@@ -1,0 +1,1710 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass beamer
+\begin_preamble
+\usetheme{CambridgeUS} 
+\beamertemplatenavigationsymbolsempty
+\end_preamble
+\options handout
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman times
+\font_sans default
+\font_typewriter default
+\font_math eulervm
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\reals}{\mathbf{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\integers}{\mathbf{Z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\naturals}{\mathbf{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rationals}{\mathbf{Q}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ca}{\mathcal{A}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cb}{\mathcal{B}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cc}{\mathcal{C}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cd}{\mathcal{D}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ce}{\mathcal{E}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cf}{\mathcal{F}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cg}{\mathcal{G}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ch}{\mathcal{H}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ci}{\mathcal{I}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cj}{\mathcal{J}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ck}{\mathcal{K}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cl}{\mathcal{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cm}{\mathcal{M}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cn}{\mathcal{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\co}{\mathcal{O}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cp}{\mathcal{P}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cq}{\mathcal{Q}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\calr}{\mathcal{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cs}{\mathcal{S}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ct}{\mathcal{T}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cu}{\mathcal{U}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cv}{\mathcal{V}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cw}{\mathcal{W}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cx}{\mathcal{X}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cy}{\mathcal{Y}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cz}{\mathcal{Z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ind}[1]{1(#1)}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand{
+\backslash
+pr}{P}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\pr}{\mathbb{P}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\predsp}{\cy}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%{
+\backslash
+hat{
+\backslash
+cy}}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\outsp}{\cy}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\prxy}{P_{\cx\times\cy}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\prx}{P_{\cx}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\prygivenx}{P_{\cy\mid\cx}}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand{
+\backslash
+ex}{E}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ex}{\mathbb{E}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\var}{\textrm{Var}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cov}{\textrm{Cov}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\sgn}{\textrm{sgn}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\sign}{\textrm{sign}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\kl}{\textrm{KL}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\law}{\mathcal{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\eps}{\varepsilon}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\as}{\textrm{ a.s.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\io}{\textrm{ i.o.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ev}{\textrm{ ev.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\convd}{\stackrel{d}{\to}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\eqd}{\stackrel{d}{=}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\del}{\nabla}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\loss}{\ell}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\risk}{R}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\emprisk}{\hat{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\lossfnl}{L}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\emplossfnl}{\hat{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\empminimizer}[1]{\hat{#1}^{*}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\minimizer}[1]{#1^{*}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\optimizer}[1]{#1^{*}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\etal}{\textrm{et. al.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\tr}{\operatorname{tr}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\trace}{\operatorname{trace}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\diag}{\text{diag}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rank}{\text{rank}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\linspan}{\text{span}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\spn}{\text{span}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\proj}{\text{Proj}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\argmax}{\operatornamewithlimits{arg\, max}}
+{\text{argmax}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\argmin}{\operatornamewithlimits{arg\, min}}
+{\text{argmin}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\bfx}{\mathbf{x}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfy}{\mathbf{y}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfl}{\mathbf{\lambda}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfm}{\mathbf{\mu}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\calL}{\mathcal{L}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\vw}{\boldsymbol{w}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vx}{\boldsymbol{x}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vxi}{\boldsymbol{\xi}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\valpha}{\boldsymbol{\alpha}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vbeta}{\boldsymbol{\beta}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vsigma}{\boldsymbol{\sigma}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vtheta}{\boldsymbol{\theta}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vd}{\boldsymbol{d}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vs}{\boldsymbol{s}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vt}{\boldsymbol{t}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vh}{\boldsymbol{h}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ve}{\boldsymbol{e}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vf}{\boldsymbol{f}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vg}{\boldsymbol{g}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vz}{\boldsymbol{z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vk}{\boldsymbol{k}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\va}{\boldsymbol{a}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vb}{\boldsymbol{b}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vv}{\boldsymbol{v}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vy}{\boldsymbol{y}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\hil}{\ch}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rkhs}{\hil}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ber}{\text{Ber}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+Comments on Homework Assignments
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+DS-GA 1003 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+optional, use only with long paper titles
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+David Rosenberg 
+\end_layout
+
+\begin_layout Date
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+today
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Institute
+New York University
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex ArticleMode
+status open
+
+\begin_layout Plain Layout
+Just in article version
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Plots courtesy of Ningshan Zhang.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Parameter Tuning
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Parameter Tuning
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Can start by trying many different orders of magnitude
+\begin_inset Formula 
+\begin{eqnarray*}
+10^{-5},10^{-4},\ldots,10^{-1},10^{0},10^{1},\ldots,10^{4},10^{5}\\
+\pause2^{-10},2^{-9},\ldots,2^{-1},2^{0},2^{1},\ldots,2^{9},2^{10}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+See where the action is...
+ and zoom in!
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Keep zooming in until things aren't improving on validation set.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Parameter Tuning
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If you want to plot all values on one graph, you may want to take logarithms
+ of your axes.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../Figures/L1L2/Shooting_LambdaVsValidationLoss.png
+	lyxscale 50
+	width 70text%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Section
+Lasso: Coordinate Descent vs SGD 
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+SGD For Total Loss vs Average Loss
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose we write linear regression objective as
+\begin_inset Formula 
+\[
+J(w)={\displaystyle \sum_{i=1}^{n}(w^{T}x_{i}-y_{i})^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Then we can do gradient descent using this step direction:
+\begin_inset Formula 
+\[
+-\del J(w)=-\sum_{i=1}^{n}2\left(w^{T}x_{i}-y_{i}\right)x_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+What about stochastic gradient descent?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Do we just choose a random 
+\begin_inset Formula $(x_{i},y_{i})$
+\end_inset
+
+ and step in direction
+\begin_inset Formula 
+\[
+-2\left(w^{T}x_{i}-y_{i}\right)x_{i}?
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+SGD Step and Gradient Step Should have Same Expectation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Expectation of gradient step is
+\begin_inset Formula 
+\begin{eqnarray*}
+\ex\left[-\del J(w)\right] & = & -\ex\left[\sum_{i=1}^{n}2\left(w^{T}X_{i}-Y_{i}\right)X_{i}\right]\\
+\pause & = & -\sum_{i=1}^{n}\ex\left[2\left(w^{T}X_{i}-Y_{i}\right)X_{i}\right]\\
+\pause & = & -n\ex\left[2\left(w^{T}X-Y\right)X\right]
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Which is 
+\begin_inset Formula $n$
+\end_inset
+
+ times 
+\begin_inset Formula 
+\[
+-\ex\left[2\left(w^{T}X_{i}-Y_{i}\right)X_{i}\right]=-\ex\left[2\left(w^{T}X-Y\right)X\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Proper SGD step for this objective is
+\begin_inset Formula 
+\[
+-n\times2\left(w^{T}X_{i}-Y_{i}\right)X_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Alternatively, divide original objective by 
+\begin_inset Formula $n$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+SGD For Total Loss vs Average Loss
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+So we had
+\begin_inset Formula 
+\[
+J(w)={\displaystyle \sum_{i=1}^{n}(w^{T}x_{i}-y_{i})^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Proper SGD step is
+\begin_inset Formula 
+\[
+-n\times2\left(w^{T}X_{i}-Y_{i}\right)X_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+What if we take step 
+\begin_inset Formula 
+\[
+-2\left(w^{T}X_{i}-Y_{i}\right)X_{i}?
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Then we're optimizing 
+\begin_inset Formula 
+\[
+J_{1}(w)=\frac{1}{n}{\displaystyle \sum_{i=1}^{n}(w^{T}x_{i}-y_{i})^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Does it matter? 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+SGD For Total Loss vs Average Loss
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The objective functions
+\begin_inset Formula 
+\begin{eqnarray*}
+J(w) & = & {\displaystyle \sum_{i=1}^{n}(w^{T}x_{i}-y_{i})^{2}}\\
+J_{1}(w) & = & \frac{1}{n}{\displaystyle \sum_{i=1}^{n}(w^{T}x_{i}-y_{i})^{2}}
+\end{eqnarray*}
+
+\end_inset
+
+have the same minimizer 
+\begin_inset Formula $w^{*}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+But they have different minimum values.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+SGD For Total Loss vs Average Loss
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The objective functions
+\begin_inset Formula 
+\begin{eqnarray*}
+J(w) & = & {\displaystyle \sum_{i=1}^{n}(w^{T}x_{i}-y_{i})^{2}}+\lambda\|w\|^{2}\\
+J_{1}(w) & = & \frac{1}{n}{\displaystyle \sum_{i=1}^{n}(w^{T}x_{i}-y_{i})^{2}+\lambda\|w\|^{2}}
+\end{eqnarray*}
+
+\end_inset
+
+do 
+\series bold
+not 
+\series default
+have the same minimizer 
+\begin_inset Formula $w^{*}$
+\end_inset
+
+ for the same 
+\begin_inset Formula $\lambda$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+For the same 
+\begin_inset Formula $\lambda$
+\end_inset
+
+, which objective has the minimizer with smaller 
+\begin_inset Quotes eld
+\end_inset
+
+complexity
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Formula $\|w\|^{2}$
+\end_inset
+
+?
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Section
+Directional Derivatives and Minima
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Directional Derivatives
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+A 
+\series bold
+directional derivative
+\series default
+ of 
+\begin_inset Formula $f$
+\end_inset
+
+ at 
+\begin_inset Formula $x$
+\end_inset
+
+ in the direction 
+\begin_inset Formula $\delta x$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+f'(x;\delta x)=\lim_{h\downarrow0}\frac{f(x+h\delta x)-f(x)}{h},
+\]
+
+\end_inset
+
+and it can be 
+\begin_inset Formula $\pm\infty$
+\end_inset
+
+ (e.g.
+ for discontinuous functions).
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+If 
+\begin_inset Formula $f$
+\end_inset
+
+ is convex and finite near 
+\begin_inset Formula $x$
+\end_inset
+
+, then 
+\begin_inset Formula $f'(x;\delta x)$
+\end_inset
+
+ exists.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $f$
+\end_inset
+
+ is differentiable at 
+\begin_inset Formula $x$
+\end_inset
+
+ iff for some 
+\begin_inset Formula $g(=\del f(x))$
+\end_inset
+
+ and all 
+\begin_inset Formula $\delta x$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+f'(x;\delta x)=g^{T}\delta x.
+\]
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Boyd EE364b: Subgradients Slides}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Descent Directions and Optimality
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+\begin_inset Formula $\delta x$
+\end_inset
+
+ is a 
+\series bold
+descent direction 
+\series default
+for 
+\begin_inset Formula $f$
+\end_inset
+
+ at 
+\begin_inset Formula $x$
+\end_inset
+
+ if 
+\begin_inset Formula $f'(x;\delta x)<0$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+For differentiable 
+\begin_inset Formula $f$
+\end_inset
+
+, if 
+\begin_inset Formula $\del f(x)\neq0$
+\end_inset
+
+, then 
+\begin_inset Formula $\delta x=-\del f(x)$
+\end_inset
+
+ is a descent direction.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We have a nice characterization for a minimum in terms of directional derivative
+:
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Theorem
+If 
+\begin_inset Formula $f$
+\end_inset
+
+ is convex and finite near 
+\begin_inset Formula $x$
+\end_inset
+
+, then either
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $x$
+\end_inset
+
+ minimizes 
+\begin_inset Formula $f$
+\end_inset
+
+, or
+\end_layout
+
+\begin_layout Itemize
+there is a descent direction for 
+\begin_inset Formula $f$
+\end_inset
+
+ at 
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Boyd EE364b: Subgradients Slides}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\lambda_{\text{max}}$
+\end_inset
+
+ for Lasso
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Lasso objective
+\begin_inset Formula 
+\[
+J_{\lambda}(w)=\sum_{i=1}^{n}\left(w^{T}x_{i}-y_{i}\right)^{2}+\lambda\left|w\right|_{1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Is there a 
+\begin_inset Formula $\lambda_{\text{max}}$
+\end_inset
+
+ such that 
+\begin_inset Formula $\lambda\ge\lambda_{\text{max }}$
+\end_inset
+
+ implies 
+\begin_inset Formula $\argmin_{w}J_{\lambda}(w)=0$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Suppose yes.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Then 
+\begin_inset Formula $w=0$
+\end_inset
+
+ is a minimum of 
+\begin_inset Formula $J_{\lambda}(w)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Let's see what that means in terms of our directional derivative characterizatio
+n.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Directional Derivative for Lasso
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Consider a step direction 
+\begin_inset Formula $v$
+\end_inset
+
+.
+ For convenience, take 
+\begin_inset Formula $v$
+\end_inset
+
+ s.t.
+ 
+\begin_inset Formula $|v|=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Then directional derivative at 
+\begin_inset Formula $w=0$
+\end_inset
+
+ in direction 
+\begin_inset Formula $v$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+J'_{\lambda}(0;v)=\lim_{h\downarrow0}\frac{J(hv)-J(0)}{h}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+For 
+\begin_inset Formula $w=0$
+\end_inset
+
+ to be a minimizer, need to have 
+\begin_inset Formula $J'_{\lambda}(0;v)\ge0$
+\end_inset
+
+ for every direction 
+\begin_inset Formula $v$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Can find 
+\begin_inset Formula $\lambda_{\text{max}}$
+\end_inset
+
+ by finding conditions on 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ for this to be the case.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,1884 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass beamer
+\begin_preamble
+\usetheme{CambridgeUS} 
+\beamertemplatenavigationsymbolsempty
+\end_preamble
+\options handout
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman times
+\font_sans default
+\font_typewriter default
+\font_math eulervm
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\reals}{\mathbf{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\integers}{\mathbf{Z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\naturals}{\mathbf{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rationals}{\mathbf{Q}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ca}{\mathcal{A}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cb}{\mathcal{B}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cc}{\mathcal{C}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cd}{\mathcal{D}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ce}{\mathcal{E}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cf}{\mathcal{F}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cg}{\mathcal{G}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ch}{\mathcal{H}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ci}{\mathcal{I}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cj}{\mathcal{J}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ck}{\mathcal{K}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cl}{\mathcal{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cm}{\mathcal{M}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cn}{\mathcal{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\co}{\mathcal{O}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cp}{\mathcal{P}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cq}{\mathcal{Q}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\calr}{\mathcal{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cs}{\mathcal{S}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ct}{\mathcal{T}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cu}{\mathcal{U}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cv}{\mathcal{V}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cw}{\mathcal{W}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cx}{\mathcal{X}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cy}{\mathcal{Y}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cz}{\mathcal{Z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ind}[1]{1(#1)}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand{
+\backslash
+pr}{P}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\pr}{\mathbb{P}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\predsp}{\cy}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%{
+\backslash
+hat{
+\backslash
+cy}}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\outsp}{\cy}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\prxy}{P_{\cx\times\cy}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\prx}{P_{\cx}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\prygivenx}{P_{\cy\mid\cx}}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand{
+\backslash
+ex}{E}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ex}{\mathbb{E}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\var}{\textrm{Var}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cov}{\textrm{Cov}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\sgn}{\textrm{sgn}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\sign}{\textrm{sign}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\kl}{\textrm{KL}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\law}{\mathcal{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\eps}{\varepsilon}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\as}{\textrm{ a.s.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\io}{\textrm{ i.o.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ev}{\textrm{ ev.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\convd}{\stackrel{d}{\to}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\eqd}{\stackrel{d}{=}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\del}{\nabla}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\loss}{\ell}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\risk}{R}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\emprisk}{\hat{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\lossfnl}{L}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\emplossfnl}{\hat{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\empminimizer}[1]{\hat{#1}^{*}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\minimizer}[1]{#1^{*}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\optimizer}[1]{#1^{*}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\etal}{\textrm{et. al.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\tr}{\operatorname{tr}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\trace}{\operatorname{trace}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\diag}{\text{diag}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rank}{\text{rank}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\linspan}{\text{span}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\spn}{\text{span}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\proj}{\text{Proj}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\argmax}{\operatornamewithlimits{arg\, max}}
+{\text{argmax}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\argmin}{\operatornamewithlimits{arg\, min}}
+{\text{argmin}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\bfx}{\mathbf{x}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfy}{\mathbf{y}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfl}{\mathbf{\lambda}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfm}{\mathbf{\mu}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\calL}{\mathcal{L}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\vw}{\boldsymbol{w}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vx}{\boldsymbol{x}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vxi}{\boldsymbol{\xi}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\valpha}{\boldsymbol{\alpha}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vbeta}{\boldsymbol{\beta}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vsigma}{\boldsymbol{\sigma}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vtheta}{\boldsymbol{\theta}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vd}{\boldsymbol{d}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vs}{\boldsymbol{s}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vt}{\boldsymbol{t}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vh}{\boldsymbol{h}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ve}{\boldsymbol{e}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vf}{\boldsymbol{f}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vg}{\boldsymbol{g}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vz}{\boldsymbol{z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vk}{\boldsymbol{k}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\va}{\boldsymbol{a}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vb}{\boldsymbol{b}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vv}{\boldsymbol{v}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vy}{\boldsymbol{y}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\hil}{\ch}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rkhs}{\hil}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ber}{\text{Ber}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\err}{\text{err}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+Gradient Boosting
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+DS-GA 1003 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+optional, use only with long paper titles
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+David Rosenberg 
+\end_layout
+
+\begin_layout Institute
+New York University
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex ArticleMode
+status open
+
+\begin_layout Plain Layout
+Just in article version
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Plots courtesy of Ningshan Zhang.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Section
+Boosting Fits an Additive Model
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Adaptive Basis Function Model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+AdaBoost produces a classification score function of the form 
+\begin_inset Formula 
+\[
+\sum_{m=1}^{M}\alpha_{m}G_{m}(x)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+each 
+\begin_inset Formula $G_{m}$
+\end_inset
+
+ is a 
+\series bold
+weak classifier
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+The 
+\begin_inset Formula $G_{m}$
+\end_inset
+
+'s are like basis functions, but they are learned from the data.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Let's move beyond classification models...
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Adaptive Basis Function Model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Hypothesis space 
+\begin_inset Formula $\cf$
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Can be classifiers or regression functions
+\end_layout
+
+\begin_layout Itemize
+These would be the 
+\begin_inset Quotes eld
+\end_inset
+
+weak classifiers
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+base classifiers
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+An 
+\series bold
+adaptive basis function expansion 
+\series default
+over 
+\begin_inset Formula $\cf$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+f(x)=\sum_{m=1}^{M}\nu_{m}h_{m}(x),
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Each 
+\begin_inset Formula $h_{m}\in\cf$
+\end_inset
+
+ is chosen in a learning process, and
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\nu_{m}$
+\end_inset
+
+ are 
+\series bold
+expansion coefficients.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+For example, 
+\begin_inset Formula $\cf$
+\end_inset
+
+ could be all decision trees of depth at most 4.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We now discuss one approach to fitting such a model.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Forward Stagewise Additive Modeling
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Initialize 
+\begin_inset Formula $f_{0}(x)=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+For 
+\begin_inset Formula $m=1$
+\end_inset
+
+ to 
+\begin_inset Formula $M$
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Enumerate
+Compute:
+\begin_inset Formula 
+\[
+\left(\nu_{m},h_{m}\right)=\argmin_{\nu\in\reals,h\in\cf}\sum_{i=1}^{n}\ell\left\{ y_{i},f_{m-1}(x_{i})\underbrace{+\nu h(x_{i})}_{\text{new piece}}\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Set 
+\begin_inset Formula $f_{m}(x)=f_{m-1}(x)+\nu_{m}h(x)$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+Return: 
+\begin_inset Formula $f_{M}(x)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Exponential Loss and AdaBoost
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Take loss function to be 
+\begin_inset Formula 
+\[
+\ell(y,f(x))=\exp\left(-yf(x)\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $\cf=\left\{ h(x):\cx\to\left\{ -1,1\right\} \right\} $
+\end_inset
+
+ be a hypothesis space of weak classifiers.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Then Forward Stagewise Additive Modeling (FSAM) reduces to AdaBoost.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+(See HTF Section 10.4 for proof.) 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Section
+Gradient Boosting 
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+FSAM Looks Like Gradient Descent?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let's examine the key step of FSAM a bit more closely:
+\begin_inset Formula 
+\[
+\left(\nu_{m},h_{m}\right)=\argmin_{\nu\in\reals,h\in\cf}\sum_{i=1}^{n}\ell\left\{ y_{i},f_{m-1}(x_{i})\underbrace{+\nu h(x_{i})}_{\text{new piece}}\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+This looks like one step of a numerical optimization method:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $h(x_{i})$
+\end_inset
+
+ is like a step direction 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+This inspires a 
+\series bold
+new
+\series default
+ approach to boosting.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+We can choose 
+\begin_inset Formula $h_{m}$
+\end_inset
+
+ to be something like a gradient in function space.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Roughly speaking, it will be like the gradient projected onto 
+\begin_inset Formula $\cf$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Leads to a 
+\series bold
+functional gradient descent
+\series default
+ method.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Note: This will be a new method.
+ AdaBoost will 
+\series bold
+not
+\series default
+ be a special case.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Functional Gradient Descent: Main Idea
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We want to minimize
+\begin_inset Formula 
+\[
+\sum_{i=1}^{n}\ell\left\{ y_{i},f(x_{i})\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Take functional gradient w.r.t.
+ 
+\begin_inset Formula $f$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Find function 
+\begin_inset Formula $h\in\cf$
+\end_inset
+
+ closest to gradient.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Take a step in this 
+\begin_inset Quotes eld
+\end_inset
+
+projected gradient
+\begin_inset Quotes erd
+\end_inset
+
+ direction 
+\begin_inset Formula $h$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Functional Gradient Descent: Unconstrained Objective
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Note that
+\begin_inset Formula 
+\[
+\sum_{i=1}^{n}\ell\left(y_{i},f(x_{i})\right)
+\]
+
+\end_inset
+
+only depends on 
+\begin_inset Formula $f$
+\end_inset
+
+ at the training points.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Define
+\begin_inset Formula 
+\[
+{\bf f}=\left(f(x_{1}),\ldots,f(x_{n})\right)^{T}
+\]
+
+\end_inset
+
+and write the objective function as 
+\begin_inset Formula 
+\[
+J({\bf f})=\sum_{i=1}^{n}\ell\left(y_{i,}{\bf f}_{i}\right).
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Functional Gradient Descent: Unconstrained Step Direction
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Consider gradient descent on 
+\begin_inset Formula 
+\[
+J({\bf f})=\sum_{i=1}^{n}\ell\left(y_{i,}{\bf f}_{i}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The 
+\series bold
+negative gradient step direction
+\series default
+ at 
+\begin_inset Formula ${\bf f}$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+-{\bf g}=-\del_{\vf}J({\bf f}),
+\]
+
+\end_inset
+
+which we can easily calculate.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+This is just about how to adjust the values of 
+\begin_inset Formula $f$
+\end_inset
+
+ at the training data.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+How to keep 
+\begin_inset Formula $f\in\cf$
+\end_inset
+
+?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Solve both of these problems by projecting 
+\begin_inset Formula $-{\bf g}_{m}$
+\end_inset
+
+ into 
+\begin_inset Formula $\cf$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Functional Gradient Descent: Projection Step
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Unconstrained step direction is
+\begin_inset Formula 
+\[
+-{\bf g}=-\del_{\vf}J({\bf f}).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Suppose 
+\begin_inset Formula $\cf$
+\end_inset
+
+ is our weak hypothesis space.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Find 
+\begin_inset Formula $h\in\cf$
+\end_inset
+
+ that is closest to 
+\begin_inset Formula $-{\bf g}$
+\end_inset
+
+ at the training points, in the 
+\begin_inset Formula $\ell^{2}$
+\end_inset
+
+ sense:
+\begin_inset Formula 
+\[
+\min_{h\in\cf}\sum_{i=1}^{n}\left(-{\bf g}_{i}-h(x_{i})\right)^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+This is a least squares regression problem!
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\cf$
+\end_inset
+
+ should have 
+\series bold
+real-valued
+\series default
+ functions.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+So the 
+\begin_inset Formula $h$
+\end_inset
+
+ that best approximates 
+\begin_inset Formula $-{\bf g}$
+\end_inset
+
+ is our step direction.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Functional Gradient Descent: Step Size
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Finally, we choose a stepsize.
+ 
+\end_layout
+
+\begin_layout Itemize
+Option 1 (Line search):
+\begin_inset Formula 
+\[
+\nu_{m}=\argmin_{\nu>0}\sum_{i=1}^{n}\ell\left\{ y_{i},f_{m-1}(x_{i})+\nu h_{m}(x_{i})\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Option 2: (Shrinkage parameter)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We consider 
+\begin_inset Formula $\nu=1$
+\end_inset
+
+ to be the full gradient step.
+\end_layout
+
+\begin_layout Itemize
+Choose a fixed 
+\begin_inset Formula $\nu\in(0,1)$
+\end_inset
+
+ -- called a 
+\series bold
+shrinkage parameter.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+A value of 
+\begin_inset Formula $\nu=0.1$
+\end_inset
+
+ is typical -- optimize as a hyperparameter .
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Gradient Boosting Machine
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Initialize 
+\begin_inset Formula $f_{0}(x)=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+For 
+\begin_inset Formula $m=1$
+\end_inset
+
+ to 
+\begin_inset Formula $M$
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Compute:
+\begin_inset Formula 
+\[
+{\bf g}_{m}=\left(\left.\frac{\partial}{\partial f(x_{i})}\left(\sum_{i=1}^{n}\ell\left\{ y_{i},f(x_{i})\right\} \right)\right|_{f(x_{i})=f_{m-1}(x_{i})}\right)_{i=1}^{n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Fit regression model to 
+\begin_inset Formula $-{\bf g}_{m}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+h_{m}=\argmin_{h\in\cf}\sum_{i=1}^{n}\left(\left(-{\bf g}_{m}\right)_{i}-h(x_{i})\right)^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Choose fixed step size 
+\begin_inset Formula $\nu_{m}=\nu\in(0,1]$
+\end_inset
+
+, or take
+\begin_inset Formula 
+\[
+\nu_{m}=\argmin_{\nu>0}\sum_{i=1}^{n}\ell\left\{ y_{i},f_{m-1}(x_{i})+\nu h_{m}(x_{i})\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Take the step:
+\begin_inset Formula 
+\[
+f_{m}(x)=f_{m-1}(x)+\nu_{m}h_{m}(x)
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Gradient Boosting Machine: Recap
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Take any differentiable loss function.
+\end_layout
+
+\begin_layout Itemize
+Choose a weak hypothesis space for regression.
+\end_layout
+
+\begin_layout Itemize
+Choose number of steps (or a stopping criterion).
+\end_layout
+
+\begin_layout Itemize
+Choose step size methodology.
+\end_layout
+
+\begin_layout Itemize
+Then you're good to go!
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Section
+Gradient Tree Boosting
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Gradient Tree Boosting
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Common form of gradient boosting machine takes
+\begin_inset Formula 
+\[
+\cf=\left\{ \mbox{regression trees of size \ensuremath{J}}\right\} ,
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $J$
+\end_inset
+
+ is the number of terminal nodes.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $J=2$
+\end_inset
+
+ gives decision stumps
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+HTF recommends 
+\begin_inset Formula $4\le J\le8$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Software packages:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Gradient tree boosting is implemented by the 
+\series bold
+gbm package
+\series default
+ for R
+\end_layout
+
+\begin_layout Itemize
+as 
+\family typewriter
+\size footnotesize
+GradientBoostingClassifier
+\family default
+\size default
+ and 
+\family typewriter
+\size footnotesize
+GradientBoostingRegressor
+\family default
+\size default
+ in 
+\series bold
+sklearn
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+For trees, there are other tweaks on the algorithm one can do
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+See HTF 10.9-10.12 and 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\end_body
+\end_document

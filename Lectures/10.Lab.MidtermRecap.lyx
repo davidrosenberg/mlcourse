@@ -1,0 +1,2018 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass beamer
+\begin_preamble
+\usetheme{CambridgeUS} 
+\beamertemplatenavigationsymbolsempty
+\end_preamble
+\options handout
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman times
+\font_sans default
+\font_typewriter default
+\font_math eulervm
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\reals}{\mathbf{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\integers}{\mathbf{Z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\naturals}{\mathbf{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rationals}{\mathbf{Q}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ca}{\mathcal{A}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cb}{\mathcal{B}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cc}{\mathcal{C}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cd}{\mathcal{D}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ce}{\mathcal{E}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cf}{\mathcal{F}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cg}{\mathcal{G}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ch}{\mathcal{H}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ci}{\mathcal{I}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cj}{\mathcal{J}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ck}{\mathcal{K}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cl}{\mathcal{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cm}{\mathcal{M}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cn}{\mathcal{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\co}{\mathcal{O}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cp}{\mathcal{P}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cq}{\mathcal{Q}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\calr}{\mathcal{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cs}{\mathcal{S}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ct}{\mathcal{T}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cu}{\mathcal{U}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cv}{\mathcal{V}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cw}{\mathcal{W}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cx}{\mathcal{X}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cy}{\mathcal{Y}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cz}{\mathcal{Z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ind}[1]{1(#1)}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand{
+\backslash
+pr}{P}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\pr}{\mathbb{P}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\predsp}{\cy}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%{
+\backslash
+hat{
+\backslash
+cy}}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\outsp}{\cy}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\prxy}{P_{\cx\times\cy}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\prx}{P_{\cx}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\prygivenx}{P_{\cy\mid\cx}}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand{
+\backslash
+ex}{E}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ex}{\mathbb{E}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\var}{\textrm{Var}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cov}{\textrm{Cov}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\sgn}{\textrm{sgn}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\sign}{\textrm{sign}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\kl}{\textrm{KL}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\law}{\mathcal{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\eps}{\varepsilon}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\as}{\textrm{ a.s.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\io}{\textrm{ i.o.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ev}{\textrm{ ev.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\convd}{\stackrel{d}{\to}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\eqd}{\stackrel{d}{=}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\del}{\nabla}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\loss}{\ell}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\risk}{R}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\emprisk}{\hat{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\lossfnl}{L}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\emplossfnl}{\hat{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\empminimizer}[1]{\hat{#1}^{*}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\minimizer}[1]{#1^{*}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\optimizer}[1]{#1^{*}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\etal}{\textrm{et. al.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\tr}{\operatorname{tr}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\trace}{\operatorname{trace}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\diag}{\text{diag}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rank}{\text{rank}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\linspan}{\text{span}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\spn}{\text{span}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\proj}{\text{Proj}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\argmax}{\operatornamewithlimits{arg\, max}}
+{\text{argmax}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\argmin}{\operatornamewithlimits{arg\, min}}
+{\text{argmin}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\bfx}{\mathbf{x}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfy}{\mathbf{y}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfl}{\mathbf{\lambda}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfm}{\mathbf{\mu}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\calL}{\mathcal{L}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\vw}{\boldsymbol{w}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vx}{\boldsymbol{x}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vxi}{\boldsymbol{\xi}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\valpha}{\boldsymbol{\alpha}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vbeta}{\boldsymbol{\beta}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vsigma}{\boldsymbol{\sigma}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vtheta}{\boldsymbol{\theta}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vd}{\boldsymbol{d}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vs}{\boldsymbol{s}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vt}{\boldsymbol{t}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vh}{\boldsymbol{h}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ve}{\boldsymbol{e}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vf}{\boldsymbol{f}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vg}{\boldsymbol{g}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vz}{\boldsymbol{z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vk}{\boldsymbol{k}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\va}{\boldsymbol{a}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vb}{\boldsymbol{b}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vv}{\boldsymbol{v}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vy}{\boldsymbol{y}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\hil}{\ch}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rkhs}{\hil}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ber}{\text{Ber}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+Midterm Recap
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+DS-GA 1003 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+optional, use only with long paper titles
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+David Rosenberg 
+\end_layout
+
+\begin_layout Date
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+today
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Institute
+New York University
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex ArticleMode
+status open
+
+\begin_layout Plain Layout
+Just in article version
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Plots courtesy of Ningshan Zhang.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+True / False
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+New Features
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+(
+\series bold
+True or False
+\series default
+, 1 pt) When using (unregularized) linear regression, adding new features
+ always improves the performance on training data, or at least never make
+ it worse.
+\end_layout
+
+\begin_layout Itemize
+(
+\series bold
+True or False
+\series default
+, 1 pt)When using a (unregularized) linear regression, adding new features
+ always improves the performance on test data, or at least never make it
+ worse.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Adding new features makes a bigger hypothesis space
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+decrease training error
+\end_layout
+
+\begin_layout Itemize
+could lead to overfitting
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Said 
+\begin_inset Quotes eld
+\end_inset
+
+unregularized linear regression
+\begin_inset Quotes erd
+\end_inset
+
+, because regularization can prevent overfitting
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Overfitting
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+(
+\series bold
+True or False
+\series default
+, 1 pt) Overfitting is more likely when the set of training data is small.
+\end_layout
+
+\begin_layout Itemize
+(
+\series bold
+True or False
+\series default
+, 1 pt) Overfitting is more likely when the hypothesis space is small.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Whether you overfit depends on 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+size of the training set and 
+\end_layout
+
+\begin_layout Itemize
+the size of the hypothesis space 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Estimation Error / Approximation Error
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+(
+\series bold
+True or False
+\series default
+, 1 pt) Approximation error decreases to zero as the amount of training
+ data goes to infinity.
+\end_layout
+
+\begin_layout Itemize
+(
+\series bold
+True or False
+\series default
+, 1 pt) If the empirical risk function is not convex, more training data
+ may not help estimation error.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Block
+
+\end_layout
+
+\begin_deeper
+\begin_layout ColumnsCenterAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+.4
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename ../Figures/ApproxEstError/alexApproxEstErrorPic.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+.4
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+f^{*}= & \argmin_{f}\ex\ell(f(X),Y)\\
+f_{\cf}= & \argmin_{f\in\cf}\ex\ell(f(X),Y))\\
+\hat{f}_{n}= & \argmin_{f\in\cf}\frac{1}{n}\sum_{i=1}^{n}\ell(f(x_{i}),y_{i})
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Duplicate Features in a Tree
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+(
+\series bold
+True or False
+\series default
+, 1 pt) If a decision tree is trained on data for which two features are
+ exactly equal, the resulting tree will be the same whether or not we remove
+ one of those two features.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Feature Rescaling
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+(
+\series bold
+True or False
+\series default
+, 1 pt) Suppose we fit Lasso regression to a data set.
+ If we rescale one of the features by multiplying it by 10, and we then
+ refit Lasso regression with the same regularization parameter, then it
+ is more likely for that feature to be excluded from the model
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Big feature values 
+\begin_inset Formula $\implies$
+\end_inset
+
+ smaller coefficients 
+\begin_inset Formula $\implies$
+\end_inset
+
+ less lasso penalty 
+\begin_inset Formula $\implies$
+\end_inset
+
+ more likely to have be kept
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Kernel Methods Scalability
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+(
+\series bold
+True or False
+\series default
+, 1 pt) When you have a very large data set of size 
+\begin_inset Formula $n$
+\end_inset
+
+, which is much larger than the dimension 
+\begin_inset Formula $d$
+\end_inset
+
+ of the feature space, kernel methods are probably not a good idea.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+At the heart of kernel methods is the kernel matrix, which is 
+\begin_inset Formula $n\times n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+If 
+\begin_inset Formula $n$
+\end_inset
+
+ is huge, kernel methods become much more difficult.
+ 
+\end_layout
+
+\begin_layout Itemize
+If feature space is also much smaller, no obvious reason to use kernelized
+ approach.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+AdaBoost Converges to Zero Training Error?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+(
+\series bold
+True or False
+\series default
+, 1 pt) Adaboost with decision stumps will eventually reach zero training
+ error, provided we run enough rounds of boosting.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The best any method can do is to converge to
+\begin_inset Formula 
+\[
+\min_{f}\frac{1}{n}\sum_{i=1}^{n}\ell(f(x_{i}),y_{i})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+But this may not be zero.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Section
+Short Answer
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Support Vectors
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+(1 pt) Circle all of the loss functions that may lead to sparsity of support
+ vectors: 
+\series bold
+exponential loss, hinge loss, squared hinge loss, logistic loss, square
+ loss
+\series default
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/loss-functions/loss.Zero_One.Hinge.Logistic.png
+	lyxscale 30
+	width 70text%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ell_{1}/\ell_{2}$
+\end_inset
+
+ regularization
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+(4 pts) We have a dataset 
+\begin_inset Formula $\cd=\left\{ \left(0,1\right),(1,4),(2,3)\right\} $
+\end_inset
+
+ that we fit by minimizing an objective function of the form:
+\begin_inset Formula 
+\[
+J(\alpha_{0},\alpha_{1})=\sum_{i=1}^{3}\left(\alpha_{0}+\alpha_{1}x_{i}-y_{i}\right)^{2}+\lambda_{1}\left|\alpha_{0}+\alpha_{1}\right|+\lambda_{2}(\alpha_{0}^{2}+\alpha_{1}^{2}),
+\]
+
+\end_inset
+
+and the corresponding fitted function is given by 
+\begin_inset Formula $f(x)=\alpha_{0}+\alpha_{1}x$
+\end_inset
+
+.
+ We tried four different settings of 
+\begin_inset Formula $\lambda_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\lambda_{2}$
+\end_inset
+
+, and the results are shown in Figure.
+ For each of the following parameter settings, give the number of the plot
+ that shows the resulting fit.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+(1 pt) 
+\begin_inset Formula $\lambda_{1}=0$
+\end_inset
+
+ and 
+\begin_inset Formula $\lambda_{2}=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+(1 pt) 
+\begin_inset Formula $\lambda_{1}=5$
+\end_inset
+
+ and 
+\begin_inset Formula $\lambda_{2}=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+(1 pt) 
+\begin_inset Formula $\lambda_{1}=0$
+\end_inset
+
+ and 
+\begin_inset Formula $\lambda_{2}=10$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+(1 pt) 
+\begin_inset Formula $\lambda_{1}=0$
+\end_inset
+
+ and 
+\begin_inset Formula $\lambda_{2}=2$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ell_{1}/\ell_{2}$
+\end_inset
+
+ regularization
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename ../Figures/misc/fourFits.png
+	lyxscale 20
+	width 4in
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Kernel Function
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Show that the following kernel function is a Mercer kernel (i.e.
+ it represents an inner product):
+\begin_inset Formula 
+\[
+k(x,y)=\frac{x^{T}y}{\|x\|\|y\|},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $x,y\in\reals^{d}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+For 
+\begin_inset Formula $\phi(x)=\frac{x}{\|x\|}$
+\end_inset
+
+, we have
+\begin_inset Formula 
+\[
+k(x,y)=\left\langle \phi(x),\phi(y)\right\rangle .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Nonlinear Feature Mappings
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+(2 pts) Consider the binary classification problem shown in Figure
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/misc/twoCircles.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Denote the input space by 
+\begin_inset Formula $\cx=\left\{ \left(x_{1},x_{2}\right)\in\reals^{2}\right\} $
+\end_inset
+
+.
+ Give a feature mapping for which a linear classifier could perfectly separate
+ the two classes shown.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Nonlinear Feature Mappings
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+(2 pts) Consider the binary classification problem shown in Figure
+\end_layout
+
+\begin_layout Standard
+Denote the input space by 
+\begin_inset Formula $\cx=\left\{ \left(x_{1},x_{2}\right)\in\reals^{2}\right\} $
+\end_inset
+
+.
+ Give a feature mapping for which a linear classifier could perfectly separate
+ the two classes shown.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\phi(x)=\left(1,x_{1},x_{2},x_{1}^{2},x_{2}^{2},x_{1}x_{2}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\phi(x)=\left(x_{1}^{2}+x_{2}^{2}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Hypothesis Space Decision Boundaries
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+(2 pts) For the classification problem in Figure, circle all classifiers
+ that could perfectly separate the classes: 
+\series bold
+linear SVM, SVM with quadratic kernel, decision stumps (i.e.
+ classification trees with only two leaf nodes), AdaBoost with decision
+ stumps, SVM with radial basis function kernel
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/misc/twoCircles.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Kernel Machine Prediction Functions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+In general, when we kernelize a linear method, prediction functions have
+ form
+\begin_inset Formula 
+\begin{eqnarray*}
+f^{*}(x) & = & \sum_{i=1}^{n}\beta_{i}k(x_{i},x)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Basis function viewpoint -- each 
+\begin_inset Formula $k(x_{i},\cdot)$
+\end_inset
+
+ is a basis function:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/kernels/kernel-fns-1.jpg
+	lyxscale 60
+	width 80col%
+	groupId halfSlide
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Prediction functions look like
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/kernels/kernel-fns-2.jpg
+	lyxscale 60
+	width 80col%
+	groupId halfSlide
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Trees vs Linear Classifiers
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+(2 pts) Let 
+\begin_inset Formula $\cf_{1}=\left\{ \mbox{binary decision trees of depth 2}\right\} $
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $\cf_{2}=\left\{ \mbox{all linear classifiers}\right\} $
+\end_inset
+
+.
+ Draw a binary classification dataset for which a member of 
+\begin_inset Formula $\cf_{1}$
+\end_inset
+
+ can perfectly separate the data, while no member of 
+\begin_inset Formula $\cf_{2}$
+\end_inset
+
+ can.
+ Show the splits and the decision boundary for the tree.
+ 
+\end_layout
+
+\begin_layout Itemize
+(2 pts) Same 
+\begin_inset Formula $\cf_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\cf_{2}$
+\end_inset
+
+ as in the previous problem.
+ Draw a binary classification dataset for which a member of 
+\begin_inset Formula $\cf_{2}$
+\end_inset
+
+ can perfectly separate the data, while no member of 
+\begin_inset Formula $\cf_{1}$
+\end_inset
+
+ can.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Hard Margin SVMs
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Plain Layout
+(2 pts) Suppose we fit a hard-margin SVM to 
+\begin_inset Formula $N$
+\end_inset
+
+ data points, and we have 2 data points 
+\begin_inset Quotes eld
+\end_inset
+
+on the margin
+\begin_inset Quotes erd
+\end_inset
+
+.
+ If we add a new data point to the training set and refit the SVM, what's
+ the largest number of data points that could end up 
+\begin_inset Quotes eld
+\end_inset
+
+on the margin
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Support your answer (a picture could suffice).
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../Homeworks/Midterm/Figures/hardmarginSVM-Npoints.png
+	lyxscale 50
+	width 60text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../Homeworks/Midterm/Figures/hardmarginSVM-N+1points.png
+	lyxscale 50
+	width 60text%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Hypothesis Spaces
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Unnecessary Features
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+(1 pt) Consider the following two hypothesis spaces:
+\begin_inset Formula 
+\[
+\cf_{1}=\left\{ f(x)=e^{w_{1}}x+w_{2}x\mid w_{1},w_{2}\in\reals\right\} \qquad\cf_{2}=\left\{ f(x)=wx\mid w\in\reals\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Suppose we are selecting hypotheses using empirical risk minimization (without
+ any penalty).
+ 
+\end_layout
+
+\begin_layout Itemize
+Are there any situations in which one of these hypothesis spaces would be
+ preferred to the other? Why?
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Restricted Feature
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+(1 pt) Consider the following two hypothesis spaces:
+\begin_inset Formula 
+\[
+\cf_{1}=\left\{ f(x)=e^{w_{1}}x\mid w_{1}\in\reals\right\} \qquad\cf_{2}=\left\{ f(x)=wx\mid w\in\reals\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Suppose we are selecting hypotheses using empirical risk minimization (without
+ any penalty).
+ 
+\end_layout
+
+\begin_layout Itemize
+Are there any situations in which one of these hypothesis spaces would be
+ preferred to the other? Why?
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Complexity Constraints for Binary Trees
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+(1 pt) Consider the following two hypothesis spaces:
+\begin_inset Formula 
+\begin{eqnarray*}
+\cf_{1} & = & \left\{ \mbox{binary trees of depth at most }2\right\} \\
+\cf_{2} & = & \left\{ \mbox{binary trees with at most 4 leaf nodes}\right\} 
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\cf_{1}$
+\end_inset
+
+ is contained in 
+\begin_inset Formula $\cf_{2}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\cf_{2}$
+\end_inset
+
+ allows more tree depth 
+\begin_inset Formula $\implies$
+\end_inset
+
+ more feature interaction
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,2186 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass paper
+\use_default_options false
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding iso8859-1
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize letterpaper
+\use_geometry false
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 5
+\tocdepth 5
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\reals}{\mathbf{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\integers}{\mathbf{Z}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\naturals}{\mathbf{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rationals}{\mathbf{Q}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ca}{\mathcal{A}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cb}{\mathcal{B}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cc}{\mathcal{C}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cd}{\mathcal{D}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ce}{\mathcal{E}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cf}{\mathcal{F}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cg}{\mathcal{G}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ch}{\mathcal{H}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ci}{\mathcal{I}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cj}{\mathcal{J}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ck}{\mathcal{K}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cl}{\mathcal{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cm}{\mathcal{M}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cn}{\mathcal{N}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\co}{\mathcal{O}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cp}{\mathcal{P}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cq}{\mathcal{Q}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\calr}{\mathcal{R}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cs}{\mathcal{S}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ct}{\mathcal{T}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cu}{\mathcal{U}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cv}{\mathcal{V}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cw}{\mathcal{W}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cx}{\mathcal{X}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cy}{\mathcal{Y}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cz}{\mathcal{Z}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ind}[1]{1(#1)}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\pr}{\mathbb{P}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\predsp}{\cy}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\outsp}{\cy}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\prxy}{P_{\cx\times\cy}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\prx}{P_{\cx}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\prygivenx}{P_{\cy\mid\cx}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ex}{\mathbb{E}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\var}{\textrm{Var}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cov}{\textrm{Cov}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\sgn}{\textrm{sgn}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\sign}{\textrm{sign}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\kl}{\textrm{KL}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\law}{\mathcal{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\eps}{\varepsilon}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\as}{\textrm{ a.s.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\io}{\textrm{ i.o.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ev}{\textrm{ ev.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\convd}{\stackrel{d}{\to}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\eqd}{\stackrel{d}{=}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\del}{\nabla}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\loss}{V}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\risk}{R}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\emprisk}{\hat{R}_{\ell}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\lossfnl}{L}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\emplossfnl}{\hat{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\empminimizer}[1]{\hat{#1}_{\ell}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\minimizer}[1]{#1_{*}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\etal}{\textrm{et. al.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\tr}{\operatorname{tr}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\trace}{\operatorname{trace}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\diag}{\text{diag}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\rank}{\text{rank}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\linspan}{\text{span}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\proj}{\text{Proj}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\argmax}{\operatornamewithlimits{arg\, max}}
+{\mbox{argmax}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\argmin}{\operatornamewithlimits{arg\, min}}
+{\mbox{argmin}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfx}{\mathbf{x}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfy}{\mathbf{y}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfl}{\mathbf{\lambda}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfm}{\mathbf{\mu}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\calL}{\mathcal{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vw}{\boldsymbol{w}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vx}{\boldsymbol{x}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vxi}{\boldsymbol{\xi}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\valpha}{\boldsymbol{\alpha}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vbeta}{\boldsymbol{\beta}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vsigma}{\boldsymbol{\sigma}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vmu}{\boldsymbol{\mu}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vtheta}{\boldsymbol{\theta}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vd}{\boldsymbol{d}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vs}{\boldsymbol{s}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vt}{\boldsymbol{t}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vh}{\boldsymbol{h}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ve}{\boldsymbol{e}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vf}{\boldsymbol{f}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vg}{\boldsymbol{g}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vz}{\boldsymbol{z}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vk}{\boldsymbol{k}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\va}{\boldsymbol{a}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vb}{\boldsymbol{b}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vv}{\boldsymbol{v}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vy}{\boldsymbol{y}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\hil}{\ch}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\rkhs}{\hil}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\gauss}{\cn}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+Bayesian Linear Regression
+\end_layout
+
+\begin_layout Author
+David S.
+ Rosenberg
+\end_layout
+
+\begin_layout Date
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+today
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Abstract
+Here we develop some basics of Bayesian linear regression.
+ Most of the calculations for this document come from the basic theory of
+ gaussian random variables.
+ To keep the focus on the probabilistic and statistics concepts in this
+ document, I've outsourced the calculations to another document, on basical
+ normal variable theory.
+\end_layout
+
+\begin_layout Section
+Gaussian Linear Regression -- Everything but Bayes
+\end_layout
+
+\begin_layout Standard
+Given an input 
+\begin_inset Formula $x\in\reals^{d}$
+\end_inset
+
+, we'd like to predict the corresponding output 
+\begin_inset Formula $y\in\reals$
+\end_inset
+
+.
+ In Gaussian linear regression, we assume that 
+\begin_inset Formula $y$
+\end_inset
+
+ is generated by first taking a linear function of 
+\begin_inset Formula $x$
+\end_inset
+
+, namely 
+\begin_inset Formula $f(x)=x^{T}w,$
+\end_inset
+
+ for some 
+\begin_inset Formula $w\in\reals^{d}$
+\end_inset
+
+.
+ Barber refers to 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ as the 
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+clean
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+ output.
+ However, we don't get to observe 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ directly.
+ In Gaussian regression, we assume that we observe 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ plus some random Gaussian noise 
+\begin_inset Formula $\eps$
+\end_inset
+
+.
+ This setting is described mathematically in the expressions below: 
+\begin_inset Formula 
+\begin{eqnarray}
+f(x) & = & w^{T}x\nonumber \\
+\eps & \sim & \gauss(0,\sigma^{2})\label{eq:generativemodel-ygivenx}\\
+y & = & f(x)+\eps.\nonumber 
+\end{eqnarray}
+
+\end_inset
+
+We can think of these expressions as describing how 
+\begin_inset Quotes eld
+\end_inset
+
+nature
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+the world
+\begin_inset Quotes erd
+\end_inset
+
+ generates a 
+\begin_inset Formula $y$
+\end_inset
+
+ value given an 
+\begin_inset Formula $x$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Enumerate
+We give Nature 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ (Or some other process generates 
+\begin_inset Formula $x$
+\end_inset
+
+.)
+\end_layout
+
+\begin_layout Enumerate
+Nature computes
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Nature knows 
+\begin_inset Formula $w$
+\end_inset
+
+, though we (the data scientists) generally do not.
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $f(x)=w^{T}x$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Nature draws a random sample 
+\begin_inset Formula $\eps$
+\end_inset
+
+ from 
+\begin_inset Formula $\cn(0,\sigma^{2})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Nature tells us the value  of 
+\begin_inset Formula $y=f(x)+\eps$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We can think of 
+\begin_inset Formula $\eps$
+\end_inset
+
+ as the noise in our observation.
+ The 
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+learning
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+estimation
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+ problem is to figure out what 
+\begin_inset Formula $w$
+\end_inset
+
+ is, given a 
+\series bold
+training set
+\series default
+ 
+\begin_inset Formula $\cd=\left\{ \left(x_{1},y_{1}\right),\ldots,\left(x_{n},y_{n}\right)\right\} $
+\end_inset
+
+ generated by this process.
+\end_layout
+
+\begin_layout Standard
+Using basic properties of Gaussian distributions
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Adding a constant to a Gaussian random variable just changes the mean of
+ the Gaussian.
+\end_layout
+
+\end_inset
+
+, we can write: 
+\begin_inset Formula 
+\begin{equation}
+Y|x\sim\gauss(w^{T}x,\sigma^{2}).\label{eq:gauss-lin-regr-cond-dist}
+\end{equation}
+
+\end_inset
+
+We read this as 
+\begin_inset Quotes eld
+\end_inset
+
+the conditional distribution of [the random variable] 
+\begin_inset Formula $Y$
+\end_inset
+
+ given input 
+\begin_inset Formula $x$
+\end_inset
+
+ is Gaussian with mean 
+\begin_inset Formula $w^{T}x$
+\end_inset
+
+ and variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+.
+ Although there is no explicit reference to the 
+\begin_inset Quotes eld
+\end_inset
+
+clean
+\begin_inset Quotes erd
+\end_inset
+
+ output in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:gauss-lin-regr-cond-dist"
+
+\end_inset
+
+, you can see it is just the mean of the Gaussian distribution.
+\end_layout
+
+\begin_layout Standard
+Note that the model we have described makes no mention of how 
+\begin_inset Formula $x$
+\end_inset
+
+ is generated.
+ Indeed, this is intentional.
+ This kind of model is called a 
+\series bold
+conditional model
+\series default
+.
+ We only describe what 
+\begin_inset Formula $Y$
+\end_inset
+
+ is like, given 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ The 
+\begin_inset Formula $x$
+\end_inset
+
+ may be the output of an unknown random process or it may be chosen by a
+ person designing an experiment.
+ One can think about 
+\begin_inset Formula $x$
+\end_inset
+
+ simply as 
+\begin_inset Quotes eld
+\end_inset
+
+input
+\begin_inset Quotes erd
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+[show distribution for a single x]
+\end_layout
+
+\begin_layout Standard
+[show conditional distribution for several x's (picture gaussian going verticall
+y?)
+\end_layout
+
+\begin_layout Standard
+[show scatter plot of samples from several randomly chosen x's , x's chosen
+ uniformly at random]
+\end_layout
+
+\begin_layout Standard
+So far, we have only specified the distribution for 
+\begin_inset Formula $Y\mid x$
+\end_inset
+
+ up to a particular 
+\series bold
+family of distributions
+\series default
+.
+ What does that mean? The distribution of 
+\begin_inset Formula $Y\mid x$
+\end_inset
+
+ depends on the parameter 
+\begin_inset Formula $w$
+\end_inset
+
+, which is unknown.
+ We only know that 
+\begin_inset Formula 
+\[
+\mbox{Distribution}\left(Y\mid x\right)\in\left\{ \cn\left(w^{T}x,\sigma^{2}\right)\mid w\in\reals^{d}\right\} .
+\]
+
+\end_inset
+
+Our goal is to be able to predict the distribution of 
+\begin_inset Formula $Y$
+\end_inset
+
+ for a given 
+\begin_inset Formula $x$
+\end_inset
+
+ (or perhaps some characteristic of this distribution, such as its expected
+ value or standard deviation).
+ To end up with a single distribution for 
+\begin_inset Formula $Y\mid x$
+\end_inset
+
+, we'll have to do more.
+ One approach is to come up with a 
+\series bold
+point estimate
+\series default
+ for 
+\begin_inset Formula $w$
+\end_inset
+
+.
+ This means choosing a specific 
+\begin_inset Formula $w\in\reals^{d}$
+\end_inset
+
+, typically based on our training data.
+ Coming up with a point estimate for 
+\begin_inset Formula $w$
+\end_inset
+
+ is the approach taken in classical or 
+\series bold
+
+\begin_inset Quotes eld
+\end_inset
+
+frequentist
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\series default
+statistics.
+ In Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Maximum-Likelihood-Estimation"
+
+\end_inset
+
+ we a classical frequentist approach called maximum likelihood estimation.
+ 
+\end_layout
+
+\begin_layout Standard
+By contrast to the frequentist approach, in the 
+\series bold
+Bayesian approach
+\series default
+, we treat the unknown 
+\begin_inset Formula $w$
+\end_inset
+
+ as a random variable.
+ In this approach, we never settle on a single 
+\begin_inset Formula $w$
+\end_inset
+
+, but rather we end up producing a distribution on 
+\begin_inset Formula $w\in\reals^{d}$
+\end_inset
+
+, called the 
+\series bold
+posterior distribution
+\series default
+.
+ We then get the distribution for 
+\begin_inset Formula $Y\mid x$
+\end_inset
+
+ by integrating out 
+\begin_inset Formula $w$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+In the frequentist version, 
+\begin_inset Formula $f(x)=w^{T}x$
+\end_inset
+
+ is a deterministic function of 
+\begin_inset Formula $x$
+\end_inset
+
+, while in the Bayesian version it is a random function, since 
+\begin_inset Formula $w$
+\end_inset
+
+ is random.
+ We'll explain these concepts further below.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+What about 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+? Throughout this development, we assume that 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ is a known quantity.
+ However, we can also treat it as another unknown parameter, in both the
+ frequentist approach and the Bayesian approach.
+ 
+\end_layout
+
+\begin_layout Standard
+[REWRITE: ]We'll first discuss what is arguably the most important frequentist
+ approach, namely maximum likelihood estimation.
+ Then we will introduce and develop the Bayesian approach in some detail.
+\end_layout
+
+\begin_layout Standard
+For the rest of this document, we will assume that we have a 
+\series bold
+training set
+\series default
+ 
+\begin_inset Formula $\cd=\left\{ \left(x_{1},y_{1}\right),\ldots,\left(x_{n},y_{n}\right)\right\} $
+\end_inset
+
+ of input/output pairs.
+ Although we make no assumptions about how the 
+\begin_inset Formula $x_{1},\ldots,x_{n}$
+\end_inset
+
+ were chosen, we assume that conditioned on the inputs 
+\begin_inset Formula $x=\left(x_{1},\ldots,x_{n}\right)$
+\end_inset
+
+, the responses 
+\begin_inset Formula $y_{1},\ldots,y_{n}$
+\end_inset
+
+ are independent.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Equivalently, we can assume that the training set was generated according
+ to 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:generativemodel-ygivenx"
+
+\end_inset
+
+, with the assumption that 
+\begin_inset Formula $\eps_{1},\ldots,\eps_{n}$
+\end_inset
+
+ are i.i.d.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Maximum Likelihood Estimation 
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Maximum-Likelihood-Estimation"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Recall from 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:gauss-lin-regr-cond-dist"
+
+\end_inset
+
+ that our model has the form 
+\begin_inset Formula $Y\mid x\sim\cn(w^{T}x,\sigma^{2})$
+\end_inset
+
+.
+ The conditional density for a single observation 
+\begin_inset Formula $Y_{i}\mid x_{i}$
+\end_inset
+
+ is of course
+\begin_inset Formula 
+\begin{eqnarray*}
+p_{w}(y_{i}\mid x_{i}) & = & \frac{1}{\sigma\sqrt{2\pi}}\exp\left(-\frac{(y_{i}-w^{T}x_{i})^{2}}{2\sigma^{2}}\right).
+\end{eqnarray*}
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+ For clarity, let's define vectors of responses and inputs separately: 
+\begin_inset Formula 
+\begin{align*}
+y & =\left(y_{1},\ldots,y_{n}\right)\\
+x & =\left(x_{1},\ldots,x_{n}\right).
+\end{align*}
+
+\end_inset
+
+So we can now write the joint conditional density for the data 
+\begin_inset Formula $\cd$
+\end_inset
+
+ as 
+\begin_inset Formula 
+\begin{eqnarray*}
+p_{w}(y\mid x) & = & \prod_{i=1}^{n}p_{w}(y_{i}\mid x_{i}).
+\end{eqnarray*}
+
+\end_inset
+
+For convenience, and since it is usually clear from the context, we often
+ write
+\begin_inset Formula 
+\[
+p_{w}(\cd)=p_{w}(y\mid x)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+By our conditional independence assumption, we can write the joint density
+ for the dataset 
+\begin_inset Formula $\cd=\left\{ (x_{1},y_{1}),\ldots,(x_{n},y_{n})\right\} $
+\end_inset
+
+as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+p_{w}(\cd) & = & \prod_{i=1}^{n}p_{w}(y_{i}\mid x_{i}).
+\end{eqnarray*}
+
+\end_inset
+
+For a fixed dataset 
+\begin_inset Formula $\cd$
+\end_inset
+
+, the function 
+\begin_inset Formula $w\mapsto p_{w}(y\mid x)$
+\end_inset
+
+ is called the 
+\series bold
+likelihood function
+\series default
+.
+ The likelihood function gives a measure of how 
+\begin_inset Quotes eld
+\end_inset
+
+likely
+\begin_inset Quotes erd
+\end_inset
+
+ each 
+\begin_inset Formula $w$
+\end_inset
+
+ is to have given rise to the data 
+\begin_inset Formula $\cd$
+\end_inset
+
+.
+ In 
+\series bold
+maximum likelihood estimation
+\series default
+, we choose the 
+\begin_inset Formula $w$
+\end_inset
+
+ that has maximum likelihood for the data 
+\begin_inset Formula $\cd$
+\end_inset
+
+.
+ This estimator, know as the maximum likelihood estimator, or MLE, is
+\begin_inset Formula 
+\[
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+maximizes the likelihood frob teh bthe method of 
+\series bold
+maximum likelihoo
+\end_layout
+
+\begin_layout Standard
+known as 
+\end_layout
+
+\begin_layout Standard
+When viewed as a function
+\begin_inset Formula $n$
+\end_inset
+
+ observ
+\end_layout
+
+\begin_layout Standard
+= convenience, 
+\end_layout
+
+\begin_layout Standard
+Using our assumption of conditional independence, the joint conditional
+ density for .
+\end_layout
+
+\begin_layout Standard
+The joint conditional density for 
+\end_layout
+
+\begin_layout Standard
+Suppose we observed a pair 
+\begin_inset Formula $(x,y)$
+\end_inset
+
+ from this model.
+ For each possible 
+\begin_inset Formula $w\in\reals^{d}$
+\end_inset
+
+, we want a measure of how 
+\begin_inset Quotes eld
+\end_inset
+
+likely
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Formula $w$
+\end_inset
+
+ is to have produced 
+\begin_inset Formula $y$
+\end_inset
+
+ for the given 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+We say that the 
+\series bold
+likelihood
+\series default
+ that 
+\end_layout
+
+\begin_layout Section
+Bayesian Method
+\end_layout
+
+\begin_layout Standard
+In the Bayesian approach, we assign a probability distribution to all unknown
+ parameters.
+ The distribution should represent our 
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+prior belief
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+ about the value of w.
+ Let's consider the case of a Gaussian prior distribution on 
+\begin_inset Formula $w$
+\end_inset
+
+, namely 
+\begin_inset Formula $w\sim\gauss(0,\Sigma_{p})$
+\end_inset
+
+.
+ Now the full model for 
+\begin_inset Formula $y$
+\end_inset
+
+ can be written as
+\begin_inset Formula 
+\begin{eqnarray*}
+Y & = & f(x)+\eps\\
+f(x) & = & w^{T}x\\
+\eps & \sim & \gauss(0,\sigma_{n}^{2})\\
+w & \sim & \gauss(0,\Sigma_{p}).
+\end{eqnarray*}
+
+\end_inset
+
+Here we assume that both 
+\begin_inset Formula $\sigma_{n}^{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $\Sigma_{p}$
+\end_inset
+
+ are known.
+ Note that we now have a fully specified probability distribution for 
+\begin_inset Formula $Y\mid x$
+\end_inset
+
+ -- there are no 
+\begin_inset Quotes eld
+\end_inset
+
+unknown parameters
+\begin_inset Quotes erd
+\end_inset
+
+.
+ We now consider 
+\begin_inset Formula $w$
+\end_inset
+
+ to be an unobserved random variable.
+ [Mathematically, it has the same status as 
+\begin_inset Formula $\eps$
+\end_inset
+
+.] [While previously 
+\begin_inset Formula $w$
+\end_inset
+
+ was an unknown parameter, now it is an unobserved random variable with
+ a specific probability distribution.] 
+\end_layout
+
+\begin_layout Subsection
+Posterior for a single observation [Barber 18.1.1]
+\end_layout
+
+\begin_layout Standard
+[Plan -- possibly simplify this treatment by giving a 
+\begin_inset Quotes eld
+\end_inset
+
+completing the square identity
+\begin_inset Quotes erd
+\end_inset
+
+ that we can plug into
+\end_layout
+
+\begin_layout Standard
+Now suppose we observe a single input/output pair from this model: 
+\begin_inset Formula $\cd=\left\{ (x,y)\right\} $
+\end_inset
+
+.
+ The likelihood of any particular 
+\begin_inset Formula $w\in\reals^{d}$
+\end_inset
+
+ for the data 
+\begin_inset Formula $\cd$
+\end_inset
+
+ is given by
+\begin_inset Formula 
+\begin{eqnarray*}
+p(y\mid x,w) & = & \gauss(y\,;\,w^{T}x,\sigma_{n}^{2})\\
+ & = & \frac{1}{\sigma_{n}\sqrt{2\pi}}\exp\left(-\frac{\left(y-w^{T}x\right)^{2}}{2\sigma_{n}^{2}}\right).
+\end{eqnarray*}
+
+\end_inset
+
+Now, the data 
+\begin_inset Formula $\cd$
+\end_inset
+
+ has given us some information about the relationship between 
+\begin_inset Formula $y$
+\end_inset
+
+ and 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ This allows us to update our belief about 
+\begin_inset Formula $w$
+\end_inset
+
+.
+ Mathematically, this amounts to computing the distribution of 
+\begin_inset Formula $w$
+\end_inset
+
+, conditional on the data.
+ This distribution is called the 
+\series bold
+posterior distribution
+\series default
+:
+\begin_inset Formula 
+\begin{eqnarray*}
+p(w\mid\cd) & = & p(w\mid y,x)\\
+ & = & \frac{p(y\mid w,x)p(w)}{p(y\mid x)}\mbox{ (using fact that \ensuremath{w} is independent of \ensuremath{x})}\\
+ & = & \frac{\gauss(y\,;\,w^{T}x,\sigma_{n}^{2})\cn(w\,;\,0,\Sigma_{p})}{p(y\mid x)}.
+\end{eqnarray*}
+
+\end_inset
+
+The denominator 
+\begin_inset Formula $p(y\mid x)$
+\end_inset
+
+ is called the 
+\series bold
+marginal likelihood
+\series default
+.
+ Note that it is independent of the weights 
+\begin_inset Formula $w$
+\end_inset
+
+.
+ [At this point would be good to analyze this expression...
+ nothing that since the LHS is a probability distribution in 
+\begin_inset Formula $w$
+\end_inset
+
+, so is the RHS.
+ Since 
+\begin_inset Formula $p(y\mid x)$
+\end_inset
+
+ is independent of 
+\begin_inset Formula $w$
+\end_inset
+
+, it is just a proportionality constant.
+ We can recompute it anytime we want by integrating the RHS.
+ 
+\begin_inset Formula 
+\begin{eqnarray*}
+p(w\mid\Gamma) & \propto & f(w,\Gamma),
+\end{eqnarray*}
+
+\end_inset
+
+where 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+ can be a set of many other parameters or variables.
+ Then to get the proportionality constant, we only have to integrate the
+ RHS over 
+\begin_inset Formula $w$
+\end_inset
+
+.
+ So we get 
+\begin_inset Formula 
+\[
+k(\Gamma)=\int_{w}f(w,\Gamma),
+\]
+
+\end_inset
+
+and the full expression is
+\begin_inset Formula 
+\[
+p(w\mid\Gamma)=k(\Gamma)f(w,\Gamma).
+\]
+
+\end_inset
+
+Whenever you want to use proportionality, rather than equality, make sure
+ you are keeping track of what is the variable you need to integrate over
+ to recover the proportionality constant.
+ ]
+\end_layout
+
+\begin_layout Standard
+To get the proportionality constant, we simply integrate the RHS over 
+\begin_inset Formula $w$
+\end_inset
+
+.
+ Note that the proportionality constant may depend on the other parameters
+\end_layout
+
+\begin_layout Standard
+[Move this to a later section] To compute it, we need to introduce the weight
+ and integrate it out:
+\begin_inset Formula 
+\begin{eqnarray*}
+p(y\mid x) & = & \int p(y,w\mid x)\,dw\\
+ & = & \int p(y\mid w,x)p(w)\,dw\\
+ & = & \int\gauss(y\,;\,w^{T}x,\sigma_{n}^{2})\cn(w\,;\,0,\Sigma_{p})\,dw.
+\end{eqnarray*}
+
+\end_inset
+
+The marginal likelihood 
+\begin_inset Formula $p(y\mid x)$
+\end_inset
+
+ has a very interesting interpretation, and we will return to this later.
+\end_layout
+
+\begin_layout Standard
+Note that 
+\begin_inset Formula $p(w\mid\cd)$
+\end_inset
+
+ has the product of two Gaussian densities 
+\begin_inset Formula $\gauss(y\,;\,w^{T}x,\sigma_{n}^{2})\cn(w\,;\,0,\Sigma_{p})$
+\end_inset
+
+ both in the numerator, and in the integral of the marginal likelihood.
+ It turns out that the product of these Gaussian densities can be rewritten
+ as something proportional to a single Gaussian density, which makes it
+ much easier to work with.
+ Below we derive that
+\begin_inset Formula 
+\[
+p(w\mid\cd)=\cn(w\,;\,\mu_{\pi},\Sigma_{\pi}),
+\]
+
+\end_inset
+
+where
+\begin_inset Formula 
+\begin{eqnarray*}
+\mu_{\pi} & = & v=M^{-1}yx=y\left(xx^{T}+\sigma_{n}^{2}\Sigma^{-1}\right)^{-1}x\\
+\Sigma_{\pi} & = & \sigma_{n}^{2}M^{-1}=\sigma_{n}^{2}\left(xx^{T}+\sigma_{n}^{2}\Sigma^{-1}\right)^{-1}=\left(\sigma_{n}^{-2}xx^{T}+\Sigma^{-1}\right)^{-1}
+\end{eqnarray*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{eqnarray*}
+\gauss(y\,;\,w^{T}x,\sigma_{n}^{2})\cn(w\,;\,0,\Sigma_{p}) & = & \alpha\gauss(w\,;\,\mu_{1},\Sigma_{1})\\
+ &  & k'\exp\left(-\frac{1}{2}\left(w-v\right)^{T}\sigma_{n}^{-2}M(w-v)\right)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where
+\begin_inset Formula 
+\begin{eqnarray*}
+\Sigma_{1}^{-1} & = & \sigma_{n}^{-2}\left(xx^{T}+\sigma_{n}^{2}\Sigma^{-1}\right)\\
+\mu & = & y\left(xx^{T}+\sigma_{n}^{2}\Sigma^{-1}\right)x
+\end{eqnarray*}
+
+\end_inset
+
+
+\begin_inset Formula $M=xx^{T}+\sigma_{n}^{2}\Sigma^{-1}$
+\end_inset
+
+ 
+\begin_inset Formula $v=M^{-1}yx$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+The machinery at the core of this simplification occurs frequently when
+ dealing with Gaussian densities, and is well worth adding to your toolbox.
+ We give a lot of details below, though in books and papers, the simplification
+ is often given in a single line.
+ We begin with a bit of rearrangement: 
+\begin_inset Formula 
+\begin{eqnarray*}
+\gauss(y\,;\,w^{T}x,\sigma_{n}^{2})\cn(w\,;\,0,\Sigma_{p}) & = & \frac{1}{\sigma_{n}\sqrt{2\pi}}\exp\left(-\frac{(y-w^{T}x)^{2}}{2\sigma_{n}^{2}}\right)\\
+ &  & \times\left|2\pi\Sigma_{p}\right|^{-1/2}\exp\left(-\frac{1}{2}w^{T}\Sigma^{-1}w\right)\\
+ & = & k\exp\left(-\frac{1}{2}\sigma_{n}^{-2}\left[(y-w^{T}x)^{2}+\sigma_{n}^{2}w^{T}\Sigma^{-1}w\right]\right),
+\end{eqnarray*}
+
+\end_inset
+
+where 
+\begin_inset Formula $k=\frac{1}{\sigma_{n}\sqrt{2\pi}}\left|2\pi\Sigma_{p}\right|^{-1/2}$
+\end_inset
+
+ collects the factors outside the 
+\begin_inset Formula $\exp(\cdot)$
+\end_inset
+
+.
+ We can now simplify the expression inside the exponential.
+ The goal is to get it into the form:
+\begin_inset Formula 
+\[
+a\left(w-v\right)^{T}M(w-v)+c,
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $c$
+\end_inset
+
+ are just scalar constants, 
+\begin_inset Formula $v$
+\end_inset
+
+ is a vector independent of 
+\begin_inset Formula $w$
+\end_inset
+
+, and 
+\begin_inset Formula $M$
+\end_inset
+
+ is a symmetric positive definite matrix (spd), independent of 
+\begin_inset Formula $w$
+\end_inset
+
+.
+ Once it's in this form, we can write the whole expression as something
+ proportional to a single Gaussian density, rather than the product of two
+ densities.
+ We can get there by a method known as 
+\begin_inset Quotes eld
+\end_inset
+
+completing the square
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+completing the quadratic form
+\begin_inset Quotes erd
+\end_inset
+
+.
+ We first do some matrix algebra write things in the form 
+\begin_inset Formula $\alpha+w^{T}\beta+w^{T}Hw$
+\end_inset
+
+: 
+\begin_inset Formula 
+\begin{eqnarray}
+ &  & (y-w^{T}x)^{2}+\sigma_{n}^{2}w^{T}\Sigma^{-1}w\nonumber \\
+ & = & \left(y-2yw^{T}x+(w^{T}x)(x^{T}w)\right)+w^{T}\left(\sigma_{n}^{2}\Sigma^{-1}\right)w\nonumber \\
+ & = & y-2yw^{T}x+w^{T}\left(xx^{T}+\sigma_{n}^{2}\Sigma^{-1}\right)w.\label{eq:sum-of-sqr-and-quadform}
+\end{eqnarray}
+
+\end_inset
+
+Note that this is a sum of 3 terms: the first term is a 
+\begin_inset Quotes eld
+\end_inset
+
+constant term
+\begin_inset Quotes erd
+\end_inset
+
+, independent of 
+\begin_inset Formula $w$
+\end_inset
+
+, the second term is linear in 
+\begin_inset Formula $w$
+\end_inset
+
+, and the third term is a quadratic form in 
+\begin_inset Formula $w$
+\end_inset
+
+.
+ We now expand out the target form that we are going for, and simply equate
+ corresponding parts:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray}
+\left(w-v\right)^{T}M(w-v)+c & = & \underbrace{v^{T}Mv+c}_{\mbox{constant in }w}-2v^{T}Mw+w^{T}Mw\label{eq:expanded-quad-form}
+\end{eqnarray}
+
+\end_inset
+
+where we've used the symmetry of 
+\begin_inset Formula $M$
+\end_inset
+
+ to combine the two linear terms.
+ Equating the quadratic terms in 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:sum-of-sqr-and-quadform"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:expanded-quad-form"
+
+\end_inset
+
+, we get
+\begin_inset Formula 
+\[
+w^{T}Mw=w^{T}\left(xx^{T}+\sigma_{n}^{2}\Sigma^{-1}\right)w.
+\]
+
+\end_inset
+
+So we take 
+\begin_inset Formula $M=xx^{T}+\sigma_{n}^{2}\Sigma^{-1}$
+\end_inset
+
+.
+ (Note that 
+\begin_inset Formula $M$
+\end_inset
+
+ is indeed spd, since 
+\begin_inset Formula $xx^{T}$
+\end_inset
+
+ is positive semidefinite, and 
+\begin_inset Formula $\Sigma^{-1}$
+\end_inset
+
+ is spd.) Equating the linear terms, we have
+\begin_inset Formula 
+\begin{eqnarray*}
+-2yw^{T}x & = & -2v^{T}Mw\\
+\implies w^{T}\left(yx\right) & = & w^{T}\left(Mv\right)
+\end{eqnarray*}
+
+\end_inset
+
+Since 
+\begin_inset Formula $M$
+\end_inset
+
+ is spd, it is invertible, and we can take 
+\begin_inset Formula $v=M^{-1}yx$
+\end_inset
+
+.
+ In practice, we often don't need an explicit form for the constant 
+\begin_inset Formula $c$
+\end_inset
+
+.
+ In our case, 
+\begin_inset Formula $c$
+\end_inset
+
+ will eventually just be part of the normalization term for a Gaussian density.
+ For completeness, we give here an explicit form for 
+\begin_inset Formula $c$
+\end_inset
+
+ by equating the constant terms:
+\begin_inset Formula 
+\begin{eqnarray*}
+v^{T}Mv+c & = & y\\
+\implies c & = & y-v^{T}Mv\\
+ & = & y-yx^{T}M^{-1}MM^{-1}yx\\
+ & = & y-y^{2}x^{T}M^{-1}x.
+\end{eqnarray*}
+
+\end_inset
+
+Bringing it all together, we get
+\begin_inset Formula 
+\[
+(y-w^{T}x)^{2}+\sigma_{n}^{2}w^{T}\Sigma^{-1}w=\left(w-v\right)^{T}M(w-v)+c,
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $M$
+\end_inset
+
+, 
+\begin_inset Formula $v$
+\end_inset
+
+, and 
+\begin_inset Formula $c$
+\end_inset
+
+ are as defined above.
+ And so
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+\gauss(y\,;\,w^{T}x,\sigma_{n}^{2})\cn(w\,;\,0,\Sigma_{p}) & = & k\exp\left(-\frac{1}{2}\sigma_{n}^{-2}\left[\left(w-v\right)^{T}M(w-v)+c\right]\right)\\
+ & = & k'\exp\left(-\frac{1}{2}\left(w-v\right)^{T}\sigma_{n}^{-2}M(w-v)\right),
+\end{eqnarray*}
+
+\end_inset
+
+for a new constant 
+\begin_inset Formula $k'=k\exp\left(-\frac{1}{2}\sigma_{n}^{-2}c\right)$
+\end_inset
+
+.
+ Bringing it back to our original expression:
+\begin_inset Formula 
+\begin{eqnarray*}
+p(w\mid\cd) & = & \frac{\gauss(y\,;\,w^{T}x,\sigma_{n}^{2})\cn(w\,;\,0,\Sigma_{p})}{p(y\mid x)}\\
+ & = & k''\exp\left(-\frac{1}{2}\left(w-v\right)^{T}\sigma_{n}^{-2}M(w-v)\right),
+\end{eqnarray*}
+
+\end_inset
+
+where 
+\begin_inset Formula $k''=k'/p(y\mid x)$
+\end_inset
+
+.
+ Note that 
+\begin_inset Formula $k''$
+\end_inset
+
+ is still independent of 
+\begin_inset Formula $w$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+At this point, we claim that the RHS is exactly a multivariate Gaussian
+ density.
+ Because we've been careful to keep track of the explicit expression for
+ 
+\begin_inset Formula $k''$
+\end_inset
+
+, one could verify explicitly that 
+\begin_inset Formula $k''$
+\end_inset
+
+ is indeed the appropriate normalization constant for the multivariate Gaussian
+ with variance 
+\begin_inset Formula $\sigma_{n}^{2}M^{-1}$
+\end_inset
+
+.
+ However, we can avoid this work (and in the future, avoid keeping explicit
+ track of the normalization constants), since we know the following things:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $p(w\mid\cd)$
+\end_inset
+
+ gives the density for 
+\begin_inset Formula $w$
+\end_inset
+
+.
+ So the expression on the RHS must also be a density for 
+\begin_inset Formula $w$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+The RHS is proportional to a multivariate Gaussian density.
+ 
+\end_layout
+
+\begin_layout Standard
+Since the RHS is both proportional to a multivariate Gaussian density, and
+ it actually is a density, it must in fact actually be a multivariate Gaussian
+ density.
+ We conclude that 
+\begin_inset Formula 
+\[
+p(w\mid\cd)=\cn(w\,;\,\mu_{\pi},\Sigma_{\pi}),
+\]
+
+\end_inset
+
+where
+\begin_inset Formula 
+\begin{eqnarray*}
+\mu_{\pi} & = & v=M^{-1}yx=y\left(xx^{T}+\sigma_{n}^{2}\Sigma^{-1}\right)^{-1}x\\
+\Sigma_{\pi} & = & \sigma_{n}^{2}M^{-1}=\sigma_{n}^{2}\left(xx^{T}+\sigma_{n}^{2}\Sigma^{-1}\right)^{-1}=\left(\sigma_{n}^{-2}xx^{T}+\Sigma^{-1}\right)^{-1}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Posterior for Multiple Observations
+\end_layout
+
+\begin_layout Standard
+Above we considered a dataset consisting of a single observation.
+ This can be a realistic scenario in practice: we may get new observations
+ one at a time, and we may want to update our posterior distribution after
+ each observation.
+ We can use the update rules given above.
+ [In homework, we show that updating one data point at a time is equivalent
+ to updating all at once.]
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Data: 
+\series default
+
+\begin_inset Formula $\cd=\left\{ (x_{1},y_{1}),\ldots,(x_{n},y_{n})\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Write 
+\begin_inset Formula $y=\left(y_{1},\ldots,y_{n}\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $x=\left(x_{1},\ldots,x_{n}\right)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Design matrix
+\series default
+ 
+\begin_inset Formula $X\in\reals^{n\times d}$
+\end_inset
+
+ has input vectors as rows: 
+\begin_inset Formula 
+\[
+X=\begin{pmatrix}-x_{1}-\\
+\vdots\\
+-x_{n}-
+\end{pmatrix}.
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Subsection
+(Note: We don't have or need a model for 
+\begin_inset Formula $x$
+\end_inset
+
+ -- we always condition on 
+\begin_inset Formula $x$
+\end_inset
+
+, or assume that 
+\begin_inset Formula $x$
+\end_inset
+
+ is designed.) 
+\end_layout
+
+\begin_layout Standard
+We can find that the data likelihood is
+\begin_inset Formula 
+\[
+p(y|X,w)\sim N(X'w,\sigma_{n}^{2}I)
+\]
+
+\end_inset
+
+ and the posterior on the parameters is
+\begin_inset Formula 
+\[
+p(w|X,y)\sim N\left(\bar{w}=\frac{1}{\sigma_{n}^{2}}A^{-1}Xy,A^{-1}\right)
+\]
+
+\end_inset
+
+ where 
+\begin_inset Formula $A=\sigma_{n}^{-2}XX'+\Sigma_{p}^{-1}.$
+\end_inset
+
+ Note this is some combination of the prior and the data covariances.
+ The predictive distribution for  a new input point 
+\begin_inset Formula $x_{*}$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+p(f_{*}|x_{*},X,y)=N\left(\frac{1}{\sigma_{n}^{2}}x_{*}'A^{-1}Xy,x_{*}'A^{-1}x_{*}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Sanity check -- noise free case
+\end_layout
+
+\begin_layout Standard
+We should be able to show that in the noise-free case (
+\begin_inset Formula $\sigma_{n}^{2}=0$
+\end_inset
+
+), the marginal distribution of the posterior function of 
+\begin_inset Formula $f$
+\end_inset
+
+ is degenerate at the training point output value...
+ Say we have two training points 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+, and our test point is 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+.
+ Then the posterior mean at 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ is given in our formulae to have 
+\begin_inset Formula 
+\begin{eqnarray*}
+\bar{f}_{*} & = & (k_{11},k_{12})\begin{pmatrix}k_{11} & k_{12}\\
+k_{21} & k_{22}
+\end{pmatrix}^{-1}\begin{pmatrix}y_{1}\\
+y_{2}
+\end{pmatrix}=(1\;0)\begin{pmatrix}y_{1}\\
+y_{2}
+\end{pmatrix}=y_{1}\\
+\var(f_{*}) & = & k_{11}-(k_{11},k_{12})\begin{pmatrix}k_{11} & k_{12}\\
+k_{21} & k_{22}
+\end{pmatrix}^{-1}\begin{pmatrix}k_{11}\\
+k_{12}
+\end{pmatrix}=k_{11}-(1\;0)\begin{pmatrix}k_{11}\\
+k_{12}
+\end{pmatrix}=0
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

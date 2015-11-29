@@ -1,0 +1,1638 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass paper
+\use_default_options false
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding iso8859-1
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize letterpaper
+\use_geometry false
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 5
+\tocdepth 5
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\reals}{\mathbf{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\integers}{\mathbf{Z}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\naturals}{\mathbf{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rationals}{\mathbf{Q}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ca}{\mathcal{A}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cb}{\mathcal{B}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cc}{\mathcal{C}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cd}{\mathcal{D}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ce}{\mathcal{E}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cf}{\mathcal{F}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cg}{\mathcal{G}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ch}{\mathcal{H}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ci}{\mathcal{I}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cj}{\mathcal{J}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ck}{\mathcal{K}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cl}{\mathcal{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cm}{\mathcal{M}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cn}{\mathcal{N}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\co}{\mathcal{O}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cp}{\mathcal{P}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cq}{\mathcal{Q}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\calr}{\mathcal{R}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cs}{\mathcal{S}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ct}{\mathcal{T}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cu}{\mathcal{U}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cv}{\mathcal{V}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cw}{\mathcal{W}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cx}{\mathcal{X}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cy}{\mathcal{Y}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cz}{\mathcal{Z}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ind}[1]{1(#1)}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\pr}{\mathbb{P}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\predsp}{\cy}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\outsp}{\cy}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\prxy}{P_{\cx\times\cy}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\prx}{P_{\cx}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\prygivenx}{P_{\cy\mid\cx}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ex}{\mathbb{E}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\var}{\textrm{Var}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cov}{\textrm{Cov}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\sgn}{\textrm{sgn}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\sign}{\textrm{sign}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\kl}{\textrm{KL}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\law}{\mathcal{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\eps}{\varepsilon}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\as}{\textrm{ a.s.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\io}{\textrm{ i.o.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ev}{\textrm{ ev.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\convd}{\stackrel{d}{\to}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\eqd}{\stackrel{d}{=}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\del}{\nabla}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\loss}{V}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\risk}{R}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\emprisk}{\hat{R}_{\ell}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\lossfnl}{L}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\emplossfnl}{\hat{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\empminimizer}[1]{\hat{#1}_{\ell}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\minimizer}[1]{#1_{*}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\etal}{\textrm{et. al.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\tr}{\operatorname{tr}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\trace}{\operatorname{trace}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\diag}{\text{diag}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\rank}{\text{rank}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\linspan}{\text{span}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\proj}{\text{Proj}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\argmax}{\operatornamewithlimits{arg\, max}}
+{\mbox{argmax}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\argmin}{\operatornamewithlimits{arg\, min}}
+{\mbox{argmin}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfx}{\mathbf{x}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfy}{\mathbf{y}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfl}{\mathbf{\lambda}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfm}{\mathbf{\mu}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\calL}{\mathcal{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vw}{\boldsymbol{w}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vx}{\boldsymbol{x}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vxi}{\boldsymbol{\xi}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\valpha}{\boldsymbol{\alpha}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vbeta}{\boldsymbol{\beta}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vsigma}{\boldsymbol{\sigma}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vmu}{\boldsymbol{\mu}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vtheta}{\boldsymbol{\theta}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vd}{\boldsymbol{d}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vs}{\boldsymbol{s}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vt}{\boldsymbol{t}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vh}{\boldsymbol{h}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ve}{\boldsymbol{e}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vf}{\boldsymbol{f}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vg}{\boldsymbol{g}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vz}{\boldsymbol{z}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vk}{\boldsymbol{k}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\va}{\boldsymbol{a}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vb}{\boldsymbol{b}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vv}{\boldsymbol{v}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vy}{\boldsymbol{y}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\hil}{\ch}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\rkhs}{\hil}
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Title
+Reproducing Kernel Hilbert Spaces
+\end_layout
+
+\begin_layout Author
+David S.
+ Rosenberg 
+\end_layout
+
+\begin_layout Date
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+today
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Definition and Basic Properties
+\end_layout
+
+\begin_layout Definition
+[RKHS]
+\begin_inset CommandInset label
+LatexCommand label
+name "defn:RKHS"
+
+\end_inset
+
+ A reproducing kernel Hilbert space (RKHS) of functions from 
+\begin_inset Formula $\cx$
+\end_inset
+
+ to 
+\begin_inset Formula $\reals$
+\end_inset
+
+ is a Hilbert Space 
+\begin_inset Formula $\hil$
+\end_inset
+
+ that possesses a reproducing kernel, 
+\emph on
+i.e.
+\emph default
+, a function 
+\begin_inset Formula $k:\cx\times\cx\to\reals$
+\end_inset
+
+ for which the following properties hold: 
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $k(x,.)\in\hil$
+\end_inset
+
+ for all 
+\begin_inset Formula $x\in\cx$
+\end_inset
+
+, and 
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\langle f,k(x,.)\rangle_{\hil}=f(x)$
+\end_inset
+
+, for all 
+\begin_inset Formula $x\in\cx$
+\end_inset
+
+ and 
+\begin_inset Formula $f\in\hil$
+\end_inset
+
+, where 
+\begin_inset Formula $\langle\cdot,\cdot\rangle_{\hil}$
+\end_inset
+
+ denotes the inner product in 
+\begin_inset Formula $\hil$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+An 
+\emph on
+evaluation functional
+\emph default
+ is a functional that maps a function 
+\begin_inset Formula $f\in\ch$
+\end_inset
+
+ to its evaluation at some fixed point, such as 
+\begin_inset Formula $f\mapsto f(x)$
+\end_inset
+
+.
+ An RKHS is sometimes defined as a Hilbert space for which all evaluation
+ functionals are continuous.
+ Here we show that this is a consequence of our Definition
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "defn:RKHS"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Proposition
+\begin_inset CommandInset label
+LatexCommand label
+name "prop:evaluationalFnlIsContinuous"
+
+\end_inset
+
+Any evaluation functional 
+\begin_inset Formula $f\mapsto f(x)$
+\end_inset
+
+ on an RKHS 
+\begin_inset Formula $\rkhs$
+\end_inset
+
+ is uniformly continuous.
+ 
+\end_layout
+
+\begin_layout Proof
+For any 
+\begin_inset Formula $f,g\in\rkhs$
+\end_inset
+
+, we have 
+\begin_inset Formula 
+\begin{align*}
+\left|f(x)-g(x)\right| & =\left|\left\langle f,k(x,\cdot)\right\rangle _{\rkhs}-\left\langle g,k(x,\cdot)\right\rangle _{\rkhs}\right|\\
+ & =\left|\left\langle f-g,k(x,\cdot)\right\rangle _{\rkhs}\right|\\
+ & \le\|f-g\|_{\rkhs}\|k(x,\cdot)\|_{\rkhs}\text{ by Cauchy Schwartz}\\
+ & =\|f-g\|_{\rkhs}\sqrt{\left\langle k(x,\cdot),k(x,\cdot)\right\rangle _{\rkhs}}\\
+ & =\|f-g\|_{\rkhs}\sqrt{k(x,x)}
+\end{align*}
+
+\end_inset
+
+ Thus for all 
+\begin_inset Formula $f,g\in\rkhs$
+\end_inset
+
+ for which 
+\begin_inset Formula $\|f-g\|_{\rkhs}\le\eps/\sqrt{k(x,x)}$
+\end_inset
+
+, we have 
+\begin_inset Formula $|f(x)-g(x)|\le\eps$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Proposition
+\begin_inset CommandInset label
+LatexCommand label
+name "prop:kernelIsPSD"
+
+\end_inset
+
+ The reproducing kernel 
+\begin_inset Formula $k(\cdot,\cdot)$
+\end_inset
+
+ for an RKHS 
+\begin_inset Formula $\rkhs$
+\end_inset
+
+ is positive definite, which means that for any 
+\begin_inset Formula $n=1,2,3,\ldots$
+\end_inset
+
+, and any choice of points 
+\begin_inset Formula $x_{1},\ldots,x_{n}\in\cx$
+\end_inset
+
+, the kernel matrix 
+\begin_inset Formula $K=\left(k(x_{i},x_{j})\right)_{i,j=1}^{n}$
+\end_inset
+
+ is positive semidefinite.
+\end_layout
+
+\begin_layout Proof
+Fix any 
+\begin_inset Formula $n=1,2,3,\ldots$
+\end_inset
+
+ and any choice of points 
+\begin_inset Formula $x_{1},\ldots,x_{n}\in\cx$
+\end_inset
+
+.
+ For any 
+\begin_inset Formula $\valpha=(\alpha_{1},\ldots,\alpha_{n})\in\reals^{n}$
+\end_inset
+
+, we have
+\begin_inset Formula 
+\[
+0\le\left|\left|\sum\alpha_{i}k(x_{i},\cdot)\right|\right|_{\rkhs}^{2}=\sum_{i,j=1}^{n}\alpha_{i}\alpha_{j}k(x_{i},x_{j})=\valpha'K\valpha
+\]
+
+\end_inset
+
+ Thus 
+\begin_inset Formula $K$
+\end_inset
+
+ is positive semidefinite.
+ 
+\end_layout
+
+\begin_layout Lemma
+\begin_inset CommandInset label
+LatexCommand label
+name "lem:rkhsFnValBnddByKernelSup"
+
+\end_inset
+
+ Let 
+\begin_inset Formula $\rkhs$
+\end_inset
+
+ be an RKHS of functions mapping 
+\begin_inset Formula $\cx\to\reals$
+\end_inset
+
+, having reproducing kernel 
+\begin_inset Formula $k(\cdot,\cdot)$
+\end_inset
+
+.
+ Fix any 
+\begin_inset Formula $z\in\cx$
+\end_inset
+
+, and let 
+\begin_inset Formula $k_{z}=k(z,\cdot)\in\rkhs$
+\end_inset
+
+.
+ Then
+\begin_inset Formula 
+\begin{eqnarray*}
+\sup_{f:\|f\|_{\rkhs}\le1}|f(z)| & = & \sup_{\|f\|_{\rkhs}\le1}|\left\langle f,k_{z}\right\rangle |\\
+ & = & \left\langle k_{z},k_{z}/\|k_{z}\|_{\rkhs}\right\rangle =\frac{1}{\|k_{z}\|_{\rkhs}}k(z,z)\\
+ & = & \sqrt{k(z,z)}
+\end{eqnarray*}
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:rkhsProjections"
+
+\end_inset
+
+Projections
+\end_layout
+
+\begin_layout Standard
+The 
+\series bold
+Hilbert projection theorem
+\series default
+  states that for any 
+\begin_inset Formula $f$
+\end_inset
+
+ in a Hilbert space 
+\begin_inset Formula $\hil$
+\end_inset
+
+, and for any closed subspace 
+\begin_inset Formula $\cl\subset\hil$
+\end_inset
+
+, there exists a unique element 
+\begin_inset Formula $f_{\|}\in\cl$
+\end_inset
+
+, called the 
+\emph on
+projection
+\emph default
+ of 
+\begin_inset Formula $f$
+\end_inset
+
+ onto 
+\begin_inset Formula $\cl$
+\end_inset
+
+, such that 
+\begin_inset Formula $\|f-f_{\|}\|_{\hil}\le\|f-g\|_{\hil}$
+\end_inset
+
+ for every 
+\begin_inset Formula $g\in\cl$
+\end_inset
+
+.
+ We will denote the projection of 
+\begin_inset Formula $f$
+\end_inset
+
+ onto 
+\begin_inset Formula $\cl$
+\end_inset
+
+ by 
+\begin_inset Formula $\proj_{\cl}f$
+\end_inset
+
+.
+ A necessary and sufficient condition for 
+\begin_inset Formula $f_{\|}\in\cl$
+\end_inset
+
+ to be the projection of 
+\begin_inset Formula $f$
+\end_inset
+
+ onto 
+\begin_inset Formula $\cl$
+\end_inset
+
+ is that 
+\begin_inset Formula $\langle f-f_{\|},g\rangle=0$
+\end_inset
+
+ for every 
+\begin_inset Formula $g\in\cl$
+\end_inset
+
+.
+ A simple corollary of this characterization is that the norm of 
+\begin_inset Formula $f_{\|}$
+\end_inset
+
+ never exceeds the norm of 
+\begin_inset Formula $f$
+\end_inset
+
+: 
+\end_layout
+
+\begin_layout Lemma
+\begin_inset CommandInset label
+LatexCommand label
+name "lem:projectionReducesNorm"
+
+\end_inset
+
+For any 
+\begin_inset Formula $f$
+\end_inset
+
+ in a Hilbert space 
+\begin_inset Formula $\hil$
+\end_inset
+
+, let 
+\begin_inset Formula $f_{\|}=\proj_{\cl}f$
+\end_inset
+
+, where 
+\begin_inset Formula $\cl$
+\end_inset
+
+ is a closed subspace.
+ Then 
+\begin_inset Formula 
+\[
+\|f_{\|}\|_{\hil}\le\|f\|_{\hil}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+We have 
+\begin_inset Formula $f=f_{\|}+(f-f_{\|})$
+\end_inset
+
+, and 
+\begin_inset Formula $\langle f_{\|},f-f_{\|}\rangle=0$
+\end_inset
+
+.
+ Thus 
+\begin_inset Formula 
+\[
+\|f\|_{\hil}^{2}=\|f_{\|}\|_{\hil}^{2}+\|f-f_{\|}\|_{\hil}^{2}+2\langle f_{\|},f-f_{\|}\rangle_{\hil}\geq\|f_{\|}\|_{\hil}^{2}.
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+When the Hilbert space 
+\begin_inset Formula $\hil$
+\end_inset
+
+ is an RKHS of functions mapping from 
+\begin_inset Formula $\cx\to\reals$
+\end_inset
+
+, we have the following interesting result: 
+\end_layout
+
+\begin_layout Lemma
+\begin_inset CommandInset label
+LatexCommand label
+name "lem:RKHSProjection"
+
+\end_inset
+
+Let 
+\begin_inset Formula $\hil$
+\end_inset
+
+ be an RKHS with kernel 
+\begin_inset Formula $k:\cx\times\cx\to\reals$
+\end_inset
+
+, and consider any point 
+\begin_inset Formula $x\in\cx$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $\cl\subset\ch$
+\end_inset
+
+ is a closed subspace containing 
+\begin_inset Formula $k(x,\cdot)$
+\end_inset
+
+, then the projection of 
+\begin_inset Formula $f$
+\end_inset
+
+ onto 
+\begin_inset Formula $\cl$
+\end_inset
+
+ has the same value at 
+\begin_inset Formula $x$
+\end_inset
+
+ as 
+\begin_inset Formula $f$
+\end_inset
+
+ does.
+ That is, 
+\begin_inset Formula 
+\[
+f(x)=\left(\proj_{\cl}f\right)(x)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+By the Hilbert projection theorem, there exists a unique element 
+\begin_inset Formula $f_{\|}=\proj_{\cl}f\in\cl$
+\end_inset
+
+ such that 
+\begin_inset Formula $\left\langle f-f_{\|},g\right\rangle _{\hil}=0$
+\end_inset
+
+ for all 
+\begin_inset Formula $g\in\cl$
+\end_inset
+
+.
+ By definition of RKHS, we have 
+\begin_inset Formula $f(x)=\left\langle f,k(x,\cdot)\right\rangle _{\hil}$
+\end_inset
+
+.
+ Combining these facts, we get 
+\begin_inset Formula 
+\begin{eqnarray*}
+f(x)=\left\langle f,k(x,\cdot)\right\rangle _{\hil} & = & \left\langle f_{\|}+f-f_{\|},k(x,\cdot)\right\rangle =\left\langle f_{\|},k(x,\cdot)\right\rangle +\left\langle f-f_{\|},k(x,\cdot)\right\rangle \\
+ & = & \left\langle f_{\|},k(x,\cdot)\right\rangle =f_{\|}(x)
+\end{eqnarray*}
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Section
+The Representer Theorem and the 
+\begin_inset Quotes eld
+\end_inset
+
+Span of the Data
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In practice, many RKHS optimization problems refer to a fixed set of points
+ 
+\begin_inset Formula $x_{1},\ldots,x_{n}\in\cx$
+\end_inset
+
+, and the solution to the optimization problem is contained in a special
+ subspace of the RKHS, often referred to informally as the 
+\begin_inset Quotes eld
+\end_inset
+
+span of the data.
+\begin_inset Quotes erd
+\end_inset
+
+ For an RKHS 
+\begin_inset Formula $\rkhs$
+\end_inset
+
+ with kernel 
+\begin_inset Formula $k(\cdot,\cdot)$
+\end_inset
+
+, the 
+\emph on
+span of the data
+\emph default
+ is the linear subspace 
+\begin_inset Formula 
+\[
+\cl=\linspan\left\{ k(x_{1},\cdot),\ldots,k(x_{n},\cdot)\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We now state and prove the representer theorem, which gives some conditions
+ under which the solution to an RKHS optimization problem is contained in
+ the span of the data.
+\end_layout
+
+\begin_layout Theorem
+[Representer Theorem]
+\begin_inset CommandInset label
+LatexCommand label
+name "thm:RepresenterThm"
+
+\end_inset
+
+ Let 
+\begin_inset Formula $\hil$
+\end_inset
+
+ be an RKHS with kernel 
+\begin_inset Formula $k:\cx\times\cx\to\reals$
+\end_inset
+
+.
+ Fix any function 
+\begin_inset Formula $\loss:\reals^{n}\to\reals$
+\end_inset
+
+ and any nondecreasing function 
+\begin_inset Formula $\Omega:\reals\to\reals$
+\end_inset
+
+.
+ Define
+\begin_inset Formula 
+\[
+J(f)=\loss\left(f(x_{1}),\ldots,f(x_{n})\right)+\Omega\left(\|f\|_{\hil}^{2}\right)
+\]
+
+\end_inset
+
+ Let 
+\begin_inset Formula $\cl=\linspan\left\{ k(x_{1},\cdot),\ldots,k(x_{n},\cdot)\right\} $
+\end_inset
+
+.
+ Then for any 
+\begin_inset Formula $f\in\rkhs$
+\end_inset
+
+ we have 
+\begin_inset Formula 
+\[
+J(\proj_{\cl}f)\le J(f).
+\]
+
+\end_inset
+
+ Thus if 
+\begin_inset Formula $J^{*}=\min_{f\in\cl}J(f)$
+\end_inset
+
+ exists, then this minimum is attained for some 
+\begin_inset Formula $f\in\cl$
+\end_inset
+
+.
+ Furthermore, if 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ is strictly increasing, then each minimizer of 
+\begin_inset Formula $J(f)$
+\end_inset
+
+ over 
+\begin_inset Formula $\rkhs$
+\end_inset
+
+ is also contained in 
+\begin_inset Formula $\cl$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Let 
+\begin_inset Formula $f_{\|}=\proj_{\cl}f$
+\end_inset
+
+.
+ By Lemma
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lem:RKHSProjection"
+
+\end_inset
+
+, 
+\begin_inset Formula $f(x_{i})=f_{\|}(x_{i})$
+\end_inset
+
+ for 
+\begin_inset Formula $i=1,\ldots,n$
+\end_inset
+
+.
+ Thus 
+\begin_inset Formula 
+\[
+\loss\left(f(x_{1}),\ldots,f(x_{n})\right)=\loss\left(f_{\|}(x_{1}),\ldots,f_{\|}(x_{n})\right).
+\]
+
+\end_inset
+
+ Since 
+\begin_inset Formula $f$
+\end_inset
+
+ and 
+\begin_inset Formula $f-f_{\|}$
+\end_inset
+
+ are orthogonal, we have 
+\begin_inset Formula 
+\[
+\|f\|_{\hil}^{2}=\|f_{\|}\|_{\hil}^{2}+\|f-f_{\|}\|_{\hil}^{2}\geq\|f_{\|}\|_{\hil}^{2}.
+\]
+
+\end_inset
+
+ Since 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ is nondecreasing, 
+\begin_inset Formula $\Omega\left(\|f_{\|}\|_{\hil}^{2}\right)\le\Omega\left(\|f\|_{\hil}^{2}\right)$
+\end_inset
+
+.
+ Combining these results, we get 
+\begin_inset Formula $J(f_{\|})\le J(f)$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ is strictly increasing and 
+\begin_inset Formula $f\neq f_{\|}$
+\end_inset
+
+ (i.e.
+ 
+\begin_inset Formula $\|f-f_{\|}\|_{\hil}^{2}>0)$
+\end_inset
+
+, then 
+\begin_inset Formula 
+\begin{eqnarray*}
+\|f_{\|}\|_{\hil}^{2} & < & \|f\|_{\ch}^{2}\\
+\implies\Omega\left(\|f_{\|}\|_{\hil}^{2}\right) & < & \Omega\left(\|f\|_{\ch}^{2}\right)\\
+\implies J(f_{\|}) & < & J(f).
+\end{eqnarray*}
+
+\end_inset
+
+ Thus every minimizer of 
+\begin_inset Formula $J(f)$
+\end_inset
+
+ must be contained in 
+\begin_inset Formula $\cl$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Definition
+We define the 
+\emph on
+kernel matrix
+\emph default
+ for the data 
+\begin_inset Formula $x_{1},\ldots,x_{n}\in\cx$
+\end_inset
+
+ by the matrix 
+\begin_inset Formula $K=\left(k(x_{i},x_{j})\right)_{i,j=1}^{n}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+This matrix is very useful when dealing with functions that live in the
+ span of the data.
+ The following proposition gives two useful expressions involving the kernel
+ matrix: 
+\end_layout
+
+\begin_layout Proposition
+\begin_inset CommandInset label
+LatexCommand label
+name "prop:spanOfDataProps"
+
+\end_inset
+
+ For any function 
+\begin_inset Formula $f:\cx\to\reals$
+\end_inset
+
+ of the form
+\begin_inset Formula 
+\[
+f(\cdot)=\sum_{i=1}^{n}\alpha_{i}k(x_{i},\cdot),
+\]
+
+\end_inset
+
+ for some 
+\begin_inset Formula $\valpha=(\alpha_{1},\ldots,\alpha_{n})\in\reals^{n}$
+\end_inset
+
+, we have
+\begin_inset Formula 
+\[
+\|f\|_{\rkhs}^{2}=\left\langle \sum_{i=1}^{n}\alpha_{i}k(x_{i},\cdot),\sum_{i=1}^{n}\alpha_{i}k(x_{i},\cdot)\right\rangle _{\rkhs}=\sum_{i,j=1}^{n}\alpha_{i}\alpha_{j}k(x_{i},x_{j})=\valpha^{T}K\valpha.
+\]
+
+\end_inset
+
+ Let 
+\begin_inset Formula $\vf=\left(f(x_{1}),\ldots,f(x_{n})\right)^{T}$
+\end_inset
+
+ be the column vector of evaluations of 
+\begin_inset Formula $f$
+\end_inset
+
+ on the data points.
+ Then we also have
+\begin_inset Formula 
+\[
+\vf=\left(f(x_{j})\right)_{j=1}^{n}=\left(\sum_{i=1}^{n}\alpha_{i}k(x_{i},x_{j})\right)_{j=1}^{n}=K\valpha
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:kernelRidgeRegr"
+
+\end_inset
+
+Kernel Ridge Regression and the SVM
+\end_layout
+
+\begin_layout Standard
+In this section we present two specific algorithms: kernel ridge regression,
+ also known as regularized least squares (RLS), and the soft-margin support
+ vector machine (SVM).
+ In their most natural forms, the optimization problems associated with
+ these algorithms are optimizations over an RKHS.
+ Below, we show how to use the Representer Theorem to reduce the optimization
+ over a function space to an optimization over a finite dimensional Euclidean
+ space.
+ 
+\end_layout
+
+\begin_layout Standard
+Consider an RKHS 
+\begin_inset Formula $\rkhs$
+\end_inset
+
+ and a loss functional 
+\begin_inset Formula $\lossfnl:\rkhs\to\reals$
+\end_inset
+
+.
+ We would like to find 
+\begin_inset Formula 
+\begin{equation}
+\argmin_{f\in\rkhs}\left[L(f)+\lambda\|f\|_{\rkhs}^{2}\right],\label{eq:kernelRidgeRegression}
+\end{equation}
+
+\end_inset
+
+ for some 
+\begin_inset Formula $\lambda>0$
+\end_inset
+
+.
+ Suppose, as is typical in practice, the loss functional takes the form
+ 
+\begin_inset Formula 
+\[
+\lossfnl(f)=\sum_{i=1}^{n}\loss(f(x_{i}),y_{i}),
+\]
+
+\end_inset
+
+ where 
+\begin_inset Formula $(x_{1},y_{1}),\ldots,(x_{n},y_{n})$
+\end_inset
+
+ are labeled training examples.
+ Then by the Representer Theorem (Theorem
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:RepresenterThm"
+
+\end_inset
+
+), if a minimizer for Equation
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:kernelRidgeRegression"
+
+\end_inset
+
+) exists, then the minimum is attained by some function of the form 
+\begin_inset Formula $f_{\valpha}=\sum_{i=1}^{n}\alpha_{i}k(x_{i},\cdot)$
+\end_inset
+
+, where 
+\begin_inset Formula $\valpha=(\alpha_{1},\ldots,\alpha_{n})\in\reals^{n}$
+\end_inset
+
+.
+ Thus we have reduced the problem of finding the optimal 
+\begin_inset Formula $f\in\rkhs$
+\end_inset
+
+ to the finite dimensional optimization problem of finding the best 
+\begin_inset Formula $\valpha\in\reals^{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We now recall some of the notation and facts derived above that will facilitate
+ writing this finite-dimensional optimization problem in a form that can
+ be easily solved on a computer.
+ For any function 
+\begin_inset Formula $f_{\valpha}$
+\end_inset
+
+, as defined above, define the column vector 
+\begin_inset Formula $\vf_{\valpha}=\left(f_{\valpha}(x_{1}),\ldots,f_{\valpha}(x_{n})\right)^{T}$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $K=\left(k(x_{i},x_{j})\right)_{i,j=1}^{n}$
+\end_inset
+
+ be the 
+\begin_inset Formula $n\times n$
+\end_inset
+
+ kernel matrix on the data points.
+ Then by Prop.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "prop:spanOfDataProps"
+
+\end_inset
+
+, 
+\begin_inset Formula $\vf_{\valpha}=K\valpha$
+\end_inset
+
+ and 
+\begin_inset Formula $\|f_{\valpha}\|_{\rkhs}^{2}=\valpha^{T}K\valpha$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+For RLS, we take the loss function is to be 
+\begin_inset Formula $V(\hat{y},y)=(y-\hat{y})^{2}$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $\vy=(y_{1},\ldots,y_{n})^{T}$
+\end_inset
+
+.
+ Then we can write the minimization as
+\begin_inset Formula 
+\begin{eqnarray*}
+\argmin_{\valpha\in\reals^{n}}\left[L(f_{\valpha})+\lambda\|f_{\valpha}\|_{\rkhs}^{2}\right] & = & \argmin_{\valpha\in\reals^{n}}\left(\vy-K\valpha\right)^{T}\left(\vy-K\valpha\right)+\lambda\valpha^{T}K\valpha\\
+ & = & \argmin_{\valpha\in\reals^{n}}\valpha K^{2}\valpha-2\vy^{T}K\valpha+\lambda\valpha^{T}K\valpha\\
+ & = & \argmin_{\valpha\in\reals^{n}}\left[\valpha\left(K^{2}+\lambda K\right)\valpha-2\vy^{T}K\valpha\right]
+\end{eqnarray*}
+
+\end_inset
+
+ Since we are minimizing over an open set, the minimum must occur at a critical
+ point, so we solve the first order conditions:
+\begin_inset Formula 
+\begin{eqnarray*}
+0=\partial_{\valpha}\valpha\left(K^{2}+\lambda K\right)\valpha-2\vy^{T}K\valpha & = & 2\left(K^{2}+\lambda K\right)\valpha-2K\vy\\
+\implies\left(K^{2}+\lambda K\right)\valpha & = & K\vy
+\end{eqnarray*}
+
+\end_inset
+
+ It is clear that one solution to this equality is 
+\begin_inset Formula $\minimizer{\valpha}=\left(K+\lambda I\right)^{-1}\vy$
+\end_inset
+
+, which exists if we assume 
+\begin_inset Formula $\lambda>0$
+\end_inset
+
+.
+ Thus the RLS prediction function is 
+\begin_inset Formula $f_{\minimizer{\valpha}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+For the SVM, we take the loss function to be the 
+\emph on
+hinge loss
+\emph default
+, which is defined as 
+\begin_inset Formula 
+\[
+V(y,\hat{y})=\left(1-y\hat{y}\right)_{+}=\begin{cases}
+1-y\hat{y} & \text{for }1-y\hat{y}\ge0\\
+0 & \text{otherwise.}
+\end{cases}
+\]
+
+\end_inset
+
+ The SVM optimization problem can be written as 
+\begin_inset Formula 
+\[
+\min_{\valpha\in\reals^{n}}\sum_{i=1}^{n}\left(1-y_{i}f_{\valpha}(x_{i})\right)_{+}+\lambda\|f_{\valpha}\|_{\rkhs}^{2}.
+\]
+
+\end_inset
+
+ Defining 
+\begin_inset Formula $Y=\diag(y_{1},\ldots,y_{n})$
+\end_inset
+
+, we can rewrite this optimization problem as
+\begin_inset Formula 
+\begin{eqnarray*}
+\min_{\valpha,\vbeta\in\reals^{n}} &  & \sum_{i=1}^{n}\vbeta_{i}+\lambda\valpha^{T}K\valpha\\
+\text{subject to} &  & \vbeta\succeq0\\
+ &  & \vbeta\succeq1-YK\valpha,
+\end{eqnarray*}
+
+\end_inset
+
+ where 
+\begin_inset Formula $\succeq$
+\end_inset
+
+ means that the inequality holds component-wise for the vectors.
+ This optimization problem is a quadratic program with linear constraints,
+ which can be solved by many standard numerical computing packages.
+ 
+\end_layout
+
+\end_body
+\end_document

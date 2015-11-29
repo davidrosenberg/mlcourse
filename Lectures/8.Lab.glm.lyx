@@ -1,0 +1,2776 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass beamer
+\begin_preamble
+\usetheme{CambridgeUS} 
+\beamertemplatenavigationsymbolsempty
+\end_preamble
+\options handout
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman times
+\font_sans default
+\font_typewriter default
+\font_math eulervm
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\reals}{\mathbf{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\integers}{\mathbf{Z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\naturals}{\mathbf{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rationals}{\mathbf{Q}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ca}{\mathcal{A}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cb}{\mathcal{B}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cc}{\mathcal{C}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cd}{\mathcal{D}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ce}{\mathcal{E}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cf}{\mathcal{F}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cg}{\mathcal{G}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ch}{\mathcal{H}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ci}{\mathcal{I}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cj}{\mathcal{J}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ck}{\mathcal{K}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cl}{\mathcal{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cm}{\mathcal{M}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cn}{\mathcal{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\co}{\mathcal{O}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cp}{\mathcal{P}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cq}{\mathcal{Q}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\calr}{\mathcal{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cs}{\mathcal{S}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ct}{\mathcal{T}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cu}{\mathcal{U}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cv}{\mathcal{V}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cw}{\mathcal{W}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cx}{\mathcal{X}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cy}{\mathcal{Y}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cz}{\mathcal{Z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ind}[1]{1(#1)}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand{
+\backslash
+pr}{P}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\pr}{\mathbb{P}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\predsp}{\cy}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%{
+\backslash
+hat{
+\backslash
+cy}}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\outsp}{\cy}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\prxy}{P_{\cx\times\cy}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\prx}{P_{\cx}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\prygivenx}{P_{\cy\mid\cx}}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand{
+\backslash
+ex}{E}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ex}{\mathbb{E}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\var}{\textrm{Var}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cov}{\textrm{Cov}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\sgn}{\textrm{sgn}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\sign}{\textrm{sign}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\kl}{\textrm{KL}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\law}{\mathcal{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\eps}{\varepsilon}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\as}{\textrm{ a.s.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\io}{\textrm{ i.o.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ev}{\textrm{ ev.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\convd}{\stackrel{d}{\to}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\eqd}{\stackrel{d}{=}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\del}{\nabla}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\loss}{\ell}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\risk}{R}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\emprisk}{\hat{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\lossfnl}{L}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\emplossfnl}{\hat{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\empminimizer}[1]{\hat{#1}^{*}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\minimizer}[1]{#1^{*}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\optimizer}[1]{#1^{*}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\etal}{\textrm{et. al.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\tr}{\operatorname{tr}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\trace}{\operatorname{trace}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\diag}{\text{diag}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rank}{\text{rank}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\linspan}{\text{span}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\spn}{\text{span}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\proj}{\text{Proj}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\argmax}{\operatornamewithlimits{arg\, max}}
+{\text{argmax}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\argmin}{\operatornamewithlimits{arg\, min}}
+{\text{argmin}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\bfx}{\mathbf{x}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfy}{\mathbf{y}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfl}{\mathbf{\lambda}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfm}{\mathbf{\mu}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\calL}{\mathcal{L}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\vw}{\boldsymbol{w}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vx}{\boldsymbol{x}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vxi}{\boldsymbol{\xi}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\valpha}{\boldsymbol{\alpha}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vbeta}{\boldsymbol{\beta}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vsigma}{\boldsymbol{\sigma}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vtheta}{\boldsymbol{\theta}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vd}{\boldsymbol{d}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vs}{\boldsymbol{s}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vt}{\boldsymbol{t}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vh}{\boldsymbol{h}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ve}{\boldsymbol{e}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vf}{\boldsymbol{f}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vg}{\boldsymbol{g}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vz}{\boldsymbol{z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vk}{\boldsymbol{k}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\va}{\boldsymbol{a}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vb}{\boldsymbol{b}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vv}{\boldsymbol{v}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vy}{\boldsymbol{y}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\hil}{\ch}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rkhs}{\hil}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ber}{\text{Ber}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+Generalized Linear Models 
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+DS-GA 1003 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+optional, use only with long paper titles
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+David Rosenberg 
+\end_layout
+
+\begin_layout Date
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+today
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Institute
+New York University
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex ArticleMode
+status open
+
+\begin_layout Plain Layout
+Just in article version
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Plots courtesy of Ningshan Zhang.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Conditional Gaussian Regression
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Gaussian Regression
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Input space 
+\begin_inset Formula $\cx=\reals^{d}$
+\end_inset
+
+, Output space 
+\begin_inset Formula $\cy=\reals$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Hypothesis space consists of functions 
+\begin_inset Formula $f:x\mapsto\cn\left(w^{T}x,\sigma^{2}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+For each 
+\begin_inset Formula $x$
+\end_inset
+
+, 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ returns a particular Gaussian density with variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ .
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Choice of 
+\begin_inset Formula $w$
+\end_inset
+
+ determines the function.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+For some parameter 
+\begin_inset Formula $w\in\reals^{d}$
+\end_inset
+
+, can write our prediction function as
+\begin_inset Formula 
+\begin{align*}
+\left[f_{w}(x)\right](y)=p_{w}(y\mid x)= & \cn(y\mid w^{T}x,\sigma^{2}),
+\end{align*}
+
+\end_inset
+
+where 
+\begin_inset Formula $\sigma^{2}>0$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Given some i.i.d.
+ data 
+\begin_inset Formula $\cd=\{(x_{1},y_{1}),\ldots,(x_{n},y_{n})\}$
+\end_inset
+
+, how to assess the fit?
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Gaussian Regression: Likelihood Scoring
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose we have data 
+\begin_inset Formula $\cd=\left\{ (x_{1},y_{1}),\ldots,(x_{n},y_{n})\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Compute the model likelihood for 
+\begin_inset Formula $\cd$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+p_{w}(\cd)= & \prod_{i=1}^{n}p_{w}(y_{i}\mid x_{i})\text{ [by independence]}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Maximum Likelihood Estimation (MLE) finds 
+\begin_inset Formula $w$
+\end_inset
+
+ maximizing 
+\begin_inset Formula $p_{w}(\cd)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Equivalently, maximize the data log-likelihood:
+\begin_inset Formula 
+\[
+\minimizer w=\argmax_{w\in\reals^{d}}\sum_{i=1}^{n}\log p_{w}(y_{i}\mid x_{i})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Let's start solving this!
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Gaussian Regression: MLE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The conditional log-likelhood is:
+\begin_inset Formula 
+\begin{eqnarray*}
+ &  & \sum_{i=1}^{n}\log p_{w}(y_{i}\mid x_{i})\\
+\pause & = & \sum_{i=1}^{n}\log\left[\frac{1}{\sigma\sqrt{2\pi}}\exp\left(-\frac{(y_{i}-w^{T}x_{i})^{2}}{2\sigma^{2}}\right)\right]\\
+\pause & = & \underbrace{\sum_{i=1}^{n}\log\left[\frac{1}{\sigma\sqrt{2\pi}}\right]}_{\mbox{independent of }w}+\sum_{i=1}^{n}\left(-\frac{(y_{i}-w^{T}x_{i})^{2}}{2\sigma^{2}}\right)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+MLE is the 
+\begin_inset Formula $w$
+\end_inset
+
+ where this is maximized.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Note that 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ is irrelevant to finding the maximizing 
+\begin_inset Formula $w$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Can drop the negative sign and make it a minimization problem.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Gaussian Regression: MLE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The MLE is 
+\begin_inset Formula 
+\begin{align*}
+\minimizer w= & \argmin_{w\in\reals^{d}}\sum_{i=1}^{n}(y_{i}-w^{T}x_{i})^{2}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+This is exactly the objective function for least squares.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+From here, can use usual approaches to solve for 
+\begin_inset Formula $w^{*}$
+\end_inset
+
+(linear algebra, calculus, iterative methods etc.)
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+NOTE: Parameter vector 
+\begin_inset Formula $w$
+\end_inset
+
+ only interacts with 
+\begin_inset Formula $x$
+\end_inset
+
+ by an inner product
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+NOTE: The variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ falls out of the objective function.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Can use maximum likelihood to estimate 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ as well?
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Poisson Regression
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\poi}{\text{Poisson}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Poisson Regression: Setup
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Input space 
+\begin_inset Formula $\cx=\reals^{d}$
+\end_inset
+
+, Output space 
+\begin_inset Formula $\cy=\left\{ 0,1,2,3,4,\dots\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Hypothesis space consists of functions 
+\begin_inset Formula $f:x\mapsto\poi\left(\lambda(x)\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+That is, for each 
+\begin_inset Formula $x$
+\end_inset
+
+, 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ returns a Poisson with mean 
+\begin_inset Formula $\lambda(x)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+What function?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Recall 
+\begin_inset Formula $\lambda>0$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+GLMs (and Poisson is a special case) have a linear dependence on 
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Standard approach is to take
+\begin_inset Formula 
+\[
+\lambda(x)=\exp\left(w^{T}x\right),
+\]
+
+\end_inset
+
+for some parameter vector 
+\begin_inset Formula $w$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Note that range of 
+\begin_inset Formula $\lambda(x)=\left(0,\infty\right)$
+\end_inset
+
+, (appropriate for the Poisson parameter).
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Poisson Regression: Likelihood Scoring
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose we have data 
+\begin_inset Formula $\cd=\left\{ (x_{1},y_{1}),\ldots,(x_{n},y_{n})\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Last time we found the log-likelihood for Poisson was:
+\begin_inset Formula 
+\begin{eqnarray*}
+\log p(\cd,\lambda) & = & \sum_{i=1}^{n}\left[y_{i}\log\lambda-\lambda-\log\left(y_{i}!\right)\right]
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Plugging in 
+\begin_inset Formula $\lambda(x)=\exp\left(w^{T}x\right)$
+\end_inset
+
+, we get
+\begin_inset Formula 
+\begin{eqnarray*}
+\log p(\cd,\lambda) & = & \sum_{i=1}^{n}\left[y_{i}\log\left[\exp\left(w^{T}x\right)\right]-\exp\left(w^{T}x\right)-\log\left(y_{i}!\right)\right]\\
+ & = & \sum_{i=1}^{n}\left[y_{i}w^{T}x-\exp\left(w^{T}x\right)-\log\left(y_{i}!\right)\right]
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Maximize this w.r.t.
+ 
+\begin_inset Formula $w$
+\end_inset
+
+ to find the Poisson regression.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+No closed form for optimum, but it's concave, so easy to optimize.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Section
+Bernoulli Regression
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Linear Probabilistic Classifiers
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Setting: 
+\begin_inset Formula $\cx=\reals^{d}$
+\end_inset
+
+, 
+\begin_inset Formula $\cy=\left\{ 0,1\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+For each 
+\begin_inset Formula $X=x$
+\end_inset
+
+, 
+\begin_inset Formula $p(Y=1\mid x)=\theta$
+\end_inset
+
+.
+ (i.e.
+ 
+\begin_inset Formula $Y$
+\end_inset
+
+ has a Bernoulli
+\begin_inset Formula $(\theta)$
+\end_inset
+
+ distribution)
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\theta$
+\end_inset
+
+ may vary with 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+For each 
+\begin_inset Formula $x\in\reals^{d}$
+\end_inset
+
+, just want to predict 
+\begin_inset Formula $\theta\in[0,1]$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Two steps:
+\begin_inset Formula 
+\[
+\underbrace{x}_{\in\reals^{D}}\mapsto\underbrace{w^{T}x}_{\in\reals}\mapsto\underbrace{f(w^{T}x)}_{\in[0,1]},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $f:\reals\to[0,1]$
+\end_inset
+
+ is called the 
+\series bold
+transfer 
+\series default
+or 
+\series bold
+inverse link 
+\series default
+function.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Probability model is then
+\begin_inset Formula 
+\[
+p(Y=1\mid x)=f(w^{T}x)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Inverse Link Functions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Two commonly used 
+\begin_inset Quotes eld
+\end_inset
+
+inverse link
+\begin_inset Quotes erd
+\end_inset
+
+ functions to map from 
+\begin_inset Formula $w^{T}x$
+\end_inset
+
+ to 
+\begin_inset Formula $\theta$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename ../Figures/GLM/bernoulliInverseLinkFunctions.pdf
+	width 60text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Logistic function 
+\begin_inset Formula $\implies$
+\end_inset
+
+ Logistic Regression
+\end_layout
+
+\begin_layout Itemize
+Normal CDF 
+\begin_inset Formula $\implies$
+\end_inset
+
+ Probit Regression
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Section
+Multinomial Logistic Regression
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Multinomial Logistic Regression
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Setting: 
+\begin_inset Formula $\cx=\reals^{d}$
+\end_inset
+
+, 
+\begin_inset Formula $\cy=\left\{ 1,\ldots,K\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The numbers 
+\begin_inset Formula $\left(\theta_{1},\ldots,\theta_{c}\right)$
+\end_inset
+
+ where 
+\begin_inset Formula $\sum_{c=1}^{K}\theta_{c}=1$
+\end_inset
+
+ represent a 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+multinoulli
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+categorical
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+ distribution.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+For each 
+\begin_inset Formula $x$
+\end_inset
+
+, we want to produce a distribution on the 
+\begin_inset Formula $K$
+\end_inset
+
+ classes.
+\end_layout
+
+\begin_layout Itemize
+That is, for each 
+\begin_inset Formula $x$
+\end_inset
+
+ and each 
+\begin_inset Formula $y\in\left\{ 1,\ldots,K\right\} $
+\end_inset
+
+, we want to produce a probability 
+\begin_inset Formula 
+\[
+p(y\mid x)=\theta_{y},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\sum_{y=1}^{K}\theta_{y}=1$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Multinomial Logistic Regression: Classic Setup
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Classically we write multinomial logistic regression (cf.
+ KPM Sec.
+ 8.3.7):
+\begin_inset Formula 
+\[
+p(y\mid x)=\frac{\exp\left(w_{y}^{T}x\right)}{\sum_{c=1}^{K}\exp\left(w_{c}^{T}x\right)},
+\]
+
+\end_inset
+
+where we've introduced parameter vectors 
+\begin_inset Formula $w_{1},\ldots,w_{K}\in\reals^{d}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+The log of this likelihod is concave and straightforward to optimize.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+More Convenient to Flatten This
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Dropping proportionality constant 
+\begin_inset Formula $Z(x)=\sum_{c=1}^{K}\exp\left(w_{c}^{T}x\right)$
+\end_inset
+
+, we have
+\begin_inset Formula 
+\begin{eqnarray*}
+p(y\mid x) & \propto & \exp\left(w_{y}^{T}x\right)\\
+\pause & = & \exp\left(\sum_{c=1}^{K}\ind{y=c}w_{c}^{T}x\right)\\
+\pause & = & \exp\left(\sum_{c=1}^{K}\ind{y=c}\left[\sum_{j=1}^{d}\left(w_{c}\right)_{j}x_{j}\right]\right)\\
+\pause & = & \exp\left(\sum_{i=1}^{K}\sum_{j=1}^{d}\left(w_{c}\right)_{j}\underbrace{\ind{y=c}x_{j}}\right)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Create a 
+\begin_inset Quotes eld
+\end_inset
+
+feature
+\begin_inset Quotes erd
+\end_inset
+
+ for every term 
+\begin_inset Formula $\ind{y=c}x_{j}$
+\end_inset
+
+, for 
+\begin_inset Formula $c\in\left\{ 1,\ldots,k\right\} $
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Define feature function
+\begin_inset Formula 
+\[
+g_{r}(x,y)=\ind{y=c}x_{j}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+More Convenient to Flatten This
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+So
+\begin_inset Formula 
+\begin{eqnarray*}
+p(y\mid x) & \propto & \exp\left(\sum_{i=1}^{K}\sum_{j=1}^{d}\left(w_{c}\right)_{j}\underbrace{\ind{y=c}x_{j}}\right)\\
+\pause & = & \exp\left(\sum_{r=1}^{R}\mu_{r}g_{r}(x,y)\right).
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+What is 
+\begin_inset Formula $R$
+\end_inset
+
+? What are the 
+\begin_inset Formula $\mu_{r}$
+\end_inset
+
+'s
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $R=kd$
+\end_inset
+
+ and 
+\begin_inset Formula $\mu_{r}$
+\end_inset
+
+'s are just some flattening of 
+\begin_inset Formula $w_{1},\ldots,w_{K}$
+\end_inset
+
+ into a single vector.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+More Convenient to Flatten This
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Why did we do this?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Computational Reason:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+To plug into optimization algorithm, easier to have a single parameter vector.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Original version had 
+\begin_inset Formula $K$
+\end_inset
+
+ parameter vectors.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Conceptual Reason:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Introduce the idea of 
+\begin_inset Quotes eld
+\end_inset
+
+features
+\begin_inset Quotes erd
+\end_inset
+
+ that depend jointly on input and output.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+These 
+\begin_inset Quotes eld
+\end_inset
+
+features
+\begin_inset Quotes erd
+\end_inset
+
+ measure 
+\begin_inset Quotes eld
+\end_inset
+
+compatibility
+\begin_inset Quotes erd
+\end_inset
+
+ between input and particular label.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We could call them 
+\begin_inset Quotes eld
+\end_inset
+
+compatibility functions
+\begin_inset Quotes erd
+\end_inset
+
+, but we usually call them features.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Example from natural language processing: (Part-of-speech tagging)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g_{r}(y,x)=\begin{cases}
+1 & \textrm{if }y=\textrm{"NOUN" and }x_{i}=\textrm{"apple"}\\
+0 & \textrm{otherwise}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Section
+Generalized Linear Models (Lite)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Natural Exponential Families
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\left\{ p_{\theta}(x):\theta\in\Theta\subset\reals^{d}\right\} $
+\end_inset
+
+is a family of pdf's or pmf's on 
+\begin_inset Formula $\cx$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The family is 
+\series bold
+natural exponential family
+\series default
+ with parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+ if 
+\begin_inset Formula 
+\begin{align*}
+p_{\theta}(x)= & \frac{1}{Z(\theta)}h(x)\exp\left[\theta^{T}x\right]
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $Z(\theta)=\int_{\cx}h(x)\exp\left[\theta^{T}x\right]$
+\end_inset
+
+ is the 
+\emph on
+partition function 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Natural Exponential Families
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\left\{ p_{\theta}(y)\mid\theta\in\Theta\subset\reals^{d}\right\} $
+\end_inset
+
+ is a family of pdf's or pmf's on 
+\begin_inset Formula $\cy$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The family is a 
+\series bold
+natural exponential family
+\series default
+ with parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+ if
+\begin_inset Formula 
+\[
+p_{\theta}(y)=\frac{1}{Z(\theta)}h(y)\exp\left[\theta^{T}y\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $h(y)$
+\end_inset
+
+ is a 
+\series bold
+nonnegative
+\series default
+ function called the 
+\series bold
+base measure.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $Z(\theta)=\int_{\cy}h(y)\exp\left[\theta^{T}y\right]$
+\end_inset
+
+ is the 
+\series bold
+partition function
+\series default
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The 
+\series bold
+natural parameter
+\series default
+ 
+\series bold
+space 
+\series default
+is the set 
+\begin_inset Formula $\Theta=\left\{ \theta\mid Z(\theta)<\infty\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+the set of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ for which 
+\begin_inset Formula $\exp\left[\theta^{T}y\right]$
+\end_inset
+
+ can be normalized to have integral 1
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\theta$
+\end_inset
+
+ is called the 
+\series bold
+natural parameter
+\series default
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Note: In exponential family form, family typically has a different parameterizat
+ion than the 
+\begin_inset Quotes eld
+\end_inset
+
+standard
+\begin_inset Quotes erd
+\end_inset
+
+ form.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Specifying a Natural Exponential Family
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The family is a 
+\series bold
+natural exponential family
+\series default
+ with parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+ if
+\begin_inset Formula 
+\[
+p_{\theta}(y)=\frac{1}{Z(\theta)}h(y)\exp\left[\theta^{T}y\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+To specify a natural exponential family, we need to choose 
+\begin_inset Formula $h(y)$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Everything else is determined.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Implicit in choosing 
+\begin_inset Formula $h(y)$
+\end_inset
+
+ is the choice of the support of the distribution.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Natural Exponential Families: Examples
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+The following are univariate natural exponential families:
+\end_layout
+
+\begin_layout Enumerate
+Normal distribution with known variance.
+\end_layout
+
+\begin_layout Enumerate
+Poisson distribution
+\end_layout
+
+\begin_layout Enumerate
+Gamma distribution (with known 
+\begin_inset Formula $k$
+\end_inset
+
+ parameter)
+\end_layout
+
+\begin_layout Enumerate
+Bernoulli distribution (and Binomial with known number of trials)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Enumerate
+Negative binomial distribution 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Example: Poisson Distribution
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For Poisson, we found the log probability mass function is:
+\begin_inset Formula 
+\begin{eqnarray*}
+\log\left[p(y;\lambda)\right] & = & y\log\lambda-\lambda-\log\left(y!\right).
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Exponentiating this, we get
+\begin_inset Formula 
+\begin{eqnarray*}
+p(y;\lambda) & = & \exp\left(y\log\lambda-\lambda-\log\left(y!\right)\right).
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+If we reparametrize, taking 
+\begin_inset Formula $\theta=\log\lambda$
+\end_inset
+
+, we can write this as
+\begin_inset Formula 
+\begin{eqnarray*}
+p(y,\theta) & = & \exp\left(y\theta-e^{\theta}-\log\left(y!\right)\right)\\
+\pause & = & \frac{1}{y!}\frac{1}{e^{e^{\theta}}}\exp\left(y\theta\right),
+\end{eqnarray*}
+
+\end_inset
+
+which is in natural exponential family form, where
+\begin_inset Formula 
+\begin{eqnarray*}
+Z(\theta) & = & \exp\left(e^{\theta}\right)\\
+h(y) & = & \frac{1}{y!}.
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\theta=\log\lambda$
+\end_inset
+
+ is the 
+\series bold
+natural parameter
+\series default
+.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Generalized Linear Models [with Canonical Link]
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+In GLMs, we first choose a natural exponential family.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+(This amounts to choosing 
+\begin_inset Formula $h(y)$
+\end_inset
+
+.)
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+The idea is to plug in 
+\begin_inset Formula $w^{T}x$
+\end_inset
+
+ for the natural parameter.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+This gives models of the following form:
+\begin_inset Formula 
+\[
+p_{\theta}(y\mid x)=\frac{1}{Z(w^{T}x)}h(y)\exp\left[(w^{T}x)y\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+This is the form we had for Poisson regression.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Note
+\series default
+: This is very convenient, but 
+\series bold
+only works if 
+\begin_inset Formula $\Theta=\reals$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Generalized Linear Models [with General Link]
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+More generally, choose a function 
+\begin_inset Formula $\psi:\reals\to\Theta$
+\end_inset
+
+ so that
+\begin_inset Formula 
+\[
+x\mapsto w^{T}x\mapsto\psi(w^{T}x),
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\theta=\psi(w^{T}x)$
+\end_inset
+
+ is the natural parameter for the family.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+So our final prediction (for one-parameter families) is:
+\begin_inset Formula 
+\[
+p_{\theta}(y\mid x)=\frac{1}{Z(\psi(w^{T}x))}h(y)\exp\left[\psi(w^{T}x)y\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Section
+Exponential Families
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Exponential Families
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\left\{ p_{\theta}(x):\theta\in\Theta\subset\reals^{d}\right\} $
+\end_inset
+
+is a family of pdf's or pmf's on 
+\begin_inset Formula $\cx$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The family is an exponential family with parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+ if 
+\begin_inset Formula 
+\begin{align*}
+p_{\theta}(x)= & \frac{1}{Z(\theta)}h(x)\exp\left[\theta^{T}T(x)\right]\\
+= & h(x)\exp\left[\theta^{T}T(x)-A(\theta)\right]
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $T(x)\in\reals^{d}$
+\end_inset
+
+ is a vector of 
+\emph on
+sufficient statistics
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $Z(\theta)=\int_{\cx}h(x)\exp\left[\theta^{T}T(x)\right]$
+\end_inset
+
+ is the 
+\emph on
+partition function
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $A(\theta)=\log Z(\theta)$
+\end_inset
+
+ is the 
+\emph on
+log paritition function
+\emph default
+ or 
+\emph on
+cumulant function
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

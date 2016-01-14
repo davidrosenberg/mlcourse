@@ -584,6 +584,10 @@ today
 
 \end_layout
 
+\begin_layout Standard
+TODO:
+\end_layout
+
 \begin_layout Abstract
 Here we develop some basics of Bayesian linear regression.
  Most of the calculations for this document come from the basic theory of
@@ -591,6 +595,69 @@ Here we develop some basics of Bayesian linear regression.
  To keep the focus on the probabilistic and statistics concepts in this
  document, I've outsourced the calculations to another document, on basical
  normal variable theory.
+\end_layout
+
+\begin_layout Section
+A Note on Notation
+\end_layout
+
+\begin_layout Standard
+In many texts it's common to denote a random variable with a captial letter,
+ while a particular instantiation of that variable would be denoted with
+ the corresponding lowercase letter.
+ For example: 
+\begin_inset Formula $p(Y=y\mid X=x).$
+\end_inset
+
+ In our development below, we would simply write 
+\begin_inset Formula $p(y\mid x)$
+\end_inset
+
+, since it should always be clear in our context what is random and what
+ is not.
+ 
+\end_layout
+
+\begin_layout Standard
+We use capital letters to denote matrices (e.g.
+ the design matrix 
+\begin_inset Formula $X$
+\end_inset
+
+ and the covariance matrix 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+) and lower case letters to denote vectors and scalars.
+\end_layout
+
+\begin_layout Subsection
+Conditional distributions 
+\end_layout
+
+\begin_layout Standard
+throughout, everything we write below can be thought of as 
+\begin_inset Quotes eld
+\end_inset
+
+conditional on X
+\begin_inset Quotes erd
+\end_inset
+
+.
+ if it's a random variable, we can write it down on the right side of the
+ conditional..
+ but we can also just take it as convention that X is known at every stage,
+ and we can use it in any expression...
+ Thus we mean the same thing by each of the following three expressions:
+\begin_inset Formula 
+\[
+p(\cd)=p(y\mid X)=p(y)
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -1209,9 +1276,9 @@ as
 
 \begin_layout Standard
 \begin_inset Formula 
-\begin{eqnarray*}
-p_{w}(\cd) & = & \prod_{i=1}^{n}p_{w}(y_{i}\mid x_{i}).
-\end{eqnarray*}
+\begin{eqnarray}
+p_{w}(\cd) & = & \prod_{i=1}^{n}p_{w}(y_{i}\mid x_{i}).\label{eq:likelihood-product}
+\end{eqnarray}
 
 \end_inset
 
@@ -1245,11 +1312,11 @@ likely
 \end_inset
 
 .
- In 
-\series bold
-maximum likelihood estimation
-\series default
-, we choose the 
+ 
+\end_layout
+
+\begin_layout Standard
+In maximum likelihood estimation, we choose 
 \begin_inset Formula $w$
 \end_inset
 
@@ -1258,9 +1325,31 @@ maximum likelihood estimation
 \end_inset
 
 .
- This estimator, know as the maximum likelihood estimator, or MLE, is
+ This estimator, know as the 
+\series bold
+maximum likelihood estimator
+\series default
+, or 
+\series bold
+MLE
+\series default
+, is 
+\begin_inset Formula $w^{*}=\argmax_{w}p_{w}(\cd)$
+\end_inset
+
+.
+ It is often convenient to express the MLE in terms of the log-likelihood,
+ since it changes the expression in 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:likelihood-product"
+
+\end_inset
+
+ from a product into a sum:
 \begin_inset Formula 
 \[
+w^{*}=\argmax_{w\in\reals^{d}}\sum_{i=1}^{n}\log p_{w}(y_{i}\mid x_{i}).
 \]
 
 \end_inset
@@ -1269,76 +1358,353 @@ maximum likelihood estimation
 \end_layout
 
 \begin_layout Standard
-maximizes the likelihood frob teh bthe method of 
-\series bold
-maximum likelihoo
-\end_layout
-
-\begin_layout Standard
-known as 
-\end_layout
-
-\begin_layout Standard
-When viewed as a function
-\begin_inset Formula $n$
+Let us derive an expression for the MLE 
+\begin_inset Formula $\minimizer w$
 \end_inset
 
- observ
-\end_layout
+.
+ The log-likelihood is 
+\begin_inset Formula 
+\begin{eqnarray}
+\log p_{w}(\cd) & = & \sum_{i=1}^{n}\log p_{w}(y_{i}\mid x_{i})\nonumber \\
+ & = & \sum_{i=1}^{n}\log\left[\frac{1}{\sigma\sqrt{2\pi}}\exp\left(-\frac{(y_{i}-w^{T}x_{i})^{2}}{2\sigma^{2}}\right)\right]\nonumber \\
+ & = & \underbrace{\sum_{i=1}^{n}\log\left[\frac{1}{\sigma\sqrt{2\pi}}\right]}_{\mbox{independent of }w}+\sum_{i=1}^{n}\left(-\frac{(y_{i}-w^{T}x_{i})^{2}}{2\sigma^{2}}\right)\label{eq:loglik-lastexp}
+\end{eqnarray}
 
-\begin_layout Standard
-= convenience, 
-\end_layout
-
-\begin_layout Standard
-Using our assumption of conditional independence, the joint conditional
- density for .
-\end_layout
-
-\begin_layout Standard
-The joint conditional density for 
-\end_layout
-
-\begin_layout Standard
-Suppose we observed a pair 
-\begin_inset Formula $(x,y)$
 \end_inset
 
- from this model.
- For each possible 
-\begin_inset Formula $w\in\reals^{d}$
+It is now straightforward
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+First, note that the first term in the last expression 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:loglik-lastexp"
+
 \end_inset
 
-, we want a measure of how 
-\begin_inset Quotes eld
-\end_inset
-
-likely
-\begin_inset Quotes erd
-\end_inset
-
- 
+ is independent of 
 \begin_inset Formula $w$
 \end_inset
 
- is to have produced 
-\begin_inset Formula $y$
+, and thus we can drop it without changing the maximizer 
+\begin_inset Formula $w^{*}$
 \end_inset
 
- for the given 
-\begin_inset Formula $x$
+.
+ Similarly, we can drop the factor 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ in the second term without affecting the maximizer.
+ Finally, we can flip the sign of the objective function and change the
+ maximization to a minimization, again without affecting 
+\begin_inset Formula $w^{*}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ to see that we can write
+\begin_inset Formula 
+\begin{align*}
+w^{*}= & \argmin_{w\in\reals^{d}}\sum_{i=1}^{n}(y_{i}-w^{T}x_{i})^{2}.
+\end{align*}
+
+\end_inset
+
+Hopefully, this is recognizable as the objective function for least squares
+ regression.
+ The take-away message so far is that 
+\series bold
+maximum likelihood estimation for gaussian linear regression is equivalent
+ to least squares linear regression.
+\end_layout
+
+\begin_layout Standard
+For completeness, we'll derive a closed form expression for 
+\begin_inset Formula $w^{*}$
+\end_inset
+
+.
+ First, let's rewrite this in matrix notation.
+ Introduce the
+\series bold
+ design matrix
+\series default
+ 
+\begin_inset Formula $X\in\reals^{n\times d}$
+\end_inset
+
+, which has input vectors as rows: 
+\begin_inset Formula 
+\[
+X=\begin{pmatrix}-x_{1}-\\
+\vdots\\
+-x_{n}-
+\end{pmatrix}
+\]
+
+\end_inset
+
+ and let 
+\begin_inset Formula $y=\left(y_{1},\ldots,y_{n}\right)^{T}$
+\end_inset
+
+ be the corresponding column vector of responses.
+ Then
+\begin_inset Formula 
+\begin{eqnarray*}
+\sum_{i=1}^{n}(y_{i}-w^{T}x_{i})^{2} & = & (y-Xw)^{T}(y-Xw)\\
+ & = & y^{T}y-2w^{T}X^{T}y+w^{T}X^{T}Xw.
+\end{eqnarray*}
+
+\end_inset
+
+Since we are minimizing this function over 
+\begin_inset Formula $w\in\reals^{d}$
+\end_inset
+
+, and 
+\begin_inset Formula $\reals^{d}$
+\end_inset
+
+ is an open set, the minimum must occur at a critical point.
+ Differentiating with respect to 
+\begin_inset Formula $w$
+\end_inset
+
+ and equating to 
+\begin_inset Formula $0$
+\end_inset
+
+, we get
+\begin_inset Formula 
+\begin{eqnarray}
+2X^{T}Xw-2X^{T}y & = & 0\nonumber \\
+\iff X^{T}Xw & = & X^{T}y\label{eq:normal-equations}
+\end{eqnarray}
+
+\end_inset
+
+This last expression represents what are often called the 
+\series bold
+normal equations
+\series default
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+They are called the normal equations because, after rewriting as 
+\begin_inset Formula $X^{T}\left(y-Xw\right)=0$
+\end_inset
+
+, we see they express that the residual vector 
+\begin_inset Formula $y-Xw$
+\end_inset
+
+ is normal to the column space of 
+\begin_inset Formula $X$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+.
+ If we assume 
+\begin_inset Formula $X^{T}X$
+\end_inset
+
+ is invertible, then a bit of algebra gives the solution as
+\begin_inset Formula 
+\[
+w^{*}=\left(X^{T}X\right)^{-1}X^{T}y.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+However, 
+\begin_inset Formula $X^{T}X$
+\end_inset
+
+ may not be invertible.
+ For example, if 
+\begin_inset Formula $X$
+\end_inset
+
+ short and wide (
+\begin_inset Formula $n<d$
+\end_inset
+
+ case), or more generally, if 
+\begin_inset Formula $X$
+\end_inset
+
+ does not have full column rank, then 
+\begin_inset Formula $X^{T}X$
+\end_inset
+
+ will not be invertible.
+ This is the 
+\series bold
+underdetermined 
+\series default
+case, in which there are infinitely many equivalent solutions.
+ One can show this with some linear algebra, but this is not (or should
+ not be) an important case for machine learning practice.
+ In the underdetermined case (and in general, unless we have 
+\begin_inset Formula $n\gg d$
+\end_inset
+
+), we should use 
+\series bold
+regularized 
+\series default
+maximum likelihood, in which case we don't run into this problem.
+ 
+\end_layout
+
+\begin_layout Standard
+EXERCISE? 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+First, we claim that the normal equations 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:normal-equations"
+
+\end_inset
+
+ have a solution in 
+\begin_inset Formula $w$
+\end_inset
+
+ for any choice of 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
+\begin_inset Formula $y$
 \end_inset
 
 .
  
 \end_layout
 
-\begin_layout Standard
-We say that the 
-\series bold
-likelihood
-\series default
- that 
+\begin_layout Proposition
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $A^{T}A$
+\end_inset
+
+ have the same nullspace.
+ Equivalently, 
+\begin_inset Formula $\cn(A)=\cn(A^{T}A)$
+\end_inset
+
+, where 
+\begin_inset Formula $\cn(A)$
+\end_inset
+
+ denotes the nullspace of 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $Ax=0$
+\end_inset
+
+ implies 
+\begin_inset Formula $A^{T}Ax=A^{T}\left(Ax\right)=A^{T}0=0$
+\end_inset
+
+.
+ Thus 
+\begin_inset Formula $\cn(A)\subset\cn(A^{T}A)$
+\end_inset
+
+.
+ Conversely, suppose 
+\begin_inset Formula $A^{T}Ax=0$
+\end_inset
+
+.
+ Then taking the inner product with 
+\begin_inset Formula $x$
+\end_inset
+
+ on both sides gives:
+\begin_inset Formula 
+\[
+0=x^{T}A^{T}Ax=\|Ax\|^{2}.
+\]
+
+\end_inset
+
+Thus 
+\begin_inset Formula $Ax=0$
+\end_inset
+
+, which implies 
+\begin_inset Formula $\cn(A^{T}A)\subset\cn(A)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+Recall that 
+\end_layout
+
+\begin_layout Corollary
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $A^{T}A$
+\end_inset
+
+ have the same rowspace.
+ 
+\end_layout
+
+\begin_layout --Separator--
+
+\end_layout
+
+\begin_layout Corollary
+\begin_inset Formula $A^{T}$
+\end_inset
+
+ and 
+\begin_inset Formula $A^{T}A$
+\end_inset
+
+ have the same column space.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -1370,32 +1736,47 @@ prior belief
 \end_inset
 
 .
- Now the full model for 
-\begin_inset Formula $y$
+ The expressions below give a recipe for generating a dataset of 
+\begin_inset Formula $\cd=\left\{ \left(x_{1},y_{1}\right),\ldots,\left(x_{n},y_{n}\right)\right\} $
 \end_inset
 
- can be written as
+ under this model.
+ Note that we assume that 
+\begin_inset Formula $x_{1},\ldots,x_{n}$
+\end_inset
+
+ are given, and we are generating corresponding random values for 
+\begin_inset Formula $y_{1},\ldots,y_{n}$
+\end_inset
+
+:
 \begin_inset Formula 
 \begin{eqnarray*}
-Y & = & f(x)+\eps\\
-f(x) & = & w^{T}x\\
-\eps & \sim & \gauss(0,\sigma_{n}^{2})\\
-w & \sim & \gauss(0,\Sigma_{p}).
+w & \sim & \gauss(0,\Sigma)\\
+f(x_{i}) & = & w^{T}x_{i}\;\mbox{for }i=1,\ldots,n\\
+\eps_{i} & \sim & \gauss(0,\sigma^{2})\mbox{ i.i.d for }i=1,\ldots,n\\
+y_{i} & = & f(x_{i})+\eps_{i}.
 \end{eqnarray*}
 
 \end_inset
 
-Here we assume that both 
-\begin_inset Formula $\sigma_{n}^{2}$
+We assume that both 
+\begin_inset Formula $\sigma^{2}$
 \end_inset
 
  and 
-\begin_inset Formula $\Sigma_{p}$
+\begin_inset Formula $\Sigma$
 \end_inset
 
  are known.
- Note that we now have a fully specified probability distribution for 
-\begin_inset Formula $Y\mid x$
+ 
+\end_layout
+
+\begin_layout Standard
+We have now written down a full Bayesisan model for our data generating
+ process.
+ Note that we have a fully specified probability distribution for 
+\begin_inset Formula $Y_{i}\mid x_{i}$
 \end_inset
 
  -- there are no 
@@ -1406,29 +1787,601 @@ unknown parameters
 \begin_inset Quotes erd
 \end_inset
 
+ in the way that 
+\begin_inset Formula $w$
+\end_inset
+
+ was unknown in the maximum likelihood approach of Section 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sec:Maximum-Likelihood-Estimation"
+
+\end_inset
+
 .
- We now consider 
+ In this Bayesian model, 
 \begin_inset Formula $w$
 \end_inset
 
- to be an unobserved random variable.
- [Mathematically, it has the same status as 
-\begin_inset Formula $\eps$
+ is an unobserved random variable: mathematically, it has the same status
+ as the 
+\begin_inset Formula $\eps_{i}$
 \end_inset
 
-.] [While previously 
+'s.
+ In Equations 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:generativemodel-ygivenx"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:gauss-lin-regr-cond-dist"
+
+\end_inset
+
+, we had a collection of candidate probability distributions for 
+\begin_inset Formula $y|x$
+\end_inset
+
+, one for each value of 
 \begin_inset Formula $w$
 \end_inset
 
- was an unknown parameter, now it is an unobserved random variable with
- a specific probability distribution.] 
+.
 \end_layout
+
+\begin_layout Subsection
+Matrix Form
+\end_layout
+
+\begin_layout Standard
+It will be convenient to rewrite this model more compactly, using random
+ vectors.
+ For the data 
+\begin_inset Formula $\cd=\left\{ (x_{1},y_{1}),\ldots,(x_{n},y_{n})\right\} $
+\end_inset
+
+, let 
+\begin_inset Formula $y=\left(y_{1},\ldots,y_{n}\right)$
+\end_inset
+
+ and denote the 
+\series bold
+design matrix 
+\series default
+by 
+\begin_inset Formula $X\in\reals^{n\times d}$
+\end_inset
+
+, which has the input vectors as rows: 
+\begin_inset Formula 
+\[
+X=\begin{pmatrix}-x_{1}-\\
+\vdots\\
+-x_{n}-
+\end{pmatrix}.
+\]
+
+\end_inset
+
+If we let 
+\begin_inset Formula $f(X)=\left(f(x_{1}),\ldots,f(x_{n})\right)^{T}$
+\end_inset
+
+ and 
+\begin_inset Formula $\eps=(\eps_{1},\ldots,\eps_{n})$
+\end_inset
+
+, then we can write
+\begin_inset Formula 
+\begin{eqnarray*}
+w & \sim & \gauss(0,\Sigma)\\
+f(X) & = & Xw\\
+\eps & \sim & \gauss(0,\sigma^{2}I)\\
+y & = & f(X)+\eps,
+\end{eqnarray*}
+
+\end_inset
+
+where 
+\begin_inset Formula $I$
+\end_inset
+
+ denotes the 
+\begin_inset Formula $n\times n$
+\end_inset
+
+ identity matrix
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+In this form, it's clear that we can generalize this model by replacing
+ 
+\begin_inset Formula $\sigma^{2}I$
+\end_inset
+
+ with a general covariance matrix.
+\end_layout
+
+\end_inset
+
+.
+ We can write this in a compact form as
+\begin_inset Formula 
+\begin{eqnarray*}
+w & \sim & \cn(0,\Sigma)\\
+y\mid X,w & \sim & \cn(Xw,\sigma^{2}I)
+\end{eqnarray*}
+
+\end_inset
+
+througho
+\end_layout
+
+\begin_layout Subsection
+Posterior
+\end_layout
+
+\begin_layout Standard
+So far, we've defined our Bayesian model.
+ As noted above, this amounts to a specific conditional distribution for
+ 
+\begin_inset Formula $y\mid X$
+\end_inset
+
+.
+ 
+\begin_inset Formula 
+\begin{eqnarray*}
+p(w\mid\cd) & = & \frac{p(\cd\mid w)p(w)}{p(\cd)}.
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Going to proportionality (important technique!)
+\end_layout
+
+\begin_layout Standard
+We're about to rewrite the expression above as
+\begin_inset Formula 
+\[
+p(w\mid\cd)\propto p(\cd\mid w)p(w).
+\]
+
+\end_inset
+
+The 
+\begin_inset Formula $\propto$
+\end_inset
+
+ is read 
+\begin_inset Quotes eld
+\end_inset
+
+is proportional to
+\begin_inset Quotes erd
+\end_inset
+
+.
+ This is not a 
+\begin_inset Quotes eld
+\end_inset
+
+hand-wavy
+\begin_inset Quotes erd
+\end_inset
+
+ expression -- it has a precise mathematical meaning.
+ It means that for every each dataset 
+\begin_inset Formula $\cd$
+\end_inset
+
+, we have a proportionality constant 
+\begin_inset Formula $k$
+\end_inset
+
+ such that 
+\begin_inset Formula $p(w\mid\cd)=kp(\cd\mid w)p(w)$
+\end_inset
+
+.
+ Put another way, there is a function 
+\begin_inset Formula $k(\cd)$
+\end_inset
+
+ such that 
+\begin_inset Formula 
+\[
+p(w\mid\cd)=k(\cd)p(\cd\mid w)p(w)\quad\forall w,\cd.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+p(w\mid\cd) & \propto & p(\cd\mid w)p(w)\\
+ & = & p(y\mid X,w)p(w)\\
+ & = & \cn\left(y\,;\,Xw,\sigma^{2}I\right)\cn(w\,;\,0,\Sigma)\\
+ & \propto & \exp\left(-\frac{1}{2\sigma^{2}}(y-Xw)^{T}(y-Xw)\right)\exp\left(-\frac{1}{2}w^{T}\Sigma^{-1}w\right)\\
+ & = & \exp\left(-\frac{1}{2}\left[\frac{1}{\sigma^{2}}(y-Xw)^{T}(y-Xw)+w^{T}\Sigma^{-1}w\right]\right).
+\end{eqnarray*}
+
+\end_inset
+
+Extracting out the piece in the exponent, 
+\begin_inset Formula 
+\begin{eqnarray*}
+ &  & \frac{1}{\sigma^{2}}(y-Xw)^{T}(y-Xw)+w^{T}\Sigma^{-1}w\\
+ & = & \frac{1}{\sigma^{2}}\left(w^{T}X^{T}Xw-2w^{T}X^{T}y+y^{T}y\right)+w^{T}\Sigma^{-1}w\\
+ & = & w^{T}\left(\frac{1}{\sigma^{2}}X^{T}X+\Sigma^{-1}\right)w-2\left(\frac{1}{\sigma^{2}}\right)y^{T}Xw.
+\end{eqnarray*}
+
+\end_inset
+
+To simplify our expressions, let's take 
+\begin_inset Formula $M=\frac{1}{\sigma^{2}}X^{T}X+\Sigma^{-1}$
+\end_inset
+
+ and 
+\begin_inset Formula $b=\left(\frac{1}{\sigma^{2}}\right)X^{T}y$
+\end_inset
+
+.
+ The expression them becomes 
+\begin_inset Formula $w^{T}Mw-2b^{T}w$
+\end_inset
+
+.
+ We can now 
+\begin_inset Quotes eld
+\end_inset
+
+complete the quadratic form
+\begin_inset Quotes erd
+\end_inset
+
+ by applying following identity
+\begin_inset Formula 
+\[
+w^{T}Mw-2b^{T}w=\left(w-M^{-1}b\right)^{T}M(w-M^{-1}b)-b^{T}M^{-1}b,
+\]
+
+\end_inset
+
+which is easily verified by expanding the quadratic form on the RHS.
+ We call it 
+\begin_inset Quotes eld
+\end_inset
+
+completing the quadratic form
+\begin_inset Quotes erd
+\end_inset
+
+ because while the LHS has both quadratic and linear terms involving 
+\begin_inset Formula $w$
+\end_inset
+
+, while on the RHS 
+\begin_inset Formula $w$
+\end_inset
+
+ only appears in a quadratic term.
+ (For a slower introduction to this technique, see the notes on Completing
+ the Quadratic Form.) Putting it together, we get
+\begin_inset Formula 
+\begin{eqnarray*}
+p(w\mid\cd) & \propto & \exp\left(-\frac{1}{2}\left[\left(w-M^{-1}b\right)^{T}M(w-M^{-1}b)-b^{T}M^{-1}b\right]\right)\\
+ & = & \exp\left(-\frac{1}{2}\left[\left(w-M^{-1}b\right)^{T}M(w-M^{-1}b)\right]\right)\exp\left(-\frac{1}{2}\left[-b^{T}M^{-1}b\right]\right)\\
+ & \propto & \exp\left(-\frac{1}{2}\left[\left(w-M^{-1}b\right)^{T}M(w-M^{-1}b)\right]\right).
+\end{eqnarray*}
+
+\end_inset
+
+Now recall that a Gaussian density in 
+\begin_inset Formula $w$
+\end_inset
+
+ is given by
+\begin_inset Formula 
+\begin{align*}
+\cn(w;\mu,\Sigma) & =\left|2\pi\Sigma\right|^{-1/2}\exp\left(-\frac{1}{2}(w-\mu)^{T}\Sigma^{-1}(w-\mu)\right).
+\end{align*}
+
+\end_inset
+
+So 
+\begin_inset Formula 
+\begin{equation}
+p(w\mid\cd)\propto\cn\left(w;M^{-1}b,M^{-1}\right)\label{eq:propto-normal}
+\end{equation}
+
+\end_inset
+
+Since the LHS and RHS of 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:propto-normal"
+
+\end_inset
+
+ are both densities in 
+\begin_inset Formula $w$
+\end_inset
+
+ and are proportional, they must actually be equal
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+See notes on proportionality for a bit more discussion of this idea.
+\end_layout
+
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{eqnarray*}
+p(w\mid\cd) & = & \cn\left(w;M^{-1}b,M^{-1}\right),
+\end{eqnarray*}
+
+\end_inset
+
+where 
+\begin_inset Formula $M=\frac{1}{\sigma^{2}}X^{T}X+\Sigma^{-1}$
+\end_inset
+
+ and 
+\begin_inset Formula $b=\left(\frac{1}{\sigma^{2}}\right)X^{T}y$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Note that the posterior mean is
+\begin_inset Formula 
+\begin{eqnarray*}
+M^{-1}b & = & \left(\frac{1}{\sigma^{2}}X^{T}X+\Sigma^{-1}\right)^{-1}\frac{1}{\sigma^{2}}X^{T}y\\
+ & = & \left(X^{T}X+\sigma^{2}\Sigma^{-1}\right)^{-1}X^{T}y,
+\end{eqnarray*}
+
+\end_inset
+
+which should look familiar from our study of ridge regression.
+ Indeed, if the prior covariance matrix is taken to be 
+\begin_inset Formula $\Sigma=\frac{\sigma^{2}}{\lambda}I$
+\end_inset
+
+, then the posterior mean is
+\begin_inset Formula 
+\[
+\left(X^{T}X+\lambda I\right)^{-1}X^{T}y,
+\]
+
+\end_inset
+
+which is exactly the ridge regression estimate for 
+\begin_inset Formula $w$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+To make things look prettier, people often specify the gaussian prior in
+ terms of the 
+\series bold
+precision matrix
+\series default
+, which is the inverse of the covariance matrix.
+ That is 
+\begin_inset Formula $\Lambda=\Sigma^{-1}$
+\end_inset
+
+.
+ Then the posterior mean looks like
+\begin_inset Formula 
+\[
+\left(X^{T}X+\sigma^{2}\Lambda\right)^{-1}X^{T}y.
+\]
+
+\end_inset
+
+The precision matrix of a Gaussian distribution has some other interesting
+ properties as well (see ...).
+\end_layout
+
+\begin_layout Standard
+which is of course the ridge regression solution.
+ S
+\end_layout
+
+\begin_layout Standard
+Thus we have derived the posterior distribution for the unknown parameter
+ 
+\begin_inset Formula $w$
+\end_inset
+
+ conditioned on the data 
+\begin_inset Formula $\cd$
+\end_inset
+
+.
+ We write this result in the theorem below, purely in terms of probability
+ distributions, without mentioning 
+\begin_inset Quotes eld
+\end_inset
+
+priors
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+posteriors
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+Given a fixed 
+\series bold
+design matrix
+\series default
+ 
+\begin_inset Formula $X\in\reals^{m\times n}$
+\end_inset
+
+, and a random vector 
+\begin_inset Formula $y=Xw+\eps$
+\end_inset
+
+, where 
+\begin_inset Formula $\eps\sim\cn\left(0,\sigma^{2}I\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $w\sim\cn(0,\Sigma)$
+\end_inset
+
+, the conditional distribution of 
+\begin_inset Formula $w\mid y$
+\end_inset
+
+ is 
+\begin_inset Formula $\cn\left(m,V\right)$
+\end_inset
+
+, where 
+\begin_inset Formula 
+\begin{eqnarray*}
+m & = & \left(X^{T}X+\sigma^{2}\Sigma^{-1}\right)^{-1}X^{T}y\\
+V & = & \sigma^{2}\left(X^{T}X+\sigma^{2}\Sigma^{-1}\right)^{-1}.
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Predictive Distributions
+\end_layout
+
+\begin_layout Standard
+In machine learning contexts, our ultimate goal is typically prediction,
+ rather than parameter estimation.
+ That is, our primary objective is typically to predict the 
+\begin_inset Formula $y$
+\end_inset
+
+ corresponding to a new 
+\begin_inset Formula $x$
+\end_inset
+
+, rather than to estimate 
+\begin_inset Formula $w$
+\end_inset
+
+.
+ Predictive distributions are straightforward to calculate.
+ Before seeing any data, the predictive distribution for 
+\begin_inset Formula $x$
+\end_inset
+
+ is simply
+\begin_inset Formula 
+\begin{eqnarray*}
+p(y\mid x) & = & \int_{w}p(y\mid w)p(w)\,dw\\
+ & =
+\end{eqnarray*}
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+We should be able to show that in the noise-free case (
+\begin_inset Formula $\sigma_{n}^{2}=0$
+\end_inset
+
+), the marginal distribution of the posterior function of 
+\begin_inset Formula $f$
+\end_inset
+
+ is degenerate at the training point output value...
+ Say we have two training points 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+, and our test point is 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+.
+ Then the posterior mean at 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ is given in our formulae to have 
+\begin_inset Formula 
+\begin{eqnarray*}
+\bar{f}_{*} & = & (k_{11},k_{12})\begin{pmatrix}k_{11} & k_{12}\\
+k_{21} & k_{22}
+\end{pmatrix}^{-1}\begin{pmatrix}y_{1}\\
+y_{2}
+\end{pmatrix}=(1\;0)\begin{pmatrix}y_{1}\\
+y_{2}
+\end{pmatrix}=y_{1}\\
+\var(f_{*}) & = & k_{11}-(k_{11},k_{12})\begin{pmatrix}k_{11} & k_{12}\\
+k_{21} & k_{22}
+\end{pmatrix}^{-1}\begin{pmatrix}k_{11}\\
+k_{12}
+\end{pmatrix}=k_{11}-(1\;0)\begin{pmatrix}k_{11}\\
+k_{12}
+\end{pmatrix}=0
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
 
 \begin_layout Subsection
 Posterior for a single observation [Barber 18.1.1]
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 [Plan -- possibly simplify this treatment by giving a 
 \begin_inset Quotes eld
 \end_inset
@@ -1440,7 +2393,7 @@ completing the square identity
  that we can plug into
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Now suppose we observe a single input/output pair from this model: 
 \begin_inset Formula $\cd=\left\{ (x,y)\right\} $
 \end_inset
@@ -1571,7 +2524,7 @@ Whenever you want to use proportionality, rather than equality, make sure
  ]
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 To get the proportionality constant, we simply integrate the RHS over 
 \begin_inset Formula $w$
 \end_inset
@@ -1580,7 +2533,7 @@ To get the proportionality constant, we simply integrate the RHS over
  Note that the proportionality constant may depend on the other parameters
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 [Move this to a later section] To compute it, we need to introduce the weight
  and integrate it out:
 \begin_inset Formula 
@@ -1599,7 +2552,7 @@ The marginal likelihood
  has a very interesting interpretation, and we will return to this later.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Note that 
 \begin_inset Formula $p(w\mid\cd)$
 \end_inset
@@ -1641,7 +2594,7 @@ where
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 where
 \begin_inset Formula 
 \begin{eqnarray*}
@@ -1663,7 +2616,7 @@ where
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 The machinery at the core of this simplification occurs frequently when
  dealing with Gaussian densities, and is well worth adding to your toolbox.
  We give a lot of details below, though in books and papers, the simplification
@@ -1780,7 +2733,7 @@ constant term
  corresponding parts:
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Formula 
 \begin{eqnarray}
 \left(w-v\right)^{T}M(w-v)+c & = & \underbrace{v^{T}Mv+c}_{\mbox{constant in }w}-2v^{T}Mw+w^{T}Mw\label{eq:expanded-quad-form}
@@ -1899,7 +2852,7 @@ where
  And so
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Formula 
 \begin{eqnarray*}
 \gauss(y\,;\,w^{T}x,\sigma_{n}^{2})\cn(w\,;\,0,\Sigma_{p}) & = & k\exp\left(-\frac{1}{2}\sigma_{n}^{-2}\left[\left(w-v\right)^{T}M(w-v)+c\right]\right)\\
@@ -1939,7 +2892,7 @@ where
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 At this point, we claim that the RHS is exactly a multivariate Gaussian
  density.
  Because we've been careful to keep track of the explicit expression for
@@ -1982,7 +2935,7 @@ The RHS is proportional to a multivariate Gaussian density.
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Since the RHS is both proportional to a multivariate Gaussian density, and
  it actually is a density, it must in fact actually be a multivariate Gaussian
  density.
@@ -2000,6 +2953,11 @@ where
 \mu_{\pi} & = & v=M^{-1}yx=y\left(xx^{T}+\sigma_{n}^{2}\Sigma^{-1}\right)^{-1}x\\
 \Sigma_{\pi} & = & \sigma_{n}^{2}M^{-1}=\sigma_{n}^{2}\left(xx^{T}+\sigma_{n}^{2}\Sigma^{-1}\right)^{-1}=\left(\sigma_{n}^{-2}xx^{T}+\Sigma^{-1}\right)^{-1}
 \end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -2033,10 +2991,6 @@ Data:
 \end_layout
 
 \begin_deeper
-\begin_layout Pause
-
-\end_layout
-
 \begin_layout Itemize
 Write 
 \begin_inset Formula $y=\left(y_{1},\ldots,y_{n}\right)$
@@ -2071,7 +3025,34 @@ X=\begin{pmatrix}-x_{1}-\\
 
 \end_inset
 
- 
+
+\end_layout
+
+\begin_layout Itemize
+The data likelihood is
+\begin_inset Formula 
+\begin{eqnarray*}
+p(\cd\mid w) & = & p(y\mid x,w)\mbox{}\\
+ & = & p(\\
+ &  & \cn\left(y\,;\,\right)\\
+\\
+ &  & \prod_{i=1}^{n}p(y_{i}\mid x_{i},w)\\
+ & =
+\end{eqnarray*}
+
+\end_inset
+
+The posterior distribution is 
+\begin_inset Formula 
+\begin{eqnarray*}
+p(w\mid\cd) & = & \frac{p(\cd\mid w)p(w)}{p(\cd)}\mbox{ (using fact that \ensuremath{w} is independent of \ensuremath{x})}\\
+ & =\\
+ & = & \frac{\gauss(y\,;\,w^{T}x,\sigma_{n}^{2})\cn(w\,;\,0,\Sigma_{p})}{p(y\mid x)}.
+\end{eqnarray*}
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -2121,61 +3102,6 @@ p(w|X,y)\sim N\left(\bar{w}=\frac{1}{\sigma_{n}^{2}}A^{-1}Xy,A^{-1}\right)
 \[
 p(f_{*}|x_{*},X,y)=N\left(\frac{1}{\sigma_{n}^{2}}x_{*}'A^{-1}Xy,x_{*}'A^{-1}x_{*}\right)
 \]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection
-Sanity check -- noise free case
-\end_layout
-
-\begin_layout Standard
-We should be able to show that in the noise-free case (
-\begin_inset Formula $\sigma_{n}^{2}=0$
-\end_inset
-
-), the marginal distribution of the posterior function of 
-\begin_inset Formula $f$
-\end_inset
-
- is degenerate at the training point output value...
- Say we have two training points 
-\begin_inset Formula $x_{1}$
-\end_inset
-
- and 
-\begin_inset Formula $x_{2}$
-\end_inset
-
-, and our test point is 
-\begin_inset Formula $x_{1}$
-\end_inset
-
-.
- Then the posterior mean at 
-\begin_inset Formula $x_{1}$
-\end_inset
-
- is given in our formulae to have 
-\begin_inset Formula 
-\begin{eqnarray*}
-\bar{f}_{*} & = & (k_{11},k_{12})\begin{pmatrix}k_{11} & k_{12}\\
-k_{21} & k_{22}
-\end{pmatrix}^{-1}\begin{pmatrix}y_{1}\\
-y_{2}
-\end{pmatrix}=(1\;0)\begin{pmatrix}y_{1}\\
-y_{2}
-\end{pmatrix}=y_{1}\\
-\var(f_{*}) & = & k_{11}-(k_{11},k_{12})\begin{pmatrix}k_{11} & k_{12}\\
-k_{21} & k_{22}
-\end{pmatrix}^{-1}\begin{pmatrix}k_{11}\\
-k_{12}
-\end{pmatrix}=k_{11}-(1\;0)\begin{pmatrix}k_{11}\\
-k_{12}
-\end{pmatrix}=0
-\end{eqnarray*}
 
 \end_inset
 

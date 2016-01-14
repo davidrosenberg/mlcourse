@@ -1,0 +1,3188 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass beamer
+\begin_preamble
+\usetheme{CambridgeUS} 
+\beamertemplatenavigationsymbolsempty
+\end_preamble
+\options handout
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman times
+\font_sans default
+\font_typewriter default
+\font_math eulervm
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\reals}{\mathbf{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\integers}{\mathbf{Z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\naturals}{\mathbf{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rationals}{\mathbf{Q}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ca}{\mathcal{A}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cb}{\mathcal{B}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cc}{\mathcal{C}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cd}{\mathcal{D}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ce}{\mathcal{E}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cf}{\mathcal{F}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cg}{\mathcal{G}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ch}{\mathcal{H}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ci}{\mathcal{I}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cj}{\mathcal{J}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ck}{\mathcal{K}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cl}{\mathcal{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cm}{\mathcal{M}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cn}{\mathcal{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\co}{\mathcal{O}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cp}{\mathcal{P}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cq}{\mathcal{Q}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\calr}{\mathcal{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cs}{\mathcal{S}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ct}{\mathcal{T}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cu}{\mathcal{U}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cv}{\mathcal{V}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cw}{\mathcal{W}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cx}{\mathcal{X}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cy}{\mathcal{Y}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cz}{\mathcal{Z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ind}[1]{1(#1)}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand{
+\backslash
+pr}{P}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\pr}{\mathbb{P}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\predsp}{\cy}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%{
+\backslash
+hat{
+\backslash
+cy}}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\outsp}{\cy}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\prxy}{P_{\cx\times\cy}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\prx}{P_{\cx}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\prygivenx}{P_{\cy\mid\cx}}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand{
+\backslash
+ex}{E}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ex}{\mathbb{E}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\var}{\textrm{Var}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cov}{\textrm{Cov}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\sgn}{\textrm{sgn}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\sign}{\textrm{sign}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\kl}{\text{KL}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\law}{\mathcal{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\eps}{\varepsilon}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\as}{\textrm{ a.s.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\io}{\textrm{ i.o.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ev}{\textrm{ ev.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\convd}{\stackrel{d}{\to}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\eqd}{\stackrel{d}{=}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\del}{\nabla}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\loss}{\ell}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\risk}{R}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\emprisk}{\hat{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\lossfnl}{L}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\emplossfnl}{\hat{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\empminimizer}[1]{\hat{#1}^{*}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\minimizer}[1]{#1^{*}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\optimizer}[1]{#1^{*}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\etal}{\textrm{et. al.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\tr}{\operatorname{tr}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\trace}{\operatorname{trace}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\diag}{\text{diag}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rank}{\text{rank}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\linspan}{\text{span}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\spn}{\text{span}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\proj}{\text{Proj}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\argmax}{\operatornamewithlimits{arg\, max}}
+{\text{argmax}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\argmin}{\operatornamewithlimits{arg\, min}}
+{\text{argmin}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\bfx}{\mathbf{x}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfy}{\mathbf{y}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfl}{\mathbf{\lambda}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfm}{\mathbf{\mu}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\calL}{\mathcal{L}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\vw}{\boldsymbol{w}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vx}{\boldsymbol{x}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vxi}{\boldsymbol{\xi}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\valpha}{\boldsymbol{\alpha}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vbeta}{\boldsymbol{\beta}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vsigma}{\boldsymbol{\sigma}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vtheta}{\boldsymbol{\theta}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vd}{\boldsymbol{d}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vs}{\boldsymbol{s}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vt}{\boldsymbol{t}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vh}{\boldsymbol{h}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ve}{\boldsymbol{e}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vf}{\boldsymbol{f}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vg}{\boldsymbol{g}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vz}{\boldsymbol{z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vk}{\boldsymbol{k}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\va}{\boldsymbol{a}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vb}{\boldsymbol{b}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vv}{\boldsymbol{v}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vy}{\boldsymbol{y}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\hil}{\ch}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rkhs}{\hil}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ber}{\text{Ber}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+Information Theory
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+DS-GA 1003 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+optional, use only with long paper titles
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+David Rosenberg 
+\end_layout
+
+\begin_layout Date
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+today
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Institute
+New York University
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex ArticleMode
+status open
+
+\begin_layout Plain Layout
+Just in article version
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Plots courtesy of Ningshan Zhang.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+David MacKay's book Information Theory, Inference, and Learning Algorithms
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Entropy 
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+A Measure of Information?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Consider a discrete random variable 
+\begin_inset Formula $X$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+How much 
+\begin_inset Quotes eld
+\end_inset
+
+information
+\begin_inset Quotes erd
+\end_inset
+
+ do we gain from observing 
+\begin_inset Formula $X$
+\end_inset
+
+?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Information 
+\begin_inset Formula $\approx$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+degree of surprise
+\begin_inset Quotes erd
+\end_inset
+
+ from observing 
+\begin_inset Formula $X=x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+If we know 
+\begin_inset Formula $\pr\left(X=0\right)=1$
+\end_inset
+
+, then observing 
+\begin_inset Formula $X=0$
+\end_inset
+
+ gives no information.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+If we know 
+\begin_inset Formula $\pr\left(X=0\right)=.999$
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Observing 
+\begin_inset Formula $X=0$
+\end_inset
+
+ gives little information.
+\end_layout
+
+\begin_layout Itemize
+Observing 
+\begin_inset Formula $X=1$
+\end_inset
+
+ gives a lot of surprise / 
+\begin_inset Quotes eld
+\end_inset
+
+information
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Information measure 
+\begin_inset Formula $h(x)$
+\end_inset
+
+ should depend on 
+\begin_inset Formula $p(x)$
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Smaller 
+\begin_inset Formula $p(x)\implies\text{ More information }\implies$
+\end_inset
+
+ Larger 
+\begin_inset Formula $h(x)$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Shannon Information Content of an Outcome
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+Let 
+\begin_inset Formula $X\in\cx$
+\end_inset
+
+ have PMF 
+\begin_inset Formula $p(x)$
+\end_inset
+
+.
+ The 
+\series bold
+Shannon information content of an outcome 
+\series default
+
+\begin_inset Formula $x$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+h(x)=\log\left(\frac{1}{p(x)}\right),
+\]
+
+\end_inset
+
+where the base of the 
+\begin_inset Formula $\log$
+\end_inset
+
+ is 
+\begin_inset Formula $2$
+\end_inset
+
+.
+ Information is measured in 
+\series bold
+bits.
+ 
+\series default
+(Or 
+\series bold
+nats
+\series default
+ if the base of the 
+\begin_inset Formula $\log$
+\end_inset
+
+ is 
+\begin_inset Formula $e$
+\end_inset
+
+.)
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Less likely outcome gives more information.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Information is 
+\series bold
+additive
+\series default
+ for independent events:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
+\begin_inset Formula $Y$
+\end_inset
+
+ are independent, 
+\begin_inset Formula 
+\begin{eqnarray*}
+h(x,y) & = & -\log p(x,y)\pause=-\log\left[p(x)p(y)\right]\\
+\pause & = & -\log p(x)-\log p(y)\\
+\pause & = & h(x)+h(y)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Entropy
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+Let 
+\begin_inset Formula $X\in\cx$
+\end_inset
+
+ have PMF 
+\begin_inset Formula $p(x)$
+\end_inset
+
+.
+ The 
+\series bold
+entropy of 
+\begin_inset Formula $X$
+\end_inset
+
+ 
+\series default
+is
+\series bold
+ 
+\series default
+
+\begin_inset Formula 
+\begin{eqnarray*}
+H(X) & = & \ex_{p}\log\left(\frac{1}{p(X)}\right)\\
+\pause & = & -\sum_{x\in\cx}p(x)\log p(x),
+\end{eqnarray*}
+
+\end_inset
+
+using convention that 
+\begin_inset Formula $0\log0=0$
+\end_inset
+
+, since 
+\begin_inset Formula $\lim_{x\to0^{+}}x\log x=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Entropy of 
+\begin_inset Formula $X$
+\end_inset
+
+ is the expected information gain from observing 
+\begin_inset Formula $X$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Entropy only depends on distribution 
+\begin_inset Formula $p$
+\end_inset
+
+, so we can write 
+\begin_inset Formula $H(p)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Coding
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+A 
+\series bold
+binary source code 
+\begin_inset Formula $C$
+\end_inset
+
+ 
+\series default
+is a mapping from 
+\begin_inset Formula $\cx$
+\end_inset
+
+ to finite 0/1 sequences.
+ 
+\end_layout
+
+\begin_layout Itemize
+Consider r.v.
+ 
+\begin_inset Formula $X\in\cx$
+\end_inset
+
+ and binary source code 
+\begin_inset Formula $C$
+\end_inset
+
+ defined as:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p(x)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C(x)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1/2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1/4$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $3$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1/8$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+110
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $4$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1/8$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+111
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Coding
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The 
+\series bold
+binary source code 
+\begin_inset Formula $C$
+\end_inset
+
+ 
+\series default
+for a r.v.
+ 
+\begin_inset Formula $X\in\cx$
+\end_inset
+
+ is a mapping from 
+\begin_inset Formula $\cx$
+\end_inset
+
+ to finite binary sequences.
+\end_layout
+
+\begin_layout Itemize
+Let 
+\begin_inset Formula $\ell(x)$
+\end_inset
+
+ denote the length of 
+\begin_inset Formula $C(x)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+The 
+\series bold
+expected length
+\series default
+ 
+\begin_inset Formula $L(C)$
+\end_inset
+
+ of a source code 
+\begin_inset Formula $C$
+\end_inset
+
+ for a r.v.
+ 
+\begin_inset Formula $X$
+\end_inset
+
+ is given by
+\begin_inset Formula 
+\[
+L(C)=\sum_{x\in\cx}p(x)\ell(x).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Question of 
+\series bold
+data compression: 
+\series default
+For a random variable 
+\begin_inset Formula $X$
+\end_inset
+
+, can we make a code 
+\begin_inset Formula $C$
+\end_inset
+
+ with short expected length?
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+What's the best we can possibly do? 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Expected Code Length
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Consider r.v.
+ 
+\begin_inset Formula $X\in\cx$
+\end_inset
+
+ and binary source code 
+\begin_inset Formula $C$
+\end_inset
+
+ defined as:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="4">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="top">
+<column alignment="left" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p(x)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $C(x)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\log\frac{1}{p(x)}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1/2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\log_{2}2=1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1/4$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\log_{2}4=2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $3$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1/8$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+110
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\log_{2}8=3$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $4$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1/8$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+111
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\log_{2}8=3$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+The 
+\series bold
+entropy
+\series default
+ is 
+\begin_inset Formula $H(X)=\ex\log\left[1/p(x)\right]$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\pause H(X)=\frac{1}{2}\left(1\right)+\frac{1}{4}\left(2\right)+\frac{1}{8}(3)+\frac{1}{8}(3)=1.75\mbox{ bits}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The 
+\series bold
+expected code length
+\series default
+ is 
+\begin_inset Formula 
+\[
+\pause L(C)=\frac{1}{2}\left(1\right)+\frac{1}{4}\left(2\right)+\frac{1}{8}(3)+\frac{1}{8}(3)=1.75\mbox{ bits}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Prefix Codes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A code is a 
+\series bold
+prefix code
+\series default
+ if no codeword is a prefix of another.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Prefix codes can be represented on trees:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/information-theory/prefix-code-tree-MacKay.5.1.png
+	lyxscale 50
+	height 40theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Each leaf node is a codeword.
+ 
+\end_layout
+
+\begin_layout Itemize
+It's encoding represents the path from root to leaf.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From David MacKay's 
+\backslash
+emph{Information Theory, Inference, and Learning Algorithms}, Section 5.1.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Data Compression: What's the Best Prefix Code?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For 
+\begin_inset Formula $X\sim p(x)$
+\end_inset
+
+, we get best compression with codeword lengths 
+\begin_inset Formula 
+\[
+\ell^{*}(x)\approx-\log p(x).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Optimal bit length of 
+\begin_inset Formula $x$
+\end_inset
+
+ is the Shannon Information of 
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Then the 
+\series bold
+expected codeword length
+\series default
+ is
+\begin_inset Formula 
+\begin{eqnarray*}
+L^{*} & = & \ex\left[-\log p(X)\right]\\
+\pause & = & H(X)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Entropy 
+\begin_inset Formula $H(X)$
+\end_inset
+
+ gives a 
+\series bold
+lower bound
+\series default
+ on coding performance.
+\end_layout
+
+\begin_layout Itemize
+Shannon's Theorem says we can achieve 
+\begin_inset Formula $H(X)$
+\end_inset
+
+ within 1 bit.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Shannon's Source Coding Theorem
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Theorem
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[Shannon's Source Coding Theorem]
+\end_layout
+
+\end_inset
+
+ The expected length 
+\begin_inset Formula $L$
+\end_inset
+
+ of any binary prefix code for r.v.
+ 
+\begin_inset Formula $X$
+\end_inset
+
+ is at least 
+\begin_inset Formula $H(X)$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+L\ge H(X).\pause
+\]
+
+\end_inset
+
+There exist codes with lengths 
+\begin_inset Formula $\ell(x)=\left\lceil -\log_{2}p(x)\right\rceil $
+\end_inset
+
+ achieving
+\begin_inset Formula 
+\[
+H(X)\le L<H(X)+1.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Notation
+\series default
+ 
+\begin_inset Formula $\left\lceil x\right\rceil =\text{ceil}(x)=\left(\mbox{smallest integer \ensuremath{\ge}}x\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Theorem
+
+\end_layout
+
+\begin_layout Itemize
+By coding multiple 
+\begin_inset Formula $X$
+\end_inset
+
+'s at once, we can get the expected length per 
+\begin_inset Formula $X$
+\end_inset
+
+ arbitrarily close to 
+\begin_inset Formula $H(X)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Codes that achieve this performance:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Huffman codes
+\end_layout
+
+\begin_layout Itemize
+Arithmetic codes
+\end_layout
+
+\begin_layout Itemize
+and many more...
+ 
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Shannon's Source Coding Theorem: Summary
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For any 
+\begin_inset Formula $X\sim p(x)$
+\end_inset
+
+, 
+\begin_inset Formula $\exists$
+\end_inset
+
+ code with 
+\begin_inset Formula $L\approx H(X)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Get arbitrarily close to 
+\begin_inset Formula $H(X)$
+\end_inset
+
+ by grouping multiple 
+\begin_inset Formula $X$
+\end_inset
+
+'s and coding all at once.
+\end_layout
+
+\begin_layout Itemize
+If we know the distribution of 
+\begin_inset Formula $X$
+\end_inset
+
+, we can code optimally.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+e.g.
+ Use 
+\series bold
+Huffman codes 
+\series default
+or 
+\series bold
+arithmetic codes.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+What if we don't know 
+\begin_inset Formula $p(x)$
+\end_inset
+
+, and we use 
+\begin_inset Formula $q(x)$
+\end_inset
+
+ instead?
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Coding with the Wrong Distribution: Core Calculation
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Allow fractional code lengths: 
+\begin_inset Formula $\ell_{q}(x)=-\log q(x)$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Then expected length for coding 
+\begin_inset Formula $X\sim p(x)$
+\end_inset
+
+ using 
+\begin_inset Formula $\ell_{q}(x)$
+\end_inset
+
+ is
+\begin_inset Formula 
+\begin{eqnarray*}
+L & = & \ex_{X\sim p(x)}\ell_{q}(X)\\
+\pause & = & -\sum_{x}p(x)\log q(x)\\
+\pause & = & \sum_{x}p(x)\log\left[\frac{p(x)}{q(x)}\frac{1}{p(x)}\right]\\
+\pause & = & \sum_{x}p(x)\log\frac{p(x)}{q(x)}+\sum p(x)\log\frac{1}{p(x)}\\
+\pause & = & \kl(p\|q)+H(p),
+\end{eqnarray*}
+
+\end_inset
+
+ where 
+\begin_inset Formula $\kl(p\|q)$
+\end_inset
+
+ is the Kullback-Leibler divergence between 
+\begin_inset Formula $p$
+\end_inset
+
+ and 
+\begin_inset Formula $q$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Entropy, Cross-Entropy, and KL-Divergence
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The 
+\series bold
+Kullback-Leibler
+\series default
+ or 
+\series bold
+
+\begin_inset Quotes eld
+\end_inset
+
+KL
+\begin_inset Quotes erd
+\end_inset
+
+ Diverence
+\series default
+ is defined by
+\begin_inset Formula 
+\begin{eqnarray*}
+\kl(p\|q) & = & \ex_{p}\log\left(\frac{p(X)}{q(X)}\right).
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\kl(p\|q)$
+\end_inset
+
+: 
+\series bold
+#(extra bits)
+\series default
+ needed if we code with 
+\begin_inset Formula $q(x)$
+\end_inset
+
+ instead of 
+\begin_inset Formula $p(x)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+The 
+\series bold
+cross entropy 
+\series default
+for 
+\begin_inset Formula $p(x)$
+\end_inset
+
+ and 
+\begin_inset Formula $q(x)$
+\end_inset
+
+ is defined as 
+\begin_inset Formula 
+\[
+H(p,q)=-\ex_{p}\log q(X).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $H(p,q)$
+\end_inset
+
+: 
+\series bold
+#(bits) 
+\series default
+needed to code 
+\begin_inset Formula $X\sim p(x)$
+\end_inset
+
+ using 
+\begin_inset Formula $q(x)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Summary:
+\begin_inset Formula 
+\[
+H(p,q)=H(p)+\kl(p\|q).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Coding with the Wrong Distribution: Integer Lengths
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Theorem
+If we code 
+\begin_inset Formula $X\sim p(x)$
+\end_inset
+
+ using code lengths 
+\begin_inset Formula $\ell(x)=\left\lceil -\log_{2}q(x)\right\rceil $
+\end_inset
+
+, the expected code length is bounded as 
+\begin_inset Formula 
+\[
+H(p)+\kl(p\|q)\le\ex_{p}\ell(X)<H(p)+\kl(p\|q)+1.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+So with an implementable code (using integer codeword lengths), the expected
+ code length is within 1 bit of what could be achieved with 
+\begin_inset Formula $\ell(x)=-\log_{2}q(x)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Proof is a slight tweak on the 
+\begin_inset Quotes eld
+\end_inset
+
+core calculation
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Jensen's Inequality
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Theorem
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[Jensen's Inequality]
+\end_layout
+
+\end_inset
+
+If 
+\begin_inset Formula $f:\cx\to\reals$
+\end_inset
+
+ is a 
+\series bold
+convex
+\series default
+ function, and 
+\begin_inset Formula $X\in\cx$
+\end_inset
+
+ is a random variable, then
+\begin_inset Formula 
+\[
+\ex f(X)\ge f(\ex X).\pause
+\]
+
+\end_inset
+
+Moreover, if 
+\begin_inset Formula $f$
+\end_inset
+
+ is 
+\series bold
+strictly convex
+\series default
+, then equality implies that 
+\begin_inset Formula $X=\ex X$
+\end_inset
+
+ with probability 
+\begin_inset Formula $1$
+\end_inset
+
+ (i.e.
+ 
+\begin_inset Formula $X$
+\end_inset
+
+ is a constant).
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+e.g.
+ 
+\begin_inset Formula $f(x)=x^{2}$
+\end_inset
+
+ is convex.
+ So 
+\begin_inset Formula $\ex X^{2}\ge\left(\ex X\right)^{2}$
+\end_inset
+
+.
+ Thus 
+\begin_inset Formula 
+\[
+\var X=\ex X^{2}-\left(\ex X\right)^{2}\ge0.
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Gibbs Inequality (
+\begin_inset Formula $\kl(p\|q)\ge0$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Theorem
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[Gibbs Inequality]
+\end_layout
+
+\end_inset
+
+Let 
+\begin_inset Formula $p(x)$
+\end_inset
+
+ and 
+\begin_inset Formula $q(x)$
+\end_inset
+
+ be PMFs on 
+\begin_inset Formula $\cx$
+\end_inset
+
+.
+ Then
+\begin_inset Formula 
+\[
+\kl(p\|q)\ge0,
+\]
+
+\end_inset
+
+with equality iff 
+\begin_inset Formula $p(x)=q(x)$
+\end_inset
+
+ for all 
+\begin_inset Formula $x\in\cx$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+KL divergence measures the 
+\begin_inset Quotes eld
+\end_inset
+
+distance
+\begin_inset Quotes erd
+\end_inset
+
+ between distributions.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Note:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+KL divergence 
+\series bold
+not a metric
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+KL divergence is 
+\series bold
+not symmetric
+\series default
+.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Gibbs Inequality: Proof
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+\kl(p\|q) & = & \ex_{p}\left[-\log\left(\frac{q(X)}{p(X)}\right)\right]\\
+ & \ge & -\log\left[\ex_{p}\left(\frac{q(X)}{p(X)}\right)\right]\mbox{\qquad\text{(Jensen's)}}\\
+ & = & -\log\left[\sum_{\left\{ x\mid p(x)>0\right\} }p(x)\frac{q(x)}{p(x)}\right]\\
+ & = & -\log\left[\sum_{x\in\cx}q(x)\right]\\
+ & = & -\log1=0.
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Since 
+\begin_inset Formula $-\log$
+\end_inset
+
+ is strictly convex, we have strict equality iff 
+\begin_inset Formula $q(x)/p(x)$
+\end_inset
+
+ is a constant, which implies 
+\begin_inset Formula $q=p$
+\end_inset
+
+ .
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Essentially the same proof for PDFs.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+\begin_inset Note Note
+status open
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Section
+Kullback-Leibler (KL) Divergence
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Statistical Divergence Measures
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Given two probability distributions on 
+\begin_inset Formula $\cx$
+\end_inset
+
+, 
+\begin_inset Formula $p$
+\end_inset
+
+ and 
+\begin_inset Formula $q$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+How to measure how different they are?
+\end_layout
+
+\begin_layout Itemize
+Let 
+\begin_inset Formula $S$
+\end_inset
+
+ be the space of all probability distributions on 
+\begin_inset Formula $\cx$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Divergence is typically written 
+\begin_inset Formula $D(p\|q)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+For a divergence measure, we want
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $D(p\|q)\ge0$
+\end_inset
+
+ for all 
+\begin_inset Formula $p,q\in S$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $D(p\|q)=0$
+\end_inset
+
+ if and only if 
+\begin_inset Formula $p=q$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Kullback-Leibler Divergence
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $p(x)$
+\end_inset
+
+ and 
+\begin_inset Formula $q(x)$
+\end_inset
+
+ be PMFs on 
+\begin_inset Formula $\cx$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Then the 
+\series bold
+Kullback-Leibler
+\series default
+ or 
+\series bold
+
+\begin_inset Quotes eld
+\end_inset
+
+KL
+\begin_inset Quotes erd
+\end_inset
+
+ Diverence
+\series default
+ is defined by
+\begin_inset Formula 
+\begin{eqnarray*}
+\kl(p\|q) & = & \sum_{x}p(x)\log\frac{p(x)}{q(x)},
+\end{eqnarray*}
+
+\end_inset
+
+where we assume 
+\begin_inset Formula $q(x)=0$
+\end_inset
+
+ implies 
+\begin_inset Formula $p(x)=0$
+\end_inset
+
+.
+ (i.e.
+ absolute continuity 
+\begin_inset Formula $p\ll q$
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Itemize
+Note that we can also write this as
+\begin_inset Formula 
+\begin{eqnarray*}
+\kl(p\|q) & = & \ex_{X\sim p}\log\frac{p(X)}{q(X)}.
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Statistical Divergence and Metrics
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Some divergences are proper distance metrics:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+e.g.
+ Hellinger distance: 
+\begin_inset Formula $h^{2}(p,q)=\frac{1}{2}\int\left(\sqrt{p(x)}-\sqrt{q(x)}\right)^{2}dx$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+where 
+\begin_inset Formula $p$
+\end_inset
+
+ and 
+\begin_inset Formula $q$
+\end_inset
+
+ are PMFs.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Kullback-Leibler divergence is an important divergence measure
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Not a proper distance metric.
+\end_layout
+
+\begin_layout Itemize
+Not even symmetric.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[[
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $D(p\|q)=0$
+\end_inset
+
+ if and only if 
+\begin_inset Formula $p=q$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+KL-Divergence for Model Estimation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose 
+\begin_inset Formula $\cd=\left\{ x_{1},\ldots,x_{n}\right\} $
+\end_inset
+
+ is a sample from 
+\series bold
+unknown
+\series default
+ 
+\begin_inset Formula $p(x)$
+\end_inset
+
+ on 
+\begin_inset Formula $\cx$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Hypothesis spac
+\series default
+e: 
+\begin_inset Formula $\cp$
+\end_inset
+
+ some set of distributions on 
+\begin_inset Formula $\cx$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Idea: Find 
+\begin_inset Formula $q\in\cp$
+\end_inset
+
+ that minimizes 
+\begin_inset Formula $\kl(p\|q)$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{eqnarray*}
+\argmin_{q\in\cp}\kl(p,q) & = & \argmin_{q\in\cp}\ex_{p}\left[\log\left(\frac{p(X)}{q(X)}\right)\right]
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Don't know 
+\begin_inset Formula $p$
+\end_inset
+
+, so 
+\series bold
+replace expectation by average over 
+\begin_inset Formula $\cd$
+\end_inset
+
+
+\series default
+:
+\begin_inset Formula 
+\[
+\argmin_{q\in\cp}\left\{ \frac{1}{n}\sum_{i=1}^{n}\log\left[\frac{p(x_{i})}{q(x_{i})}\right]\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Estimated KL-Divergence
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The 
+\series bold
+estimated KL-divergence
+\series default
+:
+\begin_inset Formula 
+\begin{eqnarray*}
+ &  & \frac{1}{n}\sum_{i=1}^{n}\log\left[\frac{p(x_{i})}{q(x_{i})}\right]\\
+\pause & = & \frac{1}{n}\sum_{i=1}^{n}\log p(x_{i})-\frac{1}{n}\sum_{i=1}^{n}\log q(x_{i}).
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+The minimizer of this over 
+\begin_inset Formula $q\in\cp$
+\end_inset
+
+ is also
+\begin_inset Formula 
+\[
+\pause\argmax_{q\in\cp}\sum_{i=1}^{n}\log q(x_{i}).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+This is exactly the objective for the 
+\series bold
+MLE
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Minimizing KL between model and truth leads to MLE
+\series default
+.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\end_body
+\end_document

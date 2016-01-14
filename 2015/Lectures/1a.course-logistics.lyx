@@ -1,0 +1,757 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass beamer
+\begin_preamble
+\usetheme{CambridgeUS} 
+\end_preamble
+\options handout
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman times
+\font_sans default
+\font_typewriter default
+\font_math eulervm
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Machine Learning and Computational Statistics
+\begin_inset Newline newline
+\end_inset
+
+ (DS-GA 1003)
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+DS-GA 1003
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+optional, use only with long paper titles
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+David Rosenberg
+\end_layout
+
+\begin_layout Institute
+New York University
+\end_layout
+
+\begin_layout Date
+January 28, 2015
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Logistics
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Class webpage: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://davidrosenberg.github.io/ml2015
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Syllabus on the website
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Piazza: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://piazza.com/nyu/spring2015/dsga1003
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Ask questions here
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Required Lab Session
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Thursdays: 6:10pm - 7pm (WWH 109)
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+First session:
+\series default
+ Guest lecture on differentiating w.r.t matrices and vectors
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Lab instructor: TBD
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Lab Sessions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Supplemental Topics
+\end_layout
+
+\begin_layout Itemize
+Mathematical topics (e.g.
+ subgradients, matrix derivatives, SVD)
+\end_layout
+
+\begin_layout Itemize
+Demonstrations or examples related to lecture
+\end_layout
+
+\begin_layout Itemize
+Answer common questions from Piazza
+\end_layout
+
+\begin_layout Itemize
+Midterm review
+\end_layout
+
+\begin_layout Itemize
+Meeting with project advisors
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Evaluation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+About 8 to 10 homeworks (60%)
+\end_layout
+
+\begin_layout Itemize
+Midterm Exam (20%)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+In 10th week of class, after spring break
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Project (20%) 
+\end_layout
+
+\begin_layout Itemize
+Extra Credit Opportunities
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Up to (2%) for answering questions on Piazza
+\end_layout
+
+\begin_layout Itemize
+Optional problems or competitions on the homework
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Homework (60%)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+First assignment out tonight -- Due in one week.
+\end_layout
+
+\begin_layout Itemize
+Submit with NYU Classes: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://newclasses.nyu.edu
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Late homework: Accepted up to 48 hours late with 20% penalty
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Collaboration is fine, but
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Write up solutions and code on your own
+\end_layout
+
+\begin_layout Itemize
+List names of who you talked to about each problem
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Graders:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Hao Xu, Ran Bi, Prasoon Goyal
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Midterm (20%)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Late midterm: 10th week of term 
+\series default
+(April 8th)
+\end_layout
+
+\begin_layout Itemize
+In class -- during lecture
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Projects (20%)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Find some new data or new approach to old data
+\end_layout
+
+\begin_layout Itemize
+Project philosophy the same as in these courses:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://cs.nyu.edu/~dsontag/courses/ml14/assignments/projects.html
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://web.stanford.edu/class/cs221/project.html
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Logistics:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+2 students per group
+\end_layout
+
+\begin_layout Itemize
+First meeting with advisors 
+\series bold
+March 12th
+\end_layout
+
+\begin_layout Itemize
+Project proposal due after Spring Break: 
+\series bold
+March 26th
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Advisers:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Kurt Miller, Gideon Mann, plue one or two more TBD
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Prerequisites
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Introduction to Data Science (DS-GA 1001)
+\end_layout
+
+\begin_layout Itemize
+Math
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Multivariate Calculus
+\end_layout
+
+\begin_layout Itemize
+Linear Algebra
+\end_layout
+
+\begin_layout Itemize
+Probability Theory
+\end_layout
+
+\begin_layout Itemize
+Statistics
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Python programming (numpy)
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+General Philosophy
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Mastery vs Performance 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+(understanding vs 
+\begin_inset Quotes eld
+\end_inset
+
+getting the grade
+\begin_inset Quotes erd
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Don't confuse 
+\begin_inset Quotes eld
+\end_inset
+
+kind of understanding
+\begin_inset Quotes erd
+\end_inset
+
+ with 
+\begin_inset Quotes eld
+\end_inset
+
+actual understanding
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Can you explain this picture?
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/stepFnsL1L2/L0L1.jpg
+	lyxscale 60
+	width 60col%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Course Topics
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Frequentist Approaches
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ERM, regularization, SVM, kernels, ensemble methods, neural networks
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Probabilistic Models
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+GLM, Bayesian networks, Gaussian mixture models, EM algorithm, HMM
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Bayesian Approaches
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+priors/posteriors, hierarchical models, sampling methods, Bayesian model
+ selection
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Misc.
+ and Advanced Topics
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+dimensionality reduction, structured prediction
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Questions?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+What are you looking to get out of the course?
+\end_layout
+
+\begin_layout Itemize
+Questions for me?
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,1958 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass paper
+\use_default_options false
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding iso8859-1
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize letterpaper
+\use_geometry false
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 5
+\tocdepth 5
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\reals}{\mathbf{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\integers}{\mathbf{Z}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\naturals}{\mathbf{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rationals}{\mathbf{Q}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ca}{\mathcal{A}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cb}{\mathcal{B}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cc}{\mathcal{C}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cd}{\mathcal{D}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ce}{\mathcal{E}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cf}{\mathcal{F}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cg}{\mathcal{G}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ch}{\mathcal{H}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ci}{\mathcal{I}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cj}{\mathcal{J}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ck}{\mathcal{K}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cl}{\mathcal{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cm}{\mathcal{M}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cn}{\mathcal{N}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\co}{\mathcal{O}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cp}{\mathcal{P}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cq}{\mathcal{Q}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\calr}{\mathcal{R}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cs}{\mathcal{S}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ct}{\mathcal{T}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cu}{\mathcal{U}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cv}{\mathcal{V}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cw}{\mathcal{W}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cx}{\mathcal{X}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cy}{\mathcal{Y}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cz}{\mathcal{Z}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ind}[1]{1(#1)}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\pr}{\mathbb{P}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\predsp}{\cy}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\outsp}{\cy}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\prxy}{P_{\cx\times\cy}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\prx}{P_{\cx}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\prygivenx}{P_{\cy\mid\cx}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ex}{\mathbb{E}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\var}{\textrm{Var}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cov}{\textrm{Cov}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\sgn}{\textrm{sgn}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\sign}{\textrm{sign}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\kl}{\textrm{KL}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\law}{\mathcal{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\eps}{\varepsilon}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\as}{\textrm{ a.s.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\io}{\textrm{ i.o.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ev}{\textrm{ ev.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\convd}{\stackrel{d}{\to}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\eqd}{\stackrel{d}{=}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\del}{\nabla}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\loss}{V}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\risk}{R}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\emprisk}{\hat{R}_{\ell}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\lossfnl}{L}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\emplossfnl}{\hat{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\empminimizer}[1]{\hat{#1}_{\ell}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\minimizer}[1]{#1_{*}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\etal}{\textrm{et. al.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\tr}{\operatorname{tr}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\trace}{\operatorname{trace}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\diag}{\text{diag}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\rank}{\text{rank}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\linspan}{\text{span}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\proj}{\text{Proj}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\argmax}{\operatornamewithlimits{arg\, max}}
+{\mbox{argmax}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\argmin}{\operatornamewithlimits{arg\, min}}
+{\mbox{argmin}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfx}{\mathbf{x}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfy}{\mathbf{y}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfl}{\mathbf{\lambda}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfm}{\mathbf{\mu}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\calL}{\mathcal{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vw}{\boldsymbol{w}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vx}{\boldsymbol{x}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vxi}{\boldsymbol{\xi}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\valpha}{\boldsymbol{\alpha}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vbeta}{\boldsymbol{\beta}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vsigma}{\boldsymbol{\sigma}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vmu}{\boldsymbol{\mu}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vtheta}{\boldsymbol{\theta}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vd}{\boldsymbol{d}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vs}{\boldsymbol{s}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vt}{\boldsymbol{t}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vh}{\boldsymbol{h}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ve}{\boldsymbol{e}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vf}{\boldsymbol{f}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vg}{\boldsymbol{g}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vz}{\boldsymbol{z}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vk}{\boldsymbol{k}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\va}{\boldsymbol{a}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vb}{\boldsymbol{b}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vv}{\boldsymbol{v}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vy}{\boldsymbol{y}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\hil}{\ch}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\rkhs}{\hil}
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Title
+The Multivariate Gaussian Distribution
+\end_layout
+
+\begin_layout Date
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+today
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+David S.
+ Rosenberg
+\end_layout
+
+\begin_layout Standard
+Notes from DS-GA 1002: Probability_3 Section 2.4: Gaussian Random Vectors
+ (pp.
+ 23-26).
+ 
+\end_layout
+
+\begin_layout Standard
+[TO DO: need to put something about inverses of block matrices; Also need
+ to talk about iterated expectations]
+\end_layout
+
+\begin_layout Standard
+See also: Murphy p.
+ 113 Section 4.3.1.
+ 
+\end_layout
+
+\begin_layout Section
+One-Dimensional Gaussian
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f(x)=\frac{1}{\sigma\sqrt{2\pi}}\exp\left(-\frac{(x-\mu)^{2}}{2\sigma^{2}}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Multivariate Gaussian Density
+\end_layout
+
+\begin_layout Standard
+A random vector 
+\begin_inset Formula $x\in\reals^{d}$
+\end_inset
+
+ has a 
+\series bold
+
+\begin_inset Formula $d$
+\end_inset
+
+-dimensional multivariate Gaussian distribution
+\series default
+ with mean 
+\begin_inset Formula $\mu\in\reals^{d}$
+\end_inset
+
+ and covariance matrix 
+\begin_inset Formula $\Sigma\in\reals^{d\times d}$
+\end_inset
+
+ if its density is given by
+\begin_inset Formula 
+\[
+\cn\left(x\mid\mu,\Sigma\right)=\frac{1}{(2\pi)^{d/2}|\Sigma|^{1/2}}\exp\left(-\frac{1}{2}(x-\mu)^{T}\Sigma^{-1}(x-\mu)\right),
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\left|\Sigma\right|$
+\end_inset
+
+ denotes the determinant of 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+.
+ Note that this expression requires that the covariance matrix 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ be invertible
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+We 
+\series bold
+can
+\series default
+ have a 
+\begin_inset Formula $d$
+\end_inset
+
+-dimensional Gaussian distribution with a non-invertible 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+, but such a distribution will not have a density on 
+\begin_inset Formula $\reals^{n}$
+\end_inset
+
+, and that case will not be of interest here.
+ 
+\end_layout
+
+\end_inset
+
+.
+ Sometimes we will rewrite the factor in front of the 
+\begin_inset Formula $\exp(\cdot)$
+\end_inset
+
+ as 
+\begin_inset Formula $\left|2\pi\Sigma\right|^{-1/2}$
+\end_inset
+
+, which follows from basic facts about determinants.
+ 
+\end_layout
+
+\begin_layout Exercise
+There are at least 2 claims implicit in this definition.
+ First, that the expression given is, in fact, a density(i.e.
+ it's non-negative and integrates to 
+\begin_inset Formula $1$
+\end_inset
+
+).
+ Second, the density corresponds to a distribution with mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and covariance 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+, as claimed.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $N_{p}(\mu,\Sigma)$
+\end_inset
+
+ a p-variate normal with mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and covaraince matrix 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ has density
+\begin_inset Formula 
+\begin{align*}
+f_{X}(x) & =\frac{1}{(2\pi)^{p/2}|\Sigma|^{1/2}}\exp\left(-\frac{1}{2}(x-\mu)^{T}\Sigma^{-1}(x-\mu)\right)\\
+ & =\left|2\pi\Sigma\right|^{-1/2}\exp\left(-\frac{1}{2}(x-\mu)^{T}\Sigma^{-1}(x-\mu)\right),
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+More complicated version
+\begin_inset Formula 
+\begin{eqnarray*}
+f(y,w) & = & \cn\left(y;Xw,\Sigma_{1}\right)\cn\left(w;\mu_{2},\Sigma\right)\\
+ & = & \left|2\pi\Sigma_{1}\right|^{-1/2}\exp\left(-\frac{1}{2}(y-Xw)^{T}\Sigma_{1}^{-1}(y-Xw)\right)\\
+ &  & \times\left|2\pi\Sigma\right|^{-1/2}\exp\left(-\frac{1}{2}(w-\mu_{2})'\Sigma^{-1}(w-\mu_{2})\right)\\
+ & = & \left(\left|2\pi\Sigma_{1}\right|\left|2\pi\Sigma\right|\right)^{-1/2}\\
+ &  & \times\exp\left(-\frac{1}{2}\left[(y-Xw)^{T}\Sigma_{1}^{-1}(y-Xw)+(w-\mu_{2})^{T}\Sigma^{-1}(w-\mu_{2})\right]\right).
+\end{eqnarray*}
+
+\end_inset
+
+ 
+\begin_inset Formula 
+\begin{eqnarray*}
+ &  & (y-Xw)^{T}\Sigma_{1}^{-1}(y-Xw)+(w-\mu_{2})^{T}\Sigma^{-1}(w-\mu_{2})\\
+ & = & w^{T}X^{T}\Sigma_{1}^{-1}Xw-2w^{T}X^{T}\Sigma_{1}^{-1}y+y^{T}\Sigma_{1}^{-1}y+(w-\mu_{2})^{T}\Sigma^{-1}(w-\mu_{2})
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+w^{T}X^{T}\Sigma_{1}^{-1}Xw-2w^{T}X^{T}\Sigma_{1}^{-1}y
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Recognizing a Gaussian Density
+\end_layout
+
+\begin_layout Standard
+If we come across a density function of the form 
+\begin_inset Formula $p(x)\propto e^{-q(x)/2}$
+\end_inset
+
+, where 
+\begin_inset Formula $q(x)$
+\end_inset
+
+ is a positive definite quadratic function, then 
+\begin_inset Formula $p(x)$
+\end_inset
+
+ is the density for a Gaussian distribution.
+ More precisely, we have the following theorem:
+\end_layout
+
+\begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "thm:expNegQuadraticIsGaussian"
+
+\end_inset
+
+Consider the quadratic function 
+\begin_inset Formula $q(x)=x^{T}\Lambda x-2b^{T}x+c$
+\end_inset
+
+, for any 
+\series bold
+symmetric positive definite
+\series default
+ 
+\begin_inset Formula $A\in\reals^{d\times d}$
+\end_inset
+
+, any 
+\begin_inset Formula $b\in\reals^{d}$
+\end_inset
+
+, and 
+\begin_inset Formula $c\in\reals$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $p(x)$
+\end_inset
+
+ is a density function with
+\begin_inset Formula 
+\[
+p(x)\propto e^{-q(x)/2},
+\]
+
+\end_inset
+
+then 
+\begin_inset Formula $p(x)$
+\end_inset
+
+ is a multivariate Gaussian density with mean 
+\begin_inset Formula $\Lambda^{-1}b$
+\end_inset
+
+ and covariance 
+\begin_inset Formula $\Lambda^{-1}$
+\end_inset
+
+.
+ That is, 
+\begin_inset Formula 
+\[
+p(x)=\frac{|\Lambda|^{1/2}}{(2\pi)^{d/2}}\exp\left(-\frac{1}{2}(x-\Lambda^{-1}b)^{T}\Lambda(x-\Lambda^{-1}b)\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Note: The inverse of the covariance matrix is called the 
+\series bold
+precision matrix
+\series default
+.
+ Precision matrices of multivariate Gaussians have some interesting properties.
+ [explain that this is the Gaussian density in 
+\begin_inset Quotes eld
+\end_inset
+
+information form
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+canonical form
+\begin_inset Quotes erd
+\end_inset
+
+ c.f.
+ Murphy p.
+ 117).]
+\end_layout
+
+\begin_layout Proof
+Completing the square, we have
+\begin_inset Formula 
+\begin{eqnarray*}
+q(x) & = & x^{T}\Lambda x-2b^{T}x+c\\
+ & = & \left(x-\Lambda^{-1}b\right)^{T}\Lambda(x-\Lambda^{-1}b)-b^{T}\Lambda^{-1}b+c.
+\end{eqnarray*}
+
+\end_inset
+
+Since the last two terms are independent of 
+\begin_inset Formula $x$
+\end_inset
+
+, when we exponentiate 
+\begin_inset Formula $q(x)$
+\end_inset
+
+, they can be absorbed into the constant of proportionality.
+ That is, 
+\begin_inset Formula 
+\begin{eqnarray*}
+e^{-q(x)/2} & = & \exp\left[-\frac{1}{2}\left(x-\Lambda^{-1}b\right)^{T}\Lambda(x-\Lambda^{-1}b)\right]\exp\left(-\frac{1}{2}\left[-b^{T}\Lambda^{-1}b+c\right]\right)\\
+ & \propto & \exp\left[-\frac{1}{2}\left(x-\Lambda^{-1}b\right)^{T}\Lambda(x-\Lambda^{-1}b)\right]
+\end{eqnarray*}
+
+\end_inset
+
+Now recall that the density function for the multivariate Gaussian density
+ 
+\begin_inset Formula $\cn(\mu,\Sigma)$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+\phi(x)=\frac{1}{(2\pi)^{d/2}|\Sigma|^{1/2}}\exp\left(-\frac{1}{2}(x-\mu)^{T}\Sigma^{-1}(x-\mu)\right).
+\]
+
+\end_inset
+
+Thus we see that 
+\begin_inset Formula $p(x)$
+\end_inset
+
+ must also be a Gaussian density with covariance 
+\begin_inset Formula $\Sigma=\Lambda^{-1}$
+\end_inset
+
+ and mean 
+\begin_inset Formula $\Lambda^{-1}b$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Conditional-Distributions"
+
+\end_inset
+
+Conditional Distributions (Bishop Section 2.3.1)
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $x\in\reals^{d}$
+\end_inset
+
+ have a Gaussian distribution: 
+\begin_inset Formula $x\sim\cn(\mu,\Sigma)$
+\end_inset
+
+.
+ Let's partition the random variables in 
+\begin_inset Formula $x$
+\end_inset
+
+ into two pieces:
+\begin_inset Formula 
+\begin{align*}
+x & =\begin{pmatrix}x_{1}\\
+x_{2}
+\end{pmatrix},
+\end{align*}
+
+\end_inset
+
+where 
+\begin_inset Formula $x_{1}\in\reals^{d_{1}},x_{2}\in\reals^{d_{2}}$
+\end_inset
+
+ and 
+\begin_inset Formula $d=d_{1}+d_{2}$
+\end_inset
+
+.
+ Similarly, we'll partition the mean vector, the covariance matrix, and
+ the precision matrix as
+\begin_inset Formula 
+\[
+\mu=\begin{pmatrix}\mu_{1}\\
+\mu_{2}
+\end{pmatrix}\qquad\Sigma=\begin{pmatrix}\Sigma_{11} & \Sigma_{12}\\
+\Sigma_{21} & \Sigma_{22}
+\end{pmatrix}\qquad\Lambda=\Sigma^{-1}=\begin{pmatrix}\Lambda_{11} & \Lambda_{12}\\
+\Lambda_{21} & \Lambda_{22}
+\end{pmatrix},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\mu_{1}\in\reals^{d_{1}}$
+\end_inset
+
+, 
+\begin_inset Formula $\Sigma_{12}\in\reals^{d_{1}\times d_{2}},$
+\end_inset
+
+ 
+\begin_inset Formula $\Lambda_{12}\in\reals^{d_{1}\times d_{2}}$
+\end_inset
+
+, etc.
+ Note that by the symmetry of the covariance matrix 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+, we have 
+\begin_inset Formula $\Sigma_{12}=\Sigma_{21}^{T}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+When 
+\begin_inset Formula $x=\begin{pmatrix}x_{1}\\
+x_{2}
+\end{pmatrix}$
+\end_inset
+
+ has a Gaussian distribution, we say that 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+ are 
+\series bold
+jointly Gaussian
+\series default
+.
+ Can we conclude anything about the marginal distributions of 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+? Indeed, the following theorem states that they are individually Gaussian:
+\end_layout
+
+\begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "thm:marginal-dist-are-gaussian"
+
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $x$
+\end_inset
+
+, 
+\begin_inset Formula $\mu,$
+\end_inset
+
+ and 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ be as defined above.
+ Then the marginal distributions of 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+ are each Gaussian, with
+\begin_inset Formula 
+\begin{eqnarray*}
+x_{1} & \sim & \cn\left(\mu_{1},\Sigma_{1}\right)\\
+x_{2} & \sim & \cn\left(\mu_{2},\Sigma_{2}\right).
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+(See Bishop Section 2.3.2, p.
+ 88) This can be done by showing that the marginal density 
+\begin_inset Formula $p(x_{1})=\int p(x_{1},x_{2})\,dx_{2}$
+\end_inset
+
+ has the form claimed, and similarly for 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+.
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+The density for the marginal distribution of 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+p(x_{1})=\int p(x_{1},x_{2})\,dx_{2}.
+\]
+
+\end_inset
+
+ Let's manipulate 
+\begin_inset Formula $p(x_{1},x_{2})$
+\end_inset
+
+ to make it easy to integrate against 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+.
+ First, note that 
+\begin_inset Formula $p(x_{1},x_{2})\propto e^{-q(x_{1},x_{2})/2}$
+\end_inset
+
+, where 
+\begin_inset Formula 
+\begin{eqnarray*}
+q(x) & = & (x-\mu)^{T}\Lambda(x-\mu)\\
+ & = & \begin{pmatrix}x_{1}-\mu_{1}\\
+x_{2}-\mu_{2}
+\end{pmatrix}^{T}\begin{pmatrix}\Lambda_{11} & \Lambda_{12}\\
+\Lambda_{21} & \Lambda_{22}
+\end{pmatrix}\begin{pmatrix}x_{1}-\mu_{1}\\
+x_{2}-\mu_{2}
+\end{pmatrix}.
+\end{eqnarray*}
+
+\end_inset
+
+Our goal here is to make it easy to Recall that 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So when 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+ are jointly Gaussian, we know that 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+ are also marginally Gaussian.
+ It turns out that the conditional distributions 
+\begin_inset Formula $x_{1}\mid x_{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{2}\mid x_{1}$
+\end_inset
+
+ are also Gaussian:
+\end_layout
+
+\begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "thm:conditioningJointGaussian"
+
+\end_inset
+
+Let 
+\begin_inset Formula $x$
+\end_inset
+
+, 
+\begin_inset Formula $\mu,$
+\end_inset
+
+ and 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ be as defined above.
+ Assume that 
+\begin_inset Formula $\Sigma_{22}$
+\end_inset
+
+ is positive definite
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+In fact, this is implied by our assumption that 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ is positive definite.
+\end_layout
+
+\end_inset
+
+.
+ Then the distribution of 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ given 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+ is multivariate normal.
+ More specifically, 
+\begin_inset Formula 
+\[
+x_{1}\mid x_{2}\sim\cn\left(\mu_{1\mid2},\Sigma_{1\mid2}\right),
+\]
+
+\end_inset
+
+where
+\begin_inset Formula 
+\begin{eqnarray*}
+\mu_{1\mid2} & = & \mu_{1}+\Sigma_{12}\Sigma_{22}^{-1}(x_{2}-\mu_{2})\\
+\Sigma_{1\mid2} & = & \Sigma_{11}-\Sigma_{12}\Sigma_{22}^{-1}\Sigma_{21}.
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+(See Bishop Section 2.3.1, p.
+ 85) 
+\end_layout
+
+\begin_layout Example*
+Consider a standard regression framework in which we are building a predictive
+ model for 
+\begin_inset Formula $x_{1}\in\reals$
+\end_inset
+
+ given 
+\begin_inset Formula $x_{2}\in\reals^{d}$
+\end_inset
+
+.
+ Recall that if we are using a square loss, then the Bayes optimal prediction
+ function is 
+\begin_inset Formula $f^{*}(x_{2})=\ex\left[x_{1}\mid x_{2}\right]$
+\end_inset
+
+.
+ If we assume that 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+ are jointly Gaussian with a positive definite covariance matrix, then Theorem
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:conditioningJointGaussian"
+
+\end_inset
+
+ gives us tells us that
+\begin_inset Formula 
+\[
+\ex\left[x_{1}\mid x_{2}\right]=\mu_{1}+\Sigma_{12}\Sigma_{22}^{-1}(x_{2}-\mu_{2}).
+\]
+
+\end_inset
+
+Of course, in practice we don't know 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+.
+ Nevertheless, what's interesting is that the Bayes optimal prediction function
+ is an affine function of 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+ (i.e.
+ a linear function plus a constant).
+ Thus if we think that our input vector 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+ and our response variable 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ are jointly Gaussian, there's no reason to go beyond a hypothesis space
+ of affine functions of 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+.
+ In other words, linear regression is all we need.
+ 
+\end_layout
+
+\begin_layout Section
+Joint Distribution from Marginal + Conditional
+\end_layout
+
+\begin_layout Standard
+In Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Conditional-Distributions"
+
+\end_inset
+
+, we found that if 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+ are jointly Gaussian, then 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+ is marginally Gaussian and the conditional distribution 
+\begin_inset Formula $x_{1}\mid x_{2}$
+\end_inset
+
+ was also Gaussian, where the mean is a linear function of 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+.
+ The following theorem shows that we can 
+\series bold
+we can go in the reverse direction as well
+\series default
+.
+\end_layout
+
+\begin_layout Theorem*
+\begin_inset CommandInset label
+LatexCommand label
+name "thm:jointDistForGaussianHierarchy"
+
+\end_inset
+
+Suppose 
+\begin_inset Formula $x_{1}\sim\cn\left(\mu_{1},\Sigma_{1}\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{2}\mid x_{1}\sim\cn\left(Ax_{1}+b,\Sigma_{2\mid1}\right)$
+\end_inset
+
+, for some 
+\begin_inset Formula $\mu_{1}\in\reals^{d_{1}}$
+\end_inset
+
+, 
+\begin_inset Formula $\Sigma_{1}\in\reals^{d_{1}\times d_{1}}$
+\end_inset
+
+, 
+\begin_inset Formula $A\in\reals^{d_{2}\times d_{1}}$
+\end_inset
+
+, and 
+\begin_inset Formula $\Sigma_{2\mid1}\in\reals^{d_{2}\times d_{2}}$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+ are jointly Gaussian with 
+\begin_inset Formula 
+\[
+x=\begin{pmatrix}x_{1}\\
+x_{2}
+\end{pmatrix}\sim\cn\left(\begin{pmatrix}\mu_{1}\\
+A\mu_{1}+b
+\end{pmatrix},\begin{pmatrix}\Sigma_{1} & \Sigma_{1}A^{T}\\
+A\Sigma_{1} & \Sigma_{2\mid1}+A\Sigma_{1}A^{T}
+\end{pmatrix}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We'll prove this with two steps.
+ First, we'll show that the mean and variance of 
+\begin_inset Formula $x$
+\end_inset
+
+ take the form claimed above.
+ Then, we'll write down the joint density 
+\begin_inset Formula $p(x_{1},x_{2})=p(x_{1})p(x_{2}\mid x_{1})$
+\end_inset
+
+ and show that it's proportional to 
+\begin_inset Formula $e^{-q(x)/2}$
+\end_inset
+
+ for an appropriate quadratic 
+\begin_inset Formula $q(x)$
+\end_inset
+
+.
+ The result then follows from 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:expNegQuadraticIsGaussian"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+We're given that 
+\begin_inset Formula $\ex x_{1}=\mu_{1}$
+\end_inset
+
+.
+ For the other part of the mean vector, note that 
+\begin_inset Formula 
+\begin{eqnarray*}
+\ex x_{2} & = & \ex\ex\left[x_{2}\mid x_{1}\right]\\
+ & = & \ex\left(Ax_{1}+b\right)=A\mu_{1}+b,
+\end{eqnarray*}
+
+\end_inset
+
+which explains the lower entry in the mean.
+ 
+\end_layout
+
+\begin_layout Proof
+We are given that the marginal covariance of 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ is 
+\begin_inset Formula $\Sigma_{1}$
+\end_inset
+
+.
+ That is, 
+\begin_inset Formula 
+\[
+\ex\left(x_{1}-\mu_{1}\right)\left(x_{1}-\mu_{1}\right)^{T}=\Sigma_{1}.
+\]
+
+\end_inset
+
+We're also given the conditional covariance of 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+: 
+\begin_inset Formula 
+\[
+\ex\left[\left(x_{2}-Ax_{1}-b\right)\left(x_{2}-Ax_{1}-b\right)^{T}\mid x_{1}\right]=\Sigma_{2\mid1}.
+\]
+
+\end_inset
+
+We'll know try to express 
+\begin_inset Formula $\cov(x_{2})$
+\end_inset
+
+ in terms of these expressions above.
+ For convenience, we'll introduce the random variable 
+\begin_inset Formula $m_{2\mid1}=Ax_{1}+b$
+\end_inset
+
+.
+ (It's random because it depends on 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+.) Note that 
+\begin_inset Formula $\ex m_{2\mid1}=\ex x_{2}=A\mu_{1}+b$
+\end_inset
+
+.
+ So
+\begin_inset Formula 
+\begin{eqnarray*}
+\cov(x_{2}) & = & \ex\left(x_{2}-\ex x_{2}\right)\left(x_{2}-\ex x_{2}\right)^{T}\mbox{ (by definition)}\\
+ & = & \ex\ex\left[\left(x_{2}-\ex x_{2}\right)\left(x_{2}-\ex x_{2}\right)^{T}\mid x_{1}\right]\mbox{ (law of iterated expectations)}\\
+ & = & \ex\ex\left[\left(x_{2}\underbrace{-m_{2\mid1}+m_{2\mid1}}_{=0}-\ex x_{2}\right)\left(x_{2}\underbrace{-m_{2\mid1}+m_{2\mid1}}_{=0}-\ex x_{2}\right)^{T}\mid x_{1}\right]\\
+ & = & \ex\ex\left[\left(\left(x_{2}-m_{2\mid1}\right)+\left(m_{2\mid1}-\ex x_{2}\right)\right)\left(\left(x_{2}-m_{2\mid1}\right)+\left(m_{2\mid1}-\ex x_{2}\right)\right)^{T}\mid x_{1}\right]\\
+ & = & U+2V+W,
+\end{eqnarray*}
+
+\end_inset
+
+where we've multiplied out the parenthesized terms.
+ The terms are as follows:
+\begin_inset Formula 
+\begin{eqnarray*}
+U & = & \ex\ex\left[\left(x_{2}-m_{2\mid1}\right)\left(x_{2}-m_{2\mid1}\right)^{T}\mid x_{1}\right]\\
+ & = & \Sigma_{2\mid1}
+\end{eqnarray*}
+
+\end_inset
+
+The cross-term turns out to be zero:
+\begin_inset Formula 
+\begin{eqnarray*}
+V & = & \ex\ex\left[\left(x_{2}-m_{2\mid1}\right)\left(m_{2\mid1}-\ex x_{2}\right)^{T}\mid x_{1}\right]\\
+ &  & \ex\ex\left[\left(x_{2}-Ax_{1}-b\right)\left(Ax_{1}+b-A\mu_{1}-b\right)^{T}\mid x_{1}\right]\\
+ & = & \ex\left[\underbrace{\ex\left[\left(x_{2}-Ax_{1}+b\right)\mid x_{1}\right]}_{=0}\left(Ax_{1}+b-A\mu_{1}-b\right)^{T}\right]\\
+ & = & 0,
+\end{eqnarray*}
+
+\end_inset
+
+where in the second to last step we used the fact that 
+\begin_inset Formula $\ensuremath{\ex\left[f(x)g(x,y)\mid x\right]=f(x)\ex\left[g(x,y)\mid x\right]}.$
+\end_inset
+
+ This same identity is used a couple more times below.
+ Finally the last term is 
+\begin_inset Formula 
+\begin{eqnarray*}
+W & = & \ex\ex\left[\left(m_{2\mid1}-\ex m_{2\mid1}\right)\left(m_{2\mid1}-\ex m_{2\mid1}\right)^{T}\mid x_{1}\right]\\
+ & = & \ex\ex\left[\left(Ax_{1}-A\mu_{1}\right)\left(Ax_{1}-A\mu_{1}\right)^{T}\mid x_{1}\right]\\
+ & = & \ex\left[\left(Ax_{1}-A\mu_{1}\right)\left(Ax_{1}-A\mu_{1}\right)^{T}\right]\\
+ & = & A\left[\ex\left(x_{1}-\mu_{1}\right)\left(x_{1}-\mu_{1}\right)^{T}\right]A^{T}\\
+ & = & A\Sigma_{1}A^{T}
+\end{eqnarray*}
+
+\end_inset
+
+So 
+\begin_inset Formula 
+\[
+\cov(x_{2})=\Sigma_{2\mid1}+A\Sigma_{1}A^{T},
+\]
+
+\end_inset
+
+The top-right cross-covariance submatrix can be computed as follows:
+\begin_inset Formula 
+\begin{eqnarray*}
+\ex\left(x_{1}-\mu_{1}\right)\left(x_{2}-A\mu_{1}-b\right)^{T} & = & \ex\ex\left[\left(x_{1}-\mu_{1}\right)\left(x_{2}-A\mu_{1}-b\right)^{T}\mid x_{1}\right]\\
+ & = & \ex\left[\left(x_{1}-\mu_{1}\right)\ex\left[\left(x_{2}-A\mu_{1}-b\right)^{T}\mid x_{1}\right]\right]\\
+ & = & \ex\left[\left(x_{1}-\mu_{1}\right)\left(Ax_{1}+b-A\mu_{1}-b\right)^{T}\right]\\
+ & = & \ex\left[\left(x_{1}-\mu_{1}\right)\left(x_{1}-\mu_{1}\right)^{T}\right]A^{T}\\
+ & = & \Sigma_{1}A^{T}.
+\end{eqnarray*}
+
+\end_inset
+
+Finally, the bottom left cross-covariance matrix is just the transpose of
+ the top right.
+\end_layout
+
+\begin_layout Proof
+So far we have shown that the 
+\begin_inset Formula $x=\begin{pmatrix}x_{1}\\
+x_{2}
+\end{pmatrix}$
+\end_inset
+
+ has the mean and covariance specified in the theorem statement.
+ We now show that the joint density is indeed Gaussian:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\begin{eqnarray*}
+p(x_{1},x_{2}) & = & p(x_{1})p(x_{2}\mid x_{1})\\
+ & = & \cn\left(x_{1}\mid\mu_{1},\Sigma_{1}\right)\cn\left(x_{2}\mid Ax_{1}+b,\Sigma_{2\mid1}\right)\\
+ & \propto & \exp\left(-\frac{1}{2}(x_{1}-\mu_{1})^{T}\Sigma_{1}^{-1}(x_{1}-\mu_{1})\right)\\
+ &  & \times\exp\left(-\frac{1}{2}(x_{2}-Ax_{1}-b)^{T}\Sigma_{2\mid1}^{-1}(x_{2}-Ax_{1}-b)\right)\\
+ & = & e^{-q(x)/2},
+\end{eqnarray*}
+
+\end_inset
+
+where 
+\begin_inset Formula 
+\[
+q(x)=(x_{1}-\mu_{1})^{T}\Sigma_{1}^{-1}(x_{1}-\mu_{1})+(x_{2}-Ax_{1}-b)^{T}\Sigma_{2\mid1}^{-1}(x_{2}-Ax_{1}-b).
+\]
+
+\end_inset
+
+To apply Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:expNegQuadraticIsGaussian"
+
+\end_inset
+
+, we need to make sure we can write the quadratic terms of 
+\begin_inset Formula $q(x)$
+\end_inset
+
+ as 
+\begin_inset Formula $x^{T}Mx$
+\end_inset
+
+, where 
+\begin_inset Formula $M$
+\end_inset
+
+ is symmetric positive definite.
+ We'll separate the quadratic terms in 
+\begin_inset Formula $q(x)$
+\end_inset
+
+ and write 
+\series bold
+l.o.t.
+ for 
+\begin_inset Quotes eld
+\end_inset
+
+lower order terms
+\begin_inset Quotes erd
+\end_inset
+
+
+\series default
+, which includes linear terms of the form 
+\begin_inset Formula $b^{T}x$
+\end_inset
+
+ and constants:
+\begin_inset Formula 
+\begin{eqnarray*}
+q(x) & = & -\frac{1}{2}\left[x_{2}^{T}\Sigma_{2\mid1}^{-1}x_{2}-2x_{1}^{T}A^{T}\Sigma_{2\mid1}^{-1}x_{2}+x_{1}^{T}\left(\Sigma_{1}^{-1}+A^{T}\Sigma_{2\mid1}^{-1}A\right)x_{1}\right]+\mbox{l.o.t.}\\
+ & = & -\frac{1}{2}\begin{pmatrix}x_{1}\\
+x_{2}
+\end{pmatrix}^{T}\begin{pmatrix}\left(\Sigma_{1}^{-1}+A^{T}\Sigma_{2\mid1}^{-1}A\right) & -A^{T}\Sigma_{2\mid1}^{-1}\\
+-\Sigma_{2\mid1}^{-1}A & \Sigma_{2\mid1}^{-1}
+\end{pmatrix}\begin{pmatrix}x_{1}\\
+y_{1}
+\end{pmatrix}+\mbox{l.o.t.}
+\end{eqnarray*}
+
+\end_inset
+
+Let 
+\begin_inset Formula $M$
+\end_inset
+
+ be that matrix in the middle.
+ We only need to show that 
+\begin_inset Formula $M$
+\end_inset
+
+ is positive definite.
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Proof
+\begin_inset Formula 
+\begin{eqnarray*}
+\begin{pmatrix}\left(\Sigma_{1}^{-1}+A^{T}\Sigma_{2\mid1}^{-1}A\right) & -A^{T}\Sigma_{2\mid1}^{-1}\\
+-\Sigma_{2\mid1}^{-1}A & \Sigma_{2\mid1}^{-1}
+\end{pmatrix} & = & \begin{pmatrix}\Sigma_{1}^{-1} & 0\\
+0 & 0
+\end{pmatrix}+\begin{pmatrix}A^{T}\Sigma_{2\mid1}^{-1}A & -A^{T}\Sigma_{2\mid1}^{-1}\\
+-\Sigma_{2\mid1}^{-1}A & \Sigma_{2\mid1}^{-1}
+\end{pmatrix}\\
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\begin{eqnarray*}
+\begin{pmatrix}A^{T}\Sigma_{2\mid1}^{-1}A & -A^{T}\Sigma_{2\mid1}^{-1}\\
+-\Sigma_{2\mid1}^{-1}A & \Sigma_{2\mid1}^{-1}
+\end{pmatrix} & = & \begin{pmatrix}A^{T}\\
+-I
+\end{pmatrix}\Sigma_{2\mid1}^{-1}\begin{pmatrix}A\;-I\end{pmatrix}\\
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+From the Schur complement condition, 
+\begin_inset Formula $M$
+\end_inset
+
+ is positive definite if and only if both 
+\begin_inset Formula $\Sigma_{2\mid1}^{-1}$
+\end_inset
+
+ and 
+\begin_inset Formula $M/\Sigma_{2\mid1}^{-1}$
+\end_inset
+
+ are positive definite, where
+\begin_inset Formula 
+\begin{eqnarray*}
+M/\Sigma_{2\mid1}^{-1} & = & \left(\Sigma_{1}^{-1}+A^{T}\Sigma_{2\mid1}^{-1}A\right)-\left(-A^{T}\Sigma_{2\mid1}^{-1}\Sigma_{2\mid1}\left(-\Sigma_{2\mid1}^{-1}A\right)\right)\\
+ & = & \Sigma_{1}^{-1}.
+\end{eqnarray*}
+
+\end_inset
+
+Since 
+\begin_inset Formula $\Sigma_{2\mid1}^{-1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\Sigma_{1}^{-1}$
+\end_inset
+
+ are both inverses of covariance matrices (by assumption), they are each
+ positive definite.
+ Thus 
+\begin_inset Formula $M$
+\end_inset
+
+ must be positive definite.
+\end_layout
+
+\begin_layout Proof
+Thus 
+\begin_inset Formula $p(x)\propto e^{-q(x)/2}$
+\end_inset
+
+, where 
+\begin_inset Formula $q(x)$
+\end_inset
+
+ has the form requried by Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:expNegQuadraticIsGaussian"
+
+\end_inset
+
+.
+ We conclude that 
+\begin_inset Formula $x=\begin{pmatrix}x_{1}\\
+x_{2}
+\end{pmatrix}$
+\end_inset
+
+ is jointly Gaussian.
+ We have also shown that the marginal means and covariances, as well as
+ the cross-covariances all have the forms claimed.
+ We still need a theorem ssaying that if 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+ are jointly gaussian and have given marginals and covariances, then the
+ joint distribution is what we'd expect to have...
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Section
+Product of multivariate gaussian densities
+\end_layout
+
+\begin_layout Plain Layout
+Suppose we have random variables 
+\begin_inset Formula $X_{1}\sim\cn(\mu_{1},\Sigma_{1})$
+\end_inset
+
+ and 
+\begin_inset Formula $X_{2}\sim\cn(\mu_{2},\Sigma_{2})$
+\end_inset
+
+, where 
+\begin_inset Formula $X_{1}\in\reals^{p_{1}}$
+\end_inset
+
+ and 
+\begin_inset Formula $X_{2}\in\reals^{p_{2}}$
+\end_inset
+
+ (in other words, 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+ may have different dimensions).
+ We frequently come across an expression that takes the form of the product
+ of the densities of 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+.
+ That is, an expression 
+\begin_inset Formula 
+\begin{eqnarray*}
+f(x_{1},x_{2}) & = & \cn\left(x_{1};\mu_{1},\Sigma_{1}\right)\cn\left(x_{2};\mu_{2},\Sigma_{2}\right).
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+So 
+\begin_inset Formula 
+\begin{eqnarray*}
+f(x_{1},x_{2}) & = & \cn\left(x_{1};\mu_{1},\Sigma_{1}\right)\cn\left(x_{2};\mu_{2},\Sigma_{2}\right)\\
+ & = & \left|2\pi\Sigma_{1}\right|^{-1/2}\exp\left(-\frac{1}{2}(x_{1}-\mu_{1})^{T}\Sigma_{1}^{-1}(x_{1}-\mu_{1})\right)\\
+ &  & \times\left|2\pi\Sigma_{2}\right|^{-1/2}\exp\left(-\frac{1}{2}(x_{2}-\mu_{2})'\Sigma_{2}^{-1}(x_{2}-\mu_{2})\right)\\
+ & = & \left(\left|2\pi\Sigma_{1}\right|\left|2\pi\Sigma_{2}\right|\right)^{-1/2}\\
+ &  & \times\exp\left(-\frac{1}{2}\left[(x_{1}-\mu_{1})^{T}\Sigma_{1}^{-1}(x_{1}-\mu_{1})+(x_{2}-\mu_{2})^{T}\Sigma_{2}^{-1}(x_{2}-\mu_{2})\right]\right).
+\end{eqnarray*}
+
+\end_inset
+
+Note that inside the exponent we have the sum of two quadratic forms.
+ Using a process called 
+\series bold
+completing the square 
+\series default
+(or I usually call it 
+\series bold
+completing the
+\series default
+ 
+\series bold
+quadratic form
+\series default
+, to emphasize that this is a generalization of the process learned in middle
+ school algebra).
+ Since this is an important topic in its own right, we'll devote a section
+ for itself.
+ 
+\begin_inset Formula 
+\begin{eqnarray*}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+It turns out that 
+\begin_inset Formula 
+\[
+f(x_{1},x_{2})=c_{3}\cn
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

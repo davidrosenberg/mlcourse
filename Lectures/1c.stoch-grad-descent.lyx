@@ -1191,10 +1191,6 @@ href{http://en.wikipedia.org/wiki/Image:Banana-SteepDesc.gif}{Wikipedia page
 
 \end_layout
 
-\begin_layout Separator
-
-\end_layout
-
 \begin_layout Frame
 \begin_inset Argument 4
 status open
@@ -1238,6 +1234,28 @@ Better
 \series default
 : Optimize at every step (e.g.
  backtracking line search)
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+Steepest descent
+\begin_inset Quotes erd
+\end_inset
+
+ means going all the way to the local minimum in the direction 
+\begin_inset Formula $-\del f(x)$
+\end_inset
+
+.
+ Consecutive step directions are orthogonal.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Pause

@@ -110,7 +110,32 @@ New York University
 \end_layout
 
 \begin_layout Date
-January 28, 2015
+January 27, 2016
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+TODO:
+\end_layout
+
+\begin_layout Plain Layout
+1) Slide for TA
+\end_layout
+
+\begin_layout Plain Layout
+2) Slide for Grader
+\end_layout
+
+\begin_layout Plain Layout
+3) Slide explaining where to find lectures, and my typical posting strategy
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Frame
@@ -138,7 +163,7 @@ status open
 
 \begin_layout Plain Layout
 
-https://davidrosenberg.github.io/ml2015
+https://davidrosenberg.github.io/ml2016
 \end_layout
 
 \end_inset
@@ -165,7 +190,7 @@ status open
 
 \begin_layout Plain Layout
 
-https://piazza.com/nyu/spring2015/dsga1003
+https://piazza.com/nyu/spring2016/dsga1003
 \end_layout
 
 \end_inset
@@ -186,30 +211,38 @@ Ask questions here
 \end_deeper
 \end_deeper
 \begin_layout Itemize
-Required Lab Session
+Class Times
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Thursdays: 6:10pm - 7pm (WWH 109)
+Wednesdays 
+\begin_inset Quotes eld
+\end_inset
+
+Lecture
+\begin_inset Quotes erd
+\end_inset
+
+: 7:10pm - 9pm (WWH 109)
+\end_layout
+
+\begin_layout Itemize
+Thursdays 
+\begin_inset Quotes eld
+\end_inset
+
+Lab
+\begin_inset Quotes erd
+\end_inset
+
+: 7:10pm - 8pm (WWH 109)
 \end_layout
 
 \begin_layout Itemize
 
 \series bold
-First session:
-\series default
- Guest lecture on differentiating w.r.t matrices and vectors
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Lab instructor: TBD
+(Both are required.) 
 \end_layout
 
 \end_deeper
@@ -233,30 +266,80 @@ Lab Sessions
 
 \begin_deeper
 \begin_layout Itemize
-Supplemental Topics
+Some led by TA, some by me
 \end_layout
 
 \begin_layout Itemize
-Mathematical topics (e.g.
- subgradients, matrix derivatives, SVD)
+Most will be lecture format
 \end_layout
 
 \begin_layout Itemize
-Demonstrations or examples related to lecture
+Sometimes we'll review homeworks or have test prep
 \end_layout
 
 \begin_layout Itemize
-Answer common questions from Piazza
+One-hour test during lab session
 \end_layout
 
 \begin_layout Itemize
-Midterm review
+Meetings with project advisors
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Course Staff
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+TA: Levent Sagun
 \end_layout
 
 \begin_layout Itemize
-Meeting with project advisors
+Graders:
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+Peter Li (Head Grader)
+\end_layout
+
+\begin_layout Itemize
+Lucy Wang
+\end_layout
+
+\begin_layout Itemize
+Jacqueline Gutman
+\end_layout
+
+\begin_layout Itemize
+Tian Wang
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Project Advisers:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Kurt Miller, Kush Varshney, Brian d'Alessandro, and more TBD.
+\end_layout
+
+\end_deeper
 \end_deeper
 \begin_layout Separator
 
@@ -277,16 +360,20 @@ Evaluation
 
 \begin_deeper
 \begin_layout Itemize
-About 8 to 10 homeworks (60%)
+About 8 homeworks (40%)
 \end_layout
 
 \begin_layout Itemize
-Midterm Exam (20%)
+Two tests (40%)
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-In 10th week of class, after spring break
+One-Hour Test (15%) in Week 6
+\end_layout
+
+\begin_layout Itemize
+Two-Hour Test (25%) in Week 11
 \end_layout
 
 \end_deeper
@@ -294,17 +381,38 @@ In 10th week of class, after spring break
 Project (20%) 
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+Poster session during exam week (Week 15)
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
 \begin_layout Itemize
 Extra Credit Opportunities
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Up to (2%) for answering questions on Piazza
+Optional homework problems
 \end_layout
 
 \begin_layout Itemize
-Optional problems or competitions on the homework
+Significant contributions to Piazza and in-class discussions
+\end_layout
+
+\begin_layout Itemize
+Primarily used to boost a borderline grade
+\end_layout
+
+\begin_layout Itemize
+At most, increases final grade by half a letter (e.g.
+ B+ to A-)
 \end_layout
 
 \end_deeper
@@ -318,7 +426,7 @@ Optional problems or competitions on the homework
 status open
 
 \begin_layout Plain Layout
-Homework (60%)
+Homework (40%)
 \end_layout
 
 \end_inset
@@ -328,7 +436,7 @@ Homework (60%)
 
 \begin_deeper
 \begin_layout Itemize
-First assignment out tonight -- Due in one week.
+First assignment out Thursday -- Due in one week.
 \end_layout
 
 \begin_layout Itemize
@@ -344,6 +452,14 @@ https://newclasses.nyu.edu
 \end_inset
 
 
+\end_layout
+
+\begin_layout Itemize
+Homeworks should be 
+\series bold
+submitted as a PDF document
+\series default
+.
 \end_layout
 
 \begin_layout Itemize
@@ -369,54 +485,7 @@ Write up solutions and code on your own
 List names of who you talked to about each problem
 \end_layout
 
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
 \end_deeper
-\end_deeper
-\begin_layout Itemize
-Graders:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Hao Xu, Ran Bi, Prasoon Goyal
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Midterm (20%)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-
-\series bold
-Late midterm: 10th week of term 
-\series default
-(April 8th)
-\end_layout
-
-\begin_layout Itemize
-In class -- during lecture
-\end_layout
-
 \end_deeper
 \begin_layout Separator
 
@@ -486,29 +555,15 @@ Logistics:
 
 \begin_deeper
 \begin_layout Itemize
-2 students per group
+3 students per group
 \end_layout
 
 \begin_layout Itemize
-First meeting with advisors 
-\series bold
-March 12th
+First meeting with advisors in March (date TBD)
 \end_layout
 
 \begin_layout Itemize
-Project proposal due after Spring Break: 
-\series bold
-March 26th
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Advisers:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Kurt Miller, Gideon Mann, plue one or two more TBD
+Project proposal due around Spring Break (date TBD) 
 \end_layout
 
 \end_deeper
@@ -532,7 +587,11 @@ Prerequisites
 
 \begin_deeper
 \begin_layout Itemize
-Introduction to Data Science (DS-GA 1001)
+DS-GA 1001: Introduction to Data Science
+\end_layout
+
+\begin_layout Itemize
+DS-GA 1002: Statistical and Mathematical Methods
 \end_layout
 
 \begin_layout Itemize
@@ -629,15 +688,53 @@ actual understanding
 
 \end_deeper
 \begin_layout Itemize
-Can you explain this picture?
+From Quora: 
+\begin_inset Quotes eld
+\end_inset
+
+Why is L1 regularization supposed to lead to sparsity than L2?
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
 \begin_layout Standard
 \align center
 \begin_inset Graphics
 	filename ../Figures/stepFnsL1L2/L0L1.jpg
 	lyxscale 60
 	width 60col%
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Figure from 
+\backslash
+url{https://www.quora.com/Why-is-L1-regularization-supposed-to-lead-to-sparsity-th
+an-L2}.}}
+\end_layout
 
 \end_inset
 
@@ -673,7 +770,7 @@ Frequentist Approaches
 
 \begin_deeper
 \begin_layout Itemize
-ERM, regularization, SVM, kernels, ensemble methods, neural networks
+ERM, regularization, SVM, kernels, ensemble methods
 \end_layout
 
 \begin_layout Pause
@@ -687,7 +784,7 @@ Probabilistic Models
 
 \begin_deeper
 \begin_layout Itemize
-GLM, Bayesian networks, Gaussian mixture models, EM algorithm, HMM
+GLM, Bayesian networks, Gaussian mixture models, EM algorithm
 \end_layout
 
 \begin_layout Pause
@@ -701,8 +798,7 @@ Bayesian Approaches
 
 \begin_deeper
 \begin_layout Itemize
-priors/posteriors, hierarchical models, sampling methods, Bayesian model
- selection
+priors/posteriors, hierarchical models, Bayesian regression
 \end_layout
 
 \begin_layout Pause

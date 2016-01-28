@@ -6,7 +6,6 @@
 \begin_preamble
 \usetheme{CambridgeUS} 
 \end_preamble
-\options handout
 \use_default_options false
 \maintain_unincluded_children false
 \language english

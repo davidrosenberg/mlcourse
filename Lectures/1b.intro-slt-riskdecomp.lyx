@@ -7,7 +7,6 @@
 \usetheme{CambridgeUS} 
 \beamertemplatenavigationsymbolsempty
 \end_preamble
-\options handout
 \use_default_options false
 \maintain_unincluded_children false
 \language english
@@ -1608,7 +1607,7 @@ Action space:
 \end_layout
 
 \begin_layout Itemize
-Outcome space:
+Outcome space:
 \begin_inset Note Note
 status open
 

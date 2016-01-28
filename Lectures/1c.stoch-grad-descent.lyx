@@ -7,7 +7,6 @@
 \usetheme{CambridgeUS} 
 \beamertemplatenavigationsymbolsempty
 \end_preamble
-\options handout
 \use_default_options false
 \maintain_unincluded_children false
 \language english

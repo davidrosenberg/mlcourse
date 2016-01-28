@@ -1,0 +1,1746 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\title{Machine Learning and Computational Statistics, Spring 2016\\
+Homework 1: Ridge Regression and SGD} 
+\date{}
+%\date{Due: February $5^{th}$, 6pm}
+
+
+
+
+\usepackage{amsfonts}\usepackage{capt-of}
+%\usepackage{url}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{bbm}
+\usepackage{enumerate}
+\newcommand{\carlos}[1]{\textcolor{red}{Carlos: #1}}
+\newcommand{\field}[1]{\mathbb{#1}} 
+\newcommand{\hide}[1]{#1}
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\providecommand{\m}[1]{\mathbf{#1}}
+\providecommand{\norm}[1]{\left\|#1\right\|}
+\providecommand{\sign}[1]{\text{sign}\left(#1\right)}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\providecommand{\what}{\m{\hat{w}}}
+\providecommand{\dw}{\Delta w}
+\providecommand{\dmw}{\Delta \m{w}}
+\providecommand{\hy}{\hat{y}}
+\end_preamble
+\options ruled
+\use_default_options false
+\begin_modules
+algorithm2e
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package none
+\inputencoding auto
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter courier
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks false
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref section
+\pdf_pdfusetitle false
+\papersize letterpaper
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\reals}{\mathbf{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\integers}{\mathbf{Z}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\naturals}{\mathbf{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rationals}{\mathbf{Q}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ca}{\mathcal{A}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cb}{\mathcal{B}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cc}{\mathcal{C}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cd}{\mathcal{D}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ce}{\mathcal{E}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cf}{\mathcal{F}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cg}{\mathcal{G}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ch}{\mathcal{H}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ci}{\mathcal{I}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cj}{\mathcal{J}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ck}{\mathcal{K}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cl}{\mathcal{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cm}{\mathcal{M}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cn}{\mathcal{N}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\co}{\mathcal{O}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cp}{\mathcal{P}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cq}{\mathcal{Q}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\calr}{\mathcal{R}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cs}{\mathcal{S}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ct}{\mathcal{T}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cu}{\mathcal{U}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cv}{\mathcal{V}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cw}{\mathcal{W}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cx}{\mathcal{X}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cy}{\mathcal{Y}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cz}{\mathcal{Z}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ind}[1]{1(#1)}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\pr}{\mathbb{P}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\predsp}{\cy}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\outsp}{\cy}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\prxy}{P_{\cx\times\cy}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\prx}{P_{\cx}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\prygivenx}{P_{\cy\mid\cx}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ex}{\mathbb{E}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\var}{\textrm{Var}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cov}{\textrm{Cov}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\sgn}{\textrm{sgn}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\sign}{\textrm{sign}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\kl}{\textrm{KL}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\law}{\mathcal{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\eps}{\varepsilon}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\as}{\textrm{ a.s.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\io}{\textrm{ i.o.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ev}{\textrm{ ev.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\convd}{\stackrel{d}{\to}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\eqd}{\stackrel{d}{=}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\del}{\nabla}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\loss}{\ell}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\risk}{R}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\emprisk}{\hat{R}_{\ell}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\lossfnl}{L}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\emplossfnl}{\hat{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\empminimizer}[1]{\hat{#1}_{\ell}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\minimizer}[1]{#1_{*}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\etal}{\textrm{et. al.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\tr}{\operatorname{tr}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\trace}{\operatorname{trace}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\diag}{\text{diag}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\rank}{\text{rank}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\linspan}{\text{span}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\proj}{\text{Proj}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\argmax}{\operatornamewithlimits{arg\, max}}
+{\mbox{argmax}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\argmin}{\operatornamewithlimits{arg\, min}}
+{\mbox{argmin}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfx}{\mathbf{x}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfy}{\mathbf{y}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfl}{\mathbf{\lambda}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfm}{\mathbf{\mu}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\calL}{\mathcal{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vw}{\boldsymbol{w}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vx}{\boldsymbol{x}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vxi}{\boldsymbol{\xi}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\valpha}{\boldsymbol{\alpha}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vbeta}{\boldsymbol{\beta}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vsigma}{\boldsymbol{\sigma}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vmu}{\boldsymbol{\mu}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vtheta}{\boldsymbol{\theta}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vd}{\boldsymbol{d}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vs}{\boldsymbol{s}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vt}{\boldsymbol{t}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vh}{\boldsymbol{h}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ve}{\boldsymbol{e}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vf}{\boldsymbol{f}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vg}{\boldsymbol{g}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vz}{\boldsymbol{z}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vk}{\boldsymbol{k}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\va}{\boldsymbol{a}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vb}{\boldsymbol{b}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vv}{\boldsymbol{v}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vy}{\boldsymbol{y}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\hil}{\ch}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\rkhs}{\hil}
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+maketitle
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Due: Friday, February 5, 2015, at 6pm (Submit via NYU Classes)
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Instructions
+\series default
+: Your answers to the questions below, including plots and mathematical
+ work, should be submitted as a single PDF file.
+ You may include your code inline or submit it as a separate file.
+ You may either scan hand-written work or, preferably, write your answers
+ using software that typesets mathematics (e.g.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+LaTeX
+\end_layout
+
+\end_inset
+
+, LyX, or MathJax via iPython).
+ 
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+In this homework you will implement ridge regression using gradient descent
+ and stochastic gradient descent.
+ We've provided a lot of support Python code to get you started on the right
+ track.
+ References below to particular functions that you should modify are referring
+ to the support code, which you can download from the website.
+ If you have time after completing the assignment, you might pursue some
+ of the following:
+\end_layout
+
+\begin_layout Itemize
+Study up on numpy's 
+\begin_inset Quotes eld
+\end_inset
+
+broadcasting
+\begin_inset Quotes erd
+\end_inset
+
+ to see if you can simplify and/or speed up your code: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://docs.scipy.org/doc/numpy/user/basics.broadcasting.html
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Think about how you could make the code more modular so that you could easily
+ try different loss functions and step size methods.
+ 
+\end_layout
+
+\begin_layout Itemize
+Experiment with more sophisticated approaches to setting the step sizes
+ for SGD (e.g.
+ try out the recommendations in 
+\begin_inset Quotes eld
+\end_inset
+
+Bottou's SGD Tricks
+\begin_inset Quotes erd
+\end_inset
+
+ on the website) 
+\end_layout
+
+\begin_layout Itemize
+Investigate what happens to the convergence rate when you intentionally
+ make the feature values have vastly different orders of magnitude.
+ Try a dataset (could be artificial) where 
+\begin_inset Formula $\cx\subset\reals^{2}$
+\end_inset
+
+ so that you can plot the convergence path of GD and SGD.
+ Take a look at 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://imgur.com/a/Hqolp
+\end_layout
+
+\end_inset
+
+ for inspiration.
+\end_layout
+
+\begin_layout Itemize
+Instead of taking 1 data point at a time, as in SGD, try minibatch gradient
+ descent, where you use multiple points at a time to get your step direction.
+ How does this effect convergence speed? Are you getting computational speedup
+ as well by using vectorized code?
+\end_layout
+
+\begin_layout Itemize
+Advanced: What kind of loss function will give us 
+\begin_inset Quotes eld
+\end_inset
+
+quantile regression
+\begin_inset Quotes erd
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+Include any investigations you do in your submission, and we may award optional
+ credit.
+\end_layout
+
+\begin_layout Standard
+I encourage you to develop the habit of asking 
+\begin_inset Quotes eld
+\end_inset
+
+what if?
+\begin_inset Quotes erd
+\end_inset
+
+ questions and then seeking the answers.
+ I guarantee this will give you a much deeper understanding of the material
+ (and likely better performance on the exam and job interviews, if that's
+ your focus).
+ You're also encouraged to post your interesting questions on Piazza under
+ 
+\begin_inset Quotes eld
+\end_inset
+
+questions.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Linear Regression
+\end_layout
+
+\begin_layout Subsection
+Feature Normalization
+\end_layout
+
+\begin_layout Standard
+When feature values differ greatly, we can get much slower rates of convergence
+ of gradient-based algorithms.
+ Furthermore, when we start using regularization, features with larger values
+ can have a much greater effect on the final output for the same regularization
+ cost -- in effect, features with larger values become more important once
+ we start regularizing.
+ One common approach to feature normalization is to linearly transform (i.e.
+ shift and rescale) each feature so that all feature values in the training
+ set are in 
+\begin_inset Formula $[0,1]$
+\end_inset
+
+.
+ Each feature gets its own transformation.
+ We then apply the same transformations to each feature on the test set.
+ It's important that the transformation is 
+\begin_inset Quotes eld
+\end_inset
+
+learned
+\begin_inset Quotes erd
+\end_inset
+
+ on the training set, and then applied to the test set.
+ It is possible that some transformed test set values will lie outside the
+ 
+\begin_inset Formula $[0,1]$
+\end_inset
+
+ interval.
+\end_layout
+
+\begin_layout Standard
+Modify function 
+\family typewriter
+feature_normalization
+\family default
+ to normalize all the features to 
+\begin_inset Formula $[0,1]$
+\end_inset
+
+.
+ (Can you use numpy's 
+\begin_inset Quotes eld
+\end_inset
+
+broadcasting
+\begin_inset Quotes erd
+\end_inset
+
+ here?)
+\end_layout
+
+\begin_layout Subsection
+Gradient Descent Setup
+\end_layout
+
+\begin_layout Standard
+In linear regression, we consider the hypothesis space of linear functions
+ 
+\begin_inset Formula $h_{\theta}:\reals^{d}\to\reals$
+\end_inset
+
+, where
+\begin_inset Formula 
+\[
+h_{\theta}(x)=\theta^{T}x,
+\]
+
+\end_inset
+
+for 
+\begin_inset Formula $\theta,x\in\reals^{d}$
+\end_inset
+
+, and we choose 
+\begin_inset Formula $\theta$
+\end_inset
+
+ that minimizes the following 
+\begin_inset Quotes eld
+\end_inset
+
+square loss
+\begin_inset Quotes erd
+\end_inset
+
+ objective function: 
+\begin_inset Formula 
+\[
+J(\theta)=\frac{1}{2m}\sum_{i=1}^{m}\left(h_{\theta}(x_{i})-y_{i}\right)^{2},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $(x_{1},y_{1}),\ldots,(x_{m},y_{m})\in\reals^{d}\times\reals$
+\end_inset
+
+ is our training data.
+\end_layout
+
+\begin_layout Standard
+While this formulation of linear regression is very convenient, it's more
+ standard to use a hypothesis space of 
+\begin_inset Quotes eld
+\end_inset
+
+affine
+\begin_inset Quotes erd
+\end_inset
+
+ functions:
+\begin_inset Formula 
+\[
+h_{\theta,b}(x)=\theta^{T}x+b,
+\]
+
+\end_inset
+
+which allows a 
+\begin_inset Quotes eld
+\end_inset
+
+bias
+\begin_inset Quotes erd
+\end_inset
+
+ or nonzero intercept term.
+ The standard way to achieve this, while still maintaining the convenience
+ of the first representation, is to add an extra dimension to 
+\begin_inset Formula $x$
+\end_inset
+
+ that is always a fixed value, such as 1.
+ You should convince yourself that this is equivalent.
+ We'll assume this representation, and thus we'll actually take 
+\begin_inset Formula $\theta,x\in\reals^{d+1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Let 
+\begin_inset Formula $X\in\reals^{m\times d+1}$
+\end_inset
+
+ be the 
+\begin_inset Quotes eld
+\end_inset
+
+design matrix
+\begin_inset Quotes erd
+\end_inset
+
+, where the 
+\begin_inset Formula $i$
+\end_inset
+
+'th row of 
+\begin_inset Formula $X$
+\end_inset
+
+ is 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $y=\left(y_{1},\ldots,y_{m}\right)^{T}\in\reals^{m\times1}$
+\end_inset
+
+ be a the 
+\begin_inset Quotes eld
+\end_inset
+
+response
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Write the objective function 
+\begin_inset Formula $J(\theta)$
+\end_inset
+
+ as a matrix/vector expression, without using an explicit summation sign.
+\end_layout
+
+\begin_layout Enumerate
+Write down an expression for the gradient of 
+\begin_inset Formula $J$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+In our search for a 
+\begin_inset Formula $\theta$
+\end_inset
+
+ that minimizes 
+\begin_inset Formula $J$
+\end_inset
+
+, suppose we take a step from 
+\begin_inset Formula $\theta$
+\end_inset
+
+ to 
+\begin_inset Formula $\theta+\eta\Delta$
+\end_inset
+
+, where 
+\begin_inset Formula $\Delta\in\reals^{d+1}$
+\end_inset
+
+ is a unit vector giving the direction of the step, and 
+\begin_inset Formula $\eta\in\reals$
+\end_inset
+
+ is the length of the step.
+ Use the gradient to write down an approximate expression for 
+\begin_inset Formula $J(\theta+\eta\Delta)-J(\theta)$
+\end_inset
+
+.
+ [This approximation is called a 
+\begin_inset Quotes eld
+\end_inset
+
+linear
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+first-order
+\begin_inset Quotes erd
+\end_inset
+
+ approximation.]
+\end_layout
+
+\begin_layout Enumerate
+Write down the expression for updating 
+\begin_inset Formula $\theta$
+\end_inset
+
+ in the gradient descent algorithm.
+ Let 
+\begin_inset Formula $\eta$
+\end_inset
+
+ be the step size.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Modify the function 
+\family typewriter
+compute_square_loss
+\family default
+, to compute 
+\begin_inset Formula $J(\theta)$
+\end_inset
+
+ for a given 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Create a small dataset for which you can compute 
+\begin_inset Formula $J(\theta)$
+\end_inset
+
+ by hand, and verify that your 
+\family typewriter
+compute_square_loss
+\family default
+ function returns the correct value.
+\end_layout
+
+\begin_layout Enumerate
+Modify the function 
+\family typewriter
+compute_square_loss_gradient
+\family default
+, to compute 
+\begin_inset Formula $\del_{\theta}J(\theta)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Using your small dataset, verify that your 
+\family typewriter
+compute_square_loss_gradient
+\family default
+ function returns the correct value.
+\end_layout
+
+\begin_layout Subsection
+Gradient Checker
+\end_layout
+
+\begin_layout Standard
+\noindent
+For many optimization problems, coding up the gradient correctly can be
+ tricky.
+ Luckily, there is a nice way to numerically check the gradient calculation.
+ If 
+\begin_inset Formula $J:\reals^{d}\to\reals$
+\end_inset
+
+ is differentiable, then for any direction vector 
+\begin_inset Formula $\Delta\in\reals^{d}$
+\end_inset
+
+, the directional derivative of 
+\begin_inset Formula $J$
+\end_inset
+
+ at 
+\begin_inset Formula $\theta$
+\end_inset
+
+ in the direction 
+\begin_inset Formula $\Delta$
+\end_inset
+
+ is given by
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Of course, it is also given by the more standard definition of directional
+ derivative, 
+\begin_inset Formula $\lim_{\eps\downarrow0}\frac{1}{\eps}\left[J(\theta+\eps\Delta)-J(\theta)\right]$
+\end_inset
+
+.
+ The form given gives a better approximation, but it requires differentiability
+ at 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ It won't give the right result for a nondifferentiable function, such as
+ 
+\begin_inset Formula $J(\theta)=\left|\theta\right|$
+\end_inset
+
+ at 
+\begin_inset Formula $\theta=0$
+\end_inset
+
+ for 
+\begin_inset Formula $\Delta=1$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+
+: 
+\begin_inset Formula 
+\[
+\lim_{\eps\to0}\frac{J(\theta+\eps\Delta)-J(\theta-\eps\Delta)}{2\epsilon}
+\]
+
+\end_inset
+
+We can approximate this directional derivative by choosing a small value
+ of 
+\begin_inset Formula $\eps>0$
+\end_inset
+
+ and evaluating the quotient above.
+ We can get an approximation to the gradient by approximating the directional
+ derivatives in each coordinate direction and putting them together into
+ a vector.
+ In other words, take 
+\begin_inset Formula $\Delta=\left(1,0,0,\ldots,0\right)$
+\end_inset
+
+ to get the first component of the gradient.
+ Then take 
+\begin_inset Formula $\Delta=(0,1,0,\ldots,0$
+\end_inset
+
+ to get the second component.
+ And so on.
+ See 
+\begin_inset Flex Flex:URL
+status open
+
+\begin_layout Plain Layout
+
+http://ufldl.stanford.edu/wiki/index.php/Gradient_checking_and_advanced_optimizatio
+n
+\end_layout
+
+\end_inset
+
+ for details.
+ 
+\end_layout
+
+\begin_layout Enumerate
+\noindent
+Complete the function 
+\family typewriter
+grad_checker
+\family default
+ according to the documentation given.
+\end_layout
+
+\begin_layout Enumerate
+(Optional) Write a generic version of 
+\family typewriter
+grad_checker
+\family default
+ that will work for any objective function.
+ It should take as parameters a function that computes the objective function
+ and a function that computes the gradient of the objective function.
+\end_layout
+
+\begin_layout Subsection
+Batch Gradient Descent
+\end_layout
+
+\begin_layout Standard
+At the end of the skeleton code, the data is loaded, split into a training
+ and test set, and normalized.
+ We'll now finish the job of running regression on the training set.
+ Later on we'll plot the results together with SGD results.
+\end_layout
+
+\begin_layout Enumerate
+Complete 
+\family typewriter
+batch_gradient_descent
+\family default
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Now let's experiment with the step size.
+ Note that if the step size is too large, gradient descent may not converge
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+For the mathematically inclined, there is a theorem that if the objective
+ function is convex, differentiable, and Lipschitz continuous with constant
+ 
+\begin_inset Formula $L>0$
+\end_inset
+
+, then gradient descent converges for fixed step sizes smaller than 
+\begin_inset Formula $1/L$
+\end_inset
+
+.
+ See 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.cs.cmu.edu/~ggordon/10725-F12/scribes/10725_Lecture5.pdf
+\end_layout
+
+\end_inset
+
+, Theorem 5.1.
+\end_layout
+
+\end_inset
+
+.
+ Starting with a step-size of 
+\begin_inset Formula $0.1$
+\end_inset
+
+, try various different fixed step sizes to see which converges most quickly
+ and/or which diverge.
+ As a minimum, try step sizes 0.5, 0.1, .05, and .01.
+ Plot the value of the objective function as a function of the number of
+ steps for each step size.
+ Briefly summarize your findings.
+ 
+\end_layout
+
+\begin_layout Enumerate
+(Optional, but recommended) Implement backtracking line search (google it),
+ and never have to worry choosing your step size again.
+ How does it compare to the best fixed step-size you found in terms of number
+ of steps? In terms of time? How does the extra time to run backtracking
+ line search at each step compare to the time it takes to compute the gradient?
+ (You can also compare the operation counts.)
+\end_layout
+
+\begin_layout Subsection
+Ridge Regression (i.e.
+ Linear Regression with 
+\begin_inset Formula $L_{2}$
+\end_inset
+
+ regularization)
+\end_layout
+
+\begin_layout Standard
+When we have large number of features compared to instances, regularization
+ can help control overfitting.
+ Ridge regression is linear regression with 
+\begin_inset Formula $L_{2}$
+\end_inset
+
+ regularization.
+ The objective function is
+\begin_inset Formula 
+\[
+J(\theta)=\frac{1}{2m}\sum_{i=1}^{m}\left(h_{\theta}(x_{i})-y_{i}\right)^{2}+\lambda\theta^{T}\theta,
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ is the regularization parameter, which controls the degree of regularization.
+ Note that the bias term is being regularized as well.
+ We will address that below.
+\end_layout
+
+\begin_layout Enumerate
+Compute the gradient of 
+\begin_inset Formula $J(\theta)$
+\end_inset
+
+ and write down the expression for updating 
+\begin_inset Formula $\theta$
+\end_inset
+
+ in the gradient descent algorithm.
+\end_layout
+
+\begin_layout Enumerate
+Implement 
+\family typewriter
+compute_regularized_square_loss_gradient.
+\end_layout
+
+\begin_layout Enumerate
+Implement 
+\family typewriter
+regularized_grad_descent.
+\end_layout
+
+\begin_layout Enumerate
+For regression problems, we may prefer to leave the bias term unregularized.
+ One approach is to rewrite 
+\begin_inset Formula $J(\theta)$
+\end_inset
+
+ and re-compute 
+\begin_inset Formula $\del_{\theta}J(\theta)$
+\end_inset
+
+ in a way that separates out the bias from the other parameter.
+ Another approach that can achieve approximately the same thing is to use
+ a very large number 
+\begin_inset Formula $B$
+\end_inset
+
+, rather than 
+\begin_inset Formula $1$
+\end_inset
+
+, for the extra bias dimension.
+ Explain why making 
+\begin_inset Formula $B$
+\end_inset
+
+ large decreases the effective regularization on the bias term, and how
+ we can make that regularization as weak as we like (though not zero).
+ 
+\end_layout
+
+\begin_layout Enumerate
+Choosing a reasonable step-size or using backtracking line search, find
+ the 
+\begin_inset Formula $\theta_{\lambda}^{*}$
+\end_inset
+
+ that minimizes 
+\begin_inset Formula $J(\theta)$
+\end_inset
+
+ for a range of 
+\begin_inset Formula $\lambda$
+\end_inset
+
+.
+ You should plot the training loss and the validation loss (just the square
+ loss part, without the regularization) as a function of 
+\begin_inset Formula $\lambda$
+\end_inset
+
+.
+ Your goal is to find 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ that gives the minimum validation loss.
+ It's hard to predict what 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ that will be, so you should start your search very broadly, looking over
+ several orders of magnitude.
+ For example, 
+\begin_inset Formula $\lambda\in\left\{ 10^{-7},10^{-5},10^{-3},10^{-1},1,10,100\right\} $
+\end_inset
+
+.
+ Once you find a range that works better, keep zooming in.
+ You may want to have 
+\begin_inset Formula $\log(\lambda)$
+\end_inset
+
+ on the 
+\begin_inset Formula $x$
+\end_inset
+
+-axis rather than 
+\begin_inset Formula $\lambda$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+(Optional) Once you have found a good value for 
+\begin_inset Formula $\lambda$
+\end_inset
+
+, repeat the fits with different values for 
+\begin_inset Formula $B$
+\end_inset
+
+, and plot the results.
+ For this dataset, does regularizing the bias help, hurt, or make no significant
+ difference?
+\end_layout
+
+\begin_layout Enumerate
+(Optional) Estimate the average time it takes on your computer to compute
+ a single gradient step.
+ 
+\end_layout
+
+\begin_layout Enumerate
+What 
+\begin_inset Formula $\theta$
+\end_inset
+
+ would you select for deployment and why?
+\end_layout
+
+\begin_layout Subsection
+Stochastic Gradient Descent
+\end_layout
+
+\begin_layout Standard
+\noindent
+When the training data set is very large, evaluating the gradient of the
+ loss function can take a long time, since it requires looking at each training
+ example to take a single gradient step.
+ In this case, stochastic gradient descent (SGD) can be very effective.
+ In SGD, the gradient of the risk is approximated by a gradient at a single
+ example.
+ The approximation is poor, but it is unbiased.
+ The algorithm sweeps through the whole training set one by one, and performs
+ an update for each training example individually.
+ One pass through the data is called an 
+\emph on
+epoch
+\emph default
+.
+ Note that each epoch of SGD touches as much data as a single step of batch
+ gradient descent.
+ Before we begin we cycling through the training examples, it is important
+ to shuffle them into a random order.
+ You can use the same ordering for each epoch, though optionally you could
+ investigate whether reshuffling after each epoch speeds up convergence.
+ 
+\end_layout
+
+\begin_layout Enumerate
+
+\emph on
+W
+\emph default
+rite down the update rule for 
+\begin_inset Formula $\theta$
+\end_inset
+
+ in SGD.
+\end_layout
+
+\begin_layout Enumerate
+Implement 
+\family typewriter
+stochastic_grad_descent
+\family default
+.
+\end_layout
+
+\begin_layout Enumerate
+Use SGD to find 
+\begin_inset Formula $\theta_{\lambda}^{*}$
+\end_inset
+
+ that minimizes the ridge regression objective for the 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+ that you selected in the previous problem.
+ (If you could not solve the previous problem, choose 
+\begin_inset Formula $\lambda=10^{-2}$
+\end_inset
+
+ and 
+\begin_inset Formula $B=1$
+\end_inset
+
+).
+ Try a few fixed step sizes (at least try 
+\begin_inset Formula $\eta_{t}\in\left\{ 0.05,.005\right\} $
+\end_inset
+
+.
+ Note that SGD may not converge with fixed step size.
+ Simply note your results.
+ Next try step sizes that decrease with the step number according to the
+ following schedules: 
+\begin_inset Formula $\eta_{t}=\frac{1}{t}$
+\end_inset
+
+ and 
+\begin_inset Formula $\eta_{t}=\frac{1}{\sqrt{t}}$
+\end_inset
+
+.
+ For each step size rule, plot the value of the objective function (or the
+ log of the objective function if that is more clear) as a function of epoch
+ (or step number) for each of the approaches to step size.
+ How do the results compare? (Note: In this case we are investigating the
+ convergence rate of the optimization algorithm, thus we're interested in
+ the value of the objective function, which includes the regularization
+ term.)
+\end_layout
+
+\begin_layout Enumerate
+(Optional) Try a stepsize rule of the form 
+\begin_inset Formula $\eta_{t}=\frac{\eta_{0}}{1+\eta_{0}\lambda t}$
+\end_inset
+
+, where 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ is your regularization constant, and 
+\begin_inset Formula $\eta_{0}$
+\end_inset
+
+ a constant you can choose.
+ How do the results compare?
+\end_layout
+
+\begin_layout Enumerate
+Estimate the amount of time it takes on your computer for a single epoch
+ of SGD.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Comparing SGD and gradient descent, if your goal is to minimize the total
+ number of epochs (for SGD) or steps (for batch gradient descent), which
+ would you choose? If your goal were to minimize the total time, which would
+ you choose? 
+\end_layout
+
+\begin_layout Section
+Risk Minimization
+\end_layout
+
+\begin_layout Standard
+Recall that the definition of the 
+\series bold
+expected loss 
+\series default
+or 
+\series bold
+
+\begin_inset Quotes eld
+\end_inset
+
+risk
+\begin_inset Quotes erd
+\end_inset
+
+
+\series default
+\emph on
+ 
+\emph default
+of a decision function 
+\begin_inset Formula $f:\cx\to\ca$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+R(f)=\ex\loss(f(x),y),
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $(x,y)\sim P_{\cx\times\cy}$
+\end_inset
+
+, and the 
+\series bold
+Bayes decision function
+\series default
+ 
+\begin_inset Formula $f^{*}:\cx\to\ca$
+\end_inset
+
+ is a function that achieves the 
+\emph on
+minimal risk
+\emph default
+ among all possible functions: 
+\begin_inset Formula 
+\[
+R(f^{*})=\inf_{f}R(f).
+\]
+
+\end_inset
+
+ Here we consider the regression setting, in which 
+\begin_inset Formula $\ca=\cy=\reals$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Show that for the square loss 
+\begin_inset Formula $\ell(\hat{y},y)=\frac{1}{2}\left(y-\hat{y}\right)^{2}$
+\end_inset
+
+, the Bayes decision function is a 
+\begin_inset Formula $f^{*}(x)=\ex\left[Y\mid X=x\right]$
+\end_inset
+
+.
+ [Hint: Consider constructing 
+\begin_inset Formula $f^{*}(x)$
+\end_inset
+
+, one 
+\begin_inset Formula $x$
+\end_inset
+
+ at a time.]
+\end_layout
+
+\begin_layout Enumerate
+(Optional) Show that for the absolute loss 
+\begin_inset Formula $\ell(\hat{y},y)=\left|y-\hat{y}\right|$
+\end_inset
+
+, the Bayes decision function is a 
+\begin_inset Formula $f^{*}(x)=\mbox{median}\left[Y\mid X=x\right]$
+\end_inset
+
+.
+ [Hint: Again, consider one 
+\begin_inset Formula $x$
+\end_inset
+
+ at time.
+ For some approaches, it may help to use the following characterization
+ of a median: 
+\begin_inset Formula $m$
+\end_inset
+
+ is a median of the distribution for random variable 
+\begin_inset Formula $Y$
+\end_inset
+
+ if 
+\begin_inset Formula $P(Y\ge m)\ge\frac{1}{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $P(Y\le m)\ge\frac{1}{2}$
+\end_inset
+
+.] Note: This loss function leads to 
+\begin_inset Quotes eld
+\end_inset
+
+median regression
+\begin_inset Quotes erd
+\end_inset
+
+, There are other loss functions that lead to 
+\begin_inset Quotes eld
+\end_inset
+
+quantile regression
+\begin_inset Quotes erd
+\end_inset
+
+ for any chosen quantile.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Note for next year: Have backtracking line search integrated into the skeleton
+ codebase.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

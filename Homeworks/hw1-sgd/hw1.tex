@@ -1,0 +1,448 @@
+%% LyX 2.1.4 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[ruled]{article}
+\usepackage{courier}
+\usepackage[latin9]{inputenc}
+\usepackage[letterpaper]{geometry}
+\geometry{verbose}
+\usepackage{url}
+\usepackage{algorithm2e}
+\usepackage{amsmath}
+\usepackage[unicode=true,
+ bookmarks=false,
+ breaklinks=false,pdfborder={0 0 1},backref=section,colorlinks=false]
+ {hyperref}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+\providecommand{\LyX}{\texorpdfstring%
+  {L\kern-.1667em\lower.25em\hbox{Y}\kern-.125emX\@}
+  {LyX}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\title{Machine Learning and Computational Statistics, Spring 2016\\
+Homework 1: Ridge Regression and SGD} 
+\date{}
+%\date{Due: February $5^{th}$, 6pm}
+
+
+
+
+\usepackage{amsfonts}\usepackage{capt-of}
+%\usepackage{url}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{bbm}
+\usepackage{enumerate}
+\newcommand{\carlos}[1]{\textcolor{red}{Carlos: #1}}
+\newcommand{\field}[1]{\mathbb{#1}} 
+\newcommand{\hide}[1]{#1}
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\providecommand{\m}[1]{\mathbf{#1}}
+\providecommand{\norm}[1]{\left\|#1\right\|}
+\providecommand{\sign}[1]{\text{sign}\left(#1\right)}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\providecommand{\what}{\m{\hat{w}}}
+\providecommand{\dw}{\Delta w}
+\providecommand{\dmw}{\Delta \m{w}}
+\providecommand{\hy}{\hat{y}}
+
+\makeatother
+
+\begin{document}
+\global\long\def\reals{\mathbf{R}}
+ \global\long\def\integers{\mathbf{Z}}
+\global\long\def\naturals{\mathbf{N}}
+ \global\long\def\rationals{\mathbf{Q}}
+\global\long\def\ca{\mathcal{A}}
+\global\long\def\cb{\mathcal{B}}
+ \global\long\def\cc{\mathcal{C}}
+ \global\long\def\cd{\mathcal{D}}
+\global\long\def\ce{\mathcal{E}}
+\global\long\def\cf{\mathcal{F}}
+\global\long\def\cg{\mathcal{G}}
+\global\long\def\ch{\mathcal{H}}
+\global\long\def\ci{\mathcal{I}}
+\global\long\def\cj{\mathcal{J}}
+\global\long\def\ck{\mathcal{K}}
+\global\long\def\cl{\mathcal{L}}
+\global\long\def\cm{\mathcal{M}}
+\global\long\def\cn{\mathcal{N}}
+\global\long\def\co{\mathcal{O}}
+\global\long\def\cp{\mathcal{P}}
+\global\long\def\cq{\mathcal{Q}}
+\global\long\def\calr{\mathcal{R}}
+\global\long\def\cs{\mathcal{S}}
+\global\long\def\ct{\mathcal{T}}
+\global\long\def\cu{\mathcal{U}}
+\global\long\def\cv{\mathcal{V}}
+\global\long\def\cw{\mathcal{W}}
+\global\long\def\cx{\mathcal{X}}
+\global\long\def\cy{\mathcal{Y}}
+\global\long\def\cz{\mathcal{Z}}
+\global\long\def\ind#1{1(#1)}
+\global\long\def\pr{\mathbb{P}}
+\global\long\def\predsp{\cy}
+\global\long\def\outsp{\cy}
+\global\long\def\prxy{P_{\cx\times\cy}}
+\global\long\def\prx{P_{\cx}}
+\global\long\def\prygivenx{P_{\cy\mid\cx}}
+\global\long\def\ex{\mathbb{E}}
+\global\long\def\var{\textrm{Var}}
+\global\long\def\cov{\textrm{Cov}}
+\global\long\def\sgn{\textrm{sgn}}
+\global\long\def\sign{\textrm{sign}}
+\global\long\def\kl{\textrm{KL}}
+\global\long\def\law{\mathcal{L}}
+\global\long\def\eps{\varepsilon}
+\global\long\def\as{\textrm{ a.s.}}
+\global\long\def\io{\textrm{ i.o.}}
+\global\long\def\ev{\textrm{ ev.}}
+\global\long\def\convd{\stackrel{d}{\to}}
+\global\long\def\eqd{\stackrel{d}{=}}
+\global\long\def\del{\nabla}
+\global\long\def\loss{\ell}
+\global\long\def\risk{R}
+\global\long\def\emprisk{\hat{R}_{\ell}}
+\global\long\def\lossfnl{L}
+\global\long\def\emplossfnl{\hat{L}}
+\global\long\def\empminimizer#1{\hat{#1}_{\ell}}
+\global\long\def\minimizer#1{#1_{*}}
+\global\long\def\etal{\textrm{et. al.}}
+\global\long\def\tr{\operatorname{tr}}
+\global\long\def\trace{\operatorname{trace}}
+\global\long\def\diag{\text{diag}}
+\global\long\def\rank{\text{rank}}
+\global\long\def\linspan{\text{span}}
+\global\long\def\proj{\text{Proj}}
+\global\long\def\argmax{\operatornamewithlimits{arg\, max}}
+\global\long\def\argmin{\operatornamewithlimits{arg\, min}}
+\global\long\def\bfx{\mathbf{x}}
+\global\long\def\bfy{\mathbf{y}}
+\global\long\def\bfl{\mathbf{\lambda}}
+\global\long\def\bfm{\mathbf{\mu}}
+\global\long\def\calL{\mathcal{L}}
+\global\long\def\vw{\boldsymbol{w}}
+\global\long\def\vx{\boldsymbol{x}}
+\global\long\def\vxi{\boldsymbol{\xi}}
+\global\long\def\valpha{\boldsymbol{\alpha}}
+\global\long\def\vbeta{\boldsymbol{\beta}}
+\global\long\def\vsigma{\boldsymbol{\sigma}}
+\global\long\def\vmu{\boldsymbol{\mu}}
+\global\long\def\vtheta{\boldsymbol{\theta}}
+\global\long\def\vd{\boldsymbol{d}}
+\global\long\def\vs{\boldsymbol{s}}
+\global\long\def\vt{\boldsymbol{t}}
+\global\long\def\vh{\boldsymbol{h}}
+\global\long\def\ve{\boldsymbol{e}}
+\global\long\def\vf{\boldsymbol{f}}
+\global\long\def\vg{\boldsymbol{g}}
+\global\long\def\vz{\boldsymbol{z}}
+\global\long\def\vk{\boldsymbol{k}}
+\global\long\def\va{\boldsymbol{a}}
+\global\long\def\vb{\boldsymbol{b}}
+\global\long\def\vv{\boldsymbol{v}}
+\global\long\def\vy{\boldsymbol{y}}
+\global\long\def\hil{\ch}
+\global\long\def\rkhs{\hil}
+\maketitle
+
+\textbf{Due: Friday, February 5, 2015, at 6pm (Submit via NYU Classes)}
+
+\textbf{Instructions}: Your answers to the questions below, including
+plots and mathematical work, should be submitted as a single PDF file.
+You may include your code inline or submit it as a separate file.
+You may either scan hand-written work or, preferably, write your answers
+using software that typesets mathematics (e.g. \LaTeX, \LyX{}, or
+MathJax via iPython). 
+
+
+\section{Introduction}
+
+In this homework you will implement ridge regression using gradient
+descent and stochastic gradient descent. We've provided a lot of support
+Python code to get you started on the right track. References below
+to particular functions that you should modify are referring to the
+support code, which you can download from the website. If you have
+time after completing the assignment, you might pursue some of the
+following:
+\begin{itemize}
+\item Study up on numpy's ``broadcasting'' to see if you can simplify
+and/or speed up your code: \url{http://docs.scipy.org/doc/numpy/user/basics.broadcasting.html}
+\item Think about how you could make the code more modular so that you could
+easily try different loss functions and step size methods. 
+\item Experiment with more sophisticated approaches to setting the step
+sizes for SGD (e.g. try out the recommendations in ``Bottou's SGD
+Tricks'' on the website) 
+\item Investigate what happens to the convergence rate when you intentionally
+make the feature values have vastly different orders of magnitude.
+Try a dataset (could be artificial) where $\cx\subset\reals^{2}$
+so that you can plot the convergence path of GD and SGD. Take a look
+at \url{http://imgur.com/a/Hqolp} for inspiration.
+\item Instead of taking 1 data point at a time, as in SGD, try minibatch
+gradient descent, where you use multiple points at a time to get your
+step direction. How does this effect convergence speed? Are you getting
+computational speedup as well by using vectorized code?
+\item Advanced: What kind of loss function will give us ``quantile regression''?
+\end{itemize}
+Include any investigations you do in your submission, and we may award
+optional credit.
+
+I encourage you to develop the habit of asking ``what if?'' questions
+and then seeking the answers. I guarantee this will give you a much
+deeper understanding of the material (and likely better performance
+on the exam and job interviews, if that's your focus). You're also
+encouraged to post your interesting questions on Piazza under ``questions.''
+
+
+\section{Linear Regression}
+
+
+\subsection{Feature Normalization}
+
+When feature values differ greatly, we can get much slower rates of
+convergence of gradient-based algorithms. Furthermore, when we start
+using regularization, features with larger values can have a much
+greater effect on the final output for the same regularization cost
+-- in effect, features with larger values become more important once
+we start regularizing. One common approach to feature normalization
+is to linearly transform (i.e. shift and rescale) each feature so
+that all feature values in the training set are in $[0,1]$. Each
+feature gets its own transformation. We then apply the same transformations
+to each feature on the test set. It's important that the transformation
+is ``learned'' on the training set, and then applied to the test
+set. It is possible that some transformed test set values will lie
+outside the $[0,1]$ interval.
+
+Modify function \texttt{feature\_normalization} to normalize all the
+features to $[0,1]$. (Can you use numpy's ``broadcasting'' here?)
+
+
+\subsection{Gradient Descent Setup}
+
+In linear regression, we consider the hypothesis space of linear functions
+$h_{\theta}:\reals^{d}\to\reals$, where
+\[
+h_{\theta}(x)=\theta^{T}x,
+\]
+for $\theta,x\in\reals^{d}$, and we choose $\theta$ that minimizes
+the following ``square loss'' objective function: 
+\[
+J(\theta)=\frac{1}{2m}\sum_{i=1}^{m}\left(h_{\theta}(x_{i})-y_{i}\right)^{2},
+\]
+where $(x_{1},y_{1}),\ldots,(x_{m},y_{m})\in\reals^{d}\times\reals$
+is our training data.
+
+While this formulation of linear regression is very convenient, it's
+more standard to use a hypothesis space of ``affine'' functions:
+\[
+h_{\theta,b}(x)=\theta^{T}x+b,
+\]
+which allows a ``bias'' or nonzero intercept term. The standard
+way to achieve this, while still maintaining the convenience of the
+first representation, is to add an extra dimension to $x$ that is
+always a fixed value, such as 1. You should convince yourself that
+this is equivalent. We'll assume this representation, and thus we'll
+actually take $\theta,x\in\reals^{d+1}$.
+\begin{enumerate}
+\item Let $X\in\reals^{m\times d+1}$ be the ``design matrix'', where
+the $i$'th row of $X$ is $x_{i}$. Let $y=\left(y_{1},\ldots,y_{m}\right)^{T}\in\reals^{m\times1}$
+be a the ``response''. Write the objective function $J(\theta)$
+as a matrix/vector expression, without using an explicit summation
+sign.
+\item Write down an expression for the gradient of $J$. 
+\item In our search for a $\theta$ that minimizes $J$, suppose we take
+a step from $\theta$ to $\theta+\eta\Delta$, where $\Delta\in\reals^{d+1}$
+is a unit vector giving the direction of the step, and $\eta\in\reals$
+is the length of the step. Use the gradient to write down an approximate
+expression for $J(\theta+\eta\Delta)-J(\theta)$. {[}This approximation
+is called a ``linear'' or ``first-order'' approximation.{]}
+\item Write down the expression for updating $\theta$ in the gradient descent
+algorithm. Let $\eta$ be the step size. 
+\item Modify the function \texttt{compute\_square\_loss}, to compute $J(\theta)$
+for a given $\theta$. 
+\item Create a small dataset for which you can compute $J(\theta)$ by hand,
+and verify that your \texttt{compute\_square\_loss} function returns
+the correct value.
+\item Modify the function \texttt{compute\_square\_loss\_gradient}, to compute
+$\del_{\theta}J(\theta)$.
+\item Using your small dataset, verify that your \texttt{compute\_square\_loss\_gradient}
+function returns the correct value.
+\end{enumerate}
+
+\subsection{Gradient Checker}
+
+\noindent For many optimization problems, coding up the gradient correctly
+can be tricky. Luckily, there is a nice way to numerically check the
+gradient calculation. If $J:\reals^{d}\to\reals$ is differentiable,
+then for any direction vector $\Delta\in\reals^{d}$, the directional
+derivative of $J$ at $\theta$ in the direction $\Delta$ is given
+by\footnote{Of course, it is also given by the more standard definition of directional
+derivative, $\lim_{\eps\downarrow0}\frac{1}{\eps}\left[J(\theta+\eps\Delta)-J(\theta)\right]$.
+The form given gives a better approximation, but it requires differentiability
+at $\theta$. It won't give the right result for a nondifferentiable
+function, such as $J(\theta)=\left|\theta\right|$ at $\theta=0$
+for $\Delta=1$. }: 
+\[
+\lim_{\eps\to0}\frac{J(\theta+\eps\Delta)-J(\theta-\eps\Delta)}{2\epsilon}
+\]
+We can approximate this directional derivative by choosing a small
+value of $\eps>0$ and evaluating the quotient above. We can get an
+approximation to the gradient by approximating the directional derivatives
+in each coordinate direction and putting them together into a vector.
+In other words, take $\Delta=\left(1,0,0,\ldots,0\right)$ to get
+the first component of the gradient. Then take $\Delta=(0,1,0,\ldots,0$
+to get the second component. And so on. See \url{http://ufldl.stanford.edu/wiki/index.php/Gradient_checking_and_advanced_optimization}
+for details. 
+\begin{enumerate}
+\item \noindent Complete the function \texttt{grad\_checker} according to
+the documentation given.
+\item (Optional) Write a generic version of \texttt{grad\_checker} that
+will work for any objective function. It should take as parameters
+a function that computes the objective function and a function that
+computes the gradient of the objective function.
+\end{enumerate}
+
+\subsection{Batch Gradient Descent}
+
+At the end of the skeleton code, the data is loaded, split into a
+training and test set, and normalized. We'll now finish the job of
+running regression on the training set. Later on we'll plot the results
+together with SGD results.
+\begin{enumerate}
+\item Complete \texttt{batch\_gradient\_descent}. 
+\item Now let's experiment with the step size. Note that if the step size
+is too large, gradient descent may not converge\footnote{For the mathematically inclined, there is a theorem that if the objective
+function is convex, differentiable, and Lipschitz continuous with
+constant $L>0$, then gradient descent converges for fixed step sizes
+smaller than $1/L$. See \url{https://www.cs.cmu.edu/~ggordon/10725-F12/scribes/10725_Lecture5.pdf},
+Theorem 5.1.}. Starting with a step-size of $0.1$, try various different fixed
+step sizes to see which converges most quickly and/or which diverge.
+As a minimum, try step sizes 0.5, 0.1, .05, and .01. Plot the value
+of the objective function as a function of the number of steps for
+each step size. Briefly summarize your findings. 
+\item (Optional, but recommended) Implement backtracking line search (google
+it), and never have to worry choosing your step size again. How does
+it compare to the best fixed step-size you found in terms of number
+of steps? In terms of time? How does the extra time to run backtracking
+line search at each step compare to the time it takes to compute the
+gradient? (You can also compare the operation counts.)
+\end{enumerate}
+
+\subsection{Ridge Regression (i.e. Linear Regression with $L_{2}$ regularization)}
+
+When we have large number of features compared to instances, regularization
+can help control overfitting. Ridge regression is linear regression
+with $L_{2}$ regularization. The objective function is
+\[
+J(\theta)=\frac{1}{2m}\sum_{i=1}^{m}\left(h_{\theta}(x_{i})-y_{i}\right)^{2}+\lambda\theta^{T}\theta,
+\]
+where $\lambda$ is the regularization parameter, which controls the
+degree of regularization. Note that the bias term is being regularized
+as well. We will address that below.
+\begin{enumerate}
+\item Compute the gradient of $J(\theta)$ and write down the expression
+for updating $\theta$ in the gradient descent algorithm.
+\item Implement \texttt{compute\_regularized\_square\_loss\_gradient.}
+\item Implement \texttt{regularized\_grad\_descent.}
+\item For regression problems, we may prefer to leave the bias term unregularized.
+One approach is to rewrite $J(\theta)$ and re-compute $\del_{\theta}J(\theta)$
+in a way that separates out the bias from the other parameter. Another
+approach that can achieve approximately the same thing is to use a
+very large number $B$, rather than $1$, for the extra bias dimension.
+Explain why making $B$ large decreases the effective regularization
+on the bias term, and how we can make that regularization as weak
+as we like (though not zero). 
+\item Choosing a reasonable step-size or using backtracking line search,
+find the $\theta_{\lambda}^{*}$ that minimizes $J(\theta)$ for a
+range of $\lambda$. You should plot the training loss and the validation
+loss (just the square loss part, without the regularization) as a
+function of $\lambda$. Your goal is to find $\lambda$ that gives
+the minimum validation loss. It's hard to predict what $\lambda$
+that will be, so you should start your search very broadly, looking
+over several orders of magnitude. For example, $\lambda\in\left\{ 10^{-7},10^{-5},10^{-3},10^{-1},1,10,100\right\} $.
+Once you find a range that works better, keep zooming in. You may
+want to have $\log(\lambda)$ on the $x$-axis rather than $\lambda$. 
+\item (Optional) Once you have found a good value for $\lambda$, repeat
+the fits with different values for $B$, and plot the results. For
+this dataset, does regularizing the bias help, hurt, or make no significant
+difference?
+\item (Optional) Estimate the average time it takes on your computer to
+compute a single gradient step. 
+\item What $\theta$ would you select for deployment and why?
+\end{enumerate}
+
+\subsection{Stochastic Gradient Descent}
+
+\noindent When the training data set is very large, evaluating the
+gradient of the loss function can take a long time, since it requires
+looking at each training example to take a single gradient step. In
+this case, stochastic gradient descent (SGD) can be very effective.
+In SGD, the gradient of the risk is approximated by a gradient at
+a single example. The approximation is poor, but it is unbiased. The
+algorithm sweeps through the whole training set one by one, and performs
+an update for each training example individually. One pass through
+the data is called an \emph{epoch}. Note that each epoch of SGD touches
+as much data as a single step of batch gradient descent. Before we
+begin we cycling through the training examples, it is important to
+shuffle them into a random order. You can use the same ordering for
+each epoch, though optionally you could investigate whether reshuffling
+after each epoch speeds up convergence. 
+\begin{enumerate}
+\item \emph{W}rite down the update rule for $\theta$ in SGD.
+\item Implement \texttt{stochastic\_grad\_descent}.
+\item Use SGD to find $\theta_{\lambda}^{*}$ that minimizes the ridge regression
+objective for the $\lambda$ and $B$ that you selected in the previous
+problem. (If you could not solve the previous problem, choose $\lambda=10^{-2}$
+and $B=1$). Try a few fixed step sizes (at least try $\eta_{t}\in\left\{ 0.05,.005\right\} $.
+Note that SGD may not converge with fixed step size. Simply note your
+results. Next try step sizes that decrease with the step number according
+to the following schedules: $\eta_{t}=\frac{1}{t}$ and $\eta_{t}=\frac{1}{\sqrt{t}}$.
+For each step size rule, plot the value of the objective function
+(or the log of the objective function if that is more clear) as a
+function of epoch (or step number) for each of the approaches to step
+size. How do the results compare? (Note: In this case we are investigating
+the convergence rate of the optimization algorithm, thus we're interested
+in the value of the objective function, which includes the regularization
+term.)
+\item (Optional) Try a stepsize rule of the form $\eta_{t}=\frac{\eta_{0}}{1+\eta_{0}\lambda t}$,
+where $\lambda$ is your regularization constant, and $\eta_{0}$
+a constant you can choose. How do the results compare?
+\item Estimate the amount of time it takes on your computer for a single
+epoch of SGD. 
+\item Comparing SGD and gradient descent, if your goal is to minimize the
+total number of epochs (for SGD) or steps (for batch gradient descent),
+which would you choose? If your goal were to minimize the total time,
+which would you choose? 
+\end{enumerate}
+
+\section{Risk Minimization}
+
+Recall that the definition of the \textbf{expected loss }or \textbf{``risk''}\emph{
+}of a decision function $f:\cx\to\ca$ is
+\[
+R(f)=\ex\loss(f(x),y),
+\]
+where $(x,y)\sim P_{\cx\times\cy}$, and the \textbf{Bayes decision
+function} $f^{*}:\cx\to\ca$ is a function that achieves the \emph{minimal
+risk} among all possible functions: 
+\[
+R(f^{*})=\inf_{f}R(f).
+\]
+ Here we consider the regression setting, in which $\ca=\cy=\reals$.
+\begin{enumerate}
+\item Show that for the square loss $\ell(\hat{y},y)=\frac{1}{2}\left(y-\hat{y}\right)^{2}$,
+the Bayes decision function is a $f^{*}(x)=\ex\left[Y\mid X=x\right]$.
+{[}Hint: Consider constructing $f^{*}(x)$, one $x$ at a time.{]}
+\item (Optional) Show that for the absolute loss $\ell(\hat{y},y)=\left|y-\hat{y}\right|$,
+the Bayes decision function is a $f^{*}(x)=\mbox{median}\left[Y\mid X=x\right]$.
+{[}Hint: Again, consider one $x$ at time. For some approaches, it
+may help to use the following characterization of a median: $m$ is
+a median of the distribution for random variable $Y$ if $P(Y\ge m)\ge\frac{1}{2}$
+and $P(Y\le m)\ge\frac{1}{2}$.{]} Note: This loss function leads
+to ``median regression'', There are other loss functions that lead
+to ``quantile regression'' for any chosen quantile. 
+\end{enumerate}
+
+\end{document}

@@ -555,7 +555,7 @@ figs-within-sections
 \end_layout
 
 \begin_layout Title
-Quick Note on Gradients and Directional Derivatives
+Directional Derivatives and First Order Approximations
 \end_layout
 
 \begin_layout Author
@@ -593,7 +593,7 @@ Let
 \end_inset
 
 .
- We the directional derivative of 
+ We define the directional derivative of 
 \begin_inset Formula $f$
 \end_inset
 
@@ -623,7 +623,20 @@ Note that
 \end_inset
 
 ).
- 
+ [Sometimes people require that 
+\begin_inset Formula $v$
+\end_inset
+
+ be a unit vector, but that is not necessary for what we do below.
+ But if you prefer, you can always replace 
+\begin_inset Formula $v$
+\end_inset
+
+ by 
+\begin_inset Formula $v/\|v\|$
+\end_inset
+
+.]
 \end_layout
 
 \begin_layout Itemize
@@ -748,7 +761,7 @@ The gradient of
 \[
 \del f(x)=\begin{pmatrix}\del_{e_{1}}f(x)\\
 \vdots\\
-\del e_{d}f(x)
+\del_{e_{d}}f(x)
 \end{pmatrix},
 \]
 
@@ -758,7 +771,8 @@ and where
 \begin_inset Formula $e_{1},\ldots,e_{d}\in\reals^{d}$
 \end_inset
 
- are the unit coordinate vectors: 
+ are the unit coordinate vectors.
+ That is, 
 \begin_inset Formula $e_{1}=\left(1,0,0,\ldots,0\right)\in\reals^{d}$
 \end_inset
 
@@ -780,7 +794,8 @@ th coordinate.
 
 \begin_layout Itemize
 One fact you should recall from calculus is that we can get any directional
- derivative from the gradient:
+ derivative from the gradient, simply by taking the inner product between
+ the gradient and the direction vector:
 \begin_inset Formula 
 \[
 \del_{v}f(x)=\del f(x)^{T}v

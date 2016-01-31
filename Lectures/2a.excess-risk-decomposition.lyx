@@ -1613,15 +1613,15 @@ is the performance hit for using empirical risk rather than true risk
 
 \end_deeper
 \begin_layout Standard
-
+With
 \emph on
-Smaller 
+ smaller 
 \emph default
 
 \begin_inset Formula $\cf$
 \end_inset
 
- means 
+ we expect 
 \emph on
 smaller 
 \emph default

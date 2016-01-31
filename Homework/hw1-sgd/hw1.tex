@@ -278,12 +278,7 @@ can be tricky. Luckily, there is a nice way to numerically check the
 gradient calculation. If $J:\reals^{d}\to\reals$ is differentiable,
 then for any direction vector $\Delta\in\reals^{d}$, the directional
 derivative of $J$ at $\theta$ in the direction $\Delta$ is given
-by\footnote{Of course, it is also given by the more standard definition of directional
-derivative, $\lim_{\eps\downarrow0}\frac{1}{\eps}\left[J(\theta+\eps\Delta)-J(\theta)\right]$.
-The form given gives a better approximation, but it requires differentiability
-at $\theta$. It won't give the right result for a nondifferentiable
-function, such as $J(\theta)=\left|\theta\right|$ at $\theta=0$
-for $\Delta=1$. }: 
+by: 
 \[
 \lim_{\eps\to0}\frac{J(\theta+\eps\Delta)-J(\theta-\eps\Delta)}{2\epsilon}
 \]
@@ -297,7 +292,9 @@ to get the second component. And so on. See \url{http://ufldl.stanford.edu/wiki/
 for details. 
 \begin{enumerate}
 \item \noindent Complete the function \texttt{grad\_checker} according to
-the documentation given.
+the documentation given. Running the gradient checker takes extra
+time. In practice, once you're convinced your gradient calculator
+is correct, you can stop calling the checker.
 \item (Optional) Write a generic version of \texttt{grad\_checker} that
 will work for any objective function. It should take as parameters
 a function that computes the objective function and a function that
@@ -354,12 +351,12 @@ very large number $B$, rather than $1$, for the extra bias dimension.
 Explain why making $B$ large decreases the effective regularization
 on the bias term, and how we can make that regularization as weak
 as we like (though not zero). 
-\item Choosing a reasonable step-size or using backtracking line search,
-find the $\theta_{\lambda}^{*}$ that minimizes $J(\theta)$ for a
-range of $\lambda$. You should plot the training loss and the validation
-loss (just the square loss part, without the regularization) as a
-function of $\lambda$. Your goal is to find $\lambda$ that gives
-the minimum validation loss. It's hard to predict what $\lambda$
+\item Now fix $B=1$. Choosing a reasonable step-size or using backtracking
+line search, find the $\theta_{\lambda}^{*}$ that minimizes $J(\theta)$
+for a range of $\lambda$. You should plot the training loss and the
+validation loss (just the square loss part, without the regularization)
+as a function of $\lambda$. Your goal is to find $\lambda$ that
+gives the minimum validation loss. It's hard to predict what $\lambda$
 that will be, so you should start your search very broadly, looking
 over several orders of magnitude. For example, $\lambda\in\left\{ 10^{-7},10^{-5},10^{-3},10^{-1},1,10,100\right\} $.
 Once you find a range that works better, keep zooming in. You may

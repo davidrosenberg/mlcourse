@@ -1115,6 +1115,14 @@ For many optimization problems, coding up the gradient correctly can be
 \end_inset
 
  is given by
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+The definition of directional derivative I give in this footnote doesn't
+ seem to be standard.
+ My definition was the one-sideed directional derivative.
 \begin_inset Foot
 status collapsed
 
@@ -1146,6 +1154,11 @@ Of course, it is also given by the more standard definition of directional
 
 .
  
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1201,6 +1214,9 @@ Complete the function
 grad_checker
 \family default
  according to the documentation given.
+ Running the gradient checker takes extra time.
+ In practice, once you're convinced your gradient calculator is correct,
+ you can stop calling the checker.
 \end_layout
 
 \begin_layout Enumerate
@@ -1379,7 +1395,12 @@ For regression problems, we may prefer to leave the bias term unregularized.
 \end_layout
 
 \begin_layout Enumerate
-Choosing a reasonable step-size or using backtracking line search, find
+Now fix 
+\begin_inset Formula $B=1$
+\end_inset
+
+.
+ Choosing a reasonable step-size or using backtracking line search, find
  the 
 \begin_inset Formula $\theta_{\lambda}^{*}$
 \end_inset

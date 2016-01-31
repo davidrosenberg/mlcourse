@@ -7,6 +7,7 @@
 \usetheme{CambridgeUS} 
 \beamertemplatenavigationsymbolsempty
 \end_preamble
+\options handout
 \use_default_options false
 \maintain_unincluded_children false
 \language english
@@ -4328,7 +4329,7 @@ ca$.}}
 \end_deeper
 \begin_layout Separator
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Separator
 
@@ -4462,7 +4463,7 @@ Empirical risk minimizer
  is 
 \begin_inset Formula 
 \[
-\hat{f}_{n}=\argmin_{f\in\cf}\frac{1}{n}\sum_{i=1}^{n}\loss(f(X_{i}),Y_{i}).
+\hat{f}_{n}=\argmin_{f\in\cf}\frac{1}{n}\sum_{i=1}^{n}\loss(f(x_{i}),y_{i}).
 \]
 
 \end_inset
@@ -4492,7 +4493,7 @@ in
  , where 
 \begin_inset Formula 
 \[
-\minimizer{f_{\cf}}=\argmin_{f\in\cf}\ex\loss(f(X),Y).
+\minimizer{f_{\cf}}=\argmin_{f\in\cf}\ex\loss(f(x),y).
 \]
 
 \end_inset
@@ -4693,7 +4694,7 @@ excess risk
  exceeds the Bayes risk
 \begin_inset Formula 
 \[
-\mbox{\textbf{Excess Risk}}(\hat{f}_{n})\,=\,\risk(\hat{f}_{n})-\risk(\minimizer f)=\underbrace{\risk(\hat{f}_{n})-\risk(\minimizer{f_{\cf}})}_{\text{estimation error}}+\underbrace{\risk(\minimizer{f_{\cf}})-\risk(\minimizer f)}_{\text{approximation error}}.
+\mbox{\textbf{Excess Risk}}(\hat{f}_{n})\,=\,\risk(\hat{f}_{n})-\risk(\minimizer f)=\underbrace{\risk(\hat{f}_{n})-\risk(f_{\cf})}_{\text{estimation error}}+\underbrace{\risk(f_{\cf})-\risk(\minimizer f)}_{\text{approximation error}}.
 \]
 
 \end_inset

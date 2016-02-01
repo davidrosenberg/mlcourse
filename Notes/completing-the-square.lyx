@@ -681,13 +681,23 @@ reference "eq:square-binomial-for-poly"
 \end_layout
 
 \begin_layout Standard
-It turns out that we can generalize this process to expressions involving
- quadratic forms and dot products.
+It turns out that we can generalize this process to quadratic expressions
+ involving matrices and vectors.
 \end_layout
 
 \begin_layout Section
-Completing the Square (Multivariate) [See Barber Section 8.4.1 p.
+Completing the Square (Multivariate)
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ [See Barber Section 8.4.1 p.
  178] 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Proposition
@@ -708,7 +718,7 @@ For any vectors
 , we have 
 \begin_inset Formula 
 \begin{eqnarray}
-x^{T}Mx-2b^{T}x & = & \left(x-M^{-1}b\right)M(x-M^{-1}b)-b^{T}M^{-1}b\label{eq:second-quad-form}
+x^{T}Mx-2b^{T}x & = & \left(x-M^{-1}b\right)^{T}M(x-M^{-1}b)-b^{T}M^{-1}b\label{eq:second-quad-form}
 \end{eqnarray}
 
 \end_inset

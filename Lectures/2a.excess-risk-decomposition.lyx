@@ -6,6 +6,19 @@
 \begin_preamble
 \usetheme{CambridgeUS} 
 \beamertemplatenavigationsymbolsempty
+
+
+
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
 \end_preamble
 \options handout
 \use_default_options false
@@ -1201,6 +1214,10 @@ is
 
 \end_layout
 
+\begin_layout Section
+Excess Risk Decomposition
+\end_layout
+
 \begin_layout Frame
 \begin_inset Argument 4
 status open
@@ -1382,15 +1399,11 @@ The
 \series bold
 excess risk
 \series default
- of 
+ compares the risk of 
 \begin_inset Formula $f$
 \end_inset
 
- is how much more risk 
-\begin_inset Formula $f$
-\end_inset
-
- has than the Bayes optimal 
+ to the Bayes optimal 
 \begin_inset Formula $f^{*}$
 \end_inset
 
@@ -1447,7 +1460,8 @@ The excess risk of the ERM
 \end_inset
 
 
-\end_layout
+\begin_inset Note Note
+status open
 
 \begin_layout Pause
 
@@ -1491,6 +1505,11 @@ variance
 \end_layout
 
 \end_deeper
+\end_inset
+
+
+\end_layout
+
 \end_deeper
 \begin_layout Separator
 
@@ -1561,6 +1580,17 @@ approximation error.
  
 \end_layout
 
+\begin_layout Pause
+\begin_inset VSpace 15theight%
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Concept check: Is approximation error a random or non-random variable?
+\end_layout
+
 \end_deeper
 \begin_layout Separator
 
@@ -1628,10 +1658,21 @@ smaller
 estimation error.
 \end_layout
 
+\begin_layout Pause
+\begin_inset VSpace 15theight%
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Concept check: Is estimation error a random or non-random variable?
+\end_layout
+
 \end_deeper
 \begin_layout Standard
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Pause
 
@@ -2127,7 +2168,7 @@ textwidth
 status open
 
 \begin_layout Plain Layout
-Excess Risk Decomposition, Nested Spaces, and Trees
+A Simple Classification Problem
 \end_layout
 
 \end_inset
@@ -2223,7 +2264,11 @@ P_{\cx}=\mbox{Uniform}([0,1]^{2})\\
 status open
 
 \begin_layout Plain Layout
-Regression Trees
+Binary Decision Trees on 
+\begin_inset Formula $\reals^{2}$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2232,7 +2277,90 @@ Regression Trees
 \end_layout
 
 \begin_deeper
+\begin_layout Itemize
+Consider a binary tree on 
+\begin_inset Formula $\left\{ \left(X_{1},X_{2}\right)\mid X_{1},X_{2}\in\reals\right\} $
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/trees/basicBinaryTree.png
+	lyxscale 50
+	width 50theight%
+
+\end_inset
+
+
+\begin_inset space \qquad{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../Figures/trees/binaryRegions.png
+	lyxscale 50
+	width 50theight%
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From 
+\backslash
+emph{An Introduction to Statistical Learning, with applications in R} (Springer,
+ 2013) with permission from the authors: G.
+ James, D.
+ Witten,  T.
+ Hastie and R.
+ Tibshirani.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+\begin_inset Note Note
+status open
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Trees
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -2260,7 +2388,7 @@ tiny{KPM Figure 16.1}}
 Partition space on one variable at a time
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Graphics
 	filename ../Figures/ExcessRiskTreeDemo/fig16.1a.pdf
 	width 50text%
@@ -2282,6 +2410,16 @@ Partition space on one variable at a time
 
 \end_layout
 
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Separator
+
+\end_layout
+
 \begin_layout Frame
 \begin_inset Argument 4
 status open
@@ -2296,7 +2434,7 @@ Classification Trees
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -2331,7 +2469,7 @@ Classification Tree
  in the leaf node means 4 successes, 0 failures
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename ../Figures/ExcessRiskTreeDemo/fig16.2.pdf
@@ -2352,6 +2490,11 @@ Depth of the tree is one measure of complexity
 
 \end_deeper
 \begin_layout Separator
+
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
@@ -2486,7 +2629,11 @@ tiny{Plots courtesy of Ningshan Zhang.}}
 \end_layout
 
 \begin_layout Itemize
-Risk Minimizer (e.g.
+Risk Minimizer in 
+\begin_inset Formula $\cf_{2}$
+\end_inset
+
+ (e.g.
  assuming 
 \series bold
 infinite training data
@@ -2552,7 +2699,11 @@ Theoretical Best in
 \end_layout
 
 \begin_layout Itemize
-Risk Minimizer (e.g.
+Risk Minimizer in 
+\begin_inset Formula $\cf_{3}$
+\end_inset
+
+ (e.g.
  assuming 
 \series bold
 infinite training data

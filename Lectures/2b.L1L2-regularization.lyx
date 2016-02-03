@@ -1933,6 +1933,71 @@ tiny{Plot from Hastie, Tibshirani, and Wainwright's Statistical Learning
 status open
 
 \begin_layout Plain Layout
+Ridge vs.
+ Lasso: Regularization Paths
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Plot from Hastie, Tibshirani, and Wainwright's Statistical Learning
+ with Sparsity, Figure 2.1}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/L1L2/ridge-regularization-HTW-Fig2.1.png
+	lyxscale 80
+	width 60theight%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/L1L2/lasso-regularization-HTW-Fig2.1.png
+	lyxscale 80
+	width 60theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
 Lasso Gives Feature Sparsity: So What?
 \end_layout
 
@@ -1942,6 +2007,23 @@ Lasso Gives Feature Sparsity: So What?
 \end_layout
 
 \begin_deeper
+\begin_layout Standard
+Coefficient are 
+\begin_inset Formula $0$
+\end_inset
+
+ 
+\begin_inset Formula $\implies$
+\end_inset
+
+don't need those features.
+ What's the gain?
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
 \begin_layout Itemize
 Time/expense to compute/buy features
 \end_layout
@@ -2385,7 +2467,7 @@ completing the square
 :
 \begin_inset Formula 
 \[
-\hat{R}_{n}(w)=\hat{R}_{n}(\hat{w})+\frac{1}{n}\left(w-\hat{w}\right)^{T}X^{T}X\left(w-\hat{w}\right)
+\hat{R}_{n}(w)=\frac{1}{n}\left(w-\hat{w}\right)^{T}X^{T}X\left(w-\hat{w}\right)+\hat{R}_{n}(\hat{w})
 \]
 
 \end_inset
@@ -2540,6 +2622,113 @@ Blue region: Area satisfying complexity constraint:
 
 \end_layout
 
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Quora Picture
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+From Quora: 
+\begin_inset Quotes eld
+\end_inset
+
+Why is L1 regularization supposed to lead to sparsity than L2?
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/stepFnsL1L2/L0L1.jpg
+	lyxscale 60
+	width 60col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Doesn't seem like this figure represents the situation well...
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+But maybe sometimes it does?
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+e.g.
+ What if the empirical risk minimizer has huge norm (i.e.
+ is very far from the origin).
+ Then the ellipse around that point may look like a straight line in the
+ vicinity of the relevant level sets of 
+\begin_inset Formula $\|w\|_{1}$
+\end_inset
+
+.
+ In this situation, we see it is even more likely to hit a corner.
+ Translation for intuition: When regularization is significantly changing
+ the least squares solution, we're more likely to be sparse.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Figure from 
+\backslash
+url{https://www.quora.com/Why-is-L1-regularization-supposed-to-lead-to-sparsity-th
+an-L2}.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset Note Note
 status open
@@ -2587,7 +2776,7 @@ How to find the Lasso solution?
 How to solve the Lasso?
 \begin_inset Formula 
 \[
-\min_{w\in\reals^{d}}\sum_{i=1}^{n}\left(w^{T}x_{i}-y_{i}\right)^{2}+\lambda\left|w\right|_{1}
+\min_{w\in\reals^{d}}\sum_{i=1}^{n}\left(w^{T}x_{i}-y_{i}\right)^{2}+\lambda\|w\|_{1}
 \]
 
 \end_inset
@@ -2596,7 +2785,7 @@ How to solve the Lasso?
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $\left|w\right|_{1}$
+\begin_inset Formula $\|w\|_{1}$
 \end_inset
 
  is not differentiable!
@@ -2714,7 +2903,7 @@ How do you write
 
 ?
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Formula 
@@ -2753,7 +2942,7 @@ How do you write
 
 ?
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
  
@@ -2856,7 +3045,7 @@ Substituting
 \begin_inset Formula $\left|w\right|=w^{+}+w^{-}$
 \end_inset
 
-, Lasso problem is:
+, Lasso problem is:j
 \begin_inset Formula 
 \begin{align*}
 \min_{w^{+},w^{-}\in\reals^{d}} & \sum_{i=1}^{n}\left(\left(w^{+}-w^{-}\right)^{T}x_{i}-y_{i}\right)^{2}+\lambda\left(w^{+}+w^{-}\right)\\
@@ -3394,6 +3583,165 @@ tiny{KPM Figure 13.5}}
 status open
 
 \begin_layout Plain Layout
+Coordinate Descent: Does it Work?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose we're minimizing 
+\begin_inset Formula $f:\reals^{d}\to\reals$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Sufficient conditions:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $f$
+\end_inset
+
+ is continuously differentiable and
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $f$
+\end_inset
+
+ is strictly convex in each coordinate
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+But lasso objective
+\begin_inset Formula 
+\[
+\sum_{i=1}^{n}\left(w^{T}x_{i}-y_{i}\right)^{2}+\lambda\|w\|_{1}
+\]
+
+\end_inset
+
+is not differentiable...
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Luckily there are weaker conditions...
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Coordinate Descent: The Separability Condition
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Theorem
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Tseng 1988: 
+\begin_inset Quotes eld
+\end_inset
+
+Coordinate ascent for maximizing nondifferentiable concave functions
+\begin_inset Quotes erd
+\end_inset
+
+, Technical Report LIDS-P
+\end_layout
+
+\end_inset
+
+If the objective 
+\begin_inset Formula $f$
+\end_inset
+
+ has the following structure
+\begin_inset Formula 
+\[
+f(w_{1},\ldots,w_{d})=g(w_{1},\ldots,g_{d})+\sum_{j=1}^{d}h_{j}(x_{j}),
+\]
+
+\end_inset
+
+where
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $g:\reals^{d}\to\reals$
+\end_inset
+
+ is differentiable and convex, and 
+\end_layout
+
+\begin_layout Itemize
+each 
+\begin_inset Formula $h_{j}:\reals\to\reals$
+\end_inset
+
+ is convex (but not necessarily differentiable) 
+\end_layout
+
+\end_deeper
+\begin_layout Theorem
+then the coordinate descent algorithm converges to the global minimum.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
 Coordinate Descent Method -- Variation
 \end_layout
 
@@ -3563,142 +3911,6 @@ Randomly choose a coordinate
 
 \end_layout
 
-\begin_layout Section
-The Grouping Issue
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-A Simple Model
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Suppose 
-\begin_inset Formula $(x,y)$
-\end_inset
-
- pairs generated as follows:
-\begin_inset Formula 
-\begin{eqnarray*}
-z_{1},z_{2} & \sim & \cn(0,1)\mbox{ are i.i.d.}
-\end{eqnarray*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-let
-\backslash
-thefootnote
-\backslash
-relax
-\backslash
-footnotetext{
-\backslash
-tiny{Example based on Section 4.2 in Hastie et al's 
-\backslash
-emph{Statistical Learning with Sparsity}.}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-The 
-\begin_inset Formula $\left(\ell_{q}\right)^{q}$
-\end_inset
-
- Norm Constraint
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Generalize to 
-\begin_inset Formula $\ell_{q}$
-\end_inset
-
- norm: 
-\begin_inset Formula $\left(\|w\|_{q}\right)^{q}=\left|w_{1}\right|^{q}+\left|w_{2}\right|^{q}$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Formula $\cf=\left\{ f(x)=w_{1}x_{1}+w_{2}x_{2}\right\} $
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Itemize
-Contours of 
-\begin_inset Formula $\|w\|_{q}^{q}=\left|w_{1}\right|^{q}+\left|w_{2}\right|^{q}$
-\end_inset
-
-:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename ../Figures/L1L2/LqNormContours.png
-	width 80col%
-
-\end_inset
-
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename ../Figures/L1L2/elasticNetContour.png
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
 \begin_layout Separator
 
 \end_layout

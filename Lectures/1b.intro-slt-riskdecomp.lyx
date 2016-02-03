@@ -2745,8 +2745,8 @@ square loss:
 mean square risk: 
 \begin_inset Formula 
 \begin{eqnarray*}
-R(f) & = & \frac{1}{2}\ex\big[(f(X)-Y)^{2}\big]\\
-\pause(\mbox{homework}\implies) & = & \frac{1}{2}\ex\big[(f(X)-\ex[Y|X])^{2}\big]+\frac{1}{2}\ex\big[(Y-\ex[Y|X])^{2}\big]
+R(f) & = & \frac{1}{2}\ex\big[(f(x)-y)^{2}\big]\\
+\pause(\mbox{homework}\implies) & = & \frac{1}{2}\ex\big[(f(x)-\ex[y|x])^{2}\big]+\frac{1}{2}\ex\big[(y-\ex[y|x])^{2}\big]
 \end{eqnarray*}
 
 \end_inset
@@ -2762,7 +2762,7 @@ R(f) & = & \frac{1}{2}\ex\big[(f(X)-Y)^{2}\big]\\
 target function: 
 \begin_inset Formula 
 \[
-f^{*}(x)=\ex[Y|X=x]
+f^{*}(x)=\ex[y|x]
 \]
 
 \end_inset
@@ -2824,8 +2824,8 @@ spaces:
 risk is misclassification error rate 
 \begin_inset Formula 
 \begin{eqnarray*}
-R(f) & = & \ex\left[\ind{f(X)\neq Y}\right]\\
-\pause & = & \pr\left(f(X)\neq Y\right)
+R(f) & = & \ex\left[\ind{f(x)\neq y}\right]\\
+\pause & = & \pr\left(f(x)\neq y\right)
 \end{eqnarray*}
 
 \end_inset
@@ -2841,7 +2841,7 @@ R(f) & = & \ex\left[\ind{f(X)\neq Y}\right]\\
 target function is the assignment to the most likely class 
 \begin_inset Formula 
 \[
-f^{*}(x)=\argmax_{1\le k\le K}\pr(Y=k\mid X=x)
+f^{*}(x)=\argmax_{1\le k\le K}\pr(y=k\mid x)
 \]
 
 \end_inset
@@ -3059,7 +3059,7 @@ But we can't compute the risk!
 \begin_deeper
 \begin_layout Itemize
 Can't compute 
-\begin_inset Formula $R(f)=\ex\loss(f(X),Y)$
+\begin_inset Formula $R(f)=\ex\loss(f(x),y)$
 \end_inset
 
  because we 
@@ -3404,7 +3404,7 @@ of
  is
 \begin_inset Formula 
 \[
-\hat{R}_{n}(f)=\frac{1}{n}\sum_{i=1}^{n}\loss(f(X_{i}),Y_{i}).
+\hat{R}_{n}(f)=\frac{1}{n}\sum_{i=1}^{n}\loss(f(x_{i}),y_{i}).
 \]
 
 \end_inset
@@ -4575,8 +4575,8 @@ textwidth
 \begin_layout Standard
 \begin_inset Formula 
 \begin{eqnarray*}
-f^{*} & = & \argmin_{f}\ex\ell(f(X),Y)\\
-f_{\cf} & = & \argmin_{f\in\cf}\ex\ell(f(X),Y))\\
+f^{*} & = & \argmin_{f}\ex\ell(f(x),y)\\
+f_{\cf} & = & \argmin_{f\in\cf}\ex\ell(f(y),y))\\
 \hat{f}_{n} & = & \argmin_{f\in\cf}\frac{1}{n}\sum_{i=1}^{n}\ell(f(x_{i}),y_{i})
 \end{eqnarray*}
 
@@ -4950,7 +4950,7 @@ Use an algorithm (an optimization method) to find
  minimizing the empirical risk:
 \begin_inset Formula 
 \[
-\min_{f\in\cf}\frac{1}{n}\sum_{i=1}^{n}\loss(f(X_{i}),Y_{i}).
+\min_{f\in\cf}\frac{1}{n}\sum_{i=1}^{n}\loss(f(x_{i}),y_{i}).
 \]
 
 \end_inset

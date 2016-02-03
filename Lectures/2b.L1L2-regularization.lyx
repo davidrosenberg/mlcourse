@@ -3563,6 +3563,71 @@ Randomly choose a coordinate
 
 \end_layout
 
+\begin_layout Section
+The Grouping Issue
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+A Simple Model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose 
+\begin_inset Formula $(x,y)$
+\end_inset
+
+ pairs generated as follows:
+\begin_inset Formula 
+\begin{eqnarray*}
+z_{1},z_{2} & \sim & \cn(0,1)\mbox{ are i.i.d.}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Example based on Section 4.2 in Hastie et al's 
+\backslash
+emph{Statistical Learning with Sparsity}.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
 \begin_layout Frame
 \begin_inset Argument 4
 status open

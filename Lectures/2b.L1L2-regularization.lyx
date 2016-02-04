@@ -3045,7 +3045,7 @@ Substituting
 \begin_inset Formula $\left|w\right|=w^{+}+w^{-}$
 \end_inset
 
-, Lasso problem is:j
+, Lasso problem is:
 \begin_inset Formula 
 \begin{align*}
 \min_{w^{+},w^{-}\in\reals^{d}} & \sum_{i=1}^{n}\left(\left(w^{+}-w^{-}\right)^{T}x_{i}-y_{i}\right)^{2}+\lambda\left(w^{+}+w^{-}\right)\\
@@ -3238,6 +3238,127 @@ Coordinate Descent Method
 \end_layout
 
 \begin_deeper
+\begin_layout Itemize
+
+\series bold
+Goal: 
+\series default
+Minimize 
+\begin_inset Formula $L(w)=L(w_{1},\ldots w_{d})$
+\end_inset
+
+ over 
+\begin_inset Formula $w=\left(w_{1},\ldots,w_{d}\right)\in\reals^{d}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+In gradient descent or SGD, 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+each step potentially changes all entries of 
+\begin_inset Formula $w$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+In each step of 
+\series bold
+coordinate descent
+\series default
+, 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+we adjust only a single 
+\begin_inset Formula $w_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+In each step, solve
+\begin_inset Formula 
+\[
+w_{i}^{\mbox{new}}=\argmin_{w_{i}}L(w_{1},\ldots,w_{i-1},\mathbf{w_{i}},w_{i+1},\ldots,w_{d})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Solving this argmin may itself be an iterative process.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Coordinate descent is great when 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+it's easy or easier to minimize w.r.t.
+ one coordinate at a time 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Coordinate Descent Method
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
 \begin_layout Block
 \begin_inset Argument 2
 status open
@@ -3326,17 +3447,6 @@ Choose a coordinate
 \end_layout
 
 \end_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-For when it's easier to minimize w.r.t.
- one coordinate at a time
-\end_layout
-
-\begin_deeper
 \begin_layout Pause
 
 \end_layout
@@ -3468,7 +3578,7 @@ Then
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align*}
-a_{j} & =2\sum_{i=1}^{n}x_{i,j}^{2} & c_{j} & =2\sum_{i=1}^{n}x_{i,j}(y_{i}-w_{-j}^{T}x_{i,-j})
+a_{j} & =2\sum_{i=1}^{n}x_{i,j}^{2}\qquad & c_{j} & =2\sum_{i=1}^{n}x_{i,j}(y_{i}-w_{-j}^{T}x_{i,-j})
 \end{align*}
 
 \end_inset
@@ -3576,6 +3686,11 @@ tiny{KPM Figure 13.5}}
 \end_inset
 
 
+\begin_inset Note Note
+status open
+
+\begin_layout Separator
+
 \end_layout
 
 \begin_layout Frame
@@ -3583,7 +3698,116 @@ tiny{KPM Figure 13.5}}
 status open
 
 \begin_layout Plain Layout
-Coordinate Descent: Does it Work?
+Closed Form Solution
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose we're solving for 
+\begin_inset Formula $w_{j}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Consider the expression
+\begin_inset Formula 
+\[
+c_{j}=2\sum_{i=1}^{n}x_{i,j}(y_{i}-w_{-j}^{T}x_{i,-j}).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The piece 
+\begin_inset Formula $w_{-j}^{T}x_{i,-j}$
+\end_inset
+
+ is prediction of 
+\begin_inset Formula $y_{i}$
+\end_inset
+
+ using everything but 
+\begin_inset Formula $w_{j}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Then 
+\begin_inset Formula $y_{i}-w_{-j}^{T}x_{i,-j}$
+\end_inset
+
+ is the partial residual of that prediction.
+\end_layout
+
+\begin_layout Itemize
+Then 
+\begin_inset Formula $\sum_{i=1}^{n}x_{i,j}(y_{i}-w_{-j}^{T}x_{i,-j})$
+\end_inset
+
+ is kind of like a correlation between 
+\begin_inset Formula $x_{j}$
+\end_inset
+
+ and partial residuals
+\end_layout
+
+\begin_layout Itemize
+If this 
+\begin_inset Quotes eld
+\end_inset
+
+correlation-like
+\begin_inset Quotes erd
+\end_inset
+
+ thing is smaller than 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ in absolute value, then 
+\begin_inset Formula $w_{j}$
+\end_inset
+
+ becomes 
+\begin_inset Formula $0$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Coordinate Descent: When does it work?
 \end_layout
 
 \end_inset
@@ -3907,10 +4131,6 @@ Randomly choose a coordinate
 \end_deeper
 \end_deeper
 \end_deeper
-\begin_layout Separator
-
-\end_layout
-
 \begin_layout Separator
 
 \end_layout

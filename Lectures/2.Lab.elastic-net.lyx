@@ -1258,7 +1258,7 @@ For identical features
 
 \end_deeper
 \begin_layout Itemize
-Extrapoloation to correlated variables:
+Extrapolation to correlated variables:
 \end_layout
 
 \begin_deeper
@@ -1758,7 +1758,29 @@ Let
 
 \end_inset
 
- 
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Theorem 1 in 
+\begin_inset Quotes eld
+\end_inset
+
+Regularization and variable selection via the elastic net
+\begin_inset Quotes erd
+\end_inset
+
+: https://web.stanford.edu/~hastie/Papers/B67.2%20(2005)%20301-320%20Zou%20&%20Hast
+ie.pdf
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper

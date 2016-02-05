@@ -2963,6 +2963,17 @@ status open
 
 \end_deeper
 \begin_layout Separator
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Some people found it confusing that the formulation that follows doesn't
+ actually maintain the definition of positive and negative parts, as they
+ can range freely over positive numbers.
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
@@ -3048,7 +3059,7 @@ Substituting
 , Lasso problem is:
 \begin_inset Formula 
 \begin{align*}
-\min_{w^{+},w^{-}\in\reals^{d}} & \sum_{i=1}^{n}\left(\left(w^{+}-w^{-}\right)^{T}x_{i}-y_{i}\right)^{2}+\lambda\left(w^{+}+w^{-}\right)\\
+\min_{w^{+},w^{-}\in\reals^{d}} & \sum_{i=1}^{n}\left(\left(w^{+}-w^{-}\right)^{T}x_{i}-y_{i}\right)^{2}+\lambda1^{T}\left(w^{+}+w^{-}\right)\\
 \mbox{subject to } & w_{i}^{+}\ge0\mbox{ for all }i\\
  & w_{i}^{-}\ge0\mbox{ for all }i
 \end{align*}
@@ -3144,14 +3155,26 @@ Projected SGD
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align*}
-\min_{w^{+},w^{-}\in\reals^{d}} & \sum_{i=1}^{n}\left(\left(w^{+}-w^{-}\right)^{T}x_{i}-y_{i}\right)^{2}+\lambda\left(w^{+}+w^{-}\right)\\
+\min_{w^{+},w^{-}\in\reals^{d}} & \sum_{i=1}^{n}\left(\left(w^{+}-w^{-}\right)^{T}x_{i}-y_{i}\right)^{2}+\lambda1^{T}\left(w^{+}+w^{-}\right)\\
 \mbox{subject to } & w_{i}^{+}\ge0\mbox{ for all }i\\
- & w_{i}^{-}\ge0\mbox{ for all }i
+ & w_{i}^{-}\ge0\mbox{ for all }i,
 \end{align*}
 
 \end_inset
 
+where 
+\begin_inset Formula $1$
+\end_inset
 
+ represents a column vector of 
+\begin_inset Formula $1$
+\end_inset
+
+'s in 
+\begin_inset Formula $\reals^{d}$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Pause
@@ -3217,6 +3240,15 @@ Note: Sparsity pattern may change frequently as we iterate
 \end_deeper
 \end_deeper
 \begin_layout Separator
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Not clear that it's not just one pass through the coordinates.
+\end_layout
+
+\end_inset
+
 
 \end_layout
 

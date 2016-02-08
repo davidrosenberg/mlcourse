@@ -2019,7 +2019,7 @@ Excess risk decomposition for function
 \begin_inset Formula 
 \begin{align*}
 \mbox{\textbf{Excess Risk}}(\tilde{f}_{n})\, & =\,\risk(\tilde{f}_{n})-\risk(\minimizer f)\\
- & =\underbrace{\risk(\tilde{f}_{n})-R(\hat{f}_{n})}_{\text{optimization error}}+\underbrace{\risk(\hat{f}_{n})-\risk(\minimizer{f_{\cf}})}_{\text{estimation error}}+\underbrace{\risk(\minimizer{f_{\cf}})-\risk(\minimizer f)}_{\text{approximation error}}
+ & =\underbrace{\risk(\tilde{f}_{n})-R(\hat{f}_{n})}_{\text{optimization error}}+\underbrace{\risk(\hat{f}_{n})-\risk(f_{\cf})}_{\text{estimation error}}+\underbrace{\risk(f_{\cf})-\risk(\minimizer f)}_{\text{approximation error}}
 \end{align*}
 
 \end_inset

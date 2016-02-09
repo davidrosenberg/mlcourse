@@ -1201,7 +1201,7 @@ in
 is 
 \begin_inset Formula 
 \begin{eqnarray*}
-\hat{f}_{n} & = & \argmin_{f\in\cf}\ex\loss(f(x),y).
+f_{\cf} & = & \argmin_{f\in\cf}\ex\loss(f(x),y).
 \end{eqnarray*}
 
 \end_inset
@@ -1988,7 +1988,19 @@ If
 
 \end_deeper
 \begin_layout Itemize
-Can optimization error be negative?
+Can optimization error be negative? Yes!
+\end_layout
+
+\begin_layout Itemize
+But
+\begin_inset Formula 
+\[
+\hat{R}(\tilde{f}_{n})-\hat{R}(\hat{f}(n))\ge0.
+\]
+
+\end_inset
+
+ 
 \end_layout
 
 \end_deeper

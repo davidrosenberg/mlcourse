@@ -6,6 +6,18 @@
 \begin_preamble
 \usetheme{CambridgeUS} 
 \beamertemplatenavigationsymbolsempty
+
+
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
 \end_preamble
 \options handout
 \use_default_options false
@@ -822,15 +834,388 @@ not
 \end_layout
 
 \begin_deeper
-\begin_layout Itemize
-Can you transform your response 
-\begin_inset Formula $y$
-\end_inset
+\begin_layout Pause
 
- so that the loss you want is translation-invariant?
 \end_layout
 
 \end_deeper
+\begin_layout Itemize
+Often you can transform your response 
+\begin_inset Formula $y$
+\end_inset
+
+ so it's translation-invariant.
+ (e.g.
+ log transform)
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Some Losses for Regression
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{KPM Figure 7.6}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Square
+\series default
+ or 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ Loss: 
+\begin_inset Formula $\ell(r)=r^{2}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Absolute
+\series default
+ or 
+\series bold
+Laplace
+\series default
+ or 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ Loss: 
+\begin_inset Formula $\ell(r)=\left|r\right|$
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Description
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="4">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\hat{y}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $y$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left|r\right|=\left|y-\hat{y}\right|$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $r^{2}=\left(y-\hat{y}\right)^{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+25
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+100
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+50
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+50
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2500
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Loss Function Robustness
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Robustness 
+\series default
+refers to how affected a learning algorithm is by outliers.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/loss-functions/fig7.6a.pdf
+	height 60theight%
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{KPM Figure 7.6}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_deeper
 \begin_layout Separator
 
@@ -947,24 +1332,17 @@ Huber
 \begin_inset Formula $\left|r\right|>\delta$
 \end_inset
 
- (robust and differentiable)
+
 \end_layout
 
 \begin_deeper
-\begin_layout Pause
-
+\begin_layout Itemize
+robust and differentiable
 \end_layout
 
 \end_deeper
 \begin_layout Standard
 \align center
-\begin_inset Graphics
-	filename ../Figures/loss-functions/fig7.6a.pdf
-	width 40text%
-
-\end_inset
-
-
 \begin_inset Graphics
 	filename ../Figures/loss-functions/fig7.6b.pdf
 	width 40text%
@@ -1580,54 +1958,6 @@ margin error
 status open
 
 \begin_layout Plain Layout
-Classification Losses
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-Logistic/Log loss: 
-\begin_inset Formula $\loss_{\text{Logistic}}=\log\left(1+e^{-m}\right)$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename ../Figures/loss-functions/loss.Zero_One.Hinge.Logistic.png
-	lyxscale 30
-	width 70text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Logistic loss is differentiable.
- Never enough margin for logistic loss.
-\begin_inset Newline newline
-\end_inset
-
-How many support vectors?
-\end_layout
-
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
 (Soft Margin) Linear Support Vector Machine 
 \end_layout
 
@@ -1669,6 +1999,210 @@ Loss
 \end_layout
 
 \end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Classification Losses
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Logistic/Log loss: 
+\begin_inset Formula $\loss_{\text{Logistic}}=\log\left(1+e^{-m}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/loss-functions/loss.Zero_One.Hinge.Logistic.png
+	lyxscale 30
+	width 70text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Logistic loss is differentiable.
+ Never enough margin for logistic loss.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+How many support vectors?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+What About Square Loss for Classification?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Action space 
+\begin_inset Formula $\ca=\reals\qquad$
+\end_inset
+
+Output space 
+\begin_inset Formula $\cy=\left\{ -1,1\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Loss 
+\begin_inset Formula $\ell(f(x),y)=\left(f(x)-y\right)^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Turns out, can write this in terms of margin 
+\begin_inset Formula $m=f(x)y$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{eqnarray*}
+\ell(f(x),y) & = & \left(f(x)-y\right)^{2}=\left(1-m\right)^{2}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Prove using fact that 
+\begin_inset Formula $y^{2}=1$
+\end_inset
+
+, since 
+\begin_inset Formula $y\in\left\{ -1,1\right\} $
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+What About Square Loss for Classification?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/loss-functions/loss.Zero_One.Hinge.Logistic.Square.png
+	lyxscale 30
+	width 70text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+Heavily penalizes outliers.
+\end_layout
+
+\begin_layout Standard
+Seems to have higher sample complexity than hinge & logistic
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+
+\size tiny
+Rosasco et al's 
+\begin_inset Quotes eld
+\end_inset
+
+Are Loss Functions All the Same?
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://web.mit.edu/lrosasco/www/publications/loss.pdf
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Separator
+\begin_inset Note Note
+status open
+
 \begin_layout Separator
 
 \end_layout
@@ -1939,9 +2473,14 @@ sparse
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Frame
 \begin_inset Argument 4
@@ -2023,7 +2562,8 @@ kernelize
 \end_inset
 
 
-\end_layout
+\begin_inset Note Note
+status open
 
 \begin_layout Frame
 \begin_inset Argument 4
@@ -2039,7 +2579,7 @@ Population Minimizers
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 The 
 \series bold
 population minimizer
@@ -2060,7 +2600,7 @@ infinite data
  case.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \align center
 \begin_inset ERT
 status open
@@ -2097,6 +2637,11 @@ emph{The Elements of Statistical Learning}, 2nd Ed.
 
 \end_deeper
 \begin_layout Separator
+
+\end_layout
+
+\end_inset
+
 
 \end_layout
 

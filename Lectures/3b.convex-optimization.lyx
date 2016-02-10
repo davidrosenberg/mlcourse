@@ -807,7 +807,7 @@ Nonlinear programs
 \end_deeper
 \end_deeper
 \begin_layout Itemize
-Today:
+More Recently:
 \end_layout
 
 \begin_deeper
@@ -833,12 +833,10 @@ non-convex
 Convex problems are the ones we know how to solve efficiently
 \end_layout
 
-\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
 \end_deeper
 \begin_layout Itemize
 Many techniques that are well understood for convex problems are applied
@@ -848,7 +846,7 @@ Many techniques that are well understood for convex problems are applied
 \begin_deeper
 \begin_layout Itemize
 e.g.
- SGD is routinely applied to neural networks
+ SGD is routinely applied to neural networks, which are not convex
 \end_layout
 
 \end_deeper
@@ -1021,7 +1019,7 @@ convex
 \begin_inset Graphics
 	filename ../Figures/convex-optimization/fig7.4a.pdf
 	lyxscale 30
-	width 40text%
+	width 35text%
 
 \end_inset
 
@@ -1029,7 +1027,7 @@ convex
 \begin_inset Graphics
 	filename ../Figures/convex-optimization/fig7.4b.pdf
 	lyxscale 30
-	width 40text%
+	width 35text%
 
 \end_inset
 
@@ -1422,7 +1420,8 @@ Log-Sum-Exp:
 \end_inset
 
 
-\end_layout
+\begin_inset Note Note
+status open
 
 \begin_layout Frame
 \begin_inset Argument 4
@@ -1459,7 +1458,7 @@ f(x)=\max\left\{ f_{1}(x),\ldots,f_{m}(x)\right\}
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \series bold
 This result extends to sup over arbitrary [infinite] sets of functions
@@ -1504,7 +1503,9 @@ f(\theta x+\left(1-\theta\right)y) & = & \max\left\{ f_{1}(\theta x+\left(1-\the
 
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
 \begin_inset Note Note
 status open
 
@@ -1845,7 +1846,7 @@ optimal value
  of the problem is defined as
 \begin_inset Formula 
 \[
-p^{*}=\inf\left\{ f_{0}(x)\mid f_{i}(x)\le0,i=1,\ldots,m,\;h_{i}(x)=0,\,i=1,\ldots,p\right\} .
+p^{*}=\inf\left\{ f_{0}(x)\mid x\mbox{ satisfies all constraints}\right\} .
 \]
 
 \end_inset
@@ -3002,6 +3003,12 @@ the domain
 \end_layout
 
 \begin_layout Itemize
+
+\series bold
+Strict feasibility is sufficient
+\series default
+.
+ (
 \begin_inset Formula $\exists x$
 \end_inset
 
@@ -3013,7 +3020,7 @@ the domain
 \begin_inset Formula $i=1,\ldots,m$
 \end_inset
 
-
+)
 \end_layout
 
 \begin_layout Itemize
@@ -3139,7 +3146,7 @@ complementary slackness
 
 \end_deeper
 \begin_layout Itemize
-Lagrange multiplier is zero unless the constraint is active at the optimum.
+Lagrange multiplier is zero unless constraint is active at optimum.
 \end_layout
 
 \end_deeper
@@ -3212,7 +3219,7 @@ Each term in sum
  That is
 \begin_inset Formula 
 \[
-\lambda_{i}^{*}f_{i}(x^{*})=0,\quad i=1,\ldots,m.
+\boxed{\lambda_{i}^{*}f_{i}(x^{*})=0,\quad i=1,\ldots,m}.
 \]
 
 \end_inset

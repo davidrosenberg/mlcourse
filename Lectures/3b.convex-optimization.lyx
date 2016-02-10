@@ -6,6 +6,18 @@
 \begin_preamble
 \usetheme{CambridgeUS} 
 \beamertemplatenavigationsymbolsempty
+
+
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
 \end_preamble
 \options handout
 \use_default_options false
@@ -1277,7 +1289,7 @@ Examples of Convex Functions on
 \begin_inset Formula $\reals$
 \end_inset
 
-for all 
+ for all 
 \begin_inset Formula $a,b\in\reals$
 \end_inset
 
@@ -1870,6 +1882,73 @@ optimal point
 
 \end_layout
 
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Do We Need Equality Constraints?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Note that
+\begin_inset Formula 
+\[
+h(x)=0\;\iff\;\left(h(x)\ge0\mbox{ AND}\;h(x)\le0\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+So any equality-constrained problem 
+\begin_inset Formula 
+\begin{eqnarray*}
+\textrm{minimize} &  & f_{0}(x)\\
+\textrm{subject to} &  & h(x)=0
+\end{eqnarray*}
+
+\end_inset
+
+can be rewritten as
+\begin_inset Formula 
+\begin{eqnarray*}
+\pause\textrm{minimize} &  & f_{0}(x)\\
+\textrm{subject to} &  & h(x)\le0\\
+ &  & -h(x)\le0.
+\end{eqnarray*}
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+For simplicity, we'll drop equality contraints from this presentation.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
 \begin_layout Section
 Lagrangian Duality: Convexity not required
 \end_layout
@@ -1889,12 +1968,11 @@ The Lagrangian
 
 \begin_deeper
 \begin_layout Standard
-Recall the general optimization problem:
+The general [inequality-constrained] optimization problem is:
 \begin_inset Formula 
 \begin{eqnarray*}
 \textrm{minimize} &  & f_{0}(x)\\
-\textrm{subject to} &  & f_{i}(x)\le0,\;\;i=1,\ldots,m\\
- &  & h_{i}(x)=0,\;\;i=1,\ldots p,
+\textrm{subject to} &  & f_{i}(x)\le0,\;\;i=1,\ldots,m
 \end{eqnarray*}
 
 \end_inset
@@ -1911,10 +1989,10 @@ The
 \series bold
 Lagrangian
 \series default
- for the general optimization problem is
+ for this optimization problem is
 \begin_inset Formula 
 \[
-L(x,\lambda,\nu)=f_{0}(x)+\sum_{I=1}^{m}\lambda_{i}f_{i}(x)+\sum_{i=1}^{p}\nu_{i}h_{i}(x),
+L(x,\lambda)=f_{0}(x)+\sum_{I=1}^{m}\lambda_{i}f_{i}(x).
 \]
 
 \end_inset
@@ -1927,28 +2005,15 @@ L(x,\lambda,\nu)=f_{0}(x)+\sum_{I=1}^{m}\lambda_{i}f_{i}(x)+\sum_{i=1}^{p}\nu_{i
 \begin_inset Formula $\lambda_{i}$
 \end_inset
 
-'s and 
-\begin_inset Formula $\nu$
-\end_inset
-
 's are called 
 \series bold
 Lagrange multipliers
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Formula $\lambda$
-\end_inset
-
- and 
-\begin_inset Formula $\nu$
-\end_inset
-
- also called the 
+\series default
+ (also called the 
 \series bold
 dual variables
 \series default
- .
+).
  
 \end_layout
 
@@ -1976,9 +2041,9 @@ The Lagrangian Encodes the Objective and Constraints
 Supremum over Lagrangian gives back objective and constraints:
 \begin_inset Formula 
 \begin{eqnarray*}
-\sup_{\lambda\succeq0,\nu}L(x,\lambda,\nu) & = & \sup_{\lambda\succeq0,\nu}\left(f_{0}(x)+\sum_{i=1}^{m}\lambda_{i}f_{i}(x)+\sum_{i=1}^{p}\nu_{i}h_{i}(x),\right)\\
+\sup_{\lambda\succeq0}L(x,\lambda) & = & \sup_{\lambda\succeq0}\left(f_{0}(x)+\sum_{i=1}^{m}\lambda_{i}f_{i}(x)\right)\\
 \pause & = & \begin{cases}
-f_{0}(x) & f_{i}(x)\le0\mbox{ and }h_{i}(x)=0,\;\mbox{all }i\\
+f_{0}(x) & \mbox{when }f_{i}(x)\le0\;\mbox{all }i\\
 \infty & \mbox{otherwise.}
 \end{cases}
 \end{eqnarray*}
@@ -2000,8 +2065,65 @@ primal form
  of optimization problem:
 \begin_inset Formula 
 \[
-p^{*}=\inf_{x}\sup_{\lambda\succeq0,\nu}L(x,\lambda,\nu)
+p^{*}=\inf_{x}\sup_{\lambda\succeq0}L(x,\lambda)
 \]
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Now let's consider the infimum over 
+\begin_inset Formula $x$
+\end_inset
+
+ of this expression:
+\begin_inset Formula 
+\[
+\inf_{x}\sup_{\lambda\succeq0}L(x,\lambda)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+If 
+\begin_inset Formula $x$
+\end_inset
+
+ is not feasible, then 
+\begin_inset Formula $\sup_{\lambda\succeq0}L(x,\lambda)=\infty$
+\end_inset
+
+.
+ So infimum not at 
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Therefore, equivalent expression is
+\begin_inset Formula 
+\begin{eqnarray*}
+ &  & \inf_{\left\{ x|x\mbox{ is feasible}\right\} }\sup_{\lambda\succeq0}L(x,\lambda)\\
+\pause & = & \inf_{\left\{ x|x\mbox{ is feasible}\right\} }f_{0}(x)\\
+\pause & = & p^{*}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -2035,7 +2157,7 @@ primal form:
 
 \begin_inset Formula 
 \[
-p^{*}=\inf_{x}\sup_{\lambda\succeq0,\nu}L(x,\lambda,\nu)
+p^{*}=\inf_{x}\sup_{\lambda\succeq0}L(x,\lambda)
 \]
 
 \end_inset
@@ -2057,7 +2179,7 @@ Lagrangian dual problem
 :
 \begin_inset Formula 
 \[
-d^{*}=\sup_{\lambda\succeq0,\nu}\inf_{x}L(x,\lambda,\nu)
+d^{*}=\sup_{\lambda\succeq0}\inf_{x}L(x,\lambda)
 \]
 
 \end_inset
@@ -2103,6 +2225,10 @@ Weak Max-Min Inequality
 
 \begin_deeper
 \begin_layout Theorem
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 For 
 \series bold
 any
@@ -2113,6 +2239,19 @@ any
 
 , or 
 \begin_inset Formula $Z\subseteq\reals^{m}$
+\end_inset
+
+, we have
+\end_layout
+
+\end_inset
+
+For 
+\series bold
+any
+\series default
+ 
+\begin_inset Formula $f:W\times Z\to\reals$
 \end_inset
 
 , we have
@@ -2212,8 +2351,8 @@ weak duality
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align*}
-p^{*}= & \inf_{x}\sup_{\lambda\ge0,\nu}\left[f_{0}(x)+\sum_{I=1}^{m}\lambda_{i}f_{i}(x)+\sum_{i=1}^{p}\nu_{i}h_{i}(x)\right]\\
-\ge & \sup_{\lambda\ge0,\nu}\inf_{x}\left[f_{0}(x)+\sum_{I=1}^{m}\lambda_{i}f_{i}(x)+\sum_{i=1}^{p}\nu_{i}h_{i}(x)\right]=d^{*}
+p^{*}= & \inf_{x}\sup_{\lambda\succeq0}\left[f_{0}(x)+\sum_{i=1}^{m}\lambda_{i}f_{i}(x)\right]\\
+\ge & \sup_{\lambda\succeq0,\nu}\inf_{x}\left[f_{0}(x)+\sum_{i=1}^{m}\lambda_{i}f_{i}(x)\right]=d^{*}
 \end{align*}
 
 \end_inset
@@ -2280,7 +2419,7 @@ Lagrangian dual problem
 :
 \begin_inset Formula 
 \[
-d^{*}=\sup_{\lambda\succeq0,\nu}\underbrace{\inf_{x}L(x,\lambda,\nu)}_{\mbox{Lagrange dual function}}
+d^{*}=\sup_{\lambda\succeq0}\underbrace{\inf_{x}L(x,\lambda)}_{\mbox{Lagrange dual function}}
 \]
 
 \end_inset
@@ -2306,7 +2445,7 @@ dual function
 ) is 
 \begin_inset Formula 
 \[
-g(\lambda,\nu)=\inf_{x\in\cd}L(x,\lambda,\nu)=\inf_{x\in\cd}\left(f_{0}(x)+\sum_{i=1}^{m}\lambda_{i}f_{i}(x)+\sum_{i=1}^{p}\nu_{i}h_{i}(x)\right).
+g(\lambda)=\inf_{x}L(x,\lambda)=\inf_{x}\left(f_{0}(x)+\sum_{i=1}^{m}\lambda_{i}f_{i}(x)\right).
 \]
 
 \end_inset
@@ -2375,7 +2514,7 @@ The Lagrange Dual Problem
 In terms of Lagrange dual function, we can write weak duality as
 \begin_inset Formula 
 \begin{align*}
-p^{*} & \ge\sup_{\lambda\ge0,\nu}g(\lambda,\nu)=d^{*}
+p^{*} & \ge\sup_{\lambda\ge0}g(\lambda)=d^{*}
 \end{align*}
 
 \end_inset
@@ -2391,7 +2530,7 @@ p^{*} & \ge\sup_{\lambda\ge0,\nu}g(\lambda,\nu)=d^{*}
 \end_deeper
 \begin_layout Itemize
 So for any 
-\begin_inset Formula $\left(\lambda,\nu\right)$
+\begin_inset Formula $\lambda$
 \end_inset
 
  with 
@@ -2405,7 +2544,7 @@ Lagrange dual function gives a lower bound on optimal solution
 :
 \begin_inset Formula 
 \[
-g(\lambda,\nu)\le p^{*}
+g(\lambda)\le p^{*}
 \]
 
 \end_inset
@@ -2440,7 +2579,7 @@ Lagrange dual problem
  is a search for best lower bound:
 \begin_inset Formula 
 \begin{eqnarray*}
-\textrm{maximize} &  & g(\lambda,\nu)\\
+\textrm{maximize} &  & g(\lambda)\\
 \textrm{subject to} &  & \lambda\succeq0.
 \end{eqnarray*}
 
@@ -2455,7 +2594,7 @@ Lagrange dual problem
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $\left(\lambda,\nu\right)$
+\begin_inset Formula $\lambda$
 \end_inset
 
  
@@ -2467,7 +2606,7 @@ dual feasible
 \end_inset
 
  and 
-\begin_inset Formula $g(\lambda,\nu)>-\infty$
+\begin_inset Formula $g(\lambda)>-\infty$
 \end_inset
 
 .
@@ -2480,10 +2619,10 @@ dual feasible
 
 \end_deeper
 \begin_layout Itemize
-\begin_inset Formula $\left(\lambda^{*},\nu^{*}\right)$
+\begin_inset Formula $\lambda^{*}$
 \end_inset
 
- are 
+ 
 \series bold
 dual optimal
 \series default
@@ -2656,8 +2795,7 @@ Convex Optimization Problem: Standard Form
 \begin_inset Formula 
 \begin{eqnarray*}
 \textrm{minimize} &  & f_{0}(x)\\
-\textrm{subject to} &  & f_{i}(x)\le0,\;\;i=1,\ldots,m\\
- &  & a_{i}^{T}x=b_{i},\;\;i=1,\ldots p
+\textrm{subject to} &  & f_{i}(x)\le0,\;\;i=1,\ldots,m
 \end{eqnarray*}
 
 \end_inset
@@ -2670,22 +2808,15 @@ where
  
 \end_layout
 
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
 \begin_layout Block
-Note: Equality constraints are now linear.
- Why?
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-Because we should actually be able to replace the equality constraint with
- two inequality constraints, one in each direction, but unless we have an
- affine function, we can't have the function and its negative both be convex.
+If we had equality constraints here, they would affine constraints, because
+ we should actually be able to replace the equality constraint with two
+ inequality constraints, one in each direction, but unless we have an affine
+ function, we can't have the function and its negative both be convex.
 \end_layout
 
 \end_inset
@@ -2820,6 +2951,15 @@ Qualifications when problem domain
 \end_inset
 
  is an open set:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+(
+\begin_inset Formula $\cd$
+\end_inset
+
+ is the set where all functions are defined, NOT the feasible set.)
 \begin_inset Note Note
 status open
 
@@ -2861,16 +3001,11 @@ the domain
 
 \end_layout
 
-\begin_deeper
 \begin_layout Itemize
 \begin_inset Formula $\exists x$
 \end_inset
 
- such that 
-\begin_inset Formula $Ax=b$
-\end_inset
-
- and 
+ 
 \begin_inset Formula $f_{i}(x)<0$
 \end_inset
 
@@ -2886,7 +3021,8 @@ For any affine inequality constraints,
 \begin_inset Formula $f_{i}(x)\le0$
 \end_inset
 
- is sufficient
+ is sufficient.
+ 
 \end_layout
 
 \begin_deeper
@@ -2897,33 +3033,11 @@ For any affine inequality constraints,
 \end_deeper
 \end_deeper
 \begin_layout Itemize
-Otherwise, 
-\begin_inset Formula $x$
-\end_inset
-
- must be in the 
-\begin_inset Quotes eld
-\end_inset
-
-relative interior
-\begin_inset Quotes erd
-\end_inset
-
- of 
-\begin_inset Formula $\cd$
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-See notes, or BV Section 5.2.3, p.
+Otherwise, see notes or BV Section 5.2.3, p.
  226.
  
 \end_layout
 
-\end_deeper
 \end_deeper
 \begin_layout Separator
 
@@ -3061,16 +3175,16 @@ Let
 \end_inset
 
  be primal optimal and 
-\begin_inset Formula $\left(\lambda^{*},\nu^{*}\right)$
+\begin_inset Formula $\lambda^{*}$
 \end_inset
 
  be dual optimal.
  Then:
 \begin_inset Formula 
 \begin{eqnarray*}
-f_{0}(x^{*}) & = & g(\lambda^{*},\nu^{*})\\
-\pause & = & \inf_{x}\left(f_{0}(x)+\sum_{I=1}^{m}\lambda_{i}^{*}f_{i}(x)+\sum_{i=1}^{p}\nu_{i}^{*}h_{i}(x)\right)\\
-\pause & \le & f_{0}(x^{*})+\sum_{i=1}^{m}\underbrace{\lambda_{i}^{*}f_{i}(x^{*})}_{\le0}+\sum_{i=1}^{p}\underbrace{\nu_{i}^{*}h_{i}(x^{*})}_{=0}\\
+f_{0}(x^{*}) & = & g(\lambda^{*})\\
+\pause & = & \inf_{x}\left(f_{0}(x)+\sum_{I=1}^{m}\lambda_{i}^{*}f_{i}(x)\right)\\
+\pause & \le & f_{0}(x^{*})+\sum_{i=1}^{m}\underbrace{\lambda_{i}^{*}f_{i}(x^{*})}_{\le0}\\
 \pause & \le & f_{0}(x^{*}).
 \end{eqnarray*}
 

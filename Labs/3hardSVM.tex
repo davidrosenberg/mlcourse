@@ -9,10 +9,10 @@
 \usepackage{amsfonts}
 \definecolor{midnight}{RGB}{25,25,112}
 \mode<presentation>{
-    \usetheme{Singapore}
-    \usecolortheme[named=midnight]{structure}
-    \setbeamertemplate{navigation symbols}{} % rids of nav bar
-    \setbeamertemplate{footline}[frame number] % number slides
+	\usetheme{Singapore}
+	\usecolortheme[named=midnight]{structure}
+	\setbeamertemplate{navigation symbols}{} % rids of nav bar
+	\setbeamertemplate{footline}[frame number] % number slides
 }
 
 \title{Hard-margin SVM}
@@ -40,7 +40,7 @@ Given a set of linearly separable training data, how can one find a good separat
     \item<1-> ... that it generalizes well
 \end{itemize}
 
-Let $\{x^i, y^i\}_{i=1}^N \in \mathcal{D} $ be the training data, where $x^i \in \mathbb{R}$ and $y^i$ is either +1 or -1. What does it mean that the data is linearly separable?
+Let $\{x^i, y^i\}_{i=1}^N \in \mathcal{D} $ be the training data, where $x^i \in \mathbb{R}\in^n$ and $y^i$ is either +1 or -1. What does it mean that the data is linearly separable?
 
 \begin{itemize}
     \item<1-> ... that there is a hyperplane that separates the two clusters
@@ -83,7 +83,7 @@ Simplest case of real variables, $y = mx + b$ draws a line with slope $m$ that i
 Generalize this to higher dimensions, for $w, x \in \mathbb{R}^n$ and $b \in \mathbb{R}$:
 \begin{itemize}
     \item $ \ell(x) = w\cdot x + b$ where $L=\{x:\ell(x) = 0\}$ describes a hyperplane.
-    \item $w$ is orthogonal to $L$ (check $w\cdot v = 0$ for $v$ in $L$)
+    \item $w$ is orthogonal to $L$ (check $w\cdot (v-v') = 0$ for $v,v'\in L$)
     \item What should $\ell$ assign to the two clusters?
         \[
         \ell(x) \text{ is } 

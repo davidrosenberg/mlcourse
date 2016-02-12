@@ -889,7 +889,34 @@ soft thresholding
 
 \end_inset
 
-Note that Murphy is suggesting to initialize the optimization with the ridge
+
+\end_layout
+
+\begin_layout Standard
+NOTE: Algorithm 13.1 does not account for the case that 
+\begin_inset Formula $a_{j}=c_{j}=0$
+\end_inset
+
+, which occurs when the 
+\begin_inset Formula $j$
+\end_inset
+
+th column of 
+\begin_inset Formula $X$
+\end_inset
+
+ is the identically 
+\begin_inset Formula $0$
+\end_inset
+
+.
+ One can either eliminate the column (as it cannot possibly help the solution),
+ or you can set 
+\begin_inset Formula $w_{j}=0$
+\end_inset
+
+ in that case, as that is, in fact, the coordinate minimizer in that case.Note
+ that Murphy is suggesting to initialize the optimization with the ridge
  regession solution, though this is not necessary.
  
 \end_layout
@@ -1376,6 +1403,27 @@ direction
 
 , respectively.
  
+\end_layout
+
+\begin_layout Enumerate
+First let's get a trivial case out of the way.
+ If 
+\begin_inset Formula $x_{ij}=0$
+\end_inset
+
+ for 
+\begin_inset Formula $i=1,\ldots,n$
+\end_inset
+
+, what is the coordinate minimizer 
+\begin_inset Formula $w_{j}$
+\end_inset
+
+? In the remaining questions below, you may assume that 
+\begin_inset Formula $\sum_{i=1}^{n}x_{ij}^{2}>0$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Enumerate

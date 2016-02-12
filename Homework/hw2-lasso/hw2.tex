@@ -239,8 +239,15 @@ The ``soft thresholding'' function is defined as
 \[
 \text{soft}\left(a,\delta\right)=\text{sign}(a)\left(\left|a\right|-\delta\right)_{+}.
 \]
-Note that Murphy is suggesting to initialize the optimization with
-the ridge regession solution, though this is not necessary. 
+
+
+NOTE: Algorithm 13.1 does not account for the case that $a_{j}=c_{j}=0$,
+which occurs when the $j$th column of $X$ is the identically $0$.
+One can either eliminate the column (as it cannot possibly help the
+solution), or you can set $w_{j}=0$ in that case, as that is, in
+fact, the coordinate minimizer in that case.Note that Murphy is suggesting
+to initialize the optimization with the ridge regession solution,
+though this is not necessary. 
 
 The solution should have a sparsity pattern that is similar to the
 ground truth. Estimators that preserve the sparsity pattern (with
@@ -346,6 +353,9 @@ slide \url{http://davidrosenberg.github.io/ml2015/docs/5.Lab.misc.pdf#page=10},
 where now the ``direction'' $v$ is simply taken to be the scalars
 $1$ and $-1$, respectively. 
 \begin{enumerate}
+\item First let's get a trivial case out of the way. If $x_{ij}=0$ for
+$i=1,\ldots,n$, what is the coordinate minimizer $w_{j}$? In the
+remaining questions below, you may assume that $\sum_{i=1}^{n}x_{ij}^{2}>0$.
 \item Give an expression for the derivative $f(w_{j})$ for $w_{j}\neq0$.
 It will be convenient to write your expression in terms of the following
 definitions:
@@ -393,11 +403,11 @@ value of any component of the vector.
 \item The one-sided directional derivative of $f(x)$ at $x$ in the direction
 $v$ is defined as:
 \[
-f'(x;v)=\lim_{h\downarrow0}\frac{f(x+hv)-f(v)}{h}
+f'(x;v)=\lim_{h\downarrow0}\frac{f(x+hv)-f(x)}{h}
 \]
 Compute $L'(0;v)$. That is, compute the one-sided directional derivative
 of $L(w)$ at $w=0$ in the direction $v$. {[}Hint: the result should
-contain the terms $X,y,\lambda,\text{ and }v$.{]}
+be in terms of $X,y,\lambda,\text{ and }v$.{]}
 \item Since the Lasso objective is convex, for $w^{*}$ to be a minimizer
 of $L(w)$ we must have that the directional derivative $L'(w^{*};v)\geq0$
 for all $v$. Starting from the condition $L'(0;v)\ge0$, rearrange

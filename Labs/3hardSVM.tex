@@ -9,10 +9,10 @@
 \usepackage{amsfonts}
 \definecolor{midnight}{RGB}{25,25,112}
 \mode<presentation>{
-	\usetheme{Singapore}
-	\usecolortheme[named=midnight]{structure}
-	\setbeamertemplate{navigation symbols}{} % rids of nav bar
-	\setbeamertemplate{footline}[frame number] % number slides
+    \usetheme{Singapore}
+    \usecolortheme[named=midnight]{structure}
+    \setbeamertemplate{navigation symbols}{} % rids of nav bar
+    \setbeamertemplate{footline}[frame number] % number slides
 }
 
 \title{Hard-margin SVM}
@@ -33,7 +33,7 @@
 \begin{frame}
 \frametitle{Problem setup}
 
-Given a set of linearly separable training data, how can one find a good separator? What do we expect from a good separator? 
+Given a set of linearly separable training data, how can one find a good separator? What do we expect from a good separator?
 
 \begin{itemize}
     \item<1-> ... that it actually separates the training points
@@ -50,7 +50,7 @@ Let $\{x^i, y^i\}_{i=1}^N \in \mathcal{D} $ be the training data, where $x^i \in
 How to choose the best one?
 
 \end{frame}
- 
+
 %---------------------------------------------------------
 
 \begin{frame}{Example}
@@ -86,15 +86,15 @@ Generalize this to higher dimensions, for $w, x \in \mathbb{R}^n$ and $b \in \ma
     \item $w$ is orthogonal to $L$ (check $w\cdot (v-v') = 0$ for $v,v'\in L$)
     \item What should $\ell$ assign to the two clusters?
         \[
-        \ell(x) \text{ is } 
+        \ell(x) \text{ is }
         \begin{cases}
         > 0 \text{ if } x \in \text{Blue: $+1$ class} \\
         < 0 \text{ if } x \in \text{Red: $-1$ class}
         \end{cases}
         \]
-    \item \textit{Note:} $y^i\ell(x^i) > 0$ if $\ell(x)=0$ separates the data perfectly! 
+    \item \textit{Note:} $y^i\ell(x^i) > 0$ if $\ell(x)=0$ separates the data perfectly!
 \end{itemize}
-    
+
 \end{frame}
 
 %---------------------------------------------------------
@@ -120,7 +120,7 @@ Crash course on projections:
     \item Vector projection: $P_w(v)=\frac{v\cdot w}{||w||^2}w$
 \end{itemize}
 \end{columns}
-    
+
 \end{frame}
 
 %---------------------------------------------------------
@@ -132,7 +132,7 @@ Given two linearly separable clusters, $\mathcal{C}_1$ and $\mathcal{C}_2$, and 
     \item For any $i$, $y^i\ell(x^i) \geq \min \{d(x^{1,L},L), d(x^{2,L},L)\}> 0 $
     \item \textbf{GOAL:} Maximize the \textit{margin} around $L$! %: $\max\{ d(x^{1,\ell},\ell)+d(x^{2,\ell},\ell)\}$
     \item Since data is linearly separable, the maximizer will be on the set where $d(x^{1,L},L)=d(x^{2,L},L)$, let's call this $M$.
-    
+
     (note that $M$ depends on data points and the line)
 \end{itemize}
 \vspace{0.5cm}
@@ -171,7 +171,7 @@ For any pair of $(w,b)$ we can calculate $M$ and then considering the new pair $
 
 \begin{frame}{Overlapping clusters}
     For all data points let $t^i > 0 $ be the slack variables that represent how wrong the prediction is. We will modify the first formulation first:
-    
+
     \textbf{Recall the procedure:}
     \begin{align}
     & \max \{M:b\in\mathbb{R}, w \in\mathbb{R}^n, ||w||=1\} \\
@@ -179,14 +179,14 @@ For any pair of $(w,b)$ we can calculate $M$ and then considering the new pair $
     \end{align}
 
     Let's modify the second equation to allow each point to have a little more room:
-    
+
     \textbf{Modified procedure:}
     \begin{align}
     & \max \{M:b\in\mathbb{R}, w \in\mathbb{R}^n, ||w||=1\} \\
-    &\text{subject to } y^i(w\cdot x^i + b)\geq M(1 - t^i) 
+    &\text{subject to } y^i(w\cdot x^i + b)\geq M(1 - t^i)
     \end{align}
 
-\end{frame}    
+\end{frame}
 
 %---------------------------------------------------------
 
@@ -204,15 +204,15 @@ For any pair of $(w,b)$ we can calculate $M$ and then considering the new pair $
     & \min \{||w'||:b'\in\mathbb{R}, w' \in\mathbb{R}^n\} \\
     & \text{subject to } y^i(w'\cdot x^i + b')\geq 1 - t^i
     \end{align}
-    
+
     How much should we allow points to sneak in? Let's put a bound on this: $\sum t^i < C$
-    
+
     \textbf{Final procedure:}
     \begin{align}
-    &\min \{\frac{1}{2}||w||^2 + c\sum t^i \} \\ 
+    &\min \{\frac{1}{2}||w||^2 + c\sum t^i: w\in \mathbb{R}^n, t^i>0 \} \\
     &\text{ subject to } y^i(w\cdot x^i + b)\geq 1 - t^i
     \end{align}
-    
+
 \end{frame}
 
 %---------------------------------------------------------
@@ -229,7 +229,7 @@ For any pair of $(w,b)$ we can calculate $M$ and then considering the new pair $
 
 \begin{frame}{Exercises}
 \begin{itemize}
-    \item \textit{Linear regression;} Minimizing sum of squares of errors in $y=X\beta + \epsilon$:  Find $\beta$ such that $||y-X\beta||=f(\beta)$ is minimized. 
+    \item \textit{Linear regression;} Minimizing sum of squares of errors in $y=X\beta + \epsilon$:  Find $\beta$ such that $||y-X\beta||=f(\beta)$ is minimized.
     \item What's the orthogonal projection of $y$ onto the columns of $X$?
     \item What's the connection of the two?
     \item When is $X^TX$ not invertible?

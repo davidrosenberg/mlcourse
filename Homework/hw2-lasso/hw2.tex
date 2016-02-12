@@ -242,12 +242,13 @@ The ``soft thresholding'' function is defined as
 
 
 NOTE: Algorithm 13.1 does not account for the case that $a_{j}=c_{j}=0$,
-which occurs when the $j$th column of $X$ is the identically $0$.
-One can either eliminate the column (as it cannot possibly help the
-solution), or you can set $w_{j}=0$ in that case, as that is, in
-fact, the coordinate minimizer in that case.Note that Murphy is suggesting
-to initialize the optimization with the ridge regession solution,
-though this is not necessary. 
+which occurs when the $j$th column of $X$ is identically $0$. One
+can either eliminate the column (as it cannot possibly help the solution),
+or you can set $w_{j}=0$ in that case, as that is, in fact, the coordinate
+minimizer in that case.
+
+Note also that Murphy is suggesting to initialize the optimization
+with the ridge regession solution, though this is not necessary. 
 
 The solution should have a sparsity pattern that is similar to the
 ground truth. Estimators that preserve the sparsity pattern (with

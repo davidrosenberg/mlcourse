@@ -905,7 +905,7 @@ th column of
 \begin_inset Formula $X$
 \end_inset
 
- is the identically 
+ is  identically 
 \begin_inset Formula $0$
 \end_inset
 
@@ -915,9 +915,12 @@ th column of
 \begin_inset Formula $w_{j}=0$
 \end_inset
 
- in that case, as that is, in fact, the coordinate minimizer in that case.Note
- that Murphy is suggesting to initialize the optimization with the ridge
- regession solution, though this is not necessary.
+ in that case, as that is, in fact, the coordinate minimizer in that case.
+\end_layout
+
+\begin_layout Standard
+Note also that Murphy is suggesting to initialize the optimization with
+ the ridge regession solution, though this is not necessary.
  
 \end_layout
 

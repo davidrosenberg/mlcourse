@@ -1544,7 +1544,7 @@ The one-sided directional derivative of
  is defined as:
 \begin_inset Formula 
 \[
-f'(x;v)=\lim_{h\downarrow0}\frac{f(x+hv)-f(v)}{h}
+f'(x;v)=\lim_{h\downarrow0}\frac{f(x+hv)-f(x)}{h}
 \]
 
 \end_inset
@@ -1591,7 +1591,7 @@ Compute
 \end_inset
 
 .
- [Hint: the result should contain the terms 
+ [Hint: the result should be in terms of 
 \begin_inset Formula $X,y,\lambda,\text{ and }v$
 \end_inset
 

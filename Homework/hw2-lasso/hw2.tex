@@ -152,7 +152,7 @@ Homework 2: Lasso}
  \global\long\def\rkhs{\hil}
  \maketitle
 
-\textbf{Due: Monday, February 15, 2016, at 6pm (Submit via NYU Classes)}
+\textbf{Due: Tuesday, February 16, 2016, at 6pm (Submit via NYU Classes)}
 
 \textbf{Instructions}: Your answers to the questions below, including
 plots and mathematical work, should be submitted as a single PDF file.
@@ -382,15 +382,36 @@ w_{j}=\begin{cases}
 
 \subsection{Deriving $\lambda_{\mbox{max}}$}
 
-Show that for any $\lambda>2\|X^{T}(y-\bar{y})\|_{\infty}$, the estimated
-weight vector $\hat{w}$ is entirely zero, where $\bar{y}$ is the
-mean of values in the vector $y$, and $\|\cdot\|_{\infty}$ is the
-infinity norm (or supremum norm), which is the maximum absolute value
-of any component of the vector. {[}Hint: One approach is the following:
-Suppose that $\hat{w}=0$ is a minimizer of the Lasso objective function.
-Since the Lasso objective is convex, the one-sided directional derivative
-must be nonnegative in every direction at $\hat{w}=0$. (See slide
-\url{http://davidrosenberg.github.io/ml2015/docs/5.Lab.misc.pdf#page=10}.){]}
+In this problem we will derive an expression for $\lambda_{\text{max}}$.
+For the first three parts, use the Lasso objective function excluding
+the bias term i.e, $L(w)=\left\Vert Xw-y\right\Vert _{2}^{2}+\lambda\left\Vert w\right\Vert _{1}$.
+Show that for any $\lambda\geq2\|X^{T}y\|_{\infty}$, the estimated
+weight vector $\hat{w}$ is entirely zero, where $\|\cdot\|_{\infty}$
+is the infinity norm (or supremum norm), which is the maximum absolute
+value of any component of the vector. 
+\begin{enumerate}
+\item The one-sided directional derivative of $f(x)$ at $x$ in the direction
+$v$ is defined as:
+\[
+f'(x;v)=\lim_{h\downarrow0}\frac{f(x+hv)-f(v)}{h}
+\]
+Compute $L'(0;v)$. That is, compute the one-sided directional derivative
+of $L(w)$ at $w=0$ in the direction $v$. {[}Hint: the result should
+contain the terms $X,y,\lambda,\text{ and }v$.{]}
+\item Since the Lasso objective is convex, for $w^{*}$ to be a minimizer
+of $L(w)$ we must have that the directional derivative $L'(w^{*};v)\geq0$
+for all $v$. Starting from the condition $L'(0;v)\ge0$, rearrange
+terms to get a lower bounds on $\lambda$. {[}Hint: this should be
+in terms of $X,y,\text{{and} }v$.{]} 
+\item Since our lower bounds on $\lambda$ hold for all $v$, we want to
+compute the maximum lower bound. Compute the maximum lower bound of
+$\lambda$ by maximizing the expression over $v.$ Show that this
+expression is equivalent to $\lambda_{\text{max}}=2\|X^{T}y\|_{\infty}$.
+\item {[}Optional{]} Show that for $L(w)=\left\Vert Xw+b-y\right\Vert _{2}^{2}+\lambda\left\Vert w\right\Vert _{1}$,
+$\lambda_{\text{max}}=2\|X^{T}(y-\bar{y})\|_{\infty}$where $\bar{y}$
+is the mean of values in the vector $y$.
+\end{enumerate}
+Reference: \url{http://davidrosenberg.github.io/ml2015/docs/5.Lab.misc.pdf#page=10}.
 
 
 \subsection{{[}Optional{]} Feature Correlation}

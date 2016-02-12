@@ -604,7 +604,7 @@ maketitle
 \begin_layout Standard
 
 \series bold
-Due: Monday, February 15, 2016, at 6pm (Submit via NYU Classes)
+Due: Tuesday, February 16, 2016, at 6pm (Submit via NYU Classes)
 \end_layout
 
 \begin_layout Standard
@@ -1500,8 +1500,19 @@ Deriving
 \end_layout
 
 \begin_layout Standard
-Show that for any 
-\begin_inset Formula $\lambda>2\|X^{T}(y-\bar{y})\|_{\infty}$
+In this problem we will derive an expression for 
+\begin_inset Formula $\lambda_{\text{max}}$
+\end_inset
+
+.
+ For the first three parts, use the Lasso objective function excluding the
+ bias term i.e, 
+\begin_inset Formula $L(w)=\left\Vert Xw-y\right\Vert _{2}^{2}+\lambda\left\Vert w\right\Vert _{1}$
+\end_inset
+
+.
+ Show that for any 
+\begin_inset Formula $\lambda\geq2\|X^{T}y\|_{\infty}$
 \end_inset
 
 , the estimated weight vector 
@@ -1509,6 +1520,153 @@ Show that for any
 \end_inset
 
  is entirely zero, where 
+\begin_inset Formula $\|\cdot\|_{\infty}$
+\end_inset
+
+ is the infinity norm (or supremum norm), which is the maximum absolute
+ value of any component of the vector.
+ 
+\end_layout
+
+\begin_layout Enumerate
+The one-sided directional derivative of 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ at 
+\begin_inset Formula $x$
+\end_inset
+
+ in the direction 
+\begin_inset Formula $v$
+\end_inset
+
+ is defined as:
+\begin_inset Formula 
+\[
+f'(x;v)=\lim_{h\downarrow0}\frac{f(x+hv)-f(v)}{h}
+\]
+
+\end_inset
+
+Compute 
+\begin_inset Formula $L'(0;v)$
+\end_inset
+
+.
+ That is, compute the one-sided directional derivative of 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $L(w)$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ at 
+\begin_inset Formula $w=0$
+\end_inset
+
+ in the direction 
+\begin_inset Formula $v$
+\end_inset
+
+.
+ [Hint: the result should contain the terms 
+\begin_inset Formula $X,y,\lambda,\text{ and }v$
+\end_inset
+
+.]
+\end_layout
+
+\begin_layout Enumerate
+Since the Lasso objective is convex, for 
+\begin_inset Formula $w^{*}$
+\end_inset
+
+ to be a minimizer of 
+\begin_inset Formula $L(w)$
+\end_inset
+
+ we must have that the directional derivative 
+\begin_inset Formula $L'(w^{*};v)\geq0$
+\end_inset
+
+ for all 
+\begin_inset Formula $v$
+\end_inset
+
+.
+ Starting from the condition 
+\begin_inset Formula $L'(0;v)\ge0$
+\end_inset
+
+, rearrange terms to get a lower bounds on 
+\begin_inset Formula $\lambda$
+\end_inset
+
+.
+ [Hint: this should be in terms of 
+\begin_inset Formula $X,y,\text{{and} }v$
+\end_inset
+
+.] 
+\end_layout
+
+\begin_layout Enumerate
+Since our lower bounds on 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ hold for all 
+\begin_inset Formula $v$
+\end_inset
+
+, we want to compute the maximum lower bound.
+ Compute the maximum lower bound of 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ by maximizing the expression over 
+\begin_inset Formula $v.$
+\end_inset
+
+ Show that this expression is equivalent to 
+\begin_inset Formula $\lambda_{\text{max}}=2\|X^{T}y\|_{\infty}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+[Optional] Show that for 
+\begin_inset Formula $L(w)=\left\Vert Xw+b-y\right\Vert _{2}^{2}+\lambda\left\Vert w\right\Vert _{1}$
+\end_inset
+
+, 
+\begin_inset Formula $\lambda_{\text{max}}=2\|X^{T}(y-\bar{y})\|_{\infty}$
+\end_inset
+
+where 
 \begin_inset Formula $\bar{y}$
 \end_inset
 
@@ -1516,24 +1674,11 @@ Show that for any
 \begin_inset Formula $y$
 \end_inset
 
-, and 
-\begin_inset Formula $\|\cdot\|_{\infty}$
-\end_inset
-
- is the infinity norm (or supremum norm), which is the maximum absolute
- value of any component of the vector.
- [Hint: One approach is the following: Suppose that 
-\begin_inset Formula $\hat{w}=0$
-\end_inset
-
- is a minimizer of the Lasso objective function.
- Since the Lasso objective is convex, the one-sided directional derivative
- must be nonnegative in every direction at 
-\begin_inset Formula $\hat{w}=0$
-\end_inset
-
 .
- (See slide 
+\end_layout
+
+\begin_layout Standard
+Reference: 
 \begin_inset Flex URL
 status open
 
@@ -1544,7 +1689,7 @@ http://davidrosenberg.github.io/ml2015/docs/5.Lab.misc.pdf#page=10
 
 \end_inset
 
-.)]
+.
 \end_layout
 
 \begin_layout Subsection

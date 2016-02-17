@@ -740,6 +740,438 @@ tiny{Plots courtesy of Ningshan Zhang.}}
 \end_layout
 
 \begin_layout Section
+Kernels: High-Level View
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Input Space 
+\begin_inset Formula $\cx$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Our general learning theory setup: no assumptions about 
+\begin_inset Formula $\cx$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+But 
+\begin_inset Formula $\cx=\reals^{d}$
+\end_inset
+
+ for the specific methods we've developed: 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Ridge regression
+\end_layout
+
+\begin_layout Itemize
+Lasso regression
+\end_layout
+
+\begin_layout Itemize
+Linear SVM
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Feature Extraction
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+Mapping an input from 
+\begin_inset Formula $\cx$
+\end_inset
+
+ to a vector in 
+\begin_inset Formula $\reals^{d}$
+\end_inset
+
+ is called 
+\series bold
+feature extraction
+\series default
+ or 
+\series bold
+featurization
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../2015/Figures/features/feature-extraction.png
+	lyxscale 60
+	width 90text%
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../2015/Figures/kernels/feature-extraction.png
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+e.g.
+ Quadratic feature map: 
+\begin_inset Formula $\cx=\reals^{d}$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\ensuremath{\phi(x)=(x_{1},\ldots,x_{d},x_{1}^{2},\ldots,x_{d}^{2},\sqrt{2}x_{1}x_{2},\ldots,\sqrt{2}x_{i}x_{j},\ldots\sqrt{2}x_{d-1}x_{d})^{T}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+High-Dimensional Features Good but Expensive
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+To get 
+\series bold
+expressive
+\series default
+ hypothesis spaces using linear models, 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+need high-dimensional feature spaces
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+But more costly in terms of computation and memory.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Some Methods Can Be 
+\begin_inset Quotes eld
+\end_inset
+
+Kernelized
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+A method is 
+\series bold
+kernelized 
+\series default
+if inputs only appear inside inner products: 
+\begin_inset Formula $\left\langle \phi(x),\phi(y)\right\rangle $
+\end_inset
+
+ for 
+\begin_inset Formula $x,y\in\cx$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+The function 
+\begin_inset Formula 
+\[
+k(x,y)=\left\langle \phi(x),\phi(y)\right\rangle 
+\]
+
+\end_inset
+
+is called the 
+\series bold
+kernel 
+\series default
+function.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Kernel Evaluation Can Be Fast
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Example
+Quadratic feature map
+\begin_inset Formula 
+\[
+\ensuremath{\phi(x)=(x_{1},\ldots,x_{d},x_{1}^{2},\ldots,x_{d}^{2},\sqrt{2}x_{1}x_{2},\ldots,\sqrt{2}x_{i}x_{j},\ldots\sqrt{2}x_{d-1}x_{d})^{T}}
+\]
+
+\end_inset
+
+has dimension 
+\begin_inset Formula $O(d^{2})$
+\end_inset
+
+, but
+\begin_inset Formula 
+\[
+k(w,x)=\left\langle \phi(w),\phi(x)\right\rangle =\left\langle w,x\right\rangle +\left\langle w,x\right\rangle ^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Naively explicit computation of 
+\begin_inset Formula $k(w,x)$
+\end_inset
+
+: 
+\begin_inset Formula $O(d^{2})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Implicit computation of 
+\begin_inset Formula $k(w,x)$
+\end_inset
+
+: 
+\begin_inset Formula $O(d)$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Recap
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Given a kernelized ML algorithm.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Can swap out the inner product for a new kernel function.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+New kernel may correspond to a high dimensional feature space.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Once kernel matrix is computed, computational cost depends on number of
+ data points, rather than the dimension of feature space.
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Example: Kernelized Ridge Regression
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Kernelized Ridge Regression:
+\begin_inset Formula 
+\[
+\min_{\alpha\in\reals^{n}}||XX^{T}\alpha-y||^{2}+\lambda XX^{T}\lambda
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
 Introduction
 \end_layout
 
@@ -1644,6 +2076,1641 @@ Probably the most common nonlinear kernel.
 
 \end_deeper
 \begin_layout Separator
+
+\end_layout
+
+\begin_layout Section
+Kernelizing the SVM Dual
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Linear SVM
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The SVM prediction function is the solution to
+\begin_inset Formula 
+\[
+\min_{w\in\reals^{d},b\in\reals}\frac{1}{2}||w||^{2}+\frac{c}{n}\sum_{i=1}^{n}\left(1-y_{i}\left[w^{T}x_{i}+b\right]\right)_{+}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Found it's equivalent to solve the dual problem to get 
+\begin_inset Formula $\alpha^{*}$
+\end_inset
+
+:i
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+\sup_{\alpha} &  & \sum_{i=1}^{n}\alpha_{i}-\frac{1}{2}\sum_{i,j=1}^{n}\alpha_{i}\alpha_{j}y_{i}y_{j}x_{j}^{T}x_{i}\\
+\mbox{s.t.} &  & \sum_{i=1}^{n}\alpha_{i}y_{i}=0\\
+ & \quad & \alpha_{i}\in\left[0,\frac{c}{n}\right]\;i=1,\ldots,n.
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Notice: 
+\begin_inset Formula $x$
+\end_inset
+
+'s only show up as inner products with other 
+\begin_inset Formula $x$
+\end_inset
+
+'s.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Kernelization
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+We say a machine learning method is 
+\series bold
+kernelized 
+\series default
+if all references to inputs 
+\begin_inset Formula $x\in\cx$
+\end_inset
+
+ are through an inner product between pairs of points 
+\begin_inset Formula $\left\langle x,y\right\rangle $
+\end_inset
+
+ for 
+\begin_inset Formula $x,y\in\reals^{d}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout AlertBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+So far, we've only partially kernelized SVM
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout AlertBlock
+We've shown that the training portion is kernelized.
+ Later we'll show the prediction portion is also kernelized.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+SVM Dual Problem
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $x$
+\end_inset
+
+'s only show up in pairs of inner products: 
+\begin_inset Formula $x_{j}^{T}x_{i}=\left\langle x_{j},x_{i}\right\rangle $
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{eqnarray*}
+\sup_{\alpha} &  & \sum_{i=1}^{n}\alpha_{i}-\frac{1}{2}\sum_{i,j=1}^{n}\alpha_{i}\alpha_{j}y_{i}y_{j}\left\langle x_{j},x_{i}\right\rangle \\
+\mbox{s.t.} &  & \sum_{i=1}^{n}\alpha_{i}y_{i}=0\\
+ & \quad & \alpha_{i}\in\left[0,\frac{c}{n}\right]\;i=1,\ldots,n.
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Then primal optimal solution is given as:
+\begin_inset Formula 
+\[
+w^{*}=\sum_{i=1}^{n}\alpha_{i}^{*}y_{i}x_{i}
+\]
+
+\end_inset
+
+and for any 
+\begin_inset Formula $\alpha_{i}\in\left(0,\frac{c}{n}\right)$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+b^{*}=y_{i}-x_{i}^{T}w^{*}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+SVM: Kernelizing 
+\begin_inset Formula $b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We found that for any 
+\begin_inset Formula $j$
+\end_inset
+
+ with 
+\begin_inset Formula $\alpha_{j}\in\left(0,\frac{c}{n}\right)$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{eqnarray*}
+b^{*} & = & y_{j}-x_{j}^{T}w^{*}\\
+\pause & = & y_{j}-x_{j}^{T}\left(\sum_{i=1}^{n}\alpha_{i}^{*}y_{i}x_{i}\right).\\
+\pause & = & y_{j}-\sum_{i=1}^{n}\alpha_{i}^{*}y_{i}\left\langle x_{j},x_{i}\right\rangle .\pause
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+What about kernelizing 
+\begin_inset Formula $w^{*}$
+\end_inset
+
+?
+\begin_inset Formula 
+\[
+w^{*}=\sum_{i=1}^{n}\alpha_{i}^{*}y_{i}x_{i}\pause
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Not obvious...
+\end_layout
+
+\begin_layout Itemize
+But we really only care about kernelizing the predictions 
+\begin_inset Formula $f^{*}(x)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+SVM: Kernelizing Predictions 
+\begin_inset Formula $f^{*}(x)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For any 
+\begin_inset Formula $j$
+\end_inset
+
+ with 
+\begin_inset Formula $\alpha_{j}\in\left(0,\frac{c}{n}\right)$
+\end_inset
+
+: 
+\begin_inset Formula 
+\begin{eqnarray*}
+\pause f^{*}(x) & = & x^{T}w^{*}+b^{*}\\
+\pause & = & x^{T}\left(\sum_{i=1}^{n}\alpha_{i}^{*}y_{i}x_{i}\right)+b^{*}\\
+\pause & = & \sum_{i=1}^{n}\alpha_{i}^{*}y_{i}\left\langle x_{i},x\right\rangle +\left(y_{j}-\sum_{i=1}^{n}\alpha_{i}^{*}y_{i}\left\langle x_{j},x_{i}\right\rangle \right)\pause
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+We now have a fully kernelized version of SVM.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Can we kernelize the primal version of the SVM?
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Section
+Kernelizing the SVM Primal Problem 
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Kernelizing the SVM Primal Problem
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Primal SVM 
+\begin_inset Formula 
+\[
+\min_{w\in\reals^{d},b\in\reals}\frac{1}{2}||w||^{2}+\frac{c}{n}\sum_{i=1}^{n}\left(1-y_{i}\left[w^{T}x_{i}+b\right]\right)_{+}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+From our study of the dual, found that
+\begin_inset Formula 
+\[
+w^{*}=\sum_{i=1}^{n}\alpha_{i}^{*}y_{i}x_{i}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+So 
+\begin_inset Formula $w^{*}$
+\end_inset
+
+ is a linear combination of the input vectors.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Restrict to optimization to 
+\begin_inset Formula $w$
+\end_inset
+
+ of the form
+\begin_inset Formula 
+\[
+w=\sum_{i=1}^{n}\beta_{i}x_{i}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Some Vectorization
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Design matrix
+\series default
+ 
+\begin_inset Formula $X\in\reals^{n\times d}$
+\end_inset
+
+ has input vectors as rows: 
+\begin_inset Formula 
+\[
+X=\begin{pmatrix}-x_{1}-\\
+\vdots\\
+-x_{n}-
+\end{pmatrix}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The contraint on 
+\begin_inset Formula $w$
+\end_inset
+
+ looks like
+\begin_inset Formula 
+\[
+w=\begin{pmatrix}w_{1}\\
+\vdots\\
+w_{d}
+\end{pmatrix}=\begin{pmatrix}| & \cdots & |\\
+x_{1} & \cdots & x_{n}\\
+| & \cdots & |
+\end{pmatrix}\begin{pmatrix}\beta_{1}\\
+\vdots\\
+\beta_{n}
+\end{pmatrix}=X^{T}\beta.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+So replace all 
+\begin_inset Formula $w$
+\end_inset
+
+ with 
+\begin_inset Formula $X^{T}\beta$
+\end_inset
+
+, with 
+\begin_inset Formula $\beta\in\reals^{n}$
+\end_inset
+
+ unrestricted.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Kernel Matrix (or the Gram Matrix)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+For a set of 
+\begin_inset Formula $\left\{ x_{1},\ldots,x_{n}\right\} $
+\end_inset
+
+ and an inner product 
+\begin_inset Formula $\left\langle \cdot,\cdot\right\rangle $
+\end_inset
+
+on the set, the 
+\series bold
+kernel matrix
+\series default
+ or the 
+\series bold
+Gram matrix
+\series default
+ is defined as
+\begin_inset Formula 
+\[
+K=\begin{pmatrix}\left\langle x_{i},x_{j}\right\rangle \end{pmatrix}_{i,j}=\begin{pmatrix}\left\langle x_{1},x_{1}\right\rangle  & \cdots & \left\langle x_{1},x_{n}\right\rangle \\
+\vdots & \ddots & \cdots\\
+\left\langle x_{n},x_{1}\right\rangle  & \cdots & \left\langle x_{n},x_{n}\right\rangle 
+\end{pmatrix}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Then for the standard Euclidean inner product 
+\begin_inset Formula $\left\langle x_{i},x_{j}\right\rangle =x_{i}^{T}x_{j}$
+\end_inset
+
+, we have
+\begin_inset Formula 
+\[
+K=XX^{T}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Some Vectorization
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Regularization Term:
+\begin_inset Formula 
+\[
+\|w\|^{2}=w^{T}w=\beta^{T}XX^{T}\beta=\beta^{T}K\beta
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Prediction on training point 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{eqnarray*}
+f(x_{i}) & = & b+x_{i}^{T}w\\
+\pause & = & b+x_{i}^{T}\left(\sum_{j=1}^{n}\beta_{j}x_{j}\right)\\
+\pause & = & b+\sum_{j=1}^{n}\beta_{j}K_{ij}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Kernelized Primal SVM
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Putting it together, kernelized primal SVM is 
+\begin_inset Formula 
+\[
+\min_{\beta\in\reals^{n},b\in\reals}\frac{1}{2}\beta^{T}K\beta+\frac{c}{n}\sum_{i=1}^{n}\left(1-y_{i}\left[b+\sum_{j=1}^{n}\beta_{j}K_{ij}\right]\right)_{+}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We can write this as a differentiable, constrained optimization problem:
+\begin_inset Formula 
+\begin{eqnarray*}
+\textrm{minimize} &  & \frac{1}{2}\beta^{T}K\beta+\frac{c}{n}\mathbf{1}^{T}\xi\\
+\textrm{subject to} &  & \xi\succeq0\\
+ &  & \xi\succeq\left(\mathbf{1}-Y\left[b+K\beta\right]\right),
+\end{eqnarray*}
+
+\end_inset
+
+where 
+\begin_inset Formula $Y=\diag(y_{1},\ldots,y_{n})$
+\end_inset
+
+, 
+\begin_inset Formula $\mathbf{1}$
+\end_inset
+
+ is a column vector of 
+\begin_inset Formula $1$
+\end_inset
+
+'s, and 
+\begin_inset Formula $\succeq$
+\end_inset
+
+ represent element-wise vector inequality.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Kernelized Primal SVM: Kernel Trick
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Kernelized primal SVM is 
+\begin_inset Formula 
+\[
+\min_{\beta\in\reals^{n},b\in\reals}\frac{1}{2}\beta^{T}K\beta+\frac{c}{n}\sum_{i=1}^{n}\left(1-y_{i}\left[b+\sum_{j=1}^{n}\beta_{j}K_{ij}\right]\right)_{+}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We derived this with 
+\begin_inset Formula $K=XX^{T}$
+\end_inset
+
+, which corresponds to the linear kernel.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Suppose we have another kernel defined in terms of a map 
+\begin_inset Formula $\phi$
+\end_inset
+
+, i.e.
+\begin_inset Formula 
+\[
+k(w,x)=\left\langle \phi(w),\phi(x)\right\rangle ,
+\]
+
+\end_inset
+
+then we can just plug in the corresponding kernel matrix 
+\begin_inset Formula $K_{\phi}$
+\end_inset
+
+ to the optimization problem above.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+What kernels can be written as an inner product of feature vectors?
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Section
+Kernelizing Ridge Regression
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Ridge Regression
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Recall the ridge regression objective:
+\begin_inset Formula 
+\[
+J(w)=||Xw-y||^{2}+\lambda||w||^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Differentiating and setting equal to zero ,we get
+\begin_inset Formula 
+\begin{eqnarray*}
+\left(X^{T}X+\lambda I\right)w & = & X^{T}y
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+On board to review?
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Kernelizing Ridge Regression
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+So we have, for 
+\begin_inset Formula $\lambda>0$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{eqnarray*}
+(X^{T}X+\lambda I)w & = & X^{T}y\\
+\pause\lambda w & = & X^{T}y-X^{T}Xw\\
+\pause w & = & \frac{1}{\lambda}X^{T}(y-Xw)\\
+\pause w & = & X^{T}\alpha
+\end{eqnarray*}
+
+\end_inset
+
+ for 
+\begin_inset Formula $\alpha=\lambda^{-1}(y-Xw)\in\reals^{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+So 
+\begin_inset Formula $w$
+\end_inset
+
+ is 
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+in the span of the data
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+w= & \begin{pmatrix}| & \cdots & |\\
+x_{1} & \cdots & x_{n}\\
+| & \cdots & |
+\end{pmatrix}\begin{pmatrix}\alpha_{1}\\
+\vdots\\
+\alpha_{n}
+\end{pmatrix}=\alpha_{1}x_{1}+\cdots\alpha_{n}x_{n}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Kernelizing Ridge Regression
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+So plugging in 
+\begin_inset Formula $w=X^{T}\alpha$
+\end_inset
+
+ to
+\begin_inset Formula 
+\begin{eqnarray*}
+\alpha & = & \lambda^{-1}(y-Xw)\\
+\pause\lambda\alpha & = & y-XX^{T}\alpha\\
+\pause XX^{T}\alpha+\lambda\alpha & = & y\\
+\pause\left(XX^{T}+\lambda I\right)\alpha & = & y\\
+\pause\alpha & = & (\lambda I+XX^{T})^{-1}y
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+So we have 
+\begin_inset Formula $\alpha$
+\end_inset
+
+.
+ How to do prediction?
+\begin_inset Formula 
+\begin{eqnarray*}
+\pause Xw & = & \pause X\left(X^{T}\alpha\right)\\
+\pause & = & \left(XX^{T}\right)(\lambda I+XX^{T})^{-1}y
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+To predict on new data, need the 
+\begin_inset Quotes eld
+\end_inset
+
+cross-kernel
+\begin_inset Quotes erd
+\end_inset
+
+ matrix, between new and old data.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Suppose you have two sets of points in input space, say A={x1,…,xm} and
+ B={w1,…,wn}.
+ Then the cross kernel matrix for the sets A and B would be the matrix of
+ size m×n for which the (i,j)'th entry has value k(xi,wj).
+ In typical usage, you may have a cross-kernel matrix where A consists of
+ your training points, and B consists of our test points where you want
+ to make predictions.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Section
+Mercer's Theorem
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Positive Semidefinite Matrices
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+A real, symmetric matrix 
+\begin_inset Formula $M\in\reals^{n\times n}$
+\end_inset
+
+ is 
+\series bold
+positive semidefinite (psd)
+\series default
+ if for any 
+\begin_inset Formula $x\in\reals^{n}$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+x^{T}Mx\ge0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Theorem
+The following conditions are each necessary and sufficient for 
+\begin_inset Formula $M$
+\end_inset
+
+ to be positive semidefinite:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $M$
+\end_inset
+
+ has a 
+\begin_inset Quotes eld
+\end_inset
+
+square root
+\begin_inset Quotes erd
+\end_inset
+
+, i.e.
+ there exists 
+\begin_inset Formula $R$
+\end_inset
+
+ s.t.
+ 
+\begin_inset Formula $M=R^{T}R$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+All eigenvalues of 
+\begin_inset Formula $M$
+\end_inset
+
+ are greater than or equal to 
+\begin_inset Formula $0$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Positive Semidefinite Function
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+A symmetric kernel function 
+\begin_inset Formula $k:\cx\times\cx\to\reals$
+\end_inset
+
+ is 
+\series bold
+positive semidefinite (psd)
+\series default
+ if for any finite set 
+\begin_inset Formula $\left\{ x_{1},\ldots,x_{n}\right\} \in\cx$
+\end_inset
+
+, the kernel matrix on this set 
+\begin_inset Formula 
+\[
+K=\begin{pmatrix}k(x_{i},x_{j})\end{pmatrix}_{i,j}=\begin{pmatrix}k(x_{1},x_{1}) & \cdots & k(x_{1},x_{n})\\
+\vdots & \ddots & \cdots\\
+k(x_{n},x_{1}) & \cdots & k(x_{n},x_{n})
+\end{pmatrix}
+\]
+
+\end_inset
+
+is a positive semidefinite matrix.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Mercer's Theorem
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Theorem
+A symmetric function 
+\begin_inset Formula $k(w,x)$
+\end_inset
+
+ can be expressed as an inner product
+\begin_inset Formula 
+\[
+k(w,x)=\left\langle \phi(w),\phi(x)\right\rangle 
+\]
+
+\end_inset
+
+for some 
+\begin_inset Formula $\phi$
+\end_inset
+
+ if and only if 
+\begin_inset Formula $k(w,x)$
+\end_inset
+
+ is 
+\series bold
+positive semidefinite.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+If we start with a psd kernel, can we generate more?
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Additive Closure
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose 
+\begin_inset Formula $k_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $k_{2}$
+\end_inset
+
+ are psd kernels with feature maps 
+\begin_inset Formula $\phi_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\phi_{2}$
+\end_inset
+
+, respectively.
+\end_layout
+
+\begin_layout Itemize
+Then 
+\begin_inset Formula 
+\[
+k_{1}(w,x)+k_{2}(w,x)
+\]
+
+\end_inset
+
+is a psd kernel.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Proof: Concatenate the feature vectors to get 
+\begin_inset Formula 
+\[
+\phi(x)=\left(\phi_{1}(x),\phi_{2}(x)\right).
+\]
+
+\end_inset
+
+Then 
+\begin_inset Formula $\phi$
+\end_inset
+
+ is a feature map for 
+\begin_inset Formula $k_{1}+k_{2}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Closure under Positive Scaling
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose 
+\begin_inset Formula $k$
+\end_inset
+
+ is a psd kernel with feature maps 
+\begin_inset Formula $\phi$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Then for any 
+\begin_inset Formula $\alpha>0$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+\alpha k
+\]
+
+\end_inset
+
+is a psd kernel.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Proof: Note that 
+\begin_inset Formula 
+\[
+\phi(x)=\sqrt{\alpha}\phi(x)
+\]
+
+\end_inset
+
+ is a feature map for 
+\begin_inset Formula $\alpha k$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Scalar Function Gives a Kernel
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For any function 
+\begin_inset Formula $f(x)$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+k(w,x)=f(w)f(x)
+\]
+
+\end_inset
+
+is a kernel.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Proof: Let 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ be the feature mapping.
+ (It maps into a 1-dimensional feature space.)
+\begin_inset Formula 
+\[
+\left\langle f(x),f(w)\right\rangle =f(x)f(w)=k(w,x).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Closure under Hadamard Products
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose 
+\begin_inset Formula $k_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $k_{2}$
+\end_inset
+
+ are psd kernels with feature maps 
+\begin_inset Formula $\phi_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\phi_{2}$
+\end_inset
+
+, respectively.
+\end_layout
+
+\begin_layout Itemize
+Then 
+\begin_inset Formula 
+\[
+k_{1}(w,x)k_{2}(w,x)
+\]
+
+\end_inset
+
+is a psd kernel.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Proof: Take the outer product of the feature vectors: 
+\begin_inset Formula 
+\[
+\phi(x)=\phi_{1}(x)\left[\phi_{2}(x)\right]^{T}.
+\]
+
+\end_inset
+
+Note that 
+\begin_inset Formula $\phi(x)$
+\end_inset
+
+ is a matrix.
+\end_layout
+
+\begin_layout Itemize
+Continued...
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Closure under Hadamard Products
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Then
+\begin_inset Formula 
+\begin{eqnarray*}
+\left\langle \phi(x),\phi(w)\right\rangle  & = & \sum_{i,j}\phi(x)\phi(w)\\
+ & = & \sum_{i,j}\left[\phi_{1}(x)\left[\phi_{2}(x)\right]^{T}\right]_{ij}\left[\phi_{1}(w)\left[\phi_{2}(w)\right]^{T}\right]_{ij}\\
+ & = & \sum_{i,j}\left[\phi_{1}(x)\right]_{i}\left[\phi_{2}(x)\right]_{j}\left[\phi_{1}(w)\right]_{i}\left[\phi_{2}(w)\right]_{j}\\
+ & = & \left(\sum_{i}\left[\phi_{1}(x)\right]_{i}\left[\phi_{1}(w)\right]_{i}\right)\left(\sum_{j}\left[\phi_{2}(x)\right]_{j}\left[\phi_{2}(w)\right]_{j}\right)\\
+ & = & k_{1}(w,x)k_{2}(w,x)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Are RBFs Kernels?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let's consider the RBF kernel on 
+\begin_inset Formula $\reals$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{eqnarray*}
+k(w,x) & = & \exp\left(-\|w-x\|^{2}\right)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Note that
+\begin_inset Formula 
+\begin{eqnarray*}
+\|w-x\|^{2} & = & \left(w-x\right)^{T}\left(w-x\right)\\
+\pause & = & w^{T}w+x^{T}x-2w^{T}x\\
+\pause & = & \|w\|^{2}+\|x\|^{2}-2w^{T}x
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+So
+\begin_inset Formula 
+\begin{eqnarray*}
+\exp\left(-\|w-x\|^{2}\right) & = & e^{-\|w\|^{2}}e^{-\|x\|^{2}}e^{2w^{T}x}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\end_inset
+
 
 \end_layout
 

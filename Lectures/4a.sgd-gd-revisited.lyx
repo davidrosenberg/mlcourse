@@ -1689,7 +1689,7 @@ Short answer: It does, just takes a very long time.
 status open
 
 \begin_layout Plain Layout
-Convergence Rates
+Convergence Rates for Gradient Descent
 \end_layout
 
 \end_inset
@@ -1697,10 +1697,123 @@ Convergence Rates
 
 \end_layout
 
-\begin_layout Frame
+\begin_deeper
+\begin_layout Standard
+Assume 
+\begin_inset Formula $f:\reals^{n}\to\reals$
+\end_inset
+
+ is convex and differentiable, and
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\del f$
+\end_inset
+
+ is 
+\series bold
+Lipschitz continuous
+\series default
+ with constant 
+\begin_inset Formula $L>0$
+\end_inset
+
+, that is:
+\begin_inset Formula 
+\[
+\left|\del f(x)-\del f(y)\right|\le L\|x-y\|\mbox{ for all }x,y
+\]
+
+\end_inset
+
 
 \end_layout
 
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Theorem
+Gradient descent with fixed step size 
+\begin_inset Formula $t\le1/L$
+\end_inset
+
+ satisfies
+\begin_inset Formula 
+\[
+f(x^{(k)})-f(x^{*})\le\frac{\|x^{(0)}-x^{*}\|^{2}}{2tk}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+So GD has convergence rate 
+\begin_inset Formula $O(1/k)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+To get 
+\begin_inset Formula $f(x^{(k)})-f(x^{*})\le\eps$
+\end_inset
+
+, need 
+\begin_inset Formula $O(1/\eps)$
+\end_inset
+
+ iterations.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Same rate with backtracking line search.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Based on 
+\backslash
+url{https://www.cs.cmu.edu/~ggordon/10725-F12/slides/05-gd-revisited.pdf}}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \begin_layout Separator
 
 \end_layout
@@ -1710,7 +1823,7 @@ Convergence Rates
 status open
 
 \begin_layout Plain Layout
-SGD on Risk
+Convergence Rates for GD with Strong Convexity
 \end_layout
 
 \end_inset
@@ -1719,24 +1832,122 @@ SGD on Risk
 \end_layout
 
 \begin_deeper
-\begin_layout Itemize
-Loss on ridge regression for GD and SGD with various stepsizes
+\begin_layout Definition
+A differentiable function 
+\begin_inset Formula $f$
+\end_inset
+
+ is strongly convex if there is some 
+\begin_inset Formula $d>0$
+\end_inset
+
+ for which
+\begin_inset Formula 
+\[
+f(y)\ge f(x)+\del f(x)^{T}(y-x)+\frac{d}{2}\|y-x\|^{2}\mbox{ all }x,y.
+\]
+
+\end_inset
+
+(e.g.
+ ridge regression because of the 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ regularization term)
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Theorem
+Under same Lipschitz condition as before and strong convexity, GD with fixed
+ step size or with backtracking line search satisfies
+\begin_inset Formula 
+\[
+f(x^{(k)})-f(x^{*})\le c^{k}\frac{L}{2}\|x^{(0)}-x^{*}\|^{2},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $0<c<1$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
 \align center
-\begin_inset Graphics
-	filename ../Figures/optimization-rates/batch-vs-sgd-on-ridge-regression.png
-	lyxscale 60
-	height 60theight%
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Based on 
+\backslash
+url{https://www.cs.cmu.edu/~ggordon/10725-F12/slides/05-gd-revisited.pdf}}}
+\end_layout
 
 \end_inset
 
 
 \end_layout
 
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Convergence Rates for GD with Strong Convexity
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Theorem
+Under same Lipschitz condition as before and strong convexity, GD with fixed
+ step size or with backtracking line search satisfies
+\begin_inset Formula 
+\[
+f(x^{(k)})-f(x^{*})\le c^{k}\frac{L}{2}\|x^{(0)}-x^{*}\|^{2},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $0<c<1$
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Itemize
-Why doesn't SGD catch up to batch GD?
+So with strong convexity, GD converges at rate 
+\begin_inset Formula $O(c^{k})$
+\end_inset
+
+.
+ (exponentially fast!)
 \end_layout
 
 \begin_layout Pause
@@ -1744,7 +1955,146 @@ Why doesn't SGD catch up to batch GD?
 \end_layout
 
 \begin_layout Itemize
-Short answer: It does, just takes a very long time.
+To get 
+\begin_inset Formula $f(x^{(k)})-f(x^{*})\le\eps$
+\end_inset
+
+, need 
+\begin_inset Formula $O(\log\left[1/\eps\right])$
+\end_inset
+
+ iterations.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Called 
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+linear convergence
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+ because looks linear on semi-log plot.
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Based on 
+\backslash
+url{https://www.cs.cmu.edu/~ggordon/10725-F12/slides/05-gd-revisited.pdf}}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+SGD vs GD on Log Scale
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/optimization-rates/sgd-vs-gd-ridge-logistic.png
+	lyxscale 50
+	height 65theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Shows l
+\series bold
+inear convergence
+\series default
+ for 
+\begin_inset Quotes eld
+\end_inset
+
+Full
+\begin_inset Quotes erd
+\end_inset
+
+ GD; 
+\series bold
+sublinear
+\series default
+ for others.
+ 
+\end_layout
+
+\begin_layout Itemize
+Note: logarithmic y-axis
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Figure from 
+\backslash
+url{http://www.stat.cmu.edu/~ryantibs/convexopt/lectures/25-fast-stochastic.pdf}}}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
@@ -1807,10 +2157,6 @@ tiny{Plots from Bottou and Bousquet's "The Tradeoffs of Large Scale Learning."}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
-
-\end_layout
-
 \begin_layout Separator
 
 \end_layout

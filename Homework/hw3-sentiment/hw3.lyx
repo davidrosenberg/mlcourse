@@ -1,0 +1,2173 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\title{DS-GA 1003: Machine Learning and Computational Statistics\\
+Homework 3: SVM and Sentiment Analysis} 
+\date{} 
+
+\usepackage{amsfonts}\usepackage{capt-of}
+%\usepackage{url}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{bbm}
+\usepackage{enumerate}
+\newcommand{\carlos}[1]{\textcolor{red}{Carlos: #1}}
+\newcommand{\field}[1]{\mathbb{#1}} 
+\newcommand{\hide}[1]{#1}
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\providecommand{\m}[1]{\mathbf{#1}}
+\providecommand{\norm}[1]{\left\|#1\right\|}
+\providecommand{\sign}[1]{\text{sign}\left(#1\right)}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\providecommand{\what}{\m{\hat{w}}}
+\providecommand{\dw}{\Delta w}
+\providecommand{\dmw}{\Delta \m{w}}
+\providecommand{\hy}{\hat{y}}
+\end_preamble
+\options ruled
+\use_default_options false
+\begin_modules
+algorithm2e
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package none
+\inputencoding auto
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter courier
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks false
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref section
+\pdf_pdfusetitle false
+\papersize letterpaper
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\reals}{\mathbf{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\integers}{\mathbf{Z}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\naturals}{\mathbf{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rationals}{\mathbf{Q}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ca}{\mathcal{A}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cb}{\mathcal{B}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cc}{\mathcal{C}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cd}{\mathcal{D}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ce}{\mathcal{E}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cf}{\mathcal{F}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cg}{\mathcal{G}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ch}{\mathcal{H}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ci}{\mathcal{I}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cj}{\mathcal{J}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ck}{\mathcal{K}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cl}{\mathcal{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cm}{\mathcal{M}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cn}{\mathcal{N}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\co}{\mathcal{O}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cp}{\mathcal{P}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cq}{\mathcal{Q}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\calr}{\mathcal{R}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cs}{\mathcal{S}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ct}{\mathcal{T}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cu}{\mathcal{U}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cv}{\mathcal{V}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cw}{\mathcal{W}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cx}{\mathcal{X}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cy}{\mathcal{Y}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cz}{\mathcal{Z}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ind}[1]{1(#1)}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\pr}{\mathbb{P}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\predsp}{\cy}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\outsp}{\cy}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\prxy}{P_{\cx\times\cy}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\prx}{P_{\cx}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\prygivenx}{P_{\cy\mid\cx}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ex}{\mathbb{E}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\var}{\textrm{Var}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cov}{\textrm{Cov}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\sgn}{\textrm{sgn}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\sign}{\textrm{sign}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\kl}{\textrm{KL}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\law}{\mathcal{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\eps}{\varepsilon}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\as}{\textrm{ a.s.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\io}{\textrm{ i.o.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ev}{\textrm{ ev.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\convd}{\stackrel{d}{\to}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\eqd}{\stackrel{d}{=}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\del}{\nabla}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\loss}{\ell}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\risk}{R}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\emprisk}{\hat{R}_{\ell}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\lossfnl}{L}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\emplossfnl}{\hat{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\empminimizer}[1]{\hat{#1}_{\ell}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\minimizer}[1]{#1_{*}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\etal}{\textrm{et. al.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\tr}{\operatorname{tr}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\trace}{\operatorname{trace}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\diag}{\text{diag}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\rank}{\text{rank}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\linspan}{\text{span}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\proj}{\text{Proj}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\argmax}{\operatornamewithlimits{arg\, max}}
+{\mbox{argmax}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\argmin}{\operatornamewithlimits{arg\, min}}
+{\mbox{argmin}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfx}{\mathbf{x}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfy}{\mathbf{y}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfl}{\mathbf{\lambda}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfm}{\mathbf{\mu}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\calL}{\mathcal{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vw}{\boldsymbol{w}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vx}{\boldsymbol{x}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vxi}{\boldsymbol{\xi}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\valpha}{\boldsymbol{\alpha}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vbeta}{\boldsymbol{\beta}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vsigma}{\boldsymbol{\sigma}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vmu}{\boldsymbol{\mu}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vtheta}{\boldsymbol{\theta}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vd}{\boldsymbol{d}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vs}{\boldsymbol{s}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vt}{\boldsymbol{t}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vh}{\boldsymbol{h}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ve}{\boldsymbol{e}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vf}{\boldsymbol{f}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vg}{\boldsymbol{g}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vz}{\boldsymbol{z}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vk}{\boldsymbol{k}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\va}{\boldsymbol{a}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vb}{\boldsymbol{b}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vv}{\boldsymbol{v}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vy}{\boldsymbol{y}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\hil}{\ch}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\rkhs}{\hil}
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+maketitle
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Due: Monday, February 29, 2016, at 6pm (Submit via NYU Classes)
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Instructions
+\series default
+: Your answers to the questions below, including plots and mathematical
+ work, should be submitted as a single file, either HTML or PDF.
+ You may include your code inline or submit it as a separate file.
+ You may either scan hand-written work or, preferably, write your answers
+ using software that typesets mathematics (e.g.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+LaTeX
+\end_layout
+
+\end_inset
+
+, LyX, or MathJax via iPython).
+ 
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+In this assignment, we'll be working with natural language data.
+ In particular, we'll be doing sentiment analysis on movie reviews.
+ This problem will give you the opportunity to try your hand at feature
+ engineering, which is one of the most important parts of many data science
+ problems.
+ From a technical standpoint, this homework has two new pieces.
+ First, you'll be implementing Pegasos.
+ Pegasos is essentially stochastic subgradient descent for the SVM with
+ a particular schedule for the step-size.
+ Second, because in natural langauge domains we typically have huge feature
+ spaces, we work with sparse representations of feature vectors, where only
+ the non-zero entries are explicitly recorded.
+ This will require coding your gradient and SGD code using hash tables (dictiona
+ries in Python), rather than numpy arrays.
+ We begin with some practice with subgradients and an easy problem that
+ introduces the Perceptron algorithm.
+\end_layout
+
+\begin_layout Section
+Calculating Subgradients
+\end_layout
+
+\begin_layout Standard
+Recall that a vector 
+\begin_inset Formula $g\in\reals^{d}$
+\end_inset
+
+ is a 
+\series bold
+subgradient
+\series default
+ of 
+\begin_inset Formula $f:\reals^{d}\to\reals$
+\end_inset
+
+ at 
+\begin_inset Formula $x$
+\end_inset
+
+ if for all 
+\begin_inset Formula $z$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+f(z)\ge f(x)+g^{T}(z-x).
+\]
+
+\end_inset
+
+As we noted in lecture, there may be 
+\begin_inset Formula $0$
+\end_inset
+
+, 
+\begin_inset Formula $1$
+\end_inset
+
+, or infinitely many subgradients at any point.
+ The 
+\series bold
+subdifferential
+\series default
+ of 
+\begin_inset Formula $f$
+\end_inset
+
+ at a point 
+\begin_inset Formula $x$
+\end_inset
+
+, denoted 
+\begin_inset Formula $\partial f(x)$
+\end_inset
+
+, is the set of all subgradients of 
+\begin_inset Formula $f$
+\end_inset
+
+ at 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Just as there is a calculus for gradients, there is a calculus for subgradients
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+A good reference for subgradients are these notes 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://see.stanford.edu/materials/lsocoee364b/01-subgradients_notes.pdf
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+.
+ For our purposes, we can usually get by using the definition of subgradient
+ directly.
+ However, in the first problem below we derive a property that will make
+ our life easier for finding a subgradient of the hinge loss and perceptron
+ loss.
+ 
+\end_layout
+
+\begin_layout Enumerate
+[Subgradients for pointwise maximum of functions] Suppose 
+\begin_inset Formula $f_{1},\ldots,f_{m}:\reals^{d}\to\reals$
+\end_inset
+
+ are convex functions, and 
+\begin_inset Formula 
+\[
+f(x)=\max_{i=1,\ldots,,m}f_{i}(x).
+\]
+
+\end_inset
+
+Let 
+\begin_inset Formula $k$
+\end_inset
+
+ be any index for which 
+\begin_inset Formula $f_{k}(x)=f(x)$
+\end_inset
+
+, and choose 
+\begin_inset Formula $g\in\partial f_{k}(x)$
+\end_inset
+
+.
+ [We are using the fact that a convex function on 
+\begin_inset Formula $\reals^{d}$
+\end_inset
+
+ has a non-empty subdifferential at all points.] Show that 
+\begin_inset Formula $g\in\partial f(x)$
+\end_inset
+
+.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+[Optional] [Subdifferential for same] A 
+\series bold
+convex combination
+\series default
+ of points 
+\begin_inset Formula $x_{1},\ldots,x_{k}\in\reals^{d}$
+\end_inset
+
+ is a point of the form 
+\begin_inset Formula $\theta_{1}x_{1}+\cdots+\theta_{k}x_{k}$
+\end_inset
+
+, where 
+\begin_inset Formula $\theta_{1}+\cdots+\theta_{k}=1$
+\end_inset
+
+ and 
+\begin_inset Formula $\theta_{i}\ge0$
+\end_inset
+
+ for all 
+\begin_inset Formula $i$
+\end_inset
+
+.
+ The 
+\series bold
+convex hull
+\series default
+ of 
+\begin_inset Formula $x_{1},\ldots,x_{k}$
+\end_inset
+
+ is the set of all convex combinations of 
+\begin_inset Formula $x_{1},\ldots,x_{k}$
+\end_inset
+
+.
+ We will denote the convex hull of a set of points by 
+\begin_inset Formula $\convhull\left\{ x_{1},\ldots,x_{k}\right\} $
+\end_inset
+
+.
+ For 
+\begin_inset Formula $f$
+\end_inset
+
+ as defined above, show that 
+\begin_inset Formula $\partial f(x)=\convhull\left\{ \partial f_{i}(x)\mid f_{i}(x)=f(x)\right\} $
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+[Subgradient of hinge loss for linear prediction] Give a subgradient of
+\begin_inset Formula 
+\[
+J(w)=\max\left\{ 0,1-yw^{T}x\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Perceptron
+\end_layout
+
+\begin_layout Standard
+The perceptron algorithm is often the first classification algorithm taught
+ in machine learning classes.
+ Suppose we have a labeled training set 
+\begin_inset Formula $\left(x_{1},y_{1}\right),\ldots,(x_{n},y_{n})\in\reals^{d}\times\left\{ -1,1\right\} $
+\end_inset
+
+.
+ In the perceptron algorithm, we are looking for a hyperplane that perfectly
+ separates the classes.
+ That is, we're looking for 
+\begin_inset Formula $w\in\reals^{d}$
+\end_inset
+
+ such that
+\begin_inset Formula 
+\[
+y_{i}w^{T}x_{i}>0\;\forall i\in\left\{ 1,\ldots,n\right\} .
+\]
+
+\end_inset
+
+Visually, this would mean that all the 
+\begin_inset Formula $x$
+\end_inset
+
+'s for which 
+\begin_inset Formula $y=1$
+\end_inset
+
+ are on one side of the hyperplane 
+\begin_inset Formula $\left\{ x\mid w^{T}x=0\right\} $
+\end_inset
+
+, and all the 
+\begin_inset Formula $x's$
+\end_inset
+
+ for which 
+\begin_inset Formula $y=-1$
+\end_inset
+
+ are on the other side.
+ When such a hyperplane exists, we say that the data are 
+\series bold
+linearly separable
+\series default
+.
+ The perceptron algorithm is given in Algorithm 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:Perceptron-Algorithm"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:Perceptron-Algorithm"
+
+\end_inset
+
+Perceptron Algorithm
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+input: Training set 
+\begin_inset Formula $\left(x_{1},y_{1}\right),\ldots,(x_{n},y_{n})\in\reals^{d}\times\left\{ -1,1\right\} $
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $w^{(0)}=\left(0,\ldots,0\right)\in\reals^{d}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $k=0$
+\end_inset
+
+ # step number
+\begin_inset Newline newline
+\end_inset
+
+repeat
+\begin_inset Newline newline
+\end_inset
+
+  all_correct = TRUE
+\begin_inset Newline newline
+\end_inset
+
+  for 
+\begin_inset Formula $i=1,2,\ldots,n$
+\end_inset
+
+ # loop through data
+\begin_inset Newline newline
+\end_inset
+
+    if (
+\begin_inset Formula $y_{i}x_{i}^{T}w^{(k)}\le0$
+\end_inset
+
+)
+\begin_inset Newline newline
+\end_inset
+
+      
+\begin_inset Formula $w^{(k+1)}=w^{(k)}+y_{i}x_{i}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+      all_correct = FALSE
+\begin_inset Newline newline
+\end_inset
+
+    else
+\begin_inset Newline newline
+\end_inset
+
+      
+\begin_inset Formula $w^{(k+1)}=w^{(k)}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+    end if
+\begin_inset Newline newline
+\end_inset
+
+    
+\begin_inset Formula $k=k+1$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+  end for
+\begin_inset Newline newline
+\end_inset
+
+until (all_correct == TRUE)
+\begin_inset Newline newline
+\end_inset
+
+return 
+\begin_inset Formula $w^{(k)}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+There is also something called the 
+\series bold
+perceptron loss,
+\series default
+ given by 
+\begin_inset Formula 
+\[
+\ell(\hat{y},y)=\max\left\{ 0,-\hat{y}y\right\} .
+\]
+
+\end_inset
+
+In this problem we will see why this loss function has this name.
+\end_layout
+
+\begin_layout Enumerate
+Show that if 
+\begin_inset Formula $\left\{ x\mid w^{T}x=0\right\} $
+\end_inset
+
+ is a separating hyperplane for a training set 
+\begin_inset Formula $\cd=\left(\left(x_{1},y_{1}\right),\ldots,(x_{n},y_{n})\right)$
+\end_inset
+
+, then the average perceptron loss on 
+\begin_inset Formula $\cd$
+\end_inset
+
+ is 
+\begin_inset Formula $0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Let 
+\begin_inset Formula $\ch$
+\end_inset
+
+ be the linear hypothesis space consisting of functions 
+\begin_inset Formula $x\mapsto w^{T}x$
+\end_inset
+
+.
+ Consider running SGD to minimize the empirical risk with the perceptron
+ loss.
+ We'll use the version of SGD in which we cycle through the data points
+ in each epoch.
+ Show that if we use a fixed step size 
+\begin_inset Formula $1$
+\end_inset
+
+ and we terminate when our training loss is 
+\begin_inset Formula $0$
+\end_inset
+
+, then we are exactly doing the Perceptron algorithm.
+\end_layout
+
+\begin_layout Enumerate
+Suppose the perceptron algorithm returns 
+\begin_inset Formula $w$
+\end_inset
+
+.
+ Show that 
+\begin_inset Formula $w$
+\end_inset
+
+ is a linear combination of the input points.
+ That is, we can write 
+\begin_inset Formula $w=\sum_{i=1}^{n}\alpha_{i}x_{i}$
+\end_inset
+
+ for some 
+\begin_inset Formula $\alpha_{1},\ldots,\alpha_{n}\in\reals$
+\end_inset
+
+.
+ The 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ for which 
+\begin_inset Formula $\alpha_{i}\neq0$
+\end_inset
+
+ are called support vectors.
+ Give a characterization of points that are support vectors and not support
+ vectors.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+The Data
+\end_layout
+
+\begin_layout Standard
+We will be using the 
+\begin_inset Quotes eld
+\end_inset
+
+polarity dataset v2.0
+\begin_inset Quotes erd
+\end_inset
+
+, constructed by Pang and Lee (
+\begin_inset Flex Flex:URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.cs.cornell.edu/People/pabo/movie
+\backslash
+%2Dreview
+\backslash
+%2Ddata/
+\end_layout
+
+\end_inset
+
+).
+ It has the full text from 2000 movies reivews: 1000 reviews are classified
+ as 
+\begin_inset Quotes eld
+\end_inset
+
+positive
+\begin_inset Quotes erd
+\end_inset
+
+ and 1000 as 
+\begin_inset Quotes eld
+\end_inset
+
+negative.
+\begin_inset Quotes erd
+\end_inset
+
+ Our goal is to predict whether a review has positive or negative sentiment
+ from the text of the review.
+ Each review is stored in a separate file: the positive reviews are in a
+ folder called 
+\begin_inset Quotes eld
+\end_inset
+
+pos
+\begin_inset Quotes erd
+\end_inset
+
+, and the negative reviews are in 
+\begin_inset Quotes eld
+\end_inset
+
+neg
+\begin_inset Quotes erd
+\end_inset
+
+.
+ We have provided some code in 
+\family typewriter
+load.py
+\family default
+ to assist with reading these files.
+ You can use the code, or write your own version.
+ The code removes some special symbols from the reviews.
+ Later you can check if this helps or hurts your results.
+\end_layout
+
+\begin_layout Enumerate
+Load all the data and randomly split it into 1500 training examples and
+ 500 test examples.
+ 
+\end_layout
+
+\begin_layout Section
+Sparse Representations
+\end_layout
+
+\begin_layout Standard
+The most basic way to represent text documents for machine learning is with
+ a 
+\begin_inset Quotes eld
+\end_inset
+
+bag-of-words
+\begin_inset Quotes erd
+\end_inset
+
+ representation.
+ Here every possible word is a feature, and the value of a word feature
+ is the number of times that word appears in the document.
+ Of course, most words will not appear in any particular document, and those
+ counts will be zero.
+ Rather than store a huge number of zeros, we use a sparse representation,
+ in which we only store the counts that are nonzero.
+ The counts are stored in a key/value store (such as a dictionary in Python).
+ For example, 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+``Harry Potter and Harry Potter II'' would be represented as the following
+ Python dict: x={`Harry':2, `Potter':2, `and':1, 'II':1}.
+ We will be using linear classifiers of the form 
+\begin_inset Formula $f(x)=w^{T}x$
+\end_inset
+
+, and we can store the 
+\begin_inset Formula $w$
+\end_inset
+
+ vector in a sparse format as well, such as w={`minimal':1.3,`Harry':-1.1,`viable'
+:-4.2,`and':2.2,`product':9.1}.
+ The inner product between 
+\begin_inset Formula $w$
+\end_inset
+
+ and 
+\begin_inset Formula $x$
+\end_inset
+
+ would only involve the features that appear in both x and w, since whatever
+ doesn't appear is assumed to be zero.
+ For this example, the inner product would be x[Harry] * w[Harry] + x[and]
+ * w[and] = 2*(-1.1) + 1*(2.2).
+ Although we hate to spoil the fun, to help you along, we've included two
+ functions for working with sparse vectors: 1) a dot product between two
+ vectors represented as dict's and 2) a function that increments one sparse
+ vector by a scaled multiple of another vector, which is a very common operation.
+ These functions are located in 
+\family typewriter
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+util.py
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Write a function that converts an example (e.g.
+ a list of words) into a sparse bag-of-words representation.
+ You may find Python's Counter class to be useful here: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://docs.python.org/2/library/collections.html
+\end_layout
+
+\end_inset
+
+.
+ Note that a Counter is also a dict.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+[Optional] Write a version of 
+\family typewriter
+generic_gradient_checker
+\family default
+ from Homework 1 that works with sparse vectors represented as dict types.
+ See Homework 1 solutions if you didn't do that part.
+ Since we'll be using it for stochastic methods, it should take a single
+ 
+\begin_inset Formula $(x,y)$
+\end_inset
+
+ pair, rather than the entire dataset.
+ Be sure to use the dotProduct and increment primitives we provide, or make
+ your own.
+ 
+\series bold
+Note
+\series default
+: SVM loss is not differentiable at a particular point.
+ Our method for checking the gradient doesn't extent to subgradients.
+ One should skip checking those points.
+ It's also an interesting opportunity to see how often we actually end up
+ in those places.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Support Vector Machine via Pegasos
+\end_layout
+
+\begin_layout Standard
+In this question you will build an SVM using the Pegasos algorithm.
+ To align with the notation used in the Pegasos paper
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Shalev-Shwartz et al.'s 
+\begin_inset Quotes eld
+\end_inset
+
+Pegasos: Primal Estimated sub-GrAdient SOlver for SVM
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Flex Flex:URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://ttic.uchicago.edu/~nati/Publications/PegasosMPB.pdf
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, we're considering the following formulation of the SVM objective function:
+\begin_inset Formula 
+\[
+\min_{w\in\reals^{n}}\frac{\lambda}{2}\|w\|^{2}+\frac{1}{m}\sum_{i=1}^{m}\max\left\{ 0,1-y_{i}w^{T}x_{i}\right\} .
+\]
+
+\end_inset
+
+Note that, for simplicity, we are leaving off the unregularized bias term
+ 
+\begin_inset Formula $b$
+\end_inset
+
+, and the expression with 
+\begin_inset Quotes eld
+\end_inset
+
+max
+\begin_inset Quotes erd
+\end_inset
+
+ is just another way to write 
+\begin_inset Formula $\left(1-y_{i}w^{T}x\right)_{+}$
+\end_inset
+
+.
+ Pegasos is stochastic subgradient descent using a step size rule 
+\begin_inset Formula $\eta_{t}=1/\left(\lambda t\right)$
+\end_inset
+
+.
+ The pseudocode is given below:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="9" columns="1">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<row>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Input: 
+\begin_inset Formula $\lambda>0$
+\end_inset
+
+.
+ Choose 
+\begin_inset Formula $w_{1}=0,t=0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+While epoch 
+\begin_inset Formula $\le$
+\end_inset
+
+ max_epochs
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+For 
+\begin_inset Formula $j=1,\ldots,m$
+\end_inset
+
+ (assumes data is randomly permuted)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset Formula $t=t+1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset Formula $\eta_{t}=1/\left(t\lambda\right)$
+\end_inset
+
+;
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+If 
+\begin_inset Formula $y_{j}w_{t}^{T}x_{j}<1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset Formula $w_{t+1}=(1-\eta_{t}\lambda)w_{t}+\eta_{t}y_{j}x_{j}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+Else 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset Formula $w_{t+1}=(1-\eta_{t}\lambda)w_{t}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+[Written] Compute a subgradient for the 
+\begin_inset Quotes eld
+\end_inset
+
+stochastic
+\begin_inset Quotes erd
+\end_inset
+
+ SVM objective, which assumes a single training point.
+ Show that if your step size rule is 
+\begin_inset Formula $\eta_{t}=1/\left(\lambda t\right)$
+\end_inset
+
+, then the the corresponding SGD update is the same as given in the pseudocode.
+ [You may use the following facts without proof: 1) If 
+\begin_inset Formula $f_{1},\ldots,f_{m}:\reals^{d}\to\reals$
+\end_inset
+
+ are convex functions and 
+\begin_inset Formula $f=f_{1}+\cdots+f_{m}$
+\end_inset
+
+, then 
+\begin_inset Formula $\partial f(x)=\partial f_{1}(x)+\cdots+\partial f_{m}(x)$
+\end_inset
+
+.
+ 2) For 
+\begin_inset Formula $\alpha\ge0$
+\end_inset
+
+, 
+\begin_inset Formula $\partial\left(\alpha f\right)(x)=\alpha\partial f(x)$
+\end_inset
+
+.
+ ]
+\end_layout
+
+\begin_layout Enumerate
+Implement the Pegasos algorithm to run on a sparse data representation.
+ The output should be a sparse weight vector 
+\begin_inset Formula $w$
+\end_inset
+
+.
+ Note that our Pegasos algorithm starts at 
+\begin_inset Formula $w=0$
+\end_inset
+
+.
+ In a sparse representation, this corresponds to an empty dictionary.
+ With this problem, you will need to take some care to code things efficiently.
+ In particular, be aware that making copies of the weight dictionary can
+ slow down your code significantly.
+ If you want to make a copy of your weights (e.g.
+ for checking for convergence), make sure you don't do this more than once
+ per epoch.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Note that in every step of the Pegasos algorithm, we rescale every entry
+ of 
+\begin_inset Formula $w_{t}$
+\end_inset
+
+ by the factor 
+\begin_inset Formula $(1-\eta_{t}\lambda)$
+\end_inset
+
+.
+ Implementing this directly with dictionaries is relatively slow.
+ We can make things significantly faster by representing 
+\begin_inset Formula $w$
+\end_inset
+
+ as 
+\begin_inset Formula $w=sW$
+\end_inset
+
+, where 
+\begin_inset Formula $s\in\reals$
+\end_inset
+
+ and 
+\begin_inset Formula $W\in\reals^{d}$
+\end_inset
+
+.
+ You can start with 
+\begin_inset Formula $s=1$
+\end_inset
+
+ and 
+\begin_inset Formula $W$
+\end_inset
+
+ all zeros (i.e.
+ an empty dictionary).
+ Note that both updates start with rescaling 
+\begin_inset Formula $w_{t}$
+\end_inset
+
+, which we can do simply by setting 
+\begin_inset Formula $s_{t+1}=\left(1-\eta_{t}\lambda\right)s_{t}$
+\end_inset
+
+.
+ If the update is 
+\begin_inset Formula $w_{t+1}=(1-\eta_{t}\lambda)w_{t}+\eta_{t}y_{j}x_{j}$
+\end_inset
+
+, then 
+\series bold
+verify that the update is equivalent to
+\series default
+:
+\begin_inset Formula 
+\begin{eqnarray*}
+s_{t+1} & = & \left(1-\eta_{t}\lambda\right)s_{t}\\
+W_{t+1} & = & W_{t}+\frac{1}{s_{t+1}}\eta_{t}y_{j}x_{j}.
+\end{eqnarray*}
+
+\end_inset
+
+There is one subtle issue with the approach described above: if we ever
+ have 
+\begin_inset Formula $1-\eta_{t}\lambda=0$
+\end_inset
+
+, then 
+\begin_inset Formula $s_{t+1}=0$
+\end_inset
+
+, and we'll have a divide by 
+\begin_inset Formula $0$
+\end_inset
+
+ in the calculation for 
+\begin_inset Formula $W_{t+1}$
+\end_inset
+
+.
+ This only happens when 
+\begin_inset Formula $\eta_{t}=1/\lambda$
+\end_inset
+
+.
+ With our step-size rule of 
+\begin_inset Formula $\eta_{t}=1/\left(\lambda t\right)$
+\end_inset
+
+, it happens exactly when 
+\begin_inset Formula $t=1$
+\end_inset
+
+.
+ So one approach is to just start at 
+\begin_inset Formula $t=2$
+\end_inset
+
+.
+ More generically, note that if 
+\begin_inset Formula $s_{t+1}=0$
+\end_inset
+
+, then 
+\begin_inset Formula $w_{t+1}=0$
+\end_inset
+
+.
+ Thus an equivalent representation is 
+\begin_inset Formula $s_{t+1}=1$
+\end_inset
+
+ and 
+\begin_inset Formula $W=0$
+\end_inset
+
+.
+ Thus if we ever get 
+\begin_inset Formula $s_{t+1}=0$
+\end_inset
+
+, simply set it back to 
+\begin_inset Formula $1$
+\end_inset
+
+ and reset 
+\begin_inset Formula $W_{t+1}$
+\end_inset
+
+ to zero, which is an empty dictionary in a sparse representation.
+ 
+\series bold
+Implement the Pegasos algorithm with this change
+\series default
+.
+ [Section 5.1 of 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://leon.bottou.org/papers/bottou-tricks-2012
+\end_layout
+
+\end_inset
+
+ for a more generic version of this trick, and many other useful tricks.]
+\end_layout
+
+\begin_layout Enumerate
+Run both implementations of Pegasos to train an SVM on the training data
+ (using the bag-of-words feature representation described above).
+ Make sure your implementations are correct by verifying that the two approaches
+ give essentially the same result.
+ Report on the time taken to run each approach.
+\end_layout
+
+\begin_layout Enumerate
+Write a function that takes a sparse weight vector 
+\begin_inset Formula $w$
+\end_inset
+
+ and a collection of 
+\begin_inset Formula $(x,y)$
+\end_inset
+
+ pairs, and returns the percent error when predicting 
+\begin_inset Formula $y$
+\end_inset
+
+ using 
+\begin_inset Formula $\sign(w^{T}x)$
+\end_inset
+
+.
+ In other words, the function reports the 0-1 loss of the linear predictor
+ 
+\begin_inset Formula $x\mapsto w^{T}x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Using the bag-of-words feature representation described above, search for
+ the regularization parameter that gives the minimal percent error on your
+ test set.
+ A good search strategy is to start with a set of lambdas spanning a broad
+ range of orders of magnitude.
+ Then, continue to zoom in until you're convinced that additional search
+ will not significantly improve your test performance\SpecialChar \@.
+ Once you have a sense
+ of the general range of regularization parameters that give good results,
+ you do not have to search over orders of magnitude every time you change
+ something (such as adding new feature).
+ 
+\end_layout
+
+\begin_layout Enumerate
+[Optional] Recall that the 
+\begin_inset Quotes eld
+\end_inset
+
+score
+\begin_inset Quotes erd
+\end_inset
+
+ is the value of the prediction 
+\begin_inset Formula $f(x)=w^{T}x$
+\end_inset
+
+.
+ We like to think that the magnitude of the score represents the confidence
+ of the prediction.
+ This is something we can directly verify or refute.
+ Break the predictions into groups based on the score (you can play with
+ the size of the groups to get a result you think is informative).
+ For each group, examine the percentage error.
+ You can make a table or graph.
+ Summarize the results.
+ Is there a correlation between higher magnitude scores and accuracy?
+\end_layout
+
+\begin_layout Enumerate
+[Optional] Our objective is not differentiable when 
+\begin_inset Formula $w^{T}x_{i}=0$
+\end_inset
+
+.
+ Investigate how often and when we have 
+\begin_inset Formula $w^{T}x_{i}=0$
+\end_inset
+
+.
+ Describe your findings.
+ If we didn't know about subgradients, one might suggest just skipping the
+ update when 
+\begin_inset Formula $w^{T}x_{i}=0$
+\end_inset
+
+.
+ Does this seem reasonable? 
+\end_layout
+
+\begin_layout Section
+Error Analysis
+\end_layout
+
+\begin_layout Standard
+The natural language processing domain is particularly nice in that often
+ one can often interpret why a model has performed well or poorly on a specific
+ example, and sometimes it is not very difficult to come up with ideas for
+ new features that might help fix a problem.
+ The first step in this process is to look closely at the errors that our
+ model makes.
+\end_layout
+
+\begin_layout Enumerate
+Choose some examples that the model got wrong.
+ List the features that contributed most heavily to the descision (e.g.
+ rank them by 
+\begin_inset Formula $\left|w_{i}x_{i}\right|$
+\end_inset
+
+), along with 
+\begin_inset Formula $x_{i},w_{i},xw_{i}$
+\end_inset
+
+.
+ Do you understand why the model was incorrect? Can you think of a new feature
+ that might be able to fix the issue? Include a short analysis for at least
+ 2 incorrect examples.
+\end_layout
+
+\begin_layout Section
+Features
+\end_layout
+
+\begin_layout Standard
+For a problem like this, the features you use are far more important than
+ the learning model you choose.
+ Whenever you enter a new problem domain, one of your first orders of business
+ is to beg, borrow, or steal the best features you can find.
+ This means looking at any relevant published work and seeing what they've
+ used.
+ Maybe it means asking a colleague what features they use.
+ But eventually you'll need to engineer new features that help in your particula
+r situation.
+ To get ideas for this dataset, you might check the discussion board on
+ this Kaggle competition, which is using a very similar dataset 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.kaggle.com/c/sentiment-analysis-on-movie-reviews
+\end_layout
+
+\end_inset
+
+.
+ There are also a very large number of academic research papers on sentiment
+ analysis that you can look at for ideas.
+\end_layout
+
+\begin_layout Enumerate
+Based on your error analysis, or on some idea you have, construct a new
+ feature (or group of features) that you hope will improve your test performance.
+ Describe the features and what kind of improvement they give.
+ At this point, it's important to consider the standard errors (
+\begin_inset Formula $\sqrt{p(1-p)/n}$
+\end_inset
+
+) on your performance estimates, to know whether the improvement is statisticall
+y significant.
+ 
+\end_layout
+
+\begin_layout Enumerate
+[Optional] Try to get the best performance possible by generating lots of
+ new features, changing the pre-processing, or any other method you want,
+ so long as you are using the same core SVM model.
+ Describe what you tried, and how much improvement each thing brought to
+ the model.
+ To get you thinking on features, here are some basic ideas of varying quality:
+ 1) how many words are in the review? 2) How many 
+\begin_inset Quotes eld
+\end_inset
+
+negative
+\begin_inset Quotes erd
+\end_inset
+
+ words are there? (You'd have to construct or find a list of negative words.)
+ 3) Word n-gram features: Instead of single-word features, you can make
+ every pair of consecutive words a feature.
+ 4) Character n-gram features: Ignore word boundaries and make every sequence
+ of n characters into a feature (this will be a lot).
+ 5) Adding an extra feature whenever a word is preceded by 
+\begin_inset Quotes eld
+\end_inset
+
+not
+\begin_inset Quotes erd
+\end_inset
+
+.
+ For example 
+\begin_inset Quotes eld
+\end_inset
+
+not amazing
+\begin_inset Quotes erd
+\end_inset
+
+ becomes its own feature.
+ 6) Do we really need to eliminate those funny characters in the data loading
+ phase? Might there be useful signal there? 7) Use tf-idf instead of raw
+ word counts.
+ The tf-idf is calculated as 
+\begin_inset Formula 
+\begin{equation}
+\mbox{tfidf}(f_{i})=\frac{FF_{i}}{\log(DF_{i})}
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $FF_{i}$
+\end_inset
+
+ is the feature frequency of feature 
+\begin_inset Formula $f_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $DF_{i}$
+\end_inset
+
+ is the number of document containing 
+\begin_inset Formula $f_{i}$
+\end_inset
+
+.
+ In this way we increase the weight of rare words.
+ Sometimes this scheme helps, sometimes it makes things worse.
+ You could try using both! [Extra credit points will be awarded in proportion
+ to how much improvement you achieve.] 
+\end_layout
+
+\end_body
+\end_document

@@ -875,7 +875,7 @@ As usual, we capture the inner optimization in the Lagrange dual objective:
  are 0:
 \begin_inset Formula 
 \begin{eqnarray}
-\partial_{w}L=0 & \iff & w-\sum_{i=1}^{n}\alpha_{i}y_{i}x_{i}=0\;\iff\; w=\sum_{i=1}^{n}\alpha_{i}y_{i}x_{i}\label{eq:lagrangeDeriv_w}\\
+\partial_{w}L=0 & \iff & w-\sum_{i=1}^{n}\alpha_{i}y_{i}x_{i}=0\;\iff\;w=\sum_{i=1}^{n}\alpha_{i}y_{i}x_{i}\label{eq:lagrangeDeriv_w}\\
 \partial_{b}L=0 & \iff & -\sum_{i=1}^{n}\alpha_{i}y_{i}=0\;\iff\;\sum_{i=1}^{n}\alpha_{i}y_{i}=0\nonumber \\
 \partial_{\xi_{i}}L=0 & \iff & \frac{c}{n}-\alpha_{i}-\lambda_{i}=0\;\iff\;\alpha_{i}+\lambda_{i}=\frac{c}{n}
 \end{eqnarray}
@@ -928,8 +928,8 @@ Thus we can write the dual problem as
 \begin{align*}
 \sup_{\alpha,\lambda} & \sum_{i=1}^{n}\alpha_{i}-\frac{1}{2}\sum_{i,j=1}^{n}\alpha_{i}\alpha_{j}y_{i}y_{j}x_{j}^{T}x_{i}\\
 \mbox{s.t.} & \sum_{i=1}^{n}\alpha_{i}y_{i}=0\\
- & \alpha_{i}+\lambda_{i}=\frac{c}{n},\, i=1,\ldots,n\\
- & \alpha_{i},\lambda_{i}\ge0,\, i=1,\ldots,n
+ & \alpha_{i}+\lambda_{i}=\frac{c}{n},\,i=1,\ldots,n\\
+ & \alpha_{i},\lambda_{i}\ge0,\,i=1,\ldots,n
 \end{align*}
 
 \end_inset
@@ -961,24 +961,40 @@ When written in standard form, this has a quadratic objective in
 \end_inset
 
  constraints.
- Note that these constraints have a particularly simple form: they are called
- 
+ The constraints of the form 
+\begin_inset Formula $\alpha_{i}\in\left[0,\frac{c}{n}\right]$
+\end_inset
+
+ are called 
 \series bold
 box constraints
 \series default
-.
- If 
-\begin_inset Formula $\alpha^{*}$
+, and are particularly easy to handle in optimization.
+ 
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\left(w^{*},b^{*},\xi_{i}^{*},\alpha^{*},\lambda^{*}\right)$
 \end_inset
 
- is a solution to the dual problem, then by strong duality and 
+ be a solution to the dual problem 
+\begin_inset Formula 
+\[
+\sup_{\alpha,\lambda\succeq0}\inf_{w,b,\xi}L(w,b,\xi,\alpha,\lambda).
+\]
+
+\end_inset
+
+By our first order conditions for the dual problem in Eq.
+ 
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "eq:lagrangeDeriv_w"
 
 \end_inset
 
-, the optimal solution to the primal problem is given by 
+, we have 
 \begin_inset Formula 
 \[
 w^{*}=\sum_{i=1}^{n}\alpha_{i}^{*}y_{i}x_{i}.
@@ -986,7 +1002,24 @@ w^{*}=\sum_{i=1}^{n}\alpha_{i}^{*}y_{i}x_{i}.
 
 \end_inset
 
+By strong duality, we know that 
+\begin_inset Formula $\left(w^{*},b^{*},\xi_{i}^{*},\alpha^{*},\lambda^{*}\right)$
+\end_inset
 
+ is also a solution to the primal problem 
+\begin_inset Formula $\inf_{w,b,\xi}\sup_{\alpha,\lambda\succeq0}L(w,b,\xi,\alpha,\lambda)$
+\end_inset
+
+.
+ Thus the relationship between 
+\begin_inset Formula $w^{*}$
+\end_inset
+
+ and 
+\begin_inset Formula $\alpha^{*}$
+\end_inset
+
+ also applies to the solution to the primal problem.
 \end_layout
 
 \begin_layout Itemize

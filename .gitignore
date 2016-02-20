@@ -7,4 +7,8 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Other stuff
 stubs
+publishLecture.sh
+lectures-2016

@@ -2035,6 +2035,17 @@ SGD vs GD on Log Scale
 \begin_deeper
 \begin_layout Standard
 \align center
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+NOTE: Can we verify that iteration refers to something reasonable to make
+ SGD and GD comparable?
+\end_layout
+
+\end_inset
+
+
 \begin_inset Graphics
 	filename ../Figures/optimization-rates/sgd-vs-gd-ridge-logistic.png
 	lyxscale 50
@@ -2042,7 +2053,7 @@ SGD vs GD on Log Scale
 
 \end_inset
 
-
+ 
 \end_layout
 
 \begin_layout Itemize

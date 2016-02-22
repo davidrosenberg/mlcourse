@@ -2133,6 +2133,20 @@ The
 \end_layout
 
 \begin_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+THESE PICTURES ARE VERY HARD TO SEE WHEN PROJECTED.
+ Try to get a better color.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Itemize
 For visualization, restrict to 2-dimensional input space
 \end_layout
@@ -3276,7 +3290,7 @@ Coordinate Descent Method
 Goal: 
 \series default
 Minimize 
-\begin_inset Formula $L(w)=L(w_{1},\ldots w_{d})$
+\begin_inset Formula $L(w)=L(w_{1},\ldots,w_{d})$
 \end_inset
 
  over 

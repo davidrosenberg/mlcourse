@@ -2233,173 +2233,6 @@ tiny{Based on Guillaume Obozinski's Statistical Machine Learning course
 status open
 
 \begin_layout Plain Layout
-String Kernel
-\end_layout
-
-\end_inset
-
- 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Computer virus finding: want to find a sequence of characters 
-\begin_inset Formula $v$
-\end_inset
-
- in a file that indicates file contains a virus.
-\end_layout
-
-\begin_layout Itemize
-Alphabet set 
-\begin_inset Formula $\Sigma$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Formula $\cx$
-\end_inset
-
- is set of all finite-length strings over 
-\begin_inset Formula $\Sigma$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Formula $\cx_{d}$
-\end_inset
-
- is set of strings over 
-\begin_inset Formula $\Sigma$
-\end_inset
-
- of length at most 
-\begin_inset Formula $d$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Itemize
-Hypothesis space 
-\begin_inset Formula $\ch=\left\{ f:\right\} $
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Input space 
-\begin_inset Formula $\cx=\reals^{d}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Feature space: 
-\begin_inset Formula $\ch=\reals^{D}$
-\end_inset
-
-, where 
-\begin_inset Formula $D=d+{d \choose 2}\approx d^{2}/2$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Itemize
-Feature map:
-\begin_inset Formula 
-\[
-\ensuremath{\phi(x)=(x_{1},\ldots,x_{d},x_{1}^{2},\ldots,x_{d}^{2},\sqrt{2}x_{1}x_{2},\ldots,\sqrt{2}x_{i}x_{j},\ldots\sqrt{2}x_{d-1}x_{d})^{T}}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Still have
-\begin_inset Formula 
-\begin{eqnarray*}
-k(w,x) & = & \left\langle \phi(w),\phi(x)\right\rangle \\
-\pause & = & \left\langle x,y\right\rangle +\left\langle x,y\right\rangle ^{2}
-\end{eqnarray*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Computation for inner product with explicit mapping: 
-\begin_inset Formula $O(d^{2})$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Computation for implicit kernel calculation: 
-\begin_inset Formula $O(d)$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-let
-\backslash
-thefootnote
-\backslash
-relax
-\backslash
-footnotetext{
-\backslash
-tiny{Based on Guillaume Obozinski's Statistical Machine Learning course
- at Louvain, Feb 2014.}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
 Quadratic Kernel in 
 \begin_inset Formula $\reals^{d}$
 \end_inset
@@ -2513,6 +2346,85 @@ tiny{Based on Guillaume Obozinski's Statistical Machine Learning course
 
 \end_deeper
 \begin_layout Separator
+\begin_inset Note Note
+status open
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+String Kernel
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Computer virus finding: want to find a sequence of characters 
+\begin_inset Formula $v$
+\end_inset
+
+ in a file that indicates file contains a virus.
+\end_layout
+
+\begin_layout Itemize
+Alphabet set 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\cx$
+\end_inset
+
+ is set of all finite-length strings over 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\cx_{d}$
+\end_inset
+
+ is set of strings over 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ of length at most 
+\begin_inset Formula $d$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Feature map - indiciator variable for every substring of length at most
+ 
+\begin_inset Formula $d$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
@@ -3154,6 +3066,88 @@ A symmetric function
  can be expressed as an inner product
 \begin_inset Formula 
 \[
+k(w,x)=\left\langle \psi(w),\psi(x)\right\rangle 
+\]
+
+\end_inset
+
+for some 
+\begin_inset Formula $\psi$
+\end_inset
+
+ if and only if 
+\begin_inset Formula $k(w,x)$
+\end_inset
+
+ is 
+\series bold
+positive semidefinite.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Proof
+[Sketch] Suppose 
+\begin_inset Formula $k(w,x)$
+\end_inset
+
+ is psd.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Let 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Generating New Kernels from Old
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Suppose 
+\begin_inset Formula $k,k_{1},k_{2}:\cx\times\cx\to\reals$
+\end_inset
+
+ are psd kernels.
+ Then so are the following:
+\begin_inset Formula 
+\begin{eqnarray*}
+k_{\mbox{new}}(w,x) & = & k_{1}(w,x)+k_{2}(w,x)\\
+k_{\mbox{new}}(w,x) & = & \alpha k(w,x)\\
+k_{\mbox{new}}(w,x) & = & f(w)f(x)\mbox{ for any function \ensuremath{f(x)}}\\
+k_{\mbox{new}}(w,x) & = & k_{1}(w,x)k_{2}(w,x)
+\end{eqnarray*}
+
+\end_inset
+
+ are also A symmetric function 
+\begin_inset Formula $k(w,x)$
+\end_inset
+
+ can be expressed as an inner product
+\begin_inset Formula 
+\[
 k(w,x)=\left\langle \phi(w),\phi(x)\right\rangle 
 \]
 
@@ -3172,17 +3166,19 @@ for some
 positive semidefinite.
 \end_layout
 
-\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 If we start with a psd kernel, can we generate more?
 \end_layout
 
 \end_deeper
+\begin_layout Separator
+\begin_inset Note Note
+status collapsed
+
 \begin_layout Separator
 
 \end_layout
@@ -3501,11 +3497,21 @@ Then
 
 \end_deeper
 \begin_layout Separator
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Section
-Hint of RKHS?
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \end_body

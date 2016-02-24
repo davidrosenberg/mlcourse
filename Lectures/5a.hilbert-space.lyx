@@ -677,7 +677,7 @@ ex}{E}
 \end_layout
 
 \begin_layout Title
-Basic Hilbert Space Theory
+A Bit About Hilbert Spaces 
 \begin_inset Argument 1
 status open
 
@@ -769,6 +769,10 @@ Optimization by Vector Space Methods.
 
 \end_inset
 
+ 
+\end_layout
+
+\begin_layout Separator
 
 \end_layout
 
@@ -777,7 +781,7 @@ Optimization by Vector Space Methods.
 status open
 
 \begin_layout Plain Layout
-Inner Product Spaces (or 
+Inner Product Space (or 
 \begin_inset Quotes eld
 \end_inset
 
@@ -794,49 +798,98 @@ Pre-Hilbert
 \end_layout
 
 \begin_deeper
-\begin_layout Definitions
-A 
+\begin_layout Standard
+An
 \series bold
-[real] inner product space
+ inner product space
 \series default
- is 
-\begin_inset Formula $\left(\cv,\left\langle \cdot,\cdot\right\rangle \right)$
-\end_inset
-
- is 
-\end_layout
-
-\begin_layout Itemize
-a [real] vector space 
+ (over reals) is a vector space 
 \begin_inset Formula $\cv$
 \end_inset
 
- and
+ and an 
+\series bold
+inner product
+\series default
+, which is a mapping
+\begin_inset Formula 
+\[
+\left\langle \cdot,\cdot\right\rangle :\cv\times\cv\to\reals
+\]
+
+\end_inset
+
+that has the following properties 
+\begin_inset Formula $\forall x,y,z\in\cv$
+\end_inset
+
+ and 
+\begin_inset Formula $a,b\in\reals$
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Itemize
-an inner product 
-\begin_inset Formula $\left\langle \cdot,\cdot\right\rangle :\cv\times\cv\to\reals$
+Symmetry: 
+\begin_inset Formula $\left\langle x,y\right\rangle =\left\langle y,x\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Linearity: 
+\begin_inset Formula $\left\langle ax+by,z\right\rangle =a\left\langle x,z\right\rangle +b\left\langle y,z\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Postive-definiteness: 
+\begin_inset Formula $\left\langle x,x\right\rangle \ge0$
+\end_inset
+
+ and 
+\begin_inset Formula $\left\langle x,x=0\right\rangle \iff x=0$
 \end_inset
 
 .
 \end_layout
 
-\begin_deeper
-\begin_layout Pause
+\end_deeper
+\begin_layout Separator
 
 \end_layout
 
-\end_deeper
-\begin_layout Itemize
-Inner product induces a 
-\series bold
-norm
-\series default
-: 
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Norm from Inner Product
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+For an inner product space, we define a norm as
 \begin_inset Formula 
 \[
-\|v\|=\sqrt{\left\langle v,v\right\rangle }.
+\|x\|=\sqrt{\left\langle x,x\right\rangle }.
 \]
 
 \end_inset
@@ -856,6 +909,14 @@ norm
 \begin_inset Formula 
 \[
 \left\langle x,y\right\rangle :=x^{T}y\qquad\forall x,y\in\reals^{d}.
+\]
+
+\end_inset
+
+Norm is
+\begin_inset Formula 
+\[
+\|x\|=\sqrt{x^{T}y}.
 \]
 
 \end_inset
@@ -888,12 +949,12 @@ status open
 
 \begin_layout Plain Layout
 
-Parallelogram Law
+[Parallelogram Law]
 \end_layout
 
 \end_inset
 
-A norm 
+ A norm 
 \begin_inset Formula $\|v\|$
 \end_inset
 
@@ -901,20 +962,23 @@ A norm
 \begin_inset Formula $\cv$
 \end_inset
 
- if and only if 
+ iff 
 \begin_inset Formula $\forall x,y\in\cv$
 \end_inset
 
  
 \begin_inset Formula 
 \[
-2\|x\|^{2}+2\|y\|^{2}=\|x+y\|^{2}+\|x-y\|^{2}.
+2\|x\|^{2}+2\|y\|^{2}=\|x+y\|^{2}+\|x-y\|^{2},
 \]
 
 \end_inset
 
-If it can be, then the [unique] inner product is given by the polarization
- identity
+and if it can, the inner product is given by the
+\series bold
+ polarization identity
+\series default
+
 \begin_inset Formula 
 \[
 \left\langle x,y\right\rangle =\frac{||x||^{2}+||y||^{2}-||x-y||^{2}}{2}.
@@ -1000,7 +1064,6 @@ orthogonal
 \end_layout
 
 \begin_layout Definition
-Vector 
 \begin_inset Formula $x$
 \end_inset
 
@@ -1008,11 +1071,12 @@ Vector
 \begin_inset Formula $S$
 \end_inset
 
- (
+, i.e.
+ 
 \begin_inset Formula $x\perp S$
 \end_inset
 
-) if 
+, if 
 \begin_inset Formula $x\perp s$
 \end_inset
 
@@ -1028,7 +1092,17 @@ Vector
 \end_layout
 
 \begin_layout Theorem
-If 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[Pythagorean Theorem]
+\end_layout
+
+\end_inset
+
+ If 
 \begin_inset Formula $x\perp y$
 \end_inset
 
@@ -1048,8 +1122,8 @@ We have
 \begin_inset Formula 
 \begin{eqnarray*}
 \|x+y\|^{2} & = & \left\langle x+y,x+y\right\rangle \\
- & = & \left\langle x,x\right\rangle +\left\langle x,y\right\rangle +\left\langle y,x\right\rangle +\left\langle y,y\right\rangle \\
- & = & \|x\|^{2}+\|y\|^{2}.
+\pause & = & \left\langle x,x\right\rangle +\left\langle x,y\right\rangle +\left\langle y,x\right\rangle +\left\langle y,y\right\rangle \\
+\pause & = & \|x\|^{2}+\|y\|^{2}.
 \end{eqnarray*}
 
 \end_inset
@@ -1077,17 +1151,19 @@ Projection onto a Plane (Rough Definition)
 
 \begin_deeper
 \begin_layout Itemize
-\begin_inset Formula $\left(\cv,\left\langle \cdot,\cdot\right\rangle \right)$
+Choose some 
+\begin_inset Formula $x\in\cv$
 \end_inset
 
- an inner product space.
+.
 \end_layout
 
 \begin_layout Itemize
+Let 
 \begin_inset Formula $M$
 \end_inset
 
- is a subspace of 
+ be a subspace of inner product space 
 \begin_inset Formula $\cv$
 \end_inset
 
@@ -1095,15 +1171,8 @@ Projection onto a Plane (Rough Definition)
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $x\in\cv$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
 Then 
-\begin_inset Formula $m_{0}\in M$
+\begin_inset Formula $m_{0}$
 \end_inset
 
  is the 
@@ -1116,16 +1185,16 @@ projection of
 \begin_inset Formula $M$
 \end_inset
 
- 
+, 
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 if 
-\begin_inset Formula $m_{0}$
+\begin_inset Formula $m_{0}\in M$
 \end_inset
 
- is the closest point to 
+ and is the closest point to 
 \begin_inset Formula $x$
 \end_inset
 
@@ -1157,21 +1226,25 @@ In math: For all
 \end_inset
 
 
-\end_layout
+\begin_inset Note Note
+status open
 
-\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
-To Do: projections exist and characterized by 
+To show: projections exist and characterized by 
 \begin_inset Formula $x-m_{0}\perp M$
 \end_inset
 
 .
  
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
@@ -1228,11 +1301,11 @@ completeness
 
 \end_deeper
 \begin_layout Itemize
-(Recall: A space is 
+A space is 
 \series bold
 complete
 \series default
- if all Cauchy sequences in the space converge.)
+ if all Cauchy sequences in the space converge.
 \end_layout
 
 \begin_deeper
@@ -1249,6 +1322,12 @@ Hilbert space
 is a complete inner product space.
 \end_layout
 
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
 \begin_layout Example
 Any finite dimensional inner product space is a Hilbert space.
 \end_layout
@@ -1263,7 +1342,7 @@ Any finite dimensional inner product space is a Hilbert space.
 status open
 
 \begin_layout Plain Layout
-Hilbert Space
+The Projection Theorem
 \end_layout
 
 \end_inset
@@ -1483,6 +1562,10 @@ Let
 \end_deeper
 \end_deeper
 \begin_layout Separator
+\begin_inset Note Note
+status open
+
+\begin_layout Separator
 
 \end_layout
 
@@ -1496,7 +1579,7 @@ Orthogonal Complements
 
 \end_inset
 
-
+t
 \end_layout
 
 \begin_deeper
@@ -1603,6 +1686,120 @@ where
 \end_layout
 
 \begin_layout Separator
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Orthogonal Decomposition
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Theorem
+If 
+\begin_inset Formula $M$
+\end_inset
+
+ is a closed subspace of a Hilbert space 
+\begin_inset Formula $\ch$
+\end_inset
+
+, then every 
+\begin_inset Formula $x\in\ch$
+\end_inset
+
+ has a unique representation of the form
+\begin_inset Formula 
+\[
+x=m+m^{\perp},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $m\in M$
+\end_inset
+
+ and 
+\begin_inset Formula $m^{\perp}\perp M$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Theorem
+
+\end_layout
+
+\begin_layout Proof
+[We'll prove existence.] 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $m=\proj_{M}x$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+By Projection Theorem, 
+\begin_inset Formula $m^{\perp}=x-m\perp M$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+So 
+\begin_inset Formula 
+\begin{eqnarray*}
+x & = & m+x-m\\
+ & = & m+m^{\perp}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\end_inset
+
 
 \end_layout
 

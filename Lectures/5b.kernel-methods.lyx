@@ -677,7 +677,7 @@ ex}{E}
 \end_layout
 
 \begin_layout Title
-Kernelization
+Kernel Methods
 \begin_inset Argument 1
 status open
 
@@ -775,6 +775,345 @@ Understanding Machine Learning: From Theory to Algorithms
 
 \end_layout
 
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Section
+Setup and Motivation
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Linear Models
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+So far we've discussed
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Linear regression
+\end_layout
+
+\begin_layout Itemize
+Ridge regression
+\end_layout
+
+\begin_layout Itemize
+Lasso regression
+\end_layout
+
+\begin_layout Itemize
+Support Vector Machines
+\end_layout
+
+\begin_layout Itemize
+Perceptrons
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Each of these methods assumes
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Input space 
+\begin_inset Formula $\cx$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Feature map 
+\begin_inset Formula $\psi:\cx\to\reals^{d}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Linear (or affine) hypothesis space:
+\begin_inset Formula 
+\[
+\ch=\left\{ x\mapsto w^{T}\psi(x)\mid w\in\reals^{d}\right\} .
+\]
+
+\end_inset
+
+ applicable when we use 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ regularization.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Linear Models Need Big Feature Space
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+To get 
+\series bold
+expressive
+\series default
+ hypothesis spaces using linear models, 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+need high-dimensional feature spaces
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+(What do we mean by expressive?)
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Very large feature spaces have two problems:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Overfitting
+\end_layout
+
+\begin_layout Enumerate
+Memory and computational costs 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Overfitting we handle with regularization.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Kernel methods can help with memory and computational costs.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+In practice, most applicable when we use 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ regularization.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Some Methods Can Be 
+\begin_inset Quotes eld
+\end_inset
+
+Kernelized
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+A method is 
+\series bold
+kernelized 
+\series default
+if inputs only appear inside inner products: 
+\begin_inset Formula $\left\langle \psi(x),\psi(y)\right\rangle $
+\end_inset
+
+ for 
+\begin_inset Formula $x,y\in\cx$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+The function 
+\series bold
+kernel function
+\series default
+ corresponding to 
+\begin_inset Formula $\psi$
+\end_inset
+
+ is 
+\begin_inset Formula 
+\[
+k(x,y)=\left\langle \psi(x),\psi(y)\right\rangle .
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Can think of the kernel function as a 
+\series bold
+similarity score
+\series default
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+But this is not precise.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+There are many ways to design a similarity score.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A kernel function is special because it's an inner product.
+\end_layout
+
+\begin_layout Itemize
+Has many mathematical benefits.
+ 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+What's the Benefit of Kernelization?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Computational.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Access to infinite-dimensional feature spaces.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Allows thinking in terms of 
+\begin_inset Quotes eld
+\end_inset
+
+similarity
+\begin_inset Quotes erd
+\end_inset
+
+ rather than features.
+ (debatable)
+\end_layout
+
+\end_deeper
 \begin_layout Separator
 
 \end_layout
@@ -3082,6 +3421,11 @@ for some
  is 
 \series bold
 positive semidefinite.
+\begin_inset Note Note
+status open
+
+\begin_layout Theorem
+
 \end_layout
 
 \begin_deeper
@@ -3105,6 +3449,11 @@ Let
 \end_layout
 
 \end_deeper
+\end_inset
+
+
+\end_layout
+
 \end_deeper
 \begin_layout Separator
 

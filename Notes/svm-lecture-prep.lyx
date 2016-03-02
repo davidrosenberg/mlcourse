@@ -743,7 +743,7 @@ Convince yourself that the problem
  is equivalent to
 \begin_inset Formula 
 \begin{eqnarray*}
-\textrm{minimize} &  & f(x)+\sum_{i=1}^{n}\xi_{i}\\
+\textrm{minimize} &  & f(w)+\sum_{i=1}^{n}\xi_{i}\\
 \textrm{subject to} &  & \xi_{i}\ge\left(1-y_{i}\left[w^{T}x_{i}+b\right]\right)_{+}\mbox{ for }i=1,\ldots,n,
 \end{eqnarray*}
 
@@ -752,7 +752,7 @@ Convince yourself that the problem
 which is equivalent to
 \begin_inset Formula 
 \begin{eqnarray*}
-\textrm{minimize} &  & f(x)+\sum_{i=1}^{n}\xi_{i}\\
+\textrm{minimize} &  & f(w)+\sum_{i=1}^{n}\xi_{i}\\
 \textrm{subject to} &  & \xi_{i}\ge0\mbox{ for }i=1,\ldots,n\\
  &  & \xi_{i}\ge1-y_{i}\left[w^{T}x_{i}+b\right]\mbox{ for }i=1,\ldots,n.
 \end{eqnarray*}

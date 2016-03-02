@@ -1410,12 +1410,17 @@ Find
 
 \end_layout
 
+\begin_layout Itemize
+How?
+\end_layout
+
 \begin_layout Standard
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-HOW DO WE Do THIS SPLITTING EFFICIENTLY???
+HOW DO WE Do THIS SPLITTING EFFICIENTLY??? For each variable, try splitting
+ at each data point (or unique value in the range of that feature)...
 \end_layout
 
 \end_inset
@@ -2112,7 +2117,8 @@ Regularization Path for Trees
 \align center
 \begin_inset Graphics
 	filename ../Figures/trees/pruningTreesize.png
-	height 60theight%
+	lyxscale 70
+	height 45theight%
 
 \end_inset
 
@@ -2187,6 +2193,10 @@ tiny{HTF Figure 9.4}}
 \begin_layout Frame
 
 \end_layout
+
+\begin_layout Separator
+\begin_inset Note Note
+status open
 
 \begin_layout Separator
 
@@ -2570,7 +2580,7 @@ Here are three node impurity measures as a function of
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename ../Figures/trees/impurityMeasureTwoClass.png
@@ -2582,7 +2592,7 @@ Here are three node impurity measures as a function of
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \align center
 \begin_inset ERT
 status open
@@ -2755,7 +2765,7 @@ information gain
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Note Note
 status open
 
@@ -2789,7 +2799,7 @@ Class Distributions: Pre-split
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename ../Figures/trees/treeEntropyPreSplit.png
@@ -2801,7 +2811,7 @@ Class Distributions: Pre-split
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \align center
 \begin_inset ERT
 status open
@@ -2846,7 +2856,7 @@ Class Distributions: Split Search
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename ../Figures/trees/treeEntropySplitSearch.png
@@ -2862,7 +2872,7 @@ Class Distributions: Split Search
 (Maximizing information gain is equivalent to minimizing entropy)
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Note Note
 status open
 
@@ -2876,7 +2886,7 @@ Not clear what is going on here -- is this weighted average information
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \align center
 \begin_inset ERT
 status open
@@ -3039,6 +3049,11 @@ For pruning the tree, use misclassification error -- closer to risk estimate.
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Trees in General
 \end_layout
@@ -3173,6 +3188,10 @@ Surrogates ordered by how well they approximate the original split.
 \end_deeper
 \end_deeper
 \begin_layout Separator
+\begin_inset Note Note
+status open
+
+\begin_layout Separator
 
 \end_layout
 
@@ -3295,6 +3314,11 @@ Extreme example: Row Number could lead to perfect classification with a
 \end_deeper
 \end_deeper
 \begin_layout Separator
+
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
@@ -3484,6 +3508,10 @@ Trees can be used to discover nonlinear features.
 
 \end_deeper
 \begin_layout Separator
+\begin_inset Note Note
+status open
+
+\begin_layout Separator
 
 \end_layout
 
@@ -3534,6 +3562,11 @@ Later we investigate several ways to reduce this variance
 
 \end_deeper
 \begin_layout Separator
+
+\end_layout
+
+\end_inset
+
 
 \end_layout
 

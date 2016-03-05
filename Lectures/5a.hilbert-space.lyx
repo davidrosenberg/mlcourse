@@ -860,7 +860,7 @@ Postive-definiteness:
 \end_inset
 
  and 
-\begin_inset Formula $\left\langle x,x=0\right\rangle \iff x=0$
+\begin_inset Formula $\left\langle x,x\right\rangle =0\iff x=0$
 \end_inset
 
 .
@@ -1475,95 +1475,8 @@ x-m_{0}\perp M.
 \end_deeper
 \end_deeper
 \begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Projection Reduces Norm
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Theorem
-Let 
-\begin_inset Formula $M$
-\end_inset
-
- be a closed subspace of 
-\begin_inset Formula $\ch$
-\end_inset
-
-.
- For any 
-\begin_inset Formula $x\in\ch$
-\end_inset
-
-, let 
-\begin_inset Formula $m_{0}=\proj_{M}x$
-\end_inset
-
- be the projection of 
-\begin_inset Formula $x$
-\end_inset
-
- onto 
-\begin_inset Formula $M$
-\end_inset
-
-.
- Then
-\begin_inset Formula 
-\[
-\|m_{0}\|\le\|x\|.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Proof
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset Formula 
-\begin{eqnarray*}
-\|x\|^{2} & = & \|m_{0}+(x-m_{0})\|^{2}\pause\;(\mbox{note: }x-m_{0}\perp m_{0})\\
- & = & \|m_{0}\|^{2}+\|x-m_{0}\|^{2}\mbox{\pause}\ \mbox{by Pythagorean theorem}\\
-\pause\|m_{0}\|^{2} & = & \|x\|^{2}-\|x-m_{0}\|^{2}\\
-\pause\|m_{0}\|^{2} & \le & \|x\|^{2}
-\end{eqnarray*}
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Separator
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Separator
 
@@ -1693,7 +1606,7 @@ where
 
 
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Separator
 
@@ -1800,6 +1713,105 @@ x & = & m+x-m\\
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Projection Reduces Norm
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Theorem
+Let 
+\begin_inset Formula $M$
+\end_inset
+
+ be a closed subspace of 
+\begin_inset Formula $\ch$
+\end_inset
+
+.
+ For any 
+\begin_inset Formula $x\in\ch$
+\end_inset
+
+, let 
+\begin_inset Formula $m_{0}=\proj_{M}x$
+\end_inset
+
+ be the projection of 
+\begin_inset Formula $x$
+\end_inset
+
+ onto 
+\begin_inset Formula $M$
+\end_inset
+
+.
+ Then
+\begin_inset Formula 
+\[
+\|m_{0}\|\le\|x\|,
+\]
+
+\end_inset
+
+with equality only when 
+\begin_inset Formula $m_{0}=x$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Proof
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+\|x\|^{2} & = & \|m_{0}+(x-m_{0})\|^{2}\pause\;(\mbox{note: }x-m_{0}\perp m_{0})\\
+ & = & \|m_{0}\|^{2}+\|x-m_{0}\|^{2}\mbox{\pause}\ \mbox{by Pythagorean theorem}\\
+\pause\|m_{0}\|^{2} & = & \|x\|^{2}-\|x-m_{0}\|^{2}
+\end{eqnarray*}
+
+\end_inset
+
+If 
+\begin_inset Formula $\|x-m_{0}\|^{2}=0$
+\end_inset
+
+, then 
+\begin_inset Formula $x=m_{0}$
+\end_inset
+
+, by definition of norm.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
 
 \end_layout
 

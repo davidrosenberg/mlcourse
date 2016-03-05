@@ -1569,7 +1569,8 @@ w^{*}=\sum_{i=1}^{n}\alpha_{i}\psi(x_{i}).
 \begin_inset Formula $R$
 \end_inset
 
- is strictly increasing, then all minimizers have this form.]
+ is strictly increasing, then all minimizers have this form.
+ (homework)]
 \end_layout
 
 \end_deeper
@@ -2066,40 +2067,37 @@ Kernelized Predictions
 
 \begin_deeper
 \begin_layout Itemize
-\begin_inset Formula $R\left(\|w\|\right)+L\left(\left\langle w,\psi(x_{1})\right\rangle ,\ldots,\left\langle w,\psi(x_{n})\right\rangle \right)$
-\end_inset
-
- involves 
-\begin_inset Formula $f(x_{i})=\left\langle w,\psi(x_{i})\right\rangle $
+Write 
+\begin_inset Formula $f_{\alpha}(x)=\sum_{i=1}^{n}\alpha_{i}k(x_{i},x)$
 \end_inset
 
 .
 \end_layout
 
 \begin_layout Itemize
-Note that 
+Predictions on the training points have a particulalry simple form: 
 \begin_inset Formula 
 \begin{eqnarray*}
-\pause K\alpha & = & \begin{pmatrix}k(x_{1},x_{1}) & \cdots & k(x_{1},x_{n})\\
+\pause\begin{pmatrix}f_{\alpha}(x_{1})\\
+\vdots\\
+f_{\alpha}(x_{n})
+\end{pmatrix} & = & \begin{pmatrix}\alpha_{1}k(x_{1},x_{1})+\cdots+\alpha_{n}k(x_{1},x_{n})\\
+\vdots\\
+\alpha_{1}k(x_{n},x_{1})+\cdots+\alpha_{n}k(x_{1,}x_{n})
+\end{pmatrix}\\
+\pause & = & \begin{pmatrix}k(x_{1},x_{1}) & \cdots & k(x_{1},x_{n})\\
 \vdots & \ddots & \cdots\\
 k(x_{n},x_{1}) & \cdots & k(x_{n},x_{n})
 \end{pmatrix}\begin{pmatrix}\alpha_{1}\\
 \vdots\\
 \alpha_{n}
 \end{pmatrix}\\
-\pause & = & \begin{pmatrix}\alpha_{1}k(x_{1},x_{1})+\cdots+\alpha_{n}k(x_{1},x_{n})\\
-\vdots\\
-\alpha_{1}k(x_{n},x_{1})+\cdots+\alpha_{n}k(x_{1,}x_{n})
-\end{pmatrix}\\
-\pause & = & \begin{pmatrix}f_{\alpha}(x_{1})\\
-\vdots\\
-f_{\alpha}(x_{n})
-\end{pmatrix}.
+\pause & = & K\alpha
 \end{eqnarray*}
 
 \end_inset
 
- 
+
 \end_layout
 
 \end_deeper

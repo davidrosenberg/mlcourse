@@ -1549,11 +1549,11 @@ Loss term
 
 \end_deeper
 \begin_layout Theorem
-Then there is a minimizer of 
+If 
 \begin_inset Formula $J(w)$
 \end_inset
 
- of the form
+ has a minimizer, then it has a minimizer of the form
 \begin_inset Formula 
 \[
 w^{*}=\sum_{i=1}^{n}\alpha_{i}\psi(x_{i}).

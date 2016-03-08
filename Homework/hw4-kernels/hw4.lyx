@@ -2316,13 +2316,12 @@ by hand
 
 \begin_layout Enumerate
 The first split partitions the data into two parts.
- Using the same approach as before, compute a split of each of these parts.
- When you're done, the data should be partitioned into 4 regions.
- Determine the predicited 
+ Make another split so that the space is partitioned into 3 regions.
+ Determine the predicted 
 \begin_inset Quotes eld
 \end_inset
 
-probability of white
+probability of poisonous
 \begin_inset Quotes erd
 \end_inset
 

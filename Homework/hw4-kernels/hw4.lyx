@@ -3220,10 +3220,14 @@ Continue the proof of the Representer Theorem from the lecture slides to
 
 \begin_layout Enumerate
 Suppose that 
+\begin_inset Formula $R$
+\end_inset
+
+ and 
 \begin_inset Formula $L$
 \end_inset
 
- is convex in its arguments.
+ are both convex in their arguments.
  Use properties of convex functions to show that 
 \begin_inset Formula $L$
 \end_inset

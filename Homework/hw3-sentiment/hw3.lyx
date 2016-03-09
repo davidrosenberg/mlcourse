@@ -1108,19 +1108,20 @@ Let
 \end_inset
 
 .
- Consider running SGD to minimize the empirical risk with the perceptron
- loss.
- We'll use the version of SGD in which we cycle through the data points
+ Consider running stochastic subgradient descent (SSGD) to minimize the
+ empirical risk with the perceptron loss.
+ We'll use the version of SSGD in which we cycle through the data points
  in each epoch.
  Show that if we use a fixed step size 
 \begin_inset Formula $1$
 \end_inset
 
- and we terminate when our training loss is 
+, we terminate when our training loss is 
 \begin_inset Formula $0$
 \end_inset
 
-, then we are exactly doing the Perceptron algorithm.
+, and we make the right choice of subgradient,  then we are exactly doing
+ the Perceptron algorithm.
 \end_layout
 
 \begin_layout Enumerate
@@ -2004,19 +2005,19 @@ score
 
 \begin_layout Enumerate
 [Optional] Our objective is not differentiable when 
-\begin_inset Formula $w^{T}x_{i}=0$
+\begin_inset Formula $y_{i}w^{T}x_{i}=1$
 \end_inset
 
 .
  Investigate how often and when we have 
-\begin_inset Formula $w^{T}x_{i}=0$
+\begin_inset Formula $y_{i}w^{T}x_{i}=1$
 \end_inset
 
 .
  Describe your findings.
  If we didn't know about subgradients, one might suggest just skipping the
  update when 
-\begin_inset Formula $w^{T}x_{i}=0$
+\begin_inset Formula $yw^{T}x_{i}=1$
 \end_inset
 
 .
@@ -2044,7 +2045,7 @@ Choose some examples that the model got wrong.
 \end_inset
 
 ), along with 
-\begin_inset Formula $x_{i},w_{i},xw_{i}$
+\begin_inset Formula $x_{i},w_{i},x_{i}w_{i}$
 \end_inset
 
 .

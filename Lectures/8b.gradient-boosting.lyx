@@ -1178,7 +1178,7 @@ step direction
 step size 
 \series default
 
-\begin_inset Formula $\nu_{i}>0$
+\begin_inset Formula $\nu_{m}>0$
 \end_inset
 
  
@@ -1195,7 +1195,7 @@ step size
 So that 
 \begin_inset Formula 
 \[
-f_{m}=f_{m-1}+\nu_{i}h_{m}
+f_{m}=f_{m-1}+\nu_{m}h_{m}
 \]
 
 \end_inset
@@ -1336,7 +1336,8 @@ Base hypothesis space:
 
 \end_deeper
 \begin_layout Itemize
-Then Forward Stagewise Additive Modeling (FSAM) reduces to AdaBoost.
+Then Forward Stagewise Additive Modeling (FSAM) reduces to an instance of
+ AdaBoost.
 \end_layout
 
 \begin_deeper
@@ -1581,7 +1582,7 @@ Possibilities so far:
 
 \begin_deeper
 \begin_layout Itemize
-solve it exactly (e.g.
+reduce it to weighted classification (e.g.
  AdaBoost)
 \end_layout
 
@@ -2483,7 +2484,19 @@ For
 
 \begin_deeper
 \begin_layout Enumerate
-Compute:
+Compute the 
+\series bold
+
+\begin_inset Quotes eld
+\end_inset
+
+pseudo-residuals
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+:
 \begin_inset Formula 
 \[
 {\bf g}_{m}=\left(\left.\frac{\partial}{\partial f(x_{i})}\left(\sum_{i=1}^{n}\ell\left\{ y_{i},f(x_{i})\right\} \right)\right|_{f(x_{i})=f_{m-1}(x_{i})}\right)_{i=1}^{n}
@@ -2578,120 +2591,6 @@ Choose step size methodology.
 Then you're good to go!
 \end_layout
 
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Section
-Gradient Tree Boosting
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Gradient Tree Boosting
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Common form of gradient boosting machine takes
-\begin_inset Formula 
-\[
-\cf=\left\{ \mbox{regression trees of size \ensuremath{J}}\right\} ,
-\]
-
-\end_inset
-
-where 
-\begin_inset Formula $J$
-\end_inset
-
- is the number of terminal nodes.
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-\begin_inset Formula $J=2$
-\end_inset
-
- gives decision stumps
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-HTF recommends 
-\begin_inset Formula $4\le J\le8$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Itemize
-Software packages:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Gradient tree boosting is implemented by the 
-\series bold
-gbm package
-\series default
- for R
-\end_layout
-
-\begin_layout Itemize
-as 
-\family typewriter
-\size footnotesize
-GradientBoostingClassifier
-\family default
-\size default
- and 
-\family typewriter
-\size footnotesize
-GradientBoostingRegressor
-\family default
-\size default
- in 
-\series bold
-sklearn
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Itemize
-For trees, there are other tweaks on the algorithm one can do
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-See HTF 10.9-10.12 and 
-\end_layout
-
-\end_deeper
 \end_deeper
 \begin_layout Separator
 

@@ -730,6 +730,23 @@ tiny{Plots courtesy of Ningshan Zhang.}}
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Wondering if we should extend the plots for error >.5? This would be a really
+ annoying hypothesis space that was always worse than random..
+ But they would enter the ensemble with a negative weight.
+ Might should at least point this out...
+ beacuse it's only a nonnegative combination if error is always <=.5.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Boosting Introduction
 \end_layout
@@ -2646,6 +2663,29 @@ emph{Boosting: Foundations and Algorithms} by Schapire and Freund.}}
 
 \begin_layout Section
 Test Performance of Boosting
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Next year: leave the out unless I give more reasons or caveats.
+ I guess the point of this is to say that AdaBoost isn't 
+\begin_inset Quotes eld
+\end_inset
+
+just
+\begin_inset Quotes erd
+\end_inset
+
+ minimizing an objective function.
+ The way it does it is good too...?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Frame

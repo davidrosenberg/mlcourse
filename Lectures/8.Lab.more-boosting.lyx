@@ -19,7 +19,6 @@
   \end{frame}
 }
 \end_preamble
-\options handout
 \use_default_options false
 \maintain_unincluded_children false
 \language english
@@ -1227,6 +1226,134 @@ See HTF 10.9-10.12
 \end_deeper
 \end_deeper
 \begin_layout Separator
+\begin_inset Note Note
+status open
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Gradient Tree Boosting Modification
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Common form of gradient boosting machine takes
+\begin_inset Formula 
+\[
+\cf=\left\{ \mbox{regression trees of size \ensuremath{J}}\right\} ,
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $J$
+\end_inset
+
+ is the number of terminal nodes.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $J=2$
+\end_inset
+
+ gives decision stumps
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+HTF recommends 
+\begin_inset Formula $4\le J\le8$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Software packages:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Gradient tree boosting is implemented by the 
+\series bold
+gbm package
+\series default
+ for R
+\end_layout
+
+\begin_layout Itemize
+as 
+\family typewriter
+\size footnotesize
+GradientBoostingClassifier
+\family default
+\size default
+ and 
+\family typewriter
+\size footnotesize
+GradientBoostingRegressor
+\family default
+\size default
+ in 
+\series bold
+sklearn
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+For trees, there are other tweaks on the algorithm one can do
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+See HTF 10.9-10.12 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
@@ -1706,64 +1833,6 @@ According to use feedback, using column sub-sampling prevents overfitting
 
 \end_layout
 
-\begin_layout Itemize
-Newtons method is a 
-\begin_inset Quotes eld
-\end_inset
-
-second order method
-\begin_inset Quotes erd
-\end_inset
-
-:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Find 2nd order (quadratic) approximation to 
-\begin_inset Formula $J$
-\end_inset
-
- at 
-\begin_inset Formula $\vf$
-\end_inset
-
-.
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Requires computing gradient and Hessian of 
-\begin_inset Formula $J$
-\end_inset
-
-.
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Newton step direction points towards minimizer of the quadratic.
-\end_layout
-
-\begin_layout Itemize
-Minimizer of quadratic is easy to find in closed form
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Boosting methods with projected Newton step direction:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-LogitBoost (logistic loss function)
-\end_layout
-
-\begin_layout Itemize
-XGBoost (any loss -- uses regression trees for base classifier)
-\end_layout
-
-\end_deeper
 \end_deeper
 \begin_layout Separator
 

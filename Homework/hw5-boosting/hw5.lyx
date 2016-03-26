@@ -1,0 +1,1606 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\title{DS-GA 1003: Machine Learning and Computational Statistics\\
+Homework 5: Trees and Boosting} 
+\date{} 
+
+\usepackage{amsfonts}\usepackage{capt-of}
+%\usepackage{url}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{bbm}
+\usepackage{enumerate}
+\newcommand{\carlos}[1]{\textcolor{red}{Carlos: #1}}
+\newcommand{\field}[1]{\mathbb{#1}} 
+\newcommand{\hide}[1]{#1}
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\providecommand{\m}[1]{\mathbf{#1}}
+\providecommand{\norm}[1]{\left\|#1\right\|}
+\providecommand{\sign}[1]{\text{sign}\left(#1\right)}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\providecommand{\what}{\m{\hat{w}}}
+\providecommand{\dw}{\Delta w}
+\providecommand{\dmw}{\Delta \m{w}}
+\providecommand{\hy}{\hat{y}}
+\end_preamble
+\options ruled
+\use_default_options false
+\begin_modules
+algorithm2e
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package none
+\inputencoding auto
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter courier
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks false
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref section
+\pdf_pdfusetitle false
+\papersize letterpaper
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\reals}{\mathbf{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\integers}{\mathbf{Z}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\naturals}{\mathbf{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rationals}{\mathbf{Q}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ca}{\mathcal{A}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cb}{\mathcal{B}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cc}{\mathcal{C}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cd}{\mathcal{D}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ce}{\mathcal{E}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cf}{\mathcal{F}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cg}{\mathcal{G}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ch}{\mathcal{H}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ci}{\mathcal{I}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cj}{\mathcal{J}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ck}{\mathcal{K}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cl}{\mathcal{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cm}{\mathcal{M}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cn}{\mathcal{N}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\co}{\mathcal{O}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cp}{\mathcal{P}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cq}{\mathcal{Q}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\calr}{\mathcal{R}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cs}{\mathcal{S}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ct}{\mathcal{T}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cu}{\mathcal{U}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cv}{\mathcal{V}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cw}{\mathcal{W}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cx}{\mathcal{X}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cy}{\mathcal{Y}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cz}{\mathcal{Z}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ind}[1]{1(#1)}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\pr}{\mathbb{P}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\predsp}{\cy}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\outsp}{\cy}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\prxy}{P_{\cx\times\cy}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\prx}{P_{\cx}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\prygivenx}{P_{\cy\mid\cx}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ex}{\mathbb{E}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\var}{\textrm{Var}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cov}{\textrm{Cov}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\sgn}{\textrm{sgn}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\sign}{\textrm{sign}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\kl}{\textrm{KL}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\law}{\mathcal{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\eps}{\varepsilon}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\as}{\textrm{ a.s.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\io}{\textrm{ i.o.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ev}{\textrm{ ev.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\convd}{\stackrel{d}{\to}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\eqd}{\stackrel{d}{=}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\del}{\nabla}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\loss}{\ell}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\risk}{R}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\emprisk}{\hat{R}_{\ell}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\lossfnl}{L}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\emplossfnl}{\hat{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\empminimizer}[1]{\hat{#1}_{\ell}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\minimizer}[1]{#1_{*}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\etal}{\textrm{et. al.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\tr}{\operatorname{tr}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\trace}{\operatorname{trace}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\diag}{\text{diag}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\rank}{\text{rank}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\linspan}{\text{span}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\proj}{\text{Proj}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\argmax}{\operatornamewithlimits{arg\, max}}
+{\mbox{argmax}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\argmin}{\operatornamewithlimits{arg\, min}}
+{\mbox{argmin}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfx}{\mathbf{x}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfy}{\mathbf{y}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfl}{\mathbf{\lambda}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfm}{\mathbf{\mu}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\calL}{\mathcal{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vw}{\boldsymbol{w}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vx}{\boldsymbol{x}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vxi}{\boldsymbol{\xi}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\valpha}{\boldsymbol{\alpha}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vbeta}{\boldsymbol{\beta}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vsigma}{\boldsymbol{\sigma}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vmu}{\boldsymbol{\mu}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vtheta}{\boldsymbol{\theta}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vd}{\boldsymbol{d}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vs}{\boldsymbol{s}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vt}{\boldsymbol{t}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vh}{\boldsymbol{h}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ve}{\boldsymbol{e}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vf}{\boldsymbol{f}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vg}{\boldsymbol{g}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vz}{\boldsymbol{z}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vk}{\boldsymbol{k}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\va}{\boldsymbol{a}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vb}{\boldsymbol{b}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vv}{\boldsymbol{v}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vy}{\boldsymbol{y}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\hil}{\ch}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\rkhs}{\hil}
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+maketitle
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Due: Monday, April 4, 2016, at 6pm (Submit via NYU Classes)
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Instructions
+\series default
+: Your answers to the questions below, including plots and mathematical
+ work, should be submitted as a single file, either HTML or PDF.
+ You may include your code inline or submit it as a separate file.
+ You may either scan hand-written work or, preferably, write your answers
+ using software that typesets mathematics (e.g.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+LaTeX
+\end_layout
+
+\end_inset
+
+, LyX, or MathJax via iPython).
+\begin_inset Note Note
+status open
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Plain Layout
+In this problem set, you will get some practical experience with decision
+ trees and AdaBoost, and you will derive some gradient boosting algorithms
+ for specific loss functions.
+ We will also eamine do some calculations related to gradienn and ensemble
+ methods.
+ You will be using the decision tree implementation from 
+\family typewriter
+sklearn
+\family default
+, and implementing 
+\family typewriter
+AdaBoost
+\family default
+ from scratch.
+ You'll also work on some simple theoretical problems that highlight interesting
+ properties of decision trees and ensemble methods.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Dataset description
+\end_layout
+
+\begin_layout Standard
+You will be working with a simple two-feature binary dataset, known as the
+ Banana dataset
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex Flex:URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://mldata.org/repository/data/viewslug/banana-ida/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, which can be visualized as follows:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename banana.png
+	width 40text%
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+ (Source: 
+\begin_inset Flex Flex:URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://adessowiki.fee.unicamp.br/adesso/wiki/courseIA368Q1S2012/eri_test_2/view/
+\end_layout
+
+\end_inset
+
+) 
+\end_layout
+
+\begin_layout Standard
+The data consists of 5,300 instances, which have been split into 3,500 training
+ points and 1,800 test points for this assignment.
+ The csv files are included in the 
+\family typewriter
+data
+\family default
+ directory.
+ Each row corresponds to a data point - the first entry of the row gives
+ the class label, and the next two entries give the values of the attributes.
+\end_layout
+
+\begin_layout Section
+Decision Trees 
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Trees-on-the-banana-dataset"
+
+\end_inset
+
+Trees on the Banana Dataset
+\end_layout
+
+\begin_layout Standard
+The official 
+\family typewriter
+sklearn
+\family default
+ documentation provides code that constructs a decision tree and visualizes
+ the decision boundary on the 
+\begin_inset Quotes eld
+\end_inset
+
+Iris
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Flex Flex:URL
+status open
+
+\begin_layout Plain Layout
+
+https://archive.ics.uci.edu/ml/datasets/Iris
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ dataset
+\begin_inset Quotes erd
+\end_inset
+
+ (
+\begin_inset Flex Flex:URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://scikit-learn.org/stable/auto_examples/tree/plot_iris.html#example-tree-plot
+-iris-py
+\end_layout
+
+\end_inset
+
+).
+ Note that the 
+\family typewriter
+sklearn
+\family default
+ implementation of decision trees is a bit different from that described
+ in lecture: they just build to a certain depth, without a pruning step.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Modify the code referenced above to work on the Banana dataset.
+ The default class labels are -1 and 1 in the given data files, but for
+ the visualization code snippet to work, you will have to modify the class
+ labels to 0 and 1.
+ Note that the Iris dataset is a multiclass problem with 3 classes, while
+ the Banana dataset is a binary dataset.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Run your code for different depths of decision trees, from 1 through 10,
+ and briefly describe your observations of the decision surface visualization.
+ [Use the default values for all other parameters.] 
+\end_layout
+
+\begin_layout Enumerate
+Plot the train and test errors as a function of the depth.
+ Again, give a brief description of your observations.
+ 
+\end_layout
+
+\begin_layout Enumerate
+[Optional] Experiment with the other hyperparameters provided by 
+\family typewriter
+DecisionTreeClassifier
+\family default
+ and find the combination giving the smallest test error.
+ Summarize what you learn.
+ 
+\end_layout
+
+\begin_layout Section
+AdaBoost
+\end_layout
+
+\begin_layout Subsection
+Implementation
+\end_layout
+
+\begin_layout Standard
+In this problem, you will implement AdaBoost, one of the most popular techniques
+ in ensemble methods.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Implement AdaBoost for the Banana dataset with decision trees of depth 3
+ as the weak classifiers (also known as 
+\begin_inset Quotes eld
+\end_inset
+
+base classifiers
+\begin_inset Quotes erd
+\end_inset
+
+).
+ Use the decision tree implementation from 
+\family typewriter
+sklearn
+\family default
+ as in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Trees-on-the-banana-dataset"
+
+\end_inset
+
+.
+ The 
+\family typewriter
+fit
+\family default
+ function of 
+\family typewriter
+DecisionTreeClassifier
+\family default
+ has a parameter 
+\family typewriter
+sample_weight,
+\family default
+ which you can use to weigh training examples differently during various
+ rounds of AdaBoost.
+ 
+\end_layout
+
+\begin_layout Enumerate
+[Optional] Visualize the AdaBoost training procedure for different numbers
+ of rounds from 1 through 10.
+ Plot the decision surface, and the training examples, such that training
+ samples with larger weights in any round are represented as larger points
+ compared to those with smaller weights.
+ Provide a brief description of your observations.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Plot the train and test errors as a function of the number of rounds from
+ 1 through 10.
+ Again, give a brief description of your observations.
+ 
+\end_layout
+
+\begin_layout Section
+Gradient Boosting Machines
+\end_layout
+
+\begin_layout Standard
+Recall the general gradient boosting algorithm
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Besides the lecture slides, you can find an accessible discussion of this
+ approach in 
+\begin_inset Flex Flex:URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.saedsayad.com/docs/gbm2.pdf
+\end_layout
+
+\end_inset
+
+, in one of the original references 
+\begin_inset Flex Flex:URL
+status open
+
+\begin_layout Plain Layout
+
+http://statweb.stanford.edu/~jhf/ftp/trebst.pdf
+\end_layout
+
+\end_inset
+
+, and in this review paper 
+\begin_inset Flex Flex:URL
+status open
+
+\begin_layout Plain Layout
+
+http://web.stanford.edu/~hastie/Papers/buehlmann.pdf
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+
+, for a given loss function 
+\begin_inset Formula $\ell$
+\end_inset
+
+ and a hypothesis space 
+\begin_inset Formula $\cf$
+\end_inset
+
+ of regression functions (i.e.
+ functions mapping from the input space to 
+\begin_inset Formula $\reals$
+\end_inset
+
+): 
+\end_layout
+
+\begin_layout Enumerate
+Initialize 
+\begin_inset Formula $f_{0}(x)=0$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+For 
+\begin_inset Formula $m=1$
+\end_inset
+
+ to 
+\begin_inset Formula $M$
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Compute: 
+\begin_inset Formula 
+\[
+{\bf g}_{m}=\left(\left.\frac{\partial}{\partial f(x_{i})}\sum_{i=1}^{n}\ell\left(y_{i},f(x_{i})\right)\right|_{f(x_{i})=f_{m-1}(x_{i})}\right)_{i=1}^{n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Fit regression model to 
+\begin_inset Formula $-{\bf g}_{m}$
+\end_inset
+
+: 
+\begin_inset Formula 
+\[
+h_{m}=\argmin_{h\in\cf}\sum_{i=1}^{n}\left(\left(-{\bf g}_{m}\right)_{i}-h(x_{i})\right)^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Choose fixed step size 
+\begin_inset Formula $\nu_{m}=\nu\in(0,1]$
+\end_inset
+
+, or take 
+\begin_inset Formula 
+\[
+\nu_{m}=\argmin_{\nu>0}\sum_{i=1}^{n}\ell\left(y_{i},f_{m-1}(x_{i})+\nu h_{m}(x_{i})\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Take the step: 
+\begin_inset Formula 
+\[
+f_{m}(x)=f_{m-1}(x)+\nu_{m}h_{m}(x)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Return 
+\begin_inset Formula $f_{M}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+In this problem we'll derive two special cases of the general gradient boosting
+ framework: 
+\begin_inset Formula $L_{2}$
+\end_inset
+
+-Boosting and BinomialBoost.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Consider the regression framework, where 
+\begin_inset Formula $\cy=\reals$
+\end_inset
+
+.
+ Suppose our loss function is given by 
+\begin_inset Formula 
+\[
+\ell(\hat{y},y)=\frac{1}{2}\left(\hat{y}-y\right)^{2},
+\]
+
+\end_inset
+
+and at the beginning of the 
+\begin_inset Formula $m$
+\end_inset
+
+'th round of gradient boosting, we have the function 
+\begin_inset Formula $f_{m-1}(x)$
+\end_inset
+
+.
+ Show that the 
+\begin_inset Formula $h_{m}$
+\end_inset
+
+ chosen as the next basis function is given by 
+\begin_inset Formula 
+\[
+h_{m}=\argmin_{h\in\cf}\sum_{i=1}^{n}\left[\left(y_{i}-f_{m-1}(x_{i})\right)-h(x_{i})\right]^{2}.
+\]
+
+\end_inset
+
+In other words, at each stage we find the weak prediction function 
+\begin_inset Formula $h_{m}\in\cf$
+\end_inset
+
+ that is the best fit to the residuals from the previous stage.
+ [Hint: Once you understand what's going on, this is a pretty easy problem.]
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Historical Note: The legendary statistician John Tukey proposed 
+\begin_inset Quotes eld
+\end_inset
+
+twicing
+\begin_inset Quotes erd
+\end_inset
+
+, which is basically two rounds of L2Boosting.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Now let's consider the classification framework, where 
+\begin_inset Formula $\cy=\left\{ -1,1\right\} $
+\end_inset
+
+.
+ In lecture, we noted that AdaBoost corresponds to forward stagewise additive
+ modeling with the exponential loss, and that the exponential loss not very
+ robust to outliers (i.e.
+ outliers can have a large effect on the final prediction function).
+ Instead, let's consider instead the logistic loss 
+\begin_inset Formula 
+\[
+\ell(m)=\ln\left(1+e^{-m}\right),
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $m=yf(x)$
+\end_inset
+
+ is the margin.
+ Similar to what we did in the 
+\begin_inset Formula $L_{2}$
+\end_inset
+
+-Boosting question, write an expression for 
+\begin_inset Formula $h_{m}$
+\end_inset
+
+ as an argmin over 
+\begin_inset Formula $\cf$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Section
+From Margins to Conditional Probabilities
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+This problem is based on Section 7.5.3 of Schapire and Freund's book 
+\emph on
+Boosting: Foundations and Algorithms
+\emph default
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let's consider the classification setting, in which 
+\begin_inset Formula $\left(x_{1},y_{1}\right),\ldots,\left(x_{n},y_{n}\right)\in\cx\times\left\{ -1,1\right\} $
+\end_inset
+
+ are sampled i.i.d.
+ from some unknown distribution.
+ For a prediction function 
+\begin_inset Formula $f:\cx\to\reals$
+\end_inset
+
+, we define the 
+\series bold
+margin 
+\series default
+on an example 
+\begin_inset Formula $\left(x,y\right)$
+\end_inset
+
+ to be 
+\begin_inset Formula $m=yf(x)$
+\end_inset
+
+.
+ Since our class predictions are given by 
+\begin_inset Formula $\sign(f(x))$
+\end_inset
+
+, we see that a prediction is correct iff 
+\begin_inset Formula $m(x)>0$
+\end_inset
+
+.
+ We have said we can interpret the magnitude of the margin 
+\begin_inset Formula $\left|m(x)\right|$
+\end_inset
+
+ as a measure of confidence.
+ However, it is not clear what the 
+\begin_inset Quotes eld
+\end_inset
+
+units
+\begin_inset Quotes erd
+\end_inset
+
+ of the margin are, so it is hard to interpret the magnitudes beyond saying
+ one prediction is more or less confident than another.
+ In this problem, we investigate how we can translate the margin into a
+ conditional probability, which is much easier to interpret.
+ In other words, we are looking for a mapping 
+\begin_inset Formula $m(x)\mapsto p(y=1\mid x)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+In this problem we will consider margin losses.
+ A loss function is a 
+\series bold
+margin loss
+\series default
+ if it can be written in terms of the margin 
+\begin_inset Formula $m=yf(x)$
+\end_inset
+
+.
+ We are interested in how we can go from an empirical risk minimizer of
+ a margin loss, 
+\begin_inset Formula $\hat{f}=\argmin_{f\in\cf}\sum_{i=1}^{n}\ell\left(y_{i}f(x_{i})\right)$
+\end_inset
+
+, to a conditional probability estimator 
+\begin_inset Formula $\hat{\pi}(x)\approx p(y=1\mid x)$
+\end_inset
+
+.
+ Our approach will be to find the mapping in terms of the Bayes prediction
+ function
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+In this context, the Bayes prediction function is often referred to as the
+ 
+\begin_inset Quotes eld
+\end_inset
+
+population minimizer.
+\begin_inset Quotes erd
+\end_inset
+
+ The term 
+\begin_inset Quotes eld
+\end_inset
+
+population
+\begin_inset Quotes erd
+\end_inset
+
+ makes most sense in a context where we are using a sample to approximate
+ some statistic of an entire population.
+ In our case, 
+\begin_inset Quotes eld
+\end_inset
+
+population
+\begin_inset Quotes erd
+\end_inset
+
+ referes to the fact that we are minimizing with respect to the true distributio
+n, rather than a sample.
+\end_layout
+
+\end_inset
+
+, and then apply the same mapping to the empirical risk minimizer.
+ While there is plenty that can go wrong with this 
+\begin_inset Quotes eld
+\end_inset
+
+plug-in
+\begin_inset Quotes erd
+\end_inset
+
+ approach (primarily, the empirical risk minimizer from a hypothesis space
+ 
+\begin_inset Formula $\cf$
+\end_inset
+
+ may be a poor estimate for the Bayes prediction function), it is at least
+ well-motivated, and it can work well in practice.
+ And please note that we can do better than just hoping for success: if
+ you have enough validation data, you can directly assess how well 
+\begin_inset Quotes eld
+\end_inset
+
+calibrated
+\begin_inset Quotes erd
+\end_inset
+
+ the predicted probabilities are.
+ This blog post has some discussion of calibration plots: 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://jmetzen.github.io/2015-04-14/calibration.html"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+It turns out it is straightforward to find the Bayes prediction function
+ 
+\begin_inset Formula $f^{*}$
+\end_inset
+
+ for margin losses, at least in terms of the data-generating distribution:
+ For any given 
+\begin_inset Formula $x\in\cx$
+\end_inset
+
+, we'll find the best possible prediction 
+\begin_inset Formula $\hat{y}$
+\end_inset
+
+.
+ This will be the 
+\begin_inset Formula $\hat{y}$
+\end_inset
+
+ that minimizes
+\begin_inset Formula 
+\[
+\ex_{y}\left[\ell\left(y\hat{y}\right)\mid x\right].
+\]
+
+\end_inset
+
+If we can calculate this 
+\begin_inset Formula $\hat{y}$
+\end_inset
+
+ for all 
+\begin_inset Formula $x\in\cx$
+\end_inset
+
+, then we will have determined 
+\begin_inset Formula $f^{*}(x)$
+\end_inset
+
+.
+ We will simply take
+\begin_inset Formula 
+\[
+f^{*}(x)=\argmin_{\hat{y}}\ex_{y}\left[\ell\left(y\hat{y}\right)\mid x\right].
+\]
+
+\end_inset
+
+It may be intuitively obvious that this 
+\begin_inset Formula $f^{*}$
+\end_inset
+
+ is the risk minimizer.
+ Here's a mathematical proof: 
+\begin_inset Formula 
+\begin{eqnarray*}
+\min_{f}\ex_{x,y}\ell\left(yf(x)\right) & = & \min_{f}\ex_{x}\left[\ex_{y}\left[\ell\left(yf(x)\right)\mid x\right]\right]\\
+ & \ge & \ex_{x}\left[\min_{\hat{y}}\ex_{y}\left[\ell\left(y\hat{y}\right)\mid x\right]\right]\\
+ & = & \ex_{x}\left[\ex_{y}\left[\ell\left(yf^{*}(x)\right)\mid x\right]\right]\\
+ & = & \ex_{x,y}\ell\left(yf^{*}(x)\right).
+\end{eqnarray*}
+
+\end_inset
+
+But of course we must also have 
+\begin_inset Formula $\min_{f}\ex_{x,y}\ell\left(yf(x)\right)\le\ex_{x,y}\ell\left(yf^{*}(x)\right)$
+\end_inset
+
+.
+ So the inequality must actually be an equality, and thus the minimum is
+ attained at 
+\begin_inset Formula $f^{*}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Below we'll calculate 
+\begin_inset Formula $f^{*}$
+\end_inset
+
+ for several loss functions.
+ It will be convenient to let 
+\begin_inset Formula $\pi(x)=\pr\left(y=1\mid x\right)$
+\end_inset
+
+ in the work below.
+\end_layout
+
+\begin_layout Enumerate
+Write 
+\begin_inset Formula $\ex_{y}\left[\ell\left(yf(x)\right)\mid x\right]$
+\end_inset
+
+ in terms of 
+\begin_inset Formula $\pi(x)$
+\end_inset
+
+ and 
+\begin_inset Formula $\ell\left(f(x)\right)$
+\end_inset
+
+.
+ [Hint: Use the fact that 
+\begin_inset Formula $y\in\left\{ -1,1\right\} $
+\end_inset
+
+.]
+\end_layout
+
+\begin_layout Enumerate
+Show that the Bayes prediction function 
+\begin_inset Formula $f^{*}(x)$
+\end_inset
+
+ for the exponential loss function 
+\begin_inset Formula $\ell\left(y,f(x)\right)=e^{-yf(x)}$
+\end_inset
+
+ is given by 
+\begin_inset Formula 
+\[
+f^{*}(x)=\frac{1}{2}\ln\left(\frac{\pi(x)}{1-\pi(x)}\right)
+\]
+
+\end_inset
+
+and, given the Bayes prediction function 
+\begin_inset Formula $f^{*}$
+\end_inset
+
+, we can recover the conditional probabilities by
+\begin_inset Formula 
+\[
+\pi(x)=\frac{1}{1+e^{-2f^{*}(x)}}.
+\]
+
+\end_inset
+
+[Hint: Differentiate the expression in the previous problem with respect
+ to 
+\begin_inset Formula $f(x)$
+\end_inset
+
+.
+ If this is confusing, you may find it more comforting to change variables
+ a bit: Fix an 
+\begin_inset Formula $x\in\cx$
+\end_inset
+
+.
+ Then write 
+\begin_inset Formula $p=\pi(x)$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{y}=f(x)$
+\end_inset
+
+.
+ After substituting these into the expression you had for the previous problem,
+ you'll want to find 
+\begin_inset Formula $\hat{y}$
+\end_inset
+
+ that minimizes the expression.
+ Use differential calculus.
+ Once you've done it for a single 
+\begin_inset Formula $x$
+\end_inset
+
+, it's easy to write the solution as a function of 
+\begin_inset Formula $x$
+\end_inset
+
+.] 
+\end_layout
+
+\begin_layout Enumerate
+Show that the Bayes prediction function 
+\begin_inset Formula $f^{*}(x)$
+\end_inset
+
+ for the logistic loss function 
+\begin_inset Formula $\ell\left(y,f(x)\right)=\ln\left(1+e^{-yf(x)}\right)$
+\end_inset
+
+ is given by
+\begin_inset Formula 
+\[
+f^{*}(x)=\ln\left(\frac{\pi(x)}{1-\pi(x)}\right)
+\]
+
+\end_inset
+
+and the conditional probabilities are given by
+\begin_inset Formula 
+\[
+\pi(x)=\frac{1}{1+e^{-f^{*}(x)}}.
+\]
+
+\end_inset
+
+ Again, we may assume that 
+\begin_inset Formula $\pi(x)\in(0,1)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+[Optional] Show that the Bayes prediction function 
+\begin_inset Formula $f^{*}(x)$
+\end_inset
+
+ for the hinge loss function 
+\begin_inset Formula $\ell\left(y,f(x)\right)=\max\left(0,1-yf(x)\right)$
+\end_inset
+
+ is given by
+\begin_inset Formula 
+\[
+f^{*}(x)=\sign\left(\pi(x)-\frac{1}{2}\right).
+\]
+
+\end_inset
+
+Note that it is impossible to recover 
+\begin_inset Formula $\pi(x)$
+\end_inset
+
+ from 
+\begin_inset Formula $f^{*}(x)$
+\end_inset
+
+ in this scenario.
+ However, in practice we work with an empirical risk minimizer, from which
+ we may still be able to recover a reasonable estimate for 
+\begin_inset Formula $\pi(x)$
+\end_inset
+
+.
+ An early approach to this problem is known as 
+\begin_inset Quotes eld
+\end_inset
+
+Platt scaling
+\begin_inset Quotes erd
+\end_inset
+
+: 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://en.wikipedia.org/wiki/Platt_scaling"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_body
+\end_document

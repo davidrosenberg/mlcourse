@@ -1602,5 +1602,371 @@ target "https://en.wikipedia.org/wiki/Platt_scaling"
  
 \end_layout
 
+\begin_layout Section
+AdaBoost Actually Works [Optional]
+\end_layout
+
+\begin_layout Subsection*
+Introduction
+\end_layout
+
+\begin_layout Standard
+Given training set 
+\begin_inset Formula $D=\{(x_{1},y_{1}),\dots,(x_{n},y_{n})\},$
+\end_inset
+
+ where 
+\begin_inset Formula $y_{i}$
+\end_inset
+
+'s are either 
+\begin_inset Formula $+1$
+\end_inset
+
+ or 
+\begin_inset Formula $-1$
+\end_inset
+
+, suppose we have a weak learner 
+\begin_inset Formula $G_{t}$
+\end_inset
+
+ at time 
+\begin_inset Formula $t$
+\end_inset
+
+ and we will perform AdaBoost 
+\begin_inset Formula $T$
+\end_inset
+
+ times.
+ Initialize observation weights uniformly by setting 
+\begin_inset Formula $W^{1}=(w_{1}^{1},\dots,w_{n}^{1})$
+\end_inset
+
+ and 
+\begin_inset Formula $w_{i}=1/n$
+\end_inset
+
+ for 
+\begin_inset Formula $i=1,2,\dots,n.$
+\end_inset
+
+ For 
+\begin_inset Formula $t=1,2,\dots,n$
+\end_inset
+
+: 
+\end_layout
+
+\begin_layout Enumerate
+Fit the weak learner at time 
+\begin_inset Formula $t$
+\end_inset
+
+ to weighted samples: 
+\begin_inset Formula $G_{t}$
+\end_inset
+
+ that depends on 
+\begin_inset Formula $(D,W^{t})$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Enumerate
+Compute the weighted misclassifications: 
+\begin_inset Formula $\text{err}_{t}=\sum_{D}w_{i}^{t}\ind{G_{t}(x_{i})\neq y_{i}}/\sum_{i}w_{i}^{t}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Enumerate
+Compute the contribution coefficient for the weak learner: 
+\begin_inset Formula $\alpha_{t}=\log(\frac{1}{\text{err}_{t}}-1)$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Enumerate
+Update the weights: 
+\begin_inset Formula $w_{i}^{t+1}=w_{i}^{t}\exp(-\alpha_{t}y_{i}G_{t}(x_{i}))$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+After 
+\begin_inset Formula $T$
+\end_inset
+
+ steps, the cumulative contributions of weak learners is 
+\begin_inset Formula $G(x)=\text{sign}(\sum_{t=1}^{T}\alpha_{t}G_{t}(x))$
+\end_inset
+
+ as the final output.
+ We will prove that with a reasonable weak learner the error of the output
+ decreases exponentially fast with the number of iterations.
+\end_layout
+
+\begin_layout Subsection*
+Exponential bound on the training loss
+\end_layout
+
+\begin_layout Standard
+More precisely, we will show that the training error 
+\begin_inset Formula $L(G,D)=\frac{1}{n}\sum_{i=1}^{n}\ind{G(x_{i})\neq y_{i}}\leq\exp(-\gamma^{2}T)$
+\end_inset
+
+ where the error of the weak learner is less than 
+\begin_inset Formula $1/2-\gamma$
+\end_inset
+
+ for some 
+\begin_inset Formula $\gamma>0$
+\end_inset
+
+.
+ To start, let's denote two cumulative variables: the output at time 
+\begin_inset Formula $t$
+\end_inset
+
+ as 
+\begin_inset Formula $f_{t}=\sum_{s\leq t}\alpha_{s}G_{s}$
+\end_inset
+
+ and 
+\begin_inset Formula $Z_{t}=\frac{1}{n}\sum_{i=1}^{n}\exp(-y_{i}f_{t}(x_{i}))$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+For any function 
+\begin_inset Formula $g$
+\end_inset
+
+ into 
+\begin_inset Formula $\{-1.+1\}$
+\end_inset
+
+, show that 
+\begin_inset Formula $\ind{G(x_{i})\neq y_{i}}<\exp(-yg(x))$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Use this to show 
+\begin_inset Formula $L(G,D)<Z_{T}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Enumerate
+Show that 
+\begin_inset Formula $w_{i}^{t+1}=\exp(-y_{i}f_{t}(x_{i}))$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Enumerate
+Use part 3 to show 
+\begin_inset Formula $\frac{Z_{t+1}}{Z_{t}}\leq2\sqrt{\text{err}_{t+1}(1-\text{err}_{t+1})}$
+\end_inset
+
+ (Hint: use the definition of weight updates and separate the sum on where
+ 
+\begin_inset Formula $G_{t}$
+\end_inset
+
+ is equal to 1 and 
+\begin_inset Formula $-1$
+\end_inset
+
+.) 
+\end_layout
+
+\begin_layout Enumerate
+Show that the function 
+\begin_inset Formula $g(a)=a(1-a)$
+\end_inset
+
+ is monotonically increasing on 
+\begin_inset Formula $[0,1/2]$
+\end_inset
+
+.
+ Show that 
+\begin_inset Formula $1-a\leq\exp(-a)$
+\end_inset
+
+.
+ And use the assumption on the weak learner to show that 
+\begin_inset Formula $\frac{Z_{t+1}}{Z_{t}}\leq\exp(-2\gamma^{2})$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Enumerate
+Conclude the proof! 
+\end_layout
+
+\begin_layout Section
+AdaBoost is FSAM With Exponential Loss [Optional]
+\end_layout
+
+\begin_layout Subsection*
+Introduction
+\end_layout
+
+\begin_layout Standard
+The main function in AdaBoost, 
+\begin_inset Formula $G(x)=\text{sign}(\sum_{t=1}^{T}\alpha_{t}G_{t}(x))$
+\end_inset
+
+, is an additive expansion in a set of `basis' functions, 
+\begin_inset Formula $f(x)=\sum_{t=1}^{T}\alpha_{t}G_{t}(x)$
+\end_inset
+
+.
+ The function 
+\begin_inset Formula $f$
+\end_inset
+
+ is similar to the way of representing a vector as a linear combination
+ of the basis vectors in linear algebra: Given a set of basis elements,
+ find the correct coefficients.
+ Here we have 
+\begin_inset Formula $G_{t}(x)$
+\end_inset
+
+'s as basis functions and 
+\begin_inset Formula $\alpha$
+\end_inset
+
+'s as coefficients.
+\end_layout
+
+\begin_layout Standard
+In the additive model, the algorithm starts by initializing 
+\begin_inset Formula $f_{0}(x)=0$
+\end_inset
+
+, and then for 
+\begin_inset Formula $t=1,\dots,T$
+\end_inset
+
+ iterate over the following for some loss function 
+\begin_inset Formula $L$
+\end_inset
+
+: 
+\end_layout
+
+\begin_layout Enumerate
+Compute 
+\begin_inset Formula $(\alpha_{t},G_{t})=\text{argmin}_{\alpha,G}\sum_{i=1}^{n}L(y_{i},f_{t-1}(x_{i})+\alpha G(x_{i}))$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Enumerate
+Find the expansion at time 
+\begin_inset Formula $t$
+\end_inset
+
+: 
+\begin_inset Formula $f_{t}(x)=f_{t-1}(x)+\alpha_{t}G_{t}(x)$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+In the next problem, show that using exponential loss will lead to AdaBoost.
+\end_layout
+
+\begin_layout Subsection*
+Exponential loss and AdaBoost
+\end_layout
+
+\begin_layout Standard
+Consider the loss function 
+\begin_inset Formula $L(y,f(x))=\exp(-yf(x))$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Write the first step of the additive model using the exponential loss function.
+ Show that it can be written as: 
+\begin_inset Formula 
+\[
+(\alpha_{t},G_{t})=\text{argmin}_{\alpha,G}\sum_{i=1}^{n}w_{i}^{t}\exp(-\alpha y_{i}G(x_{i})))
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Show that for fixed positive alpha: 
+\begin_inset Formula 
+\[
+G_{t}=\text{argmin}_{G}\sum_{i=1}^{n}w_{i}^{t}\ind{G(x_{i})\neq y_{i}}
+\]
+
+\end_inset
+
+(Hint: split the sum in part 1 for 
+\begin_inset Formula $y_{i}=G(x_{i})$
+\end_inset
+
+ and otherwise.) 
+\end_layout
+
+\begin_layout Enumerate
+Plug this 
+\begin_inset Formula $G_{t}$
+\end_inset
+
+ back into the first equation and solve for 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ to obtain 
+\begin_inset Formula $\alpha_{t}=\frac{1}{2}\log\frac{1}{\text{err}_{t}}-1$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Enumerate
+Show that the weight iterations are given by: 
+\begin_inset Formula 
+\[
+w_{i}^{t+1}=w_{i}^{t}\exp(-\alpha_{t}y_{i}G_{t}(x_{i}))
+\]
+
+\end_inset
+
+And conclude the equivalence.
+ 
+\end_layout
+
 \end_body
 \end_document

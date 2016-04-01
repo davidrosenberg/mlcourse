@@ -1685,7 +1685,7 @@ Compute the weighted misclassifications:
 
 \begin_layout Enumerate
 Compute the contribution coefficient for the weak learner: 
-\begin_inset Formula $\alpha_{t}=1/2\log(\frac{1}{\text{err}_{t}}-1)$
+\begin_inset Formula $\alpha_{t}=\log(\frac{1}{\text{err}_{t}}-1)$
 \end_inset
 
  
@@ -1781,7 +1781,7 @@ Show that
 
 \begin_layout Enumerate
 Use part 3 to show 
-\begin_inset Formula $\frac{Z_{t+1}}{Z_{t}}=2\sqrt{\text{err}_{t+1}(1-\text{err}_{t+1})}$
+\begin_inset Formula $\frac{Z_{t+1}}{Z_{t}}\leq2\sqrt{\text{err}_{t+1}(1-\text{err}_{t+1})}$
 \end_inset
 
  (Hint: use the definition of weight updates and separate the sum on where

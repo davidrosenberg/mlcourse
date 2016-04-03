@@ -692,7 +692,7 @@ http://mldata.org/repository/data/viewslug/banana-ida/
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename banana.png
+	filename ../../../mlcourse/Homework/hw5-boosting/banana.png
 	width 40text%
 
 \end_inset

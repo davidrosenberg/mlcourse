@@ -19,7 +19,6 @@
   \end{frame}
 }
 \end_preamble
-\options handout
 \use_default_options false
 \maintain_unincluded_children false
 \language english
@@ -742,27 +741,9 @@ Just in article version
 status open
 
 \begin_layout Plain Layout
-\begin_inset ERT
-status open
 
-\begin_layout Plain Layout
-
-
-\backslash
-let
-\backslash
-thefootnote
-\backslash
-relax
-\backslash
-footnotetext{
-\backslash
-tiny{Plots courtesy of Ningshan Zhang.}}
-\end_layout
-
-\end_inset
-
-
+To do: What happens when we increase the norm of w? Does the decision region
+ rotate? anything specific we can say
 \end_layout
 
 \end_inset
@@ -1876,7 +1857,7 @@ e.g
 \begin_inset Formula $\cy=\left\{ 1,\ldots,k\right\} $
 \end_inset
 
-for multiclass
+ for multiclass
 \end_layout
 
 \begin_layout Pause
@@ -2232,11 +2213,11 @@ Linear Multiclass Hypothesis Space
 \begin_inset Formula $\Psi(x,y)$
 \end_inset
 
- is a feature vector representing how much of a match 
+ is a feature vector representing how well 
 \begin_inset Formula $y$
 \end_inset
 
- is for 
+ matches 
 \begin_inset Formula $x$
 \end_inset
 
@@ -2783,7 +2764,7 @@ DF(w,y),
 
 \end_inset
 
-is the numer of documents contain word 
+is the number of documents containing word 
 \begin_inset Formula $w$
 \end_inset
 
@@ -2794,6 +2775,12 @@ is the numer of documents contain word
 .
 \end_layout
 
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
 \begin_layout Itemize
 The TF-IDF feature for word 
 \begin_inset Formula $w$
@@ -2852,7 +2839,7 @@ TF-IDF: Things to note
 
 \begin_deeper
 \begin_layout Itemize
-Suppose we 
+Suppose we have 
 \begin_inset Formula $d$
 \end_inset
 

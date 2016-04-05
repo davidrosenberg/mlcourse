@@ -741,7 +741,6 @@ Just in article version
 status open
 
 \begin_layout Plain Layout
-
 To do: What happens when we increase the norm of w? Does the decision region
  rotate? anything specific we can say
 \end_layout
@@ -3085,12 +3084,8 @@ The
 \series bold
 margin
 \series default
- of prediction function 
+ of score function 
 \begin_inset Formula $h$
-\end_inset
-
- when predicting 
-\begin_inset Formula $y$
 \end_inset
 
  on the 
@@ -3099,6 +3094,10 @@ margin
 
 th example 
 \begin_inset Formula $(x_{i},y_{i})$
+\end_inset
+
+ for class 
+\begin_inset Formula $y$
 \end_inset
 
  is

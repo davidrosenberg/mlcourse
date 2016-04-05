@@ -739,7 +739,9 @@ Wondering if we should extend the plots for error >.5? This would be a really
  annoying hypothesis space that was always worse than random..
  But they would enter the ensemble with a negative weight.
  Might should at least point this out...
- beacuse it's only a nonnegative combination if error is always <=.5.
+ because it's only a nonnegative combination if error is always <=.5.
+ QUESTION: Does AdaBoost work on training data if error is bounded away
+ from 0.5?
 \end_layout
 
 \end_inset
@@ -1816,7 +1818,11 @@ w_{i} & \gets & w_{i}e^{\alpha_{m}}\\
 
 \end_deeper
 \begin_layout Itemize
-See why this only increases the weight?
+See why this only increases the weight? [at least for 
+\begin_inset Formula $\mbox{err}_{m}<0.5$
+\end_inset
+
+]
 \end_layout
 
 \end_deeper

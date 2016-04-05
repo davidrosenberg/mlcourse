@@ -692,7 +692,7 @@ http://mldata.org/repository/data/viewslug/banana-ida/
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename banana.png
+	filename ../../../mlcourse/Homework/hw5-boosting/banana.png
 	width 40text%
 
 \end_inset
@@ -1719,7 +1719,7 @@ Exponential bound on the training loss
 
 \begin_layout Standard
 More precisely, we will show that the training error 
-\begin_inset Formula $L(G,D)=\frac{1}{n}\sum_{i=1}^{n}\ind{G(x_{i})\neq y_{i}}\leq\exp(-\gamma^{2}T)$
+\begin_inset Formula $L(G,D)=\frac{1}{n}\sum_{i=1}^{n}\ind{G(x_{i})\neq y_{i}}\leq\exp(-2\gamma^{2}T)$
 \end_inset
 
  where the error of the weak learner is less than 
@@ -1736,7 +1736,7 @@ More precisely, we will show that the training error
 \end_inset
 
  as 
-\begin_inset Formula $f_{t}=\sum_{s\leq t}\alpha_{s}G_{s}$
+\begin_inset Formula $f_{t}=\text{\text{sign}}\sum_{s\leq t}\alpha_{s}G_{s}$
 \end_inset
 
  and 

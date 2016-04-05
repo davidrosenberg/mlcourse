@@ -692,7 +692,7 @@ http://mldata.org/repository/data/viewslug/banana-ida/
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../../mlcourse/Homework/hw5-boosting/banana.png
+	filename banana.png
 	width 40text%
 
 \end_inset
@@ -1736,7 +1736,7 @@ More precisely, we will show that the training error
 \end_inset
 
  as 
-\begin_inset Formula $f_{t}=\text{\text{sign}}\sum_{s\leq t}\alpha_{s}G_{s}$
+\begin_inset Formula $f_{t}=\sum_{s\leq t}\alpha_{s}G_{s}$
 \end_inset
 
  and 
@@ -1749,10 +1749,6 @@ More precisely, we will show that the training error
 \begin_layout Enumerate
 For any function 
 \begin_inset Formula $g$
-\end_inset
-
- into 
-\begin_inset Formula $\{-1,+1\}$
 \end_inset
 
 , show that 

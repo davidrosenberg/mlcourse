@@ -1070,7 +1070,7 @@ Denote proportion of observations in
  by
 \begin_inset Formula 
 \[
-\hat{p}_{mk}=\frac{1}{m}\sum_{\left\{ i:x_{i}\in R_{m}\right\} }\ind{y_{i}=k}.
+\hat{p}_{mk}=\frac{1}{N_{m}}\sum_{\left\{ i:x_{i}\in R_{m}\right\} }\ind{y_{i}=k}.
 \]
 
 \end_inset

@@ -1428,27 +1428,6 @@ Show that for
 .
  (The last part should follow easily from the earlier exercises on psd and
  spd matrices.) 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Formula 
-\begin{eqnarray*}
-J(w) & = & \left(Xw-y\right)^{T}\left(Xw-y\right)+\lambda w^{T}w\\
-\partial_{w}J(w) & = & 2X^{T}\left(Xw-y\right)+2\lambda w\\
-\partial_{w}J(w)=0 & \iff & 2X^{T}Xw+2\lambda w-2X^{T}y=0\\
- & \iff & (X^{T}X+\lambda I)w=X^{T}y\\
- & \iff & w=(X^{T}X+\lambda I)^{-1}X^{T}y
-\end{eqnarray*}
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Enumerate
@@ -1474,29 +1453,6 @@ Rewrite
 \end_inset
 
 .
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
- 
-\begin_inset Newline newline
-\end_inset
-
-Solution:
-\begin_inset Formula 
-\begin{eqnarray*}
-w & = & X^{T}\left[\frac{1}{\lambda}\left(y-Xw\right)\right]\\
-\implies\alpha & = & \frac{1}{\lambda}\left(y-Xw\right)
-\end{eqnarray*}
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Enumerate
@@ -1510,44 +1466,6 @@ Based on the fact that
 
 in the span of the data.
 \begin_inset Quotes erd
-\end_inset
-
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Formula $X^{T}\alpha$
-\end_inset
-
- is a linear combination of the columns of 
-\begin_inset Formula $X^{T}$
-\end_inset
-
-, which contain the input vectors 
-\begin_inset Formula $x_{1},\ldots,x_{n}$
-\end_inset
-
-:
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Formula 
-\begin{align*}
-w= & \begin{pmatrix}| & \cdots & |\\
-x_{1} & \cdots & x_{n}\\
-| & \cdots & |
-\end{pmatrix}\begin{pmatrix}\alpha_{1}\\
-\vdots\\
-\alpha_{n}
-\end{pmatrix}=\alpha_{1}x_{1}+\cdots\alpha_{n}x_{n}
-\end{align*}
-
-\end_inset
-
-
-\end_layout
-
 \end_inset
 
 
@@ -1581,27 +1499,6 @@ Show that
 \end_inset
 
 .)
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Formula 
-\begin{eqnarray*}
-\alpha & = & \lambda^{-1}(y-Xw)\\
-\lambda\alpha & = & y-XX^{T}\alpha\\
-XX^{T}\alpha+\lambda\alpha & = & y\\
-\left(XX^{T}+\lambda I\right)\alpha & = & y\\
-\alpha & = & (\lambda I+XX^{T})^{-1}y
-\end{eqnarray*}
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Enumerate
@@ -1627,24 +1524,6 @@ Give a kernelized expression for the
 \end_inset
 
 .
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Formula 
-\begin{eqnarray*}
-Xw & = & X\left(X^{T}\alpha\right)\\
- & = & \left(XX^{T}\right)(\lambda I+XX^{T})^{-1}y
-\end{eqnarray*}
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Enumerate
@@ -3219,16 +3098,16 @@ Continue the proof of the Representer Theorem from the lecture slides to
 
 \begin_layout Enumerate
 Suppose that 
-\begin_inset Formula $R$
+\begin_inset Formula $R:\reals^{\ge0}\to\reals$
 \end_inset
 
  and 
-\begin_inset Formula $L$
+\begin_inset Formula $L:\reals^{n}\to\reals$
 \end_inset
 
- are both convex in their arguments.
+ are both convex functions.
  Use properties of convex functions to show that 
-\begin_inset Formula $L$
+\begin_inset Formula $w\mapsto L\left(\left\langle w,\psi(x_{1})\right\rangle ,\ldots,\left\langle w,\psi(x_{n})\right\rangle \right)$
 \end_inset
 
  is a convex function of 
@@ -3236,7 +3115,7 @@ Suppose that
 \end_inset
 
 , and then that 
-\begin_inset Formula $J$
+\begin_inset Formula $J(w)$
 \end_inset
 
  is also convex function of 
@@ -3281,7 +3160,11 @@ Suppose that
 \begin_inset Formula $L$
 \end_inset
 
- is convex, then 
+ and 
+\begin_inset Formula $R$
+\end_inset
+
+ are convex, then 
 \begin_inset Formula $J$
 \end_inset
 
@@ -3298,6 +3181,7 @@ Suppose that
 \end_inset
 
  have this form.
+ 
 \end_layout
 
 \begin_layout Section

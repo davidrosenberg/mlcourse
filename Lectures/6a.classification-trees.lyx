@@ -719,10 +719,8 @@ tiny{Plots courtesy of Ningshan Zhang.}}
 status open
 
 \begin_layout Plain Layout
-Should really give a reference for what version of trees we are teaching
- here.
- Is it CART? I followed the development of HTF's book, but they don't really
- say which version they're using.
+The approach to trees presented here follows the development of HTF's book,
+ and I believe is exactly CART.
  Would be interesting to discuss how it differs from Q4.5 and ID3.
 \end_layout
 

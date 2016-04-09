@@ -19,6 +19,7 @@
   \end{frame}
 }
 \end_preamble
+\options handout
 \use_default_options false
 \maintain_unincluded_children false
 \language english
@@ -3197,7 +3198,7 @@ Recall binary SVM (without bias term):
 Multiclass SVM (Version 1): 
 \begin_inset Formula 
 \[
-\min_{w\in\reals^{d}}\frac{1}{2}||w||^{2}+\frac{c}{n}\sum_{i=1}^{n}\max_{y}\left(1-m_{i,y}(w))\right)_{+}
+\min_{w\in\reals^{d}}\frac{1}{2}||w||^{2}+\frac{c}{n}\sum_{i=1}^{n}\max_{y\neq y_{i}}\left(1-m_{i,y}(w)\right)_{+}
 \]
 
 \end_inset
@@ -3208,7 +3209,7 @@ Multiclass SVM (Version 1):
 
 .
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Itemize
 is the 
@@ -3338,7 +3339,7 @@ SVM.
 Multiclass SVM (Version 2):
 \begin_inset Formula 
 \[
-\min_{w\in\reals^{d}}\frac{1}{2}||w||^{2}+\frac{c}{n}\sum_{i=1}^{n}\max_{y}\left(\Delta(y_{i},y)-m_{i,y}(w))\right)_{+}
+\min_{w\in\reals^{d}}\frac{1}{2}||w||^{2}+\frac{c}{n}\sum_{i=1}^{n}\max_{y}\left(\Delta(y_{i},y)-m_{i,y}(w)\right)_{+}
 \]
 
 \end_inset

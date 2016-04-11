@@ -1476,11 +1476,20 @@ Then
 \begin_inset Formula $x$
 \end_inset
 
- is classified by whichever has smallest 
+ is classified by whichever has largest 
 \begin_inset Formula $\cos\theta_{i}$
 \end_inset
 
-.
+ (i.e.
+ 
+\begin_inset Formula $\theta_{i}$
+\end_inset
+
+ closest to 
+\begin_inset Formula $0$
+\end_inset
+
+)
 \end_layout
 
 \begin_layout Pause

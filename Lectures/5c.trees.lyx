@@ -1238,6 +1238,17 @@ we want the tree minimizing square error on training set.
 \begin_layout Itemize
 Finding the optimal binary tree of a given complexity is computationally
  intractable.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Learning the simplest (smallest) decision tree is an NP-complete problem
+ [Hyafil & Rivest ’76] 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2152,11 +2163,17 @@ Why doesn't this overfit? For each
 \end_inset
 
  we might get a different tree depth in each fold...
- maybe the tree size is the size of the tree when use 
+ the tree size is the size of the tree when use 
 \begin_inset Formula $\alpha$
 \end_inset
 
- on the full dataset?
+ on the full dataset, after pruning.
+  My best guess for why we're not seeing overfitting is that the tree size
+ complexity just doesn't get that large.
+ Note that in this figure, tree size is the number of terminal nodes, not
+ the depth of the tree.
+ Perhaps if we'd been working with larger trees, we'd start to see overfitting.
+ 
 \end_layout
 
 \end_inset

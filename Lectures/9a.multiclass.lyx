@@ -3337,11 +3337,15 @@ Rather than
 \end_layout
 
 \begin_layout Itemize
-We can use this loss as our 
+We can use this 
+\begin_inset Formula $\Delta$
+\end_inset
+
+ as our 
 \series bold
 target margin 
 \series default
-SVM.
+for multiclass SVM.
 \end_layout
 
 \begin_layout Itemize
@@ -3354,6 +3358,42 @@ Multiclass SVM (Version 2):
 \end_inset
 
 
+\end_layout
+
+\begin_layout Itemize
+We can think of 
+\begin_inset Formula $\Delta(y_{i},y)$
+\end_inset
+
+ as the 
+\begin_inset Quotes eld
+\end_inset
+
+target margin
+\begin_inset Quotes erd
+\end_inset
+
+ for example 
+\begin_inset Formula $i$
+\end_inset
+
+ and class 
+\begin_inset Formula $y$
+\end_inset
+
+ because if each margin 
+\begin_inset Formula $m_{i,y}(w)$
+\end_inset
+
+ meets or exceeds its corresponding target 
+\begin_inset Formula $\Delta(y_{i},y)$
+\end_inset
+
+, then we don't incur a loss on example 
+\begin_inset Formula $i$
+\end_inset
+
+.
 \end_layout
 
 \end_deeper

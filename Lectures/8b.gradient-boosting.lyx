@@ -2576,7 +2576,7 @@ Take any [sub]differentiable loss function.
 \end_layout
 
 \begin_layout Itemize
-Choose a weak hypothesis space for regression.
+Choose a base hypothesis space for regression.
 \end_layout
 
 \begin_layout Itemize

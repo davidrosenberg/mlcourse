@@ -1537,8 +1537,8 @@ information gain
 status open
 
 \begin_layout Plain Layout
-Should give example of how misclassification error can be the same,btu gini
- or entropy can have preference for more pure classes.
+Should give example of how misclassification error can be the same, but
+ gini or entropy can have preference for more pure classes.
  examples in the HTF or the more elementary book.
  
 \end_layout

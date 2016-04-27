@@ -1512,7 +1512,7 @@ Maximum Likelihood Estimation
 \begin_deeper
 \begin_layout Standard
 Suppose we have a parametric model 
-\begin_inset Formula $\left\{ p(y,\theta)\mid\theta\in\Theta\right\} $
+\begin_inset Formula $\left\{ p(y;\theta)\mid\theta\in\Theta\right\} $
 \end_inset
 
  and a sample 
@@ -1538,7 +1538,7 @@ The maximum likelihood estimator (MLE) for
  is
 \begin_inset Formula 
 \[
-\hat{\theta}=\argmax_{\theta\in\Theta}L_{\cd}(\theta)\pause=\argmax_{\theta\in\Theta}\prod_{i=1}^{n}p(y_{i},\theta).
+\hat{\theta}=\argmax_{\theta\in\Theta}L_{\cd}(\theta)\pause=\argmax_{\theta\in\Theta}\prod_{i=1}^{n}p(y_{i};\theta).
 \]
 
 \end_inset
@@ -1559,7 +1559,7 @@ log likelihood
  Same maximum but
 \begin_inset Formula 
 \[
-\log p(y_{i},\theta)=\sum_{i=1}^{n}\log p(y_{i},\theta),
+\log p(\cd;\theta)=\sum_{i=1}^{n}\log p(y_{i};\theta),
 \]
 
 \end_inset

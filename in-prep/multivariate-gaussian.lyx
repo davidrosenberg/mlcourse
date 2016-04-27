@@ -1319,7 +1319,7 @@ reference "thm:conditioningJointGaussian"
 
 \end_inset
 
- gives us tells us that
+ tells us that
 \begin_inset Formula 
 \[
 \ex\left[x_{1}\mid x_{2}\right]=\mu_{1}+\Sigma_{12}\Sigma_{22}^{-1}(x_{2}-\mu_{2}).

@@ -2319,7 +2319,7 @@ Consider
  has smaller variance:
 \begin_inset Formula 
 \begin{eqnarray*}
-\mbox{\var}(\hat{f}_{\mbox{avg}}) & = & \frac{1}{B^{2}}\var\left(\sum_{b=1}^{B}\hat{f}_{b}(x)\right)\\
+\mbox{\var}(\hat{f}_{\mbox{avg}}(x)) & = & \frac{1}{B^{2}}\var\left(\sum_{b=1}^{B}\hat{f}_{b}(x)\right)\\
 \pause & = & \frac{1}{B}\var\left(\hat{f}_{1}(x)\right)
 \end{eqnarray*}
 

@@ -610,6 +610,23 @@ book is very well-written and a pleasure to read.
  verbatim from the original.
  My main contribution is deciding what to leave out.
  
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+would be nice to add example of logistic loss being convex.
+ 
+\begin_inset Formula $\log\left(1+e^{-m}\right)$
+\end_inset
+
+.
+ Also the second derivative test for convexity.
+ 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Author

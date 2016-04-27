@@ -2996,183 +2996,6 @@ So if we have the model, clustering is trival.
 
 \end_layout
 
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-The GMM 
-\begin_inset Quotes eld
-\end_inset
-
-Learning
-\begin_inset Quotes erd
-\end_inset
-
- Problem
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Given data 
-\begin_inset Formula $x_{1},\ldots,x_{n}$
-\end_inset
-
- drawn from a GMM,
-\end_layout
-
-\begin_layout Itemize
-Estimate the parameters: 
-\begin_inset Formula 
-\begin{eqnarray*}
-\text{Cluster probabilities}: &  & \pi=\left(\pi_{1},\ldots,\pi_{k}\right)\\
-\text{Cluster means}: &  & \mu=\left(\mu_{1},\ldots,\mu_{k}\right)\\
-\text{Cluster covariance matrices:} &  & \Sigma=\left(\Sigma_{1},\ldots\Sigma_{k}\right)
-\end{eqnarray*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Once we have the parameters, we're done.
- 
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Just do 
-\begin_inset Quotes eld
-\end_inset
-
-inference
-\begin_inset Quotes erd
-\end_inset
-
- to get cluster assignments.
-\end_layout
-
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Learning in Probabilistic Models: Maximum Likelihood
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-One approach to learning in probabilistic models is 
-\series bold
-maximum likelihood
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-find parameter values that give 
-\series bold
-observed data 
-\series default
-the
-\series bold
- highest likelihood
-\series default
-.
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Let 
-\begin_inset Formula $\theta=\left(\pi,\mu,\Sigma\right)$
-\end_inset
-
- be the parameters for GMM.
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-Observed data likelihood is
-\begin_inset Formula 
-\[
-p(x)=\sum_{z=1}^{k}p(x,z)\pause=\sum_{z=1}^{k}\pi_{z}\cn\left(x\mid\mu_{z},\Sigma_{z}\right)
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-In principle, just need to find
-\begin_inset Formula 
-\[
-\argmax_{\pi,\mu,\Sigma}\sum_{z=1}^{k}\pi_{z}\cn\left(x\mid\mu_{z},\Sigma_{z}\right).
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Unfortunately, this is very difficult.
-\end_layout
-
-\begin_layout Standard
- 
-\end_layout
-
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
 \begin_layout Section
 Mixture Models
 \end_layout
@@ -3196,13 +3019,17 @@ Gaussian Mixture Model: Marginal Distribution
 
 \begin_deeper
 \begin_layout Itemize
-Since we only observe 
-\begin_inset Formula $X$
+The 
+\series bold
+marginal distribution
+\series default
+ for a single observation 
+\begin_inset Formula $x$
 \end_inset
 
-, we need the 
+ is
 \series bold
-marginal distribution:
+
 \begin_inset Formula 
 \begin{eqnarray*}
 p(x) & = & \sum_{z=1}^{k}p(x,z)\\
@@ -3311,7 +3138,7 @@ where
 \end_deeper
 \begin_layout Itemize
 In our Gaussian mixture model, 
-\begin_inset Formula $X$
+\begin_inset Formula $x$
 \end_inset
 
  has a 
@@ -3347,7 +3174,7 @@ Choose a distribution randomly from
 
 \begin_layout Enumerate
 Sample 
-\begin_inset Formula $X$
+\begin_inset Formula $x$
 \end_inset
 
  from the chosen distribution.
@@ -3356,13 +3183,103 @@ Sample
 \end_deeper
 \begin_layout Itemize
 Then 
-\begin_inset Formula $X$
+\begin_inset Formula $x$
 \end_inset
 
  has a mixture distribution.
 \end_layout
 
 \end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Section
+Learning in Gaussian Mixture Models
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The GMM 
+\begin_inset Quotes eld
+\end_inset
+
+Learning
+\begin_inset Quotes erd
+\end_inset
+
+ Problem
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Given data 
+\begin_inset Formula $x_{1},\ldots,x_{n}$
+\end_inset
+
+ drawn from a GMM,
+\end_layout
+
+\begin_layout Itemize
+Estimate the parameters: 
+\begin_inset Formula 
+\begin{eqnarray*}
+\text{Cluster probabilities}: &  & \pi=\left(\pi_{1},\ldots,\pi_{k}\right)\\
+\text{Cluster means}: &  & \mu=\left(\mu_{1},\ldots,\mu_{k}\right)\\
+\text{Cluster covariance matrices:} &  & \Sigma=\left(\Sigma_{1},\ldots\Sigma_{k}\right)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Once we have the parameters, we're done.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Just do 
+\begin_inset Quotes eld
+\end_inset
+
+inference
+\begin_inset Quotes erd
+\end_inset
+
+ to get cluster assignments.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+\begin_inset Note Note
+status open
+
 \begin_layout Separator
 
 \end_layout
@@ -3381,6 +3298,139 @@ Estimating/Learning the Gaussian Mixture Model
 \end_layout
 
 \begin_deeper
+\begin_layout Itemize
+One approach to learning in probabilistic models is 
+\series bold
+maximum likelihood
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+find parameter values that give 
+\series bold
+observed data 
+\series default
+the
+\series bold
+ highest likelihood
+\series default
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $\theta=\left(\pi,\mu,\Sigma\right)$
+\end_inset
+
+ be the parameters for GMM.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Observed likelihood for 
+\begin_inset Formula $\cd=\left(x_{1},\ldots,x_{n}\right)$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+p(\cd)=\prod_{i=1}^{n}p(x_{i})=\prod_{i=1}^{n}\sum_{z=1}^{k}p(x_{i},z)\pause=\prod_{i=1}^{n}\sum_{z=1}^{k}\pi_{z}\cn\left(x\mid\mu_{z},\Sigma_{z}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+In principle, just need to find
+\begin_inset Formula 
+\[
+\argmax_{\pi,\mu,\Sigma}\prod_{i=1}^{n}\sum_{z=1}^{k}\pi_{z}\cn\left(x\mid\mu_{z},\Sigma_{z}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Unfortunately, this is very difficult.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Estimating/Learning the Gaussian Mixture Model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+One approach to learning is 
+\series bold
+maximum likelihood
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+find parameter values that give 
+\series bold
+observed data 
+\series default
+the
+\series bold
+ highest likelihood
+\series default
+.
+\end_layout
+
+\end_deeper
 \begin_layout Itemize
 The model likelihood for 
 \begin_inset Formula $\cd=\left\{ x_{1},\ldots,x_{n}\right\} $

@@ -6,6 +6,17 @@
 \begin_preamble
 \usetheme{CambridgeUS} 
 \beamertemplatenavigationsymbolsempty
+
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
 \end_preamble
 \options handout
 \use_default_options false
@@ -5085,7 +5096,7 @@ A hidden Markov model (HMM) has structure:
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\pause p(z{}_{1},z_{2},z_{3},\ldots)=\underbrace{p(z_{1})\prod_{t=2}^{T}p(z_{t}\mid z_{t-1})}_{\mbox{Transition Model}}\underbrace{\prod_{t=1}^{T}p(x_{t}\mid z_{t})}_{\mbox{Observation Model}}
+\pause p(x_{1},z{}_{1},x_{2},z_{2},x_{3},z_{3},\ldots)=\underbrace{p(z_{1})\prod_{t=2}^{T}p(z_{t}\mid z_{t-1})}_{\mbox{Transition Model}}\underbrace{\prod_{t=1}^{T}p(x_{t}\mid z_{t})}_{\mbox{Observation Model}}
 \]
 
 \end_inset

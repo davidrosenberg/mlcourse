@@ -647,7 +647,7 @@ ex}{E}
 \end_layout
 
 \begin_layout Title
-Bayesian Methods
+Bayesian Regression
 \begin_inset Argument 1
 status open
 
@@ -1573,7 +1573,7 @@ p(y\mid x,w) & = & \pause\prod_{i=1}^{n}p(y_{i}\mid x_{i},w)\qquad\text{by condi
 
 \end_deeper
 \begin_layout Itemize
-You should be to see 
+You should see 
 \series bold
 in your head
 \series default
@@ -1972,7 +1972,7 @@ Prior distribution:
 \end_layout
 
 \begin_layout Itemize
-On right, plots of 
+On right,  
 \begin_inset Formula $y(x)=\ex\left[y\mid x,w\right]$
 \end_inset
 
@@ -2663,7 +2663,7 @@ Closed form:
 \begin_inset Formula 
 \begin{eqnarray*}
 y_{\text{new}}\mid x_{\text{new}},\cd & \sim & \cn\left(\eta_{\text{new}}\,,\,\sigma_{\text{new}}\right)\\
-\pause\mu_{\text{new}} & = & \mu_{\text{P}}^{T}x_{\text{new}}\\
+\pause\eta_{\text{new}} & = & \mu_{\text{P}}^{T}x_{\text{new}}\\
 \pause\sigma_{\text{new}} & = & \underbrace{x_{\text{new}}^{T}\Sigma_{\text{P}}x_{\text{new}}}_{\text{from variance in }\theta}+\underbrace{\sigma^{2}}_{\text{inherent variance in }y}
 \end{eqnarray*}
 

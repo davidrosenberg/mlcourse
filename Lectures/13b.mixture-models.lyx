@@ -3471,6 +3471,20 @@ J(\pi,\mu,\Sigma) & = & \sum_{i=1}^{n}\log\left\{ \sum_{z=1}^{k}\pi_{z}\cn\left(
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Point of the next slide is to illustate that the sum blocks the log from
+ simplifying things (the log and the exp canceling out)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Frame
 \begin_inset Argument 4
 status open
@@ -3747,6 +3761,21 @@ emph{Pattern recognition and machine learning}, Figure 9.7.}}
 
 \end_deeper
 \begin_layout Separator
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Really need a reference or something to see if this thing actually even
+ works...
+ 
+\end_layout
+
+\end_inset
+
 
 \end_layout
 

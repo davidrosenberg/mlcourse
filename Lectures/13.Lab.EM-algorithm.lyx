@@ -1149,6 +1149,20 @@ Repeat from Step 2, until log-likelihood converges.
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Slightly better example of this in Andrew Moore's slides: http://www.autonlab.org/
+tutorials/gmm14.pdf
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Frame
 \begin_inset Argument 4
 status open
@@ -1349,10 +1363,6 @@ emph{Pattern recognition and machine learning}, Figure 9.8.}}
 
 \end_deeper
 \begin_layout Frame
-
-\end_layout
-
-\begin_layout Separator
 
 \end_layout
 

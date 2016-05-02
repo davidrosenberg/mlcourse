@@ -602,7 +602,7 @@ maketitle
 \begin_layout Standard
 
 \series bold
-Due: Monday, May 9, 2016, at 6pm (Submit via NYU Classes)
+Due: Tuesday, May 10, 2016, at 6pm (Submit via NYU Classes)
 \end_layout
 
 \begin_layout Standard
@@ -1866,7 +1866,7 @@ Explain why
 \end_layout
 
 \begin_layout Enumerate
-Suppose we have data from 6 apps.
+[Optional] Suppose we have data from 6 apps.
  3 of the apps have a fair number of impressions, and 3 have relatively
  few.
  Suppose we observe the following:
@@ -2119,7 +2119,7 @@ Compute the empirical Bayes estimates for
 \end_layout
 
 \begin_layout Enumerate
-Complete the following table:
+[Optional] Complete the following table:
 \begin_inset Newline newline
 \end_inset
 
@@ -2674,7 +2674,7 @@ reference "sub:Empirical-Bayes-multiple-apps"
 \begin_inset Formula $b$
 \end_inset
 
-, it easier to reason about priors on the mean 
+, it is easier to reason about priors on the mean 
 \begin_inset Formula $m$
 \end_inset
 
@@ -2704,8 +2704,9 @@ reference "sub:Empirical-Bayes-multiple-apps"
 \end_inset
 
 .
- You are free to use the internet to get this expression.
- [Hint: You may find it convenient to write some expression in terms of
+ You are free to use the internet to get this expression (though no partial
+ credit if the website had it wrong).
+ [Hint: You may find it convenient to write some expressions in terms of
  
 \begin_inset Formula $\eta=a+b$
 \end_inset

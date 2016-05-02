@@ -5,6 +5,7 @@
 \usepackage[latin9]{inputenc}
 \usepackage[letterpaper]{geometry}
 \geometry{verbose}
+\usepackage{url}
 \usepackage{algorithm2e}
 \usepackage{amsmath}
 \usepackage{graphicx}
@@ -20,6 +21,8 @@
 \providecommand{\LyX}{\texorpdfstring%
   {L\kern-.1667em\lower.25em\hbox{Y}\kern-.125emX\@}
   {LyX}}
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
 \title{DS-GA 1003: Machine Learning and Computational Statistics\\
@@ -229,15 +232,19 @@ of $\theta$. {[}Hint: You may use the fact that a $\mbox{Beta}(h,t)$
 distribution has mean $h/(h+t)$ and has mode $\left(h-1\right)/\left(h+t-2\right)$
 for $h,t>1$. For the Bayesian solutions, you should note that as
 $h+t$ gets very large, the posterior mean and MAP approach the prior
-mean $h/\left(n+h\right)$, while when for {]}\\
+mean $h/\left(n+h\right)$, while for fixed $h$ and $t$, the posterior
+mean approaches the MLE when $n_{h}+n_{t}\to\infty$.\\
 
 \item What happens to $\hat{\theta}_{\text{MLE }}$, $\hat{\theta}_{\text{MAP}}$,
 and $\hat{\theta}_{\text{POSTERIOR MEAN}}$ as the number of coin
 flips approaches infinity? \\
 
-\item Which of the MLE, MAP, and posterior mean estimates are \textbf{unbiased}
-estimates of $\theta$, if any? {[}Hint: The answer may depend on
-the parameters $h$ and $t$ of the prior.{]}\\
+\item The MAP and posterior mean estimators of $\theta$ were derived from
+a Bayesian perspective. Let's now evaluate them from a frequentist
+perspective. Suppose $\theta$ is fixed and unknown. Which of the
+MLE, MAP, and posterior mean estimators give \textbf{unbiased} estimates
+of $\theta$, if any? {[}Hint: The answer may depend on the parameters
+$h$ and $t$ of the prior.{]}\\
 
 \item Suppose somebody gives you a coin and asks you to give an estimate
 of the probability of heads, but you can only toss the coin $3$ times.
@@ -320,7 +327,8 @@ as follows:
 from Bernoulli$(\theta_{i})$. 
 \end{enumerate}
 
-\subsection{Empirical Bayes for a single app}
+\subsection{\label{sub:Empirical-Bayes-single-app}Empirical Bayes for a single
+app}
 
 We start by working out some details for Bayesian inference for a
 single app. That is, suppose we only have the data $\cd_{i}$ from
@@ -403,7 +411,8 @@ to a single data point using maximum likelihood.{]}\\
 
 \end{enumerate}
 
-\subsection{Empirical Bayes Using All App Data}
+\subsection{\label{sub:Empirical-Bayes-multiple-apps}Empirical Bayes Using All
+App Data}
 
 In the previous section, we considered working with data from a single
 app. With a fixed prior, such as Beta(3,400), our Bayesian estimates
@@ -422,6 +431,104 @@ Bayes makes more sense.
 the apps. Give an expression for $p(\cd\mid a,b)$, the \textbf{marginal
 likelihood} of $\cd$. Expression should be in terms of $a,b,x_{i},n_{i}$
 for $i=1,\ldots,d$. (Hint: This problem should be easy, based on
-a problem from the previous section.) \end{enumerate}
+a problem from the previous section.) 
+\item Explain why $p(\theta_{i}\mid\cd)=p(\theta_{i}\mid\cd_{i})$, according
+to our model. In other words, once we choose values for parameters
+$a$ and $b$, information about one app does not give any information
+about other apps. 
+\item Suppose we have data from 6 apps. 3 of the apps have a fair number
+of impressions, and 3 have relatively few. Suppose we observe the
+following:\\
+\begin{tabular}{|c|c|c|}
+\hline 
+ & Num Clicks & Num Impressions\tabularnewline
+\hline 
+\hline 
+App 1 & 50 & 10000\tabularnewline
+\hline 
+App 2 & 160 & 20000\tabularnewline
+\hline 
+App 3 & 180 & 60000\tabularnewline
+\hline 
+App 4 & 0 & 100\tabularnewline
+\hline 
+App 5 & 0 & 5\tabularnewline
+\hline 
+App 6 & 1 & 2\tabularnewline
+\hline 
+\end{tabular}\\
+Compute the empirical Bayes estimates for $a$ and $b$. The empirical
+Bayes prior is then Beta$(\hat{a},\hat{b})$, where $\hat{a}$ and
+$\hat{b}$ are our estimates. What are the corresponding prior mean
+and standard deviation? {[}Hint: You're encouraged to use a general
+purpose function optimization routine that does not require a gradient.{]} 
+\item Complete the following table:\\
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline 
+ & NumClicks & NumImpressions & MLE & MAP & PosteriorMean & PosteriorSD\tabularnewline
+\hline 
+\hline 
+App 1 & 50 & 10000 & 0.5\%  &  &  & \tabularnewline
+\hline 
+App 2 & 160 & 20000 & 0.8\%  &  &  & \tabularnewline
+\hline 
+App 3 & 180 & 60000 & 0.3\%  &  &  & \tabularnewline
+\hline 
+App 4 & 0 & 100 & 0\%  &  &  & \tabularnewline
+\hline 
+App 5 & 0 & 5 & 0\%  &  &  & \tabularnewline
+\hline 
+App 6 & 1 & 2 & 50\%  &  &  & \tabularnewline
+\hline 
+\end{tabular}\\
+
+\end{enumerate}
+
+\subsection{Hierarchical Bayes}
+
+In Section \ref{sub:Empirical-Bayes-multiple-apps} we managed to
+get empirical Bayes ML-II estimates for $a$ and $b$ by assuming
+we had data from multiple apps. However, we didn't really address
+the issue that ML-II, as a maximum likelihood method, is prone to
+overfitting if we don't have enough data (in this case, enough apps).
+Moreover, a true Bayesian would reject this approach, since we're
+using our data to determine our prior. If we don't have enough confidence
+to choose parameters for $a$ and $b$ without looking at the data,
+a proper Bayesian approach is to put another prior on the parameters
+$a$ and $b$. If you are very uncertain about values for $a$ and
+$b$, you could put priors on them that have high variance. 
+\begin{enumerate}
+\item {[}Optional{]} Suppose $P$ is the Beta$(a,b)$ distribution. Conceptually,
+rather than putting priors on $a$ and $b$, it is easier to reason
+about priors on the mean $m$ and the variance $v$ of $P$. If we
+parameterize $P$ by its mean $m$ and the variance $v$, give an
+expression for the density function $\mbox{Beta}(\theta;m,v)$. You
+are free to use the internet to get this expression (though no partial
+credit if the website had it wrong). {[}Hint: You may find it convenient
+to write some expressions in terms of $\eta=a+b$.{]}\\
+
+\item {[}Optional{]} Suggest a prior distribution to put on $m$ and $v$.
+{[}Hint: You might want to use one of the distribution families given
+in this lecture: \url{https://davidrosenberg.github.io/mlcourse/Lectures/10b.conditional-probability-models.pdf#page=7}.{]}
+\item {[}Optional{]} Once we have our prior on $m$ and $v$, we can go
+``full Bayesian'' and compute posterior distributions on $\theta_{1},\ldots,\theta_{d}$.
+However, these no longer have closed forms. We would have to use approximation
+techniques, typically either a Monte Carlo sampling approach or a
+variational method, which are beyond the scope of this course\footnote{If you're very ambitious, you could try out a package like PyStan
+(\url{https://pystan.readthedocs.io/en/latest/}) to see what happens.}. After observing the data $\mbox{\ensuremath{\cd}}$, $m$ and $v$
+will have some posterior distribution $p(m,v\mid\cd)$. We can approximate
+that distribution by a point mass at the mode of that distribution
+$\left(m_{\text{MAP}},v_{\text{MAP}}\right)=\argmax_{m,v}p(m,v\mid\cd)$.\textbf{
+Give expressions} for the posterior distribution $p(\theta_{1},\ldots,\theta_{d}\mid\cd)$,
+with and without this approximation. You do not need to give any explicit
+expressions here. It's fine to have expressions like $p(\theta_{1},\ldots,\theta_{d}\mid m,v)$
+in your solution. Without the approximation, you will probably need
+some integrals. It's these integrals that we need sampling or variational
+approaches to approximate. While one can see this approach as a way
+to approximate the proper Bayesian approach, one could also be skeptical
+and say this is just another way to determine your prior from the
+data. The estimators $\left(m_{\text{MAP}},v_{\text{MAP}}\right)$
+are often called \textbf{MAP-II estimators}, since they are MAP estimators
+at a higher level of the Bayesian hierarchy. \end{enumerate}
 
 \end{document}

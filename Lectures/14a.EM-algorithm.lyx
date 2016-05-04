@@ -705,1466 +705,7 @@ Just in article version
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-Next time -- refer more to "components" than clusters.
- talk about vector quantization
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
  
-\end_layout
-
-\begin_layout Section
-Gaussian Mixture Model: Review
-\end_layout
-
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Gaussian Mixture Model Parameters (
-\begin_inset Formula $k$
-\end_inset
-
- Components)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\align center
-\begin_inset Formula 
-\begin{eqnarray*}
-\text{Cluster probabilities}: &  & \pi=\left(\pi_{1},\ldots,\pi_{k}\right)\\
-\text{Cluster means}: &  & \mu=\left(\mu_{1},\ldots,\mu_{k}\right)\\
-\text{Cluster covariance matrices:} &  & \Sigma=\left(\Sigma_{1},\ldots\Sigma_{k}\right)
-\end{eqnarray*}
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename ../Figures/clustering/mixture-3-gaussians.png
-	lyxscale 20
-	height 40theight%
-
-\end_inset
-
- 
-\end_layout
-
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-GMM: The Joint and the Marginal Likelihood
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-
-\series bold
-Generative model 
-\series default
-description:
-\begin_inset Formula 
-\begin{eqnarray*}
-z & \sim & \text{Categorical}\left(\pi_{1},\ldots,\pi_{k}\right)\qquad\text{ \textbf{Cluster assignment}}\\
-x\mid z & \sim & \cn\left(\mu_{z},\Sigma_{z}\right)\qquad\text{\textbf{Choose point from cluster distribution }}
-\end{eqnarray*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-Joint distribution
-\series default
- (includes observed 
-\begin_inset Formula $x$
-\end_inset
-
- and unobserved 
-\begin_inset Formula $z$
-\end_inset
-
-):
-\begin_inset Formula 
-\begin{eqnarray*}
-p(x,z) & = & p(x\mid z)p(z)\\
-\pause & = & \cn\left(x\mid\mu_{z},\Sigma_{z}\right)\pi_{z}
-\end{eqnarray*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-Marginal distribution
-\series default
- (just observed variable 
-\begin_inset Formula $x$
-\end_inset
-
-):
-\begin_inset Formula 
-\[
-p(x)=\pause\sum_{z=1}^{k}p(x,z)=\pause\sum_{z=1}^{k}\pi_{z}\cn\left(x\mid\mu_{z},\Sigma_{z}\right)
-\]
-
-\end_inset
-
- 
-\end_layout
-
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Maximum Likelihood for the Gaussian Mixture Model
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Find parameters that give 
-\series bold
-observed data 
-\series default
-the
-\series bold
- highest likelihood
-\series default
-.
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-The model likelihood for 
-\begin_inset Formula $\cd=\left\{ x_{1},\ldots,x_{n}\right\} $
-\end_inset
-
- is
-\begin_inset Formula 
-\[
-p(\cd)=\pause\prod_{i=1}^{n}p(x_{i})=\pause\prod_{i=1}^{n}\left[\sum_{z=1}^{k}\pi_{z}\cn\left(x_{i}\mid\mu_{z},\Sigma_{z}\right)\right].
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-The log-likelihood objective function:
-\begin_inset Formula 
-\begin{eqnarray*}
-J(\pi,\mu,\Sigma) & = & \sum_{i=1}^{n}\log\left[\sum_{z=1}^{k}\pi_{z}\cn\left(x_{i}\mid\mu_{z},\Sigma_{z}\right)\right]
-\end{eqnarray*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-MLE is 
-\begin_inset Formula $\left(\hat{\pi},\hat{\mu},\hat{\Sigma}\right)=\argmax_{\pi,\mu,\Sigma}J(\pi,\mu,\Sigma)$
-\end_inset
-
-.
- EM algorithm to find it...
-\end_layout
-
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Section
-The EM Algorithm for GMM 
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Cluster Probabilities and Expected Cluster Sizes
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Probability that observed value 
-\begin_inset Formula $x_{i}$
-\end_inset
-
- comes from cluster 
-\begin_inset Formula $c$
-\end_inset
-
-:
-\begin_inset Formula 
-\[
-\gamma_{i}^{c}:=\pr\left(z_{i}=c\mid x_{i}\right).
-\]
-
-\end_inset
-
- 
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-The vector 
-\begin_inset Formula $\left(\gamma_{i}^{1},\ldots,\gamma_{i}^{k}\right)$
-\end_inset
-
- gives the 
-\series bold
-soft cluster assignments
-\series default
- for 
-\begin_inset Formula $x_{i}$
-\end_inset
-
-.
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Let 
-\begin_inset Formula $n_{c}$
-\end_inset
-
- be the 
-\series bold
-expected number
-\series default
- of points in cluster 
-\begin_inset Formula $c$
-\end_inset
-
-:
-\begin_inset Formula 
-\begin{eqnarray*}
-n_{c} & = & \ex\left[\sum_{i}\ind{z_{i}=c}\mid x_{1},\ldots,x_{n}\right]\\
-\pause & = & \sum_{i}\pr\left(z_{i}=c\mid x_{i}\right)\\
- & = & \sum_{i=1}^{n}\gamma_{i}^{c}
-\end{eqnarray*}
-
-\end_inset
-
-.
-\end_layout
-
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-EM Algorithm for GMM
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-
-\end_layout
-
-\begin_deeper
-\begin_layout Enumerate
-Initialize parameters 
-\begin_inset Formula $\mu,\Sigma,\pi$
-\end_inset
-
-.
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-\begin_inset Quotes eld
-\end_inset
-
-E step
-\begin_inset Quotes erd
-\end_inset
-
-.
- Evaluate the 
-\series bold
-responsibilities
-\series default
- using current parameters:
-\begin_inset Formula 
-\[
-\gamma_{i}^{j}=\pr(z_{i}=j\mid x_{i})=\frac{\pi_{j}\cn\left(x_{i}\mid\mu_{j},\Sigma_{j}\right)}{\sum_{c=1}^{k}\pi_{c}\cn\left(x_{i}\mid\mu_{c},\Sigma_{c}\right)},
-\]
-
-\end_inset
-
-for 
-\begin_inset Formula $i=1,\ldots,n$
-\end_inset
-
- and 
-\begin_inset Formula $j=1,\ldots,k$
-\end_inset
-
-.
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-\begin_inset Quotes eld
-\end_inset
-
-M step
-\begin_inset Quotes erd
-\end_inset
-
-.
- Re-estimate the parameters using responsibilities:
-\begin_inset Formula 
-\begin{eqnarray*}
-\mu_{c}^{\text{new}} & = & \frac{1}{n_{c}}\sum_{i=1}^{n}\gamma_{i}^{c}x_{i}\\
-\pause\Sigma_{c}^{\text{new}} & = & \frac{1}{n_{c}}\sum_{i=1}^{n}\gamma_{i}^{c}\left(x_{i}-\mu_{\text{MLE}}\right)\left(x_{i}-\mu_{\text{MLE}}\right)^{T}\\
-\pause\pi_{c}^{\text{new}} & = & \frac{n_{c}}{n},
-\end{eqnarray*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Enumerate
-Repeat from Step 2, until log-likelihood converges.
- 
-\end_layout
-
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Slightly better example of this in Andrew Moore's slides: http://www.autonlab.org/
-tutorials/gmm14.pdf
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-EM for GMM
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Initialization
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename ../Figures/clustering/9.8a.png
-	lyxscale 50
-	height 55theight%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-let
-\backslash
-thefootnote
-\backslash
-relax
-\backslash
-footnotetext{
-\backslash
-tiny{From Bishop's 
-\backslash
-emph{Pattern recognition and machine learning}, Figure 9.8.}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Frame
-
-\end_layout
-
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-EM for GMM
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-First soft assignment:
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename ../Figures/clustering/9.8b.png
-	lyxscale 50
-	height 55theight%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-let
-\backslash
-thefootnote
-\backslash
-relax
-\backslash
-footnotetext{
-\backslash
-tiny{From Bishop's 
-\backslash
-emph{Pattern recognition and machine learning}, Figure 9.8.}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Frame
-
-\end_layout
-
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-EM for GMM
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-First soft assignment:
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename ../Figures/clustering/9.8c.png
-	lyxscale 50
-	height 55theight%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-let
-\backslash
-thefootnote
-\backslash
-relax
-\backslash
-footnotetext{
-\backslash
-tiny{From Bishop's 
-\backslash
-emph{Pattern recognition and machine learning}, Figure 9.8.}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Frame
-
-\end_layout
-
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-EM for GMM
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-After 5 rounds of EM:
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename ../Figures/clustering/9.8e.png
-	lyxscale 50
-	height 55theight%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-let
-\backslash
-thefootnote
-\backslash
-relax
-\backslash
-footnotetext{
-\backslash
-tiny{From Bishop's 
-\backslash
-emph{Pattern recognition and machine learning}, Figure 9.8.}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Frame
-
-\end_layout
-
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-EM for GMM
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-After 20 rounds of EM:
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename ../Figures/clustering/9.8f.png
-	lyxscale 50
-	height 55theight%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-let
-\backslash
-thefootnote
-\backslash
-relax
-\backslash
-footnotetext{
-\backslash
-tiny{From Bishop's 
-\backslash
-emph{Pattern recognition and machine learning}, Figure 9.8.}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Frame
-
-\end_layout
-
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Relation to 
-\begin_inset Formula $K$
-\end_inset
-
--Means
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-EM for GMM seems a little like 
-\begin_inset Formula $k$
-\end_inset
-
--means.
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-In fact, there is a precise correspondence.
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-First, fix each cluster covariance matrix to be 
-\begin_inset Formula $\sigma^{2}I$
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-As we take 
-\begin_inset Formula $\sigma^{2}\to0$
-\end_inset
-
-, the update equations converge to doing 
-\begin_inset Formula $k$
-\end_inset
-
--means.
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-If you do a quick experiment yourself, you'll find
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Soft assignments converge to hard assignments.
-\end_layout
-
-\begin_layout Itemize
-Has to do with the tail behavior (exponential decay) of Gaussian.
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-TODO: a little more extraction from EM convergence paper
-\end_layout
-
-\end_inset
-
- 
-\end_layout
-
-\begin_layout Section
-Math Prerequisites
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Convex and Concave Functions
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Definition
-A function 
-\begin_inset Formula $f:\reals^{n}\to\reals$
-\end_inset
-
- is 
-\series bold
-convex
-\series default
- if for all 
-\begin_inset Formula $x,y\in\reals^{n}$
-\end_inset
-
- and 
-\begin_inset Formula $0\le\theta\le1$
-\end_inset
-
-, we have
-\begin_inset Formula 
-\[
-f(\theta x+(1-\theta)y)\le\theta f(x)+(1-\theta)f(y).
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename ../Figures/convex-optimization/fig7.5a.pdf
-	lyxscale 50
-	width 40text%
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename ../Figures/convex-optimization/fig7.5b.pdf
-	lyxscale 50
-	width 40text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-let
-\backslash
-thefootnote
-\backslash
-relax
-\backslash
-footnotetext{
-\backslash
-tiny{KPM Fig.
- 7.5}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Jensen's Inequality
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Theorem
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-[Jensen's Inequality]
-\end_layout
-
-\end_inset
-
-If 
-\begin_inset Formula $f:\reals\to\reals$
-\end_inset
-
- is a 
-\series bold
-convex
-\series default
- function, and 
-\begin_inset Formula $x$
-\end_inset
-
- is a random variable, then
-\begin_inset Formula 
-\[
-\ex f(x)\ge f(\ex x).\pause
-\]
-
-\end_inset
-
-Moreover, if 
-\begin_inset Formula $f$
-\end_inset
-
- is 
-\series bold
-strictly convex
-\series default
-, then equality implies that 
-\begin_inset Formula $x=\ex x$
-\end_inset
-
- with probability 
-\begin_inset Formula $1$
-\end_inset
-
- (i.e.
- 
-\begin_inset Formula $x$
-\end_inset
-
- is a constant).
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-e.g.
- 
-\begin_inset Formula $f(x)=x^{2}$
-\end_inset
-
- is convex.
- So 
-\begin_inset Formula $\ex x^{2}\ge\left(\ex x\right)^{2}$
-\end_inset
-
-.
- Thus 
-\begin_inset Formula 
-\[
-\var x=\ex x^{2}-\left(\ex x\right)^{2}\ge0.
-\]
-
-\end_inset
-
- 
-\end_layout
-
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Kullback-Leibler Divergence
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Let 
-\begin_inset Formula $p(x)$
-\end_inset
-
- and 
-\begin_inset Formula $q(x)$
-\end_inset
-
- be probability mass functions (PMFs) on 
-\begin_inset Formula $\cx$
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Itemize
-How can we measure how 
-\begin_inset Quotes eld
-\end_inset
-
-different
-\begin_inset Quotes erd
-\end_inset
-
- 
-\begin_inset Formula $p$
-\end_inset
-
- and 
-\begin_inset Formula $q$
-\end_inset
-
- are?
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-The 
-\series bold
-Kullback-Leibler
-\series default
- or 
-\series bold
-
-\begin_inset Quotes eld
-\end_inset
-
-KL
-\begin_inset Quotes erd
-\end_inset
-
- Divergence
-\series default
- is defined by
-\begin_inset Formula 
-\begin{eqnarray*}
-\kl(p\|q) & = & \sum_{x\in\cx}p(x)\log\frac{p(x)}{q(x)}.
-\end{eqnarray*}
-
-\end_inset
-
-(Assumes 
-\begin_inset Formula $q(x)=0$
-\end_inset
-
- implies 
-\begin_inset Formula $p(x)=0$
-\end_inset
-
-.)
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-Can also write this as
-\begin_inset Formula 
-\begin{eqnarray*}
-\kl(p\|q) & = & \ex_{x\sim p}\log\frac{p(x)}{q(x)}.
-\end{eqnarray*}
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Separator
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Statistical Divergence and Metrics
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Some divergences are proper distance metrics:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-e.g.
- Hellinger distance: 
-\begin_inset Formula $h^{2}(p,q)=\frac{1}{2}\int\left(\sqrt{p(x)}-\sqrt{q(x)}\right)^{2}dx$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-where 
-\begin_inset Formula $p$
-\end_inset
-
- and 
-\begin_inset Formula $q$
-\end_inset
-
- are PMFs.
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Kullback-Leibler divergence is an important divergence measure
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Not a proper distance metric.
-\end_layout
-
-\begin_layout Itemize
-Not even symmetric.
- 
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Gibbs Inequality (
-\begin_inset Formula $\kl(p\|q)\ge0$
-\end_inset
-
- and 
-\begin_inset Formula $\kl(p\|p)=0$
-\end_inset
-
-)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Theorem
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-[Gibbs Inequality]
-\end_layout
-
-\end_inset
-
-Let 
-\begin_inset Formula $p(x)$
-\end_inset
-
- and 
-\begin_inset Formula $q(x)$
-\end_inset
-
- be PMFs on 
-\begin_inset Formula $\cx$
-\end_inset
-
-.
- Then
-\begin_inset Formula 
-\[
-\kl(p\|q)\ge0,
-\]
-
-\end_inset
-
-with equality iff 
-\begin_inset Formula $p(x)=q(x)$
-\end_inset
-
- for all 
-\begin_inset Formula $x\in\cx$
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-KL divergence measures the 
-\begin_inset Quotes eld
-\end_inset
-
-distance
-\begin_inset Quotes erd
-\end_inset
-
- between distributions.
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-Note:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-KL divergence 
-\series bold
-not a metric
-\series default
-.
-\end_layout
-
-\begin_layout Itemize
-KL divergence is 
-\series bold
-not symmetric
-\series default
-.
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Gibbs Inequality: Proof
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset Formula 
-\begin{eqnarray*}
-\kl(p\|q) & = & \ex_{p}\left[-\log\left(\frac{q(x)}{p(x)}\right)\right]\\
- & \ge & -\log\left[\ex_{p}\left(\frac{q(x)}{p(x)}\right)\right]\mbox{\qquad\text{(Jensen's)}}\\
- & = & -\log\left[\sum_{\left\{ x\mid p(x)>0\right\} }p(x)\frac{q(x)}{p(x)}\right]\\
- & = & -\log\left[\sum_{x\in\cx}q(x)\right]\\
- & = & -\log1=0.
-\end{eqnarray*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-Since 
-\begin_inset Formula $-\log$
-\end_inset
-
- is strictly convex, we have strict equality iff 
-\begin_inset Formula $q(x)/p(x)$
-\end_inset
-
- is a constant, which implies 
-\begin_inset Formula $q=p$
-\end_inset
-
- .
- 
-\end_layout
-
-\end_deeper
-\begin_layout Separator
-
 \end_layout
 
 \begin_layout Section
@@ -2238,64 +779,7 @@ p(x,z\mid\theta)
 
 \end_inset
 
-
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout AlertBlock
-\begin_inset Argument 2
-status open
-
-\begin_layout Plain Layout
-Notation abuse
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout AlertBlock
-Notation 
-\begin_inset Formula $p(x,z\mid\theta)$
-\end_inset
-
- suggests a Bayesian setting, in which 
-\begin_inset Formula $\theta$
-\end_inset
-
- is a r.v.
- However we are 
-\series bold
-not
-\series default
- assuming a Bayesian setting.
  
-\begin_inset Formula $p(x,z\mid\theta)$
-\end_inset
-
- is just easier to read than 
-\begin_inset Formula $p_{\theta}(x,z)$
-\end_inset
-
-, once 
-\begin_inset Formula $\theta$
-\end_inset
-
- gets more complicated.
- 
-\begin_inset Formula 
-\[
-\]
-
-\end_inset
-
-
 \end_layout
 
 \end_deeper
@@ -2341,20 +825,6 @@ complete data set
 .
 \end_layout
 
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-We never have a complete data set for latent variable models.
-\end_layout
-
-\begin_layout Itemize
-But it's a useful construct.
-\end_layout
-
-\end_deeper
 \begin_layout Pause
 
 \end_layout
@@ -2632,14 +1102,16 @@ Clearly true for Gaussian mixture model.
 
 \end_layout
 
+\begin_layout Separator
+
+\end_layout
+
 \begin_layout Frame
 \begin_inset Argument 4
 status open
 
 \begin_layout Plain Layout
-The EM Algorithm 
-\series bold
-Key Idea
+Complete and Incomplete Data
 \end_layout
 
 \end_inset
@@ -2649,15 +1121,39 @@ Key Idea
 
 \begin_deeper
 \begin_layout Itemize
-Marginal log-likelihood is hard to optimize:
-\begin_inset Formula 
-\[
-\max_{\theta}\;\log\left\{ \sum_{z}p(x,z\mid\theta)\right\} 
-\]
-
+An observation of 
+\begin_inset Formula $x$
 \end_inset
 
+ is called an 
+\series bold
+incomplete data set
+\series default
+.
+\end_layout
 
+\begin_layout Itemize
+An observation 
+\begin_inset Formula $\left(x,z\right)$
+\end_inset
+
+ is called a 
+\series bold
+complete data set
+\series default
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Suppose we have an incomplete data set 
+\begin_inset Formula $\cd=\left(x_{1},\ldots,x_{n}\right)$
+\end_inset
+
+.
 \end_layout
 
 \begin_deeper
@@ -2667,58 +1163,61 @@ Marginal log-likelihood is hard to optimize:
 
 \end_deeper
 \begin_layout Itemize
+To simplify notation, take 
+\begin_inset Formula $x$
+\end_inset
 
-\series bold
-Assume that 
-\series default
-complete data log-likelihood would be easy to optimize:
+ to represent the entire dataset
 \begin_inset Formula 
 \[
-\max_{\theta}\;\log p(x,z\mid\theta)
+x=\left(x_{1},\ldots,x_{n}\right),
 \]
 
 \end_inset
 
-
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-What if we had a 
-\series bold
-distribution 
-\series default
-
-\begin_inset Formula $q(z)$
-\end_inset
-
- for the latent variables 
+and 
 \begin_inset Formula $z$
 \end_inset
 
-?
-\end_layout
+ to represent the corresponding unobserved variables
+\begin_inset Formula 
+\[
+z=\left(z_{1},\ldots,z_{n}\right).
+\]
 
-\begin_deeper
-\begin_layout Pause
+\end_inset
+
 
 \end_layout
 
 \end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Our Objectives
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Itemize
-Then maximize the 
-\series bold
-expected complete data log-likelihood
-\series default
-:
+Given incomplete dataset 
+\begin_inset Formula $\cd=x=\left(x_{1},\ldots,x_{n}\right)$
+\end_inset
+
+, find MLE
 \begin_inset Formula 
 \[
-\max_{\theta}\:\sum_{z}q(z)\log p(x,z\mid\theta)
+\hat{\theta}=\argmax_{\theta}p(\cd\mid\theta).
 \]
 
 \end_inset
@@ -2733,13 +1232,48 @@ expected complete data log-likelihood
 
 \end_deeper
 \begin_layout Itemize
-EM 
-\series bold
-assumes
-\series default
- this maximization is feasible.
+Given 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+, find conditional distribution over 
+\begin_inset Formula $z_{i}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+p\left(z_{i}\mid x_{i},\theta\right).
+\]
+
+\end_inset
+
+
 \end_layout
 
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+For Gaussian mixture model, this is easy once we have 
+\begin_inset Formula $\theta$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{eqnarray*}
+p(z_{i}\mid x_{i},\theta) & \propto & p(z_{i},x_{i}\mid\theta_{i})\\
+ & = & \pi(z_{i})\cn\left(x_{i}\mid\mu_{z_{i}},\Sigma_{z_{i}}\right).
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \end_deeper
 \begin_layout Separator
 
@@ -2777,8 +1311,7 @@ Let
 \begin{eqnarray*}
 \log p(x\mid\theta) & = & \log\left[\sum_{z}p(x,z\mid\theta)\right]\\
 \pause & = & \log\left[\sum_{z}q(z)\left(\frac{p(x,z\mid\theta)}{q(z)}\right)\right]\mbox{\quad\ (log of an expectation)}\\
-\pause & \ge & \sum_{z}q(z)\log\left(\frac{p(x,z\mid\theta)}{q(z)}\right)\mbox{\quad(expectation of log)}\\
-\pause & =: & \cl(q,\theta).
+\pause & \ge & \underbrace{\sum_{z}q(z)\log\left(\frac{p(x,z\mid\theta)}{q(z)}\right)}_{\cl(q,\theta)}\mbox{\quad(expectation of log)}
 \end{eqnarray*}
 
 \end_inset
@@ -2787,12 +1320,38 @@ Let
 \end_layout
 
 \begin_layout Itemize
-The inequality is by Jensen's, by concavity of the 
-\begin_inset Formula $\log$
+We'll maximize the lower 
+\begin_inset Formula $\cl(q,\theta)$
+\end_inset
+
+ w.r.t.
+ 
+\begin_inset Formula $\theta$
+\end_inset
+
+ and 
+\begin_inset Formula $q$
 \end_inset
 
 .
- 
+\begin_inset Note Note
+status open
+
+\begin_layout Itemize
+[NOT SURE if this is standard terminology outside of setting when we're
+ doing variational inference in Bayesian setting
+\end_layout
+
+\begin_layout Itemize
+Marginal log likelihood 
+\begin_inset Formula $\log p(x\mid\theta)$
+\end_inset
+
+ also called the 
+\series bold
+evidence
+\series default
+.
 \end_layout
 
 \begin_deeper
@@ -2801,20 +1360,30 @@ The inequality is by Jensen's, by concavity of the
 \end_layout
 
 \end_deeper
-\begin_layout Standard
-This is the 
+\begin_layout Itemize
+\begin_inset Formula $\cl(q,\theta)$
+\end_inset
+
+ is the 
 \series bold
-key step
+evidence lower bound
 \series default
- for 
+, or 
 \begin_inset Quotes eld
 \end_inset
 
-variational methods
+
+\series bold
+ELBO
 \begin_inset Quotes erd
 \end_inset
 
 .
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
@@ -2946,150 +1515,6 @@ emph{Pattern recognition and machine learning}, Figure 9.14.}}
 \end_inset
 
 
-\end_layout
-
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-EM: Big Picture Idea
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-The following inequality holds for all 
-\begin_inset Formula $\theta$
-\end_inset
-
- and 
-\begin_inset Formula $q$
-\end_inset
-
-:
-\begin_inset Formula 
-\[
-\log p(x\mid\theta)\ge\cl(q,\theta).
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-We want to find 
-\begin_inset Formula $\theta$
-\end_inset
-
- that maximizes 
-\begin_inset Formula $\log p(x\mid\theta)$
-\end_inset
-
-.
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-\begin_inset Formula $\log p(x\mid\theta)$
-\end_inset
-
- is hard to maximize directly.
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Two step version of the EM algorithm:
-\end_layout
-
-\begin_deeper
-\begin_layout Enumerate
-We vary 
-\begin_inset Formula $q$
-\end_inset
-
- and 
-\begin_inset Formula $\theta$
-\end_inset
-
-, searching for the biggest 
-\begin_inset Formula $\cl(q,\theta)$
-\end_inset
-
- we can find.
- 
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-Final result is 
-\begin_inset Formula $\hat{\theta}$
-\end_inset
-
- corresponding to the largest 
-\begin_inset Formula $\cl(q,\theta)$
-\end_inset
-
- we found.
- 
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Often this is a local maximum of the likelihood.
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-One question left: How to choose the sequence of 
-\begin_inset Formula $q$
-\end_inset
-
-'s and 
-\begin_inset Formula $\theta$
-\end_inset
-
-'s we try?
 \end_layout
 
 \end_deeper
@@ -3457,8 +1882,7 @@ Best
 \begin_inset Formula $q^{*}(z)=p(z\mid x,\theta^{\text{old}})$
 \end_inset
 
-.
- Proof:
+ and
 \begin_inset Formula 
 \[
 \pause\cl(q^{*},\theta^{\text{old}})=-\underbrace{\kl[p(z\mid x,\theta^{\text{old}}),p(z\mid x,\theta^{\text{old}})]}_{=0}+\log p(x\mid\theta^{\text{old}})
@@ -3595,6 +2019,10 @@ emph{Pattern recognition and machine learning}, Figure 9.14.}}
 \end_layout
 
 \end_deeper
+\begin_layout Separator
+
+\end_layout
+
 \begin_layout Separator
 
 \end_layout

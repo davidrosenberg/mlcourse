@@ -7,7 +7,6 @@
 \usetheme{CambridgeUS} 
 \beamertemplatenavigationsymbolsempty
 \end_preamble
-\options handout
 \use_default_options false
 \maintain_unincluded_children false
 \language english
@@ -3065,8 +3064,7 @@ where
 
 \end_deeper
 \begin_layout Itemize
-We'll discuss this further when we talk about exponential families and generaliz
-ed linear models.
+Same loss as for multinomial logistic regression.
 \end_layout
 
 \end_deeper
@@ -3384,7 +3382,7 @@ https://code.google.com/p/word2vec/
 \end_layout
 
 \begin_layout Itemize
-Represents words and phrases using real-valued vectors.
+Represents words using real-valued vectors.
  
 \end_layout
 

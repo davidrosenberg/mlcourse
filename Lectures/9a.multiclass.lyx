@@ -4062,7 +4062,7 @@ Local compatibility score
 \end_inset
 
  is 
-\begin_inset Formula $\left\langle w,\Psi_{i}(x,y_{i-1},y_{i}\right\rangle $
+\begin_inset Formula $\left\langle w,\Psi_{i}(x,y_{i-1},y_{i})\right\rangle $
 \end_inset
 
 .
@@ -4101,7 +4101,7 @@ compatibility score
 \begin_inset Formula $\left(x,y\right)$
 \end_inset
 
- is the sum o fthe local compatibility scores: 
+ is the sum of the local compatibility scores: 
 \begin_inset Formula 
 \begin{eqnarray*}
  &  & \sum_{i}\left\langle w,\Psi_{i}(x,y_{i-1},y_{i})\right\rangle \\
@@ -4289,7 +4289,7 @@ we can solve this efficiently using dynamic programming.
 
 \end_deeper
 \begin_layout Itemize
-Learning can be done witih SGD and a similar dynamic program.
+Learning can be done with SGD and a similar dynamic program.
 \end_layout
 
 \end_deeper

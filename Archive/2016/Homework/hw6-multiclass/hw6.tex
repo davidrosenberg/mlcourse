@@ -1,0 +1,394 @@
+%% LyX 2.1.4 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[ruled]{article}
+\usepackage{courier}
+\usepackage[latin9]{inputenc}
+\usepackage[letterpaper]{geometry}
+\geometry{verbose}
+\usepackage{url}
+\usepackage{algorithm2e}
+\usepackage{amsmath}
+\usepackage[unicode=true,
+ bookmarks=false,
+ breaklinks=false,pdfborder={0 0 1},backref=section,colorlinks=false]
+ {hyperref}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+\providecommand{\LyX}{\texorpdfstring%
+  {L\kern-.1667em\lower.25em\hbox{Y}\kern-.125emX\@}
+  {LyX}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\title{DS-GA 1003: Machine Learning and Computational Statistics\\
+Homework 6: Generalized Hinge Loss and Multiclass SVM} 
+\date{} 
+
+\usepackage{amsfonts}\usepackage{capt-of}
+%\usepackage{url}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{bbm}
+\usepackage{enumerate}
+\newcommand{\carlos}[1]{\textcolor{red}{Carlos: #1}}
+\newcommand{\field}[1]{\mathbb{#1}} 
+\newcommand{\hide}[1]{#1}
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\providecommand{\m}[1]{\mathbf{#1}}
+\providecommand{\norm}[1]{\left\|#1\right\|}
+\providecommand{\sign}[1]{\text{sign}\left(#1\right)}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\providecommand{\what}{\m{\hat{w}}}
+\providecommand{\dw}{\Delta w}
+\providecommand{\dmw}{\Delta \m{w}}
+\providecommand{\hy}{\hat{y}}
+
+\makeatother
+
+\begin{document}
+\global\long\def\reals{\mathbf{R}}
+ \global\long\def\integers{\mathbf{Z}}
+\global\long\def\naturals{\mathbf{N}}
+ \global\long\def\rationals{\mathbf{Q}}
+\global\long\def\ca{\mathcal{A}}
+\global\long\def\cb{\mathcal{B}}
+ \global\long\def\cc{\mathcal{C}}
+ \global\long\def\cd{\mathcal{D}}
+\global\long\def\ce{\mathcal{E}}
+\global\long\def\cf{\mathcal{F}}
+\global\long\def\cg{\mathcal{G}}
+\global\long\def\ch{\mathcal{H}}
+\global\long\def\ci{\mathcal{I}}
+\global\long\def\cj{\mathcal{J}}
+\global\long\def\ck{\mathcal{K}}
+\global\long\def\cl{\mathcal{L}}
+\global\long\def\cm{\mathcal{M}}
+\global\long\def\cn{\mathcal{N}}
+\global\long\def\co{\mathcal{O}}
+\global\long\def\cp{\mathcal{P}}
+\global\long\def\cq{\mathcal{Q}}
+\global\long\def\calr{\mathcal{R}}
+\global\long\def\cs{\mathcal{S}}
+\global\long\def\ct{\mathcal{T}}
+\global\long\def\cu{\mathcal{U}}
+\global\long\def\cv{\mathcal{V}}
+\global\long\def\cw{\mathcal{W}}
+\global\long\def\cx{\mathcal{X}}
+\global\long\def\cy{\mathcal{Y}}
+\global\long\def\cz{\mathcal{Z}}
+\global\long\def\ind#1{1(#1)}
+\global\long\def\pr{\mathbb{P}}
+\global\long\def\predsp{\cy}
+\global\long\def\outsp{\cy}
+\global\long\def\prxy{P_{\cx\times\cy}}
+\global\long\def\prx{P_{\cx}}
+\global\long\def\prygivenx{P_{\cy\mid\cx}}
+\global\long\def\ex{\mathbb{E}}
+\global\long\def\var{\textrm{Var}}
+\global\long\def\cov{\textrm{Cov}}
+\global\long\def\sgn{\textrm{sgn}}
+\global\long\def\sign{\textrm{sign}}
+\global\long\def\kl{\textrm{KL}}
+\global\long\def\law{\mathcal{L}}
+\global\long\def\eps{\varepsilon}
+\global\long\def\as{\textrm{ a.s.}}
+\global\long\def\io{\textrm{ i.o.}}
+\global\long\def\ev{\textrm{ ev.}}
+\global\long\def\convd{\stackrel{d}{\to}}
+\global\long\def\eqd{\stackrel{d}{=}}
+\global\long\def\del{\nabla}
+\global\long\def\loss{\ell}
+\global\long\def\risk{R}
+\global\long\def\emprisk{\hat{R}_{\ell}}
+\global\long\def\lossfnl{L}
+\global\long\def\emplossfnl{\hat{L}}
+\global\long\def\empminimizer#1{\hat{#1}_{\ell}}
+\global\long\def\minimizer#1{#1_{*}}
+\global\long\def\etal{\textrm{et. al.}}
+\global\long\def\tr{\operatorname{tr}}
+\global\long\def\trace{\operatorname{trace}}
+\global\long\def\diag{\text{diag}}
+\global\long\def\rank{\text{rank}}
+\global\long\def\linspan{\text{span}}
+\global\long\def\proj{\text{Proj}}
+\global\long\def\argmax{\operatornamewithlimits{arg\, max}}
+\global\long\def\argmin{\operatornamewithlimits{arg\, min}}
+\global\long\def\bfx{\mathbf{x}}
+\global\long\def\bfy{\mathbf{y}}
+\global\long\def\bfl{\mathbf{\lambda}}
+\global\long\def\bfm{\mathbf{\mu}}
+\global\long\def\calL{\mathcal{L}}
+\global\long\def\vw{\boldsymbol{w}}
+\global\long\def\vx{\boldsymbol{x}}
+\global\long\def\vxi{\boldsymbol{\xi}}
+\global\long\def\valpha{\boldsymbol{\alpha}}
+\global\long\def\vbeta{\boldsymbol{\beta}}
+\global\long\def\vsigma{\boldsymbol{\sigma}}
+\global\long\def\vmu{\boldsymbol{\mu}}
+\global\long\def\vtheta{\boldsymbol{\theta}}
+\global\long\def\vd{\boldsymbol{d}}
+\global\long\def\vs{\boldsymbol{s}}
+\global\long\def\vt{\boldsymbol{t}}
+\global\long\def\vh{\boldsymbol{h}}
+\global\long\def\ve{\boldsymbol{e}}
+\global\long\def\vf{\boldsymbol{f}}
+\global\long\def\vg{\boldsymbol{g}}
+\global\long\def\vz{\boldsymbol{z}}
+\global\long\def\vk{\boldsymbol{k}}
+\global\long\def\va{\boldsymbol{a}}
+\global\long\def\vb{\boldsymbol{b}}
+\global\long\def\vv{\boldsymbol{v}}
+\global\long\def\vy{\boldsymbol{y}}
+\global\long\def\hil{\ch}
+\global\long\def\rkhs{\hil}
+\maketitle
+
+\textbf{Due: Monday, April 11, 2016, at 6pm (Submit via NYU Classes)}
+
+\textbf{Instructions}: Your answers to the questions below, including
+plots and mathematical work, should be submitted as a single file,
+either HTML or PDF. You may include your code inline or submit it
+as a separate file. You may either scan hand-written work or, preferably,
+write your answers using software that typesets mathematics (e.g.
+\LaTeX, \LyX{}, or MathJax via iPython). 
+
+
+\section{Introduction}
+
+This is an entirely written problem set, and relatively short. Many
+of the problems below can be answered in a line or two. The goal of
+this problem set is to get more comfortable with the multiclass hinge
+loss and multiclass SVM. In several problems below, you are asked
+to justify that certain things are convex functions. For these problems,
+you may use any of the rules about convex functions described in our
+notes on Convex Optimization (\url{https://davidrosenberg.github.io/mlcourse/Notes/convex-optimization.pdf})
+or in the Boyd and Vandenberghe book. In particular, you will need
+to make frequent use of the following result: If $f_{1},\ldots,f_{m}:\reals^{n}\to\reals$
+are convex, then their pointwise maximum
+\[
+f(x)=\max\left\{ f_{1}(x),\ldots,f_{m}(x)\right\} 
+\]
+ is also convex. 
+
+
+\section{Convex Surrogate Loss Functions}
+
+It's common in machine learning that the loss function we really care
+about leads to optimization problems that are not computationally
+tractable. The $0/1$ loss for binary classification is one such example\footnote{Interestingly, if our hypothesis space is linear classifiers and we
+are in the ``realizable'' case, which means that there is some hypothesis
+that achieves $0$ loss (with the 0/1 loss), then we can efficiently
+find a good hypothesis using linear programming. This is not difficult
+to see: each data point gives a single linear constraint, and we are
+looking for a vector that satisfies the constraints for each data
+point.}. Since we have better machinery for minimizing convex functions,
+a standard approach is to find a \textbf{convex surrogate loss function.
+}A convex surrogate loss function is a convex function that is an
+upper bound for the loss function of interest\footnote{At this level of generality, you might be wondering: ``A convex function
+of WHAT?''. For binary classification, we usually are talking about
+a convex function of the margin. But to solve our machine learning
+optimization problems, we will eventually need our loss function to
+be a convex function of some $w\in\reals^{d}$ that parameterizes
+our hypothesis space. It'll be clear in what follows what we're talking
+about.}. If we can make the upper bound small, then the loss we care about
+will also be small\footnote{This is actually fairly weak motivation for a convex surrogate. Much
+better motivation comes from the more advanced theory of \textbf{classification
+calibrated} loss functions. See Bartlett et al's paper ``Convexity,
+Classification, and Risk Bounds.'' \url{http://www.eecs.berkeley.edu/~wainwrig/stat241b/bartlettetal.pdf}}. Below we will show that the multiclass hinge loss based on a class-sensitive
+loss $\Delta$ is a convex surrogate for the multiclass loss function
+$\Delta$, when we have a linear hypothesis space. We'll start with
+a special case, that the hinge loss is a convex surrogate for the
+$0/1$ loss.
+
+
+\subsection{Hinge loss is a convex surrogate for 0/1 loss}
+\begin{enumerate}
+\item Let $f:\cx\to\reals$ be a classification score function for binary
+classification. 
+
+\begin{enumerate}
+\item For any example $(x,y)\in\cx\times\left\{ -1,1\right\} $, show that
+\[
+\ind{y\neq\sign(f(x)}\le\max\left\{ 0,1-yf(x)\right\} ,
+\]
+where $\sign\left(x\right)=\begin{cases}
+1 & x>0\\
+0 & x=0\\
+-1 & x<0
+\end{cases}$. 
+\item Show that the hinge loss $\max\left\{ 0,1-m\right\} $ is a convex
+function of the margin $m$. 
+\item Suppose our prediction score functions are given by $f_{w}(x)=w^{T}x$.
+The hinge loss of $f_{w}$ on any example $\left(x,y\right)$ is then
+$\max\left\{ 0,1-yw^{T}x\right\} $. Show that this is a convex function
+of $w$. 
+\end{enumerate}
+\end{enumerate}
+
+\subsection{Multiclass Hinge Loss}
+
+Consider the multiclass output space $\cy=\left\{ 1,\ldots,k\right\} $.
+Suppose we have a base hypothesis space \textbf{$\ch=\left\{ h:\cx\times\cy\to\reals\right\} $
+}from which we select a compatibility score function. Then our final
+multiclass hypothesis space is $\cf=\left\{ f(x)=\argmax_{y\in\cy}h(x,y)\mid h\in\ch\right\} $.
+Since functions in $\cf$ map into $\cy$, our action space $\ca$
+and output space $\cy$ are the same. Suppose we have a class-sensitive
+loss function $\Delta:\cy\times\ca\to\reals$. Even though $\cy=\ca$,
+we write $\cy\times\ca$ to indicate that the true class goes in the
+first argument of the function, while the prediction (i.e. the action)
+goes in the second slot. We do this because we don't assume that $\Delta(y,y')=\Delta(y',y)$.
+It would not be unusual to have this asymmetry in practice. For example,
+false alarms may be much less costly than no alarm when indeed something
+is going wrong.
+
+Our ultimate goal would be to find $f\in\cf$ minimizing the empirical
+cost-sensitive loss:
+\[
+\min_{f\in\cf}\sum_{i=1}^{n}\Delta\left(y_{i},f(x_{i})\right).
+\]
+Since binary classification with $0/1$ loss is intractable and is
+a special case of this formulation, we know that this more general
+formulation must also be computationally intractable. Thus we are
+looking for a convex surrogate loss function.
+\begin{enumerate}
+\item Suppose we have chosen an $h\in\ch$, from which we get $f(x)=\argmax_{y\in\cy}h(x,y)$.
+Justify that for any $x\in\cx$ and $y\in\cy$, we have 
+\[
+h(x,y)\le h(x,f(x)).
+\]
+ 
+\item Justify the following two inequalities:
+\begin{eqnarray*}
+\Delta\left(y,f(x)\right) & \le & \Delta\left(y,f(x)\right)+h(x,f(x))-h(x,y)\\
+ & \le & \max_{y'\in\cy}\left[\Delta\left(y,y')\right)+h(x,y')-h(x,y)\right]
+\end{eqnarray*}
+The RHS of the last expression is called the \textbf{generalized hinge
+loss:}
+\[
+\ell\left(h,\left(x,y\right)\right)=\max_{y'\in\cy}\left[\Delta\left(y,y')\right)+h(x,y')-h(x,y)\right].
+\]
+We have shown that for any $x\in\cx,y\in\cy,h\in\ch$ we have
+\[
+\ell\left(h,(x,y)\right)\ge\Delta(y,f(x)),
+\]
+where, as usual, $f(x)=\argmax_{y\in\cy}h(x,y)$. {[}You should think
+about why we cannot write the generalized hinge loss as $\ell\left(f,(x,y)\right)$.{]} 
+\item We now introduce a specific base hypothesis space $\ch$ of linear
+functions. Consider a class-sensitive feature mapping $\Psi:\cx\times\cy\to\reals^{d}$,
+and $\ch=\left\{ h_{w}\left(x,y\right)=\left\langle w,\Psi(x,y)\right\rangle \mid w\in\reals^{d}\right\} $.
+Show that we can write the generalized hinge loss for $h_{w}(x,y)$
+on example $\left(x_{i},y_{i}\right)$ as
+\[
+\ell\left(h_{w},(x_{i},y_{i})\right)=\max_{y\in\cy}\left[\Delta\left(y_{i},y)\right)+\left\langle w,\Psi(x_{i},y)-\Psi(x_{i},y_{i})\right\rangle \right].
+\]
+ 
+\item We will now show that the generalized hinge loss $\ell\left(h_{w},(x_{i},y_{i})\right)$
+is a convex function of $w$. Justify each of the following steps.
+
+\begin{enumerate}
+\item The expression $\Delta(y_{i},y)+\left\langle w,\Psi(x_{i},y)-\Psi(x_{i},y_{i})\right\rangle $
+is an affine function of $w$. 
+\item The expression $\max_{y\in\cy}\left[\Delta\left(y_{i},y)\right)+\left\langle w,\Psi(x_{i},y)-\Psi(x_{i},y_{i})\right\rangle \right]$
+is a convex function of $w$. 
+\end{enumerate}
+\item Conclude that $\ell\left(h_{w},(x_{i},y_{i})\right)$ is a convex
+surrogate for $\Delta(y_{i},f_{w}(x_{i}))$. 
+\end{enumerate}
+
+\section{Hinge Loss is a Special Case of Generalized Hinge Loss}
+
+Let $\cy=\left\{ -1,1\right\} $. Let $\Delta(y,\hat{y})=\ind{y\neq\hat{y}}.$
+If $g(x)$ is the score function in our binary classification setting,
+then define our compatibility function as 
+\begin{eqnarray*}
+h(x,1) & = & g(x)/2\\
+h(x,-1) & = & -g(x)/2.
+\end{eqnarray*}
+Show that for this choice of $h$, the multiclass hinge loss reduces
+to hinge loss: 
+\[
+\ell\left(h,\left(x,y\right)\right)=\max_{y'\in\cy}\left[\Delta\left(y,y')\right)+h(x,y')-h(x,y)\right]=\max\left\{ 0,1-yg(x)\right\} 
+\]
+ 
+
+
+\section{Another Formulation of Generalized Hinge Loss}
+
+In lecture we defined the \textbf{margin} of the compatibility score
+function $h$ on the $i$th example $(x_{i},y_{i})$ for class $y$
+as
+\[
+m_{i,y}(h)=h(x_{i},y_{i})-h(x_{i},y),
+\]
+ and the loss on an individual example $\left(x_{i},y_{i}\right)$
+to be:
+
+\[
+\max_{y}\left[\left(\Delta(y_{i},y)-m_{i,y}(h))\right)_{+}\right].
+\]
+Here we investigate whether this is just an instance of the generalized
+hinge loss $\ell\left(h,\left(x,y)\right)\right)$ defined above.
+\begin{enumerate}
+\item Show that $\ell\left(h,\left(x_{i},y_{i}\right)\right)=\max_{y'\in\cy}\left[\Delta\left(y_{i},y')\right)-m_{i,y'}(h)\right]$. 
+\item Suppose $\Delta\left(y,y'\right)\ge0$ for all $y,y'\in\cy$. Show
+that for any example $\left(x_{i},y_{i}\right)$ and any score function
+$h$, the multiclass hinge loss we gave in lecture and the generalized
+hinge loss presened above are equivalent, in the sense that
+\[
+\max_{y\in\cy}\left[\left(\Delta(y_{i},y)-m_{i,y}(h))\right)_{+}\right]=\max_{y\in\cy}\left(\Delta(y_{i},y)-m_{i,y}(h))\right).
+\]
+(Hint: This is easy by piecing together other results we have already
+attained regarding the relationship between $\ell$ and $\Delta$.) 
+\item In the context of the generalized hinge loss, $\Delta(y,y')$ is like
+the ``target margin'' between the score for true class $y$ and
+the score for class $y'$. Suppose that our prediction function $f$
+gets the correct class on $x_{i}$. That is, $f(x_{i})=\argmax_{y'\in\cy}h(x_{i},y')=y_{i}$.
+Furthermore, assume that all of our target margins are reached or
+exceeded. That is
+\[
+m_{i,y}(h)=h(x_{i},y_{i})-h(x_{i},y)\ge\Delta(y_{i},y),
+\]
+for all $y\neq y_{i}$. Show that $\ell\left(h,(x_{i},y_{i})\right)=0$
+if we assume that $\Delta\left(y,y\right)=0$ for all $y\in\cy$. 
+\end{enumerate}
+
+\section{SGD for Multiclass SVM}
+
+Suppose our output space and our action space are given as follows:
+$\cy=\ca=\left\{ 1,\ldots,k\right\} $. Given a non-negative class-sensitive
+loss function $\Delta:\cy\times\ca\to\reals^{\ge0}$ and a class-sensitive
+feature mapping $\Psi:\cx\times\cy\to\reals^{d}$. Our prediction
+function is $f:\cx\to\cy$ is given by
+\[
+f_{w}(x)=\argmax_{y\in\cy}\left\langle w,\Psi(x,y)\right\rangle 
+\]
+ 
+\begin{enumerate}
+\item For a training set $(x_{1},y_{1}),\ldots(x_{n},y_{n})$, let $J(w)$
+be the $\ell_{2}$-regularized empirical risk function for the multiclass
+hinge loss. We can write this as
+\[
+J(w)=\lambda\|w\|^{2}+\frac{1}{n}\sum_{i=1}^{n}\max_{y\in\cy}\left[\Delta\left(y_{i},y)\right)+\left\langle w,\Psi(x_{i},y)-\Psi(x_{i},y_{i})\right\rangle \right].
+\]
+We will now show that that $J(w)$ is a convex function of $w$. Justify
+each of the following steps. As we've shown it in a previous problem,
+you may use the fact that $w\mapsto\max_{y\in\cy}\left[\Delta\left(y_{i},y)\right)+\left\langle w,\Psi(x_{i},y)-\Psi(x_{i},y_{i})\right\rangle \right]$
+is a convex function.
+
+\begin{enumerate}
+\item $\frac{1}{n}\sum_{i=1}^{n}\max_{y\in\cy}\left[\Delta\left(y_{i},y)\right)+\left\langle w,\Psi(x_{i},y)-\Psi(x_{i},y_{i})\right\rangle \right]$
+is a convex function of $w$. 
+\item $\|w\|^{2}$ is a convex function of $w$. 
+\item $J(w)$ is a convex function of $w$. 
+\end{enumerate}
+\item Since $J(w)$ is convex, it has a subgradient at every point. Give
+an expression for a subgradient of $J(w)$. You may use any standard
+results about subgradients, including the result from an earlier homework
+about subgradients of the pointwise maxima of functions. (Hint: It
+may be helpful to refer to $\hat{y}=\argmax_{y\in\cy}\left[\Delta\left(y_{i},y)\right)+\left\langle w,\Psi(x_{i},y)-\Psi(x_{i},y_{i})\right\rangle \right]$.) 
+\item Give an expression the stochastic subgradient based on the point $(x_{i},y_{i})$. 
+\item Give an expression for a minibatch subgradient, based on the points
+$(x_{i},y_{i}),\ldots,\left(x_{i+m-1},y_{i+m-1}\right)$. \end{enumerate}
+
+\end{document}

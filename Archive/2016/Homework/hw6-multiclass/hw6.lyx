@@ -1,0 +1,1502 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\title{DS-GA 1003: Machine Learning and Computational Statistics\\
+Homework 6: Generalized Hinge Loss and Multiclass SVM} 
+\date{} 
+
+\usepackage{amsfonts}\usepackage{capt-of}
+%\usepackage{url}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{bbm}
+\usepackage{enumerate}
+\newcommand{\carlos}[1]{\textcolor{red}{Carlos: #1}}
+\newcommand{\field}[1]{\mathbb{#1}} 
+\newcommand{\hide}[1]{#1}
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\providecommand{\m}[1]{\mathbf{#1}}
+\providecommand{\norm}[1]{\left\|#1\right\|}
+\providecommand{\sign}[1]{\text{sign}\left(#1\right)}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\providecommand{\what}{\m{\hat{w}}}
+\providecommand{\dw}{\Delta w}
+\providecommand{\dmw}{\Delta \m{w}}
+\providecommand{\hy}{\hat{y}}
+\end_preamble
+\options ruled
+\use_default_options false
+\begin_modules
+algorithm2e
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package none
+\inputencoding auto
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter courier
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks false
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref section
+\pdf_pdfusetitle false
+\papersize letterpaper
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\reals}{\mathbf{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\integers}{\mathbf{Z}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\naturals}{\mathbf{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rationals}{\mathbf{Q}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ca}{\mathcal{A}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cb}{\mathcal{B}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cc}{\mathcal{C}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cd}{\mathcal{D}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ce}{\mathcal{E}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cf}{\mathcal{F}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cg}{\mathcal{G}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ch}{\mathcal{H}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ci}{\mathcal{I}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cj}{\mathcal{J}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ck}{\mathcal{K}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cl}{\mathcal{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cm}{\mathcal{M}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cn}{\mathcal{N}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\co}{\mathcal{O}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cp}{\mathcal{P}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cq}{\mathcal{Q}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\calr}{\mathcal{R}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cs}{\mathcal{S}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ct}{\mathcal{T}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cu}{\mathcal{U}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cv}{\mathcal{V}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cw}{\mathcal{W}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cx}{\mathcal{X}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cy}{\mathcal{Y}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cz}{\mathcal{Z}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ind}[1]{1(#1)}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\pr}{\mathbb{P}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\predsp}{\cy}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\outsp}{\cy}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\prxy}{P_{\cx\times\cy}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\prx}{P_{\cx}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\prygivenx}{P_{\cy\mid\cx}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ex}{\mathbb{E}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\var}{\textrm{Var}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cov}{\textrm{Cov}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\sgn}{\textrm{sgn}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\sign}{\textrm{sign}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\kl}{\textrm{KL}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\law}{\mathcal{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\eps}{\varepsilon}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\as}{\textrm{ a.s.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\io}{\textrm{ i.o.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ev}{\textrm{ ev.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\convd}{\stackrel{d}{\to}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\eqd}{\stackrel{d}{=}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\del}{\nabla}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\loss}{\ell}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\risk}{R}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\emprisk}{\hat{R}_{\ell}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\lossfnl}{L}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\emplossfnl}{\hat{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\empminimizer}[1]{\hat{#1}_{\ell}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\minimizer}[1]{#1_{*}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\etal}{\textrm{et. al.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\tr}{\operatorname{tr}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\trace}{\operatorname{trace}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\diag}{\text{diag}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\rank}{\text{rank}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\linspan}{\text{span}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\proj}{\text{Proj}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\argmax}{\operatornamewithlimits{arg\, max}}
+{\mbox{argmax}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\argmin}{\operatornamewithlimits{arg\, min}}
+{\mbox{argmin}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfx}{\mathbf{x}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfy}{\mathbf{y}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfl}{\mathbf{\lambda}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfm}{\mathbf{\mu}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\calL}{\mathcal{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vw}{\boldsymbol{w}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vx}{\boldsymbol{x}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vxi}{\boldsymbol{\xi}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\valpha}{\boldsymbol{\alpha}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vbeta}{\boldsymbol{\beta}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vsigma}{\boldsymbol{\sigma}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vmu}{\boldsymbol{\mu}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vtheta}{\boldsymbol{\theta}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vd}{\boldsymbol{d}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vs}{\boldsymbol{s}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vt}{\boldsymbol{t}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vh}{\boldsymbol{h}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ve}{\boldsymbol{e}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vf}{\boldsymbol{f}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vg}{\boldsymbol{g}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vz}{\boldsymbol{z}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vk}{\boldsymbol{k}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\va}{\boldsymbol{a}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vb}{\boldsymbol{b}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vv}{\boldsymbol{v}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vy}{\boldsymbol{y}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\hil}{\ch}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\rkhs}{\hil}
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+maketitle
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Due: Monday, April 11, 2016, at 6pm (Submit via NYU Classes)
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Instructions
+\series default
+: Your answers to the questions below, including plots and mathematical
+ work, should be submitted as a single file, either HTML or PDF.
+ You may include your code inline or submit it as a separate file.
+ You may either scan hand-written work or, preferably, write your answers
+ using software that typesets mathematics (e.g.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+LaTeX
+\end_layout
+
+\end_inset
+
+, LyX, or MathJax via iPython).
+ 
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+This is an entirely written problem set, and relatively short.
+ Many of the problems below can be answered in a line or two.
+ The goal of this problem set is to get more comfortable with the multiclass
+ hinge loss and multiclass SVM.
+ In several problems below, you are asked to justify that certain things
+ are convex functions.
+ For these problems, you may use any of the rules about convex functions
+ described in our notes on Convex Optimization (
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://davidrosenberg.github.io/mlcourse/Notes/convex-optimization.pdf
+\end_layout
+
+\end_inset
+
+) or in the Boyd and Vandenberghe book.
+ In particular, you will need to make frequent use of the following result:
+ If 
+\begin_inset Formula $f_{1},\ldots,f_{m}:\reals^{n}\to\reals$
+\end_inset
+
+ are convex, then their pointwise maximum
+\begin_inset Formula 
+\[
+f(x)=\max\left\{ f_{1}(x),\ldots,f_{m}(x)\right\} 
+\]
+
+\end_inset
+
+ is also convex.
+ 
+\end_layout
+
+\begin_layout Section
+Convex Surrogate Loss Functions
+\end_layout
+
+\begin_layout Standard
+It's common in machine learning that the loss function we really care about
+ leads to optimization problems that are not computationally tractable.
+ The 
+\begin_inset Formula $0/1$
+\end_inset
+
+ loss for binary classification is one such example
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Interestingly, if our hypothesis space is linear classifiers and we are
+ in the 
+\begin_inset Quotes eld
+\end_inset
+
+realizable
+\begin_inset Quotes erd
+\end_inset
+
+ case, which means that there is some hypothesis that achieves 
+\begin_inset Formula $0$
+\end_inset
+
+ loss (with the 0/1 loss), then we can efficiently find a good hypothesis
+ using linear programming.
+ This is not difficult to see: each data point gives a single linear constraint,
+ and we are looking for a vector that satisfies the constraints for each
+ data point.
+\end_layout
+
+\end_inset
+
+.
+ Since we have better machinery for minimizing convex functions, a standard
+ approach is to find a 
+\series bold
+convex surrogate loss function.
+ 
+\series default
+A convex surrogate loss function is a convex function that is an upper bound
+ for the loss function of interest
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+At this level of generality, you might be wondering: 
+\begin_inset Quotes eld
+\end_inset
+
+A convex function of WHAT?
+\begin_inset Quotes erd
+\end_inset
+
+.
+ For binary classification, we usually are talking about a convex function
+ of the margin.
+ But to solve our machine learning optimization problems, we will eventually
+ need our loss function to be a convex function of some 
+\begin_inset Formula $w\in\reals^{d}$
+\end_inset
+
+ that parameterizes our hypothesis space.
+ It'll be clear in what follows what we're talking about.
+\end_layout
+
+\end_inset
+
+.
+ If we can make the upper bound small, then the loss we care about will
+ also be small
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+This is actually fairly weak motivation for a convex surrogate.
+ Much better motivation comes from the more advanced theory of 
+\series bold
+classification calibrated
+\series default
+ loss functions.
+ See Bartlett et al's paper 
+\begin_inset Quotes eld
+\end_inset
+
+Convexity, Classification, and Risk Bounds.
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.eecs.berkeley.edu/~wainwrig/stat241b/bartlettetal.pdf
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+ Below we will show that the multiclass hinge loss based on a class-sensitive
+ loss 
+\begin_inset Formula $\Delta$
+\end_inset
+
+ is a convex surrogate for the multiclass loss function 
+\begin_inset Formula $\Delta$
+\end_inset
+
+, when we have a linear hypothesis space.
+ We'll start with a special case, that the hinge loss is a convex surrogate
+ for the 
+\begin_inset Formula $0/1$
+\end_inset
+
+ loss.
+\end_layout
+
+\begin_layout Subsection
+Hinge loss is a convex surrogate for 0/1 loss
+\end_layout
+
+\begin_layout Enumerate
+Let 
+\begin_inset Formula $f:\cx\to\reals$
+\end_inset
+
+ be a classification score function for binary classification.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+For any example 
+\begin_inset Formula $(x,y)\in\cx\times\left\{ -1,1\right\} $
+\end_inset
+
+, show that 
+\begin_inset Formula 
+\[
+\ind{y\neq\sign(f(x)}\le\max\left\{ 0,1-yf(x)\right\} ,
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\sign\left(x\right)=\begin{cases}
+1 & x>0\\
+0 & x=0\\
+-1 & x<0
+\end{cases}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Show that the hinge loss 
+\begin_inset Formula $\max\left\{ 0,1-m\right\} $
+\end_inset
+
+ is a convex function of the margin 
+\begin_inset Formula $m$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Suppose our prediction score functions are given by 
+\begin_inset Formula $f_{w}(x)=w^{T}x$
+\end_inset
+
+.
+ The hinge loss of 
+\begin_inset Formula $f_{w}$
+\end_inset
+
+ on any example 
+\begin_inset Formula $\left(x,y\right)$
+\end_inset
+
+ is then 
+\begin_inset Formula $\max\left\{ 0,1-yw^{T}x\right\} $
+\end_inset
+
+.
+ Show that this is a convex function of 
+\begin_inset Formula $w$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Multiclass Hinge Loss
+\end_layout
+
+\begin_layout Standard
+Consider the multiclass output space 
+\begin_inset Formula $\cy=\left\{ 1,\ldots,k\right\} $
+\end_inset
+
+.
+ Suppose we have a base hypothesis space 
+\series bold
+
+\begin_inset Formula $\ch=\left\{ h:\cx\times\cy\to\reals\right\} $
+\end_inset
+
+ 
+\series default
+from which we select a compatibility score function.
+ Then our final multiclass hypothesis space is 
+\begin_inset Formula $\cf=\left\{ f(x)=\argmax_{y\in\cy}h(x,y)\mid h\in\ch\right\} $
+\end_inset
+
+.
+ Since functions in 
+\begin_inset Formula $\cf$
+\end_inset
+
+ map into 
+\begin_inset Formula $\cy$
+\end_inset
+
+, our action space 
+\begin_inset Formula $\ca$
+\end_inset
+
+ and output space 
+\begin_inset Formula $\cy$
+\end_inset
+
+ are the same.
+ Suppose we have a class-sensitive loss function 
+\begin_inset Formula $\Delta:\cy\times\ca\to\reals$
+\end_inset
+
+.
+ Even though 
+\begin_inset Formula $\cy=\ca$
+\end_inset
+
+, we write 
+\begin_inset Formula $\cy\times\ca$
+\end_inset
+
+ to indicate that the true class goes in the first argument of the function,
+ while the prediction (i.e.
+ the action) goes in the second slot.
+ We do this because we don't assume that 
+\begin_inset Formula $\Delta(y,y')=\Delta(y',y)$
+\end_inset
+
+.
+ It would not be unusual to have this asymmetry in practice.
+ For example, false alarms may be much less costly than no alarm when indeed
+ something is going wrong.
+\end_layout
+
+\begin_layout Standard
+Our ultimate goal would be to find 
+\begin_inset Formula $f\in\cf$
+\end_inset
+
+ minimizing the empirical cost-sensitive loss:
+\begin_inset Formula 
+\[
+\min_{f\in\cf}\sum_{i=1}^{n}\Delta\left(y_{i},f(x_{i})\right).
+\]
+
+\end_inset
+
+Since binary classification with 
+\begin_inset Formula $0/1$
+\end_inset
+
+ loss is intractable and is a special case of this formulation, we know
+ that this more general formulation must also be computationally intractable.
+ Thus we are looking for a convex surrogate loss function.
+\end_layout
+
+\begin_layout Enumerate
+Suppose we have chosen an 
+\begin_inset Formula $h\in\ch$
+\end_inset
+
+, from which we get 
+\begin_inset Formula $f(x)=\argmax_{y\in\cy}h(x,y)$
+\end_inset
+
+.
+ Justify that for any 
+\begin_inset Formula $x\in\cx$
+\end_inset
+
+ and 
+\begin_inset Formula $y\in\cy$
+\end_inset
+
+, we have 
+\begin_inset Formula 
+\[
+h(x,y)\le h(x,f(x)).
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Enumerate
+Justify the following two inequalities:
+\begin_inset Formula 
+\begin{eqnarray*}
+\Delta\left(y,f(x)\right) & \le & \Delta\left(y,f(x)\right)+h(x,f(x))-h(x,y)\\
+ & \le & \max_{y'\in\cy}\left[\Delta\left(y,y')\right)+h(x,y')-h(x,y)\right]
+\end{eqnarray*}
+
+\end_inset
+
+The RHS of the last expression is called the 
+\series bold
+generalized hinge loss:
+\series default
+
+\begin_inset Formula 
+\[
+\ell\left(h,\left(x,y\right)\right)=\max_{y'\in\cy}\left[\Delta\left(y,y')\right)+h(x,y')-h(x,y)\right].
+\]
+
+\end_inset
+
+We have shown that for any 
+\begin_inset Formula $x\in\cx,y\in\cy,h\in\ch$
+\end_inset
+
+ we have
+\begin_inset Formula 
+\[
+\ell\left(h,(x,y)\right)\ge\Delta(y,f(x)),
+\]
+
+\end_inset
+
+where, as usual, 
+\begin_inset Formula $f(x)=\argmax_{y\in\cy}h(x,y)$
+\end_inset
+
+.
+ [You should think about why we cannot write the generalized hinge loss
+ as 
+\begin_inset Formula $\ell\left(f,(x,y)\right)$
+\end_inset
+
+.] 
+\end_layout
+
+\begin_layout Enumerate
+We now introduce a specific base hypothesis space 
+\begin_inset Formula $\ch$
+\end_inset
+
+ of linear functions.
+ Consider a class-sensitive feature mapping 
+\begin_inset Formula $\Psi:\cx\times\cy\to\reals^{d}$
+\end_inset
+
+, and 
+\begin_inset Formula $\ch=\left\{ h_{w}\left(x,y\right)=\left\langle w,\Psi(x,y)\right\rangle \mid w\in\reals^{d}\right\} $
+\end_inset
+
+.
+ Show that we can write the generalized hinge loss for 
+\begin_inset Formula $h_{w}(x,y)$
+\end_inset
+
+ on example 
+\begin_inset Formula $\left(x_{i},y_{i}\right)$
+\end_inset
+
+ as
+\begin_inset Formula 
+\[
+\ell\left(h_{w},(x_{i},y_{i})\right)=\max_{y\in\cy}\left[\Delta\left(y_{i},y)\right)+\left\langle w,\Psi(x_{i},y)-\Psi(x_{i},y_{i})\right\rangle \right].
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Enumerate
+We will now show that the generalized hinge loss 
+\begin_inset Formula $\ell\left(h_{w},(x_{i},y_{i})\right)$
+\end_inset
+
+ is a convex function of 
+\begin_inset Formula $w$
+\end_inset
+
+.
+ Justify each of the following steps.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+The expression 
+\begin_inset Formula $\Delta(y_{i},y)+\left\langle w,\Psi(x_{i},y)-\Psi(x_{i},y_{i})\right\rangle $
+\end_inset
+
+ is an affine function of 
+\begin_inset Formula $w$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+The expression 
+\begin_inset Formula $\max_{y\in\cy}\left[\Delta\left(y_{i},y)\right)+\left\langle w,\Psi(x_{i},y)-\Psi(x_{i},y_{i})\right\rangle \right]$
+\end_inset
+
+ is a convex function of 
+\begin_inset Formula $w$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Conclude that 
+\begin_inset Formula $\ell\left(h_{w},(x_{i},y_{i})\right)$
+\end_inset
+
+ is a convex surrogate for 
+\begin_inset Formula $\Delta(y_{i},f_{w}(x_{i}))$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Section
+Hinge Loss is a Special Case of Generalized Hinge Loss
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\cy=\left\{ -1,1\right\} $
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $\Delta(y,\hat{y})=\ind{y\neq\hat{y}}.$
+\end_inset
+
+ If 
+\begin_inset Formula $g(x)$
+\end_inset
+
+ is the score function in our binary classification setting, then define
+ our compatibility function as 
+\begin_inset Formula 
+\begin{eqnarray*}
+h(x,1) & = & g(x)/2\\
+h(x,-1) & = & -g(x)/2.
+\end{eqnarray*}
+
+\end_inset
+
+Show that for this choice of 
+\begin_inset Formula $h$
+\end_inset
+
+, the multiclass hinge loss reduces to hinge loss: 
+\begin_inset Formula 
+\[
+\ell\left(h,\left(x,y\right)\right)=\max_{y'\in\cy}\left[\Delta\left(y,y')\right)+h(x,y')-h(x,y)\right]=\max\left\{ 0,1-yg(x)\right\} 
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Section
+Another Formulation of Generalized Hinge Loss
+\end_layout
+
+\begin_layout Standard
+In lecture we defined the 
+\series bold
+margin
+\series default
+ of the compatibility score function 
+\begin_inset Formula $h$
+\end_inset
+
+ on the 
+\begin_inset Formula $i$
+\end_inset
+
+th example 
+\begin_inset Formula $(x_{i},y_{i})$
+\end_inset
+
+ for class 
+\begin_inset Formula $y$
+\end_inset
+
+ as
+\begin_inset Formula 
+\[
+m_{i,y}(h)=h(x_{i},y_{i})-h(x_{i},y),
+\]
+
+\end_inset
+
+ and the loss on an individual example 
+\begin_inset Formula $\left(x_{i},y_{i}\right)$
+\end_inset
+
+ to be:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\max_{y}\left[\left(\Delta(y_{i},y)-m_{i,y}(h))\right)_{+}\right].
+\]
+
+\end_inset
+
+Here we investigate whether this is just an instance of the generalized
+ hinge loss 
+\begin_inset Formula $\ell\left(h,\left(x,y)\right)\right)$
+\end_inset
+
+ defined above.
+\end_layout
+
+\begin_layout Enumerate
+Show that 
+\begin_inset Formula $\ell\left(h,\left(x_{i},y_{i}\right)\right)=\max_{y'\in\cy}\left[\Delta\left(y_{i},y')\right)-m_{i,y'}(h)\right]$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Suppose 
+\begin_inset Formula $\Delta\left(y,y'\right)\ge0$
+\end_inset
+
+ for all 
+\begin_inset Formula $y,y'\in\cy$
+\end_inset
+
+.
+ Show that for any example 
+\begin_inset Formula $\left(x_{i},y_{i}\right)$
+\end_inset
+
+ and any score function 
+\begin_inset Formula $h$
+\end_inset
+
+, the multiclass hinge loss we gave in lecture and the generalized hinge
+ loss presened above are equivalent, in the sense that
+\begin_inset Formula 
+\[
+\max_{y\in\cy}\left[\left(\Delta(y_{i},y)-m_{i,y}(h))\right)_{+}\right]=\max_{y\in\cy}\left(\Delta(y_{i},y)-m_{i,y}(h))\right).
+\]
+
+\end_inset
+
+(Hint: This is easy by piecing together other results we have already attained
+ regarding the relationship between 
+\begin_inset Formula $\ell$
+\end_inset
+
+ and 
+\begin_inset Formula $\Delta$
+\end_inset
+
+.) 
+\end_layout
+
+\begin_layout Enumerate
+In the context of the generalized hinge loss, 
+\begin_inset Formula $\Delta(y,y')$
+\end_inset
+
+ is like the 
+\begin_inset Quotes eld
+\end_inset
+
+target margin
+\begin_inset Quotes erd
+\end_inset
+
+ between the score for true class 
+\begin_inset Formula $y$
+\end_inset
+
+ and the score for class 
+\begin_inset Formula $y'$
+\end_inset
+
+.
+ Suppose that our prediction function 
+\begin_inset Formula $f$
+\end_inset
+
+ gets the correct class on 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+.
+ That is, 
+\begin_inset Formula $f(x_{i})=\argmax_{y'\in\cy}h(x_{i},y')=y_{i}$
+\end_inset
+
+.
+ Furthermore, assume that all of our target margins are reached or exceeded.
+ That is
+\begin_inset Formula 
+\[
+m_{i,y}(h)=h(x_{i},y_{i})-h(x_{i},y)\ge\Delta(y_{i},y),
+\]
+
+\end_inset
+
+for all 
+\begin_inset Formula $y\neq y_{i}$
+\end_inset
+
+.
+ Show that 
+\begin_inset Formula $\ell\left(h,(x_{i},y_{i})\right)=0$
+\end_inset
+
+ if we assume that 
+\begin_inset Formula $\Delta\left(y,y\right)=0$
+\end_inset
+
+ for all 
+\begin_inset Formula $y\in\cy$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Section
+SGD for Multiclass SVM
+\end_layout
+
+\begin_layout Standard
+Suppose our output space and our action space are given as follows: 
+\begin_inset Formula $\cy=\ca=\left\{ 1,\ldots,k\right\} $
+\end_inset
+
+.
+ Given a non-negative class-sensitive loss function 
+\begin_inset Formula $\Delta:\cy\times\ca\to\reals^{\ge0}$
+\end_inset
+
+ and a class-sensitive feature mapping 
+\begin_inset Formula $\Psi:\cx\times\cy\to\reals^{d}$
+\end_inset
+
+.
+ Our prediction function is 
+\begin_inset Formula $f:\cx\to\cy$
+\end_inset
+
+ is given by
+\begin_inset Formula 
+\[
+f_{w}(x)=\argmax_{y\in\cy}\left\langle w,\Psi(x,y)\right\rangle 
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Enumerate
+For a training set 
+\begin_inset Formula $(x_{1},y_{1}),\ldots(x_{n},y_{n})$
+\end_inset
+
+, let 
+\begin_inset Formula $J(w)$
+\end_inset
+
+ be the 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+-regularized empirical risk function for the multiclass hinge loss.
+ We can write this as
+\begin_inset Formula 
+\[
+J(w)=\lambda\|w\|^{2}+\frac{1}{n}\sum_{i=1}^{n}\max_{y\in\cy}\left[\Delta\left(y_{i},y)\right)+\left\langle w,\Psi(x_{i},y)-\Psi(x_{i},y_{i})\right\rangle \right].
+\]
+
+\end_inset
+
+We will now show that that 
+\begin_inset Formula $J(w)$
+\end_inset
+
+ is a convex function of 
+\begin_inset Formula $w$
+\end_inset
+
+.
+ Justify each of the following steps.
+ As we've shown it in a previous problem, you may use the fact that 
+\begin_inset Formula $w\mapsto\max_{y\in\cy}\left[\Delta\left(y_{i},y)\right)+\left\langle w,\Psi(x_{i},y)-\Psi(x_{i},y_{i})\right\rangle \right]$
+\end_inset
+
+ is a convex function.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $\frac{1}{n}\sum_{i=1}^{n}\max_{y\in\cy}\left[\Delta\left(y_{i},y)\right)+\left\langle w,\Psi(x_{i},y)-\Psi(x_{i},y_{i})\right\rangle \right]$
+\end_inset
+
+ is a convex function of 
+\begin_inset Formula $w$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\|w\|^{2}$
+\end_inset
+
+ is a convex function of 
+\begin_inset Formula $w$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $J(w)$
+\end_inset
+
+ is a convex function of 
+\begin_inset Formula $w$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Since 
+\begin_inset Formula $J(w)$
+\end_inset
+
+ is convex, it has a subgradient at every point.
+ Give an expression for a subgradient of 
+\begin_inset Formula $J(w)$
+\end_inset
+
+.
+ You may use any standard results about subgradients, including the result
+ from an earlier homework about subgradients of the pointwise maxima of
+ functions.
+ (Hint: It may be helpful to refer to 
+\begin_inset Formula $\hat{y}=\argmax_{y\in\cy}\left[\Delta\left(y_{i},y)\right)+\left\langle w,\Psi(x_{i},y)-\Psi(x_{i},y_{i})\right\rangle \right]$
+\end_inset
+
+.) 
+\end_layout
+
+\begin_layout Enumerate
+Give an expression the stochastic subgradient based on the point 
+\begin_inset Formula $(x_{i},y_{i})$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Give an expression for a minibatch subgradient, based on the points 
+\begin_inset Formula $(x_{i},y_{i}),\ldots,\left(x_{i+m-1},y_{i+m-1}\right)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_body
+\end_document

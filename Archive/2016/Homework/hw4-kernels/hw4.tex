@@ -1,0 +1,665 @@
+%% LyX 2.1.4 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[ruled]{article}
+\usepackage{courier}
+\usepackage[latin9]{inputenc}
+\usepackage[letterpaper]{geometry}
+\geometry{verbose}
+\usepackage{url}
+\usepackage{algorithm2e}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage[unicode=true,
+ bookmarks=false,
+ breaklinks=false,pdfborder={0 0 1},backref=section,colorlinks=false]
+ {hyperref}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+\providecommand{\LyX}{\texorpdfstring%
+  {L\kern-.1667em\lower.25em\hbox{Y}\kern-.125emX\@}
+  {LyX}}
+%% Special footnote code from the package 'stblftnt.sty'
+%% Author: Robin Fairbairns -- Last revised Dec 13 1996
+\let\SF@@footnote\footnote
+\def\footnote{\ifx\protect\@typeset@protect
+    \expandafter\SF@@footnote
+  \else
+    \expandafter\SF@gobble@opt
+  \fi
+}
+\expandafter\def\csname SF@gobble@opt \endcsname{\@ifnextchar[%]
+  \SF@gobble@twobracket
+  \@gobble
+}
+\edef\SF@gobble@opt{\noexpand\protect
+  \expandafter\noexpand\csname SF@gobble@opt \endcsname}
+\def\SF@gobble@twobracket[#1]#2{}
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+ \theoremstyle{definition}
+ \newtheorem*{defn*}{\protect\definitionname}
+  \theoremstyle{plain}
+  \newtheorem*{thm*}{\protect\theoremname}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\title{Machine Learning and Computational Statistics, Spring 2016\\
+Homework 4: Kernels, Duals, and Trees} 
+\date{} 
+
+
+
+
+\usepackage{amsfonts}\usepackage{capt-of}
+%\usepackage{url}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{bbm}
+\usepackage{enumerate}
+\newcommand{\carlos}[1]{\textcolor{red}{Carlos: #1}}
+\newcommand{\field}[1]{\mathbb{#1}} 
+\newcommand{\hide}[1]{#1}
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\providecommand{\m}[1]{\mathbf{#1}}
+\providecommand{\norm}[1]{\left\|#1\right\|}
+\providecommand{\sign}[1]{\text{sign}\left(#1\right)}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\providecommand{\what}{\m{\hat{w}}}
+\providecommand{\dw}{\Delta w}
+\providecommand{\dmw}{\Delta \m{w}}
+\providecommand{\hy}{\hat{y}}
+
+\makeatother
+
+  \providecommand{\definitionname}{Definition}
+  \providecommand{\theoremname}{Theorem}
+
+\begin{document}
+\global\long\def\reals{\mathbf{R}}
+ \global\long\def\integers{\mathbf{Z}}
+\global\long\def\naturals{\mathbf{N}}
+ \global\long\def\rationals{\mathbf{Q}}
+\global\long\def\ca{\mathcal{A}}
+\global\long\def\cb{\mathcal{B}}
+ \global\long\def\cc{\mathcal{C}}
+ \global\long\def\cd{\mathcal{D}}
+\global\long\def\ce{\mathcal{E}}
+\global\long\def\cf{\mathcal{F}}
+\global\long\def\cg{\mathcal{G}}
+\global\long\def\ch{\mathcal{H}}
+\global\long\def\ci{\mathcal{I}}
+\global\long\def\cj{\mathcal{J}}
+\global\long\def\ck{\mathcal{K}}
+\global\long\def\cl{\mathcal{L}}
+\global\long\def\cm{\mathcal{M}}
+\global\long\def\cn{\mathcal{N}}
+\global\long\def\co{\mathcal{O}}
+\global\long\def\cp{\mathcal{P}}
+\global\long\def\cq{\mathcal{Q}}
+\global\long\def\calr{\mathcal{R}}
+\global\long\def\cs{\mathcal{S}}
+\global\long\def\ct{\mathcal{T}}
+\global\long\def\cu{\mathcal{U}}
+\global\long\def\cv{\mathcal{V}}
+\global\long\def\cw{\mathcal{W}}
+\global\long\def\cx{\mathcal{X}}
+\global\long\def\cy{\mathcal{Y}}
+\global\long\def\cz{\mathcal{Z}}
+\global\long\def\ind#1{1(#1)}
+\global\long\def\pr{\mathbb{P}}
+\global\long\def\predsp{\cy}
+\global\long\def\outsp{\cy}
+\global\long\def\prxy{P_{\cx\times\cy}}
+\global\long\def\prx{P_{\cx}}
+\global\long\def\prygivenx{P_{\cy\mid\cx}}
+\global\long\def\ex{\mathbb{E}}
+\global\long\def\var{\textrm{Var}}
+\global\long\def\cov{\textrm{Cov}}
+\global\long\def\sgn{\textrm{sgn}}
+\global\long\def\sign{\textrm{sign}}
+\global\long\def\kl{\textrm{KL}}
+\global\long\def\law{\mathcal{L}}
+\global\long\def\eps{\varepsilon}
+\global\long\def\as{\textrm{ a.s.}}
+\global\long\def\io{\textrm{ i.o.}}
+\global\long\def\ev{\textrm{ ev.}}
+\global\long\def\convd{\stackrel{d}{\to}}
+\global\long\def\eqd{\stackrel{d}{=}}
+\global\long\def\del{\nabla}
+\global\long\def\loss{\ell}
+\global\long\def\risk{R}
+\global\long\def\emprisk{\hat{R}_{\ell}}
+\global\long\def\lossfnl{L}
+\global\long\def\emplossfnl{\hat{L}}
+\global\long\def\empminimizer#1{\hat{#1}_{\ell}}
+\global\long\def\minimizer#1{#1_{*}}
+\global\long\def\etal{\textrm{et. al.}}
+\global\long\def\tr{\operatorname{tr}}
+\global\long\def\trace{\operatorname{trace}}
+\global\long\def\diag{\text{diag}}
+\global\long\def\rank{\text{rank}}
+\global\long\def\linspan{\text{span}}
+\global\long\def\proj{\text{Proj}}
+\global\long\def\argmax{\operatornamewithlimits{arg\, max}}
+\global\long\def\argmin{\operatornamewithlimits{arg\, min}}
+\global\long\def\bfx{\mathbf{x}}
+\global\long\def\bfy{\mathbf{y}}
+\global\long\def\bfl{\mathbf{\lambda}}
+\global\long\def\bfm{\mathbf{\mu}}
+\global\long\def\calL{\mathcal{L}}
+\global\long\def\vw{\boldsymbol{w}}
+\global\long\def\vx{\boldsymbol{x}}
+\global\long\def\vxi{\boldsymbol{\xi}}
+\global\long\def\valpha{\boldsymbol{\alpha}}
+\global\long\def\vbeta{\boldsymbol{\beta}}
+\global\long\def\vsigma{\boldsymbol{\sigma}}
+\global\long\def\vmu{\boldsymbol{\mu}}
+\global\long\def\vtheta{\boldsymbol{\theta}}
+\global\long\def\vd{\boldsymbol{d}}
+\global\long\def\vs{\boldsymbol{s}}
+\global\long\def\vt{\boldsymbol{t}}
+\global\long\def\vh{\boldsymbol{h}}
+\global\long\def\ve{\boldsymbol{e}}
+\global\long\def\vf{\boldsymbol{f}}
+\global\long\def\vg{\boldsymbol{g}}
+\global\long\def\vz{\boldsymbol{z}}
+\global\long\def\vk{\boldsymbol{k}}
+\global\long\def\va{\boldsymbol{a}}
+\global\long\def\vb{\boldsymbol{b}}
+\global\long\def\vv{\boldsymbol{v}}
+\global\long\def\vy{\boldsymbol{y}}
+\global\long\def\hil{\ch}
+\global\long\def\rkhs{\hil}
+\maketitle
+
+\textbf{Due: Tuesday, March 22, 2016, at 6pm (Submit via NYU Classes)}
+
+\textbf{Instructions}: Your answers to the questions below, including
+plots and mathematical work, should be submitted as a single file,
+either HTML or PDF. You may include your code inline or submit it
+as a separate file. You may either scan hand-written work or, preferably,
+write your answers using software that typesets mathematics (e.g.
+\LaTeX, \LyX{}, or MathJax via iPython). 
+
+
+\section{Introduction}
+
+This problem set is entirely written -- we'll return to coding problems
+on the next problem set. The problem set begins with a review of some
+important linear algebra concepts that we routinely use in machine
+learning and statistics. The solutions to each of these problems is
+at most a few lines long, and we've tried to give helpful hints. These
+aren't meant to be very challenging problems -- just the opposite,
+in fact -- we'd like this material to be second nature to you. We
+next have a couple problems on kernel methods: the first explores
+what geometric information about the data is stored in the kernel
+matrix, and the second revisits kernel ridge regression with a direct
+approach, rather than using the Representer Theorem. The last required
+problem has some exercises related to decision trees. We also have
+three optional problems this week. The first completes the proof of
+the Representer Theorem that we discussed in lecture. The second applies
+Lagrangian duality to show the equivalence of Tikhonov and Ivanov
+regularization. And the third introduces an approach to ``novelty''
+or ``anomoly'' detection as an exercise in the machinery of Lagrangian
+duality. 
+
+
+\section{Positive Semidefinite Matrices}
+
+In statistics and machine learning, we use positive semidefinite matrices
+a lot. Let's recall some definitions from linear algebra that will
+be useful here:
+
+
+\begin{defn*}
+A set of vectors $\left\{ x_{1},\ldots,x_{n}\right\} $ is \textbf{orthonormal}
+if $\left\langle x_{i},x_{i}\right\rangle =1$ for any $i\in\left\{ 1,\ldots,n\right\} $
+(i.e. $x_{i}$ has unit norm), and for any $i,j\in\left\{ 1,\ldots,n\right\} $
+with $i\neq j$ we have $\left\langle x_{i},x_{j}\right\rangle =0$
+(i.e. $x_{i}$ and $x_{j}$ are orthogonal).
+
+Note that if the vectors are column vectors in a Euclidean space,
+we can write this as $x_{i}^{T}x_{j}=\ind{i\neq j}$ for all $i,j\in\left\{ 1,\ldots,n\right\} $. 
+\end{defn*}
+
+\begin{defn*}
+A matrix is \textbf{orthogonal }if it is a square matrix with orthonormal
+columns. 
+
+It follows from the definition that if a matrix $M\in\reals^{n\times n}$
+is orthogonal, then $M^{T}M=I$, where $I$ is the $n\times n$ identity
+matrix. Thus $M^{T}=M^{-1}$, and so $MM^{T}=I$ as well. 
+\end{defn*}
+
+\begin{defn*}
+A matrix $M$ is \textbf{symmetric }if $M=M^{T}$. 
+\end{defn*}
+
+\begin{defn*}
+For a square matrix $M$, if $Mv=\lambda v$ for some column vector
+$v$ and scalar $\lambda$, then $v$ is called an \textbf{eigenvector}
+of $M$ and $v$ is the corresponding \textbf{eigenvalue}. \end{defn*}
+\begin{thm*}
+[Spectral Theorem]A real, symmetric matrix $M\in\reals^{n\times n}$
+can be diagonalized as $M=Q\Sigma Q^{T}$, where $Q\in\reals^{n\times n}$
+is an orthogonal matrix whose columns are a set of orthonormal eigenvectors
+of $M$, and $\Sigma$ is a diagonal matrix of the corresponding eigenvalues. \end{thm*}
+\begin{defn*}
+A real, symmetric matrix $M\in\reals^{n\times n}$ is \textbf{positive
+semidefinite (psd)} if for any $x\in\reals^{n}$, 
+\[
+x^{T}Mx\ge0.
+\]
+
+
+Note that unless otherwise specified, when a matrix is described as
+positive semidefinite, we are implicitly assuming it is real and symmetric
+(or complex and Hermitian in certain contexts, though not here).
+
+As an exercise in matrix multiplication, note that for any matrix
+$A$ with columns $a_{1},\ldots,a_{d}$, that is 
+\[
+A=\begin{pmatrix}| &  & |\\
+a_{1} & \cdots & a_{d}\\
+| &  & |
+\end{pmatrix}\in\reals^{n\times d},
+\]
+we have
+\[
+A^{T}MA=\begin{pmatrix}a_{1}^{T}Ma_{1} & a_{1}^{T}Ma_{2} & \cdots & a_{1}^{T}Ma_{d}\\
+a_{2}^{T}Ma_{1} & a_{2}^{T}Ma_{2} & \cdots & a_{2}^{T}Ma_{d}\\
+\vdots & \vdots & \cdots & \vdots\\
+a_{d}^{T}Ma_{1} & a_{d}^{T}Ma_{2} & \cdots & a_{d}^{T}Ma_{d}
+\end{pmatrix}.
+\]
+So $M$ is psd if and only if for any $A\in\reals^{n\times d}$, we
+have $\diag(A^{T}MA)=\left(a_{1}^{T}Ma_{1},\ldots,a_{d}^{T}Ma_{d}\right)^{T}\succeq0$,
+where $\succeq$ is elementwise inequality, and $0$ is a $d\times1$
+column vector of $0$'s . \end{defn*}
+\begin{enumerate}
+\item Give an example of an orthogonal matrix that is not symmetric. (Hint:
+You can use a $2\times2$ matrix with only $0$'s and $1$'s.) 
+\item Use the definition of a psd matrix and the spectral theorem to show
+that all eigenvalues of a positive semidefinite matrix $M$ are non-negative.
+{[}Hint: By Spectral theorem, $\Sigma=Q^{T}MQ$ for some $Q$. What
+if you take $A=Q$ in the ``exercise in matrix multiplication''
+described above?{]} 
+\item In this problem we show that a psd matrix is a matrix version of a
+non-negative scalar, in that they both have a ``square root''. Show
+that a symmetric matrix $M$ can be expressed as $M=BB^{T}$ for some
+matrix $B$, if and only if $M$ is psd. {[}Hint: To show $M=BB^{T}$
+implies $M$ is psd, use the fact that for any vector $v$, $v^{T}v\ge0$.
+To show that $M$ psd implies $M=BB^{T}$ for some $B$, use the Spectral
+Theorem.{]} 
+\end{enumerate}
+
+\section{Positive Definite Matices}
+\begin{defn*}
+A real, symmetric matrix $M\in\reals^{n\times n}$ is \textbf{positive
+definite} (spd) if for any $x\in\reals^{n}$ with $x\neq0$, 
+\[
+x^{T}Mx>0.
+\]
+\end{defn*}
+\begin{enumerate}
+\item Show that all eigenvalues of a symmetric positive definite matrix
+are positive. {[}Hint: You can use the same method as you used for
+psd matrices above.{]} 
+\item Let $M$ be a symmetric positve definite matrix. By the spectral theorem,
+$M=Q\Sigma Q^{T}$, where $\Sigma$ is a diagonal matrix of the eigenvalues
+of $M$. By the previous problem, all diagonal entries of $\Sigma$
+are positive. If $\Sigma=\diag\left(\sigma_{1},\ldots,\sigma_{n}\right)$,
+then $\Sigma^{-1}=\diag\left(\sigma_{1}^{-1},\ldots,\sigma_{n}^{-1}\right)$.
+Show that the matrix $Q\Sigma^{-1}Q^{T}$ is the inverse of $M$. 
+\item Since positive semidefinite matrices may have eigenvalues that are
+zero, we see by the previous problem that not all psd matrices are
+invertible. Show that if $M$ is a psd matrix and $I$ is the identity
+matrix, then $M+\lambda I$ is symmetric positive definite for any
+$\lambda>0$, and give an expression for the inverse of $M+\lambda I$.
+\item Let $M$ and $N$ be symmetric matrices, with $M$ positive semidefinite
+and $N$ positive definite. Use the definitions of psd and spd to
+show that $M+N$ is symmetric positive definite. Thus $M+N$ is invertible.
+(Hint: For any $x\neq0$, show that $x^{T}(M+N)x>0$. Also note that
+$x^{T}(M+N)x=x^{T}Mx+x^{T}Nx$.) 
+\end{enumerate}
+
+\section{Kernel Matrices}
+
+The following problem will gives us some additional insight into
+what information is encoded in the kernel matrix. 
+\begin{enumerate}
+\item Consider a set of vectors $S=\{x_{1},\ldots,x_{m}\}$. Let $X$ denote
+the matrix whose rows are these vectors. Form the Gram matrix $K=XX^{T}$.
+Show that knowing $K$ is equivalent to knowing the set of pairwise
+distances among the vectors in $S$ as well as the vector lengths.
+{[}Hint: The distance between $x$ and $y$ is given by $d(x,y)=\|x-y\|$,
+and the norm of a vector $x$ is defined as $\|x\|=$$\sqrt{\left\langle x,x\right\rangle }=\sqrt{x^{T}x}$.{]} 
+\end{enumerate}
+
+\section{Kernel Ridge Regression}
+
+In lecture, we discussed how to kernelize ridge regression using the
+representer theorem. He we pursue a bare-hands approach. 
+
+Suppose our input space is $\mbox{\ensuremath{\cx}=}\reals^{d}$ and
+our output space is $\cy=\reals$. Let $\cd=\left\{ \left(x_{1},y_{1}\right),\ldots,\left(x_{n},y_{n}\right)\right\} $
+be a training set from $\cx\times\cy$. We'll use the ``design matrix''
+$X\in\reals^{n\times d}$, which has the input vectors as rows: 
+\[
+X=\begin{pmatrix}-x_{1}-\\
+\vdots\\
+-x_{n}-
+\end{pmatrix}.
+\]
+Recall the ridge regression objective function:
+\[
+J(w)=||Xw-y||^{2}+\lambda||w||^{2},
+\]
+for $\lambda>0$.
+\begin{enumerate}
+\item Show that for $w$ to be a minimizer of $J(w)$, we must have $X^{T}Xw+\lambda Iw=X^{T}y$.
+Show that the minimizer of $J(w)$ is $w=(X^{T}X+\lambda I)^{-1}X^{T}y$.
+Justify that the matrix $X^{T}X+\lambda I$ is invertible, for $\lambda>0$.
+(The last part should follow easily from the earlier exercises on
+psd and spd matrices.) 
+\item Rewrite $X^{T}Xw+\lambda Iw=X^{T}y$ as $w=\frac{1}{\lambda}(X^{T}y-X^{T}Xw)$.
+Based on this, show that we can write $w=X^{T}\alpha$ for some $\alpha$,
+and give an expression for $\alpha$.
+\item Based on the fact that $w=X^{T}\alpha$, explain why we say w is ``in
+the span of the data.''
+\item Show that $\alpha=(\lambda I+XX^{T})^{-1}y$. Note that $XX^{T}$
+is the kernel matrix for the standard vector dot product. (Hint: Replace
+$w$ by $X^{T}\alpha$ in the expression for $\alpha$, and then solve
+for $\alpha$.)
+\item Give a kernelized expression for the $Xw$, the predicted values on
+the training points. (Hint: Replace $w$ by $X^{T}\alpha$ and $\alpha$
+by its expression in terms of the kernel matrix $XX^{T}$.
+\item Give an expression for the prediction $f(x)=x^{T}w^{*}$ for a new
+point $x$, not in the training set. The expression should only involve
+$x$ via inner products with other $x$'s. {[}Hint: It is often convenient
+to define the column vector
+\[
+k_{x}=\begin{pmatrix}x^{T}x_{1}\\
+\vdots\\
+x^{T}x_{n}
+\end{pmatrix}
+\]
+to simplify the expression.{]} 
+\end{enumerate}
+
+\section{Decision Trees }
+
+
+\subsection{Building Trees by Hand\protect\protect\footnote{Based on Homework \#4 from David Sontag's DS-GA 1003, Spring 2014.}}
+
+In this problem we're going to be build a a small decision tree by
+hand for predicting whether or not a mushroom is poisonous. The training
+dataset is given below:
+
+\begin{center}
+\begin{tabular}{lrll}
+\hline 
+\multicolumn{1}{c}{Poisonous} & \multicolumn{1}{c}{Size} & \multicolumn{1}{c}{Spots} & \multicolumn{1}{c}{Color}\tabularnewline
+\hline 
+N  & $5$  & N  & White\tabularnewline
+N  & $2$  & Y  & White\tabularnewline
+N  & $2$  & N  & Brown\tabularnewline
+N  & $3$  & Y  & Brown\tabularnewline
+N  & $4$  & N  & White\tabularnewline
+N  & $1$  & N  & Brown\tabularnewline
+Y  & $5$  & Y  & White\tabularnewline
+Y  & $4$  & Y  & Brown\tabularnewline
+Y  & $4$  & Y  & Brown\tabularnewline
+Y  & $1$  & Y  & White\tabularnewline
+Y  & $1$  & Y  & Brown\tabularnewline
+\hline 
+\end{tabular}
+\par\end{center}
+
+We're going to build a binary classification tree using the Gini index
+as the node impurity measure. The feature ``Size'' should be treated
+as numeric (i.e. we should find real-valued split points). For a given
+split, let $R_{1}$ and $R_{2}$ be the sets of data indices in each
+of the two regions of the split. Let $\hat{p}_{1}$ be the proportion
+of poisonous mushrooms in $R_{1}$, and let $\hat{p}_{2}$ be the
+proportion in $R_{2}$. Let $N_{1}$ and $N_{2}$ be the total number
+of training points in $R_{1}$ and $R_{2}$, respectively. Then the
+Gini index for the first region is $Q_{1}=2\hat{p}_{1}(1-\hat{p}_{1})$
+and $Q_{2}=2\hat{p}_{2}(1-\hat{p}_{2})$ for the second region. When
+choosing our splitting variable and split point, we're looking to
+minimize the weighted impurity measure: 
+\[
+N_{1}Q_{1}+N_{2}Q_{2}.
+\]
+
+\begin{enumerate}
+\item What is the first split for a binary classification tree on this data,
+using the Gini index? Work this out ``by hand'', and show your calculations.
+{[}Hint: This should only require calculating 6 weighted impurity
+measures.{]} 
+\item The first split partitions the data into two parts. Make another split
+so that the space is partitioned into 3 regions. Determine the predicted
+``probability of poisonous'' for each of those regions.
+\item Suppose we build a binary tree on the dataset given below using the
+Gini criterion and we build it so deep that all terminal nodes are
+either pure or cannot be split further. (To think about: How could
+we have a node that is not pure, but cannot be split further?) What
+would the training error be, given as a percentage? Why? {[}Hint:
+You can do this by inspection, without any significant calculations.{]} 
+\end{enumerate}
+\begin{center}
+\begin{tabular}{rrrr}
+\hline 
+\multicolumn{1}{c}{Y} & \multicolumn{1}{c}{A} & \multicolumn{1}{c}{B} & \multicolumn{1}{c}{C}\tabularnewline
+\hline 
+$0$  & $0$  & $0$  & $0$\tabularnewline
+$0$  & $0$  & $0$  & $1$\tabularnewline
+$0$  & $0$  & $1$  & $0$\tabularnewline
+$0$  & $0$  & $1$  & $0$\tabularnewline
+$0$  & $0$  & $1$  & $1$\tabularnewline
+$1$  & $0$  & $1$  & $1$\tabularnewline
+$0$  & $1$  & $0$  & $0$\tabularnewline
+$1$  & $1$  & $0$  & $1$\tabularnewline
+$1$  & $1$  & $1$  & $0$\tabularnewline
+$0$  & $1$  & $1$  & $1$\tabularnewline
+$1$  & $1$  & $1$  & $1$\tabularnewline
+\hline 
+\end{tabular}
+\par\end{center}
+
+
+\subsection{Investigating Impurity Measures\protect\protect\footnote{From Bishop's \emph{Pattern Recognition and Machine Learning}, Problem
+14.11} }
+\begin{enumerate}
+\item Consider a data set with $400$ data points from class $C_{1}$ and
+$400$ data points from class $C_{2}$ . Suppose that a tree model
+$A$ splits these into $(300,100)$ at the first leaf node and $(100,300)$
+at the second leaf node, where $(n,m)$ denotes that $n$ points are
+assigned to $C_{1}$ and $m$ points are assigned to $C_{2}$ . Similarly,
+suppose that a second tree model $B$ splits them into $(200,400)$
+and $(200,0)$. Show that the misclassification rates for the two
+trees are equal, but that the cross-entropy and Gini impurity measures
+are both lower for tree $B$ than for tree $A$. 
+\end{enumerate}
+
+\section{Representer Theorem {[}Optional{]}}
+
+Recall the following theorem from lecture:
+\begin{thm*}
+[Representer Theorem] Let 
+\[
+J(w)=R\left(\|w\|\right)+L\left(\left\langle w,\psi(x_{1})\right\rangle ,\ldots,\left\langle w,\psi(x_{n})\right\rangle \right),
+\]
+where $R:\reals^{\ge0}\to\reals$ is nondecreasing (the \textbf{regularization}
+term) and $L:\reals^{n}\to\reals$ is arbitrary (the\textbf{ loss
+}term). If $J(w)$ has a minimizer, then it has a minimizer of the
+form
+\[
+w^{*}=\sum_{i=1}^{n}\alpha_{i}\psi(x_{i}).
+\]
+Furthermore, if $R$ is strictly increasing, then all minimizers have
+this form.
+\end{thm*}
+Note: There is nothing in this theorem that guarantees $J(w)$ has
+a minimizer at all. If there is no minimizer, then this theorem does
+not tell us anything. 
+
+In the lecture slides we proved the first part of the theorem. Now
+we will prove the part beginning with ``Furthermore.'' 
+\begin{enumerate}
+\item Let $M$ be a closed subspace of a Hilbert space $\ch$. F or any
+$x\in\ch$, let $m_{0}=\proj_{M}x$ be the projection of $x$ onto
+$M$. By the Projection Theorem, we know that $x-m_{0}\perp M$. Then
+by the Pythagorean Theorem, we know $\|x\|^{2}=\|m_{0}\|^{2}+\|x-m_{0}\|^{2}$.
+From this we concluded in lecture that $\|m_{0}\|\le\|x\|$. Show
+that we have $\|m_{0}\|=\|x\|$ only when $m_{0}=x$. (Hint: Use the
+postive-definiteness of the inner product: $\left\langle x,x\right\rangle \ge0$
+and $\left\langle x,x\right\rangle =0\iff x=0$, and the fact that
+we're using the norm derived from such an inner product.)
+\item Continue the proof of the Representer Theorem from the lecture slides
+to show that if $R$ is strictly increasing, then all minimizers have
+this form. (Hint: Consider separately the cases that $\|w\|<\|w^{*}\|$
+and the case $\|w\|=\|w^{*}\|$.)
+\item Suppose that $R:\reals^{\ge0}\to\reals$ and $L:\reals^{n}\to\reals$
+are both convex functions. Use properties of convex functions to show
+that $w\mapsto L\left(\left\langle w,\psi(x_{1})\right\rangle ,\ldots,\left\langle w,\psi(x_{n})\right\rangle \right)$
+is a convex function of $w$, and then that $J(w)$ is also convex
+function of $w$. For simplicity, you may assume that our feature
+space is $\reals^{d}$, rather than a generic Hilbert space. You may
+also use the fact that the composition of a convex function and an
+affine function is convex. That is:, suppose $f:\reals^{n}\to\reals,\ A\in\reals^{n\times m}$
+and $b\in\reals^{n}.$ Define $g:\reals^{m}\to\reals$ by $g(x)=f\left(Ax+b\right)$.
+Then if $f$ is convex, then so is $g$. From this exercise, we can
+conclude that if $L$ and $R$ are convex, then $J$ does have a minimizer
+of the form $w^{*}=\sum_{i=1}^{n}\alpha_{i}\psi(x_{i})$, and if $R$
+is also strictly increasing, then all minimizers of $J$ have this
+form. 
+\end{enumerate}
+
+\section{Ivanov and Tikhonov Regularization {[}Optional{]}}
+
+In lecture there was a claim that the Ivanov and Tikhonov forms of
+ridge and lasso regression are equivalent. We will now prove a more
+general result.
+
+
+\subsection{Tikhonov optimal implies Ivanov optimal}
+
+Let $\phi:\cf\to\reals$ be any performance measure of $f\in\cf$,
+and let $\Omega:\cf\to\reals$ be any complexity measure. For example,
+for ridge regression over the linear hypothesis space $\cf=\left\{ f_{w}(x)=w^{T}x\mid w\in\reals^{d}\right\} $,
+we would have $\phi(f_{w})=\frac{1}{n}\sum_{i=1}^{n}\left(w^{T}x_{i}-y_{i}\right)^{2}$
+and $\Omega(f_{w})=w^{T}w$.
+\begin{enumerate}
+\item Suppose that for some $\lambda>0$ we have the Tikhonov regularization
+solution
+\begin{equation}
+\minimizer f=\argmin_{f\in\cf}\left[\phi(f)+\lambda\Omega(f)\right].\label{eq:tikhonovReg}
+\end{equation}
+Show that $\minimizer f$ is also an Ivanov solution. That is, $\exists r>0$
+such that
+\begin{equation}
+\minimizer f=\argmin_{\substack{f\in\cf}
+}\phi(f)\mbox{ subject to }\Omega(f)\le r.\label{eq:ivanovReg}
+\end{equation}
+(Hint: Start by figuring out what $r$ should be. If you're stuck
+on this, ask for help. Then one approach is proof by contradiction:
+suppose $f^{*}$ is not the optimum in \eqref{eq:ivanovReg} and show
+that contradicts the fact that $f^{*}$ solves \eqref{eq:tikhonovReg}.) 
+\end{enumerate}
+
+\subsection{Ivanov optimal implies Tikhonov optimal}
+
+For the converse, we will restrict our hypothesis space to a parametric
+set. That is, 
+\[
+\cf=\left\{ f_{w}(x):\cx\to\reals\mid w\in\reals^{d}\right\} .
+\]
+So we will now write $\phi$ and $\Omega$ as functions of $w\in\reals^{d}$. 
+
+Let $w^{*}$ be a solution to the following Ivanov optimization problem:
+\begin{eqnarray*}
+\textrm{minimize} &  & \phi(w)\\
+\textrm{subject to} &  & \Omega(w)\le r.
+\end{eqnarray*}
+Assume that strong duality holds for this optimization problem and
+that the dual solution is attained. Then we will show that there exists
+a $\lambda\ge0$ such that $\minimizer w=\argmin_{w\in\reals^{d}}\left[\phi(w)+\lambda\Omega(w)\right].$ 
+\begin{enumerate}
+\item Write the Lagrangian $L(w,\lambda)$ for the Ivanov optimization problem. 
+\item Write the dual optimization problem in terms of the dual objective
+function $g(\lambda)$, and give an expression for $g(\lambda)$.
+{[}Writing $g(\lambda)$ as an optimization problem is expected -
+don't try to solve it.{]} 
+\item We assumed that the dual solution is attained, so let $\lambda^{*}=\argmax_{\lambda\ge0}g(\lambda)$.
+We also assumed strong duality, which implies $\phi(w^{*})=g(\lambda^{*})$.
+Show that the minimum in the expression for $g(\lambda^{*})$ is attained
+at $w^{*}$. {[}Hint: You can use the same approach we used when we
+derived that strong duality implies complementary slackness \footnote{See \url{https://davidrosenberg.github.io/ml2015/docs/3b.convex-optimization.pdf}
+slide 24.}.{]} \textbf{Conclude the proof} by showing that for the choice of
+$\lambda=\lambda^{*}$, we have $\minimizer w=\argmin_{w\in\reals^{d}}\left[\phi(w)+\lambda\Omega(w)\right].$ 
+\item {[}Optional{]} The conclusion of the previous problem allows $\lambda=0$,
+which means we're not actually regularizing at all. To ensure we get
+a proper Ivanov regularization problem, we need an additional assumption.
+The one below is taken from \cite{kloft2009efficient}:
+\[
+\inf_{w\in\reals^{d}}\phi(w)<\inf_{\substack{w\in\reals^{d}\\
+\Omega(w)\le r
+}
+}\phi(w)
+\]
+Note that this is a rather intuitive condition: it is simply saying
+that we can fit the training data better {[}strictly better{]} if
+we don't use any regularization. With this additional condition, show
+that $\minimizer w=\argmin_{w\in\reals^{d}}\left[\phi(w)+\lambda\Omega(w)\right]$
+for some $\lambda>0$. 
+\end{enumerate}
+
+\subsection{Ivanov implies Tikhonov for Ridge Regression.}
+
+To show that Ivanov implies Tikhonov for the ridge regression problem
+(square loss with $\ell_{2}$ regularization), we need to demonstrate
+strong duality and that the dual optimum is attained. Both of these
+things are implied by Slater's constraint qualifications. 
+\begin{enumerate}
+\item Show that the Ivanov form of ridge regression is a convex optimization
+problem with a strictly feasible point. 
+\end{enumerate}
+
+\section{Novelty Detection {[}Optional{]}}
+
+(Problem derived from Michael Jordan's Stat 241b Problem Set \#2,
+Spring 2004)
+
+A novelty detection algorithm can be based on an algorithm that finds
+the smallest possible sphere containing the data in feature space. 
+\begin{enumerate}
+\item Let $\phi:\cx\to\ch$ be our feature map, mapping elements of the
+input space into our ``feature space'' $\ch$, which is a Hilbert
+space (and thus has an inner product). Formulate the novelty detection
+algorithm described above as an optimization problem. 
+\item Give the Lagrangian for this problem, and write an equivalent, unconstrained
+``$\inf\sup$'' version of the optimization problem.
+\item Show that we have strong duality and thus we will have an equivalent
+optimization problem if we swap the inf and the sup. {[}Hint: Use
+Slater's qualification conditions.{]} 
+\item Solve the inner minimization problem and give the dual optimization
+problem. {[}Note: You may find it convenient to define the kernel
+function $k(x_{i},x_{j})=\left\langle \phi(x_{i}),\phi(x_{j})\right\rangle $
+and to write your final problem in terms of the corresponding kernel
+matrix $K$ to simplify notation.{]} 
+\item Write an expression for the optimal sphere in terms of the solution
+to the dual problem. 
+\item Write down the complementary slackness conditions for this problem,
+and characterize the points that are the ``support vectors''.
+\item Briefly explain how you would apply this algorithm in practice to
+detect ``novel'' instances.
+\item {[}More Optional{]} Redo this problem allowing some of the data to
+lie outside of the sphere, where the number of points outside the
+sphere can be increased or decreased by adjusting a parameter. (Hint:
+Use slack variables). \end{enumerate}
+
+\end{document}

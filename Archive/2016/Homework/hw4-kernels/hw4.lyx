@@ -1,0 +1,3613 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\title{Machine Learning and Computational Statistics, Spring 2016\\
+Homework 4: Kernels, Duals, and Trees} 
+\date{} 
+
+
+
+
+\usepackage{amsfonts}\usepackage{capt-of}
+%\usepackage{url}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{bbm}
+\usepackage{enumerate}
+\newcommand{\carlos}[1]{\textcolor{red}{Carlos: #1}}
+\newcommand{\field}[1]{\mathbb{#1}} 
+\newcommand{\hide}[1]{#1}
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\providecommand{\m}[1]{\mathbf{#1}}
+\providecommand{\norm}[1]{\left\|#1\right\|}
+\providecommand{\sign}[1]{\text{sign}\left(#1\right)}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\providecommand{\what}{\m{\hat{w}}}
+\providecommand{\dw}{\Delta w}
+\providecommand{\dmw}{\Delta \m{w}}
+\providecommand{\hy}{\hat{y}}
+\end_preamble
+\options ruled
+\use_default_options false
+\begin_modules
+algorithm2e
+theorems-starred
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package none
+\inputencoding auto
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter courier
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks false
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref section
+\pdf_pdfusetitle false
+\papersize letterpaper
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\reals}{\mathbf{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\integers}{\mathbf{Z}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\naturals}{\mathbf{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rationals}{\mathbf{Q}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ca}{\mathcal{A}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cb}{\mathcal{B}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cc}{\mathcal{C}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cd}{\mathcal{D}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ce}{\mathcal{E}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cf}{\mathcal{F}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cg}{\mathcal{G}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ch}{\mathcal{H}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ci}{\mathcal{I}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cj}{\mathcal{J}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ck}{\mathcal{K}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cl}{\mathcal{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cm}{\mathcal{M}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cn}{\mathcal{N}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\co}{\mathcal{O}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cp}{\mathcal{P}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cq}{\mathcal{Q}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\calr}{\mathcal{R}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cs}{\mathcal{S}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ct}{\mathcal{T}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cu}{\mathcal{U}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cv}{\mathcal{V}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cw}{\mathcal{W}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cx}{\mathcal{X}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cy}{\mathcal{Y}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cz}{\mathcal{Z}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ind}[1]{1(#1)}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\pr}{\mathbb{P}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\predsp}{\cy}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\outsp}{\cy}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\prxy}{P_{\cx\times\cy}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\prx}{P_{\cx}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\prygivenx}{P_{\cy\mid\cx}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ex}{\mathbb{E}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\var}{\textrm{Var}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cov}{\textrm{Cov}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\sgn}{\textrm{sgn}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\sign}{\textrm{sign}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\kl}{\textrm{KL}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\law}{\mathcal{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\eps}{\varepsilon}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\as}{\textrm{ a.s.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\io}{\textrm{ i.o.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ev}{\textrm{ ev.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\convd}{\stackrel{d}{\to}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\eqd}{\stackrel{d}{=}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\del}{\nabla}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\loss}{\ell}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\risk}{R}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\emprisk}{\hat{R}_{\ell}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\lossfnl}{L}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\emplossfnl}{\hat{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\empminimizer}[1]{\hat{#1}_{\ell}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\minimizer}[1]{#1_{*}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\etal}{\textrm{et. al.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\tr}{\operatorname{tr}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\trace}{\operatorname{trace}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\diag}{\text{diag}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\rank}{\text{rank}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\linspan}{\text{span}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\proj}{\text{Proj}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\argmax}{\operatornamewithlimits{arg\, max}}
+{\mbox{argmax}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\argmin}{\operatornamewithlimits{arg\, min}}
+{\mbox{argmin}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfx}{\mathbf{x}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfy}{\mathbf{y}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfl}{\mathbf{\lambda}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfm}{\mathbf{\mu}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\calL}{\mathcal{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vw}{\boldsymbol{w}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vx}{\boldsymbol{x}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vxi}{\boldsymbol{\xi}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\valpha}{\boldsymbol{\alpha}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vbeta}{\boldsymbol{\beta}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vsigma}{\boldsymbol{\sigma}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vmu}{\boldsymbol{\mu}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vtheta}{\boldsymbol{\theta}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vd}{\boldsymbol{d}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vs}{\boldsymbol{s}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vt}{\boldsymbol{t}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vh}{\boldsymbol{h}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ve}{\boldsymbol{e}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vf}{\boldsymbol{f}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vg}{\boldsymbol{g}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vz}{\boldsymbol{z}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vk}{\boldsymbol{k}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\va}{\boldsymbol{a}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vb}{\boldsymbol{b}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vv}{\boldsymbol{v}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vy}{\boldsymbol{y}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\hil}{\ch}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\rkhs}{\hil}
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+maketitle
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Due: Tuesday, March 22, 2016, at 6pm (Submit via NYU Classes)
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Instructions
+\series default
+: Your answers to the questions below, including plots and mathematical
+ work, should be submitted as a single file, either HTML or PDF.
+ You may include your code inline or submit it as a separate file.
+ You may either scan hand-written work or, preferably, write your answers
+ using software that typesets mathematics (e.g.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+LaTeX
+\end_layout
+
+\end_inset
+
+, LyX, or MathJax via iPython).
+ 
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+This problem set is entirely written -- we'll return to coding problems
+ on the next problem set.
+ The problem set begins with a review of some important linear algebra concepts
+ that we routinely use in machine learning and statistics.
+ The solutions to each of these problems is at most a few lines long, and
+ we've tried to give helpful hints.
+ These aren't meant to be very challenging problems -- just the opposite,
+ in fact -- we'd like this material to be second nature to you.
+ We next have a couple problems on kernel methods: the first explores what
+ geometric information about the data is stored in the kernel matrix, and
+ the second revisits kernel ridge regression with a direct approach, rather
+ than using the Representer Theorem.
+ The last required problem has some exercises related to decision trees.
+ We also have three optional problems this week.
+ The first completes the proof of the Representer Theorem that we discussed
+ in lecture.
+ The second applies Lagrangian duality to show the equivalence of Tikhonov
+ and Ivanov regularization.
+ And the third introduces an approach to 
+\begin_inset Quotes eld
+\end_inset
+
+novelty
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+anomoly
+\begin_inset Quotes erd
+\end_inset
+
+ detection as an exercise in the machinery of Lagrangian duality.
+ 
+\end_layout
+
+\begin_layout Section
+Positive Semidefinite Matrices
+\end_layout
+
+\begin_layout Standard
+In statistics and machine learning, we use positive semidefinite matrices
+ a lot.
+ Let's recall some definitions from linear algebra that will be useful here:
+\end_layout
+
+\begin_layout --Separator--
+
+\end_layout
+
+\begin_layout Definition
+A set of vectors 
+\begin_inset Formula $\left\{ x_{1},\ldots,x_{n}\right\} $
+\end_inset
+
+ is 
+\series bold
+orthonormal
+\series default
+ if 
+\begin_inset Formula $\left\langle x_{i},x_{i}\right\rangle =1$
+\end_inset
+
+ for any 
+\begin_inset Formula $i\in\left\{ 1,\ldots,n\right\} $
+\end_inset
+
+ (i.e.
+ 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ has unit norm), and for any 
+\begin_inset Formula $i,j\in\left\{ 1,\ldots,n\right\} $
+\end_inset
+
+ with 
+\begin_inset Formula $i\neq j$
+\end_inset
+
+ we have 
+\begin_inset Formula $\left\langle x_{i},x_{j}\right\rangle =0$
+\end_inset
+
+ (i.e.
+ 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{j}$
+\end_inset
+
+ are orthogonal).
+\end_layout
+
+\begin_layout Definition
+Note that if the vectors are column vectors in a Euclidean space, we can
+ write this as 
+\begin_inset Formula $x_{i}^{T}x_{j}=\ind{i\neq j}$
+\end_inset
+
+ for all 
+\begin_inset Formula $i,j\in\left\{ 1,\ldots,n\right\} $
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout --Separator--
+
+\end_layout
+
+\begin_layout Definition
+A matrix is 
+\series bold
+orthogonal 
+\series default
+if it is a square matrix with orthonormal columns.
+ 
+\end_layout
+
+\begin_layout Definition
+It follows from the definition that if a matrix 
+\begin_inset Formula $M\in\reals^{n\times n}$
+\end_inset
+
+ is orthogonal, then 
+\begin_inset Formula $M^{T}M=I$
+\end_inset
+
+, where 
+\begin_inset Formula $I$
+\end_inset
+
+ is the 
+\begin_inset Formula $n\times n$
+\end_inset
+
+ identity matrix.
+ Thus 
+\begin_inset Formula $M^{T}=M^{-1}$
+\end_inset
+
+, and so 
+\begin_inset Formula $MM^{T}=I$
+\end_inset
+
+ as well.
+ 
+\end_layout
+
+\begin_layout --Separator--
+
+\end_layout
+
+\begin_layout Definition
+A matrix 
+\begin_inset Formula $M$
+\end_inset
+
+ is 
+\series bold
+symmetric 
+\series default
+if 
+\begin_inset Formula $M=M^{T}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout --Separator--
+
+\end_layout
+
+\begin_layout Definition
+For a square matrix 
+\begin_inset Formula $M$
+\end_inset
+
+, if 
+\begin_inset Formula $Mv=\lambda v$
+\end_inset
+
+ for some column vector 
+\begin_inset Formula $v$
+\end_inset
+
+ and scalar 
+\begin_inset Formula $\lambda$
+\end_inset
+
+, then 
+\begin_inset Formula $v$
+\end_inset
+
+ is called an 
+\series bold
+eigenvector
+\series default
+ of 
+\begin_inset Formula $M$
+\end_inset
+
+ and 
+\begin_inset Formula $v$
+\end_inset
+
+ is the corresponding 
+\series bold
+eigenvalue
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Theorem
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[Spectral Theorem]
+\end_layout
+
+\end_inset
+
+A real, symmetric matrix 
+\begin_inset Formula $M\in\reals^{n\times n}$
+\end_inset
+
+ can be diagonalized as 
+\begin_inset Formula $M=Q\Sigma Q^{T}$
+\end_inset
+
+, where 
+\begin_inset Formula $Q\in\reals^{n\times n}$
+\end_inset
+
+ is an orthogonal matrix whose columns are a set of orthonormal eigenvectors
+ of 
+\begin_inset Formula $M$
+\end_inset
+
+, and 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ is a diagonal matrix of the corresponding eigenvalues.
+ 
+\end_layout
+
+\begin_layout Definition
+A real, symmetric matrix 
+\begin_inset Formula $M\in\reals^{n\times n}$
+\end_inset
+
+ is 
+\series bold
+positive semidefinite (psd)
+\series default
+ if for any 
+\begin_inset Formula $x\in\reals^{n}$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+x^{T}Mx\ge0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+Note that unless otherwise specified, when a matrix is described as positive
+ semidefinite, we are implicitly assuming it is real and symmetric (or complex
+ and Hermitian in certain contexts, though not here).
+\end_layout
+
+\begin_layout Definition
+As an exercise in matrix multiplication, note that for any matrix 
+\begin_inset Formula $A$
+\end_inset
+
+ with columns 
+\begin_inset Formula $a_{1},\ldots,a_{d}$
+\end_inset
+
+, that is 
+\begin_inset Formula 
+\[
+A=\begin{pmatrix}| &  & |\\
+a_{1} & \cdots & a_{d}\\
+| &  & |
+\end{pmatrix}\in\reals^{n\times d},
+\]
+
+\end_inset
+
+we have
+\begin_inset Formula 
+\[
+A^{T}MA=\begin{pmatrix}a_{1}^{T}Ma_{1} & a_{1}^{T}Ma_{2} & \cdots & a_{1}^{T}Ma_{d}\\
+a_{2}^{T}Ma_{1} & a_{2}^{T}Ma_{2} & \cdots & a_{2}^{T}Ma_{d}\\
+\vdots & \vdots & \cdots & \vdots\\
+a_{d}^{T}Ma_{1} & a_{d}^{T}Ma_{2} & \cdots & a_{d}^{T}Ma_{d}
+\end{pmatrix}.
+\]
+
+\end_inset
+
+So 
+\begin_inset Formula $M$
+\end_inset
+
+ is psd if and only if for any 
+\begin_inset Formula $A\in\reals^{n\times d}$
+\end_inset
+
+, we have 
+\begin_inset Formula $\diag(A^{T}MA)=\left(a_{1}^{T}Ma_{1},\ldots,a_{d}^{T}Ma_{d}\right)^{T}\succeq0$
+\end_inset
+
+, where 
+\begin_inset Formula $\succeq$
+\end_inset
+
+ is elementwise inequality, and 
+\begin_inset Formula $0$
+\end_inset
+
+ is a 
+\begin_inset Formula $d\times1$
+\end_inset
+
+ column vector of 
+\begin_inset Formula $0$
+\end_inset
+
+'s .
+ 
+\end_layout
+
+\begin_layout Enumerate
+Give an example of an orthogonal matrix that is not symmetric.
+ (Hint: You can use a 
+\begin_inset Formula $2\times2$
+\end_inset
+
+ matrix with only 
+\begin_inset Formula $0$
+\end_inset
+
+'s and 
+\begin_inset Formula $1$
+\end_inset
+
+'s.) 
+\end_layout
+
+\begin_layout Enumerate
+Use the definition of a psd matrix and the spectral theorem to show that
+ all eigenvalues of a positive semidefinite matrix 
+\begin_inset Formula $M$
+\end_inset
+
+ are non-negative.
+ [Hint: By Spectral theorem, 
+\begin_inset Formula $\Sigma=Q^{T}MQ$
+\end_inset
+
+ for some 
+\begin_inset Formula $Q$
+\end_inset
+
+.
+ What if you take 
+\begin_inset Formula $A=Q$
+\end_inset
+
+ in the 
+\begin_inset Quotes eld
+\end_inset
+
+exercise in matrix multiplication
+\begin_inset Quotes erd
+\end_inset
+
+ described above?] 
+\end_layout
+
+\begin_layout Enumerate
+In this problem we show that a psd matrix is a matrix version of a non-negative
+ scalar, in that they both have a 
+\begin_inset Quotes eld
+\end_inset
+
+square root
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Show that a symmetric matrix 
+\begin_inset Formula $M$
+\end_inset
+
+ can be expressed as 
+\begin_inset Formula $M=BB^{T}$
+\end_inset
+
+ for some matrix 
+\begin_inset Formula $B$
+\end_inset
+
+, if and only if 
+\begin_inset Formula $M$
+\end_inset
+
+ is psd.
+ [Hint: To show 
+\begin_inset Formula $M=BB^{T}$
+\end_inset
+
+ implies 
+\begin_inset Formula $M$
+\end_inset
+
+ is psd, use the fact that for any vector 
+\begin_inset Formula $v$
+\end_inset
+
+, 
+\begin_inset Formula $v^{T}v\ge0$
+\end_inset
+
+.
+ To show that 
+\begin_inset Formula $M$
+\end_inset
+
+ psd implies 
+\begin_inset Formula $M=BB^{T}$
+\end_inset
+
+ for some 
+\begin_inset Formula $B$
+\end_inset
+
+, use the Spectral Theorem.] 
+\end_layout
+
+\begin_layout Section
+Positive Definite Matices
+\end_layout
+
+\begin_layout Definition
+A real, symmetric matrix 
+\begin_inset Formula $M\in\reals^{n\times n}$
+\end_inset
+
+ is 
+\series bold
+positive definite
+\series default
+ (spd) if for any 
+\begin_inset Formula $x\in\reals^{n}$
+\end_inset
+
+ with 
+\begin_inset Formula $x\neq0$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+x^{T}Mx>0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Show that all eigenvalues of a symmetric positive definite matrix are positive.
+ [Hint: You can use the same method as you used for psd matrices above.]
+ 
+\end_layout
+
+\begin_layout Enumerate
+Let 
+\begin_inset Formula $M$
+\end_inset
+
+ be a symmetric positve definite matrix.
+ By the spectral theorem, 
+\begin_inset Formula $M=Q\Sigma Q^{T}$
+\end_inset
+
+, where 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ is a diagonal matrix of the eigenvalues of 
+\begin_inset Formula $M$
+\end_inset
+
+.
+ By the previous problem, all diagonal entries of 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ are positive.
+ If 
+\begin_inset Formula $\Sigma=\diag\left(\sigma_{1},\ldots,\sigma_{n}\right)$
+\end_inset
+
+, then 
+\begin_inset Formula $\Sigma^{-1}=\diag\left(\sigma_{1}^{-1},\ldots,\sigma_{n}^{-1}\right)$
+\end_inset
+
+.
+ Show that the matrix 
+\begin_inset Formula $Q\Sigma^{-1}Q^{T}$
+\end_inset
+
+ is the inverse of 
+\begin_inset Formula $M$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Since positive semidefinite matrices may have eigenvalues that are zero,
+ we see by the previous problem that not all psd matrices are invertible.
+ Show that if 
+\begin_inset Formula $M$
+\end_inset
+
+ is a psd matrix and 
+\begin_inset Formula $I$
+\end_inset
+
+ is the identity matrix, then 
+\begin_inset Formula $M+\lambda I$
+\end_inset
+
+ is symmetric positive definite for any 
+\begin_inset Formula $\lambda>0$
+\end_inset
+
+, and give an expression for the inverse of 
+\begin_inset Formula $M+\lambda I$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Let 
+\begin_inset Formula $M$
+\end_inset
+
+ and 
+\begin_inset Formula $N$
+\end_inset
+
+ be symmetric matrices, with 
+\begin_inset Formula $M$
+\end_inset
+
+ positive semidefinite and 
+\begin_inset Formula $N$
+\end_inset
+
+ positive definite.
+ Use the definitions of psd and spd to show that 
+\begin_inset Formula $M+N$
+\end_inset
+
+ is symmetric positive definite.
+ Thus 
+\begin_inset Formula $M+N$
+\end_inset
+
+ is invertible.
+ (Hint: For any 
+\begin_inset Formula $x\neq0$
+\end_inset
+
+, show that 
+\begin_inset Formula $x^{T}(M+N)x>0$
+\end_inset
+
+.
+ Also note that 
+\begin_inset Formula $x^{T}(M+N)x=x^{T}Mx+x^{T}Nx$
+\end_inset
+
+.) 
+\end_layout
+
+\begin_layout Section
+Kernel Matrices
+\end_layout
+
+\begin_layout Standard
+The following problem
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+This problem is from Michael Jordan's Stat 241b Problem Set #1, Spring 2004.
+\end_layout
+
+\end_inset
+
+ will gives us some additional insight into what information is encoded
+ in the kernel matrix.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Consider a set of vectors 
+\begin_inset Formula $S=\{x_{1},\ldots,x_{m}\}$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $X$
+\end_inset
+
+ denote the matrix whose rows are these vectors.
+ Form the Gram matrix 
+\begin_inset Formula $K=XX^{T}$
+\end_inset
+
+.
+ Show that knowing 
+\begin_inset Formula $K$
+\end_inset
+
+ is equivalent to knowing the set of pairwise distances among the vectors
+ in 
+\begin_inset Formula $S$
+\end_inset
+
+ as well as the vector lengths.
+ [Hint: The distance between 
+\begin_inset Formula $x$
+\end_inset
+
+ and 
+\begin_inset Formula $y$
+\end_inset
+
+ is given by 
+\begin_inset Formula $d(x,y)=\|x-y\|$
+\end_inset
+
+, and the norm of a vector 
+\begin_inset Formula $x$
+\end_inset
+
+ is defined as 
+\begin_inset Formula $\|x\|=$
+\end_inset
+
+
+\begin_inset Formula $\sqrt{\left\langle x,x\right\rangle }=\sqrt{x^{T}x}$
+\end_inset
+
+.] 
+\end_layout
+
+\begin_layout Section
+Kernel Ridge Regression
+\end_layout
+
+\begin_layout Standard
+In lecture, we discussed how to kernelize ridge regression using the representer
+ theorem.
+ He we pursue a bare-hands approach.
+ 
+\end_layout
+
+\begin_layout Standard
+Suppose our input space is 
+\begin_inset Formula $\mbox{\cx=}\reals^{d}$
+\end_inset
+
+ and our output space is 
+\begin_inset Formula $\cy=\reals$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $\cd=\left\{ \left(x_{1},y_{1}\right),\ldots,\left(x_{n},y_{n}\right)\right\} $
+\end_inset
+
+ be a training set from 
+\begin_inset Formula $\cx\times\cy$
+\end_inset
+
+.
+ We'll use the 
+\begin_inset Quotes eld
+\end_inset
+
+design matrix
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Formula $X\in\reals^{n\times d}$
+\end_inset
+
+, which has the input vectors as rows: 
+\begin_inset Formula 
+\[
+X=\begin{pmatrix}-x_{1}-\\
+\vdots\\
+-x_{n}-
+\end{pmatrix}.
+\]
+
+\end_inset
+
+Recall the ridge regression objective function:
+\begin_inset Formula 
+\[
+J(w)=||Xw-y||^{2}+\lambda||w||^{2},
+\]
+
+\end_inset
+
+for 
+\begin_inset Formula $\lambda>0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Show that for 
+\begin_inset Formula $w$
+\end_inset
+
+ to be a minimizer of 
+\begin_inset Formula $J(w)$
+\end_inset
+
+, we must have 
+\begin_inset Formula $X^{T}Xw+\lambda Iw=X^{T}y$
+\end_inset
+
+.
+ Show that the minimizer of 
+\begin_inset Formula $J(w)$
+\end_inset
+
+ is 
+\begin_inset Formula $w=(X^{T}X+\lambda I)^{-1}X^{T}y$
+\end_inset
+
+.
+ Justify that the matrix 
+\begin_inset Formula $X^{T}X+\lambda I$
+\end_inset
+
+ is invertible, for 
+\begin_inset Formula $\lambda>0$
+\end_inset
+
+.
+ (The last part should follow easily from the earlier exercises on psd and
+ spd matrices.) 
+\end_layout
+
+\begin_layout Enumerate
+Rewrite 
+\begin_inset Formula $X^{T}Xw+\lambda Iw=X^{T}y$
+\end_inset
+
+ as 
+\begin_inset Formula $w=\frac{1}{\lambda}(X^{T}y-X^{T}Xw)$
+\end_inset
+
+.
+ Based on this, show that we can write 
+\begin_inset Formula $w=X^{T}\alpha$
+\end_inset
+
+ for some 
+\begin_inset Formula $\alpha$
+\end_inset
+
+, and give an expression for 
+\begin_inset Formula $\alpha$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Based on the fact that 
+\begin_inset Formula $w=X^{T}\alpha$
+\end_inset
+
+, explain why we say w is 
+\begin_inset Quotes eld
+\end_inset
+
+in the span of the data.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Show that 
+\begin_inset Formula $\alpha=(\lambda I+XX^{T})^{-1}y$
+\end_inset
+
+.
+ Note that 
+\begin_inset Formula $XX^{T}$
+\end_inset
+
+ is the kernel matrix for the standard vector dot product.
+ (Hint: Replace 
+\begin_inset Formula $w$
+\end_inset
+
+ by 
+\begin_inset Formula $X^{T}\alpha$
+\end_inset
+
+ in the expression for 
+\begin_inset Formula $\alpha$
+\end_inset
+
+, and then solve for 
+\begin_inset Formula $\alpha$
+\end_inset
+
+.)
+\end_layout
+
+\begin_layout Enumerate
+Give a kernelized expression for the 
+\begin_inset Formula $Xw$
+\end_inset
+
+, the predicted values on the training points.
+ (Hint: Replace 
+\begin_inset Formula $w$
+\end_inset
+
+ by 
+\begin_inset Formula $X^{T}\alpha$
+\end_inset
+
+ and 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ by its expression in terms of the kernel matrix 
+\begin_inset Formula $XX^{T}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Give an expression for the prediction 
+\begin_inset Formula $f(x)=x^{T}w^{*}$
+\end_inset
+
+ for a new point 
+\begin_inset Formula $x$
+\end_inset
+
+, not in the training set.
+ The expression should only involve 
+\begin_inset Formula $x$
+\end_inset
+
+ via inner products with other 
+\begin_inset Formula $x$
+\end_inset
+
+'s.
+ [Hint: It is often convenient to define the column vector
+\begin_inset Formula 
+\[
+k_{x}=\begin{pmatrix}x^{T}x_{1}\\
+\vdots\\
+x^{T}x_{n}
+\end{pmatrix}
+\]
+
+\end_inset
+
+to simplify the expression.] 
+\end_layout
+
+\begin_layout Section
+Decision Trees 
+\end_layout
+
+\begin_layout Subsection
+Building Trees by Hand
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+protect
+\end_layout
+
+\end_inset
+
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Based on Homework #4 from David Sontag's DS-GA 1003, Spring 2014.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In this problem we're going to be build a a small decision tree by hand
+ for predicting whether or not a mushroom is poisonous.
+ The training dataset is given below:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="12" columns="4">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="right" valignment="top">
+<column alignment="left" valignment="top">
+<column alignment="left" valignment="top">
+<row>
+<cell multicolumn="1" alignment="none" valignment="top" topline="true" usebox="none" special="c">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Poisonous
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="none" valignment="top" topline="true" usebox="none" special="c">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Size
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="none" valignment="top" topline="true" usebox="none" special="c">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Spots
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="none" valignment="top" topline="true" usebox="none" special="c">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Color
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+N 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $5$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+N 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+White
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+N 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Y 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+White
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+N 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+N 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Brown
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+N 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $3$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Y 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Brown
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+N 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $4$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+N 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+White
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+N 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+N 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Brown
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Y 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $5$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Y 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+White
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Y 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $4$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Y 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Brown
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Y 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $4$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Y 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Brown
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Y 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Y 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+White
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Y 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Y 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Brown
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We're going to build a binary classification tree using the Gini index as
+ the node impurity measure.
+ The feature 
+\begin_inset Quotes eld
+\end_inset
+
+Size
+\begin_inset Quotes erd
+\end_inset
+
+ should be treated as numeric (i.e.
+ we should find real-valued split points).
+ For a given split, let 
+\begin_inset Formula $R_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $R_{2}$
+\end_inset
+
+ be the sets of data indices in each of the two regions of the split.
+ Let 
+\begin_inset Formula $\hat{p}_{1}$
+\end_inset
+
+ be the proportion of poisonous mushrooms in 
+\begin_inset Formula $R_{1}$
+\end_inset
+
+, and let 
+\begin_inset Formula $\hat{p}_{2}$
+\end_inset
+
+ be the proportion in 
+\begin_inset Formula $R_{2}$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $N_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $N_{2}$
+\end_inset
+
+ be the total number of training points in 
+\begin_inset Formula $R_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $R_{2}$
+\end_inset
+
+, respectively.
+ Then the Gini index for the first region is 
+\begin_inset Formula $Q_{1}=2\hat{p}_{1}(1-\hat{p}_{1})$
+\end_inset
+
+ and 
+\begin_inset Formula $Q_{2}=2\hat{p}_{2}(1-\hat{p}_{2})$
+\end_inset
+
+ for the second region.
+ When choosing our splitting variable and split point, we're looking to
+ minimize the weighted impurity measure: 
+\begin_inset Formula 
+\[
+N_{1}Q_{1}+N_{2}Q_{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+What is the first split for a binary classification tree on this data, using
+ the Gini index? Work this out 
+\begin_inset Quotes eld
+\end_inset
+
+by hand
+\begin_inset Quotes erd
+\end_inset
+
+, and show your calculations.
+ [Hint: This should only require calculating 6 weighted impurity measures.]
+ 
+\end_layout
+
+\begin_layout Enumerate
+The first split partitions the data into two parts.
+ Make another split so that the space is partitioned into 3 regions.
+ Determine the predicted 
+\begin_inset Quotes eld
+\end_inset
+
+probability of poisonous
+\begin_inset Quotes erd
+\end_inset
+
+ for each of those regions.
+\end_layout
+
+\begin_layout Enumerate
+Suppose we build a binary tree on the dataset given below using the Gini
+ criterion and we build it so deep that all terminal nodes are either pure
+ or cannot be split further.
+ (To think about: How could we have a node that is not pure, but cannot
+ be split further?) What would the training error be, given as a percentage?
+ Why? [Hint: You can do this by inspection, without any significant calculations.
+] 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="12" columns="4">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="right" valignment="top">
+<column alignment="right" valignment="top">
+<column alignment="right" valignment="top">
+<column alignment="right" valignment="top">
+<row>
+<cell multicolumn="1" alignment="none" valignment="top" topline="true" usebox="none" special="c">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Y
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="none" valignment="top" topline="true" usebox="none" special="c">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="none" valignment="top" topline="true" usebox="none" special="c">
+\begin_inset Text
+
+\begin_layout Plain Layout
+B
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="none" valignment="top" topline="true" usebox="none" special="c">
+\begin_inset Text
+
+\begin_layout Plain Layout
+C
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Investigating Impurity Measures
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+protect
+\end_layout
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+From Bishop's 
+\emph on
+Pattern Recognition and Machine Learning
+\emph default
+, Problem 14.11
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Enumerate
+Consider a data set with 
+\begin_inset Formula $400$
+\end_inset
+
+ data points from class 
+\begin_inset Formula $C_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $400$
+\end_inset
+
+ data points from class 
+\begin_inset Formula $C_{2}$
+\end_inset
+
+ .
+ Suppose that a tree model 
+\begin_inset Formula $A$
+\end_inset
+
+ splits these into 
+\begin_inset Formula $(300,100)$
+\end_inset
+
+ at the first leaf node and 
+\begin_inset Formula $(100,300)$
+\end_inset
+
+ at the second leaf node, where 
+\begin_inset Formula $(n,m)$
+\end_inset
+
+ denotes that 
+\begin_inset Formula $n$
+\end_inset
+
+ points are assigned to 
+\begin_inset Formula $C_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $m$
+\end_inset
+
+ points are assigned to 
+\begin_inset Formula $C_{2}$
+\end_inset
+
+ .
+ Similarly, suppose that a second tree model 
+\begin_inset Formula $B$
+\end_inset
+
+ splits them into 
+\begin_inset Formula $(200,400)$
+\end_inset
+
+ and 
+\begin_inset Formula $(200,0)$
+\end_inset
+
+.
+ Show that the misclassification rates for the two trees are equal, but
+ that the cross-entropy and Gini impurity measures are both lower for tree
+ 
+\begin_inset Formula $B$
+\end_inset
+
+ than for tree 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Section
+Representer Theorem [Optional]
+\end_layout
+
+\begin_layout Standard
+Recall the following theorem from lecture:
+\end_layout
+
+\begin_layout Theorem
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[Representer Theorem]
+\end_layout
+
+\end_inset
+
+ Let 
+\begin_inset Formula 
+\[
+J(w)=R\left(\|w\|\right)+L\left(\left\langle w,\psi(x_{1})\right\rangle ,\ldots,\left\langle w,\psi(x_{n})\right\rangle \right),
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $R:\reals^{\ge0}\to\reals$
+\end_inset
+
+ is nondecreasing (the 
+\series bold
+regularization
+\series default
+ term) and 
+\begin_inset Formula $L:\reals^{n}\to\reals$
+\end_inset
+
+ is arbitrary (the
+\series bold
+ loss 
+\series default
+term).
+ If 
+\begin_inset Formula $J(w)$
+\end_inset
+
+ has a minimizer, then it has a minimizer of the form
+\begin_inset Formula 
+\[
+w^{*}=\sum_{i=1}^{n}\alpha_{i}\psi(x_{i}).
+\]
+
+\end_inset
+
+Furthermore, if 
+\begin_inset Formula $R$
+\end_inset
+
+ is strictly increasing, then all minimizers have this form.
+\end_layout
+
+\begin_layout Standard
+Note: There is nothing in this theorem that guarantees 
+\begin_inset Formula $J(w)$
+\end_inset
+
+ has a minimizer at all.
+ If there is no minimizer, then this theorem does not tell us anything.
+ 
+\end_layout
+
+\begin_layout Standard
+In the lecture slides we proved the first part of the theorem.
+ Now we will prove the part beginning with 
+\begin_inset Quotes eld
+\end_inset
+
+Furthermore.
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Enumerate
+Let 
+\begin_inset Formula $M$
+\end_inset
+
+ be a closed subspace of a Hilbert space 
+\begin_inset Formula $\ch$
+\end_inset
+
+.
+ F or any 
+\begin_inset Formula $x\in\ch$
+\end_inset
+
+, let 
+\begin_inset Formula $m_{0}=\proj_{M}x$
+\end_inset
+
+ be the projection of 
+\begin_inset Formula $x$
+\end_inset
+
+ onto 
+\begin_inset Formula $M$
+\end_inset
+
+.
+ By the Projection Theorem, we know that 
+\begin_inset Formula $x-m_{0}\perp M$
+\end_inset
+
+.
+ Then by the Pythagorean Theorem, we know 
+\begin_inset Formula $\|x\|^{2}=\|m_{0}\|^{2}+\|x-m_{0}\|^{2}$
+\end_inset
+
+.
+ From this we concluded in lecture that 
+\begin_inset Formula $\|m_{0}\|\le\|x\|$
+\end_inset
+
+.
+ Show that we have 
+\begin_inset Formula $\|m_{0}\|=\|x\|$
+\end_inset
+
+ only when 
+\begin_inset Formula $m_{0}=x$
+\end_inset
+
+.
+ (Hint: Use the postive-definiteness of the inner product: 
+\begin_inset Formula $\left\langle x,x\right\rangle \ge0$
+\end_inset
+
+ and 
+\begin_inset Formula $\left\langle x,x\right\rangle =0\iff x=0$
+\end_inset
+
+, and the fact that we're using the norm derived from such an inner product.)
+\end_layout
+
+\begin_layout Enumerate
+Continue the proof of the Representer Theorem from the lecture slides to
+ show that if 
+\begin_inset Formula $R$
+\end_inset
+
+ is strictly increasing, then all minimizers have this form.
+ (Hint: Consider separately the cases that 
+\begin_inset Formula $\|w\|<\|w^{*}\|$
+\end_inset
+
+ and the case 
+\begin_inset Formula $\|w\|=\|w^{*}\|$
+\end_inset
+
+.)
+\end_layout
+
+\begin_layout Enumerate
+Suppose that 
+\begin_inset Formula $R:\reals^{\ge0}\to\reals$
+\end_inset
+
+ and 
+\begin_inset Formula $L:\reals^{n}\to\reals$
+\end_inset
+
+ are both convex functions.
+ Use properties of convex functions to show that 
+\begin_inset Formula $w\mapsto L\left(\left\langle w,\psi(x_{1})\right\rangle ,\ldots,\left\langle w,\psi(x_{n})\right\rangle \right)$
+\end_inset
+
+ is a convex function of 
+\begin_inset Formula $w$
+\end_inset
+
+, and then that 
+\begin_inset Formula $J(w)$
+\end_inset
+
+ is also convex function of 
+\begin_inset Formula $w$
+\end_inset
+
+.
+ For simplicity, you may assume that our feature space is 
+\begin_inset Formula $\reals^{d}$
+\end_inset
+
+, rather than a generic Hilbert space.
+ You may also use the fact that the composition of a convex function and
+ an affine function is convex.
+ That is:, suppose 
+\begin_inset Formula $f:\reals^{n}\to\reals,\ A\in\reals^{n\times m}$
+\end_inset
+
+ and 
+\begin_inset Formula $b\in\reals^{n}.$
+\end_inset
+
+ Define 
+\begin_inset Formula $g:\reals^{m}\to\reals$
+\end_inset
+
+ by 
+\begin_inset Formula $g(x)=f\left(Ax+b\right)$
+\end_inset
+
+.
+ Then if 
+\begin_inset Formula $f$
+\end_inset
+
+ is convex, then so is 
+\begin_inset Formula $g$
+\end_inset
+
+.
+ From this exercise, we can conclude that if 
+\begin_inset Formula $L$
+\end_inset
+
+ and 
+\begin_inset Formula $R$
+\end_inset
+
+ are convex, then 
+\begin_inset Formula $J$
+\end_inset
+
+ does have a minimizer of the form 
+\begin_inset Formula $w^{*}=\sum_{i=1}^{n}\alpha_{i}\psi(x_{i})$
+\end_inset
+
+, and if 
+\begin_inset Formula $R$
+\end_inset
+
+ is also strictly increasing, then all minimizers of 
+\begin_inset Formula $J$
+\end_inset
+
+ have this form.
+ 
+\end_layout
+
+\begin_layout Section
+Ivanov and Tikhonov Regularization [Optional]
+\end_layout
+
+\begin_layout Standard
+In lecture there was a claim that the Ivanov and Tikhonov forms of ridge
+ and lasso regression are equivalent.
+ We will now prove a more general result.
+\end_layout
+
+\begin_layout Subsection
+Tikhonov optimal implies Ivanov optimal
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\phi:\cf\to\reals$
+\end_inset
+
+ be any performance measure of 
+\begin_inset Formula $f\in\cf$
+\end_inset
+
+, and let 
+\begin_inset Formula $\Omega:\cf\to\reals$
+\end_inset
+
+ be any complexity measure.
+ For example, for ridge regression over the linear hypothesis space 
+\begin_inset Formula $\cf=\left\{ f_{w}(x)=w^{T}x\mid w\in\reals^{d}\right\} $
+\end_inset
+
+, we would have 
+\begin_inset Formula $\phi(f_{w})=\frac{1}{n}\sum_{i=1}^{n}\left(w^{T}x_{i}-y_{i}\right)^{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $\Omega(f_{w})=w^{T}w$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Suppose that for some 
+\begin_inset Formula $\lambda>0$
+\end_inset
+
+ we have the Tikhonov regularization solution
+\begin_inset Formula 
+\begin{equation}
+\minimizer f=\argmin_{f\in\cf}\left[\phi(f)+\lambda\Omega(f)\right].\label{eq:tikhonovReg}
+\end{equation}
+
+\end_inset
+
+Show that 
+\begin_inset Formula $\minimizer f$
+\end_inset
+
+ is also an Ivanov solution.
+ That is, 
+\begin_inset Formula $\exists r>0$
+\end_inset
+
+ such that
+\begin_inset Formula 
+\begin{equation}
+\minimizer f=\argmin_{\substack{f\in\cf}
+}\phi(f)\mbox{ subject to }\Omega(f)\le r.\label{eq:ivanovReg}
+\end{equation}
+
+\end_inset
+
+(Hint: Start by figuring out what 
+\begin_inset Formula $r$
+\end_inset
+
+ should be.
+ If you're stuck on this, ask for help.
+ Then one approach is proof by contradiction: suppose 
+\begin_inset Formula $f^{*}$
+\end_inset
+
+ is not the optimum in 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:ivanovReg"
+
+\end_inset
+
+ and show that contradicts the fact that 
+\begin_inset Formula $f^{*}$
+\end_inset
+
+ solves 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:tikhonovReg"
+
+\end_inset
+
+.) 
+\end_layout
+
+\begin_layout Subsection
+Ivanov optimal implies Tikhonov optimal
+\end_layout
+
+\begin_layout Standard
+For the converse, we will restrict our hypothesis space to a parametric
+ set.
+ That is, 
+\begin_inset Formula 
+\[
+\cf=\left\{ f_{w}(x):\cx\to\reals\mid w\in\reals^{d}\right\} .
+\]
+
+\end_inset
+
+So we will now write 
+\begin_inset Formula $\phi$
+\end_inset
+
+ and 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ as functions of 
+\begin_inset Formula $w\in\reals^{d}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $w^{*}$
+\end_inset
+
+ be a solution to the following Ivanov optimization problem:
+\begin_inset Formula 
+\begin{eqnarray*}
+\textrm{minimize} &  & \phi(w)\\
+\textrm{subject to} &  & \Omega(w)\le r.
+\end{eqnarray*}
+
+\end_inset
+
+Assume that strong duality holds for this optimization problem and that
+ the dual solution is attained.
+ Then we will show that there exists a 
+\begin_inset Formula $\lambda\ge0$
+\end_inset
+
+ such that 
+\begin_inset Formula $\minimizer w=\argmin_{w\in\reals^{d}}\left[\phi(w)+\lambda\Omega(w)\right].$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Enumerate
+Write the Lagrangian 
+\begin_inset Formula $L(w,\lambda)$
+\end_inset
+
+ for the Ivanov optimization problem.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Write the dual optimization problem in terms of the dual objective function
+ 
+\begin_inset Formula $g(\lambda)$
+\end_inset
+
+, and give an expression for 
+\begin_inset Formula $g(\lambda)$
+\end_inset
+
+.
+ [Writing 
+\begin_inset Formula $g(\lambda)$
+\end_inset
+
+ as an optimization problem is expected - don't try to solve it.] 
+\end_layout
+
+\begin_layout Enumerate
+We assumed that the dual solution is attained, so let 
+\begin_inset Formula $\lambda^{*}=\argmax_{\lambda\ge0}g(\lambda)$
+\end_inset
+
+.
+ We also assumed strong duality, which implies 
+\begin_inset Formula $\phi(w^{*})=g(\lambda^{*})$
+\end_inset
+
+.
+ Show that the minimum in the expression for 
+\begin_inset Formula $g(\lambda^{*})$
+\end_inset
+
+ is attained at 
+\begin_inset Formula $w^{*}$
+\end_inset
+
+.
+ [Hint: You can use the same approach we used when we derived that strong
+ duality implies complementary slackness 
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+See 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://davidrosenberg.github.io/ml2015/docs/3b.convex-optimization.pdf
+\end_layout
+
+\end_inset
+
+ slide 24.
+\end_layout
+
+\end_inset
+
+.] 
+\series bold
+Conclude the proof
+\series default
+ by showing that for the choice of 
+\begin_inset Formula $\lambda=\lambda^{*}$
+\end_inset
+
+, we have 
+\begin_inset Formula $\minimizer w=\argmin_{w\in\reals^{d}}\left[\phi(w)+\lambda\Omega(w)\right].$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Enumerate
+[Optional] The conclusion of the previous problem allows 
+\begin_inset Formula $\lambda=0$
+\end_inset
+
+, which means we're not actually regularizing at all.
+ To ensure we get a proper Ivanov regularization problem, we need an additional
+ assumption.
+ The one below is taken from 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "kloft2009efficient"
+
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\inf_{w\in\reals^{d}}\phi(w)<\inf_{\substack{w\in\reals^{d}\\
+\Omega(w)\le r
+}
+}\phi(w)
+\]
+
+\end_inset
+
+Note that this is a rather intuitive condition: it is simply saying that
+ we can fit the training data better [strictly better] if we don't use any
+ regularization.
+ With this additional condition, show that 
+\begin_inset Formula $\minimizer w=\argmin_{w\in\reals^{d}}\left[\phi(w)+\lambda\Omega(w)\right]$
+\end_inset
+
+ for some 
+\begin_inset Formula $\lambda>0$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Subsection
+Ivanov implies Tikhonov for Ridge Regression.
+\end_layout
+
+\begin_layout Standard
+To show that Ivanov implies Tikhonov for the ridge regression problem (square
+ loss with 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ regularization), we need to demonstrate strong duality and that the dual
+ optimum is attained.
+ Both of these things are implied by Slater's constraint qualifications.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Show that the Ivanov form of ridge regression is a convex optimization problem
+ with a strictly feasible point.
+ 
+\end_layout
+
+\begin_layout Section
+Novelty Detection [Optional]
+\end_layout
+
+\begin_layout Standard
+(Problem derived from Michael Jordan's Stat 241b Problem Set #2, Spring
+ 2004)
+\end_layout
+
+\begin_layout Standard
+A novelty detection algorithm can be based on an algorithm that finds the
+ smallest possible sphere containing the data in feature space.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Let 
+\begin_inset Formula $\phi:\cx\to\ch$
+\end_inset
+
+ be our feature map, mapping elements of the input space into our 
+\begin_inset Quotes eld
+\end_inset
+
+feature space
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Formula $\ch$
+\end_inset
+
+, which is a Hilbert space (and thus has an inner product).
+ Formulate the novelty detection algorithm described above as an optimization
+ problem.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Give the Lagrangian for this problem, and write an equivalent, unconstrained
+ 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $\inf\sup$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ version of the optimization problem.
+\end_layout
+
+\begin_layout Enumerate
+Show that we have strong duality and thus we will have an equivalent optimizatio
+n problem if we swap the inf and the sup.
+ [Hint: Use Slater's qualification conditions.] 
+\end_layout
+
+\begin_layout Enumerate
+Solve the inner minimization problem and give the dual optimization problem.
+ [Note: You may find it convenient to define the kernel function 
+\begin_inset Formula $k(x_{i},x_{j})=\left\langle \phi(x_{i}),\phi(x_{j})\right\rangle $
+\end_inset
+
+ and to write your final problem in terms of the corresponding kernel matrix
+ 
+\begin_inset Formula $K$
+\end_inset
+
+ to simplify notation.] 
+\end_layout
+
+\begin_layout Enumerate
+Write an expression for the optimal sphere in terms of the solution to the
+ dual problem.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Write down the complementary slackness conditions for this problem, and
+ characterize the points that are the 
+\begin_inset Quotes eld
+\end_inset
+
+support vectors
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Briefly explain how you would apply this algorithm in practice to detect
+ 
+\begin_inset Quotes eld
+\end_inset
+
+novel
+\begin_inset Quotes erd
+\end_inset
+
+ instances.
+\end_layout
+
+\begin_layout Enumerate
+[More Optional] Redo this problem allowing some of the data to lie outside
+ of the sphere, where the number of points outside the sphere can be increased
+ or decreased by adjusting a parameter.
+ (Hint: Use slack variables).
+ 
+\end_layout
+
+\end_body
+\end_document

@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -14,16 +16,16 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman times
-\font_sans default
-\font_typewriter default
-\font_math eulervm
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "eulervm" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -665,27 +667,6 @@ optional, use only with long paper titles
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Next time: emphasize the directional derivative more so than subgradient?
- In particular, directional derivative exists, ahve to check all directions,
- not just a basis of directions, because not differentiable.
- (c.f.
- Guillaume's slides Obozinski4a.pdf) Optimality if all directional derivatives
- are >=0.
- Include counter example for subgradient descent being a descent direction
- (boyd notes) and include proof that we're always moving closer to an optimum;
- 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Author
 David Rosenberg 
 \end_layout
@@ -696,19 +677,6 @@ New York University
 
 \begin_layout Section
 Convex and differentiable functions
-\end_layout
-
-\begin_layout Standard
-\begin_inset Flex ArticleMode
-status open
-
-\begin_layout Plain Layout
-Just in article version
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -744,6 +712,27 @@ tiny{Plots courtesy of Ningshan Zhang.}}
  
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Next time: emphasize the directional derivative more so than subgradient?
+ In particular, directional derivative exists, ahve to check all directions,
+ not just a basis of directions, because not differentiable.
+ (c.f.
+ Guillaume's slides Obozinski4a.pdf) Optimality if all directional derivatives
+ are >=0.
+ Include counter example for subgradient descent being a descent direction
+ (boyd notes) and include proof that we're always moving closer to an optimum;
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Frame
 \begin_inset Argument 4
 status open
@@ -752,6 +741,10 @@ status open
 Convex Sets
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -820,7 +813,10 @@ tiny{KPM Fig.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -832,6 +828,10 @@ status open
 Convex and Concave Functions
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -908,7 +908,10 @@ tiny{KPM Fig.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -926,6 +929,9 @@ First-Order Approximation
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -966,6 +972,10 @@ What can we say about
 \end_inset
 
 ?
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1027,7 +1037,10 @@ tiny{Boyd
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1045,6 +1058,9 @@ First-Order Condition for Convex, Differentiable Function
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -1074,6 +1090,10 @@ Then for any
 f(y)\ge f(x)+\del f(x)^{T}(y-x)
 \]
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1130,6 +1150,10 @@ tiny{Boyd
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1145,7 +1169,10 @@ tiny{Boyd
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1163,6 +1190,9 @@ First-Order Condition for Convex, Differentiable Function
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -1195,6 +1225,10 @@ f(y)\ge f(x)+\del f(x)^{T}(y-x)
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1220,7 +1254,10 @@ If
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1236,6 +1273,10 @@ status open
 Subgradients
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1269,6 +1310,10 @@ subgradient
 f(z)\ge f(x)+g^{T}(z-x).
 \]
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1308,7 +1353,10 @@ f(z)\ge f(x)+g^{T}(z-x).
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1326,11 +1374,17 @@ Subdifferential
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
 \begin_deeper
 \begin_layout Definitions
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -1373,6 +1427,10 @@ subdifferential:
 \end_inset
 
  
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1413,6 +1471,10 @@ If
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1435,6 +1497,10 @@ Any point
 \end_inset
 
 , or infinitely many subgradients.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1452,7 +1518,10 @@ Can only be
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1464,6 +1533,10 @@ status open
 Globla Optimality Condition
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1500,6 +1573,10 @@ f(z)\ge f(x)+g^{T}(z-x).
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1529,7 +1606,10 @@ global minimizer
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1541,6 +1621,10 @@ status open
 Subdifferential of Absolute Value
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1577,6 +1661,10 @@ tiny{Boyd EE364b: Subgradients Slides}}
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1593,6 +1681,10 @@ tiny{Boyd EE364b: Subgradients Slides}}
 \begin_layout Itemize
 Plot on right shows 
 \begin_inset Formula $\cup\left\{ (x,g)\mid x\in\reals,g\in\partial f(x)\right\} $
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1620,7 +1712,10 @@ status open
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1639,6 +1734,10 @@ Subgradient Descent
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1653,6 +1752,10 @@ Subgradient Descent
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1662,11 +1765,19 @@ Initialize
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 repeat 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1698,6 +1809,10 @@ descent method
 \end_inset
 
  
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1715,7 +1830,10 @@ Always keep track of the best
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1730,11 +1848,19 @@ Step Size
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 Because not a descent method, can't adaptive step size
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1750,6 +1876,10 @@ Need to determine step sizes in advance
 
 \begin_layout Itemize
 Two main choices:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1783,7 +1913,10 @@ e.g.
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1795,6 +1928,10 @@ status open
 Convergence Theorem for Fixed Step Size
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1872,7 +2009,10 @@ url{https://www.cs.cmu.edu/~ggordon/10725-F12/slides/06-sg-method.pdf}}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1884,6 +2024,10 @@ status open
 Convergence Theorems for Decreasing Step Sizes
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1957,7 +2101,10 @@ url{https://www.cs.cmu.edu/~ggordon/10725-F12/slides/06-sg-method.pdf}}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1965,7 +2112,10 @@ url{https://www.cs.cmu.edu/~ggordon/10725-F12/slides/06-sg-method.pdf}}}
 Example: Lasso
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1980,6 +2130,10 @@ Coordinate Subdifferential of Lasso Objective
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1990,6 +2144,10 @@ Lasso objective:
 \min_{w\in\reals^{d}}\sum_{i=1}^{n}\left(w^{T}x_{i}-y_{i}\right)^{2}+\lambda\left|w\right|_{1}
 \]
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2022,7 +2180,10 @@ a_{j} & =2\sum_{i=1}^{n}x_{ij}^{2} & c_{j} & =2\sum_{i=1}^{n}x_{ij}(y_{i}-w_{-j}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2034,6 +2195,10 @@ status open
 Coordinate Subdifferential of Lasso Objective
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2055,6 +2220,10 @@ Subdifferential of
 \end{cases}
 \]
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2083,7 +2252,10 @@ a_{k}w_{k}-c_{k}+\lambda & w_{k}>0\\
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2098,6 +2270,10 @@ Coordinate Subdifferential of Lasso Objective
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2107,6 +2283,10 @@ Solving for
 \end_inset
 
 :
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2152,7 +2332,7 @@ Case 2
 \end_inset
 
  then 
-\begin_inset Formula $w_{k}=\left(c{}_{k}-\lambda\right)/a_{k}$
+\begin_inset Formula $w_{k}=\left(c_{k}-\lambda\right)/a_{k}$
 \end_inset
 
  is a critical point
@@ -2200,7 +2380,10 @@ w_{j}(c_{j})=\begin{cases}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 

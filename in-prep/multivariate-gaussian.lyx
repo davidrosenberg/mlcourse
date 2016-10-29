@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass paper
 \use_default_options false
 \begin_modules
@@ -14,16 +16,16 @@ figs-within-sections
 \language_package default
 \inputencoding iso8859-1
 \fontencoding global
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -1661,6 +1663,85 @@ q(x)=(x_{1}-\mu_{1})^{T}\Sigma_{1}^{-1}(x_{1}-\mu_{1})+(x_{2}-Ax_{1}-b)^{T}\Sigm
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Proof
+[Idea from Leo Razoumov about showing that 
+\begin_inset Formula $q(x)$
+\end_inset
+
+ must be spd.
+ First 
+\begin_inset Formula $p(x_{1},x_{2})$
+\end_inset
+
+ is a density, so must have 
+\begin_inset Formula $e^{-q(x)/2}<\infty$
+\end_inset
+
+.
+ Next, we know we can write 
+\begin_inset Formula $q(x)=x^{T}Mx+x^{T}b+c$
+\end_inset
+
+, for 
+\begin_inset Formula $M$
+\end_inset
+
+ symmetric.
+ [the symmetric part is an easy proof – that it has this form for some 
+\begin_inset Formula $M$
+\end_inset
+
+ is clear].
+ Let 
+\begin_inset Formula $M=Q\Sigma Q^{T}$
+\end_inset
+
+, for orthogonal 
+\begin_inset Formula $Q$
+\end_inset
+
+ and diagonal 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+.
+ Then
+\begin_inset Formula 
+\begin{eqnarray*}
+\int e^{-q(x)} & = & \int e^{-x^{T}Q\Sigma Q^{T}x+x^{T}b+c}\,dx\\
+ & = & \int e^{-s^{T}\Sigma s+s^{T}b+c}\,d\left(Q^{T}x\right)\\
+ & = & \int e^{-s^{T}\Sigma s+s^{T}b+c}\,d\left(Q^{T}x\right)
+\end{eqnarray*}
+
+\end_inset
+
+ 
+\begin_inset Formula 
+\begin{eqnarray*}
+\int e^{-s^{T}\Sigma s+s^{T}b+c}\,ds & = & \int e^{-x^{T}Q\Sigma Q^{T}x+x^{T}b+c}\underbrace{\left|Q\right|}_{=1}\,dx\\
+\implies\int e^{-x^{T}Q\Sigma Q^{T}x+x^{T}b+c}\,dx & = & \int e^{-s^{T}\Sigma s+s^{T}b+c}\,ds\\
+ & = & e^{c}\prod_{i=1}^{d}\left[\int e^{-\sigma_{i}s_{i}^{2}+s_{i}b_{i}}ds_{i}\right]...
+\end{eqnarray*}
+
+\end_inset
+
+and this thing will be infinite for any 
+\begin_inset Formula $s_{i}\le0$
+\end_inset
+
+, or something like that...
+ and the idea is that this shoudl become a product of integrals, and if
+ 
+\begin_inset Formula $\Sigma_{11}\le0$
+\end_inset
+
+, then one of these integrals is infinite.
+\end_layout
+
+\begin_layout Proof
 To apply Theorem 
 \begin_inset CommandInset ref
 LatexCommand ref

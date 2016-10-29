@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -14,16 +16,16 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman times
-\font_sans default
-\font_typewriter default
-\font_math eulervm
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "eulervm" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -748,6 +750,9 @@ New Features
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -778,6 +783,10 @@ True or False
 
 \begin_layout Itemize
 Adding new features makes a bigger hypothesis space
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -807,7 +816,10 @@ unregularized linear regression
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -825,6 +837,9 @@ Overfitting
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -851,6 +866,10 @@ True or False
 
 \begin_layout Itemize
 Whether you overfit depends on 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -864,7 +883,10 @@ the size of the hypothesis space
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -882,6 +904,9 @@ Estimation Error / Approximation Error
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -902,6 +927,10 @@ True or False
 \series default
 , 1 pt) If the empirical risk function is not convex, more training data
  may not help estimation error.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -911,11 +940,17 @@ True or False
 
 \end_deeper
 \begin_layout Block
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
 \begin_deeper
 \begin_layout ColumnsCenterAligned
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -978,7 +1013,10 @@ f_{\cf}= & \argmin_{f\in\cf}\ex\ell(f(X),Y))\\
 \end_deeper
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -996,6 +1034,9 @@ Duplicate Features in a Tree
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -1012,7 +1053,10 @@ True or False
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1030,6 +1074,9 @@ Feature Rescaling
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -1066,7 +1113,10 @@ Big feature values
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1084,6 +1134,9 @@ Kernel Methods Scalability
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -1131,7 +1184,10 @@ If feature space is also much smaller, no obvious reason to use kernelized
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1149,6 +1205,9 @@ AdaBoost Converges to Zero Training Error?
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -1161,6 +1220,10 @@ True or False
 , 1 pt) Adaboost with decision stumps will eventually reach zero training
  error, provided we run enough rounds of boosting.
  
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1179,6 +1242,10 @@ The best any method can do is to converge to
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1192,7 +1259,10 @@ But this may not be zero.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1214,6 +1284,9 @@ Support Vectors
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -1226,6 +1299,10 @@ exponential loss, hinge loss, squared hinge loss, logistic loss, square
  loss
 \series default
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1247,7 +1324,10 @@ exponential loss, hinge loss, squared hinge loss, logistic loss, square
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1268,6 +1348,9 @@ status open
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -1301,6 +1384,10 @@ and the corresponding fitted function is given by
 , and the results are shown in Figure.
  For each of the following parameter settings, give the number of the plot
  that shows the resulting fit.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1355,7 +1442,10 @@ and the corresponding fitted function is given by
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1376,6 +1466,9 @@ status open
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -1392,7 +1485,10 @@ status open
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1410,6 +1506,9 @@ Kernel Function
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -1429,6 +1528,10 @@ where
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1458,7 +1561,10 @@ k(x,y)=\left\langle \phi(x),\phi(y)\right\rangle .
 
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1476,6 +1582,9 @@ Nonlinear Feature Mappings
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -1508,7 +1617,10 @@ Denote the input space by
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1526,6 +1638,9 @@ Nonlinear Feature Mappings
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -1567,7 +1682,10 @@ Denote the input space by
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1585,6 +1703,9 @@ Hypothesis Space Decision Boundaries
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -1618,7 +1739,10 @@ linear SVM, SVM with quadratic kernel, decision stumps (i.e.
 
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1630,6 +1754,10 @@ status open
 Kernel Machine Prediction Functions
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1654,7 +1782,7 @@ f^{*}(x) & = & \sum_{i=1}^{n}\beta_{i}k(x_{i},x)
 \end_layout
 
 \begin_layout Itemize
-Basis function viewpoint -- each 
+Basis function viewpoint – each 
 \begin_inset Formula $k(x_{i},\cdot)$
 \end_inset
 
@@ -1696,7 +1824,10 @@ Prediction functions look like
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1708,6 +1839,10 @@ status open
 Trees vs Linear Classifiers
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1761,96 +1896,8 @@ Trees vs Linear Classifiers
 \end_layout
 
 \end_deeper
-\begin_layout Separator
-
-\end_layout
-
 \begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Hard Margin SVMs
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Plain Layout
-(2 pts) Suppose we fit a hard-margin SVM to 
-\begin_inset Formula $N$
-\end_inset
-
- data points, and we have 2 data points 
-\begin_inset Quotes eld
-\end_inset
-
-on the margin
-\begin_inset Quotes erd
-\end_inset
-
-.
- If we add a new data point to the training set and refit the SVM, what's
- the largest number of data points that could end up 
-\begin_inset Quotes eld
-\end_inset
-
-on the margin
-\begin_inset Quotes erd
-\end_inset
-
-.
- Support your answer (a picture could suffice).
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename ../Homeworks/Midterm/Figures/hardmarginSVM-Npoints.png
-	lyxscale 50
-	width 60text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename ../Homeworks/Midterm/Figures/hardmarginSVM-N+1points.png
-	lyxscale 50
-	width 60text%
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
+\begin_inset Separator parbreak
 \end_inset
 
 
@@ -1860,7 +1907,10 @@ on the margin
 Hypothesis Spaces
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1872,6 +1922,10 @@ status open
 Unnecessary Features
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1902,7 +1956,10 @@ Are there any situations in which one of these hypothesis spaces would be
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1914,6 +1971,10 @@ status open
 Restricted Feature
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1944,7 +2005,10 @@ Are there any situations in which one of these hypothesis spaces would be
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1959,6 +2023,10 @@ Complexity Constraints for Binary Trees
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1970,6 +2038,10 @@ Complexity Constraints for Binary Trees
 \cf_{2} & = & \left\{ \mbox{binary trees with at most 4 leaf nodes}\right\} 
 \end{eqnarray*}
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1990,6 +2062,10 @@ Complexity Constraints for Binary Trees
 \end_inset
 
  
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2010,7 +2086,10 @@ Complexity Constraints for Binary Trees
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 

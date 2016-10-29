@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -14,16 +16,16 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman times
-\font_sans default
-\font_typewriter default
-\font_math eulervm
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "eulervm" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -665,6 +667,18 @@ optional, use only with long paper titles
 
 \end_layout
 
+\begin_layout Author
+David Rosenberg 
+\end_layout
+
+\begin_layout Institute
+New York University 
+\end_layout
+
+\begin_layout Section
+Convex and differentiable functions
+\end_layout
+
 \begin_layout Standard
 \begin_inset Note Note
 status open
@@ -684,18 +698,6 @@ Next time: emphasize the directional derivative more so than subgradient?
 \end_inset
 
 
-\end_layout
-
-\begin_layout Author
-David Rosenberg 
-\end_layout
-
-\begin_layout Institute
-New York University 
-\end_layout
-
-\begin_layout Section
-Convex and differentiable functions
 \end_layout
 
 \begin_layout Standard
@@ -752,6 +754,10 @@ status open
 Convex Sets
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -822,7 +828,10 @@ tiny{KPM Fig.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -834,6 +843,10 @@ status open
 Convex and Concave Functions
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -912,7 +925,10 @@ tiny{KPM Fig.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -930,6 +946,9 @@ First-Order Approximation
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -958,6 +977,10 @@ Predict
 \end_inset
 
 ?
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1032,7 +1055,10 @@ tiny{Boyd
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1050,6 +1076,9 @@ First-Order Condition for Convex, Differentiable Function
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -1079,6 +1108,10 @@ Then for any
 f(y)\ge f(x)+\del f(x)^{T}(y-x)
 \]
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1135,6 +1168,10 @@ tiny{Figure from Boyd
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1150,7 +1187,10 @@ tiny{Figure from Boyd
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1168,6 +1208,9 @@ First-Order Condition for Convex, Differentiable Function
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -1197,6 +1240,10 @@ Then for any
 f(y)\ge f(x)+\del f(x)^{T}(y-x)
 \]
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1235,7 +1282,10 @@ local information gives global information.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1251,6 +1301,10 @@ status open
 Subgradients
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1287,6 +1341,10 @@ f(z)\ge f(x)+g^{T}(z-x).
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1305,6 +1363,10 @@ f(z)\ge f(x)+g^{T}(z-x).
 
  is a global underestimator of 
 \begin_inset Formula $f$
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1340,7 +1402,10 @@ Each red line is a lower bound:
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1358,11 +1423,17 @@ Subdifferential
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
 \begin_deeper
 \begin_layout Definitions
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -1405,6 +1476,10 @@ subdifferential:
 \end_inset
 
  
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1440,6 +1515,10 @@ Basic Facts
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1462,6 +1541,10 @@ Any point
 \end_inset
 
 , or infinitely many subgradients.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1486,7 +1569,10 @@ Any point
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1498,6 +1584,10 @@ status open
 Globla Optimality Condition
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1534,6 +1624,10 @@ f(z)\ge f(x)+g^{T}(z-x).
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1563,7 +1657,10 @@ global minimizer
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1575,6 +1672,10 @@ status open
 Subdifferential of Absolute Value
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1611,6 +1712,10 @@ tiny{Boyd EE364b: Subgradients Slides}}
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1633,7 +1738,10 @@ Plot on right shows
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1649,6 +1757,10 @@ status open
 Descent Directions
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1704,7 +1816,10 @@ Is
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1716,6 +1831,10 @@ status open
 Subgradient Not a Descent Direction
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1800,7 +1919,10 @@ url{http://web.stanford.edu/class/ee364b/lectures/subgradients_slides.pdf},
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1812,6 +1934,10 @@ status open
 Subgradient Descent
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1832,6 +1958,10 @@ Suppose
 
 \begin_layout Itemize
 Repeat
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1864,11 +1994,14 @@ where
 \begin_inset Formula $-g$
 \end_inset
 
- not a descent direction -- can this work?
+ not a descent direction – can this work?
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1883,6 +2016,10 @@ Subgradient Gets Us Closer To Minimizer
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1892,6 +2029,10 @@ Suppose
 \end_inset
 
  is convex.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1961,7 +2102,10 @@ Negative subgradient step gets us closer to minimizer
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1973,6 +2117,10 @@ status open
 Subgradient Gets Us Closer To Minimizer (Proof)
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2019,6 +2167,10 @@ Then
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2034,6 +2186,10 @@ Consider
 
 .
  
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2135,7 +2291,10 @@ tiny{Based on Boyd EE364b: Subgradients Slides}}
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2147,6 +2306,10 @@ status open
 Convergence Theorem for Fixed Step Size
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2224,7 +2387,10 @@ url{https://www.cs.cmu.edu/~ggordon/10725-F12/slides/06-sg-method.pdf}}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2236,6 +2402,10 @@ status open
 Convergence Theorems for Decreasing Step Sizes
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2309,7 +2479,10 @@ url{https://www.cs.cmu.edu/~ggordon/10725-F12/slides/06-sg-method.pdf}}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 

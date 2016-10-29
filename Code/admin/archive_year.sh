@@ -4,7 +4,7 @@
 cd ~/Dropbox/repos/mlcourse
 FLATTEN="python Code/admin/flatten_lyx.py"
 LYX2LYX="python /Applications/LyX.app/Contents/Resources/lyx2lyx/lyx2lyx"
-YEAR=2015
+YEAR=2016
 ORIGIN="." 
 ORIGIN="2015" 
 DEST="Archive"/$YEAR
@@ -26,18 +26,15 @@ find $DEST/Notes -name "*.lyx" | parallel --verbose /Applications/LyX.app/Conten
 ## Move newly generated PDF files up to the $YEAR/Notes directory
 find $ORIGIN/Notes/*lyx | parallel mv $DEST/Notes/source/{/.}/{/.}.pdf $DEST/Notes/
 
-
-
 ## Copy homework
-rsync -av Homework $YEAR/
+rsync -av $ORIGIN/Homework $DEST/
 
 ## Copy Labs
-rsync -av Labs $YEAR/
+rsync -av $ORIGIN/Labs $DEST/
 
 ## Copy Code
-rsync -av Code $YEAR/
-rm -rf $YEAR/Code/admin
-
+rsync -av Code $DEST/
+rm -rf $DEST/Code/admin
 
 ## Convert to newest LyX version
 ##find $DEST/Lectures -name "*.lyx" |  parallel --verbose 'echo cp {} {//}/old; '

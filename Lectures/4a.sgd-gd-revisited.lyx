@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -26,16 +28,16 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman times
-\font_sans default
-\font_typewriter default
-\font_math eulervm
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "eulervm" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -770,6 +772,27 @@ tiny{Plots courtesy of Ningshan Zhang.}}
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+TODO: Need to give rate of SGD for strongly convex functions (It's 
+\begin_inset Formula $O(1/\eps)$
+\end_inset
+
+ – see Nemirovsky et al '09, which is exponentially more steps than for
+ GD...
+ but then, does it really make a difference to this extent? NO - rest is
+ explained in these slides...
+ Just need that missing rate.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Terminology
 \end_layout
@@ -788,6 +811,9 @@ Iterative Optimization Methods
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -800,6 +826,10 @@ status open
 Iterative Optimization (Generic Version)
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -817,6 +847,10 @@ Pick some starting point
 \begin_layout Enumerate
 For 
 \begin_inset Formula $k=0,1,\ldots$
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -865,6 +899,10 @@ Set
 
 \begin_layout Itemize
 Despite the names,
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -904,7 +942,10 @@ not
 
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -916,6 +957,10 @@ status open
 Descent Directions
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -988,7 +1033,10 @@ for
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1000,6 +1048,10 @@ status open
 Descent Directions
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1017,6 +1069,10 @@ If
 f'(x,v)=\del f(x)^{T}v.
 \]
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1050,6 +1106,10 @@ So if
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1069,6 +1129,10 @@ step is a descent direction for strictly convex functions:
 v_{\mbox{newton}}=-\left[\del^{2}f(x)\right]^{-1}\del f(x)
 \]
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1095,7 +1159,10 @@ Quasi-Newton methods approximate Newton step, without Hessian (e.g.
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1107,6 +1174,10 @@ status open
 Descent Method
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1155,6 +1226,10 @@ status collapsed
 
 \begin_layout Itemize
 Is a negative subgradient a descent direction?
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1190,6 +1265,10 @@ If
 \end_inset
 
  exists.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1239,7 +1318,10 @@ f'(x;v)=g^{T}v.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1247,7 +1329,10 @@ f'(x;v)=g^{T}v.
 Stochastic Gradient Descent
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1259,6 +1344,10 @@ status open
 Gradient Descent
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1276,6 +1365,10 @@ Gradient Descent
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1289,6 +1382,10 @@ Initialize
 
 \begin_layout Itemize
 repeat
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1302,7 +1399,10 @@ repeat
 \end_deeper
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1321,6 +1421,10 @@ Noisy
  Gradient Descent 
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1345,6 +1449,10 @@ Noisy
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1358,6 +1466,10 @@ Initialize
 
 \begin_layout Itemize
 repeat
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1400,7 +1512,10 @@ With large batches, we get better estimates.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1412,6 +1527,10 @@ status open
 SGD on Regularized Empirical Risk 
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1449,6 +1568,10 @@ SGD on
 \end_inset
 
 :
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1486,7 +1609,10 @@ Step is unbiased for gradient:
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1498,6 +1624,10 @@ status open
 SGD on Risk
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1530,6 +1660,10 @@ SGD on
 \end_inset
 
 :
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1621,7 +1755,10 @@ url{http://planetmath.org/differentiationundertheintegralsign}.}}
 
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1629,7 +1766,10 @@ url{http://planetmath.org/differentiationundertheintegralsign}.}}
 Convergence Rates
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1641,6 +1781,10 @@ status open
 Does SGD Catch Up to GD?
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1680,7 +1824,10 @@ Short answer: It does, just takes a very long time.
 
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1692,6 +1839,10 @@ status open
 Convergence Rates for Gradient Descent
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1814,7 +1965,10 @@ url{https://www.cs.cmu.edu/~ggordon/10725-F12/slides/05-gd-revisited.pdf}}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1826,6 +1980,10 @@ status open
 Convergence Rates for GD with Strong Convexity
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1906,7 +2064,10 @@ url{https://www.cs.cmu.edu/~ggordon/10725-F12/slides/05-gd-revisited.pdf}}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1918,6 +2079,10 @@ status open
 Convergence Rates for GD with Strong Convexity
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2015,7 +2180,10 @@ url{https://www.cs.cmu.edu/~ggordon/10725-F12/slides/05-gd-revisited.pdf}}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2027,6 +2195,10 @@ status open
 SGD vs GD on Log Scale
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2109,7 +2281,10 @@ url{http://www.stat.cmu.edu/~ryantibs/convexopt/lectures/25-fast-stochastic.pdf}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2118,9 +2293,13 @@ url{http://www.stat.cmu.edu/~ryantibs/convexopt/lectures/25-fast-stochastic.pdf}
 status open
 
 \begin_layout Plain Layout
-SGD is Slow Close to the Optimum -- Does it Matter?
+SGD is Slow Close to the Optimum – Does it Matter?
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2168,7 +2347,10 @@ tiny{Plots from Bottou and Bousquet's "The Tradeoffs of Large Scale Learning."}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 

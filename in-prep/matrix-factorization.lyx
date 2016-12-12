@@ -1,0 +1,3227 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass beamer
+\begin_preamble
+\usetheme{CambridgeUS} 
+\beamertemplatenavigationsymbolsempty
+
+
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+\end_preamble
+\options handout
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "eulervm" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\boxbgcolor #ff31d8
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\reals}{\mathbf{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\integers}{\mathbf{Z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\naturals}{\mathbf{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rationals}{\mathbf{Q}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ca}{\mathcal{A}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cb}{\mathcal{B}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cc}{\mathcal{C}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cd}{\mathcal{D}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ce}{\mathcal{E}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cf}{\mathcal{F}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cg}{\mathcal{G}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ch}{\mathcal{H}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ci}{\mathcal{I}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cj}{\mathcal{J}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ck}{\mathcal{K}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cl}{\mathcal{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cm}{\mathcal{M}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cn}{\mathcal{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\co}{\mathcal{O}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cp}{\mathcal{P}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cq}{\mathcal{Q}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\calr}{\mathcal{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cs}{\mathcal{S}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ct}{\mathcal{T}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cu}{\mathcal{U}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cv}{\mathcal{V}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cw}{\mathcal{W}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cx}{\mathcal{X}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cy}{\mathcal{Y}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cz}{\mathcal{Z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ind}[1]{1(#1)}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand{
+\backslash
+pr}{P}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\pr}{\mathbb{P}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\predsp}{\cy}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%{
+\backslash
+hat{
+\backslash
+cy}}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\outsp}{\cy}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\prxy}{P_{\cx\times\cy}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\prx}{P_{\cx}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\prygivenx}{P_{\cy\mid\cx}}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand{
+\backslash
+ex}{E}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ex}{\mathbb{E}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\var}{\textrm{Var}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cov}{\textrm{Cov}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\sgn}{\textrm{sgn}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\sign}{\textrm{sign}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\kl}{\textrm{KL}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\law}{\mathcal{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\eps}{\varepsilon}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\as}{\textrm{ a.s.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\io}{\textrm{ i.o.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ev}{\textrm{ ev.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\convd}{\stackrel{d}{\to}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\eqd}{\stackrel{d}{=}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\del}{\nabla}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\loss}{\ell}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\risk}{R}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\emprisk}{\hat{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\lossfnl}{L}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\emplossfnl}{\hat{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\empminimizer}[1]{\hat{#1}^{*}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\minimizer}[1]{#1^{*}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\optimizer}[1]{#1^{*}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\etal}{\textrm{et. al.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\tr}{\operatorname{tr}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\trace}{\operatorname{trace}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\diag}{\text{diag}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rank}{\text{rank}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\linspan}{\text{span}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\spn}{\text{span}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\proj}{\text{Proj}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\argmax}{\operatornamewithlimits{arg\, max}}
+{\text{argmax}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\argmin}{\operatornamewithlimits{arg\, min}}
+{\text{argmin}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\bfx}{\mathbf{x}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfy}{\mathbf{y}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfl}{\mathbf{\lambda}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfm}{\mathbf{\mu}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\calL}{\mathcal{L}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\vw}{\boldsymbol{w}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vx}{\boldsymbol{x}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vxi}{\boldsymbol{\xi}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\valpha}{\boldsymbol{\alpha}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vbeta}{\boldsymbol{\beta}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vsigma}{\boldsymbol{\sigma}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vtheta}{\boldsymbol{\theta}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vd}{\boldsymbol{d}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vs}{\boldsymbol{s}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vt}{\boldsymbol{t}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vh}{\boldsymbol{h}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ve}{\boldsymbol{e}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vf}{\boldsymbol{f}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vg}{\boldsymbol{g}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vz}{\boldsymbol{z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vk}{\boldsymbol{k}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\va}{\boldsymbol{a}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vb}{\boldsymbol{b}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vv}{\boldsymbol{v}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vy}{\boldsymbol{y}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\hil}{\ch}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rkhs}{\hil}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ber}{\text{Ber}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+Introduction to Matrix Factorization
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+DS-GA 1003 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+optional, use only with long paper titles
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+David Rosenberg 
+\end_layout
+
+\begin_layout Date
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+today
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Institute
+New York University
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex ArticleMode
+status open
+
+\begin_layout Plain Layout
+Just in article version
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Plots courtesy of Ningshan Zhang.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+TODO: Work out the details of SGD for SVD.
+ Has a nice form that nly accesses one row adn one column of our matrices
+ per data point.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Matrix Denoising (or Smoothing) Problem 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Consider an image as a matrix of gray-scale values:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/matrix-factorization/denoiz53-peppers256-l0.png
+	lyxscale 50
+	width 90text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Left: 
+\series bold
+Original
+\series default
+; Middle: 
+\series bold
+Adds Gaussisan noise
+\series default
+; Right: 
+\series bold
+Denoised
+\series default
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Taken from  Marc'Aurelio Ranzato's page   
+\backslash
+url{http://www.cs.nyu.edu/~ranzato/research/projects.html}.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Matrix Denoising (or Smoothing) Problem 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $M$
+\end_inset
+
+ is the 
+\series bold
+original matrix
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $W$
+\end_inset
+
+ is the 
+\series bold
+noise
+\series default
+ added to 
+\begin_inset Formula $Z$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+We observe 
+\begin_inset Formula $Z=M+W$
+\end_inset
+
+.
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Problem:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Given 
+\begin_inset Formula $Z$
+\end_inset
+
+, produce some estimate for 
+\begin_inset Formula $M$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+How?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+General Approach
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Observe 
+\begin_inset Formula $Z$
+\end_inset
+
+ (the noisy 
+\begin_inset Formula $M$
+\end_inset
+
+ matrix).
+\end_layout
+
+\begin_layout Itemize
+We want a matrix 
+\begin_inset Formula $\hat{Z}$
+\end_inset
+
+ such that
+\begin_inset Formula 
+\[
+\sum_{i=1}^{m}\sum_{j=1}^{n}\left(\hat{z}_{ij}-z_{ij}\right)^{2}\mbox{ is small.}
+\]
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+But not too small!
+\end_layout
+
+\begin_layout Itemize
+Don't want to be fitting the noise
+\series bold
+ (overfitting)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Need some way to constrain 
+\begin_inset Formula $\hat{Z}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Different constraints give different algorithms.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Some Constraints for 
+\begin_inset Formula $\hat{M}$
+\end_inset
+
+ (Quick Look)
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $\|\hat{Z}\|_{\ell_{1}}\le c$
+\end_inset
+
+ (Sparse matrix approximation)
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\rank(\hat{Z})\le c$
+\end_inset
+
+.
+ (SVD methods)
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\|\hat{Z}\|_{*}\le c$
+\end_inset
+
+ (
+\series bold
+Nuclear norm 
+\series default
+= sum of singular values
+\series bold
+)
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\hat{Z}=UDV^{T}$
+\end_inset
+
+ with 
+\begin_inset Formula $\Phi(u_{j})\le c_{1},\Phi_{2}(v_{k})\le c_{2}$
+\end_inset
+
+ (Penalized SVD) 
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\hat{Z}=LR^{T}$
+\end_inset
+
+ with 
+\begin_inset Formula $\Phi_{1}(L)\le c_{1},\Phi_{2}(R)\le c_{2}$
+\end_inset
+
+ (Max-margin matrix factorization)
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\hat{Z}=L+S$
+\end_inset
+
+ with 
+\begin_inset Formula $\Phi_{1}(L)\le c_{1},\Phi_{2}(S)\le c_{2}$
+\end_inset
+
+ (Additive matrix decompostion)
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{List from 
+\backslash
+emph{Statistical Learning with Sparsity} by Hastie et al.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Itemize
+sparse matrix approx leads to soft-thresholded version o foriginal matrix;
+ optimal solution takes form 
+\begin_inset Formula $\hat{z}_{ij}=\sign(z_{ij})\left(\left|z_{ij}\right|-\gamma\right)_{+}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+rank constraint bounds number of nonzero singular values in 
+\begin_inset Formula $\hat{Z}$
+\end_inset
+
+; nonconvex, but optimal solution easily found by SVD
+\end_layout
+
+\begin_layout Itemize
+nuclear norm is convex – can be solved with SVD and soft-thresholding singular
+ values (apparently this method is useful with missing elements)
+\end_layout
+
+\begin_layout Itemize
+penalized SVD impose constraints on the left and right singular vectors;
+ e.g.
+ L1 and l2 norms; useful where interpretation of singular vectors is important
+\end_layout
+
+\begin_layout Itemize
+max-margin matrix factorization, typical penalty would be Frobenius norm
+ on whole matrix, which makes it closer to the nuclear norm
+\end_layout
+
+\begin_layout Itemize
+in additive decomposition, typical would be to make 
+\begin_inset Formula $L$
+\end_inset
+
+ low rank and 
+\begin_inset Formula $S$
+\end_inset
+
+ sparse
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Frobenius Norm
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+[Squared] Frobenius norm = 
+\begin_inset Quotes eld
+\end_inset
+
+sum of squares
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\series default
+(for a matrix)
+\end_layout
+
+\begin_layout Itemize
+For a matrix 
+\begin_inset Formula $M\in\reals^{m\times n}$
+\end_inset
+
+, the Frobenius norm of 
+\begin_inset Formula $M$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+\|M\|_{F}^{2}=\sum_{i=1}^{m}\sum_{j=1}^{n}m_{ij}^{2}.
+\]
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+-loss at the matrix level is often written as
+\begin_inset Formula 
+\begin{eqnarray*}
+\|Z-\hat{Z}\|_{F}^{2} & = & \sum_{i=1}^{m}\sum_{j=1}^{n}\left(z_{ij}-\hat{z}_{ij}\right)^{2}
+\end{eqnarray*}
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+General Framework
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Given 
+\begin_inset Formula $Z\in\reals^{m\times n},$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Find 
+\begin_inset Formula $\hat{Z}\in\reals^{m\times n}$
+\end_inset
+
+ solving the following optimization problem:
+\begin_inset Formula 
+\begin{eqnarray*}
+\text{minimize} &  & \|Z-\hat{Z}\|_{F}^{2}\\
+\mbox{such that } &  & \Phi(\hat{Z})\le c.
+\end{eqnarray*}
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Modifications required when
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $Z$
+\end_inset
+
+ isn't fully observed, or
+\end_layout
+
+\begin_layout Itemize
+if we want to apply 
+\begin_inset Formula $\Phi$
+\end_inset
+
+ to factors of 
+\begin_inset Formula $\hat{Z}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Matrix Notation
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Consider 
+\begin_inset Formula 
+\[
+M=\begin{pmatrix}m_{11} & m_{12}\\
+m_{21} & m_{22}\\
+m_{31} & m_{33}
+\end{pmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Can also write 
+\begin_inset Formula $M$
+\end_inset
+
+ in terms of its column vectors: 
+\begin_inset Formula $M=\left(m_{\cdot1},m_{\cdot2}\right)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Matrix-Vector Product
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Consider 
+\begin_inset Formula $Mv$
+\end_inset
+
+, where 
+\begin_inset Formula $v=\left(v_{1},v_{2}\right)^{T}$
+\end_inset
+
+ is a column vector: 
+\begin_inset Formula 
+\[
+\begin{pmatrix}m_{11} & m_{12}\\
+m_{21} & m_{22}\\
+m_{31} & m_{33}
+\end{pmatrix}\begin{pmatrix}v_{1}\\
+v_{2}
+\end{pmatrix}=\begin{pmatrix}v_{1}m_{11}+v_{2}m_{12}\\
+v_{1}m_{21}+v_{2}m_{22}\\
+v_{1}m_{31}+v_{2}m_{33}
+\end{pmatrix}=v_{1}\begin{pmatrix}m_{11}\\
+m_{21}\\
+m_{31}
+\end{pmatrix}+v_{2}\begin{pmatrix}m_{12}\\
+m_{22}\\
+m_{33}
+\end{pmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Product is a linear combination of the columns.
+\end_layout
+
+\begin_layout Itemize
+Can write as
+\begin_inset Formula 
+\[
+Mv=v_{1}m_{\cdot1}+v_{2}m_{\cdot2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Matrix-Matrix Product
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Multiplying 2 matrices is a matrix-vector multiply for each column in product
+ 
+\begin_inset Formula 
+\begin{eqnarray*}
+ &  & \begin{pmatrix}m_{11} & m_{12}\\
+m_{21} & m_{22}\\
+m_{31} & m_{33}
+\end{pmatrix}\begin{pmatrix}a_{11} & a_{12}\\
+a_{21} & a_{22}
+\end{pmatrix}\\
+ & = & \begin{pmatrix}\begin{pmatrix}m_{11} & m_{12}\\
+m_{21} & m_{22}\\
+m_{31} & m_{33}
+\end{pmatrix}\begin{pmatrix}a_{11}\\
+a_{21}
+\end{pmatrix}\;;\;\begin{pmatrix}m_{11} & m_{12}\\
+m_{21} & m_{22}\\
+m_{31} & m_{33}
+\end{pmatrix}\begin{pmatrix}a_{12}\\
+a_{22}
+\end{pmatrix}\end{pmatrix}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+From this, easy to see certain results on rank coming up...
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Rank of a Matrix
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $M\in\reals^{m\times n}$
+\end_inset
+
+ be an 
+\begin_inset Formula $m\times n$
+\end_inset
+
+ matrix.
+\end_layout
+
+\begin_layout Itemize
+Many equivalent definitions of 
+\series bold
+rank(M).
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\rank(M)$
+\end_inset
+
+ is
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+max number of linearly independent columns
+\end_layout
+
+\begin_layout Itemize
+max number of linearly independent rows
+\end_layout
+
+\begin_layout Itemize
+dimension of column space
+\end_layout
+
+\begin_layout Itemize
+dimension of row space
+\end_layout
+
+\begin_layout Itemize
+number of non-zero singular values in SVD
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Largest possible rank for 
+\begin_inset Formula $M$
+\end_inset
+
+?
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Rank of an outer product
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose we have column vectors 
+\begin_inset Formula $v=(v_{1},v_{2})^{T}$
+\end_inset
+
+ and 
+\begin_inset Formula $w=\left(w_{1},w_{2},w_{3}\right)^{T}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Their
+\series bold
+ outer product 
+\series default
+is
+\begin_inset Formula 
+\begin{eqnarray*}
+vw^{T} & = & \begin{pmatrix}v_{1}\\
+v_{2}
+\end{pmatrix}\begin{pmatrix}w_{1} & w_{2} & w_{3}\end{pmatrix}\\
+ & = & \begin{pmatrix}v_{1}w_{1} & v_{1}w_{2} & v_{1}w_{3}\\
+v_{2}w_{1} & v_{2}w_{2} & v_{2}w_{3}
+\end{pmatrix}\\
+ & = & \begin{pmatrix}w_{1}v\;w_{2}v\;w_{3}v\end{pmatrix}
+\end{eqnarray*}
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Every column of 
+\begin_inset Formula $vw^{T}$
+\end_inset
+
+ is a multiple of 
+\begin_inset Formula $v$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+What is the rank of 
+\begin_inset Formula $vw^{T}$
+\end_inset
+
+? 
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Every Rank 1 Matrix is an Outer Product
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose 
+\begin_inset Formula $M\in\reals^{m\times n}$
+\end_inset
+
+ is a rank 
+\begin_inset Formula $1$
+\end_inset
+
+ matrix.
+\end_layout
+
+\begin_layout Itemize
+Claim: 
+\begin_inset Formula $\exists w\in\reals^{m},x\in\reals^{n}$
+\end_inset
+
+ s.t.
+ 
+\begin_inset Formula $M=wx^{T}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Proof: 
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Rank 
+\begin_inset Formula $1$
+\end_inset
+
+ implies every column is multiple of first column.
+\end_layout
+
+\begin_layout Itemize
+Let 
+\begin_inset Formula $w$
+\end_inset
+
+=first column of 
+\begin_inset Formula $M$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Take 
+\begin_inset Formula $v$
+\end_inset
+
+ to be vector of multiples of 
+\begin_inset Formula $w$
+\end_inset
+
+ required.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+SVD for Rank 1 Matrix
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The factorization
+\begin_inset Formula 
+\[
+M=\sigma_{1}uv^{T},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\sigma_{1}>0$
+\end_inset
+
+ and 
+\begin_inset Formula $\|u\|=\|v\|=1$
+\end_inset
+
+ is the 
+\series bold
+singular value decomposition (SVD).
+\end_layout
+
+\begin_layout Itemize
+Easy derivation from 
+\begin_inset Formula $M=wx^{T}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Rank of matrix product
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose 
+\begin_inset Formula $\rank(M)=r$
+\end_inset
+
+ and 
+\begin_inset Formula $\rank(N)=s$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+What is largest possible rank of 
+\begin_inset Formula $MN$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Itemize
+Approach:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Every column of 
+\begin_inset Formula $MN$
+\end_inset
+
+ is a linear combination of columns of 
+\begin_inset Formula $M$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+So 
+\begin_inset Formula $\rank(MN)\le r$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Using 
+\begin_inset Formula $\rank(A)=\rank(A^{T})$
+\end_inset
+
+, 
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+can apply same argument to 
+\begin_inset Formula $NM$
+\end_inset
+
+ 
+\begin_inset Formula $\implies$
+\end_inset
+
+ 
+\begin_inset Formula $\rank(MN)\le s$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+So
+\begin_inset Formula 
+\[
+\rank\left(MN\right)\le\min(\rank(M),\rank(N)).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Low Rank Matrices
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $M\in\reals^{m\times n}$
+\end_inset
+
+ is 
+\series bold
+low rank 
+\series default
+if 
+\begin_inset Formula $\rank(M)\ll\min(m,n)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+(
+\begin_inset Formula $M$
+\end_inset
+
+ has relatively few independent columns.)
+\end_layout
+
+\begin_layout Itemize
+Suppose 
+\begin_inset Formula $M$
+\end_inset
+
+ is 
+\begin_inset Formula $5\times4$
+\end_inset
+
+ and 
+\begin_inset Formula $\rank(M)=2$
+\end_inset
+
+, then we can 
+\series bold
+factorize
+\series default
+ as:
+\begin_inset Formula 
+\[
+\underbrace{\begin{pmatrix}m_{11}\\
+\\
+\\
+\\
+ &  &  & m_{54}
+\end{pmatrix}}_{5\times4}=\underbrace{\begin{pmatrix}a_{11}\\
+\\
+\\
+\\
+ & a_{52}
+\end{pmatrix}}_{5\times2}\underbrace{\begin{pmatrix}b_{11}\\
+ &  &  & b_{24}
+\end{pmatrix}}_{2\times5}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Proof: Should be clear from discussion above.
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Rank-Constrained Matrix Approximation
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Given 
+\begin_inset Formula $Z\in\reals^{m\times n},$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Find 
+\begin_inset Formula $\hat{Z}\in\reals^{m\times n}$
+\end_inset
+
+ solving the following optimization problem:
+\begin_inset Formula 
+\begin{eqnarray*}
+\text{minimize} &  & \|Z-\hat{Z}\|_{F}^{2}\\
+\mbox{such that } &  & \rank(\hat{Z})\le c,
+\end{eqnarray*}
+
+\end_inset
+
+for 
+\begin_inset Formula $c\in\left\{ 1,2,\ldots,\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The solution to this problem is immediate from the 
+\series bold
+singular value decomposition 
+\series default
+(SVD)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Singular Value Decomposition (SVD) 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If 
+\begin_inset Formula $M\in\reals^{m\times n}$
+\end_inset
+
+ has rank 
+\begin_inset Formula $r$
+\end_inset
+
+, then its 
+\series bold
+singular value decomposition
+\series default
+ is
+\begin_inset Formula 
+\[
+M=\sum_{i=1}^{r}\sigma_{i}u_{i}v_{i}^{T},
+\]
+
+\end_inset
+
+where
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\sigma_{1}\ge\sigma_{2}\ge\cdots\ge\sigma_{r}>0$
+\end_inset
+
+ are called the 
+\series bold
+singular values
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $u_{1},\ldots,u_{r}$
+\end_inset
+
+ are 
+\series bold
+orthonormal 
+\series default
+and are called the 
+\series bold
+left singular vectors
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $v_{1},\ldots,v_{r}$
+\end_inset
+
+ are 
+\series bold
+orthonormal 
+\series default
+and are called the 
+\series bold
+right singular vectors
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+THEOREM
+\series default
+: 
+\series bold
+Every matrix has a singular value decomposition.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Note on uniqueness from Wikipedia: A singular value for which we can find
+ two left (or right) singular vectors that are linearly independent is called
+ degenerate.
+ Non-degenerate singular values always have unique left- and right-singular
+ vectors, up to multiplication by a unit-phase factor eiφ (for the real
+ case up to sign).
+ Consequently, if all singular values of M are non-degenerate and non-zero,
+ then its singular value decomposition is unique, up to multiplication of
+ a column of U by a unit-phase factor and simultaneous multiplication of
+ the corresponding column of V by the same unit-phase factor.
+ Degenerate singular values, by definition, have non-unique singular vectors.
+ Furthermore, if u1 and u2 are two left-singular vectors which both correspond
+ to the singular value σ, then any normalized linear combination of the
+ two vectors is also a left-singular vector corresponding to the singular
+ value σ.
+ The similar statement is true for right-singular vectors.
+ Consequently, if M has degenerate singular values, then its singular value
+ decomposition is not unique.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+SVD: Rank 
+\begin_inset Formula $r$
+\end_inset
+
+ Approximation Theorem
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Given 
+\begin_inset Formula $Z\in\reals^{m\times n},$
+\end_inset
+
+ find 
+\begin_inset Formula $\hat{Z}\in\reals^{m\times n}$
+\end_inset
+
+ solving the following:
+\begin_inset Formula 
+\begin{eqnarray*}
+\text{minimize} &  & \|Z-\hat{Z}\|_{F}^{2}\\
+\mbox{such that } &  & \rank(\hat{Z})\le c,
+\end{eqnarray*}
+
+\end_inset
+
+for 
+\begin_inset Formula $c\in\left\{ 1,2,\ldots,\rank(Z)\right\} $
+\end_inset
+
+.
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+THEOREM:
+\series default
+ This optimization problem is solved by
+\begin_inset Formula 
+\[
+\hat{Z}=\sum_{i=1}^{c}\sigma_{i}u_{i}v_{i}^{T},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\sigma$
+\end_inset
+
+'s, 
+\begin_inset Formula $u$
+\end_inset
+
+'s, and 
+\begin_inset Formula $v$
+\end_inset
+
+'s are given by the SVD for 
+\begin_inset Formula $Z$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+Z=\sum_{i=1}^{r}\sigma_{i}u_{i}v_{i}^{T}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Netflix Problem
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Partially observed ratings matrix
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/matrix-factorization/netflix-cartoon.png
+	width 70text%
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Taken from 
+\backslash
+url{https://analyticsweek.com/content/movie-recommendations-how-does-netflix-do-i
+t-a-9-step-coding-intuitive-guide-into-collaborative-filtering/}}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Netflix Problem
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+How do we fill in the missing entries of the ratings matrix?
+\end_layout
+
+\begin_layout Itemize
+Let's generalize the problem a bit:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $m$
+\end_inset
+
+ users
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $n$
+\end_inset
+
+ movies
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+ratings matrix
+\series default
+ 
+\begin_inset Formula $Z\in\reals^{m\times n}$
+\end_inset
+
+ (an 
+\begin_inset Formula $m\times n$
+\end_inset
+
+ matrix)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We observe some entries of 
+\begin_inset Formula $Z$
+\end_inset
+
+ – how to estimate the rest?
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Partial Observations (Notation)
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $z_{ij}$
+\end_inset
+
+: rating for user 
+\begin_inset Formula $i$
+\end_inset
+
+ and movie 
+\begin_inset Formula $j$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Observed entries 
+\begin_inset Formula $\cd=\left\{ z_{1,2}=3,z_{2,4}=0,z_{4,2}=1,z_{6,2}=5\right\} $
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+(This is our 
+\series bold
+training data
+\series default
+.)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\Omega$
+\end_inset
+
+: set of entries that we observe, e.g.
+\begin_inset Formula 
+\[
+\Omega=\left\{ \left(1,2\right),\left(2,4\right),\left(4,2\right),\left(6,2\right)\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Mean observed rating:
+\begin_inset Formula 
+\[
+\mu=\frac{1}{\left|\Omega\right|}\sum_{\left(i,j\right)\in\Omega}z_{ij}=\frac{9}{4}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Prediction Problem
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Given a new user/movie pair 
+\begin_inset Formula $(i,j)$
+\end_inset
+
+,
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+give a prediction 
+\begin_inset Formula $\hat{z}_{ij}$
+\end_inset
+
+ for the unknown 
+\begin_inset Formula $z_{ij}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Alternatively, 
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+produce a full matrix 
+\begin_inset Formula $\hat{Z}=\left(\hat{z}_{ij}\right)\in\reals^{m\times n}$
+\end_inset
+
+ all at once.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Equivalent, just two different ways to think about it.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Performance Measure
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We predict 
+\begin_inset Formula $\hat{z}_{ij}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Later we get the actual 
+\begin_inset Formula $z_{ij}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+How to evaluate how well we did?
+\end_layout
+
+\begin_layout Itemize
+Need a 
+\series bold
+loss function
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+Netflix used 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+-loss (i.e.
+ square loss): 
+\begin_inset Formula 
+\[
+\ell(z_{ij},\hat{z}_{ij})=\left(z_{ij}-\hat{z}_{ij}\right)^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+We'll focus on square loss.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+More Matrix Multiplication
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Sometimes we need the most vanilla description of matrix mult:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/matrix-factorization/basic-matrix-mult.png
+	lyxscale 60
+	width 85text%
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Alex Lin's "Introduction to Matrix Factorization Methods Collaborative
+ Filtering"}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Netflix Matrix Factorization (
+\begin_inset Quotes eld
+\end_inset
+
+Latent Factor Model
+\begin_inset Quotes erd
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+t
+\begin_inset Graphics
+	filename ../Figures/matrix-factorization/basic-matrix-mult.png
+	lyxscale 60
+	width 60text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Factorization tells us 
+\begin_inset Formula $\rank(r)\le3$
+\end_inset
+
+.(clear?)
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $x_{32}$
+\end_inset
+
+ is rating for user 3 of movie 
+\begin_inset Formula $2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Interpretation: we have 
+\begin_inset Formula $3$
+\end_inset
+
+ movie 
+\series bold
+categories 
+\series default
+(called 
+\series bold
+factors
+\series default
+ in more generic contexts)
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $q_{3\cdot}$
+\end_inset
+
+ gives user 
+\begin_inset Formula $3$
+\end_inset
+
+'s weightings to each 
+\series bold
+category
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $p_{\cdot2}$
+\end_inset
+
+ gives how much each movie belongs to 
+\series bold
+category 
+\series default
+2
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Alex Lin's "Introduction to Matrix Factorization Methods Collaborative
+ Filtering"}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Netflix Matrix Factorization: Objective Function
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Find 
+\begin_inset Formula $\hat{Z}=QP^{T}$
+\end_inset
+
+ where 
+\begin_inset Formula $Q$
+\end_inset
+
+ is 
+\begin_inset Formula $m\times r$
+\end_inset
+
+ and 
+\begin_inset Formula $P$
+\end_inset
+
+ is 
+\begin_inset Formula $n\times r$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Training loss is
+\begin_inset Formula 
+\[
+\frac{1}{|\Omega|}\sum_{\left(i,j\right)\in\Omega}\left(z_{ij}-q_{i\cdot}p_{\cdot j}\right)^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+How many parameters? 
+\begin_inset Formula $r(m+n)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Minimize this loss using
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+SGD or
+\end_layout
+
+\begin_layout Itemize
+Alternating least squares
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Put in some regularization
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Training loss is
+\begin_inset Formula 
+\[
+\frac{1}{|\Omega|}\sum_{\left(i,j\right)\in\Omega}\left(z_{ij}-q_{i\cdot}p_{\cdot j}\right)^{2}+\sum_{i=1}^{m}\sum_{j=1}^{r}\left(\lambda_{1}|q_{ij}|+\lambda_{2}q_{ij}^{2}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+How many parameters? 
+\begin_inset Formula $r(m+n)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+First pass: minimize this loss using SGD.
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Put in some bias terms
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Training loss is
+\begin_inset Formula 
+\[
+\frac{1}{|\Omega|}\sum_{\left(i,j\right)\in\Omega}\left(z_{ij}-\left[q_{i\cdot}p_{\cdot j}+u_{i}+m_{j}+c\right]\right)^{2}+\sum_{i=1}^{m}\sum_{j=1}^{r}\left(\lambda_{1}|q_{ij}|+\lambda_{2}q_{ij}^{2}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+user bias term: 
+\begin_inset Formula $u_{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+movie bias term: 
+\begin_inset Formula $m_{j}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

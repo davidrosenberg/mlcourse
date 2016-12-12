@@ -33,7 +33,16 @@ figs-within-sections
 \index_command default
 \paperfontsize 12
 \spacing single
-\use_hyperref false
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
 \papersize letterpaper
 \use_geometry false
 \use_package amsmath 2
@@ -579,7 +588,11 @@ Let
 \end_inset
 
 .
- We define the directional derivative of 
+ We define the 
+\series bold
+directional derivative
+\series default
+ of 
 \begin_inset Formula $f$
 \end_inset
 
@@ -599,7 +612,40 @@ Let
 
 \end_inset
 
-Note that 
+Note
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Sometimes people require that 
+\begin_inset Formula $v$
+\end_inset
+
+ be a unit vector, but that is not necessary and we do not assume that here.
+ If you prefer, you can always replace 
+\begin_inset Formula $v$
+\end_inset
+
+ by 
+\begin_inset Formula $v/\|v\|$
+\end_inset
+
+.
+ As we write it here, the directional derivative has the same form as the
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "Gâteaux derivative"
+target "https://en.wikipedia.org/wiki/G%C3%A2teaux_derivative"
+
+\end_inset
+
+, used in functional analysis.
+\end_layout
+
+\end_inset
+
+ that 
 \begin_inset Formula $\del_{v}f(x)$
 \end_inset
 
@@ -609,20 +655,6 @@ Note that
 \end_inset
 
 ).
- [Sometimes people require that 
-\begin_inset Formula $v$
-\end_inset
-
- be a unit vector, but that is not necessary for what we do below.
- But if you prefer, you can always replace 
-\begin_inset Formula $v$
-\end_inset
-
- by 
-\begin_inset Formula $v/\|v\|$
-\end_inset
-
-.]
 \end_layout
 
 \begin_layout Itemize
@@ -717,12 +749,22 @@ first order approximation
 \end_inset
 
 .
- This approximation becomes exact as 
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+This approximation becomes exact as 
 \begin_inset Formula $\eps\to0$
 \end_inset
 
 .
- 
+ [Removed this sentence because needs more explanation.]
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -775,6 +817,27 @@ and where
 \end_inset
 
 th coordinate.
+ Note that 
+\begin_inset Formula $\del_{e_{i}}f(x)$
+\end_inset
+
+ is also the 
+\series bold
+partial derivative
+\series default
+ with respect to 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+, the 
+\begin_inset Formula $i$
+\end_inset
+
+th coordinate of 
+\begin_inset Formula $x$
+\end_inset
+
+.
  
 \end_layout
 
@@ -793,10 +856,10 @@ One fact you should recall from calculus is that we can get any directional
 \end_layout
 
 \begin_layout Itemize
-Thus we can also write
+Thus we can also write the first order approximation as 
 \begin_inset Formula 
 \[
-f(x+\eps v)\approx f(x)+\eps\del f(x)^{T}v
+f(x+\eps v)\approx f(x)+\eps\del f(x)^{T}v.
 \]
 
 \end_inset

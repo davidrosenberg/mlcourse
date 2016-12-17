@@ -1,0 +1,48 @@
+#+TITLE: Learning Objectives
+#+EMAIL: dr129@nyu.edu
+#+AUTHOR: David S. Rosenberg
+#+OPTIONS: toc:nil
+
+Issue: "The students come to believe that their primary responsibility is not
+so much to learn as to guess what their instructors want them to
+know." (Teaching and Learning STEM: A practical guide)
+
+Solution: Just tell the students directly what we want them to know.
+
+By the end of each lecture/homework, you should be able to do the
+following:
+
+* Lecture 1b: Introduction to Statistical Learning Theory 
+** Basic Setup for Statistical Learning Theory
+- Identify the input, action, and outcome spaces for a given machine
+  learning problem.
+- Provide an example for which the action space and outcome spaces are
+  the same and one for which they are different different.
+- Explain the relationships between the decision function, the loss
+  function, the input space, the action space, and the outcome space.
+- Define the risk of a decision function and a Bayes decision
+  function.
+- Provide example decision problems for which the Bayes risk is 0 and
+  the Bayes risk is nonzero.
+- Know the Bayes decision functions for square loss and multiclass 0/1
+  loss.
+- Define the empirical risk functional and the empirical risk
+  minimizer.
+- Provide an example for which the empirical risk minimizer will
+  overfit arbitrarily badly. 
+- Explain what a hypothesis space is, and how it can be used wtih
+  constrained empirical risk minimization to control overfitting.
+- Give precise definitions for excess risk, approximation error, estimation error,
+  and optimization error.
+- Suppose we have nested hypothesis spaces, say H_1 \subset H_2.
+  Explain how we would expect the approximation error and
+  estimation error to change when we change from H_1 to H_2, all else fixed.
+- Explain how we would expect the approximation error and
+  estimation error to change when we increase the sample size, all
+  else fixed.
+- Explain optimization error, and write down an excess risk
+  decomposition that incorporates approximation error, estimation
+  error, and optimization error.
+* Lecture 1c: Gradient and Stochastic Gradient Descent
+- Give ane the empirical risk for square loss over a hypothesis
+  space of linear functions.

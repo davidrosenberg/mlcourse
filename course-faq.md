@@ -10,8 +10,9 @@ using built in operations for multiplying matrices, vectors, and
 arrays, rather than coding it yourself with loops.  Some people have
 found Justin Johnson's [Nympy Tutorial](http://cs231n.github.io/python-numpy-tutorial/)
 helpful, but please share additional recommended resources.
-## <a name="concept-mastery"></a> Partial Credit and Concept Mastery
+## Partial Credit and Concept Mastery
 
+<a name="concept-mastery"></a> 
 [//]: # (Original discussion: https://piazza.com/class?cid=ioafvb6pm2h7dz&nid=ii99b8o57me5jo&token=UBVy4GpzZ0f)
 
 I receive a lot of questions and comments related to partial credit on

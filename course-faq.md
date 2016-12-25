@@ -8,7 +8,7 @@ An essential tool for writing machine learning tools in high-level
 languages such as Python, Matlab, R, etc., is vectorization.  That is,
 using built in operations for multiplying matrices, vectors, and
 arrays, rather than coding it yourself with loops.  Some people have
-found Justin Johnson's [Nympy Tutorial](http://cs231n.github.io/python-numpy-tutorial/)
+found Justin Johnson's [Numpy Tutorial](http://cs231n.github.io/python-numpy-tutorial/)
 helpful, but please share additional recommended resources.
 ## Partial Credit and Concept Mastery
 

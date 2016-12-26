@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -19,22 +21,23 @@
   \end{frame}
 }
 \end_preamble
+\options handout
 \use_default_options false
 \maintain_unincluded_children false
 \language english
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman times
-\font_sans default
-\font_typewriter default
-\font_math eulervm
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "eulervm" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -789,7 +792,7 @@ bag fraction
 
  ; frequent default is 50%...
  but what if we have tons of data?[what happens in the limit of a single
- or very few data points?] -- possible issue is that we mess up predictions
+ or very few data points?] – possible issue is that we mess up predictions
  at other points...
  [homework problem???]
 \end_layout
@@ -825,7 +828,10 @@ According to use feedback, using column sub-sampling prevents overfitting
 Review: Gradient Boosting
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -837,6 +843,10 @@ status open
 The Gradient Boosting Machine
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -857,6 +867,10 @@ For
 \end_inset
 
  (until stopping condition met)
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -926,7 +940,10 @@ f_{m}(x)=f_{m-1}(x)+\nu_{m}h_{m}(x)
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -938,6 +955,10 @@ status open
 Unconstrained Functional Gradient Stepping
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1000,7 +1021,10 @@ emph{Ensemble Methods in Data Mining}, Fig B.1.}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1012,6 +1036,10 @@ status open
 Projected Functional Gradient Stepping
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1072,7 +1100,10 @@ emph{Ensemble Methods in Data Mining}, Fig B.2.}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1084,6 +1115,10 @@ status open
 The Gradient Boosting Machine: Recap
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1111,7 +1146,10 @@ Then you're good to go!
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1127,6 +1165,10 @@ status open
 Gradient Tree Boosting
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1147,6 +1189,10 @@ where
 \end_inset
 
  is the number of terminal nodes.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1160,6 +1206,10 @@ where
 \end_inset
 
  gives decision stumps
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1178,6 +1228,10 @@ HTF recommends
 
 \begin_layout Itemize
 Software packages:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1205,6 +1259,12 @@ GradientBoostingRegressor
  in 
 \series bold
 sklearn
+\series default
+
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1216,6 +1276,10 @@ sklearn
 \end_deeper
 \begin_layout Itemize
 For trees, there are other tweaks on the algorithm one can do
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1225,7 +1289,7 @@ See HTF 10.9-10.12
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
@@ -1244,6 +1308,10 @@ Gradient Tree Boosting Modification
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1261,6 +1329,10 @@ where
 \end_inset
 
  is the number of terminal nodes.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1274,6 +1346,10 @@ where
 \end_inset
 
  gives decision stumps
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1292,6 +1368,10 @@ HTF recommends
 
 \begin_layout Itemize
 Software packages:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1319,6 +1399,12 @@ GradientBoostingRegressor
  in 
 \series bold
 sklearn
+\series default
+
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1330,6 +1416,10 @@ sklearn
 \end_deeper
 \begin_layout Itemize
 For trees, there are other tweaks on the algorithm one can do
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1355,13 +1445,20 @@ status open
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
 GBM Regression with Stumps
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1373,6 +1470,10 @@ status open
 Sinc Function: Our Dataset
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1416,11 +1517,17 @@ tiny{From Natekin and Knoll's "Gradient boosting machines, a tutorial"}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1432,6 +1539,10 @@ status open
 Fitting with Ensemble of Decision Stumps
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1501,7 +1612,10 @@ tiny{From Natekin and Knoll's "Gradient boosting machines, a tutorial"}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1513,6 +1627,10 @@ status open
 Step Size as Regularization
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1560,7 +1678,10 @@ tiny{From Natekin and Knoll's "Gradient boosting machines, a tutorial"}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1579,11 +1700,19 @@ Stochastic Gradient Boosting
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 For each stage, 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1610,6 +1739,10 @@ bag fraction
 \end_deeper
 \begin_layout Itemize
 Why?
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1623,6 +1756,10 @@ Faster.
 
 \begin_layout Itemize
 Subsample percentage is additional regularization parameter.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1637,7 +1774,7 @@ How small a fraction can we take?
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
@@ -1653,6 +1790,10 @@ status open
 Newton Step Direction
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1771,6 +1912,10 @@ second order method
 \end_inset
 
 :
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1795,6 +1940,10 @@ Step direction is towards the
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_layout Frame
@@ -1805,6 +1954,10 @@ status open
 Column / Feature Subsampling for Regularization
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1834,7 +1987,10 @@ According to use feedback, using column sub-sampling prevents overfitting
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1846,6 +2002,10 @@ status open
 Newton Step Direction
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1895,6 +2055,10 @@ second order method
 \end_inset
 
 :
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1908,6 +2072,10 @@ Find 2nd order (quadratic) approximation to
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1931,6 +2099,10 @@ Minimizer of quadratic is easy to find in closed form
 \end_deeper
 \begin_layout Itemize
 Boosting methods with projected Newton step direction:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1939,12 +2111,12 @@ LogitBoost (logistic loss function)
 \end_layout
 
 \begin_layout Itemize
-XGBoost (any loss -- uses regression trees for base classifier)
+XGBoost (any loss – uses regression trees for base classifier)
 \end_layout
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
@@ -1967,12 +2139,20 @@ The Hypothesis Space for AdaBoost
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 Base hypothesis space: 
 \begin_inset Formula $\ch$
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1992,7 +2172,7 @@ For
 \begin_inset Formula $h:\cx\to\left\{ -1,1\right\} $
 \end_inset
 
-\SpecialChar \@.
+\SpecialChar endofsentence
 
 \end_layout
 
@@ -2043,6 +2223,10 @@ Questions
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2070,7 +2254,7 @@ bag fraction
 
  ; frequent default is 50%...
  but what if we have tons of data?[what happens in the limit of a single
- or very few data points?] -- possible issue is that we mess up predictions
+ or very few data points?] – possible issue is that we mess up predictions
  at other points...
  [homework problem???]
 \end_layout
@@ -2084,6 +2268,10 @@ bag fraction
 
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 

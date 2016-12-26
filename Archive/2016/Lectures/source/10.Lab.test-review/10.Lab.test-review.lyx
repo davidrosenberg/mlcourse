@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -19,22 +21,23 @@
   \end{frame}
 }
 \end_preamble
+\options handout
 \use_default_options false
 \maintain_unincluded_children false
 \language english
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman times
-\font_sans default
-\font_typewriter default
-\font_math eulervm
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "eulervm" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -780,6 +783,10 @@ Kernels
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -788,7 +795,10 @@ The kernel trick
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -803,16 +813,23 @@ Trees
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-doesn't depend on actual values of features -- just ordering within each
+doesn't depend on actual values of features – just ordering within each
  feature 
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -827,12 +844,20 @@ Bagging
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 T/F: In bagging, as we increase the number of bootstrap samples, we expect
  that we will eventually overfit.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -848,6 +873,10 @@ False.
 \begin_layout Itemize
 With bagging, how can we get an estimate of test perfomance while still
  using all our data for training?
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -868,7 +897,10 @@ out-of-bag
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -883,11 +915,19 @@ Random Forest
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 T/F: Random forest is just bagging with trees.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -903,6 +943,10 @@ False
 \begin_layout Itemize
 T/F: Generating too many trees in a random forest will probably lead to
  overfitting.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -916,7 +960,10 @@ False
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -931,11 +978,19 @@ AdaBoost
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 T/F: We can use regression trees as the base classifier for AdaBoost.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -951,6 +1006,10 @@ False.
 \end_deeper
 \begin_layout Itemize
 T/F: We can use SVM as a base classifier for AdaBoost.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -960,6 +1019,10 @@ True, if you map the output to
 \end_inset
 
  with a modified sign function.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -972,6 +1035,10 @@ True, if you map the output to
 \begin_layout Itemize
 T/F: We can view AdaBoost a method for minimizing the exponential loss using
  forward stagewise additive modeling.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -985,7 +1052,10 @@ True
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -997,6 +1067,10 @@ status open
 Gradient Boosting
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1013,7 +1087,10 @@ Know how to do gradient boosting with a new loss function and a black box
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1028,17 +1105,29 @@ Multiclass Classification
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 Understand the key pieces
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 class sensitive loss function 
 \begin_inset Formula $\Delta(y,y')$
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1053,6 +1142,10 @@ class sensitive loss function
 \begin_layout Itemize
 feature map: 
 \begin_inset Formula $\Psi:\cx\times\cy\to\reals^{d}$
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1074,6 +1167,10 @@ linear score function
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1092,6 +1189,10 @@ final prediction function
 
 \begin_layout Itemize
 loss functions:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1101,6 +1202,10 @@ loss functions:
 
 \begin_layout Itemize
 multiclass hinge / SVM loss
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1120,7 +1225,10 @@ multinomial logistic regression loss
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1135,12 +1243,20 @@ Likelihood, MLE, Conditional Likelihood
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 go through examples in slides (Poisson regression, Gaussian regression,
  binomial, multinomial)
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1158,11 +1274,17 @@ note that you can use these same losses for gradient boosting
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1174,6 +1296,10 @@ status open
 Conditional Exponential Distribution
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1194,6 +1320,10 @@ Output:
 \end_inset
 
  gives waiting time for taxi pickup
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1209,6 +1339,10 @@ Exponential distributions are a natural candidate:
 \text{ExpDists}=\left\{ p_{\lambda}(y)=\lambda e^{-\lambda y}\ind{y\in[0,\infty)}\mid\lambda\in\left(0,\infty\right)\right\} .
 \]
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1234,6 +1368,10 @@ For input
 parameter
 \series default
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1257,6 +1395,10 @@ So we'll predict
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1278,7 +1420,10 @@ What can we use for
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1290,6 +1435,10 @@ status open
 Conditional Exponential Distribution
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1307,6 +1456,10 @@ Taking
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1329,6 +1482,10 @@ p_{\lambda}(y)=\lambda e^{-\lambda y}
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1347,6 +1504,10 @@ For input
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1376,7 +1537,10 @@ p_{w}(y\mid x)=\exp\left(w^{T}x\right)e^{-\exp\left(w^{T}x\right)y}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1388,6 +1552,10 @@ status open
 Conditional Exponential Distribution
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1406,6 +1574,10 @@ p_{w}(y|x) & = & \exp\left(w^{T}x\right)e^{-\exp\left(w^{T}x\right)y}\\
 \implies\log p_{w}(y\mid x) & = & w^{T}x-y\exp\left(w^{T}x\right)
 \end{eqnarray*}
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1450,7 +1622,10 @@ MLE is then
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1462,6 +1637,10 @@ status open
 Conditional Exponential Distribution with GBM?
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1483,6 +1662,10 @@ For linear version, we take parameter to be
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1501,6 +1684,10 @@ Replace
 \end_inset
 
  that we will learn with GBM.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1519,6 +1706,10 @@ J(g)=\sum_{i=1}^{n}\left[g(x_{i})-y_{i}\exp\left(g(x_{i})\right)\right].
 \end_inset
 
 (we want to maximize it)
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1542,7 +1733,10 @@ Differentiate w.r.t.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 

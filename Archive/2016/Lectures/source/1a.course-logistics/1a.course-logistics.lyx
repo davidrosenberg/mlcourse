@@ -1,27 +1,30 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
 \end_preamble
+\options handout
 \use_default_options false
 \maintain_unincluded_children false
 \language english
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman times
-\font_sans default
-\font_typewriter default
-\font_math eulervm
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "eulervm" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -151,6 +154,9 @@ Logistics
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -168,11 +174,19 @@ https://davidrosenberg.github.io/ml2016
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 Syllabus on the website
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -195,11 +209,19 @@ https://piazza.com/nyu/spring2016/dsga1003
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 Ask questions here
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -211,6 +233,10 @@ Ask questions here
 \end_deeper
 \begin_layout Itemize
 Class Times
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -246,7 +272,10 @@ Lab
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -258,6 +287,10 @@ status open
 Lab Sessions
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -285,7 +318,10 @@ Meetings with project advisors
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -300,6 +336,10 @@ Course Staff
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -309,6 +349,10 @@ TA: Levent Sagun
 
 \begin_layout Itemize
 Graders:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -331,6 +375,10 @@ Tian Wang
 \end_deeper
 \begin_layout Itemize
 Project Advisers:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -340,7 +388,10 @@ Kurt Miller, Kush Varshney, Brian d'Alessandro, and more TBD.
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -355,6 +406,10 @@ Evaluation
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -364,6 +419,10 @@ About 8 homeworks (40%)
 
 \begin_layout Itemize
 Two tests (40%)
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -378,11 +437,19 @@ Two-Hour Test (25%) in Week 11
 \end_deeper
 \begin_layout Itemize
 Project (20%) 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 Poster session during exam week (Week 15)
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -394,6 +461,10 @@ Poster session during exam week (Week 15)
 \end_deeper
 \begin_layout Itemize
 Extra Credit Opportunities
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -416,7 +487,10 @@ At most, increases final grade by half a letter (e.g.
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -431,11 +505,15 @@ Homework (40%)
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-First assignment out Thursday -- Due in one week.
+First assignment out Thursday – Due in one week.
 \end_layout
 
 \begin_layout Itemize
@@ -463,6 +541,10 @@ submitted as a PDF document
 
 \begin_layout Itemize
 Late homework: Accepted up to 48 hours late with 20% penalty
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -473,6 +555,10 @@ Late homework: Accepted up to 48 hours late with 20% penalty
 \end_deeper
 \begin_layout Itemize
 Collaboration is fine, but
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -486,7 +572,10 @@ List names of who you talked to about each problem
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -501,6 +590,10 @@ Projects (20%)
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -510,6 +603,10 @@ Find some new data or new approach to old data
 
 \begin_layout Itemize
 Project philosophy the same as in these courses:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -539,6 +636,10 @@ http://web.stanford.edu/class/cs221/project.html
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -550,6 +651,10 @@ http://web.stanford.edu/class/cs221/project.html
 \end_deeper
 \begin_layout Itemize
 Logistics:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -567,7 +672,10 @@ Project proposal due around Spring Break (date TBD)
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -579,6 +687,10 @@ status open
 Prerequisites
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -595,6 +707,10 @@ DS-GA 1002: Statistical and Mathematical Methods
 
 \begin_layout Itemize
 Math
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -620,7 +736,10 @@ Python programming (numpy)
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -635,11 +754,19 @@ General Philosophy
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 Mastery vs Performance 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -678,6 +805,10 @@ actual understanding
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -693,6 +824,10 @@ From Quora:
 
 Why is L1 regularization supposed to lead to sparsity than L2?
 \begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -741,7 +876,10 @@ an-L2}.}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -759,12 +897,19 @@ Course Topics
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 Frequentist Approaches
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -779,6 +924,10 @@ ERM, regularization, SVM, kernels, ensemble methods
 \end_deeper
 \begin_layout Itemize
 Probabilistic Models
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -793,6 +942,10 @@ GLM, Bayesian networks, Gaussian mixture models, EM algorithm
 \end_deeper
 \begin_layout Itemize
 Bayesian Approaches
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -808,6 +961,10 @@ priors/posteriors, hierarchical models, Bayesian regression
 \begin_layout Itemize
 Misc.
  and Advanced Topics
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -817,7 +974,10 @@ dimensionality reduction, structured prediction
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -829,6 +989,10 @@ status open
 Questions?
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -844,7 +1008,10 @@ Questions for me?
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 

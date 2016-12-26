@@ -45,11 +45,11 @@ mastering the material.
 I think you'll be surprised how much easier it is to remember
 something once you've fully mastered it.  In any case, once you master
 something, I always recommend that you write a note to your future
-self, explaining the concept.  This should be somehting you can read
+self, explaining the concept.  This should be something you can read
 in 6-12 months (or years, eventually) when you need that mastery, but
 you've forgotten the details.  You'll have trouble writing the note if
 you don't fully understand the material, so it's also a good self
-test.  I have 100s pages of these types of notes, and I have find them
+test.  I have 100s pages of these types of notes, and I've found them
 immensely useful over the years.
 
 ## Is all the math really necessary?

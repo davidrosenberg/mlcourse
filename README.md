@@ -1,4 +1,4 @@
-# DS-GA 1003: Machine Learning and Computational Statistics
+<!-- # DS-GA 1003: Machine Learning and Computational Statistics -->
 
 ## Notable Changes from [2015](https://davidrosenberg.github.io/ml2015/#home) to [2016](https://davidrosenberg.github.io/ml2016/#home)
 - [New lecture](https://davidrosenberg.github.io/mlcourse/Archive/2016/Lectures/9a.multiclass.pdf) on **multiclass classification** and an intro to **structured classification**

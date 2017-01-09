@@ -2443,7 +2443,7 @@ Assume
 For step size respecting Robbins-Monro conditions,
 \begin_inset Formula 
 \[
-\lim_{k\to\infty}f(x_{\text{best}}^{(k)})\le f(x^{*})
+\lim_{k\to\infty}f(x_{\text{best}}^{(k)})=f(x^{*})
 \]
 
 \end_inset

@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -26,16 +28,16 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman times
-\font_sans default
-\font_typewriter default
-\font_math eulervm
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "eulervm" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -785,6 +787,9 @@ Multiclass Setting
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -826,7 +831,10 @@ Today we consider linear methods specifically designed for multiclass.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -842,6 +850,10 @@ status open
 One-vs-All / One-vs-Rest
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -885,7 +897,10 @@ tiny{Plot courtesy of  David Sontag.}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -903,6 +918,9 @@ One-vs-All / One-vs-Rest
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -937,6 +955,10 @@ Suppose
 \end_inset
 
  are our binary classifiers.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -970,7 +992,10 @@ Ties can be broken arbitrarily.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -992,6 +1017,9 @@ Linear Binary Classifier Review
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -1026,6 +1054,10 @@ f(x) & = & \left\langle w,x\right\rangle =w^{T}x
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1055,7 +1087,10 @@ Geometrically, when are
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1073,6 +1108,9 @@ Linear Binary Classifier Review
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -1116,7 +1154,10 @@ f(x) & = & \left\langle w,x\right\rangle =\|w\|\|x\|\cos\theta\\
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1134,6 +1175,9 @@ Three Class Example
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -1160,6 +1204,10 @@ Base hypothesis space
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1170,7 +1218,6 @@ Base hypothesis space
 \end_deeper
 \begin_layout Itemize
 Note: Separating boundary always contains the origin.
- 
 \end_layout
 
 \begin_layout Standard
@@ -1200,7 +1247,10 @@ emph{Understanding Machine Learning}, Section 17.1}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1218,6 +1268,9 @@ Three Class Example: One-vs-Rest
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -1251,7 +1304,10 @@ f_{1}(x)=w_{1}^{T}x
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1269,6 +1325,9 @@ Three Class Example: One-vs-Rest
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -1296,6 +1355,10 @@ Examine
 
 Class 2 vs Rest
 \begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1341,7 +1404,10 @@ Not 2
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1359,6 +1425,9 @@ One-vs-Rest: Predictions
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -1424,7 +1493,10 @@ Predict class
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1442,6 +1514,9 @@ One-vs-Rest: Class Boundaries
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -1451,7 +1526,7 @@ For simplicity, we've assumed
 \begin_inset Formula $\|w_{1}\|=\|w_{2}\|=\|w_{3}\|$
 \end_inset
 
-\SpecialChar \@.
+\SpecialChar endofsentence
 
 \end_layout
 
@@ -1509,7 +1584,10 @@ Then
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1527,6 +1605,9 @@ One-vs-Rest: Class Boundaries
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -1549,6 +1630,10 @@ One-vs-Rest: Class Boundaries
 
 \begin_layout Itemize
 This approach doesn't work well in this instance.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1562,7 +1647,10 @@ Can we fix it by changing our base hypothesis space?
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1580,6 +1668,9 @@ The Linear Multiclass Hypothesis Space
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -1625,7 +1716,10 @@ What's the action space here?
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1643,6 +1737,9 @@ One-vs-Rest: Class Boundaries
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -1676,7 +1773,10 @@ learning algorithm
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1694,6 +1794,9 @@ A Solution with Linear Functions
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -1728,7 +1831,10 @@ How can we get a solution like this?
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1736,7 +1842,10 @@ How can we get a solution like this?
 Multiclass Predictors
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1754,6 +1863,9 @@ Multiclass Hypothesis Space
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -1822,7 +1934,10 @@ scores
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1840,6 +1955,9 @@ Multiclass Hypothesis Space: Reframed
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -1858,6 +1976,10 @@ General Output Space:
 \end_inset
 
  
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1879,6 +2001,12 @@ e.g
 \series bold
 Base Hypothesis Space: 
 \begin_inset Formula $\ch=\left\{ h:\cx\times\cy\to\reals\right\} $
+\end_inset
+
+
+\series default
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1947,7 +2075,10 @@ and
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1965,6 +2096,9 @@ Learning in a Multiclass Hypothesis Space: In Words
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -1982,6 +2116,10 @@ Base Hypothesis Space:
 \begin_layout Itemize
 Training data: 
 \begin_inset Formula $(x_{1},y_{1}),(x_{2},y_{2}),\ldots,(x_{n},y_{n})$
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2007,6 +2145,10 @@ What type of
 \end_inset
 
  do we want? 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2033,7 +2175,10 @@ Want
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2051,6 +2196,9 @@ Learning in a Multiclass Hypothesis Space: In Math
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -2080,6 +2228,10 @@ h(x_{i},y_{i})>h(x_{i},y)\,\forall y\neq y_{i}
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2101,6 +2253,10 @@ h(x_{i},y_{i})>h(x_{i},y)\,\forall y\neq y_{i}
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2116,6 +2272,10 @@ An equivalent condition is the following:
 h(x_{i},y_{i})>\max_{y\neq y_{i}}h(x_{i},y)
 \]
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2140,7 +2300,10 @@ First idea for objective function:
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2148,7 +2311,10 @@ First idea for objective function:
 Linear Hypothesis Space
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2166,6 +2332,9 @@ Linear Multiclass Prediction Function
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -2254,7 +2423,10 @@ linearly
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2280,6 +2452,9 @@ Example:
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -2340,7 +2515,10 @@ How can we get this into the form
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2358,6 +2536,9 @@ The Multivector Construction
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -2390,6 +2571,10 @@ And then do the following:
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2408,7 +2593,10 @@ Then
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2426,6 +2614,9 @@ Natural Language Processing Example
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -2442,6 +2633,10 @@ Natural Language Processing Example
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2456,6 +2651,10 @@ Features of
 \end_inset
 
 :
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2469,6 +2668,10 @@ Features of
 
 =
 \begin_inset Formula $\left\{ \mbox{[The word itself], ENDS\_IN\_ly, ENDS\_IN\_ness, ...}\right\} $
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2498,6 +2701,10 @@ Features of
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2515,7 +2722,10 @@ After training, what would corresponding
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2533,6 +2743,9 @@ NLP Example: How does it work? (To be totally clear)
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -2552,6 +2765,10 @@ NLP Example: How does it work? (To be totally clear)
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2568,6 +2785,10 @@ After training, we've learned
 .
  Say 
 \begin_inset Formula $w=\left(5,3,1,4,\ldots\right)$
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2607,7 +2828,10 @@ Predict class that gives highest score.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2640,6 +2864,9 @@ TF-IDF Features for News Article Classification
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -2656,6 +2883,10 @@ TF-IDF Features for News Article Classification
 \end_inset
 
  [TOPICS]
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2685,6 +2916,10 @@ Suppose we have a list of of all
  words in English.
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2730,7 +2965,10 @@ is the numer of times word
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2748,6 +2986,9 @@ TF-IDF Features for News Article Classification
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -2782,6 +3023,10 @@ is the number of documents containing word
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2808,6 +3053,10 @@ where
 \end_inset
 
  is the total number of documents in training set.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2825,7 +3074,10 @@ many
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2843,6 +3095,9 @@ TF-IDF: Things to note
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -2869,6 +3124,10 @@ What's the dimension of
 \end_inset
 
 ?
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2879,6 +3138,10 @@ What's the dimension of
 \end_deeper
 \begin_layout Itemize
 We have one TF-IDF for each word.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2895,6 +3158,10 @@ Recall our multivector-style NLP features:
 \pause\psi_{3}(x,y) & = & \ind{x=\mbox{run AND }y=\mbox{VERB}}
 \end{eqnarray*}
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2927,7 +3194,10 @@ TF-IDF
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2945,12 +3215,19 @@ Another Approach: Use Label Features
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 What if we have a very large number of classes?
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2960,7 +3237,11 @@ What if we have a very large number of classes?
 
 \end_deeper
 \begin_layout Itemize
-Make features for the classes\SpecialChar \@.
+Make features for the classes\SpecialChar endofsentence
+
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -2972,6 +3253,10 @@ Make features for the classes\SpecialChar \@.
 \end_deeper
 \begin_layout Itemize
 Common in advertising
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2987,6 +3272,10 @@ Common in advertising
 \end_inset
 
  A large set of banner ads
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3006,6 +3295,10 @@ Suppose user
 
 \begin_layout Itemize
 We want to predict which one the user will click on.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3029,7 +3322,10 @@ Possible features:
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3037,7 +3333,10 @@ Possible features:
 Linear Multiclass SVM
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3055,6 +3354,9 @@ The Margin for Multiclass
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -3081,6 +3383,10 @@ margin
  
 \series default
 between correct class and each other class:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3119,6 +3425,10 @@ m_{i,y}(h)=h(x_{i},y_{i})-h(x_{i},y).
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3138,6 +3448,10 @@ Want
 
 .
  
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3159,7 +3473,10 @@ m_{i,y}(w)=\left\langle w,\Psi(x_{i},y_{i})\right\rangle -\left\langle w,\Psi(x_
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3174,6 +3491,10 @@ Multiclass SVM with Hinge Loss
 \end_inset
 
  
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3195,6 +3516,10 @@ Recall binary SVM (without bias term):
 \end_inset
 
 .]
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3298,7 +3623,10 @@ desired minimal margin
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3313,6 +3641,10 @@ Class-Sensitive Loss
 \end_inset
 
  
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3397,7 +3729,10 @@ target margin
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3412,6 +3747,10 @@ Geometric Interpretation
 \end_inset
 
  
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3421,6 +3760,10 @@ Prediction is given by
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3439,6 +3782,10 @@ Note it's unchanged if we replace
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3453,6 +3800,10 @@ For simplicity, let's assume
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3468,6 +3819,10 @@ Then score function
 
 .
  
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3489,7 +3844,10 @@ Then score function
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3504,6 +3862,10 @@ Geometric Interpretation
 \end_inset
 
  
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3586,7 +3948,10 @@ emph{Understanding Machine Learning}}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3608,6 +3973,9 @@ Part-of-speech (POS) Tagging
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -3620,7 +3988,7 @@ Given a sentence, give a part of speech tag for each word:
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="2" columns="5">
-<features rotate="0" tabularvalignment="middle">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -3794,7 +4162,10 @@ Given a sentence, give a part of speech tag for each word:
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3812,6 +4183,9 @@ Structured Prediction
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -3854,7 +4228,10 @@ structure
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3872,6 +4249,9 @@ Local Feature Functions: Type 1
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -3890,6 +4270,10 @@ type 1
 local feature 
 \series default
 only depends on 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3928,7 +4312,10 @@ Example:
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3946,6 +4333,9 @@ Local Feature Functions: Type 2
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -3964,6 +4354,10 @@ type 2
 local feature 
 \series default
 only depends on 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -4001,7 +4395,10 @@ Example:
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -4019,6 +4416,9 @@ Local Feature Vector and Compatibility Score
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -4070,7 +4470,10 @@ Local compatibility score
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -4088,6 +4491,9 @@ Sequence Compatibility Score
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -4131,7 +4537,10 @@ So we see this is a special case of linear multiclass prediction.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -4149,6 +4558,9 @@ Sequence Target Loss
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -4202,7 +4614,10 @@ Could generalize this as
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -4220,6 +4635,9 @@ What remains to be done?
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -4271,6 +4689,10 @@ Because
 \end_inset
 
  adjacent labels,
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -4293,7 +4715,7 @@ Learning can be done with SGD and a similar dynamic program.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
@@ -4319,6 +4741,9 @@ Regression
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -4340,6 +4765,10 @@ status open
 Example: Mobile Advertising Problem
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -4372,11 +4801,19 @@ Example: Basic Online Advertising Problem
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 Ads to serve:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -4390,6 +4827,10 @@ Cruise vacation
 
 \begin_layout Itemize
 $5.00 off Custom Shirt
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -4408,6 +4849,10 @@ Somebody visits
 
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 

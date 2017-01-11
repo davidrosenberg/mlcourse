@@ -1,7 +1,7 @@
 <!-- # DS-GA 1003: Machine Learning and Computational Statistics -->
 
 ## Notable Changes from [2015](https://davidrosenberg.github.io/ml2015/#home) to [2016](https://davidrosenberg.github.io/ml2016/#home)
-- [New lecture](https://davidrosenberg.github.io/mlcourse/Archive/2016/Lectures/9a.multiclass.pdf) on **multiclass classification** and an intro to **structured classification**
+- [New lecture](https://davidrosenberg.github.io/mlcourse/Archive/2016/Lectures/9a.multiclass.pdf) on **multiclass classification** and an intro to **structured prediction**
 - [New homework](https://davidrosenberg.github.io/mlcourse/Archive/2016/Homework/hw6-multiclass/hw6.pdf) on **multiclass hinge loss** and **multiclass SVM**
 - [New homework](https://davidrosenberg.github.io/mlcourse/Archive/2016/Homework/hw7-bayesian/hw7.pdf) on Bayesian methods, specifically the **beta-binomial model, hierarchical models, empirical Bayes ML-II, MAP-II**
 - [New short lecture](https://davidrosenberg.github.io/mlcourse/Archive/2016/Lectures/2.Lab.elastic-net.pdf) on correlated variables with L1, L2, and **Elastic Net** regularization

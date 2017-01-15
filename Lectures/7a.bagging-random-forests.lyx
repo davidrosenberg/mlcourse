@@ -743,6 +743,62 @@ tiny{Plots courtesy of Ningshan Zhang.}}
  
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Notes from Zhi-Hua Zhou's book 
+\emph on
+Ensemble Methods: foundations and algorithms: 
+\emph default
+ensemble combines base
+\emph on
+ 
+\emph default
+learners; base learning algorithms generate these learners; when ensemble
+ method using a single base learning algorithm, we get a 
+\series bold
+homogeneous ensemble
+\series default
+ (e.g.
+ boosting, bagging, random forests), but there are also methods that use
+ ultiple laerning algorithms to produce 
+\series bold
+hetereogeneous ensembles
+\series default
+.
+ Learning algorithms mayb e called 
+\series bold
+individual learners
+\series default
+ or 
+\series bold
+component learners
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+There are three threads of early contributions .
+ .
+ [to] ensemble methods; that is, combining classifiers, ensembles of weak
+ learners, and mixture of experts.
+\begin_inset Quotes erd
+\end_inset
+
+ (p 16)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Bias and Variance
 \end_layout

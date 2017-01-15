@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -25,16 +27,16 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman times
-\font_sans default
-\font_typewriter default
-\font_math eulervm
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "eulervm" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -749,6 +751,70 @@ Wondering if we should extend the plots for error >.5? This would be a really
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Notes from Zhou's book - Section 2.4: Freund and Schapire (1997) showed 
+\begin_inset Quotes eld
+\end_inset
+
+generalization error of AdaBoost is upper bounded by
+\begin_inset Quotes erd
+\end_inset
+
+ a term that grows with the square root of the VC-dimenison of the base
+ hypothesis space and the number of learning rounds, and decreases with
+ the square root of m, the number of training examples.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Empirical studies, however, show that AdaBoost often does not overfit; that
+ is, the test error often tends to decrase een after the trainnig eror reaches
+ zero, even after a large numer of rounds such as 1000.
+ .
+ ..
+ explaining why AdaBoost seems resistant ot overfitting becomes one of the
+ cetnral theoretical issues and has attracted much attention..
+ [then there's the margin story, which seems to be overturned by Breiman's
+ work with arc-gv, but 7 years later is finally explained away by Reyzin
+ and Schapire [2006].
+ turns out hte margin distribution of AdaBoost is better than that of arc-gv...
+ (i.e.
+ it's not just about the worst margin, but the distribution of margins).
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Gao and Zhou (2012) gave a new generalization error bound based on emprical
+ Bernstein inequality ...
+ that further defends the margin-baesd explanation aainst Breiman's doubts.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+A statistical view of boosting developed that AdaBoost is just an optimization
+ process that tries to fit an additive model to some surrogate loss function.
+ LogitBoost uses log-loss, which should an equivalent probabilistic classifier
+ asymptotically.
+ But if it's really just an optimization of a loss function, there are other
+ ways to minimize the same loss function using an additive model of weak
+ learners.
+ Resulting algorithm from one line of work is LPBoost, whcih doesn't seem
+ to improve on adaboost....
+ there seems to be something important in HOW the function is being fit
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Boosting Introduction
 \end_layout
@@ -767,12 +833,19 @@ Ensembles: Parallel vs Sequential
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 Ensemble methods combine multiple models 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -787,6 +860,10 @@ Ensemble methods combine multiple models
 Parallel ensembles
 \series default
 : each model is built independently
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -801,6 +878,10 @@ e.g.
 
 \begin_layout Itemize
 Main Idea: Combine many (high complexity, low bias) models to reduce variance
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -816,6 +897,10 @@ Main Idea: Combine many (high complexity, low bias) models to reduce variance
 Sequential ensembles
 \series default
 : 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -829,7 +914,10 @@ Try to add new models that do well where previous models lack
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -847,6 +935,9 @@ The Boosting Question: Weak Learners
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -857,6 +948,10 @@ A
 weak learner 
 \series default
 is a classifier that does slightly better than random.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -875,6 +970,10 @@ rules of thumb
 \end_inset
 
 :
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -892,6 +991,10 @@ Viagra
 \end_inset
 
  in it, more likely than not it's spam.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -902,6 +1005,10 @@ Viagra
 \end_deeper
 \begin_layout Itemize
 Email from a friend is probably not spam.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -940,6 +1047,10 @@ combine
 \series default
  a set of weak classifiers to form single classifier that makes accurate
  predictions?
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -949,6 +1060,10 @@ combine
 
 \begin_layout Itemize
 Posed by Kearns and Valiant (1988,1989): 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -978,7 +1093,10 @@ Pronounced: Sha pee ree (according to Berk Kapicioglu)
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1022,6 +1140,9 @@ AdaBoost: Setting
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -1032,6 +1153,10 @@ Consider
 \end_inset
 
  (binary classification).
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1046,6 +1171,10 @@ Suppose we have a
 weak learner
 \series default
 :
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1056,6 +1185,10 @@ Hypothesis space
 
 .
  
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1074,6 +1207,10 @@ Algorithm for finding
 \end_inset
 
  that's better than random on training data.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1085,6 +1222,10 @@ Algorithm for finding
 \end_deeper
 \begin_layout Itemize
 Typical weak learners:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1106,7 +1247,10 @@ Linear decision functions
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1124,6 +1268,9 @@ Weighted Training Set
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -1142,6 +1289,10 @@ Weights
 \end_inset
 
  associated with each example.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1164,6 +1315,10 @@ Weighted empirical risk
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1174,6 +1329,10 @@ Weighted empirical risk
 \end_deeper
 \begin_layout Itemize
 Can train a model to minimize weighted empirical risk.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1184,6 +1343,10 @@ Can train a model to minimize weighted empirical risk.
 \end_deeper
 \begin_layout Itemize
 What if model cannot conveniently be trained to reweighted data?
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1205,7 +1368,10 @@ Can sample a new data set from
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1223,6 +1389,9 @@ AdaBoost - Rough Sketch
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -1241,6 +1410,10 @@ Start with equal weight on all training points
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1255,6 +1428,10 @@ Repeat for
 \end_inset
 
 :
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1268,6 +1445,10 @@ Fit weak classifier
 \end_inset
 
  to weighted training points
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1298,7 +1479,10 @@ So far, we've generated
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1310,6 +1494,10 @@ status open
 AdaBoost: Schematic
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1353,11 +1541,17 @@ tiny{From ESL Figure 10.1}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1375,6 +1569,9 @@ AdaBoost - Rough Sketch
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -1401,6 +1598,10 @@ Repeat for
 \end_inset
 
 :
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1427,6 +1628,10 @@ Final prediction
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1441,6 +1646,10 @@ The
 \end_inset
 
 's are nonnegative,
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1491,7 +1700,10 @@ Important: Each
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1506,6 +1718,10 @@ Adaboost: Weighted Classification Error
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1515,6 +1731,10 @@ In round
 \end_inset
 
 , weak learner gets a weighted training set.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1528,6 +1748,10 @@ Returns a classifier
 \end_inset
 
  error.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1555,6 +1779,10 @@ weighted 0-1 error
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1569,6 +1797,10 @@ Notice:
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1579,6 +1811,10 @@ Notice:
 \end_deeper
 \begin_layout Itemize
 We treat the weak learner as a black box.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1594,6 +1830,10 @@ It can use any method it wants to find
 .
  (e.g.
  SVM, tree, etc.)
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1613,7 +1853,10 @@ BUT, for things to work, we need at least
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1658,6 +1901,10 @@ score
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1668,6 +1915,10 @@ The weight of classifier
 
  is 
 \begin_inset Formula $\alpha_{m}=\ln\left(\frac{1-\text{err}_{m}}{\text{err}_{m}}\right).$
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1705,7 +1956,10 @@ Note that weight
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1717,6 +1971,10 @@ status open
 AdaBoost: Example Reweighting
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1733,6 +1991,10 @@ We train
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1751,6 +2013,10 @@ Then
 \end_inset
 
  in final ensemble.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1769,6 +2035,10 @@ Suppose
 \end_inset
 
  before training:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1786,6 +2056,10 @@ If
 \end_inset
 
  is unchanged.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1809,6 +2083,10 @@ w_{i} & \gets & w_{i}e^{\alpha_{m}}\\
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1827,7 +2105,10 @@ See why this only increases the weight? [at least for
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1839,6 +2120,10 @@ status open
 Adaboost: Example Reweighting
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1875,7 +2160,10 @@ The smaller
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1887,6 +2175,10 @@ status open
 AdaBoost: Algorithm
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1911,6 +2203,10 @@ Initialize observation weights
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1929,6 +2225,10 @@ For
 \end_inset
 
 :
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1946,6 +2246,10 @@ Fit weak classifier
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1964,6 +2268,10 @@ Compute weighted empirical 0-1 risk:
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1978,6 +2286,10 @@ Compute
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1989,6 +2301,10 @@ Compute
 \begin_layout Enumerate
 Set 
 \begin_inset Formula $w_{i}\gets w_{i}\cdot\exp\left[\alpha_{m}\ind{y_{i}\neq G_{m}(x_{i})}\right],\quad i=1,2,\ldots,N$
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2010,7 +2326,10 @@ Ouptut
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2022,6 +2341,10 @@ status open
 AdaBoost with Decision Stumps
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2095,7 +2418,10 @@ tiny{KPM Figure 16.10}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2107,6 +2433,10 @@ status open
 AdaBoost with Decision Stumps
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2181,7 +2511,10 @@ tiny{KPM Figure 16.10}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2193,6 +2526,10 @@ status open
 AdaBoost with Decision Stumps
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2266,7 +2603,10 @@ tiny{KPM Figure 16.10}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2281,11 +2621,19 @@ AdaBoost: Does it actually minimize training error?
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 Methods we've seen so far come in two categories:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2295,11 +2643,19 @@ Methods we've seen so far come in two categories:
 
 \begin_layout Itemize
 Convex optimization problems (L1/L2 regression, SVM, kernelized versions)
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 No issue minimizing objective function over hypothesis space
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2311,6 +2667,10 @@ No issue minimizing objective function over hypothesis space
 \end_deeper
 \begin_layout Itemize
 Trees
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2326,6 +2686,10 @@ except for exactly duplicate inputs and label noise
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2338,6 +2702,10 @@ except for exactly duplicate inputs and label noise
 \end_deeper
 \begin_layout Itemize
 AdaBoost is something new - at this point, it's just an algorithm.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2347,6 +2715,10 @@ AdaBoost is something new - at this point, it's just an algorithm.
 
 \begin_layout Itemize
 In this sense, it's like the Perceptron algorithm.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2362,6 +2734,10 @@ Will
 \end_inset
 
  even minimize training error?
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2394,7 +2770,10 @@ edge
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2406,6 +2785,10 @@ status open
 AdaBoost: Does it actually minimize training error?
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2422,6 +2805,10 @@ As a weak classifier,
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2463,7 +2850,10 @@ Measures how much better than random
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2475,6 +2865,10 @@ status open
 AdaBoost: Does it actually minimize training error?
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2550,7 +2944,10 @@ emph{Boosting: Foundations and Algorithms} by Schapire and Freund.}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2562,6 +2959,10 @@ status open
 AdaBoost: Does it actually minimize training error?
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2578,6 +2979,10 @@ Suppose
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2599,6 +3004,10 @@ Then
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2616,6 +3025,10 @@ Bound decreases exponentially:
 .98^{300} & \approx & .002
 \end{eqnarray*}
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2663,7 +3076,10 @@ emph{Boosting: Foundations and Algorithms} by Schapire and Freund.}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2702,6 +3118,10 @@ status open
 Typical Train / Test Learning Curves
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2749,7 +3169,10 @@ tiny{From Rob Schapire's NIPS 2007 Boosting tutorial.}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2761,6 +3184,10 @@ status open
 Learning Curves for AdaBoost
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2812,7 +3239,10 @@ tiny{From Rob Schapire's NIPS 2007 Boosting tutorial.}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2820,7 +3250,10 @@ tiny{From Rob Schapire's NIPS 2007 Boosting tutorial.}}
 Boosting Fits an Additive Model 
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2832,6 +3265,10 @@ status open
 Adaptive Basis Function Model
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2848,6 +3285,10 @@ AdaBoost produces a classification score function of the form
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2859,6 +3300,12 @@ each
  is a 
 \series bold
 weak classifier
+\series default
+
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2874,6 +3321,10 @@ The
 \end_inset
 
 's are like basis functions, but they are learned from the data.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2887,7 +3338,10 @@ Let's move beyond classification models...
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2899,6 +3353,10 @@ status open
 Adaptive Basis Function Model
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2915,6 +3373,10 @@ Base hypothesis space
 \end_inset
 
  
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2928,6 +3390,10 @@ weak classifiers
 \end_inset
 
  in boosting context
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2952,6 +3418,10 @@ over
 f(x)=\sum_{m=1}^{M}\nu_{m}h_{m}(x),
 \]
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3000,6 +3470,10 @@ We are taking linear combination of outputs of
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3017,7 +3491,10 @@ Functions in
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3029,6 +3506,10 @@ status open
 How to fit an adaptive basis function model?
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3061,6 +3542,10 @@ Base hypothesis space
 real-valued
 \series default
  functions
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3107,7 +3592,10 @@ We'll proceed in stages, adding a new
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3119,6 +3607,10 @@ status open
 Forward Stagewise Additive Modeling (FSAM)
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3159,6 +3651,10 @@ where
 
 \begin_layout Itemize
 Want to find 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3184,6 +3680,10 @@ step size
 \end_inset
 
  
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3206,7 +3706,10 @@ minimizes empirical risk.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3218,6 +3721,10 @@ status open
 Forward Stagewise Additive Modeling
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3242,6 +3749,10 @@ For
 \end_inset
 
 :
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3259,6 +3770,10 @@ Compute:
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3273,6 +3788,10 @@ Set
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3291,7 +3810,10 @@ Return:
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3306,6 +3828,10 @@ Exponential Loss and AdaBoost
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3316,6 +3842,10 @@ Take loss function to be
 \ell(y,f(x))=\exp\left(-yf(x)\right).
 \]
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3333,6 +3863,10 @@ Let
 \end_inset
 
  be a hypothesis space of weak classifiers.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3344,6 +3878,10 @@ Let
 \begin_layout Itemize
 Then Forward Stagewise Additive Modeling (FSAM) reduces to AdaBoost! (See
  HTF Section 10.4 for proof.)
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3354,6 +3892,10 @@ Then Forward Stagewise Additive Modeling (FSAM) reduces to AdaBoost! (See
 \end_deeper
 \begin_layout Itemize
 Only difference:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3371,6 +3913,10 @@ fitting the weighted training data
 \end_inset
 
  
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3401,7 +3947,10 @@ G_{m}=\argmin_{G\in\cf}\sum_{i=1}^{N}w_{i}^{(m)}\ind{y_{i}\neq G(x_{i})}
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3417,6 +3966,10 @@ status open
 Exponential Loss
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3440,7 +3993,10 @@ Note that exponential loss puts a very large weight on bad misclassifications.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3455,6 +4011,10 @@ AdaBoost / Exponential Loss: Robustness Issues
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3465,6 +4025,10 @@ When Bayes error rate is high (e.g.
 \end_inset
 
 )
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3474,6 +4038,10 @@ When Bayes error rate is high (e.g.
 
 \begin_layout Itemize
 Training examples with same input, but different classifications.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3488,6 +4056,10 @@ Best we can do is predict the most likely class for each
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3503,11 +4075,19 @@ Some training predictions
 should be wrong
 \series default
  (because example doesn't have majority class)
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 AdaBoost / exponential loss puts a lot of focus on geting those right
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3519,6 +4099,10 @@ AdaBoost / exponential loss puts a lot of focus on geting those right
 \end_deeper
 \begin_layout Itemize
 Empirically, AdaBoost has degraded performance in situations with 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3540,6 +4124,10 @@ label noise
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3554,7 +4142,10 @@ Logistic loss performs better in settings with high Bayes error
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3573,6 +4164,10 @@ Population Minimizers
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3582,11 +4177,19 @@ In traditional statistics, the
 population 
 \series default
 refers to
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 the full population of a group, rather than a sample.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3602,6 +4205,10 @@ In machine learning, the
 population case 
 \series default
 is the hypothetical case of
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3611,6 +4218,10 @@ an infinite training sample from
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3626,6 +4237,10 @@ A
 population minimizer 
 \series default
 for a loss function is another name for the risk minimizer.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3652,6 +4267,10 @@ f^{*}(x)=\frac{1}{2}\ln\frac{\pr(Y=1\mid X=x)}{\pr(Y=-1\mid X=x)}
 
 \begin_layout Itemize
 (Short proof in KPM 16.4.1)
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3670,7 +4289,10 @@ By solving for
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3685,11 +4307,19 @@ Population Minimizers
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 AdaBoost has the robustness issue because of the exponential loss.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3704,6 +4334,10 @@ Logistic loss
 \end_inset
 
  has the same population minimizer.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3713,7 +4347,7 @@ But works better with high label noise or high Bayes error rate
 status collapsed
 
 \begin_layout Plain Layout
-In practice we use regularized logistic regressoin -- how do we adjust to
+In practice we use regularized logistic regressoin – how do we adjust to
  map 
 \begin_inset Formula $\hat{f}(x)$
 \end_inset
@@ -3721,6 +4355,10 @@ In practice we use regularized logistic regressoin -- how do we adjust to
  to a probability in this case?
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3755,7 +4393,10 @@ Because of the
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 

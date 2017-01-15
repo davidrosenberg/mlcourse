@@ -769,6 +769,20 @@ Understanding Machine Learning
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Besides one vs all, there's also error correcting output codes (ECOC) -
+ -see Dietterich and Bakiri 1995
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Introduction
 \end_layout

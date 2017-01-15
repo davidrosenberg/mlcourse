@@ -740,6 +740,7 @@ TODO: initialization of k-means actually can be very important.
   Introduce k-means++ for seeding (arthur et al 2007).
   Issue is it's slow; Refer to NIPS 2016 paper for a fast minibatch/MCMC
  approach.
+ (fast and provably good seedings for k-means)
 \end_layout
 
 \end_inset
@@ -5060,13 +5061,6 @@ emph{Pattern recognition and machine learning}, Figure 9.8.}}
 
 \end_deeper
 \begin_layout Frame
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
 
 \end_layout
 

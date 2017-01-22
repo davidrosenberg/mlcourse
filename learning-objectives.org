@@ -1,7 +1,7 @@
 #+TITLE: Learning Objectives
 #+EMAIL: dr129@nyu.edu, bb269@nyu.edu
 #+AUTHOR: David S. Rosenberg, Brett Bernstein
-#+OPTIONS: toc:nil
+#+OPTIONS: toc:nil, tex:t
 
 Issue: "The students come to believe that their primary responsibility is not
 so much to learn as to guess what their instructors want them to

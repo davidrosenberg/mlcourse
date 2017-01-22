@@ -1,6 +1,6 @@
 #+TITLE: Learning Objectives
-#+EMAIL: dr129@nyu.edu
-#+AUTHOR: David S. Rosenberg
+#+EMAIL: dr129@nyu.edu, bb269@nyu.edu
+#+AUTHOR: David S. Rosenberg, Brett Bernstein
 #+OPTIONS: toc:nil
 
 Issue: "The students come to believe that their primary responsibility is not
@@ -46,3 +46,23 @@ following:
 * Lecture 1c: Gradient and Stochastic Gradient Descent
 - Give ane the empirical risk for square loss over a hypothesis
   space of linear functions.
+* Lab 1: Review of Multivariable Calculus and Linear Algebra
+** Quick Review of Linear Algebra
+- Apply the Rank-Nullity Theorem to determine when a matrix has trivial nullspace.
+- Determine when a system of linear equations is solvable, and how
+  many solutions it has.
+- Manipulate equations involving matrix inverses, transposes, and norms.
+** Gradients and Directional Derivatives
+- Define the directional derivative, and use it to find a linear
+  approximation to $f(x+hu)$.
+- Define partial derivative and the gradient.  Show how to compute
+  an arbitrary directional derivative using the gradient.
+- For a differentiable function, give a linear approximation near a point $x$
+  the gradient.
+- Show that the gradient gives the direction of steepest ascent, and
+  the negative gradient gives the direction of steepest descent.
+- Find the gradient of a function by computing each partial
+  derivative separately.
+- Use the chain rule to perform gradient computations.
+- Compute the gradient of a differentiable function by determining the form of a
+  general directional derivative.

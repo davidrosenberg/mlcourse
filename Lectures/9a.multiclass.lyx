@@ -21,7 +21,7 @@
   \end{frame}
 }
 \end_preamble
-\options handout
+\options aspectratio=169
 \use_default_options false
 \maintain_unincluded_children false
 \language english
@@ -4767,10 +4767,6 @@ hi
 \end_layout
 
 \end_deeper
-\begin_layout Separator
-
-\end_layout
-
 \begin_layout Frame
 \begin_inset Argument 4
 status open

@@ -8,7 +8,7 @@
 \begin_preamble
 \usetheme{CambridgeUS} 
 \end_preamble
-\options handout
+\options handout,aspectratio=169
 \use_default_options false
 \maintain_unincluded_children false
 \language english
@@ -112,7 +112,7 @@ New York University
 \end_layout
 
 \begin_layout Date
-January 27, 2016
+January 24, 2017
 \end_layout
 
 \begin_layout Standard
@@ -168,7 +168,7 @@ status open
 
 \begin_layout Plain Layout
 
-https://davidrosenberg.github.io/ml2016
+https://davidrosenberg.github.io/ml2017
 \end_layout
 
 \end_inset
@@ -203,7 +203,7 @@ status open
 
 \begin_layout Plain Layout
 
-https://piazza.com/nyu/spring2016/dsga1003
+https://piazza.com/nyu/spring2017/dsga1003
 \end_layout
 
 \end_inset
@@ -241,7 +241,7 @@ Class Times
 
 \begin_deeper
 \begin_layout Itemize
-Wednesdays 
+Tuesdays 
 \begin_inset Quotes eld
 \end_inset
 
@@ -249,11 +249,11 @@ Lecture
 \begin_inset Quotes erd
 \end_inset
 
-: 7:10pm - 9pm (WWH 109)
+: 5:10p - 7pm (WWH 109)
 \end_layout
 
 \begin_layout Itemize
-Thursdays 
+Wednesdays 
 \begin_inset Quotes eld
 \end_inset
 

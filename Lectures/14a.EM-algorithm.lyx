@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -25,16 +27,16 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman times
-\font_sans default
-\font_typewriter default
-\font_math eulervm
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "eulervm" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -723,6 +725,10 @@ General Latent Variable Model
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -758,6 +764,10 @@ hidden variables
 observed variables
 \series default
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -783,7 +793,10 @@ p(x,z\mid\theta)
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -795,6 +808,10 @@ status open
 Complete and Incomplete Data
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -835,6 +852,10 @@ Suppose we have an incomplete data set
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -872,7 +893,7 @@ z=\left(z_{1},\ldots,z_{n}\right).
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
 \begin_inset Note Note
 status collapsed
 
@@ -891,6 +912,10 @@ Log-Likelihood and Terminology
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -901,6 +926,10 @@ Note that
 \argmax_{\theta}p(x\mid\theta)=\argmax_{\theta}\left[\log p(x\mid\theta)\right].
 \]
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -926,6 +955,10 @@ og-likelihood
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -944,6 +977,10 @@ We often call
 marginal likelihood
 \series default
 , 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -970,6 +1007,10 @@ marginalized out
 p(x)=\sum_{z}p(x,z)
 \]
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1001,6 +1042,10 @@ joint distribution
 \end_inset
 
 )
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1047,6 +1092,10 @@ Assumptions for EM Algorithm
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1056,6 +1105,10 @@ Assumptions for EM Algorithm
 Assumption for the EM algorithm
 \series default
 :
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1069,6 +1122,10 @@ Optimization for complete data is relatively easy
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1079,6 +1136,10 @@ Optimization for complete data is relatively easy
 \end_deeper
 \begin_layout Itemize
 Clearly true for Gaussian mixture model.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1100,9 +1161,16 @@ Clearly true for Gaussian mixture model.
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1114,6 +1182,10 @@ status open
 Complete and Incomplete Data
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1154,6 +1226,10 @@ Suppose we have an incomplete data set
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1191,7 +1267,10 @@ z=\left(z_{1},\ldots,z_{n}\right).
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1203,6 +1282,10 @@ status open
 Our Objectives
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1275,7 +1358,10 @@ p(z_{i}\mid x_{i},\theta) & \propto & p(z_{i},x_{i}\mid\theta_{i})\\
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1287,6 +1373,10 @@ status open
 Lower Bound for Likelihood
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1352,6 +1442,10 @@ Marginal log likelihood
 evidence
 \series default
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1387,7 +1481,10 @@ ELBO
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1399,6 +1496,10 @@ status open
 Lower Bound and Expected Complete Log-Likelihood
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1435,7 +1536,10 @@ Maximizing
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1450,6 +1554,10 @@ A Family of Lower Bounds
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1460,6 +1568,10 @@ Each
 
  gives a different lower bound: 
 \begin_inset Formula $\log p(x\mid\theta)\ge\cl(q,\theta)$
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1518,7 +1630,10 @@ emph{Pattern recognition and machine learning}, Figure 9.14.}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1530,6 +1645,10 @@ status open
 EM: Coordinate Ascent on Lower Bound
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1558,6 +1677,10 @@ coordinate ascent
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1568,6 +1691,10 @@ coordinate ascent
 \end_deeper
 \begin_layout Itemize
 EM Algorithm (high level):
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1585,6 +1712,10 @@ Let
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1599,6 +1730,10 @@ Let
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1637,6 +1772,10 @@ status open
 
 \begin_layout Itemize
 Why is this a good idea?
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1664,7 +1803,10 @@ e.g.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1676,6 +1818,10 @@ status open
 EM: Coordinate Ascent on Lower Bound
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1700,6 +1846,10 @@ Start at
 \end_inset
 
  
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1727,6 +1877,10 @@ Find
 
 .
  
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1769,7 +1923,10 @@ emph{Pattern recognition and machine learning}, Figure 9.14.}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1781,6 +1938,10 @@ status open
 The Lower Bound
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1815,7 +1976,10 @@ Amazing! We get back an equality for the marginal likelihood:
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1827,6 +1991,10 @@ status open
 The Best Lower Bound
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1844,6 +2012,10 @@ Find
 \cl(q,\theta^{\text{old}}) & = & -\kl[q(z),p(z\mid x,\theta^{\text{old}})]+\underbrace{\log p(x\mid\theta^{\text{old}})}_{\text{no }q\text{ here}}
 \end{eqnarray*}
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1865,6 +2037,10 @@ Recall
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1891,6 +2067,10 @@ Best
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1913,7 +2093,10 @@ Summary:
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1929,6 +2112,10 @@ Tight lower bound for any chosen
 
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2019,11 +2206,17 @@ emph{Pattern recognition and machine learning}, Figure 9.14.}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2035,6 +2228,10 @@ status open
 General EM Algorithm
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2053,6 +2250,12 @@ Choose initial
 
 \series bold
 Expectation Step
+\series default
+
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2071,6 +2274,10 @@ Let
 \end_inset
 
 ]
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2089,6 +2296,10 @@ J(\theta):=\cl(q^{*},\theta)=\underbrace{\sum_{z}q^{*}(z)\log\left(\frac{p(x,z\m
 \end_inset
 
  
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2112,6 +2323,10 @@ Maximization Step
 \end_inset
 
 [Equivalent to maximizing expected complete log-likelihood.]
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2125,7 +2340,7 @@ Go to step 2, until converged.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
 \begin_inset Note Note
 status collapsed
 
@@ -2144,6 +2359,10 @@ EM and Variational Methods
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2153,6 +2372,10 @@ What makes EM a
 variational method
 \series default
 ?
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2175,6 +2398,10 @@ of distribution
 
 \begin_layout Itemize
 Calculus of variations is the traditional tool.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2207,6 +2434,10 @@ variational lower bound
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -2221,6 +2452,10 @@ status open
 EM Gives Monotonically Increasing Likelihood: By Picture
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2266,7 +2501,10 @@ emph{Pattern recognition and machine learning}, Figure 9.14.}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2278,6 +2516,10 @@ status open
 EM Gives Monotonically Increasing Likelihood: By Math
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2307,6 +2549,10 @@ Choose
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2327,6 +2573,10 @@ Choose
 \cl(q^{*},\theta^{\text{new}}) & \ge & \cl(q^{*},\theta^{\text{old}}).
 \end{eqnarray*}
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2353,7 +2603,10 @@ Putting it together, we get
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2365,6 +2618,10 @@ status open
 Suppose We Maximize the Lower Bound...
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2397,6 +2654,10 @@ q^{*}(z)=p(z\mid x,\theta^{*}).
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2415,6 +2676,10 @@ Claim:
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2480,7 +2745,10 @@ Continuity argument can give same result for local.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2492,6 +2760,10 @@ status open
 Convergence of EM
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2508,6 +2780,10 @@ Let
 \end_inset
 
  steps.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2534,6 +2810,10 @@ transition function
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2548,6 +2828,10 @@ Suppose log-likelihood function
 \end_inset
 
  is differentiable.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2572,6 +2856,10 @@ Let
 \end_inset
 
 )
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2620,6 +2908,10 @@ http://www3.stat.sinica.edu.tw/statistica/oldpdf/a15n316.pdf
 \end_inset
 
 , 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2684,7 +2976,10 @@ In practice, can run EM multiple times with random starts.
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2692,7 +2987,10 @@ In practice, can run EM multiple times with random starts.
 Variations on EM
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2704,6 +3002,10 @@ status open
 EM Gives Us Two New Problems
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2720,6 +3022,10 @@ E
 \end_inset
 
  Step: Computing
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2757,6 +3063,10 @@ M
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2770,7 +3080,10 @@ Either of these can be too hard to do in practice.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2782,6 +3095,10 @@ status open
 Generalized EM (GEM)
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2798,6 +3115,10 @@ M
 \end_inset
 
  step.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2832,6 +3153,10 @@ J(\theta^{\mbox{new}})>J(\theta^{\mbox{old}}).
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2842,6 +3167,10 @@ J(\theta^{\mbox{new}})>J(\theta^{\mbox{old}}).
 \end_deeper
 \begin_layout Itemize
 Can use a standard nonlinear optimization strategy
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2852,6 +3181,10 @@ e.g.
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2867,7 +3200,10 @@ We still get monotonically increasing likelihood.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2879,6 +3215,10 @@ status open
 EM and More General Variational Methods
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2895,6 +3235,10 @@ E
 \end_inset
 
  step is difficult:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2919,6 +3263,10 @@ Solution: Restrict to distributions
 
  that are easy to work with.
  
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2940,7 +3288,10 @@ q^{*}=\argmin_{q\in\cq}\kl[q(z),p(z\mid x,\theta^{\text{old}})]
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2952,6 +3303,10 @@ status open
 EM in Bayesian Setting
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2982,6 +3337,10 @@ Want to find MAP estimate:
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3016,6 +3375,10 @@ Maximization step becomes
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3033,7 +3396,10 @@ Homework: Convince yourself our lower bound is still tight at
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3041,7 +3407,10 @@ Homework: Convince yourself our lower bound is still tight at
 Homework: Gaussian Mixture Model (Hints)
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3056,6 +3425,10 @@ Homework: Derive EM for GMM from General EM Algorithm
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3065,6 +3438,10 @@ Subsequent slides may help set things up.
 
 \begin_layout Itemize
 Key skills:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3078,7 +3455,10 @@ Lagrange multipliers
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3094,6 +3474,10 @@ Gaussian Mixture Model (
  Components)
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3143,7 +3527,10 @@ Marginal log-likelihood
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3172,6 +3559,9 @@ Soft Assignments
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -3246,7 +3636,10 @@ Convenient to define the conditional distribution for
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3264,6 +3657,9 @@ Expectation Step
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -3304,7 +3700,10 @@ J(\theta) & = & \sum_{z}q^{*}(z)\log p(x,z\mid\theta)\\
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3322,6 +3721,9 @@ Maximization Step
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -3354,7 +3756,10 @@ Find
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 

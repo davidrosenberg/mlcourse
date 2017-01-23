@@ -4249,10 +4249,6 @@ J(\pi,\mu,\Sigma) & = & -\sum_{i=1}^{n}\log\left\{ \sum_{z=1}^{k}\pi_{z}\cn\left
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -4263,10 +4259,6 @@ J(\pi,\mu,\Sigma) & = & -\sum_{i=1}^{n}\log\left\{ \sum_{z=1}^{k}\pi_{z}\cn\left
 \end_deeper
 \begin_layout Itemize
 Can be done – but need to be clever about it.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -4281,10 +4273,6 @@ Each matrix
 \end_inset
 
  has to be positive semidefinite.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -4295,10 +4283,6 @@ Each matrix
 \end_deeper
 \begin_layout Itemize
 How to maintain that constraint?
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -4317,10 +4301,6 @@ Rewrite
 
  is an unconstrained matrix.
  
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -4336,10 +4316,6 @@ Then
 
  is positive semidefinite.
  
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper

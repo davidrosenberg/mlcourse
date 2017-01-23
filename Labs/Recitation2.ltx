@@ -1,0 +1,30 @@
+\section{Recitation 2}
+\subsection{Intro Question}
+\begin{enumerate}
+\item You have been given a data set $(x_i,y_i)$ for $i=1,\ldots,n$ where
+  $x_i\in\RR^d$ and $y_i\in\{-1,1\}$.  Assume $w\in\RR^n$ and
+  $a\in\RR$.
+  \begin{enumerate}
+  \item Suppose $y_i(w^Tx_i+a)>0$ for all $i$.  Use a picture to
+    explain what this means when $d=2$.
+  \item Fix $M>0$.
+    Suppose $y_i(w^Tx_i+a)\geq M$ for all $i$.  Use a picture to
+    explain what this means when $d=2$.
+  \end{enumerate}
+\end{enumerate}
+\subsection{Support Vector Machines}
+\subsubsection{Review of Geometry}
+If $v,w\in\RR^d$ then the component of $v$ in the direction $w$ is
+given by $\frac{w^Tv}{\|w\|_2}$. [Give picture of two vectors
+  $v_1,v_2$ and their components in the direction $w$. ]
+
+Assuming $w\neq 0$ we can use this to interpret the set
+$$S=\{x\in\RR^d\mid w^Tx=b\}.$$
+Noting that $w^Tx=b\iff \frac{w^Tx}{\|w\|_2} = \frac{b}{\|w\|_2}$ we
+see that $S$ contains all vectors whose component in the direction $w$
+is $\frac{b}{\|w\|_2}$.  
+Using linear algebra we can see this is a hyperplane normal
+to the vector $w$ that passes through the point $\frac{bw}{\|w\|_2^2}$.
+[Give picture of parallel level surfaces of $f(x)=w^Tx$.]
+Given a hyperplane $\{v\mid w^Tv=b\}$, we can distinguish points
+$x\in\RR^d$ depending on whether 

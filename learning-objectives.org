@@ -47,11 +47,6 @@ following:
 - Give ane the empirical risk for square loss over a hypothesis
   space of linear functions.
 * Lab 1: Review of Multivariable Calculus and Linear Algebra
-** Quick Review of Linear Algebra
-- Apply the Rank-Nullity Theorem to determine when a matrix has trivial nullspace.
-- Determine when a system of linear equations is solvable, and how
-  many solutions it has.
-- Manipulate equations involving matrix inverses, transposes, and norms.
 ** Gradients and Directional Derivatives
 - Define the directional derivative, and use it to find a linear
   approximation to $f(x+hu)$.

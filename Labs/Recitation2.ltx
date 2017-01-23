@@ -57,13 +57,19 @@ result in the same hyperplanes.
 \begin{asy}
   include "Recitation2/Level.asy";
 \end{asy}
-\caption{Level Surfaces of $f(x)=w^Tx$ with $\|w\|_2=1$}
+\caption{Level Surfaces of $f(v)=w^Tv$ with $\|w\|_2=1$}
 \end{figure}
 Given a hyperplane $\{v\mid w^Tv=b\}$, we can distinguish points
 $x\in\RR^d$ depending on whether $w^Tx-b$ is zero, positive, or
 negative, or in other words, whether $x$ is on the hyperplane, on the
-side $w$ is pointing at, or on the side $-w$ is pointing at. [Image of
-  sides of hyperplane]
+side $w$ is pointing at, or on the side $-w$ is pointing at. 
+\begin{figure}[H]
+\centering
+\begin{asy}
+  include "Recitation2/Sides.asy";
+\end{asy}
+\caption{Sides of the Hyperplane $w^Tv=15$}
+\end{figure}
 If we have a vector $x\in\RR^d$ and a hyperplane $H=\{v\mid w^Tv=b\}$ we
 can measure the distance from $x$ to $H$ by
 $$d(x,H) = \left|\frac{w^Tx-b}{\|w\|_2}\right|.$$

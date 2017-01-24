@@ -9,7 +9,7 @@
 \usetheme{CambridgeUS} 
 \beamertemplatenavigationsymbolsempty
 \end_preamble
-\options aspectratio=169
+\options aspectratio=169,handout
 \use_default_options false
 \maintain_unincluded_children false
 \language english
@@ -2751,7 +2751,7 @@ f^{*}(x)=\ex[y|x]
 \end_layout
 
 \end_deeper
-\begin_layout Itemize
+\begin_layout Standard
 \begin_inset Flex ArticleMode
 status open
 
@@ -3483,7 +3483,7 @@ empirical risk minimizer
 
 \end_inset
 
-where the minimum is taken over all [] functions.
+where the minimum is taken over all functions.
 \end_layout
 
 \begin_layout Definition

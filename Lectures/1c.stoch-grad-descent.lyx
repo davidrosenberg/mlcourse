@@ -2334,11 +2334,7 @@ Let's take a subsample of size
 \begin_inset Formula $N$
 \end_inset
 
- (sampled 
-\series bold
-with replacement
-\series default
-):
+:
 \begin_inset Formula 
 \[
 (x_{m_{1}},y_{m_{1}}),\ldots,(x_{m_{N}},y_{m_{N}})
@@ -2508,32 +2504,6 @@ Minibatch Gradient – In Practice
 \end_layout
 
 \begin_deeper
-\begin_layout Itemize
-In practice, minibatch is sampled 
-\series bold
-without replacement
-\series default
-.
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Not exactly unbiased (unless 
-\begin_inset Formula $N=1$
-\end_inset
-
-), but close when 
-\begin_inset Formula $N\ll n$
-\end_inset
-
-.
-\end_layout
-
-\end_deeper
-\begin_layout Pause
-
-\end_layout
-
 \begin_layout Itemize
 Tradeoffs of minibatch size:
 \end_layout

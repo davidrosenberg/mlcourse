@@ -2405,10 +2405,10 @@ minibatch gradient
 ?
 \begin_inset Formula 
 \begin{eqnarray*}
-\pause\ex\left[\del\hat{R}_{N}(w)\right] & = & \frac{1}{N}\sum_{i=1}^{N}2\ex\left[\del_{w}\ell(f_{w}(x_{m_{i}}),y_{m_{i}})\right]\\
-\pause & = & 2\ex\left[\del_{w}\ell(f_{w}(x_{m_{i}}),y_{m_{i}})\right]\\
-\pause & = & 2\sum_{i=1}^{n}\pr\left(m_{1}=i\right)\del_{w}\ell(f_{w}(x_{i}),y_{i})\\
-\pause & = & \frac{2}{n}\sum_{i=1}^{n}\del_{w}\ell(f_{w}(x_{m_{i}}),y_{m_{i}})\\
+\pause\ex\left[\del\hat{R}_{N}(w)\right] & = & \frac{1}{N}\sum_{i=1}^{N}\ex\left[\del_{w}\ell(f_{w}(x_{m_{i}}),y_{m_{i}})\right]\\
+\pause & = & \ex\left[\del_{w}\ell(f_{w}(x_{m_{i}}),y_{m_{i}})\right]\\
+\pause & = & \sum_{i=1}^{n}\pr\left(m_{1}=i\right)\del_{w}\ell(f_{w}(x_{i}),y_{i})\\
+\pause & = & \frac{1}{n}\sum_{i=1}^{n}\del_{w}\ell(f_{w}(x_{m_{i}}),y_{m_{i}})\\
 \pause & = & \del\hat{R}_{n}(w)
 \end{eqnarray*}
 

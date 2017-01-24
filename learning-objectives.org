@@ -46,8 +46,8 @@ following:
 * Lecture 1c: Gradient and Stochastic Gradient Descent
 - Give ane the empirical risk for square loss over a hypothesis
   space of linear functions.
-* Lab 1: Review of Multivariable Calculus and Linear Algebra
-** Gradients and Directional Derivatives
+* Recitation 1: Gradients and Directional Derivatives
+** Multivariate Differentiation
 - Define the directional derivative, and use it to find a linear
   approximation to $f(x+hu)$.
 - Define partial derivative and the gradient.  Show how to compute
@@ -56,6 +56,7 @@ following:
   the gradient.
 - Show that the gradient gives the direction of steepest ascent, and
   the negative gradient gives the direction of steepest descent.
+** Computing Gradients
 - Find the gradient of a function by computing each partial
   derivative separately.
 - Use the chain rule to perform gradient computations.

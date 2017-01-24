@@ -1500,6 +1500,7 @@ In minibatch SGD, we have
 \end_inset
 
 .
+ (if sampling with replacement)
 \end_layout
 
 \begin_layout Itemize
@@ -1872,7 +1873,7 @@ Lipschitz continuous
 , that is:
 \begin_inset Formula 
 \[
-\left|\del f(x)-\del f(y)\right|\le L\|x-y\|\mbox{ for all }x,y
+\|\del f(x)-\del f(y)\|\le L\|x-y\|\mbox{ for all }x,y
 \]
 
 \end_inset

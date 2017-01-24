@@ -2913,7 +2913,7 @@ Step Size
 
 \begin_deeper
 \begin_layout Itemize
-For SGD we find we want decreasing step size to dampen noise in step direction
+For SGD we want decreasing step size to dampen noise in step direction
 \end_layout
 
 \begin_deeper

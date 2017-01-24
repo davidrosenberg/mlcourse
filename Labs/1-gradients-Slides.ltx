@@ -1,0 +1,69 @@
+\title{Recitation 1}
+\subtitle{Gradients and Directional Derivatives}
+\begin{document}
+\begin{frame} 
+  \titlepage 
+\end{frame}
+\section{Recitation 1}
+\subsection{Initial Question}
+\begin{frame}
+  \begin{block}{Question}
+    We are given the data set $(x_1,y_1),\ldots,(x_n,y_n)$ where
+    $x_i\in\RR^d$ and $y_i\in\RR$.  We want to fit a linear function to
+    this data by performing empirical risk minimization.  More
+    precisely, we are using the hypothesis space $\FF=\{f(x)=w^Tx\mid
+    w\in\RR^d\}$ and the loss function $\ell(a,y)=(a-y)^2$.  Given an
+    initial guess $\tilde{w}$ for the empirical risk minimizing
+    parameter vector, how could we improve our guess?
+  \end{block}
+\end{frame}
+
+\subsection{Single Variable Calculus}
+
+\begin{frame}[fragile]
+  \frametitle{1D Linear Approximation By Derivative}
+\begin{center}
+\begin{asy}[width=\textwidth,height=0.8\textheight]
+  include "1-gradients/Taylor1d.asy";
+\end{asy}
+\end{center}
+\end{frame}
+
+\subsection{Multivariable Calculus}
+
+\begin{frame}[fragile]
+  \frametitle{Multiple Possible Directions for $f:\RR^2\to\RR$}
+\begin{center}
+\begin{asy}[width=\textwidth,height=0.8\textheight]
+  include "1-gradients/Directions.asy";
+\end{asy}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Directional Derivative as a Slope of a Slice}
+\begin{center}
+\begin{asy}[width=\textwidth,height=0.8\textheight]
+  include "1-gradients/Slice.asy";
+\end{asy}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Tangent Plane for $f:\RR^2\to\RR$}
+\begin{center}
+\begin{asy}[width=\textwidth,height=0.8\textheight]
+  include "1-gradients/Tangent.asy";
+\end{asy}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Critical Points of $f:\RR^2\to\RR$}
+\begin{center}
+\begin{asy}[width=\textwidth,height=0.8\textheight]
+  include "1-gradients/Saddle.asy";
+\end{asy}
+\end{center}
+\end{frame}
+\end{document}

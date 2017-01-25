@@ -6,7 +6,8 @@
 \end{frame}
 \section{Recitation 1}
 \subsection{Initial Question}
-\begin{frame}
+\begin{frame}[fragile]
+  \frametitle{Intro Question}
   \begin{block}{Question}
     We are given the data set $(x_1,y_1),\ldots,(x_n,y_n)$ where
     $x_i\in\RR^d$ and $y_i\in\RR$.  We want to fit a linear function to
@@ -16,6 +17,11 @@
     initial guess $\tilde{w}$ for the empirical risk minimizing
     parameter vector, how could we improve our guess?
   \end{block}
+\begin{center}
+\begin{asy}[width=\textwidth,height=0.4\textheight]
+  include "1-gradients/Data.asy";
+\end{asy}
+\end{center}
 \end{frame}
 
 \subsection{Single Variable Calculus}

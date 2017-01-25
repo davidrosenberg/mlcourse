@@ -1,3 +1,4 @@
+USESOLUTIONS = "\def\USESOLUTIONS{1} \input{VarMain.ltx}"
 PARAMS =
 MACROS = Macros.ltx Theorems.ltx
 
@@ -27,6 +28,19 @@ MACROS = Macros.ltx Theorems.ltx
 	rm -f $(basename $@).out
 	rm -f $(basename $@).pre
 	rm -f $(basename $@).aux
+	rm -f $(basename $@)-*.*
+
+%_sol.pdf : %.ltx ${MACROS}
+	cat $< >VarFill.ltx
+	pdflatex -jobname=$(basename $@) ${USESOLUTIONS}
+	ls $(basename $@)-*.asy && python Runner.py asy -compact $(basename $@)-*.asy || echo "No asymptote files"
+	pdflatex -jobname=$(basename $@) ${USESOLUTIONS}
+	pdflatex -jobname=$(basename $@) ${USESOLUTIONS}
+	rm -f $(basename $@).log
+	rm -f $(basename $@).out
+	rm -f $(basename $@).pre
+	rm -f $(basename $@).aux
+	rm -f comment.cut
 	rm -f $(basename $@)-*.*
 
 clean : 

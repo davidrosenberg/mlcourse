@@ -8,15 +8,24 @@
   w\in\RR^d\}$ and the loss function $\ell(a,y)=(a-y)^2$.  Given an
   initial guess $\tilde{w}$ for the empirical risk minimizing
   parameter vector, how could we improve our guess?
+\begin{figure}[H]
+\centering
+\begin{asy}[width=\textwidth,height=0.4\textheight]
+  include "1-gradients/Data.asy";
+\end{asy}
+\caption{Data Set With $d=1$}
+\end{figure}
 \begin{solution}
 \item[]\Sol The empirical risk is given by
   $$\hat{R}_n(f) = \frac{1}{n}\sum_{i=1}^n \ell(f(x_i),y_i) =
   \frac{1}{n}\sum_{i=1}^n (w^Tx_i-y_i)^2
   = \frac{1}{n}\|Xw-y\|_2^2,$$
   where $X\in\RR^{n\times d}$ is the matrix whose $i$th row is given by $x_i$.
-  Assuming $\tilde{w}$ is the empirical risk minimizer, we can improve
+  Assuming $\tilde{w}$ is not the empirical risk minimizer, we can improve
   our guess by taking a sufficiently small step in the direction of
-  the negative gradient.  This will be explained further below.
+  the negative gradient.  In this particular example, we can also
+  solve for the empirical risk minimizer analytically.
+  This will be explained further below.
 \end{solution}
 \end{enumerate}
 \subsection{Multivariable Differentiation}

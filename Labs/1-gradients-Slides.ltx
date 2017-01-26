@@ -72,4 +72,17 @@
 \end{asy}
 \end{center}
 \end{frame}
+\begin{frame}[fragile]
+  \frametitle{Computing Gradients}
+  \begin{block}{Question}
+    For each of the following functions, compute the gradient.
+    \begin{enumerate}
+    \item $f:\RR^3\to\RR$ is given by
+      $$f(x_1,x_2,x_3) = \log(1+e^{x_1+2x_2+3x_3}).$$
+    \item $f:\RR^n\to\RR$ is given by
+      $$f(x) = \|Ax-y\|_2^2 = (Ax-y)^T(Ax-y) = x^TA^TAx - 2y^TAx+y^Ty,$$
+      for some $A\in\RR^{m\times n}$ and $y\in\RR^m$.
+    \end{enumerate}
+  \end{block}
+\end{frame}
 \end{document}

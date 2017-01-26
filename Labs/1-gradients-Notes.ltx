@@ -72,7 +72,7 @@ $$f(x+hu) = f(x) + hf'(x;u) + o(h),$$
 mimicking our earlier 1-d formula.  This says that nearby $x$ we can
 get a good approximation of $f(x+hu)$ using the linear approximation
 $f(x)+hf'(x;u)$.  In particular, if $f'(x;u)<0$ (such a $u$ is called
-a \textit{descent direction}) then for sufficiently small $h$ we have $f(x+hu)<f(x)$.
+a \textit{descent direction}) then for sufficiently small $h>0$ we have $f(x+hu)<f(x)$.
 \begin{figure}[H]
 \centering
 \begin{asy}
@@ -109,7 +109,8 @@ $$\nabla_x f(x,w) :=
 \pMattt{\partial_{w_1}f(x,w)}{\vdots}{\partial_{w_q}f(x,w)}.
 $$
 
-Analogous to the univariate case, this can be written equivalently as
+Analogous to the univariate case, can express the condition for
+differentiability in terms of a gradient approximation:
 $$f(x+v) = f(x) + \nabla f(x)^Tv + o(\|v\|_2).$$
 The approximation $f(x+v) \approx f(x)+\nabla f(x)^Tv$ gives a tangent
 plane at the point $x$ as we let $v$ vary.
@@ -159,8 +160,8 @@ $$\nabla f(x_1,x_2,x_3) =
 {\frac{3e^{x_1+2x_2+3x_3}}{1+e^{x_1+2x_2+3x_3}}}.$$
 Alternatively, we could let $w=(1,2,3)^T$ and write
 $$f(x) = \log(1+e^{w^Tx}).$$
-Then we can apply the chain rule which says that if $g:\RR\to\RR$ and
-$h:\RR^n\to\RR$ are differentiable then
+Then we can apply a version of the chain rule which says 
+that if $g:\RR\to\RR$ and $h:\RR^n\to\RR$ are differentiable then
 $$\nabla g(h(x)) = g'(h(x))\nabla h(x).$$
 Applying the chain rule twice (for $\log$ and $\exp$) we obtain
 $$\nabla f(x) = \frac{1}{1+e^{w^Tx}}e^{w^Tx}w,$$
@@ -205,3 +206,11 @@ This shows $f(x+v)$ above has the form
 $$f(x+v) = f(x) + \nabla f(x)^Tv + o(\|v\|_2).$$
 This proves that $f$ is differentiable and that 
 $$\nabla f(x) = 2A^TAx - 2A^Ty.$$
+Another method we could have used to establish differentiability is to
+observe that the partial derivatives are all continuous.  This relies
+on the following theorem.
+\begin{thm}
+  Let $f:\RR^n\to\RR$ and suppose $\partial_{x_i}f(x):\RR^n\to\RR$ is
+  continuous for all $x\in\RR^n$ and all $i=1,\ldots,n$.  Then $f$ is
+  differentiable. 
+\end{thm}

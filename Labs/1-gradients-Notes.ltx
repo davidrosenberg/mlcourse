@@ -174,7 +174,7 @@ derivative and then infer the gradient from the computation.  For
 example, let $f:\RR^n\to\RR$ be given by
 $$f(x) = \|Ax-y\|_2^2 = (Ax-y)^T(Ax-y) = x^TA^TAx - 2y^TAx+y^Ty,$$
 for some $A\in\RR^{m\times n}$ and $y\in\RR^m$.  Assuming $f$ is
-differentiable (so that $f'(x,v)=\nabla f(x)^Tv$) we have
+differentiable (so that $f'(x;v)=\nabla f(x)^Tv$) we have
 $$\begin{Array}{rcl}
   f(x+tv) 
   & = & (x+tv)^TA^TA(x+tv) - 2y^TA(x+tv) + y^Ty\\
@@ -184,7 +184,7 @@ $$\begin{Array}{rcl}
 Thus we have
 $$\frac{f(x+tv)-f(x)}{t} = (2x^TA^TA- 2y^TA)v + tv^TA^TAv.$$
 Taking the limit as $t\to0$ shows
-$$f'(x,v) = (2x^TA^TA- 2y^TA)v \implies \nabla f(x) = (2x^TA^TA-
+$$f'(x;v) = (2x^TA^TA- 2y^TA)v \implies \nabla f(x) = (2x^TA^TA-
 2y^TA)^T = 2A^TAx - 2A^Ty.$$
 Using this we can determine the critical points of $f$.
 Let's assume here that $A$ has full column rank.  Then $A^TA$ is

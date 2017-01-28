@@ -1,5 +1,18 @@
 # Frequently Asked Questions
 
+## Gradient Checker
+What to do if the gradient checker fails?
+
+If your gradient checker fails, either your gradient checker is wrong, or the
+gradient calculation is wrong. Either way, there's a bug in the code that you
+should fix. So the correct action is that the code should exit. The gradient
+check is intended to help you detect a bug in your code. It becomes more
+important as the complexity of the gradient code increases (which happens with
+more sophisticated models).
+
+For more information about gradient checking, see
+the
+[UFLDL notes on gradient checking](http://ufldl.stanford.edu/wiki/index.php/Gradient_checking_and_advanced_optimization).
 
 ## Vectorization
 [//]: # (Original discussion: https://piazza.com/class/ii99b8o57me5jo?cid=24)

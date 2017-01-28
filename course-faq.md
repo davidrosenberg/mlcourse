@@ -1,7 +1,7 @@
 # Frequently Asked Questions
 
 ## Is the gradient a row vector or a column vector?
-This is indeed a confusing issue. Below I'll describe one of the standard conventions, which we will follow. But if you understand the meaning of the objects in question, it won't really matter for this class.
+This is indeed a confusing issue, since different people adopt different conventions. In this course we consider the gradient to be a column vector. But if you understand the meaning of the objects in question, it doesn't really matter much for this class.
 
 When we talk about the derivative of f:ℝᵈ→ℝ, we're talking about the Jacobian matrix of f, which for a function mapping into ℝ ends up as a matrix with a single row, which is a row vector. The gradient would then be the transpose of the Jacobian matrix, and thus a column vector.
 
@@ -16,7 +16,9 @@ Michael Orlitzky's also has some
 finding derivatives (note that he mentions gradient as an aside).
 
 So now -- does it matter? Well, to some people, of course it matters. But in this couse, we have two primary uses for the gradient:
+
 1. Find the directional derivative in a particular direction. To do this, we only need to take the inner product of the gradient with the direction. If you have a row vector (i.e. the Jacobian) instead of a column vector (the gradient), it's still pretty clear what you're supposed to do. In fact, when you're programming, row and column vectors are often just represented as "vectors" rather than matrices that happen to have only 1 column or 1 row. You then just keep track yourself of whether it's a row or a column vector.
+
 2. Equating the gradient to zero to find the critical points. Again, here it doesn't matter at all if you have a row or column vector (i.e. if you're working with the gradient or the derivative).
 
 ## Gradient Checker

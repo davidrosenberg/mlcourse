@@ -1,5 +1,39 @@
 # Frequently Asked Questions
 
+## Is the gradient a row vector or a column vector?
+This is indeed a confusing issue, since different people adopt different conventions. In this course we consider the gradient to be a column vector. But if you understand the meaning of the objects in question, it doesn't really matter much for this class.
+
+When we talk about the derivative of f:ℝᵈ→ℝ, we're talking about the Jacobian matrix of f, which for a function mapping into ℝ ends up as a matrix with a single row, which is a row vector. The gradient would then be the transpose of the Jacobian matrix, and thus a column vector.
+
+In the course webpage we link to [Barnes's Matrix Differentiation](http://www.atmos.washington.edu/~dennis/MatrixCalculus.pdf) notes as a reference. You'll notice the notes never use the word "gradient". Indeed, everything he writes there is about the derivative (i.e. the Jacobian). This is fine, as the gradient is just going to be the transpose of the relevant Jacobian.
+
+Now an annoying thing: the other document on the website, simply called [C: Matrix Calculus](http://www.colorado.edu/engineering/cas/courses.d/IFEM.d/IFEM.AppC.d/IFEM.AppC.pdf), uses the reverse convention. They define the Jacobian as the transpose of the one we've defined above and which we've found to be the more standard. Once you realize the difference is just a transpose, it's not a big deal. But it can certainly be confusing at first...
+
+Besides
+[Brett Bernstein's excellent notes](https://davidrosenberg.github.io/mlcourse/Labs/1-gradients-Notes_sol.pdf),
+Michael Orlitzky's also has some
+[nice notes](http://michael.orlitzky.com/articles/the_derivative_of_a_quadratic_form.php) on
+finding derivatives (note that he mentions gradient as an aside).
+
+So now -- does it matter? Well, to some people, of course it matters. But in this couse, we have two primary uses for the gradient:
+
+1. Find the directional derivative in a particular direction. To do this, we only need to take the inner product of the gradient with the direction. If you have a row vector (i.e. the Jacobian) instead of a column vector (the gradient), it's still pretty clear what you're supposed to do. In fact, when you're programming, row and column vectors are often just represented as "vectors" rather than matrices that happen to have only 1 column or 1 row. You then just keep track yourself of whether it's a row or a column vector.
+
+2. Equating the gradient to zero to find the critical points. Again, here it doesn't matter at all if you have a row or column vector (i.e. if you're working with the gradient or the derivative).
+
+## Gradient Checker
+What to do if the gradient checker fails?
+
+If your gradient checker fails, either your gradient checker is wrong, or the
+gradient calculation is wrong. Either way, there's a bug in the code that you
+should fix. So the correct action is that the code should exit. The gradient
+check is intended to help you detect a bug in your code. It becomes more
+important as the complexity of the gradient code increases (which happens with
+more sophisticated models).
+
+For more information about gradient checking, see
+the
+[UFLDL notes on gradient checking](http://ufldl.stanford.edu/wiki/index.php/Gradient_checking_and_advanced_optimization).
 
 ## Vectorization
 [//]: # (Original discussion: https://piazza.com/class/ii99b8o57me5jo?cid=24)

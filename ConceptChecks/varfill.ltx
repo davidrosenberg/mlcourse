@@ -1,256 +1,259 @@
-\section{Week 1 Lecture: Concept Check Exercises}
-\subsection{Statistical Learning Theory}
+\section{Week 1 Lab: Concept Check Exercises}
+\subsection{Multivariable Calculus Exercises}
 \begin{enumerate}
-\item Suppose $\AA=\YY=\RR$ and $\XX$ is some other set.  Furthermore, assume
-  $\Pr_{\XX\times \YY}$ is a discrete joint distribution.
-  Compute a Bayes decision function when 
-  the loss function $\ell:\AA\times\YY\to\RR$ is
-  given by
-  $$\ell(a,y) = \Ind(a\neq y),$$
-  the $0-1$ loss.
+\item If $f'(x;u)<0$ show that $f(x+hu)<f(x)$ for sufficiently small
+  $h>0$.
 \begin{solution}
-\item[]\Sol The Bayes decision function $f^*$ satisfies
-  $$f^* = \argmin_f R(f) = \argmin_f \E[\Ind(f(X)\neq Y)] = \argmin_f
-  \Pr(f(X)\neq Y),$$
-  where $(X,Y)\sim \Pr_{\XX\times\YY}$.
-  Let
-  $$f_1(x) = \argmax_y \Pr(Y=y\mid X=x),$$
-  the maximum a posteriori estimate of $Y$.
-  If there is a tie, we choose any of the maximizers.  If $f_2$ is
-  another decision function we have
-  $$\begin{array}{rcll}
-    \Pr(f_1(X)\neq Y) 
-    & = & \sum_x \Pr(f_1(x)\neq Y|X=x)\Pr(X=x)\\
-    & = & \sum_x (1-\Pr(f_1(x)=Y|X=x))\Pr(X=x)\\
-    & \leq & \sum_x (1-\Pr(f_2(x)=Y|X=x))\Pr(X=x) &\text{(Defn of
-      $f_1$)}\\
-    & = & \sum_x \Pr(f_2(x)\neq Y|X=x)\Pr(X=x)\\
-    & = & \Pr(f_2(X)\neq Y).
-  \end{array}$$
-  Thus $f^*=f_1$.
+\item[]\Sol The directional derivative is given by
+  $$f'(x;u)=\lim_{h\to0} \frac{f(x+hu)-f(x)}{h}<0.$$
+  By the definition of a limit, there must be a $\delta > 0$ such that 
+  $$\frac{f(x+hu)-f(x)}{h}<0$$
+  whenever $|h|<\delta$.  If we restrict $0<h<\delta$ then we have
+  $$f(x+hu)-f(x)<0 \implies f(x+hu) < f(x)$$
+  as required.
 \end{solution}
-\item Suppose $\AA=\YY=\RR$, $\XX$ is some other set, 
-  and $\ell:\AA\times\YY\to\RR$ is given by
-  $\ell(a,y)= (a-y)^2$, the square error loss.  What is the Bayes risk
-  and how does it compare with the variance of $Y$?
+\item Let $f:\RR^n\to\RR$ be differentiable, and assume that $\nabla
+  f(x)\neq 0$.  Prove
+  $$\argmax_{\|u\|_2=1} f'(x;u) = \frac{\nabla f(x)}{\|\nabla f(x)\|_2}
+  \quad\text{and}\quad
+  \argmin_{\|u\|_2=1} f'(x;u) = -\frac{\nabla f(x)}{\|\nabla
+    f(x)\|_2}.$$
 \begin{solution}
-\item[]\Sol From Homework~1 we know that the Bayes decision function
-  is given by $f^*(x)=\E[Y|X=x]$.  Thus the Bayes risk is given by
-  $$\E[(f^*(X)-Y)^2]=\E[(\E[Y|X]-Y)^2] = \E[\E[(\E[Y|X]-Y)^2|X]] = \E[\Var(Y|X)],$$
-  where we applied the law of iterated expectations.
-  The law of total variance states that
-  $$\Var(Y) = \E[\Var(Y|X)] + \Var[\E(Y|X)].$$
-  This proves the Bayes risk satisfies
-  $$\E[\Var(Y|X)] = \Var(Y)-\Var[\E(Y|X)] \leq \Var(Y).$$
-  Recall from Homework~1 that $\Var(Y)$ is the Bayes risk when we
-  estimate $Y$ without any input $X$.  This shows that using $X$ in
-  our estimation reduces the Bayes risk, and that the improvement is
-  measured by $\Var[\E(Y|X)]$.  As a sanity check, note that if $X,Y$
-  are independent then $\E(Y|X)=\E(Y)$ so $\Var[\E(Y|X)]=0$.  If $X=Y$
-  then $\E(Y|X)=Y$ and $\Var[\E(Y|X)]=\Var(Y)$. 
+\item[]\Sol By Cauchy-Schwarz we have, for $\|u\|_2=1$,
+  $$|f'(x;u)| = |\nabla f(x)^Tu| \leq \|\nabla f(x)\|_2 \|u\|_2
+  = \|\nabla f(x)\|_2.$$
+  Note that
+  $$\nabla f(x)^T\frac{\nabla f(x)}{\|\nabla f(x)\|_2} = \|\nabla
+  f(x)\|_2
+  \quad\text{and}\quad
+  \nabla f(x)^T\frac{-\nabla f(x)}{\|\nabla f(x)\|_2} = -\|\nabla
+  f(x)\|_2,$$
+  so these achieve the maximum and minimum bounds given by
+  Cauchy-Schwarz. 
 
-  The prominent role of variance in our analysis above is due to the
-  fact that we are using the square loss.
+  One way to understand the Cauchy-Schwarz inequality is to recall
+  that the dot-product between two vectors $v,w\in\RR^d$ can be
+  written as
+  $$v^Tw = \|v\|_2\|w\|_2\cos(\theta),$$
+  where $\theta$ is the angle between $v$ and~$w$.  This value is
+  maximized at $\cos(0)=1$ and minimized at $\cos(\pi)=-1$.
 \end{solution}
-\item Let $\XX=\{1,\ldots,10\}$, let $\YY=\{1,\ldots,10\}$, and let
-  $A=\YY$. Suppose the data generating distribution, $\PP$, has
-  marginal $X\sim \Unif\{1,\ldots,10\}$ and conditional
-  distribution $Y|X=x\sim \Unif\{1,\ldots,x\}$.  For each loss
-  function below give a Bayes decision function.
+\item Let $f:\RR^2\to\RR$ be given by $f(x,y) = x^2+4xy+3y^2$.
+  Compute the gradient $\nabla f(x,y)$.
+\begin{solution}
+\item[]\Sol Computing the partial derivatives gives
+  $$\partial_1f(x,y) = 2x+4y\quad\text{and}\quad
+  \partial_2f(x,y)=4x+6y.$$
+  Thus the gradient is given by
+  $$\nabla f(x,y) = \begin{pmatrix}2x+4y\\4x+6y\end{pmatrix}.$$
+\end{solution}
+\item Compute the gradient of $f:\RR^n\to\RR$ where $f(x)=x^TAx$ and
+  $A\in\RR^{n\times n}$ is any matrix.
+\begin{solution}
+\item[]\Sol Here we show two methods.  In either case we can obtain
+  differentiability by noticing the partial derivatives are continuous.
   \begin{enumerate}
-  \item $\ell(a,y) = (a-y)^2$,
-  \item $\ell(a,y) = |a-y|$,
-  \item $\ell(a,y) = \Ind(a\neq y)$.
+  \item Since 
+    $$f(x) = x^TAx = \sum_{i,j=1}^na_{ij}x_ix_j$$
+    we have
+    $$\partial_k f(x) = \sum_{j=1}^n (a_{kj}+a_{jk})x_j$$
+    so
+    $$\nabla f(x) = (A+A^T)x.$$
+  \item Note that
+    $$\begin{array}{rcl}
+    f(x+tv) 
+    & = & (x+tv)^TA(x+tv)\\ 
+    & = & x^TAx + tx^TAv + tv^TAx + t^2v^TAv\\
+    & = & f(x) + t(x^TA+x^TA^T)v + t^2(v^TAv).
+    \end{array}$$
+    Thus
+    $$f'(x;v) = \lim_{t\to 0}\frac{f(x+tv)-f(x)}{t}
+    = \lim_{t\to0} (x^TA+x^TA^T)v  +t(v^TAv) = (x^TA+x^TA^T)v.$$
+    This shows
+    $$\nabla f(x) = (A+A^T)x.$$
+  \end{enumerate}
+\end{solution}
+\item Compute the gradient of the quadratic function
+  $f:\RR^n\to\RR$ given by
+  $$f(x) = b + c^Tx + x^TAx,$$
+  where $b\in\RR$, $c\in\RR^n$ and $A\in\RR^{n\times n}$.
+\begin{solution}
+\item[]\Sol First consider the linear function $g(x)=c^Tx$.  Note that
+  $$g(x+tv) = c^T(x+tv) = c^Tx + tc^Tv \implies \nabla f(x) = c.$$
+  As the derivative is linear we can combine this with the previous
+  problem to obtain
+  $$\nabla f(x) = c + (A+A^T)x.$$
+\end{solution}    
+\item Fix $s\in\RR^n$ and consider $f(x) = (x-s)^TA(x-s)$ where
+  $A\in\RR^{n\times n}$.  Compute the gradient of $f$.
+\begin{solution}
+\item[]\Sol We give two methods.
+  \begin{enumerate}
+  \item Let $g(x) = x^TAx$ and $h(x)=x-s$ so that $f(x)=g(h(x))$.  By
+    the vector-valued form of the chain rule we have
+    $$\nabla f(x) = \nabla g(h(x))^TDh(x) = (A+A^T)(x-s),$$
+    where $Dh(x)=\Id_{n\times n}$ is the Jacobian matrix of $h$.
+  \item We have
+    $$(x-s)^TA(x-s) = x^TAx - s^T(A+A^T)x+s^TAs.$$
+    Computing the gradient gives
+    $$\nabla f(x) = (A+A^T)x - (A+A^T)s = (A+A^T)(x-s).$$
+  \end{enumerate}
+\end{solution}
+\item Consider the ridge regression objective function
+  $$f(w) = \|Aw-y\|_2^2 + \lambda\|w\|_2^2,$$
+  where $w\in\RR^n$, $A\in\RR^{m\times n}$, $y\in\RR^m$, and
+  $\lambda\in\RR_{\geq 0}$.  
+  \begin{enumerate}
+  \item Compute the gradient of $f$.
+  \item Express $f$ in the form $f(w)=\|Bw-z\|_2^2$ for some choice of
+    $B,z$.
+  \item Using either of the parts above, compute
+    $$\argmin_{w\in\RR^n} f(w).$$
   \end{enumerate}
 \begin{solution}
 \item[]\Sol
   \begin{enumerate}
-  \item From Homework~1 we know that $f^*(x)=\E[Y|X=x]=(x+1)/2$.
-  \item From Homework~1, we know that $f^*(x)$ is the conditional
-    median of $Y$ given $X=x$.  If $x$ is odd, then $f^*(x)=(x+1)/2$.
-    If $x$ is even, then we can choose any value in the interval
-    $$\left[\left\lfloor \frac{x+1}{2}\right\rfloor,\left\lceil \frac{x+1}{2}\right\rceil\right].$$
-  \item From question~1 above, we know that $f^*(x)=\argmax_y
-    \Pr(Y=y|X=x)$.  Thus we can choose any integer between $1$ and $x$,
-    inclusive, for $f^*(x)$.
+  \item We can express $f(w)$ as
+    $$f(w) = (Aw-y)^T(Aw-y) + \lambda w^Tw = w^TA^TAw - 2y^TAw 
+    + y^Ty + \lambda w^Tw.$$
+    Applying our previous results gives (noting $w^Tw =
+    w^T\Id_{n\times n} w$)
+    $$\nabla f(w) = 2A^TAw - 2A^Ty + 2\lambda w =
+    2(A^TA+\lambda\Id_{n\times n})w-2A^Ty.$$
+  \item Let 
+    $$B = \begin{pmatrix} A \\ \sqrt{\lambda}\Id_{n\times
+      n}\end{pmatrix}\quad\text{and}\quad
+    z = \begin{pmatrix} y\\\mathbf{0}_{n\times 1}\end{pmatrix}$$
+    written in block-matrix form.
+  \item The argmin is $w = (A^TA+\lambda\Id_{n\times n})^{-1}A^Ty$.
+    To see why the inverse is valid, see the linear algebra questions below.
   \end{enumerate}
 \end{solution}
-\item Show that the empirical risk is an unbiased and
-  consistent estimator of the Bayes risk. You may assume the Bayes
-  risk is finite.
+\item Compute the gradient of
+  $$f(\theta) = \lambda\|\theta\|_2^2 + \sum_{i=1}^n \log(1 + \exp(-y_i\theta^Tx_i)),$$
+  where $y_i\in\RR$ and $\theta\in\RR^m$ and $x_i\in\RR^m$ for
+  $i=1,\ldots,n$.
 \begin{solution}
-\item[]\Sol We assume a given loss function $\ell$ and an
-  i.i.d.~sample $(x_1,y_i),\ldots,(x_n,y_n)$. 
-  To show it is unbiased, note that
-  $$\begin{Array}{rcll}
-    \E[\hat{R}_n(f)] 
-    & = & \E\left[\frac{1}{n}\sum_{i=1}^n \ell(f(x_i),y_i)\right]\\ 
-    & = & \frac{1}{n}\sum_{i=1}^n\E[\ell(f(x_i),y_i)] &
-    \text{(Linearity of $\E$)}\\
-    & = & \E[\ell(f(x_1),y_1)] & \text{(i.i.d.)}\\
-    & = & R(f).
-  \end{Array}$$
-  For consistency, we must show that as $n\to\infty$ we have
-  $\hat{R}_n(f)\to R(f)$ with probability~1.  Letting
-  $z_i=\ell(f(x_i),y_i)$, we see that the $z_i$ are i.i.d.~with finite
-  mean.  Thus consistency follows by applying the strong law of large numbers.
-\end{solution}
-\item Let $\XX=[0,1]$ and $\YY=\AA=\RR$.  Suppose you receive the
-  $(x,y)$ data points $(0,5)$, $(.2,3)$, $(.37,4.2)$, $(.9,3)$, $(1,5)$.  Throughout
-  assume we are using the $0-1$ loss.
-  \begin{enumerate}
-  \item Suppose we restrict our decision functions to the hypothesis
-    space $\FF_1$ of constant functions.  Give a decision function that
-    minimizes the empirical risk over $\FF_1$ and the corresponding
-    empirical risk.  Is the empirical risk minimizing function unique?
-  \item Suppose we restrict our decision functions to the hypothesis
-    space $\FF_2$ of piecewise-constant functions with at most 1
-    discontinuity.  Give a decision function that
-    minimizes the empirical risk over $\FF_2$ and the corresponding
-    empirical risk.  Is the empirical risk minimizing function unique?
-  \end{enumerate}
-\begin{solution}
-\item[]\Sol
-  \begin{enumerate}
-  \item We can let $\hat{f}(x)=5$ or $\hat{f}(x)=3$ and obtain the
-    minimal empirical risk of $3/5$.  Thus the empirical risk
-    minimizer is not unique.
-  \item One solution is to let $\hat{f}(x)=5$ for $x\in[0,.1]$ and
-    $\hat{f}(x)=3$ for $x\in(.1,1]$ giving an empirical risk of
-    $2/5$.  There are uncountably many empirical risk minimizers, so
-    again we do not have uniqueness.
-  \end{enumerate}
-\end{solution}
-\item Let $\XX=[-10,10]$, $\YY=\AA=\RR$ and suppose the data generating
-  distribution has marginal distribution $X\sim\Unif[-10,10]$ and 
-  conditional distribution $Y|X=x\sim
-  \Norm(a+bx,1)$ for some fixed $a,b\in\RR$.  Suppose you are also
-  given the following data points: $(0,1)$, $(0,2)$, $(1,3)$,
-  $(2.5,3.1)$, $(-4,-2.1)$.
-  \begin{enumerate}
-  \item Assuming the $0-1$ loss, what is the Bayes risk?
-  \item Assuming the square error loss $\ell(a,y)=(a-y)^2$, what is the Bayes risk?
-  \item Using the full hypothesis space of all (measurable) functions,
-    what is the minimum achievable empirical risk for the square error loss.
-  \item Using the hypothesis space of all affine functions (i.e., of
-    the form $f(x)=cx+d$ for some $c,d\in\RR$),
-    what is the minimum achievable empirical risk for the square error loss.
-  \item Using the hypothesis space of all quadratic functions (i.e., of
-    the form $f(x)=cx^2+dx+e$ for some $c,d,e\in\RR$),
-    what is the minimum achievable empirical risk for the square error
-    loss.
-  \end{enumerate}
-\begin{solution}
-\item[]\Sol
-  \begin{enumerate}
-  \item For any decision function $f$ the risk is given by
-    $$\E[\Ind(f(X)\neq Y)] = \Pr(f(X)\neq Y) = 1 - \Pr(f(X)=Y)=1.$$
-    To see this note that
-    $$\Pr(f(X)=Y) =
-    \frac{1}{20\sqrt{2\pi}}\int_{-10}^{10}\int_{-\infty}^\infty
-    \Ind(f(x)=y)e^{-(y-a-bx)^2/2}\,dy\,dx
-    = \frac{1}{20\sqrt{2\pi}}\int_{-10}^{10} 0\,dx = 0.$$
-    Thus every decision function is a Bayes decision function, and the
-    Bayes risk is~$1$.
-  \item By problem~2 above we know the Bayes risk is given by
-    $$\E[\Var(Y|X)] = \E[1]=1,$$
-    since $\Var(Y|X=x)=1$. 
-  \item We choose $\hat{f}$ such that
-    $$\hat{f}(0)=1.5, \hat{f}(1)=3, \hat{f}(2.5)=3.1,
-    \hat{f}(-4)=2.1,$$
-    and $\hat{f}(x)=0$ otherwise.  Then we achieve the minimum
-    empirical risk of $1/10$.
-  \item Letting
-    $$A=\begin{pmatrix}1&0\\1&0\\1&1\\1&2.5\\1&-4\end{pmatrix},\quad y =
-    \begin{pmatrix}1\\2\\3\\3.1\\-2.1\end{pmatrix}$$
-    we obtain (using a computer)
-    $$\hat{w}=\begin{pmatrix}\hat{d}\\\hat{c}\end{pmatrix} = (A^TA)^{-1}A^Ty
-    = \begin{pmatrix}1.4856\\0.8556\end{pmatrix}.$$
-    This gives
-    $$\hat{R}_5(\hat{f}) = \frac{1}{5}\|A\hat{w}-y\|_2^2 = 0.2473.$$
-    [Aside: In general, to solve systems like the one above on a computer you shouldn't actually invert
-      the matrix $A^TA$, but use something like \lstinline!w=A\y! in
-      Matlab which performs a QR factorization of $A$.]
-  \item Letting
-    $$A=\begin{pmatrix}1&0&0\\1&0&0\\1&1&1\\1&2.5&6.25\\1&-4&16\end{pmatrix},\quad y =
-    \begin{pmatrix}1\\2\\3\\3.1\\-2.1\end{pmatrix}$$
-    we obtain (using a computer)
-    $$\hat{w}=\begin{pmatrix}\hat{e}\\\hat{d}\\\hat{c}\end{pmatrix} = (A^TA)^{-1}A^Ty
-    = \begin{pmatrix}1.7175\\0.7545\\-0.0521\end{pmatrix}.$$
-    This gives
-    $$\hat{R}_5(\hat{f}) = \frac{1}{5}\|A\hat{w}-y\|_2^2 = 0.1928.$$
-  \end{enumerate}
+\item[]\Sol As the derivative is linear, we can compute the gradient
+  of each term separately and obtain
+  $$\nabla f(\theta) = 2\lambda\theta - \sum_{i=1}^n
+  \frac{\exp(-y_i\theta^Tx_i)}{1+\exp(-y_i\theta^Tx_i)}y_ix_i,$$
+  where we used the techniques from Recitation~1 to differentiate the
+  log terms.
 \end{solution}
 \end{enumerate}
-\subsection{Stochastic Gradient Descent}
+\subsection{Linear Algebra Exercises}
 \begin{enumerate}
-\item When performing mini-batch gradient descent, we often randomly choose
-  the mini-batch from the full training set without replacement.  
-  Show that the resulting  mini-batch gradient is an unbiased estimate of the gradient of the
-  full training set.  Here we assume each decision function $f_w$ in
-  our hypothesis space is determined by a parameter vector $w\in\RR^d$.
+\item When performing linear regression we obtain the \textit{normal
+  equations} $A^TAx=A^Ty$ where $A\in\RR^{m\times n}$, $x\in \RR^n$,
+  and $y\in\RR^m$.
+  \begin{enumerate}
+  \item If $\rank(A)=n$ then solve the normal equations for $x$.
+  \item What if $\rank(A)\neq n$?
+  \end{enumerate}
 \begin{solution}
-\item[]\Sol Let $(x_{m_1},y_{m_1}),\ldots,(x_{m_n},y_{m_n})$ be our
-  mini-batch selected uniformly without replacement from the full
-  training set $(x_1,y_1),\ldots,(x_n,y_n)$.
-  $$\begin{Array}{rcll}
-    \E\left[\nabla_w\frac{1}{n}\sum_{i=1}^n
-      \ell(f_w(x_{m_i},y_{m_i}))\right]
-    & = & \frac{1}{n}\sum_{i=1}^n\E\left[\nabla_w
-      \ell(f_w(x_{m_i}),y_{m_i})\right] & \text{(Linearity of
-      $\nabla,\E$)}\\
-    & = & \frac{1}{n}\sum_{i=1}^n\E\left[\nabla_w
-      \ell(f_w(x_{m_1}),y_{m_1})\right]    &\text{(Marginals are the same)}\\
-    & = & \E\left[\nabla_w\ell(f_w(x_{m_1}),y_{m_1})\right]\\
-    & = & \sum_{i=1}^N \frac{1}{N}\nabla_w\ell(f_w(x_{i}),y_{i})\\
-    & = & \nabla_w\frac{1}{N}\sum_{i=1}^N
-    \ell(f_w(x_{i}),y_{i})&\text{(Linearity of $\nabla$).}
-  \end{Array}$$
+\item[]\Sol
+  \begin{enumerate}
+  \item We first show that $\rank(A^TA)=n$ to show that we can invert
+    $A^TA$.  By the rank-nullity theorem, we can do this by showing
+    $A^TA$ has trivial nullspace.  Note that for any $x\in\RR^n$ we have
+    $$A^TAx=0\implies x^TA^TAx=0 \implies \|Ax\|_2^2=0 \implies Ax=0
+    \implies x=0.$$
+    This last implication follows since $\rank(A)=n$ so $A$ has
+    trivial nullspace (again by rank-nullity).  This proves
+    $A^TA$ has a trivial nullspace, and thus $A^TA$ is
+    invertible. Applying the inverse we obtain
+    $$x = (A^TA)^{-1}A^Ty.$$
+    Since $A^TA$ is invertible, our answer for $x$ is unique.
+  \item We will show that the equation always has infinitely many
+    solutions~$x$. First note that $\rank(A)\neq n$ implies
+    $\rank(A)<n$ since you cannot have larger rank than the number of
+    columns. By rank-nullity, $A^TA$ has a non-trivial nullspace,
+    which in turn implies that if there is a solution, there must be
+    infinitely many solutions. 
+    
+    We will show that $A^T$ and $A^TA$ have the same column space.
+    This will imply $A^Ty$ is in the column space of $A^TA$ giving
+    the result.  First note that every vector of the form
+    $A^TAx$ must be a linear combination of the columns of $A^T$,
+    and thus lies in the column space of $A^T$.  Above we proved
+    that the column space of $A^TA$ has dimension $n$, the same as
+    the column space of $A^T$ (since $\rank(A^T)=\rank(A)$).  Thus
+    $A^T$ and $A^TA$ have the same column spaces.
+
+    A specific solution can be computed as $x=(A^TA)^+ A^Ty$, where
+    $(A^TA)^+$ is the \textit{pseudoinverse} of $A^TA$.  Of the infinitely
+    many possible solutions $x$, this gives the one that minimizes
+    $\|x\|_2$.  More precisely, $x=(A^TA)^+ A^Ty$ solves the
+    optimization problem
+    $$\begin{array}{ll}
+      \text{minimize} & \|x\|_2\\
+      \text{subject to} & A^TAx=A^Ty.
+    \end{array}$$
+  \end{enumerate}
 \end{solution}
-\item You want to estimate the average age of the people visiting your
-  website.  Over a fixed week we will receive a total of $N$
-  visitors (which we will call our full population).  Suppose the population mean $\mu$
-  is unknown but the variance $\sigma^2$ is known.  Since we don't
-  want to bother every visitor, we will ask a small sample what their
-  ages are.  How many visitors must we randomly sample
-  so that our estimator $\hat{\mu}$ has variance at
-  most $\epsilon>0$?  
+\item Prove that $A^TA+\lambda \Id_{n\times n}$ is invertible if
+  $\lambda>0$ and $A\in\RR^{n\times n}$.
 \begin{solution}
-\item[]\Sol Let $x_1,\ldots,x_n$ denote our randomly sampled ages, and
-  let $\hat{x}$ denote the sample mean $\frac{1}{n}\sum_{i=1}^n x_i$.
-  Then
-  $$\Var(\hat{x}) = \frac{\sigma^2}{n}.$$
-  Thus we require $n\geq \sigma^2/\epsilon$.  Note that this doesn't
-  depend on $N$, the full population size.
+\item[]\Sol If $(A^TA+\lambda\Id_{n\times n})x=0$ then 
+  $$0=x^T(A^TA+\lambda\Id_{n\times n})x = \|Ax\|_2^2 + \lambda\|x\|_2^2
+  \implies x=0.$$
+  Thus $A^TA+\lambda\Id_{n\times n}$ has trivial nullspace.
+  Alternatively, we could notice that $A^TA$ is positive semidefinite,
+  so adding $\lambda\Id_{n\times n}$ will give a matrix whose
+  eigenvalues are all at least $\lambda>0$.  A square matrix is
+  invertible iff its eigenvalues are all non-zero.
 \end{solution}
-\item Suppose you have been successfully 
-  running mini-batch gradient descent with
-  a full training set size of $10^5$ and a mini-batch size of $100$.
-  After receiving more data your full training set size increases to $10^9$.
-  Give a heuristic argument as to why the mini-batch size need not
-  increase even though we have $10000$ times more data.
+\item Describe the following set geometrically:
+  $$\left\{v\in\RR^2\;\middle|\;
+  v^T\pMatt{2&2}{0&2}v = 4\right\}.$$
 \begin{solution}
-\item[]\Sol Throughout we assume our gradient lies in $\RR^d$.
-  Consider the empirical distribution on the full training
-  set (i.e., each sample is chosen with probability $1/N$ where $N$ is
-  the full training set size).  Assume this distribution has mean
-  vector $\mu\in\RR^d$ (the full-batch gradient) and covariance matrix
-  $\Sigma\in\RR^{d\times d}$.  By the central
-  limit theorem the mini-batch gradient will be approximately normally
-  distributed with mean $\mu$ and covariance $\frac{1}{n}\Sigma$, where
-  $n$ is the mini-batch size.  As $N$ grows the entries of $\Sigma$
-  need not grow, and thus $n$ need not grow.
-  In fact, as $N$ grows, the empirical mean and
-  covariance matrix will converge to their true values.  More
-  precisely, the mean of the empirical distribution
-  will converge to $\E\nabla\ell(f(X),Y)$ and the covariance will
-  converge to
-  $$\E[(\nabla\ell(f(X),Y))(\nabla\ell(f(X),Y))^T]-\E[\nabla\ell(f(X),Y)]\E[\nabla\ell(f(X),Y)]^T$$
-  where $(X,Y)\sim\Pr_{\XX\times\YY}$.  
-  
-  The important takeaway here is that the size of the mini-batch is
-  dependent on the speed of computation, and on the characteristics of
-  the distribution of the gradients (such as the moments), and thus
-  vary independently of the size of the full training set.
+\item[]\Sol The set is an ellipse with semi-axis lengths $2/\sqrt{3}$ and $2$
+  rotated counter-clockwise by $\pi/4$.
+Letting $v=(x,y)^T$ and multiplying all terms we get
+$$2x^2+2xy+2y^2=4.$$
+From precalculus we can see this is a conic section, and must be an
+ellipse or a hyperbola, but more work is needed to determine which
+one.  Instead of proceeding along these lines,
+let's use linear algebra to give a cleaner treatment that extends to
+higher dimensions.  
+
+Let $A=\pMatt{2&2}{0&2}$.  Since $v^TAv$ is a number, we must have
+$(v^TAv)^T=v^TAv$.  This gives 
+$$v^TA^Tv=v^TAv = \frac{1}{2}v^T(A^T+A)v = v^T\pMatt{2&1}{1&2}v.$$
+Our new matrix is symmetric, and thus allows us to apply the spectral
+theorem to diagonalize it with an orthonormal basis of eigenvectors.
+In other words, by rotating our axes we can get a diagonal matrix.
+Either doing this by hand, or using a computer (Matlab, Mathematica,
+Numpy) we obtain
+$$\pMatt{2&1}{1&2} = Q\pMatt{3&0}{0&1}Q^T \quad\text{where}\quad
+Q=\frac{1}{\sqrt{2}}\pMatt{1&-1}{1&1}=\pMatt{\cos(\pi/4)&-\sin(\pi/4)}{\sin(\pi/4)&\cos(\pi/4)}.$$
+The set
+$$\left\{w\in\RR^2\;\middle|\;
+  w^T\pMatt{3&0}{0&1}w = 4\right\}$$
+is an ellipse with semi-axis lengths $2/\sqrt{3}$ and $2$ 
+since it corresponds to the equation $3w_1^2+w_2^2=4$.
+Since $Q$ performs a counter-clockwise rotation by $\pi/4$ we obtain
+the answer.  More concretely,
+$$w^T\pMatt{3&0}{0&1}w=4\iff (Qw)^TQ\pMatt{3&0}{0&1}Q^T(Qw)=4\iff
+(Qw)^T\pMatt{2&1}{1&2}(Qw)=4$$
+so
+$$\{v\mid v^TAv=4\} = \left\{Qw\;\middle|\; w^T\pMatt{3&0}{0&1}w=4\right\}.$$
+\begin{figure}[H]
+\centering
+\begin{asy}
+  include "1-Lab-Check/Ellipse.asy";
+\end{asy}
+\qquad
+\begin{asy}
+  include "1-Lab-Check/RotEllipse.asy";
+\end{asy}
+\caption{Rotated Ellipse}
+\end{figure}
+
+More generally, the solution to $v^TAv=c$ for $v\in\RR^n$,
+$A\in\RR^{n\times n}$ and $c>0$ will be an ellipsoid if
+$A$ is positive definite.  The $i$th semi-axis will have length
+$\sqrt{c/\lambda_i}$ where $\lambda_i$ is the $i$th eigenvalue of~$A$.
 \end{solution}
 \end{enumerate}

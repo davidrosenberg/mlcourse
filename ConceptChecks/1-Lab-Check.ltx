@@ -28,7 +28,15 @@
   \quad\text{and}\quad
   \nabla f(x)^T\frac{-\nabla f(x)}{\|\nabla f(x)\|_2} = -\|\nabla
   f(x)\|_2,$$
-  so these achieve the maximum and minimum bounds given by Cauchy-Schwarz.
+  so these achieve the maximum and minimum bounds given by
+  Cauchy-Schwarz. 
+
+  One way to understand the Cauchy-Schwarz inequality is to recall
+  that the dot-product between two vectors $v,w\in\RR^d$ can be
+  written as
+  $$v^Tw = \|v\|_2\|w\|_2\cos(\theta),$$
+  where $\theta$ is the angle between $v$ and~$w$.  This value is
+  maximized at $\cos(0)=1$ and minimized at $\cos(\pi)=-1$.
 \end{solution}
 \item Let $f:\RR^2\to\RR$ be given by $f(x,y) = x^2+4xy+3y^2$.
   Compute the gradient $\nabla f(x,y)$.

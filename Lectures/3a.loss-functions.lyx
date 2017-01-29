@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin /Users/drosen/Dropbox/repos/mlcourse/Lectures/
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -19,23 +21,23 @@
   \end{frame}
 }
 \end_preamble
-\options handout
+\options handout,aspectratio=169
 \use_default_options false
 \maintain_unincluded_children false
 \language english
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman times
-\font_sans default
-\font_typewriter default
-\font_math eulervm
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "eulervm" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -773,6 +775,9 @@ Loss Functions for Regression
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -784,6 +789,10 @@ In general, loss function may take the form
 \left(\hat{y},y\right)\mapsto\ell(\hat{y},y)
 \]
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -817,6 +826,10 @@ r=y-\hat{y}
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -831,6 +844,10 @@ When would you
 not
 \series default
  want a translation-invariant loss?
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -850,7 +867,10 @@ Often you can transform your response
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -862,6 +882,10 @@ status open
 Some Losses for Regression
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -906,6 +930,10 @@ Square
 \end_inset
 
  
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -932,6 +960,10 @@ Laplace
 \end_inset
 
  
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -942,7 +974,7 @@ Laplace
 \begin_layout Description
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="4">
-<features rotate="0" tabularvalignment="middle">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -1158,7 +1190,10 @@ Laplace
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1170,6 +1205,10 @@ status open
 Loss Function Robustness
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1217,7 +1256,10 @@ tiny{KPM Figure 7.6}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1229,6 +1271,10 @@ status open
 Some Losses for Regression
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1273,6 +1319,10 @@ Square
 \end_inset
 
  (not robust)
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1299,6 +1349,10 @@ Laplace
 \end_inset
 
  (not differentiable)
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1310,6 +1364,12 @@ Laplace
 gives 
 \series bold
 median regression
+\series default
+
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1333,6 +1393,10 @@ Huber
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1353,7 +1417,10 @@ robust and differentiable
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1361,7 +1428,10 @@ robust and differentiable
 Classification Loss Functions
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1373,6 +1443,10 @@ status open
 The Classification Problem
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1409,6 +1483,10 @@ Output space
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1435,7 +1513,10 @@ f<0\;\implies & \mbox{Predict }-1
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1447,6 +1528,10 @@ status open
 The Classification Problem: Real-Valued Predictions
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1468,6 +1553,10 @@ Output space
 \begin_layout Itemize
 Prediction function 
 \begin_inset Formula $f:\cx\to\reals$
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1498,6 +1587,10 @@ score
 confidence of our prediction
 \series default
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1506,7 +1599,10 @@ confidence of our prediction
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1530,6 +1626,10 @@ correct
 \series default
  we are.
  
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1544,6 +1644,10 @@ We want to
 maximize the margin
 \series default
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1557,7 +1661,10 @@ Most classification losses depend only on the margin.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1569,6 +1676,10 @@ status open
 The Classification Problem: Real-Valued Predictions
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1625,7 +1736,10 @@ NP-Hard
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1641,6 +1755,10 @@ status open
 Classification Losses
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1668,7 +1786,10 @@ Zero-One loss:
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Plain Layout
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1680,6 +1801,10 @@ status open
 Classification Losses
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1707,7 +1832,10 @@ Perceptron loss:
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Plain Layout
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1719,6 +1847,10 @@ status open
 Classification Losses
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1746,7 +1878,10 @@ SVM/Hinge loss:
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Plain Layout
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1758,6 +1893,10 @@ status open
 Classification Losses
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1785,7 +1924,10 @@ Logistic/Log loss:
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Plain Layout
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1797,6 +1939,10 @@ status open
 Classification Losses
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1824,7 +1970,10 @@ Logistic/Log loss:
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Plain Layout
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1841,6 +1990,10 @@ status open
 Classification Losses
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1850,6 +2003,10 @@ Classification Losses
 \begin_layout Standard
 Zero-One loss: 
 \begin_inset Formula $\loss_{\text{0-1}}=\ind{m\le0}$
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1868,7 +2025,10 @@ Zero-One loss:
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1883,12 +2043,20 @@ Classification Losses
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Standard
 SVM/Hinge loss: 
 \begin_inset Formula $\loss_{\text{Hinge}}=\max\left\{ 1-m,0\right\} =\left(1-m\right)_{+}$
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1949,7 +2117,10 @@ margin error
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1961,6 +2132,10 @@ status open
 (Soft Margin) Linear Support Vector Machine 
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1999,7 +2174,10 @@ Loss
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2014,12 +2192,20 @@ Classification Losses
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Standard
 Logistic/Log loss: 
 \begin_inset Formula $\loss_{\text{Logistic}}=\log\left(1+e^{-m}\right)$
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2053,7 +2239,10 @@ How many support vectors?
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2065,6 +2254,10 @@ status open
 What About Square Loss for Classification?
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2120,7 +2313,10 @@ Prove using fact that
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2132,6 +2328,10 @@ status open
 What About Square Loss for Classification?
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2199,7 +2399,7 @@ http://web.mit.edu/lrosasco/www/publications/loss.pdf
 
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
@@ -2218,6 +2418,10 @@ Stochastic Gradient Descent (SGD)
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2229,6 +2433,10 @@ status open
 Stochastic Gradient Descent
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2245,6 +2453,10 @@ initialize
 
 \begin_layout Itemize
 repeat
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2285,6 +2497,10 @@ SGD for Hinge Loss and Linear Predictors
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2294,6 +2510,10 @@ Consider linear hypothesis space:
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2320,6 +2540,10 @@ Gradient of hinge loss
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2334,6 +2558,10 @@ A point with margin
 \end_inset
 
  is correctly classified.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2365,6 +2593,10 @@ SGD for Hinge Loss and Linear Predictors
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2389,6 +2621,10 @@ w^{(t)} & \mbox{otherwise}
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2406,6 +2642,10 @@ w^{(t)} & \mbox{otherwise}
 \end_inset
 
 's with margin error when selected.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2444,6 +2684,10 @@ where
 \end_inset
 
  are the support vectors.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2476,6 +2720,10 @@ sparse
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2490,6 +2738,10 @@ status open
 Predicting with Support Vectors
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2514,6 +2766,10 @@ To evaluate
 \end_inset
 
 , we could either
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2555,7 +2811,10 @@ kernelize
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Plain Layout
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2573,6 +2832,10 @@ status open
 Population Minimizers
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2636,7 +2899,10 @@ emph{The Elements of Statistical Learning}, 2nd Ed.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Plain Layout
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 

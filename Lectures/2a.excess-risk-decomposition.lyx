@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin /Users/drosen/Dropbox/repos/mlcourse/Lectures/
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -20,23 +22,23 @@
   \end{frame}
 }
 \end_preamble
-\options handout
+\options handout,aspectratio=169
 \use_default_options false
 \maintain_unincluded_children false
 \language english
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman times
-\font_sans default
-\font_typewriter default
-\font_math eulervm
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "eulervm" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -731,10 +733,6 @@ tiny{Plots courtesy of Ningshan Zhang.}}
 Review: Statistical Learning Theory
 \end_layout
 
-\begin_layout Separator
-
-\end_layout
-
 \begin_layout Frame
 \begin_inset Argument 4
 status open
@@ -938,7 +936,10 @@ loss function
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1001,7 +1002,10 @@ where the expectation taken is over
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1044,7 +1048,10 @@ But risk function cannot be computed because we don't know
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1113,7 +1120,10 @@ Minimizing empirical risk over all functions leads to overfitting.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1210,7 +1220,10 @@ f_{\cf} & = & \argmin_{f\in\cf}\ex\loss(f(x),y).
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1376,7 +1389,10 @@ url{http://yosinski.com/mlss12/MLSS-2012-Rakhlin-Statistical-Learning-Theory/}}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1427,7 +1443,10 @@ Can excess risk ever be negative?
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1511,7 +1530,10 @@ variance
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1592,7 +1614,10 @@ Concept check: Is approximation error a random or non-random variable?
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1659,6 +1684,38 @@ estimation error.
 \end_layout
 
 \begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Under typical conditions: 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph default
+With infinite training data, estimation error goes to zero.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+[Infinite training data solves the 
+\emph on
+statistical 
+\emph default
+problem, which is not knowing the true risk.]
+\end_layout
+
+\begin_layout Pause
 \begin_inset VSpace 15theight%
 \end_inset
 
@@ -1707,7 +1764,7 @@ e.g.
 
 
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Pause
 
@@ -1744,7 +1801,10 @@ problem, which is not knowing the true risk.]
 
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1817,7 +1877,10 @@ as we get more training data, use a bigger
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1837,7 +1900,7 @@ ERM in Practice
 \begin_deeper
 \begin_layout Standard
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Itemize
 Does unlimited data solve our problems?
@@ -1896,7 +1959,7 @@ For nice choices of loss functions and classes
 
 \begin_deeper
 \begin_layout Itemize
-But takes time -- is it worth it?
+But takes time – is it worth it?
 \end_layout
 
 \begin_deeper
@@ -1907,7 +1970,8 @@ But takes time -- is it worth it?
 \end_deeper
 \end_deeper
 \begin_layout Itemize
-For neural networks, we have no idea how to find 
+For some hypothesis spaces (e.g.
+ neural networks), we don't know how to find 
 \begin_inset Formula $\hat{f}_{n}\in\cf$
 \end_inset
 
@@ -1916,7 +1980,10 @@ For neural networks, we have no idea how to find
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2004,7 +2071,10 @@ But
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2040,7 +2110,10 @@ Excess risk decomposition for function
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2052,7 +2125,10 @@ Excess Risk Decomposition: Example
 \begin_inset Note Note
 status collapsed
 
-\begin_layout Separator
+\begin_layout Plain Layout
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2166,7 +2242,10 @@ textwidth
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Plain Layout
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2218,7 +2297,7 @@ textwidth
 \begin_inset Graphics
 	filename ../Figures/ExcessRiskTreeDemo/2.pointsWithNoise_BayesBoundary.png
 	lyxscale 60
-	width 70col%
+	height 80theight%
 
 \end_inset
 
@@ -2227,10 +2306,6 @@ textwidth
 
 \end_deeper
 \begin_layout ColumnsTopAligned
-Bayes Error Rate = 
-\begin_inset Formula $0.1$
-\end_inset
-
 
 \end_layout
 
@@ -2257,17 +2332,28 @@ textwidth
 \cy=\{\text{blue},\text{orange}\}\\
 P_{\cx}=\mbox{Uniform}([0,1]^{2})\\
 \pr(\text{orange}\mid x_{1}>x_{2})=.9\\
-\pr(\text{orange}\mid x_{1}<x_{2})=.1
+\pr(\text{orange}\mid x_{1}<x_{2})=.1\pause
 \end{gather*}
 
+\end_inset
+
+Bayes Error Rate = 
+\begin_inset Formula $0.1$
 \end_inset
 
 
 \end_layout
 
 \end_deeper
+\begin_layout ColumnsTopAligned
+
+\end_layout
+
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2350,7 +2436,7 @@ emph{An Introduction to Statistical Learning, with applications in R} (Springer,
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
@@ -2575,7 +2661,10 @@ Bayes error rate = 0.1
 
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2631,9 +2720,10 @@ tiny{Plots courtesy of Ningshan Zhang.}}
 
 \begin_deeper
 \begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename ../Figures/ExcessRiskTreeDemo/3.optimalTree.2.png
-	width 90text%
+	height 60theight%
 
 \end_inset
 
@@ -2650,17 +2740,7 @@ Risk Minimizer in
 \series bold
 infinite training data
 \series default
-)
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Risk = P(error) = 0.2
+); Risk = P(error) = 0.2
 \end_layout
 
 \begin_deeper
@@ -2674,7 +2754,10 @@ Approximation Error = 0.2 - 0.1 = 0.1
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2701,9 +2784,10 @@ Theoretical Best in
 
 \begin_deeper
 \begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename ../Figures/ExcessRiskTreeDemo/3.optimalTree.3.png
-	width 90text%
+	height 60theight%
 
 \end_inset
 
@@ -2720,19 +2804,24 @@ Risk Minimizer in
 \series bold
 infinite training data
 \series default
-)
+); Risk = P(error) = 0.15
 \end_layout
 
-\begin_layout Itemize
-Risk = P(error) = 0.15
+\begin_deeper
+\begin_layout Pause
+
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
 Approximation Error = 0.15 - 0.1 = 0.05
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2759,9 +2848,10 @@ Theoretical Best in
 
 \begin_deeper
 \begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename ../Figures/ExcessRiskTreeDemo/3.optimalTree.4.png
-	width 90text%
+	height 60theight%
 
 \end_inset
 
@@ -2774,11 +2864,7 @@ Risk Minimizer (e.g.
 \series bold
 infinite training data
 \series default
-)
-\end_layout
-
-\begin_layout Itemize
-Risk = P(error) = 0.125
+); Risk = P(error) = 0.125
 \end_layout
 
 \begin_layout Itemize
@@ -2786,7 +2872,10 @@ Approximation Error = 0.125 - 0.1 = 0.025
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2844,7 +2933,10 @@ Approximation Error = 0.106 - 0.1 = 0.006
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Plain Layout
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2880,9 +2972,10 @@ Decision Tree in
 
 \begin_deeper
 \begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename ../Figures/ExcessRiskTreeDemo/4.sampleFit.treeDepth.3.png
-	width 90text%
+	height 60theight%
 
 \end_inset
 
@@ -2903,8 +2996,7 @@ Decision Tree in
 
 \begin_inset Formula 
 \begin{align*}
-\mbox{Estimation Error+Optimization Error}= & \;\underbrace{0.176\pm.004}_{R(\tilde{f})}\;\;-\underbrace{0.150}_{\min_{f\in\cf_{3}}R(f)}\\
-= & \;.026\pm.004
+\mbox{Estimation Error+Optimization Error}= & \;\underbrace{0.176\pm.004}_{R(\tilde{f})}\;\;-\underbrace{0.150}_{\min_{f\in\cf_{3}}R(f)}=.026\pm.004
 \end{align*}
 
 \end_inset
@@ -2913,7 +3005,10 @@ Decision Tree in
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2944,9 +3039,10 @@ Decision Tree in
 
 \begin_deeper
 \begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename ../Figures/ExcessRiskTreeDemo/4.sampleFit.treeDepth.4.png
-	width 90text%
+	height 60theight%
 
 \end_inset
 
@@ -2964,8 +3060,7 @@ Decision Tree in
 
 \begin_inset Formula 
 \begin{align*}
-\mbox{Estimation Error+Optimization Error}= & \;\underbrace{0.144\pm.005}_{R(\tilde{f})}\;\;-\underbrace{0.125}_{\min_{f\in\cf_{4}}R(f)}\\
-= & \;.019\pm.005
+\mbox{Estimation Error+Optimization Error}= & \;\underbrace{0.144\pm.005}_{R(\tilde{f})}\;\;-\underbrace{0.125}_{\min_{f\in\cf_{4}}R(f)}=\;.019\pm.005
 \end{align*}
 
 \end_inset
@@ -2974,7 +3069,10 @@ Decision Tree in
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3005,9 +3103,10 @@ Decision Tree in
 
 \begin_deeper
 \begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename ../Figures/ExcessRiskTreeDemo/4.sampleFit.treeDepth.6.png
-	width 90text%
+	height 60theight%
 
 \end_inset
 
@@ -3025,8 +3124,7 @@ Decision Tree in
 
 \begin_inset Formula 
 \begin{align*}
-\mbox{Estimation Error+Optimization Error}= & \;\underbrace{0.148\pm.007}_{R(\tilde{f})}\;\;-\underbrace{0.106}_{\min_{f\in\cf_{6}}R(f)}\\
-= & \;.042\pm.008
+\mbox{Estimation Error+Optimization Error}= & \;\underbrace{0.148\pm.007}_{R(\tilde{f})}\;\;-\underbrace{0.106}_{\min_{f\in\cf_{6}}R(f)}=.042\pm.007
 \end{align*}
 
 \end_inset
@@ -3035,7 +3133,10 @@ Decision Tree in
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3066,9 +3167,10 @@ Decision Tree in
 
 \begin_deeper
 \begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename ../Figures/ExcessRiskTreeDemo/4.sampleFit.treeDepth.8.png
-	width 90text%
+	height 60theight%
 
 \end_inset
 
@@ -3086,8 +3188,7 @@ Decision Tree in
 
 \begin_inset Formula 
 \begin{align*}
-\mbox{Estimation Error+Optimization Error}= & \;\underbrace{0.162\pm.009}_{R(\tilde{f})}\;\;-\underbrace{0.102}_{\min_{f\in\cf_{8}}R(f)}\\
-= & \;.061\pm.009
+\mbox{Estimation Error+Optimization Error}= & \;\underbrace{0.162\pm.009}_{R(\tilde{f})}\;\;-\underbrace{0.102}_{\min_{f\in\cf_{8}}R(f)}=\;.061\pm.009
 \end{align*}
 
 \end_inset
@@ -3096,7 +3197,10 @@ Decision Tree in
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3127,9 +3231,10 @@ Decision Tree in
 
 \begin_deeper
 \begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename ../Figures/ExcessRiskTreeDemo/5.improveFit.sampleSize.Big.2048.png
-	width 90text%
+	height 60theight%
 
 \end_inset
 
@@ -3147,8 +3252,7 @@ Decision Tree in
 
 \begin_inset Formula 
 \begin{align*}
-\mbox{Estimation Error+Optimization Error}= & \;\underbrace{0.146\pm.006}_{R(\tilde{f})}\;\;-\underbrace{0.102}_{\min_{f\in\cf_{3}}R(f)}\\
-= & \;.045\pm.006
+\mbox{Estimation Error+Optimization Error}= & \;\underbrace{0.146\pm.006}_{R(\tilde{f})}\;\;-\underbrace{0.102}_{\min_{f\in\cf_{3}}R(f)}=.045\pm.006
 \end{align*}
 
 \end_inset
@@ -3157,7 +3261,10 @@ Decision Tree in
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3188,9 +3295,10 @@ Decision Tree in
 
 \begin_deeper
 \begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename ../Figures/ExcessRiskTreeDemo/5.improveFit.sampleSize.Big.8192.png
-	width 90text%
+	height 60theight%
 
 \end_inset
 
@@ -3208,8 +3316,7 @@ Decision Tree in
 
 \begin_inset Formula 
 \begin{align*}
-\mbox{Estimation Error+Optimization Error}= & \;\underbrace{0.121\pm.002}_{R(\tilde{f})}\;\;-\underbrace{0.102}_{\min_{f\in\cf_{3}}R(f)}\\
-= & \;.019\pm.002
+\mbox{Estimation Error+Optimization Error}= & \;\underbrace{0.121\pm.002}_{R(\tilde{f})}\;\;-\underbrace{0.102}_{\min_{f\in\cf_{3}}R(f)}=\;.019\pm.002
 \end{align*}
 
 \end_inset
@@ -3218,7 +3325,10 @@ Decision Tree in
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3241,10 +3351,11 @@ Risk Summary
 
 \begin_deeper
 \begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename ../Figures/ExcessRiskTreeDemo/sampleSize4096.risk.png
 	lyxscale 25
-	width 100text%
+	height 70theight%
 
 \end_inset
 
@@ -3256,7 +3367,10 @@ Why do some curves have confidence bands and others not?
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3279,10 +3393,11 @@ Excess Risk Decomposition
 
 \begin_deeper
 \begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename ../Figures/ExcessRiskTreeDemo/sampleSize4096.withErrorBands.png
 	lyxscale 25
-	width 100text%
+	height 60theight%
 
 \end_inset
 
@@ -3294,7 +3409,10 @@ Why do some curves have confidence bands and others not?
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 

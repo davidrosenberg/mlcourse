@@ -1,4 +1,5 @@
 \section{Week 1 Lecture: Concept Check Exercises}
+Starred problems are optional.
 \subsection{Statistical Learning Theory}
 \begin{enumerate}
 \item Suppose $\AA=\YY=\RR$ and $\XX$ is some other set.  Furthermore, assume
@@ -29,7 +30,7 @@
   \end{array}$$
   Thus $f^*=f_1$.
 \end{solution}
-\item Suppose $\AA=\YY=\RR$, $\XX$ is some other set, 
+\item ($\star$) Suppose $\AA=\YY=\RR$, $\XX$ is some other set, 
   and $\ell:\AA\times\YY\to\RR$ is given by
   $\ell(a,y)= (a-y)^2$, the square error loss.  What is the Bayes risk
   and how does it compare with the variance of $Y$?
@@ -121,7 +122,7 @@
     again we do not have uniqueness.
   \end{enumerate}
 \end{solution}
-\item Let $\XX=[-10,10]$, $\YY=\AA=\RR$ and suppose the data generating
+\item $(\star)$ Let $\XX=[-10,10]$, $\YY=\AA=\RR$ and suppose the data generating
   distribution has marginal distribution $X\sim\Unif[-10,10]$ and 
   conditional distribution $Y|X=x\sim
   \Norm(a+bx,1)$ for some fixed $a,b\in\RR$.  Suppose you are also
@@ -223,7 +224,7 @@
   Thus we require $n\geq \sigma^2/\epsilon$.  Note that this doesn't
   depend on $N$, the full population size.
 \end{solution}
-\item Suppose you have been successfully 
+\item ($\star$) Suppose you have been successfully 
   running mini-batch gradient descent with
   a full training set size of $10^5$ and a mini-batch size of $100$.
   After receiving more data your full training set size increases to $10^9$.
@@ -251,6 +252,6 @@
   The important takeaway here is that the size of the mini-batch is
   dependent on the speed of computation, and on the characteristics of
   the distribution of the gradients (such as the moments), and thus
-  vary independently of the size of the full training set.
+  may vary independently of the size of the full training set.
 \end{solution}
 \end{enumerate}

@@ -4126,7 +4126,7 @@ If the objective
  has the following structure
 \begin_inset Formula 
 \[
-f(w_{1},\ldots,w_{d})=g(w_{1},\ldots,g_{d})+\sum_{j=1}^{d}h_{j}(x_{j}),
+f(w_{1},\ldots,w_{d})=g(w_{1},\ldots,w_{d})+\sum_{j=1}^{d}h_{j}(x_{j}),
 \]
 
 \end_inset

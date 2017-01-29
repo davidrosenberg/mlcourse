@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin /Users/drosen/Dropbox/repos/mlcourse/Lectures/
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -19,23 +21,23 @@
   \end{frame}
 }
 \end_preamble
-\options handout
+\options aspectratio=169,handout
 \use_default_options false
 \maintain_unincluded_children false
 \language english
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman times
-\font_sans default
-\font_typewriter default
-\font_math eulervm
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "eulervm" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -795,6 +797,42 @@ of spaces:
 status open
 
 \begin_layout Plain Layout
+Polynomial Functions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\cf=\left\{ \mbox{all polynomial functions}\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\cf_{d}=\left\{ \mbox{all polynomials of degree }\le d\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout ExampleBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
 Decision Trees
 \end_layout
 
@@ -811,6 +849,7 @@ Decision Trees
 
 \end_layout
 
+\begin_deeper
 \begin_layout Itemize
 \begin_inset Formula $\cf_{n}=\left\{ \mbox{all decision trees of depth }\le n\right\} $
 \end_inset
@@ -820,7 +859,17 @@ Decision Trees
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -960,7 +1009,10 @@ ridge
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1078,7 +1130,10 @@ Increasing complexities:
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1171,7 +1226,10 @@ Each
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1239,11 +1297,14 @@ Choose
 
 \end_deeper
 \begin_layout Itemize
-(Ridge regression formulation in Homework #1 was of this form.)
+(Ridge regression in Homework #1 was of this form.)
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1324,11 +1385,19 @@ What does this mean?
 \end_layout
 
 \begin_layout Itemize
-Any solution you could get from Ivanov, can also get from Tikhonov.
+Any solution 
+\begin_inset Formula $f^{*}$
+\end_inset
+
+ you could get from Ivanov, can also get from Tikhonov.
 \end_layout
 
 \begin_layout Itemize
-Any solution you could get from Tikhonov, can also get from Ivanov.
+Any solution 
+\begin_inset Formula $f^{*}$
+\end_inset
+
+ you could get from Tikhonov, can also get from Ivanov.
 \end_layout
 
 \begin_deeper
@@ -1357,11 +1426,14 @@ unconstrained
 
 \end_deeper
 \begin_layout Standard
-Proof of equivalence based on Lagrangian duality -- a topic of Lecture 3.
+Proof of equivalence based on Lagrangian duality – a topic of Lecture 3..
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1471,7 +1543,10 @@ NIPS2009-0879_extra.pdf
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1486,7 +1561,10 @@ NIPS2009-0879_extra.pdf
  Regularization
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1584,7 +1662,10 @@ e.g.:
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1645,7 +1726,10 @@ where
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1681,7 +1765,10 @@ The ridge regression solution for complexity parameter
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1715,7 +1802,8 @@ relax
 footnotetext{
 \backslash
 tiny{Plot from Hastie, Tibshirani, and Wainwright's Statistical Learning
- with Sparsity, Figure 2.1}}
+ with Sparsity, Figure 2.1.
+ Data about predicting crime rate in 50 US cities.}}
 \end_layout
 
 \end_inset
@@ -1729,7 +1817,7 @@ tiny{Plot from Hastie, Tibshirani, and Wainwright's Statistical Learning
 \begin_inset Graphics
 	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/L1L2/ridge-regularization-HTW-Fig2.1.png
 	lyxscale 80
-	width 60theight%
+	width 55theight%
 
 \end_inset
 
@@ -1753,14 +1841,43 @@ tiny{Plot from Hastie, Tibshirani, and Wainwright's Statistical Learning
 \end_inset
 
  is the ridge solution.
+ (Which side has more regularization?)
 \end_layout
 
 \end_deeper
-\begin_layout Frame
+\begin_layout Standard
+\begin_inset Flex ArticleMode
+status open
+
+\begin_layout Plain Layout
+This plot traces out the paths of coefficients as we vary the amount of
+ 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ regularization.
+ With no regularization, 
+\begin_inset Formula $\|\hat{\beta}\|_{2}=\|\tilde{\beta}\|_{2}$
+\end_inset
+
+, which corresponds to the right side of the plot.
+ With lots of regularization, 
+\begin_inset Formula $\|\hat{\beta}\|$
+\end_inset
+
+ is small, which corresponds to the left side of the plot.
+ 
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1821,7 +1938,10 @@ where
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1857,7 +1977,10 @@ The lasso regression solution for complexity parameter
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1905,7 +2028,7 @@ tiny{Plot from Hastie, Tibshirani, and Wainwright's Statistical Learning
 \begin_inset Graphics
 	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/L1L2/lasso-regularization-HTW-Fig2.1.png
 	lyxscale 80
-	width 60theight%
+	width 55theight%
 
 \end_inset
 
@@ -1924,7 +2047,10 @@ tiny{Plot from Hastie, Tibshirani, and Wainwright's Statistical Learning
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1989,7 +2115,10 @@ tiny{Plot from Hastie, Tibshirani, and Wainwright's Statistical Learning
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2070,7 +2199,10 @@ As a feature-selection step for training a slower non-linear model
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2089,7 +2221,7 @@ Ivanov and Tikhonov Equivalent?
 
 \begin_deeper
 \begin_layout Itemize
-For ridge regression and lasso regression, 
+For ridge regression and lasso regression (and much more) 
 \end_layout
 
 \begin_deeper
@@ -2098,7 +2230,7 @@ the Ivanov and Tikhonov formulations are equivalent
 \end_layout
 
 \begin_layout Itemize
-[We may prove this in homework assignment 3.]
+[Homework assignment 3 or 4.]
 \end_layout
 
 \end_deeper
@@ -2107,7 +2239,10 @@ We will use whichever form is most convenient.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2289,7 +2424,10 @@ sparse
 
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2377,7 +2515,10 @@ Blue region: Area satisfying complexity constraint:
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2447,7 +2588,10 @@ What does
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2540,7 +2684,10 @@ We'll derive this in homework #2.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2632,7 +2779,10 @@ Blue region: Area satisfying complexity constraint:
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2739,7 +2889,10 @@ an-L2}.}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2806,7 +2959,10 @@ How to solve the Lasso?
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2976,7 +3132,7 @@ status open
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
@@ -3043,7 +3199,10 @@ Write
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3148,7 +3307,10 @@ Could plug this into a generic QP solver.
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3253,7 +3415,7 @@ Note: Sparsity pattern may change frequently as we iterate
 \end_deeper
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
@@ -3383,7 +3545,10 @@ it's easy or easier to minimize w.r.t.
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3519,7 +3684,10 @@ cyclic coordinate descent
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3550,7 +3718,10 @@ closed form solution
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3651,13 +3822,9 @@ where
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
 \begin_inset Note Note
-status collapsed
-
-\begin_layout Separator
-
-\end_layout
+status open
 
 \begin_layout Frame
 \begin_inset Argument 4
@@ -3725,19 +3892,11 @@ tiny{KPM Figure 13.5}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
-
-\end_layout
-
 \end_inset
 
 
 \begin_inset Note Note
 status open
-
-\begin_layout Separator
-
-\end_layout
 
 \begin_layout Frame
 \begin_inset Argument 4
@@ -3839,10 +3998,6 @@ correlation-like
 \end_layout
 
 \end_deeper
-\begin_layout Separator
-
-\end_layout
-
 \end_inset
 
 
@@ -3921,7 +4076,10 @@ Luckily there are weaker conditions...
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3968,7 +4126,7 @@ If the objective
  has the following structure
 \begin_inset Formula 
 \[
-f(w_{1},\ldots,w_{d})=g(w_{1},\ldots,g_{d})+\sum_{j=1}^{d}h_{j}(x_{j}),
+f(w_{1},\ldots,w_{d})=g(w_{1},\ldots,w_{d})+\sum_{j=1}^{d}h_{j}(x_{j}),
 \]
 
 \end_inset
@@ -4003,7 +4161,10 @@ then the coordinate descent algorithm converges to the global minimum.
 
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -4012,7 +4173,7 @@ then the coordinate descent algorithm converges to the global minimum.
 status open
 
 \begin_layout Plain Layout
-Coordinate Descent Method -- Variation
+Coordinate Descent Method – Variation
 \end_layout
 
 \end_inset
@@ -4065,7 +4226,10 @@ Stochastic Methods...
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -4074,7 +4238,7 @@ Stochastic Methods...
 status open
 
 \begin_layout Plain Layout
-Stochastic Coordinate Descent for Lasso -- Variation 
+Stochastic Coordinate Descent for Lasso – Variation 
 \end_layout
 
 \end_inset
@@ -4177,7 +4341,10 @@ Randomly choose a coordinate
 \end_deeper
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 

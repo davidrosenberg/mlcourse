@@ -77,7 +77,8 @@ Without the absolute values we get the \textit{signed distance}: a
 positive distance if $w^Tx>b$ and a negative distance if $w^Tx<b$.  To
 see why this formula is correct, note that we are computing
 $$\frac{w^Tx}{\|w\|_2} - \frac{w^Tv}{\|w\|_2},$$
-where $v$ is any vector in the hyperplane $\{v\mid w^Tv=b\}$.
+where $v$ is any vector in the hyperplane $\{v\mid w^Tv=b\}$.  This
+is the difference between their components in the direction $w$.
 \begin{figure}[H]
 \centering
 \begin{asy}

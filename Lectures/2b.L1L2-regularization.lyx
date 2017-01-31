@@ -1881,7 +1881,7 @@ close
 \begin_inset Formula 
 \begin{eqnarray*}
 \left|f(x)-f(x')\right| & = & |\hat{w}^{T}x-\hat{w}^{T}x'|=\pause\left|\hat{w}^{T}\left(x-x'\right)\right|\\
-\pause & = & \|\hat{w}\|_{2}\|x-x'\|_{2}\text{\pause(Cauchy-Schwarz inequality)}\pause
+\pause & \le & \|\hat{w}\|_{2}\|x-x'\|_{2}\text{\pause(Cauchy-Schwarz inequality)}\pause
 \end{eqnarray*}
 
 \end_inset
@@ -1900,6 +1900,24 @@ with Lipschitz constant
 
 .
  
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Since 
+\begin_inset Formula $\|\hat{w}\|_{1}\ge\|\hat{w}\|_{2}$
+\end_inset
+
+, an 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ constraint will also give a Lipschitz bound.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
@@ -2668,12 +2686,20 @@ Denote the empirical risk of
  by
 \begin_inset Formula 
 \[
-\hat{R}_{n}(w)=\frac{1}{n}\|Xw-y\|^{2}
+\hat{R}_{n}(w)=\frac{1}{n}\|Xw-y\|^{2},
 \]
 
 \end_inset
 
+where 
+\begin_inset Formula $X$
+\end_inset
 
+ is the 
+\series bold
+design matrix
+\series default
+.
 \end_layout
 
 \begin_deeper
@@ -2783,7 +2809,7 @@ Set of
  is
 \begin_inset Formula 
 \[
-\left\{ w\mid\hat{R}_{n}(w)=c+\hat{R}_{n}(w)\right\} =\left\{ w\mid\left(w-\hat{w}\right)^{T}X^{T}X\left(w-\hat{w}\right)=c\right\} ,
+\left\{ w\mid\hat{R}_{n}(w)=c+\hat{R}_{n}(\hat{w})\right\} =\left\{ w\mid\left(w-\hat{w}\right)^{T}X^{T}X\left(w-\hat{w}\right)=nc\right\} ,
 \]
 
 \end_inset
@@ -2972,23 +2998,125 @@ href{https://arxiv.org/abs/1411.3230}{Mairal et al.'s Sparse Modeling for Image
 \end_layout
 
 \begin_layout Itemize
-Illustrates points that Red lines: contours of 
-\begin_inset Formula $\hat{R}_{n}(w)=\sum_{i=1}^{n}\left(w^{T}x_{i}-y_{i}\right)^{2}$
+Suppose design matrix 
+\begin_inset Formula $X$
 \end_inset
 
-.
- 
+ is orthogonal, so 
+\begin_inset Formula $X^{T}X=I$
+\end_inset
+
+, and contours are circles.
 \end_layout
 
 \begin_layout Itemize
-Blue region: Area satisfying complexity constraint: 
-\begin_inset Formula $w_{1}^{2}+w_{2}^{2}\le r$
+Then OLS solution in green or red regions implies 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ constrained solution will be at corner
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
 \end_inset
 
 
 \end_layout
 
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ell_{q}$
+\end_inset
+
+ Even Sparser
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Fig from 
+\backslash
+href{https://arxiv.org/abs/1411.3230}{Mairal et al.'s Sparse Modeling for Image
+ and Vision Processing} Fig 1.9}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/L1L2/projections-to-LqBall.png
+	lyxscale 40
+	height 50theight%
+
+\end_inset
+
+
+\begin_inset VSpace -0.3cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Suppose design matrix 
+\begin_inset Formula $X$
+\end_inset
+
+ is orthogonal, so 
+\begin_inset Formula $X^{T}X=I$
+\end_inset
+
+, and contours are circles.
+\end_layout
+
+\begin_layout Itemize
+Then OLS solution in green or red regions implies 
+\begin_inset Formula $\ell_{q}$
+\end_inset
+
+ constrained solution will be at corner
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\ell_{q}$
+\end_inset
+
+-ball constraint is not convex, so more difficult to optimize.
+\end_layout
+
 \end_deeper
+\begin_layout Frame
+
+\end_layout
+
 \begin_layout Frame
 
 \end_layout
@@ -3019,7 +3147,7 @@ From Quora:
 \begin_inset Quotes eld
 \end_inset
 
-Why is L1 regularization supposed to lead to sparsity than L2?
+Why is L1 regularization supposed to lead to sparsity than L2? [sic]
 \begin_inset Quotes erd
 \end_inset
 
@@ -3031,7 +3159,7 @@ Why is L1 regularization supposed to lead to sparsity than L2?
 \begin_inset Graphics
 	filename ../Figures/stepFnsL1L2/L0L1.jpg
 	lyxscale 60
-	width 60col%
+	width 46col%
 
 \end_inset
 
@@ -3039,23 +3167,28 @@ Why is L1 regularization supposed to lead to sparsity than L2?
 \end_layout
 
 \begin_layout Itemize
-Doesn't seem like this figure represents the situation well...
+Does this picture have any interpretation that makes sense? ( Aren't those
+ lines supposed to be ellipses?)
 \end_layout
 
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
 \begin_layout Itemize
-But maybe sometimes it does?
+Yes...
+ we can revisit.
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
 e.g.
- What if the empirical risk minimizer has huge norm (i.e.
+ What if 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+ are linearly related? What if the empirical risk minimizer has huge norm
+ (i.e.
  is very far from the origin).
  Then the ellipse around that point may look like a straight line in the
  vicinity of the relevant level sets of 
@@ -3448,12 +3581,24 @@ Substituting
 \begin{align*}
 \min_{w^{+},w^{-}\in\reals^{d}} & \sum_{i=1}^{n}\left(\left(w^{+}-w^{-}\right)^{T}x_{i}-y_{i}\right)^{2}+\lambda1^{T}\left(w^{+}+w^{-}\right)\\
 \mbox{subject to } & w_{i}^{+}\ge0\mbox{ for all }i\\
- & w_{i}^{-}\ge0\mbox{ for all }i
+ & w_{i}^{-}\ge0\mbox{ for all }i,
 \end{align*}
 
 \end_inset
 
+where 
+\begin_inset Formula $1$
+\end_inset
 
+ represents a column vector of 
+\begin_inset Formula $1$
+\end_inset
+
+'s in 
+\begin_inset Formula $\reals^{d}$
+\end_inset
+
+.
 \end_layout
 
 \begin_deeper
@@ -3482,10 +3627,7 @@ convex and quadratic
 \begin_inset Formula $d$
 \end_inset
 
- variables
-\end_layout
-
-\begin_layout Itemize
+ variables and 
 \begin_inset Formula $2d$
 \end_inset
 
@@ -3547,24 +3689,12 @@ Projected SGD
 \begin{align*}
 \min_{w^{+},w^{-}\in\reals^{d}} & \sum_{i=1}^{n}\left(\left(w^{+}-w^{-}\right)^{T}x_{i}-y_{i}\right)^{2}+\lambda1^{T}\left(w^{+}+w^{-}\right)\\
 \mbox{subject to } & w_{i}^{+}\ge0\mbox{ for all }i\\
- & w_{i}^{-}\ge0\mbox{ for all }i,
+ & w_{i}^{-}\ge0\mbox{ for all }i
 \end{align*}
 
 \end_inset
 
-where 
-\begin_inset Formula $1$
-\end_inset
 
- represents a column vector of 
-\begin_inset Formula $1$
-\end_inset
-
-'s in 
-\begin_inset Formula $\reals^{d}$
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Pause
@@ -3572,23 +3702,12 @@ where
 \end_layout
 
 \begin_layout Itemize
-Solution:
+Just like SGD, but after each step
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Take a stochastic gradient step
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Quotes eld
-\end_inset
-
-Project
-\begin_inset Quotes erd
-\end_inset
-
- 
+Project 
 \begin_inset Formula $w^{+}$
 \end_inset
 
@@ -3596,10 +3715,9 @@ Project
 \begin_inset Formula $w^{-}$
 \end_inset
 
- into the constraint set
+ into the constraint set.
 \end_layout
 
-\begin_deeper
 \begin_layout Itemize
 In other words, any component of 
 \begin_inset Formula $w^{+}$
@@ -3609,7 +3727,7 @@ In other words, any component of
 \begin_inset Formula $w^{-}$
 \end_inset
 
- is negative, make it 0 .
+ becomes negative, set it back to 0 .
 \begin_inset Note Note
 status open
 
@@ -3626,7 +3744,6 @@ Note: Sparsity pattern may change frequently as we iterate
 
 \end_layout
 
-\end_deeper
 \end_deeper
 \end_deeper
 \begin_layout Standard
@@ -3851,14 +3968,11 @@ Choose a coordinate
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $w^{(t+1)}\gets w^{(t)}$
+\begin_inset Formula $w_{j}^{(t+1)}\gets w_{j}^{\mbox{new}}$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Formula $w_{j}^{(t+1)}\gets w_{j}^{\mbox{new}}$
+ and 
+\begin_inset Formula $w^{(t+1)}\gets w^{(t)}$
 \end_inset
 
 
@@ -3895,6 +4009,14 @@ Cyclic coordinate choice
  
 \series bold
 cyclic coordinate descent
+\end_layout
+
+\begin_layout Standard
+In general, 
+\series bold
+we will adjust each coordinate several times
+\series default
+.
 \end_layout
 
 \end_deeper
@@ -3990,7 +4112,7 @@ Closed Form Coordinate Minimization for Lasso
 Then
 \begin_inset Formula 
 \[
-\hat{w}_{j}(c_{j})=\begin{cases}
+\hat{w}_{j}=\begin{cases}
 (c_{j}+\lambda)/a_{j} & \mbox{if }c_{j}<-\lambda\\
 0 & \mbox{if }c_{j}\in[-\lambda,\lambda]\\
 (c_{j}-\lambda)/a_{j} & \mbox{if }c_{j}>\lambda

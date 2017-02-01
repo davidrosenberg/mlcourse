@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin /Users/drosen/Dropbox/repos/mlcourse/Archive/2016/Lectures/source/2b.L1L2-regularization/
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -26,16 +28,16 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman times
-\font_sans default
-\font_typewriter default
-\font_math eulervm
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "eulervm" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -738,6 +740,9 @@ Hypothesis Spaces
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -760,6 +765,10 @@ smaller
 \end_inset
 
  hypothesis spaces
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -782,6 +791,10 @@ of spaces:
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -798,6 +811,10 @@ status open
 Decision Trees
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -820,7 +837,10 @@ Decision Trees
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -835,11 +855,19 @@ Complexity Measures for Decision Functions
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 Number of variables / features
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -854,6 +882,10 @@ Depth of a decision tree
 
 \begin_layout Itemize
 Degree of polynomial
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -872,6 +904,10 @@ f\mapsto\int\left\{ f''(t)\right\} ^{2}\,dt
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -886,6 +922,10 @@ How about for
 linear
 \series default
  models?
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -898,6 +938,10 @@ linear
 \end_inset
 
  complexity: number of non-zero coefficients
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -924,6 +968,10 @@ lasso
 
 , for coefficients 
 \begin_inset Formula $w_{1},\ldots,w_{d}$
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -960,7 +1008,10 @@ ridge
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -972,6 +1023,10 @@ status open
 Nested Hypothesis Spaces from Complexity Measure
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -989,6 +1044,10 @@ Hypothesis space:
 \begin_layout Itemize
 Complexity measure 
 \begin_inset Formula $\Omega:\cf\to\reals^{\ge0}$
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1026,6 +1085,10 @@ at most
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1052,6 +1115,10 @@ in
 
 .
  
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1078,7 +1145,10 @@ Increasing complexities:
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1093,6 +1163,10 @@ Constrained Empirical Risk Minimization
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1104,6 +1178,10 @@ status open
 Constrained ERM (Ivanov regularization)
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1145,6 +1223,10 @@ Choose
 \end_inset
 
  using validation data or cross-validation.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1171,7 +1253,10 @@ Each
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1186,6 +1271,10 @@ Penalized Empirical Risk Minimization
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1197,6 +1286,10 @@ status open
 Penalized ERM (Tikhonov regularization)
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1230,6 +1323,10 @@ Choose
 \end_inset
 
  using validation data or cross-validation.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1243,7 +1340,10 @@ Choose
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1255,6 +1355,10 @@ status open
 Ivanov vs Tikhonov Regularization 
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1271,6 +1375,10 @@ Let
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1282,6 +1390,10 @@ e.g.
 
  could be the empirical risk of 
 \begin_inset Formula $f$
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1316,6 +1428,10 @@ equivalent
 
 \begin_layout Itemize
 What does this mean?
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1329,6 +1445,10 @@ Any solution you could get from Ivanov, can also get from Tikhonov.
 
 \begin_layout Itemize
 Any solution you could get from Tikhonov, can also get from Ivanov.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1348,6 +1468,10 @@ Tikhonov convenient because it's
 unconstrained
 \emph default
  minimization.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1357,11 +1481,14 @@ unconstrained
 
 \end_deeper
 \begin_layout Standard
-Proof of equivalence based on Lagrangian duality -- a topic of Lecture 3.
+Proof of equivalence based on Lagrangian duality – a topic of Lecture 3.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1373,6 +1500,10 @@ status open
 Ivanov vs Tikhonov Regularization (Details) 
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1412,6 +1543,10 @@ is also a Tikhonov solution for some
 \minimizer{f_{r}}=\argmin_{f\in\cf}L(f)+\lambda\Omega(f).
 \]
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1471,7 +1606,10 @@ NIPS2009-0879_extra.pdf
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1486,7 +1624,10 @@ NIPS2009-0879_extra.pdf
  Regularization
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1498,6 +1639,10 @@ status open
 Linear Least Squares Regression
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1550,6 +1695,10 @@ Linear least squares regression is ERM for
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1584,7 +1733,10 @@ e.g.:
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1599,6 +1751,10 @@ Ridge Regression: Workhorse of Modern Data Science
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1610,6 +1766,10 @@ status open
 Ridge Regression (Tikhonov Form)
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1645,7 +1805,10 @@ where
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1660,6 +1823,10 @@ Ridge Regression (Ivanov Form)
 \end_inset
 
  
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1681,7 +1848,10 @@ The ridge regression solution for complexity parameter
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1718,6 +1888,10 @@ tiny{Plot from Hastie, Tibshirani, and Wainwright's Statistical Learning
  with Sparsity, Figure 2.1}}
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1760,7 +1934,10 @@ tiny{Plot from Hastie, Tibshirani, and Wainwright's Statistical Learning
 
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1775,6 +1952,10 @@ Lasso Regression: Workhorse (2) of Modern Data Science
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1786,6 +1967,10 @@ status open
 Lasso Regression (Tikhonov Form)
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1821,7 +2006,10 @@ where
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1836,6 +2024,10 @@ Lasso Regression (Ivanov Form)
 \end_inset
 
  
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1857,7 +2049,10 @@ The lasso regression solution for complexity parameter
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1897,6 +2092,10 @@ tiny{Plot from Hastie, Tibshirani, and Wainwright's Statistical Learning
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1924,7 +2123,10 @@ tiny{Plot from Hastie, Tibshirani, and Wainwright's Statistical Learning
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1965,6 +2167,10 @@ tiny{Plot from Hastie, Tibshirani, and Wainwright's Statistical Learning
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1989,7 +2195,10 @@ tiny{Plot from Hastie, Tibshirani, and Wainwright's Statistical Learning
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2001,6 +2210,10 @@ status open
 Lasso Gives Feature Sparsity: So What?
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2026,6 +2239,10 @@ don't need those features.
 
 \begin_layout Itemize
 Time/expense to compute/buy features
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2037,6 +2254,10 @@ Time/expense to compute/buy features
 \begin_layout Itemize
 Memory to store features (e.g.
  real-time deployment)
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2047,6 +2268,10 @@ Memory to store features (e.g.
 \end_deeper
 \begin_layout Itemize
 Identifies the important features
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2057,6 +2282,10 @@ Identifies the important features
 \end_deeper
 \begin_layout Itemize
 Better prediction? sometimes
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2070,7 +2299,10 @@ As a feature-selection step for training a slower non-linear model
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2085,11 +2317,19 @@ Ivanov and Tikhonov Equivalent?
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 For ridge regression and lasso regression, 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2107,7 +2347,10 @@ We will use whichever form is most convenient.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2127,6 +2370,10 @@ The
  Norm Constraints
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2156,6 +2403,10 @@ For visualization, restrict to 2-dimensional input space
 \end_inset
 
  (linear hypothesis space)
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2174,6 +2425,10 @@ Represent
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2183,6 +2438,9 @@ Represent
 
 \end_deeper
 \begin_layout ColumnsTopAligned
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -2226,6 +2484,9 @@ textwidth
 \end_layout
 
 \begin_layout ColumnsTopAligned
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -2289,7 +2550,10 @@ sparse
 
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2305,6 +2569,10 @@ The Famous Picture for
  Regularization
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2377,7 +2645,10 @@ Blue region: Area satisfying complexity constraint:
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2389,6 +2660,10 @@ status open
 The Empirical Risk for Square Loss
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2409,6 +2684,10 @@ Denote the empirical risk of
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2426,6 +2705,10 @@ Denote the empirical risk of
 \end_inset
 
 , the OLS solution.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2447,7 +2730,10 @@ What does
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2459,6 +2745,10 @@ status open
 The Empirical Risk for Square Loss
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2484,6 +2774,10 @@ completing the square
 \hat{R}_{n}(w)=\frac{1}{n}\left(w-\hat{w}\right)^{T}X^{T}X\left(w-\hat{w}\right)+\hat{R}_{n}(\hat{w})
 \]
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2515,7 +2809,7 @@ Set of
  is
 \begin_inset Formula 
 \[
-\left\{ w\mid\hat{R}_{n}(w)=c+\hat{R}_{n}(w)\right\} =\left\{ w\mid\left(w-\hat{w}\right)^{T}X^{T}X\left(w-\hat{w}\right)=c\right\} ,
+\left\{ w\mid\hat{R}_{n}(w)=c+\hat{R}_{n}(\hat{w})\right\} =\left\{ w\mid\left(w-\hat{w}\right)^{T}X^{T}X\left(w-\hat{w}\right)=c\right\} ,
 \]
 
 \end_inset
@@ -2527,6 +2821,12 @@ ellipsoid centered at
 \end_inset
 
 .
+\series default
+
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2540,7 +2840,10 @@ We'll derive this in homework #2.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2562,6 +2865,9 @@ The Famous Picture for
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -2632,7 +2938,10 @@ Blue region: Area satisfying complexity constraint:
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2644,6 +2953,10 @@ status open
 The Quora Picture
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2676,6 +2989,10 @@ Why is L1 regularization supposed to lead to sparsity than L2?
 
 \begin_layout Itemize
 Doesn't seem like this figure represents the situation well...
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2739,7 +3056,10 @@ an-L2}.}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2783,6 +3103,10 @@ How to find the Lasso solution?
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2806,7 +3130,10 @@ How to solve the Lasso?
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2818,6 +3145,10 @@ status open
 Splitting a Number into Positive and Negative Parts
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2850,6 +3181,10 @@ a^{+}=a\ind{a\ge0}.
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2876,6 +3211,10 @@ a^{-}=-a\ind{a\le0}.
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2894,6 +3233,10 @@ Do you see why
 \end_inset
 
 ?
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2930,6 +3273,10 @@ a=a^{+}-a^{-}
 
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2976,7 +3323,7 @@ status open
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
@@ -2986,6 +3333,10 @@ Some people found it confusing that the formulation that follows doesn't
  can range freely over positive numbers.
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2999,6 +3350,10 @@ status open
 How to find the Lasso solution?
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3043,7 +3398,10 @@ Write
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3055,6 +3413,10 @@ status open
 The Lasso as a Quadratic Program
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3078,6 +3440,10 @@ Substituting
  & w_{i}^{-}\ge0\mbox{ for all }i
 \end{align*}
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3117,6 +3483,10 @@ convex and quadratic
 \end_inset
 
  constraints vs no constraints
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3139,6 +3509,10 @@ quadratic program
 \end_inset
 
 : a convex quadratic objective with linear constraints.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3148,7 +3522,10 @@ Could plug this into a generic QP solver.
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3160,6 +3537,10 @@ status open
 Projected SGD
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3197,6 +3578,10 @@ where
 
 \begin_layout Itemize
 Solution:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3221,6 +3606,10 @@ Project
 \end_inset
 
  into the constraint set
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3253,7 +3642,7 @@ Note: Sparsity pattern may change frequently as we iterate
 \end_deeper
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
@@ -3261,6 +3650,10 @@ status open
 Not clear that it's not just one pass through the coordinates.
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3280,6 +3673,9 @@ Coordinate Descent Method
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -3298,6 +3694,10 @@ Minimize
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3308,6 +3708,10 @@ Minimize
 \end_deeper
 \begin_layout Itemize
 In gradient descent or SGD, 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3330,6 +3734,10 @@ In each step of
 coordinate descent
 \series default
 , 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3373,6 +3781,10 @@ Solving this argmin may itself be an iterative process.
 
 \begin_layout Itemize
 Coordinate descent is great when 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3383,7 +3795,10 @@ it's easy or easier to minimize w.r.t.
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3401,6 +3816,9 @@ Coordinate Descent Method
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -3413,6 +3831,10 @@ status open
 Coordinate Descent Method
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3453,6 +3875,10 @@ Initialize
 while
 \series default
  not converged:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3519,7 +3945,10 @@ cyclic coordinate descent
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3531,6 +3960,10 @@ status open
 Coordinate Descent Method for Lasso
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3550,7 +3983,10 @@ closed form solution
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3568,6 +4004,9 @@ Coordinate Descent Method for Lasso
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -3580,6 +4019,10 @@ status open
 Closed Form Coordinate Minimization for Lasso
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3651,7 +4094,7 @@ where
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
 \begin_inset Note Note
 status collapsed
 
@@ -3691,6 +4134,10 @@ footnotetext{
 tiny{KPM Figure 13.5}}
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3753,6 +4200,9 @@ Closed Form Solution
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -3846,6 +4296,10 @@ correlation-like
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_layout Frame
@@ -3862,6 +4316,9 @@ Coordinate Descent: When does it work?
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -3876,6 +4333,10 @@ Suppose we're minimizing
 
 \begin_layout Itemize
 Sufficient conditions:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3908,6 +4369,10 @@ But lasso objective
 \end_inset
 
 is not differentiable...
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3921,7 +4386,10 @@ Luckily there are weaker conditions...
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3939,6 +4407,9 @@ Coordinate Descent: The Separability Condition
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -3974,6 +4445,10 @@ f(w_{1},\ldots,w_{d})=g(w_{1},\ldots,g_{d})+\sum_{j=1}^{d}h_{j}(x_{j}),
 \end_inset
 
 where
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -4003,7 +4478,10 @@ then the coordinate descent algorithm converges to the global minimum.
 
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -4012,9 +4490,13 @@ then the coordinate descent algorithm converges to the global minimum.
 status open
 
 \begin_layout Plain Layout
-Coordinate Descent Method -- Variation
+Coordinate Descent Method – Variation
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -4024,6 +4506,10 @@ Coordinate Descent Method -- Variation
 \begin_layout Itemize
 Suppose there's no closed form? (e.g.
  logistic regression)
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -4034,6 +4520,10 @@ Suppose there's no closed form? (e.g.
 \end_deeper
 \begin_layout Itemize
 Do we really need to fully solve each inner minimization problem?
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -4048,6 +4538,10 @@ A single projected gradient step is enough for
 \end_inset
 
  regularization!
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -4065,7 +4559,10 @@ Stochastic Methods...
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -4074,9 +4571,13 @@ Stochastic Methods...
 status open
 
 \begin_layout Plain Layout
-Stochastic Coordinate Descent for Lasso -- Variation 
+Stochastic Coordinate Descent for Lasso – Variation 
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -4097,6 +4598,10 @@ L(\tilde{w})=\sum_{i=1}^{n}\left(\left(w^{+}-w^{-}\right)^{T}x_{i}-y_{i}\right)^
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -4113,6 +4618,10 @@ status open
 Stochastic Coordinate Descent for Lasso - Variation 
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -4146,6 +4655,10 @@ Initialize
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -4155,6 +4668,10 @@ Initialize
 while
 \series default
  not converged:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -4177,7 +4694,10 @@ Randomly choose a coordinate
 \end_deeper
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 

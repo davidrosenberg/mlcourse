@@ -1,5 +1,6 @@
 \section{Week 2 Pre-Lecture: Concept Check Exercises}
 \subsection{Optimization Prerequisites for Lasso}
+\section{L1 and L2 Regularization}
 \begin{enumerate}
 \item Given $a\in\RR$ we define $a^+,a^-$ as follows:
   $$a^+ = \left\{\begin{array}{ll}a & \text{if
@@ -43,10 +44,11 @@
   \end{array}$$
   Solve the following questions.
   \begin{enumerate}
-  \item If $f(x)\in S$ show how to quickly
+  \item If $x$ in the first problem satistfies $f(x)\in S$ show how to quickly
     compute $(a,b)$ for the second problem with $a+b=|x|$ and
     $f(a-b)\in S$.
-  \item If $a,b$ satisfy $f(a-b)\in S$, show how to quickly compute an
+  \item If $a,b$ in the second problem
+    satisfy $f(a-b)\in S$, show how to quickly compute an
     $x$ for the first problem with $|x|\leq a+b$ and $f(x)\in S$.
   \item Assume $x$ is a minimizer for the first problem with minimum
     value $p_1^*$ and $(a,b)$ is a minimizer for the second problem

@@ -3160,6 +3160,7 @@ Why is L1 regularization supposed to lead to sparsity than L2? [sic]
 	filename ../Figures/stepFnsL1L2/L0L1.jpg
 	lyxscale 60
 	width 46col%
+	height 35theight%
 
 \end_inset
 
@@ -3547,184 +3548,6 @@ Write
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-The Lasso as a Quadratic Program
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Substituting 
-\begin_inset Formula $w=w^{+}-w^{-}$
-\end_inset
-
- and 
-\begin_inset Formula $\left|w\right|=w^{+}+w^{-}$
-\end_inset
-
-, Lasso problem is:
-\begin_inset Formula 
-\begin{align*}
-\min_{w}\;\min_{w^{+},w^{-}}\quad & \sum_{i=1}^{n}\left(\left(w^{+}-w^{-}\right)^{T}x_{i}-y_{i}\right)^{2}+\lambda1^{T}\left(w^{+}+w^{-}\right)\\
-\mbox{subject to}\quad & w_{i}^{+}\ge0\mbox{ for all }i\text{\qquad}w_{i}^{-}\ge0\mbox{ for all }i,\\
- & w^{+}-w^{-}=w\\
- & w^{+}+w^{-}=|w|
-\end{align*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Claim: Don't need constraint 
-\begin_inset Formula $w^{+}+w^{-}=|w|$
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-\begin_inset Formula $w^{+}\gets w^{+}-\min(w^{-},w^{+})$
-\end_inset
-
- and 
-\begin_inset Formula $w^{-}\gets w^{-}-\min(w^{-},w^{+})$
-\end_inset
-
- at least as good
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-After which at least one of 
-\begin_inset Formula $w^{+}$
-\end_inset
-
- and 
-\begin_inset Formula $w^{-}$
-\end_inset
-
- is 
-\begin_inset Formula $0$
-\end_inset
-
-,
-\end_layout
-
-\begin_layout Itemize
-And 
-\begin_inset Formula $w^{+}+w^{-}=|w|$
-\end_inset
-
-.
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-The Lasso as a Quadratic Program
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset Formula 
-\begin{align*}
-\min_{w}\;\min_{w^{+},w^{-}}\quad & \sum_{i=1}^{n}\left(\left(w^{+}-w^{-}\right)^{T}x_{i}-y_{i}\right)^{2}+\lambda1^{T}\left(w^{+}+w^{-}\right)\\
-\mbox{subject to}\quad & w_{i}^{+}\ge0\mbox{ for all }i\text{\qquad}w_{i}^{-}\ge0\mbox{ for all }i,\\
- & w^{+}-w^{-}=w
-\end{align*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-Claim: Don't need constraint 
-\begin_inset Formula $w^{+}-w^{-}=w$
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-If we let 
-\begin_inset Formula $w^{+}$
-\end_inset
-
- and 
-\begin_inset Formula $w^{-}$
-\end_inset
-
- vary freely, they'll hit all possible 
-\begin_inset Formula $w$
-\end_inset
-
-'s via 
-\begin_inset Formula $w=w^{+}-w^{-}$
-\end_inset
-
-.
- 
-\end_layout
-
-\end_deeper
-\begin_layout Standard
 \begin_inset Separator plain
 \end_inset
 
@@ -3749,8 +3572,12 @@ The Lasso as a Quadratic Program
 \end_layout
 
 \begin_deeper
-\begin_layout Itemize
-Substituting 
+\begin_layout Standard
+We
+\series bold
+ will show:
+\series default
+ substituting 
 \begin_inset Formula $w=w^{+}-w^{-}$
 \end_inset
 
@@ -3758,7 +3585,11 @@ Substituting
 \begin_inset Formula $\left|w\right|=w^{+}+w^{-}$
 \end_inset
 
-, Lasso problem is:
+ gives 
+\series bold
+equivalent
+\series default
+ Lasso:
 \begin_inset Formula 
 \begin{align*}
 \min_{w^{+},w^{-}}\quad & \sum_{i=1}^{n}\left(\left(w^{+}-w^{-}\right)^{T}x_{i}-y_{i}\right)^{2}+\lambda1^{T}\left(w^{+}+w^{-}\right)\\
@@ -3770,12 +3601,10 @@ Substituting
 
 \end_layout
 
-\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 Objective is 
 \series bold
@@ -3796,18 +3625,11 @@ convex and quadratic
 \begin_inset Formula $d$
 \end_inset
 
- variables
-\end_layout
-
-\begin_layout Itemize
+ variables and 
 \begin_inset Formula $2d$
 \end_inset
 
  constraints vs no constraints
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3830,10 +3652,6 @@ quadratic program
 \end_inset
 
 : a convex quadratic objective with linear constraints.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3842,6 +3660,231 @@ Could plug this into a generic QP solver.
 \end_layout
 
 \end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Lasso as a Quadratic Program
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Lasso problem is trivially equivlent to the following: 
+\begin_inset Formula 
+\begin{align*}
+\min_{w}\;\min_{a,b}\quad & \sum_{i=1}^{n}\left(\left(a-b\right)^{T}x_{i}-y_{i}\right)^{2}+\lambda1^{T}\left(a+b\right)\\
+\mbox{subject to}\quad & a_{i}\ge0\mbox{ for all }i\text{\qquad}b_{i}\ge0\mbox{ for all }i,\\
+ & a-b=w\\
+ & a+b=|w|
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Claim: Don't need constraint 
+\begin_inset Formula $a+b=|w|$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $a'\gets a-\min(a,b)$
+\end_inset
+
+ and 
+\begin_inset Formula $b'\gets b-\min(a,b)$
+\end_inset
+
+ at least as good
+\end_layout
+
+\begin_layout Itemize
+So if 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+ are minimizers, at least one is 
+\begin_inset Formula $0$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Since 
+\begin_inset Formula $a-b=w$
+\end_inset
+
+, we must have 
+\begin_inset Formula $a=w^{+}$
+\end_inset
+
+ and 
+\begin_inset Formula $b=w^{-}$
+\end_inset
+
+.
+ So also 
+\begin_inset Formula $a+b=|w|$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Lasso as a Quadratic Program
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\min_{w}\;\min_{a,b}\quad & \sum_{i=1}^{n}\left(\left(a-b\right)^{T}x_{i}-y_{i}\right)^{2}+\lambda1^{T}\left(a+b\right)\\
+\mbox{subject to}\quad & a_{i}\ge0\mbox{ for all }i\text{\qquad}b_{i}\ge0\mbox{ for all }i,\\
+ & a-b=w
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Claim: Don't need constraint 
+\begin_inset Formula $a-b=w$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+If we let 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+ vary freely, they'll hit all possible 
+\begin_inset Formula $w$
+\end_inset
+
+'s via 
+\begin_inset Formula $w=a-b$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Lasso as a Quadratic Program
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+So lasso optimization problem is equivalenet to 
+\begin_inset Formula 
+\begin{align*}
+\min_{w}\;\min_{a,b}\quad & \sum_{i=1}^{n}\left(\left(a-b\right)^{T}x_{i}-y_{i}\right)^{2}+\lambda1^{T}\left(a+b\right)\\
+\mbox{subject to}\quad & a_{i}\ge0\mbox{ for all }i\text{\qquad}b_{i}\ge0\mbox{ for all }i,\\
+ & a-b=w
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+QED
+\end_layout
+
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator plain

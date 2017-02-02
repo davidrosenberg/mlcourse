@@ -45,7 +45,16 @@
 \index_command default
 \paperfontsize default
 \spacing single
-\use_hyperref false
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
 \papersize default
 \use_geometry true
 \use_package amsmath 2
@@ -903,20 +912,24 @@ Depth of a decision tree
 
 \begin_layout Itemize
 Degree of polynomial
-\end_layout
+\begin_inset Note Note
+status open
 
-\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 A measure of smoothness:
 \begin_inset Formula 
 \[
 f\mapsto\int\left\{ f''(t)\right\} ^{2}\,dt
 \]
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -1040,7 +1053,7 @@ Hypothesis space:
 
 \begin_layout Itemize
 Complexity measure 
-\begin_inset Formula $\Omega:\cf\to\reals^{\ge0}$
+\begin_inset Formula $\Omega:\cf\to[0,\infty)$
 \end_inset
 
 
@@ -1167,7 +1180,7 @@ Constrained ERM (Ivanov regularization)
 \begin_deeper
 \begin_layout Standard
 For complexity measure 
-\begin_inset Formula $\Omega:\cf\to\reals^{\ge0}$
+\begin_inset Formula $\Omega:\cf\to[0,\infty)$
 \end_inset
 
  and fixed 
@@ -1297,7 +1310,7 @@ Choose
 
 \end_deeper
 \begin_layout Itemize
-(Ridge regression in Homework #1 was of this form.)
+(Ridge regression in Homework #1 is of this form.)
 \end_layout
 
 \end_deeper
@@ -1426,7 +1439,7 @@ unconstrained
 
 \end_deeper
 \begin_layout Standard
-Proof of equivalence based on Lagrangian duality – a topic of Lecture 3..
+Proof of equivalence based on Lagrangian duality – a topic of Lecture 3.
 \end_layout
 
 \end_deeper
@@ -1755,7 +1768,7 @@ The ridge regression solution for complexity parameter
  is
 \begin_inset Formula 
 \[
-\hat{w}=\argmin_{\|w\|_{2}^{2}\le r}\frac{1}{n}\sum_{i=1}^{n}\left\{ w^{T}x_{i}-y_{i}\right\} ^{2}.
+\hat{w}=\argmin_{\|w\|_{2}^{2}\le r^{2}}\frac{1}{n}\sum_{i=1}^{n}\left\{ w^{T}x_{i}-y_{i}\right\} ^{2}.
 \]
 
 \end_inset
@@ -1764,6 +1777,149 @@ The ridge regression solution for complexity parameter
 \end_layout
 
 \end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+How does 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ penalty induce 
+\begin_inset Quotes eld
+\end_inset
+
+regularity
+\begin_inset Quotes erd
+\end_inset
+
+?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $\hat{f}(x)=\hat{w}^{T}x$
+\end_inset
+
+ be a solution to the Ivanov form of ridge regression:
+\begin_inset Formula 
+\[
+\hat{w}=\argmin_{\|w\|_{2}^{2}\le r^{2}}\frac{1}{n}\sum_{i=1}^{n}\left\{ w^{T}x_{i}-y_{i}\right\} ^{2}.
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Suppose 
+\begin_inset Formula $x$
+\end_inset
+
+ and 
+\begin_inset Formula $x'$
+\end_inset
+
+ are 
+\begin_inset Quotes eld
+\end_inset
+
+close
+\begin_inset Quotes erd
+\end_inset
+
+ — that is, 
+\begin_inset Formula $\|x-x'\|_{2}<\eps$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Then 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ and 
+\begin_inset Formula $f(x')$
+\end_inset
+
+ are also 
+\begin_inset Quotes eld
+\end_inset
+
+close
+\begin_inset Quotes erd
+\end_inset
+
+ if 
+\begin_inset Formula $\|\hat{w}\|_{2}\le r$
+\end_inset
+
+ is small:
+\begin_inset Formula 
+\begin{eqnarray*}
+\left|f(x)-f(x')\right| & = & |\hat{w}^{T}x-\hat{w}^{T}x'|=\pause\left|\hat{w}^{T}\left(x-x'\right)\right|\\
+\pause & \le & \|\hat{w}\|_{2}\|x-x'\|_{2}\text{\pause(Cauchy-Schwarz inequality)}\pause
+\end{eqnarray*}
+
+\end_inset
+
+ 
+\begin_inset Formula $f$
+\end_inset
+
+ is 
+\series bold
+Lipschitz continuous 
+\series default
+with Lipschitz constant 
+\begin_inset Formula $r\ge\|\hat{w}\|_{2}$
+\end_inset
+
+.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Since 
+\begin_inset Formula $\|\hat{w}\|_{1}\ge\|\hat{w}\|_{2}$
+\end_inset
+
+, an 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ constraint will also give a Lipschitz bound.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator parbreak
@@ -2268,20 +2424,6 @@ The
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-THESE PICTURES ARE VERY HARD TO SEE WHEN PROJECTED.
- Try to get a better color.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Itemize
 For visualization, restrict to 2-dimensional input space
 \end_layout
@@ -2353,7 +2495,7 @@ textwidth
 \begin_layout ColumnsTopAligned
 \begin_inset Graphics
 	filename ../Figures/L1L2/l2Contour.png
-	width 80col%
+	height 25theight%
 
 \end_inset
 
@@ -2395,7 +2537,7 @@ textwidth
 \begin_layout Standard
 \begin_inset Graphics
 	filename ../Figures/L1L2/l1Countour.png
-	width 80col%
+	height 25theight%
 
 \end_inset
 
@@ -2486,7 +2628,7 @@ tiny{KPM Fig.
 \begin_inset Graphics
 	filename ../Figures/L1L2/l1LossConstraintPic.png
 	lyxscale 60
-	height 60theight%
+	height 50theight%
 
 \end_inset
 
@@ -2544,12 +2686,20 @@ Denote the empirical risk of
  by
 \begin_inset Formula 
 \[
-\hat{R}_{n}(w)=\frac{1}{n}\|Xw-y\|^{2}
+\hat{R}_{n}(w)=\frac{1}{n}\|Xw-y\|^{2},
 \]
 
 \end_inset
 
+where 
+\begin_inset Formula $X$
+\end_inset
 
+ is the 
+\series bold
+design matrix
+\series default
+.
 \end_layout
 
 \begin_deeper
@@ -2659,7 +2809,7 @@ Set of
  is
 \begin_inset Formula 
 \[
-\left\{ w\mid\hat{R}_{n}(w)=c+\hat{R}_{n}(w)\right\} =\left\{ w\mid\left(w-\hat{w}\right)^{T}X^{T}X\left(w-\hat{w}\right)=c\right\} ,
+\left\{ w\mid\hat{R}_{n}(w)=c+\hat{R}_{n}(\hat{w})\right\} =\left\{ w\mid\left(w-\hat{w}\right)^{T}X^{T}X\left(w-\hat{w}\right)=nc\right\} ,
 \]
 
 \end_inset
@@ -2713,31 +2863,6 @@ The Famous Picture for
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-let
-\backslash
-thefootnote
-\backslash
-relax
-\backslash
-footnotetext{
-\backslash
-tiny{KPM Fig.
- 13.3}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Itemize
 \begin_inset Formula $\minimizer{f_{r}}=\argmin_{w\in\reals^{2}}\sum_{i=1}^{n}\left(w^{T}x_{i}-y_{i}\right)^{2}\text{subject to }w_{1}^{2}+w_{2}^{2}\le r$
 \end_inset
@@ -2750,7 +2875,7 @@ tiny{KPM Fig.
 \begin_inset Graphics
 	filename ../Figures/L1L2/l2LossConstraintPic.png
 	lyxscale 60
-	height 60theight%
+	height 50theight%
 
 \end_inset
 
@@ -2778,7 +2903,224 @@ Blue region: Area satisfying complexity constraint:
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{KPM Fig.
+ 13.3}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Why are Lasso Solutions Often Sparse?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Fig from 
+\backslash
+href{https://arxiv.org/abs/1411.3230}{Mairal et al.'s Sparse Modeling for Image
+ and Vision Processing} Fig 1.6}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/L1L2/projections-to-L1Ball.png
+	lyxscale 40
+	height 50theight%
+
+\end_inset
+
+
+\begin_inset VSpace -0.3cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Suppose design matrix 
+\begin_inset Formula $X$
+\end_inset
+
+ is orthogonal, so 
+\begin_inset Formula $X^{T}X=I$
+\end_inset
+
+, and contours are circles.
+\end_layout
+
+\begin_layout Itemize
+Then OLS solution in green or red regions implies 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ constrained solution will be at corner
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ell_{q}$
+\end_inset
+
+ Even Sparser
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Fig from 
+\backslash
+href{https://arxiv.org/abs/1411.3230}{Mairal et al.'s Sparse Modeling for Image
+ and Vision Processing} Fig 1.9}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/L1L2/projections-to-LqBall.png
+	lyxscale 40
+	height 50theight%
+
+\end_inset
+
+
+\begin_inset VSpace -0.3cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Suppose design matrix 
+\begin_inset Formula $X$
+\end_inset
+
+ is orthogonal, so 
+\begin_inset Formula $X^{T}X=I$
+\end_inset
+
+, and contours are circles.
+\end_layout
+
+\begin_layout Itemize
+Then OLS solution in green or red regions implies 
+\begin_inset Formula $\ell_{q}$
+\end_inset
+
+ constrained solution will be at corner
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\ell_{q}$
+\end_inset
+
+-ball constraint is not convex, so more difficult to optimize.
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset Separator parbreak
 \end_inset
@@ -2805,7 +3147,7 @@ From Quora:
 \begin_inset Quotes eld
 \end_inset
 
-Why is L1 regularization supposed to lead to sparsity than L2?
+Why is L1 regularization supposed to lead to sparsity than L2? [sic]
 \begin_inset Quotes erd
 \end_inset
 
@@ -2817,7 +3159,7 @@ Why is L1 regularization supposed to lead to sparsity than L2?
 \begin_inset Graphics
 	filename ../Figures/stepFnsL1L2/L0L1.jpg
 	lyxscale 60
-	width 60col%
+	width 46col%
 
 \end_inset
 
@@ -2825,23 +3167,28 @@ Why is L1 regularization supposed to lead to sparsity than L2?
 \end_layout
 
 \begin_layout Itemize
-Doesn't seem like this figure represents the situation well...
+Does this picture have any interpretation that makes sense? ( Aren't those
+ lines supposed to be ellipses?)
 \end_layout
 
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
 \begin_layout Itemize
-But maybe sometimes it does?
+Yes...
+ we can revisit.
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
 e.g.
- What if the empirical risk minimizer has huge norm (i.e.
+ What if 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+ are linearly related? What if the empirical risk minimizer has huge norm
+ (i.e.
  is very far from the origin).
  Then the ellipse around that point may look like a straight line in the
  vicinity of the relevant level sets of 
@@ -3232,9 +3579,190 @@ Substituting
 , Lasso problem is:
 \begin_inset Formula 
 \begin{align*}
-\min_{w^{+},w^{-}\in\reals^{d}} & \sum_{i=1}^{n}\left(\left(w^{+}-w^{-}\right)^{T}x_{i}-y_{i}\right)^{2}+\lambda1^{T}\left(w^{+}+w^{-}\right)\\
-\mbox{subject to } & w_{i}^{+}\ge0\mbox{ for all }i\\
- & w_{i}^{-}\ge0\mbox{ for all }i
+\min_{w}\;\min_{w^{+},w^{-}}\quad & \sum_{i=1}^{n}\left(\left(w^{+}-w^{-}\right)^{T}x_{i}-y_{i}\right)^{2}+\lambda1^{T}\left(w^{+}+w^{-}\right)\\
+\mbox{subject to}\quad & w_{i}^{+}\ge0\mbox{ for all }i\text{\qquad}w_{i}^{-}\ge0\mbox{ for all }i,\\
+ & w^{+}-w^{-}=w\\
+ & w^{+}+w^{-}=|w|
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Claim: Don't need constraint 
+\begin_inset Formula $w^{+}+w^{-}=|w|$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $w^{+}\gets w^{+}-\min(w^{-},w^{+})$
+\end_inset
+
+ and 
+\begin_inset Formula $w^{-}\gets w^{-}-\min(w^{-},w^{+})$
+\end_inset
+
+ at least as good
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+After which at least one of 
+\begin_inset Formula $w^{+}$
+\end_inset
+
+ and 
+\begin_inset Formula $w^{-}$
+\end_inset
+
+ is 
+\begin_inset Formula $0$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Itemize
+And 
+\begin_inset Formula $w^{+}+w^{-}=|w|$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Lasso as a Quadratic Program
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\min_{w}\;\min_{w^{+},w^{-}}\quad & \sum_{i=1}^{n}\left(\left(w^{+}-w^{-}\right)^{T}x_{i}-y_{i}\right)^{2}+\lambda1^{T}\left(w^{+}+w^{-}\right)\\
+\mbox{subject to}\quad & w_{i}^{+}\ge0\mbox{ for all }i\text{\qquad}w_{i}^{-}\ge0\mbox{ for all }i,\\
+ & w^{+}-w^{-}=w
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Claim: Don't need constraint 
+\begin_inset Formula $w^{+}-w^{-}=w$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+If we let 
+\begin_inset Formula $w^{+}$
+\end_inset
+
+ and 
+\begin_inset Formula $w^{-}$
+\end_inset
+
+ vary freely, they'll hit all possible 
+\begin_inset Formula $w$
+\end_inset
+
+'s via 
+\begin_inset Formula $w=w^{+}-w^{-}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Lasso as a Quadratic Program
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Substituting 
+\begin_inset Formula $w=w^{+}-w^{-}$
+\end_inset
+
+ and 
+\begin_inset Formula $\left|w\right|=w^{+}+w^{-}$
+\end_inset
+
+, Lasso problem is:
+\begin_inset Formula 
+\begin{align*}
+\min_{w^{+},w^{-}}\quad & \sum_{i=1}^{n}\left(\left(w^{+}-w^{-}\right)^{T}x_{i}-y_{i}\right)^{2}+\lambda1^{T}\left(w^{+}+w^{-}\right)\\
+\mbox{subject to}\quad & w_{i}^{+}\ge0\mbox{ for all }i\text{\qquad}w_{i}^{-}\ge0\mbox{ for all }i,
 \end{align*}
 
 \end_inset
@@ -3276,6 +3804,10 @@ convex and quadratic
 \end_inset
 
  constraints vs no constraints
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3298,6 +3830,10 @@ quadratic program
 \end_inset
 
 : a convex quadratic objective with linear constraints.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3308,7 +3844,7 @@ Could plug this into a generic QP solver.
 \end_deeper
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -3333,24 +3869,12 @@ Projected SGD
 \begin{align*}
 \min_{w^{+},w^{-}\in\reals^{d}} & \sum_{i=1}^{n}\left(\left(w^{+}-w^{-}\right)^{T}x_{i}-y_{i}\right)^{2}+\lambda1^{T}\left(w^{+}+w^{-}\right)\\
 \mbox{subject to } & w_{i}^{+}\ge0\mbox{ for all }i\\
- & w_{i}^{-}\ge0\mbox{ for all }i,
+ & w_{i}^{-}\ge0\mbox{ for all }i
 \end{align*}
 
 \end_inset
 
-where 
-\begin_inset Formula $1$
-\end_inset
 
- represents a column vector of 
-\begin_inset Formula $1$
-\end_inset
-
-'s in 
-\begin_inset Formula $\reals^{d}$
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Pause
@@ -3358,23 +3882,12 @@ where
 \end_layout
 
 \begin_layout Itemize
-Solution:
+Just like SGD, but after each step
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Take a stochastic gradient step
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Quotes eld
-\end_inset
-
-Project
-\begin_inset Quotes erd
-\end_inset
-
- 
+Project 
 \begin_inset Formula $w^{+}$
 \end_inset
 
@@ -3382,10 +3895,9 @@ Project
 \begin_inset Formula $w^{-}$
 \end_inset
 
- into the constraint set
+ into the constraint set.
 \end_layout
 
-\begin_deeper
 \begin_layout Itemize
 In other words, any component of 
 \begin_inset Formula $w^{+}$
@@ -3395,7 +3907,7 @@ In other words, any component of
 \begin_inset Formula $w^{-}$
 \end_inset
 
- is negative, make it 0 .
+ becomes negative, set it back to 0 .
 \begin_inset Note Note
 status open
 
@@ -3412,7 +3924,6 @@ Note: Sparsity pattern may change frequently as we iterate
 
 \end_layout
 
-\end_deeper
 \end_deeper
 \end_deeper
 \begin_layout Standard
@@ -3637,14 +4148,11 @@ Choose a coordinate
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $w^{(t+1)}\gets w^{(t)}$
+\begin_inset Formula $w_{j}^{(t+1)}\gets w_{j}^{\mbox{new}}$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Formula $w_{j}^{(t+1)}\gets w_{j}^{\mbox{new}}$
+ and 
+\begin_inset Formula $w^{(t+1)}\gets w^{(t)}$
 \end_inset
 
 
@@ -3681,6 +4189,14 @@ Cyclic coordinate choice
  
 \series bold
 cyclic coordinate descent
+\end_layout
+
+\begin_layout Standard
+In general, 
+\series bold
+we will adjust each coordinate several times
+\series default
+.
 \end_layout
 
 \end_deeper
@@ -3776,7 +4292,7 @@ Closed Form Coordinate Minimization for Lasso
 Then
 \begin_inset Formula 
 \[
-\hat{w}_{j}(c_{j})=\begin{cases}
+\hat{w}_{j}=\begin{cases}
 (c_{j}+\lambda)/a_{j} & \mbox{if }c_{j}<-\lambda\\
 0 & \mbox{if }c_{j}\in[-\lambda,\lambda]\\
 (c_{j}-\lambda)/a_{j} & \mbox{if }c_{j}>\lambda

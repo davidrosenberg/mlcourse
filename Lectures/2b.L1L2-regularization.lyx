@@ -1858,11 +1858,11 @@ close
 
 \begin_layout Itemize
 Then 
-\begin_inset Formula $f(x)$
+\begin_inset Formula $\hat{f}(x)$
 \end_inset
 
  and 
-\begin_inset Formula $f(x')$
+\begin_inset Formula $\hat{f}(x')$
 \end_inset
 
  are also 
@@ -1880,22 +1880,22 @@ close
  is small:
 \begin_inset Formula 
 \begin{eqnarray*}
-\left|f(x)-f(x')\right| & = & |\hat{w}^{T}x-\hat{w}^{T}x'|=\pause\left|\hat{w}^{T}\left(x-x'\right)\right|\\
+\left|\hat{f}(x)-\hat{f}(x')\right| & = & |\hat{w}^{T}x-\hat{w}^{T}x'|=\pause\left|\hat{w}^{T}\left(x-x'\right)\right|\\
 \pause & \le & \|\hat{w}\|_{2}\|x-x'\|_{2}\text{\pause(Cauchy-Schwarz inequality)}\pause
 \end{eqnarray*}
 
 \end_inset
 
  
-\begin_inset Formula $f$
+\begin_inset Formula $\hat{f}$
 \end_inset
 
  is 
 \series bold
 Lipschitz continuous 
 \series default
-with Lipschitz constant 
-\begin_inset Formula $r\ge\|\hat{w}\|_{2}$
+with a Lipschitz constant 
+\begin_inset Formula $\|\hat{w}\|_{2}\le r$
 \end_inset
 
 .

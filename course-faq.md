@@ -1,4 +1,16 @@
-# Frequently Asked Questions
+# Frequently Asked Questions and Useful Notes
+
+## Do **not** normalize the gradient in gradient descent
+In gradient descent, SGD, and minibatch GD, we do NOT normalize the gradient. For backtracking line search in GD, it doesn't matter, but for the other methods, convergence proofs assume we're not normalizing the gradient.
+ 
+The terminology IS confusing, but that's the way it is. Let's review it:
+step direction = negative gradient (in GD), or negative estimate of the gradient (in SGD and minibatch GD)
+ 
+Even though it's called a step _direction_, it is NOT normalized to have unit length.
+ 
+Second confusing point: the step _length_ is NOT the length of the step.  it is the multiplier on the step direction.  It WOULD be the length of the step if the step direction had unit length, but it does NOT (in general).
+ 
+If I can find a more consistent terminology that people actually used, I would be happy to switch terminologies to something that made more sense.
 
 ## Is the gradient a row vector or a column vector?
 This is indeed a confusing issue, since different people adopt different conventions. In this course we consider the gradient to be a column vector. But if you understand the meaning of the objects in question, it doesn't really matter much for this class.

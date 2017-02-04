@@ -93,9 +93,9 @@ immensely useful over the years.
 This is a good question and worth examining.  You know the 80/20 rule
 or the "pareto principle"?  Says you can get 80% of the outcome from
 20% of the effort.  Applied here, you can be a pretty decent data
-scientist without a lot of "deep understanding" and without knowing
-much math.  What's essential (the "20%") is an understanding of the
-core principles of machine learning, such as discussed in
+scientist without without knowing much math.  What's essential (the
+"20%") is an understanding of the core principles of machine learning,
+such as discussed in
 [DS-GA 1001](http://cds.nyu.edu/course-pages/ds-ga-1001-intro-data-science/)
 or the book
 [Data Science for Business](http://data-science-for-biz.com/DSB/Home.html),

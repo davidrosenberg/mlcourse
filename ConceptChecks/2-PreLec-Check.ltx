@@ -1,0 +1,95 @@
+\section{Week 2 Pre-Lecture: Concept Check Exercises}
+\subsection{Optimization Prerequisites for Lasso}
+\begin{enumerate}
+\item Given $a\in\RR$ we define $a^+,a^-$ as follows:
+  $$a^+ = \left\{\begin{array}{ll}a & \text{if
+  $a\geq 0$,}\\0&\text{otherwise,}\end{array}\right.
+  \quad\text{and}\quad
+  a^- = \left\{\begin{array}{ll}-a & \text{if
+  $a<0$,}\\0&\text{otherwise.}\end{array}\right.$$
+  We call $a^+$ the \textit{positive part} of $a$ and $a^-$ the \textit{negative part}
+  of $a$.  Note that $a^+,a^-\geq0$.
+  \begin{enumerate}
+  \item Give an expression for $a$ in terms of $a^+,a^-$.
+  \item Give an expression for $|a|$ in terms of $a^+,a^-$.
+  \item[] For $x\in\RR^d$ define $x^+=(x_1^+,\ldots,x_d^+)$ and
+    $x^-=(x_1^-,\ldots,x_d^-)$.  
+  \item Give an expression for $x$ in terms of $x^+,x^-$.
+  \item Give an expression for $\|x\|_1$ without using any summations
+    or absolute values. [Hint: Use $x^+,x^-$ and the
+      vector $\mathbf{1}=(1,1,\ldots,1)\in\RR^d$.]
+  \end{enumerate}
+\begin{solution}
+\item[]\Sol 
+  \begin{enumerate}
+  \item $a=a^+-a^-$
+  \item $|a|=a^++a^-$
+  \item $x=x^+-x^-$
+  \item $\|x\|_1=\mathbf{1}^T(x^++x^-)$
+  \end{enumerate}
+\end{solution}
+\item Let $f:\RR\to\RR$ and $S\subseteq\RR$.  Consider the two
+  optimization problems
+  $$\begin{array}{ll}
+    \text{minimize}_{x\in\RR}  & |x|\\
+    \text{subject to} & f(x)\in S\\
+    \vphantom{a,b}
+  \end{array}
+  \qquad\text{and}\qquad
+  \begin{array}{ll}
+    \text{minimize}_{a,b\in\RR}  & a+b\\
+    \text{subject to} & f(a-b)\in S\\
+    & a,b\geq 0.
+  \end{array}$$
+  Solve the following questions.
+  \begin{enumerate}
+  \item If $x$ in the first problem satistfies $f(x)\in S$ show how to quickly
+    compute $(a,b)$ for the second problem with $a+b=|x|$ and
+    $f(a-b)\in S$.
+  \item If $a,b$ in the second problem
+    satisfy $f(a-b)\in S$, show how to quickly compute an
+    $x$ for the first problem with $|x|\leq a+b$ and $f(x)\in S$.
+  \item Assume $x$ is a minimizer for the first problem with minimum
+    value $p_1^*$ and $(a,b)$ is a minimizer for the second problem
+    with minimum $p_2^*$.  Using the previous two parts, conclude
+    that $p_1^*=p_2^*$.
+  \end{enumerate}
+\begin{solution}
+\item[]\Sol 
+  \begin{enumerate}
+  \item Let $a=x^+$ and $b=x^-$.  Then $a+b=|x|$ and $a-b=x$.
+  \item Let $x=a-b$ and note that $|x|=|a-b|\leq |a|+|b|=a+b$.
+  \item Part a) shows $p_2^*\leq p_1^*$ by letting $\hat{a}=x^+$ and
+    $\hat{b}=x^-$. Part b) shows $p_1^*\leq p_2^*$ by letting $\hat{x}=a-b$.
+  \end{enumerate}
+\end{solution}
+\item Let $f:\RR^d\to\RR$, $S\subseteq\RR$ and consider the following optimization problem:
+  $$\begin{array}{ll}
+  \text{minimize}_{x\in\RR^d} & \|x\|_1 \\
+  \text{subject to} & f(x)\in S,
+  \end{array}$$
+  where $\|x\|_1 = \sum_{i=1}^d |x_i|$.  
+  Give a new optimization problem with a linear objective function and the same minimum
+  value.  Show how to convert a solution to your new problem into a
+  solution to the given problem. [Hint: Use the previous two problems.]
+\begin{solution}
+\item[]\Sol Consider the minimization problem
+  $$\begin{array}{ll}
+  \text{minimize}_{a,b\in\RR^d} & \mathbf{1}^T(a+b)\\
+  \text{subject to} & f(a-b)\in S,\\
+  & a_i,b_i \geq 0\quad\text{for $i=1,\ldots,d$.}
+  \end{array}$$
+  Let $p_1^*$ be the minimum for the original problem, and $p_2^*$ the
+  minimum for our new problem.  We first show $p_1^*=p_2^*$.
+  Suppose $x$ is a minimizer for the original problem and let $a=x^+$
+  and $b=x^-$.  Then by the first question $\mathbf{1}^T(a+b)=\|x\|_1$
+  and $a-b=x$.  This shows $p_2^*\leq p_1^*$.  Next suppose $(a,b)$ is
+  a minimizer for our new problem, and let $x=a-b$.  Then
+  $$\|x\|_1 = \|a-b\|_1 = \sum_{i=1}^d |a_i-b_i| \leq \sum_{i=1}^d |a_i|+|b_i|
+  =\sum_{i=1}^d a_i+b_i = \mathbf{1}^T(a+b).$$
+  This proves $p_1^*\leq p_2^*$.
+
+  Finally, given a minimizer $(a,b)$ for the new problem we recover a
+  minimizer $x$ for the original problem by letting $x=a-b$.
+\end{solution}
+\end{enumerate}

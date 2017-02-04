@@ -1,5 +1,8 @@
 <!-- # DS-GA 1003: Machine Learning and Computational Statistics -->
 
+## Notable Changes from [2016](https://davidrosenberg.github.io/ml2016/#home) to [2017](https://davidrosenberg.github.io/ml2017/#home)
+- L2 constraint for linear models gives Lipschitz continuity of prediction function (Thanks to Brian Dalessandro for pointing this out to me). 
+
 ## Notable Changes from [2015](https://davidrosenberg.github.io/ml2015/#home) to [2016](https://davidrosenberg.github.io/ml2016/#home)
 - [New lecture](https://davidrosenberg.github.io/mlcourse/Archive/2016/Lectures/9a.multiclass.pdf) on **multiclass classification** and an intro to **structured prediction**
 - [New homework](https://davidrosenberg.github.io/mlcourse/Archive/2016/Homework/hw6-multiclass/hw6.pdf) on **multiclass hinge loss** and **multiclass SVM**

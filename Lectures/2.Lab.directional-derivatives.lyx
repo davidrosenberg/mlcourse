@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin /Users/drosen/Dropbox/repos/mlcourse/Lectures/
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -19,23 +21,23 @@
   \end{frame}
 }
 \end_preamble
-\options handout
+\options handout,aspectratio=169
 \use_default_options false
 \maintain_unincluded_children false
 \language english
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman times
-\font_sans default
-\font_typewriter default
-\font_math eulervm
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "eulervm" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -770,7 +772,10 @@ tiny{Plots courtesy of Ningshan Zhang.}}
  
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -829,7 +834,7 @@ convex
 \begin_inset Graphics
 	filename ../Figures/convex-optimization/fig7.4a.pdf
 	lyxscale 30
-	width 40text%
+	height 50theight%
 
 \end_inset
 
@@ -837,7 +842,7 @@ convex
 \begin_inset Graphics
 	filename ../Figures/convex-optimization/fig7.4b.pdf
 	lyxscale 30
-	width 40text%
+	height 50theight%
 
 \end_inset
 
@@ -867,7 +872,10 @@ tiny{KPM Fig.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -922,7 +930,7 @@ f(\theta x+(1-\theta)y)\le\theta f(x)+(1-\theta)f(y).
 \begin_inset Graphics
 	filename ../Figures/convex-optimization/fig7.5a.pdf
 	lyxscale 50
-	width 40text%
+	height 50theight%
 
 \end_inset
 
@@ -930,7 +938,7 @@ f(\theta x+(1-\theta)y)\le\theta f(x)+(1-\theta)f(y).
 \begin_inset Graphics
 	filename ../Figures/convex-optimization/fig7.5b.pdf
 	lyxscale 50
-	width 40text%
+	height 50theight%
 
 \end_inset
 
@@ -960,7 +968,10 @@ tiny{KPM Fig.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1045,29 +1056,22 @@ If
 
 \end_deeper
 \begin_layout Itemize
+If 
 \begin_inset Formula $f$
 \end_inset
 
  is 
 \series bold
-differentiable
+differentiable 
 \series default
- at 
-\begin_inset Formula $x$
-\end_inset
-
- iff for some 
-\begin_inset Formula $g(=\del f(x))$
-\end_inset
-
- and all 
+then for all 
 \begin_inset Formula $v$
 \end_inset
 
 , 
 \begin_inset Formula 
 \[
-f'(x;v)=g^{T}v.
+f'(x;v)=v^{T}\del f(x).
 \]
 
 \end_inset
@@ -1097,7 +1101,10 @@ tiny{Boyd EE364b: Subgradients Slides}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1236,7 +1243,10 @@ tiny{Boyd EE364b: Subgradients Slides}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1328,7 +1338,10 @@ n.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1429,7 +1442,10 @@ Can find
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 

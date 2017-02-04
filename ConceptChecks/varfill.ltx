@@ -1,257 +1,336 @@
-\section{Week 1 Lecture: Concept Check Exercises}
+\section{Week 2 Lecture: Concept Check Exercises}
 Starred problems are optional.
-\subsection{Statistical Learning Theory}
+\subsection{Excess Risk Decomposition}
 \begin{enumerate}
-\item Suppose $\AA=\YY=\RR$ and $\XX$ is some other set.  Furthermore, assume
-  $\Pr_{\XX\times \YY}$ is a discrete joint distribution.
-  Compute a Bayes decision function when 
-  the loss function $\ell:\AA\times\YY\to\RR$ is
-  given by
-  $$\ell(a,y) = \Ind(a\neq y),$$
-  the $0-1$ loss.
-\begin{solution}
-\item[]\Sol The Bayes decision function $f^*$ satisfies
-  $$f^* = \argmin_f R(f) = \argmin_f \E[\Ind(f(X)\neq Y)] = \argmin_f
-  \Pr(f(X)\neq Y),$$
-  where $(X,Y)\sim \Pr_{\XX\times\YY}$.
-  Let
-  $$f_1(x) = \argmax_y \Pr(Y=y\mid X=x),$$
-  the maximum a posteriori estimate of $Y$.
-  If there is a tie, we choose any of the maximizers.  If $f_2$ is
-  another decision function we have
-  $$\begin{array}{rcll}
-    \Pr(f_1(X)\neq Y) 
-    & = & \sum_x \Pr(f_1(x)\neq Y|X=x)\Pr(X=x)\\
-    & = & \sum_x (1-\Pr(f_1(x)=Y|X=x))\Pr(X=x)\\
-    & \leq & \sum_x (1-\Pr(f_2(x)=Y|X=x))\Pr(X=x) &\text{(Defn of
-      $f_1$)}\\
-    & = & \sum_x \Pr(f_2(x)\neq Y|X=x)\Pr(X=x)\\
-    & = & \Pr(f_2(X)\neq Y).
-  \end{array}$$
-  Thus $f^*=f_1$.
-\end{solution}
-\item ($\star$) Suppose $\AA=\YY=\RR$, $\XX$ is some other set, 
-  and $\ell:\AA\times\YY\to\RR$ is given by
-  $\ell(a,y)= (a-y)^2$, the square error loss.  What is the Bayes risk
-  and how does it compare with the variance of $Y$?
-\begin{solution}
-\item[]\Sol From Homework~1 we know that the Bayes decision function
-  is given by $f^*(x)=\E[Y|X=x]$.  Thus the Bayes risk is given by
-  $$\E[(f^*(X)-Y)^2]=\E[(\E[Y|X]-Y)^2] = \E[\E[(\E[Y|X]-Y)^2|X]] = \E[\Var(Y|X)],$$
-  where we applied the law of iterated expectations.
-  The law of total variance states that
-  $$\Var(Y) = \E[\Var(Y|X)] + \Var[\E(Y|X)].$$
-  This proves the Bayes risk satisfies
-  $$\E[\Var(Y|X)] = \Var(Y)-\Var[\E(Y|X)] \leq \Var(Y).$$
-  Recall from Homework~1 that $\Var(Y)$ is the Bayes risk when we
-  estimate $Y$ without any input $X$.  This shows that using $X$ in
-  our estimation reduces the Bayes risk, and that the improvement is
-  measured by $\Var[\E(Y|X)]$.  As a sanity check, note that if $X,Y$
-  are independent then $\E(Y|X)=\E(Y)$ so $\Var[\E(Y|X)]=0$.  If $X=Y$
-  then $\E(Y|X)=Y$ and $\Var[\E(Y|X)]=\Var(Y)$. 
-
-  The prominent role of variance in our analysis above is due to the
-  fact that we are using the square loss.
-\end{solution}
-\item Let $\XX=\{1,\ldots,10\}$, let $\YY=\{1,\ldots,10\}$, and let
-  $A=\YY$. Suppose the data generating distribution, $\PP$, has
-  marginal $X\sim \Unif\{1,\ldots,10\}$ and conditional
-  distribution $Y|X=x\sim \Unif\{1,\ldots,x\}$.  For each loss
-  function below give a Bayes decision function.
+\item Let $\XX=\{1,2,\ldots,10\}$, $\YY=\AA=\{1,\ldots,10,11\}$ and suppose the data
+  distribution has marginal distribution $X\sim\Unif\{1,\ldots,10\}$.
+  Furthermore, assume $Y=X$ (i.e., $Y$ always has the exact same value
+  as $X$).  In the questions below we use square loss function $\ell(a,x)=(a-x)^2$.
   \begin{enumerate}
-  \item $\ell(a,y) = (a-y)^2$,
-  \item $\ell(a,y) = |a-y|$,
-  \item $\ell(a,y) = \Ind(a\neq y)$.
+  \item What is the Bayes risk?
+  \item What is the approximation error when using the hypothesis
+    space of constant functions?
+  \item Suppose we use the hypothesis space of affine functions.
+    \begin{enumerate}
+    \item What is the approximation error?
+    \item Suppose you have a fixed data set and compute the empirical
+      risk minimizer $\hat{f}_n(x)=x+1$.  What is the estimation
+      error?
+    \end{enumerate}
+  \end{enumerate}
+\begin{solution}
+\item[]\Sol 
+  \begin{enumerate}
+  \item The best decision function is $f^*(x)=x$.  The
+    associated risk is $0$.
+  \item The best constant function is
+    $f(x)=\E[Y]=\E[X]=5.5$.  This has risk
+    $$\E[(Y-5.5)^2]=\Var(Y) = \frac{33}{4},$$
+    by using (or deriving) the formula for the variance of a discrete
+    uniform distribution.  Thus the approximation error is $33/4$.
+  \item 
+    \begin{enumerate}
+    \item The Bayes decision function is affine, so the approximation
+      error is $0$.
+    \item The risk is 
+      $$R(\hat{f}_n) = \E[(Y-\hat{f}_n(X))^2] = \E[(X-(X+1))^2] = 1.$$
+      Thus the estimation error is $1$.
+    \end{enumerate}
+  \end{enumerate}
+\end{solution}
+\item ($\star$) Let $\XX=[-10,10]$, $\YY=\AA=\RR$ and suppose the data
+  distribution has marginal distribution $X\sim\Unif(-10,10)$ and
+  $Y|X=x\sim\Norm(a+bx,1)$.  Throughout we assume the square loss
+  function $\ell(a,x)=(a-x)^2$.
+  \begin{enumerate}
+  \item What is the Bayes risk?
+  \item What is the approximation error when using the hypothesis
+    space of constant functions (in terms of $a$ and $b$)?
+  \item Suppose we use the hypothesis space of affine functions.
+    \begin{enumerate}
+    \item What is the approximation error?
+    \item Suppose you have a fixed data set and compute the empirical
+      risk minimizer $\hat{f}_n(x)=c+dx$.  What is the estimation
+      error (int terms of $a,b,c,d$) ?
+    \end{enumerate}
+  \end{enumerate}
+\begin{solution}
+\item[]\Sol Throughout we use the fact that $\Var(X)=\E[X^2]-\E[X]^2$.
+  \begin{enumerate}
+  \item The best decision function is $f(x)=\E[Y|X=x]=a+bx$.  This has
+    risk
+    $$\E[(Y-a-bX)^2] = \E[\E[(Y-a-bX)^2|X]] = \E[1] = 1.$$
+  \item The best constant function is given by
+    $\E[Y]=\E[\E[Y|X]]=a+b\E[X]=a$.  This has risk 
+    $$\E[(Y-a)^2]=\E[\E[(Y-a)^2|X]]=\E[1+b^2X^2] = 1+b^2\E[X^2],$$
+    where
+    $$\E[X^2] = \int_{-10}^{10}\frac{x^2}{20}\,dx =
+    \frac{2000}{3\cdot20}=\frac{100}{3}.$$
+    Thus the approximation error is $100b^2/3$.
+  \item
+    \begin{enumerate}
+    \item There is an affine Bayes decision function, so the
+      approximation error is 0.
+    \item Note that
+      $$\begin{array}{rcl}
+      R(\hat{f}_n) 
+      & = & \E[(Y-c-dX)^2] = \E[\E[(Y-c-dX)^2|X]]\\
+      & = & \E[1 + ((a-c)+(b-d)X)^2] = 1 + (a-c)^2 + 100(b-d)^2/3.
+      \end{array}$$
+      Thus the estimation error is $(a-c)^2 + 100(b-d)^2/3$.
+    \end{enumerate}
+  \end{enumerate}
+\end{solution}
+\item Try to best characterize each of the following in terms of one
+  or more of
+  optimization error, approximation error, and estimation error.
+  \begin{enumerate}
+  \item Overfitting.
+  \item Underfitting.
+  \item Precise empirical risk minimization for your hypothesis space
+    is computationally intractable.
+  \item Not enough data.
   \end{enumerate}
 \begin{solution}
 \item[]\Sol
   \begin{enumerate}
-  \item From Homework~1 we know that $f^*(x)=\E[Y|X=x]=(x+1)/2$.
-  \item From Homework~1, we know that $f^*(x)$ is the conditional
-    median of $Y$ given $X=x$.  If $x$ is odd, then $f^*(x)=(x+1)/2$.
-    If $x$ is even, then we can choose any value in the interval
-    $$\left[\left\lfloor \frac{x+1}{2}\right\rfloor,\left\lceil \frac{x+1}{2}\right\rceil\right].$$
-  \item From question~1 above, we know that $f^*(x)=\argmax_y
-    \Pr(Y=y|X=x)$.  Thus we can choose any integer between $1$ and $x$,
-    inclusive, for $f^*(x)$.
+  \item High estimation error due to insufficient data relative to the
+    complexity of your hypothesis space.  Can be accompanied by low
+    approximation error indicating a complex hypothesis space.
+  \item High approximation error due to an overly simplistic
+    hypothesis space.  Can be accompanied by low estimation estimation
+    error due to the large amount of data relative to the (low)
+    complexity of the hypothesis space.
+  \item Increased optimization error.
+  \item High estimation error.
   \end{enumerate}
 \end{solution}
-\item Show that the empirical risk is an unbiased and
-  consistent estimator of the Bayes risk. You may assume the Bayes
-  risk is finite.
-\begin{solution}
-\item[]\Sol We assume a given loss function $\ell$ and an
-  i.i.d.~sample $(x_1,y_i),\ldots,(x_n,y_n)$. 
-  To show it is unbiased, note that
-  $$\begin{Array}{rcll}
-    \E[\hat{R}_n(f)] 
-    & = & \E\left[\frac{1}{n}\sum_{i=1}^n \ell(f(x_i),y_i)\right]\\ 
-    & = & \frac{1}{n}\sum_{i=1}^n\E[\ell(f(x_i),y_i)] &
-    \text{(Linearity of $\E$)}\\
-    & = & \E[\ell(f(x_1),y_1)] & \text{(i.i.d.)}\\
-    & = & R(f).
-  \end{Array}$$
-  For consistency, we must show that as $n\to\infty$ we have
-  $\hat{R}_n(f)\to R(f)$ with probability~1.  Letting
-  $z_i=\ell(f(x_i),y_i)$, we see that the $z_i$ are i.i.d.~with finite
-  mean.  Thus consistency follows by applying the strong law of large numbers.
-\end{solution}
-\item Let $\XX=[0,1]$ and $\YY=\AA=\RR$.  Suppose you receive the
-  $(x,y)$ data points $(0,5)$, $(.2,3)$, $(.37,4.2)$, $(.9,3)$, $(1,5)$.  Throughout
-  assume we are using the $0-1$ loss.
+\item
   \begin{enumerate}
-  \item Suppose we restrict our decision functions to the hypothesis
-    space $\FF_1$ of constant functions.  Give a decision function that
-    minimizes the empirical risk over $\FF_1$ and the corresponding
-    empirical risk.  Is the empirical risk minimizing function unique?
-  \item Suppose we restrict our decision functions to the hypothesis
-    space $\FF_2$ of piecewise-constant functions with at most 1
-    discontinuity.  Give a decision function that
-    minimizes the empirical risk over $\FF_2$ and the corresponding
-    empirical risk.  Is the empirical risk minimizing function unique?
+  \item We sometimes look at $R(\hat{f}_n)$ as random, and other times
+    as deterministic.  What causes this difference?
+  \item True or False: Increasing the size of our hypothesis space can
+    shift risk from approximation error to estimation error but always
+    leaves the quantity $R(\hat{f}_n)-R(f^*)$ constant.
+  \item True or False: Assume we treat our data set as a random sample and not a
+    fixed quantity.  Then the estimation error and the approximation
+    error are random and not deterministic.
+  \item True or False: The empirical risk of the ERM,
+    $\hat{R}(\hat{f}_n)$, is an unbiased estimator of the risk of the
+    ERM $R(\hat{f}_n)$.
+  \item In each of the following situations, there is an implicit
+    sample space in which the given expectation is computed.  Give
+    that space.
+    \begin{enumerate}
+    \item When we say the empirical risk $\hat{R}(f)$ is an unbiased estimator of
+      the risk $R(f)$ (where $f$ is independent of the training data
+      used to compute the empirical risk).
+    \item When we compute the expected empirical risk
+      $\E[R(\hat{f}_n)]$ (i.e., the outer expectation).
+    \item When we say the minibatch gradient is an unbiased estimator
+      of the full training set gradient.
+    \end{enumerate}
   \end{enumerate}
 \begin{solution}
 \item[]\Sol
   \begin{enumerate}
-  \item We can let $\hat{f}(x)=5$ or $\hat{f}(x)=3$ and obtain the
-    minimal empirical risk of $3/5$.  Thus the empirical risk
-    minimizer is not unique.
-  \item One solution is to let $\hat{f}(x)=5$ for $x\in[0,.1]$ and
-    $\hat{f}(x)=3$ for $x\in(.1,1]$ giving an empirical risk of
-    $2/5$.  There are uncountably many empirical risk minimizers, so
-    again we do not have uniqueness.
+  \item The quantity is random when we consider the training data as a
+    random sample of size $n$.  If we focus on a fixed set of training
+    data then the quantity is deterministic.
+  \item False.  Note that $\hat{f}_n$ depends on which hypothesis
+    space you have chosen.  As an example, imagine having an affine
+    Bayes decision function, and changing the hypothesis space from
+    the set of affine functions to the set of all decision functions.
+    This can cause empirical risk minimization to overfit the training
+    data thus creating a sharp rise in $R(\hat{f}_n)-R(f^*)$.
+  \item False, approximation error is a deterministic quantity.
+  \item False. The empirical risk of the ERM will often be biased
+    low. This is why we use a test set to approximate its true risk.
+    The issue is that $\hat{f}_n$ depends on the training data so
+    $$\E\ell(\hat{f}_n(x_i),y_i) \neq \E\ell(\hat{f}_n(x),y)$$
+    where $x,y$ is a new random draw from the data distribution that
+    isn't in the training data.
+  \item 
+    \begin{enumerate}
+    \item The space of training sets (i.e., samples of size $n$ from
+      the data generating distribution).
+    \item The space of training sets (i.e., samples of size $n$ from
+      the data generating distribution).
+    \item The space of all minibatches chosen from the full training
+      set (i.e., samples of of the batch size from the empirical
+      distribution on the full training set).
+    \end{enumerate}
   \end{enumerate}
 \end{solution}
-\item $(\star)$ Let $\XX=[-10,10]$, $\YY=\AA=\RR$ and suppose the data generating
-  distribution has marginal distribution $X\sim\Unif[-10,10]$ and 
-  conditional distribution $Y|X=x\sim
-  \Norm(a+bx,1)$ for some fixed $a,b\in\RR$.  Suppose you are also
-  given the following data points: $(0,1)$, $(0,2)$, $(1,3)$,
-  $(2.5,3.1)$, $(-4,-2.1)$.
+\item For each, use $\leq$, $\geq$, or $=$ to determine the
+  relationship between the two quantities,
+  or if the relationship cannot be determined.
+  Throughout assume $\FF_1,\FF_2$ are hypothesis spaces with
+  $\FF_1\subseteq \FF_2$, and assume we are working with a fixed loss
+  function $\ell$.  
   \begin{enumerate}
-  \item Assuming the $0-1$ loss, what is the Bayes risk?
-  \item Assuming the square error loss $\ell(a,y)=(a-y)^2$, what is the Bayes risk?
-  \item Using the full hypothesis space of all (measurable) functions,
-    what is the minimum achievable empirical risk for the square error loss.
-  \item Using the hypothesis space of all affine functions (i.e., of
-    the form $f(x)=cx+d$ for some $c,d\in\RR$),
-    what is the minimum achievable empirical risk for the square error loss.
-  \item Using the hypothesis space of all quadratic functions (i.e., of
-    the form $f(x)=cx^2+dx+e$ for some $c,d,e\in\RR$),
-    what is the minimum achievable empirical risk for the square error
-    loss.
+  \item The estimation errors of two decision functions $f_1,f_2$ that
+    minimize the empirical risk over the same hypothesis space,
+    where $f_2$ uses 5 extra data points.
+  \item The approximation errors of the two decision functions
+    $f_1,f_2$ that minimize risk with respect to $\FF_1,\FF_2$,
+    respectively (i.e., $f_1=f_{\FF_1}$ and $f_2=f_{\FF_2}$).
+  \item The empirical risks of two decision functions $f_1,f_2$ that
+    minimize the empirical risk over $\FF_1,\FF_2$, respectively.
+    Both use the same fixed training data.
+  \item The estimation errors (for $\FF_1,\FF_2$, respectively) of two decision functions $f_1,f_2$ that
+    minimize the empirical risk over $\FF_1,\FF_2$, respectively.
+  \item The risk of two decision functions $f_1,f_2$ that
+    minimize the empirical risk over $\FF_1,\FF_2$, respectively.
   \end{enumerate}
 \begin{solution}
-\item[]\Sol
+\item[]\Sol 
   \begin{enumerate}
-  \item For any decision function $f$ the risk is given by
-    $$\E[\Ind(f(X)\neq Y)] = \Pr(f(X)\neq Y) = 1 - \Pr(f(X)=Y)=1.$$
-    To see this note that
-    $$\Pr(f(X)=Y) =
-    \frac{1}{20\sqrt{2\pi}}\int_{-10}^{10}\int_{-\infty}^\infty
-    \Ind(f(x)=y)e^{-(y-a-bx)^2/2}\,dy\,dx
-    = \frac{1}{20\sqrt{2\pi}}\int_{-10}^{10} 0\,dx = 0.$$
-    Thus every decision function is a Bayes decision function, and the
-    Bayes risk is~$1$.
-  \item By problem~2 above we know the Bayes risk is given by
-    $$\E[\Var(Y|X)] = \E[1]=1,$$
-    since $\Var(Y|X=x)=1$. 
-  \item We choose $\hat{f}$ such that
-    $$\hat{f}(0)=1.5, \hat{f}(1)=3, \hat{f}(2.5)=3.1,
-    \hat{f}(-4)=2.1,$$
-    and $\hat{f}(x)=0$ otherwise.  Then we achieve the minimum
-    empirical risk of $1/10$.
-  \item Letting
-    $$A=\begin{pmatrix}1&0\\1&0\\1&1\\1&2.5\\1&-4\end{pmatrix},\quad y =
-    \begin{pmatrix}1\\2\\3\\3.1\\-2.1\end{pmatrix}$$
-    we obtain (using a computer)
-    $$\hat{w}=\begin{pmatrix}\hat{d}\\\hat{c}\end{pmatrix} = (A^TA)^{-1}A^Ty
-    = \begin{pmatrix}1.4856\\0.8556\end{pmatrix}.$$
-    This gives
-    $$\hat{R}_5(\hat{f}) = \frac{1}{5}\|A\hat{w}-y\|_2^2 = 0.2473.$$
-    [Aside: In general, to solve systems like the one above on a computer you shouldn't actually invert
-      the matrix $A^TA$, but use something like \lstinline!w=A\y! in
-      Matlab which performs a QR factorization of $A$.]
-  \item Letting
-    $$A=\begin{pmatrix}1&0&0\\1&0&0\\1&1&1\\1&2.5&6.25\\1&-4&16\end{pmatrix},\quad y =
-    \begin{pmatrix}1\\2\\3\\3.1\\-2.1\end{pmatrix}$$
-    we obtain (using a computer)
-    $$\hat{w}=\begin{pmatrix}\hat{e}\\\hat{d}\\\hat{c}\end{pmatrix} = (A^TA)^{-1}A^Ty
-    = \begin{pmatrix}1.7175\\0.7545\\-0.0521\end{pmatrix}.$$
-    This gives
-    $$\hat{R}_5(\hat{f}) = \frac{1}{5}\|A\hat{w}-y\|_2^2 = 0.1928.$$
+  \item Roughly speaking, more data is better, so we would tend to expect
+    that $f_2$ will have lower estimation error.  That said, this is
+    not always the case, so the relationship cannot be determined.
+  \item The approximation error of $f_1$ will be larger.
+  \item The empirical risk of $f_1$ will be larger.
+  \item Roughly speaking, increasing the hypothesis space should
+    increase the estimation error since the approximation error will
+    decrease, and we expect to need more data.  That said, this
+    is not always the case, so the answer is the relationship cannot
+    be determined.
+  \item Cannot be determined.
+  \end{enumerate}
+\end{solution}
+\item In the excess risk decomposition lecture, we introduced the
+  decision tree classifier spaces $\FF$ (space of all decision trees)
+  and $\FF_d$ (the space of decision trees of depth~$d$) and went through
+  some examples.  The following questions are based on those slides.
+  Recall that $P_\XX = \Unif([0,1]^2)$,
+  $\YY=\{\text{blue},\text{orange}\}$, orange occurs with $.9$
+  probability below the line $y=x$ and blue occurs with $.9$
+  probability above the line $y=x$.
+  \begin{enumerate}
+  \item Prove that the Bayes error rate is $0.1$.
+  \item Is the Bayes decision function in $\FF$?
+  \item For the hypothesis space $\FF_3$ the slide states that
+    $R(\tilde{f})=0.176\pm.004$ for $n=1024$.  Assuming you had access to the
+    training code that produces $\tilde{f}$ from a set of data points,
+    and random draws from the data generating distribution,
+    give an algorithm (pseudocode) to compute (or estimate) the values $0.176$ and
+    $.004$.
+  \end{enumerate}
+\begin{solution}
+\item[]\Sol 
+  \begin{enumerate}
+  \item Since the output space is discrete and we are using the $0-1$
+    loss, our best prediction is the highest probability output
+    conditional on the input.  By choosing orange below the line $y=x$
+    and blue above, we obtain a $.1$ probability of error.  For the
+    $0-1$ loss, probability of error gives the risk.
+  \item No. Any decision tree in $\FF$ has finite depth, and thus will
+    divide $[0,1]^2$ into a finite number of rectangles.  Thus we
+    cannot produce the decision boundary $y=x$ used by the Bayes
+    decision function.
+  \item Pseudocode follows:
+    \begin{enumerate}
+    \item Initialize $L$ to be an empty list of risks.
+    \item Repeat the following $M$ times for some sufficiently large
+      $M$:
+      \begin{enumerate}
+      \item Draw a random sample $(x_1,y_1),\ldots,(x_n,y_n)$ from the
+        data generating distribution.
+      \item Obtain a decision function $\tilde{f}$ by running our
+        training algorithm on the generated sample.
+      \item Draw a new random sample $(x'_1,y'_1),\ldots,(x'_S,y'_S)$ 
+        of size $S$ where $S$ is sufficiently large.
+      \item Compute $e=|\{i\mid \tilde{f}(x'_i)\neq y'_i\}|$.  That is,
+        the number of times $\tilde{f}$ is incorrect on our new
+        sample.
+      \item Add $e/S$ to the list $L$.
+      \end{enumerate}
+    \item Compute the sample average and standard deviation of the
+      values in $L$.  Above $.176$ would be the average and $.004$
+      would be the standard deviation.
+    \end{enumerate}
+    Instead of drawing the sample of size $S$ we could have computed
+    the risk analytically.
   \end{enumerate}
 \end{solution}
 \end{enumerate}
-\subsection{Stochastic Gradient Descent}
+\subsection{$L_1$ and $L_2$ Regularization}
 \begin{enumerate}
-\item When performing mini-batch gradient descent, we often randomly choose
-  the mini-batch from the full training set without replacement.  
-  Show that the resulting  mini-batch gradient is an unbiased estimate of the gradient of the
-  full training set.  Here we assume each decision function $f_w$ in
-  our hypothesis space is determined by a parameter vector $w\in\RR^d$.
+\item Consider the following two minimization problems:
+  $$\argmin_w \Omega(w) + \frac{\lambda}{n}\sum_{i=1}^n L(f_w(x_i),y_i)$$
+  and
+  $$\argmin_w C\Omega(w) + \frac{1}{n}\sum_{i=1}^n L(f_w(x_i),y_i),$$
+  where $\Omega(w)$ is the penalty function (for regularization) and
+  $L$ is the loss function.  Give sufficient conditions under which these two
+  give the same minimizer.
 \begin{solution}
-\item[]\Sol Let $(x_{m_1},y_{m_1}),\ldots,(x_{m_n},y_{m_n})$ be our
-  mini-batch selected uniformly without replacement from the full
-  training set $(x_1,y_1),\ldots,(x_n,y_n)$.
-  $$\begin{Array}{rcll}
-    \E\left[\nabla_w\frac{1}{n}\sum_{i=1}^n
-      \ell(f_w(x_{m_i},y_{m_i}))\right]
-    & = & \frac{1}{n}\sum_{i=1}^n\E\left[\nabla_w
-      \ell(f_w(x_{m_i}),y_{m_i})\right] & \text{(Linearity of
-      $\nabla,\E$)}\\
-    & = & \frac{1}{n}\sum_{i=1}^n\E\left[\nabla_w
-      \ell(f_w(x_{m_1}),y_{m_1})\right]    &\text{(Marginals are the same)}\\
-    & = & \E\left[\nabla_w\ell(f_w(x_{m_1}),y_{m_1})\right]\\
-    & = & \sum_{i=1}^N \frac{1}{N}\nabla_w\ell(f_w(x_{i}),y_{i})\\
-    & = & \nabla_w\frac{1}{N}\sum_{i=1}^N
-    \ell(f_w(x_{i}),y_{i})&\text{(Linearity of $\nabla$).}
-  \end{Array}$$
+\item[]\Sol Let $C=1/\lambda$.  Then the two objectives differ by a
+  constant factor.
 \end{solution}
-\item You want to estimate the average age of the people visiting your
-  website.  Over a fixed week we will receive a total of $N$
-  visitors (which we will call our full population).  Suppose the population mean $\mu$
-  is unknown but the variance $\sigma^2$ is known.  Since we don't
-  want to bother every visitor, we will ask a small sample what their
-  ages are.  How many visitors must we randomly sample
-  so that our estimator $\hat{\mu}$ has variance at
-  most $\epsilon>0$?  
+\item ($\star$) Let $f:\RR^n\to\RR$ be a differentiable function.  Prove that
+  $\|\nabla f(x)\|_2 \leq L$ if and only if $f$ is Lipschitz with
+  constant $L$.
 \begin{solution}
-\item[]\Sol Let $x_1,\ldots,x_n$ denote our randomly sampled ages, and
-  let $\hat{x}$ denote the sample mean $\frac{1}{n}\sum_{i=1}^n x_i$.
-  Then
-  $$\Var(\hat{x}) = \frac{\sigma^2}{n}.$$
-  Thus we require $n\geq \sigma^2/\epsilon$.  Note that this doesn't
-  depend on $N$, the full population size.
+\item[]\Sol First suppose $\|\nabla f(x)\|_2\leq L$ for some $L\geq
+  0$ and all $x\in\RR^n$.  By the mean value theorem we have, for any $x,y\in\RR^n$,
+  $$f(y)-f(x) = \nabla f(x+\xi(y-x))^T(y-x),$$
+  where $\xi$ is some value between $0$ and $1$.  Taking absolute values on each
+  side we have
+  $$|f(y)-f(x)| = |\nabla f(x+\xi(y-x))^T(y-x)| \leq \|\nabla
+  f(x+\xi(y-x))\|_2\|y-x\|_2$$
+  by Cauchy-Schwarz.  Applying our bound on the gradient norm proves
+  $f$ is Lipschitz with constant $L$.
+
+  Conversely, suppose $f$ is Lipschitz with constant~$L$.  Note that
+  $$|\nabla f(x)^Tv| = |f'(x;v)| = \left|\lim_{t\to
+    0}\frac{f(x+tv)-f(x)}{t}\right| \leq \lim_{t\to0}\frac{|t|L\|v\|}{|t|}
+  = L\|v\|.$$
+  Letting $v=\nabla f(x)$ we obtain $\|\nabla f(x)\|_2^2 \leq
+  L\|\nabla f(x)\|_2$ giving the result.
 \end{solution}
-\item ($\star$) Suppose you have been successfully 
-  running mini-batch gradient descent with
-  a full training set size of $10^5$ and a mini-batch size of $100$.
-  After receiving more data your full training set size increases to $10^9$.
-  Give a heuristic argument as to why the mini-batch size need not
-  increase even though we have $10000$ times more data.
+\item ($\star$) Let $\hat{w}$ denote the minimizer for
+  $$\begin{array}{ll}
+  \text{minimize}_w & \|Xw-y\|_2^2\\
+  \text{subject to} & \|w\|_1 \leq r.
+  \end{array}$$
+  Prove that $f(x)=\hat{w}^Tx$ is Lipschitz with constant $r$.
 \begin{solution}
-\item[]\Sol Throughout we assume our gradient lies in $\RR^d$.
-  Consider the empirical distribution on the full training
-  set (i.e., each sample is chosen with probability $1/N$ where $N$ is
-  the full training set size).  Assume this distribution has mean
-  vector $\mu\in\RR^d$ (the full-batch gradient) and covariance matrix
-  $\Sigma\in\RR^{d\times d}$.  By the central
-  limit theorem the mini-batch gradient will be approximately normally
-  distributed with mean $\mu$ and covariance $\frac{1}{n}\Sigma$, where
-  $n$ is the mini-batch size.  As $N$ grows the entries of $\Sigma$
-  need not grow, and thus $n$ need not grow.
-  In fact, as $N$ grows, the empirical mean and
-  covariance matrix will converge to their true values.  More
-  precisely, the mean of the empirical distribution
-  will converge to $\E\nabla\ell(f(X),Y)$ and the covariance will
-  converge to
-  $$\E[(\nabla\ell(f(X),Y))(\nabla\ell(f(X),Y))^T]-\E[\nabla\ell(f(X),Y)]\E[\nabla\ell(f(X),Y)]^T$$
-  where $(X,Y)\sim\Pr_{\XX\times\YY}$.  
-  
-  The important takeaway here is that the size of the mini-batch is
-  dependent on the speed of computation, and on the characteristics of
-  the distribution of the gradients (such as the moments), and thus
-  may vary independently of the size of the full training set.
+\item[]\Sol Note that $\|w\|_2 \leq \|w\|_1\leq r$, so the argument
+  from class gives the result.  To see the inequality, note that
+  $$\|w\|_1^2 = (|w_1|+\cdots+|w_n|)^2 \geq |w_1|^2 + \cdots +|w_n|^2
+  = \|w\|_2^2.$$
+\end{solution}
+\item Two of the plots in the lecture slides use the fact that
+  $\|\hat{\beta}\|/\|\tilde{\beta}\|$ is always between $0$ and
+  $1$.  Here $\hat{\beta}$ is the parameter vector of the linear model
+  resulting from the regularized least squares problem.  Analgously,
+  $\tilde{\beta}$ is the parameter vector from the unregularized
+  problem.  Why is this true that the quotient lies in $[0,1]$? 
+\begin{solution}
+\item[]\Sol We assume Ivanov regularization (since Tikhonov is equivalent). We know that
+  $$\frac{1}{n}\sum_{i=1}^n (\tilde{\beta}^Tx_i-y_i)^2 \leq
+  \frac{1}{n}\sum_{i=1}^n (\hat{\beta}^Tx_i-y_i)^2$$
+  since $\tilde{\beta}$ is the solution to the unconstrained
+  minimization.  But if $\|\tilde{\beta}\| \leq \|\hat{\beta}\|$ then
+  $\|\tilde{\beta}\|$ is feasible for the regularized problem, so
+  $\|\hat{\beta}\|=\|\tilde{\beta}\|$.  
+  Thus $\|\tilde{\beta}\|\geq\|\hat{\beta}\|$.
+\end{solution}
+\item Explain why feature normalization is important if you are using
+  $L_1$ or $L_2$ regularization.
+\begin{solution}
+\item[]\Sol Suppose you have a model $y = w^Tx$ where $x_1$ is a very
+  correlated with $y$, but the
+  feature is measured in meters.  Thus $w_1=4$ would mean each increase
+  in $x_1$ by $1$ meter yields an increase in $y$ by $4$.  Now suppose
+  we change the units of $w_1$ to kilometers by scaling it.  This
+  would require us to
+  change $w_1$ to $4000$ to achieve the same decision function.  
+  While this has no effect on the loss
+  $(y-w^Tx)^2$ it has a significant effect on $\lambda\|w\|_2^2$ or 
+  $\lambda\|w\|_1$.  For example, even if $x_2,\ldots,x_n$ had very
+  little relationship with $y$, we would still undervalue $w_1$ due to
+  the regularization.
 \end{solution}
 \end{enumerate}

@@ -22,7 +22,7 @@
 \item[]\Sol 
   \begin{enumerate}
   \item The data is linearly separable.
-  \item The data is separable with margin at least $M/\|w\|_2$.
+  \item The data is separable with geometric margin at least $M/\|w\|_2$.
   \end{enumerate}
   Both of these answers will be fleshed out in the upcoming sections.
 \end{solution}
@@ -91,7 +91,7 @@ Returning to the initial question, suppose we have the data set
 $(x_i,y_i)$ for $i=1,\ldots,n$ where $x_i\in\RR^d$ and
 $y_i\in\{-1,1\}$.
 \begin{dfn}[Linearly Separable]
-  We say $(x_i,y_i)$ for $i=1,\ldots,n$ is \textit{linearly separable} if there
+  We say $(x_i,y_i)$ for $i=1,\ldots,n$ are \textit{linearly separable} if there
   is a $w\in\RR^d$ and $a\in\RR$ such that $y_i(w^Tx_i+a)>0$ for all
   $i$. The set $\{v\in\RR^d\mid w^Tv+a=0\}$ is called a \textit{separating hyperplane}.
 \end{dfn}
@@ -121,10 +121,10 @@ hyperplanes.
 \caption{Many Separating Hyperplanes Exist}
 \end{figure}
 We will choose the hyperplane that maximizes a quantity called the
-\textit{margin}.
-\begin{dfn}[Margin]
+\textit{geometric margin}.
+\begin{dfn}[Geometric Margin]
   Let $H$ be a hyperplane that separates the data $(x_i,y_i)$ for
-  $i=1,\ldots,n$.  The margin of this hyperplane is 
+  $i=1,\ldots,n$.  The geometric margin of this hyperplane is 
   $$\min_i d(x_i,H),$$
   the distance from the hyperplane to the closest data point.
 \end{dfn}
@@ -149,7 +149,7 @@ $$\begin{Array}{ll}
 \end{asy}
 \caption{Maximum Margin Separating Hyperplane}
 \end{figure}
-Note above how the margin is achieved on both sides of the optimal
+Note above how the geometric margin is achieved on both sides of the optimal
 hyperplane.  This must be the case, as otherwise we could slightly
 move the hyperplane and obtain a better solution.
 The expression $y_i(w^Tx_i+a)/\|w\|_2$ allows us to choose any
@@ -169,7 +169,8 @@ $$\begin{array}{ll}
 This is a quadratic program that can be solved quickly on fairly large datasets.
 \subsection{Soft Margin SVM}
 The methods developed thus far require linearly separable data.  To
-remove this restriction, we will allow vectors to violate the margin
+remove this restriction, we will allow vectors to violate the
+geometric margin
 requirements, but at a penalty.  More precisely, we replace our
 previous SVM formulation
 $$\begin{array}{ll}
@@ -185,12 +186,12 @@ $$\begin{array}{ll}
 \end{array}$$
 This is the standard formulation of a support vector machine, and is
 equivalent to the statement from the lecture.
-When $\xi_i>0$ the corresponding $x_i$ violates the margin condition.
+When $\xi_i>0$ the corresponding $x_i$ violates the geometric margin condition.
 The constant $C$ controls how much we penalize violations.
 Rewriting the condition as
 $$\frac{y_i(w^Tx_i+a)}{\|w\|_2} \geq \frac{1-\xi_i}{\|w\|_2}$$
 shows that $\xi_i$ measures the size of the violation in multiples of
-the margin.  For example, $\xi_i=1$ means $x_i$ lies on the decision hyperplane
+the geometric margin.  For example, $\xi_i=1$ means $x_i$ lies on the decision hyperplane
 $w^Tv+a=0$, and $\xi_i=3$ means $x_i$ lies 2 margin widths past the
 decision hyperplane. 
 \begin{figure}[H]

@@ -1,216 +1,208 @@
-\section{Recitation 1: Gradients and Directional Derivatives}
+\section{Recitation 2: Geometric Derivation of SVMs}
 \subsection{Intro Question}
 \begin{enumerate}
-\item We are given the data set $(x_1,y_1),\ldots,(x_n,y_n)$ where
-  $x_i\in\RR^d$ and $y_i\in\RR$.  We want to fit a linear function to
-  this data by performing empirical risk minimization.  More
-  precisely, we are using the hypothesis space $\FF=\{f(x)=w^Tx\mid
-  w\in\RR^d\}$ and the loss function $\ell(a,y)=(a-y)^2$.  Given an
-  initial guess $\tilde{w}$ for the empirical risk minimizing
-  parameter vector, how could we improve our guess?
+\item You have been given a data set $(x_i,y_i)$ for $i=1,\ldots,n$ where
+  $x_i\in\RR^d$ and $y_i\in\{-1,1\}$.  Assume $w\in\RR^n$ and
+  $a\in\RR$.
+  \begin{enumerate}
+  \item Suppose $y_i(w^Tx_i+a)>0$ for all $i$.  Use a picture to
+    explain what this means when $d=2$.
+  \item Fix $M>0$.
+    Suppose $y_i(w^Tx_i+a)\geq M$ for all $i$.  Use a picture to
+    explain what this means when $d=2$.
+  \end{enumerate}
 \begin{figure}[H]
 \centering
-\begin{asy}[width=\textwidth,height=0.4\textheight]
-  include "1-gradients/Data.asy";
+\begin{asy}
+  include "3-SVM/Data.asy";
 \end{asy}
-\caption{Data Set With $d=1$}
+\caption{Data set with $x_i\in\RR^2$ and $y_i\in\{+1,-1\}$}
 \end{figure}
 \begin{solution}
-\item[]\Sol The empirical risk is given by
-  $$\hat{R}_n(f) = \frac{1}{n}\sum_{i=1}^n \ell(f(x_i),y_i) =
-  \frac{1}{n}\sum_{i=1}^n (w^Tx_i-y_i)^2
-  = \frac{1}{n}\|Xw-y\|_2^2,$$
-  where $X\in\RR^{n\times d}$ is the matrix whose $i$th row is given by $x_i$.
-  Assuming $\tilde{w}$ is not the empirical risk minimizer, we can improve
-  our guess by taking a sufficiently small step in the direction of
-  the negative gradient.  In this particular example, we can also
-  solve for the empirical risk minimizer analytically.
-  This will be explained further below.
+\item[]\Sol 
+  \begin{enumerate}
+  \item The data is linearly separable.
+  \item The data is separable with margin at least $M/\|w\|_2$.
+  \end{enumerate}
+  Both of these answers will be fleshed out in the upcoming sections.
 \end{solution}
 \end{enumerate}
-\subsection{Multivariable Differentiation}
-Differential calculus allows us to convert non-linear problems into
-local linear problems, to which we can apply the well-developed
-techniques of linear algebra.  Here we will review some of the
-important concepts needed in the rest of the course.
-\subsubsection{Single Variable Differentiation}
-To gain intuition, we first recall the single variable case.  Let
-$f:\RR\to\RR$ be differentiable.  The derivative
-$$f'(x) = \lim_{h\to0}\frac{f(x+h)-f(x)}{h}$$
-gives us a local linear approximation of $f$ near $x$.  This is seen
-more clearly in the following form:
-$$f(x+h) = f(x) + hf'(x) + o(h)\quad\text{as $h\to0$,}$$
-where $o(h)$ represents a function $g(h)$ with $g(h)/h\to 0$ as
-$h\to0$.  This can be used to show that if $x$ is a local extremum of
-$f$ then $f'(x)=0$.  Points with $f'(x)=0$ are called \textit{critical points}.
+\subsection{Support Vector Machines}
+\subsubsection{Review of Geometry}
+If $v,w\in\RR^d$ then the component of $v$ in the direction $w$ is
+given by $\displaystyle{\frac{w^Tv}{\|w\|_2}}$.  This can also be thought of as the
+signed length of $v$ when orthogonally projected onto the line through
+the vector $w$.
 \begin{figure}[H]
 \centering
 \begin{asy}
-  include "1-gradients/Taylor1d.asy";
+  include "3-SVM/Component.asy";
 \end{asy}
-\caption{1D Linear Approximation By Derivative}
+\caption{Component of $v_1,v_2$ in the direction $w$.}
 \end{figure}
-\subsubsection{Multivariate Differentiation}
-More generally, we will look at functions $f:\RR^n\to\RR$.  In the
-single-variable case, the derivative was just a number that signified
-how much the function increased when we moved in the positive
-$x$-direction.  In the multivariable case, we have many possible
-directions we can move along from a given point $x=(x_1,\ldots,x_n)\in\RR^n$.
+Assuming $w\neq 0$ we can use this to interpret the set
+$$S=\{x\in\RR^d\mid w^Tx=b\}.$$
+Noting that $w^Tx=b\iff \frac{w^Tx}{\|w\|_2} = \frac{b}{\|w\|_2}$ we
+see that $S$ contains all vectors whose component in the direction $w$
+is $\frac{b}{\|w\|_2}$.  
+Using linear algebra we can see this is the hyperplane orthogonal
+to the vector $w$ that passes through the point
+$\frac{bw}{\|w\|_2^2}$.  Note also that there are infinitely many
+pairs $(w,b)$ that give the same hyperplane.  If $c\neq0$ then
+$$\{x\in\RR^d\mid w^Tx=b\}\quad\text{and}\quad\{x\in\RR^d\mid
+(cw)^Tx=(cb)\}$$
+result in the same hyperplanes.
 \begin{figure}[H]
 \centering
 \begin{asy}
-  include "1-gradients/Directions.asy";
+  include "3-SVM/Level.asy";
 \end{asy}
-\caption{Multiple Possible Directions for $f:\RR^2\to\RR$}
+\caption{Level Surfaces of $f(v)=w^Tv$ with $\|w\|_2=1$}
 \end{figure}
-If we fix a direction $u$
-we can compute the directional derivative $f'(x;u)$ as
-$$f'(x;u) = \lim_{h\to0}\frac{f(x+hu)-f(x)}{h}.$$
-This allows us to turn our multidimensional problem into a
-1-dimensional computation.  For instance,
-$$f(x+hu) = f(x) + hf'(x;u) + o(h),$$
-mimicking our earlier 1-d formula.  This says that nearby $x$ we can
-get a good approximation of $f(x+hu)$ using the linear approximation
-$f(x)+hf'(x;u)$.  In particular, if $f'(x;u)<0$ (such a $u$ is called
-a \textit{descent direction}) then for sufficiently small $h>0$ we have $f(x+hu)<f(x)$.
+Given a hyperplane $\{v\mid w^Tv=b\}$, we can distinguish points
+$x\in\RR^d$ depending on whether $w^Tx-b$ is zero, positive, or
+negative, or in other words, whether $x$ is on the hyperplane, on the
+side $w$ is pointing at, or on the side $-w$ is pointing at. 
 \begin{figure}[H]
 \centering
 \begin{asy}
-  include "1-gradients/Slice.asy";
+  include "3-SVM/Sides.asy";
 \end{asy}
-\caption{Directional Derivative as a Slope of a Slice}
+\caption{Sides of the Hyperplane $w^Tv=15$}
 \end{figure}
-Let $e_i=(\overbrace{0,0,\ldots,0}^{i-1},1,0,\ldots,0)$ be the $i$th
-standard basis vector.  The directional derivative in the direction
-$e_i$ is called the $i$th partial derivative and can be written in
-several ways:
-$$\frac{\partial}{\partial x_i} f(x)=\partial_{x_i}f(x)=\partial_i
-f(x) = f'(x;e_i).$$
-
-We say that $f$ is differentiable at $x$ if
-$$\lim_{v\to0}\frac{f(x+v)-f(x)-g^Tv}{\|v\|_2}=0,$$
-for some $g\in\RR^n$ (note that the limit for $v$ is taken in
-$\RR^n$).  This $g$ is uniquely determined, and is called
-the gradient of $f$ at $x$ denoted by $\nabla f(x)$.  It is easy to
-show that the gradient is the vector of partial derivatives:
-$$\nabla f(x) =
-\pMattt{\partial_{x_1}f(x)}{\vdots}{\partial_{x_n}f(x)}.$$
-The $k$th entry of the gradient (i.e., the $k$th partial derivative)
-is the approximate change in $f$ due to a small positive change in
-$x_k$.  Sometimes we will split the variables of $f$ into two parts.
-For instance, we could write $f(x,w)$ with $x\in\RR^p$ and
-$w\in\RR^q$.  It is often useful to take the gradient with respect to
-some of the variables.  Here we would write $\nabla_x$ or $\nabla_w$
-to specify which part:
-$$\nabla_x f(x,w) :=
-\pMattt{\partial_{x_1}f(x,w)}{\vdots}{\partial_{x_p}f(x,w)}
-\quad\text{and}\quad
-\nabla_w f(x,w) :=
-\pMattt{\partial_{w_1}f(x,w)}{\vdots}{\partial_{w_q}f(x,w)}.
-$$
-
-Analogous to the univariate case, can express the condition for
-differentiability in terms of a gradient approximation:
-$$f(x+v) = f(x) + \nabla f(x)^Tv + o(\|v\|_2).$$
-The approximation $f(x+v) \approx f(x)+\nabla f(x)^Tv$ gives a tangent
-plane at the point $x$ as we let $v$ vary.
+If we have a vector $x\in\RR^d$ and a hyperplane $H=\{v\mid w^Tv=b\}$ we
+can measure the distance from $x$ to $H$ by
+$$d(x,H) = \left|\frac{w^Tx-b}{\|w\|_2}\right|.$$
+Without the absolute values we get the \textit{signed distance}: a
+positive distance if $w^Tx>b$ and a negative distance if $w^Tx<b$.  To
+see why this formula is correct, note that we are computing
+$$\frac{w^Tx}{\|w\|_2} - \frac{w^Tv}{\|w\|_2},$$
+where $v$ is any vector in the hyperplane $\{v\mid w^Tv=b\}$.  This
+is the difference between their components in the direction $w$.
 \begin{figure}[H]
 \centering
 \begin{asy}
-  include "1-gradients/Tangent.asy";
+  include "3-SVM/Distance.asy";
 \end{asy}
-\caption{Tangent Plane for $f:\RR^2\to\RR$}
+\caption{Signed Distance from $x_1,x_2$ to Hyperplane $w^Tv=20$}
 \end{figure}
-If $f$ is differentiable, we can use the gradient to compute an arbitrary directional derivative:
-$$f'(x;u) = \nabla f(x)^T u.$$
-From this expression we can quickly see that (assuming $\nabla f(x)\neq0$)
-$$\argmax_{\|u\|_2=1} f'(x;u) = \frac{\nabla f(x)}{\|\nabla f(x)\|_2}
-\quad\text{and}\quad
-\argmin_{\|u\|_2=1} f'(x;u) = -\frac{\nabla f(x)}{\|\nabla
-  f(x)\|_2}.$$
-In words, we say that the gradient points in the direction of
-steepest ascent, and the negative gradient points in the direction of
-steepest descent.
-
-As in the 1-dimensional case, if $f:\RR^n\to\RR$ is differentiable and
-$x$ is a local extremum of $f$ then we must have $\nabla f(x)=0$.
-Points $x$ with $\nabla f(x)=0$ are called \textit{critical points}.
-As we will see later in the course, if a function is differentiable
-and convex, then a point is critical if and only if it is a global minimum.
+\subsection{Hard Margin SVM}
+Returning to the initial question, suppose we have the data set
+$(x_i,y_i)$ for $i=1,\ldots,n$ where $x_i\in\RR^d$ and
+$y_i\in\{-1,1\}$.
+\begin{dfn}[Linearly Separable]
+  We say $(x_i,y_i)$ for $i=1,\ldots,n$ are \textit{linearly separable} if there
+  is a $w\in\RR^d$ and $a\in\RR$ such that $y_i(w^Tx_i+a)>0$ for all
+  $i$. The set $\{v\in\RR^d\mid w^Tv+a=0\}$ is called a \textit{separating hyperplane}.
+\end{dfn}
+Let's examine what this definition says.  If $y_i=+1$ then we require
+that $w^Tx_i>-a$ and if $y_i=-1$ we require that $w^Tx_i<-a$.  Thus
+linearly separable means that we can separate all of the $+1$'s from
+the $-1$'s using the hyperplane $\{v\mid w^Tv=-a\}$.  For the rest of this section, we
+assume our data is linearly separable.
 \begin{figure}[H]
 \centering
 \begin{asy}
-  include "1-gradients/Saddle.asy";
+  include "3-SVM/LinSep.asy";
 \end{asy}
-\caption{Critical Points of $f:\RR^2\to\RR$}
+\caption{Linearly Separable Data}
 \end{figure}
-\subsubsection{Computing Gradients}
-A simple method to compute the gradient of a function is to compute
-each partial derivative separately.  For example, if $f:\RR^3\to\RR$
-is given by
-$$f(x_1,x_2,x_3) = \log(1+e^{x_1+2x_2+3x_3})$$
-then we can directly compute
-$$\hspace{-1cm}\partial_{x_1} f(x_1,x_2,x_3) = \frac{e^{x_1+2x_2+3x_3}}{1+e^{x_1+2x_2+3x_3}},\quad
-\partial_{x_2} f(x_1,x_2,x_3) = \frac{2e^{x_1+2x_2+3x_3}}{1+e^{x_1+2x_2+3x_3}},\quad
-\partial_{x_3} f(x_1,x_2,x_3) = \frac{3e^{x_1+2x_2+3x_3}}{1+e^{x_1+2x_2+3x_3}}$$
-and obtain
-$$\nabla f(x_1,x_2,x_3) =
-\PMattt{\frac{e^{x_1+2x_2+3x_3}}{1+e^{x_1+2x_2+3x_3}}}
-{\frac{2e^{x_1+2x_2+3x_3}}{1+e^{x_1+2x_2+3x_3}}}
-{\frac{3e^{x_1+2x_2+3x_3}}{1+e^{x_1+2x_2+3x_3}}}.$$
-Alternatively, we could let $w=(1,2,3)^T$ and write
-$$f(x) = \log(1+e^{w^Tx}).$$
-Then we can apply a version of the chain rule which says 
-that if $g:\RR\to\RR$ and $h:\RR^n\to\RR$ are differentiable then
-$$\nabla g(h(x)) = g'(h(x))\nabla h(x).$$
-Applying the chain rule twice (for $\log$ and $\exp$) we obtain
-$$\nabla f(x) = \frac{1}{1+e^{w^Tx}}e^{w^Tx}w,$$
-where we use the fact that $\nabla_x(w^Tx) = w$.  This last expression
-is more concise, and is more amenable to vectorized computation in
-many languages.
-
-Another useful technique is to compute a general directional
-derivative and then infer the gradient from the computation.  For
-example, let $f:\RR^n\to\RR$ be given by
-$$f(x) = \|Ax-y\|_2^2 = (Ax-y)^T(Ax-y) = x^TA^TAx - 2y^TAx+y^Ty,$$
-for some $A\in\RR^{m\times n}$ and $y\in\RR^m$.  Assuming $f$ is
-differentiable (so that $f'(x;v)=\nabla f(x)^Tv$) we have
-$$\begin{Array}{rcl}
-  f(x+tv) 
-  & = & (x+tv)^TA^TA(x+tv) - 2y^TA(x+tv) + y^Ty\\
-  & = & x^TA^TAx + t^2v^TA^TAv + 2tx^TA^TAv - 2y^TAx - 2ty^TAv+y^Ty\\
-  & = & f(x) + t(2x^TA^TA- 2y^TA)v +t^2v^TA^TAv.
+If we can find the $w,a$ corresponding to a hyperplane that separates
+the data, we then have a decision function for classifiying elements
+of $\XX$: $f(x) = \sgn(w^Tx+a)$.  Before we look for such a
+hyperplane, we must address another issue.  If the data is linearly
+separable, then there are infinitely many choices of separating
+hyperplanes. 
+\begin{figure}[H]
+\centering
+\begin{asy}
+  include "3-SVM/ManyLinSep.asy";
+\end{asy}
+\caption{Many Separating Hyperplanes Exist}
+\end{figure}
+We will choose the hyperplane that maximizes a quantity called the
+\textit{geometric margin}.
+\begin{dfn}[Geometric Margin]
+  Let $H$ be a hyperplane that separates the data $(x_i,y_i)$ for
+  $i=1,\ldots,n$.  The geometric margin of this hyperplane is 
+  $$\min_i d(x_i,H),$$
+  the distance from the hyperplane to the closest data point.
+\end{dfn}
+Fix $w\in\RR^d$ and $a\in\RR$ with $y_i(w^Tx_i+a)>0$ for all $i$.
+Then we saw earlier that
+$$d(x_i,H) = \left|\frac{w^Tx_i+a}{\|w\|_2}\right| =
+\frac{y_i(w^Tx_i+a)}{\|w\|_2}.$$
+This gives us the following optimization problem:
+$$\begin{Array}{ll}
+  \text{maximize}_{w,a} & \min_i\frac{y_i(w^Tx_i+a)}{\|w\|_2}.
 \end{Array}$$
-Thus we have
-$$\frac{f(x+tv)-f(x)}{t} = (2x^TA^TA- 2y^TA)v + tv^TA^TAv.$$
-Taking the limit as $t\to0$ shows
-$$f'(x;v) = (2x^TA^TA- 2y^TA)v \implies \nabla f(x) = (2x^TA^TA-
-2y^TA)^T = 2A^TAx - 2A^Ty.$$
-Using this we can determine the critical points of $f$.
-Let's assume here that $A$ has full column rank.  Then $A^TA$ is
-invertible, and the unique critical point is
-$x = (A^TA)^{-1}A^Ty$.  As we will see later in the course, this is a
-global minimum since $f$ is convex (the \textit{Hessian} of $f$ satisfies $\nabla^2f(x) = 2A^TA\succ0$).
-
-\subsubsection{$(\star)$ Proving Differentiability}
-With a little extra work we can make the previous technique give a
-proof of differentiability.  Using the computation above, we can rewrite
-$f(x+v)$ as $f(x)$ plus terms depending on $v$:
-$$f(x+v) = f(x) + (2x^TA^TA- 2y^TA)v + v^TA^TAv.$$
-Note that
-$$\frac{v^TA^TAv}{\|v\|_2} = \frac{\|Av\|_2^2}{\|v\||_2} \leq
-\frac{\|A\|_2^2\|v\|_2^2}{\|v\|_2} = \|A\|_2^2\|v\|_2\to 0,$$
-as $\|v\|_2\to0$. (This section is starred since we used the matrix
-norm $\|A\|_2$ here.)
-This shows $f(x+v)$ above has the form
-$$f(x+v) = f(x) + \nabla f(x)^Tv + o(\|v\|_2).$$
-This proves that $f$ is differentiable and that 
-$$\nabla f(x) = 2A^TAx - 2A^Ty.$$
-Another method we could have used to establish differentiability is to
-observe that the partial derivatives are all continuous.  This relies
-on the following theorem.
-\begin{thm}
-  Let $f:\RR^n\to\RR$ and suppose $\partial_{x_i}f(x):\RR^n\to\RR$ is
-  continuous for all $x\in\RR^n$ and all $i=1,\ldots,n$.  Then $f$ is
-  differentiable. 
-\end{thm}
+We can rewrite this in a more standard form:
+$$\begin{Array}{ll}
+  \text{maximize}_{w,a,M} & M\\
+  \text{subject to} & \frac{y_i(w^Tx_i+a)}{\|w\|_2} \geq
+  M\quad\text{for all $i$.}
+\end{Array}$$
+\begin{figure}[H]
+\centering
+\begin{asy}
+  include "3-SVM/MaxMargin.asy";
+\end{asy}
+\caption{Maximum Margin Separating Hyperplane}
+\end{figure}
+Note above how the geometric margin is achieved on both sides of the optimal
+hyperplane.  This must be the case, as otherwise we could slightly
+move the hyperplane and obtain a better solution.
+The expression $y_i(w^Tx_i+a)/\|w\|_2$ allows us to choose any
+positive value for $\|w\|_2$ by changing $a$ accordingly (e.g., we can
+replace $w\to 2w$ and $a\to 2a$ and get the same value for all $(x_i,y_i)$).  Thus we can
+fix $\|w\|_2=1/M$ and obtain
+$$\begin{array}{ll}
+  \text{maximize}_{w,a} & 1/\|w\|_2\\
+  \text{subject to} & y_i(w^Tx_i+a) \geq 1\quad\text{for all $i$.}
+\end{array}$$
+To find the optimal $w,a$ we can instead solve the minimization
+problem
+$$\begin{array}{ll}
+  \text{minimize}_{w,a} & \|w\|_2^2\\
+  \text{subject to} & y_i(w^Tx_i+a) \geq 1\quad\text{for all $i$.}
+\end{array}$$
+This is a quadratic program that can be solved quickly on fairly large datasets.
+\subsection{Soft Margin SVM}
+The methods developed thus far require linearly separable data.  To
+remove this restriction, we will allow vectors to violate the
+geometric margin
+requirements, but at a penalty.  More precisely, we replace our
+previous SVM formulation
+$$\begin{array}{ll}
+  \text{minimize}_{w,a} & \|w\|_2^2\\
+  \text{subject to} & y_i(w^Tx_i+a) \geq 1\quad\text{for all $i$}
+\end{array}$$
+with
+$$\begin{array}{ll}
+  \text{minimize}_{w,a} & \|w\|_2^2 + \frac{C}{n}\sum_{i=1}^n\xi_i\\
+  \text{subject to} & y_i(w^Tx_i+a) \geq 1-\xi_i\quad\text{for all
+    $i$}\\
+  & \xi_i \geq 0 \quad\text{for all $i$.}
+\end{array}$$
+This is the standard formulation of a support vector machine, and is
+equivalent to the statement from the lecture.
+When $\xi_i>0$ the corresponding $x_i$ violates the geometric margin condition.
+The constant $C$ controls how much we penalize violations.
+Rewriting the condition as
+$$\frac{y_i(w^Tx_i+a)}{\|w\|_2} \geq \frac{1-\xi_i}{\|w\|_2}$$
+shows that $\xi_i$ measures the size of the violation in multiples of
+the geometric margin.  For example, $\xi_i=1$ means $x_i$ lies on the decision hyperplane
+$w^Tv+a=0$, and $\xi_i=3$ means $x_i$ lies 2 margin widths past the
+decision hyperplane. 
+\begin{figure}[H]
+\centering
+\begin{asy}
+  include "3-SVM/SoftMargin.asy";
+\end{asy}
+\caption{Soft Margin SVM (unlabeled points have $\xi_i=0$)}
+\end{figure}
+Recall from the treatment in class, that the minimizer $w$ will be a
+linear combination of some of the $x_i$, called support vectors.  More
+precisely, the support vectors will be some subset of the $x_i$ that
+either lie on the margin boundary ($y_i(w^Tx_i+a)=1$) or violate the
+margin boundary ($y_i(w^Tx_i+a)<1$, $\xi_i>0$).

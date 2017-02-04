@@ -29,8 +29,8 @@
 \end{enumerate}
 \subsection{Support Vector Machines}
 \subsubsection{Review of Geometry}
-If $v,w\in\RR^d$ then the component of $v$ in the direction $w$ is
-given by $\displaystyle{\frac{w^Tv}{\|w\|_2}}$.  This can also be thought of as the
+If $v,w\in\RR^d$ then the component (also called scalar projection) of $v$ in the direction $w$ is
+given by the scalar $\displaystyle{\frac{w^Tv}{\|w\|_2}}$.  This can also be thought of as the
 signed length of $v$ when orthogonally projected onto the line through
 the vector $w$.
 \begin{figure}[H]
@@ -166,8 +166,8 @@ $$\begin{array}{ll}
   \text{minimize}_{w,a} & \|w\|_2^2\\
   \text{subject to} & y_i(w^Tx_i+a) \geq 1\quad\text{for all $i$.}
 \end{array}$$
-This is a quadratic program that can be solved quickly on fairly large
-datasets.
+This is a quadratic program that can be solved by standard
+packages.
 
 Here the geometric margin is $\frac{1}{\|w\|_2}$ which is also the minimum of
 $\frac{y_i(w^Tx_i+a)}{\|w\|_2}$ over the training data.  The concept

@@ -22,7 +22,7 @@
 \item[]\Sol 
   \begin{enumerate}
   \item The data is linearly separable.
-  \item The data is separable with margin at least $M/\|w\|_2$.
+  \item The data is separable with geometric margin at least $M/\|w\|_2$.
   \end{enumerate}
   Both of these answers will be fleshed out in the upcoming sections.
 \end{solution}
@@ -166,7 +166,14 @@ $$\begin{array}{ll}
   \text{minimize}_{w,a} & \|w\|_2^2\\
   \text{subject to} & y_i(w^Tx_i+a) \geq 1\quad\text{for all $i$.}
 \end{array}$$
-This is a quadratic program that can be solved quickly on fairly large datasets.
+This is a quadratic program that can be solved quickly on fairly large
+datasets.
+
+Here the geometric margin is $\frac{1}{\|w\|_2}$ which is also the minimum of
+$\frac{y_i(w^Tx_i+a)}{\|w\|_2}$ over the training data.  The concept
+of margin used in class (also called \textit{functional margin}) is
+slightly different, but clearly related.  It is the value $y_i(w^Tx_i+a)$ denoting the
+score we give to a given training example.
 \subsection{Soft Margin SVM}
 The methods developed thus far require linearly separable data.  To
 remove this restriction, we will allow vectors to violate the

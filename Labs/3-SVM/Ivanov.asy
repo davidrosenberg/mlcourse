@@ -22,7 +22,7 @@ minus(-5.25,3);
 pair[] ws = {w,w-(3,0),w-(1,0)};
 real[] rs = {8.7,30,7};
 real[] bs = {-1.9,-1.25,-2};
-for (int i = 0; i < 3; ++i) {
+for (int i = 0; i < 2; ++i) {
   w = ws[i];
   real r = rs[i], b = bs[i];
   func f = fmake(-w.x/w.y,b*a*v);

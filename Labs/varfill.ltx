@@ -38,7 +38,7 @@ the vector $w$.
 \begin{asy}
   include "3-SVM/Component.asy";
 \end{asy}
-\caption{Component of $v_1,v_2$ in the direction $w$.}
+\caption{Component of $v_1,v_2$ in the direction $w$}
 \end{figure}
 Assuming $w\neq 0$ we can use this to interpret the set
 $$S=\{x\in\RR^d\mid w^Tx=b\}.$$
@@ -174,7 +174,7 @@ $\frac{y_i(w^Tx_i+a)}{\|w\|_2}$ over the training data.  The concept
 of margin used in class (also called \textit{functional margin}) is
 slightly different, but clearly related.  It is the value $y_i(w^Tx_i+a)$ denoting the
 score we give to a given training example.
-\subsection{Soft Margin SVM}
+\subsubsection{Soft Margin SVM}
 The methods developed thus far require linearly separable data.  To
 remove this restriction, we will allow vectors to violate the
 geometric margin
@@ -225,7 +225,7 @@ Consider the following two questions:
   sense to use the soft margin SVM to avoid overfitting. We will
   discuss this below.
 \end{solution}
-\item Explain geometrically what the following optimization determines.
+\item Explain geometrically what the following optimization problem computes:
 $$\begin{array}{ll}
   \text{minimize}_{w,a,\xi} & \frac{1}{n}\sum_{i=1}^n\xi_i\\
   \text{subject to} & y_i(w^Tx_i+a) \geq 1-\xi_i\quad\text{for all
@@ -268,7 +268,7 @@ classifiers that have a margin of at least $1/r$.
 \begin{asy}
   include "3-SVM/Ivanov.asy";
 \end{asy}
-\caption{Optimization Possibilities With Geometric Margin At Least $1/r$}
+\caption{Optimize Over Cases Where Margin Is At Least $1/r$}
 \end{figure}
 To see the value of regularization, consider the following examples.
 \begin{figure}[H]

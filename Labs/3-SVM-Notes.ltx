@@ -186,14 +186,16 @@ $$\begin{array}{ll}
 \end{array}$$
 with
 $$\begin{array}{ll}
-  \text{minimize}_{w,a} & \|w\|_2^2 + \frac{C}{n}\sum_{i=1}^n\xi_i\\
+  \text{minimize}_{w,a,\xi} & \|w\|_2^2 + \frac{C}{n}\sum_{i=1}^n\xi_i\\
   \text{subject to} & y_i(w^Tx_i+a) \geq 1-\xi_i\quad\text{for all
     $i$}\\
   & \xi_i \geq 0 \quad\text{for all $i$.}
 \end{array}$$
 This is the standard formulation of a support vector machine, and is
 equivalent to the statement from the lecture.
-When $\xi_i>0$ the corresponding $x_i$ violates the geometric margin condition.
+When $\xi_i>0$ the corresponding $x_i$ violates the geometric margin
+condition.
+Each $\xi_i$ is called a slack variable.
 The constant $C$ controls how much we penalize violations.
 Rewriting the condition as
 $$\frac{y_i(w^Tx_i+a)}{\|w\|_2} \geq \frac{1-\xi_i}{\|w\|_2}$$
@@ -213,3 +215,82 @@ linear combination of some of the $x_i$, called support vectors.  More
 precisely, the support vectors will be some subset of the $x_i$ that
 either lie on the margin boundary ($y_i(w^Tx_i+a)=1$) or violate the
 margin boundary ($y_i(w^Tx_i+a)<1$, $\xi_i>0$).
+\subsection{Regularization Interpretation}
+Consider the following two questions:
+\begin{enumerate}
+\item If your data is linearly separable, which SVM (hard margin or
+  soft margin) would you use?
+\begin{solution}
+\item[]\Sol While a hard margin SVM will work, it still often makes
+  sense to use the soft margin SVM to avoid overfitting. We will
+  discuss this below.
+\end{solution}
+\item Explain geometrically what the following optimization determines.
+$$\begin{array}{ll}
+  \text{minimize}_{w,a,\xi} & \frac{1}{n}\sum_{i=1}^n\xi_i\\
+  \text{subject to} & y_i(w^Tx_i+a) \geq 1-\xi_i\quad\text{for all
+    $i$}\\
+  & \|w\|_2^2 \leq r^2\\
+  & \xi_i \geq 0 \quad\text{for all $i$.}
+\end{array}$$
+\begin{solution}
+\item[]\Sol Minimizes the average slack over all decision functions
+  where the geometric margin is at least $1/r$.
+\end{solution}
+\end{enumerate}
+By dividing the soft margin objective by $C$ and writing $\lambda=1/C$ we obtain
+the equivalent minimization problem
+$$\begin{array}{ll}
+  \text{minimize}_{w,a,\xi} & \lambda \|w\|_2^2 + \frac{1}{n}\sum_{i=1}^n\xi_i\\
+  \text{subject to} & y_i(w^Tx_i+a) \geq 1-\xi_i\quad\text{for all
+    $i$}\\
+  & \xi_i \geq 0 \quad\text{for all $i$.}
+\end{array}$$
+This has the form of a regularized objective where the average slack
+is the loss and $\lambda\|w\|_2^2$ is the $L_2$ regularization.  By
+choosing $\lambda$ we determine
+the trade-off between minimizing the slack of the violations,
+while keeping the other points at a reasonable margin
+from the decision boundary.
+As with linear regression, there is an equivalent Ivanov formulation:
+$$\begin{array}{ll}
+  \text{minimize}_{w,a,\xi} & \frac{1}{n}\sum_{i=1}^n\xi_i\\
+  \text{subject to} & y_i(w^Tx_i+a) \geq 1-\xi_i\quad\text{for all
+    $i$}\\
+  & \|w\|_2^2 \leq r^2\\
+  & \xi_i \geq 0 \quad\text{for all $i$.}
+\end{array}$$
+Recall that the geometric margin is $1/\|w\|_2$.  Thus the Ivanov
+regularized problem is to minimize the average slack, but only among
+classifiers that have a margin of at least $1/r$.
+\begin{figure}[H]
+\centering
+\begin{asy}
+  include "3-SVM/Ivanov.asy";
+\end{asy}
+\caption{Optimization Possibilities With Geometric Margin At Least $1/r$}
+\end{figure}
+To see the value of regularization, consider the following examples.
+\begin{figure}[H]
+\centering
+\begin{asy}
+  include "3-SVM/SmallMargin.asy";
+  size(8cm);
+\end{asy}
+\caption{Overfitting: Tight Margin With No Misclassifications}
+\end{figure}
+\begin{figure}[H]
+\centering
+\begin{asy}
+  include "3-SVM/LargeMargin.asy";
+  size(8cm);
+\end{asy}
+\caption{Some Training Errors But Large Margin}
+\end{figure}
+Although the first figure above has no misclassifications on the
+training set, it has an incredibly small geometric margin.  As a
+result, we may be willing to suffer a single training mistake in
+return for a large buffer region for most training examples.  
+Note that the the data here was linearly separable, but we still may prefer the
+soft margin SVM.  By using cross-validation we can use data to find
+the correct tradeoff.

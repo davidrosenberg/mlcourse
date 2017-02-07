@@ -740,7 +740,237 @@ tiny{Plots courtesy of Ningshan Zhang.}}
 \end_layout
 
 \begin_layout Section
-The Grouping Issue
+Linearly Dependent Features
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Suppose We Have 2 Equal Features
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Input features: 
+\begin_inset Formula $x_{1},x_{2}\in\reals$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Outcome: 
+\begin_inset Formula $y\in\reals$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Linear prediction functions 
+\begin_inset Formula $f(x)=w_{1}x_{2}+w_{2}x_{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Suppose 
+\begin_inset Formula $x_{1}=x_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Then all functions with 
+\begin_inset Formula $w_{1}+w_{2}=k$
+\end_inset
+
+ are the same.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+give same predictions and have same empirical risk
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+What function will we select if we do ERM with 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ or 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ constraint?
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Equal Features, 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ Constraint
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/L1L2/L2Eq.pdf
+	height 40theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Suppose the line 
+\begin_inset Formula $w_{1}+w_{2}=2\sqrt{2}+3.5$
+\end_inset
+
+ corresponds to the empirical risk minimizers.
+\end_layout
+
+\begin_layout Itemize
+Empirical risk decreases as we move away from these parameter settings
+\end_layout
+
+\begin_layout Itemize
+Intersection of 
+\begin_inset Formula $w_{1}+w_{2}=2\sqrt{2}$
+\end_inset
+
+ and the norm ball 
+\begin_inset Formula $\|w\|_{2}\le2$
+\end_inset
+
+ is ridge solution.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Note that 
+\begin_inset Formula $w_{1}=w_{2}$
+\end_inset
+
+ at the solution
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Equal Features, 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ Constraint
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/L1L2/L1Eq.pdf
+	height 40theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Suppose the line 
+\begin_inset Formula $w_{1}+w_{2}=5.5$
+\end_inset
+
+ corresponds to the empirical risk minimizers.
+\end_layout
+
+\begin_layout Itemize
+Empirical risk decreases as we move away from these parameter settings
+\end_layout
+
+\begin_layout Itemize
+Intersection of 
+\begin_inset Formula $w_{1}+w_{2}=2$
+\end_inset
+
+ and the norm ball 
+\begin_inset Formula $\|w\|_{1}\le2$
+\end_inset
+
+ is lasso solution.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Note that the solution set is 
+\begin_inset Formula $\left\{ \left(w_{1},w_{2}\right):w_{1}+w_{2}=2,w_{1},w_{2}\ge0\right\} $
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Section
+Correlated Features and the Grouping Issue
 \end_layout
 
 \begin_layout Frame
@@ -1404,7 +1634,7 @@ relax
 \backslash
 footnotetext{
 \backslash
-tiny{Example based on Section 4.2 in Hastie et al's 
+tiny{Example from Section 4.2 in Hastie et al's 
 \backslash
 emph{Statistical Learning with Sparsity}.}}
 \end_layout
@@ -1521,7 +1751,7 @@ relax
 \backslash
 footnotetext{
 \backslash
-tiny{Example based on Section 4.2 in Hastie et al's 
+tiny{Example from Section 4.2 in Hastie et al's 
 \backslash
 emph{Statistical Learning with Sparsity}.}}
 \end_layout

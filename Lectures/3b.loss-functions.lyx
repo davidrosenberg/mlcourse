@@ -775,9 +775,6 @@ Loss Functions for Regression
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -786,13 +783,9 @@ Loss Functions for Regression
 In general, loss function may take the form
 \begin_inset Formula 
 \[
-\left(\hat{y},y\right)\mapsto\ell(\hat{y},y)
+\left(\hat{y},y\right)\mapsto\ell(\hat{y},y)\in\reals
 \]
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -807,44 +800,37 @@ In general, loss function may take the form
 \begin_layout Itemize
 Regression losses usually only depend on the 
 \series bold
-residual:
-\series default
- 
-\begin_inset Formula 
-\[
-r=y-\hat{y}
-\]
-
+residual 
+\begin_inset Formula $r=y-\hat{y}$
 \end_inset
 
-
-\begin_inset Formula 
-\[
-\left(\hat{y},y\right)\mapsto\ell(r)=\ell(y-\hat{y})
-\]
-
-\end_inset
-
-
-\begin_inset Separator latexpar
-\end_inset
-
-
+.
 \end_layout
 
-\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
-When would you 
+Loss 
+\begin_inset Formula $\ell(\hat{y},y)$
+\end_inset
+
+ is called 
 \series bold
-not
+distance-based 
 \series default
- want a translation-invariant loss?
-\begin_inset Separator latexpar
+if it
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+only depends on the residual: 
+\begin_inset Formula 
+\[
+\ell(\hat{y},y)=\psi(y-\hat{y})\quad\text{for some \psi:\reals\to\reals}
+\]
+
 \end_inset
 
 
@@ -856,14 +842,160 @@ not
 \end_layout
 
 \end_deeper
+\begin_layout Enumerate
+loss is zero when residual is 
+\begin_inset Formula $0$
+\end_inset
+
+: 
+\begin_inset Formula 
+\[
+\psi(0)=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Distance-Based Losses are Translation Invariant
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Itemize
-Often you can transform your response 
+Distance-based losses are translation-invariant.
+ That is,
+\begin_inset Formula 
+\[
+\ell(\hat{y}+a,y+a)=\ell\left(\hat{y},y\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+When might you not want to use a translation-invariant loss?
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+e.g.
+ Sometimes relative error is a more natural loss (but not translation-invariant)
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+:
+\begin_inset Formula 
+\begin{eqnarray*}
+\frac{\hat{y}-y}{y} & = & \hat{\frac{y}{y}}-1\\
+\end{eqnarray*}
+
+\end_inset
+
+If we transform 
+\begin_inset Formula $y\mapsto$
+\end_inset
+
+
+\begin_inset Formula $\log y$
+\end_inset
+
+ and predict 
+\begin_inset Formula $\log\hat{y},$
+\end_inset
+
+ then residual is 
+\begin_inset Formula 
+\[
+\log y-\log\hat{y}=\log\left(\frac{y}{\hat{y}}\right)
+\]
+
+\end_inset
+
+If we take 
+\begin_inset Formula $\psi(x)=e^{-x}-1$
+\end_inset
+
+, then 
+\begin_inset Formula 
+\[
+\ell\left(\log\hat{y},\log y\right)=\psi\left(\log y-\log\hat{y}\right)=\frac{\hat{y}-y}{y}
+\]
+
+\end_inset
+
+and 
+\begin_inset Formula $\psi(0)=0$
+\end_inset
+
+, so relative error can be written as a distance-based loss after log-transform\SpecialChar endofsentence
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Often you can transform response 
 \begin_inset Formula $y$
 \end_inset
 
- so it's translation-invariant.
- (e.g.
+ so it's translation-invariant (e.g.
  log transform)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+See homework or concept check questions.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+distance-based loss coming from Steinwart's SVM book
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
@@ -882,10 +1014,6 @@ status open
 Some Losses for Regression
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -930,10 +1058,6 @@ Square
 \end_inset
 
  
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -960,10 +1084,6 @@ Laplace
 \end_inset
 
  
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -984,7 +1104,7 @@ Laplace
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\hat{y}$
+\begin_inset Formula $y$
 \end_inset
 
 
@@ -996,7 +1116,7 @@ Laplace
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $y$
+\begin_inset Formula $\hat{y}$
 \end_inset
 
 
@@ -1034,7 +1154,7 @@ Laplace
 \begin_inset Text
 
 \begin_layout Plain Layout
-0
+1
 \end_layout
 
 \end_inset
@@ -1043,7 +1163,7 @@ Laplace
 \begin_inset Text
 
 \begin_layout Plain Layout
-1
+0
 \end_layout
 
 \end_inset
@@ -1072,7 +1192,7 @@ Laplace
 \begin_inset Text
 
 \begin_layout Plain Layout
-0
+5
 \end_layout
 
 \end_inset
@@ -1081,7 +1201,7 @@ Laplace
 \begin_inset Text
 
 \begin_layout Plain Layout
-5
+0
 \end_layout
 
 \end_inset
@@ -1110,7 +1230,7 @@ Laplace
 \begin_inset Text
 
 \begin_layout Plain Layout
-0
+10
 \end_layout
 
 \end_inset
@@ -1119,7 +1239,7 @@ Laplace
 \begin_inset Text
 
 \begin_layout Plain Layout
-10
+0
 \end_layout
 
 \end_inset
@@ -1148,7 +1268,7 @@ Laplace
 \begin_inset Text
 
 \begin_layout Plain Layout
-0
+50
 \end_layout
 
 \end_inset
@@ -1157,7 +1277,7 @@ Laplace
 \begin_inset Text
 
 \begin_layout Plain Layout
-50
+0
 \end_layout
 
 \end_inset
@@ -1188,7 +1308,21 @@ Laplace
 
 \end_layout
 
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
 \end_deeper
+\end_deeper
+\begin_layout Itemize
+Outliers typically have large residuals.
+\end_layout
+
+\begin_layout Itemize
+Square loss much more affected by outliers than absolute loss.
+\end_layout
+
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator parbreak
@@ -1205,10 +1339,6 @@ status open
 Loss Function Robustness
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1274,10 +1404,6 @@ Some Losses for Regression
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1318,11 +1444,11 @@ Square
 \begin_inset Formula $\ell(r)=r^{2}$
 \end_inset
 
- (not robust)
-\begin_inset Separator latexpar
-\end_inset
-
-
+ (
+\emph on
+not robust
+\emph default
+)
 \end_layout
 
 \begin_deeper
@@ -1340,44 +1466,28 @@ Absolute
 \series bold
 Laplace
 \series default
- or 
-\begin_inset Formula $\ell_{1}$
-\end_inset
-
  Loss: 
 \begin_inset Formula $\ell(r)=\left|r\right|$
 \end_inset
 
- (not differentiable)
-\begin_inset Separator latexpar
-\end_inset
-
-
+ (
+\emph on
+not differentiable
+\emph default
+)
 \end_layout
 
 \begin_deeper
-\begin_layout Pause
-
-\end_layout
-
 \begin_layout Itemize
 gives 
 \series bold
 median regression
-\series default
-
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
-\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
 \end_deeper
 \begin_layout Itemize
 
@@ -1392,24 +1502,50 @@ Huber
 \begin_inset Formula $\left|r\right|>\delta$
 \end_inset
 
+ (
+\emph on
+robust and differentiable
+\emph default
+)
+\end_layout
 
-\begin_inset Separator latexpar
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/loss-functions/fig7.6b.pdf
+	height 35theight%
+
 \end_inset
 
 
 \end_layout
 
-\begin_deeper
 \begin_layout Itemize
-robust and differentiable
+x-axis is the residual 
+\begin_inset Formula $y-\hat{y}$
+\end_inset
+
+.
 \end_layout
 
-\end_deeper
 \begin_layout Standard
 \align center
-\begin_inset Graphics
-	filename ../Figures/loss-functions/fig7.6b.pdf
-	width 40text%
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Would be nice to say something about the efficiency of Huber, 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ losses.
+ (i.e.
+ the sample complexity)
+\end_layout
 
 \end_inset
 
@@ -1446,20 +1582,20 @@ The Classification Problem
 \end_inset
 
 
-\begin_inset Separator latexpar
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Outcome space 
+\begin_inset Formula $\cy=\left\{ -1,1\right\} $
 \end_inset
 
 
 \end_layout
 
-\begin_deeper
 \begin_layout Itemize
 Action space 
-\begin_inset Formula $\ca=\left\{ -1,1\right\} \qquad$
-\end_inset
-
-Output space 
-\begin_inset Formula $\cy=\left\{ -1,1\right\} $
+\begin_inset Formula $\ca=\left\{ -1,1\right\} $
 \end_inset
 
 
@@ -1483,10 +1619,6 @@ Output space
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1496,7 +1628,11 @@ Output space
 
 \end_deeper
 \begin_layout Itemize
-But let's allow real-valued predictions 
+But let's allow 
+\series bold
+real-valued predictions
+\series default
+ 
 \begin_inset Formula $f:\cx\to\reals$
 \end_inset
 
@@ -1525,13 +1661,9 @@ f<0\;\implies & \mbox{Predict }-1
 status open
 
 \begin_layout Plain Layout
-The Classification Problem: Real-Valued Predictions
+The Score Function
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1551,12 +1683,12 @@ Output space
 \end_layout
 
 \begin_layout Itemize
-Prediction function 
+
+\series bold
+Real-valued prediction function
+\series default
+ 
 \begin_inset Formula $f:\cx\to\reals$
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1582,15 +1714,19 @@ score
 \end_inset
 
 .
- Generally, the magnitude of the score represents the 
-\series bold
-confidence of our prediction
-\series default
-.
-\begin_inset Separator latexpar
+ 
+\end_layout
+
+\begin_layout Itemize
+In this context, 
+\begin_inset Formula $f$
 \end_inset
 
-
+ may be called a 
+\series bold
+score function
+\series default
+.
 \end_layout
 
 \begin_deeper
@@ -1599,19 +1735,50 @@ confidence of our prediction
 \end_layout
 
 \end_deeper
+\begin_layout Itemize
+Intuitively, magnitude of the score represents the 
+\series bold
+confidence of our prediction
+\series default
+.
+\end_layout
+
+\end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
 \end_layout
 
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Margin
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Definition
 The 
 \series bold
 margin
 \series default
- on an example 
+ (or 
+\series bold
+functional margin
+\series default
+)
+\series bold
+ 
+\series default
+on an example 
 \begin_inset Formula $(x,y)$
 \end_inset
 
@@ -1620,44 +1787,52 @@ margin
 \end_inset
 
 .
- The margin is a measure of how 
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+The margin is a measure of how 
 \series bold
 correct
 \series default
  we are.
  
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
-\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 We want to 
 \series bold
 maximize the margin
 \series default
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
-\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 Most classification losses depend only on the margin.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+(In Lab, we will discuss a related concept called the 
+\series bold
+geometric margin
+\series default
+.)
 \end_layout
 
 \end_deeper
@@ -1676,10 +1851,6 @@ status open
 The Classification Problem: Real-Valued Predictions
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1758,10 +1929,6 @@ Classification Losses
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1801,10 +1968,6 @@ status open
 Classification Losses
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1850,10 +2013,6 @@ Classification Losses
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1896,10 +2055,6 @@ Classification Losses
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1942,10 +2097,6 @@ Classification Losses
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1990,10 +2141,6 @@ status open
 Classification Losses
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2006,10 +2153,6 @@ Zero-One loss:
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -2017,8 +2160,20 @@ Zero-One loss:
 \begin_inset Graphics
 	filename ../Figures/loss-functions/loss.Zero_One.png
 	lyxscale 30
-	width 85text%
+	height 60theight%
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+x-axis is 
+\series bold
+margin
+\series default
+: 
+\begin_inset Formula $m>0\iff\text{correct classification}$
 \end_inset
 
 
@@ -2043,20 +2198,12 @@ Classification Losses
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
 \begin_layout Standard
 SVM/Hinge loss: 
 \begin_inset Formula $\loss_{\text{Hinge}}=\max\left\{ 1-m,0\right\} =\left(1-m\right)_{+}$
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2067,7 +2214,7 @@ SVM/Hinge loss:
 \begin_inset Graphics
 	filename ../Figures/loss-functions/loss.Zero_One.Hinge.png
 	lyxscale 30
-	width 70text%
+	height 60theight%
 
 \end_inset
 
@@ -2089,7 +2236,7 @@ upper bound
 
  loss.
  Not differentiable at 
-\begin_inset Formula $1$
+\begin_inset Formula $m=1$
 \end_inset
 
 .
@@ -2132,10 +2279,6 @@ status open
 (Soft Margin) Linear Support Vector Machine 
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2192,20 +2335,12 @@ Classification Losses
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
 \begin_layout Standard
 Logistic/Log loss: 
 \begin_inset Formula $\loss_{\text{Logistic}}=\log\left(1+e^{-m}\right)$
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2216,7 +2351,7 @@ Logistic/Log loss:
 \begin_inset Graphics
 	filename ../Figures/loss-functions/loss.Zero_One.Hinge.Logistic.png
 	lyxscale 30
-	width 70text%
+	height 70theight%
 
 \end_inset
 
@@ -2225,7 +2360,7 @@ Logistic/Log loss:
 
 \begin_layout Standard
 Logistic loss is differentiable.
- Never enough margin for logistic loss.
+ Logistic loss always wants more margin (loss never 0).
 \begin_inset Note Note
 status open
 
@@ -2254,10 +2389,6 @@ status open
 What About Square Loss for Classification?
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2331,10 +2462,6 @@ What About Square Loss for Classification?
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2343,7 +2470,7 @@ What About Square Loss for Classification?
 \begin_inset Graphics
 	filename ../Figures/loss-functions/loss.Zero_One.Hinge.Logistic.Square.png
 	lyxscale 30
-	width 70text%
+	height 60theight%
 
 \end_inset
 
@@ -2359,9 +2486,10 @@ Heavily penalizes outliers.
 \end_layout
 
 \begin_layout Standard
-Seems to have higher sample complexity than hinge & logistic
+Seems to have higher sample complexity (i.e.
+ needs more data) than hinge & logistic
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -2418,10 +2546,6 @@ Stochastic Gradient Descent (SGD)
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2433,10 +2557,6 @@ status open
 Stochastic Gradient Descent
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2453,10 +2573,6 @@ initialize
 
 \begin_layout Itemize
 repeat
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2497,10 +2613,6 @@ SGD for Hinge Loss and Linear Predictors
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2510,10 +2622,6 @@ Consider linear hypothesis space:
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2540,10 +2648,6 @@ Gradient of hinge loss
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2558,10 +2662,6 @@ A point with margin
 \end_inset
 
  is correctly classified.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2593,10 +2693,6 @@ SGD for Hinge Loss and Linear Predictors
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2621,10 +2717,6 @@ w^{(t)} & \mbox{otherwise}
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2642,10 +2734,6 @@ w^{(t)} & \mbox{otherwise}
 \end_inset
 
 's with margin error when selected.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2684,10 +2772,6 @@ where
 \end_inset
 
  are the support vectors.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2720,10 +2804,6 @@ sparse
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -2738,10 +2818,6 @@ status open
 Predicting with Support Vectors
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2766,10 +2842,6 @@ To evaluate
 \end_inset
 
 , we could either
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2832,10 +2904,6 @@ status open
 Population Minimizers
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 

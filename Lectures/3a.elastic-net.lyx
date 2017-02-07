@@ -1450,7 +1450,7 @@ Suppose
 \begin{eqnarray*}
 z_{1},z_{2} & \sim & \cn(0,1)\mbox{ (independent)}\\
 \eps_{0},\eps_{1},\ldots,\eps_{6} & \sim & \cn(0,1)\mbox{ (independent)}\\
-\pause y & = & 3z_{1}-1.5z_{2}+\eps_{0}\\
+\pause y & = & 3z_{1}-1.5z_{2}+2\eps_{0}\\
 \pause x_{j} & = & \begin{cases}
 z_{1}+\eps_{j}/5 & \mbox{ for }j=1,2,3\\
 z_{2}+\eps_{j}/5 & \mbox{ for }j=4,5,6

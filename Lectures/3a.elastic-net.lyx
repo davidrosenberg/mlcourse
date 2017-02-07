@@ -33,7 +33,16 @@
 \index_command default
 \paperfontsize default
 \spacing single
-\use_hyperref false
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
 \papersize default
 \use_geometry true
 \use_package amsmath 2
@@ -740,8 +749,766 @@ tiny{Plots courtesy of Ningshan Zhang.}}
 \end_layout
 
 \begin_layout Section
-The Grouping Issue
+Linearly Dependent Features
 \end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Suppose We Have 2 Equal Features
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Input features: 
+\begin_inset Formula $x_{1},x_{2}\in\reals$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Outcome: 
+\begin_inset Formula $y\in\reals$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Linear prediction functions 
+\begin_inset Formula $f(x)=w_{1}x_{2}+w_{2}x_{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Suppose 
+\begin_inset Formula $x_{1}=x_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Then all functions with 
+\begin_inset Formula $w_{1}+w_{2}=k$
+\end_inset
+
+ are the same.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+give same predictions and have same empirical risk
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+What function will we select if we do ERM with 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ or 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ constraint?
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Equal Features, 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ Constraint
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/L1L2/L2Eq.pdf
+	height 40theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Suppose the line 
+\begin_inset Formula $w_{1}+w_{2}=2\sqrt{2}+3.5$
+\end_inset
+
+ corresponds to the empirical risk minimizers.
+\end_layout
+
+\begin_layout Itemize
+Empirical risk decreases as we move away from these parameter settings
+\end_layout
+
+\begin_layout Itemize
+Intersection of 
+\begin_inset Formula $w_{1}+w_{2}=2\sqrt{2}$
+\end_inset
+
+ and the norm ball 
+\begin_inset Formula $\|w\|_{2}\le2$
+\end_inset
+
+ is ridge solution.
+\end_layout
+
+\begin_layout Itemize
+Note that 
+\begin_inset Formula $w_{1}=w_{2}$
+\end_inset
+
+ at the solution
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Equal Features, 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ Constraint
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/L1L2/L1Eq.pdf
+	height 40theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Suppose the line 
+\begin_inset Formula $w_{1}+w_{2}=5.5$
+\end_inset
+
+ corresponds to the empirical risk minimizers.
+\end_layout
+
+\begin_layout Itemize
+Intersection of 
+\begin_inset Formula $w_{1}+w_{2}=2$
+\end_inset
+
+ and the norm ball 
+\begin_inset Formula $\|w\|_{1}\le2$
+\end_inset
+
+ is lasso solution.
+\end_layout
+
+\begin_layout Itemize
+Note that the solution set is 
+\begin_inset Formula $\left\{ \left(w_{1},w_{2}\right):w_{1}+w_{2}=2,w_{1},w_{2}\ge0\right\} $
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Linearly Related Features
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Same setup, now suppose 
+\begin_inset Formula $x_{1}=2x_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Then all functions with 
+\begin_inset Formula $w_{1}+2w_{2}=k$
+\end_inset
+
+ are the same.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+give same predictions and have same empirical risk
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+What function will we select if we do ERM with 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ or 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ constraint?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Suppose the 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ solution is on the line 
+\begin_inset Formula $w_{1}+2w_{2}=k$
+\end_inset
+
+.
+ Then we know the solution minimizes 
+\begin_inset Formula $w_{1}^{2}+w_{2}^{2}$
+\end_inset
+
+ on that line.
+ Plugging in, this is minimized at 
+\begin_inset Formula $w_{1}=k/5$
+\end_inset
+
+ and 
+\begin_inset Formula $w_{2}=\left[k-\left(k/5\right)\right]/2=2k/5$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $w_{2}/w_{1}=2$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Linearly Related Features, 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ Constraint
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/L1L2/L2Doub.pdf
+	height 40theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Intersection of 
+\begin_inset Formula $w_{1}+2w_{2}=10\sqrt{5}$
+\end_inset
+
+ and the norm ball 
+\begin_inset Formula $\|w\|_{2}\le2$
+\end_inset
+
+ is ridge solution.
+\end_layout
+
+\begin_layout Itemize
+At solution, 
+\begin_inset Formula $w_{2}=2w_{1}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Linearly Related Features, 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ Constraint
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/L1L2/L1Doub.pdf
+	height 40theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Intersection of 
+\begin_inset Formula $w_{1}+2w_{2}=4$
+\end_inset
+
+ and the norm ball 
+\begin_inset Formula $\|w\|_{1}\le2$
+\end_inset
+
+ is lasso solution.
+\end_layout
+
+\begin_layout Itemize
+Solution is now a corner of the 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ ball, corresonding to a sparse solution.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Linearly Dependent Features: Take Away
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For identical features
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ regularization spreads weight arbitrarily (all weights same sign)
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ regularization spreads weight evenly 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Linearly related features
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ regularization chooses variable with larger scale, 0 weight to others
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ prefers variables with larger scale – spreads weight inversely proportional
+ to scale
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Empirical Risk for Square Loss and Linear Predictors
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Recall 
+\begin_inset CommandInset href
+LatexCommand href
+name "our discussion"
+target "https://davidrosenberg.github.io/mlcourse/Lectures/2b.L1L2-regularization.pdf#page=23"
+
+\end_inset
+
+ of linear predictors 
+\begin_inset Formula $f(x)=w^{T}x$
+\end_inset
+
+ and square loss.
+\end_layout
+
+\begin_layout Itemize
+Sets of 
+\begin_inset Formula $w$
+\end_inset
+
+ giving same empirical risk (i.e.
+ level sets) formed ellipsoids around the ERM.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{KPM Fig.
+ 13.3}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/L1L2/l1LossConstraintPic.png
+	lyxscale 60
+	height 50theight%
+
+\end_inset
+
+
+\begin_inset VSpace -0.3cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+With 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+ linearly related, we get a degenerate ellipse.
+\end_layout
+
+\begin_layout Itemize
+That's why level sets were lines (actually pairs of lines, one on each side
+ of ERM).
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Correlated Features – Same Scale
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+ are highly correlated and the same scale.
+\end_layout
+
+\begin_layout Itemize
+This is quite typical in real data, after normalizing data.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Nothing degenerate here, so level sets are ellipsoids.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+But, the higher the correlation, the closer to degenerate we get.
+\end_layout
+
+\begin_layout Itemize
+That is, ellipsoids keep stretching out, getting closer to two parallel
+ lines.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Correlated Features, 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ Regularization
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/L1L2/L1Corr.pdf
+	lyxscale 70
+	height 40theight%
+
+\end_inset
+
+
+\begin_inset space \hspace{}
+\length 20text%
+\end_inset
+
+
+\begin_inset Graphics
+	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/L1L2/L1Corr2.pdf
+	lyxscale 70
+	height 40theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Intersection could be anywhere on the top right edge.
+ 
+\end_layout
+
+\begin_layout Itemize
+Minor perturbations can drastically change intersection point – very unstable
+ solution.
+\end_layout
+
+\begin_layout Itemize
+Makes division of weight among highly correlated features (of same scale)
+ seem arbitrary.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If 
+\begin_inset Formula $x_{1}\approx2x_{2}$
+\end_inset
+
+, ellipse changes orientation and we probably hit a corner.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Note Note
+status collapsed
 
 \begin_layout Frame
 \begin_inset Argument 4
@@ -820,7 +1587,7 @@ but we always have
 
 \end_deeper
 \end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Separator parbreak
 \end_inset
 
@@ -900,7 +1667,7 @@ What if we introduce
 \end_layout
 
 \end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Separator parbreak
 \end_inset
 
@@ -958,7 +1725,7 @@ Consider the
  norms of various solutions:
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="4">
@@ -1203,7 +1970,7 @@ Consider the
 \end_layout
 
 \begin_deeper
-\begin_layout Pause
+\begin_layout Plain Layout
 \begin_inset Note Note
 status open
 
@@ -1230,74 +1997,13 @@ Picture proof: Level sets of loss are lines of the form
 \end_layout
 
 \end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
 \end_inset
 
 
 \end_layout
 
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Duplicate Features: Take Away
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-For identical features
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-\begin_inset Formula $\ell_{1}$
-\end_inset
-
- regularization spreads weight arbitrarily (all weights same sign)
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Formula $\ell_{2}$
-\end_inset
-
- regularization spreads weight evenly 
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Extrapolation to correlated variables:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-\begin_inset Formula $\ell_{1}$
-\end_inset
-
- regularization may choose just one variable from a group and ignore the
- rest
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Formula $\ell_{2}$
-\end_inset
-
- tends to spread weight roughly equally among correlated variables
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
+\begin_layout Section
+Correlated Features and the Grouping Issue
 \end_layout
 
 \begin_layout Frame
@@ -1404,7 +2110,7 @@ relax
 \backslash
 footnotetext{
 \backslash
-tiny{Example based on Section 4.2 in Hastie et al's 
+tiny{Example from Section 4.2 in Hastie et al's 
 \backslash
 emph{Statistical Learning with Sparsity}.}}
 \end_layout
@@ -1521,7 +2227,7 @@ relax
 \backslash
 footnotetext{
 \backslash
-tiny{Example based on Section 4.2 in Hastie et al's 
+tiny{Example from Section 4.2 in Hastie et al's 
 \backslash
 emph{Statistical Learning with Sparsity}.}}
 \end_layout
@@ -1564,23 +2270,8 @@ Lasso regularization paths:
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../Figures/L1L2/L1regpaths-correlated-vars.png
-	lyxscale 60
+	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/L1L2/L1regpaths-correlated-vars.pdf
 	height 60theight%
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-One of the variables in the blue group is 
-\begin_inset Formula $0$
-\end_inset
-
- the whole way.
-\end_layout
 
 \end_inset
 
@@ -1588,42 +2279,17 @@ One of the variables in the blue group is
 \end_layout
 
 \begin_layout Itemize
-This is not a good outcome – why?
+Lines with the same color correspond to features with essentially the same
+ information
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-let
-\backslash
-thefootnote
-\backslash
-relax
-\backslash
-footnotetext{
-\backslash
-tiny{From Figure 4.1 of Hastie et al's 
-\backslash
-emph{Statistical Learning with Sparsity}.}}
-\end_layout
-
-\end_inset
-
-
+\begin_layout Itemize
+Distribution of weight among them seems almost arbitrary
 \end_layout
 
 \end_deeper
-\begin_layout Frame
-
-\end_layout
-
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1644,7 +2310,8 @@ Hedge Bets When Variables Highly Correlated
 
 \begin_deeper
 \begin_layout Itemize
-When variables are highly correlated, 
+When variables are highly correlated (and same scale, after normalization),
+ 
 \end_layout
 
 \begin_deeper
@@ -1653,13 +2320,17 @@ we want to give them roughly the same weight.
 \end_layout
 
 \end_deeper
+\begin_layout Pause
+
+\end_layout
+
 \begin_layout Itemize
 Why?
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-let their error cancel out
+Let their error cancel out
 \end_layout
 
 \end_deeper
@@ -1671,39 +2342,9 @@ let their error cancel out
 How can we get the weight spread more evenly?
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-let
-\backslash
-thefootnote
-\backslash
-relax
-\backslash
-footnotetext{
-\backslash
-tiny{From Figure 4.1 of Hastie et al's 
-\backslash
-emph{Statistical Learning with Sparsity}.}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \end_deeper
-\begin_layout Frame
-
-\end_layout
-
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1747,10 +2388,159 @@ elastic net
 We expect correlated random variables to have similar coefficients.
 \end_layout
 
-\begin_layout Pause
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
 
 \end_layout
 
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Highly Correlated Features, Elastic Net Constraint
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/L1L2/EnetCorr.pdf
+	height 40theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Elastic net solution is closer to 
+\begin_inset Formula $w_{2}=w_{1}$
+\end_inset
+
+ line, despite high correlation.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Elastic Net - 
+\begin_inset Quotes eld
+\end_inset
+
+Sparse Regions
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Fig from 
+\backslash
+href{https://arxiv.org/abs/1411.3230}{Mairal et al.'s Sparse Modeling for Image
+ and Vision Processing} Fig 1.9}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/L1L2/projections-to-ElasticNetBall.png
+	lyxscale 40
+	height 50theight%
+
+\end_inset
+
+
+\begin_inset VSpace -0.3cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Suppose design matrix 
+\begin_inset Formula $X$
+\end_inset
+
+ is orthogonal, so 
+\begin_inset Formula $X^{T}X=I$
+\end_inset
+
+, and contours are circles (and features uncorrelated)
+\end_layout
+
+\begin_layout Itemize
+Then OLS solution in green or red regions implies elastic-net constrained
+ solution will be at corner
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Elastic Net – A Theorem for Correlated Variables
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Theorem
 \begin_inset Foot
 status open
@@ -1835,17 +2625,16 @@ Elastic Net Results on Model
 
 \begin_deeper
 \begin_layout Standard
+\align center
 \begin_inset Graphics
-	filename ../Figures/L1L2/L1regpaths-correlated-vars.png
-	lyxscale 60
+	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/L1L2/L1regpaths-correlated-vars.pdf
 	height 60theight%
 
 \end_inset
 
 
 \begin_inset Graphics
-	filename ../Figures/L1L2/elasticnet-correlated-vars.png
-	lyxscale 60
+	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/L1L2/elasticNetregpaths-correlated-vars.pdf
 	height 60theight%
 
 \end_inset
@@ -1871,29 +2660,6 @@ Ratio of
 \end_inset
 
 .
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-let
-\backslash
-thefootnote
-\backslash
-relax
-\backslash
-footnotetext{
-\backslash
-tiny{From Figure 4.1 of Hastie et al's 
-\backslash
-emph{Statistical Learning with Sparsity}.}}
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \end_deeper
@@ -1902,6 +2668,11 @@ emph{Statistical Learning with Sparsity}.}}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Section
+\start_of_appendix
+Extra Pictures
 \end_layout
 
 \begin_layout Frame
@@ -1917,7 +2688,6 @@ Elastic Net vs Lasso Norm Ball
 
 \end_layout
 
-\begin_deeper
 \begin_layout Standard
 \align center
 \begin_inset Graphics
@@ -1951,18 +2721,6 @@ tiny{From Figure 4.2 of Hastie et al's
 emph{Statistical Learning with Sparsity}.}}
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Frame
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Separator parbreak
 \end_inset
 
 

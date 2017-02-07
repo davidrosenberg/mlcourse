@@ -2007,17 +2007,6 @@ Correlated Features and the Grouping Issue
 \end_layout
 
 \begin_layout Frame
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
 \begin_inset Argument 4
 status open
 
@@ -2399,10 +2388,159 @@ elastic net
 We expect correlated random variables to have similar coefficients.
 \end_layout
 
-\begin_layout Pause
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
 
 \end_layout
 
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Highly Correlated Features, Elastic Net Constraint
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/L1L2/EnetCorr.pdf
+	height 40theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Elastic net solution is closer to 
+\begin_inset Formula $w_{2}=w_{1}$
+\end_inset
+
+ line, despite high correlation.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Elastic Net - 
+\begin_inset Quotes eld
+\end_inset
+
+Sparse Regions
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Fig from 
+\backslash
+href{https://arxiv.org/abs/1411.3230}{Mairal et al.'s Sparse Modeling for Image
+ and Vision Processing} Fig 1.9}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/L1L2/projections-to-ElasticNetBall.png
+	lyxscale 40
+	height 50theight%
+
+\end_inset
+
+
+\begin_inset VSpace -0.3cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Suppose design matrix 
+\begin_inset Formula $X$
+\end_inset
+
+ is orthogonal, so 
+\begin_inset Formula $X^{T}X=I$
+\end_inset
+
+, and contours are circles (and features uncorrelated)
+\end_layout
+
+\begin_layout Itemize
+Then OLS solution in green or red regions implies elastic-net constrained
+ solution will be at corner
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Elastic Net – A Theorem for Correlated Variables
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Theorem
 \begin_inset Foot
 status open
@@ -2532,8 +2670,12 @@ Ratio of
 
 \end_layout
 
-\begin_layout Frame
+\begin_layout Section
 \start_of_appendix
+Extra Pictures
+\end_layout
+
+\begin_layout Frame
 \begin_inset Argument 4
 status open
 
@@ -2546,7 +2688,6 @@ Elastic Net vs Lasso Norm Ball
 
 \end_layout
 
-\begin_deeper
 \begin_layout Standard
 \align center
 \begin_inset Graphics
@@ -2580,18 +2721,6 @@ tiny{From Figure 4.2 of Hastie et al's
 emph{Statistical Learning with Sparsity}.}}
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Frame
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Separator parbreak
 \end_inset
 
 

@@ -2281,133 +2281,26 @@ Lasso regularization paths:
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../Figures/L1L2/L1regpaths-correlated-vars.png
-	lyxscale 60
+	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/L1L2/L1regpaths-correlated-vars.pdf
 	height 60theight%
 
 \end_inset
 
 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-One of the variables in the blue group is 
-\begin_inset Formula $0$
-\end_inset
-
- the whole way.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Itemize
-This is not a good outcome – why?
+Lines with the same color correspond to features with essentially the same
+ information
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-let
-\backslash
-thefootnote
-\backslash
-relax
-\backslash
-footnotetext{
-\backslash
-tiny{From Figure 4.1 of Hastie et al's 
-\backslash
-emph{Statistical Learning with Sparsity}.}}
-\end_layout
-
-\end_inset
-
-
+\begin_layout Itemize
+Distribution of weight among them seems almost arbitrary
 \end_layout
 
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Duplicate Features: Take Away
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-For identical features
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-\begin_inset Formula $\ell_{1}$
-\end_inset
-
- regularization spreads weight arbitrarily (all weights same sign)
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Formula $\ell_{2}$
-\end_inset
-
- regularization spreads weight evenly 
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Extrapolation to correlated variables:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-\begin_inset Formula $\ell_{1}$
-\end_inset
-
- regularization may choose just one variable from a group and ignore the
- rest
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Formula $\ell_{2}$
-\end_inset
-
- tends to spread weight roughly equally among correlated variables
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Frame
-
-\end_layout
-
-\begin_layout Frame
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Separator parbreak
 \end_inset
 
 
@@ -2428,7 +2321,8 @@ Hedge Bets When Variables Highly Correlated
 
 \begin_deeper
 \begin_layout Itemize
-When variables are highly correlated, 
+When variables are highly correlated (and same scale, after normalization),
+ 
 \end_layout
 
 \begin_deeper
@@ -2437,13 +2331,17 @@ we want to give them roughly the same weight.
 \end_layout
 
 \end_deeper
+\begin_layout Pause
+
+\end_layout
+
 \begin_layout Itemize
 Why?
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-let their error cancel out
+Let their error cancel out
 \end_layout
 
 \end_deeper
@@ -2455,39 +2353,9 @@ let their error cancel out
 How can we get the weight spread more evenly?
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-let
-\backslash
-thefootnote
-\backslash
-relax
-\backslash
-footnotetext{
-\backslash
-tiny{From Figure 4.1 of Hastie et al's 
-\backslash
-emph{Statistical Learning with Sparsity}.}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \end_deeper
-\begin_layout Frame
-
-\end_layout
-
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2619,17 +2487,16 @@ Elastic Net Results on Model
 
 \begin_deeper
 \begin_layout Standard
+\align center
 \begin_inset Graphics
-	filename ../Figures/L1L2/L1regpaths-correlated-vars.png
-	lyxscale 60
+	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/L1L2/L1regpaths-correlated-vars.pdf
 	height 60theight%
 
 \end_inset
 
 
 \begin_inset Graphics
-	filename ../Figures/L1L2/elasticnet-correlated-vars.png
-	lyxscale 60
+	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/L1L2/elasticNetregpaths-correlated-vars.pdf
 	height 60theight%
 
 \end_inset
@@ -2655,29 +2522,6 @@ Ratio of
 \end_inset
 
 .
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-let
-\backslash
-thefootnote
-\backslash
-relax
-\backslash
-footnotetext{
-\backslash
-tiny{From Figure 4.1 of Hastie et al's 
-\backslash
-emph{Statistical Learning with Sparsity}.}}
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \end_deeper
@@ -2689,6 +2533,7 @@ emph{Statistical Learning with Sparsity}.}}
 \end_layout
 
 \begin_layout Frame
+\start_of_appendix
 \begin_inset Argument 4
 status open
 

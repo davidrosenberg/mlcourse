@@ -1148,10 +1148,9 @@ Constraint
 
 \begin_layout Standard
 \begin_inset Formula 
-\begin{eqnarray*}
-L(w,b,\xi,\alpha,\lambda) & = & \frac{1}{2}||w||^{2}+\frac{c}{n}\sum_{i=1}^{n}\xi_{i}\\
- &  & +\sum_{i=1}^{n}\alpha_{i}\left(1-y_{i}\left[w^{T}x_{i}+b\right]-\xi_{i}\right)+\sum_{i=1}^{n}\lambda_{i}\left(-\xi_{i}\right)
-\end{eqnarray*}
+\[
+L(w,b,\xi,\alpha,\lambda)=\frac{1}{2}||w||^{2}+\frac{c}{n}\sum_{i=1}^{n}\xi_{i}+\sum_{i=1}^{n}\alpha_{i}\left(1-y_{i}\left[w^{T}x_{i}+b\right]-\xi_{i}\right)+\sum_{i=1}^{n}\lambda_{i}\left(-\xi_{i}\right)
+\]
 
 \end_inset
 
@@ -1449,7 +1448,7 @@ SVM Dual Function: First Order Conditions
 \end_layout
 
 \begin_deeper
-\begin_layout Itemize
+\begin_layout Standard
 Lagrange dual function is the inf over primal variables of 
 \begin_inset Formula $L$
 \end_inset
@@ -1466,12 +1465,10 @@ Lagrange dual function is the inf over primal variables of
 
 \end_layout
 
-\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
 \begin_layout Standard
 \begin_inset Formula 
 \begin{eqnarray*}

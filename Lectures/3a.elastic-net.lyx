@@ -881,7 +881,7 @@ Suppose the line
 \end_layout
 
 \begin_layout Itemize
-Empirical risk decreases as we move away from these parameter settings
+Empirical risk increase as we move away from these parameter settings
 \end_layout
 
 \begin_layout Itemize
@@ -1113,6 +1113,13 @@ Linearly Related Features,
 \end_inset
 
 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $w_{1}+2w_{2}=10/\sqrt{5}+7$
+\end_inset
+
+ corresponds to the empirical risk minimizers.
 \end_layout
 
 \begin_layout Itemize

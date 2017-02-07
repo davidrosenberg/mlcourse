@@ -2749,11 +2749,27 @@ Generalize to
 \begin_inset Formula $\ell_{q}$
 \end_inset
 
- norm: 
+ : 
 \begin_inset Formula $\left(\|w\|_{q}\right)^{q}=\left|w_{1}\right|^{q}+\left|w_{2}\right|^{q}$
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Itemize
+Note: 
+\begin_inset Formula $\|w\|_{q}$
+\end_inset
+
+ is a norm if 
+\begin_inset Formula $q\ge1$
+\end_inset
+
+, but not for 
+\begin_inset Formula $q\in\left(0,1\right)$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize

@@ -608,7 +608,7 @@ Suppose we have two functions
 \end_inset
 
 .
- And suppose we have the following optimization problem:
+ Now consider the following optimization problem:
 \begin_inset Formula 
 \[
 \min_{x\in\reals^{d}}f(x)+g(x).
@@ -616,24 +616,8 @@ Suppose we have two functions
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 This is an unconstrained optimization problem.
- Now consider the following constrained optimization problem:
-\end_layout
-
-\begin_layout Standard
-This problem is 
-\begin_inset Quotes eld
-\end_inset
-
-equivalent
-\begin_inset Quotes erd
-\end_inset
-
- 'to the following problem:
+ Let's also consider the following constrained optimization problem:
 \begin_inset Formula 
 \begin{eqnarray*}
 \textrm{minimize} &  & f(x)+\xi\\
@@ -644,7 +628,7 @@ equivalent
 
 When an optimization problem is presented in this form, it should be understood
  as a minimization over all variables that are unknown.
- This case, we are minimizing over 
+ In this case, we are minimizing over 
 \begin_inset Formula $x\in\reals^{d}$
 \end_inset
 
@@ -656,7 +640,7 @@ When an optimization problem is presented in this form, it should be understood
 \end_layout
 
 \begin_layout Standard
-We now claim that these two problems are 
+We claim that these two problems are 
 \begin_inset Quotes eld
 \end_inset
 
@@ -721,6 +705,22 @@ Convince yourself that these two problems are equivalent.
 
 .
  
+\end_layout
+
+\begin_layout Remark
+The equivalence shown above is a very strict equivalence.
+ We may also speak more loosely and say that two problems are equivalent
+ if we can easily derive a solution to one of them given a solution to the
+ other one, even if the minimizers and minima are different.
+ For example, if we know that 
+\begin_inset Formula $\argmin_{x}\exp\left[f(2x)\right]=x^{*}$
+\end_inset
+
+, then we can immediately conclude that 
+\begin_inset Formula $\argmin_{x}f(x)=2x^{*}$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -828,7 +828,7 @@ Second problem:
 \end_inset
 
 .
- And what constraints to we need on 
+ And what constraints do we need on 
 \begin_inset Formula $x_{i}$
 \end_inset
 
@@ -988,13 +988,6 @@ But when
 
 and this is exactly the first optimization problem.
  
-\begin_inset Formula 
-\[
-\]
-
-\end_inset
-
-
 \end_layout
 
 \end_body

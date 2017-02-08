@@ -9,7 +9,7 @@
 \usetheme{CambridgeUS} 
 \beamertemplatenavigationsymbolsempty
 \end_preamble
-\options aspectratio=169
+\options aspectratio=169,handout
 \use_default_options false
 \maintain_unincluded_children false
 \language english
@@ -696,19 +696,6 @@ New York University
 \end_layout
 
 \begin_layout Standard
-\begin_inset Flex ArticleMode
-status open
-
-\begin_layout Plain Layout
-Just in article version
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Note Note
 status open
 
@@ -993,14 +980,34 @@ Linearly Related Features
 \begin_deeper
 \begin_layout Itemize
 Same setup, now suppose 
-\begin_inset Formula $x_{1}=2x_{2}$
+\begin_inset Formula $x_{2}=2x_{1}$
 \end_inset
 
 .
 \end_layout
 
 \begin_layout Pause
-\begin_inset Formula $ $
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex ArticleMode
+status open
+
+\begin_layout Plain Layout
+So 
+\begin_inset Formula $f(x)=w_{1}x_{1}+w_{2}x_{2}=w_{1}x_{1}+2w_{2}x_{1}=\left(w_{1}+2w_{2}\right)x_{1}$
+\end_inset
+
+.
+ So all functions with 
+\begin_inset Formula $w_{1}+2w_{2}=k$
+\end_inset
+
+ are the same.
+ 
+\end_layout
+
 \end_inset
 
 
@@ -1015,11 +1022,11 @@ Then all functions with
  
 \end_layout
 
-\begin_deeper
 \begin_layout Itemize
 give same predictions and have same empirical risk
 \end_layout
 
+\begin_deeper
 \begin_layout Pause
 
 \end_layout
@@ -1485,8 +1492,8 @@ Intersection could be anywhere on the top right edge.
 \end_layout
 
 \begin_layout Itemize
-Minor perturbations can drastically change intersection point – very unstable
- solution.
+Minor perturbations (in data) can drastically change intersection point
+ – very unstable solution.
 \end_layout
 
 \begin_layout Itemize
@@ -1505,17 +1512,12 @@ If
 
 \end_deeper
 \end_deeper
-\begin_layout Frame
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
 
 \end_layout
-
-\begin_layout Frame
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Note Note
-status collapsed
 
 \begin_layout Frame
 \begin_inset Argument 4
@@ -1594,7 +1596,7 @@ but we always have
 
 \end_deeper
 \end_deeper
-\begin_layout Plain Layout
+\begin_layout Standard
 \begin_inset Separator parbreak
 \end_inset
 
@@ -1674,7 +1676,7 @@ What if we introduce
 \end_layout
 
 \end_deeper
-\begin_layout Plain Layout
+\begin_layout Standard
 \begin_inset Separator parbreak
 \end_inset
 
@@ -1732,7 +1734,7 @@ Consider the
  norms of various solutions:
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="4">
@@ -1977,7 +1979,7 @@ Consider the
 \end_layout
 
 \begin_deeper
-\begin_layout Plain Layout
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
@@ -2004,8 +2006,15 @@ Picture proof: Level sets of loss are lines of the form
 \end_layout
 
 \end_deeper
-\end_inset
+\begin_layout Frame
 
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
 
 \end_layout
 

@@ -2,7 +2,7 @@
 \subsection{Intro Question}
 \begin{enumerate}
 \item You have been given a data set $(x_i,y_i)$ for $i=1,\ldots,n$ where
-  $x_i\in\RR^d$ and $y_i\in\{-1,1\}$.  Assume $w\in\RR^n$ and
+  $x_i\in\RR^d$ and $y_i\in\{-1,1\}$.  Assume $w\in\RR^d$ and
   $a\in\RR$.
   \begin{enumerate}
   \item Suppose $y_i(w^Tx_i+a)>0$ for all $i$.  Use a picture to
@@ -191,8 +191,7 @@ $$\begin{array}{ll}
     $i$}\\
   & \xi_i \geq 0 \quad\text{for all $i$.}
 \end{array}$$
-This is the standard formulation of a support vector machine, and is
-equivalent to the statement from the lecture.
+This is the standard formulation of a support vector machine.
 When $\xi_i>0$ the corresponding $x_i$ violates the geometric margin
 condition.
 Each $\xi_i$ is called a slack variable.

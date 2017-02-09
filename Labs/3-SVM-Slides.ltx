@@ -10,7 +10,7 @@
   \frametitle{Intro Question}
   \begin{block}{Question}
     You have been given a data set $(x_i,y_i)$ for $i=1,\ldots,n$ where
-    $x_i\in\RR^d$ and $y_i\in\{-1,1\}$.  Assume $w\in\RR^n$ and
+    $x_i\in\RR^d$ and $y_i\in\{-1,1\}$.  Assume $w\in\RR^d$ and
     $a\in\RR$.
     \begin{enumerate}
     \item Suppose $y_i(w^Tx_i+a)>0$ for all $i$.  Use a picture to
@@ -35,6 +35,16 @@
 \end{frame}
 
 \begin{frame}[fragile]
+  \frametitle{Level Surfaces of $f(v)=w^Tv$ with $\|w\|_2=1$}
+\begin{center}
+\begin{asy}[width=\textwidth,height=0.8\textheight]
+  include "3-SVM/Level.asy";
+\end{asy}
+\end{center}
+\end{frame}
+
+
+\begin{frame}[fragile]
   \frametitle{Sides of the Hyperplane $w^Tv=15$}
 \begin{center}
 \begin{asy}[width=\textwidth,height=0.8\textheight]
@@ -50,6 +60,15 @@
   include "3-SVM/DistanceS.asy";
 \end{asy}
 \end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Linearly Separable}
+  \begin{definition}
+    We say $(x_i,y_i)$ for $i=1,\ldots,n$ are \textit{linearly separable} if there
+    is a $w\in\RR^d$ and $a\in\RR$ such that $y_i(w^Tx_i+a)>0$ for all
+    $i$. The set $\{v\in\RR^d\mid w^Tv+a=0\}$ is called a \textit{separating hyperplane}.    
+  \end{definition}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -137,19 +156,5 @@
   include "3-SVM/LargeMargin.asy";
 \end{asy}
 \end{center}
-\end{frame}
-\subsection{Linear Algebra Review (If Time Permits)}
-\subsubsection{Level Curves}
-\begin{frame}[fragile]
-  \frametitle{Shapes of Level Curves}
-  \begin{block}{Question}
-    For each of the following functions, determine the shape of the
-    given set.
-    \begin{enumerate}
-    \item $\{x\in\RR^2 \mid x^TAx = 1\}$ where $A=\begin{pmatrix}
-      2&2\\2&1\end{pmatrix}$.
-    \item $\{x\in\RR^2 \mid x^TAx = 1\}$ where $A=\begin{pmatrix} 2&2\\2&3\end{pmatrix}$.
-    \end{enumerate}
-  \end{block}
 \end{frame}
 \end{document}

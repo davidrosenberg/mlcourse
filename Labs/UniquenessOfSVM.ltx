@@ -51,9 +51,17 @@ $$\begin{array}{ll}
   Thus any minimizer $(w_*,b_*)$, if it exists, must have $\|w_*\|_2\leq
   \|w_L\|_2/\epsilon$.  Furthermore, if $\|w_*\|\leq
   \|w_L\|_2/\epsilon$ then note that
-  $$y_iw_*^Tx_i - 1\geq -y_ib \implies |b| \leq 1 + \|w_*\|_2\|x_i\|_2
-  \leq 1 + \|w_L\|_2\|x_i\|_2$$
-  for all $i$.  This shows that we are optimizing a continuous
+  $$-y_ib \leq y_iw_*^Tx_i - 1\leq |y_iw_*^Tx_i| + 1$$
+  implies that
+  $$b \leq 1 + \|w_*\|_2\|x_i\|_2
+  \leq 1 + \|w_L\|_2\|x_i\|_2/\epsilon$$
+  when $y_i=-1$ and
+  $$-b \leq 1 + \|w_*\|_2\|x_i\|_2
+  \leq 1 + \|w_L\|_2\|x_i\|_2/\epsilon$$
+  when $y_i=+1$.  By assumption, both values of $y_i$ appear in our
+  data set.  Thus we obtain
+  $$|b|\leq 1 + \|w_L\|_2\max_i\|x_i\|_2/\epsilon.$$
+  This shows that we are optimizing a continuous
   function over a non-empty compact region, and thus must have a
   minimizer.
 
@@ -65,12 +73,12 @@ $$\begin{array}{ll}
   $w_*^Tx_j+b_*=-1$.  Geometrically, this says that there must be
   points from both classes lying on the margin boundaries.  
   Note that this implies $b_1=b_2$ since increasing $b_*$ makes
-  $w_*^Tx_j+b_*>-1$ and decreasing $b_*$ makes $w_*^Tx_i+b_*<1$
+  $w_*^Tx_j+b_*>-1$ and decreasing $b_*$ makes $w_*^Tx_i+b_*<1$.
   Thus what remains is to establish this geometric fact.
   To prove it, suppose all data points $i$ with $y_i=+1$ have
   $w_*^Tx_i+b>1$ and let $m=\min_{y_i=+1} w_*^Tx_i+b-1$.
   Letting $\hat{w}=w_*/(1+m/2)$ and $\hat{b}=(b_*-m/2)/(1+m/2)$ we
-  obtain a new feasible point with a lower objective:
+  obtain a new feasible point with a strictly lower objective:
   $$\begin{Array}{ll}
     \hat{w}^Tx_i + \hat{b}  =  \frac{w_*^Tx_i+b_*-m/2}{1+m/2} \geq
     \frac{1+m/2}{1+m/2}=1&\text{(if $y_i=+1$),}\\
@@ -84,9 +92,9 @@ $$\begin{array}{ll}
 The soft-margin SVM problem is given by
 $$\begin{array}{ll}
 \text{minimize}_{w,b,\xi} & \|w\|_2^2 +C\sum_{i=1}^n \xi_i\\
-\text{subject to} & y_i(w^Tx_i+b) \geq 1-\xi_i\qquad\text{for all
+\text{subject to} & y_i(w^Tx_i+b) \geq 1-\xi_i\qquad\text{for
   $i=1,\ldots,n$}\\
-& \xi_i\geq 0\qquad\text{for all $i=1,\ldots,n$.}
+& \xi_i\geq 0\qquad\text{for $i=1,\ldots,n$.}
 \end{array}$$
 Here $C>0$ is a given constant, and $(x_i,y_i)$ are as in the
 hard-margin SVM, but not necessarily linearly separable.  

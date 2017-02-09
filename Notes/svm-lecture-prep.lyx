@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin /Users/drosen/Dropbox/repos/mlcourse/Notes/
 \textclass paper
 \use_default_options false
 \begin_modules
@@ -14,16 +16,16 @@ figs-within-sections
 \language_package default
 \inputencoding iso8859-1
 \fontencoding global
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -579,6 +581,19 @@ today
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Mention weaker forms of equivalence...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Equivalent Optimization Problems
 \end_layout
@@ -593,7 +608,7 @@ Suppose we have two functions
 \end_inset
 
 .
- And suppose we have the following optimization problem:
+ Now consider the following optimization problem:
 \begin_inset Formula 
 \[
 \min_{x\in\reals^{d}}f(x)+g(x).
@@ -601,24 +616,8 @@ Suppose we have two functions
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 This is an unconstrained optimization problem.
- Now consider the following constrained optimization problem:
-\end_layout
-
-\begin_layout Standard
-This problem is 
-\begin_inset Quotes eld
-\end_inset
-
-equivalent
-\begin_inset Quotes erd
-\end_inset
-
- 'to the following problem:
+ Let's also consider the following constrained optimization problem:
 \begin_inset Formula 
 \begin{eqnarray*}
 \textrm{minimize} &  & f(x)+\xi\\
@@ -629,7 +628,7 @@ equivalent
 
 When an optimization problem is presented in this form, it should be understood
  as a minimization over all variables that are unknown.
- This case, we are minimizing over 
+ In this case, we are minimizing over 
 \begin_inset Formula $x\in\reals^{d}$
 \end_inset
 
@@ -641,7 +640,7 @@ When an optimization problem is presented in this form, it should be understood
 \end_layout
 
 \begin_layout Standard
-We now claim that these two problems are 
+We claim that these two problems are 
 \begin_inset Quotes eld
 \end_inset
 
@@ -708,7 +707,26 @@ Convince yourself that these two problems are equivalent.
  
 \end_layout
 
-\begin_layout --Separator--
+\begin_layout Remark
+The equivalence shown above is a very strict equivalence.
+ We may also speak more loosely and say that two problems are equivalent
+ if we can easily derive a solution to one of them given a solution to the
+ other one, even if the minimizers and minima are different.
+ For example, if we know that 
+\begin_inset Formula $\argmin_{x}\exp\left[f(2x)\right]=x^{*}$
+\end_inset
+
+, then we can immediately conclude that 
+\begin_inset Formula $\argmin_{x}f(x)=2x^{*}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -762,7 +780,10 @@ which is equivalent to
 
 \end_layout
 
-\begin_layout --Separator--
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -807,7 +828,7 @@ Second problem:
 \end_inset
 
 .
- And what constraints to we need on 
+ And what constraints do we need on 
 \begin_inset Formula $x_{i}$
 \end_inset
 
@@ -832,7 +853,11 @@ First some shorthand: If
 \end_inset
 
  as a shorthand for 
-\begin_inset Formula $\lambda_{i}\ge0\,i=1,\ldots,d$
+\begin_inset Formula $\lambda_{i}\ge0$
+\end_inset
+
+ for 
+\begin_inset Formula $i=1,\ldots,d$
 \end_inset
 
 .
@@ -879,7 +904,10 @@ Convince yourself that this is true.
 .)
 \end_layout
 
-\begin_layout --Separator--
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -960,13 +988,6 @@ But when
 
 and this is exactly the first optimization problem.
  
-\begin_inset Formula 
-\[
-\]
-
-\end_inset
-
-
 \end_layout
 
 \end_body

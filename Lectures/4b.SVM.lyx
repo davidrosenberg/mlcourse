@@ -737,7 +737,7 @@ The SVM as a Quadratic Program
 status open
 
 \begin_layout Plain Layout
-Support Vector Machine 
+The Margin
 \end_layout
 
 \end_inset
@@ -746,36 +746,122 @@ Support Vector Machine
 \end_layout
 
 \begin_deeper
-\begin_layout Itemize
-Hypothesis space 
-\begin_inset Formula $\cf=\left\{ f(x)=w^{T}x+b\mid w\in\reals^{d},b\in\reals\right\} $
+\begin_layout Definition
+The 
+\series bold
+margin
+\series default
+ (or 
+\series bold
+functional margin
+\series default
+)
+\series bold
+ 
+\series default
+for predicted score 
+\begin_inset Formula $\hat{y}$
+\end_inset
+
+ and true class 
+\begin_inset Formula $y\in\left\{ -1,1\right\} $
+\end_inset
+
+ is 
+\begin_inset Formula $y\hat{y}$
 \end_inset
 
 .
+ 
 \end_layout
 
-\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
-\begin_inset Formula $\ell_{2}$
+The margin often looks like 
+\begin_inset Formula $yf(x)$
 \end_inset
 
- regularization (Tikhonov style)
+, where 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ is our score function.
 \end_layout
 
 \begin_layout Itemize
-Loss 
-\begin_inset Formula $\ell(m)=\left(1-m\right)_{+}$
+The margin is a measure of how 
+\series bold
+correct
+\series default
+ we are.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+We want to 
+\series bold
+maximize the margin
+\series default
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Most classification losses depend only on the margin.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+(This is distinct from but related to 
+\series bold
+geometric margin
+\series default
+ from lab.)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Hinge Loss
+\end_layout
+
 \end_inset
 
 
 \end_layout
 
 \begin_deeper
+\begin_layout Itemize
+SVM/Hinge loss: 
+\begin_inset Formula $\loss_{\text{Hinge}}=\max\left\{ 1-m,0\right\} =\left(1-m\right)_{+}$
+\end_inset
+
+
+\end_layout
+
 \begin_layout Itemize
 Margin 
 \begin_inset Formula $m=yf(x)$
@@ -801,14 +887,120 @@ Positive part
 \begin_inset Graphics
 	filename ../Figures/loss-functions/loss.Zero_One.Hinge.png
 	lyxscale 30
-	height 40theight%
+	height 50theight%
 
 \end_inset
 
 
 \end_layout
 
+\begin_layout Standard
+Hinge is a 
+\series bold
+convex
+\series default
+, 
+\series bold
+upper bound
+\series default
+ on 
+\begin_inset Formula $0-1$
+\end_inset
+
+ loss.
+ Not differentiable at 
+\begin_inset Formula $m=1$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+We have a 
+\series bold
+
+\begin_inset Quotes eld
+\end_inset
+
+margin error
+\begin_inset Quotes erd
+\end_inset
+
+
+\series default
+ when 
+\begin_inset Formula $m<1$
+\end_inset
+
+.
+\end_layout
+
 \end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Support Vector Machine 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Hypothesis space 
+\begin_inset Formula $\cf=\left\{ f(x)=w^{T}x+b\mid w\in\reals^{d},b\in\reals\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ regularization (Tikhonov style)
+\end_layout
+
+\begin_layout Itemize
+Loss 
+\begin_inset Formula $\ell(m)=\max\left\{ 1-m,0\right\} =\left(1-m\right)_{+}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+The SVM prediction function is the solution to
+\begin_inset Formula 
+\[
+\min_{w\in\reals^{d},b\in\reals}\frac{1}{2}||w||^{2}+\frac{c}{n}\sum_{i=1}^{n}\max\left(0,1-y_{i}\left[w^{T}x_{i}+b\right]\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator parbreak
@@ -822,7 +1014,7 @@ Positive part
 status open
 
 \begin_layout Plain Layout
-SVM Optimization Problem
+SVM Optimization Problem (Tikhonov Version)
 \end_layout
 
 \end_inset
@@ -835,7 +1027,7 @@ SVM Optimization Problem
 The SVM prediction function is the solution to
 \begin_inset Formula 
 \[
-\min_{w\in\reals^{d},b\in\reals}\frac{1}{2}||w||^{2}+\frac{c}{n}\sum_{i=1}^{n}\left(1-y_{i}\left[w^{T}x_{i}+b\right]\right)_{+}.
+\min_{w\in\reals^{d},b\in\reals}\frac{1}{2}||w||^{2}+\frac{c}{n}\sum_{i=1}^{n}\max\left(0,1-y_{i}\left[w^{T}x_{i}+b\right]\right).
 \]
 
 \end_inset
@@ -858,7 +1050,7 @@ unconstrained optimization
 
 \end_deeper
 \begin_layout Itemize
-not differentiable
+not differentiable because of the max (right at the border of a margin error)
 \end_layout
 
 \begin_deeper
@@ -898,7 +1090,7 @@ The SVM optimization problem is equivalent to
 \begin_inset Formula 
 \begin{eqnarray*}
 \textrm{minimize} &  & \frac{1}{2}||w||^{2}+\frac{c}{n}\sum_{i=1}^{n}\xi_{i}\\
-\textrm{subject to} &  & \xi_{i}\ge\left(1-y_{i}\left[w^{T}x_{i}+b\right]\right)_{+},
+\textrm{subject to} &  & \xi_{i}\ge\max\left(0,1-y_{i}\left[w^{T}x_{i}+b\right]\right).
 \end{eqnarray*}
 
 \end_inset
@@ -917,8 +1109,8 @@ Which is equivalent to
 \begin_inset Formula 
 \begin{eqnarray*}
 \textrm{minimize} &  & \frac{1}{2}||w||^{2}+\frac{c}{n}\sum_{i=1}^{n}\xi_{i}\\
-\textrm{subject to} &  & \xi_{i}\ge0\;\mbox{for }i=1,\ldots,n\\
- &  & \xi_{i}\ge\left(1-y_{i}\left[w^{T}x_{i}+b\right]\right)\;\mbox{for }i=1,\ldots,n
+\textrm{subject to} &  & \xi_{i}\ge\left(1-y_{i}\left[w^{T}x_{i}+b\right]\right)\;\mbox{for }i=1,\ldots,n\\
+ &  & \xi_{i}\ge0\;\mbox{for }i=1,\ldots,n
 \end{eqnarray*}
 
 \end_inset

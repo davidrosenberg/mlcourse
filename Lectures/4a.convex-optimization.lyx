@@ -45,7 +45,16 @@
 \index_command default
 \paperfontsize default
 \spacing single
-\use_hyperref false
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
 \papersize default
 \use_geometry true
 \use_package amsmath 2
@@ -801,15 +810,13 @@ Nonlinear programs
 : some easy, some hard
 \end_layout
 
-\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
 \end_deeper
-\end_deeper
 \begin_layout Itemize
-More Recently:
+By early 2000s:
 \end_layout
 
 \begin_deeper
@@ -835,20 +842,47 @@ non-convex
 Convex problems are the ones we know how to solve efficiently
 \end_layout
 
+\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-Many techniques that are well understood for convex problems are applied
- to non-convex problems
+Mostly batch methods until...
+ around 2010? (earlier if you were into neural nets)
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+By 2010 +- few years, most people understood the 
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-e.g.
- SGD is routinely applied to neural networks, which are not convex
+optimization / estimation / approximation error tradeoffs
+\end_layout
+
+\begin_layout Itemize
+accepted that 
+\series bold
+stochatic methods
+\series default
+ were usually much faster to get good results
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+(especially on big data sets)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+now nobody's scared to try convex optimization machinery on non-convex problems
 \end_layout
 
 \end_deeper
@@ -884,12 +918,12 @@ Very clearly written, but has a ton of detail for a first pass.
 \end_layout
 
 \begin_layout Itemize
-See my 
-\begin_inset Quotes eld
-\end_inset
+See the 
+\begin_inset CommandInset href
+LatexCommand href
+name "Extreme Abridgement of Boyd and Vandenberghe"
+target "https://davidrosenberg.github.io/mlcourse/Notes/convex-optimization.pdf"
 
-Extreme Abridgement of Boyd and Vandenberghe
-\begin_inset Quotes erd
 \end_inset
 
 .

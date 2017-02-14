@@ -720,19 +720,6 @@ New York University
 \end_layout
 
 \begin_layout Standard
-\begin_inset Flex ArticleMode
-status open
-
-\begin_layout Plain Layout
-Just in article version
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Note Note
 status open
 
@@ -872,7 +859,7 @@ accepted that
 \series bold
 stochatic methods
 \series default
- were usually much faster to get good results
+ were often faster to get good results
 \end_layout
 
 \begin_deeper
@@ -1011,6 +998,45 @@ namely
 
 \begin_layout Section
 Convex Sets and Functions
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex ArticleMode
+status open
+
+\begin_layout Plain Layout
+What is the set 
+\begin_inset Formula $\left\{ \theta x_{1}+(1-\theta)x_{2}\mid\theta\in\reals\right\} $
+\end_inset
+
+? A line through 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+.
+ What is 
+\begin_inset Formula $\left\{ \theta x_{1}+(1-\theta)x_{2}\mid\theta\in[0,1]\right\} $
+\end_inset
+
+? The line segment conneting 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Frame
@@ -1391,6 +1417,47 @@ Examples of Convex Functions on
 \end_inset
 
  
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Every norm on 
+\begin_inset Formula $\reals^{n}$
+\end_inset
+
+ is convex (e.g.
+ 
+\begin_inset Formula $\|x\|_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\|x\|_{2}$
+\end_inset
+
+)
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Max: 
+\begin_inset Formula $\left(x_{1},\ldots,x_{n}\right)\mapsto\max\left\{ x_{1}\ldots,x_{n}\right\} $
+\end_inset
+
+ is convex on 
+\begin_inset Formula $\reals^{n}$
+\end_inset
+
+
 \end_layout
 
 \end_deeper
@@ -1992,7 +2059,7 @@ h(x)=0\;\iff\;\left(h(x)\ge0\mbox{ AND}\;h(x)\le0\right)
 \end_layout
 
 \begin_layout Itemize
-So any equality-constrained problem 
+Consider an equality-constrained problem: 
 \begin_inset Formula 
 \begin{eqnarray*}
 \textrm{minimize} &  & f_{0}(x)\\
@@ -2001,7 +2068,15 @@ So any equality-constrained problem
 
 \end_inset
 
-can be rewritten as
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Can be rewritten as
 \begin_inset Formula 
 \begin{eqnarray*}
 \pause\textrm{minimize} &  & f_{0}(x)\\
@@ -2074,7 +2149,7 @@ Lagrangian
  for this optimization problem is
 \begin_inset Formula 
 \[
-L(x,\lambda)=f_{0}(x)+\sum_{I=1}^{m}\lambda_{i}f_{i}(x).
+L(x,\lambda)=f_{0}(x)+\sum_{i=1}^{m}\lambda_{i}f_{i}(x).
 \]
 
 \end_inset
@@ -2123,7 +2198,7 @@ The Lagrangian Encodes the Objective and Constraints
 
 \begin_deeper
 \begin_layout Itemize
-Supremum over Lagrangian gives back objective and constraints:
+Supremum over Lagrangian gives back encoding of objective and constraints:
 \begin_inset Formula 
 \begin{eqnarray*}
 \sup_{\lambda\succeq0}L(x,\lambda) & = & \sup_{\lambda\succeq0}\left(f_{0}(x)+\sum_{i=1}^{m}\lambda_{i}f_{i}(x)\right)\\
@@ -2157,7 +2232,7 @@ p^{*}=\inf_{x}\sup_{\lambda\succeq0}L(x,\lambda)
 
 
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Pause
 
@@ -2260,10 +2335,18 @@ p^{*}=\inf_{x}\sup_{\lambda\succeq0}L(x,\lambda)
 
 \end_deeper
 \begin_layout Itemize
-The 
+Get the 
 \series bold
 Lagrangian dual problem
 \series default
+ by 
+\begin_inset Quotes eld
+\end_inset
+
+swapping the inf and the sup
+\begin_inset Quotes erd
+\end_inset
+
 :
 \begin_inset Formula 
 \[
@@ -2389,7 +2472,11 @@ For any
 
 \end_deeper
 \begin_layout Proof
-Since this is true for all 
+Since 
+\begin_inset Formula $\inf_{w\in W}f(w,z_{0})\le\sup_{z\in Z}f(w_{0},z)$
+\end_inset
+
+ for all 
 \begin_inset Formula $w_{0}$
 \end_inset
 
@@ -2516,7 +2603,7 @@ Lagrangian dual problem
 :
 \begin_inset Formula 
 \[
-d^{*}=\sup_{\lambda\succeq0}\underbrace{\inf_{x}L(x,\lambda)}_{\mbox{Lagrange dual function}}
+d^{*}=\sup_{\lambda\succeq0}\inf_{x}L(x,\lambda)
 \]
 
 \end_inset
@@ -2569,6 +2656,24 @@ The dual function may take on the value
 ).
 \end_layout
 
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The dual function is always 
+\series bold
+concave
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+since pointwise min of affine functions
+\end_layout
+
+\end_deeper
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator parbreak
@@ -2601,7 +2706,7 @@ Even when primal problem is not convex!
 status open
 
 \begin_layout Plain Layout
-The Lagrange Dual Problem
+The Lagrange Dual Problem: Search for Best Lower Bound
 \end_layout
 
 \end_inset
@@ -2644,7 +2749,7 @@ Lagrange dual function gives a lower bound on optimal solution
 :
 \begin_inset Formula 
 \[
-g(\lambda)\le p^{*}
+p^{*}\ge g(\lambda)\text{ for all }\lambda\ge0
 \]
 
 \end_inset
@@ -2665,7 +2770,7 @@ g(\lambda)\le p^{*}
 status open
 
 \begin_layout Plain Layout
-The Lagrange Dual Problem
+The Lagrange Dual Problem: Search for Best Lower Bound
 \end_layout
 
 \end_inset
@@ -2679,7 +2784,11 @@ The
 \series bold
 Lagrange dual problem
 \series default
- is a search for best lower bound:
+ is a search for best lower bound on 
+\begin_inset Formula $p^{*}$
+\end_inset
+
+:
 \begin_inset Formula 
 \begin{eqnarray*}
 \textrm{maximize} &  & g(\lambda)\\
@@ -3061,7 +3170,20 @@ feasible.
 
 \end_deeper
 \begin_layout Itemize
-Qualifications when problem domain 
+Qualifications when problem domain
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\cd$
+\end_inset
+
+ is the set where all functions are defined, NOT the feasible set.
+\end_layout
+
+\end_inset
+
+ 
 \begin_inset Formula $\cd\subset\reals^{n}$
 \end_inset
 
@@ -3069,14 +3191,9 @@ Qualifications when problem domain
 \end_layout
 
 \begin_deeper
-\begin_layout Itemize
-(
-\begin_inset Formula $\cd$
-\end_inset
-
- is the set where all functions are defined, NOT the feasible set.)
+\begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Pause
 
@@ -3309,7 +3426,7 @@ Let
  Then:
 \begin_inset Formula 
 \begin{eqnarray*}
-f_{0}(x^{*}) & = & g(\lambda^{*})\\
+f_{0}(x^{*}) & = & g(\lambda^{*})\pause\text{\quad by strong duality}\\
 \pause & = & \inf_{x}\left(f_{0}(x)+\sum_{I=1}^{m}\lambda_{i}^{*}f_{i}(x)\right)\\
 \pause & \le & f_{0}(x^{*})+\sum_{i=1}^{m}\underbrace{\lambda_{i}^{*}f_{i}(x^{*})}_{\le0}\\
 \pause & \le & f_{0}(x^{*}).

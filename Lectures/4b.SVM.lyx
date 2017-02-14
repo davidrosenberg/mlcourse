@@ -1989,7 +1989,7 @@ w^{*}=\sum_{i=1}^{n}\alpha_{i}^{*}y_{i}x_{i}.
 
 \end_deeper
 \begin_layout Itemize
-We now now the form of 
+We now know the form of 
 \begin_inset Formula $w^{*}$
 \end_inset
 
@@ -2006,6 +2006,15 @@ a linear combination of
 \end_layout
 
 \begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+(Also follows from basic linear algebra as we'll see in our Representation
+ Theorem lecture.)
+\end_layout
+
 \begin_layout Pause
 
 \end_layout

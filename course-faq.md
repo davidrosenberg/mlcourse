@@ -1,5 +1,30 @@
 # Frequently Asked Questions and Useful Notes
 
+## What are reasonable stopping conditions for our minimization procedures?
+If the goal is to minimize a differentiable and convex function, we can run until the norm of our gradient is below some threshold, since we know the gradient will be zero at a minimum.  When we're optimizing a non-differentiable function, we have to do something else.  One approach is to periodically check the value of our objective function at our current location, and compare to the last time we checked.  If we're doing gradient descent or a stochastic descent method, we can check every XX steps.  If we're doing a method like coordinate descent, we could check after every cycle through the coordinates.
+
+In the machine learning context, our objective function is typically a penalized empirical risk or penalized likelihood.  These functions can be evaluated using training data or validation data, and which we choose depends somewhat on what our goals are. Our goal in the homework is usually to understand and assess the performance of the ML methods we discuss.  Thus we should try to get as close to the optimum of our optimization problem as possible, since that is what the method prescribes.  That means evaluating the objective function on the training data.
+
+One approach to deciding when to stop is based on the idea of "patience".   There's a short description at https://davidrosenberg.github.io/mlcourse/Archive/2016/Lectures/14b.neural-networks.pdf#page=20, based on Bengio's "Practical recommendations" paper.  It's really designed for minibatch gradient steps, but could be applied for gradient descent as well.  I think it's overkill for the homework though.  
+
+So for differentiable functions, we could look at the norm of the gradient to
+get a sense of how close we are to the minimum, since the gradient is zero at
+the minimum. However, for lasso, our function is not differentiable, so this is
+not an option. So what can we do instead? You can check more directly how much
+your loss is decreasing after each cycle through the coordinates. You can check
+how much the training loss decreases after each cycle -- this gives you a sense
+of how you're progressing for minimizing the empirical risk. You can also check
+how much your validation loss is decreasing (or NOT -- validation loss may not
+be decreasing after each cycle -- it may start to increase if you are
+overfitting). Depending on what your objective is, you may want to do one or the
+other. In our case, I'd recommend using the training loss. We're interested in
+assessing the performance of the empirical risk minimizer for each of our
+methods, and so we'd like to get as close to that as possible. If we use our
+validation data to decide when to stop, we may potentially stop before we get
+close to the ERM. This is called "early stopping", and it may help our
+out-of-sample performance (i.e. how well we do on new data).
+
+
 ## Do **not** normalize the gradient in gradient descent
 In gradient descent, SGD, and minibatch GD, we do NOT normalize the gradient. For backtracking line search in GD, it doesn't matter, but for the other methods, convergence proofs assume we're not normalizing the gradient.
  

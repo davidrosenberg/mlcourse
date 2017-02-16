@@ -1778,12 +1778,16 @@ functional margin
 \series bold
  
 \series default
-on an example 
-\begin_inset Formula $(x,y)$
+for predicted score 
+\begin_inset Formula $\hat{y}$
+\end_inset
+
+ and true class 
+\begin_inset Formula $y\in\left\{ -1,1\right\} $
 \end_inset
 
  is 
-\begin_inset Formula $yf(x)$
+\begin_inset Formula $y\hat{y}$
 \end_inset
 
 .
@@ -1792,6 +1796,18 @@ on an example
 
 \begin_layout Pause
 
+\end_layout
+
+\begin_layout Itemize
+The margin often looks like 
+\begin_inset Formula $yf(x)$
+\end_inset
+
+, where 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ is our score function.
 \end_layout
 
 \begin_layout Itemize

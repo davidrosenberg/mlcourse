@@ -4662,7 +4662,7 @@ Coordinate Descent: The Separability Condition
 \begin_deeper
 \begin_layout Theorem
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Tseng 1988: 
@@ -4713,6 +4713,18 @@ each
 \begin_layout Theorem
 then the coordinate descent algorithm converges to the global minimum.
  
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+From Brett: I followed up with Tibshirani's slides.
+ I think you referenced the wrong paper.
+ This is the correct one: http://link.springer.com/article/10.1023/A:1017501703105
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper

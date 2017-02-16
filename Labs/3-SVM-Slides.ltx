@@ -1,4 +1,4 @@
-\title{Recitation 2}
+\title{Recitation 3}
 \subtitle{Geometric Derivation of SVMs}
 \begin{document}
 \begin{frame} 
@@ -28,18 +28,14 @@
 \begin{frame}[fragile]
   \frametitle{Component of $v_1,v_2$ in the direction $w$}
 \begin{center}
-\begin{asy}[width=\textwidth,height=0.8\textheight]
-  include "3-SVM/Component.asy";
-\end{asy}
+\asyinclude[width=\textwidth,height=0.8\textheight]{3-SVM/Component.asy}
 \end{center}
 \end{frame}
 
 \begin{frame}[fragile]
   \frametitle{Level Surfaces of $f(v)=w^Tv$ with $\|w\|_2=1$}
 \begin{center}
-\begin{asy}[width=\textwidth,height=0.8\textheight]
-  include "3-SVM/Level.asy";
-\end{asy}
+\asyinclude[width=\textwidth,height=0.8\textheight]{3-SVM/Level.asy}
 \end{center}
 \end{frame}
 
@@ -47,18 +43,14 @@
 \begin{frame}[fragile]
   \frametitle{Sides of the Hyperplane $w^Tv=15$}
 \begin{center}
-\begin{asy}[width=\textwidth,height=0.8\textheight]
-  include "3-SVM/Sides.asy";
-\end{asy}
+\asyinclude[width=\textwidth,height=0.8\textheight]{3-SVM/Sides.asy}
 \end{center}
 \end{frame}
 
 \begin{frame}[fragile]
   \frametitle{Signed Distance from $x_1,x_2$ to Hyperplane $w^Tv=20$}
 \begin{center}
-\begin{asy}[width=2\textwidth,height=0.8\textheight]
-  include "3-SVM/DistanceS.asy";
-\end{asy}
+\asyinclude[width=2\textwidth,height=0.8\textheight]{3-SVM/DistanceS.asy}
 \end{center}
 \end{frame}
 
@@ -74,27 +66,21 @@
 \begin{frame}[fragile]
   \frametitle{Linearly Separable Data}
 \begin{center}
-\begin{asy}[width=\textwidth,height=0.8\textheight]
-  include "3-SVM/LinSep.asy";
-\end{asy}
+\asyinclude[width=\textwidth,height=0.8\textheight]{3-SVM/LinSep.asy}
 \end{center}
 \end{frame}
 
 \begin{frame}[fragile]
   \frametitle{Many Separating Hyperplanes Exist}
 \begin{center}
-\begin{asy}[width=\textwidth,height=0.8\textheight]
-  include "3-SVM/ManyLinSep.asy";
-\end{asy}
+\asyinclude[width=\textwidth,height=0.8\textheight]{3-SVM/ManyLinSep.asy}
 \end{center}
 \end{frame}
 
 \begin{frame}[fragile]
   \frametitle{Maximum Margin Separating Hyperplane}
 \begin{center}
-\begin{asy}[width=\textwidth,height=0.8\textheight]
-  include "3-SVM/MaxMargin.asy";
-\end{asy}
+\asyinclude[width=\textwidth,height=0.8\textheight]{3-SVM/MaxMargin.asy}
 \end{center}
 \end{frame}
 
@@ -105,9 +91,7 @@
 \begin{frame}[fragile]
   \frametitle{Soft Margin SVM (unlabeled points have $\xi_i=0$)}
 \begin{center}
-\begin{asy}[width=\textwidth,height=0.8\textheight]
-  include "3-SVM/SoftMarginS.asy";
-\end{asy}
+\asyinclude[width=\textwidth,height=0.8\textheight]{3-SVM/SoftMarginS.asy}
 \end{center}
 \end{frame}
 
@@ -134,27 +118,21 @@
 \begin{frame}[fragile]
   \frametitle{Optimize Over Cases Where Margin Is At Least $1/r$}
 \begin{center}
-\begin{asy}[width=\textwidth,height=0.8\textheight]
-  include "3-SVM/Ivanov.asy";
-\end{asy}
+\asyinclude[width=\textwidth,height=0.8\textheight]{3-SVM/Ivanov.asy}
 \end{center}
 \end{frame}
 
 \begin{frame}[fragile]
   \frametitle{Overfitting: Tight Margin With No Misclassifications}
 \begin{center}
-\begin{asy}[width=\textwidth,height=0.8\textheight]
-  include "3-SVM/SmallMargin.asy";
-\end{asy}
+\asyinclude[width=\textwidth,height=0.8\textheight]{3-SVM/SmallMargin.asy}
 \end{center}
 \end{frame}
 
 \begin{frame}[fragile]
   \frametitle{Training Error But Large Margin}
 \begin{center}
-\begin{asy}[width=\textwidth,height=0.8\textheight]
-  include "3-SVM/LargeMargin.asy";
-\end{asy}
+\asyinclude[width=\textwidth,height=0.8\textheight]{3-SVM/LargeMargin.asy}
 \end{center}
 \end{frame}
 \end{document}

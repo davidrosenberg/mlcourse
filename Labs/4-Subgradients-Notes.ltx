@@ -1,7 +1,7 @@
 \section{Recitation 4: Subgradients}
 \subsection{Intro Question}
 \begin{enumerate}
-\item When stating a convex optimization problem in standard form we write
+\item  When stating a convex optimization problem in standard form we write
   $$\begin{array}{ll}
   \text{minimize} & f_0(x) \\
   \text{subject to} & f_i(x) \leq 0 \quad\text{for all $i=1,\ldots,n$.}
@@ -19,9 +19,7 @@ $f:\RR^d\to\RR$ is convex if for any $x,y\in\RR^d$ and
 $\theta\in(0,1)$ we have $f((1-\theta)x+\theta y)\leq
 (1-\theta)f(x)+\theta f(y)$. 
 \begin{center}
-\begin{asy}
-  include "4-Subgradients/Convex.asy";
-\end{asy}
+\asyinclude{4-Subgradients/Convex.asy}
 \end{center}
 For a function $f:\RR^d\to\RR$, a level set (or contour line) corresponding to the
 value $c$ is given by the set of all points $x\in\RR^d$ where $f(x)=c$:
@@ -30,14 +28,10 @@ Analogously, the sublevel set for the value $c$ is the set of all
 points $x\in\RR^d$ where $f(x)\leq c$:
 $$f^{-1}(-\infty,c] = \{x\in\RR^d\mid f(x)\leq c\}.$$
 \begin{center}
-\begin{asy}
-  include "4-Subgradients/TwoPits.asy";
-\end{asy}
+\asyinclude{4-Subgradients/TwoPits.asy}
 \end{center}
 \begin{center}
-\begin{asy}
-  include "4-Subgradients/TwoPitsC.asy";
-\end{asy}
+\asyinclude{4-Subgradients/TwoPitsC.asy}
 \end{center}
 Above is a non-convex function, the contour plot, and the sublevel set
 where $f(x)\leq-1$. When $f$ is convex, we can say something nice about these sets.
@@ -51,21 +45,15 @@ where $f(x)\leq-1$. When $f$ is convex, we can say something nice about these se
   (1-\theta)c+\theta c = c.$$
 \end{proof}
 \begin{center}
-\begin{asy}
-  include "4-Subgradients/OnePit.asy";
-\end{asy}
+\asyinclude{4-Subgradients/OnePit.asy}
 \end{center}
 \begin{center}
-\begin{asy}
-  include "4-Subgradients/OnePitC.asy";
-\end{asy}
+\asyinclude{4-Subgradients/OnePitC.asy}
 \end{center}
 In the concept check questions we will show that the intersection of
 convex sets is convex.
 \begin{center}
-\begin{asy}
-  include "4-Subgradients/Intersect.asy";
-\end{asy}
+\asyinclude{4-Subgradients/Intersect.asy}
 \end{center}
 This proves that having a bunch of conditions of the form
 $f_i(x)\leq0$ where the $f_i$ are convex gives us a convex feasible set.
@@ -74,9 +62,7 @@ convex level sets.
 Furthermore, sets of the form $\{x\in\RR^d\mid f(x)\geq c\}$ also need
 not be convex (called superlevel sets).
 \begin{center}
-\begin{asy}
-  include "4-Subgradients/OnePitSets.asy";
-\end{asy}
+\asyinclude{4-Subgradients/OnePitSets.asy}
 \end{center}
 This brings us to the question, why do we care about convexity? Here
 are some reasons.
@@ -98,19 +84,13 @@ duality ($p^*=d^*$).  Using the strong duality relationship we can
 derive interesting relations between the primal and dual solutions
 (e.g., complementary slackness).
 \begin{center}
-\begin{asy}
-  include "4-Subgradients/DualityBox.asy";
-\end{asy}
+\asyinclude{4-Subgradients/DualityBox.asy}
 \end{center}
 \begin{center}
-\begin{asy}
-  include "4-Subgradients/DualityPlot.asy";
-\end{asy}
+\asyinclude{4-Subgradients/DualityPlot.asy}
 \end{center}
 \begin{center}
-\begin{asy}
-  include "4-Subgradients/SDualityPlot.asy";
-\end{asy}
+\asyinclude{4-Subgradients/SDualityPlot.asy}
 \end{center}
 \subsection{Gradients and Subgradients}
 \subsubsection{Definitions and Basic Properties}
@@ -127,9 +107,7 @@ In words, this says that the approximating tangent line (or hyperplane in
 higher dimensions) is a global underestimator (lies entirely below the
 function). 
 \begin{center}
-\begin{asy}
-  include "4-Subgradients/GlobalUnd.asy";
-\end{asy}
+\asyinclude{4-Subgradients/GlobalUnd.asy}
 \end{center}
 Even if $f$ is not differentiable at $x$, we can still look for
 vectors satisfying a similar relationship.
@@ -144,9 +122,7 @@ vectors satisfying a similar relationship.
 \end{dfn}
 Below are subgradients drawn at $x_0$ and $x_1$.
 \begin{center}
-\begin{asy}
-  include "4-Subgradients/Subgrad.asy";
-\end{asy}
+\asyinclude{4-Subgradients/Subgrad.asy}
 \end{center}
 Facts about subgradients (proven in the concept check exercises).
 \begin{enumerate}
@@ -164,9 +140,7 @@ Facts about subgradients (proven in the concept check exercises).
 Consider $f(x)=|x|$ depicted below with some underestimating linear
 approximations.
 \begin{center}
-\begin{asy}
-  include "4-Subgradients/AbsVal.asy";
-\end{asy}
+\asyinclude{4-Subgradients/AbsVal.asy}
 \end{center}
 For $x\neq 0$ we have $\partial f(x)=\sgn(x)$ since the function is
 convex and differentiable.  At $x=0$ we have $\partial f(x)=[-1,1]$
@@ -177,19 +151,13 @@ The first coordinate of any subgradient must be $1$ due to the $|x_1|$
 part.  The second coordinate can have any value between $-2$ and $2$
 to keep the hyperplane under the function.
 \begin{center}
-\begin{asy}
-  include "4-Subgradients/Subgrad3d1.asy";
-\end{asy}
+\asyinclude{4-Subgradients/Subgrad3d1.asy}
 \end{center}
 \begin{center}
-\begin{asy}
-  include "4-Subgradients/Subgrad3dH.asy";
-\end{asy}
+\asyinclude{4-Subgradients/Subgrad3dH.asy}
 \end{center}
 \begin{center}
-\begin{asy}
-  include "4-Subgradients/Subgrad3dC.asy";
-\end{asy}
+\asyinclude{4-Subgradients/Subgrad3dC.asy}
 \end{center}
 \subsubsection{Contour Lines and Descent Directions}
 We can also look at the relationship between gradients and contour
@@ -211,9 +179,7 @@ is normal to the level set $S=\{x\in\RR^d \mid f(x)=f(x_0)\}$.
   the result follows.
 \end{sketch}
 \begin{center}
-\begin{asy}
-  include "4-Subgradients/TwoPitsCG.asy";
-\end{asy}
+\asyinclude{4-Subgradients/TwoPitsCG.asy}
 \end{center}
 Now let's handle the non-differentiable case.  Let $f:\RR^d\to\RR$
 have subgradient $g$ at $x_0$.  The hyperplane $H$ orthogonal to $g$ at $x_0$
@@ -223,9 +189,7 @@ of~$H$ (the side containing $-g$).  This is immediate since any point $y$
 lying strictly on the side containing $g$ must have 
 $$f(y) \geq f(x) + g^T(y-x) > f(x).$$
 \begin{center}
-\begin{asy}
-  include "4-Subgradients/SubgradShade.asy";
-\end{asy}
+\asyinclude{4-Subgradients/SubgradShade.asy}
 \end{center}
 Even though points on the $g$ side of $H$ have larger $f$-values than
 $f(x_0)$, it is not true that points on the $-g$ side have smaller
@@ -241,8 +205,11 @@ Using the same logic we obtain the following theorem.
   In other words, stepping in the direction of a negative subgradient
   brings us closer to a minimizer.
 \end{thm}
-[Give triangle right angle picture for proof]
-This suggests the following algorithm called Subgradient Descent.
+In fact, we can just choose $t$ in the interval
+$$t \in \left(0,\frac{2(f(x_0) - f(x^*))}{\|g\|_2^2}\right),$$
+but since we usually don't know $f(x^*)$ this is of limited use.
+
+This theorem suggests the following algorithm called Subgradient Descent.
 \begin{enumerate}
 \item Let $x^{(0)}$ denote the initial point.
 \item For $k=1,2,\ldots$

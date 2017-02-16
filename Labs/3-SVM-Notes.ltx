@@ -1,4 +1,4 @@
-\section{Recitation 2: Geometric Derivation of SVMs}
+\section{Recitation 3: Geometric Derivation of SVMs}
 \subsection{Intro Question}
 \begin{enumerate}
 \item You have been given a data set $(x_i,y_i)$ for $i=1,\ldots,n$ where
@@ -13,9 +13,7 @@
   \end{enumerate}
 \begin{figure}[H]
 \centering
-\begin{asy}
-  include "3-SVM/Data.asy";
-\end{asy}
+\asyinclude{3-SVM/Data.asy}
 \caption{Data set with $x_i\in\RR^2$ and $y_i\in\{+1,-1\}$}
 \end{figure}
 \begin{solution}
@@ -35,9 +33,7 @@ signed length of $v$ when orthogonally projected onto the line through
 the vector $w$.
 \begin{figure}[H]
 \centering
-\begin{asy}
-  include "3-SVM/Component.asy";
-\end{asy}
+\asyinclude{3-SVM/Component.asy}
 \caption{Component of $v_1,v_2$ in the direction $w$}
 \end{figure}
 Assuming $w\neq 0$ we can use this to interpret the set
@@ -54,9 +50,7 @@ $$\{x\in\RR^d\mid w^Tx=b\}\quad\text{and}\quad\{x\in\RR^d\mid
 result in the same hyperplanes.
 \begin{figure}[H]
 \centering
-\begin{asy}
-  include "3-SVM/Level.asy";
-\end{asy}
+\asyinclude{3-SVM/Level.asy}
 \caption{Level Surfaces of $f(v)=w^Tv$ with $\|w\|_2=1$}
 \end{figure}
 Given a hyperplane $\{v\mid w^Tv=b\}$, we can distinguish points
@@ -65,9 +59,7 @@ negative, or in other words, whether $x$ is on the hyperplane, on the
 side $w$ is pointing at, or on the side $-w$ is pointing at. 
 \begin{figure}[H]
 \centering
-\begin{asy}
-  include "3-SVM/Sides.asy";
-\end{asy}
+\asyinclude{3-SVM/Sides.asy}
 \caption{Sides of the Hyperplane $w^Tv=15$}
 \end{figure}
 If we have a vector $x\in\RR^d$ and a hyperplane $H=\{v\mid w^Tv=b\}$ we
@@ -81,9 +73,7 @@ where $v$ is any vector in the hyperplane $\{v\mid w^Tv=b\}$.  This
 is the difference between their components in the direction $w$.
 \begin{figure}[H]
 \centering
-\begin{asy}
-  include "3-SVM/Distance.asy";
-\end{asy}
+\asyinclude{3-SVM/Distance.asy}
 \caption{Signed Distance from $x_1,x_2$ to Hyperplane $w^Tv=20$}
 \end{figure}
 \subsection{Hard Margin SVM}
@@ -102,9 +92,7 @@ the $-1$'s using the hyperplane $\{v\mid w^Tv=-a\}$.  For the rest of this secti
 assume our data is linearly separable.
 \begin{figure}[H]
 \centering
-\begin{asy}
-  include "3-SVM/LinSep.asy";
-\end{asy}
+\asyinclude{3-SVM/LinSep.asy}
 \caption{Linearly Separable Data}
 \end{figure}
 If we can find the $w,a$ corresponding to a hyperplane that separates
@@ -115,9 +103,7 @@ separable, then there are infinitely many choices of separating
 hyperplanes. 
 \begin{figure}[H]
 \centering
-\begin{asy}
-  include "3-SVM/ManyLinSep.asy";
-\end{asy}
+\asyinclude{3-SVM/ManyLinSep.asy}
 \caption{Many Separating Hyperplanes Exist}
 \end{figure}
 We will choose the hyperplane that maximizes a quantity called the
@@ -144,9 +130,7 @@ $$\begin{Array}{ll}
 \end{Array}$$
 \begin{figure}[H]
 \centering
-\begin{asy}
-  include "3-SVM/MaxMargin.asy";
-\end{asy}
+\asyinclude{3-SVM/MaxMargin.asy}
 \caption{Maximum Margin Separating Hyperplane}
 \end{figure}
 Note above how the geometric margin is achieved on both sides of the optimal
@@ -204,9 +188,7 @@ $w^Tv+a=0$, and $\xi_i=3$ means $x_i$ lies 2 margin widths past the
 decision hyperplane. 
 \begin{figure}[H]
 \centering
-\begin{asy}
-  include "3-SVM/SoftMargin.asy";
-\end{asy}
+\asyinclude{3-SVM/SoftMargin.asy}
 \caption{Soft Margin SVM (unlabeled points have $\xi_i=0$)}
 \end{figure}
 Recall from the treatment in class, that the minimizer $w$ will be a
@@ -264,26 +246,18 @@ regularized problem is to minimize the average slack, but only among
 classifiers that have a margin of at least $1/r$.
 \begin{figure}[H]
 \centering
-\begin{asy}
-  include "3-SVM/Ivanov.asy";
-\end{asy}
+\asyinclude{3-SVM/Ivanov.asy}
 \caption{Optimize Over Cases Where Margin Is At Least $1/r$}
 \end{figure}
 To see the value of regularization, consider the following examples.
 \begin{figure}[H]
 \centering
-\begin{asy}
-  include "3-SVM/SmallMargin.asy";
-  size(8cm);
-\end{asy}
+\asyinclude{3-SVM/SmallMargin.asy}
 \caption{Overfitting: Tight Margin With No Misclassifications}
 \end{figure}
 \begin{figure}[H]
 \centering
-\begin{asy}
-  include "3-SVM/LargeMargin.asy";
-  size(8cm);
-\end{asy}
+\asyinclude{3-SVM/LargeMargin.asy}
 \caption{Training Error But Large Margin}
 \end{figure}
 Although the first figure above has no misclassifications on the

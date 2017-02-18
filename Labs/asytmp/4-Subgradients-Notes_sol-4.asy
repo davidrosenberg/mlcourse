@@ -1,3 +1,13 @@
+if(!settings.multipleView) settings.batchView=false;
+settings.tex="pdflatex";
+defaultfilename="4-Subgradients-Notes_sol-4";
+if(settings.render < 0) settings.render=4;
+settings.outformat="";
+settings.inlineimage=true;
+settings.embed=true;
+settings.toolbar=false;
+viewportmargin=(2,2);
+
 settings.prc = false;
 
 import three;
@@ -13,3 +23,4 @@ triple g(pair p) {
   return (x,y,-exp(-(x^2+y^2)/.25)/.6);
 }
 draw(surface(g,(-.3,-.3),(.3,.3),50,Notaknot,Notaknot),surfacepen=lightblue+opacity(.75),black);
+

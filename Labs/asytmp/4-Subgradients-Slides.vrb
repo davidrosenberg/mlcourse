@@ -1,0 +1,9 @@
+\frametitle{Convergence of Subgradient Descent}
+\begin{theorem}
+  Let $f:\RR^n\to\RR$ be convex and Lipschitz with constant $G$, and
+  let $x^*$ be a minimizer.
+  For a fixed step size $t$, the subgradient method satisfies:
+  $$\lim_{k\to\infty} f(x_{\text{best}}^{(k)}) \leq f(x^*)+G^2t/2.$$
+  For step sizes respecting the Robbins-Monro conditions,
+  $$\lim_{k\to\infty} f(x_{\text{best}}^{(k)}) = f(x^*).$$
+\end{theorem}

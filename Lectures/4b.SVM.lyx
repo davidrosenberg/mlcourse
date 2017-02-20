@@ -1615,7 +1615,9 @@ Note:
 \begin_inset Formula $\xi_{i}\to\pm\infty$
 \end_inset
 
-)
+).
+ This inf is NOT an optimum because it is never attained.
+ 
 \end_layout
 
 \end_deeper
@@ -1739,7 +1741,40 @@ g(\alpha,\lambda)=\begin{cases}
 
 \end_inset
 
- 
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Two possibilities for each 
+\begin_inset Formula $\alpha,\lambda$
+\end_inset
+
+: we have a local (and global) minimum (when first order conditions are
+ satisfied), or the minimum is not attained.
+ (The 
+\begin_inset Quotes eld
+\end_inset
+
+otherwise
+\begin_inset Quotes erd
+\end_inset
+
+ condition.) Make similar note in the SVM notes.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
@@ -1867,7 +1902,7 @@ Quadratic objective in
 \end_inset
 
  unknowns and 
-\begin_inset Formula $2n$
+\begin_inset Formula $n+1$
 \end_inset
 
  constraints

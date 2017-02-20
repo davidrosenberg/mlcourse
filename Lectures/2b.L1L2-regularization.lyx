@@ -3683,7 +3683,7 @@ The Lasso as a Quadratic Program
 
 \begin_deeper
 \begin_layout Standard
-Lasso problem is trivially equivlent to the following: 
+Lasso problem is trivially equivalent to the following: 
 \begin_inset Formula 
 \begin{align*}
 \min_{w}\;\min_{a,b}\quad & \sum_{i=1}^{n}\left(\left(a-b\right)^{T}x_{i}-y_{i}\right)^{2}+\lambda1^{T}\left(a+b\right)\\
@@ -3868,12 +3868,11 @@ The Lasso as a Quadratic Program
 
 \begin_deeper
 \begin_layout Itemize
-So lasso optimization problem is equivalenet to 
+So lasso optimization problem is equivalent to 
 \begin_inset Formula 
 \begin{align*}
-\min_{w}\;\min_{a,b}\quad & \sum_{i=1}^{n}\left(\left(a-b\right)^{T}x_{i}-y_{i}\right)^{2}+\lambda1^{T}\left(a+b\right)\\
-\mbox{subject to}\quad & a_{i}\ge0\mbox{ for all }i\text{\qquad}b_{i}\ge0\mbox{ for all }i,\\
- & a-b=w
+\min_{a,b}\quad & \sum_{i=1}^{n}\left(\left(a-b\right)^{T}x_{i}-y_{i}\right)^{2}+\lambda1^{T}\left(a+b\right)\\
+\mbox{subject to}\quad & a_{i}\ge0\mbox{ for all }i\text{\qquad}b_{i}\ge0\mbox{ for all }i,
 \end{align*}
 
 \end_inset
@@ -3881,7 +3880,7 @@ So lasso optimization problem is equivalenet to
 
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Standard
 QED
 \end_layout
 
@@ -3942,7 +3941,7 @@ Project
 \end_layout
 
 \begin_layout Itemize
-In other words, any component of 
+In other words, if any component of 
 \begin_inset Formula $w^{+}$
 \end_inset
 
@@ -3950,7 +3949,7 @@ In other words, any component of
 \begin_inset Formula $w^{-}$
 \end_inset
 
- becomes negative, set it back to 0 .
+ becomes negative, set it back to 0.
 \begin_inset Note Note
 status open
 
@@ -3970,13 +3969,7 @@ Note: Sparsity pattern may change frequently as we iterate
 \end_deeper
 \end_deeper
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Not clear that it's not just one pass through the coordinates.
-\end_layout
-
+\begin_inset Separator plain
 \end_inset
 
 

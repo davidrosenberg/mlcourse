@@ -1,0 +1,181 @@
+\section{Week 4 Lecture: Concept Check Exercises}
+\subsection{Convexity}
+\begin{enumerate}
+\item If $A,B\subseteq\RR^n$ are convex, then $A\cap B$ is convex.
+\begin{solution}
+\item[]\Sol Let $x,y\in A\cap B$ and $t\in(0,1)$.  Since $A,B$ are
+  convex, we have
+  $$(1-t)x+ty\in A\quad\text{and}\quad (1-t)x+ty \in B.$$
+  Thus $(1-t)x+ty \in A\cap B$.
+\end{solution}
+\item Let $f,g:\RR^n\to\RR$ be convex.  Show that $af+bg$ is convex if
+  $a,b\geq0$.
+\begin{solution}
+\item[]\Sol Let $x,y\in\RR^n$ and $\theta\in(0,1)$.  Then
+  $$\begin{array}{rcl}
+  (af+bg)((1-\theta)x+\theta y) = 
+  & = & af((1-\theta)x+\theta y)+bg((1-\theta)x+\theta y)\\
+  & \leq & a[(1-\theta)f(x) + \theta f(y)] + b[(1-\theta)g(x) + \theta
+    g(y)]\\
+  & = & (1-\theta)(af+bg)(x) + \theta(af+bg)(y).
+  \end{array}$$
+\end{solution}
+\item Let $f:\RR^n\to\RR$ be convex and differentiable.  Prove that if
+  $\nabla f(x)=0$ then $x$ is a global minimizer.
+\begin{solution}
+\item[]\Sol Suppose $\nabla f(x)=0$.  The gradient (or first-order)
+  characterization of convexity says
+  $$f(y) \geq f(x) + \nabla f(x)^T(y-x)$$
+  for all $y$.  If $\nabla f(x)=0$ then this says $f(y)\geq f(x)$ for
+  all $x$.
+\end{solution}
+\item Prove that if $f:\RR^n\to\RR$ is strictly convex and $x$ is a global
+  minimizer, then it is the unique global minimizer.
+\begin{solution}
+\item[]\Sol Suppose $y$ is also a global minimizer with $y\neq x$.  Then 
+  $$f( (y+x)/2 ) < f(y)/2 + f(x)/2 = f(x)$$
+  contradicting the fact that $f(x)$ was a global minimizer.
+\end{solution}
+\item Prove that any affine function $f:\RR^n\to\RR$ is both convex
+  and concave.
+\begin{solution}
+\item[]\Sol Recall that $f$ has the form $f(x)=w^Tx+b$ where
+  $w\in\RR^n$ and $b\in\RR$.  Then, for $x,y\in\RR^n$ and $\theta\in(0,1)$,
+  $$f((1-\theta)x+\theta y) = w^T((1-\theta)x+\theta y)+b = 
+  (1-\theta)(w^Tx+b) + \theta(w^Ty+b) = (1-\theta)f(x) + \theta
+  f(y).$$
+  This shows $f$ is convex.  But the same holds if we replace $w$ with
+  $-w$ and $b$ with $-b$.  Hence $f$ is also concave.
+\end{solution}
+\item Let $f:\RR^n\to\RR$ be convex and let $g:\RR^m\to\RR^n$ be
+  affine.  Then $f\circ g$ is convex.
+\begin{solution}
+\item[]\Sol Write $g(x)=Ax+b$ where $A\in\RR^{n\times m}$ and
+  $b\in\RR^n$.  For $x,y\in\RR^m$ and $t\in(0,1)$ we have
+  $$\begin{array}{rcl}
+  f(g((1-t)x + ty))
+  & = & f((1-t)(Ax+b) + t(Ay + b))\\
+  & \leq & (1-t)f(Ax+b) + tf(Ay+b)\\
+  & = & (1-t) f(g(x)) + tf(g(y)).
+  \end{array}$$
+\end{solution}
+\item $(\star\star)$
+  \begin{enumerate}
+  \item Let $f:\RR\to\RR$ be convex.  Show that $f$ has one-sided left and
+    right derivatives at every point.
+  \item Let $f:\RR^n\to\RR$ be convex.  Show that $f$ has one-sided
+    directional derivatives at every point.
+  \item Let $f:\RR^n\to\RR$ be convex.  Show that if $x$ is not a
+    minimizer of $f$ then $f$ has a descent direction at $x$ (i.e., a
+    direction whose corresponding one-sided directional derivative is negative). 
+  \end{enumerate}
+\begin{solution}
+\item[]\Sol We first prove the following lemma.
+  \begin{lem}\label{lem:secant}
+    If $f:\RR\to\RR$ is convex and $x < y < z$ then 
+    $$\frac{f(y)-f(x)}{y-x} \leq \frac{f(z)-f(x)}{z-x}.$$
+  \end{lem}
+  \begin{proof}
+    Let $t\in(0,1)$ satisfy $(1-t)x+tz=y$.  By convexity we have
+    $$f(y) = f( (1-t)x+tz ) \leq (1-t)f(x) + tf(z)$$
+    giving
+    $$\frac{f(y)-f(x)}{y-x} \leq \frac{(1-t)f(x) +
+      tf(z)-f(x)}{(1-t)x+tz-x} = \frac{t(f(z)-f(x))}{t(z-x)} 
+    =\frac{f(z)-f(x)}{z-x}.$$
+  \end{proof}
+  \begin{enumerate}
+  \item For the right derivative, we will show
+    $$\lim_{y\downto x} \frac{f(y)-f(x)}{y-x} =
+    \inf_{y>x}\frac{f(y)-f(x)}{y-x}=:L.$$
+    Fix $\epsilon>0$ and choose $y'>x$ so that 
+    $$\frac{f(y')-f(x)}{y'-x} < L+\epsilon.$$
+    Letting $\delta = y'-x$, the lemma shows that
+    $$\frac{f(y)-f(x)}{y-x} < L+\epsilon$$
+    for any $y < x+\delta$ proving the limit exists.
+
+    For the left derivative, we could repeat the above, or note that
+    $g(t) = 2x-t$ is affine, so $f\circ g$ is convex.  By the above
+    $$\lim_{y\downto x} \frac{f(g(y))-f(g(x))}{y-x}
+    = \lim_{y\downto x} \frac{f(2x-y)-f(x)}{y-x}
+    = \lim_{h\downto 0} \frac{f(x-h)-f(x)}{h}$$
+    exists, where $h=y-x$.  This proves the left derivative exists as
+    well.
+  \item Fix $x,v\in\RR^n$ and let $g:\RR\to\RR^n$ be defined by
+    $g(t)=x+tv$.  Then $f\circ g$ is convex, and thus the previous
+    part applies.  But the right derivative of $g$ at $0$ is the
+    one-sided directional derivative of $f$ at $x$ in the direction $v$:
+    $$\lim_{h\downto 0}\frac{f(g(h))-f(g(0))}{h} = \lim_{h\downto
+      0}\frac{f(x+hv)-f(x)}{h}.$$
+  \item Let $y$ be a minimizer of $f$ and let $g(t) = x+t(y-x)$.
+    By the arguments in the first part above, the value
+    $$\frac{f(g(1))-f(g(0))}{1-0} = f(y)-f(x) < 0$$
+    is an upper bound on the right derivative of $g$ at $0$.  But this
+    is a directional derivative, by the argument in the second part above.
+  \end{enumerate}
+\end{solution}
+\end{enumerate}
+\subsection{Convex Optimization Problems}
+\begin{enumerate}
+\item Suppose there are $mn$ people forming $m$ rows with $n$
+  columns.  Let $a$ denote the height of the tallest person taken from
+  the shortest people in each column.
+  Let $b$ denote the height of the shortest person taken from the
+  tallest people in each row. What is the relationship between $a$
+  and $b$?
+\begin{solution}
+\item[]\Sol Let $H_{ij}$ denote the height of the person in row $i$
+  and column $j$.  Then
+  $$a = \max_j \min_i H_{ij} \leq \min_i\max_j H_{ij} = b,$$
+  by the max-min inequality.
+\end{solution}
+\item Let $x_1,\ldots,x_n\in\RR^d$ be given data.  You want to find
+  the center and radius of the smallest sphere that encloses all of
+  the points.  Express this problem as a convex optimization problem.
+\begin{solution}
+\item[]\Sol 
+  $$\begin{array}{ll}
+  \text{minimize}_{r,c} & r \\
+  \text{subject to} & \|x_i-c\|_2 \leq r\quad\text{for $i=1,\ldots,n$.}
+  \end{array}$$
+  This problem is convex since norms are convex, so $f_i(c) =
+  \|x_i-c\|_2$ is convex (composition of convex with affine).
+\end{solution}
+\item Suppose $x_1,\ldots,x_n\in\RR^d$ and
+  $y_1,\ldots,y_n\in\{-1,1\}$.  Here we look at $y_i$ as the label of
+  $x_i$.  We say the data points are linearly separable if there is a
+  vector $v\in\RR^d$ and $a\in\RR$ such that $v^Tx_i>a$ when $y_i=1$
+  and $v^Tx_i<a$ for $y_i=-1$.  Give a method for determining if the
+  given data points are linearly separable.
+\begin{solution}
+\item[]\Sol Solve the hard-margin SVM problem 
+  $$\begin{array}{ll}
+  \text{minimize}_{w,b} & \|w\|_2^2 \\
+  \text{subject to} & y_i(w^Tx_i+b) \geq 1\quad\text{for all $i=1,\ldots,n$.}
+  \end{array}$$
+  If the resulting problem is feasible, then the data is linearly separable.
+\end{solution}
+\item Consider the Ivanov form of ridge regression:
+  $$\begin{array}{ll}
+  \text{minimize} & \|Ax-y\|_2^2 \\
+  \text{subject to} & \|x\|_2^2 \leq r^2,
+  \end{array}$$
+  where $r>0$, $y\in\RR^m$ and $A\in\RR^{m\times n}$ are fixed.
+  \begin{enumerate}
+  \item What is the Lagrangian?
+  \item What do you get when you take the supremum of the Lagrangian
+    over the feasible values for the dual variables?
+  \end{enumerate}
+\begin{solution}
+\item[]\Sol
+  \begin{enumerate}
+  \item $L(x,\lambda) = \|Ax-y\|_2^2 + \lambda(\|x\|_2^2-r^2)$.  Note that
+    this is a shifted version of the Tikhonov objective.
+  \item 
+    $$\sup_{\lambda\succeq 0} L(x,\lambda) = \left\{\begin{array}{ll}
+    +\infty & \text{if $\|x\|_2^2>r^2$,}\\
+    \|Ax-y\|_2^2 & \text{otherwise.}\end{array}\right.$$
+    Note that the original Ivanov minimization is then just
+    $$\inf_x\sup_{\lambda\succeq 0}L(x,\lambda).$$
+  \end{enumerate}
+\end{solution}
+\end{enumerate}

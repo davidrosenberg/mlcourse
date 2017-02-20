@@ -2,6 +2,7 @@
 
 ## Notable Changes from [2016](https://davidrosenberg.github.io/ml2016/#home) to [2017](https://davidrosenberg.github.io/ml2017/#home)
 - L2 constraint for linear models gives Lipschitz continuity of prediction function (Thanks to Brian Dalessandro for pointing this out to me). 
+- Expanded discussion of L1/L2/ElasticNet with correlated random variables
 
 ## Notable Changes from [2015](https://davidrosenberg.github.io/ml2015/#home) to [2016](https://davidrosenberg.github.io/ml2016/#home)
 - [New lecture](https://davidrosenberg.github.io/mlcourse/Archive/2016/Lectures/9a.multiclass.pdf) on **multiclass classification** and an intro to **structured prediction**

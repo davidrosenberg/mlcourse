@@ -1104,11 +1104,11 @@ need high-dimensional feature spaces
 (What do we mean by expressive?)
 \end_layout
 
+\end_deeper
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 Very large feature spaces have two problems:
 \end_layout
@@ -1122,11 +1122,11 @@ Overfitting
 Memory and computational costs 
 \end_layout
 
+\end_deeper
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 Overfitting we handle with regularization.
 \end_layout
@@ -1137,20 +1137,24 @@ Overfitting we handle with regularization.
 
 \begin_layout Itemize
 Kernel methods can (sometimes) help with memory and computational costs.
-\end_layout
+\begin_inset Note Note
+status open
 
-\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
-In practice, most applicable for linear methods with 
+In practice, kernel methods most applicable for linear methods with 
 \begin_inset Formula $\ell_{2}$
 \end_inset
 
  regularization.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
@@ -1428,7 +1432,16 @@ What's the Benefit of Kernelization?
 
 \begin_deeper
 \begin_layout Enumerate
-Computational.
+Computational (e.g.
+ when feature space dimension 
+\begin_inset Formula $d$
+\end_inset
+
+ larger than sample size 
+\begin_inset Formula $n$
+\end_inset
+
+).
  
 \end_layout
 
@@ -1458,33 +1471,22 @@ similarity
 \end_inset
 
  rather than features.
- (debatable)
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+(debatable)
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
-Kernel Examples
-\end_layout
-
-\begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
+Example: SVM 
 \end_layout
 
 \begin_layout Frame
@@ -1561,10 +1563,162 @@ What kernel are we currently using?
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Kernel Matrix (or the Gram Matrix)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+For a set of 
+\begin_inset Formula $\left\{ x_{1},\ldots,x_{n}\right\} $
+\end_inset
+
+ and an inner product 
+\begin_inset Formula $\left\langle \cdot,\cdot\right\rangle $
+\end_inset
+
+ on the set, the 
+\series bold
+kernel matrix
+\series default
+ or the 
+\series bold
+Gram matrix
+\series default
+ is defined as
+\begin_inset Formula 
+\[
+K=\begin{pmatrix}\left\langle x_{i},x_{j}\right\rangle \end{pmatrix}_{i,j}=\begin{pmatrix}\left\langle x_{1},x_{1}\right\rangle  & \cdots & \left\langle x_{1},x_{n}\right\rangle \\
+\vdots & \ddots & \cdots\\
+\left\langle x_{n},x_{1}\right\rangle  & \cdots & \left\langle x_{n},x_{n}\right\rangle 
+\end{pmatrix}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Then for the standard Euclidean inner product 
+\begin_inset Formula $\left\langle x_{i},x_{j}\right\rangle =x_{i}^{T}x_{j}$
+\end_inset
+
+, we have
+\begin_inset Formula 
+\[
+K=XX^{T}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+SVM Dual with Kernel Matrix
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+\sup_{\alpha} &  & \sum_{i=1}^{n}\alpha_{i}-\frac{1}{2}\sum_{i,j=1}^{n}\alpha_{i}\alpha_{j}y_{i}y_{j}K_{ji}\\
+\mbox{s.t.} &  & \sum_{i=1}^{n}\alpha_{i}y_{i}=0\\
+ & \quad & \alpha_{i}\in\left[0,\frac{c}{n}\right]\;i=1,\ldots,n.
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Once our algorithm works with kernel matrices, we can change kernel just
+ by changing the matrix.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Size of matrix: 
+\begin_inset Formula $n\times n$
+\end_inset
+
+, where 
+\begin_inset Formula $n$
+\end_inset
+
+ is the number of data points.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Recall with ridge regression, we worked with 
+\begin_inset Formula $X^{T}X$
+\end_inset
+
+, which is 
+\begin_inset Formula $d\times d$
+\end_inset
+
+, where 
+\begin_inset Formula $d$
+\end_inset
+
+ is feature space dimension.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Some Kernels
 \end_layout
 
 \begin_layout Frame
@@ -2128,21 +2282,14 @@ Probably the most common nonlinear kernel.
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
 \end_layout
 
 \begin_layout Section
-Prediction Functions with RBF Kernel
-\end_layout
-
-\begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
+Kernel Trick: Overview
 \end_layout
 
 \begin_layout Frame
@@ -2150,7 +2297,7 @@ Prediction Functions with RBF Kernel
 status open
 
 \begin_layout Plain Layout
-RBF Basis
+Recap
 \end_layout
 
 \end_inset
@@ -2159,20 +2306,8 @@ RBF Basis
 \end_layout
 
 \begin_deeper
-\begin_layout Itemize
-Input space 
-\begin_inset Formula $\cx=\reals$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Output space: 
-\begin_inset Formula $\cy=\reals$
-\end_inset
-
-
+\begin_layout Enumerate
+Given a kernelized ML algorithm.
 \end_layout
 
 \begin_deeper
@@ -2181,165 +2316,49 @@ Output space:
 \end_layout
 
 \end_deeper
-\begin_layout Itemize
-RBF kernel 
-\begin_inset Formula $k(w,x)=\exp\left(-\left(w-x\right)^{2}\right)$
-\end_inset
+\begin_layout Enumerate
+Can swap out the inner product for a new kernel function.
+\end_layout
 
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+New kernel may correspond to a high dimensional feature space.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Once kernel matrix is computed, computational cost depends on number of
+ data points, rather than the dimension of feature space.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Swapping out a linear kernel for a new kernel is called the 
+\series bold
+kernel trick
+\series default
 .
 \end_layout
 
-\begin_layout Itemize
-Suppose we have 6 training examples: 
-\begin_inset Formula $x_{i}\in\left\{ -6,-4,-3,0,2,4\right\} $
-\end_inset
-
-.
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-If representer theorem applies, then
-\begin_inset Formula 
-\[
-f(x)=\sum_{i=1}^{6}\alpha_{i}k(x_{i},x).
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-\begin_inset Formula $f$
-\end_inset
-
- is a linear combination of 6 basis functions of form 
-\begin_inset Formula $k(x_{i},\cdot)$
-\end_inset
-
-:
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename ../Figures/kernels/kernel-fns-1.jpg
-	lyxscale 60
-	width 80col%
-	groupId halfSlide
-
-\end_inset
-
- 
-\end_layout
-
-\end_deeper
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
 
 \end_layout
 
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-RBF Predictions
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Basis functions
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename ../Figures/kernels/kernel-fns-1.jpg
-	lyxscale 60
-	width 80col%
-	groupId halfSlide
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-Predictions of the form
-\begin_inset Formula 
-\[
-f(x)=\sum_{i=1}^{6}\alpha_{i}k(x_{i},x)
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename ../Figures/kernels/kernel-fns-2.jpg
-	lyxscale 60
-	width 80col%
-	groupId halfSlide
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-If we have a kernelized algorithm with RBF kernel, prediction functions
- 
-\begin_inset Formula $x\mapsto\left\langle w,\psi(x)\right\rangle $
-\end_inset
-
- will look this way.
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-whether we got 
-\begin_inset Formula $w$
-\end_inset
-
- from SVM, ridge regression, etc...
-\end_layout
-
-\end_deeper
-\end_deeper
 \end_body
 \end_document

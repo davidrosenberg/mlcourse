@@ -3,7 +3,7 @@
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin unavailable
+\origin /Users/drosen/Dropbox/repos/mlcourse/Notes/
 \textclass paper
 \use_default_options false
 \begin_modules
@@ -608,10 +608,8 @@ book is very well-written and a pleasure to read.
  to go through almost 300 pages to get through duality theory.
  It turns out that a well-chosen 10 pages are enough for a self-contained
  introduction to the topic.
- Besides a rare extra comment or two, the text here is copied essentially
- verbatim from the original.
- My main contribution is deciding what to leave out.
- 
+ Most of the text here is copied essentially verbatim from the original.
+  
 \begin_inset Note Note
 status open
 

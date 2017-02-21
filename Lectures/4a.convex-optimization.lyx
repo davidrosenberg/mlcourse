@@ -3426,9 +3426,9 @@ Let
  Then:
 \begin_inset Formula 
 \begin{eqnarray*}
-f_{0}(x^{*}) & = & g(\lambda^{*})\pause\text{\quad by strong duality}\\
-\pause & = & \inf_{x}\left(f_{0}(x)+\sum_{I=1}^{m}\lambda_{i}^{*}f_{i}(x)\right)\\
-\pause & \le & f_{0}(x^{*})+\sum_{i=1}^{m}\underbrace{\lambda_{i}^{*}f_{i}(x^{*})}_{\le0}\\
+f_{0}(x^{*}) & = & g(\lambda^{*})=\inf_{x}\,L(x,\lambda^{*})\pause\text{\quad(strong duality and definition)}\\
+\pause & \le & L(x^{*},\lambda^{*})\\
+\pause & = & f_{0}(x^{*})+\sum_{i=1}^{m}\underbrace{\lambda_{i}^{*}f_{i}(x^{*})}_{\le0}\\
 \pause & \le & f_{0}(x^{*}).
 \end{eqnarray*}
 
@@ -3471,11 +3471,287 @@ complementary slackness
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
 \end_layout
 
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Reiterating Consequences of Strong Duality
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $x^{*}$
+\end_inset
+
+ be primal optimal and 
+\begin_inset Formula $\lambda^{*}$
+\end_inset
+
+ be dual optimal.
+ 
+\end_layout
+
+\begin_layout Itemize
+If we have strong duality, then 
+\begin_inset Formula 
+\[
+p^{*}=d^{*}=f_{0}(x^{*})=g(\lambda^{*})=L(x^{*},\lambda^{*})
+\]
+
+\end_inset
+
+and
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lambda_{i}^{*}f_{i}(x^{*})=0,\quad i=1,\ldots,m.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+What more we can say if we have differentiable objective and constraint
+ functions?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Karush-Kuhn-Tucker (KKT) Conditions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose we have strong duality: 
+\begin_inset Formula $p^{*}=d^{*}=f_{0}(x^{*})=g(\lambda^{*})=L(x^{*},\lambda^{*})$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Itemize
+and 
+\begin_inset Formula $f_{0},\ldots,f_{m}$
+\end_inset
+
+ are differentiable, but 
+\series bold
+\emph on
+not necessarily convex
+\series default
+\emph default
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Since 
+\begin_inset Formula $x^{*}$
+\end_inset
+
+ minimizes 
+\begin_inset Formula $L(x,\lambda^{*})$
+\end_inset
+
+ over 
+\begin_inset Formula $x$
+\end_inset
+
+, we must have 
+\begin_inset Formula $\del_{x}L(x,\lambda^{*})=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Thus 
+\begin_inset Formula $x^{*},\lambda^{*}$
+\end_inset
+
+ satisfy the following
+\series bold
+ Karush-Kuhn-Tucker
+\series default
+ (KKT) conditions:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Primal and dual feasibility: 
+\begin_inset Formula $f_{i}(x^{*})\le0$
+\end_inset
+
+, 
+\begin_inset Formula $\lambda_{i}^{*}\ge0$
+\end_inset
+
+ for all 
+\begin_inset Formula $i$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Complementary slackness: 
+\begin_inset Formula $\lambda_{i}^{*}f_{i}(x^{*})=0$
+\end_inset
+
+ for all 
+\begin_inset Formula $i$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+First order conditions: 
+\begin_inset Formula $\del_{x}L(x,\lambda^{*})=\del f_{0}(x^{*})+\sum_{i=1}^{m}\lambda_{i}^{*}\del f_{i}(x^{*})=0$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Only complementary slackness is not completely obvious.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+KKT Conditions for Convex, Differentiable Problems
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Suppose
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $f_{0},\ldots,f_{m}$
+\end_inset
+
+ are differentiable and convex
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\tilde{x}$
+\end_inset
+
+ and 
+\begin_inset Formula $\tilde{\lambda}$
+\end_inset
+
+ satisfy the KKT conditions
+\end_layout
+
+\begin_layout Standard
+Then we have strong duality and 
+\begin_inset Formula $(\tilde{x},\tilde{\lambda})$
+\end_inset
+
+ are primal and dual optimal, respectively.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Proof
+Convexity and first order conditions implies 
+\begin_inset Formula $\tilde{x}\in\argmin_{x}L(x,\tilde{\lambda})$
+\end_inset
+
+.
+ So
+\begin_inset Formula 
+\[
+g(\tilde{\lambda})=\inf_{x}L(x,\tilde{\lambda})=L(\tilde{x},\tilde{\lambda})=f_{0}(\tilde{x})+\sum_{i=1}^{m}\tilde{\lambda}_{i}f_{i}(\tilde{x})=f_{0}(\tilde{x})\quad\text{by complementary slackness.}
+\]
+
+\end_inset
+
+But 
+\begin_inset Formula $g(\tilde{\lambda})\le\sup_{\lambda\succeq0}g(\lambda)\le\inf_{x}f_{0}(x)\le f_{0}(\tilde{x})$
+\end_inset
+
+ (middle inequality by weak duality).
+\begin_inset Newline newline
+\end_inset
+
+So 
+\begin_inset Formula $g(\tilde{\lambda})=\sup_{\lambda\succeq0}g(\lambda)=\inf_{x}f_{0}(x)=f_{0}(\tilde{x})$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \end_body
 \end_document

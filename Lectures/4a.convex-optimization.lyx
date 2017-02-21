@@ -3588,7 +3588,7 @@ If
 status open
 
 \begin_layout Plain Layout
-Karush-Kuhn-Tucker (KKT) Conditions
+Karush-Kuhn-Tucker (KKT) Necessary Conditions
 \end_layout
 
 \end_inset
@@ -3697,7 +3697,7 @@ Only complementary slackness is not obvious.
 status open
 
 \begin_layout Plain Layout
-KKT Conditions for Convex, Differentiable Problems
+KKT Sufficient Conditions for Convex, Differentiable Problems
 \end_layout
 
 \end_inset

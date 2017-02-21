@@ -45,7 +45,16 @@
 \index_command default
 \paperfontsize default
 \spacing single
-\use_hyperref false
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
 \papersize default
 \use_geometry true
 \use_package amsmath 2
@@ -634,6 +643,34 @@ ex}{E}
 
 \begin_layout Standard
 \begin_inset FormulaMacro
+\newcommand{\dom}{\textrm{\textbf{dom} }}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\renewcommand{\rank}{\text{\textbf{rank }}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\conv}{\textrm{\textbf{conv} }}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\relint}{\text{\textbf{relint }}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\aff}{\text{\textbf{aff }}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
 \newcommand{\hil}{\ch}
 \end_inset
 
@@ -651,7 +688,7 @@ ex}{E}
 \end_layout
 
 \begin_layout Title
-Support Vector Machines
+SVM and Complementary Slackness
 \begin_inset Argument 1
 status open
 
@@ -676,6 +713,10 @@ optional, use only with long paper titles
 
 \begin_layout Author
 David Rosenberg 
+\end_layout
+
+\begin_layout Date
+February 21, 2017
 \end_layout
 
 \begin_layout Institute
@@ -729,7 +770,7 @@ tiny{Plots courtesy of Ningshan Zhang.}}
 \end_layout
 
 \begin_layout Section
-The SVM as a Quadratic Program
+SVM Review: Primal and Dual Formulations
 \end_layout
 
 \begin_layout Frame
@@ -737,219 +778,7 @@ The SVM as a Quadratic Program
 status open
 
 \begin_layout Plain Layout
-The Margin
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Definition
-The 
-\series bold
-margin
-\series default
- (or 
-\series bold
-functional margin
-\series default
-)
-\series bold
- 
-\series default
-for predicted score 
-\begin_inset Formula $\hat{y}$
-\end_inset
-
- and true class 
-\begin_inset Formula $y\in\left\{ -1,1\right\} $
-\end_inset
-
- is 
-\begin_inset Formula $y\hat{y}$
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-The margin often looks like 
-\begin_inset Formula $yf(x)$
-\end_inset
-
-, where 
-\begin_inset Formula $f(x)$
-\end_inset
-
- is our score function.
-\end_layout
-
-\begin_layout Itemize
-The margin is a measure of how 
-\series bold
-correct
-\series default
- we are.
- 
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-We want to 
-\series bold
-maximize the margin
-\series default
-.
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-Most classification losses depend only on the margin.
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Standard
-(This is distinct from but related to 
-\series bold
-geometric margin
-\series default
- from lab.)
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Hinge Loss
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-SVM/Hinge loss: 
-\begin_inset Formula $\loss_{\text{Hinge}}=\max\left\{ 1-m,0\right\} =\left(1-m\right)_{+}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Margin 
-\begin_inset Formula $m=yf(x)$
-\end_inset
-
-; 
-\begin_inset Quotes eld
-\end_inset
-
-Positive part
-\begin_inset Quotes erd
-\end_inset
-
- 
-\begin_inset Formula $(x)_{+}=x\ind{x\ge0}$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename ../Figures/loss-functions/loss.Zero_One.Hinge.png
-	lyxscale 30
-	height 50theight%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Hinge is a 
-\series bold
-convex
-\series default
-, 
-\series bold
-upper bound
-\series default
- on 
-\begin_inset Formula $0-1$
-\end_inset
-
- loss.
- Not differentiable at 
-\begin_inset Formula $m=1$
-\end_inset
-
-.
- 
-\begin_inset Newline newline
-\end_inset
-
-We have a 
-\series bold
-
-\begin_inset Quotes eld
-\end_inset
-
-margin error
-\begin_inset Quotes erd
-\end_inset
-
-
-\series default
- when 
-\begin_inset Formula $m<1$
-\end_inset
-
-.
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Support Vector Machine 
+Support Vector Machine
 \end_layout
 
 \end_inset
@@ -1003,124 +832,7 @@ The SVM prediction function is the solution to
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-SVM Optimization Problem (Tikhonov Version)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-The SVM prediction function is the solution to
-\begin_inset Formula 
-\[
-\min_{w\in\reals^{d},b\in\reals}\frac{1}{2}||w||^{2}+\frac{c}{n}\sum_{i=1}^{n}\max\left(0,1-y_{i}\left[w^{T}x_{i}+b\right]\right).
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-unconstrained optimization
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-not differentiable because of the max (right at the border of a margin error)
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Can we reformulate into a differentiable problem?
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-SVM Optimization Problem
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-The SVM optimization problem is equivalent to
-\begin_inset Formula 
-\begin{eqnarray*}
-\textrm{minimize} &  & \frac{1}{2}||w||^{2}+\frac{c}{n}\sum_{i=1}^{n}\xi_{i}\\
-\textrm{subject to} &  & \xi_{i}\ge\max\left(0,1-y_{i}\left[w^{T}x_{i}+b\right]\right).
-\end{eqnarray*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Which is equivalent to
-\begin_inset Formula 
-\begin{eqnarray*}
-\textrm{minimize} &  & \frac{1}{2}||w||^{2}+\frac{c}{n}\sum_{i=1}^{n}\xi_{i}\\
-\textrm{subject to} &  & \xi_{i}\ge\left(1-y_{i}\left[w^{T}x_{i}+b\right]\right)\;\mbox{for }i=1,\ldots,n\\
- &  & \xi_{i}\ge0\;\mbox{for }i=1,\ldots,n
-\end{eqnarray*}
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1165,10 +877,6 @@ Differentiable objective function
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $n+d+1$
-\end_inset
-
- unknowns and 
 \begin_inset Formula $2n$
 \end_inset
 
@@ -1199,18 +907,7 @@ Let's learn more by examining the dual.
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-The SVM Dual Problem
-\end_layout
-
-\begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1340,8 +1037,58 @@ Constraint
 
 \begin_layout Standard
 \begin_inset Formula 
+\begin{eqnarray*}
+L(w,b,\xi,\alpha,\lambda) & = & \frac{1}{2}||w||^{2}+\frac{c}{n}\sum_{i=1}^{n}\xi_{i}+\sum_{i=1}^{n}\alpha_{i}\left(1-y_{i}\left[w^{T}x_{i}+b\right]-\xi_{i}\right)+\sum_{i=1}^{n}\lambda_{i}\left(-\xi_{i}\right)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+SVM Primal and Dual
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Lagrangian:
+\begin_inset Formula 
+\begin{eqnarray*}
+L(w,b,\xi,\alpha,\lambda) & = & \frac{1}{2}||w||^{2}+\frac{c}{n}\sum_{i=1}^{n}\xi_{i}+\sum_{i=1}^{n}\alpha_{i}\left(1-y_{i}\left[w^{T}x_{i}+b\right]-\xi_{i}\right)+\sum_{i=1}^{n}\lambda_{i}\left(-\xi_{i}\right)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Primal and dual formulations:
+\begin_inset Formula 
 \[
-L(w,b,\xi,\alpha,\lambda)=\frac{1}{2}||w||^{2}+\frac{c}{n}\sum_{i=1}^{n}\xi_{i}+\sum_{i=1}^{n}\alpha_{i}\left(1-y_{i}\left[w^{T}x_{i}+b\right]-\xi_{i}\right)+\sum_{i=1}^{n}\lambda_{i}\left(-\xi_{i}\right)
+p^{*}=\inf_{w,\xi,b}\underbrace{\sup_{\alpha,\lambda\succeq0}L(w,b,\xi,\alpha,\lambda)}_{\text{primal objective }}\pause\ge\sup_{\alpha,\lambda\succeq0}\underbrace{\inf_{w,b,\xi}L(w,b,\xi,\alpha,\lambda)}_{\text{dual objective }g(\alpha,\lambda)}=d^{*}
 \]
 
 \end_inset
@@ -1349,132 +1096,10 @@ L(w,b,\xi,\alpha,\lambda)=\frac{1}{2}||w||^{2}+\frac{c}{n}\sum_{i=1}^{n}\xi_{i}+
 
 \end_layout
 
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-SVM Lagrangian
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-The Lagrangian for this formulation is
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{eqnarray*}
- &  & L(w,b,\xi,\alpha,\lambda)\\
- & = & \frac{1}{2}||w||^{2}+\frac{c}{n}\sum_{i=1}^{n}\xi_{i}+\sum_{i=1}^{n}\alpha_{i}\left(1-y_{i}\left[w^{T}x_{i}+b\right]-\xi_{i}\right)-\sum_{i}\lambda_{i}\xi_{i}\\
-\pause & = & \frac{1}{2}w^{T}w+\sum_{i=1}^{n}\xi_{i}\left(\frac{c}{n}-\alpha_{i}-\lambda_{i}\right)+\sum_{i=1}^{n}\alpha_{i}\left(1-y_{i}\left[w^{T}x_{i}+b\right]\right).
-\end{eqnarray*}
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Pause
 
 \end_layout
 
-\begin_layout Itemize
-Primal and dual:
-\begin_inset Formula 
-\begin{eqnarray*}
-p^{*} & = & \inf_{w,\xi,b}\sup_{\alpha,\lambda\succeq0}L(w,b,\xi,\alpha,\lambda)\\
-\pause & \ge & \sup_{\alpha,\lambda\succeq0}\inf_{w,b,\xi}L(w,b,\xi,\alpha,\lambda)=d^{*}
-\end{eqnarray*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Do we have 
-\begin_inset Formula $p^{*}=d^{*}$
-\end_inset
-
-?
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Strong Duality by Slater's constraint qualification
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-The SVM optimization problem:
-\begin_inset Formula 
-\begin{eqnarray*}
-\textrm{minimize} &  & \frac{1}{2}||w||^{2}+\frac{c}{n}\sum_{i=1}^{n}\xi_{i}\\
-\textrm{subject to} &  & -\xi_{i}\le0\;\mbox{for }i=1,\ldots,n\\
- &  & \left(1-y_{i}\left[w^{T}x_{i}+b\right]\right)-\xi_{i}\le0\;\mbox{for }i=1,\ldots,n
-\end{eqnarray*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Convex problem + affine constraints 
-\begin_inset Formula $\implies$
-\end_inset
-
-strong duality iff problem is feasible 
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
 \begin_layout Itemize
 Constraints are satisfied by 
 \begin_inset Formula $w=b=0$
@@ -1488,7 +1113,396 @@ Constraints are satisfied by
 \begin_inset Formula $i=1,\ldots,n$
 \end_inset
 
-, 
+.
+\end_layout
+
+\begin_layout Itemize
+So we have strong duality by Slater's conditions.
+ That is: 
+\begin_inset Formula $p^{*}=d^{*}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+First Order Conditions (KKT)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose 
+\begin_inset Formula $(w^{*},b^{*})$
+\end_inset
+
+ are primal optimal and 
+\begin_inset Formula $(\xi^{*},\alpha^{*},\lambda^{*})$
+\end_inset
+
+ are dual optimal.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+By strong duality, 
+\begin_inset Formula $p^{*}=d^{*}$
+\end_inset
+
+, and by 
+\begin_inset Quotes eld
+\end_inset
+
+sandwich proof
+\begin_inset Quotes erd
+\end_inset
+
+,
+\begin_inset Formula 
+\[
+p^{*}=d^{*}=L(w^{*},b^{*},\xi^{*},\alpha^{*},\lambda^{*}).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Since 
+\begin_inset Formula $L$
+\end_inset
+
+ is differentiable, we must have first order conditions:
+\begin_inset Formula 
+\begin{eqnarray*}
+\del_{w}L(w^{*},b^{*},\xi^{*},\alpha^{*},\lambda^{*}) & = & 0\\
+\pause\text{(shown last week)}\iff w^{*} & = & \sum_{i=1}^{n}\alpha_{i}^{*}y_{i}x_{i}
+\end{eqnarray*}
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Conclude that 
+\begin_inset Formula $w^{*}$
+\end_inset
+
+ is 
+\begin_inset Quotes eld
+\end_inset
+
+in the span of the data
+\begin_inset Quotes erd
+\end_inset
+
+ – i.e.
+ a linear combination of 
+\begin_inset Formula $x_{1},\ldots,x_{n}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The SVM Dual Problem
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We found the SVM dual problem can be written as:
+\begin_inset Formula 
+\begin{eqnarray*}
+\sup_{\alpha} &  & \sum_{i=1}^{n}\alpha_{i}-\frac{1}{2}\sum_{i,j=1}^{n}\alpha_{i}\alpha_{j}y_{i}y_{j}x_{j}^{T}x_{i}\\
+\mbox{s.t.} &  & \sum_{i=1}^{n}\alpha_{i}y_{i}=0\\
+ & \quad & \alpha_{i}\in\left[0,\frac{c}{n}\right]\;i=1,\ldots,n.
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Given solution 
+\begin_inset Formula $\alpha^{*}$
+\end_inset
+
+ to dual, primal solution is 
+\begin_inset Formula $w^{*}=\sum_{i=1}^{n}\alpha_{i}^{*}y_{i}x_{i}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Note 
+\begin_inset Formula $\alpha_{i}^{*}\in[0,\frac{c}{n}]$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $c$
+\end_inset
+
+ controls max weight on each example.
+ (
+\series bold
+Robustness
+\series default
+!)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Insights From Complementary Slackness:
+\begin_inset Newline newline
+\end_inset
+
+Margin and Support Vectors
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Margin and Some Terminology
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For notational convenience, define 
+\begin_inset Formula $f^{*}(x)=x^{T}w^{*}+b^{*}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Margin 
+\begin_inset Formula $yf^{*}(x)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/loss-functions/loss.Zero_One.Hinge.png
+	lyxscale 30
+	height 40theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Incorrect classification: 
+\begin_inset Formula $yf^{*}(x)\le0$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Margin error: 
+\begin_inset Formula $yf^{*}(x)<1$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Quotes eld
+\end_inset
+
+On the margin
+\begin_inset Quotes erd
+\end_inset
+
+: 
+\begin_inset Formula $yf^{*}(x)=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Quotes eld
+\end_inset
+
+Good side of the margin
+\begin_inset Quotes erd
+\end_inset
+
+: 
+\begin_inset Formula $yf^{*}(x)>1$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Support Vectors and The Margin
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Recall 
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+slack variable
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Formula $\xi_{i}^{*}=\max\left(0,1-y_{i}f^{*}(x_{i})\right)$
+\end_inset
+
+ is the hinge loss on 
+\begin_inset Formula $\left(x_{i},y_{i}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Suppose 
+\begin_inset Formula $\xi_{i}^{*}=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Then 
+\begin_inset Formula $y_{i}f^{*}(x_{i})\ge1$
+\end_inset
+
+ 
 \end_layout
 
 \begin_deeper
@@ -1497,19 +1511,233 @@ Constraints are satisfied by
 \end_layout
 
 \begin_layout Itemize
-so 
-\series bold
-we have strong duality
-\series default
+\begin_inset Quotes eld
+\end_inset
+
+on the margin
+\begin_inset Quotes erd
+\end_inset
+
  
-\begin_inset Formula $\implies$
+\begin_inset Formula $(=1)$
+\end_inset
+
+, or 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes eld
+\end_inset
+
+on the good side
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Formula $(>1)$
 \end_inset
 
 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Complementary Slackness Conditions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Recall our primal constraints and Lagrange multipliers:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Lagrange Multiplier
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Constraint
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\lambda_{i}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\begin_inset Formula $\xi_{i}\le0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\alpha_{i}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left(1-y_{i}f(x_{i})\right)-\xi_{i}\le0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Recall first order condition 
+\begin_inset Formula $\del_{\xi_{i}}L=0$
+\end_inset
+
+ gave us 
+\begin_inset Formula $\lambda_{i}^{*}=\frac{c}{n}-\alpha_{i}^{*}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+By strong duality, we must have 
+\series bold
+complementary slackness
+\series default
+:
 \begin_inset Formula 
 \begin{align*}
-p^{*} & =\inf_{w,\xi,b}\sup_{\alpha,\lambda\succeq0}L(w,b,\xi,\alpha,\lambda)\\
- & =\sup_{\alpha,\lambda\succeq0}\inf_{w,b,\xi}L(w,b,\xi,\alpha,\lambda)=d^{*}
+\alpha_{i}^{*}\left(1-y_{i}f^{*}(x_{i})-\xi_{i}^{*}\right) & =0\\
+\lambda_{i}^{*}\xi_{i}^{*}=\left(\frac{c}{n}-\alpha_{i}^{*}\right)\xi_{i}^{*} & =0
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Note: Complementary slackness is specifically about the primal and dual
+ optima.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Consequences of Complementary Slackness
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+By strong duality, we must have 
+\series bold
+complementary slackness
+\series default
+:
+\begin_inset Formula 
+\begin{align*}
+\alpha_{i}^{*}\left(1-y_{i}f^{*}(x_{i})-\xi_{i}^{*}\right) & =0\\
+\left(\frac{c}{n}-\alpha_{i}^{*}\right)\xi_{i}^{*} & =0
 \end{align*}
 
 \end_inset
@@ -1517,68 +1745,17 @@ p^{*} & =\inf_{w,\xi,b}\sup_{\alpha,\lambda\succeq0}L(w,b,\xi,\alpha,\lambda)\\
 
 \end_layout
 
-\end_deeper
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-SVM Dual Function
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
 \begin_layout Itemize
-Lagrange dual is the inf over primal variables of the Lagrangian: 
-\begin_inset Formula 
-\begin{eqnarray*}
- &  & g(\alpha,\lambda)=\inf_{w,b,\xi}L(w,b,\xi,\alpha,\lambda)\\
-\pause & = & \inf_{w,b,\xi}\left[\frac{1}{2}w^{T}w+\sum_{i=1}^{n}\xi_{i}\left(\frac{c}{n}-\alpha_{i}-\lambda_{i}\right)+\sum_{i=1}^{n}\alpha_{i}\left(1-y_{i}\left[w^{T}x_{i}+b\right]\right)\right]
-\end{eqnarray*}
-
+If 
+\begin_inset Formula $y_{i}f^{*}(x)>1$
 \end_inset
 
-
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Taking inf of convex and differentiable function of 
-\begin_inset Formula $w,b,\xi$
+ then the margin loss is 
+\begin_inset Formula $\xi_{i}^{*}=0$
 \end_inset
 
-.
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Quadratic in 
-\begin_inset Formula $w$
-\end_inset
-
- and linear in 
-\begin_inset Formula $\xi$
-\end_inset
-
- and 
-\begin_inset Formula $b$
+, and we get 
+\begin_inset Formula $\alpha_{i}^{*}=0$
 \end_inset
 
 .
@@ -1588,92 +1765,65 @@ Quadratic in
 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
-Thus optimal point iff 
-\begin_inset Formula $\partial_{w}L=0\;\partial_{b}L=0\;\partial_{\xi}L=0$
+If 
+\begin_inset Formula $y_{i}f^{*}(x_{i})<1$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-Note: 
-\begin_inset Formula $g(\alpha,\lambda)=-\infty$
+ then the margin loss is 
+\begin_inset Formula $\xi_{i}^{*}>0$
 \end_inset
 
- when 
-\begin_inset Formula $\frac{c}{n}-\alpha_{i}-\lambda_{i}\neq0$
+, so 
+\begin_inset Formula $\alpha_{i}^{*}=\frac{c}{n}$
 \end_inset
 
 .
- (send 
-\begin_inset Formula $\xi_{i}\to\pm\infty$
-\end_inset
-
-).
- This inf is NOT an optimum because it is never attained.
  
 \end_layout
 
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-SVM Dual Function: First Order Conditions
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_deeper
-\begin_layout Standard
-Lagrange dual function is the inf over primal variables of 
-\begin_inset Formula $L$
-\end_inset
-
-: 
-\begin_inset Formula 
-\begin{eqnarray*}
- &  & g(\alpha,\lambda)=\inf_{w,b,\xi}L(w,b,\xi,\alpha,\lambda)\\
- & = & \inf_{w,b,\xi}\left[\frac{1}{2}w^{T}w+\sum_{i=1}^{n}\xi_{i}\left(\frac{c}{n}-\alpha_{i}-\lambda_{i}\right)+\sum_{i=1}^{n}\alpha_{i}\left(1-y_{i}\left[w^{T}x_{i}+b\right]\right)\right]
-\end{eqnarray*}
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Pause
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Formula 
-\begin{eqnarray*}
-\partial_{w}L=0 & \iff & w-\sum_{i=1}^{n}\alpha_{i}y_{i}x_{i}=0\;\iff\;\boxed{w=\sum_{i=1}^{n}\alpha_{i}y_{i}x_{i}}\\
-\pause\partial_{b}L=0 & \iff & -\sum_{i=1}^{n}\alpha_{i}y_{i}=0\;\iff\;\boxed{\sum_{i=1}^{n}\alpha_{i}y_{i}=0}\\
-\pause\partial_{\xi_{i}}L=0 & \iff & \frac{c}{n}-\alpha_{i}-\lambda_{i}=0\;\iff\;\boxed{\alpha_{i}+\lambda_{i}=\frac{c}{n}}
-\end{eqnarray*}
-
+\end_deeper
+\begin_layout Itemize
+If 
+\begin_inset Formula $\alpha_{i}^{*}=0$
 \end_inset
 
+, then 
+\begin_inset Formula $\xi_{i}^{*}=0$
+\end_inset
 
+, which implies no loss, so 
+\begin_inset Formula $y_{i}f^{*}(x)\ge1$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+If 
+\begin_inset Formula $\alpha_{i}^{*}\in\left(0,\frac{c}{n}\right)$
+\end_inset
+
+, then 
+\begin_inset Formula $\xi_{i}^{*}=0$
+\end_inset
+
+, which implies 
+\begin_inset Formula $1-y_{i}f^{*}(x_{i})=0$
+\end_inset
+
+.
 \end_layout
 
 \end_deeper
@@ -1689,7 +1839,7 @@ Lagrange dual function is the inf over primal variables of
 status open
 
 \begin_layout Plain Layout
-SVM Dual Function
+Complementary Slackness Results: Summary
 \end_layout
 
 \end_inset
@@ -1698,20 +1848,22 @@ SVM Dual Function
 \end_layout
 
 \begin_deeper
-\begin_layout Itemize
-Substituting these conditions back into 
-\begin_inset Formula $L$
-\end_inset
-
-, the second term disappears.
-\end_layout
-
-\begin_layout Itemize
-First and third terms become 
+\begin_layout Standard
 \begin_inset Formula 
 \begin{eqnarray*}
-\frac{1}{2}w^{T}w & = & \frac{1}{2}\sum_{i,j=1}^{n}\alpha_{i}\alpha_{j}y_{i}y_{j}x_{i}^{T}x_{j}\\
-\pause\sum_{i=1}^{n}\alpha_{i}(1-y_{i}\left[w^{T}x_{i}+b\right]) & = & \sum_{i=1}^{n}\alpha_{i}-\sum_{i,j=1}^{n}\alpha_{i}\alpha_{j}y_{i}y_{j}x_{j}^{T}x_{i}-b\underbrace{\sum_{i=1}^{n}\alpha_{i}y_{i}}_{=0}.
+\alpha_{i}^{*}=0 & \implies & y_{i}f^{*}(x_{i})\ge1\\
+\alpha_{i}^{*}\in\left(0,\frac{c}{n}\right) & \implies & y_{i}f^{*}(x_{i})=1\\
+\alpha_{i}^{*}=\frac{c}{n} & \implies & y_{i}f^{*}(x_{i})\le1
+\end{eqnarray*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{eqnarray*}
+y_{i}f^{*}(x_{i})<1 & \implies & \alpha_{i}^{*}=\frac{c}{n}\\
+y_{i}f^{*}(x_{i})=1 & \implies & \alpha_{i}^{*}\in\left[0,\frac{c}{n}\right]\\
+y_{i}f^{*}(x_{i})>1 & \implies & \alpha_{i}^{*}=0
 \end{eqnarray*}
 
 \end_inset
@@ -1719,29 +1871,47 @@ First and third terms become
 
 \end_layout
 
-\begin_deeper
-\begin_layout Pause
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
 
 \end_layout
 
-\end_deeper
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Support Vectors
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Itemize
-Putting it together, the dual function is 
+If 
+\begin_inset Formula $\alpha^{*}$
+\end_inset
+
+ is a solution to the dual problem, then primal solution is 
 \begin_inset Formula 
 \[
-g(\alpha,\lambda)=\begin{cases}
-\sum_{i=1}^{n}\alpha_{i}-\frac{1}{2}\sum_{i,j=1}^{n}\alpha_{i}\alpha_{j}y_{i}y_{j}x_{j}^{T}x_{i} & \substack{\substack{\sum_{i=1}^{n}\alpha_{i}y_{i}=0\\
-\alpha_{i}+\lambda_{i}=\frac{c}{n}\mbox{, all }i
-}
-}
-\\
--\infty & \mbox{otherwise.}
-\end{cases}
+w^{*}=\sum_{i=1}^{n}\alpha_{i}^{*}y_{i}x_{i}
 \]
 
 \end_inset
 
+with 
+\begin_inset Formula $\alpha_{i}^{*}\in[0,\frac{c}{n}]$
+\end_inset
 
+.
+ 
 \end_layout
 
 \begin_deeper
@@ -1750,27 +1920,260 @@ g(\alpha,\lambda)=\begin{cases}
 \end_layout
 
 \end_deeper
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Two possibilities for each 
-\begin_inset Formula $\alpha,\lambda$
+\begin_layout Itemize
+The 
+\begin_inset Formula $x_{i}$
 \end_inset
 
-: we have a local (and global) minimum (when first order conditions are
- satisfied), or the minimum is not attained.
- (The 
+'s corresponding to 
+\begin_inset Formula $\alpha_{i}^{*}>0$
+\end_inset
+
+ are called 
+\series bold
+support vectors.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Few margin errors or 
 \begin_inset Quotes eld
 \end_inset
 
-otherwise
+on the margin
 \begin_inset Quotes erd
 \end_inset
 
- condition.) Make similar note in the SVM notes.
+ examples 
+\begin_inset Formula $\implies$
+\end_inset
+
+ 
+\series bold
+sparsity in input examples
+\series default
+.
 \end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Complementary Slackness To Get 
+\begin_inset Formula $b^{*}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Complementary Slackness
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+By strong duality, we have the following 
+\series bold
+complementary slackness
+\series default
+ condition:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Lagrange multiplier is zero unless the [primal] constraint is active at
+ the optimum: 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $\lambda_{i}^{*}f_{i}(x^{*})=0$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Our primal constraints:
+\begin_inset Formula 
+\begin{eqnarray*}
+(\alpha_{i}) &  & \left(1-y_{i}\left[x_{i}^{T}w+b\right]\right)-\xi_{i}\le0\;\mbox{for }i=1,\ldots,n\\
+(\lambda_{i}) &  & -\xi_{i}\le0\;\mbox{for }i=1,\ldots,n
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Complementary slackness is about 
+\series bold
+optimal 
+\series default
+primal and dual variables
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $\left(w^{*},b^{*},\xi_{i}^{*}\right)$
+\end_inset
+
+ be primal optimal
+\end_layout
+
+\begin_layout Itemize
+Let
+\begin_inset Formula $\left(\alpha^{*},\lambda^{*}\right)$
+\end_inset
+
+ be dual optimal
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Plain Layout
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Bias Term: 
+\begin_inset Formula $b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For our SVM primal, the complementary slackness conditions are:
+\begin_inset Formula 
+\begin{align}
+\alpha_{i}^{*}\left(1-y_{i}\left[x_{i}^{T}w^{*}+b\right]-\xi_{i}^{*}\right) & =0\label{eq:lossNonNegativeSlackCondition-1}\\
+\lambda_{i}^{*}\xi_{i}^{*}=\left(\frac{c}{n}-\alpha_{i}^{*}\right)\xi_{i}^{*} & =0\label{eq:marginLossSlackCondition-1}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Suppose there's an 
+\begin_inset Formula $i$
+\end_inset
+
+ such that 
+\begin_inset Formula $\alpha_{i}^{*}\in\left(0,\frac{c}{n}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:marginLossSlackCondition-1"
+
+\end_inset
+
+ implies 
+\begin_inset Formula $\xi_{i}^{*}=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:lossNonNegativeSlackCondition-1"
+
+\end_inset
+
+ implies 
+\begin_inset Formula 
+\begin{eqnarray*}
+ &  & y_{i}\left[x_{i}^{T}w^{*}+b^{*}\right]=1\\
+\pause & \iff & x_{i}^{T}w^{*}+b^{*}=y_{i}\mbox{ (use }y_{i}\in\left\{ -1,1\right\} )\\
+\pause & \iff & \boxed{b^{*}=y_{i}-x_{i}^{T}w^{*}}
+\end{eqnarray*}
 
 \end_inset
 
@@ -1790,7 +2193,11 @@ otherwise
 status open
 
 \begin_layout Plain Layout
-SVM Dual Problem
+The Bias Term: 
+\begin_inset Formula $b$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1800,21 +2207,14 @@ SVM Dual Problem
 
 \begin_deeper
 \begin_layout Itemize
-The 
-\series bold
-dual function
-\series default
+The optimal 
+\begin_inset Formula $b$
+\end_inset
+
  is
 \begin_inset Formula 
 \[
-g(\alpha,\lambda)=\begin{cases}
-\sum_{i=1}^{n}\alpha_{i}-\frac{1}{2}\sum_{i,j=1}^{n}\alpha_{i}\alpha_{j}y_{i}y_{j}x_{j}^{T}x_{i} & \substack{\substack{\sum_{i=1}^{n}\alpha_{i}y_{i}=0\\
-\alpha_{i}+\lambda_{i}=\frac{c}{n}\mbox{, all }i
-}
-}
-\\
--\infty & \mbox{otherwise.}
-\end{cases}
+b^{*}=y_{i}-x_{i}^{T}w^{*}
 \]
 
 \end_inset
@@ -1829,28 +2229,113 @@ g(\alpha,\lambda)=\begin{cases}
 
 \end_deeper
 \begin_layout Itemize
-The 
-\series bold
-dual problem 
-\series default
-is 
-\begin_inset Formula $\sup_{\alpha,\lambda\succeq0}g(\alpha,\lambda)$
+We get the same 
+\begin_inset Formula $b^{*}$
 \end_inset
 
-: 
-\begin_inset Formula 
-\begin{eqnarray*}
-\pause\sup_{\alpha,\lambda} &  & \sum_{i=1}^{n}\alpha_{i}-\frac{1}{2}\sum_{i,j=1}^{n}\alpha_{i}\alpha_{j}y_{i}y_{j}x_{j}^{T}x_{i}\\
-\mbox{s.t.} &  & \sum_{i=1}^{n}\alpha_{i}y_{i}=0\\
- & \quad & \alpha_{i}+\lambda_{i}=\frac{c}{n}\quad\alpha_{i},\lambda_{i}\ge0,\;i=1,\ldots,n
-\end{eqnarray*}
+ for any choice of 
+\begin_inset Formula $i$
+\end_inset
 
+ with 
+\begin_inset Formula $\alpha_{i}^{*}\in\left(0,\frac{c}{n}\right)$
 \end_inset
 
  
 \end_layout
 
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+With exact calculations!
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
 \end_deeper
+\end_deeper
+\begin_layout Itemize
+With numerical error, more robust to average over all eligible 
+\begin_inset Formula $i$
+\end_inset
+
+'s:
+\begin_inset Formula 
+\[
+b^{*}=\text{mean}\left\{ y_{i}-x_{i}^{T}w^{*}\mid\alpha_{i}^{*}\in\left(0,\frac{c}{n}\right)\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+If there are no 
+\begin_inset Formula $\alpha_{i}^{*}\in\left(0,\frac{c}{n}\right)$
+\end_inset
+
+?
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Then we have a 
+\series bold
+degenerate SVM training problem
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+See Rifkin et al.'s 
+\begin_inset Quotes eld
+\end_inset
+
+A Note on Support Vector Machine Degeneracy
+\begin_inset Quotes erd
+\end_inset
+
+, an MIT AI Lab Technical Report.
+\end_layout
+
+\end_inset
+
+
+\series default
+ (
+\begin_inset Formula $w^{*}=0$
+\end_inset
+
+).
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Teaser for Kernelization
+\end_layout
+
 \begin_layout Standard
 \begin_inset Separator parbreak
 \end_inset
@@ -1863,7 +2348,11 @@ is
 status open
 
 \begin_layout Plain Layout
-SVM Dual Problem: Eliminating a Variable
+Dual Problem: Dependence on 
+\begin_inset Formula $x$
+\end_inset
+
+ through inner products
 \end_layout
 
 \end_inset
@@ -1873,11 +2362,7 @@ SVM Dual Problem: Eliminating a Variable
 
 \begin_deeper
 \begin_layout Itemize
-Can eliminate the 
-\begin_inset Formula $\lambda$
-\end_inset
-
- variables:
+SVM Dual Problem:
 \begin_inset Formula 
 \begin{eqnarray*}
 \sup_{\alpha} &  & \sum_{i=1}^{n}\alpha_{i}-\frac{1}{2}\sum_{i,j=1}^{n}\alpha_{i}\alpha_{j}y_{i}y_{j}x_{j}^{T}x_{i}\\
@@ -1897,15 +2382,19 @@ Can eliminate the
 
 \end_deeper
 \begin_layout Itemize
-Quadratic objective in 
-\begin_inset Formula $n$
+Note that all dependence on inputs 
+\begin_inset Formula $x_{i}$
 \end_inset
 
- unknowns and 
-\begin_inset Formula $n+1$
+ and 
+\begin_inset Formula $x_{j}$
 \end_inset
 
- constraints
+ is through their inner product: 
+\begin_inset Formula $\left\langle x_{j},x_{i}\right\rangle =x_{j}^{T}x_{i}$
+\end_inset
+
+.
 \end_layout
 
 \begin_deeper
@@ -1915,7 +2404,12 @@ Quadratic objective in
 
 \end_deeper
 \begin_layout Itemize
-Efficient minimization algorithm: SMO (sequential minimal optimization)
+We can replace 
+\begin_inset Formula $x_{j}^{T}x_{i}$
+\end_inset
+
+ by any other product...
+ 
 \end_layout
 
 \begin_deeper
@@ -1925,9 +2419,25 @@ Efficient minimization algorithm: SMO (sequential minimal optimization)
 
 \end_deeper
 \begin_layout Itemize
-Next week we'll see what insights we get from the dual formulation...
+This is a 
+\begin_inset Quotes eld
+\end_inset
+
+kernelized
+\begin_inset Quotes erd
+\end_inset
+
+ objective function.
+ 
 \end_layout
 
 \end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document

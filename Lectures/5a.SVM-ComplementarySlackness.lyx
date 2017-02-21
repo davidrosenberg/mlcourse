@@ -1747,7 +1747,7 @@ complementary slackness
 
 \begin_layout Itemize
 If 
-\begin_inset Formula $y_{i}f^{*}(x)>1$
+\begin_inset Formula $y_{i}f^{*}(x_{i})>1$
 \end_inset
 
  then the margin loss is 

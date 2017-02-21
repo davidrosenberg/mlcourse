@@ -3627,10 +3627,9 @@ If we start with a psd kernel, can we generate more?
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Note Note
-status open
+\begin_inset Separator plain
+\end_inset
 
-\begin_layout Separator
 
 \end_layout
 
@@ -3835,7 +3834,10 @@ Proof: Let
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
 
 \end_layout
 
@@ -3912,7 +3914,10 @@ Continued...
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
 
 \end_layout
 
@@ -3947,23 +3952,5 @@ Then
 \end_layout
 
 \end_deeper
-\begin_layout Separator
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- 
-\end_layout
-
 \end_body
 \end_document

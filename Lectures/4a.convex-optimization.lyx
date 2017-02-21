@@ -3380,7 +3380,15 @@ complementary slackness
 
 \end_deeper
 \begin_layout Itemize
-Lagrange multiplier is zero unless constraint is active at optimum.
+Always have Lagrange multiplier is zero 
+\series bold
+or
+\series default
+ constraint is active at optimum 
+\series bold
+or
+\series default
+ both.
 \end_layout
 
 \end_deeper

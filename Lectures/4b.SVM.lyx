@@ -2224,7 +2224,7 @@ The Margin and Some Terminology
 \begin_deeper
 \begin_layout Itemize
 For notational convenience, define 
-\begin_inset Formula $f^{*}(x)=x_{i}^{T}w^{*}+b^{*}$
+\begin_inset Formula $f^{*}(x)=x^{T}w^{*}+b^{*}$
 \end_inset
 
 .

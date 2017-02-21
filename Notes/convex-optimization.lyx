@@ -609,7 +609,7 @@ book is very well-written and a pleasure to read.
  It turns out that a well-chosen 10 pages are enough for a self-contained
  introduction to the topic.
  Most of the text here is copied essentially verbatim from the original.
-  
+ 
 \begin_inset Note Note
 status open
 
@@ -3079,7 +3079,7 @@ Consider a standard form convex optimization problem for which
 \begin_inset Formula $\tilde{x},\tilde{\lambda},\tilde{\nu}$
 \end_inset
 
- are any points that satisfy the following 
+ be any points that satisfy the following 
 \series bold
 Karush-Kuhn-Tucker
 \series default

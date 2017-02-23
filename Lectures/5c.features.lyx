@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin /Users/drosen/Dropbox/repos/mlcourse/Lectures/
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -18,23 +20,23 @@
   \end{frame}
 }
 \end_preamble
-\options handout
+\options handout,aspectratio=169
 \use_default_options false
 \maintain_unincluded_children false
 \language english
 \language_package default
 \inputencoding default
 \fontencoding global
-\font_roman times
-\font_sans default
-\font_typewriter default
-\font_math eulervm
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "eulervm" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -820,7 +822,10 @@ Linear SVM
 
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -909,7 +914,10 @@ All the sequences should have the same length
 
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -982,7 +990,10 @@ status collapsed
 
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1025,7 +1036,7 @@ Could use domain knowledge and write down:
 \begin_inset Graphics
 	filename ../Figures/features/emailFeatures.png
 	lyxscale 50
-	width 85col%
+	width 75col%
 	groupId percyPics
 
 \end_inset
@@ -1072,7 +1083,10 @@ tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1193,7 +1207,10 @@ tiny{Based on Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1232,7 +1249,7 @@ include them all.
 \begin_inset Graphics
 	filename ../Figures/features/last3CharactersFeature.png
 	lyxscale 50
-	width 85col%
+	width 75col%
 	groupId percyPics
 
 \end_inset
@@ -1275,7 +1292,10 @@ tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1352,7 +1372,10 @@ tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1375,7 +1398,7 @@ Feature Vector Representations
 \begin_inset Graphics
 	filename ../Figures/features/ftrRepresentations.png
 	lyxscale 50
-	width 85col%
+	height 70theight%
 
 \end_inset
 
@@ -1409,7 +1432,10 @@ tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1549,7 +1575,10 @@ tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1634,7 +1663,10 @@ tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1653,7 +1685,7 @@ Feature Issues for Linear Predictors
 
 \begin_deeper
 \begin_layout Itemize
-For linear predictors,it's important 
+For linear predictors, it's important 
 \series bold
 how
 \series default
@@ -1715,7 +1747,10 @@ tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1840,7 +1875,10 @@ tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1925,7 +1963,10 @@ tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2019,7 +2060,10 @@ tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2126,7 +2170,10 @@ tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2214,7 +2261,10 @@ tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2296,7 +2346,10 @@ tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2334,7 +2387,7 @@ Discretization (a discontinuous transformation):
 \end_deeper
 \begin_layout Itemize
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Itemize
 Sometimes we might prefer one-sided buckets (e.g.
@@ -2389,7 +2442,10 @@ tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2496,7 +2552,10 @@ tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2625,7 +2684,10 @@ tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2723,7 +2785,10 @@ tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2833,7 +2898,10 @@ tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3001,7 +3069,10 @@ tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3024,7 +3095,7 @@ Geometric Example: Two class problem, nonlinear boundary
 \begin_inset Graphics
 	filename ../Figures/features/circularBoundary.png
 	lyxscale 30
-	width 35col%
+	height 50theight%
 
 \end_inset
 
@@ -3102,7 +3173,10 @@ tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3147,7 +3221,7 @@ Consider a linear hypothesis space with a feature map
 \begin_inset Graphics
 	filename ../Figures/features/featuresMakeHypothesisSpace.png
 	lyxscale 50
-	width 85col%
+	width 75col%
 	groupId percyPics
 
 \end_inset
@@ -3182,7 +3256,10 @@ tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 

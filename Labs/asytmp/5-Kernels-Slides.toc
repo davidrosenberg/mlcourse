@@ -1,0 +1,5 @@
+\beamer@sectionintoc {1}{Recitation 5}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{Initial Question}{2}{0}{1}
+\beamer@subsectionintoc {1}{2}{Kernels}{6}{0}{1}
+\beamer@subsectionintoc {1}{3}{Infinite Dimensional Spaces}{21}{0}{1}
+\beamer@subsectionintoc {1}{4}{Understanding RBF Kernels}{32}{0}{1}

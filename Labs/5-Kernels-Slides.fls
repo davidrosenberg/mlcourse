@@ -1,0 +1,538 @@
+PWD c:/GitStuff/mlcourse/Labs
+INPUT C:/Users/Brett Bernstein/AppData/Local/MiKTeX/2.9/miktex/data/le/pdftex/pdflatex.fmt
+INPUT VarMainSlides.ltx
+OUTPUT c:/GitStuff/mlcourse/Labs/asytmp/5-Kernels-Slides.log
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamer.cls
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamer.cls
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/etoolbox/etoolbox.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/etoolbox/etoolbox.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasemodes.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasemodes.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasedecode.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasedecode.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/ifpdf.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/ifpdf.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbaseoptions.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbaseoptions.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/graphics/keyval.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/graphics/keyval.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/geometry/geometry.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/geometry/geometry.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/ifvtex.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/ifvtex.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/ifxetex/ifxetex.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/ifxetex/ifxetex.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/geometry/geometry.cfg
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/geometry/geometry.cfg
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/base/size11.clo
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/base/size11.clo
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmr10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/pgf/basiclayer/pgfcore.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/pgf/basiclayer/pgfcore.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/graphics/graphicx.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/graphics/graphicx.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/graphics/graphics.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/graphics/graphics.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/graphics/trig.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/graphics/trig.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/graphics-cfg/graphics.cfg
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/graphics-cfg/graphics.cfg
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/graphics-def/pdftex.def
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/graphics-def/pdftex.def
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/infwarerr.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/infwarerr.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/ltxcmds.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/ltxcmds.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/pgf/systemlayer/pgfsys.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/pgf/systemlayer/pgfsys.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/pgf/utilities/pgfrcs.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/pgf/utilities/pgfrcs.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/utilities/pgfutil-common.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/utilities/pgfutil-common-lists.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/utilities/pgfutil-latex.def
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/ms/everyshi.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/ms/everyshi.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/utilities/pgfrcs.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/utilities/pgfrcs.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/systemlayer/pgfsys.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/systemlayer/pgfsys.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/utilities/pgfkeys.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/systemlayer/pgf.cfg
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/xcolor/xcolor.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/xcolor/xcolor.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/graphics-cfg/color.cfg
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/graphics-cfg/color.cfg
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/basiclayer/pgfcore.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/basiclayer/pgfcore.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/math/pgfmath.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/math/pgfmathcalc.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/math/pgfmathutil.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/math/pgfmathparser.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/math/pgfmathfunctions.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/math/pgfmathfunctions.random.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/math/pgfmathfunctions.base.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/math/pgfmathfunctions.round.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/math/pgfmathfloat.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/pgf/utilities/xxcolor.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/pgf/utilities/xxcolor.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/atbegshi.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/atbegshi.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/hyperref/hyperref.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/hyperref/hyperref.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/hobsub-hyperref.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/hobsub-hyperref.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/hobsub-hyperref.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/hobsub-generic.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/hobsub-generic.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/oberdiek/auxhook.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/oberdiek/auxhook.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/oberdiek/kvoptions.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/oberdiek/kvoptions.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/hyperref/pd1enc.def
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/hyperref/pd1enc.def
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/00miktex/hyperref.cfg
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/00miktex/hyperref.cfg
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/url/url.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/url/url.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/hyperref/hpdftex.def
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/hyperref/hpdftex.def
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/oberdiek/rerunfilecheck.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/oberdiek/rerunfilecheck.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbaserequires.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbaserequires.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasecompatibility.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasecompatibility.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasefont.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasefont.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsfonts/amssymb.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsfonts/amssymb.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsfonts/amsfonts.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsfonts/amsfonts.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/sansmathaccent/sansmathaccent.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/sansmathaccent/sansmathaccent.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/sansmathaccent/sansmathaccent.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/filehook/filehook.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/filehook/filehook.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/filehook/filehook.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasetranslator.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasetranslator.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/translator/translator.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/translator/translator.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/translator/translator-language-mappings.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/translator/translator-language-mappings.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasemisc.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasemisc.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasetwoscreens.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasetwoscreens.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbaseoverlay.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbaseoverlay.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasetitle.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasetitle.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasesection.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasesection.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbaseframe.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbaseframe.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbaseverbatim.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbaseverbatim.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbaseframesize.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbaseframesize.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbaseframecomponents.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbaseframecomponents.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasecolor.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasecolor.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasenotes.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasenotes.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasetoc.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasetoc.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasetemplates.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasetemplates.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbaseauxtemplates.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbaseauxtemplates.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbaseboxes.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbaseboxes.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbaselocalstructure.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbaselocalstructure.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/tools/enumerate.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/tools/enumerate.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasenavigation.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasenavigation.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasetheorems.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasetheorems.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsmath/amsmath.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsmath/amsmath.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsmath/amstext.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsmath/amstext.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsmath/amsgen.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsmath/amsgen.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsmath/amsbsy.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsmath/amsbsy.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsmath/amsopn.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsmath/amsopn.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amscls/amsthm.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amscls/amsthm.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasethemes.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasethemes.sty
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmss10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/themes/theme/beamerthemedefault.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/themes/theme/beamerthemedefault.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/themes/font/beamerfontthemedefault.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/themes/font/beamerfontthemedefault.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/themes/color/beamercolorthemedefault.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/themes/color/beamercolorthemedefault.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/themes/inner/beamerinnerthemedefault.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/themes/inner/beamerinnerthemedefault.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/art/beamericonbook.pdf
+OUTPUT 5-Kernels-Slides.pdf
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/art/beamericonbook.pdf
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/art/beamericonbook.pdf
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/art/beamericonbook.20.pdf
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/art/beamericonbook.20.pdf
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/art/beamericonbook.20.pdf
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/art/beamericonarticle.pdf
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/art/beamericonarticle.pdf
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/art/beamericonarticle.pdf
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/art/beamericonarticle.20.pdf
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/art/beamericonarticle.20.pdf
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/art/beamericonarticle.20.pdf
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/art/beamericononline.pdf
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/art/beamericononline.pdf
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/art/beamericononline.pdf
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/art/beamericononline.20.pdf
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/art/beamericononline.20.pdf
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/art/beamericononline.20.pdf
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/themes/outer/beamerouterthemedefault.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/themes/outer/beamerouterthemedefault.sty
+INPUT SlideMacros.ltx
+INPUT SlideMacros.ltx
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/asymptote/asymptote.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/asymptote/asymptote.sty
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.pre
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.pre
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/base/ifthen.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/base/ifthen.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/ifpdf.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/ifxetex/ifxetex.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/catchfile.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/catchfile.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/catchfile.sty
+OUTPUT c:/GitStuff/mlcourse/Labs/asytmp/5-Kernels-Slides.pre
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/pstricks/pstricks.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/pstricks/pstricks.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pstricks/pstricks.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pstricks/pstricks.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/xkeyval/pst-xkey.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/xkeyval/xkeyval.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/xkeyval/xkeyval.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/xkeyval/xkeyval.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/xkeyval/xkvutils.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pstricks/pst-fp.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/utilities/pgfutil-common.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/utilities/pgfutil-common-lists.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/utilities/pgfkeys.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/utilities/pgffor.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/math/pgfmath.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pstricks/pstricks.con
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pstricks/pst-fp.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pstricks/pst-fp.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/multido/multido.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/multido/multido.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/multido/multido.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/multido/multido.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/themes/theme/beamerthemeCambridgeUS.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/themes/theme/beamerthemeCambridgeUS.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/themes/inner/beamerinnerthemerounded.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/themes/inner/beamerinnerthemerounded.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/themes/outer/beamerouterthemeinfolines.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/themes/outer/beamerouterthemeinfolines.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/themes/color/beamercolorthemebeaver.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/themes/color/beamercolorthemebeaver.sty
+INPUT VarFill.ltx
+INPUT VarFill.ltx
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.aux
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.aux
+OUTPUT c:/GitStuff/mlcourse/Labs/asytmp/5-Kernels-Slides.aux
+INPUT C:/Program Files/MiKTeX 2.9/tex/context/base/supp-pdf.mkii
+INPUT C:/Program Files/MiKTeX 2.9/tex/context/base/supp-pdf.mkii
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/oberdiek/epstopdf-base.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/oberdiek/epstopdf-base.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/oberdiek/grfext.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/oberdiek/grfext.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/hyperref/nameref.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/hyperref/nameref.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/gettitlestring.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/gettitlestring.sty
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.out
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.out
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.out
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.out
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.out
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.out
+OUTPUT c:/GitStuff/mlcourse/Labs/asytmp/5-Kernels-Slides.out
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/translator/dicts/translator-basic-dictionary/translator-basic-dictionary-English.dict
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/translator/dicts/translator-basic-dictionary/translator-basic-dictionary-English.dict
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/translator/dicts/translator-bibliography-dictionary/translator-bibliography-dictionary-English.dict
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/translator/dicts/translator-bibliography-dictionary/translator-bibliography-dictionary-English.dict
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/translator/dicts/translator-environment-dictionary/translator-environment-dictionary-English.dict
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/translator/dicts/translator-environment-dictionary/translator-environment-dictionary-English.dict
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/translator/dicts/translator-months-dictionary/translator-months-dictionary-English.dict
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/translator/dicts/translator-months-dictionary/translator-months-dictionary-English.dict
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/translator/dicts/translator-numbers-dictionary/translator-numbers-dictionary-English.dict
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/translator/dicts/translator-numbers-dictionary/translator-numbers-dictionary-English.dict
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/translator/dicts/translator-theorem-dictionary/translator-theorem-dictionary-English.dict
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/translator/dicts/translator-theorem-dictionary/translator-theorem-dictionary-English.dict
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.nav
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.nav
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmss8.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmss12.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmss8.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmss8.tfm
+INPUT C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map
+OUTPUT c:/GitStuff/mlcourse/Labs/asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+OUTPUT c:/GitStuff/mlcourse/Labs/asytmp/5-Kernels-Slides-1.asy
+INPUT 5-Kernels/LinearR.asy
+INPUT 5-Kernels/LinearR.asy
+INPUT 5-Kernels/LinearR.asy
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides-1.pdf
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides-1.pdf
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides-1.pdf
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides-1.pdf
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides-1.pdf
+OUTPUT c:/GitStuff/mlcourse/Labs/asytmp/5-Kernels-Slides-2.asy
+INPUT 5-Kernels/LinearS.asy
+INPUT 5-Kernels/LinearS.asy
+INPUT 5-Kernels/LinearS.asy
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides-2.pdf
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides-2.pdf
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides-2.pdf
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides-2.pdf
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides-2.pdf
+OUTPUT c:/GitStuff/mlcourse/Labs/asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmmi10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmmi8.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmmi6.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmsy10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmsy8.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmsy6.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmex10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsfonts/umsa.fd
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsfonts/umsa.fd
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msam7.tfm
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsfonts/umsb.fd
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsfonts/umsb.fd
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/sansmathaccent/ot1mathkerncmss.fd
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/sansmathaccent/ot1mathkerncmss.fd
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/sansmathaccent/mathkerncmssi10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/sansmathaccent/mathkerncmssi8.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/sansmathaccent/mathkerncmssi8.tfm
+OUTPUT c:/GitStuff/mlcourse/Labs/asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+OUTPUT c:/GitStuff/mlcourse/Labs/asytmp/5-Kernels-Slides-3.asy
+INPUT 5-Kernels/LinearRSol.asy
+INPUT 5-Kernels/LinearRSol.asy
+INPUT 5-Kernels/LinearRSol.asy
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides-3.pdf
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides-3.pdf
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides-3.pdf
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides-3.pdf
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides-3.pdf
+OUTPUT c:/GitStuff/mlcourse/Labs/asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+OUTPUT c:/GitStuff/mlcourse/Labs/asytmp/5-Kernels-Slides-4.asy
+INPUT 5-Kernels/LinearSSol.asy
+INPUT 5-Kernels/LinearSSol.asy
+INPUT 5-Kernels/LinearSSol.asy
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides-4.pdf
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides-4.pdf
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides-4.pdf
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides-4.pdf
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides-4.pdf
+OUTPUT c:/GitStuff/mlcourse/Labs/asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+OUTPUT c:/GitStuff/mlcourse/Labs/asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+OUTPUT c:/GitStuff/mlcourse/Labs/asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+OUTPUT c:/GitStuff/mlcourse/Labs/asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+OUTPUT c:/GitStuff/mlcourse/Labs/asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+OUTPUT c:/GitStuff/mlcourse/Labs/asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmssbx10.tfm
+OUTPUT c:/GitStuff/mlcourse/Labs/asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmssi10.tfm
+OUTPUT c:/GitStuff/mlcourse/Labs/asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+OUTPUT c:/GitStuff/mlcourse/Labs/asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+OUTPUT c:/GitStuff/mlcourse/Labs/asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+OUTPUT c:/GitStuff/mlcourse/Labs/asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+OUTPUT c:/GitStuff/mlcourse/Labs/asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+OUTPUT c:/GitStuff/mlcourse/Labs/asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msam5.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/sansmathaccent/mathkerncmssi8.tfm
+OUTPUT c:/GitStuff/mlcourse/Labs/asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+OUTPUT c:/GitStuff/mlcourse/Labs/asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+OUTPUT c:/GitStuff/mlcourse/Labs/asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+OUTPUT c:/GitStuff/mlcourse/Labs/asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+OUTPUT c:/GitStuff/mlcourse/Labs/asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+OUTPUT c:/GitStuff/mlcourse/Labs/asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+OUTPUT c:/GitStuff/mlcourse/Labs/asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+OUTPUT c:/GitStuff/mlcourse/Labs/asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+OUTPUT c:/GitStuff/mlcourse/Labs/asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+OUTPUT c:/GitStuff/mlcourse/Labs/asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+OUTPUT c:/GitStuff/mlcourse/Labs/asytmp/5-Kernels-Slides-5.asy
+INPUT 5-Kernels/QuadRBFPlot.asy
+INPUT 5-Kernels/QuadRBFPlot.asy
+INPUT 5-Kernels/QuadRBFPlot.asy
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides-5.pdf
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides-5.pdf
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides-5.pdf
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides-5.pdf
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides-5.pdf
+OUTPUT c:/GitStuff/mlcourse/Labs/asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+OUTPUT c:/GitStuff/mlcourse/Labs/asytmp/5-Kernels-Slides-6.asy
+INPUT 5-Kernels/XorFit.asy
+INPUT 5-Kernels/XorFit.asy
+INPUT 5-Kernels/XorFit.asy
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides-6.pdf
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides-6.pdf
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides-6.pdf
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides-6.pdf
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides-6.pdf
+OUTPUT c:/GitStuff/mlcourse/Labs/asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.vrb
+OUTPUT c:/GitStuff/mlcourse/Labs/asytmp/5-Kernels-Slides-7.asy
+INPUT 5-Kernels/XorFit2.asy
+INPUT 5-Kernels/XorFit2.asy
+INPUT 5-Kernels/XorFit2.asy
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides-7.pdf
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides-7.pdf
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides-7.pdf
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides-7.pdf
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides-7.pdf
+OUTPUT c:/GitStuff/mlcourse/Labs/asytmp/5-Kernels-Slides.nav
+OUTPUT c:/GitStuff/mlcourse/Labs/asytmp/5-Kernels-Slides.toc
+OUTPUT c:/GitStuff/mlcourse/Labs/asytmp/5-Kernels-Slides.snm
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.aux
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.out
+INPUT c:/GitStuff/mlcourse/Labs/./asytmp/5-Kernels-Slides.out
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss10.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss10.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss12.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss12.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss8.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss8.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssbx10.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssbx10.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi10.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi10.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi8.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi8.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb

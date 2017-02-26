@@ -3,7 +3,7 @@
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin unavailable
+\origin /Users/drosen/Dropbox/repos/mlcourse/Archive/2015/Lectures/source/10.Lab.MidtermRecap/
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -1109,7 +1109,7 @@ Big feature values
 \begin_inset Formula $\implies$
 \end_inset
 
- more likely to have be kept
+ more likely to have been kept
 \end_layout
 
 \end_deeper
@@ -1363,7 +1363,7 @@ status open
  that we fit by minimizing an objective function of the form:
 \begin_inset Formula 
 \[
-J(\alpha_{0},\alpha_{1})=\sum_{i=1}^{3}\left(\alpha_{0}+\alpha_{1}x_{i}-y_{i}\right)^{2}+\lambda_{1}\left|\alpha_{0}+\alpha_{1}\right|+\lambda_{2}(\alpha_{0}^{2}+\alpha_{1}^{2}),
+J(\alpha_{0},\alpha_{1})=\sum_{i=1}^{3}\left(\alpha_{0}+\alpha_{1}x_{i}-y_{i}\right)^{2}+\lambda_{1}\left(\left|\alpha_{0}\right|+\left|\alpha_{1}\right|\right)+\lambda_{2}(\alpha_{0}^{2}+\alpha_{1}^{2}),
 \]
 
 \end_inset

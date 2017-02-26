@@ -82,6 +82,17 @@ following:
 ## Lecture 3 (2/7/2017)
 ### 3a: Lasso, Ridge, and Elastic Net
 - Explain what happens when we do linear, lasso, and ridge regression with 2 identical features.
-- If features x1 and x2 are linearly related (e.g. x2 = 2 x1), then there are infinitely many ways to express the same function of x1 and x2.  Give the relation between the corresponding parameters for the set of equivalent prediction functions.
-- 
+- If features x1 and x2 are linearly related (e.g. x2 = 2 x1), then there are infinitely many ways to express the same function of x1 and x2.  Give the relation between the corresponding parameters for the set of equivalent prediction functions. If x1 and x2 are our only two features, what solutions are selected if have L1 regularization?  L2 regularization?
+- Same as previous question, but explain happens when x1 and x2 are highly correlated, but not exactly linearly related. (Be able to explain the picture from lecture slides.)
+- In class we discussed an example for which there were two batches of highly correlated features.  We claimed that using L1 regularization to select one feature from each batch would hurt our expected performance.  Explain why.
+- Explain how elastic net may help give the best of both worlds: eliminating features that are not helpful, but spreading weight roughly equally among highly correlated useful features. 
 
+### 3b: Loss functions for regression and classification 
+- For regression, "distance-based" losses (i.e. losses that only depend on the residual, and have zero loss for 0 residual) are translation-invariant. Explain what this means.
+- Explain why 'relative error' or 'percent error' are not translation-invariant.  How can we reduce these error measures to a translation invariant loss?
+- What are the relative advantages and disadvantages of L1, L2, and Huber loss that we discussed in class? (There are others we did not discuss.)
+- Explain the concepts of the score function and the margin (functional margin, not geometric margin), and define a margin-based loss.
+-  how they relate to the hinge loss.
+- 
+- 
+- 

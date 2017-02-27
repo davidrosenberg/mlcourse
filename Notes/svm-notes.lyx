@@ -1376,7 +1376,11 @@ reference "eq:lossNonNegativeSlackCondition"
 \begin_inset Formula $y_{i}\in\left\{ -1,1\right\} $
 \end_inset
 
-, ) we can conclude that 
+, we can multiply on both sides by 
+\begin_inset Formula $y_{i}$
+\end_inset
+
+ to conclude that 
 \begin_inset Formula 
 \[
 b^{*}=y_{i}-x_{i}^{T}w^{*}.
@@ -1384,6 +1388,10 @@ b^{*}=y_{i}-x_{i}^{T}w^{*}.
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 With exact calculations, we would get the same 
 \begin_inset Formula $b^{*}$
 \end_inset
@@ -1397,8 +1405,8 @@ With exact calculations, we would get the same
 \end_inset
 
 .
- With numerical error, however, it will be more robust to average over all
- eligible 
+ With numerical error, however, some people suggest averaging over all eligible
+ 
 \begin_inset Formula $i$
 \end_inset
 
@@ -1410,6 +1418,10 @@ b^{*}=\text{mean}\left\{ y_{i}-x_{i}^{T}w^{*}\mid\alpha_{i}^{*}\in\left(0,\frac{
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 If there are no 
 \begin_inset Formula $\alpha_{i}^{*}\in\left(0,\frac{c}{n}\right)$
 \end_inset

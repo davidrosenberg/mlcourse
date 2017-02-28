@@ -2,7 +2,7 @@
 Starred problems are optional.
 \subsection{Excess Risk Decomposition}
 \begin{enumerate}
-\item Let $\XX=\{1,2,\ldots,10\}$, $\YY=\AA=\{1,\ldots,10,11\}$ and suppose the data
+\item Let $\XX=\YY=\{1,2,\ldots,10\}$, $\AA=\{1,\ldots,10,11\}$ and suppose the data
   distribution has marginal distribution $X\sim\Unif\{1,\ldots,10\}$.
   Furthermore, assume $Y=X$ (i.e., $Y$ always has the exact same value
   as $X$).  In the questions below we use square loss function $\ell(a,x)=(a-x)^2$.
@@ -10,12 +10,10 @@ Starred problems are optional.
   \item What is the Bayes risk?
   \item What is the approximation error when using the hypothesis
     space of constant functions?
-  \item Suppose we use the hypothesis space of affine functions.
+  \item Suppose we use the hypothesis space $\FF$ of affine functions.
     \begin{enumerate}
     \item What is the approximation error?
-    \item Suppose you have a fixed data set and compute the empirical
-      risk minimizer $\hat{f}_n(x)=x+1$.  What is the estimation
-      error?
+    \item Consider the function $\hat{f}(x)=x+1$. Compute $R(\hat{f})-R(f_\FF)$.
     \end{enumerate}
   \end{enumerate}
 \begin{solution}
@@ -33,8 +31,8 @@ Starred problems are optional.
     \item The Bayes decision function is affine, so the approximation
       error is $0$.
     \item The risk is 
-      $$R(\hat{f}_n) = \E[(Y-\hat{f}_n(X))^2] = \E[(X-(X+1))^2] = 1.$$
-      Thus the estimation error is $1$.
+      $$R(\hat{f}) = \E[(Y-\hat{f}(X))^2] = \E[(X-(X+1))^2] = 1.$$
+      Thus the answer is $1$.
     \end{enumerate}
   \end{enumerate}
 \end{solution}

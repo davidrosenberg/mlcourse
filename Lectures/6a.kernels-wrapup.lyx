@@ -2727,32 +2727,102 @@ Consider RBF kernel (1-dim):
 \end_layout
 
 \begin_layout Itemize
-Let 
+We claim that 
 \begin_inset Formula $\psi:\reals\to\ell_{2}$
 \end_inset
 
  be defined by 
-\begin_inset Formula $\left[\psi(x)\right]_{n}=\frac{1}{\sqrt{n!}}e^{-x^{2}/2}x^{n}$
+\begin_inset Formula 
+\[
+\left[\psi(x)\right]_{n}=\frac{1}{\sqrt{n!}}e^{-x^{2}/2}x^{n}
+\]
+
 \end_inset
 
+ gives the 
+\series bold
+
+\begin_inset Quotes eld
+\end_inset
+
+infinite-dimensional feature vector
+\begin_inset Quotes erd
+\end_inset
+
+ corresponding to RBF kernel
+\series default
 .
 \end_layout
 
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
 \begin_layout Itemize
-Well-defined, since 
-\begin_inset Formula $\sum_{n=0}^{\infty}\frac{1}{n!}e^{-x^{2}}x^{2n}=e^{-x^{2}}\sum_{n=0}^{\infty}\frac{\left(x^{2}\right)^{n}}{n!}=1<\infty$
+Is this mapping even well-defined? Is 
+\begin_inset Formula $\psi(x)$
+\end_inset
+
+ even an element of 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Yes: 
+\begin_inset Formula 
+\[
+\sum_{n=0}^{\infty}\frac{1}{n!}e^{-x^{2}}x^{2n}=e^{-x^{2}}\sum_{n=0}^{\infty}\frac{\left(x^{2}\right)^{n}}{n!}=1<\infty
+\]
+
 \end_inset
 
 .
  
 \end_layout
 
-\begin_layout Itemize
-Proof of correspondence between RBF kernel feature and 
-\begin_inset Formula $\psi$
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
 \end_inset
 
-:
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Infinite Dimensional Feature Vector for RBF
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Does feature vector 
+\begin_inset Formula $\left[\psi(x)\right]_{n}=\frac{1}{\sqrt{n!}}e^{-x^{2}/2}x^{n}$
+\end_inset
+
+ actually correspond to the RBF kernel?
+\end_layout
+
+\begin_layout Itemize
+Yes! Proof:
 \begin_inset Formula 
 \begin{eqnarray*}
 \left\langle \psi(w),\psi(x)\right\rangle  & = & \sum_{n=0}^{\infty}\frac{1}{n!}e^{-\left(x^{2}+w^{2}\right)/2}x^{n}w^{n}\\

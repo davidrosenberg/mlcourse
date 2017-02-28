@@ -1839,6 +1839,14 @@ maximize the margin
 Most classification losses depend only on the margin.
 \end_layout
 
+\begin_layout Itemize
+Such a loss is called a 
+\series bold
+margin-based loss
+\series default
+.
+\end_layout
+
 \begin_layout Pause
 
 \end_layout

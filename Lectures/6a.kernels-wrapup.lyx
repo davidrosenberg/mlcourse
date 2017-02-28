@@ -2720,7 +2720,7 @@ The Infinite Dimensional Feature Vector for RBF
 \begin_deeper
 \begin_layout Itemize
 Consider RBF kernel (1-dim): 
-\begin_inset Formula $k(w,x)=\exp\left(\left(w-x\right)^{2}/2\right)$
+\begin_inset Formula $k(w,x)=\exp\left(-\left(w-x\right)^{2}/2\right)$
 \end_inset
 
 

@@ -732,6 +732,42 @@ Just in article version
 status open
 
 \begin_layout Plain Layout
+To do: Consider reordering material, to present the multiclass solution
+ without the 'compatibility score functions' until the end.
+ Possible downside is that there’s less time to get used to the idea of
+ compatibility scores, and it seems more like an add-on at the end.
+ It’s possible the compatibility score is actually the more important thing
+ to grasp.
+ e.g., with the idea of compatibility score, one can reduce to binary classificati
+on just by training it as a standard binary classifier (1 if x and y are
+ compatible, -1 otherwise)… I wonder how that would work...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+TO do: put in a slide or two about the actual algorithm of the reduction
+ to 1 vs all? (seems too easy, but wasn't clear people were getting it,
+ and we went through it on the board)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 To do: What happens when we increase the norm of w? Does the decision region
  rotate? anything specific we can say
 \end_layout
@@ -4726,121 +4762,5 @@ Learning can be done with SGD and a similar dynamic program.
 \end_layout
 
 \end_deeper
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Section
-Ranking
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Regression
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-hi
-\end_layout
-
-\end_deeper
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Example: Mobile Advertising Problem
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename ../Figures/multiclass/mobile-advertising-problem.pdf
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-What ad to choose?
-\end_layout
-
-\end_deeper
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Example: Basic Online Advertising Problem
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Ads to serve:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-50% Discount on Food Delivery
-\end_layout
-
-\begin_layout Itemize
-Cruise vacation
-\end_layout
-
-\begin_layout Itemize
-$5.00 off Custom Shirt
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Itemize
-Somebody visits 
-\end_layout
-
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \end_body
 \end_document

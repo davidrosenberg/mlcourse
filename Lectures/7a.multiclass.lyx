@@ -768,6 +768,28 @@ TO do: put in a slide or two about the actual algorithm of the reduction
 status open
 
 \begin_layout Plain Layout
+TODO: Need to clarify this in slides below: Then 
+\begin_inset Formula $\|w_{i}\|$
+\end_inset
+
+ and 
+\begin_inset Formula $\|x\|$
+\end_inset
+
+ are equal for all scores.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 To do: What happens when we increase the norm of w? Does the decision region
  rotate? anything specific we can say
 \end_layout

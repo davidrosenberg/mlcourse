@@ -20,7 +20,7 @@
   \end{frame}
 }
 \end_preamble
-\options handout
+\options handout,aspectratio=169
 \use_default_options false
 \maintain_unincluded_children false
 \language english
@@ -44,7 +44,16 @@
 \index_command default
 \paperfontsize default
 \spacing single
-\use_hyperref false
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
 \papersize default
 \use_geometry true
 \use_package amsmath 2
@@ -682,19 +691,6 @@ New York University
 \end_layout
 
 \begin_layout Standard
-\begin_inset Flex ArticleMode
-status open
-
-\begin_layout Plain Layout
-Just in article version
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Note Note
 status open
 
@@ -787,6 +783,26 @@ sphere trees
 - colinearity mattering with tree-based methods? 
 \end_layout
 
+\begin_layout Plain Layout
+questions:
+\end_layout
+
+\begin_layout Plain Layout
+1) the fact that greedy algorithm works for minimizing cost complexity criterion
+ – does that depend on the complexity measure being the number of leaf nodes?
+\end_layout
+
+\begin_layout Plain Layout
+–
+\end_layout
+
+\begin_layout Plain Layout
+Should give example of how misclassification error can be the same, but
+ gini or entropy can have preference for more pure classes.
+ examples in the HTF or the more elementary book.
+ 
+\end_layout
+
 \end_inset
 
 
@@ -794,6 +810,35 @@ sphere trees
 
 \begin_layout Section
 Trees
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex ArticleMode
+status open
+
+\begin_layout Plain Layout
+Trees are our first truly nonlinear learning algorithm.
+ We have certainly generated prediction functions that are nonlinear in
+ inputs 
+\begin_inset Formula $x\in\reals^{d}$
+\end_inset
+
+, but we did that by generating feature vectors that are nonlinear functions
+ of 
+\begin_inset Formula $x$
+\end_inset
+
+, and then we 
+\series bold
+learned
+\series default
+ the coefficients to linearly combine these nonlinear features.
+ Trees are the first method that actually learn the nonlinearities.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Frame
@@ -876,6 +921,15 @@ A Binary Decision Tree
 \begin_deeper
 \begin_layout Standard
 \align center
+
+\series bold
+binary tree
+\series default
+: each node has either 2 children or 0 children
+\end_layout
+
+\begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename ../Figures/trees/decisionTree.png
 	lyxscale 50
@@ -910,7 +964,7 @@ tiny{From Criminisi et al.
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -996,10 +1050,120 @@ emph{An Introduction to Statistical Learning, with applications in R} (Springer,
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Types of Decision Trees
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We'll only consider 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+binary trees
+\series default
+ (vs multiway trees where nodes can have more than 2 children)
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+decisions at each node involve only a single feature (i.e.
+ input coordinate)
+\end_layout
+
+\begin_layout Itemize
+splits always of the form 
+\begin_inset Formula 
+\[
+x_{i}\le t
+\]
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+(Gives us a partition into convex polyhedral cells, each side parallel to
+ a coordinate axis)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Other types of splitting rules
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+oblique decision trees 
+\series default
+or 
+\series bold
+binary space partition trees
+\series default
+ (BSP trees) have a linear split at each node
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+sphere trees
+\series default
+ – space is partitioned by a sphere of a certain radius around a fixed point
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Regression Trees
 \end_layout
 
 \begin_layout Frame
@@ -1082,7 +1246,7 @@ emph{An Introduction to Statistical Learning, with applications in R} (Springer,
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1150,7 +1314,7 @@ R_{i}\cap R_{j}=\emptyset\quad\forall i\neq j
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1225,6 +1389,72 @@ For loss function
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Trees and Overfitting
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If we do enough splitting, every unique 
+\begin_inset Formula $x$
+\end_inset
+
+ value in its own partition.
+\end_layout
+
+\begin_layout Itemize
+This very likely overfits.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+As usual, we need to control the complexity of our hypothesis space.
+\end_layout
+
+\begin_layout Itemize
+In Lecture 2, our tree complexity measure was 
+\series bold
+tree depth
+\series default
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+This lecture we'll use 
+\series bold
+number of terminal nodes
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+This is the complexity measure used by CART.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1488,6 +1718,108 @@ Find
 How?
 \end_layout
 
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Finding the Split Point
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Consider splitting on the 
+\begin_inset Formula $j$
+\end_inset
+
+'th feature 
+\begin_inset Formula $x_{j}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+As we change the split point 
+\begin_inset Formula $s$
+\end_inset
+
+,
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+the performance on training data changes at most 
+\begin_inset Formula $n-1$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+If 
+\begin_inset Formula $x_{j(1)},\ldots,x_{j(n)}$
+\end_inset
+
+ are the sorted values of the 
+\begin_inset Formula $j$
+\end_inset
+
+'th feature,
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+we only need to check split points between adjacent values
+\end_layout
+
+\begin_layout Itemize
+traditionally take split points halfway between adjacent values:
+\begin_inset Formula 
+\[
+s_{j}\in\left\{ \frac{1}{2}\left(x_{j(r)}+x_{j(r+1)}\right)\mid r=1,\ldots,n-1\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+So only need to check performance of 
+\begin_inset Formula $n-1$
+\end_inset
+
+ splits.
+\end_layout
+
+\end_deeper
 \begin_layout Standard
 \begin_inset Note Note
 status open
@@ -1502,7 +1834,6 @@ HOW DO WE Do THIS SPLITTING EFFICIENTLY??? For each variable, try splitting
 
 \end_layout
 
-\end_deeper
 \begin_layout Standard
 \begin_inset Separator parbreak
 \end_inset
@@ -1621,7 +1952,11 @@ If too small, we may miss patterns in the data (underfit).
 
 \end_deeper
 \begin_layout Itemize
-Typical approach: 
+The approach of 
+\series bold
+CART
+\series default
+ (Breiman et al 1984): 
 \end_layout
 
 \begin_deeper
@@ -1635,17 +1970,92 @@ Build a really big tree (e.g.
 \end_layout
 
 \begin_layout Enumerate
-Prune the tree.
+
+\series bold
+\begin_inset Quotes eld
+\end_inset
+
+Prune
+\begin_inset Quotes erd
+\end_inset
+
+
+\series default
+ the tree.
 \end_layout
 
 \end_deeper
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
 \end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Stopping Conditions for Building the Big Tree
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+First step is to build the 
+\begin_inset Quotes eld
+\end_inset
+
+big tree
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Keep splitting nodes until every node either has
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Zero error OR
+\end_layout
+
+\begin_layout Itemize
+Node has 
+\begin_inset Formula $C$
+\end_inset
+
+ or fewer examples (typically 
+\begin_inset Formula $C=5$
+\end_inset
+
+ or 
+\begin_inset Formula $C=1$
+\end_inset
+
+)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
 
 \begin_layout Frame
 \begin_inset Argument 4
@@ -1728,8 +2138,61 @@ pruning
 \end_layout
 
 \end_deeper
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Pruning the Tree
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Consider an internal node 
+\begin_inset Formula $n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+To prune the subtree rooted at 
+\begin_inset Formula $n$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+eliminate all descendents of 
+\begin_inset Formula $n$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $n$
+\end_inset
+
+ becomes a terminal node
+\end_layout
+
+\end_deeper
+\end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1836,7 +2299,7 @@ Subtree
 \begin_inset Graphics
 	filename ../Figures/trees/smallBaseballTree.png
 	lyxscale 30
-	width 43col%
+	height 60theight%
 
 \end_inset
 
@@ -1888,7 +2351,7 @@ emph{An Introduction to Statistical Learning, with applications in R} (Springer,
 status open
 
 \begin_layout Plain Layout
-Emprical Risk and Tree Complexity
+Empirical Risk and Tree Complexity
 \end_layout
 
 \end_inset
@@ -1928,7 +2391,7 @@ Let
 \end_layout
 
 \begin_layout Itemize
-Clearly, for any 
+Clearly, for any subtree 
 \begin_inset Formula $T\subset T_{0}$
 \end_inset
 
@@ -2029,7 +2492,7 @@ For each
 \begin_inset Formula $\alpha$
 \end_inset
 
-, find the tree 
+, find the subtree 
 \begin_inset Formula $T\subset T_{0}$
 \end_inset
 
@@ -2037,7 +2500,7 @@ For each
 \begin_inset Formula $C_{\alpha}(T)$
 \end_inset
 
-.
+ (on training data).
 \end_layout
 
 \begin_layout Itemize
@@ -2048,11 +2511,49 @@ Use cross validation to find the right choice of
 .
 \end_layout
 
-\begin_layout Pause
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
 
 \end_layout
 
-\end_deeper
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Do we need to search over all subtrees?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The 
+\series bold
+cost complexity criterion
+\series default
+ with parameter 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+C_{\alpha}(T)=\hat{R}(T)+\alpha\left|T\right|
+\]
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Itemize
 \begin_inset Formula $C_{\alpha}(T)$
 \end_inset
@@ -2060,17 +2561,88 @@ Use cross validation to find the right choice of
  has familiar regularized ERM form, but
 \end_layout
 
-\begin_deeper
 \begin_layout Itemize
-Cannot take the gradient w.r.t.
- 
+Cannot just differentiate w.r.t.
+ parameters of a tree 
 \begin_inset Formula $T$
 \end_inset
 
 .
 \end_layout
 
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+To minimize 
+\begin_inset Formula $C_{\alpha}(T)$
+\end_inset
+
+ over subtrees 
+\begin_inset Formula $T\subset T_{0}$
+\end_inset
+
+,
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+seems like we need to evaluate exponentially many
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+As many as 
+\begin_inset Formula $2^{N-1}+N-1$
+\end_inset
+
+ for trees with 
+\begin_inset Formula $N$
+\end_inset
+
+ vertices.
+ See 
+\begin_inset CommandInset href
+LatexCommand href
+name "On subtrees of trees"
+target "http://www.sciencedirect.com/science/article/pii/S0196885804000697"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ subtrees 
+\begin_inset Formula $T\subset T_{0}$
+\end_inset
+
+
+\end_layout
+
 \end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Amazingly, we only need to try 
+\begin_inset Formula $N$
+\end_inset
+
+, where 
+\begin_inset Formula $N$
+\end_inset
+
+ is the number of vertices of 
+\begin_inset Formula $T_{0}$
+\end_inset
+
+.
+\end_layout
+
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator parbreak
@@ -2084,7 +2656,7 @@ Cannot take the gradient w.r.t.
 status open
 
 \begin_layout Plain Layout
-Greedy Pruning is Sufficient
+Cost Complexity Greedy Pruning Algorithm
 \end_layout
 
 \end_inset
@@ -2098,7 +2670,32 @@ Greedy Pruning is Sufficient
 \end_layout
 
 \begin_layout Itemize
-Find subtree 
+Find a proper
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $T_{1}$
+\end_inset
+
+ is a proper subtree of 
+\begin_inset Formula $T_{0}$
+\end_inset
+
+ if tree 
+\begin_inset Formula $T_{1}\subset T_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $T_{1}\neq T_{0}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ subtree 
 \begin_inset Formula $T_{1}\subset T_{0}$
 \end_inset
 
@@ -2110,14 +2707,42 @@ Find subtree
 \end_layout
 
 \begin_deeper
+\begin_layout Itemize
+Can get 
+\begin_inset Formula $T_{1}$
+\end_inset
+
+ be removing a single pair of leaf nodes.
+\end_layout
+
+\begin_layout Itemize
+This 
+\begin_inset Formula $T_{1}$
+\end_inset
+
+ will have 
+\begin_inset Formula $1$
+\end_inset
+
+ fewer node than 
+\begin_inset Formula $T_{0}$
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Pause
 
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-Then find 
+Then find proper subtree 
 \begin_inset Formula $T_{2}\subset T_{1}$
+\end_inset
+
+ that minimizes minimizes 
+\begin_inset Formula $\hat{R}(T_{2})-\hat{R}(T_{1})$
 \end_inset
 
 .
@@ -2151,7 +2776,7 @@ If
  (terminal and internal nodes), then we end up with a set of trees:
 \begin_inset Formula 
 \[
-\ct=\left\{ T_{0}\supset T_{1}\supset T_{2}\supset\cdots\supset T_{\left|N\right|}\right\} 
+\ct=\left\{ T_{0}\supset T_{1}\supset T_{2}\supset\cdots\supset T_{\left|N\right|-1}\right\} 
 \]
 
 \end_inset
@@ -2159,15 +2784,57 @@ If
 
 \end_layout
 
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Greedy Pruning is Sufficient
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_deeper
+\begin_layout Itemize
+Cost complexity pruning algorithm gives us a set of nested trees:
+\begin_inset Formula 
+\[
+\ct=\left\{ T_{0}\supset T_{1}\supset T_{2}\supset\cdots\supset T_{\left|N\right|-1}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 Breiman et al.
- (1984) proved that this is all you need.
+ (1984
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+The CART book Section 3.3
+\end_layout
+
+\end_inset
+
+) proved that this is all you need.
  That is:
 \begin_inset Formula 
 \[
@@ -2179,22 +2846,25 @@ Breiman et al.
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Note
-status open
+\begin_layout Pause
 
-\begin_layout Plain Layout
-Would be great to include proof? or at least a reference?
 \end_layout
 
+\begin_layout Itemize
+Only need to evaluate 
+\begin_inset Formula $N$
 \end_inset
 
+ trees rather than 
+\begin_inset Formula $O(2^{N})$
+\end_inset
 
+.
 \end_layout
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2205,7 +2875,7 @@ Would be great to include proof? or at least a reference?
 status open
 
 \begin_layout Plain Layout
-Regularization Path for Trees
+Regularization Path for Trees on SPAM dataset (HTF Figure 9.4)
 \end_layout
 
 \end_inset
@@ -2219,7 +2889,7 @@ Regularization Path for Trees
 \begin_inset Graphics
 	filename ../Figures/trees/pruningTreesize.png
 	lyxscale 70
-	height 45theight%
+	height 60theight%
 
 \end_inset
 
@@ -2227,23 +2897,27 @@ Regularization Path for Trees
 \end_layout
 
 \begin_layout Standard
-SPAM dataset: Blue curve is cross-validation estimate of misclassification
- rate as a function of tree size.
- Orange curve is test error.
- The cross-validation is indexed by values of 
+For each 
 \begin_inset Formula $\alpha$
 \end_inset
 
-, shown above.
- The tree sizes shown below refer to 
+, we find optimal tree 
+\begin_inset Formula $T_{\alpha}$
+\end_inset
+
+ on training set.
+ Corresponding tree size 
 \begin_inset Formula $\left|T_{\alpha}\right|$
 \end_inset
 
-, the size of the original tree indexed by 
-\begin_inset Formula $\alpha$
+ is shown on bottom.
+ Blue curves gives error rate estimates from cross-validation (tree-size
+ in each fold may be different from 
+\begin_inset Formula $|T_{\alpha}|$
 \end_inset
 
-.
+).
+ Orange curve is test error.
 \begin_inset Note Note
 status open
 
@@ -2257,21 +2931,22 @@ Why doesn't this overfit? For each
 \begin_inset Formula $\alpha$
 \end_inset
 
- on the full dataset, after pruning.
-  My best guess for why we're not seeing overfitting is that the tree size
- complexity just doesn't get that large.
+ on the full training dataset, after pruning.
+ My best guess for why we're not seeing overfitting is that the tree size
+ complexity just doesn't get that large because we stop splitting before
+ leaf nodes have only a single element.
  Note that in this figure, tree size is the number of terminal nodes, not
  the depth of the tree.
- Perhaps if we'd been working with larger trees, we'd start to see overfitting.
+ Perhaps if we'd been working with larger trees (i.e.
+ started with a larger 
+\begin_inset Formula $T_{0}$
+\end_inset
+
+), we'd start to see overfitting.
  
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
+\begin_layout Plain Layout
 \align center
 \begin_inset ERT
 status open
@@ -2296,16 +2971,16 @@ tiny{HTF Figure 9.4}}
 
 \end_layout
 
-\end_deeper
-\begin_layout Frame
+\end_inset
+
 
 \end_layout
 
+\end_deeper
 \begin_layout Standard
-\begin_inset Note Note
-status collapsed
+\begin_inset Separator plain
+\end_inset
 
-\begin_layout Separator
 
 \end_layout
 
@@ -2356,7 +3031,10 @@ method for pruning tree
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
 
 \end_layout
 
@@ -2454,7 +3132,7 @@ k(m)=\argmax_{k}\hat{p}_{mk}.
 Predicted class probability distribution
 \series default
  is 
-\begin_inset Formula $\left(\hat{p}_{m1},\ldots,\hat{p}_{mk}\right)$
+\begin_inset Formula $\left(\hat{p}_{m1},\ldots,\hat{p}_{mK}\right)$
 \end_inset
 
 .
@@ -2462,7 +3140,10 @@ Predicted class probability distribution
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2547,7 +3228,10 @@ It's just
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2633,7 +3317,10 @@ minimizing node impurity
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2687,19 +3374,19 @@ Here are three node impurity measures as a function of
 
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 \align center
 \begin_inset Graphics
 	filename ../Figures/trees/impurityMeasureTwoClass.png
 	lyxscale 50
-	width 83theight%
+	height 50text%
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 \align center
 \begin_inset ERT
 status open
@@ -2725,7 +3412,10 @@ tiny{HTF Figure 9.3}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2855,7 +3545,7 @@ information gain
 
 \end_inset
 
- or deviance:
+ or deviance (equivalent to using information gain):
 \begin_inset Formula 
 \[
 -\sum_{k=1}^{K}\hat{p}_{mk}\log\hat{p}_{mk}.
@@ -2868,11 +3558,14 @@ information gain
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
@@ -2906,19 +3599,19 @@ Class Distributions: Pre-split
 \end_layout
 
 \begin_deeper
-\begin_layout Plain Layout
+\begin_layout Standard
 \align center
 \begin_inset Graphics
 	filename ../Figures/trees/treeEntropyPreSplit.png
 	lyxscale 50
-	width 80text%
+	height 70theight%
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 \align center
 \begin_inset ERT
 status open
@@ -2945,7 +3638,10 @@ tiny{From Criminisi et al.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2963,37 +3659,23 @@ Class Distributions: Split Search
 \end_layout
 
 \begin_deeper
-\begin_layout Plain Layout
+\begin_layout Standard
 \align center
 \begin_inset Graphics
 	filename ../Figures/trees/treeEntropySplitSearch.png
 	lyxscale 50
-	width 70text%
+	height 60theight%
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Itemize
-(Maximizing information gain is equivalent to minimizing entropy)
+\begin_layout Standard
+(Maximizing information gain is equivalent to minimizing entropy.)
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Not clear what is going on here – is this weighted average information gain?
- 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
+\begin_layout Standard
 \align center
 \begin_inset ERT
 status open
@@ -3020,7 +3702,10 @@ tiny{From Criminisi et al.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3113,7 +3798,10 @@ N_{L}Q(R_{L})+N_{R}Q(R_{R})
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3135,9 +3823,12 @@ Classification Trees: Node Impurity Measures
 For building the tree, Gini and Entropy are more effective.
 \end_layout
 
-\begin_deeper
 \begin_layout Itemize
 They push for more pure nodes, not just misclassification rate 
+\end_layout
+
+\begin_layout Itemize
+A good split may not change misclassification rate at all!
 \end_layout
 
 \begin_deeper
@@ -3145,22 +3836,37 @@ They push for more pure nodes, not just misclassification rate
 
 \end_layout
 
+\begin_layout Itemize
+Two class problem: 4 observations in each class.
+\end_layout
+
+\begin_layout Itemize
+Split 1: (3,1) and (1,3) [each rergion has 3 of one class and 1 of other]
+\end_layout
+
+\begin_layout Itemize
+Split 2: (2,4) and (2,0) [one region has 2 of one class and 4 of other,
+ other region pure]
+\end_layout
+
+\begin_layout Itemize
+Misclassification rate for two splits are same.
+\end_layout
+
+\begin_layout Itemize
+Gini and entropy split prefer Split 2.
+\end_layout
+
 \end_deeper
-\end_deeper
+\begin_layout Pause
+
+\end_layout
+
 \begin_layout Itemize
 For pruning the tree, use misclassification error – closer to risk estimate.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 Trees in General
 \end_layout
@@ -3298,12 +4004,15 @@ Surrogates ordered by how well they approximate the original split.
 \end_deeper
 \end_deeper
 \begin_layout Standard
-\begin_inset Note Note
-status open
+\begin_inset Separator plain
+\end_inset
 
-\begin_layout Separator
 
 \end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
 
 \begin_layout Frame
 \begin_inset Argument 4
@@ -3423,10 +4132,6 @@ Extreme example: Row Number could lead to perfect classification with a
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
-
-\end_layout
-
 \end_inset
 
 
@@ -3607,8 +4312,16 @@ we can view this as a
 \series bold
 linear model
 \series default
-.
- 
+ (e.g.
+ in lasso regression).
+\end_layout
+
+\begin_layout Itemize
+This is called
+\series bold
+ rule fit 
+\series default
+by Friedman.
 \end_layout
 
 \begin_deeper
@@ -3626,10 +4339,6 @@ Trees can be used to discover nonlinear features.
 \begin_layout Standard
 \begin_inset Note Note
 status open
-
-\begin_layout Separator
-
-\end_layout
 
 \begin_layout Frame
 \begin_inset Argument 4
@@ -3677,10 +4386,6 @@ Later we investigate several ways to reduce this variance
 \end_layout
 
 \end_deeper
-\begin_layout Separator
-
-\end_layout
-
 \end_inset
 
 

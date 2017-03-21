@@ -3,7 +3,7 @@
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin unavailable
+\origin /Users/drosen/Dropbox/repos/mlcourse/Lectures/
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -758,7 +758,33 @@ A system for the iduction of oblique decision trees
 \begin_inset Quotes erd
 \end_inset
 
- JAIR 1994); What about multiple features at a time [box constraints?]
+ JAIR 1994); also 
+\series bold
+binary space partition trees
+\series default
+ (BSP trees) have a linear split at each node) induces a partitiom into
+ convex polyhedral cells; Can also have 
+\series bold
+sphere trees
+\series default
+ – space is partitioned by a sphere of a certain radius around a fixed point.
+ [Devroye, Gyorfi, Lugosi p.
+ 316]
+\end_layout
+
+\begin_layout Plain Layout
+- Breiman ran some experiments with CART to see bias / variance breakdown:
+ http://projecteuclid.org/download/pdf_1/euclid.aos/1024691079 
+\end_layout
+
+\begin_layout Plain Layout
+- incorporate a slide or two about categorical variables (see CART book
+ p.
+ 101)
+\end_layout
+
+\begin_layout Plain Layout
+- colinearity mattering with tree-based methods? 
 \end_layout
 
 \end_inset
@@ -767,7 +793,7 @@ A system for the iduction of oblique decision trees
 \end_layout
 
 \begin_layout Section
-Regression Trees
+Trees
 \end_layout
 
 \begin_layout Frame
@@ -775,7 +801,7 @@ Regression Trees
 status open
 
 \begin_layout Plain Layout
-General Tree Structure
+Tree Terminology
 \end_layout
 
 \end_inset
@@ -784,9 +810,6 @@ General Tree Structure
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -838,7 +861,7 @@ tiny{From Criminisi et al.
 status open
 
 \begin_layout Plain Layout
-Decision Tree
+A Binary Decision Tree
 \end_layout
 
 \end_inset
@@ -847,9 +870,6 @@ Decision Tree
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -908,10 +928,6 @@ Binary Decision Tree on
 
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1001,10 +1017,6 @@ Binary Regression Tree on
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1087,10 +1099,6 @@ Fitting a Regression Tree
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1105,10 +1113,6 @@ The decision tree gives the partition of
 \left\{ R_{1},\ldots,R_{M}\right\} .
 \]
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1163,10 +1167,6 @@ Fitting a Regression Tree
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1184,10 +1184,6 @@ f(x)=\sum_{m=1}^{M}c_{m}\ind{x\in R_{m}}
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1202,10 +1198,6 @@ How to choose
 \end_inset
 
 ? 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1249,10 +1241,6 @@ Complexity of a Tree
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1266,10 +1254,6 @@ Let
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1284,10 +1268,6 @@ We will use
 \end_inset
 
  to measure the complexity of a tree.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1298,19 +1278,11 @@ We will use
 \end_deeper
 \begin_layout Itemize
 For any given complexity, 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 we want the tree minimizing square error on training set.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1334,10 +1306,6 @@ Learning the simplest (smallest) decision tree is an NP-complete problem
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1350,12 +1318,6 @@ Learning the simplest (smallest) decision tree is an NP-complete problem
 We proceed with a 
 \series bold
 greedy algorithm
-\series default
-
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1383,10 +1345,6 @@ Root Node, Continuous Variables
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1396,10 +1354,6 @@ Let
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1418,10 +1372,6 @@ Splitting variable
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1440,10 +1390,6 @@ Split point
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1492,10 +1438,6 @@ Root Node, Continuous Variables
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1515,10 +1457,6 @@ For each splitting variable
 \hat{c}_{2}(j,s) & = & \text{ave}(y_{i}\mid x_{i}\in R_{2}(j,s))
 \end{eqnarray*}
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1583,10 +1521,6 @@ Then Proceed Recursively
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1600,10 +1534,6 @@ We have determined
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1615,10 +1545,6 @@ We have determined
 \begin_layout Enumerate
 Find best split for points in 
 \begin_inset Formula $R_{1}$
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1636,10 +1562,6 @@ Find best split for points in
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1650,10 +1572,6 @@ Find best split for points in
 \end_deeper
 \begin_layout Enumerate
 Continue...
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1685,10 +1603,6 @@ Complexity Control Strategy
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1698,10 +1612,6 @@ If the tree is too big, we may overfit.
 
 \begin_layout Itemize
 If too small, we may miss patterns in the data (underfit).
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1712,10 +1622,6 @@ If too small, we may miss patterns in the data (underfit).
 \end_deeper
 \begin_layout Itemize
 Typical approach: 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1752,10 +1658,6 @@ Tree Terminology
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1765,10 +1667,6 @@ Each
 internal node
 \series default
  
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1793,12 +1691,6 @@ terminal node
 or 
 \series bold
 leaf node
-\series default
-
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1851,10 +1743,6 @@ status open
 Tree Pruning
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1932,10 +1820,6 @@ Tree Pruning
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2007,10 +1891,6 @@ status open
 Emprical Risk and Tree Complexity
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2102,10 +1982,6 @@ Cost Complexity (or Weakest Link) Pruning
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2127,10 +2003,6 @@ C_{\alpha}(T)=\hat{R}(T)+\alpha\left|T\right|
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2149,10 +2021,6 @@ Trades off between empirical risk and complexity of tree.
 
 \begin_layout Itemize
 Cost complexity pruning:
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2190,10 +2058,6 @@ Use cross validation to find the right choice of
 \end_inset
 
  has familiar regularized ERM form, but
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2226,10 +2090,6 @@ Greedy Pruning is Sufficient
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2247,10 +2107,6 @@ Find subtree
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2265,10 +2121,6 @@ Then find
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2279,10 +2131,6 @@ Then find
 \end_deeper
 \begin_layout Itemize
 Repeat until we have just a single node.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2306,10 +2154,6 @@ If
 \ct=\left\{ T_{0}\supset T_{1}\supset T_{2}\supset\cdots\supset T_{\left|N\right|}\right\} 
 \]
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2364,10 +2208,6 @@ status open
 Regularization Path for Trees
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2429,10 +2269,6 @@ Why doesn't this overfit? For each
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -2467,7 +2303,7 @@ tiny{HTF Figure 9.4}}
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Separator
 
@@ -2488,10 +2324,6 @@ Classification Trees
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2501,10 +2333,6 @@ Consider classification case:
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2515,10 +2343,6 @@ Consider classification case:
 \end_deeper
 \begin_layout Itemize
 We need to modify
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2547,10 +2371,6 @@ Classification Trees
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2568,10 +2388,6 @@ Let node
 \end_inset
 
  observations
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2598,10 +2414,6 @@ Denote proportion of observations in
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2625,10 +2437,6 @@ Predicted classification
 k(m)=\argmax_{k}\hat{p}_{mk}.
 \]
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2669,10 +2477,6 @@ Misclassification Error
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2690,10 +2494,6 @@ Consider node
 \end_inset
 
  observations
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2716,10 +2516,6 @@ k(m)=\argmax_{k}\hat{p}_{mk}
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2730,10 +2526,6 @@ k(m)=\argmax_{k}\hat{p}_{mk}
 \end_deeper
 \begin_layout Itemize
 What is the misclassification rate on the training data?
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2770,10 +2562,6 @@ Classification Trees: Node Impurity Measures
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2791,10 +2579,6 @@ Consider node
 \end_inset
 
  observations
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2805,10 +2589,6 @@ Consider node
 \end_deeper
 \begin_layout Itemize
 How can we generalize from squared error to classification?
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2823,10 +2603,6 @@ We will introduce some different measures of
 node impurity
 \series default
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2875,19 +2651,12 @@ Two-Class Node Impurity Measures
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 Consider binary classification
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2902,10 +2671,6 @@ Let
 \end_inset
 
  be the relative frequency of class 1.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2975,10 +2740,6 @@ Classification Trees: Node Impurity Measures
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2996,10 +2757,6 @@ Consider leaf node
 \end_inset
 
  observations
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3022,10 +2779,6 @@ node impurity
 \end_inset
 
 :
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3036,10 +2789,6 @@ Misclassification error:
 1-\hat{p}_{mk(m)}.
 \]
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3058,10 +2807,6 @@ Gini index:
 \sum_{k=1}^{K}\hat{p}_{mk}(1-\hat{p}_{mk})
 \]
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3157,9 +2902,6 @@ Class Distributions: Pre-split
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -3215,10 +2957,6 @@ status open
 Class Distributions: Split Search 
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3297,10 +3035,6 @@ Classification Trees: How exactly do we do this?
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3314,10 +3048,6 @@ Let
 \end_inset
 
  be regions corresponding to a potential node split.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3344,10 +3074,6 @@ Suppose we have
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3366,10 +3092,6 @@ Let
 \end_inset
 
  be the node impurity measures.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3406,28 +3128,16 @@ Classification Trees: Node Impurity Measures
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 For building the tree, Gini and Entropy are more effective.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 They push for more pure nodes, not just misclassification rate 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3446,10 +3156,6 @@ For pruning the tree, use misclassification error – closer to risk estimate.
 
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3485,10 +3191,6 @@ Predictors
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3502,10 +3204,6 @@ covariates
 predictors
 \series default
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3516,10 +3214,6 @@ predictors
 \end_deeper
 \begin_layout Itemize
 What to do about missing features? 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3529,10 +3223,6 @@ What to do about missing features?
 
 \begin_layout Itemize
 Throw out inputs with missing features
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3543,10 +3233,6 @@ Throw out inputs with missing features
 \end_deeper
 \begin_layout Itemize
 Impute missing values with feature means
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3565,10 +3251,6 @@ missing
 \end_inset
 
  be a new category.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3582,12 +3264,6 @@ missing
 For trees, can use 
 \series bold
 surrogate splits
-\series default
-
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3597,10 +3273,6 @@ surrogate splits
 
 \begin_layout Itemize
 For every internal node, form a list of surrogate features and split points
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3611,10 +3283,6 @@ For every internal node, form a list of surrogate features and split points
 \end_deeper
 \begin_layout Itemize
 Goal is to approximate the original split as well as possible
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3648,10 +3316,6 @@ Categorical Features
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3661,10 +3325,6 @@ Suppose we have feature with
 \end_inset
 
  possible values (unordered).
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3675,10 +3335,6 @@ Suppose we have feature with
 \end_deeper
 \begin_layout Itemize
 We want to find the best split into 2 groups
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3694,10 +3350,6 @@ There are
 
  possible partitions.
  
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3708,10 +3360,6 @@ There are
 \end_deeper
 \begin_layout Itemize
 Search time?
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3736,10 +3384,6 @@ binary classification, or a feature with two values???
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3755,10 +3399,6 @@ Otherwise, can use approximations.
 \end_deeper
 \begin_layout Itemize
 Statistical issue?
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3768,10 +3408,6 @@ Statistical issue?
 
 \begin_layout Itemize
 If a category has a very large number of categories, we can overfit.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3794,10 +3430,6 @@ Extreme example: Row Number could lead to perfect classification with a
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_layout Frame
@@ -3808,10 +3440,6 @@ status open
 Trees vs Linear Models
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3885,10 +3513,6 @@ Interpretability
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3927,10 +3551,6 @@ Trees for Nonlinear Feature Discovery
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3944,10 +3564,6 @@ Suppose tree
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3963,10 +3579,6 @@ Predictions are
 f(x)=\sum_{m=1}^{M}c_{m}\ind{x\in R_{m}}
 \]
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3997,10 +3609,6 @@ linear model
 \series default
 .
  
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -4034,10 +3642,6 @@ Instability / High Variance of Trees
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -4047,10 +3651,6 @@ Trees are
  high variance
 \series default
 : 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -4084,10 +3684,6 @@ Later we investigate several ways to reduce this variance
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_layout Frame
@@ -4101,10 +3697,6 @@ Comments about Trees
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -4112,12 +3704,6 @@ Comments about Trees
 Trees make no use of 
 \series bold
 geometry
-\series default
-
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -4127,10 +3713,6 @@ geometry
 
 \begin_layout Itemize
 No inner products or distances
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -4149,10 +3731,6 @@ nonmetric
 \end_inset
 
  method
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -4167,10 +3745,6 @@ nonmetric
 Feature scale irrelevant
 \series default
  
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -4182,10 +3756,6 @@ Feature scale irrelevant
 \end_deeper
 \begin_layout Itemize
 Predictions are not continuous
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper

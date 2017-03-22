@@ -3,7 +3,7 @@
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin unavailable
+\origin /Users/drosen/Dropbox/repos/mlcourse/Lectures/
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -20,7 +20,7 @@
   \end{frame}
 }
 \end_preamble
-\options handout
+\options handout,aspectratio=169
 \use_default_options false
 \maintain_unincluded_children false
 \language english
@@ -768,7 +768,7 @@ homogeneous ensemble
 hetereogeneous ensembles
 \series default
 .
- Learning algorithms mayb e called 
+ Learning algorithms maybe called 
 \series bold
 individual learners
 \series default
@@ -814,10 +814,6 @@ Parameters
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -835,10 +831,6 @@ Often went to estimate some characteristic of
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -849,10 +841,6 @@ Often went to estimate some characteristic of
 \begin_layout Itemize
 e.g.
  expected value, variance, kurtosis, median, etc...
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -873,10 +861,6 @@ of
 
 .
  
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -901,6 +885,52 @@ parameter
 .
 \end_layout
 
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Question: Is 
+\begin_inset Formula $\mu$
+\end_inset
+
+ random?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Answer: Nope.
+ For example if 
+\begin_inset Formula $P$
+\end_inset
+
+ has density 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ on 
+\begin_inset Formula $\reals$
+\end_inset
+
+, then mean is
+\begin_inset Formula 
+\[
+\mu=\int_{-\infty}^{\infty}xf(x)\,dx,
+\]
+
+\end_inset
+
+which just an integral - nothing random.
+ 
+\end_layout
+
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator parbreak
@@ -920,10 +950,6 @@ Statistics and Estimators
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -938,10 +964,6 @@ Suppose
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -960,10 +982,6 @@ statistic
 \end_inset
 
  is any function of the data.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -992,6 +1010,208 @@ A statistic
 .
 \end_layout
 
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Question: Are statistics and/or point estimators random? 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Answer: Yes, since we're considering the data to be random.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The function 
+\begin_inset Formula $s(\cdot)$
+\end_inset
+
+ isn't random, but we're plugging in random inputs.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Examples of Statistics
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Mean: 
+\begin_inset Formula $\bar{x}(\cd_{n})=\frac{1}{n}\sum_{i=1}^{n}x_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Median: 
+\begin_inset Formula $m(\cd_{n})=\text{median}(x_{1},\ldots,x_{n})$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Sample variance: 
+\begin_inset Formula $\sigma^{2}(\cd_{n})=\frac{1}{n-1}\sum_{i=1}^{n}\left(x_{i}-\bar{x}(\cd_{n})\right)^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Fancier:
+\end_layout
+
+\begin_layout Itemize
+A data histogram
+\series bold
+ 
+\series default
+is a statistic.
+ 
+\end_layout
+
+\begin_layout Itemize
+Empirical distribution function.
+\end_layout
+
+\begin_layout Itemize
+A confidence interval.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Statistics are Random
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Statistics are random, so they have probability distributions.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+The distribution of a statistic is called a 
+\series bold
+sampling distribution
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+We often want to know some 
+\series bold
+parameters
+\series default
+ of the sampling distribution.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Most commonly the mean and the standard deviation.
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+The standard deviation of the sampling distribution is called the 
+\series bold
+standard error
+\series default
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Question: Is standard error random?
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Answer: Nope.
+ It's a parameter of a distribution.
+\end_layout
+
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator parbreak
@@ -1008,10 +1228,6 @@ status open
 Bias and Variance for Real-Valued Estimators
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1039,20 +1255,10 @@ Let
 .
 \end_layout
 
-\begin_layout Itemize
-Examples?
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 We define the 
 \series bold
@@ -1083,18 +1289,12 @@ of
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
-\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 An estimator is 
 \series bold
@@ -1106,10 +1306,6 @@ unbiased
 
 .
  
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1159,10 +1355,6 @@ Estimating Variance of an Estimator
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1180,10 +1372,6 @@ To estimate
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1202,10 +1390,6 @@ Instead of a single sample
 \end_inset
 
 , suppose we had
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1219,10 +1403,6 @@ Instead of a single sample
 
 : 
 \begin_inset Formula $\cd_{n}^{1},\cd_{n}^{2},\ldots,\cd_{n}^{B}$
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1283,19 +1463,11 @@ Error Vars
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 Why do we even care about estimating variance?
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1314,10 +1486,6 @@ Would like to report a confidence interval for our point estimate:
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1332,6 +1500,24 @@ Would like to report a confidence interval for our point estimate:
 \end_inset
 
  is unbiased.)
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Our 
+\series bold
+estimate of standard error
+\series default
+ is 
+\begin_inset Formula $\sqrt{\widehat{\var(\hat{\mu})}}$
+\end_inset
+
+.
 \end_layout
 
 \end_deeper
@@ -1353,10 +1539,6 @@ Histogram of Estimator
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1369,16 +1551,11 @@ Want to estimate
 \begin_inset Formula $P$
 \end_inset
 
-.
- (some complicated 
+, and some complicated 
 \begin_inset Formula $\alpha$
 \end_inset
 
-)
-\begin_inset Separator latexpar
-\end_inset
-
-
+.
 \end_layout
 
 \begin_deeper
@@ -1398,10 +1575,6 @@ Point estimator
 
 .
  
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1424,10 +1597,6 @@ Histogram of
 \end_inset
 
 :
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1436,7 +1605,7 @@ Histogram of
 \begin_inset Graphics
 	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/bagging/independent-estimates.png
 	lyxscale 30
-	height 45theight%
+	height 55theight%
 
 \end_inset
 
@@ -1498,10 +1667,6 @@ Practical Issue
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1511,10 +1676,6 @@ We typically get only one sample
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1529,10 +1690,6 @@ We could divide it into
 \end_inset
 
  groups.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1547,10 +1704,6 @@ Our estimator would be
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1577,10 +1730,6 @@ But the estimator itself would not be as good as if we used all data:
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1591,10 +1740,6 @@ But the estimator itself would not be as good as if we used all data:
 \end_deeper
 \begin_layout Itemize
 Can we get the best of both worlds?
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1626,10 +1771,6 @@ The Bootstrap Sample
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1655,10 +1796,6 @@ with replacement
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1673,10 +1810,6 @@ In a bootstrap sample, some elements of
 \end_inset
 
  
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1687,10 +1820,6 @@ will show up multiple times,
 \begin_layout Itemize
 some won't show up at all.
  
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1710,10 +1839,6 @@ Each
 \end_inset
 
  of not being selected.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1733,10 +1858,6 @@ Recall from analysis that for large
 \left(1-\frac{1}{n}\right)^{n}\approx\frac{1}{e}\approx.368.
 \]
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1772,10 +1893,6 @@ status open
 The Bootstrap Sample
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1844,10 +1961,6 @@ The Bootstrap Method
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1877,10 +1990,6 @@ having
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1903,10 +2012,6 @@ Given original data
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1922,10 +2027,6 @@ For each bootstrap sample, compute some function
 \phi(D_{n}^{1}),\ldots,\phi(D_{n}^{B})
 \]
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1948,10 +2049,6 @@ Work with these values as though
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1992,10 +2089,6 @@ Independent vs Bootstrap Samples
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2027,10 +2120,6 @@ Point estimator
 
 .
  
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2045,10 +2134,6 @@ Histogram of
 \end_inset
 
  based on
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2058,10 +2143,6 @@ Histogram of
 
 \begin_layout Itemize
 1000 bootstrap samples of size 100
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2134,10 +2215,6 @@ The Bootstrap in Practice
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2164,10 +2241,6 @@ bootstrap variance
 
 .
  
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2189,10 +2262,6 @@ Compute empirical variance of
 \end_inset
 
 ..
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2217,10 +2286,6 @@ status open
 
 \begin_layout Itemize
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2269,10 +2334,6 @@ A Lousy Estimator
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2291,10 +2352,6 @@ Let
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2313,10 +2370,6 @@ We could use any single
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2327,10 +2380,6 @@ We could use any single
 \end_deeper
 \begin_layout Itemize
 Performance?
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2375,10 +2424,6 @@ Variance of a Mean
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2406,10 +2451,6 @@ Let's consider the average of the
 \end_inset
 
 's.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2424,10 +2465,6 @@ Average has the same expected value but smaller variance:
 \ex\left[\frac{1}{n}\sum_{i=1}^{n}Z_{i}\right]=\mu\qquad\var\left[\frac{1}{n}\sum_{i=1}^{n}Z_{i}\right]=\frac{\sigma^{2}}{n}.
 \]
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2446,10 +2483,6 @@ Clearly the average is preferred to a single
 \end_inset
 
  as estimator.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2481,10 +2514,6 @@ Averaging Independent Prediction Functions
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2494,10 +2523,6 @@ Suppose we have
 \end_inset
 
  independent training sets from same distribution.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2516,10 +2541,6 @@ Learning algorithm gives
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2535,10 +2556,6 @@ Define the average prediction function as:
 \hat{f}_{\text{avg}}=\frac{1}{B}\sum_{b=1}^{B}\hat{f}_{b}
 \]
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2573,10 +2590,6 @@ Averaging Independent Prediction Functions
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2602,10 +2615,6 @@ Then average prediction on
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2625,10 +2634,6 @@ Consider
 
  as random variables.
  (They are.)
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2642,10 +2647,6 @@ Consider
 \end_inset
 
  are i.i.d.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2663,10 +2664,6 @@ Consider
 \end_inset
 
  have the same expected value, but
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2710,10 +2707,6 @@ Averaging Independent Prediction Functions
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2727,10 +2720,6 @@ Using
 \end_inset
 
 seems like a win.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2745,10 +2734,6 @@ But in practice we don't have
 \end_inset
 
  independent training sets...
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2775,7 +2760,7 @@ the bootstrap
 \end_layout
 
 \begin_layout Section
-Bagging
+Bagging 
 \end_layout
 
 \begin_layout Frame
@@ -2786,10 +2771,6 @@ status open
 Bagging
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2811,10 +2792,6 @@ Draw
 
 .
  
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2829,10 +2806,6 @@ Let
 \end_inset
 
  be the decision functions for each set.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2859,10 +2832,6 @@ of these:
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2873,10 +2842,6 @@ of these:
 \end_deeper
 \begin_layout Itemize
 How might we combine 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2925,10 +2890,6 @@ Bagging for Regression
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2947,10 +2908,6 @@ Draw
 
 .
  
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2964,11 +2921,7 @@ Let
 \begin_inset Formula $\hat{f}_{1},\hat{f}_{2},\ldots,\hat{f}_{B}:\cx\to\reals$
 \end_inset
 
- be the predictions functions for each set.
-\begin_inset Separator latexpar
-\end_inset
-
-
+ be the predictions functions for each set.x
 \end_layout
 
 \begin_deeper
@@ -2995,10 +2948,6 @@ If bootstrap samples were independent draws from
 \end_inset
 
 , 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3018,10 +2967,6 @@ If bootstrap samples were independent draws from
 \end_inset
 
  would have smaller variance.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3055,10 +3000,6 @@ Out-of-Bag Error Estimation
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3072,10 +3013,6 @@ Remaining 37% are called
 out-of-bag (OOB)
 \series default
  observations.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3095,10 +3032,6 @@ th training point, let
 S_{i}=\left\{ b\mid D^{b}\text{ does not contain }i\text{th point}\right\} .
 \]
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3128,10 +3061,6 @@ OOB prediction
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3142,10 +3071,6 @@ OOB prediction
 \end_deeper
 \begin_layout Itemize
 The OOB error is a good estimate of the test error.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3170,10 +3095,6 @@ For large enough
 
 \end_layout
 
-\begin_layout Standard
-
-\end_layout
-
 \begin_layout Frame
 \begin_inset Argument 4
 status open
@@ -3182,10 +3103,6 @@ status open
 Bagging Trees
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3202,10 +3119,6 @@ Input space
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3274,10 +3187,6 @@ status open
 Bagging Trees
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3356,10 +3265,6 @@ Variance
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3381,10 +3286,6 @@ biases
 \end_inset
 
  the fit 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3406,10 +3307,6 @@ towards
 away
 \series default
  from the best possible fit of the training data.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3421,10 +3318,6 @@ away
 \end_deeper
 \begin_layout Itemize
 Full, unpruned decision trees have very little bias.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3435,10 +3328,6 @@ Full, unpruned decision trees have very little bias.
 \end_deeper
 \begin_layout Itemize
 Pruning decision trees introduces a bias.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3453,10 +3342,6 @@ Pruning decision trees introduces a bias.
 Variance
 \series default
  describes how much the fit changes across different random training sets.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3488,10 +3373,6 @@ Conventional Wisdom on When Bagging Helps
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3501,10 +3382,6 @@ Bagging does nothing to eliminate bias.
 
 \begin_layout Itemize
 Hope is that bagging reduces variance.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3515,10 +3392,6 @@ Hope is that bagging reduces variance.
 \end_deeper
 \begin_layout Itemize
 General sentiment is that bagging helps most when
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3528,10 +3401,6 @@ Relatively unbiased base predictions
 
 \begin_layout Itemize
 High variance
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3548,10 +3417,6 @@ e.g.
 \end_deeper
 \begin_layout Itemize
 I'm not aware of solid theory on this...
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3562,10 +3427,6 @@ I'm not aware of solid theory on this...
 \end_deeper
 \begin_layout Itemize
 Empirical observation
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3575,10 +3436,6 @@ Bagging trees works well.
 
 \begin_layout Itemize
 Trees have high variance and low bias.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3615,10 +3472,6 @@ Recall the Motivating Principal of Bagging
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3629,10 +3482,6 @@ Averaging
 
  reduces variance, if they're based on i.i.d.
  samples.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3643,10 +3492,6 @@ Averaging
 \end_deeper
 \begin_layout Itemize
 Bootstrap samples are not indepedendent.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3657,10 +3502,6 @@ Bootstrap samples are not indepedendent.
 \end_deeper
 \begin_layout Itemize
 This probably limits the amount of variance reduction we can get.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3696,10 +3537,6 @@ Variance of a Mean of Correlated Variables
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3726,10 +3563,6 @@ For
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3744,10 +3577,6 @@ What if
 \end_inset
 
 's are correlated? 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3772,10 +3601,6 @@ Suppose
 \var\left[\frac{1}{n}\sum_{i=1}^{n}Z_{i}\right]=\rho\sigma^{2}+\frac{1-\rho}{n}\sigma^{2}.
 \]
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3818,10 +3643,6 @@ Random Forest
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3849,10 +3670,6 @@ bagged decision trees
 \series default
 , but modify the tree-growing procedure to reduce the correlation between
  trees.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3867,24 +3684,20 @@ bagged decision trees
 Key step
 \series default
  in random forests:
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-When constructing each tree node, restrict choice of splitting variable
- to a randomly chosen subset of features of size 
+When constructing 
+\series bold
+each tree node
+\series default
+, restrict choice of splitting variable to a randomly chosen subset of features
+ of size 
 \begin_inset Formula $m$
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3904,10 +3717,6 @@ Typically choose
 \end_inset
 
  is the number of features.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3944,10 +3753,6 @@ Random Forest: Effect of
  size
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -4020,10 +3825,6 @@ Random Forest: Effect of
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -4060,11 +3861,7 @@ TensorForest:
 \begin_inset Quotes eld
 \end_inset
 
-Scalable random forests on TensorFlow' Effect of 
-\begin_inset Formula $m$
-\end_inset
-
- size
+Scalable random forests on TensorFlow'
 \end_layout
 
 \end_inset
@@ -4090,8 +3887,8 @@ batches of points keep arriving to a tree building job
 \end_layout
 
 \begin_layout Itemize
-from the first #features (tunable) poits we receive, we sample random (feature,f
-eature value) pairs.
+from the first #features (tunable) points we receive, we sample random (feature,
+feature value) pairs.
  These are our (only) candidate splits.
 \end_layout
 

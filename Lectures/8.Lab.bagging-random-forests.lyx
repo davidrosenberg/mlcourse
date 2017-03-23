@@ -1806,7 +1806,7 @@ with replacement
 \end_deeper
 \begin_layout Itemize
 In a bootstrap sample, some elements of 
-\begin_inset Formula $\cd$
+\begin_inset Formula $\cd_{n}$
 \end_inset
 
  
@@ -1900,7 +1900,7 @@ The Bootstrap Sample
 
 \begin_deeper
 \begin_layout Standard
-\align right
+\align center
 \begin_inset Graphics
 	filename ../Figures/bagging/bootstrap.pdf
 	lyxscale 50
@@ -2101,12 +2101,11 @@ Want to estimate
 \begin_inset Formula $P$
 \end_inset
 
-.
- (some complicated 
+ and some complicated 
 \begin_inset Formula $\alpha$
 \end_inset
 
-) 
+.
 \end_layout
 
 \begin_layout Itemize
@@ -2157,7 +2156,7 @@ Histogram of
 \begin_inset Graphics
 	filename ../Figures/bagging/independentVsBootstrap.png
 	lyxscale 50
-	width 72col%
+	height 40theight%
 
 \end_inset
 
@@ -2183,8 +2182,7 @@ footnotetext{
 \backslash
 tiny{Figure 5.10 from 
 \backslash
-emph{An Introduction to Statistical Learning, with applications in R} (Springer,
- 2013) with permission from the authors: G.
+emph{ISLR} (Springer, 2013) with permission from the authors: G.
  James, D.
  Witten,  T.
  Hastie and R.
@@ -3140,7 +3138,7 @@ Sample size
 \begin_inset Graphics
 	filename ../Figures/bagging/baggedTrees.png
 	lyxscale 40
-	width 60col%
+	height 55theight%
 
 \end_inset
 
@@ -3344,6 +3342,15 @@ Variance
  describes how much the fit changes across different random training sets.
 \end_layout
 
+\begin_layout Itemize
+If different random training sets give very similar fits, then algorithm
+ has high 
+\series bold
+stability
+\series default
+.
+\end_layout
+
 \begin_deeper
 \begin_layout Pause
 
@@ -3351,7 +3358,8 @@ Variance
 
 \end_deeper
 \begin_layout Itemize
-Decision trees are found to be high variance.
+Decision trees are found to be high variance (i.e.
+ not very stable).
 \end_layout
 
 \end_deeper
@@ -3804,6 +3812,10 @@ emph{An Introduction to Statistical Learning, with applications in R} (Springer,
 
 \end_deeper
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset Separator parbreak
 \end_inset
 
@@ -3845,7 +3857,7 @@ torial.pptx
 \end_layout
 
 \end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Separator parbreak
 \end_inset
 
@@ -3925,5 +3937,10 @@ could even have a more generic set of splitting hypotheses
 
 \end_deeper
 \end_deeper
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document

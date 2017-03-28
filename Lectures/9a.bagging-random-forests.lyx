@@ -650,7 +650,7 @@ ex}{E}
 \end_layout
 
 \begin_layout Title
-Bootstrap, Bagging, and Random Forests
+Bagging and Random Forests
 \begin_inset Argument 1
 status open
 
@@ -678,19 +678,7 @@ David Rosenberg
 \end_layout
 
 \begin_layout Date
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-today
-\end_layout
-
-\end_inset
-
-
+March 28, 2017
 \end_layout
 
 \begin_layout Institute
@@ -794,6 +782,10 @@ There are three threads of early contributions .
  (p 16)
 \end_layout
 
+\begin_layout Plain Layout
+For bagging
+\end_layout
+
 \end_inset
 
  
@@ -867,6 +859,7 @@ Performance?
 
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
 Unbiased: 
 \begin_inset Formula $\ex Z_{i}=\mu$
@@ -876,12 +869,32 @@ Unbiased:
 \end_layout
 
 \begin_layout Itemize
-Variance of estimator would be 
-\begin_inset Formula $\sigma^{2}$
+Standard error of estimator would be 
+\begin_inset Formula $\sigma$
 \end_inset
 
 .
  
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+The
+\series bold
+ standard error
+\series default
+ is the standard deviation of the sampling distribution of a statistic.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\text{SD}(Z)=\sqrt{\var(Z)}=\sqrt{\sigma^{2}}=\sigma$
+\end_inset
+
+.
 \end_layout
 
 \end_deeper
@@ -939,7 +952,7 @@ Let's consider the average of the
 \end_layout
 
 \begin_layout Itemize
-Average has the same expected value but smaller variance:
+Average has the same expected value but smaller standard error:
 \begin_inset Formula 
 \[
 \ex\left[\frac{1}{n}\sum_{i=1}^{n}Z_{i}\right]=\mu\qquad\var\left[\frac{1}{n}\sum_{i=1}^{n}Z_{i}\right]=\frac{\sigma^{2}}{n}.
@@ -1002,7 +1015,7 @@ Suppose we have
 \begin_inset Formula $B$
 \end_inset
 
- independent training sets from same distribution.
+ independent training sets from the same distribution.
 \end_layout
 
 \begin_deeper
@@ -1112,8 +1125,7 @@ Consider
 \begin_inset Formula $\hat{f}_{1}(x),\ldots,\hat{f}_{B}(x)$
 \end_inset
 
- as random variables.
- (They are.)
+ as random variables (since training data random).
 \end_layout
 
 \begin_deeper
@@ -1232,13 +1244,256 @@ the bootstrap
 \end_layout
 
 \end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
+\begin_layout Section
+Review: Bootstrap
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Bootstrap Sample
+\end_layout
+
 \end_inset
 
 
 \end_layout
 
+\begin_deeper
+\begin_layout Definition
+A 
+\series bold
+bootstrap sample
+\series default
+ from 
+\begin_inset Formula $\cd_{n}$
+\end_inset
+
+ is a sample of size 
+\begin_inset Formula $n$
+\end_inset
+
+ drawn 
+\emph on
+with replacement
+\emph default
+ from 
+\begin_inset Formula $\cd_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+In a bootstrap sample, some elements of 
+\begin_inset Formula $\cd_{n}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+will show up multiple times, 
+\end_layout
+
+\begin_layout Itemize
+some won't show up at all.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Each 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+ has a probability 
+\begin_inset Formula $(1-1/n)^{n}$
+\end_inset
+
+ of not being selected.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Recall from analysis that for large 
+\begin_inset Formula $n$
+\end_inset
+
+,
+\begin_inset Formula 
+\[
+\left(1-\frac{1}{n}\right)^{n}\approx\frac{1}{e}\approx.368.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+So we expect ~63.2% of elements of 
+\begin_inset Formula $\cd$
+\end_inset
+
+ will show up at least once.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Bootstrap Method
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+A 
+\series bold
+bootstrap method 
+\series default
+is when you 
+\emph on
+simulate 
+\emph default
+having 
+\begin_inset Formula $B$
+\end_inset
+
+ independent samples from 
+\begin_inset Formula $P$
+\end_inset
+
+ by taking 
+\begin_inset Formula $B$
+\end_inset
+
+ bootstrap samples from the sample 
+\begin_inset Formula $\cd_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Given original data 
+\begin_inset Formula $\cd_{n}$
+\end_inset
+
+, compute 
+\begin_inset Formula $B$
+\end_inset
+
+ bootstrap samples 
+\begin_inset Formula $D_{n}^{1},\ldots,D_{n}^{B}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+For each bootstrap sample, compute some function
+\begin_inset Formula 
+\[
+\phi(D_{n}^{1}),\ldots,\phi(D_{n}^{B})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Work with these values as though 
+\begin_inset Formula $D_{n}^{1},\ldots,D_{n}^{B}$
+\end_inset
+
+ were i.i.d.
+ 
+\begin_inset Formula $P$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Amazing fact:
+\series default
+ Things often come out very close to what we'd get with independent samples
+ from 
+\begin_inset Formula $P$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
 \begin_layout Section
 Bagging 
 \end_layout
@@ -1401,7 +1656,7 @@ Let
 \begin_inset Formula $\hat{f}_{1},\hat{f}_{2},\ldots,\hat{f}_{B}:\cx\to\reals$
 \end_inset
 
- be the predictions functions for each set.x
+ be the predictions functions for each set.
 \end_layout
 
 \begin_deeper
@@ -1423,11 +1678,15 @@ Bagged prediction function is given as
 \end_layout
 
 \begin_layout Itemize
-If bootstrap samples were independent draws from 
-\begin_inset Formula $P$
+Empirically, 
+\begin_inset Formula $\hat{f}_{\text{bag}}$
 \end_inset
 
-, 
+ often performs similarly to what we'd get from training on 
+\begin_inset Formula $B$
+\end_inset
+
+ independent samples:
 \end_layout
 
 \begin_deeper
@@ -1435,7 +1694,7 @@ If bootstrap samples were independent draws from
 \begin_inset Formula $\hat{f}_{\mbox{bag}}(x)$
 \end_inset
 
- would have the same expectation as 
+ has same expectation as 
 \begin_inset Formula $\hat{f}_{1}(x)$
 \end_inset
 
@@ -1446,7 +1705,78 @@ If bootstrap samples were independent draws from
 \begin_inset Formula $\hat{f}_{\mbox{bag}}(x)$
 \end_inset
 
- would have smaller variance.
+ has smaller variance than 
+\begin_inset Formula $\hat{f}_{1}(x)$
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Bagging Bad Classifiers Can Make Things Worse
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose true model has 
+\begin_inset Formula $y=1$
+\end_inset
+
+ for all 
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Lousy learner randomly chooses from 2 decision functions, independent of
+ training data:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+With probability 0.4, chooses decision function 1: 
+\begin_inset Formula $x\mapsto0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+With probability 0.6, chooses decision function 2: 
+\begin_inset Formula $x\mapsto1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+(NOPE - this isn't the example.
+ Really needs a bunch of iid randomize decision functions.
+ Ugh.
 \end_layout
 
 \begin_deeper
@@ -1456,14 +1786,31 @@ If bootstrap samples were independent draws from
 
 \end_deeper
 \end_deeper
-\begin_layout Itemize
-Empirically: Often get a similar effect for bagging.
- 
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Example from HTF 8.7}}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
 \end_inset
 
 
@@ -1560,11 +1907,8 @@ The OOB error is a good estimate of the test error.
 
 \end_deeper
 \begin_layout Itemize
-For large enough 
-\begin_inset Formula $B$
-\end_inset
-
-, OOB error is like cross validation.
+OOB error is similar to cross validation error – both are computed on training
+ set.
 \end_layout
 
 \end_deeper
@@ -1580,7 +1924,7 @@ For large enough
 status open
 
 \begin_layout Plain Layout
-Bagging Trees
+Bagging Classification Trees
 \end_layout
 
 \end_inset
@@ -1664,7 +2008,7 @@ tiny{From ESL Figure 8.9}}
 status open
 
 \begin_layout Plain Layout
-Bagging Trees
+Comparing Classification Combination Methods
 \end_layout
 
 \end_inset
@@ -1740,6 +2084,10 @@ Variance
 \end_inset
 
  in Casual Usage 
+\begin_inset Newline newline
+\end_inset
+
+(Warning! Confusion Zone!) 
 \end_layout
 
 \end_inset
@@ -1867,11 +2215,7 @@ Conventional Wisdom on When Bagging Helps
 
 \begin_deeper
 \begin_layout Itemize
-Bagging does nothing to eliminate bias.
-\end_layout
-
-\begin_layout Itemize
-Hope is that bagging reduces variance.
+Hope is that bagging reduces variance without making bias worse.
 \end_layout
 
 \begin_deeper
@@ -1886,16 +2230,16 @@ General sentiment is that bagging helps most when
 
 \begin_deeper
 \begin_layout Itemize
-Relatively unbiased base predictions
+Relatively unbiased base prediction functions
 \end_layout
 
 \begin_layout Itemize
-High variance
+High variance / low stability
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-e.g.
+i.e.
  small changes in training set can cause large changes in predictions
 \end_layout
 
@@ -1906,7 +2250,7 @@ e.g.
 
 \end_deeper
 \begin_layout Itemize
-I'm not aware of solid theory on this...
+Hard to find clear and convinving theoretical results on this
 \end_layout
 
 \begin_deeper
@@ -1916,29 +2260,10 @@ I'm not aware of solid theory on this...
 
 \end_deeper
 \begin_layout Itemize
-Empirical observation
+But following this intuition leads to improved ML methods, e.g.
+ Random Forests
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-Bagging trees works well.
-\end_layout
-
-\begin_layout Itemize
-Trees have high variance and low bias.
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-QED?
-\end_layout
-
-\end_deeper
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator parbreak
@@ -1971,7 +2296,11 @@ Averaging
 \end_inset
 
  reduces variance, if they're based on i.i.d.
- samples.
+ samples from 
+\begin_inset Formula $P_{\cx\times\cy}$
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1981,17 +2310,33 @@ Averaging
 
 \end_deeper
 \begin_layout Itemize
-Bootstrap samples are not indepedendent.
+Bootstrap samples are 
 \end_layout
 
 \begin_deeper
+\begin_layout Itemize
+independent samples from the training set, but
+\end_layout
+
+\begin_layout Itemize
+are 
+\series bold
+not
+\series default
+ indepedendent samples from 
+\begin_inset Formula $P_{\cx\times\cy}$
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Pause
 
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-This probably limits the amount of variance reduction we can get.
+This dependence limits the amount of variance reduction we can get.
 \end_layout
 
 \begin_deeper

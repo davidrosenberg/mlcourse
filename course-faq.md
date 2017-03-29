@@ -1,5 +1,16 @@
 # Frequently Asked Questions and Useful Notes
 
+## In AdaBoost, what happens if a base classifier gets 0 weighted training error?
+There is definitely a "gotcha" in the AdaBoost algorithm. What happens if a base
+classifier can get 0 weighted error on the training set? Then the recipe for the
+weight on that classifier gives infinity, which is no good. The important thing
+to notice is that, if a base classifier can get 0 weighted training error, then
+the same classifier will also get 0 [unweighted] training error, since the
+weights are always greater than zero. Thus if we're ever going to get a 0 for
+weighted error, it's going to happen in the first round of boosting. If that happens, you
+just stop boosting and your final classifier is the base classifier that did
+perfect classification.
+
 ## What are reasonable stopping conditions for our minimization procedures?
 If the goal is to minimize a differentiable and convex function, we can run
 until the norm of our gradient is below some threshold, since we know the

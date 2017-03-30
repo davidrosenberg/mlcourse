@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1490855989 "VarMain.ltx" "9-GBM-Notes.pdf" "9-GBM-Notes" 1490856138
-  "./asytmp/9-GBM-Notes.aux" 1490855989 531 af1abade0987778c3af7db1feacefe19 ""
+["pdflatex"] 1490856304 "VarMain.ltx" "9-GBM-Notes.pdf" "9-GBM-Notes" 1490856304
+  "./asytmp/9-GBM-Notes.aux" 1490856304 531 af1abade0987778c3af7db1feacefe19 ""
   "C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233955448 1004 54797486969f23fa377b128694d548df ""
   "C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1233955448 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1233955454 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -96,13 +96,13 @@
   "C:/Users/Brett Bernstein/AppData/Local/MiKTeX/2.9/miktex/data/le/pdftex/pdflatex.fmt" 1483327266 3822770 f06181a5c8f5e0c3f5c7a8705b33045c ""
   "Macros.ltx" 1490855229 8103 b2c15758eb3791a0d81cb8228b52268c ""
   "Theorems.ltx" 1486684434 550 764cf2d33fee051af41cbf796a7c3afe ""
-  "VarFill.ltx" 1490856138 8740 2a1270d0838324b487e03f1b09d27411 ""
+  "VarFill.ltx" 1490856304 8749 2de25bf7a45117665050e8c717b2388e ""
   "VarMain.ltx" 1487239793 259 b39b064d28b70d1d021c72b6b85a4548 ""
-  "asytmp/9-GBM-Notes.aux" 1490855989 531 af1abade0987778c3af7db1feacefe19 ""
-  "asytmp/9-GBM-Notes.pre" 1490855989 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "asytmp/9-GBM-Notes.aux" 1490856304 531 af1abade0987778c3af7db1feacefe19 ""
+  "asytmp/9-GBM-Notes.pre" 1490856304 0 d41d8cd98f00b204e9800998ecf8427e ""
   (generated)
-  "asytmp/9-GBM-Notes.aux"
-  "asytmp/9-GBM-Notes.pre"
-  "9-GBM-Notes.pdf"
   "asytmp/9-GBM-Notes.log"
   "./asytmp/9-GBM-Notes.log"
+  "9-GBM-Notes.pdf"
+  "asytmp/9-GBM-Notes.pre"
+  "asytmp/9-GBM-Notes.aux"

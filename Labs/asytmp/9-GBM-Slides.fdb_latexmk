@@ -1,14 +1,14 @@
 # Fdb version 3
-["cusdep asy pdf asytmp/9-GBM-Slides-1"] 1490854953 "asytmp/9-GBM-Slides-1.asy" "asytmp/9-GBM-Slides-1.pdf" "asytmp/9-GBM-Slides-1" 1490855457
-  "asytmp/9-GBM-Slides-1.asy" 1490854959 906 6bed9a9644fbc8ec17e7f03b0e79e640 ""
+["cusdep asy pdf asytmp/9-GBM-Slides-1"] 1490854953 "asytmp/9-GBM-Slides-1.asy" "asytmp/9-GBM-Slides-1.pdf" "asytmp/9-GBM-Slides-1" 1490856438
+  "asytmp/9-GBM-Slides-1.asy" 1490856438 906 6bed9a9644fbc8ec17e7f03b0e79e640 ""
   (generated)
   "asytmp/9-GBM-Slides-1.pdf"
-["cusdep asy pdf asytmp/9-GBM-Slides-2"] 1490854952 "asytmp/9-GBM-Slides-2.asy" "asytmp/9-GBM-Slides-2.pdf" "asytmp/9-GBM-Slides-2" 1490855457
-  "asytmp/9-GBM-Slides-2.asy" 1490854959 803 e7610cd706acde2a89993339fcd77e64 ""
+["cusdep asy pdf asytmp/9-GBM-Slides-2"] 1490854952 "asytmp/9-GBM-Slides-2.asy" "asytmp/9-GBM-Slides-2.pdf" "asytmp/9-GBM-Slides-2" 1490856438
+  "asytmp/9-GBM-Slides-2.asy" 1490856438 803 e7610cd706acde2a89993339fcd77e64 ""
   (generated)
   "asytmp/9-GBM-Slides-2.pdf"
-["pdflatex"] 1490854957 "VarMainSlides.ltx" "9-GBM-Slides.pdf" "9-GBM-Slides" 1490855457
-  "./asytmp/9-GBM-Slides.aux" 1490854959 3712 2f09b6dc3fffc4caca3090b7de6b4a77 ""
+["pdflatex"] 1490856435 "VarMainSlides.ltx" "9-GBM-Slides.pdf" "9-GBM-Slides" 1490856438
+  "./asytmp/9-GBM-Slides.aux" 1490856438 3712 2f09b6dc3fffc4caca3090b7de6b4a77 ""
   "9-GBM/data.asy" 1490826701 480 4ad4a7f4218a2d2b6ae623c891577d94 ""
   "9-GBM/stump.asy" 1490826017 621 2f04b44f833a4b326c34c87b68dc9d02 ""
   "C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233955448 1004 54797486969f23fa377b128694d548df ""
@@ -50,7 +50,6 @@
   "C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1247596666 32716 08e384dc442464e7285e891af9f45947 ""
   "C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1247596667 32626 5abc8bb2f28aa647d4c70f8ea38cc0d3 ""
   "C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1247596673 34694 870c211f62cb72718a00e353f14f254d ""
-  "C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm7.pfb" 1247596673 35309 940e81a5b9e04201a07e8b33a3ae6e64 ""
   "C:/Program Files/MiKTeX 2.9/tex/context/base/supp-pdf.mkii" 1306918461 71592 fe353e1fbd982ffc647f3e98ff74da96 ""
   "C:/Program Files/MiKTeX 2.9/tex/generic/ifxetex/ifxetex.sty" 1284260789 1458 43ab4710dc82f3edeabecd0d099626b2 ""
   "C:/Program Files/MiKTeX 2.9/tex/generic/multido/multido.tex" 1273874056 9097 0ff4dff7eb59381cc861308a1c448fc4 ""
@@ -212,24 +211,24 @@
   "C:/Program Files/MiKTeX 2.9/tex/latex/xkeyval/xkeyval.sty" 1419274338 5114 9c1069474ff71dbc47d5006555e352d3 ""
   "C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map" 1488360046 80800 dd4445c0ba25c92567263ebcf54a1770 ""
   "C:/Users/Brett Bernstein/AppData/Local/MiKTeX/2.9/miktex/data/le/pdftex/pdflatex.fmt" 1483327266 3822770 f06181a5c8f5e0c3f5c7a8705b33045c ""
-  "SlideMacros.ltx" 1485141064 7875 ed83facfb644edbb762989aba6226111 ""
-  "VarFill.ltx" 1490855456 7366 b12b24f89739dbbf6edba4aed15999de ""
+  "SlideMacros.ltx" 1490856427 7876 98844d255a1a14ba94593b865cfdaa43 ""
+  "VarFill.ltx" 1490856434 7366 b12b24f89739dbbf6edba4aed15999de ""
   "VarMainSlides.ltx" 1487805965 313 b4c9e9ca7fab58c9c9f3c48af68725a3 ""
   "asytmp/9-GBM-Slides-1.pdf" 1490854954 47177 105c56c310c6dc9d04e62390e7d6474d "cusdep asy pdf asytmp/9-GBM-Slides-1"
   "asytmp/9-GBM-Slides-2.pdf" 1490854953 10912 a8885066c8f3c47e6ddbf32b678048f2 "cusdep asy pdf asytmp/9-GBM-Slides-2"
-  "asytmp/9-GBM-Slides.aux" 1490854959 3712 2f09b6dc3fffc4caca3090b7de6b4a77 ""
-  "asytmp/9-GBM-Slides.nav" 1490854959 2125 03f0f745b5684291995d6b7d06adc6cd ""
-  "asytmp/9-GBM-Slides.out" 1490854959 182 13a0a5af3b6847d470a0f45fce8ef28b ""
-  "asytmp/9-GBM-Slides.pre" 1490854959 84 2085988704c78000e4a8d1b1c9ada1e4 ""
+  "asytmp/9-GBM-Slides.aux" 1490856438 3712 2f09b6dc3fffc4caca3090b7de6b4a77 ""
+  "asytmp/9-GBM-Slides.nav" 1490856438 2125 03f0f745b5684291995d6b7d06adc6cd ""
+  "asytmp/9-GBM-Slides.out" 1490856438 182 13a0a5af3b6847d470a0f45fce8ef28b ""
+  "asytmp/9-GBM-Slides.pre" 1490856438 84 2085988704c78000e4a8d1b1c9ada1e4 ""
   (generated)
-  "asytmp/9-GBM-Slides.nav"
+  "asytmp/9-GBM-Slides.snm"
   "./asytmp/9-GBM-Slides.log"
   "asytmp/9-GBM-Slides.out"
-  "asytmp/9-GBM-Slides.aux"
-  "asytmp/9-GBM-Slides.log"
-  "asytmp/9-GBM-Slides.pre"
   "asytmp/9-GBM-Slides-2.asy"
-  "asytmp/9-GBM-Slides.toc"
   "asytmp/9-GBM-Slides-1.asy"
-  "asytmp/9-GBM-Slides.snm"
+  "asytmp/9-GBM-Slides.toc"
+  "asytmp/9-GBM-Slides.aux"
   "9-GBM-Slides.pdf"
+  "asytmp/9-GBM-Slides.nav"
+  "asytmp/9-GBM-Slides.pre"
+  "asytmp/9-GBM-Slides.log"

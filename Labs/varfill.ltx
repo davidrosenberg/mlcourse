@@ -112,7 +112,7 @@ base hypothesis space for gradient boosting is small regression trees
 \subsection{Examples of Gradient Boosting}
 \begin{exa}[Using $\ell(y,a)=(y-a)^2/2$]
   To compute an arbitrary pseudoresidual we first note that
-  $$\partial_a(y-a)^2 = -(y-a)$$ 
+  $$\partial_a(y-a)^2/2 = -(y-a)$$ 
   giving
   $$-\partial_2\ell(y_i,f_{m-1}(x_i)) = (y_i-f_{m-1}(x_i)).$$
   In words, for the square loss, the pseudoresiduals are simply the

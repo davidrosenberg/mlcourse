@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin /Users/drosen/Dropbox/repos/mlcourse/Lectures/
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -19,23 +21,23 @@
   \end{frame}
 }
 \end_preamble
-\options handout
+\options handout,aspectratio=169
 \use_default_options false
 \maintain_unincluded_children false
 \language english
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman times
-\font_sans default
-\font_typewriter default
-\font_math eulervm
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "eulervm" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -724,6 +726,91 @@ tiny{Figure from
 url{http://taps-graph-review.wikispaces.com/Box+and+Whisker+Plots}.}}
 \end_layout
 
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+put it in first slide...
+\end_layout
+
+\begin_layout Plain Layout
+
+exponential distribution of lifetime of lightbulbs
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+somewhere in the first 7 slides, give an example with some data...
+ mean / variance (e.g.
+ assume gaussians)...
+ ......
+ ..
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+before generalized regression - tie this to something they've done already
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+calls coming into call center; want to know mean rate of a calls.
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+exponential distribuiton -- what is lifetime ...
+ Parameter estimation...
+\end_layout
+
+\begin_layout Plain Layout
+
+model = set of probability distributions
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+reframe in context -- hypothesis spaces = set of probability distributions
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+regular linear regression on Poisson data -- why don't people do that? I
+ assume it's less efficient.
+  to help motivate adn explain what is going on
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
 \end_inset
 
 
@@ -866,7 +953,10 @@ Typical
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -967,7 +1057,10 @@ Just as for the statistical learning theory setting,
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1075,7 +1168,10 @@ Special case: If
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1199,7 +1295,10 @@ hypothesis space
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1301,7 +1400,10 @@ tiny{Figure is "Poisson pmf" by Skbkekas - Own work.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1396,7 +1498,10 @@ url{http://taps-graph-review.wikispaces.com/Box+and+Whisker+Plots}.}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1488,7 +1593,10 @@ tiny{Figure from Wikipedia.}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1568,7 +1676,10 @@ and sums are easier to work with than products.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1667,7 +1778,10 @@ Take
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1735,7 +1849,10 @@ The full log-likelihood is
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1804,7 +1921,10 @@ So MLE
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1826,7 +1946,7 @@ Test Set Log Likelihood for Penn Station, Mon-Fri 7-8pm
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="2">
-<features rotate="0" tabularvalignment="middle">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <row>
@@ -1951,7 +2071,10 @@ Histogram (Bin width = 7)
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1959,7 +2082,10 @@ Histogram (Bin width = 7)
 Statistical Learning Formulation
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2066,7 +2192,10 @@ Define loss function as the negative log-likelihood of
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2171,7 +2300,10 @@ Therefore, MLE is just an empirical risk minimizer.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2180,7 +2312,7 @@ Therefore, MLE is just an empirical risk minimizer.
 status open
 
 \begin_layout Plain Layout
-Estimation Distributions, Overfitting, and Hypothesis Spaces
+Estimating Distributions, Overfitting, and Hypothesis Spaces
 \end_layout
 
 \end_inset
@@ -2272,7 +2404,7 @@ Example Hypothesis Spaces / Probability Models:
 \end_deeper
 \end_deeper
 \begin_layout Itemize
-How to judge with hypothesis space works the best?
+How to judge which hypothesis space works the best?
 \end_layout
 
 \begin_deeper
@@ -2290,7 +2422,10 @@ highest likelihood for a test set
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2298,7 +2433,10 @@ highest likelihood for a test set
 Generalized Regression
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2437,7 +2575,10 @@ Gradient Boosting Machines (GBM) / AnyBoost [with likelihood loss function]
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2540,7 +2681,10 @@ Given an
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2699,7 +2843,10 @@ Or just write
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2778,7 +2925,10 @@ conditional log-likelihood
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2887,7 +3037,10 @@ predict the Bernoulli parameter
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2997,7 +3150,10 @@ p(y=1\mid x)=f(w^{T}x)
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3066,7 +3222,10 @@ Normal CDF
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3139,7 +3298,10 @@ We can choose
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3215,7 +3377,10 @@ Easier to work with the log-likelihood:
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3298,7 +3463,10 @@ Homework: Derive the SGD step directions for logistic regression.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3429,7 +3597,10 @@ where
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3515,7 +3686,10 @@ If
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3617,7 +3791,7 @@ Parameter vector
 \end_layout
 
 \end_deeper
-\begin_layout Itemize
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
@@ -3631,7 +3805,10 @@ The log of this likelihood is concave and straightforward to optimize.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3781,7 +3958,10 @@ Note that range of
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3869,7 +4049,10 @@ No closed form for optimum, but it's concave, so easy to optimize.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3994,7 +4177,10 @@ Given some i.i.d.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -4077,7 +4263,10 @@ Let's start solving this!
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -4156,7 +4345,10 @@ Can drop the negative sign and make it a minimization problem.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -4234,7 +4426,10 @@ NOTE: Parameter vector
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -4271,6 +4466,37 @@ Can use maximum likelihood to estimate
 
 \begin_layout Section
 Generalized Linear Models (Lite)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Link isn't realy defined and it's confusing.
+ at the end wwe talk about 'generalized link', but that's not even a link
+ function, so it's all a bit crazy.
+ There's also a confusing abuse of notation for producint the parameter
+ of a family vs a density itself.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+identify the parameter with the distribution itself.....
+\end_layout
+
+\begin_layout Plain Layout
+give an example of waht something like linear regression look like...
+ 
+\end_layout
+
+\begin_layout Plain Layout
+what we get as GLM for standard linear regression
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -4342,7 +4568,10 @@ partition function
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Plain Layout
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -4513,7 +4742,10 @@ standard
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -4590,7 +4822,10 @@ Implicit in choosing
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -4650,7 +4885,10 @@ Negative binomial distribution
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -4752,7 +4990,10 @@ natural parameter
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -4851,7 +5092,10 @@ only works if
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -4912,7 +5156,10 @@ p_{\theta}(y\mid x)=\frac{1}{Z(\psi(w^{T}x))}h(y)\exp\left[\psi(w^{T}x)y\right].
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -5014,7 +5261,10 @@ cumulant function
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Plain Layout
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 

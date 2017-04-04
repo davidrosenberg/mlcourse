@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin /Users/drosen/Dropbox/repos/mlcourse/Lectures/
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -19,23 +21,23 @@
   \end{frame}
 }
 \end_preamble
-\options handout
+\options handout,aspectratio=169
 \use_default_options false
 \maintain_unincluded_children false
 \language english
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman times
-\font_sans default
-\font_typewriter default
-\font_math eulervm
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "eulervm" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -740,6 +742,14 @@ Todo:
 \end_layout
 
 \begin_layout Plain Layout
+What's the deal with stepsize? Do people ever actually do line search?
+\end_layout
+
+\begin_layout Plain Layout
+It's mostly implemented just for trees anyway?
+\end_layout
+
+\begin_layout Plain Layout
 1) expressivity / complexity of boosting decision stumps
 \end_layout
 
@@ -752,15 +762,15 @@ Todo:
 \end_layout
 
 \begin_layout Plain Layout
-4) put in L2 boosting before general GBM boosting?
+4) [DONE] put in L2 boosting before general GBM boosting?
 \end_layout
 
 \begin_layout Plain Layout
-5) Population minimizer of exponential loss
+5) [DONE in homework] Population minimizer of exponential loss
 \end_layout
 
 \begin_layout Plain Layout
-6) adaboost is special case of stagewise
+6) [DONE in homework] adaboost is special case of stagewise 
 \end_layout
 
 \begin_layout Plain Layout
@@ -782,7 +792,7 @@ bag fraction
 
  ; frequent default is 50%...
  but what if we have tons of data?[what happens in the limit of a single
- or very few data points?] -- possible issue is that we mess up predictions
+ or very few data points?] – possible issue is that we mess up predictions
  at other points...
  [homework problem???]
 \end_layout
@@ -818,7 +828,10 @@ According to use feedback, using column sub-sampling prevents overfitting
 Review: AdaBoost and FSAM
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -885,7 +898,10 @@ Let's move beyond classification models...
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1015,7 +1031,10 @@ Functions in
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1105,7 +1124,10 @@ We'll proceed in stages, adding a new
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1204,7 +1226,10 @@ minimizes empirical risk.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1289,7 +1314,10 @@ Return:
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1347,7 +1375,10 @@ Then Forward Stagewise Additive Modeling (FSAM) reduces to an instance of
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1411,7 +1442,10 @@ Key step is
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1540,7 +1574,10 @@ This is called
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1621,7 +1658,10 @@ base hypothesis space
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1733,7 +1773,10 @@ Choose a coordinate
 \end_deeper
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1845,7 +1888,10 @@ Then
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1861,7 +1907,10 @@ Anyboost
 
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1988,7 +2037,10 @@ not
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2070,7 +2122,10 @@ projected gradient
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2146,7 +2201,10 @@ J({\bf f})=\sum_{i=1}^{n}\ell\left(y_{i,}{\bf f}_{i}\right).
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2204,7 +2262,7 @@ which we can easily calculate.
 
 \begin_layout Standard
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Pause
 
@@ -2256,7 +2314,10 @@ Solve both of these problems by projecting
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2364,7 +2425,10 @@ So the
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2423,7 +2487,7 @@ Choose a fixed
 \begin_inset Formula $\nu\in(0,1)$
 \end_inset
 
- -- called a 
+ – called a 
 \series bold
 shrinkage parameter.
 \end_layout
@@ -2439,12 +2503,15 @@ A value of
 \begin_inset Formula $\nu=0.1$
 \end_inset
 
- is typical -- optimize as a hyperparameter .
+ is typical – optimize as a hyperparameter .
 \end_layout
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2553,7 +2620,10 @@ f_{m}(x)=f_{m-1}(x)+\nu_{m}h_{m}(x)
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2592,7 +2662,10 @@ Then you're good to go!
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 

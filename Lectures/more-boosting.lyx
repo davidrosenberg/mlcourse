@@ -3,7 +3,7 @@
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin unavailable
+\origin /Users/drosen/Dropbox/repos/mlcourse/Lectures/
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -846,10 +846,6 @@ The Gradient Boosting Machine
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -867,10 +863,6 @@ For
 \end_inset
 
  (until stopping condition met)
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -958,10 +950,6 @@ Unconstrained Functional Gradient Stepping
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1036,10 +1024,6 @@ status open
 Projected Functional Gradient Stepping
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1118,10 +1102,6 @@ The Gradient Boosting Machine: Recap
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1168,10 +1148,6 @@ Gradient Tree Boosting
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1189,10 +1165,6 @@ where
 \end_inset
 
  is the number of terminal nodes.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1206,10 +1178,6 @@ where
 \end_inset
 
  gives decision stumps
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1228,10 +1196,6 @@ HTF recommends
 
 \begin_layout Itemize
 Software packages:
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1259,12 +1223,6 @@ GradientBoostingRegressor
  in 
 \series bold
 sklearn
-\series default
-
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1276,10 +1234,6 @@ sklearn
 \end_deeper
 \begin_layout Itemize
 For trees, there are other tweaks on the algorithm one can do
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1289,168 +1243,6 @@ See HTF 10.9-10.12
 
 \end_deeper
 \end_deeper
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Gradient Tree Boosting Modification
-\end_layout
-
-\end_inset
-
-
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Common form of gradient boosting machine takes
-\begin_inset Formula 
-\[
-\cf=\left\{ \mbox{regression trees of size \ensuremath{J}}\right\} ,
-\]
-
-\end_inset
-
-where 
-\begin_inset Formula $J$
-\end_inset
-
- is the number of terminal nodes.
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-\begin_inset Formula $J=2$
-\end_inset
-
- gives decision stumps
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-HTF recommends 
-\begin_inset Formula $4\le J\le8$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Itemize
-Software packages:
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Gradient tree boosting is implemented by the 
-\series bold
-gbm package
-\series default
- for R
-\end_layout
-
-\begin_layout Itemize
-as 
-\family typewriter
-\size footnotesize
-GradientBoostingClassifier
-\family default
-\size default
- and 
-\family typewriter
-\size footnotesize
-GradientBoostingRegressor
-\family default
-\size default
- in 
-\series bold
-sklearn
-\series default
-
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Itemize
-For trees, there are other tweaks on the algorithm one can do
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-See HTF 10.9-10.12 
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Separator
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 GBM Regression with Stumps
 \end_layout
@@ -1470,10 +1262,6 @@ status open
 Sinc Function: Our Dataset
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1539,10 +1327,6 @@ status open
 Fitting with Ensemble of Decision Stumps
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1630,10 +1414,6 @@ Step Size as Regularization
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1651,6 +1431,7 @@ Step Size as Regularization
 
 \begin_layout Standard
 Performance vs rounds of boosting and step size.
+ (Left is training set, right is validation set)
 \end_layout
 
 \begin_layout Standard
@@ -1700,19 +1481,11 @@ Stochastic Gradient Boosting
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 For each stage, 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1739,10 +1512,6 @@ bag fraction
 \end_deeper
 \begin_layout Itemize
 Why?
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1756,10 +1525,6 @@ Faster.
 
 \begin_layout Itemize
 Subsample percentage is additional regularization parameter.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1790,10 +1555,6 @@ status open
 Newton Step Direction
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1912,10 +1673,6 @@ second order method
 \end_inset
 
 :
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1940,10 +1697,6 @@ Step direction is towards the
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_layout Frame
@@ -1954,10 +1707,6 @@ status open
 Column / Feature Subsampling for Regularization
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2002,10 +1751,6 @@ status open
 Newton Step Direction
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2055,10 +1800,6 @@ second order method
 \end_inset
 
 :
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2072,10 +1813,6 @@ Find 2nd order (quadratic) approximation to
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2099,10 +1836,6 @@ Minimizer of quadratic is easy to find in closed form
 \end_deeper
 \begin_layout Itemize
 Boosting methods with projected Newton step direction:
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2139,20 +1872,12 @@ The Hypothesis Space for AdaBoost
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 Base hypothesis space: 
 \begin_inset Formula $\ch$
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2223,10 +1948,6 @@ Questions
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2268,10 +1989,6 @@ bag fraction
 
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 

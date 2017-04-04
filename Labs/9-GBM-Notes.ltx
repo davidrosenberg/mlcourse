@@ -18,7 +18,7 @@ a method to forecast tomorrow's noon-time temperature.
 Assume we have access to a learning algorithm that, given a dataset
 $\DD=\{(x_1,y_1),\ldots,(x_n,y_n)\}$, and a weighting
 $w_1,\ldots,w_n>0$ will produce a decision function $f$ such that
-$$\frac{1}{n}\sum_{i=1}^n w_i\Ind(f(x_i)\neq y_i) \gamma < \leq 0.5.$$
+$$\frac{1}{n}\sum_{i=1}^n w_i\Ind(f(x_i)\neq y_i) < \gamma \leq 0.5.$$
 We want to use this learning algorithm to 
 build an aggregate classifier of the form
 $$G(x) = \sgn\left(\sum_{m=1}^M \alpha_m G_m\right).$$

@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin /Users/drosen/Dropbox/repos/mlcourse/Archive/2015/Lectures/source/7a.gradient-boosting/
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -14,16 +16,16 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman times
-\font_sans default
-\font_typewriter default
-\font_math eulervm
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "eulervm" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -669,6 +671,10 @@ optional, use only with long paper titles
 David Rosenberg 
 \end_layout
 
+\begin_layout Date
+March 11, 2015
+\end_layout
+
 \begin_layout Institute
 New York University
 \end_layout
@@ -723,7 +729,10 @@ tiny{Plots courtesy of Ningshan Zhang.}}
 Boosting Fits an Additive Model
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -735,6 +744,10 @@ status open
 Adaptive Basis Function Model
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -751,6 +764,10 @@ AdaBoost produces a classification score function of the form
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -762,6 +779,12 @@ each
  is a 
 \series bold
 weak classifier
+\series default
+
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -777,6 +800,10 @@ The
 \end_inset
 
 's are like basis functions, but they are learned from the data.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -790,7 +817,10 @@ Let's move beyond classification models...
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -805,6 +835,10 @@ Adaptive Basis Function Model
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -814,6 +848,10 @@ Hypothesis space
 \end_inset
 
  
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -836,6 +874,10 @@ weak classifiers
 
 base classifiers
 \begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -866,6 +908,10 @@ f(x)=\sum_{m=1}^{M}\nu_{m}h_{m}(x),
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -884,6 +930,12 @@ Each
  are 
 \series bold
 expansion coefficients.
+\series default
+
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -899,6 +951,10 @@ For example,
 \end_inset
 
  could be all decision trees of depth at most 4.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -912,7 +968,10 @@ We now discuss one approach to fitting such a model.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -924,6 +983,10 @@ status open
 Forward Stagewise Additive Modeling
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -948,6 +1011,10 @@ For
 \end_inset
 
 :
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -965,6 +1032,10 @@ Compute:
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -979,6 +1050,10 @@ Set
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -997,7 +1072,10 @@ Return:
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1012,6 +1090,10 @@ Exponential Loss and AdaBoost
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1022,6 +1104,10 @@ Take loss function to be
 \ell(y,f(x))=\exp\left(-yf(x)\right).
 \]
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1039,6 +1125,10 @@ Let
 \end_inset
 
  be a hypothesis space of weak classifiers.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1049,6 +1139,10 @@ Let
 \end_deeper
 \begin_layout Itemize
 Then Forward Stagewise Additive Modeling (FSAM) reduces to AdaBoost.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1058,7 +1152,10 @@ Then Forward Stagewise Additive Modeling (FSAM) reduces to AdaBoost.
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1066,7 +1163,10 @@ Then Forward Stagewise Additive Modeling (FSAM) reduces to AdaBoost.
 Gradient Boosting 
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1078,6 +1178,10 @@ status open
 FSAM Looks Like Gradient Descent?
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1094,6 +1198,10 @@ Let's examine the key step of FSAM a bit more closely:
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1104,6 +1212,10 @@ Let's examine the key step of FSAM a bit more closely:
 \end_deeper
 \begin_layout Itemize
 This looks like one step of a numerical optimization method:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1125,6 +1237,10 @@ This inspires a
 new
 \series default
  approach to boosting.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1138,6 +1254,10 @@ We can choose
 \end_inset
 
  to be something like a gradient in function space.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1152,6 +1272,10 @@ Roughly speaking, it will be like the gradient projected onto
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1166,6 +1290,10 @@ Leads to a
 functional gradient descent
 \series default
  method.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1176,16 +1304,15 @@ functional gradient descent
 \end_deeper
 \end_deeper
 \begin_layout Itemize
-Note: This will be a new method.
- AdaBoost will 
-\series bold
-not
-\series default
- be a special case.
+Note: This is be a new method.
+ But turns out that AdaBoost is a special case (not obvious).
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1200,6 +1327,10 @@ Functional Gradient Descent: Main Idea
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1210,6 +1341,10 @@ We want to minimize
 \sum_{i=1}^{n}\ell\left\{ y_{i},f(x_{i})\right\} .
 \]
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1228,6 +1363,10 @@ Take functional gradient w.r.t.
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1242,6 +1381,10 @@ Find function
 \end_inset
 
  closest to gradient.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1267,7 +1410,10 @@ projected gradient
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1279,6 +1425,10 @@ status open
 Functional Gradient Descent: Unconstrained Objective
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1299,6 +1449,10 @@ only depends on
 \end_inset
 
  at the training points.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1328,7 +1482,10 @@ J({\bf f})=\sum_{i=1}^{n}\ell\left(y_{i,}{\bf f}_{i}\right).
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1343,6 +1500,10 @@ Functional Gradient Descent: Unconstrained Step Direction
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1353,6 +1514,10 @@ Consider gradient descent on
 J({\bf f})=\sum_{i=1}^{n}\ell\left(y_{i,}{\bf f}_{i}\right).
 \]
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1398,6 +1563,10 @@ This is just about how to adjust the values of
 \end_inset
 
  at the training data.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1412,6 +1581,10 @@ How to keep
 \end_inset
 
 ?
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1438,7 +1611,10 @@ Solve both of these problems by projecting
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1450,6 +1626,10 @@ status open
 Functional Gradient Descent: Projection Step
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1474,6 +1654,10 @@ Suppose
 \end_inset
 
  is our weak hypothesis space.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1504,6 +1688,10 @@ Find
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1525,6 +1713,10 @@ This is a least squares regression problem!
 real-valued
 \series default
  functions.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1546,7 +1738,10 @@ So the
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1558,6 +1753,10 @@ status open
 Functional Gradient Descent: Step Size
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1579,6 +1778,10 @@ Option 1 (Line search):
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1589,6 +1792,10 @@ Option 1 (Line search):
 \end_deeper
 \begin_layout Itemize
 Option 2: (Shrinkage parameter)
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1605,9 +1812,15 @@ Choose a fixed
 \begin_inset Formula $\nu\in(0,1)$
 \end_inset
 
- -- called a 
+ – called a 
 \series bold
 shrinkage parameter.
+\series default
+
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1621,12 +1834,15 @@ A value of
 \begin_inset Formula $\nu=0.1$
 \end_inset
 
- is typical -- optimize as a hyperparameter .
+ is typical – optimize as a hyperparameter .
 \end_layout
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1638,6 +1854,10 @@ status open
 The Gradient Boosting Machine
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1662,6 +1882,10 @@ For
 \end_inset
 
 :
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1723,7 +1947,10 @@ f_{m}(x)=f_{m-1}(x)+\nu_{m}h_{m}(x)
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1735,6 +1962,10 @@ status open
 The Gradient Boosting Machine: Recap
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1762,7 +1993,10 @@ Then you're good to go!
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1778,6 +2012,10 @@ status open
 Gradient Tree Boosting
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1798,6 +2036,10 @@ where
 \end_inset
 
  is the number of terminal nodes.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1811,6 +2053,10 @@ where
 \end_inset
 
  gives decision stumps
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1829,6 +2075,10 @@ HTF recommends
 
 \begin_layout Itemize
 Software packages:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1856,6 +2106,12 @@ GradientBoostingRegressor
  in 
 \series bold
 sklearn
+\series default
+
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1867,6 +2123,10 @@ sklearn
 \end_deeper
 \begin_layout Itemize
 For trees, there are other tweaks on the algorithm one can do
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1876,7 +2136,10 @@ See HTF 10.9-10.12 and
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 

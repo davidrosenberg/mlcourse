@@ -21,7 +21,7 @@
   \end{frame}
 }
 \end_preamble
-\options handout,aspectratio=169
+\options aspectratio=169,handout
 \use_default_options false
 \maintain_unincluded_children false
 \language english
@@ -2009,8 +2009,8 @@ Plugging in
 , we get
 \begin_inset Formula 
 \begin{eqnarray*}
-\log p(\cd,\lambda) & = & \sum_{i=1}^{n}\left[y_{i}\log\left[\exp\left(w^{T}x\right)\right]-\exp\left(w^{T}x\right)-\log\left(y_{i}!\right)\right]\\
- & = & \sum_{i=1}^{n}\left[y_{i}w^{T}x-\exp\left(w^{T}x\right)-\log\left(y_{i}!\right)\right]
+\log p(\cd,\lambda) & = & \sum_{i=1}^{n}\left[y_{i}\log\left[\exp\left(w^{T}x_{i}\right)\right]-\exp\left(w^{T}x_{i}\right)-\log\left(y_{i}!\right)\right]\\
+ & = & \sum_{i=1}^{n}\left[y_{i}w^{T}x_{i}-\exp\left(w^{T}x_{i}\right)-\log\left(y_{i}!\right)\right]
 \end{eqnarray*}
 
 \end_inset
@@ -2145,7 +2145,7 @@ Let's Use Gradient Boosting
 Recall the log-likelihood for Poisson regression
 \begin_inset Formula 
 \begin{eqnarray*}
-\log p(\cd,\lambda) & = & \sum_{i=1}^{n}\left[y_{i}w^{T}x-\exp\left(w^{T}x\right)-\log\left(y_{i}!\right)\right]
+\log p(\cd,\lambda) & = & \sum_{i=1}^{n}\left[y_{i}w^{T}x_{i}-\exp\left(w^{T}x_{i}\right)-\log\left(y_{i}!\right)\right]
 \end{eqnarray*}
 
 \end_inset

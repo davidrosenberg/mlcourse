@@ -1264,8 +1264,7 @@ Linearly related features
 \begin_inset Formula $\ell_{2}$
 \end_inset
 
- prefers variables with larger scale – spreads weight inversely proportional
- to scale
+ prefers variables with larger scale – spreads weight proportional to scale
 \end_layout
 
 \end_deeper

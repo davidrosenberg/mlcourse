@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin /Users/drosen/Dropbox/repos/mlcourse/Notes/
 \textclass paper
 \use_default_options false
 \begin_modules
@@ -14,16 +16,16 @@ figs-within-sections
 \language_package default
 \inputencoding iso8859-1
 \fontencoding global
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -555,7 +557,7 @@ figs-within-sections
 \end_layout
 
 \begin_layout Title
-Review Problems for Second Test
+Conditional Exponential Distributions: A Worked Example
 \end_layout
 
 \begin_layout Author
@@ -564,19 +566,7 @@ David S.
 \end_layout
 
 \begin_layout Date
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-today
-\end_layout
-
-\end_inset
-
-
+April 6, 2017
 \end_layout
 
 \begin_layout Section
@@ -620,7 +610,7 @@ GLM Approach
 \end_layout
 
 \begin_layout Standard
-We will use a 
+We will start with a 
 \begin_inset Quotes eld
 \end_inset
 
@@ -683,11 +673,19 @@ In a GLM, the function
  Because of subsequent problems, you are encouraged to choose a function
  that is differentiable.
  
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Standard
-Since 
+
+\series bold
+Solution
+\series default
+: Since 
 \begin_inset Formula $\lambda\in\left(0,\infty\right)$
 \end_inset
 
@@ -749,7 +747,6 @@ Once
 \begin_inset Formula $\left(x_{1},y_{1}\right),\ldots,\left(x_{n},y_{n}\right)$
 \end_inset
 
-.
  sampled i.i.d.
  
 \begin_inset Formula $P_{\cx\times\cy}$
@@ -770,10 +767,18 @@ Once
 .
  Give the optimization problem you would solve to fit the GLM.
  
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Standard
+
+\series bold
+Solution: 
+\series default
 By independence, the likelihood for the dataset is
 \begin_inset Formula 
 \begin{eqnarray*}
@@ -819,11 +824,19 @@ Is
 \end_inset
 
  convex? 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Standard
-Yes.
+
+\series bold
+Solution
+\series default
+: Yes.
  
 \begin_inset Formula $w^{T}x_{i}$
 \end_inset
@@ -874,7 +887,8 @@ Yes.
 \begin_inset Formula $i$
 \end_inset
 
- is a nonnegative convex combination of convex functions, and so it's convex.
+ is a nonnegative [convex] combination of convex functions, and so it's
+ convex.
 \end_layout
 
 \end_deeper
@@ -884,13 +898,21 @@ Give a numerical method for finding
 \end_inset
 
 .
- No need to specify a step size plan or a terminiation plan.
+ No need to specify a step size plan or a termination plan.
  Just give the step directions you will use.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Standard
 
+\series bold
+Solution
+\series default
+: 
 \family roman
 \series medium
 \shape up
@@ -976,10 +998,20 @@ Write our new objective function
 \end_inset
 
  is now the function described above.
+ 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Standard
+
+\series bold
+Solution
+\series default
+: 
 \begin_inset Formula 
 \[
 J(f)=\sum_{i=1}^{n}\left[f(x_{i})-y_{i}\exp\left(f(x_{i})\right)\right].
@@ -1002,21 +1034,25 @@ We can find
 \end_inset
 
  be our base hypothesis space of real-valued functions.
- In each step maximizing 
-\begin_inset Formula $J(f)$
-\end_inset
-
- using gradient boosting, we choose a function 
+ In each step of gradient boosting, we choose a function 
 \begin_inset Formula $h\in\ch$
 \end_inset
 
  that solves a particular regression problem.
  Give this regression problem.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Standard
-For gradient boosting, we need to compute the gradient at the datapoints.
+
+\series bold
+Solution
+\series default
+: For gradient boosting, we need to compute the gradient at the datapoints.
  So
 \begin_inset Formula 
 \[
@@ -1057,9 +1093,21 @@ Give the full GBM algorithm for finding the maximum likelihood function
 \end_inset
 
  steps, if that it makes the algorithm easier to express :
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
+\begin_layout Standard
+
+\series bold
+Solution
+\series default
+: 
+\end_layout
+
 \begin_layout Enumerate
 Initialize 
 \begin_inset Formula $f_{0}(x)=0$
@@ -1078,6 +1126,10 @@ For
 \end_inset
 
 :
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1107,6 +1159,10 @@ h_{m}=\argmin_{h\in\cf}\sum_{i=1}^{n}\left(\left({\bf g}_{m}\right)_{i}-h(x_{i})
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1132,24 +1188,6 @@ Take the step:
 \[
 f_{m}(x)=f_{m-1}(x)+\nu_{m}h_{m}(x)
 \]
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Section
-Recognizing if a Function is a Kernel Function
-\end_layout
-
-\begin_layout Section
-Multinomial Logistic Regression
-\end_layout
-
-\begin_layout Section
-Idealized Bagging 
-\end_layout
 
 \end_inset
 

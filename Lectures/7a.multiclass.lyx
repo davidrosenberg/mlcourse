@@ -829,6 +829,28 @@ Besides one vs all, there's also error correcting output codes (ECOC) -
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+give more example of compatibility features that are interesting to givce
+ more justification for the 
+\begin_inset Quotes eld
+\end_inset
+
+more onvenient form
+\begin_inset Quotes erd
+\end_inset
+
+ that is compatibility functions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Introduction
 \end_layout

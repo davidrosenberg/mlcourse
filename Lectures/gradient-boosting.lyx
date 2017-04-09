@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin /Users/drosen/Dropbox/repos/mlcourse/Lectures/
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -19,23 +21,23 @@
   \end{frame}
 }
 \end_preamble
-\options handout
+\options handout,aspectratio=169
 \use_default_options false
 \maintain_unincluded_children false
 \language english
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman times
-\font_sans default
-\font_typewriter default
-\font_math eulervm
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "eulervm" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -740,6 +742,14 @@ Todo:
 \end_layout
 
 \begin_layout Plain Layout
+What's the deal with stepsize? Do people ever actually do line search?
+\end_layout
+
+\begin_layout Plain Layout
+It's mostly implemented just for trees anyway?
+\end_layout
+
+\begin_layout Plain Layout
 1) expressivity / complexity of boosting decision stumps
 \end_layout
 
@@ -752,15 +762,15 @@ Todo:
 \end_layout
 
 \begin_layout Plain Layout
-4) put in L2 boosting before general GBM boosting?
+4) [DONE] put in L2 boosting before general GBM boosting?
 \end_layout
 
 \begin_layout Plain Layout
-5) Population minimizer of exponential loss
+5) [DONE in homework] Population minimizer of exponential loss
 \end_layout
 
 \begin_layout Plain Layout
-6) adaboost is special case of stagewise
+6) [DONE in homework] adaboost is special case of stagewise 
 \end_layout
 
 \begin_layout Plain Layout
@@ -782,7 +792,7 @@ bag fraction
 
  ; frequent default is 50%...
  but what if we have tons of data?[what happens in the limit of a single
- or very few data points?] -- possible issue is that we mess up predictions
+ or very few data points?] – possible issue is that we mess up predictions
  at other points...
  [homework problem???]
 \end_layout
@@ -815,482 +825,7 @@ According to use feedback, using column sub-sampling prevents overfitting
 \end_layout
 
 \begin_layout Section
-Review: AdaBoost and FSAM
-\end_layout
-
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Adaptive Basis Function Model
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-AdaBoost produces a classification score function of the form 
-\begin_inset Formula 
-\[
-\sum_{m=1}^{M}\alpha_{m}G_{m}(x)
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-each 
-\begin_inset Formula $G_{m}$
-\end_inset
-
- is a 
-\series bold
-weak classifier
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Itemize
-The 
-\begin_inset Formula $G_{m}$
-\end_inset
-
-'s are like basis functions, but they are learned from the data.
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Let's move beyond classification models...
-\end_layout
-
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Adaptive Basis Function Model
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-
-\series bold
-Base hypothesis space
-\series default
- 
-\begin_inset Formula $\cf$
-\end_inset
-
- 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-the 
-\begin_inset Quotes eld
-\end_inset
-
-weak classifiers
-\begin_inset Quotes erd
-\end_inset
-
- in boosting context
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Itemize
-An 
-\series bold
-adaptive basis function expansion 
-\series default
-over 
-\begin_inset Formula $\cf$
-\end_inset
-
- is
-\begin_inset Formula 
-\[
-f(x)=\sum_{m=1}^{M}\nu_{m}h_{m}(x),
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-\begin_inset Formula $h_{m}\in\cf$
-\end_inset
-
- chosen in a learning process (
-\begin_inset Quotes eld
-\end_inset
-
-adaptive
-\begin_inset Quotes erd
-\end_inset
-
-)
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Formula $\nu_{m}\in\reals$
-\end_inset
-
- are 
-\series bold
-expansion coefficients.
-
-\series default
- 
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-
-\series bold
-Note: 
-\series default
-We are taking linear combination of outputs of 
-\begin_inset Formula $h_{m}(x)$
-\end_inset
-
-.
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Functions in 
-\begin_inset Formula $h_{m}\in\cf$
-\end_inset
-
- must produce values in 
-\begin_inset Formula $\reals$
-\end_inset
-
- (or a vector space) 
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-How to fit an adaptive basis function model?
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-
-\series bold
-Loss function
-\series default
-: 
-\begin_inset Formula $\ell(y,\hat{y})$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-Base hypothesis space
-\series default
-: 
-\begin_inset Formula $\cf$
-\end_inset
-
- of 
-\series bold
-real-valued
-\series default
- functions
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Want to find
-\begin_inset Formula 
-\[
-f(x)=\sum_{m=1}^{M}\nu_{m}h_{m}(x)
-\]
-
-\end_inset
-
-that 
-\series bold
-minimizes empirical risk
-\series default
-
-\begin_inset Formula 
-\[
-\frac{1}{n}\sum_{i=1}^{n}\ell\left(y_{i},f(x_{i})\right).
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-We'll proceed in stages, adding a new 
-\begin_inset Formula $h_{m}$
-\end_inset
-
- in every stage.
- 
-\end_layout
-
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Forward Stagewise Additive Modeling (FSAM)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Start with 
-\begin_inset Formula $f_{0}\equiv0$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Itemize
-After 
-\begin_inset Formula $m-1$
-\end_inset
-
- stages, we have
-\begin_inset Formula 
-\[
-f_{m-1}=\sum_{i=1}^{m-1}\nu_{i}h_{i},
-\]
-
-\end_inset
-
-where 
-\begin_inset Formula $h_{1},\ldots,h_{m-1}\in\cf$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-Want to find 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-
-\series bold
-step direction
-\series default
- 
-\begin_inset Formula $h_{m}\in\cf$
-\end_inset
-
- and
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-step size 
-\series default
-
-\begin_inset Formula $\nu_{m}>0$
-\end_inset
-
- 
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Itemize
-So that 
-\begin_inset Formula 
-\[
-f_{m}=f_{m-1}+\nu_{m}h_{m}
-\]
-
-\end_inset
-
-minimizes empirical risk.
-\end_layout
-
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Forward Stagewise Additive Modeling
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Enumerate
-Initialize 
-\begin_inset Formula $f_{0}(x)=0$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Enumerate
-For 
-\begin_inset Formula $m=1$
-\end_inset
-
- to 
-\begin_inset Formula $M$
-\end_inset
-
-:
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Enumerate
-Compute:
-\begin_inset Formula 
-\[
-\left(\nu_{m},h_{m}\right)=\argmin_{\nu\in\reals,h\in\cf}\sum_{i=1}^{n}\ell\left(y_{i},f_{m-1}(x_{i})\underbrace{+\nu h(x_{i})}_{\text{new piece}}\right).
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-Set 
-\begin_inset Formula $f_{m}=f_{m-1}+\nu_{m}h$
-\end_inset
-
-.
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Enumerate
-Return: 
-\begin_inset Formula $f_{M}$
-\end_inset
-
-.
-\end_layout
-
-\end_deeper
-\begin_layout Separator
-
+Review: AdaBoost and FSAM 
 \end_layout
 
 \begin_layout Frame
@@ -1323,7 +858,7 @@ Loss function:
 \end_deeper
 \begin_layout Itemize
 Base hypothesis space: 
-\begin_inset Formula $\cf=\left\{ h(x):\cx\to\left\{ -1,1\right\} \right\} $
+\begin_inset Formula $\ch=\left\{ h(x):\cx\to\left\{ -1,1\right\} \right\} $
 \end_inset
 
  (weak classifiers)
@@ -1347,7 +882,10 @@ Then Forward Stagewise Additive Modeling (FSAM) reduces to an instance of
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1385,7 +923,7 @@ Loss function:
 \end_deeper
 \begin_layout Itemize
 Base hypothesis space: 
-\begin_inset Formula $\cf=\left\{ h(x):\cx\to\reals\right\} $
+\begin_inset Formula $\ch=\left\{ h(x):\cx\to\reals\right\} $
 \end_inset
 
  (real-valued functions)
@@ -1411,7 +949,10 @@ Key step is
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1444,11 +985,11 @@ Simplifying assumption:
 \begin_deeper
 \begin_layout Itemize
 If 
-\begin_inset Formula $h\in\cf$
+\begin_inset Formula $h\in\ch$
 \end_inset
 
  then 
-\begin_inset Formula $ch\in\cf$
+\begin_inset Formula $ch\in\ch$
 \end_inset
 
  for all 
@@ -1465,13 +1006,13 @@ If
 \end_deeper
 \begin_layout Itemize
 Then step size is absorbed into 
-\begin_inset Formula $\cf$
+\begin_inset Formula $\ch$
 \end_inset
 
  we can just compute
 \begin_inset Formula 
 \[
-\min_{h\in\cf}\sum_{i=1}^{n}\left(\underbrace{y_{i}-f_{m-1}(x_{i})}_{\mbox{residual}}-h(x_{i})\right)^{2}
+\min_{h\in\ch}\sum_{i=1}^{n}\left(\underbrace{y_{i}-f_{m-1}(x_{i})}_{\mbox{residual}}-h(x_{i})\right)^{2}
 \]
 
 \end_inset
@@ -1515,7 +1056,7 @@ Not
 linear regression
 \series default
  unless 
-\begin_inset Formula $\cf$
+\begin_inset Formula $\ch$
 \end_inset
 
  comprises linear functions.]
@@ -1540,7 +1081,10 @@ This is called
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1562,7 +1106,7 @@ FSAM: More Examples?
 The challenge with FSAM is solving
 \begin_inset Formula 
 \[
-\min_{\nu\in\reals,h\in\cf}\sum_{i=1}^{n}\ell\left(y_{i},f_{m-1}(x_{i})\underbrace{+\nu h(x_{i})}_{\text{new piece}}\right).
+\min_{\nu\in\reals,h\in\ch}\sum_{i=1}^{n}\ell\left(y_{i},f_{m-1}(x_{i})\underbrace{+\nu h(x_{i})}_{\text{new piece}}\right).
 \]
 
 \end_inset
@@ -1621,7 +1165,10 @@ base hypothesis space
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1733,7 +1280,10 @@ Choose a coordinate
 \end_deeper
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1845,7 +1395,10 @@ Then
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1861,7 +1414,10 @@ Anyboost
 
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1883,7 +1439,7 @@ FSAM Looks Like Iterative Optimization
 The FSAM step
 \begin_inset Formula 
 \[
-\left(\nu_{m},h_{m}\right)=\argmin_{\nu\in\reals,h\in\cf}\sum_{i=1}^{n}\ell\left(y_{i},f_{m-1}(x_{i})\underbrace{+\nu h(x_{i})}_{\text{new piece}}\right).
+\left(\nu_{m},h_{m}\right)=\argmin_{\nu\in\reals,h\in\ch}\sum_{i=1}^{n}\ell\left(y_{i},f_{m-1}(x_{i})\underbrace{+\nu h(x_{i})}_{\text{new piece}}\right).
 \]
 
 \end_inset
@@ -1966,14 +1522,14 @@ Roughly speaking, it will be the functional gradient projected onto
 
 \begin_layout Standard
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Pause
 
 \end_layout
 
 \begin_layout Itemize
-Note: This will be a new method.
+Note: This seems like a new method.
  AdaBoost will 
 \series bold
 not
@@ -1988,7 +1544,10 @@ not
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2041,7 +1600,7 @@ Take functional gradient w.r.t.
 \end_deeper
 \begin_layout Itemize
 Find function 
-\begin_inset Formula $h\in\cf$
+\begin_inset Formula $h\in\ch$
 \end_inset
 
  closest to gradient.
@@ -2070,7 +1629,10 @@ projected gradient
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2146,7 +1708,10 @@ J({\bf f})=\sum_{i=1}^{n}\ell\left(y_{i,}{\bf f}_{i}\right).
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2256,7 +1821,10 @@ Solve both of these problems by projecting
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2364,7 +1932,10 @@ So the
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2423,7 +1994,7 @@ Choose a fixed
 \begin_inset Formula $\nu\in(0,1)$
 \end_inset
 
- -- called a 
+ – called a 
 \series bold
 shrinkage parameter.
 \end_layout
@@ -2439,12 +2010,15 @@ A value of
 \begin_inset Formula $\nu=0.1$
 \end_inset
 
- is typical -- optimize as a hyperparameter .
+ is typical – optimize as a hyperparameter .
 \end_layout
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2515,7 +2089,7 @@ Fit regression model to
 :
 \begin_inset Formula 
 \[
-h_{m}=\argmin_{h\in\cf}\sum_{i=1}^{n}\left(\left(-{\bf g}_{m}\right)_{i}-h(x_{i})\right)^{2}.
+h_{m}=\argmin_{h\in\ch}\sum_{i=1}^{n}\left(\left(-{\bf g}_{m}\right)_{i}-h(x_{i})\right)^{2}.
 \]
 
 \end_inset
@@ -2553,7 +2127,10 @@ f_{m}(x)=f_{m-1}(x)+\nu_{m}h_{m}(x)
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2592,7 +2169,10 @@ Then you're good to go!
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 

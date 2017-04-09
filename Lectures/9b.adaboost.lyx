@@ -741,6 +741,32 @@ tiny{Plots courtesy of Ningshan Zhang.}}
 status open
 
 \begin_layout Plain Layout
+Shoudl we get rid of 
+\begin_inset Formula $G_{m}$
+\end_inset
+
+ and replace it by 
+\begin_inset Formula $h_{m}$
+\end_inset
+
+ throughout? And wy using 
+\begin_inset Formula $\cf$
+\end_inset
+
+ for base hypothsis space instead of 
+\begin_inset Formula $\ch$
+\end_inset
+
+ ?
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 Wondering if we should extend the plots for error >.5? This would be a really
  annoying hypothesis space that was always worse than random..
  But they would enter the ensemble with a negative weight.
@@ -1253,7 +1279,7 @@ binary classification:
 Base hypothesis space
 \series default
  
-\begin_inset Formula $\cf=\left\{ f:\cx\to\left\{ -1,1\right\} \right\} $
+\begin_inset Formula $\ch=\left\{ h:\cx\to\left\{ -1,1\right\} \right\} $
 \end_inset
 
 .
@@ -1273,8 +1299,6 @@ Note
 we'll call it a 
 \series bold
 base learner
-\series default
-, since algorithm doesn't require 
 \end_layout
 
 \begin_layout Itemize
@@ -1486,7 +1510,11 @@ Find base classifier
 \begin_inset Formula $G_{m}(x)$
 \end_inset
 
- that tries to fit weighted training data
+ that 
+\series bold
+tries
+\series default
+ to fit weighted training data (but may not do that well)
 \end_layout
 
 \begin_deeper
@@ -1632,11 +1660,11 @@ Repeat for
 
 \begin_deeper
 \begin_layout Itemize
-Find base classifier 
+Base learner fits weighted training data and returns 
 \begin_inset Formula $G_{m}(x)$
 \end_inset
 
- that best fits weighted training data
+
 \end_layout
 
 \begin_layout Itemize
@@ -2193,19 +2221,11 @@ For
 
 \begin_deeper
 \begin_layout Enumerate
-Find base classifier 
+Base learner fits weighted training data and returns 
 \begin_inset Formula $G_{m}(x)$
 \end_inset
 
- that best fits 
-\begin_inset Formula $\cd$
-\end_inset
 
-, weighted by weights 
-\begin_inset Formula $w_{i}$
-\end_inset
-
-.
 \end_layout
 
 \begin_deeper
@@ -3358,7 +3378,7 @@ Adaptive Basis Function Model
 Base hypothesis space
 \series default
  
-\begin_inset Formula $\cf$
+\begin_inset Formula $\ch$
 \end_inset
 
  
@@ -3376,7 +3396,7 @@ An
 adaptive basis function expansion 
 \series default
 over 
-\begin_inset Formula $\cf$
+\begin_inset Formula $\ch$
 \end_inset
 
  is
@@ -3392,7 +3412,7 @@ f(x)=\sum_{m=1}^{M}\nu_{m}h_{m}(x),
 
 \begin_deeper
 \begin_layout Itemize
-\begin_inset Formula $h_{m}\in\cf$
+\begin_inset Formula $h_{m}\in\ch$
 \end_inset
 
  chosen in a learning process (
@@ -3438,7 +3458,7 @@ We are taking linear combination of outputs of
 \begin_deeper
 \begin_layout Itemize
 Functions in 
-\begin_inset Formula $h_{m}\in\cf$
+\begin_inset Formula $h_{m}\in\ch$
 \end_inset
 
  must produce values in 
@@ -3489,7 +3509,7 @@ Loss function
 Base hypothesis space
 \series default
 : 
-\begin_inset Formula $\cf$
+\begin_inset Formula $\ch$
 \end_inset
 
  of 
@@ -3586,7 +3606,7 @@ f_{m-1}=\sum_{i=1}^{m-1}\nu_{i}h_{i},
 \end_inset
 
 where 
-\begin_inset Formula $h_{1},\ldots,h_{m-1}\in\cf$
+\begin_inset Formula $h_{1},\ldots,h_{m-1}\in\ch$
 \end_inset
 
 .
@@ -3607,7 +3627,7 @@ Want to find
 step direction
 \series default
  
-\begin_inset Formula $h_{m}\in\cf$
+\begin_inset Formula $h_{m}\in\ch$
 \end_inset
 
  and
@@ -3695,7 +3715,7 @@ For
 Compute:
 \begin_inset Formula 
 \[
-\left(\nu_{m},h_{m}\right)=\argmin_{\nu\in\reals,h\in\cf}\sum_{i=1}^{n}\ell\left(y_{i},f_{m-1}(x_{i})\underbrace{+\nu h(x_{i})}_{\text{new piece}}\right).
+\left(\nu_{m},h_{m}\right)=\argmin_{\nu\in\reals,h\in\ch}\sum_{i=1}^{n}\ell\left(y_{i},f_{m-1}(x_{i})\underbrace{+\nu h(x_{i})}_{\text{new piece}}\right).
 \]
 
 \end_inset
@@ -3774,11 +3794,11 @@ Take loss function to be
 \end_deeper
 \begin_layout Itemize
 Let 
-\begin_inset Formula $\cf$
+\begin_inset Formula $\ch$
 \end_inset
 
  be our base hypothesis space of classifiers 
-\begin_inset Formula $f:\cx\to\left\{ -1,1\right\} $
+\begin_inset Formula $h:\cx\to\left\{ -1,1\right\} $
 \end_inset
 
 .
@@ -3810,26 +3830,30 @@ Only difference:
 
 \begin_deeper
 \begin_layout Itemize
-AdaBoost is loose about each 
+AdaBoost gets whichever 
 \begin_inset Formula $G_{m}$
 \end_inset
 
- 
-\begin_inset Quotes eld
+ the base learner returns from 
+\begin_inset Formula $\ch$
 \end_inset
 
-fitting the weighted training data
-\begin_inset Quotes erd
+ – no guarantees it's best in 
+\begin_inset Formula $\ch$
 \end_inset
 
- 
+.
 \end_layout
 
 \begin_layout Itemize
-For FSAM we're explicitly looking for
+FSAM explicitly requires getting the best in 
+\begin_inset Formula $\ch$
+\end_inset
+
+
 \begin_inset Formula 
 \[
-G_{m}=\argmin_{G\in\cf}\sum_{i=1}^{N}w_{i}^{(m)}\ind{y_{i}\neq G(x_{i})}
+G_{m}=\argmin_{G\in\ch}\sum_{i=1}^{N}w_{i}^{(m)}\ind{y_{i}\neq G(x_{i})}
 \]
 
 \end_inset

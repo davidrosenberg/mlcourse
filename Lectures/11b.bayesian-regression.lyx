@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin /Users/drosen/Dropbox/repos/mlcourse/Lectures/
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -17,23 +19,23 @@
   \end{frame}
 }
 \end_preamble
-\options handout
+\options handout,aspectratio=169
 \use_default_options false
 \maintain_unincluded_children false
 \language english
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman times
-\font_sans default
-\font_typewriter default
-\font_math eulervm
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "eulervm" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -675,19 +677,7 @@ David Rosenberg
 \end_layout
 
 \begin_layout Date
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-today
-\end_layout
-
-\end_inset
-
-
+April 11, 2017
 \end_layout
 
 \begin_layout Institute
@@ -874,13 +864,16 @@ e.g.
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
 \begin_layout Standard
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Frame
 
@@ -1066,7 +1059,10 @@ Note:
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1216,7 +1212,10 @@ prior & posterior
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1374,7 +1373,10 @@ Prior distribution
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1523,7 +1525,10 @@ conditionally independent
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1617,7 +1622,10 @@ MLE
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1697,7 +1705,10 @@ p(w\mid\cd) & = & p(w\mid x,y)\\
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1808,7 +1819,10 @@ distributions over prediction functions
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1919,7 +1933,10 @@ Prior distribution:
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2025,7 +2042,10 @@ tiny{Bishop's PRML Fig 3.7}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2088,7 +2108,10 @@ tiny{Bishop's PRML Fig 3.7}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2143,7 +2166,10 @@ tiny{Bishop's PRML Fig 3.7}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2272,7 +2298,10 @@ url{http://www.gaussianprocess.org/gpml/chapters/RW2.pdf}}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2356,13 +2385,10 @@ which is of course the ridge regression solution.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
 \begin_inset Note Note
 status collapsed
 
-\begin_layout Separator
-
-\end_layout
 
 \begin_layout Frame
 \begin_inset Argument 4
@@ -2442,9 +2468,6 @@ In other words, when our variance goes to
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
-
-\end_layout
 
 \end_inset
 
@@ -2519,7 +2542,10 @@ Which is the ridge regression objective.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2581,7 +2607,10 @@ For Gaussian regression, predictive distribution has closed form.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2675,7 +2704,10 @@ y_{\text{new}}\mid x_{\text{new}},\cd & \sim & \cn\left(\eta_{\text{new}}\,,\,\s
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2736,7 +2768,10 @@ emph{Gaussian Processes for Machine Learning}, Fig.2.1(b) }}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 

@@ -3,7 +3,7 @@
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin unavailable
+\origin /Users/drosen/Dropbox/repos/mlcourse/in-prep/
 \textclass paper
 \use_default_options false
 \begin_modules
@@ -557,7 +557,7 @@ figs-within-sections
 \end_layout
 
 \begin_layout Title
-The Multivariate Gaussian Distribution
+The Multivariate Gaussian Distribution [DRAFT]
 \end_layout
 
 \begin_layout Date
@@ -581,33 +581,91 @@ David S.
  Rosenberg
 \end_layout
 
+\begin_layout Abstract
+This is a collection of a few key (and standard) results about multivariate
+ Gaussian distributions.
+ I have not included many proofs, because I don't know how to do it without
+ either being very tedious and technical, or using some mathematics that
+ are well beyond the prerequisites.
+ To my knowledge, there are two primary approaches to developing the theory
+ of multivariate Gaussian distributions.
+ The first, and by far the most common approach in machine learning textbooks,
+ is to define the multivariate gaussian distribution in terms of its density
+ function, and to derive results by manipulating these density functions.
+ With this approach, a lot of the work turns out to be elaborate matrix
+ algebra calculations happening inside the exponent of the Gaussian density.
+ One issue with this approach is that the multivariate Gaussian density
+ is only defined when the covariance matrix is invertible.
+ To keep the derivations rigorous, some care must be taken to justify that
+ the new covariance matrices we come up with are invertible.
+ For my taste, I find the rigor in our textbooks to be a bit light on these
+ points.
+ However, making it all rigorous can be painful – we've included the proof
+ to Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:jointDistForGaussianHierarchy"
+
+\end_inset
+
+ to give a flavor of it.
+ The second major approach to multivariate Gaussian distributions does not
+ use density functions at all and does not require invertible covariance
+ matrices.
+ This approach is much cleaner and more elegant, but it relies on the theory
+ of characteristic functions and the Cramer-Wold device to get started,
+ and these are beyond the prerequisites for this course.
+ You can often find this development in more advanced probability and statistics
+ books, such as Rao's excellent 
+\emph on
+Linear Statistical Inference and Its Applications
+\emph default
+ (Chapter 8).
+ 
+\end_layout
+
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 Notes from DS-GA 1002: Probability_3 Section 2.4: Gaussian Random Vectors
  (pp.
  23-26).
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 [TO DO: need to put something about inverses of block matrices; Also need
  to talk about iterated expectations]
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 See also: Murphy p.
  113 Section 4.3.1.
  
 \end_layout
 
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
 \begin_layout Section
 One-Dimensional Gaussian
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Formula 
 \[
 f(x)=\frac{1}{\sigma\sqrt{2\pi}}\exp\left(-\frac{(x-\mu)^{2}}{2\sigma^{2}}\right)
 \]
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -662,7 +720,7 @@ where
 
  be invertible
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 We 
@@ -678,10 +736,10 @@ can
 \end_inset
 
 , but such a distribution will not have a density on 
-\begin_inset Formula $\reals^{n}$
+\begin_inset Formula $\reals^{d}$
 \end_inset
 
-, and that case will not be of interest here.
+, and we will not address that case here.
  
 \end_layout
 
@@ -702,7 +760,7 @@ can
 
 \begin_layout Exercise
 There are at least 2 claims implicit in this definition.
- First, that the expression given is, in fact, a density(i.e.
+ First, that the expression given is, in fact, a density (i.e.
  it's non-negative and integrates to 
 \begin_inset Formula $1$
 \end_inset
@@ -717,12 +775,11 @@ There are at least 2 claims implicit in this definition.
 \end_inset
 
 , as claimed.
- 
 \end_layout
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Formula $N_{p}(\mu,\Sigma)$
@@ -1664,9 +1721,10 @@ q(x)=(x_{1}-\mu_{1})^{T}\Sigma_{1}^{-1}(x_{1}-\mu_{1})+(x_{2}-Ax_{1}-b)^{T}\Sigm
 \end_inset
 
 
-\end_layout
+\begin_inset Note Note
+status open
 
-\begin_layout Proof
+\begin_layout Plain Layout
 [Idea from Leo Razoumov about showing that 
 \begin_inset Formula $q(x)$
 \end_inset
@@ -1739,6 +1797,11 @@ and this thing will be infinite for any
 \end_inset
 
 , then one of these integrals is infinite.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Proof
@@ -1893,7 +1956,7 @@ Thus
 \begin_inset Formula $q(x)$
 \end_inset
 
- has the form requried by Theorem 
+ has the form required by Theorem 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "thm:expNegQuadraticIsGaussian"
@@ -1910,16 +1973,6 @@ x_{2}
  is jointly Gaussian.
  We have also shown that the marginal means and covariances, as well as
  the cross-covariances all have the forms claimed.
- We still need a theorem ssaying that if 
-\begin_inset Formula $x_{1}$
-\end_inset
-
- and 
-\begin_inset Formula $x_{2}$
-\end_inset
-
- are jointly gaussian and have given marginals and covariances, then the
- joint distribution is what we'd expect to have...
  
 \end_layout
 

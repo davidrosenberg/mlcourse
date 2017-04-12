@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin /Users/drosen/Dropbox/repos/mlcourse/Lectures/
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -17,23 +19,23 @@
   \end{frame}
 }
 \end_preamble
-\options handout
+\options handout,aspectratio=169
 \use_default_options false
 \maintain_unincluded_children false
 \language english
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman times
-\font_sans default
-\font_typewriter default
-\font_math eulervm
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "eulervm" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -675,19 +677,7 @@ David Rosenberg
 \end_layout
 
 \begin_layout Date
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-today
-\end_layout
-
-\end_inset
-
-
+April 11, 2017
 \end_layout
 
 \begin_layout Institute
@@ -905,15 +895,21 @@ Statistics is about how to use
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
 \begin_layout Standard
 \begin_inset Note Note
-status collapsed
+status open
 
-\begin_layout Separator
+\begin_layout Plain Layout
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1067,7 +1063,10 @@ What to do?
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Plain Layout
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1229,7 +1228,10 @@ Justify its use by showing it has desirable properties.
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1324,7 +1326,10 @@ Must be chosen before seeing any data.
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1477,7 +1482,10 @@ e.g.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1669,7 +1677,10 @@ Note:
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1801,7 +1812,10 @@ prior & posterior
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1809,7 +1823,10 @@ prior & posterior
 Coin Flipping: The Beta-Binomial Model
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1901,7 +1918,7 @@ p(\cd\mid\theta)=\theta^{n_{h}}\left(1-\theta\right)^{n_{t}}
 \begin_layout Itemize
 (probability of getting the flips in the order they were received)
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Pause
 
@@ -1932,7 +1949,10 @@ Conditioned on
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2013,7 +2033,10 @@ url{http://commons.wikimedia.org/wiki/File:Beta_distribution_pdf.svg}.}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2071,7 +2094,10 @@ Mean of Beta distribution:
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2149,7 +2175,10 @@ p(\theta\mid\cd) & \propto & p(\theta)p(\cd\mid\theta)\\
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2260,7 +2289,10 @@ Posterior increments counts by observed
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2340,7 +2372,10 @@ Prior distribution:
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2420,7 +2455,10 @@ Posterior distribution:
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2515,7 +2553,10 @@ mode
 \end_deeper
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2661,13 +2702,11 @@ url{http://davidrosenberg.github.io/mlcourse/2015/Lectures/12.bayesian-methods.p
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
 \begin_inset Note Note
 status collapsed
 
-\begin_layout Separator
 
-\end_layout
 
 \begin_layout Section
 Bayesian Decision Theory
@@ -2811,9 +2850,7 @@ r(a^{*})=\min_{a\in\ca}r(a)
 \end_layout
 
 \end_deeper
-\begin_layout Separator
 
-\end_layout
 
 \begin_layout Frame
 \begin_inset Argument 4
@@ -2948,9 +2985,7 @@ r(\hat{\theta}) & = & \ex\left[\left(\theta-\hat{\theta}\right)^{2}\mid\cd\right
 \end_layout
 
 \end_deeper
-\begin_layout Separator
 
-\end_layout
 
 \begin_layout Frame
 \begin_inset Argument 4
@@ -3014,9 +3049,7 @@ Differentiate:
 \end_layout
 
 \end_deeper
-\begin_layout Separator
 
-\end_layout
 
 \begin_layout Frame
 \begin_inset Argument 4
@@ -3104,9 +3137,7 @@ No assumptions on probability model and prior distribution.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
 
-\end_layout
 
 \begin_layout Frame
 \begin_inset Argument 4
@@ -3194,9 +3225,7 @@ http://www.cogsci.ucsd.edu/~ajyu/Teaching/Tutorials/bayes_dt.pdf
 
 \end_layout
 
-\begin_layout Separator
 
-\end_layout
 
 \begin_layout Frame
 \begin_inset Argument 4
@@ -3312,9 +3341,7 @@ mode
 \end_layout
 
 \end_deeper
-\begin_layout Separator
 
-\end_layout
 
 \begin_layout Frame
 \begin_inset Argument 4
@@ -3422,9 +3449,7 @@ p\left(\text{english}\mid\cd\right)<\frac{1}{10}p\left(\mbox{french}\mid\cd\righ
 \end_layout
 
 \end_deeper
-\begin_layout Separator
 
-\end_layout
 
 \end_inset
 

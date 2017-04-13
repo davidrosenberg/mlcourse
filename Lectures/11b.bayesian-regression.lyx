@@ -19,7 +19,7 @@
   \end{frame}
 }
 \end_preamble
-\options handout,aspectratio=169
+\options aspectratio=169,handout
 \use_default_options false
 \maintain_unincluded_children false
 \language english
@@ -1324,7 +1324,7 @@ Everything conditioned on
 
 
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Pause
 
@@ -2583,20 +2583,43 @@ When we take
 \begin_inset Formula $\cov(\hat{\theta})$
 \end_inset
 
-.
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-In other words, when our prior variance goes to 
+ (i.e.
+ like our prior variance goes to 
 \begin_inset Formula $\infty$
 \end_inset
 
 .
+ )
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\Sigma_{P}$
+\end_inset
+
+ is 
+\begin_inset Quotes eld
+\end_inset
+
+smaller
+\begin_inset Quotes erd
+\end_inset
+
+ than 
+\begin_inset Formula $\cov(\hat{w})$
+\end_inset
+
+ because we're using a 
+\begin_inset Quotes eld
+\end_inset
+
+more informative
+\begin_inset Quotes erd
+\end_inset
+
+ prior.
  
 \end_layout
 
-\end_deeper
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
@@ -2724,8 +2747,8 @@ Given a new input point
 Predictive distribution
 \begin_inset Formula 
 \begin{eqnarray*}
-p(y_{\text{new}}\mid x_{\text{new}},\cd) & = & \pause\int p(y_{\text{new}}\mid x_{\text{new}},\theta,\cd)p(\theta\mid\cd)\,d\theta\\
-\pause & = & \int p(y_{\text{new}}\mid x_{\text{new}},\theta)p(\theta\mid\cd)\,d\theta
+p(y_{\text{new}}\mid x_{\text{new}},\cd) & = & \pause\int p(y_{\text{new}}\mid x_{\text{new}},w,\cd)p(w\mid\cd)\,dw\\
+\pause & = & \int p(y_{\text{new}}\mid x_{\text{new}},w)p(w\mid\cd)\,dw
 \end{eqnarray*}
 
 \end_inset
@@ -2796,7 +2819,7 @@ Predictive Distribution
 
 \begin_inset Formula 
 \begin{eqnarray*}
-p(y_{\text{new}}\mid x_{\text{new}},\cd) & = & \int p(y_{\text{new}\text{ }}\mid x_{\text{new}},w)p(w\mid\cd)\,d\theta.
+p(y_{\text{new}}\mid x_{\text{new}},\cd) & = & \int p(y_{\text{new}\text{ }}\mid x_{\text{new}},w)p(w\mid\cd)\,dw.
 \end{eqnarray*}
 
 \end_inset
@@ -2807,7 +2830,7 @@ p(y_{\text{new}}\mid x_{\text{new}},\cd) & = & \int p(y_{\text{new}\text{ }}\mid
 \begin_deeper
 \begin_layout Itemize
 Averages over prediction for each 
-\begin_inset Formula $\theta$
+\begin_inset Formula $w$
 \end_inset
 
 , weighted by posterior distribution.
@@ -2830,19 +2853,27 @@ Closed form:
 \begin{eqnarray*}
 y_{\text{new}}\mid x_{\text{new}},\cd & \sim & \cn\left(\eta_{\text{new}}\,,\,\sigma_{\text{new}}\right)\\
 \pause\eta_{\text{new}} & = & \mu_{\text{P}}^{T}x_{\text{new}}\\
-\pause\sigma_{\text{new}} & = & \underbrace{x_{\text{new}}^{T}\Sigma_{\text{P}}x_{\text{new}}}_{\text{from variance in }\theta}+\underbrace{\sigma^{2}}_{\text{inherent variance in }y}
+\pause\sigma_{\text{new}} & = & \underbrace{x_{\text{new}}^{T}\Sigma_{\text{P}}x_{\text{new}}}_{\text{from variance in }w}+\underbrace{\sigma^{2}}_{\text{inherent variance in }y}
 \end{eqnarray*}
 
 \end_inset
 
 
-\series bold
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
  
 \end_layout
 
 \end_deeper
+\begin_layout Itemize
+(In frequentist framework, could get same thing by bootstrap.)
+\end_layout
+
+\end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 

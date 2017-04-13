@@ -3,7 +3,7 @@
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin unavailable
+\origin /Users/drosen/Dropbox/repos/mlcourse/Lectures/
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -21,7 +21,7 @@
   \end{frame}
 }
 \end_preamble
-\options handout
+\options handout,aspectratio=169
 \use_default_options false
 \maintain_unincluded_children false
 \language english
@@ -45,7 +45,16 @@
 \index_command default
 \paperfontsize default
 \spacing single
-\use_hyperref false
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
 \papersize default
 \use_geometry true
 \use_package amsmath 2
@@ -846,10 +855,6 @@ The Gradient Boosting Machine
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -867,10 +872,6 @@ For
 \end_inset
 
  (until stopping condition met)
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -898,7 +899,7 @@ Fit regression model to
 :
 \begin_inset Formula 
 \[
-h_{m}=\argmin_{h\in\cf}\sum_{i=1}^{n}\left(\left(-{\bf g}_{m}\right)_{i}-h(x_{i})\right)^{2}.
+h_{m}=\argmin_{h\in\ch}\sum_{i=1}^{n}\left(\left(-{\bf g}_{m}\right)_{i}-h(x_{i})\right)^{2}.
 \]
 
 \end_inset
@@ -907,7 +908,7 @@ h_{m}=\argmin_{h\in\cf}\sum_{i=1}^{n}\left(\left(-{\bf g}_{m}\right)_{i}-h(x_{i}
 \end_layout
 
 \begin_layout Enumerate
-Choose fixed step size 
+For fixed step size 
 \begin_inset Formula $\nu_{m}=\nu\in(0,1]$
 \end_inset
 
@@ -915,27 +916,22 @@ Choose fixed step size
 \begin_inset Formula $v=0.1$
 \end_inset
 
- is typical], or take
-\begin_inset Formula 
-\[
-\nu_{m}=\argmin_{\nu>0}\sum_{i=1}^{n}\ell\left\{ y_{i},f_{m-1}(x_{i})+\nu h_{m}(x_{i})\right\} .
-\]
-
-\end_inset
-
-
+ is typical], take the step
 \end_layout
 
-\begin_layout Enumerate
-Take the step:
+\begin_layout Standard
 \begin_inset Formula 
 \[
-f_{m}(x)=f_{m-1}(x)+\nu_{m}h_{m}(x)
+f_{m}(x)=f_{m-1}(x)+\nu_{m}h_{m}(x).
 \]
 
 \end_inset
 
- 
+Could also choose 
+\begin_inset Formula $v_{m}$
+\end_inset
+
+ with line search.
 \end_layout
 
 \end_deeper
@@ -958,10 +954,6 @@ Unconstrained Functional Gradient Stepping
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -970,7 +962,7 @@ Unconstrained Functional Gradient Stepping
 \begin_inset Graphics
 	filename ../Figures/boosting/unconstrained-fnl-gradient-steps-SeniElderFigB.1.png
 	lyxscale 50
-	width 80text%
+	height 60theight%
 
 \end_inset
 
@@ -978,12 +970,14 @@ Unconstrained Functional Gradient Stepping
 \end_layout
 
 \begin_layout Standard
-Where 
 \begin_inset Formula $R(\mathbf{f})$
 \end_inset
 
- is the empirical risk.
- 
+ is the empirical risk, where 
+\begin_inset Formula $\mathbf{f}=\left(f(x_{1}),f(x_{2})\right)$
+\end_inset
+
+ are predictions on training set.
 \begin_inset Newline newline
 \end_inset
 
@@ -1033,13 +1027,16 @@ emph{Ensemble Methods in Data Mining}, Fig B.1.}}
 status open
 
 \begin_layout Plain Layout
-Projected Functional Gradient Stepping
-\end_layout
-
+\begin_inset Quotes eld
 \end_inset
 
+Projected
+\begin_inset Quotes erd
+\end_inset
 
-\begin_inset Separator latexpar
+ Functional Gradient Stepping
+\end_layout
+
 \end_inset
 
 
@@ -1051,7 +1048,7 @@ Projected Functional Gradient Stepping
 \begin_inset Graphics
 	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/boosting/projected-fnl-grad-SeniElderFigB.2.png
 	lyxscale 50
-	height 65theight%
+	height 55theight%
 
 \end_inset
 
@@ -1059,18 +1056,18 @@ Projected Functional Gradient Stepping
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $T(x;p)\in\cf$
+\begin_inset Formula $T(x;p)\in\ch$
 \end_inset
 
- is our actual step direction (projection of 
-\begin_inset Formula $\mbox{-{\bf g}=-}\del R$
+ is our actual step direction – like the projection of 
+\begin_inset Formula $\mbox{-{\bf g}=-}\del R(\mathbf{f})$
 \end_inset
 
  onto 
-\begin_inset Formula $\cf$
+\begin_inset Formula $\ch$
 \end_inset
 
-)
+.
 \end_layout
 
 \begin_layout Standard
@@ -1112,13 +1109,9 @@ emph{Ensemble Methods in Data Mining}, Fig B.2.}}
 status open
 
 \begin_layout Plain Layout
-The Gradient Boosting Machine: Recap
+The Gradient Boosting Machine Ingredients (Recap)
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1168,10 +1161,6 @@ Gradient Tree Boosting
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1179,7 +1168,7 @@ Gradient Tree Boosting
 Common form of gradient boosting machine takes
 \begin_inset Formula 
 \[
-\cf=\left\{ \mbox{regression trees of size \ensuremath{J}}\right\} ,
+\ch=\left\{ \mbox{regression trees of size \ensuremath{J}}\right\} ,
 \]
 
 \end_inset
@@ -1189,10 +1178,6 @@ where
 \end_inset
 
  is the number of terminal nodes.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1206,10 +1191,6 @@ where
 \end_inset
 
  gives decision stumps
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1223,15 +1204,11 @@ HTF recommends
 \begin_inset Formula $4\le J\le8$
 \end_inset
 
-.
+ (but some recent results use much larger trees)
 \end_layout
 
 \begin_layout Itemize
 Software packages:
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1259,12 +1236,6 @@ GradientBoostingRegressor
  in 
 \series bold
 sklearn
-\series default
-
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1276,10 +1247,6 @@ sklearn
 \end_deeper
 \begin_layout Itemize
 For trees, there are other tweaks on the algorithm one can do
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1289,168 +1256,6 @@ See HTF 10.9-10.12
 
 \end_deeper
 \end_deeper
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Gradient Tree Boosting Modification
-\end_layout
-
-\end_inset
-
-
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Common form of gradient boosting machine takes
-\begin_inset Formula 
-\[
-\cf=\left\{ \mbox{regression trees of size \ensuremath{J}}\right\} ,
-\]
-
-\end_inset
-
-where 
-\begin_inset Formula $J$
-\end_inset
-
- is the number of terminal nodes.
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-\begin_inset Formula $J=2$
-\end_inset
-
- gives decision stumps
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-HTF recommends 
-\begin_inset Formula $4\le J\le8$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Itemize
-Software packages:
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Gradient tree boosting is implemented by the 
-\series bold
-gbm package
-\series default
- for R
-\end_layout
-
-\begin_layout Itemize
-as 
-\family typewriter
-\size footnotesize
-GradientBoostingClassifier
-\family default
-\size default
- and 
-\family typewriter
-\size footnotesize
-GradientBoostingRegressor
-\family default
-\size default
- in 
-\series bold
-sklearn
-\series default
-
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Itemize
-For trees, there are other tweaks on the algorithm one can do
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-See HTF 10.9-10.12 
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Separator
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 GBM Regression with Stumps
 \end_layout
@@ -1470,10 +1275,6 @@ status open
 Sinc Function: Our Dataset
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1536,13 +1337,9 @@ tiny{From Natekin and Knoll's "Gradient boosting machines, a tutorial"}}
 status open
 
 \begin_layout Plain Layout
-Fitting with Ensemble of Decision Stumps
+Minimizing Square Loss with Ensemble of Decision Stumps
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1553,7 +1350,7 @@ Fitting with Ensemble of Decision Stumps
 \align center
 \begin_inset Graphics
 	filename ../Figures/boosting/sinc-fit-1step10steps.png
-	height 35theight%
+	height 30theight%
 
 \end_inset
 
@@ -1564,7 +1361,7 @@ Fitting with Ensemble of Decision Stumps
 \align center
 \begin_inset Graphics
 	filename ../Figures/boosting/sinc-fit-50steps100steps.png
-	height 35theight%
+	height 30theight%
 
 \end_inset
 
@@ -1603,7 +1400,8 @@ relax
 \backslash
 footnotetext{
 \backslash
-tiny{From Natekin and Knoll's "Gradient boosting machines, a tutorial"}}
+tiny{Figure 3 from Natekin and Knoll's "Gradient boosting machines, a tutorial"}
+}
 \end_layout
 
 \end_inset
@@ -1630,10 +1428,6 @@ Step Size as Regularization
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1651,6 +1445,7 @@ Step Size as Regularization
 
 \begin_layout Standard
 Performance vs rounds of boosting and step size.
+ (Left is training set, right is validation set)
 \end_layout
 
 \begin_layout Standard
@@ -1669,12 +1464,47 @@ relax
 \backslash
 footnotetext{
 \backslash
-tiny{From Natekin and Knoll's "Gradient boosting machines, a tutorial"}}
+tiny{Figure 5 from Natekin and Knoll's "Gradient boosting machines, a tutorial"}
+}
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Rule of Thumb
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The smaller the step size, the more steps you'll need.
+\end_layout
+
+\begin_layout Itemize
+But never seems to make results worse, and often better.
+\end_layout
+
+\begin_layout Itemize
+So make your step size as small as you have patience for.
 \end_layout
 
 \end_deeper
@@ -1700,19 +1530,11 @@ Stochastic Gradient Boosting
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 For each stage, 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1725,7 +1547,14 @@ choose random subset of data for computing projected gradient step.
 \end_layout
 
 \begin_layout Itemize
+\begin_inset Quotes eld
+\end_inset
+
 Typically, about 50% of the dataset size.
+\begin_inset Quotes erd
+\end_inset
+
+ (but more on this)
 \end_layout
 
 \begin_layout Itemize
@@ -1738,28 +1567,133 @@ bag fraction
 
 \end_deeper
 \begin_layout Itemize
-Why?
-\begin_inset Separator latexpar
-\end_inset
-
-
+Why do this?
 \end_layout
 
 \begin_deeper
 \begin_layout Pause
 
+\end_layout
+
+\begin_layout Itemize
+Subsample percentage is additional regularization parameter.
 \end_layout
 
 \begin_layout Itemize
 Faster.
 \end_layout
 
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
 \begin_layout Itemize
-Subsample percentage is additional regularization parameter.
-\begin_inset Separator latexpar
+So....
+ this is a minibatch method.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+we're estimating the 
+\begin_inset Quotes eld
+\end_inset
+
+true
+\begin_inset Quotes erd
+\end_inset
+
+ step direction (the projected gradient) using a subset of data
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "Stochastic Gradient Boosting"
+target "http://statweb.stanford.edu/~jhf/ftp/stobst.pdf"
+
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Introduced by Friedman (1999) in 
+\backslash
+href{http://statweb.stanford.edu/~jhf/ftp/stobst.pdf}{Stochastic Gradient Boosting}.
+ }}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Some Comments on Bag Size
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Justification for 50% of dataset size:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+In bagging, sampling 50% without replacement gives very similar results
+ to full bootstrap sample
+\end_layout
+
+\begin_layout Itemize
+See Buja and Stuetzle's 
+\begin_inset CommandInset href
+LatexCommand href
+name "Observations on Bagging"
+target "http://stat.wharton.upenn.edu/~buja/PAPERS/sinica-bagging-buja-stuetzle.pdf"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+So if we're subsampling because we're inspired by bagging, this makes sense.
 \end_layout
 
 \begin_deeper
@@ -1770,17 +1704,69 @@ Subsample percentage is additional regularization parameter.
 \end_deeper
 \end_deeper
 \begin_layout Itemize
-How small a fraction can we take? 
+But if we think of stochastic gradient boosting as a minibatch method,
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+then makes little sense to choose batch size as a fixed percent of dataset
+ size,
+\end_layout
+
+\begin_layout Itemize
+especially for large datasets.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Just as we argued for minibatch SGD, 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+sample size needed for a good estimate of step direction is independent
+ of training set size
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Minibatch size should depend on 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+the complexity of base hypothesis space
+\end_layout
+
+\begin_layout Itemize
+the complexity of the target function (Bayes decision function)
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Seems like an interesting area for both practical and theoretical pursuit.
 \end_layout
 
 \end_deeper
 \begin_layout Standard
 \begin_inset Note Note
 status open
-
-\begin_layout Separator
-
-\end_layout
 
 \begin_layout Frame
 \begin_inset Argument 4
@@ -1790,10 +1776,6 @@ status open
 Newton Step Direction
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1912,10 +1894,6 @@ second order method
 \end_inset
 
 :
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1933,14 +1911,6 @@ Step direction is towards the
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1954,10 +1924,6 @@ status open
 Column / Feature Subsampling for Regularization
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1978,7 +1944,7 @@ XGBoost paper says:
 \begin_inset Quotes eld
 \end_inset
 
-According to use feedback, using column sub-sampling prevents overfitting
+According to user feedback, using column sub-sampling prevents overfitting
  even more so than the traditional row sub-sampling.
 \begin_inset Quotes erd
 \end_inset
@@ -2002,10 +1968,6 @@ status open
 Newton Step Direction
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2055,10 +2017,6 @@ second order method
 \end_inset
 
 :
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2072,10 +2030,6 @@ Find 2nd order (quadratic) approximation to
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2096,13 +2050,13 @@ Newton step direction points towards minimizer of the quadratic.
 Minimizer of quadratic is easy to find in closed form
 \end_layout
 
+\begin_layout Pause
+
+\end_layout
+
 \end_deeper
 \begin_layout Itemize
 Boosting methods with projected Newton step direction:
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2120,10 +2074,6 @@ XGBoost (any loss – uses regression trees for base classifier)
 \begin_inset Note Note
 status open
 
-\begin_layout Separator
-
-\end_layout
-
 \begin_layout Section
 Questions
 \end_layout
@@ -2139,20 +2089,12 @@ The Hypothesis Space for AdaBoost
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 Base hypothesis space: 
 \begin_inset Formula $\ch$
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2198,19 +2140,11 @@ The hypothesis for AdaBoost after
 \end_layout
 
 \end_deeper
-\begin_layout Separator
-
-\end_layout
-
 \end_inset
 
 
 \begin_inset Note Note
 status open
-
-\begin_layout Separator
-
-\end_layout
 
 \begin_layout Frame
 \begin_inset Argument 4
@@ -2220,10 +2154,6 @@ status open
 Questions
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2264,14 +2194,6 @@ bag fraction
 \end_layout
 
 \end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 

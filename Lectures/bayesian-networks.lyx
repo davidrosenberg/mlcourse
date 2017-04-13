@@ -1,0 +1,5291 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass beamer
+\begin_preamble
+\usetheme{CambridgeUS} 
+\beamertemplatenavigationsymbolsempty
+
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+\end_preamble
+\options handout
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman times
+\font_sans default
+\font_typewriter default
+\font_math eulervm
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\reals}{\mathbf{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\integers}{\mathbf{Z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\naturals}{\mathbf{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rationals}{\mathbf{Q}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ca}{\mathcal{A}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cb}{\mathcal{B}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cc}{\mathcal{C}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cd}{\mathcal{D}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ce}{\mathcal{E}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cf}{\mathcal{F}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cg}{\mathcal{G}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ch}{\mathcal{H}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ci}{\mathcal{I}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cj}{\mathcal{J}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ck}{\mathcal{K}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cl}{\mathcal{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cm}{\mathcal{M}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cn}{\mathcal{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\co}{\mathcal{O}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cp}{\mathcal{P}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cq}{\mathcal{Q}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\calr}{\mathcal{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cs}{\mathcal{S}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ct}{\mathcal{T}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cu}{\mathcal{U}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cv}{\mathcal{V}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cw}{\mathcal{W}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cx}{\mathcal{X}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cy}{\mathcal{Y}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cz}{\mathcal{Z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ind}[1]{1(#1)}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand{
+\backslash
+pr}{P}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\pr}{\mathbb{P}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\predsp}{\cy}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%{
+\backslash
+hat{
+\backslash
+cy}}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\outsp}{\cy}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\prxy}{P_{\cx\times\cy}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\prx}{P_{\cx}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\prygivenx}{P_{\cy\mid\cx}}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand{
+\backslash
+ex}{E}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ex}{\mathbb{E}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\var}{\textrm{Var}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cov}{\textrm{Cov}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\sgn}{\textrm{sgn}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\sign}{\textrm{sign}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\kl}{\textrm{KL}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\law}{\mathcal{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\eps}{\varepsilon}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\as}{\textrm{ a.s.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\io}{\textrm{ i.o.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ev}{\textrm{ ev.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\convd}{\stackrel{d}{\to}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\eqd}{\stackrel{d}{=}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\del}{\nabla}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\loss}{\ell}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\risk}{R}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\emprisk}{\hat{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\lossfnl}{L}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\emplossfnl}{\hat{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\empminimizer}[1]{\hat{#1}^{*}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\minimizer}[1]{#1^{*}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\optimizer}[1]{#1^{*}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\etal}{\textrm{et. al.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\tr}{\operatorname{tr}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\trace}{\operatorname{trace}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\diag}{\text{diag}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rank}{\text{rank}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\linspan}{\text{span}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\spn}{\text{span}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\proj}{\text{Proj}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\argmax}{\operatornamewithlimits{arg\, max}}
+{\text{argmax}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\argmin}{\operatornamewithlimits{arg\, min}}
+{\text{argmin}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\bfx}{\mathbf{x}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfy}{\mathbf{y}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfl}{\mathbf{\lambda}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfm}{\mathbf{\mu}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\calL}{\mathcal{L}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\vw}{\boldsymbol{w}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vx}{\boldsymbol{x}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vxi}{\boldsymbol{\xi}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\valpha}{\boldsymbol{\alpha}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vbeta}{\boldsymbol{\beta}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vsigma}{\boldsymbol{\sigma}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vtheta}{\boldsymbol{\theta}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vd}{\boldsymbol{d}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vs}{\boldsymbol{s}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vt}{\boldsymbol{t}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vh}{\boldsymbol{h}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ve}{\boldsymbol{e}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vf}{\boldsymbol{f}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vg}{\boldsymbol{g}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vz}{\boldsymbol{z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vk}{\boldsymbol{k}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\va}{\boldsymbol{a}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vb}{\boldsymbol{b}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vv}{\boldsymbol{v}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vy}{\boldsymbol{y}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\hil}{\ch}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rkhs}{\hil}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ber}{\text{Ber}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+Bayesian Networks
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+DS-GA 1003 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+optional, use only with long paper titles
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+David Rosenberg 
+\end_layout
+
+\begin_layout Date
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+today
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Institute
+New York University
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex ArticleMode
+status open
+
+\begin_layout Plain Layout
+Just in article version
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Plots courtesy of Ningshan Zhang.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Obozinski2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Probabilistic Reasoning
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Represent
+\series default
+ system of interest by a set of random variables 
+\begin_inset Formula 
+\[
+\left(X_{1},\ldots,X_{d}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Suppose by research or ML, we get a joint probability distribution
+\begin_inset Formula 
+\[
+p(x_{1},\ldots,x_{d}).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We'd like to be able to do 
+\series bold
+
+\begin_inset Quotes eld
+\end_inset
+
+inference
+\begin_inset Quotes erd
+\end_inset
+
+
+\series default
+ on this model -- essentially, answer queries:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+What is the most likely of value 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+What is the most likely of value 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+, given we've observed 
+\begin_inset Formula $X_{2}=1$
+\end_inset
+
+?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Distribution of 
+\begin_inset Formula $(X_{1},X_{2})$
+\end_inset
+
+ given observation of 
+\begin_inset Formula $\left(X_{3}=x_{3},\ldots,X_{d}=x_{d}\right)$
+\end_inset
+
+?
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Example: Medical Diagnosis
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Variables for each 
+\series bold
+symptom
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+fever, cough, fast breathing, shaking, nausea, vomiting
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Variables for each 
+\series bold
+disease
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+pneumonia, flu, common cold, bronchitis, tuberculosis
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Diagnosis is performed by 
+\series bold
+inference
+\series default
+ in the model:
+\begin_inset Formula 
+\[
+p(\text{pneumonia}=1\mid\text{cough}=1,\text{fever}=1,\text{vomiting}=0)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The QMR-DT (Quick Medical Reference - Decision Theoretic) has
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+600 diseases
+\end_layout
+
+\begin_layout Itemize
+4000 symptoms 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Example from David Sontag's 
+\backslash
+emph{Inference and Representation}, Lecture 1.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Section
+Discrete Probability Distribution Review
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Some Notation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This lecture we'll only be considering 
+\series bold
+discrete
+\series default
+ random variables.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Capital letters 
+\begin_inset Formula $X_{1},\ldots,X_{d},Y$
+\end_inset
+
+, etc.
+ denote 
+\series bold
+random variables
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+Lower case letters 
+\begin_inset Formula $x_{1},\ldots,x_{n},y$
+\end_inset
+
+ denote the values taken.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Probability that 
+\begin_inset Formula $X_{1}=x_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $X_{2}=x_{2}$
+\end_inset
+
+ will be denoted
+\begin_inset Formula 
+\[
+\pr\left(X_{1}=x_{1},X_{2}=x_{2}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We'll generally write things in terms of the probability mass function:
+\begin_inset Formula 
+\[
+p(x_{1},x_{2},\ldots,x_{d}):=\pr\left(X_{1}=x_{1},X_{2}=x_{2},\ldots,X_{d}=x_{d}\right)
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Representing Probability Distributions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let's consider the case of discrete random variables.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Conceptually, everything can be represented with probability tables.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Variables
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Temperature 
+\begin_inset Formula $T\in\left\{ \mbox{hot},\mbox{cold}\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Weather 
+\begin_inset Formula $W\in\left\{ \mbox{sun},\mbox{rain}\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $t$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p(t)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+hot
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.5$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+cold
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.5$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset space \qquad{}
+\end_inset
+
+ 
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $w$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p(w)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+sun
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.6$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+rain
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.4$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+These are the 
+\series bold
+marginal
+\series default
+ probability distributions.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+To do reasoning, we need the 
+\series bold
+joint probability distribution
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Based on David Sontag's 
+\backslash
+emph{DS-GA 1003 Lectures, Spring 2014}, Lecture 10.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Joint Probability Distributions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A 
+\series bold
+joint probability distribution 
+\series default
+for 
+\begin_inset Formula $T$
+\end_inset
+
+ and 
+\begin_inset Formula $W$
+\end_inset
+
+ is given by 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $t$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $w$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p(t,w)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+hot
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+sun
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.4$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+hot
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+rain
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+cold
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+sun
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+cold
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+rain
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.3$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+With the joint we can answer question such as
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $p(\mbox{sun }|\mbox{ hot})$
+\end_inset
+
+=?
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $p(\mbox{rain | cold)=?}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Based on David Sontag's 
+\backslash
+emph{DS-GA 1003 Lectures, Spring 2014}, Lecture 10.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+\begin_inset Note Note
+status open
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Conditional Distributions From the Joint Distribution
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We 
+\series bold
+observe
+\series default
+ 
+\begin_inset Formula $T=\mbox{hot}$
+\end_inset
+
+.
+ What's the conditional distribution of 
+\begin_inset Formula $W$
+\end_inset
+
+?
+\begin_inset Formula 
+\[
+p\left(w\mid T=\mbox{hot}\right)=?
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Method:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Find entries in joint distribution table where 
+\begin_inset Formula $T=\mbox{hot}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $t$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $w$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p(t,w)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+hot
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+sun
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.4$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+hot
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+rain
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Renormalize to get conditional probability.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="4">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $t$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $w$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p(t,w)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p(w\mid T=\mbox{hot})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+hot
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+sun
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.4$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.4/0.5=0.8$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+hot
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+rain
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.1/0.5=0.2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Conditional Distributions From the Joint Distribution
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+The 
+\series bold
+conditional probability
+\series default
+ for 
+\begin_inset Formula $w$
+\end_inset
+
+ given 
+\begin_inset Formula $t$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+p(w\mid t)=\frac{p(w,t)}{p(t)}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="4">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $t$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $w$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p(t,w)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p(w\mid T=\mbox{hot})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+hot
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+sun
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.4$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.4/0.5=0.8$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+hot
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+rain
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.1/0.5=0.2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Representing Joint Distributions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Consider random variables 
+\begin_inset Formula $X_{1},\ldots,X_{d}\in\left\{ 0,1\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+How many parameters do we need to represent the joint distribution?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Joint probability table has 
+\begin_inset Formula $2^{d}$
+\end_inset
+
+ rows.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+For QMR-DT, that's 
+\begin_inset Formula $2^{4600}>10^{1000}$
+\end_inset
+
+ rows.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+That's not going to happen.
+ 
+\end_layout
+
+\begin_layout Itemize
+Only 
+\begin_inset Formula $\sim10^{80}$
+\end_inset
+
+ atoms in the universe.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Having exponentially many parameters is a problem for
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+storage
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+computation (inference is summing over exponentially many rows)
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+statistical estimation / learning
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+How to Restrict the Complexity?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Restrict the space of probability distributions
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We will make various 
+\series bold
+independence 
+\series default
+assumptions
+\series bold
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Extreme assumption: 
+\begin_inset Formula $X_{1},\ldots,X_{d}$
+\end_inset
+
+ are 
+\series bold
+mutually independent
+\series default
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Definition
+Discrete random variables 
+\begin_inset Formula $X_{1},\ldots,X_{d}$
+\end_inset
+
+ are 
+\series bold
+mutually independent
+\series default
+ if their joint probability mass function (PMF) factorizes as
+\begin_inset Formula 
+\[
+p(x_{1},x_{2},\ldots,x_{d})=p(x_{1})p(x_{2})\cdots p(x_{d}).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Note: We usually just write 
+\series bold
+independent
+\series default
+ for 
+\begin_inset Quotes eld
+\end_inset
+
+mutually independent
+\begin_inset Quotes erd
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+How many parameters to represent the joint distribution, assuming independence?
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Assume Full Independence
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+How many parameters to represent the joint distribution?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Say 
+\begin_inset Formula $p(X_{i}=1)=\theta_{i}$
+\end_inset
+
+, for 
+\begin_inset Formula $i=1,\ldots,d$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Clever representation
+\series default
+: Since 
+\begin_inset Formula $x_{i}\in\left\{ 0,1\right\} $
+\end_inset
+
+, we can write
+\begin_inset Formula 
+\[
+\pr(X_{i}=x_{i})=\theta_{i}^{x_{i}}\left(1-\theta_{i}\right)^{1-x_{i}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Then by independence,
+\begin_inset Formula 
+\[
+p(x_{1},\ldots,x_{d})=\prod_{i=1}^{d}\theta_{i}^{x_{i}}\left(1-\theta_{i}\right)^{1-x_{i}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+How many parameters? 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $d$
+\end_inset
+
+ parameters needed to represent the joint.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Conditional Interpretation of Independence
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
+\begin_inset Formula $Y$
+\end_inset
+
+ are independent, then 
+\begin_inset Formula 
+\[
+p(x\mid y)=p(x).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Proof:
+\begin_inset Formula 
+\begin{eqnarray*}
+p(x\mid y) & = & \frac{p(x,y)}{p(y)}\\
+\pause & = & \frac{p(x)p(y)}{p(y)}=p(x).
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+With full independence, we have no relationships among variables.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Information about one variable says nothing about any other variable.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Would mean diseases don't have symptoms.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Conditional Independence
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Consider 3 events:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $W=\left\{ \mbox{The grass is wet}\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $S=\left\{ \mbox{The road is slippery}\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $R=\left\{ \mbox{It's raining}\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+These events are certainly 
+\series bold
+not
+\series default
+ independent.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Raining 
+\begin_inset Formula $(R)$
+\end_inset
+
+ 
+\begin_inset Formula $\implies$
+\end_inset
+
+ Grass is wet AND The road is slippery 
+\begin_inset Formula $\left(W\cap S\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Grass is wet 
+\begin_inset Formula $(W)$
+\end_inset
+
+ 
+\begin_inset Formula $\implies$
+\end_inset
+
+ More likely that the road is slippery 
+\begin_inset Formula $(S)$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Suppose we know that 
+\series bold
+it's raining
+\series default
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Then, we learn that 
+\series bold
+the grass is wet
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Does this tell us anything new about whether 
+\series bold
+the road is slippery? 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Once we know 
+\begin_inset Formula $R$
+\end_inset
+
+, then 
+\begin_inset Formula $W$
+\end_inset
+
+ and 
+\begin_inset Formula $S$
+\end_inset
+
+ become independent.
+\end_layout
+
+\begin_layout Itemize
+This is called 
+\series bold
+conditional independence
+\series default
+, and we'll denote it as
+\begin_inset Formula 
+\[
+W\perp S\mid R.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Conditional Independence
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+We say 
+\begin_inset Formula $W$
+\end_inset
+
+ and 
+\begin_inset Formula $S$
+\end_inset
+
+ are 
+\series bold
+conditionally independent
+\series default
+ given 
+\begin_inset Formula $R$
+\end_inset
+
+, denoted 
+\begin_inset Formula 
+\[
+W\perp S\mid R,
+\]
+
+\end_inset
+
+if the conditional joint factorizes as
+\begin_inset Formula 
+\[
+p(w,s\mid r)=p(w\mid r)p(s\mid r).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Also holds when 
+\begin_inset Formula $W$
+\end_inset
+
+, 
+\begin_inset Formula $S$
+\end_inset
+
+, and 
+\begin_inset Formula $R$
+\end_inset
+
+ represent 
+\series bold
+sets of random variables
+\series default
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Can have conditional independence without independence.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Can have independence without conditional independence.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Example: Rainy, Slippery, Wet
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Consider 3 events:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $W=\left\{ \mbox{The grass is wet}\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $S=\left\{ \mbox{The road is slippery}\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $R=\left\{ \mbox{It's raining}\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Represent joint distribution as
+\begin_inset Formula 
+\begin{eqnarray*}
+p(w,s,r) & = & p(w,s\mid r)p(r)\mbox{ \qquad(no assumptions so far)}\\
+\pause & = & p(w\mid r)p(s\mid r)p(r)\qquad(\mbox{assuming }W\perp S\mid R)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+How many parameters to specify the joint?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $p(w\mid r)$
+\end_inset
+
+ requires two parameters: one for 
+\begin_inset Formula $r=1$
+\end_inset
+
+ and one for 
+\begin_inset Formula $r=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $p(s\mid r)$
+\end_inset
+
+ requires two.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $p(r)$
+\end_inset
+
+ requires one parameter,
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Full joint: 
+\begin_inset Formula $7$
+\end_inset
+
+ parameters.
+ Conditional independence: 
+\begin_inset Formula $5$
+\end_inset
+
+ parameters.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Full independence: 
+\begin_inset Formula $3$
+\end_inset
+
+ parameters.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Section
+Bayesian Networks
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Bayesian Networks: Introduction
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Bayesian Networks are 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+used to specify joint probability distributions that
+\end_layout
+
+\begin_layout Itemize
+have a particular factorization.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout ColumnsCenterAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+.4
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/bayesian-networks/basic-bayes-net-PercyBayes2page3.png
+	lyxscale 30
+	width 80col%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout ColumnsCenterAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+.4
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula 
+\begin{eqnarray*}
+p(c,h,a,i) & = & p(c)p(a)\\
+ &  & \times p(h\mid c,a)p(i\mid a)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+With practice, one can read conditional independence relationships directly
+ from the graph.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Percy Liang's "Lecture 14: Bayesian networks II" slides from Stanford'
+s CS221, Autumn 2014.
+ }}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Directed Graphs
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+A 
+\series bold
+directed graph 
+\series default
+is a pair 
+\begin_inset Formula $G=\left(\cv,\ce\right),$
+\end_inset
+
+ where 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\cv=\left\{ 1,\ldots,d\right\} $
+\end_inset
+
+ is a set of 
+\series bold
+nodes
+\series default
+ and 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\ce=\left\{ \left(s,t\right)\mid s,t\in\cv\right\} $
+\end_inset
+
+ is a set of 
+\series bold
+directed edges
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout ColumnsCenterAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+.4
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/bayesian-networks/fig10.1a.pdf
+	lyxscale 40
+	width 60col%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout ColumnsCenterAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+.4
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Formula 
+\begin{eqnarray*}
+\mbox{Parents}(5) & = & \left\{ 3\right\} \\
+\pause\mbox{Parents}(4) & = & \left\{ 2,3\right\} \\
+\pause\mbox{Children}(3) & = & \left\{ 4,5\right\} \\
+\pause\mbox{Descendants}(1) & = & \left\{ 2,3,4,5\right\} \\
+\pause\mbox{NonDescendants}(3) & = & \left\{ 1,2\right\} 
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{KPM Figure 10.2(a).}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Directed Acyclic Graphs (DAGs)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+A 
+\series bold
+DAG 
+\series default
+is a directed graph with 
+\series bold
+no directed cycles
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout ColumnsCenterAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+.4
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+DAG
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/bayesian-networks/fig10.1a.pdf
+	lyxscale 40
+	width 50col%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout ColumnsCenterAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+.4
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Not a DAG
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/bayesian-networks/directed-cycles.png
+	lyxscale 40
+	width 85col%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+Every DAG has a 
+\series bold
+topological ordering,
+\series default
+ in which parents have lower numbers than their children.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{http://www.geeksforgeeks.org/wp-content/uploads/SCC1.png} and KPM Figure
+ 10.2(a).}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Bayesian Networks
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+A 
+\series bold
+Bayesian network
+\series default
+ is a 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+DAG 
+\begin_inset Formula $G=\left(\cv,\ce\right)$
+\end_inset
+
+, where 
+\begin_inset Formula $\cv=\left\{ 1,\ldots,d\right\} $
+\end_inset
+
+,
+\series bold
+ 
+\series default
+and 
+\end_layout
+
+\begin_layout Itemize
+a corresponding set of random variables
+\series bold
+ 
+\begin_inset Formula $X=\left\{ X_{1},\ldots,X_{d}\right\} $
+\end_inset
+
+
+\series default
+ 
+\end_layout
+
+\begin_layout Standard
+where
+\end_layout
+
+\begin_layout Itemize
+the joint probability distribution over 
+\begin_inset Formula $X$
+\end_inset
+
+ factorizes as
+\begin_inset Formula 
+\[
+p(x_{1},\ldots,x_{d})=\prod_{i=1}^{d}p(x_{i}\mid x_{\text{Parents}(i)}).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+Bayesian networks are also known as
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+directed graphical models
+\series default
+, and
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+belief networks.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+\begin_inset Note Note
+status open
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Bayesian Networks: Example
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Plain Layout
+\align left
+Consider the Bayesian network depicted below:
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../Figures/bayesian-networks/fig10.2b.pdf
+	width 60col%
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+It implies the following factorization for the joint probability distribution:
+\begin_inset Formula 
+\[
+p(x_{1},x_{2},x_{3},x_{4},y)=p(y)p(x_{1}\mid y)p(x_{2}\mid x_{1},y)p(x_{3}\mid x_{1},y)p(x_{4}\mid x_{3},y)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{KPM Figure 10.2(b).}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Conditional Independencies
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Bayesian Networks: 
+\begin_inset Quotes eld
+\end_inset
+
+A Common Cause
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/bayesian-networks/Figure8.15.pdf
+	lyxscale 50
+	width 30col%
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace -8mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+p(a,b,c)=p(c)p(a\mid c)p(b\mid c)\pause
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Are 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+ independent? (c=Rain, a=Slippery, b=Wet?) 
+\begin_inset Formula 
+\begin{eqnarray*}
+\pause p(a,b) & = & \sum_{c}p(c)p(a\mid c)p(b\mid c),
+\end{eqnarray*}
+
+\end_inset
+
+which in general will not be equal to 
+\begin_inset Formula $p(a)p(b)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Bishop's 
+\backslash
+emph{Pattern recognition and machine learning}, Figure 8.15.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Bayesian Networks: 
+\begin_inset Quotes eld
+\end_inset
+
+A Common Cause
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/bayesian-networks/Figure8.16.pdf
+	lyxscale 40
+	width 30col%
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace -8mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+p(a,b,c)=p(c)p(a\mid c)p(b\mid c)\pause
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Are 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+ independent, conditioned on observing 
+\begin_inset Formula $c$
+\end_inset
+
+? (c=Rain, a=Slippery, b=Wet?)
+\begin_inset Formula 
+\begin{eqnarray*}
+\pause p(a,b\mid c) & = & p(a,b,c)/p(c)\\
+\pause & = & p(a\mid c)p(b\mid c)
+\end{eqnarray*}
+
+\end_inset
+
+So 
+\begin_inset Formula $a\perp b\mid c$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Bishop's 
+\backslash
+emph{Pattern recognition and machine learning}, Figure 8.16.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Bayesian Networks: 
+\begin_inset Quotes eld
+\end_inset
+
+An Indirect Effect
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/bayesian-networks/Figure8.17.pdf
+	lyxscale 40
+	width 30col%
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace -8mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+p(a,b,c)=p(a)p(c\mid a)p(b\mid c)\pause
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace -5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Are 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+ independent? (Note: This is a 
+\series bold
+Markov chain
+\series default
+)
+\end_layout
+
+\begin_layout Standard
+(e.g.
+ a=raining, c=wet ground, b=mud on shoes)
+\begin_inset Formula 
+\begin{eqnarray*}
+\pause p(a,b) & = & \sum_{c}p(a,b,c)\\
+\pause & = & p(a)\sum_{c}p(c\mid a)p(b\mid c)
+\end{eqnarray*}
+
+\end_inset
+
+So doesn't factorize, thus not independent, in general.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Bishop's 
+\backslash
+emph{Pattern recognition and machine learning}, Figure 8.17.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Bayesian Networks: 
+\begin_inset Quotes eld
+\end_inset
+
+An Indirect Effect
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/bayesian-networks/Figure8.18.pdf
+	lyxscale 40
+	width 30col%
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace -8mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+p(a,b,c)=p(a)p(c\mid a)p(b\mid c)\pause
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Are 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+ independent after observing 
+\begin_inset Formula $c$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+(e.g.
+ a=raining, c=wet ground, b=mud on shoes) 
+\begin_inset Formula 
+\begin{eqnarray*}
+\pause p(a,b\mid c) & = & p(a,b,c)/p(c)\\
+\pause & = & p(a)p(c\mid a)p(b\mid c)/p(c)\\
+\pause & = & p(a\mid c)p(b\mid c)
+\end{eqnarray*}
+
+\end_inset
+
+So 
+\begin_inset Formula $a\perp b\mid c$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Bishop's 
+\backslash
+emph{Pattern recognition and machine learning}, Figure 8.18.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Bayesian Networks: 
+\begin_inset Quotes eld
+\end_inset
+
+A Common Effect
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/bayesian-networks/Figure8.19.pdf
+	lyxscale 40
+	width 25col%
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace -8mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+p(a,b,c)=p(a)p(b)p(c\mid a,b)\pause
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace -7mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Are 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+ independent? (a=course difficulty, b=knowledge, c= grade)
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace -8mm
+\end_inset
+
+ 
+\begin_inset Formula 
+\begin{eqnarray*}
+\pause p(a,b) & = & \sum_{c}p(a)p(b)p(c\mid a,b)\\
+\pause & = & p(a)p(b)\sum_{c}p(c\mid a,b)\\
+\pause & = & p(a)p(b)
+\end{eqnarray*}
+
+\end_inset
+
+So 
+\begin_inset Formula $a\perp b$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Bishop's 
+\backslash
+emph{Pattern recognition and machine learning}, Figure 8.19.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Bayesian Networks: 
+\begin_inset Quotes eld
+\end_inset
+
+A Common Effect
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+V-Structure
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/bayesian-networks/Figure8.20.pdf
+	lyxscale 40
+	width 30col%
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace -8mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+p(a,b,c)=p(a)p(b)p(c\mid a,b)\pause
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Are 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+ independent, given observation of 
+\begin_inset Formula $c$
+\end_inset
+
+? (a=course difficulty, b=knowledge, c= grade)
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace -9mm
+\end_inset
+
+ 
+\begin_inset Formula 
+\begin{eqnarray*}
+\pause p(a,b\mid c) & = & p(a)p(b)p(c\mid a,b)/p(c)
+\end{eqnarray*}
+
+\end_inset
+
+which does not factorize into 
+\begin_inset Formula $p(a\mid c)p(b\mid c)$
+\end_inset
+
+, in general.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Bishop's 
+\backslash
+emph{Pattern recognition and machine learning}, Figure 8.20.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Conditional Independence from Graph Structure
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+In general, given 3 sets of nodes 
+\begin_inset Formula $A$
+\end_inset
+
+, 
+\begin_inset Formula $B$
+\end_inset
+
+, and 
+\begin_inset Formula $C$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+How can we determine whether
+\begin_inset Formula 
+\[
+A\perp B\mid C?
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+There is a purely graph-theoretic notion of 
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+d-separation
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+ that is equivalent to conditional independence.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Suppose we have observed 
+\begin_inset Formula $C$
+\end_inset
+
+ and we want to do inference on 
+\begin_inset Formula $A$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We could ignore any evidence collected about 
+\begin_inset Formula $B$
+\end_inset
+
+, where 
+\begin_inset Formula $A\perp B\mid C$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+See KPM Section 10.5.1 for details.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Markov Blanket
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose we have a very large Bayesian network.
+\end_layout
+
+\begin_layout Itemize
+We're interested in a single variable 
+\begin_inset Formula $A$
+\end_inset
+
+, which we cannot observe.
+\end_layout
+
+\begin_layout Itemize
+To get maximal information about 
+\begin_inset Formula $A$
+\end_inset
+
+, do we have to observe all other variables?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+No! We only need to observe the 
+\series bold
+Markov blanket
+\series default
+ of 
+\begin_inset Formula $A$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+p(A\mid\mbox{all other nodes})=p(A\mid\text{MarkovBlanket}(A)).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+In a Bayesian network, the Markov blanket of 
+\begin_inset Formula $A$
+\end_inset
+
+ consists of
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+the parents of 
+\begin_inset Formula $A$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+the children of 
+\begin_inset Formula $A$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+the 
+\begin_inset Quotes eld
+\end_inset
+
+co-parents
+\begin_inset Quotes erd
+\end_inset
+
+ of 
+\begin_inset Formula $A$
+\end_inset
+
+, i.e.
+ the parents of the children of 
+\begin_inset Formula $A$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(See KPM Sec.
+ 10.5.3 for details.)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Markov Blanket
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Markov Blanket of 
+\begin_inset Formula $A$
+\end_inset
+
+ in a Bayesian Network:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/bayesian-networks/markov-blanket.png
+	lyxscale 30
+	height 70theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From 
+\backslash
+url{http://en.wikipedia.org/wiki/Markov_blanket}: "Diagram of a Markov blanket"
+ by Laughsinthestocks - Licensed under CC0 via Wikimedia Commons }}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Section
+When to use Bayesian Networks?
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Bayesian Networks
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Bayesian Networks are great when
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+you know something about the relationships between your variables, or
+\end_layout
+
+\begin_layout Itemize
+you will routinely need to make inferences with incomplete data.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Challenges:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The naive approach to inference doesn't work beyond small scale.
+\end_layout
+
+\begin_layout Itemize
+Need more sophisticated algorithm:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+exact inference
+\end_layout
+
+\begin_layout Itemize
+approximate inference 
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Section
+Naive Bayes
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Binary Naive Bayes: A Generative Model for Classification
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\cx=\left\{ \left(X_{1},X_{2},X_{3},X_{4})\in\left\{ 0,1\right\} ^{4}\right)\right\} $
+\end_inset
+
+ 
+\begin_inset space \qquad{}
+\end_inset
+
+ 
+\begin_inset Formula $\cy=\left\{ 0,1\right\} $
+\end_inset
+
+ be a class label.
+\end_layout
+
+\begin_layout Itemize
+Consider the Bayesian network depicted below:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/bayesian-networks/fig10.2a.pdf
+	lyxscale 40
+	width 38col%
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+BN structure implies joint distribution factors as:
+\begin_inset Formula 
+\[
+p(x_{1},x_{2},x_{3},x_{4},y)=p(y)p(x_{1}\mid y)p(x_{2}\mid y)p(x_{3}\mid y)p(x_{4}\mid y)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Features 
+\begin_inset Formula $X_{1},\ldots,X_{4}$
+\end_inset
+
+ are independent given the class label 
+\begin_inset Formula $Y$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{KPM Figure 10.2(a).}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Section
+Markov Models
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Markov Chain Model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A Markov chain model has structure:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/bayesian-networks/fig10.3a.pdf
+	width 38col%
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace -8mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+p(x_{1},x_{2},x_{3},\ldots)=p(x_{1})p(x_{2}\mid x_{1})p(x_{3}\mid x_{2})\cdots
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Conditional distributions 
+\begin_inset Formula $p(x_{i}\mid x_{i-1})$
+\end_inset
+
+ is called the
+\series bold
+ transition model.
+\end_layout
+
+\begin_layout Itemize
+When conditional distribution independent of 
+\begin_inset Formula $i$
+\end_inset
+
+, called 
+\series bold
+time-homogeneous
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+4-state transition model for 
+\begin_inset Formula $X_{i}\in\left\{ S_{1},S_{2},S_{3},S_{4}\right\} $
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/bayesian-networks/06_04.eps
+	width 38col%
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{KPM Figure 10.3(a) and Koller and Friedman's 
+\backslash
+emph{Probabilistic Graphical Models} Figure 6.04.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Hidden Markov Model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A hidden Markov model (HMM) has structure:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/bayesian-networks/fig10.4.pdf
+	width 38col%
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace -8mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\pause p(x_{1},z{}_{1},x_{2},z_{2},x_{3},z_{3},\ldots)=\underbrace{p(z_{1})\prod_{t=2}^{T}p(z_{t}\mid z_{t-1})}_{\mbox{Transition Model}}\underbrace{\prod_{t=1}^{T}p(x_{t}\mid z_{t})}_{\mbox{Observation Model}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+At deployment time, we typically only observe 
+\begin_inset Formula $X_{1},\ldots,X_{T}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Want to infer 
+\begin_inset Formula $Z_{1},\ldots,Z_{T}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+e.g.
+ Want to most likely sequence 
+\begin_inset Formula $(Z_{1},\ldots,Z_{T})$
+\end_inset
+
+ .
+ (Use
+\series bold
+ Viterbi algorithm
+\series default
+.)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{KPM Figure 10.4}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Maximum Entropy Markov Model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A maximum entropy Markov model (MEMM) has structure:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/bayesian-networks/memm-koller-Fig20.A.1.png
+	lyxscale 30
+	width 38col%
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace -8mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\pause p(y_{1}\ldots,y_{5}\mid x)=\underbrace{p(y_{0})\prod_{t=1}^{5}p(y_{t}\mid y_{t-1},x)}_{\mbox{Conditional Transition Model}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+At deployment time, we only observe 
+\begin_inset Formula $X_{1},\ldots,X_{T}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+This is a 
+\series bold
+conditional model.
+
+\series default
+ (And not a generative model).
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Koller and Friedman's 
+\backslash
+emph{Probabilistic Graphical Models} Figure 20.A.1.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\end_body
+\end_document

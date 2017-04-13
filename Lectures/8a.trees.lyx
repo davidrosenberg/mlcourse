@@ -741,6 +741,16 @@ Should re-read HTF section for big picture review
 status open
 
 \begin_layout Plain Layout
+TODO:
+\end_layout
+
+\begin_layout Plain Layout
+1) fix pruning explanation to say: each step of pruning eliminates one split.
+ Generally this means eliminates two leaf nodes, and converting an internal
+ node to a leaf node.
+\end_layout
+
+\begin_layout Plain Layout
 Should say up front that we'll be focusing on splits that work with a single
  feature at time? These lead to axis-parallel splits of input space; 
 \series bold
@@ -3376,10 +3386,11 @@ Here are three node impurity measures as a function of
 
 \begin_layout Standard
 \align center
+0
 \begin_inset Graphics
 	filename ../Figures/trees/impurityMeasureTwoClass.png
 	lyxscale 50
-	height 50text%
+	height 50theight%
 
 \end_inset
 

@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin /Users/drosen/Dropbox/repos/mlcourse/in-prep/
 \textclass paper
 \use_default_options false
 \begin_modules
@@ -14,16 +16,16 @@ figs-within-sections
 \language_package default
 \inputencoding iso8859-1
 \fontencoding global
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -560,7 +562,7 @@ figs-within-sections
 \end_layout
 
 \begin_layout Title
-Bayesian Linear Regression
+Bayesian Linear Regression [DRAFT - In Progress]
 \end_layout
 
 \begin_layout Author
@@ -581,11 +583,7 @@ today
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-TODO:
+ 
 \end_layout
 
 \begin_layout Abstract
@@ -661,7 +659,7 @@ p(\cd)=p(y\mid X)=p(y)
 \end_layout
 
 \begin_layout Section
-Gaussian Linear Regression -- Everything but Bayes
+Gaussian Linear Regression – Everything but Bayes
 \end_layout
 
 \begin_layout Standard
@@ -1687,7 +1685,10 @@ Recall that
  
 \end_layout
 
-\begin_layout --Separator--
+\begin_layout Plain Layout
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1779,7 +1780,7 @@ We have now written down a full Bayesisan model for our data generating
 \begin_inset Formula $Y_{i}\mid x_{i}$
 \end_inset
 
- -- there are no 
+ – there are no 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1980,7 +1981,7 @@ hand-wavy
 \begin_inset Quotes erd
 \end_inset
 
- expression -- it has a precise mathematical meaning.
+ expression – it has a precise mathematical meaning.
  It means that for every each dataset 
 \begin_inset Formula $\cd$
 \end_inset
@@ -2307,22 +2308,41 @@ In machine learning contexts, our ultimate goal is typically prediction,
 .
  Predictive distributions are straightforward to calculate.
  Before seeing any data, the predictive distribution for 
+\begin_inset Formula $y$
+\end_inset
+
+ given 
 \begin_inset Formula $x$
 \end_inset
 
  is simply
 \begin_inset Formula 
 \begin{eqnarray*}
-p(y\mid x) & = & \int_{w}p(y\mid w)p(w)\,dw\\
- & =
+p(y\mid x) & = & \int_{w}p(y\mid w)p(w)\,dw
 \end{eqnarray*}
 
 \end_inset
 
- 
+
 \end_layout
 
 \begin_layout Standard
+TO DO
+\end_layout
+
+\begin_layout Enumerate
+Finish section on predictive distributions
+\end_layout
+
+\begin_layout Standard
+Both David Barber and Bishop's books are good resources for this topic.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 We should be able to show that in the noise-free case (
 \begin_inset Formula $\sigma_{n}^{2}=0$
 \end_inset
@@ -2373,16 +2393,21 @@ k_{12}
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Subsection
 Posterior for a single observation [Barber 18.1.1]
 \end_layout
 
 \begin_layout Plain Layout
-[Plan -- possibly simplify this treatment by giving a 
+[Plan – possibly simplify this treatment by giving a 
 \begin_inset Quotes eld
 \end_inset
 
@@ -2964,11 +2989,15 @@ where
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
 \begin_layout Subsection
 Posterior for Multiple Observations
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Above we considered a dataset consisting of a single observation.
  This can be a realistic scenario in practice: we may get new observations
  one at a time, and we may want to update our posterior distribution after
@@ -2985,6 +3014,10 @@ Data:
 \series default
 
 \begin_inset Formula $\cd=\left\{ (x_{1},y_{1}),\ldots,(x_{n},y_{n})\right\} $
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3060,7 +3093,7 @@ p(w\mid\cd) & = & \frac{p(\cd\mid w)p(w)}{p(\cd)}\mbox{ (using fact that \ensure
 \begin_inset Formula $x$
 \end_inset
 
- -- we always condition on 
+ – we always condition on 
 \begin_inset Formula $x$
 \end_inset
 
@@ -3071,7 +3104,7 @@ p(w\mid\cd) & = & \frac{p(\cd\mid w)p(w)}{p(\cd)}\mbox{ (using fact that \ensure
  is designed.) 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 We can find that the data likelihood is
 \begin_inset Formula 
 \[
@@ -3102,6 +3135,11 @@ p(w|X,y)\sim N\left(\bar{w}=\frac{1}{\sigma_{n}^{2}}A^{-1}Xy,A^{-1}\right)
 \[
 p(f_{*}|x_{*},X,y)=N\left(\frac{1}{\sigma_{n}^{2}}x_{*}'A^{-1}Xy,x_{*}'A^{-1}x_{*}\right)
 \]
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 

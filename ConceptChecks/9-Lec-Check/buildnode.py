@@ -20,10 +20,11 @@ def bestSplit(y) :
     bestLoss = None
     N = len(y)
     for idx in range(N-1) :
-        leftLoss = sumsq[idx]/(idx+1.0) - (sums[idx]/(idx+1.0))**2
-        rightLoss = (SS-sumsq[idx])/(N-(idx+1.0))-( (S-sums[idx])/(N-(idx+1.0)) )**2
+        leftLoss = sumsq[idx] - sums[idx]**2/(idx+1.0)
+        rightLoss = (SS-sumsq[idx])-(S-sums[idx])**2/(N-(idx+1.0)) 
         loss = leftLoss+rightLoss
         if bestIdx == -1 or loss < bestLoss :
             bestIdx = idx
             bestLoss = loss            
-    return bestIdx
+    return bestIdx,bestLoss
+

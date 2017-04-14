@@ -2191,7 +2191,7 @@ Given training set
 
 \begin_layout Enumerate
 Initialize observation weights 
-\begin_inset Formula $w_{i}=1/n$
+\begin_inset Formula $w_{i}=1$
 \end_inset
 
 , 

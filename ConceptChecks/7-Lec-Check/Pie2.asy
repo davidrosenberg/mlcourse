@@ -31,5 +31,5 @@ draw(brace(5.2*expi(3.5*pi/12),5.2*expi(pi/4)),p=black+1);
 draw(brace(5.2*expi(3*pi/4),5.2*expi(8.5*pi/12)),p=black+1);
 draw(brace(5.2*expi(14.5*pi/12),5.2*expi(13*pi/12)),p=black+1);
 draw(brace(5.2*expi(-pi/12),5.2*expi(-2.5*pi/12)),p=black+1);
-xaxis('$x$',xmin=-6,xmax=6,red,EndArrow,above=true);
-yaxis('$y$',ymin=-6,ymax=6,red,EndArrow,above=true);
+xaxis('$x_1$',xmin=-6,xmax=6,red,EndArrow,above=true);
+yaxis('$x_2$',ymin=-6,ymax=6,red,EndArrow,above=true);

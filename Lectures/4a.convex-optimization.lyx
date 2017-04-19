@@ -1,0 +1,3783 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin /Users/drosen/Dropbox/repos/mlcourse/Lectures/
+\textclass beamer
+\begin_preamble
+\usetheme{CambridgeUS} 
+\beamertemplatenavigationsymbolsempty
+
+
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+\end_preamble
+\options handout,aspectratio=169
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "eulervm" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\reals}{\mathbf{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\integers}{\mathbf{Z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\naturals}{\mathbf{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rationals}{\mathbf{Q}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ca}{\mathcal{A}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cb}{\mathcal{B}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cc}{\mathcal{C}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cd}{\mathcal{D}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ce}{\mathcal{E}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cf}{\mathcal{F}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cg}{\mathcal{G}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ch}{\mathcal{H}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ci}{\mathcal{I}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cj}{\mathcal{J}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ck}{\mathcal{K}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cl}{\mathcal{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cm}{\mathcal{M}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cn}{\mathcal{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\co}{\mathcal{O}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cp}{\mathcal{P}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cq}{\mathcal{Q}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\calr}{\mathcal{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cs}{\mathcal{S}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ct}{\mathcal{T}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cu}{\mathcal{U}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cv}{\mathcal{V}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cw}{\mathcal{W}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cx}{\mathcal{X}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cy}{\mathcal{Y}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cz}{\mathcal{Z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ind}[1]{1(#1)}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand{
+\backslash
+pr}{P}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\pr}{\mathbb{P}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\predsp}{\cy}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%{
+\backslash
+hat{
+\backslash
+cy}}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\outsp}{\cy}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\prxy}{P_{\cx\times\cy}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\prx}{P_{\cx}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\prygivenx}{P_{\cy\mid\cx}}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand{
+\backslash
+ex}{E}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ex}{\mathbb{E}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\var}{\textrm{Var}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cov}{\textrm{Cov}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\sgn}{\textrm{sgn}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\sign}{\textrm{sign}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\kl}{\textrm{KL}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\law}{\mathcal{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\eps}{\varepsilon}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\as}{\textrm{ a.s.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\io}{\textrm{ i.o.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ev}{\textrm{ ev.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\convd}{\stackrel{d}{\to}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\eqd}{\stackrel{d}{=}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\del}{\nabla}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\loss}{\ell}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\risk}{R}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\emprisk}{\hat{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\lossfnl}{L}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\emplossfnl}{\hat{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\empminimizer}[1]{\hat{#1}^{*}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\minimizer}[1]{#1^{*}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\optimizer}[1]{#1^{*}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\etal}{\textrm{et. al.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\tr}{\operatorname{tr}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\trace}{\operatorname{trace}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\diag}{\text{diag}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rank}{\text{rank}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\linspan}{\text{span}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\spn}{\text{span}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\proj}{\text{Proj}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\argmax}{\operatornamewithlimits{arg\, max}}
+{\text{argmax}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\argmin}{\operatornamewithlimits{arg\, min}}
+{\text{argmin}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\bfx}{\mathbf{x}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfy}{\mathbf{y}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfl}{\mathbf{\lambda}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfm}{\mathbf{\mu}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\calL}{\mathcal{L}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\vw}{\boldsymbol{w}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vx}{\boldsymbol{x}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vxi}{\boldsymbol{\xi}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\valpha}{\boldsymbol{\alpha}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vbeta}{\boldsymbol{\beta}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vsigma}{\boldsymbol{\sigma}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vtheta}{\boldsymbol{\theta}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vd}{\boldsymbol{d}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vs}{\boldsymbol{s}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vt}{\boldsymbol{t}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vh}{\boldsymbol{h}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ve}{\boldsymbol{e}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vf}{\boldsymbol{f}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vg}{\boldsymbol{g}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vz}{\boldsymbol{z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vk}{\boldsymbol{k}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\va}{\boldsymbol{a}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vb}{\boldsymbol{b}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vv}{\boldsymbol{v}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vy}{\boldsymbol{y}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\dom}{\textrm{\textbf{dom} }}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\renewcommand{\rank}{\text{\textbf{rank }}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\conv}{\textrm{\textbf{conv} }}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\relint}{\text{\textbf{relint }}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\aff}{\text{\textbf{aff }}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\hil}{\ch}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rkhs}{\hil}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ber}{\text{Ber}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+Lagrangian Duality and Convex Optimization
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+DS-GA 1003 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+optional, use only with long paper titles
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+David Rosenberg 
+\end_layout
+
+\begin_layout Institute
+New York University
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Plots courtesy of Ningshan Zhang.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Why Convex Optimization?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Historically:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Linear programs
+\series default
+ (linear objectives & constraints) were the focus
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Nonlinear programs
+\series default
+: some easy, some hard
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+By early 2000s:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Main distinction is between 
+\series bold
+convex
+\series default
+ and 
+\series bold
+non-convex
+\series default
+ problems
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Convex problems are the ones we know how to solve efficiently
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Mostly batch methods until...
+ around 2010? (earlier if you were into neural nets)
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+By 2010 +- few years, most people understood the 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+optimization / estimation / approximation error tradeoffs
+\end_layout
+
+\begin_layout Itemize
+accepted that 
+\series bold
+stochatic methods
+\series default
+ were often faster to get good results
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+(especially on big data sets)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+now nobody's scared to try convex optimization machinery on non-convex problems
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Your Reference for Convex Optimization
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Boyd and Vandenberghe (2004)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Very clearly written, but has a ton of detail for a first pass.
+\end_layout
+
+\begin_layout Itemize
+See the 
+\begin_inset CommandInset href
+LatexCommand href
+name "Extreme Abridgement of Boyd and Vandenberghe"
+target "https://davidrosenberg.github.io/mlcourse/Notes/convex-optimization.pdf"
+
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/convex-optimization/bv_cvxbook_cover.jpg
+	lyxscale 40
+	height 60theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Notation from Boyd and Vandenberghe
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $f:\reals^{p}\to\reals^{q}$
+\end_inset
+
+ to mean that 
+\begin_inset Formula $f$
+\end_inset
+
+ maps from some 
+\emph on
+subset
+\emph default
+ of 
+\begin_inset Formula $\reals^{p}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+namely 
+\begin_inset Formula $\dom f\subset\reals^{p}$
+\end_inset
+
+, where 
+\begin_inset Formula $\dom f$
+\end_inset
+
+ is the domain of 
+\begin_inset Formula $f$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Convex Sets and Functions
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex ArticleMode
+status open
+
+\begin_layout Plain Layout
+What is the set 
+\begin_inset Formula $\left\{ \theta x_{1}+(1-\theta)x_{2}\mid\theta\in\reals\right\} $
+\end_inset
+
+? A line through 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+.
+ What is 
+\begin_inset Formula $\left\{ \theta x_{1}+(1-\theta)x_{2}\mid\theta\in[0,1]\right\} $
+\end_inset
+
+? The line segment conneting 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Convex Sets
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+A set 
+\begin_inset Formula $C$
+\end_inset
+
+ is 
+\series bold
+convex
+\series default
+ if for any 
+\begin_inset Formula $x_{1},x_{2}\in C$
+\end_inset
+
+ and any 
+\begin_inset Formula $\theta$
+\end_inset
+
+ with 
+\begin_inset Formula $0\le\theta\le1$
+\end_inset
+
+ we have
+\begin_inset Formula 
+\[
+\theta x_{1}+(1-\theta)x_{2}\in C.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/convex-optimization/fig7.4a.pdf
+	lyxscale 30
+	height 45theight%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../Figures/convex-optimization/fig7.4b.pdf
+	lyxscale 30
+	height 45theight%
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{KPM Fig.
+ 7.4}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Convex and Concave Functions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+A function 
+\begin_inset Formula $f:\reals^{n}\to\reals$
+\end_inset
+
+ is 
+\series bold
+convex
+\series default
+ if 
+\begin_inset Formula $\dom f$
+\end_inset
+
+ is a convex set and if for all 
+\begin_inset Formula $x,y\in\dom f$
+\end_inset
+
+, and 
+\begin_inset Formula $0\le\theta\le1$
+\end_inset
+
+, we have
+\begin_inset Formula 
+\[
+f(\theta x+(1-\theta)y)\le\theta f(x)+(1-\theta)f(y).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/convex-optimization/fig7.5a.pdf
+	lyxscale 50
+	height 45theight%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../Figures/convex-optimization/fig7.5b.pdf
+	lyxscale 50
+	height 45theight%
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{KPM Fig.
+ 7.5}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Extended Value Functions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Sometimes convenient to allow 
+\begin_inset Formula $f:\reals^{n}\to\reals\cup\left\{ \infty\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+If 
+\begin_inset Formula $f$
+\end_inset
+
+ is convex, define it's 
+\series bold
+extended-value extension
+\series default
+ 
+\begin_inset Formula $\tilde{f}:\reals^{n}\to\reals\cup\left\{ \infty\right\} $
+\end_inset
+
+ by
+\begin_inset Formula 
+\[
+\tilde{f}(x)=\begin{cases}
+f(x) & x\in\dom f\\
+\infty & x\not\in\dom f
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+This will lead to [extended-value] convex functions that are not continuous.
+\end_layout
+
+\begin_layout Itemize
+If 
+\begin_inset Formula $f$
+\end_inset
+
+ is concave, define it's 
+\series bold
+extended-value extension
+\series default
+ 
+\begin_inset Formula $\tilde{f}:\reals^{n}\to\reals\cup\left\{ \infty\right\} $
+\end_inset
+
+ by
+\begin_inset Formula 
+\[
+\tilde{f}(x)=\begin{cases}
+f(x) & x\in\dom f\\
+-\infty & x\not\in\dom f
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Plain Layout
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Examples of Convex Functions on 
+\begin_inset Formula $\reals$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Examples
+
+\end_layout
+
+\begin_layout Examples
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $x\mapsto ax+b$
+\end_inset
+
+ is both convex and concave on 
+\begin_inset Formula $\reals$
+\end_inset
+
+ for all 
+\begin_inset Formula $a,b\in\reals$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $x\mapsto\left|x\right|^{p}$
+\end_inset
+
+ for 
+\begin_inset Formula $p\ge1$
+\end_inset
+
+ is convex on 
+\begin_inset Formula $\reals$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $x\mapsto e^{ax}$
+\end_inset
+
+ is convex on 
+\begin_inset Formula $\reals$
+\end_inset
+
+ for all 
+\begin_inset Formula $a\in\reals$
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Every norm on 
+\begin_inset Formula $\reals^{n}$
+\end_inset
+
+ is convex (e.g.
+ 
+\begin_inset Formula $\|x\|_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\|x\|_{2}$
+\end_inset
+
+)
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Max: 
+\begin_inset Formula $\left(x_{1},\ldots,x_{n}\right)\mapsto\max\left\{ x_{1}\ldots,x_{n}\right\} $
+\end_inset
+
+ is convex on 
+\begin_inset Formula $\reals^{n}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Examples of Convex Functions on 
+\begin_inset Formula $\reals^{n}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Examples
+
+\end_layout
+
+\begin_layout Examples
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Every norm on 
+\begin_inset Formula $\reals^{n}$
+\end_inset
+
+ is convex (e.g.
+ 
+\begin_inset Formula $\|x\|$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+Max: 
+\begin_inset Formula $\left(x_{1},\ldots,x_{n}\right)\mapsto\max\left\{ x_{1}\ldots,x_{n}\right\} $
+\end_inset
+
+ is convex on 
+\begin_inset Formula $\reals^{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Log-Sum-Exp: 
+\begin_inset Formula $\left(x_{1},\ldots,x_{n}\right)\mapsto\log\left(e^{x_{1}}+\cdots+e^{x_{n}}\right)$
+\end_inset
+
+ is convex on 
+\begin_inset Formula $\reals^{n}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Plain Layout
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Maximum of Convex Functions is Convex
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Theorem
+If 
+\begin_inset Formula $f_{1},\ldots,f_{m}:\reals^{n}\to\reals$
+\end_inset
+
+ are convex, then their pointwise maximum
+\begin_inset Formula 
+\[
+f(x)=\max\left\{ f_{1}(x),\ldots,f_{m}(x)\right\} 
+\]
+
+\end_inset
+
+ is also convex with domain 
+\begin_inset Formula $\dom f=\dom f_{1}\cap\cdots\cap\dom f_{m}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+This result extends to sup over arbitrary [infinite] sets of functions
+\series default
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Proof
+(For 
+\begin_inset Formula $m=2$
+\end_inset
+
+.) Fix an 
+\begin_inset Formula $0\le\theta\le1$
+\end_inset
+
+ and 
+\begin_inset Formula $x,y\in\dom f$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula 
+\begin{eqnarray*}
+f(\theta x+\left(1-\theta\right)y) & = & \max\left\{ f_{1}(\theta x+\left(1-\theta\right)y),f_{2}(\theta x+\left(1-\theta\right)y)\right\} \\
+\pause & \le & \max\left\{ \theta f_{1}(x)+\left(1-\theta\right)f_{1}(y),\theta f_{2}(x)+\left(1-\theta\right)f_{2}(y)\right\} \\
+\pause & \le & \max\left\{ \theta f_{1}(x),\theta f_{2}(x)\right\} +\max\left\{ \left(1-\theta\right)f_{1}(y),\left(1-\theta\right)f_{2}(y)\right\} \\
+\pause & = & \theta f(x)+(1-\theta)f(y)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Plain Layout
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Simple Composition Rules 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Examples
+
+\end_layout
+
+\begin_layout Examples
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If 
+\begin_inset Formula $g$
+\end_inset
+
+ is convex, and 
+\begin_inset Formula $Ax+b$
+\end_inset
+
+ is an affine mapping, then 
+\begin_inset Formula $g(Ax+b)$
+\end_inset
+
+ is convex.
+\end_layout
+
+\begin_layout Itemize
+If 
+\begin_inset Formula $g$
+\end_inset
+
+ is convex then 
+\begin_inset Formula $\exp g(x)$
+\end_inset
+
+ is convex.
+\end_layout
+
+\begin_layout Itemize
+If 
+\begin_inset Formula $g$
+\end_inset
+
+ is convex and nonnegative and 
+\begin_inset Formula $p\ge1$
+\end_inset
+
+ then 
+\begin_inset Formula $g(x)^{p}$
+\end_inset
+
+ is convex.
+ 
+\end_layout
+
+\begin_layout Itemize
+If 
+\begin_inset Formula $g$
+\end_inset
+
+ is concave and positive then 
+\begin_inset Formula $\log g(x)$
+\end_inset
+
+ is concave
+\end_layout
+
+\begin_layout Itemize
+If 
+\begin_inset Formula $g$
+\end_inset
+
+ is concave and positive then 
+\begin_inset Formula $1/g(x)$
+\end_inset
+
+ is convex.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Plain Layout
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Convex Functions and Optimization
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+A function 
+\begin_inset Formula $f$
+\end_inset
+
+ is 
+\series bold
+strictly convex
+\series default
+ if the line segment connecting any two points on the graph of 
+\begin_inset Formula $f$
+\end_inset
+
+ lies 
+\series bold
+strictly 
+\series default
+above the graph (excluding the endpoints).
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Consequences for optimization:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+convex:
+\series default
+ if there is a local minimum, then it is a 
+\series bold
+global
+\series default
+ minimum
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+strictly convex:
+\series default
+ if there is a local minimum, then it is the 
+\series bold
+unique global
+\series default
+ minumum
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+The General Optimization Problem
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+General Optimization Problem: Standard Form
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+General Optimization Problem: Standard Form
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{eqnarray*}
+\textrm{minimize} &  & f_{0}(x)\\
+\textrm{subject to} &  & f_{i}(x)\le0,\;\;i=1,\ldots,m\\
+ &  & h_{i}(x)=0,\;\;i=1,\ldots p,
+\end{eqnarray*}
+
+\end_inset
+
+where 
+\begin_inset Formula $x\in\reals^{n}$
+\end_inset
+
+ are the 
+\series bold
+optimization variables 
+\series default
+and
+\series bold
+ 
+\series default
+
+\begin_inset Formula $f_{0}$
+\end_inset
+
+ is the 
+\series bold
+objective function.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Assume
+\series bold
+ domain
+\series default
+ 
+\begin_inset Formula $\cd=\bigcap_{i=0}^{m}\dom f_{i}\cap\bigcap_{i=1}^{p}\dom h_{i}$
+\end_inset
+
+ is nonempty.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+General Optimization Problem: More Terminology
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The set of points satisfying the constraints is called the 
+\series bold
+feasible set
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+A point 
+\begin_inset Formula $x$
+\end_inset
+
+ in the feasible set is called a 
+\series bold
+feasible point.
+\end_layout
+
+\begin_layout Itemize
+If 
+\begin_inset Formula $x$
+\end_inset
+
+ is feasible and 
+\begin_inset Formula $f_{i}(x)=0$
+\end_inset
+
+, 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+then we say the inequality constraint 
+\begin_inset Formula $f_{i}(x)\le0$
+\end_inset
+
+ is 
+\series bold
+active
+\series default
+ at 
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+The 
+\series bold
+optimal value
+\series default
+ 
+\begin_inset Formula $p^{*}$
+\end_inset
+
+ of the problem is defined as
+\begin_inset Formula 
+\[
+p^{*}=\inf\left\{ f_{0}(x)\mid x\mbox{ satisfies all constraints}\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $x^{*}$
+\end_inset
+
+ is an 
+\series bold
+optimal point
+\series default
+ (or a solution to the problem) if 
+\begin_inset Formula $x^{*}$
+\end_inset
+
+ is feasible and 
+\begin_inset Formula $f(x^{*})=p^{*}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Do We Need Equality Constraints?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Note that
+\begin_inset Formula 
+\[
+h(x)=0\;\iff\;\left(h(x)\ge0\mbox{ AND}\;h(x)\le0\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Consider an equality-constrained problem: 
+\begin_inset Formula 
+\begin{eqnarray*}
+\textrm{minimize} &  & f_{0}(x)\\
+\textrm{subject to} &  & h(x)=0
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Can be rewritten as
+\begin_inset Formula 
+\begin{eqnarray*}
+\pause\textrm{minimize} &  & f_{0}(x)\\
+\textrm{subject to} &  & h(x)\le0\\
+ &  & -h(x)\le0.
+\end{eqnarray*}
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+For simplicity, we'll drop equality contraints from this presentation.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Lagrangian Duality: Convexity not required
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Lagrangian
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+The general [inequality-constrained] optimization problem is:
+\begin_inset Formula 
+\begin{eqnarray*}
+\textrm{minimize} &  & f_{0}(x)\\
+\textrm{subject to} &  & f_{i}(x)\le0,\;\;i=1,\ldots,m
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+
+\end_layout
+
+\begin_layout Definition
+The 
+\series bold
+Lagrangian
+\series default
+ for this optimization problem is
+\begin_inset Formula 
+\[
+L(x,\lambda)=f_{0}(x)+\sum_{i=1}^{m}\lambda_{i}f_{i}(x).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\lambda_{i}$
+\end_inset
+
+'s are called 
+\series bold
+Lagrange multipliers
+\series default
+ (also called the 
+\series bold
+dual variables
+\series default
+).
+ 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Lagrangian Encodes the Objective and Constraints
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Supremum over Lagrangian gives back encoding of objective and constraints:
+\begin_inset Formula 
+\begin{eqnarray*}
+\sup_{\lambda\succeq0}L(x,\lambda) & = & \sup_{\lambda\succeq0}\left(f_{0}(x)+\sum_{i=1}^{m}\lambda_{i}f_{i}(x)\right)\\
+\pause & = & \begin{cases}
+f_{0}(x) & \mbox{when }f_{i}(x)\le0\;\mbox{all }i\\
+\infty & \mbox{otherwise.}
+\end{cases}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Equivalent 
+\series bold
+primal form
+\series default
+ of optimization problem:
+\begin_inset Formula 
+\[
+p^{*}=\inf_{x}\sup_{\lambda\succeq0}L(x,\lambda)
+\]
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Now let's consider the infimum over 
+\begin_inset Formula $x$
+\end_inset
+
+ of this expression:
+\begin_inset Formula 
+\[
+\inf_{x}\sup_{\lambda\succeq0}L(x,\lambda)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+If 
+\begin_inset Formula $x$
+\end_inset
+
+ is not feasible, then 
+\begin_inset Formula $\sup_{\lambda\succeq0}L(x,\lambda)=\infty$
+\end_inset
+
+.
+ So infimum not at 
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Therefore, equivalent expression is
+\begin_inset Formula 
+\begin{eqnarray*}
+ &  & \inf_{\left\{ x|x\mbox{ is feasible}\right\} }\sup_{\lambda\succeq0}L(x,\lambda)\\
+\pause & = & \inf_{\left\{ x|x\mbox{ is feasible}\right\} }f_{0}(x)\\
+\pause & = & p^{*}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Primal and the Dual
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Original optimization problem in  
+\series bold
+primal form:
+\series default
+
+\begin_inset Formula 
+\[
+p^{*}=\inf_{x}\sup_{\lambda\succeq0}L(x,\lambda)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Get the 
+\series bold
+Lagrangian dual problem
+\series default
+ by 
+\begin_inset Quotes eld
+\end_inset
+
+swapping the inf and the sup
+\begin_inset Quotes erd
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+d^{*}=\sup_{\lambda\succeq0}\inf_{x}L(x,\lambda)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We will show 
+\series bold
+weak duality
+\series default
+: 
+\begin_inset Formula $p^{*}\ge d^{*}$
+\end_inset
+
+ for any optimization problem
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Weak Max-Min Inequality
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Theorem
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+For 
+\series bold
+any
+\series default
+ 
+\begin_inset Formula $f:\reals^{n}\times\reals^{m}\to\reals,\,W\subseteq\reals^{n}$
+\end_inset
+
+, or 
+\begin_inset Formula $Z\subseteq\reals^{m}$
+\end_inset
+
+, we have
+\end_layout
+
+\end_inset
+
+For 
+\series bold
+any
+\series default
+ 
+\begin_inset Formula $f:W\times Z\to\reals$
+\end_inset
+
+, we have
+\begin_inset Formula 
+\[
+\sup_{z\in Z}\inf_{w\in W}f(w,z)\le\inf_{w\in W}\sup_{z\in Z}f(w,z).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Proof
+For any 
+\begin_inset Formula $w_{0}\in W$
+\end_inset
+
+ and 
+\begin_inset Formula $z_{0}\in Z$
+\end_inset
+
+, we clearly have
+\begin_inset Formula 
+\[
+\inf_{w\in W}f(w,z_{0})\le f(w_{0},z_{0})\le\sup_{z\in Z}f(w_{0},z).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Proof
+Since 
+\begin_inset Formula $\inf_{w\in W}f(w,z_{0})\le\sup_{z\in Z}f(w_{0},z)$
+\end_inset
+
+ for all 
+\begin_inset Formula $w_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $z_{0}$
+\end_inset
+
+, we must also have
+\begin_inset Formula 
+\[
+\sup_{z_{0}\in Z}\inf_{w\in W}f(w,z_{0})\le\inf_{w_{0}\in W}\sup_{z\in Z}f(w_{0},z).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Weak Duality
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For any optimization problem (
+\series bold
+not just convex
+\series default
+), weak max-min inequality implies 
+\series bold
+weak duality
+\series default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+p^{*}= & \inf_{x}\sup_{\lambda\succeq0}\left[f_{0}(x)+\sum_{i=1}^{m}\lambda_{i}f_{i}(x)\right]\\
+\ge & \sup_{\lambda\succeq0,\nu}\inf_{x}\left[f_{0}(x)+\sum_{i=1}^{m}\lambda_{i}f_{i}(x)\right]=d^{*}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+The difference 
+\begin_inset Formula $p^{*}-d^{*}$
+\end_inset
+
+ is called the 
+\series bold
+duality gap
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+For 
+\emph on
+convex
+\emph default
+ problems, we often have 
+\series bold
+strong duality
+\series default
+: 
+\begin_inset Formula $p^{*}=d^{*}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Lagrange Dual Function
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The 
+\series bold
+Lagrangian dual problem
+\series default
+:
+\begin_inset Formula 
+\[
+d^{*}=\sup_{\lambda\succeq0}\inf_{x}L(x,\lambda)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Definition
+The 
+\series bold
+Lagrange dual function
+\series default
+ (or just 
+\series bold
+dual function
+\series default
+) is 
+\begin_inset Formula 
+\[
+g(\lambda)=\inf_{x}L(x,\lambda)=\inf_{x}\left(f_{0}(x)+\sum_{i=1}^{m}\lambda_{i}f_{i}(x)\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The dual function may take on the value 
+\begin_inset Formula $-\infty$
+\end_inset
+
+ (e.g.
+ 
+\begin_inset Formula $f_{0}(x)=x$
+\end_inset
+
+).
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The dual function is always 
+\series bold
+concave
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+since pointwise min of affine functions
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Itemize
+The dual function is concave since pointwise inf of affine functions.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Even when primal problem is not convex!
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Lagrange Dual Problem: Search for Best Lower Bound
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+In terms of Lagrange dual function, we can write weak duality as
+\begin_inset Formula 
+\begin{align*}
+p^{*} & \ge\sup_{\lambda\ge0}g(\lambda)=d^{*}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+So for any 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ with 
+\begin_inset Formula $\lambda\ge0$
+\end_inset
+
+, 
+\series bold
+Lagrange dual function gives a lower bound on optimal solution
+\series default
+:
+\begin_inset Formula 
+\[
+p^{*}\ge g(\lambda)\text{ for all }\lambda\ge0
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Lagrange Dual Problem: Search for Best Lower Bound
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The 
+\series bold
+Lagrange dual problem
+\series default
+ is a search for best lower bound on 
+\begin_inset Formula $p^{*}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{eqnarray*}
+\textrm{maximize} &  & g(\lambda)\\
+\textrm{subject to} &  & \lambda\succeq0.
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\lambda$
+\end_inset
+
+ 
+\series bold
+dual feasible
+\series default
+ if 
+\begin_inset Formula $\lambda\succeq0$
+\end_inset
+
+ and 
+\begin_inset Formula $g(\lambda)>-\infty$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\lambda^{*}$
+\end_inset
+
+ 
+\series bold
+dual optimal
+\series default
+ or 
+\series bold
+optimal Lagrange multipliers
+\series default
+ if they are optimal for the Lagrange dual problem.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Lagrange dual problem often easier to solve (simpler constraints).
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $d^{*}$
+\end_inset
+
+ can be used as stopping criterion for primal optimization.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Dual can reveal hidden structure in the solution.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Convex Optimization
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Local Optimality
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We say that a feasible point 
+\begin_inset Formula $x$
+\end_inset
+
+ is 
+\series bold
+locally optimal 
+\series default
+if there is an 
+\begin_inset Formula $R>0$
+\end_inset
+
+ such that 
+\begin_inset Formula $x$
+\end_inset
+
+ solves the following optimization problem:
+\begin_inset Formula 
+\begin{eqnarray*}
+\textrm{minimize} &  & f_{0}(z)\\
+\textrm{subject to} &  & f_{i}(z)\le0,\;\;i=1,\ldots,m\\
+ &  & h_{i}(z)=0,\;\;i=1,\ldots p\\
+ &  & \|z-x\|_{2}\le R
+\end{eqnarray*}
+
+\end_inset
+
+with optimization variable 
+\begin_inset Formula $z$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Roughly speaking, this means 
+\begin_inset Formula $x$
+\end_inset
+
+ minimizes 
+\begin_inset Formula $f_{0}$
+\end_inset
+
+ over nearby points in the feasible set.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Fact
+A fundamental property of convex optimization problems is that any locally
+ optimal point is also globally optimal.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Plain Layout
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Convex Optimization Problem: Standard Form
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Convex Optimization Problem: Standard Form
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{eqnarray*}
+\textrm{minimize} &  & f_{0}(x)\\
+\textrm{subject to} &  & f_{i}(x)\le0,\;\;i=1,\ldots,m
+\end{eqnarray*}
+
+\end_inset
+
+where 
+\begin_inset Formula $f_{0},\ldots,f_{m}$
+\end_inset
+
+ are convex functions.
+ 
+\end_layout
+
+\begin_layout Block
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+If we had equality constraints here, they would affine constraints, because
+ we should actually be able to replace the equality constraint with two
+ inequality constraints, one in each direction, but unless we have an affine
+ function, we can't have the function and its negative both be convex.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Strong Duality for Convex Problems
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For a convex optimization problems, we 
+\series bold
+usually
+\series default
+ have strong duality, but not always.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Example from Laurent El Ghaoui's EE 227A: Lecture 8 Notes, Feb 9, 2012}}
+\end_layout
+
+\end_inset
+
+For example:
+\begin_inset Formula 
+\begin{eqnarray*}
+\textrm{minimize} &  & e^{-x}\\
+\textrm{subject to} &  & x^{2}/y\le0\\
+ &  & y>0
+\end{eqnarray*}
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The additional conditions needed are called 
+\series bold
+constraint qualifications
+\series default
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Slater's Constraint Qualifications for Strong Duality
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Sufficient conditions for strong duality in a 
+\series bold
+convex
+\series default
+ problem.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Roughly: the problem must be 
+\series bold
+strictly 
+\series default
+feasible.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Qualifications when problem domain
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\cd$
+\end_inset
+
+ is the set where all functions are defined, NOT the feasible set.
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\cd\subset\reals^{n}$
+\end_inset
+
+ is an open set:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+The domain 
+\begin_inset Formula $\cd\subset\reals^{n}$
+\end_inset
+
+ of an optimization problem is the set on which all the functions are defined.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+i.e.
+ 
+\begin_inset Formula $f_{0},f_{1},\ldots,f_{m}$
+\end_inset
+
+ are all defined.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+the domain 
+\begin_inset Formula $\cd$
+\end_inset
+
+ is NOT the feasible set.
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Strict feasibility is sufficient
+\series default
+.
+ (
+\begin_inset Formula $\exists x$
+\end_inset
+
+ 
+\begin_inset Formula $f_{i}(x)<0$
+\end_inset
+
+ for 
+\begin_inset Formula $i=1,\ldots,m$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+For any affine inequality constraints, 
+\begin_inset Formula $f_{i}(x)\le0$
+\end_inset
+
+ is sufficient.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Otherwise, see notes or BV Section 5.2.3, p.
+ 226.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Complementary Slackness
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Complementary Slackness
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Consider a general optimization problem (i.e.
+ not necessarily convex).
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+If we have 
+\series bold
+strong duality
+\series default
+, we get an interesting relationship between
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+the optimal Lagrange multiplier 
+\begin_inset Formula $\lambda_{i}$
+\end_inset
+
+ and
+\end_layout
+
+\begin_layout Itemize
+the 
+\begin_inset Formula $i$
+\end_inset
+
+th constraint at the optimum: 
+\begin_inset Formula $f_{i}(x^{*})$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Relationship is called 
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+complementary slackness
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\lambda_{i}^{*}f_{i}(x^{*})=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Always have Lagrange multiplier is zero 
+\series bold
+or
+\series default
+ constraint is active at optimum 
+\series bold
+or
+\series default
+ both.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Complementary Slackness 
+\begin_inset Quotes eld
+\end_inset
+
+Sandwich Proof
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Assume strong duality: 
+\begin_inset Formula $p^{*}=d^{*}$
+\end_inset
+
+ in a general optimization problem
+\end_layout
+
+\begin_layout Itemize
+Let 
+\begin_inset Formula $x^{*}$
+\end_inset
+
+ be primal optimal and 
+\begin_inset Formula $\lambda^{*}$
+\end_inset
+
+ be dual optimal.
+ Then:
+\begin_inset Formula 
+\begin{eqnarray*}
+f_{0}(x^{*}) & = & g(\lambda^{*})=\inf_{x}\,L(x,\lambda^{*})\pause\text{\quad(strong duality and definition)}\\
+\pause & \le & L(x^{*},\lambda^{*})\\
+\pause & = & f_{0}(x^{*})+\sum_{i=1}^{m}\underbrace{\lambda_{i}^{*}f_{i}(x^{*})}_{\le0}\\
+\pause & \le & f_{0}(x^{*}).
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Each term in sum 
+\begin_inset Formula $\sum_{i=1}\lambda_{i}^{*}f_{i}(x^{*})$
+\end_inset
+
+ must actually be 
+\begin_inset Formula $0$
+\end_inset
+
+.
+ That is
+\begin_inset Formula 
+\[
+\boxed{\lambda_{i}^{*}f_{i}(x^{*})=0,\quad i=1,\ldots,m}.
+\]
+
+\end_inset
+
+This condition is known as 
+\series bold
+complementary slackness
+\series default
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Consequences of our 
+\begin_inset Quotes eld
+\end_inset
+
+Sandwich Proof
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $x^{*}$
+\end_inset
+
+ be primal optimal and 
+\begin_inset Formula $\lambda^{*}$
+\end_inset
+
+ be dual optimal.
+ 
+\end_layout
+
+\begin_layout Itemize
+If we have strong duality, then 
+\begin_inset Formula 
+\[
+p^{*}=d^{*}=f_{0}(x^{*})=g(\lambda^{*})=L(x^{*},\lambda^{*})
+\]
+
+\end_inset
+
+and we have complementary slackness
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lambda_{i}^{*}f_{i}(x^{*})=0,\quad i=1,\ldots,m.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+From the proof, we can also conclude that
+\begin_inset Formula 
+\[
+L(x^{*},\lambda^{*})=\inf_{x}L(x,\lambda^{*}).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+If 
+\begin_inset Formula $x\mapsto L(x,\lambda^{*})$
+\end_inset
+
+ is differentiable, then we must have 
+\begin_inset Formula $\del L(x^{*},\lambda^{*})=0$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Karush-Kuhn-Tucker (KKT) Necessary Conditions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose we have strong duality: 
+\begin_inset Formula $p^{*}=d^{*}=f_{0}(x^{*})=g(\lambda^{*})=L(x^{*},\lambda^{*})$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Itemize
+and 
+\begin_inset Formula $f_{0},\ldots,f_{m}$
+\end_inset
+
+ are differentiable, but 
+\series bold
+\emph on
+not necessarily convex
+\series default
+\emph default
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Then 
+\begin_inset Formula $x^{*},\lambda^{*}$
+\end_inset
+
+ satisfy the following
+\series bold
+ Karush-Kuhn-Tucker
+\series default
+ (KKT) conditions:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Primal and dual feasibility: 
+\begin_inset Formula $f_{i}(x^{*})\le0$
+\end_inset
+
+, 
+\begin_inset Formula $\lambda_{i}^{*}\ge0$
+\end_inset
+
+ for all 
+\begin_inset Formula $i$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Complementary slackness: 
+\begin_inset Formula $\lambda_{i}^{*}f_{i}(x^{*})=0$
+\end_inset
+
+ for all 
+\begin_inset Formula $i$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+First order conditions: 
+\begin_inset Formula $\del_{x}L(x^{*},\lambda^{*})=\del f_{0}(x^{*})+\sum_{i=1}^{m}\lambda_{i}^{*}\del f_{i}(x^{*})=0$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Only complementary slackness is not obvious.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+KKT Sufficient Conditions for Convex, Differentiable Problems
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Suppose
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $f_{0},\ldots,f_{m}$
+\end_inset
+
+ are differentiable and convex
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\tilde{x}$
+\end_inset
+
+ and 
+\begin_inset Formula $\tilde{\lambda}$
+\end_inset
+
+ satisfy the KKT conditions
+\end_layout
+
+\begin_layout Standard
+Then we have strong duality and 
+\begin_inset Formula $(\tilde{x},\tilde{\lambda})$
+\end_inset
+
+ are primal and dual optimal, respectively.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Proof
+Convexity and first order conditions implies 
+\begin_inset Formula $\tilde{x}\in\argmin_{x}L(x,\tilde{\lambda})$
+\end_inset
+
+.
+ So
+\begin_inset Formula 
+\[
+g(\tilde{\lambda})=\inf_{x}L(x,\tilde{\lambda})=L(\tilde{x},\tilde{\lambda})=f_{0}(\tilde{x})+\sum_{i=1}^{m}\tilde{\lambda}_{i}f_{i}(\tilde{x})=f_{0}(\tilde{x})\quad\text{by complementary slackness.}
+\]
+
+\end_inset
+
+But 
+\begin_inset Formula $g(\tilde{\lambda})\le\sup_{\lambda\succeq0}g(\lambda)\le\inf_{x}f_{0}(x)\le f_{0}(\tilde{x})$
+\end_inset
+
+ (middle inequality by weak duality).
+\begin_inset Newline newline
+\end_inset
+
+So 
+\begin_inset Formula $g(\tilde{\lambda})=\sup_{\lambda\succeq0}g(\lambda)=\inf_{x}f_{0}(x)=f_{0}(\tilde{x})$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_body
+\end_document

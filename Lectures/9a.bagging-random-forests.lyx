@@ -1,0 +1,2773 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin /Users/drosen/Dropbox/repos/mlcourse/Lectures/
+\textclass beamer
+\begin_preamble
+\usetheme{CambridgeUS} 
+\beamertemplatenavigationsymbolsempty
+
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+\end_preamble
+\options handout,aspectratio=169
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "eulervm" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\reals}{\mathbf{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\integers}{\mathbf{Z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\naturals}{\mathbf{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rationals}{\mathbf{Q}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ca}{\mathcal{A}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cb}{\mathcal{B}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cc}{\mathcal{C}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cd}{\mathcal{D}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ce}{\mathcal{E}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cf}{\mathcal{F}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cg}{\mathcal{G}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ch}{\mathcal{H}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ci}{\mathcal{I}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cj}{\mathcal{J}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ck}{\mathcal{K}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cl}{\mathcal{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cm}{\mathcal{M}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cn}{\mathcal{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\co}{\mathcal{O}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cp}{\mathcal{P}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cq}{\mathcal{Q}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\calr}{\mathcal{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cs}{\mathcal{S}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ct}{\mathcal{T}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cu}{\mathcal{U}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cv}{\mathcal{V}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cw}{\mathcal{W}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cx}{\mathcal{X}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cy}{\mathcal{Y}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cz}{\mathcal{Z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ind}[1]{1(#1)}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand{
+\backslash
+pr}{P}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\pr}{\mathbb{P}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\predsp}{\cy}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%{
+\backslash
+hat{
+\backslash
+cy}}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\outsp}{\cy}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\prxy}{P_{\cx\times\cy}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\prx}{P_{\cx}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\prygivenx}{P_{\cy\mid\cx}}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand{
+\backslash
+ex}{E}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ex}{\mathbb{E}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\var}{\textrm{Var}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cov}{\textrm{Cov}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\sgn}{\textrm{sgn}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\sign}{\textrm{sign}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\kl}{\textrm{KL}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\law}{\mathcal{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\eps}{\varepsilon}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\as}{\textrm{ a.s.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\io}{\textrm{ i.o.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ev}{\textrm{ ev.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\convd}{\stackrel{d}{\to}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\eqd}{\stackrel{d}{=}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\del}{\nabla}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\loss}{\ell}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\risk}{R}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\emprisk}{\hat{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\lossfnl}{L}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\emplossfnl}{\hat{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\empminimizer}[1]{\hat{#1}^{*}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\minimizer}[1]{#1^{*}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\optimizer}[1]{#1^{*}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\etal}{\textrm{et. al.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\tr}{\operatorname{tr}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\trace}{\operatorname{trace}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\diag}{\text{diag}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rank}{\text{rank}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\linspan}{\text{span}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\spn}{\text{span}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\proj}{\text{Proj}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\argmax}{\operatornamewithlimits{arg\, max}}
+{\text{argmax}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\argmin}{\operatornamewithlimits{arg\, min}}
+{\text{argmin}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\bfx}{\mathbf{x}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfy}{\mathbf{y}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfl}{\mathbf{\lambda}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfm}{\mathbf{\mu}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\calL}{\mathcal{L}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\vw}{\boldsymbol{w}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vx}{\boldsymbol{x}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vxi}{\boldsymbol{\xi}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\valpha}{\boldsymbol{\alpha}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vbeta}{\boldsymbol{\beta}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vsigma}{\boldsymbol{\sigma}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vtheta}{\boldsymbol{\theta}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vd}{\boldsymbol{d}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vs}{\boldsymbol{s}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vt}{\boldsymbol{t}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vh}{\boldsymbol{h}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ve}{\boldsymbol{e}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vf}{\boldsymbol{f}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vg}{\boldsymbol{g}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vz}{\boldsymbol{z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vk}{\boldsymbol{k}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\va}{\boldsymbol{a}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vb}{\boldsymbol{b}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vv}{\boldsymbol{v}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vy}{\boldsymbol{y}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\hil}{\ch}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rkhs}{\hil}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ber}{\text{Ber}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+Bagging and Random Forests
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+DS-GA 1003 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+optional, use only with long paper titles
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+David Rosenberg 
+\end_layout
+
+\begin_layout Date
+March 28, 2017
+\end_layout
+
+\begin_layout Institute
+New York University
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex ArticleMode
+status open
+
+\begin_layout Plain Layout
+Just in article version
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Plots courtesy of Ningshan Zhang.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Notes from Zhi-Hua Zhou's book 
+\emph on
+Ensemble Methods: foundations and algorithms: 
+\emph default
+ensemble combines base
+\emph on
+ 
+\emph default
+learners; base learning algorithms generate these learners; when ensemble
+ method using a single base learning algorithm, we get a 
+\series bold
+homogeneous ensemble
+\series default
+ (e.g.
+ boosting, bagging, random forests), but there are also methods that use
+ ultiple laerning algorithms to produce 
+\series bold
+hetereogeneous ensembles
+\series default
+.
+ Learning algorithms maybe called 
+\series bold
+individual learners
+\series default
+ or 
+\series bold
+component learners
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+There are three threads of early contributions .
+ .
+ [to] ensemble methods; that is, combining classifiers, ensembles of weak
+ learners, and mixture of experts.
+\begin_inset Quotes erd
+\end_inset
+
+ (p 16)
+\end_layout
+
+\begin_layout Plain Layout
+For bagging
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Section
+The Benefits of Averaging
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+A Lousy Estimator
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $Z,Z_{1},\ldots,Z_{n}$
+\end_inset
+
+ i.i.d.
+ 
+\begin_inset Formula $\ex Z=\mu$
+\end_inset
+
+ and 
+\begin_inset Formula $\var Z=\sigma^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We could use any single 
+\begin_inset Formula $Z_{i}$
+\end_inset
+
+ to estimate 
+\begin_inset Formula $\mu$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Performance?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Unbiased: 
+\begin_inset Formula $\ex Z_{i}=\mu$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Standard error of estimator would be 
+\begin_inset Formula $\sigma$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+The
+\series bold
+ standard error
+\series default
+ is the standard deviation of the sampling distribution of a statistic.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\text{SD}(Z)=\sqrt{\var(Z)}=\sqrt{\sigma^{2}}=\sigma$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Variance of a Mean 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $Z,Z_{1},\ldots,Z_{n}$
+\end_inset
+
+ i.i.d.
+ 
+\begin_inset Formula $\ex Z=\mu$
+\end_inset
+
+ and 
+\begin_inset Formula $\var Z=\sigma^{2}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Let's consider the average of the 
+\begin_inset Formula $Z_{i}$
+\end_inset
+
+'s.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Average has the same expected value but smaller standard error:
+\begin_inset Formula 
+\[
+\ex\left[\frac{1}{n}\sum_{i=1}^{n}Z_{i}\right]=\mu\qquad\var\left[\frac{1}{n}\sum_{i=1}^{n}Z_{i}\right]=\frac{\sigma^{2}}{n}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Clearly the average is preferred to a single 
+\begin_inset Formula $Z_{i}$
+\end_inset
+
+ as estimator.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Can we apply this to reduce variance of general decision functions? 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Averaging Independent Prediction Functions 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose we have 
+\begin_inset Formula $B$
+\end_inset
+
+ independent training sets from the same distribution.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Learning algorithm gives 
+\begin_inset Formula $B$
+\end_inset
+
+ decision functions: 
+\begin_inset Formula $\hat{f}_{1}(x),\hat{f}_{2}(x),\ldots,\hat{f}_{B}(x)$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Define the average prediction function as:
+\begin_inset Formula 
+\[
+\hat{f}_{\text{avg}}=\frac{1}{B}\sum_{b=1}^{B}\hat{f}_{b}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+What's random here? 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Averaging Independent Prediction Functions 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Fix some 
+\begin_inset Formula $x\in\cx$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Then average prediction on 
+\begin_inset Formula $x$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+\hat{f}_{\text{avg}}(x)=\frac{1}{B}\sum_{b=1}^{B}\hat{f}_{b}(x).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Consider 
+\begin_inset Formula $\hat{f}_{\text{avg}}(x)$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{f}_{1}(x),\ldots,\hat{f}_{B}(x)$
+\end_inset
+
+ as random variables (since training data random).
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\hat{f}_{1}(x),\ldots,\hat{f}_{B}(x)$
+\end_inset
+
+ are i.i.d.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\hat{f}_{\text{avg}}(x)$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{f}_{b}(x)$
+\end_inset
+
+ have the same expected value, but
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\hat{f}_{\text{avg}}(x)$
+\end_inset
+
+ has smaller variance:
+\begin_inset Formula 
+\begin{eqnarray*}
+\mbox{\var}(\hat{f}_{\mbox{avg}}(x)) & = & \frac{1}{B^{2}}\var\left(\sum_{b=1}^{B}\hat{f}_{b}(x)\right)\\
+\pause & = & \frac{1}{B}\var\left(\hat{f}_{1}(x)\right)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Averaging Independent Prediction Functions 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Using
+\begin_inset Formula 
+\[
+\hat{f}_{\text{avg}}=\frac{1}{B}\sum_{b=1}^{B}\hat{f}_{b}
+\]
+
+\end_inset
+
+seems like a win.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+But in practice we don't have 
+\begin_inset Formula $B$
+\end_inset
+
+ independent training sets...
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Instead, we can use 
+\series bold
+the bootstrap
+\series default
+....
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Review: Bootstrap
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Bootstrap Sample
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+A 
+\series bold
+bootstrap sample
+\series default
+ from 
+\begin_inset Formula $\cd_{n}$
+\end_inset
+
+ is a sample of size 
+\begin_inset Formula $n$
+\end_inset
+
+ drawn 
+\emph on
+with replacement
+\emph default
+ from 
+\begin_inset Formula $\cd_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+In a bootstrap sample, some elements of 
+\begin_inset Formula $\cd_{n}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+will show up multiple times, 
+\end_layout
+
+\begin_layout Itemize
+some won't show up at all.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Each 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+ has a probability 
+\begin_inset Formula $(1-1/n)^{n}$
+\end_inset
+
+ of not being selected.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Recall from analysis that for large 
+\begin_inset Formula $n$
+\end_inset
+
+,
+\begin_inset Formula 
+\[
+\left(1-\frac{1}{n}\right)^{n}\approx\frac{1}{e}\approx.368.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+So we expect ~63.2% of elements of 
+\begin_inset Formula $\cd$
+\end_inset
+
+ will show up at least once.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Bootstrap Method
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+A 
+\series bold
+bootstrap method 
+\series default
+is when you 
+\emph on
+simulate 
+\emph default
+having 
+\begin_inset Formula $B$
+\end_inset
+
+ independent samples from 
+\begin_inset Formula $P$
+\end_inset
+
+ by taking 
+\begin_inset Formula $B$
+\end_inset
+
+ bootstrap samples from the sample 
+\begin_inset Formula $\cd_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Given original data 
+\begin_inset Formula $\cd_{n}$
+\end_inset
+
+, compute 
+\begin_inset Formula $B$
+\end_inset
+
+ bootstrap samples 
+\begin_inset Formula $D_{n}^{1},\ldots,D_{n}^{B}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+For each bootstrap sample, compute some function
+\begin_inset Formula 
+\[
+\phi(D_{n}^{1}),\ldots,\phi(D_{n}^{B})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Work with these values as though 
+\begin_inset Formula $D_{n}^{1},\ldots,D_{n}^{B}$
+\end_inset
+
+ were i.i.d.
+ 
+\begin_inset Formula $P$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Amazing fact:
+\series default
+ Things often come out very close to what we'd get with independent samples
+ from 
+\begin_inset Formula $P$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Bagging 
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Bagging
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Draw 
+\begin_inset Formula $B$
+\end_inset
+
+ bootstrap samples 
+\begin_inset Formula $D^{1},\ldots,D^{B}$
+\end_inset
+
+ from original data 
+\begin_inset Formula $\cd$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $\hat{f}_{1},\hat{f}_{2},\ldots,\hat{f}_{B}$
+\end_inset
+
+ be the decision functions for each set.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The 
+\series bold
+bagged decision function
+\series default
+ is a 
+\series bold
+combination 
+\series default
+of these:
+\begin_inset Formula 
+\[
+\hat{f}_{\text{avg}}(x)=\mbox{Combine}\left(\hat{f}_{1}(x),\hat{f}_{2}(x),\ldots,\hat{f}_{B}(x)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+How might we combine 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+decision functions for regression?
+\end_layout
+
+\begin_layout Itemize
+binary class predictions? 
+\end_layout
+
+\begin_layout Itemize
+binary probability predictions?
+\end_layout
+
+\begin_layout Itemize
+multiclass predictions? 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Bagging proposed by Leo Breiman (1996).
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Bagging for Regression
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Draw 
+\begin_inset Formula $B$
+\end_inset
+
+ bootstrap samples 
+\begin_inset Formula $D^{1},\ldots,D^{B}$
+\end_inset
+
+ from original data 
+\begin_inset Formula $\cd$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $\hat{f}_{1},\hat{f}_{2},\ldots,\hat{f}_{B}:\cx\to\reals$
+\end_inset
+
+ be the predictions functions for each set.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Bagged prediction function is given as
+\begin_inset Formula 
+\[
+\hat{f}_{\text{bag}}(x)=\frac{1}{B}\sum_{b=1}^{B}\hat{f}_{b}(x).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Empirically, 
+\begin_inset Formula $\hat{f}_{\text{bag}}$
+\end_inset
+
+ often performs similarly to what we'd get from training on 
+\begin_inset Formula $B$
+\end_inset
+
+ independent samples:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\hat{f}_{\mbox{bag}}(x)$
+\end_inset
+
+ has same expectation as 
+\begin_inset Formula $\hat{f}_{1}(x)$
+\end_inset
+
+, but
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\hat{f}_{\mbox{bag}}(x)$
+\end_inset
+
+ has smaller variance than 
+\begin_inset Formula $\hat{f}_{1}(x)$
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Bagging Bad Classifiers Can Make Things Worse
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose true model has 
+\begin_inset Formula $y=1$
+\end_inset
+
+ for all 
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Lousy learner randomly chooses from 2 decision functions, independent of
+ training data:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+With probability 0.4, chooses decision function 1: 
+\begin_inset Formula $x\mapsto0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+With probability 0.6, chooses decision function 2: 
+\begin_inset Formula $x\mapsto1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+(NOPE - this isn't the example.
+ Really needs a bunch of iid randomize decision functions.
+ Ugh.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Example from HTF 8.7}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Out-of-Bag Error Estimation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Each bagged predictor is trained on about 63% of the data.
+\end_layout
+
+\begin_layout Itemize
+Remaining 37% are called 
+\series bold
+out-of-bag (OOB)
+\series default
+ observations.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+For 
+\begin_inset Formula $i$
+\end_inset
+
+th training point, let 
+\begin_inset Formula 
+\[
+S_{i}=\left\{ b\mid D^{b}\text{ does not contain }i\text{th point}\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The 
+\series bold
+OOB prediction
+\series default
+ on 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+\hat{f}_{\text{OOB}}(x_{i})=\frac{1}{\left|S_{i}\right|}\sum_{b\in S_{i}}\hat{f}_{b}(x).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The OOB error is a good estimate of the test error.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+OOB error is similar to cross validation error – both are computed on training
+ set.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Bagging Classification Trees
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Input space 
+\begin_inset Formula $\cx=\reals^{5}$
+\end_inset
+
+ and output space 
+\begin_inset Formula $\cy=\left\{ -1,1\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Sample size 
+\begin_inset Formula $N=30$
+\end_inset
+
+ (simulated data)
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/bagging/baggedTrees.png
+	lyxscale 40
+	height 55theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From ESL Figure 8.9}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Comparing Classification Combination Methods
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Two ways to combine classifications: consensus class or average probabilities.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/bagging/baggingPerformance.png
+	lyxscale 50
+	height 62theight%
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From ESL Figure 8.10}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Terms 
+\begin_inset Quotes eld
+\end_inset
+
+Bias
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+Variance
+\begin_inset Quotes erd
+\end_inset
+
+ in Casual Usage 
+\begin_inset Newline newline
+\end_inset
+
+(Warning! Confusion Zone!) 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Restricting the hypothesis space 
+\begin_inset Formula $\cf$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+biases
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+ the fit 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+towards
+\series default
+ a simpler model and 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+away
+\series default
+ from the best possible fit of the training data.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Full, unpruned decision trees have very little bias.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Pruning decision trees introduces a bias.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Variance
+\series default
+ describes how much the fit changes across different random training sets.
+\end_layout
+
+\begin_layout Itemize
+If different random training sets give very similar fits, then algorithm
+ has high 
+\series bold
+stability
+\series default
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Decision trees are found to be high variance (i.e.
+ not very stable).
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Conventional Wisdom on When Bagging Helps
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Hope is that bagging reduces variance without making bias worse.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+General sentiment is that bagging helps most when
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Relatively unbiased base prediction functions
+\end_layout
+
+\begin_layout Itemize
+High variance / low stability
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+i.e.
+ small changes in training set can cause large changes in predictions
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Hard to find clear and convinving theoretical results on this
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+But following this intuition leads to improved ML methods, e.g.
+ Random Forests
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Random Forests
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Recall the Motivating Principal of Bagging 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Averaging 
+\begin_inset Formula $\hat{f}_{1},\ldots,\hat{f}_{B}$
+\end_inset
+
+ reduces variance, if they're based on i.i.d.
+ samples from 
+\begin_inset Formula $P_{\cx\times\cy}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Bootstrap samples are 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+independent samples from the training set, but
+\end_layout
+
+\begin_layout Itemize
+are 
+\series bold
+not
+\series default
+ indepedendent samples from 
+\begin_inset Formula $P_{\cx\times\cy}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+This dependence limits the amount of variance reduction we can get.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Would be nice to reduce the dependence between 
+\begin_inset Formula $\hat{f}_{i}$
+\end_inset
+
+'s...
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Variance of a Mean of Correlated Variables 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For 
+\begin_inset Formula $Z,Z_{1},\ldots,Z_{n}$
+\end_inset
+
+ i.i.d.
+ with 
+\begin_inset Formula $\ex Z=\mu$
+\end_inset
+
+ and 
+\begin_inset Formula $\var Z=\sigma^{2}$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+\ex\left[\frac{1}{n}\sum_{i=1}^{n}Z_{i}\right]=\mu\qquad\var\left[\frac{1}{n}\sum_{i=1}^{n}Z_{i}\right]=\frac{\sigma^{2}}{n}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+What if 
+\begin_inset Formula $Z$
+\end_inset
+
+'s are correlated? 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Suppose 
+\begin_inset Formula $\forall i\neq j$
+\end_inset
+
+, 
+\begin_inset Formula $\text{Corr}(Z_{i},Z_{j})=\rho$
+\end_inset
+
+ .
+ Then
+\begin_inset Formula 
+\[
+\var\left[\frac{1}{n}\sum_{i=1}^{n}Z_{i}\right]=\rho\sigma^{2}+\frac{1-\rho}{n}\sigma^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+For large 
+\begin_inset Formula $n$
+\end_inset
+
+, the 
+\begin_inset Formula $\rho\sigma^{2}$
+\end_inset
+
+ term dominates – limits benefit of averaging.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Random Forest
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Block
+
+\series bold
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+Main idea of random forests
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+Use 
+\series bold
+bagged decision trees
+\series default
+, but modify the tree-growing procedure to reduce the correlation between
+ trees.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Key step
+\series default
+ in random forests:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+When constructing 
+\series bold
+each tree node
+\series default
+, restrict choice of splitting variable to a randomly chosen subset of features
+ of size 
+\begin_inset Formula $m$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Typically choose 
+\begin_inset Formula $m\approx\sqrt{p}$
+\end_inset
+
+, where 
+\begin_inset Formula $p$
+\end_inset
+
+ is the number of features.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Can choose 
+\begin_inset Formula $m$
+\end_inset
+
+ using cross validation.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Random Forest: Effect of 
+\begin_inset Formula $m$
+\end_inset
+
+ size
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/bagging/randomForestVsBagging.png
+	lyxscale 39
+	height 70theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From 
+\backslash
+emph{An Introduction to Statistical Learning, with applications in R} (Springer,
+ 2013) with permission from the authors: G.
+ James, D.
+ Witten,  T.
+ Hastie and R.
+ Tibshirani.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Random Forest: Effect of 
+\begin_inset Formula $m$
+\end_inset
+
+ size
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+See movie in Criminisi et al's PowerPoint: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://research.microsoft.com/en-us/um/people/antcrim/ACriminisi_DecisionForestsTu
+torial.pptx
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Plain Layout
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+TensorForest: 
+\begin_inset Quotes eld
+\end_inset
+
+Scalable random forests on TensorFlow'
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+New tree building algorihtm –> 
+\begin_inset Quotes eld
+\end_inset
+
+ExtraTrees
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+batches of points keep arriving to a tree building job
+\end_layout
+
+\begin_layout Itemize
+from the first #features (tunable) points we receive, we sample random (feature,
+feature value) pairs.
+ These are our (only) candidate splits.
+\end_layout
+
+\begin_layout Itemize
+When we have accumulated enough points (atmost 2000) we decide on the best
+ split.
+\end_layout
+
+\begin_layout Itemize
+These points could then be pushed down to the nodes of the lower layers,
+ but I think theyr'e thrown out.
+\end_layout
+
+\begin_layout Itemize
+Next we wait for more points to arrive, push them down to leaf nodes...
+ .......
+ ...
+ ...
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+(can actually use this to change presentation of random forests, and even
+ tree building)
+\end_layout
+
+\begin_layout Itemize
+maintain a set of feature split point pairs...
+\end_layout
+
+\begin_layout Itemize
+could even have a more generic set of splitting hypotheses
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

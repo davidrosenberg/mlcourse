@@ -1,0 +1,100 @@
+\section{Week 5 Lab: Concept Check Exercises}
+\subsection{Kernels}
+\begin{enumerate}
+\item Fix $n>0$.  For $x,y\in\{1,2,\ldots,n\}$ define
+  $k(x,y)=\min(x,y)$.  Give an explicit feature map
+  $\phi:\{1,2,\ldots,n\}$ to $\RR^D$ (for some $D$) such that
+  $k(x,y)=\phi(x)^T\phi(y)$.
+\begin{solution}
+\item[]\Sol Define $\phi(x) = (\Ind(x\leq 1),\Ind(x\leq
+  2),\ldots,\Ind(x\leq n))$.  Then $\phi(x)^T\phi(y)=\min(x,y)$.
+\end{solution}
+\item Show that $k(x,y) = (x^Ty)^4$ is a positive semidefinite kernel
+  on $\RR^d\times\RR^d$.
+\begin{solution}
+\item[]\Sol $k_1(x,y)=x^Ty$ is a psd kernel, since $x^Ty$ is an inner
+  product on $\RR^d$.  Using the product rule for psd kernels, we see
+  that
+  $$k(x,y)=k_1(x,y)k_1(x,y)k_1(x,y)k_1(x,y) = k_1(x,y)^4$$
+  is psd as well.
+\end{solution}
+\item Let $A\in\RR^{d\times d}$ be a positive semidefinite matrix.
+  Prove that $k(x,y)= x^TAy$ is a positive semidefinite kernel.
+\begin{solution}
+\item[]\Sol Fix $x_1,\ldots,x_n\in\RR^d$ and let $X$ denote the matrix
+  that has $x_i^T$ as its $i$th row.  Then note that
+  $(XAX^T)_{ij} = x_i^TAx_j = k(x_i,x_j)$.  Thus we are done if we can
+  show $XAX^T$ is positive semidefinite.  But note that, for any $\alpha\in\RR^n$,
+  $$\alpha^TXAX^T\alpha = (X^T\alpha)^T A (X^T\alpha) \geq 0,$$
+  since $A$ is positive semidefinite.
+\end{solution}
+\item Consider the objective function
+  $$J(w) = \|Xw - y\|_1 + \lambda \|w\|_2^2.$$
+  Assume we have a positive semidefinite kernel~$k$.
+  \begin{enumerate}
+  \item What is the kernelized version of this objective?
+  \item Given a new test point $x$, find the predicted value.
+  \end{enumerate}
+\begin{solution}
+\item[]\Sol 
+  \begin{enumerate}
+  \item $J(\alpha) = \|K\alpha -y\|_1 + \lambda \alpha^TK\alpha$,
+    where $K_{ij} = k(x_i,x_j)$.  Here $x_i^T$ is the $i$th row of $X$.
+  \item $f_\alpha(x) = \sum_{i=1}^n \alpha_i k(x_i,x)$.
+  \end{enumerate}
+\end{solution}
+\item Show that the standard 2-norm on $\RR^n$ satisfies the
+  parallelogram law.
+\begin{solution}
+\item[]\Sol 
+  $$\begin{array}{rcl}
+  \|x-y\|_2^2 + \|x+y\|_2^2
+  & = & (\|x\|_2^2 - 2x^Ty + \|y\|_2^2) + (\|x\|_2^2 + 2x^Ty +
+  \|y\|_2^2)\\
+  & = & 2\|x\|_2^2 + 2\|y\|_2^2.
+  \end{array}$$
+\end{solution}
+\item Suppose you are given an training set of distinct points
+  $x_1,x_2,\ldots,x_n\in\RR^n$ and labels
+  $y_1,\ldots,y_n\in\{-1,+1\}$.  Show that by properly selecting
+  $\sigma$ you can achieve perfect $0-1$ loss on the training data
+  using a linear decision function and the RBF kernel.
+\begin{solution}
+\item[]\Sol By selecting $\sigma$ sufficiently small (say, much
+  smaller than $\min_{i\neq j}\|x_i-x_j\|_2$) we can use
+  $\alpha_i=y_i$ and get very pointy spikes at each data point. [Note:
+    This is not possible if any repeated points have different labels,
+    which is not unusual in real data.]
+\end{solution}
+\item Suppose you are performing standard ridge regression, which you
+  have kernelized using the RBF kernel.  Prove that any decision
+  function $f_\alpha(x)$ learned on a training set must satisfy
+  $f_\alpha(x)\to 0$ as $\|x\|_2\to\infty$.
+\begin{solution}
+\item[]\Sol Since $f_\alpha(x) = \sum_{i=1}^n \alpha_i k(x_i,x)$ we
+  have
+  $$\lim_{\|x\|_2\to\infty} f_\alpha(x) = 
+  \lim_{\|x\|_2\to\infty} \sum_{i=1}^n \alpha_i
+  \exp\left(-\frac{\|x_i-x\|_2^2}{2\sigma^2}\right)
+  = \sum_{i=1}^n \alpha_i\lim_{\|x\|_2\to\infty}
+  \exp\left(-\frac{\|x_i-x\|_2^2}{2\sigma^2}\right) = 0.$$
+\end{solution}
+\item Consider the standard (unregularized) linear regression problem
+  where we minimize $L(w)=\|Xw-y\|_2^2$ for some $X\in\RR^{n\times m}$ and
+  $y\in\RR^n$.  Assume $m > n$.
+  \begin{enumerate}
+  \item Let $w^*$ be one minimizer of the loss function $L$ above.
+    Give an infinite set of minimizers of the loss function.
+  \item What property defines the minimizer given by the representer
+    theorem (in terms of $X$)?
+  \end{enumerate}
+\begin{solution}
+\item[]\Sol
+  \begin{enumerate}
+  \item $\{w^* + v\mid v\in\Null(X)\}$.  Using the standard inner
+    product on $\RR^n$, we can also write $\Null(X)$ as the set of all
+    vectors orthogonal to the row space of $X$.
+  \item $w^*$ lies in the row space of $X$.
+  \end{enumerate}
+\end{solution}
+\end{enumerate}

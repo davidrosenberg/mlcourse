@@ -10,9 +10,7 @@
   parameter vector, how could we improve our guess?
 \begin{figure}[H]
 \centering
-\begin{asy}[width=\textwidth,height=0.4\textheight]
-  include "1-gradients/Data.asy";
-\end{asy}
+\asyinclude[width=\textwidth,height=0.4\textheight]{1-gradients/Data.asy}
 \caption{Data Set With $d=1$}
 \end{figure}
 \begin{solution}
@@ -45,9 +43,7 @@ $h\to0$.  This can be used to show that if $x$ is a local extremum of
 $f$ then $f'(x)=0$.  Points with $f'(x)=0$ are called \textit{critical points}.
 \begin{figure}[H]
 \centering
-\begin{asy}
-  include "1-gradients/Taylor1d.asy";
-\end{asy}
+\asyinclude{1-gradients/Taylor1d.asy}
 \caption{1D Linear Approximation By Derivative}
 \end{figure}
 \subsubsection{Multivariate Differentiation}
@@ -58,9 +54,7 @@ $x$-direction.  In the multivariable case, we have many possible
 directions we can move along from a given point $x=(x_1,\ldots,x_n)\in\RR^n$.
 \begin{figure}[H]
 \centering
-\begin{asy}
-  include "1-gradients/Directions.asy";
-\end{asy}
+\asyinclude{1-gradients/Directions.asy}
 \caption{Multiple Possible Directions for $f:\RR^2\to\RR$}
 \end{figure}
 If we fix a direction $u$
@@ -75,9 +69,7 @@ $f(x)+hf'(x;u)$.  In particular, if $f'(x;u)<0$ (such a $u$ is called
 a \textit{descent direction}) then for sufficiently small $h>0$ we have $f(x+hu)<f(x)$.
 \begin{figure}[H]
 \centering
-\begin{asy}
-  include "1-gradients/Slice.asy";
-\end{asy}
+\asyinclude{1-gradients/Slice.asy}
 \caption{Directional Derivative as a Slope of a Slice}
 \end{figure}
 Let $e_i=(\overbrace{0,0,\ldots,0}^{i-1},1,0,\ldots,0)$ be the $i$th
@@ -116,9 +108,7 @@ The approximation $f(x+v) \approx f(x)+\nabla f(x)^Tv$ gives a tangent
 plane at the point $x$ as we let $v$ vary.
 \begin{figure}[H]
 \centering
-\begin{asy}
-  include "1-gradients/Tangent.asy";
-\end{asy}
+\asyinclude{1-gradients/Tangent.asy}
 \caption{Tangent Plane for $f:\RR^2\to\RR$}
 \end{figure}
 If $f$ is differentiable, we can use the gradient to compute an arbitrary directional derivative:
@@ -139,9 +129,7 @@ As we will see later in the course, if a function is differentiable
 and convex, then a point is critical if and only if it is a global minimum.
 \begin{figure}[H]
 \centering
-\begin{asy}
-  include "1-gradients/Saddle.asy";
-\end{asy}
+\asyinclude{1-gradients/Saddle.asy}
 \caption{Critical Points of $f:\RR^2\to\RR$}
 \end{figure}
 \subsubsection{Computing Gradients}

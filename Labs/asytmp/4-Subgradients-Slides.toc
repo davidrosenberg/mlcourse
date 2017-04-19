@@ -1,0 +1,6 @@
+\beamer@sectionintoc {1}{Recitation 4}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{Initial Question}{2}{0}{1}
+\beamer@subsectionintoc {1}{2}{More on Convexity and Review of Duality}{3}{0}{1}
+\beamer@subsectionintoc {1}{3}{More on Convexity and Review of Duality}{4}{0}{1}
+\beamer@subsectionintoc {1}{4}{Gradients and Subgradients}{16}{0}{1}
+\beamer@subsubsectionintoc {1}{4}{1}{Definitions and Basic Properties}{16}{0}{1}

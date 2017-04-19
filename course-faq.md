@@ -1,4 +1,54 @@
-# Frequently Asked Questions
+# Frequently Asked Questions and Useful Notes
+
+## In AdaBoost, what happens if a base classifier gets 0 weighted training error?
+There is definitely a "gotcha" in the AdaBoost algorithm. What happens if a base
+classifier can get 0 weighted error on the training set? Then the recipe for the
+weight on that classifier gives infinity, which is no good. The important thing
+to notice is that, if a base classifier can get 0 weighted training error, then
+the same classifier will also get 0 [unweighted] training error, since the
+weights are always greater than zero. Thus if we're ever going to get a 0 for
+weighted error, it's going to happen in the first round of boosting. If that happens, you
+just stop boosting and your final classifier is the base classifier that did
+perfect classification.
+
+## What are reasonable stopping conditions for our minimization procedures?
+If the goal is to minimize a differentiable and convex function, we can run
+until the norm of our gradient is below some threshold, since we know the
+gradient will be zero at a minimum. When we're optimizing a non-differentiable
+function (e.g. the lasso or SVM objective function), we have to do something
+else. One approach is to periodically check the value of our objective function
+at our current location, and compare to the last time we checked. If we're doing
+gradient descent or a stochastic descent method, we can check every XX steps. If
+we're doing a method like coordinate descent, we could check after every cycle
+through the coordinates.
+
+In the machine learning context, our goal is usually to find a decision function
+that performs well (say small empirical risk) out-of-sample.  Thus another approach is to stop when the empirical risk on 
+validation data stops improving, or gets worse.  This may lead us to stop before the objective function is minimized.  This is called "early stopping", and it may help our
+out-of-sample performance (i.e. how well we do on new data). 
+
+That said, our goal in the homework is usually to understand and assess the
+performance of the ML methods we discuss. Thus we should try to get as close to
+the optimum of our optimization problem as possible, since that is what the
+method prescribes. That means evaluating the objective function (which may be a
+penalized empirical risk, for example) on the training data.
+
+One approach to deciding when to stop is based on the idea of "patience".   There's a short description at https://davidrosenberg.github.io/mlcourse/Archive/2016/Lectures/14b.neural-networks.pdf#page=20, based on Bengio's "Practical recommendations" paper.  It's really designed for minibatch gradient steps, but could be applied for gradient descent as well.  I think it's overkill for the homework though.  
+
+
+## Do **not** normalize the gradient in gradient descent
+In gradient descent, SGD, and minibatch GD, we do NOT normalize the gradient.
+For backtracking line search in GD, it doesn't matter, but for the other
+methods, convergence proofs assume we're not normalizing the gradient.
+ 
+The terminology IS confusing, but that's the way it is. Let's review it:
+step direction = negative gradient (in GD), or negative estimate of the gradient (in SGD and minibatch GD)
+ 
+Even though it's called a step _direction_, it is NOT normalized to have unit length.
+ 
+Second confusing point: the step _length_ is NOT the length of the step.  it is the multiplier on the step direction.  It WOULD be the length of the step if the step direction had unit length, but it does NOT (in general).
+ 
+If I can find a more consistent terminology that people actually used, I would be happy to switch terminologies to something that made more sense.
 
 ## Is the gradient a row vector or a column vector?
 This is indeed a confusing issue, since different people adopt different conventions. In this course we consider the gradient to be a column vector. But if you understand the meaning of the objects in question, it doesn't really matter much for this class.
@@ -93,9 +143,9 @@ immensely useful over the years.
 This is a good question and worth examining.  You know the 80/20 rule
 or the "pareto principle"?  Says you can get 80% of the outcome from
 20% of the effort.  Applied here, you can be a pretty decent data
-scientist without a lot of "deep understanding" and without knowing
-much math.  What's essential (the "20%") is an understanding of the
-core principles of machine learning, such as discussed in
+scientist without without knowing much math.  What's essential (the
+"20%") is an understanding of the core principles of machine learning,
+such as discussed in
 [DS-GA 1001](http://cds.nyu.edu/course-pages/ds-ga-1001-intro-data-science/)
 or the book
 [Data Science for Business](http://data-science-for-biz.com/DSB/Home.html),

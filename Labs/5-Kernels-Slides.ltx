@@ -1,0 +1,517 @@
+\title{Recitation 5}
+\subtitle{Kernels}
+\begin{document}
+\begin{frame} 
+  \titlepage 
+\end{frame}
+\section{Recitation 5}
+\subsection{Initial Question}
+\begin{frame}[fragile]
+  \frametitle{Intro Question}
+  \begin{block}{Question}
+    Consider applying linear regression to the data set on the left,
+    and an SVM to the data set on the right.  What is the issue? Can
+    it be improved?
+  \end{block}
+  \begin{center}
+    \asyinclude[width=\textwidth/2,height=0.6\textheight]{5-Kernels/LinearR.asy}
+    \asyinclude[width=\textwidth/2,height=0.6\textheight]{5-Kernels/LinearS.asy}
+  \end{center}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{Intro Solution}
+  \begin{block}{Regression Solution}
+    We want to allow for non-linear regression functions, but we would
+    like to reuse the same fitting procedures we have already developed.
+    To do this we will expand our feature set by adding non-linear
+    functions of old features.  We change our features from $(1,x)$ to
+    $(1,x,x^2)$.  That is
+    $$X = \begin{pmatrix}1&-1\\1&-.7\\\vdots&\vdots\\1&1\end{pmatrix}
+     \implies \Phi
+     = \begin{pmatrix}1&-1&(-1)^2\\1&-.7&(-.7)^2\\\vdots&\vdots&\vdots\\1&1&1^2\end{pmatrix}.$$
+  \end{block}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{Intro Solution}
+  \begin{block}{Regression Solution}
+    Using features $(1,x,x^2)$ and $w=(-.1,0,1)$ gives us
+    $f_w(x)=-.1+0x+1x^2=x^2-.1$.  Our prediction function is quadratic
+    but we obtained it through standard linear methods.
+  \end{block}
+  \begin{center}
+    \asyinclude[width=\textwidth,height=0.6\textheight]{5-Kernels/LinearRSol.asy}
+  \end{center}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{Intro Solution}
+  \begin{block}{SVM Solution}
+    For the SVM we expand our feature
+    vector from $(1,x_1,x_2)$ to $(1,x_1,x_2,x_1x_2,x_1^2,x_2^2)$.
+    Using $w=(-1.875,2.5,-2.5,0,1,1)$ gives
+    $-1.875+2.5x_1-2.5x_2+x_1^2+x_2^2 =
+    (x_1+1.25)^2+(x_2-1.25)^2-5=0$
+    as our decision boundary.
+  \end{block}
+  \begin{center}
+    \asyinclude[width=\textwidth,height=0.5\textheight]{5-Kernels/LinearSSol.asy}
+  \end{center}
+\end{frame}
+\subsection{Kernels}
+\begin{frame}[fragile]
+  \frametitle{Cost of Adding Features}
+  \begin{block}{Question}
+    Suppose we begin with $d$ features (and a bias)
+    $x=(1,x_1,\ldots,x_d)$.  We add all monomials up to degree $M$.
+    More precisely, all terms of the form $x_1^{p_1}\cdots x_d^{p_d}$
+    where $p_i\geq 0$ and $p_1+\cdots+p_d\leq M$.  How many features
+    will we have in total?
+  \end{block}
+  \pause
+  \begin{block}{Solution}
+    There will be $\binom{M+d}{M}$ terms total.  If $M$ is fixed and
+    we let $d$ grow, this behaves like $\frac{d^M}{M!}$.  For example,
+    if $d=40$ and $M=8$ we get $\binom{40+8}{8}=377348994$.  If we are
+    training or predicting with a linear model $w^Tx$, this product
+    now takes $O(d^M)$ operations to evaluate.
+  \end{block}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{Kernel Trick}
+  Consider the polynomial kernel $k(x,y) = (1+x^Ty)^M$ where
+  $x,y\in\RR^d$.  This computes the inner product of all monomials up
+  to degree $M$ in time $O(d)$.  For example, if $M=2$ we have
+  $$\begin{array}{rcl}
+    (1+x^Ty)^2 
+    & = & 1 + 2x^Ty + x^Tyx^Ty \\
+    & = & 1 + 2\sum_{i=1}^d x_iy_i + \sum_{i,j=1}^d x_iy_ix_jy_j.
+  \end{array}$$
+  The resulting feature map is
+  $$\begin{array}{rcl}\phi(x) &=& \\
+    \multicolumn{3}{l}{(1,\sqrt{2}x_1,\ldots,\sqrt{2}x_d,x_1^2,\ldots,x_d^2,\sqrt{2}x_1x_2,\sqrt{2}x_1x_3,\ldots,\sqrt{2}x_{d-1}x_d).}
+  \end{array}$$
+  Then $k(x,y) = \phi(x)^T\phi(y)$.
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{Kernel Ridge Regression}
+  \begin{itemize}
+  \item Recall that our ridge regression loss is given by
+    $$J(w) = \frac{1}{n}\sum_{i=1}^n (w^Tx_i-y_i)^2 + \lambda \|w\|_2^2$$
+  \item If we map to a larger feature space $\phi:\RR^d\to\RR^D$ we
+    get
+    $$J(\tilde{w}) = \frac{1}{n}\sum_{i=1}^n (\tilde{w}^T\phi(x_i)-y_i)^2 +
+    \lambda\|\tilde{w}\|_2^2.$$
+  \item Using the kernel trick we can try to write this (incorrectly)
+    as 
+    $$J(w) = \frac{1}{n}\sum_{i=1}^n (k(w,x_i)-y_i)^2 +
+    \lambda k(w,w).$$
+  \item What are the issues with this?
+  \end{itemize}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{Kernel Ridge Regression}
+  Issues with 
+  $$J(w) = \frac{1}{n}\sum_{i=1}^n (k(w,x_i)-y_i)^2 + \lambda k(w,w)$$
+  \begin{itemize}
+  \item Writing $\tilde{w}^T\phi(x_i)$ isn't the same as $k(w,x_i) =
+    \phi(w)^T\phi(x_i)$ since $\phi$ isn't onto.  That is, $\phi(w)$
+    is a very specific type of element of $\RR^D$, the larger feature space.
+  \item The $L(w)$ written above isn't a ridge regression problem any
+    more, since $k(w,x_i)$ and $k(w,w)$ can be weird functions of $w$.
+    Thus our previous code and theory for dealing with ridge
+    regression doesn't immediately carry over.
+  \end{itemize}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{Math Thought Experiment}
+  \begin{itemize}
+  \item Suppose we have a standard ridge regression problem for $w\in\RR^d$:
+    $$J(w) = \frac{1}{n}\sum_{i=1}^n (w^Tx_i-y_i)^2 +
+    \lambda\|w\|_2^2.$$
+  \item Now suppose we add a new feature to $x$ that is always zero:
+    $\tilde{x}=(x,0)$.  For $w\in\RR^{d+1}$ we now have
+    $$J(w) = \frac{1}{n}\sum_{i=1}^n (w^T\tilde{x}_i-y_i)^2 +
+    \lambda\|w\|_2^2.$$
+    Does the answer change?  In other words, will the new minimizer
+    $w_*\in\RR^{d+1}$ have a non-zero value in its last coordinate?
+  \end{itemize}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{Math Thought Experiment}
+  Does the answer change for $w\in\RR^{d+1}$ with
+  $$J(w) = \frac{1}{n}\sum_{i=1}^n (w^T\tilde{x}_i-y_i)^2 +
+  \lambda\|w\|_2^2$$
+  No!
+  \begin{itemize}
+  \item Suppose $w_* = (v,a)$ where $v\in\RR^d$ and $a\in\RR$.
+  \item Recall that $\tilde{x}_i = (x,0)$.
+  \item Then $w_*^T\tilde{x}_i = v^Tx$.  In other words, $a$ has
+    \textbf{no} effect on the prediction $w_*^T\tilde{x}_i$.
+  \item But if $a\neq 0$ then $\|(v,a)\|_2^2 > \|(v,0)\|_2^2$. 
+  \item Can you think of the more general version of this phenomenon?
+  \end{itemize}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{Representer Theorem (Baby Version)}
+  \begin{theorem}[(Baby) Representer Theorem]
+    Suppose you have a loss function of the form
+    $$J(w) = L(w^T\phi(x_1),\ldots,w^T\phi(x_n)) + R(\|w\|_2)$$
+    where
+    \begin{itemize}
+    \item $w,\phi(x_i)\in\RR^D$.
+    \item $L:\RR^n\to\RR$ is an arbitrary function (loss term).
+    \item $R:\RR_{\geq0}\to\RR$ is increasing (regularization term).
+    \end{itemize}
+    Assume $J$ has at least one minimizer.
+    Then $J$ has a minimizer $w^*$ of the form $w^*=\sum_{i=1}^n
+    \alpha_i\phi(x_i)$ for some $\alpha\in\RR^n$.  If $R$ is strictly increasing, then all
+    minimizers have this form.
+  \end{theorem}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{Representer Theorem: Proof}
+  \begin{proof}
+    \begin{itemize}
+    \item Let $w^*\in\RR^D$ and let $S = \Span(\phi(x_1),\ldots,\phi(x_n))$.
+    \item Write $w^* = u + v$ where $u\in S$ and $v\in S^\perp$.
+      Here $u$ is the orthogonal projection of $w^*$ onto $S$, and
+      $S^\perp$ is the subspace of all vectors orthogonal to $S$.
+    \item Then $(w^*)^T\phi(x_i) =
+      (u+v)^T\phi(x_i)=u^T\phi(x_i)+v^T\phi(x_i)=u^T\phi(x_i)$.
+    \item But $\|w^*\|_2^2 = \|u+v\|_2^2 = \|u\|_2^2 + \|v\|_2^2 +
+      2u^Tv
+      = \|u\|_2^2+\|v\|_2^2 \geq \|u\|_2^2$.
+    \item Thus $R(\|w^*\|_2) \geq R(\|u\|_2)$ showing $J(w^*)\geq J(u)$.
+    \end{itemize}
+  \end{proof}
+  \begin{itemize}
+  \item Above we showed that $\|u+v\|_2^2 = \|u\|_2^2+\|v\|_2^2$ when
+    $u^Tv=0$.  This is called the Pythagorean theorem.
+  \end{itemize}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{Representer Theorem: Meaning}
+  \begin{itemize}
+  \item If your loss function only depends on $w$ via its inner
+    products with the inputs, and the regularization is an increasing
+    function of the $\ell_2$ norm, then we can write $w^*$ as a linear combination
+    of the training data.
+  \item This applies to ridge regression and SVM.
+  \end{itemize}
+  \begin{block}{Question}
+    Suppose you have $n=100$ samples, $d=40$ features, and $M=8$
+    degree monomial terms giving $377348994$ features.  This implies
+    $w\in \RR^{377348994}$ for ridge regression.  What does the representer theorem say?
+  \end{block}
+  \pause
+  \begin{block}{Solution}
+    As $y\in\RR^n$ varies, the solution $w$ must lie in a
+    100-dimensional subspace of $\RR^{377348994}$.
+  \end{block}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{Representer Theorem: Ridge Regression}
+  \begin{itemize}
+  \item By adding features to ridge regression we had
+    $$\begin{Array}{rcl}
+    J(\tilde{w})
+    & = & \frac{1}{n}\sum_{i=1}^n
+    (\tilde{w}^T\phi(x_i)-y_i)^2 + \lambda\|\tilde{w}\|_2^2\\
+    & = & \frac{1}{n}\left\|\Phi\tilde{w}-y\right\|_2^2 + \lambda \tilde{w}^T\tilde{w},
+    \end{Array}$$
+    where $\Phi\in\RR^{n\times D}$ is the matrix with $\phi(x_i)^T$ as
+    its $i$th row.
+  \item Representer Theorem applies giving
+    $\tilde{w}=\sum_{j=1}^n\alpha_j\phi(x_j) = \Phi^T\alpha$.
+  \item Plugging in gives
+    $$J(\alpha) = \frac{1}{n}\left\|\Phi\Phi^T\alpha -y\right\|_2^2
+    +\lambda \alpha^T\Phi\Phi^T\alpha.$$
+  \end{itemize}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{Representer Theorem: Ridge Regression}
+  \begin{itemize}
+  \item Let $K\in\RR^{n\times n}$ be given by $K=\Phi\Phi^T$.  This is
+    called the \textbf{Gram Matrix} and satisfies
+    $K_{ij}=k(x_i,x_j)=\phi(x_i)^T\phi(x_j)$:
+    $$K = \begin{pmatrix} \phi(x_1)^T\phi(x_1) & \cdots
+      &\phi(x_1)^T\phi(x_n)\\ \vdots & \ddots & \vdots
+      \\ \phi(x_n)^T\phi(x_1) & \cdots & \phi(x_n)^T\phi(x_n)\end{pmatrix}.$$
+  \item We can write ridge regression in the kernelized form by
+    turning
+    $$J(\alpha) = \frac{1}{n}\left\|\Phi\Phi^T\alpha -y\right\|_2^2
+    +\lambda \alpha^T\Phi\Phi^T\alpha.$$
+    into
+    $$J(\alpha)= \frac{1}{n} \|K\alpha - y\|_2^2 + \lambda \alpha^TK\alpha.$$
+  \item Can derive the solution algebraically (see Homework~4).
+  \item Prediction function is $f_\alpha(x)=(w^*)^T\phi(x) = \sum_{i=1}^n \alpha_ik(x_i,x)$.
+  \end{itemize}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{Representer Theorem: Primal SVM}
+  \begin{itemize}
+  \item For a general linear model, the same derivation above shows
+    $$J(w) = L(\Phi w) + R(\|w\|_2)$$
+    becomes
+    $$J(\alpha) = L(K\alpha) + R(\sqrt{\alpha^TK\alpha}).$$
+    Here $\phi(x_i)^Tw$ became $(K\alpha)_i$.
+  \item The primal SVM (bias in features) has loss function
+    $$J(w) = \frac{c}{n}\sum_{i=1}^n (1-y_i(\phi(x_i)^Tw))_+ +
+    \|w\|_2^2.$$
+  \item This is kernelized to
+    $$J(\alpha) = \frac{c}{n}\sum_{i=1}^n (1-y_i(K\alpha)_i)_+ +
+    \alpha^TK\alpha.$$
+  \item Positive decision made if $(w^*)^T\phi(x) = \sum_{i=1}^n \alpha_ik(x_i,x)>0$.
+  \end{itemize}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{Dual SVM}
+  \begin{itemize}
+  \item The dual SVM problem (with features) is given by
+    $$\begin{Array}{ll}
+    \text{maximize}_\alpha & \sum_{i=1}^n \alpha_i - \frac{1}{2}\sum_{i,j=1}^n\alpha_i\alpha_jy_iy_j \phi(x_i)^T\phi(x_j)\\
+    \text{subject to} & \sum_{i=1}^n \alpha_iy_i=0 \\
+    & \alpha_i \in \left[0,\frac{c}{n}\right]\quad\text{for
+      $i=1,\ldots,n.$}
+    \end{Array}$$
+  \item We can immediately kernelize (no representer theorem needed) by replacing
+    $\phi(x_i)^T\phi(x_j) = k(x_i,x_j)$.
+  \item Recall that we were able to derive the conclusion of the
+    representer theorem using strong duality for SVMs.
+  \end{itemize}
+\end{frame}
+\subsection{Infinite Dimensional Spaces}
+\begin{frame}[fragile]
+  \frametitle{RBF Kernel}
+  \begin{itemize}
+  \item As we saw last time, the most frequently used kernel is the
+    RBF kernel
+    $$k(w,x) = \exp\left(-\frac{\|w-x\|_2^2}{2\sigma^2}\right).$$
+  \item Is there a corresponding feature map $\phi:\RR^d\to\RR^D$ so
+    that $k(w,x) = \phi(w)^T\phi(x)$?
+  \item Unfortunately there is no finite $D$ that will work.
+  \item We will handle this by allowing infinite dimensional spaces
+    called Hilbert spaces.
+  \end{itemize}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{Rough Review of Abstract Linear Algebra}
+  \begin{itemize}
+  \item Vector Spaces: Spaces where linear combinations (scaling and
+    adding) make sense.
+  \item A vector space has no sense of length or angle, but has
+    concepts like subspace, 
+    basis, span, dimension, linear transformation, eigenvector.
+  \item We can account for length and angle by looking at inner
+    products.
+  \item Recall that in 2d, there is a law of cosines that relates side
+    lengths to the angles of a triangle.  In other words, reasonable 
+    definitions of length and angle are not independent.
+  \end{itemize}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{Definition of Inner Product}
+  \begin{definition}[Inner Product]
+    Let $V$ be a vector space.  We say $\langle
+    \cdot,\cdot\rangle:V^2\to\RR$ is an \textbf{inner product} if it satisfies
+    the following:
+    \begin{enumerate}
+    \item Symmetry: 
+      $$\langle v,w\rangle = \langle w,v\rangle$$
+      for $v,w\in V$.
+    \item Bilinearity: 
+      $$\langle \alpha v_1+\beta v_2,w\rangle
+      = \alpha\langle v_1,w\rangle + \beta\langle v_2,w\rangle$$ 
+      for
+      $v_1,v_2,w\in\in V$ and $\alpha,\beta\in\RR$.  Same holds for
+      second argument by symmetry.
+    \item Positive-Definiteness: $\langle v,v\rangle \geq 0$ with $\langle
+      v,v\rangle =0$ if and only if $v=0$.
+    \end{enumerate}
+    If we associate an inner product with a vector space we call the
+    pair an \textbf{inner product space}.
+  \end{definition}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{More on Inner Products and Norms}
+  \begin{itemize}
+  \item On $\RR^n$ the ``dot-product'' $v^Tw$ is an inner product.
+  \item Using an inner product we can obtain the norm (length) of a
+    vector: $\|v\|=\sqrt{\langle v,v\rangle}$.  We obtain the angle via
+    $\cos(\angle(v,w)):=\frac{\langle v,w\rangle}{\|v\|\|w\|}$.
+  \item We say $v,w$ are orthogonal if $\langle v,w\rangle=0$.
+  \item Not all norms we have seen have an associated inner product.
+    For example, $\|v\|_1$ has no associated inner product.
+  \item Roughly, certain norms (like $\ell_1$) do not lead to a
+    consistent way of measuring angles.  More precisely:
+    \begin{theorem}[Parallelogram Law]
+      A norm $\|\cdot\|$ has an associated inner product if and only
+      if
+      $$2\|v\|^2 + 2\|w\|^2 = \|v-w\|^2 + \|v+w\|^2.$$
+    \end{theorem}
+  \end{itemize}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{Hilbert Space}
+  \begin{itemize}
+  \item Once we have a norm, we can talk about the distance between
+    two vectors: $\|v-w\|$.  This allows one to introduce concepts
+    such as convergence and continuity.
+  \item Certain facts we need about projections are false in
+    infinite dimensions unless we impose an extra constraint on our
+    inner product spaces: completeness.
+  \item A space is complete if all Cauchy sequences converge.
+  \end{itemize}
+  \begin{definition}[Hilbert Space]
+    An inner product space $V$ with inner product
+    $\langle\cdot,\cdot\rangle$ is called a \textbf{Hilbert space} if
+    it is complete with respect to the associated norm.
+  \end{definition}
+  \begin{itemize}
+  \item All finite dimensional inner product spaces are Hilbert space.
+  \end{itemize}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{Projection Theorem}
+  \begin{theorem}[Projection Theorem]
+    Let $H$ be a Hilbert space and let $S$ be a finite dimensional
+    subspace.  Then any vector $w\in H$ can be written uniquely as
+    $w=u+v$ where $u\in S$ and $v\in S^\perp$.
+  \end{theorem}
+  More can be said:
+  \begin{itemize}
+  \item $u$ is the projection of $w$ onto $S$: $u=\argmin_{x\in
+    S}\|x-w\|$.
+  \item Can extend theorem to hold for any closed subspace (finite
+    dimensional subspaces are examples of closed subspaces).
+  \item A variant of the theorem holds for non-empty closed convex subsets.
+  \end{itemize}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{Representer Theorem (Adult Version)}
+  \begin{theorem}[Representer Theorem]
+    Suppose you have a loss function of the form
+    $$J(w) = L(\langle w,\phi(x_1)\rangle,
+    \ldots,\langle w,\phi(x_n)\rangle) + R(\|w\|)$$
+    where
+    \begin{itemize}
+    \item $w,\phi(x_i)\in H$ for some Hilbert space $H$.
+    \item $L:\RR^n\to\RR$ is an arbitrary function (loss term).
+    \item $R:\RR_{\geq0}\to\RR$ is increasing (regularization term).
+    \item $\|\cdot\|$ is the norm associated with $H$.
+    \end{itemize}
+    Assume $J$ has at least one minimizer.
+    Then $J$ has a minimizer $w^*$ of the form $w^*=\sum_{i=1}^n
+    \alpha_i\phi(x_i)$ for some $\alpha\in\RR^n$.  If $R$ is strictly increasing, then all
+    minimizers have this form.
+  \end{theorem}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{Representer Theorem (Adult Version)}
+  \begin{itemize}
+  \item Same proof as before, but apply the projection theorem and use
+    $\langle v,w\rangle$ in place of $v^Tw$.
+  \item Now we have a representer theorem that works for infinite
+    dimensional Hilbert spaces.  Why do we care?
+  \item We will show that kernels, such as the RBF Kernel, correspond
+    to inner products in Hilbert spaces.
+  \end{itemize}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{Positive Semi-Definite}
+  \begin{definition}[Positive Semi-Definite]
+    A matrix $A\in\RR^{n\times n}$ is \textbf{positive
+      semi-definite} if it is symmetric and
+    $$x^TAx\geq 0$$
+    for all $x\in\RR^n$.
+  \end{definition}
+  \begin{itemize}
+  \item Equivalent to saying the matrix is symmetric with non-negative eigenvalues.
+  \end{itemize}
+\end{frame}
+\begin{frame}
+  \frametitle{Mercer's Theorem}
+  \begin{theorem}[Mercer's Theorem]
+    Fix a kernel $k:\XX\times \XX\to\RR$.  
+    There is a Hilbert space $H$ and a feature map $\phi:\XX\to H$
+    such that $k(x,y)=\langle \phi(x),\phi(y)\rangle_H$ if and only if
+    for any $x_1,\ldots,x_n\in\XX$ the associated matrix $K$ 
+    is positive semi-definite:
+    $$K = \begin{pmatrix}
+      k(x_1,x_1)&\cdots&k(x_1,x_n)\\\vdots&\ddots&\vdots\\k(x_n,x_1)&\cdots&k(x_n,x_n)\end{pmatrix}.$$
+    Such a kernel $k$ is called \textbf{positive semi-definite}.
+  \end{theorem}
+\end{frame}
+\begin{frame}
+  \frametitle{Finding Your Own Kernels}
+  Let $k_1,k_2:\XX\times\XX\to\RR$ be positive semi-definite
+  kernels.  Then so are the following:
+  \begin{itemize}
+  \item $k_3(w,x) = k_1(w,x)+k_2(w,x)$
+  \item $k_4(w,x) = \alpha k_1(w,x)$ for $\alpha\geq 0$
+  \item $k_5(w,x) = f(w)f(x)$ for any function $f:\XX\to\RR$
+  \item $k_6(w,x) = k_1(w,x)k_2(w,x)$
+  \end{itemize}
+  Furthermore, if $k_1,k_2,\ldots$ is a sequence of positive
+  semi-definite kernels then
+  $$k(w,x) = \lim_{n\to\infty} k_n(w,x)$$
+  is also positive semi-definite (assuming the limit exists for all $w,x$).
+\end{frame}
+\subsection{Understanding RBF Kernels}
+\begin{frame}
+  \frametitle{Representer Theorem for RBF Kernels}
+  \begin{itemize}
+  \item As we saw earlier for ridge regression and SVM classification, the
+    decision function has the form $f_\alpha(x) = \sum_{i=1}^n
+    \alpha_i k(x_i,x)$.
+  \item For ridge regression, this means that using the RBF kernel
+    amounts to approximating our data by a linear combination of
+    Gaussian bumps.
+  \item For SVM classification, each $k(x_i,x)=\exp\left(-\|x_i-x\|_2^2/(2\sigma^2)\right)$ represents a
+    exponentially decaying distance between $x_i$ and $x$.  Thus our
+    decisions depend on our proximities to data points.
+  \end{itemize}
+\end{frame}
+\begin{frame}
+  \frametitle{RBF Regression}
+  \begin{itemize}
+  \item Below we use 10 uniformly spaced $x$-values between $-2$ and
+    $2$, with $y_i=x_i^2$.  We fit kernelized ridge regression with
+    the RBF kernel using $\sigma=1$ and $\lambda = .1$.
+  \item Each green curve is $g(x)=\alpha_ik(x_i,x)$.  The predicted
+    function is drawn in blue. 
+  \item As you might expect, extrapolating outside of $[-2,2]$ can
+    have poor results.
+  \item People will often normalize the RBF kernel (see Hastie,
+    Tibshirani, Friedman p.~213).
+  \end{itemize}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{RBF Regression}
+  \begin{center}
+    \asyinclude{5-Kernels/QuadRBFPlot.asy}
+  \end{center}
+\end{frame}
+\begin{frame}
+  \frametitle{RBF Classification}
+  \begin{itemize}
+  \item Next we show 4 points placed on the corners of a square with
+    positive and negative points on each diagonal.
+  \end{itemize}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{RBF Classification}
+  Contours of $f(x) = k(x_1,x)+k(x_2,x)$ where $x_1,x_2$ are positive
+  examples, and $\sigma=1$.
+  \begin{center}
+    \asyinclude[height=0.8\textheight]{5-Kernels/XorFit.asy}
+  \end{center}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{RBF Classification}
+  Contours of $f(x) = k(x_1,x)+k(x_2,x)-k(x_3,x)-k(x_4,x)$ where $x_1,x_2$ are positive
+  examples, and $\sigma=1$.
+  \begin{center}
+    \asyinclude[height=0.8\textheight]{5-Kernels/XorFit2.asy}
+  \end{center}
+\end{frame}
+\end{document}

@@ -1,0 +1,247 @@
+\title{Recitation 4}
+\subtitle{Subgradients}
+\begin{document}
+\begin{frame} 
+  \titlepage 
+\end{frame}
+\section{Recitation 4}
+\subsection{Initial Question}
+\begin{frame}[fragile]
+  \frametitle{Intro Question}
+  \begin{block}{Question}
+    When stating a convex optimization problem in standard form we write
+    $$\begin{array}{ll}
+      \text{minimize} & f_0(x) \\
+      \text{subject to} & f_i(x) \leq 0 \quad\text{for all $i=1,\ldots,n$.}
+    \end{array}
+    $$
+    where $f_0,f_1,\ldots,f_n$ are convex.  Why don't we use $\geq$ or $=$ instead of $\leq$?
+  \end{block}
+\end{frame}
+\subsection{More on Convexity and Review of Duality}
+\begin{frame}[fragile]
+  \frametitle{Review of Convexity}
+  \begin{definition}[Convex Set]
+    A set $S\subseteq\RR^d$ is convex if for any $x,y\in S$
+    and $\theta\in(0,1)$ we have $(1-\theta)x+\theta y\in S$.
+  \end{definition}
+  \begin{definition}[Convex Function]
+    A function
+    $f:\RR^d\to\RR$ is convex if for any $x,y\in\RR^d$ and
+    $\theta\in(0,1)$ we have $f((1-\theta)x+\theta y)\leq
+    (1-\theta)f(x)+\theta f(y)$.    
+  \end{definition}
+\end{frame}
+\subsection{More on Convexity and Review of Duality}
+\begin{frame}[fragile]
+\frametitle{Review of Convexity}
+\begin{center}
+\asyinclude[width=\textwidth,height=0.8\textheight]{4-Subgradients/Convex.asy}
+\end{center}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{(Sub-)Level Sets of Convex Functions}
+  \begin{definition}[(Sub-)Level Sets]
+    For a function $f:\RR^d\to\RR$, a \textit{level set} (or contour line) corresponding to the
+    value $c$ is given by the set of all points $x\in\RR^d$ where $f(x)=c$:
+    $$f^{-1}\{c\} = \{x\in\RR^d \mid f(x) = c\}.$$
+    Analogously, the \textit{sublevel set} for the value $c$ is the set of all
+    points $x\in\RR^d$ where $f(x)\leq c$:
+    $$f^{-1}(-\infty,c] = \{x\in\RR^d\mid f(x)\leq c\}.$$    
+  \end{definition}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{3D Plot and Contour Plot With Sublevel Set}
+\begin{center}
+\asyinclude[width=\textwidth,height=\textheight]{4-Subgradients/TwoPits.asy}
+\end{center}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{3D Plot and Contour Plot With Sublevel Set}
+\begin{center}
+\asyinclude[width=\textwidth,height=\textheight]{4-Subgradients/TwoPitsC.asy}
+\end{center}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{Sublevel Sets of Convex Functions}
+  \begin{theorem}
+    If $f:\RR^d\to\RR$ is convex then the sublevel sets are convex.
+  \end{theorem}
+  \pause
+  \begin{proof}
+    Fix a sublevel set $S=\{x\in\RR^d\mid f(x)\leq c\}$ for some fixed
+    $c\in\RR$.  If $x,y\in S$ and $\theta\in(0,1)$ then we have
+    $$f((1-\theta)x+\theta y) \leq (1-\theta)f(x)+\theta f(y) \leq
+    (1-\theta)c+\theta c = c.$$
+  \end{proof}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Plots of Convex Function With Sublevel Set}
+\begin{center}
+\asyinclude[width=\textwidth,height=\textheight/2]{4-Subgradients/OnePit.asy}
+\vspace{-1cm}
+\asyinclude[width=.55\textwidth,height=\textheight/2]{4-Subgradients/OnePitC.asy}
+\end{center}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Intersection of Convex Sets is Convex}
+\begin{center}
+\asyinclude[width=\textwidth,height=.8\textheight]{4-Subgradients/Intersect.asy}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Level Sets and Superlevel Sets Not Convex}
+\begin{center}
+\asyinclude[width=\textwidth,height=.8\textheight]{4-Subgradients/OnePitSets.asy}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Lagrange Duality}
+\begin{center}
+\asyinclude[width=\textwidth,height=.8\textheight]{4-Subgradients/DualityBox.asy}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Weak Duality}
+\begin{center}
+\asyinclude[width=\textwidth,height=.8\textheight]{4-Subgradients/DualityPlot.asy}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Strong Duality}
+\begin{center}
+\asyinclude[width=\textwidth,height=.8\textheight]{4-Subgradients/SDualityPlot.asy}
+\end{center}
+\end{frame}
+
+\subsection{Gradients and Subgradients}
+\subsubsection{Definitions and Basic Properties}
+
+\begin{frame}[fragile]
+\frametitle{Gradient Characterization of Convexity}
+\begin{theorem}
+  Let $f:\RR^d\to\RR$ be differentiable.  Then $f$ is convex iff
+  $$f(x+v) \geq f(x) + \nabla f(x)^Tv$$
+  hold for all $x,v\in\RR^d$.
+\end{theorem}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Gradient Approximation Gives Global Underestimator}
+\begin{center}
+\asyinclude[width=\textwidth,height=.8\textheight]{4-Subgradients/GlobalUnd.asy}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Subgradients}
+\begin{definition}[Subgradient, Subdifferential, Subdifferentiable]
+  Let $f:\RR^d\to\RR$.  We say that $g\in\RR^d$ is a \textit{subgradient} of
+  $f$ at $x\in\RR^d$ if
+  $$f(x+v) \geq f(x) + g^Tv$$
+  for all $v\in\RR^d$.  The \textit{subdifferential} $\partial f(x)$
+  is the set of all subgradients of $f$ at $x$.  We say that $f$ is
+  \textit{subdifferentiable} at $x$ if $\partial f(x)\neq\emptyset$
+    (i.e., if there is at least one subgradient).
+\end{definition}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Subgradients at $x_0$ and $x_1$}
+\begin{center}
+\asyinclude[width=\textwidth,height=.8\textheight]{4-Subgradients/Subgrad.asy}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Facts About Subgradients}
+\begin{enumerate}
+\item<1-> If $f$ is convex and differentiable at $x$ then $\partial f(x) =
+  \{\nabla f(x)\}$.
+\item<2-> If $f$ is convex then $\partial f(x)\neq\emptyset$ for all $x$.
+\item<3-> The subdifferential $\partial f(x)$ is a convex set.  Thus the
+  subdifferential can contain $0$, $1$, or infinitely many elements.
+\item<4-> If the zero vector is a subgradient of $f$ at $x$, then $x$ is a
+  global minimum.
+\item<5-> If $g$ is a subgradient of $f$ at $x$, then $(g,-1)$ is
+  orthogonal to the underestimating hyperplane $\{(x+v,f(x)+g^Tv)\mid
+  v\in\RR^d\}$ at $(x,f(x))$.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Compute the Subdifferentials of $f(x)=|x|$}
+\begin{center}
+\asyinclude[width=\textwidth,height=.8\textheight]{4-Subgradients/AbsVal.asy}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Compute $\partial f(3,0)$ For $f(x_1,x_2)=|x_1|+2|x_2|$}
+\begin{center}
+\asyinclude[width=\textwidth,height=.8\textheight]{4-Subgradients/Subgrad3d1.asy}
+\end{center}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Compute $\partial f(3,0)$ For $f(x_1,x_2)=|x_1|+2|x_2|$}
+\begin{center}
+\asyinclude[width=\textwidth,height=.8\textheight]{4-Subgradients/Subgrad3dH.asy}
+\end{center}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Compute $\partial f(3,0)$ For $f(x_1,x_2)=|x_1|+2|x_2|$}
+\begin{center}
+\asyinclude[width=\textwidth,height=.8\textheight]{4-Subgradients/Subgrad3dC.asy}
+\end{center}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Gradient Lies Normal To Contours}
+\begin{theorem}
+If $f:\RR^d\to\RR$ is continuously differentiable and $x_0\in\RR^d$
+with $\nabla f(x_0)\neq 0$ then $\nabla f(x_0)$
+is normal to the level set $S=\{x\in\RR^d \mid f(x)=f(x_0)\}$.  
+\end{theorem}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Gradient Lies Normal To Contours}
+\begin{center}
+\asyinclude[width=\textwidth,height=.8\textheight]{4-Subgradients/TwoPitsCG.asy}
+\end{center}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Normal Plane to Subgradient Splits Space}
+\begin{center}
+\asyinclude[width=\textwidth,height=.8\textheight]{4-Subgradients/SubgradShade.asy}
+\end{center}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Subgradient Descent}
+\begin{enumerate}
+\item Let $x^{(0)}$ denote the initial point.
+\item For $k=1,2,\ldots$
+  \begin{enumerate}
+  \item Assign $x^{(k)} = x^{(k-1)} - \alpha_k g$, where $g\in\partial
+    f(x^{(k-1)})$ and $\alpha_k$ is the step size.
+  \item Set $f_{\text{best}}^{(k)} =
+    \min_{i=1,\ldots,k}f(x^{(i)})$. (Used since this isn't a descent method.)
+  \end{enumerate}
+\end{enumerate}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Convergence of Subgradient Descent}
+\begin{theorem}
+  Let $f:\RR^n\to\RR$ be convex and Lipschitz with constant $G$, and
+  let $x^*$ be a minimizer.
+  For a fixed step size $t$, the subgradient method satisfies:
+  $$\lim_{k\to\infty} f(x_{\text{best}}^{(k)}) \leq f(x^*)+G^2t/2.$$
+  For step sizes respecting the Robbins-Monro conditions,
+  $$\lim_{k\to\infty} f(x_{\text{best}}^{(k)}) = f(x^*).$$
+\end{theorem}
+\end{frame}
+
+\end{document}

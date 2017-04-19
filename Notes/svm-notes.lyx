@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin /Users/drosen/Dropbox/repos/mlcourse/Notes/
 \textclass paper
 \use_default_options false
 \begin_modules
@@ -14,16 +16,16 @@ figs-within-sections
 \language_package default
 \inputencoding iso8859-1
 \fontencoding global
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -855,7 +857,7 @@ As usual, we capture the inner optimization in the Lagrange dual objective:
 \begin_inset Formula $\left(w,\xi\right)\mapsto L(w,b,\xi,\alpha,\lambda)$
 \end_inset
 
- is convex and differentiable, thus we have an optimal point if and only
+ is differentiable and convex, thus we have an optimal point if and only
  if all partial derivatives of 
 \begin_inset Formula $L$
 \end_inset
@@ -912,6 +914,26 @@ Substituting these conditions back into
 
 \end_inset
 
+In the last expression, we see that if 
+\begin_inset Formula $\sum_{i=1}^{n}\alpha_{i}y_{i}\neq0$
+\end_inset
+
+, then by sending 
+\begin_inset Formula $b$
+\end_inset
+
+ to 
+\begin_inset Formula $\pm\infty$
+\end_inset
+
+, we can send the dual function to 
+\begin_inset Formula $-\infty$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
 Putting it together, the dual function is 
 \begin_inset Formula 
 \[
@@ -975,18 +997,18 @@ box constraints
 
 \begin_layout Standard
 Let 
-\begin_inset Formula $\left(w^{*},b^{*},\xi_{i}^{*},\alpha^{*},\lambda^{*}\right)$
+\begin_inset Formula $\left(w^{*},b^{*},\xi^{*}\right)$
 \end_inset
 
- be a solution to the dual problem 
-\begin_inset Formula 
-\[
-\sup_{\alpha,\lambda\succeq0}\inf_{w,b,\xi}L(w,b,\xi,\alpha,\lambda).
-\]
-
+ be a solution to the primal problem, and let 
+\begin_inset Formula $\left(\alpha^{*},\lambda^{*}\right)$
 \end_inset
 
-By our first order conditions for the dual problem in Eq.
+ be a solution to the dual problem.
+ Then by strong duality and since everything is differentiable, the solutions
+ must obey the KKT conditions.
+ In particular, the solutions must satisfy the first order condition we
+ derived in Eq.
  
 \begin_inset CommandInset ref
 LatexCommand eqref
@@ -994,7 +1016,8 @@ reference "eq:lagrangeDeriv_w"
 
 \end_inset
 
-, we have 
+.
+ So 
 \begin_inset Formula 
 \[
 w^{*}=\sum_{i=1}^{n}\alpha_{i}^{*}y_{i}x_{i}.
@@ -1002,24 +1025,7 @@ w^{*}=\sum_{i=1}^{n}\alpha_{i}^{*}y_{i}x_{i}.
 
 \end_inset
 
-By strong duality, we know that 
-\begin_inset Formula $\left(w^{*},b^{*},\xi_{i}^{*},\alpha^{*},\lambda^{*}\right)$
-\end_inset
-
- is also a solution to the primal problem 
-\begin_inset Formula $\inf_{w,b,\xi}\sup_{\alpha,\lambda\succeq0}L(w,b,\xi,\alpha,\lambda)$
-\end_inset
-
-.
- Thus the relationship between 
-\begin_inset Formula $w^{*}$
-\end_inset
-
- and 
-\begin_inset Formula $\alpha^{*}$
-\end_inset
-
- also applies to the solution to the primal problem.
+ 
 \end_layout
 
 \begin_layout Itemize
@@ -1370,7 +1376,11 @@ reference "eq:lossNonNegativeSlackCondition"
 \begin_inset Formula $y_{i}\in\left\{ -1,1\right\} $
 \end_inset
 
-, ) we can conclude that 
+, we can multiply on both sides by 
+\begin_inset Formula $y_{i}$
+\end_inset
+
+ to conclude that 
 \begin_inset Formula 
 \[
 b^{*}=y_{i}-x_{i}^{T}w^{*}.
@@ -1378,6 +1388,10 @@ b^{*}=y_{i}-x_{i}^{T}w^{*}.
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 With exact calculations, we would get the same 
 \begin_inset Formula $b^{*}$
 \end_inset
@@ -1391,8 +1405,8 @@ With exact calculations, we would get the same
 \end_inset
 
 .
- With numerical error, however, it will be more robust to average over all
- eligible 
+ With numerical error, however, some people suggest averaging over all eligible
+ 
 \begin_inset Formula $i$
 \end_inset
 
@@ -1404,6 +1418,10 @@ b^{*}=\text{mean}\left\{ y_{i}-x_{i}^{T}w^{*}\mid\alpha_{i}^{*}\in\left(0,\frac{
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 If there are no 
 \begin_inset Formula $\alpha_{i}^{*}\in\left(0,\frac{c}{n}\right)$
 \end_inset

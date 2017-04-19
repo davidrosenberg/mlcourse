@@ -1,3 +1,4 @@
+
 # Learning Objectives
 
 **Issue:** "The students come to believe that their primary responsibility is not
@@ -8,6 +9,21 @@ know." (Teaching and Learning STEM: A practical guide)
 
 By the end of each lecture/homework, you should be able to do the
 following:
+
+
+## Big Picture Objectives
+- SGD for subgradient
+- Lagrangian
+- number of nonzero coefficients in lasso
+- scale of features and l1/l2 regularization
+- svm sparsity & lasso sparsity
+- write down the objective functions
+- outliers vs loss
+- geometric of SVM
+- lagrangian duality -- 
+- reworking objective functions
+- coordinate descent : what was special about the coordinate descent for Lasso. 
+
 
 ## Lecture 1 (1/24/2017)
 ### 1b: Basic Setup for Statistical Learning Theory
@@ -62,6 +78,45 @@ following:
 - Explain how we would expect the approximation error and
   estimation error to change when we increase the sample size, all
   else fixed.
-- Explain optimization error, and write down an excess risk
-  decomposition that incorporates approximation error, estimation
-  error, and optimization error.
+- Explain optimization error, and write down an excess risk decomposition that
+  incorporates approximation error, estimation error, and optimization error.
+  Why might we have negative optimization error but never negative estimation
+  error?
+
+### 2b: L1 and L2 Regularization
+- Explain the concept of a sequence of nested hypothesis spaces, and explain how a complexity measure (of a function) can be used to create such a sequence.
+- Given a base hypothesis space of decision functions (e.g. affine functions), a performance measure for a decision function (e.g. empirical risk on a training set), and a function complexity measure (e.g. Lipschitz continuity constant of decision function), give the corresponding optimization problem in Tikhonov and Ivanov forms.
+- For some situations (i.e. combinations of base hypothesis space, performance measure, and complexity measure), we claimed that Tikhonov and Ivanov forms are equivalent.  Be able to explain what this means and write it down mathematically. 
+- In particular, the Tikhonov and Ivanov formulations are equivalent for lasso and ridge regression. Be comfortable switching between the formulations to assist with interpretations (e.g. the classic L1 regularization picture with the norm ball is based on the Ivanov formulation).
+- Be able to explain what's going on in a regularization path plot, and highlight the key characteristics that differentiate the lasso regularization paths from ridge.
+- Explain what we mean when we say that L1 regularization often gives sparse solutions.
+- Give reasons why we might want the sparsity that L1 regularization often provides.
+- Explain the various pieces of the lasso regularization picture containing the L1 norm ball and level sets of the empirical risk. Explain how you could partition the parameter space into regions that lead to sparsity and regions that don't, and what that even means. (Hint -- pick a point in the parameter space and suppose it is the ERM.  Now suppose we imposed an L1 norm constraint...)
+- The penalty form (i.e. Tikhonov form) for the Lasso optimization problem does not have a differentiable objective function.  Give an equivalent formulation that has a differentiable objective function by dividing the weight vector into positive and negative parts. Explain how we could solve this optimization problem with techniques from our class.
+- Explain what coordinate descent is, and why it is of particular interest for the Lasso.
+
+## Lecture 3 (2/7/2017) 
+### 3a: Lasso, Ridge, and Elastic Net
+- Explain what happens when we do linear, lasso, and ridge regression with 2 identical features.
+- If features x1 and x2 are linearly related (e.g. x2 = 2 x1), then there are infinitely many ways to express the same function of x1 and x2.  Give the relation between the corresponding parameters for the set of equivalent prediction functions. If x1 and x2 are our only two features, what solutions are selected if have L1 regularization?  L2 regularization?
+- Same as previous question, but explain happens when x1 and x2 are highly correlated, but not exactly linearly related. (Be able to explain the picture from lecture slides.)
+- In class we discussed an example for which there were two batches of highly correlated features.  We claimed that using L1 regularization to select one feature from each batch would hurt our expected performance.  Explain why.
+- Explain how elastic net may help give the best of both worlds: eliminating features that are not helpful, but spreading weight roughly equally among highly correlated useful features. 
+
+### 3b: Loss functions for regression and classification 
+- For regression, "distance-based" losses (i.e. losses that only depend on the residual, and have zero loss for 0 residual) are translation-invariant. Explain what this means.
+- Explain why 'relative error' or 'percent error' are not translation-invariant.  How can we reduce these error measures to a translation invariant loss?
+- Explain why the L1 loss leads to more "robustness" than L2 loss. (Loosely
+  speaking, we can define robustness as how much a single outlier point can
+  affect the final prediction function.)'
+- What are the relative advantages and disadvantages of L1, L2, and Huber loss that we discussed in class? (There are others we did not discuss.)
+- Explain the concepts of the score function and the margin (functional margin, not geometric margin), and define a margin-based loss.
+- Define the hinge loss and compare it to the logistic loss.  In particular, explain what we mean by "logistic loss always wants more margin, while hinge loss is satisfied with 1."
+
+## Lecture 4 (2/14/2017)
+### Lecture 4a: Lagrangian Duality and Convex Optimization
+- Define a convex set,  a convex function, and a strictly convex function. (Don't forget that the domain of a convex function must be a convex set!)
+- For an optimization problem, define the terms feasible set, feasible point, active constraint, optimal value, and optimal point.
+- Give the form for a general inequality-constrained optimization problem (there are many ways to do this, but our convention is to have inequality constraints of the form fᵢ(x)≤0).
+- Define the Lagrangian for this optimization problem, and explain how the Lagrangian encodes all the information in the original optimization problem.
+- Write the primal and dual optimization problem in terms of the Lagrangian.

@@ -866,6 +866,11 @@ Seems funny that reweighting only accounts for misclassifications of the
  most recent classifier.
  But I suspect this is a peculiarity of the exponential loss and it wouldn't
  be that way for other losses.
+ – Indeed, the reweightings are also proportional to the exponential loss
+ [NOT weighted exponential loss] of the previous full ensemble's score function
+ (i.e.
+ without the sign( )).
+ 
 \end_layout
 
 \end_inset

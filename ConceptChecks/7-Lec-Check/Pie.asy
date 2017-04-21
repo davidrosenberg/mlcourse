@@ -19,5 +19,5 @@ label("$90^\circ$",(1,5.5));
 label("$60^\circ$",(-5,2),W);
 label("$60^\circ$",(5,2),E);
 label("$150^\circ$",(1,-5.5),E);
-xaxis('$x$',xmin=-6,xmax=6,red,EndArrow,above=true);
-yaxis('$y$',ymin=-6,ymax=6,red,EndArrow,above=true);
+xaxis('$x_1$',xmin=-6,xmax=6,red,EndArrow,above=true);
+yaxis('$x_2$',ymin=-6,ymax=6,red,EndArrow,above=true);

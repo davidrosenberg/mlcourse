@@ -1793,7 +1793,7 @@ Posterior distribution
 \begin_inset Formula 
 \begin{eqnarray*}
 p(w\mid\cd) & = & p(w\mid x,y)\\
-\pause & = & p\left(y\mid x,w\right)p(w)/p(y)\\
+\pause & = & p\left(y\mid x,w\right)p(w)/p(y\mid x)\\
 \pause & \propto & p(y\mid x,w)p(w)\\
 \pause & = & \prod_{i=1}^{n}\left[\frac{1}{\sigma\sqrt{2\pi}}\exp\left(-\frac{(y_{i}-w^{T}x_{i})^{2}}{2\sigma^{2}}\right)\right]\text{ (likelihood)}\\
  & \pause & \times\left|2\pi\Sigma_{0}\right|^{-1/2}\exp\left(-\frac{1}{2}w^{T}\Sigma_{0}^{-1}w)\right)\text{ (prior)}

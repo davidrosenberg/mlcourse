@@ -1,0 +1,5 @@
+\item[]\Sol Add features or use kernels.  Below we added the feature
+  $\|\tilde{x}_i\|^2$ and took the first principal component.
+\begin{center}
+\asyinclude{13-PCA/Annuli2.asy}
+\end{center}

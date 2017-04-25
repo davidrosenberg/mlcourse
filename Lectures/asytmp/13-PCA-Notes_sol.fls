@@ -1,0 +1,260 @@
+PWD c:/GitStuff/mlcourse/Lectures
+INPUT C:/Users/Brett Bernstein/AppData/Local/MiKTeX/2.9/miktex/data/le/pdftex/pdflatex.fmt
+INPUT VarMainSol.ltx
+OUTPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol.log
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/base/article.cls
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/base/article.cls
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/base/size12.clo
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/base/size12.clo
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmr12.tfm
+INPUT Macros.ltx
+INPUT Macros.ltx
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amscls/amsthm.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amscls/amsthm.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsfonts/amsfonts.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsfonts/amsfonts.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsmath/amsmath.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsmath/amsmath.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsmath/amstext.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsmath/amstext.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsmath/amsgen.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsmath/amsgen.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsmath/amsbsy.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsmath/amsbsy.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsmath/amsopn.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsmath/amsopn.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsfonts/amssymb.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsfonts/amssymb.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/preprint/fullpage.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/preprint/fullpage.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/jknappen/mathrsfs.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/jknappen/mathrsfs.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/genmisc/kbordermatrix.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/genmisc/kbordermatrix.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/oberdiek/centernot.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/oberdiek/centernot.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/bbm/bbm.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/bbm/bbm.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/graphics/graphicx.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/graphics/graphicx.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/graphics/keyval.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/graphics/keyval.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/graphics/graphics.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/graphics/graphics.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/graphics/trig.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/graphics/trig.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/graphics-cfg/graphics.cfg
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/graphics-cfg/graphics.cfg
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/graphics-def/pdftex.def
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/graphics-def/pdftex.def
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/infwarerr.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/infwarerr.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/ltxcmds.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/ltxcmds.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/matlab-prettifier/matlab-prettifier.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/matlab-prettifier/matlab-prettifier.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/base/textcomp.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/base/textcomp.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/base/ts1enc.def
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/base/ts1enc.def
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/xcolor/xcolor.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/xcolor/xcolor.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/graphics-cfg/color.cfg
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/graphics-cfg/color.cfg
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/listings/listings.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/listings/listings.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/listings/lstmisc.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/listings/lstmisc.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/listings/listings.cfg
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/listings/listings.cfg
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/url/url.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/url/url.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/asymptote/asymptote.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/asymptote/asymptote.sty
+INPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol.pre
+INPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol.pre
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/base/ifthen.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/base/ifthen.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/ifpdf.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/ifpdf.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/ifpdf.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/ifxetex/ifxetex.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/ifxetex/ifxetex.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/ifxetex/ifxetex.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/catchfile.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/catchfile.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/catchfile.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/etexcmds.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/etexcmds.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/ifluatex.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/ifluatex.sty
+OUTPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol.pre
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/comment/comment.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/comment/comment.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/float/float.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/float/float.sty
+INPUT Theorems.ltx
+INPUT Theorems.ltx
+INPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol.aux
+INPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol.aux
+OUTPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol.aux
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/base/ts1cmr.fd
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/base/ts1cmr.fd
+INPUT C:/Program Files/MiKTeX 2.9/tex/context/base/supp-pdf.mkii
+INPUT C:/Program Files/MiKTeX 2.9/tex/context/base/supp-pdf.mkii
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/pdftexcmds.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/pdftexcmds.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/oberdiek/epstopdf-base.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/oberdiek/epstopdf-base.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/oberdiek/grfext.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/oberdiek/grfext.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/kvdefinekeys.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/kvdefinekeys.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/oberdiek/kvoptions.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/oberdiek/kvoptions.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/kvsetkeys.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/kvsetkeys.sty
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmr17.tfm
+INPUT VarFill.ltx
+INPUT VarFill.ltx
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmbx12.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmr12.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmbx12.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmr8.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmr6.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmmi12.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmmi8.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmmi6.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmsy10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmsy8.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmsy6.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmex10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsfonts/umsa.fd
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsfonts/umsa.fd
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msam7.tfm
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsfonts/umsb.fd
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsfonts/umsb.fd
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/jknappen/ursfs.fd
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/jknappen/ursfs.fd
+INPUT C:/Users/Brett Bernstein/AppData/Local/MiKTeX/2.9/fonts/tfm/public/rsfs/rsfs10.tfm
+INPUT C:/Users/Brett Bernstein/AppData/Local/MiKTeX/2.9/fonts/tfm/public/rsfs/rsfs10.tfm
+INPUT C:/Users/Brett Bernstein/AppData/Local/MiKTeX/2.9/fonts/tfm/public/rsfs/rsfs5.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmbx12.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmbx8.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmbx6.tfm
+OUTPUT c:/GitStuff/mlcourse/Lectures/asytmp/comment.cut
+INPUT c:/GitStuff/mlcourse/Lectures/asytmp/comment.cut
+INPUT c:/GitStuff/mlcourse/Lectures/asytmp/comment.cut
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmti12.tfm
+OUTPUT c:/GitStuff/mlcourse/Lectures/asytmp/comment.cut
+INPUT c:/GitStuff/mlcourse/Lectures/asytmp/comment.cut
+INPUT c:/GitStuff/mlcourse/Lectures/asytmp/comment.cut
+OUTPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol.pdf
+INPUT C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map
+OUTPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-1.asy
+INPUT 13-PCA/Project0.asy
+INPUT 13-PCA/Project0.asy
+INPUT 13-PCA/Project0.asy
+INPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-1.pdf
+INPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-1.pdf
+INPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-1.pdf
+INPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-1.pdf
+INPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-1.pdf
+OUTPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-2.asy
+INPUT 13-PCA/Project.asy
+INPUT 13-PCA/Project.asy
+INPUT 13-PCA/Project.asy
+INPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-2.pdf
+INPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-2.pdf
+INPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-2.pdf
+INPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-2.pdf
+INPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-2.pdf
+OUTPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-3.asy
+INPUT 13-PCA/Meas.asy
+INPUT 13-PCA/Meas.asy
+INPUT 13-PCA/Meas.asy
+INPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-3.pdf
+INPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-3.pdf
+INPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-3.pdf
+INPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-3.pdf
+INPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-3.pdf
+OUTPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-4.asy
+INPUT 13-PCA/MeasP.asy
+INPUT 13-PCA/MeasP.asy
+INPUT 13-PCA/MeasP.asy
+INPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-4.pdf
+INPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-4.pdf
+INPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-4.pdf
+INPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-4.pdf
+INPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-4.pdf
+OUTPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-5.asy
+INPUT 13-PCA/MeasP2.asy
+INPUT 13-PCA/MeasP2.asy
+INPUT 13-PCA/MeasP2.asy
+INPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-5.pdf
+INPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-5.pdf
+INPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-5.pdf
+INPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-5.pdf
+INPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-5.pdf
+INPUT 13-PCA/JoliffeScree.png
+INPUT ./13-PCA/JoliffeScree.png
+INPUT ./13-PCA/JoliffeScree.png
+INPUT ./13-PCA/JoliffeScree.png
+INPUT ./13-PCA/JoliffeScree.png
+OUTPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-6.asy
+INPUT 13-PCA/Annuli.asy
+INPUT 13-PCA/Annuli.asy
+INPUT 13-PCA/Annuli.asy
+INPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-6.pdf
+INPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-6.pdf
+INPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-6.pdf
+INPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-6.pdf
+INPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-6.pdf
+OUTPUT c:/GitStuff/mlcourse/Lectures/asytmp/comment.cut
+INPUT c:/GitStuff/mlcourse/Lectures/asytmp/comment.cut
+INPUT c:/GitStuff/mlcourse/Lectures/asytmp/comment.cut
+OUTPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-7.asy
+INPUT 13-PCA/Annuli2.asy
+INPUT 13-PCA/Annuli2.asy
+INPUT 13-PCA/Annuli2.asy
+INPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-7.pdf
+INPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-7.pdf
+INPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-7.pdf
+INPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-7.pdf
+INPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-7.pdf
+INPUT c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol.aux
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb

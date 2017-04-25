@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2017.1.1)  25 APR 2017 00:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2017.1.1)  25 APR 2017 15:34
 entering extended mode
 **./VarMainSlides.ltx
 (VarMainSlides.ltx
@@ -1050,12 +1050,12 @@ Package pdftex.def Info: "13-PCA-Slides-2".pdf used on input line 84.
 File: "13-PCA-Slides-3".pdf Graphic file (type pdf)
 
 <use "13-PCA-Slides-3".pdf>
-Package pdftex.def Info: "13-PCA-Slides-3".pdf used on input line 174.
+Package pdftex.def Info: "13-PCA-Slides-3".pdf used on input line 183.
 (pdftex.def)             Requested size: 129.5868pt x 149.63065pt.
  [15
 
  <c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Slides-3.pdf>]
-Overfull \hbox (3.15166pt too wide) detected at line 193
+Overfull \hbox (3.15166pt too wide) detected at line 202
  \OT1/mathkerncmss/m/sl/10.95 S \OT1/cmss/m/n/10.95 = \OT1/mathkerncmss/m/sl/10
 .95 W\OT1/cmss/m/n/10.95 \OT1/mathkerncmss/m/sl/10.95 W[]\OML/cmm/m/it/10.95 ;
  \OT1/mathkerncmss/m/sl/10.95 W \OT1/cmss/m/n/10.95 = [] \OML/cmm/m/it/10.95 ; 
@@ -1072,7 +1072,7 @@ Overfull \hbox (3.15166pt too wide) detected at line 193
 File: "13-PCA-Slides-4".pdf Graphic file (type pdf)
 
 <use "13-PCA-Slides-4".pdf>
-Package pdftex.def Info: "13-PCA-Slides-4".pdf used on input line 199.
+Package pdftex.def Info: "13-PCA-Slides-4".pdf used on input line 208.
 (pdftex.def)             Requested size: 129.36096pt x 149.63065pt.
 \openout5 = `13-PCA-Slides-5.asy'.
 
@@ -1081,10 +1081,10 @@ Package pdftex.def Info: "13-PCA-Slides-4".pdf used on input line 199.
 File: "13-PCA-Slides-5".pdf Graphic file (type pdf)
 
 <use "13-PCA-Slides-5".pdf>
-Package pdftex.def Info: "13-PCA-Slides-5".pdf used on input line 199.
+Package pdftex.def Info: "13-PCA-Slides-5".pdf used on input line 208.
 (pdftex.def)             Requested size: 324.26666pt x 74.47905pt.
 
-Overfull \vbox (7.10571pt too high) detected at line 199
+Overfull \vbox (7.10571pt too high) detected at line 208
  []
 
 [17
@@ -1097,7 +1097,7 @@ se/Lectures/asytmp/13-PCA-Slides-5.pdf>] [18
 File: 13-PCA/JoliffeScree.png Graphic file (type png)
 
 <use 13-PCA/JoliffeScree.png>
-Package pdftex.def Info: 13-PCA/JoliffeScree.png used on input line 220.
+Package pdftex.def Info: 13-PCA/JoliffeScree.png used on input line 229.
 (pdftex.def)             Requested size: 229.78773pt x 199.53146pt.
  [19
 
@@ -1105,7 +1105,7 @@ Package pdftex.def Info: 13-PCA/JoliffeScree.png used on input line 220.
 <13-PCA/Europe.jpg, id=302, 326.6604pt x 269.808pt>
 File: 13-PCA/Europe.jpg Graphic file (type jpg)
  <use 13-PCA/Europe.jpg>
-Package pdftex.def Info: 13-PCA/Europe.jpg used on input line 232.
+Package pdftex.def Info: 13-PCA/Europe.jpg used on input line 241.
 (pdftex.def)             Requested size: 181.189pt x 149.64955pt.
 
 [20
@@ -1128,7 +1128,7 @@ Package pdftex.def Info: 13-PCA/Europe.jpg used on input line 232.
 File: "13-PCA-Slides-6".pdf Graphic file (type pdf)
 
 <use "13-PCA-Slides-6".pdf>
-Package pdftex.def Info: "13-PCA-Slides-6".pdf used on input line 301.
+Package pdftex.def Info: "13-PCA-Slides-6".pdf used on input line 310.
 (pdftex.def)             Requested size: 166.75958pt x 162.11726pt.
  [26
 
@@ -1140,7 +1140,7 @@ Package pdftex.def Info: "13-PCA-Slides-6".pdf used on input line 301.
 File: "13-PCA-Slides-7".pdf Graphic file (type pdf)
 
 <use "13-PCA-Slides-7".pdf>
-Package pdftex.def Info: "13-PCA-Slides-7".pdf used on input line 314.
+Package pdftex.def Info: "13-PCA-Slides-7".pdf used on input line 323.
 (pdftex.def)             Requested size: 341.43176pt x 16.64413pt.
  [27
 
@@ -1154,11 +1154,11 @@ Package pdftex.def Info: "13-PCA-Slides-7".pdf used on input line 314.
 \tf@snm=\write10
 \openout10 = `13-PCA-Slides.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 315.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 315.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 324.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 324.
  (c:\GitStuff\mlcourse\Lectures\asytmp\13-PCA-Slides.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 315.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 315.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 324.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 324.
 Package rerunfilecheck Info: File `13-PCA-Slides.out' has not changed.
 (rerunfilecheck)             Checksum: 444F7E089D07F0CD46DF1E4123882F23;500.
 
@@ -1170,7 +1170,7 @@ LaTeX Font Warning: Size substitutions with differences
 Here is how much of TeX's memory you used:
  19481 strings out of 493333
  361292 string characters out of 3139163
- 455740 words of memory out of 3000000
+ 455742 words of memory out of 3000000
  22435 multiletter control sequences out of 15000+200000
  14621 words of font info for 53 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1192,7 +1192,7 @@ ts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
 public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
 sfonts/symbols/msbm10.pfb>
 Output written on c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Slides.pdf (27 pa
-ges, 1425441 bytes).
+ges, 1426264 bytes).
 PDF statistics:
  453 PDF objects out of 1000 (max. 8388607)
  62 named destinations out of 1000 (max. 500000)

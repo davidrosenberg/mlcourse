@@ -17,7 +17,7 @@ Let $S\in\RR^{n\times n}$ be symmetric.
   $w_*^TSw_*$?
 \begin{solution}
 \item[]\Sol Suppose $S$ was diagonal:
-  $$S = \diaggggg{\lambda_1}{\lambda_2}{\ddots}{\lambda_n},$$
+  $$S = \diagggg{\lambda_1}{\lambda_2}{\ddots}{\lambda_n},$$
   with $\lambda_1 \geq \cdots \geq \lambda_n$.  Then $w_* = e_1$, the
   first standard basis vector since
   $$v^TSv = \sum_{i=1}^n \lambda_iv_i^2 \leq \lambda_1\sum_{i=1}^n
@@ -25,7 +25,8 @@ Let $S\in\RR^{n\times n}$ be symmetric.
   In general, we have $S=W\Lambda W^T$, so we want $W^Tw = e_1$
   (using the fact that $\|W^Tv\|_2=\|v\|_2$).  But then the answer is
   the first column of $W$, i.e., the eigenvector corresponding to
-  largest eigenvalue $\lambda_1$.
+  largest eigenvalue $\lambda_1$.  Here the spectral theorem allowed
+  us to rotate our axes so that $S$ became diagonal.
 \end{solution}
 \end{enumerate}
 \subsection{Principal Component Analysis (PCA)}
@@ -51,8 +52,12 @@ $$\frac{1}{n-1}\sum_{i=1}^n (\tilde{x}_i^Tw)^2.$$
 This is the sample variance of the components
 $$\tilde{x}_1^Tw, \ldots,\tilde{x}_n^Tw.$$
 \end{dfn}
+\begin{center}
 \asyinclude{13-PCA/Project0.asy}
+\end{center}
+\begin{center}
 \asyinclude{13-PCA/Project.asy}
+\end{center}
 
 As an aside, note that the variance along $w$ is also the sample
 variance of
@@ -126,8 +131,18 @@ $$\begin{Array}{rcl}
     w_{(1)},\ldots,w_{(k-1)}}} w^T\left[\sum_{i=k}^n \lambda_i
     W_{:,i}W_{:,i}^T\right]w.
 \end{Array}$$
-Noting that the maximizer $w=\sum_{i=k}^n \alpha_iW_{:,i}$ for
-$\alpha_i\in\RR$, we see the maximizer is $w_{(k)}=W_{:,k}$.
+Noting that the maximizer $w$ must be in the span of
+$W_{:,k},\ldots,W_{:,d}$, we see the maximizer is $w_{(k)}=W_{:,k}$:
+$$\begin{Array}{rcl}
+  \multicolumn{3}{l}{\left(\sum_{i=k}^n \alpha_iW_{:,i}\right)^T
+  \left[\sum_{i=k}^n \lambda_i
+    W_{:,i}W_{:,i}^T\right]\left(\sum_{i=k}^n \alpha_iW_{:,i}\right)}\\
+  & = & 
+  \sum_{i=k}^n \alpha_i^2\lambda_i\\
+  & \leq & \lambda_k \sum_{i=k}^n \alpha_i^2\\
+  & = & \lambda_k\\
+  & = & W_{:,k}^TSW_{:,k}.
+\end{Array}$$
 \end{sketch}
 
 Let's illustrate the ideas thus far using an example.
@@ -136,15 +151,21 @@ Let's illustrate the ideas thus far using an example.
   measured twice.  The two testers use different measuring devices,
   each of which introduces errors into the measurement process.  Below
   we depict some of the measurements computed (already centered).
-  \asyinclude[height=.6\textheight]{13-PCA/Meas.asy}
+  \begin{center}
+    \asyinclude[height=.6\textheight]{13-PCA/Meas.asy}
+  \end{center}
   \begin{enumerate}
   \item Describe (vaguely) what you expect the sample covariance matrix to look like.
   \item What do you think $w_{(1)}$ and $w_{(2)}$ are?
   \end{enumerate}
   We can now plot the data in terms of the principal components (i.e.,
   we plot $\tilde{X}W$).
-  \asyinclude{13-PCA/MeasP.asy}
-  \asyinclude{13-PCA/MeasP2.asy}
+  \begin{center}
+    \asyinclude{13-PCA/MeasP.asy}
+  \end{center}
+  \begin{center}
+    \asyinclude{13-PCA/MeasP2.asy}
+  \end{center}
 \end{exa}
 \subsubsection{Uses of Principal Component Analysis}
 \begin{enumerate}
@@ -174,9 +195,10 @@ the plot becomes much less steep.
 \subsubsection{Other Comments About PCA}
 \begin{enumerate}
 \item Often people standardize their data before running PCA to add
-  scale-invariance.  More precisely, if we scale a feature by a large
-  factor we can arbitrarily increase its variance, and thus
-  force it to be part of the first principal component.
+  scale-invariance.  Stated different, if a feature is scaled (maybe
+  by choice of measurement unit) by a large
+  factor we arbitrarily increase its variance, and thus
+  can incorrectly force it to be a large part of the first principal component.
 \item Define the dispersion of the data by
   $$\Delta=\sum_{i=1}^n \|x_i-\overline{x}\|_2^2.$$
   Projecting the centered data onto the $k$-dimensional subspace
@@ -192,11 +214,16 @@ the plot becomes much less steep.
   (i.e., blends or baskets) of your old features.
 \item The smallest principal components, if they correspond to small
   eigenvalues, are nearly in the null space of $X$, and thus reveal
-  linear dependencies in the centered data.
+  linear dependencies in the centered data.  To see this, let
+  $\|v\|_2=1$ and recall that
+  $$\|\tilde{X}^T\tilde{X}v\|_2 \geq
+  \|v^T\tilde{X}^T\tilde{X}v\|_2 = \|\tilde{X}v\|_2^2.$$  
 \end{enumerate}
 \begin{exa}
 Suppose you have the following data:
-\asyinclude{13-PCA/Annuli.asy}
+\begin{center}
+  \asyinclude{13-PCA/Annuli.asy}
+\end{center}
 \begin{enumerate}
 \item How can we get the first principal component to properly
   distinguish the rings above?

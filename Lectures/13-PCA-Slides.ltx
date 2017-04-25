@@ -117,7 +117,16 @@
   $w_{(k)}$ as its $k$th column.
 \item Then $W^T\tilde{x}_i$ gives the principal components of
   $\tilde{x}_i$ as a column vector.
-\item $\tilde{X}W$ gives a new data matrix in terms of principal components.
+\item $\tilde{X}W$ gives a new data matrix in terms of principal
+  components.
+\item If we compute the singular value decomposition (SVD) of $\tilde{X}$ we
+  get
+  $$\tilde{X} = VDW^T,$$
+  where $D\in\RR^{n\times d}$ is diagonal with non-negative entries,
+  and $V\in\RR^{n\times n}$, $W\in\RR^{d\times d}$ are orthogonal.
+\item Then $\tilde{X}^T\tilde{X} = WD^TDW^T$.  Thus we can use
+  the SVD on our data matrix to obtain the loading vectors $W$ and the
+  eigenvalues $\Lambda = \frac{1}{n-1}D^TD$.
 \end{enumerate}
 \end{frame}
 \subsection{Computing Principal Components}

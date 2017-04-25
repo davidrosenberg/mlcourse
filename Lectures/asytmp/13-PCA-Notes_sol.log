@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2017.1.1)  25 APR 2017 00:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2017.1.1)  25 APR 2017 15:13
 entering extended mode
 **./VarMainSol.ltx
 (VarMainSol.ltx
@@ -452,7 +452,7 @@ Including 'solution' comment.
 File: "13-PCA-Notes_sol-1".pdf Graphic file (type pdf)
 
 <use "13-PCA-Notes_sol-1".pdf>
-Package pdftex.def Info: "13-PCA-Notes_sol-1".pdf used on input line 54.
+Package pdftex.def Info: "13-PCA-Notes_sol-1".pdf used on input line 55.
 (pdftex.def)             Requested size: 341.08243pt x 217.48799pt.
 \openout3 = `13-PCA-Notes_sol-2.asy'.
 
@@ -461,121 +461,105 @@ Package pdftex.def Info: "13-PCA-Notes_sol-1".pdf used on input line 54.
 File: "13-PCA-Notes_sol-2".pdf Graphic file (type pdf)
 
 <use "13-PCA-Notes_sol-2".pdf>
-Package pdftex.def Info: "13-PCA-Notes_sol-2".pdf used on input line 55.
+Package pdftex.def Info: "13-PCA-Notes_sol-2".pdf used on input line 58.
 (pdftex.def)             Requested size: 341.42172pt x 281.77702pt.
-
-Overfull \hbox (238.2072pt too wide) in paragraph at lines 54--56
-[][]   [] 
- []
-
-[2 <c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-1.pdf> <c:/GitStuff/m
-lcourse/Lectures/asytmp/13-PCA-Notes_sol-2.pdf>] [3]
+ [2 <c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-1.pdf>] [3 <c:/GitSt
+uff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-2.pdf>] [4]
 \openout3 = `13-PCA-Notes_sol-3.asy'.
 
  (13-PCA/Meas.asy)
-<"13-PCA-Notes_sol-3".pdf, id=64, 181.77109pt x 372.25476pt>
+<"13-PCA-Notes_sol-3".pdf, id=67, 181.77109pt x 372.25476pt>
 File: "13-PCA-Notes_sol-3".pdf Graphic file (type pdf)
 
 <use "13-PCA-Notes_sol-3".pdf>
-Package pdftex.def Info: "13-PCA-Notes_sol-3".pdf used on input line 139.
+Package pdftex.def Info: "13-PCA-Notes_sol-3".pdf used on input line 154.
 (pdftex.def)             Requested size: 181.77065pt x 372.25385pt.
- [4]
+ [5]
 \openout3 = `13-PCA-Notes_sol-4.asy'.
 
  (13-PCA/MeasP.asy)
-<"13-PCA-Notes_sol-4".pdf, id=68, 168.47945pt x 341.42555pt>
+<"13-PCA-Notes_sol-4".pdf, id=71, 168.47945pt x 341.42555pt>
 File: "13-PCA-Notes_sol-4".pdf Graphic file (type pdf)
 
 <use "13-PCA-Notes_sol-4".pdf>
-Package pdftex.def Info: "13-PCA-Notes_sol-4".pdf used on input line 146.
+Package pdftex.def Info: "13-PCA-Notes_sol-4".pdf used on input line 163.
 (pdftex.def)             Requested size: 168.47902pt x 341.42471pt.
+ [6 <c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-3.pdf>]
 \openout3 = `13-PCA-Notes_sol-5.asy'.
 
  (13-PCA/MeasP2.asy)
-<"13-PCA-Notes_sol-5".pdf, id=69, 341.4326pt x 76.54196pt>
+<"13-PCA-Notes_sol-5".pdf, id=87, 341.4326pt x 76.54196pt>
 File: "13-PCA-Notes_sol-5".pdf Graphic file (type pdf)
 
 <use "13-PCA-Notes_sol-5".pdf>
-Package pdftex.def Info: "13-PCA-Notes_sol-5".pdf used on input line 147.
+Package pdftex.def Info: "13-PCA-Notes_sol-5".pdf used on input line 166.
 (pdftex.def)             Requested size: 341.43176pt x 76.54176pt.
-
-Overfull \hbox (124.31197pt too wide) in paragraph at lines 144--148
-\OT1/cmr/m/n/12 We can now plot the data in terms of the prin-ci-pal com-po-nen
-ts (i.e., we plot $[]\OML/cmm/m/it/12 W$\OT1/cmr/m/n/12 ).   []
- []
-
-[5 <c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-3.pdf>] [6 <c:/GitStu
-ff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-4.pdf> <c:/GitStuff/mlcourse/Lectu
-res/asytmp/13-PCA-Notes_sol-5.pdf>]
-<13-PCA/JoliffeScree.png, id=114, 508.90125pt x 441.90094pt>
+ [7 <c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-4.pdf> <c:/GitStuff/
+mlcourse/Lectures/asytmp/13-PCA-Notes_sol-5.pdf>] <13-PCA/JoliffeScree.png, id=
+118, 508.90125pt x 441.90094pt>
 File: 13-PCA/JoliffeScree.png Graphic file (type png)
 
 <use 13-PCA/JoliffeScree.png>
-Package pdftex.def Info: 13-PCA/JoliffeScree.png used on input line 170.
+Package pdftex.def Info: 13-PCA/JoliffeScree.png used on input line 190.
 (pdftex.def)             Requested size: 571.62727pt x 496.34589pt.
 
-Overfull \hbox (101.87225pt too wide) in paragraph at lines 167--174
+Overfull \hbox (101.87225pt too wide) in paragraph at lines 187--194
 []
  []
 
-[7 <./13-PCA/JoliffeScree.png>]
+[8 <./13-PCA/JoliffeScree.png>]
 \openout3 = `13-PCA-Notes_sol-6.asy'.
 
  (13-PCA/Annuli.asy)
-<"13-PCA-Notes_sol-6".pdf, id=119, 341.4326pt x 332.69194pt>
+<"13-PCA-Notes_sol-6".pdf, id=122, 341.4326pt x 332.69194pt>
 File: "13-PCA-Notes_sol-6".pdf Graphic file (type pdf)
 
 <use "13-PCA-Notes_sol-6".pdf>
-Package pdftex.def Info: "13-PCA-Notes_sol-6".pdf used on input line 199.
+Package pdftex.def Info: "13-PCA-Notes_sol-6".pdf used on input line 221.
 (pdftex.def)             Requested size: 341.43176pt x 332.69112pt.
-
-Overfull \hbox (138.89273pt too wide) in paragraph at lines 198--200
-[]\OT1/cmr/bx/n/12 Example 3. []\OT1/cmr/m/n/12 Sup-pose you have the fol-low-i
-ng data:   [] 
- []
-
-[8] Including 'solution' comment.
+ [9] Including 'solution' comment.
 \openout5 = `comment.cut'.
 
- Straight input of comment.cut.
+
+Straight input of comment.cut.
 (c:\GitStuff\mlcourse\Lectures\asytmp\comment.cut
 \openout3 = `13-PCA-Notes_sol-7.asy'.
 
  (13-PCA/Annuli2.asy)
-<"13-PCA-Notes_sol-7".pdf, id=123, 341.4326pt x 16.64418pt>
+<"13-PCA-Notes_sol-7".pdf, id=126, 341.4326pt x 16.64418pt>
 File: "13-PCA-Notes_sol-7".pdf Graphic file (type pdf)
 
 <use "13-PCA-Notes_sol-7".pdf>
 Package pdftex.def Info: "13-PCA-Notes_sol-7".pdf used on input line 4.
 (pdftex.def)             Requested size: 341.43176pt x 16.64413pt.
-)) [9 <c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-6.pdf> <c:/GitStuf
-f/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-7.pdf>] (c:\GitStuff\mlcourse\Lectu
-res\asytmp\13-PCA-Notes_sol.aux) ) 
+)) [10 <c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-6.pdf> <c:/GitStu
+ff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol-7.pdf>] (c:\GitStuff\mlcourse\Lect
+ures\asytmp\13-PCA-Notes_sol.aux) ) 
 Here is how much of TeX's memory you used:
  5438 strings out of 493333
  74116 string characters out of 3139163
- 142969 words of memory out of 3000000
+ 142971 words of memory out of 3000000
  8798 multiletter control sequences out of 15000+200000
  11265 words of font info for 43 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 35i,12n,37p,1001b,325s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-mmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb
-><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Prog
-ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cms
-y8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><
-C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol.pdf (9 
-pages, 1248632 bytes).
+ 35i,12n,37p,1001b,329s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pf
+b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program File
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+sy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on c:/GitStuff/mlcourse/Lectures/asytmp/13-PCA-Notes_sol.pdf (10
+ pages, 1250142 bytes).
 PDF statistics:
- 186 PDF objects out of 1000 (max. 8388607)
+ 189 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

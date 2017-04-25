@@ -746,6 +746,24 @@ status open
 
 \begin_layout Plain Layout
 
+TODO: Must tie back log loss for bernoulli regression with logistic loss
+ to the logistic regression.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
 
 \backslash
 let

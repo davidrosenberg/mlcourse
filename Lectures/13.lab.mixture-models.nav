@@ -86,8 +86,19 @@
 \headcommand {\beamer@framepages {34}{34}}
 \headcommand {\slideentry {6}{0}{11}{35/35}{}{0}}
 \headcommand {\beamer@framepages {35}{35}}
-\headcommand {\beamer@partpages {1}{35}}
-\headcommand {\beamer@subsectionpages {25}{35}}
+\headcommand {\sectionentry {7}{Math Prerequisites for General EM Algorithm}{36}{Math Prerequisites for General EM Algorithm}{0}}
 \headcommand {\beamer@sectionpages {25}{35}}
-\headcommand {\beamer@documentpages {35}}
-\headcommand {\def \inserttotalframenumber {35}}
+\headcommand {\beamer@subsectionpages {25}{35}}
+\headcommand {\slideentry {7}{0}{1}{36/36}{}{0}}
+\headcommand {\beamer@framepages {36}{36}}
+\headcommand {\slideentry {7}{0}{2}{37/38}{}{0}}
+\headcommand {\beamer@framepages {37}{38}}
+\headcommand {\slideentry {7}{0}{3}{39/40}{}{0}}
+\headcommand {\beamer@framepages {39}{40}}
+\headcommand {\slideentry {7}{0}{4}{41/41}{}{0}}
+\headcommand {\beamer@framepages {41}{41}}
+\headcommand {\beamer@partpages {1}{41}}
+\headcommand {\beamer@subsectionpages {36}{41}}
+\headcommand {\beamer@sectionpages {36}{41}}
+\headcommand {\beamer@documentpages {41}}
+\headcommand {\def \inserttotalframenumber {39}}

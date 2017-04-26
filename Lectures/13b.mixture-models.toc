@@ -1,0 +1,9 @@
+\select@language {english}
+\beamer@sectionintoc {1}{Intro Question}{2}{0}{1}
+\beamer@sectionintoc {2}{$K$-Means Clustering}{5}{0}{2}
+\beamer@sectionintoc {3}{$k$-Means: Failure Cases}{17}{0}{3}
+\beamer@sectionintoc {4}{Gaussian Mixture Models}{20}{0}{4}
+\beamer@sectionintoc {5}{Mixture Models}{27}{0}{5}
+\beamer@sectionintoc {6}{Learning in Gaussian Mixture Models}{30}{0}{6}
+\beamer@sectionintoc {7}{Issues with MLE for GMM}{34}{0}{7}
+\beamer@sectionintoc {8}{The EM Algorithm for GMM}{38}{0}{8}

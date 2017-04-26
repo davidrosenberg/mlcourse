@@ -174,7 +174,7 @@
   center is closest.  What regions of the plane below correspond to
   each possible labeling?
 \end{frame}
-\begin{frame}{Intro SOlution}
+\begin{frame}{Intro Solution}
   \begin{itemize}
   \item Note that each cell is disjoint (except for the boarders), and
     convex.
@@ -233,14 +233,20 @@
 \item Choose a random cluster $z\in\left\{ 1,2,\ldots,k\right\} $. 
 \item Choose a point from the distribution for cluster $Z$. 
 \end{enumerate}
-\item To find our clusters
+\item The clustering algorithm is then:
+  \begin{enumerate}
+  \item Use training data to fit the parameters of the generative
+    model.
+  \item For each point, choose the cluster with the highest likelihood 
+    based on model.
+  \end{enumerate}
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Gaussian Mixture Model ($k=3$)}
 
 \begin{enumerate}
-\item Choose $z\in\left\{ 1,2,3\right\} $ with $p(1)=p(2)=p(3)=\frac{1}{3}$. 
+\item Choose $z\in\left\{ 1,2,3\right\}$
 \item Choose $x\mid z\sim\cn\left(X\mid\mu_{z},\Sigma_{z}\right)$.
 \end{enumerate}
 \begin{center}
@@ -257,12 +263,11 @@
 \text{Cluster means}: &  & \mu=\left(\mu_{1},\ldots,\mu_{k}\right)\\
 \text{Cluster covariance matrices:} &  & \Sigma=\left(\Sigma_{1},\ldots\Sigma_{k}\right)
 \end{eqnarray*}
-\includegraphics[height=0.4\textheight]{../Figures/clustering/mixture-3-gaussians} 
+\begin{itemize}
+\item What if one cluster had many more points than another cluster?
+\end{itemize}
+\includegraphics[height=0.5\textheight]{../Figures/clustering/mixture-3-gaussians} 
 \par\end{center}
-
-
-For now, \textbf{suppose all these parameters are known}. \\
-We'll discuss how to \textbf{learn} or \textbf{estimate }them later.
 \end{frame}
 
 \begin{frame}{Gaussian Mixture Model: Joint Distribution }
@@ -286,15 +291,10 @@ p(x,z) & = & p(z)p(x\mid z)\\
 \end{itemize}
 \end{itemize}
 
-
-
 \begin{itemize}
-\item Suppose we know the model parameters $\pi_{z},\mu_{z},\Sigma_{z}$.
-\end{itemize}
-
-
-\begin{itemize}
-\item Then we can easily compute the joint $p(x,z)$.
+\item Suppose we know all the parameters of the model.
+\item Then we can easily compute the joint $p(x,z)$, and the
+  conditional $p(z\mid x)$.
 \end{itemize}
 \end{frame}
 
@@ -302,7 +302,7 @@ p(x,z) & = & p(z)p(x\mid z)\\
 
 \begin{itemize}
 \item We observe $x$.
-\item In the intro problem we had labeled data.  Here we don't observe
+\item In the intro problem we had labeled data, but here we don't observe
   $z$, the cluster assignment.
 
 
@@ -592,7 +592,7 @@ matrix.
 \begin{frame}{MLE for GMM}
 
 \begin{itemize}
-\item From the intro questions, we know that we can solve the MLE
+\item From yesterday's intro questions, we know that we can solve the MLE
   problem if the cluster assignments $z_i$ are known
   \begin{eqnarray*}
     n_z  & = & \sum_{i=1}^n \Ind(z_i=z)\\
@@ -636,7 +636,7 @@ exactly the \textbf{soft assignment} for $x_{i}$.
 
 
 \item Let $n_{c}=\sum_{i=1}^{n}\gamma_{i}^{c}$ be the ``number'' of points
-``soft assigned'' to cluster $c$.
+\textbf{soft assigned} to cluster $c$.
 \end{itemize}
 \end{frame}
 \begin{frame}{EM Algorithm for GMM: Overview}
@@ -751,7 +751,8 @@ exactly the \textbf{soft assignment} for $x_{i}$.
 
 
 \item First, fix each cluster covariance matrix to be $\sigma^{2}I$. 
-
+\item Then the density for each Gausian only depends on distance to
+  the mean.
 
 
 \item As we take $\sigma^{2}\to0$, the update equations converge to doing
@@ -769,5 +770,48 @@ $k$-means.
 \item Can use $k$-means$++$ to initialize parameters of EM algorithm.
 \end{itemize}
 \end{frame}
-
+\section{Math Prerequisites for General EM Algorithm}
+\begin{frame}{Jensen's Inequality}
+  \begin{itemize}
+  \item Which is larger: $\ex[X^2]$ or $\ex[X]^2$?
+    \pause
+  \item Must be $\ex[X^2]$ since $\var[X] = \ex[X^2]-\ex[X]^2\geq0$.
+  \item More general result is true:
+  \end{itemize}
+  \begin{theorem}{Jensen's Inequality}
+    If $f:\RR\to\RR$ is convex and $X$ is a random variable then $\ex[f(X)] \geq
+    f(\ex[X])$. 
+  \end{theorem}  
+\end{frame}
+\begin{frame}{Proof of Jensen}
+  \begin{block}{Exercise}
+    Suppose $X$ can take exactly two value: $x_1$ with probability
+    $\pi_1$ and $x_2$ with probability $\pi_2$.  Then prove Jensen's inequality.
+  \end{block}
+  \pause
+  \begin{itemize}
+  \item Let's compute $\ex[f(X)]$:
+    $$\ex[f(X)] = \pi_1f(x_1) + \pi_2f(x_2) \leq f(\pi_1x_1+\pi_2x_2)
+    = f(\ex[X]).$$
+  \item For the general proof, what do we know is true about all
+    convex functions $f:\RR\to\RR$?
+  \end{itemize}
+\end{frame}
+\begin{frame}{Proof of Jensen}
+  \begin{enumerate}
+  \item Let $e = \ex[X]$.
+  \item Since $f$ has a subgradient at $e$, there is an
+    underestimating line $g(x)=ax+b$ that passes through the point
+    $(e,f(e))$.
+  \item Then we have
+    \begin{eqnarray*}
+      \ex[f(X)]  & \geq & \ex[g(X)] \\
+      & = & \ex[aX+b]\\
+      & = & a\ex[X]+b\\
+      & = & ae+b\\
+      & = & f(e)\\
+      & = & f(\ex[X]).
+    \end{eqnarray*}
+  \end{enumerate}
+\end{frame}
 \end{document}

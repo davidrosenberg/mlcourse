@@ -5,3 +5,4 @@
 \beamer@sectionintoc {4}{Learning in Gaussian Mixture Models}{17}{0}{4}
 \beamer@sectionintoc {5}{Issues with MLE for GMM}{21}{0}{5}
 \beamer@sectionintoc {6}{The EM Algorithm for GMM}{25}{0}{6}
+\beamer@sectionintoc {7}{Math Prerequisites for General EM Algorithm}{36}{0}{7}

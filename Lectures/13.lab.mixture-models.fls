@@ -1,273 +1,278 @@
-PWD /Users/brett1479/Documents/mlcourse/Lectures
-INPUT /usr/local/texlive/2016/texmf.cnf
-INPUT /usr/local/texlive/2016/texmf-dist/web2c/texmf.cnf
-INPUT /usr/local/texlive/2016/texmf-var/web2c/pdftex/pdflatex.fmt
+PWD c:/GitStuff/mlcourse/Lectures
+INPUT C:/Users/Brett Bernstein/AppData/Local/MiKTeX/2.9/miktex/data/le/pdftex/pdflatex.fmt
 INPUT 13.lab.mixture-models.tex
 OUTPUT 13.lab.mixture-models.log
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamer.cls
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamer.cls
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbasemodes.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbasemodes.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbasedecode.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbasedecode.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbaseoptions.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbaseoptions.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/graphics/keyval.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/graphics/keyval.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/geometry/geometry.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/geometry/geometry.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ifvtex.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ifvtex.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/ifxetex/ifxetex.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/ifxetex/ifxetex.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/base/size11.clo
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/base/size11.clo
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/map/fontname/texfonts.map
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphicx.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphicx.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphics.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphics.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/graphics/trig.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/graphics/trig.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/graphics-def/pdftex.def
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/graphics-def/pdftex.def
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/ms/everyshi.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/ms/everyshi.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/xcolor/xcolor.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/xcolor/xcolor.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/color.cfg
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/color.cfg
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/pgf/utilities/xxcolor.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/pgf/utilities/xxcolor.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/atbegshi.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/atbegshi.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/hyperref.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/hyperref.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/auxhook.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/auxhook.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/pd1enc.def
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/pd1enc.def
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/latexconfig/hyperref.cfg
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/latexconfig/hyperref.cfg
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/url/url.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/url/url.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/hpdftex.def
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/hpdftex.def
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbaserequires.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbaserequires.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbasecompatibility.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbasecompatibility.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbasefont.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbasefont.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/amssymb.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/amssymb.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/amsfonts.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/amsfonts.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/sansmathaccent/sansmathaccent.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/sansmathaccent/sansmathaccent.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/sansmathaccent/sansmathaccent.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/filehook/filehook.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/filehook/filehook.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/filehook/filehook.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbasetranslator.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbasetranslator.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/translator/translator.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/translator/translator.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/translator/translator-language-mappings.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/translator/translator-language-mappings.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbasemisc.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbasemisc.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbasetwoscreens.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbasetwoscreens.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbaseoverlay.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbaseoverlay.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbasetitle.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbasetitle.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbasesection.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbasesection.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbaseframe.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbaseframe.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbaseverbatim.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbaseverbatim.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbaseframesize.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbaseframesize.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbaseframecomponents.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbaseframecomponents.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbasecolor.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbasecolor.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbasenotes.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbasenotes.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbasetoc.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbasetoc.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbasetemplates.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbasetemplates.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbaseauxtemplates.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbaseauxtemplates.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbaseboxes.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbaseboxes.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbaselocalstructure.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbaselocalstructure.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/tools/enumerate.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/tools/enumerate.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbasenavigation.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbasenavigation.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbasetheorems.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbasetheorems.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsmath.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsmath.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amstext.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amstext.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsgen.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsgen.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsbsy.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsbsy.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsopn.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsopn.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/amscls/amsthm.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/amscls/amsthm.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbasethemes.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/beamerbasethemes.sty
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmss10.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/themes/theme/beamerthemedefault.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/themes/theme/beamerthemedefault.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/themes/font/beamerfontthemedefault.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/themes/font/beamerfontthemedefault.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/themes/color/beamercolorthemedefault.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/themes/color/beamercolorthemedefault.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/themes/inner/beamerinnerthemedefault.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/themes/inner/beamerinnerthemedefault.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/art/beamericonbook.pdf
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamer.cls
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamer.cls
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/etoolbox/etoolbox.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/etoolbox/etoolbox.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasemodes.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasemodes.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasedecode.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasedecode.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/ifpdf.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/ifpdf.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbaseoptions.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbaseoptions.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/graphics/keyval.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/graphics/keyval.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/geometry/geometry.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/geometry/geometry.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/ifvtex.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/ifvtex.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/ifxetex/ifxetex.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/ifxetex/ifxetex.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/geometry/geometry.cfg
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/geometry/geometry.cfg
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/base/size11.clo
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/base/size11.clo
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmr10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/pgf/basiclayer/pgfcore.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/pgf/basiclayer/pgfcore.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/graphics/graphicx.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/graphics/graphicx.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/graphics/graphics.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/graphics/graphics.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/graphics/trig.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/graphics/trig.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/graphics-cfg/graphics.cfg
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/graphics-cfg/graphics.cfg
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/graphics-def/pdftex.def
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/graphics-def/pdftex.def
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/infwarerr.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/infwarerr.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/ltxcmds.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/ltxcmds.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/pgf/systemlayer/pgfsys.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/pgf/systemlayer/pgfsys.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/pgf/utilities/pgfrcs.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/pgf/utilities/pgfrcs.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/utilities/pgfutil-common.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/utilities/pgfutil-common-lists.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/utilities/pgfutil-latex.def
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/ms/everyshi.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/ms/everyshi.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/utilities/pgfrcs.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/utilities/pgfrcs.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/systemlayer/pgfsys.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/systemlayer/pgfsys.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/utilities/pgfkeys.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/systemlayer/pgf.cfg
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/xcolor/xcolor.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/xcolor/xcolor.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/graphics-cfg/color.cfg
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/graphics-cfg/color.cfg
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/basiclayer/pgfcore.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/basiclayer/pgfcore.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/math/pgfmath.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/math/pgfmathcalc.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/math/pgfmathutil.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/math/pgfmathparser.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/math/pgfmathfunctions.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/math/pgfmathfunctions.random.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/math/pgfmathfunctions.base.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/math/pgfmathfunctions.round.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/math/pgfmathfloat.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/pgf/utilities/xxcolor.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/pgf/utilities/xxcolor.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/atbegshi.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/atbegshi.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/hyperref/hyperref.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/hyperref/hyperref.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/hobsub-hyperref.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/hobsub-hyperref.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/hobsub-hyperref.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/hobsub-generic.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/hobsub-generic.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/oberdiek/auxhook.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/oberdiek/auxhook.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/oberdiek/kvoptions.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/oberdiek/kvoptions.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/hyperref/pd1enc.def
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/hyperref/pd1enc.def
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/00miktex/hyperref.cfg
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/00miktex/hyperref.cfg
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/url/url.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/url/url.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/hyperref/hpdftex.def
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/hyperref/hpdftex.def
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/oberdiek/rerunfilecheck.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/oberdiek/rerunfilecheck.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbaserequires.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbaserequires.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasecompatibility.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasecompatibility.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasefont.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasefont.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsfonts/amssymb.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsfonts/amssymb.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsfonts/amsfonts.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsfonts/amsfonts.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/sansmathaccent/sansmathaccent.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/sansmathaccent/sansmathaccent.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/sansmathaccent/sansmathaccent.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/filehook/filehook.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/filehook/filehook.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/filehook/filehook.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasetranslator.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasetranslator.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/translator/translator.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/translator/translator.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/translator/translator-language-mappings.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/translator/translator-language-mappings.tex
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasemisc.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasemisc.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasetwoscreens.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasetwoscreens.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbaseoverlay.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbaseoverlay.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasetitle.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasetitle.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasesection.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasesection.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbaseframe.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbaseframe.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbaseverbatim.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbaseverbatim.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbaseframesize.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbaseframesize.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbaseframecomponents.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbaseframecomponents.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasecolor.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasecolor.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasenotes.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasenotes.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasetoc.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasetoc.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasetemplates.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasetemplates.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbaseauxtemplates.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbaseauxtemplates.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbaseboxes.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbaseboxes.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbaselocalstructure.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbaselocalstructure.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/tools/enumerate.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/tools/enumerate.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasenavigation.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasenavigation.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasetheorems.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasetheorems.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsmath/amsmath.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsmath/amsmath.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsmath/amstext.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsmath/amstext.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsmath/amsgen.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsmath/amsgen.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsmath/amsbsy.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsmath/amsbsy.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsmath/amsopn.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amsmath/amsopn.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amscls/amsthm.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/amscls/amsthm.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasethemes.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/beamerbasethemes.sty
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmss10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/themes/theme/beamerthemedefault.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/themes/theme/beamerthemedefault.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/themes/font/beamerfontthemedefault.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/themes/font/beamerfontthemedefault.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/themes/color/beamercolorthemedefault.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/themes/color/beamercolorthemedefault.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/themes/inner/beamerinnerthemedefault.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/themes/inner/beamerinnerthemedefault.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/art/beamericonbook.pdf
 OUTPUT 13.lab.mixture-models.pdf
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/art/beamericonbook.pdf
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/art/beamericonbook.20.pdf
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/art/beamericonbook.20.pdf
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/art/beamericonarticle.pdf
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/art/beamericonarticle.pdf
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/art/beamericonarticle.20.pdf
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/art/beamericonarticle.20.pdf
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/art/beamericononline.pdf
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/art/beamericononline.pdf
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/art/beamericononline.20.pdf
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/art/beamericononline.20.pdf
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/themes/outer/beamerouterthemedefault.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/themes/outer/beamerouterthemedefault.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/mathptmx.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/mathptmx.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/eulervm/eulervm.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/eulervm/eulervm.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/base/fontenc.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/base/fontenc.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/base/t1enc.def
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/base/t1enc.def
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/jknappen/ec/ecss1095.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/base/inputenc.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/base/inputenc.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/base/latin9.def
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/base/latin9.def
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/themes/theme/beamerthemeCambridgeUS.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/themes/theme/beamerthemeCambridgeUS.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/themes/inner/beamerinnerthemerounded.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/themes/inner/beamerinnerthemerounded.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/themes/outer/beamerouterthemeinfolines.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/themes/outer/beamerouterthemeinfolines.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/themes/color/beamercolorthemebeaver.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/themes/color/beamercolorthemebeaver.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/babel/babel.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/babel/babel.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/babel-english/english.ldf
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/babel-english/english.ldf
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/babel-english/english.ldf
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/babel/babel.def
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/art/beamericonbook.pdf
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/art/beamericonbook.pdf
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/art/beamericonbook.20.pdf
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/art/beamericonbook.20.pdf
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/art/beamericonbook.20.pdf
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/art/beamericonarticle.pdf
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/art/beamericonarticle.pdf
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/art/beamericonarticle.pdf
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/art/beamericonarticle.20.pdf
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/art/beamericonarticle.20.pdf
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/art/beamericonarticle.20.pdf
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/art/beamericononline.pdf
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/art/beamericononline.pdf
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/art/beamericononline.pdf
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/art/beamericononline.20.pdf
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/art/beamericononline.20.pdf
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/art/beamericononline.20.pdf
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/themes/outer/beamerouterthemedefault.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/themes/outer/beamerouterthemedefault.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/psnfss/mathptmx.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/psnfss/mathptmx.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/eulervm/eulervm.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/eulervm/eulervm.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/base/fontenc.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/base/fontenc.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/base/t1enc.def
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/base/t1enc.def
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/jknappen/ec/ecss1095.tfm
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/base/inputenc.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/base/inputenc.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/base/latin9.def
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/base/latin9.def
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/themes/theme/beamerthemeCambridgeUS.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/themes/theme/beamerthemeCambridgeUS.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/themes/inner/beamerinnerthemerounded.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/themes/inner/beamerinnerthemerounded.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/themes/outer/beamerouterthemeinfolines.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/themes/outer/beamerouterthemeinfolines.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/themes/color/beamercolorthemebeaver.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/themes/color/beamercolorthemebeaver.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/babel/babel.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/babel/babel.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/arabi/bblopts.cfg
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/arabi/bblopts.cfg
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/babel-english/english.ldf
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/babel-english/english.ldf
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/babel-english/english.ldf
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/babel/babel.def
 INPUT 13.lab.mixture-models.aux
 INPUT 13.lab.mixture-models.aux
 OUTPUT 13.lab.mixture-models.aux
-INPUT /usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
-INPUT /usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/grfext.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/grfext.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/context/base/supp-pdf.mkii
+INPUT C:/Program Files/MiKTeX 2.9/tex/context/base/supp-pdf.mkii
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/oberdiek/epstopdf-base.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/oberdiek/epstopdf-base.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/oberdiek/grfext.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/oberdiek/grfext.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/hyperref/nameref.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/hyperref/nameref.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/gettitlestring.sty
+INPUT C:/Program Files/MiKTeX 2.9/tex/generic/oberdiek/gettitlestring.sty
 INPUT 13.lab.mixture-models.out
 INPUT 13.lab.mixture-models.out
 INPUT 13.lab.mixture-models.out
@@ -275,214 +280,275 @@ INPUT 13.lab.mixture-models.out
 INPUT ./13.lab.mixture-models.out
 INPUT ./13.lab.mixture-models.out
 OUTPUT 13.lab.mixture-models.out
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/translator/dicts/translator-basic-dictionary/translator-basic-dictionary-English.dict
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/translator/dicts/translator-basic-dictionary/translator-basic-dictionary-English.dict
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/translator/dicts/translator-bibliography-dictionary/translator-bibliography-dictionary-English.dict
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/translator/dicts/translator-bibliography-dictionary/translator-bibliography-dictionary-English.dict
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/translator/dicts/translator-environment-dictionary/translator-environment-dictionary-English.dict
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/translator/dicts/translator-environment-dictionary/translator-environment-dictionary-English.dict
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/translator/dicts/translator-months-dictionary/translator-months-dictionary-English.dict
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/translator/dicts/translator-months-dictionary/translator-months-dictionary-English.dict
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/translator/dicts/translator-numbers-dictionary/translator-numbers-dictionary-English.dict
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/translator/dicts/translator-numbers-dictionary/translator-numbers-dictionary-English.dict
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/translator/dicts/translator-theorem-dictionary/translator-theorem-dictionary-English.dict
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/beamer/translator/dicts/translator-theorem-dictionary/translator-theorem-dictionary-English.dict
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/translator/dicts/translator-basic-dictionary/translator-basic-dictionary-English.dict
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/translator/dicts/translator-basic-dictionary/translator-basic-dictionary-English.dict
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/translator/dicts/translator-bibliography-dictionary/translator-bibliography-dictionary-English.dict
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/translator/dicts/translator-bibliography-dictionary/translator-bibliography-dictionary-English.dict
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/translator/dicts/translator-environment-dictionary/translator-environment-dictionary-English.dict
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/translator/dicts/translator-environment-dictionary/translator-environment-dictionary-English.dict
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/translator/dicts/translator-months-dictionary/translator-months-dictionary-English.dict
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/translator/dicts/translator-months-dictionary/translator-months-dictionary-English.dict
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/translator/dicts/translator-numbers-dictionary/translator-numbers-dictionary-English.dict
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/translator/dicts/translator-numbers-dictionary/translator-numbers-dictionary-English.dict
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/translator/dicts/translator-theorem-dictionary/translator-theorem-dictionary-English.dict
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/beamer/translator/dicts/translator-theorem-dictionary/translator-theorem-dictionary-English.dict
 INPUT 13.lab.mixture-models.nav
 INPUT 13.lab.mixture-models.nav
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/jknappen/ec/ecss0600.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/jknappen/ec/ecss1440.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/jknappen/ec/ecss0800.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/jknappen/ec/ecss0500.tfm
-INPUT /usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmss8.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmss8.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/eulervm/uzeur.fd
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/eulervm/uzeur.fd
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/eulervm/zeurm10.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/eulervm/zeurm7.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/eulervm/zeurm7.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/eulervm/uzeus.fd
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/eulervm/uzeus.fd
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/eulervm/zeusm10.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/eulervm/zeusm7.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/eulervm/zeusm7.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/eulervm/uzeuex.fd
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/eulervm/uzeuex.fd
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/eulervm/zeuex10.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/eulervm/zeuex10.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/eulervm/zeuex10.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ot1ptm.fd
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ot1ptm.fd
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/times/ptmri7t.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/times/ptmri7t.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/times/ptmri7t.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/sansmathaccent/mathkerncmssi10.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/sansmathaccent/mathkerncmssi8.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/sansmathaccent/mathkerncmssi8.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/jknappen/ec/ecsx1095.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/jknappen/ec/ecsx0800.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/jknappen/ec/ecsx0600.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/vf/public/eulervm/zeusm10.vf
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm10.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/euler/eusm10.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/vf/public/eulervm/zeurm10.vf
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/euler/eurm10.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/vf/public/eulervm/zeuex10.vf
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/euler/euex10.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/vf/public/eulervm/zeusm7.vf
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm7.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmsy7.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/euler/eusm7.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/jknappen/ec/ecss1000.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmss10.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmss8.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/eulervm/zeurm10.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/eulervm/zeurm7.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/eulervm/zeusm10.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/eulervm/zeusm7.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/eulervm/zeuex10.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/eulervm/zeuex10.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/jknappen/ec/ecsx1000.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/jknappen/ec/ecsx0700.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/times/ptmri7t.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/times/ptmri7t.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/jknappen/ec/ecss0700.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/sansmathaccent/mathkerncmssi10.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/sansmathaccent/mathkerncmssi8.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/vf/public/eulervm/zeusm10.vf
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm10.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/euler/eusm10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/jknappen/ec/ecss0600.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/jknappen/ec/ecss1440.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/jknappen/ec/ecss0800.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/jknappen/ec/ecss0500.tfm
+INPUT C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmss8.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmss8.tfm
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/eulervm/uzeur.fd
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/eulervm/uzeur.fd
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/eulervm/zeurm10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/eulervm/zeurm7.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/eulervm/zeurm7.tfm
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/eulervm/uzeus.fd
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/eulervm/uzeus.fd
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/eulervm/zeusm10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/eulervm/zeusm7.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/eulervm/zeusm7.tfm
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/eulervm/uzeuex.fd
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/eulervm/uzeuex.fd
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/eulervm/zeuex10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/eulervm/zeuex10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/eulervm/zeuex10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msam7.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msam7.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/psnfss/ot1ptm.fd
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/psnfss/ot1ptm.fd
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/adobe/times/ptmb7t.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/adobe/times/ptmb7t.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/adobe/times/ptmb7t.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/adobe/times/ptmri7t.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/adobe/times/ptmri7t.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/adobe/times/ptmri7t.tfm
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/sansmathaccent/ot1mathkerncmss.fd
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/sansmathaccent/ot1mathkerncmss.fd
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/sansmathaccent/mathkerncmssi10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/sansmathaccent/mathkerncmssi8.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/sansmathaccent/mathkerncmssi8.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/jknappen/ec/ecsx1095.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/jknappen/ec/ecsx0800.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/jknappen/ec/ecsx0600.tfm
+INPUT Figures/clustering/vorpoints.pdf
+INPUT ./Figures/clustering/vorpoints.pdf
+INPUT ./Figures/clustering/vorpoints.pdf
+INPUT ./Figures/clustering/vorpoints.pdf
+INPUT C:/Program Files/MiKTeX 2.9/fonts/vf/public/eulervm/zeusm10.vf
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/euler/eufm10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmsy10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/euler/eusm10.tfm
+INPUT Figures/clustering/voronoi.pdf
+INPUT ./Figures/clustering/voronoi.pdf
+INPUT ./Figures/clustering/voronoi.pdf
+INPUT ./Figures/clustering/voronoi.pdf
+INPUT C:/Program Files/MiKTeX 2.9/fonts/vf/public/eulervm/zeurm10.vf
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/euler/eurm10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmmi10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmbx10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/vf/public/eulervm/zeuex10.vf
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmex10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/euler/euex10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/vf/public/eulervm/zeusm7.vf
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/euler/eufm7.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmsy7.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/euler/eusm7.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/jknappen/ec/ecss1000.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmss10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmss8.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/eulervm/zeurm10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/eulervm/zeurm7.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/eulervm/zeusm10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/eulervm/zeusm7.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/eulervm/zeuex10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/eulervm/zeuex10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/jknappen/ec/ecsx1000.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/jknappen/ec/ecsx0700.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msam7.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/adobe/times/ptmb7t.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/adobe/times/ptmb7t.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/adobe/times/ptmri7t.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/adobe/times/ptmri7t.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/jknappen/ec/ecss0700.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/sansmathaccent/mathkerncmssi10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/sansmathaccent/mathkerncmssi8.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/vf/public/eulervm/zeusm10.vf
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/euler/eufm10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/euler/eusm10.tfm
 INPUT ../Figures/clustering/mixture-3-gaussians.png
 INPUT ../Figures/clustering/mixture-3-gaussians.png
 INPUT ../Figures/clustering/mixture-3-gaussians.png
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmss12.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/eulervm/zeurm10.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/eulervm/zeusm10.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/eulervm/zeuex10.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/jknappen/ec/ecsx1440.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/times/ptmri7t.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/sansmathaccent/mathkerncmssi12.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/vf/public/eulervm/zeusm10.vf
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm10.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/euler/eusm10.tfm
 INPUT ../Figures/clustering/mixture-3-gaussians.png
 INPUT ../Figures/clustering/mixture-3-gaussians.png
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/vf/public/eulervm/zeurm10.vf
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/euler/eurm10.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmss12.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/eulervm/zeurm10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/eulervm/zeusm10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/eulervm/zeuex10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/jknappen/ec/ecsx1440.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/adobe/times/ptmb7t.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/adobe/times/ptmri7t.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/sansmathaccent/mathkerncmssi12.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/vf/public/eulervm/zeusm10.vf
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/euler/eufm10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmsy10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/euler/eusm10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/vf/public/eulervm/zeurm10.vf
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/euler/eurm10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmbx10.tfm
 INPUT ../Figures/clustering/gmm-singularity.png
 INPUT ../Figures/clustering/gmm-singularity.png
 INPUT ../Figures/clustering/gmm-singularity.png
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/jknappen/ec/ecss0900.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmss9.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmss8.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/eulervm/zeurm10.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/eulervm/zeurm7.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/eulervm/zeurm5.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/eulervm/zeusm10.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/eulervm/zeusm7.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/eulervm/zeusm5.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/eulervm/zeuex10.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/eulervm/zeuex10.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/eulervm/zeuex10.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/jknappen/ec/ecsx0900.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/jknappen/ec/ecsx0500.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/times/ptmri7t.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/times/ptmri7t.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/times/ptmri7t.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/sansmathaccent/mathkerncmssi9.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/sansmathaccent/mathkerncmssi8.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/sansmathaccent/mathkerncmssi8.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/jknappen/ec/ecsi0600.tfm
+INPUT ../Figures/clustering/gmm-singularity.png
+INPUT ../Figures/clustering/gmm-singularity.png
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/jknappen/ec/ecss0900.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmss9.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmss8.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/eulervm/zeurm10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/eulervm/zeurm7.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/eulervm/zeurm5.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/eulervm/zeusm10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/eulervm/zeusm7.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/eulervm/zeusm5.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/eulervm/zeuex10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/eulervm/zeuex10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/eulervm/zeuex10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/jknappen/ec/ecsx0900.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/jknappen/ec/ecsx0500.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msam7.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msam5.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/adobe/times/ptmb7t.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/adobe/times/ptmb7t.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/adobe/times/ptmb7t.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/adobe/times/ptmri7t.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/adobe/times/ptmri7t.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/adobe/times/ptmri7t.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/sansmathaccent/mathkerncmssi9.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/sansmathaccent/mathkerncmssi8.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/sansmathaccent/mathkerncmssi8.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/jknappen/ec/ecsi0600.tfm
+INPUT ../Figures/clustering/9.8a.png
+INPUT ../Figures/clustering/9.8a.png
 INPUT ../Figures/clustering/9.8a.png
 INPUT ../Figures/clustering/9.8a.png
 INPUT ../Figures/clustering/9.8a.png
 INPUT ../Figures/clustering/9.8b.png
 INPUT ../Figures/clustering/9.8b.png
 INPUT ../Figures/clustering/9.8b.png
+INPUT ../Figures/clustering/9.8b.png
+INPUT ../Figures/clustering/9.8b.png
+INPUT ../Figures/clustering/9.8c.png
+INPUT ../Figures/clustering/9.8c.png
 INPUT ../Figures/clustering/9.8c.png
 INPUT ../Figures/clustering/9.8c.png
 INPUT ../Figures/clustering/9.8c.png
 INPUT ../Figures/clustering/9.8e.png
 INPUT ../Figures/clustering/9.8e.png
 INPUT ../Figures/clustering/9.8e.png
+INPUT ../Figures/clustering/9.8e.png
+INPUT ../Figures/clustering/9.8e.png
 INPUT ../Figures/clustering/9.8f.png
 INPUT ../Figures/clustering/9.8f.png
 INPUT ../Figures/clustering/9.8f.png
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/t1ptm.fd
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/t1ptm.fd
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/times/ptmr8t.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/times/ptmr8t.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/times/ptmr8t.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/jknappen/ec/ecsi1095.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/vf/adobe/times/ptmr8t.vf
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
+INPUT ../Figures/clustering/9.8f.png
+INPUT ../Figures/clustering/9.8f.png
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/psnfss/t1ptm.fd
+INPUT C:/Program Files/MiKTeX 2.9/tex/latex/psnfss/t1ptm.fd
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/adobe/times/ptmr8t.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/adobe/times/ptmr8t.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/adobe/times/ptmr8t.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/jknappen/ec/ecsi1095.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/vf/adobe/times/ptmr8t.vf
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/adobe/times/ptmr8r.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/adobe/times/ptmri8t.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/jknappen/ec/ecsi0800.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/adobe/times/ptmri8t.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/adobe/times/ptmri8t.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/vf/adobe/times/ptmri8t.vf
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/adobe/times/ptmri8r.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/vf/public/eulervm/zeurm7.vf
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/amsfonts/euler/eurm7.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmmi7.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmbx7.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmr7.tfm
 OUTPUT 13.lab.mixture-models.nav
 OUTPUT 13.lab.mixture-models.toc
 OUTPUT 13.lab.mixture-models.snm
 INPUT 13.lab.mixture-models.aux
 INPUT ./13.lab.mixture-models.out
 INPUT ./13.lab.mixture-models.out
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/euler/euex10.pfb
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/euler/eusm7.pfb
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfsi0600.pfb
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfsi1095.pfb
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfss0600.pfb
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfsx1000.pfb
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr8a.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc
+INPUT C:/Users/Brett Bernstein/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecsi1095.pk
+INPUT C:/Users/Brett Bernstein/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecsi1095.pk
+INPUT C:/Users/Brett Bernstein/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecsi0600.pk
+INPUT C:/Users/Brett Bernstein/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecsi0600.pk
+INPUT C:/Users/Brett Bernstein/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecsx1000.pk
+INPUT C:/Users/Brett Bernstein/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecsx1000.pk
+INPUT C:/Users/Brett Bernstein/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecss1000.pk
+INPUT C:/Users/Brett Bernstein/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecss1000.pk
+INPUT C:/Users/Brett Bernstein/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecsx1095.pk
+INPUT C:/Users/Brett Bernstein/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecsx1095.pk
+INPUT C:/Users/Brett Bernstein/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecss0600.pk
+INPUT C:/Users/Brett Bernstein/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecss0600.pk
+INPUT C:/Users/Brett Bernstein/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecss0800.pk
+INPUT C:/Users/Brett Bernstein/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecss0800.pk
+INPUT C:/Users/Brett Bernstein/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecss1095.pk
+INPUT C:/Users/Brett Bernstein/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecss1095.pk
+INPUT C:/Users/Brett Bernstein/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecss1440.pk
+INPUT C:/Users/Brett Bernstein/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecss1440.pk
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss10.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss10.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss8.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss8.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi10.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi10.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi12.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi12.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi8.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi8.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/euex10.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/euex10.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm7.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm7.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eurm10.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eurm10.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eurm7.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eurm7.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eusm10.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eusm10.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eusm7.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eusm7.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb

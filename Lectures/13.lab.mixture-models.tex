@@ -173,13 +173,21 @@
   a new $x\in\RR^2$, we can assign it a label based on which cluster
   center is closest.  What regions of the plane below correspond to
   each possible labeling?
+  \begin{center}
+    %trim={<left> <lower> <right> <upper>}
+    \includegraphics[height=.7\textheight,trim={0 6cm 0 8cm}]{Figures/clustering/vorpoints.pdf}
+  \end{center}
 \end{frame}
 \begin{frame}{Intro Solution}
   \begin{itemize}
   \item Note that each cell is disjoint (except for the boarders), and
     convex.
-  \item This can be thought of as a limitation of $k$-means.
+  \item This can be thought of as a limitation of $k$-means: neither
+    will be true for GMMs.
   \end{itemize}
+  \begin{center}
+    \includegraphics[height=.9\textheight,trim={0 5cm 0 8cm}]{Figures/clustering/voronoi.pdf}
+  \end{center}
 \end{frame}
 \section{Gaussian Mixture Models}
 \begin{frame}{Yesterday's Intro Question}
@@ -266,8 +274,7 @@
 \begin{itemize}
 \item What if one cluster had many more points than another cluster?
 \end{itemize}
-\includegraphics[height=0.5\textheight]{../Figures/clustering/mixture-3-gaussians} 
-\par\end{center}
+\end{center}
 \end{frame}
 
 \begin{frame}{Gaussian Mixture Model: Joint Distribution }
@@ -780,7 +787,8 @@ $k$-means.
   \end{itemize}
   \begin{theorem}{Jensen's Inequality}
     If $f:\RR\to\RR$ is convex and $X$ is a random variable then $\ex[f(X)] \geq
-    f(\ex[X])$. 
+    f(\ex[X])$. If $f$ is strictly convex then we have equality iff
+    $X=\ex[X]$ with probability 1 (i.e., $X$ is constant).
   \end{theorem}  
 \end{frame}
 \begin{frame}{Proof of Jensen}
@@ -799,7 +807,7 @@ $k$-means.
 \end{frame}
 \begin{frame}{Proof of Jensen}
   \begin{enumerate}
-  \item Let $e = \ex[X]$.
+  \item Let $e = \ex[X]$. (Remember $e$ is just a number.)
   \item Since $f$ has a subgradient at $e$, there is an
     underestimating line $g(x)=ax+b$ that passes through the point
     $(e,f(e))$.
@@ -812,6 +820,49 @@ $k$-means.
       & = & f(e)\\
       & = & f(\ex[X]).
     \end{eqnarray*}
+  \item If $f$ is strictly convex then $f=g$ at exactly 1 point, so
+    equality iff $X$ is constant.
   \end{enumerate}
+\end{frame}
+\begin{frame}{KL-Divergence}
+\begin{itemize}
+\item Let $p(x)$ and $q(x)$ be probability mass functions (PMFs) on
+  $\cx$.
+\item We want to measure how different they are.
+\item The \textbf{Kullback-Leibler} or \textbf{``KL'' Divergence} is
+  define by
+  $$\kl(p\|q) = \sum_{x\in\cx} p(x)\log\frac{p(x)}{q(x)}.$$
+  (Assumes \textit{absolute continuity}: $q(x)=0$ implies $p(x)=0$.)
+\item Can also write
+  $$\kl(p\|q) = \ex_{x\sim p}\log\frac{p(x)}{q(x)}.$$
+\item Note, the KL-divergence is not symmetric and doesn't satisfy the
+  triangle inequality.
+\end{itemize}
+\end{frame}
+\begin{frame}{Gibbs' Inequality}
+  \begin{theorem}{Gibbs' Inequality}
+    Let $p(x)$ and $q(x)$ be PMFs on $\cx$.  Then
+    $$\kl(p\|q)\geq 0,$$
+    with equality iff $p(x)=q(x)$ for all $x\in\cx$.
+  \end{theorem}
+  \begin{itemize}
+  \item Since 
+    $$\kl(p\|q)=\ex_p\left[-\log\left(\frac{q(x)}{p(x)}\right)\right],$$
+    this is screaming for Jensen's inequality.
+  \end{itemize}
+\end{frame}
+\begin{frame}{Gibbs' Inequality: Proof}
+  \begin{eqnarray*}
+    \kl(p\|q)
+    & = & \ex_p\left[-\log\left(\frac{q(x)}{p(x)}\right)\right]\\
+    & \geq & -\log\left(\ex_p\left[\frac{q(x)}{p(x)}\right]\right)\\
+    & = & -\log\left(\sum_{x:p(x)>0}p(x)\frac{q(x)}{p(x)}\right)\\
+    & = & -\log\left(\sum_x q(x)\right)\\
+    & = & -\log1=0.
+  \end{eqnarray*}
+  \begin{itemize}
+  \item Since $-\log$ is strictly convex, we have equality iff $q/p$
+    is constant, i.e., $q=p$.
+  \end{itemize}
 \end{frame}
 \end{document}

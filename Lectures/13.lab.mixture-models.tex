@@ -47,6 +47,7 @@
 \begin{document}
 
 \global\long\def\reals{\mathbf{R}}
+\global\long\def\RR{\mathbf{R}}
  \global\long\def\integers{\mathbf{Z}}
  \global\long\def\naturals{\mathbf{N}}
  \global\long\def\rationals{\mathbf{Q}}
@@ -166,6 +167,22 @@
 
 \section{Intro Question}
 \begin{frame}{Intro Question}
+  Suppose we begin with a dataset $\cd = \{x_1,\ldots,x_n\}\subseteq\RR^2$
+  and we run $k$-means (or $k$-means$++$) to obtain $k$ cluster
+  centers.  Below we have drawn the cluster centers.  If we are given
+  a new $x\in\RR^2$, we can assign it a label based on which cluster
+  center is closest.  What regions of the plane below correspond to
+  each possible labeling?
+\end{frame}
+\begin{frame}{Intro SOlution}
+  \begin{itemize}
+  \item Note that each cell is disjoint (except for the boarders), and
+    convex.
+  \item This can be thought of as a limitation of $k$-means.
+  \end{itemize}
+\end{frame}
+\section{Gaussian Mixture Models}
+\begin{frame}{Yesterday's Intro Question}
   Consider the following probability model for generating data.
   \begin{enumerate}
   \item Roll a weighted $k$-sided die to choose a label
@@ -183,7 +200,7 @@
   \item How would you determine the label for a new datapoint $x$?
   \end{enumerate}
 \end{frame}
-\begin{frame}{Intro Solution}
+\begin{frame}{Yesterday's Intro Solution}
   \begin{enumerate}
   \item The joint PDF/PMF is given by
     $$p(x,z) = \pi(z)f(x;\mu_z,\Sigma_z)$$
@@ -200,8 +217,6 @@
   \item $\argmax_z p(x,z)$
   \end{enumerate}
 \end{frame}
-
-\section{Gaussian Mixture Models}
 \begin{frame}{Probabilistic Model for Clustering}
 
 \begin{itemize}
@@ -218,6 +233,7 @@
 \item Choose a random cluster $z\in\left\{ 1,2,\ldots,k\right\} $. 
 \item Choose a point from the distribution for cluster $Z$. 
 \end{enumerate}
+\item To find our clusters
 \end{itemize}
 \end{frame}
 

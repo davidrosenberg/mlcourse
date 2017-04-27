@@ -674,7 +674,7 @@ exactly the \textbf{soft assignment} for $x_{i}$.
   [Compare with intro question.]
 \begin{eqnarray*}
 \mu_{c}^{\text{new}} & = & \frac{1}{n_{c}}\sum_{i=1}^{n}\gamma_{i}^{c}x_{i}\\
-\Sigma_{c}^{\text{new}} & = & \frac{1}{n_{c}}\sum_{i=1}^{n}\gamma_{i}^{c}\left(x_{i}-\mu_{\text{MLE}}\right)\left(x_{i}-\mu_{\text{MLE}}\right)^{T}\\
+\Sigma_{c}^{\text{new}} & = & \frac{1}{n_{c}}\sum_{i=1}^{n}\gamma_{i}^{c}\left(x_{i}-\mu_c^{\text{new}}\right)\left(x_{i}-\mu_c^{\text{new}}\right)^{T}\\
 \pi_{c}^{\text{new}} & = & \frac{n_{c}}{n},
 \end{eqnarray*}
 \item Repeat from Step 2, until log-likelihood converges. 

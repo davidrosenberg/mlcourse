@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1493243210 "13.lab.mixture-models.tex" "13.lab.mixture-models.pdf" "13.lab.mixture-models" 1493243213
+["pdflatex"] 1493261548 "13.lab.mixture-models.tex" "13.lab.mixture-models.pdf" "13.lab.mixture-models" 1493261554
   "../Figures/clustering/9.8a.png" 1485077747 69830 ba5f5d0b4e8e71f6401000d964fff77d ""
   "../Figures/clustering/9.8b.png" 1485077747 77511 c65031f91c4f1a49748b7c8887217238 ""
   "../Figures/clustering/9.8c.png" 1485077747 67472 c73bf982af63ca8416738a8d63b6c3f7 ""
@@ -7,10 +7,10 @@
   "../Figures/clustering/9.8f.png" 1485077747 50853 93d1c5def717ce6c82dccc74a239c3d5 ""
   "../Figures/clustering/gmm-singularity.png" 1485077747 43592 5861d0b55e4eaa1fd59d6ef5a0ebabcc ""
   "../Figures/clustering/mixture-3-gaussians.png" 1485077747 217368 2a72244f59663502aba23aedad18cc1c ""
-  "13.lab.mixture-models.aux" 1493243212 8852 d0fe34cfc8f652a609508539820615ff ""
-  "13.lab.mixture-models.nav" 1493243212 5464 91cb74057f0eba7f105eea07fe145e2c ""
-  "13.lab.mixture-models.out" 1493243212 428 d210e841056e6af8a647d494615d83ef ""
-  "13.lab.mixture-models.tex" 1493243201 25782 5ee060bfde1c2ff7a48007ee7806cd21 ""
+  "13.lab.mixture-models.aux" 1493261554 8852 d0fe34cfc8f652a609508539820615ff ""
+  "13.lab.mixture-models.nav" 1493261554 5464 91cb74057f0eba7f105eea07fe145e2c ""
+  "13.lab.mixture-models.out" 1493261554 428 d210e841056e6af8a647d494615d83ef ""
+  "13.lab.mixture-models.tex" 1493261538 25786 55a0f49b8ce5c0b71d0c6941b1f62c7b ""
   "C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
   "C:/Program Files/MiKTeX 2.9/fonts/tfm/adobe/times/ptmb7t.tfm" 1136793854 2172 fd0c924230362ff848a33632ed45dc23 ""
   "C:/Program Files/MiKTeX 2.9/fonts/tfm/adobe/times/ptmr8r.tfm" 1136793854 4408 25b74d011a4c66b7f212c0cc3c90061b ""
@@ -273,10 +273,10 @@
   "Figures/clustering/voronoi.pdf" 1493240335 2594 f2973d0bd44e6246b2f168f50772ba52 ""
   "Figures/clustering/vorpoints.pdf" 1493240315 2141 96b17eaa898b2bc6b067ebf5611fce6e ""
   (generated)
-  "13.lab.mixture-models.log"
-  "13.lab.mixture-models.aux"
-  "13.lab.mixture-models.nav"
   "13.lab.mixture-models.out"
+  "13.lab.mixture-models.log"
+  "13.lab.mixture-models.snm"
+  "13.lab.mixture-models.nav"
+  "13.lab.mixture-models.aux"
   "13.lab.mixture-models.pdf"
   "13.lab.mixture-models.toc"
-  "13.lab.mixture-models.snm"

@@ -3,7 +3,7 @@
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin unavailable
+\origin /Users/drosen/Dropbox/repos/mlcourse/Lectures/
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -20,7 +20,7 @@
   \end{frame}
 }
 \end_preamble
-\options handout
+\options handout,aspectratio=169
 \use_default_options false
 \maintain_unincluded_children false
 \language english
@@ -678,19 +678,7 @@ David Rosenberg
 \end_layout
 
 \begin_layout Date
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-today
-\end_layout
-
-\end_inset
-
-
+May 2, 2017
 \end_layout
 
 \begin_layout Institute
@@ -710,6 +698,833 @@ Just in article version
  
 \end_layout
 
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Gaussian Mixture Models (Review)
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Example: Old Faithful Geyser
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/clustering/oldfaithful.png
+	lyxscale 20
+	width 65text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Looks like two clusters.
+\end_layout
+
+\begin_layout Itemize
+How to find these clusters algorithmically?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Probabilistic Model for Clustering
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let's consider a 
+\series bold
+generative model
+\series default
+ for the data.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Suppose 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+There are 
+\begin_inset Formula $k$
+\end_inset
+
+ clusters.
+\end_layout
+
+\begin_layout Enumerate
+We have a probability density for each cluster.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Generate a point 
+\begin_inset Formula $x$
+\end_inset
+
+ as follows
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Choose a random cluster 
+\begin_inset Formula $z\in\left\{ 1,2,\ldots,k\right\} $
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Choose a point 
+\begin_inset Formula $x$
+\end_inset
+
+ from the distribution for cluster 
+\begin_inset Formula $z$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Gaussian Mixture Model (
+\begin_inset Formula $k=3$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Choose 
+\begin_inset Formula $z\in\left\{ 1,2,3\right\} $
+\end_inset
+
+ with 
+\begin_inset Formula $p(1)=p(2)=p(3)=\frac{1}{3}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Choose 
+\begin_inset Formula $x\mid z\sim\cn\left(X\mid\mu_{z},\Sigma_{z}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/clustering/mixture-3-gaussians.png
+	lyxscale 30
+	height 60theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Gaussian Mixture Model Parameters (
+\begin_inset Formula $k$
+\end_inset
+
+ Components)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Formula 
+\begin{eqnarray*}
+\text{Cluster probabilities}: &  & \pi=\left(\pi_{1},\ldots,\pi_{k}\right)\\
+\text{Cluster means}: &  & \mu=\left(\mu_{1},\ldots,\mu_{k}\right)\\
+\text{Cluster covariance matrices:} &  & \Sigma=\left(\Sigma_{1},\ldots\Sigma_{k}\right)
+\end{eqnarray*}
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../Figures/clustering/mixture-3-gaussians.png
+	lyxscale 20
+	height 35theight%
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+For now, 
+\series bold
+suppose all these parameters are known
+\series default
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+We'll discuss how to 
+\series bold
+learn
+\series default
+ or 
+\series bold
+estimate 
+\series default
+them later.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The GMM 
+\begin_inset Quotes eld
+\end_inset
+
+Inference
+\begin_inset Quotes erd
+\end_inset
+
+ Problem
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+Suppose
+\emph default
+ we know all the model parameters 
+\begin_inset Formula $\pi,\mu,\Sigma$
+\end_inset
+
+, and thus 
+\begin_inset Formula $p(x,z)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+The 
+\series bold
+inference problem
+\series default
+: We observe 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ We want to know its cluster 
+\begin_inset Formula $z$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+We can get a
+\series bold
+ soft cluster assignment 
+\series default
+from the conditional distribution:
+\begin_inset Formula 
+\[
+p(z\mid x)=p(x,z)/p(x)
+\]
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Could say: can't compute this because 
+\begin_inset Formula $p(x)$
+\end_inset
+
+ is hard.
+ But we don't actually need 
+\begin_inset Formula $p(x)$
+\end_inset
+
+.
+ Since 
+\begin_inset Formula $p(z\mid x)\propto p(x,z)$
+\end_inset
+
+, which is easy.
+ And we can just renormalize over 
+\begin_inset Formula $z$
+\end_inset
+
+, which is a simple sum for discrete 
+\begin_inset Formula $z$
+\end_inset
+
+.
+ Moreover, in this case, calculating 
+\begin_inset Formula $p(x)$
+\end_inset
+
+ is NOT hard, because the latent variable space is very small.
+ (Just the number of clusters.) It IS hard in situations where we have a
+ high dimensional latent space and we have exponentially many possible assignmen
+ts of 
+\begin_inset Formula $z$
+\end_inset
+
+ we need to sum over.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+A 
+\series bold
+hard cluster assignment 
+\series default
+is given by
+\begin_inset Formula 
+\[
+z^{*}=\argmax_{z\in\left\{ 1,\ldots,k\right\} }p(z\mid x).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+So if we know the model parameters, we can compute 
+\begin_inset Formula $p(z\mid x)$
+\end_inset
+
+, and clustering is trival.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The GMM 
+\begin_inset Quotes eld
+\end_inset
+
+Learning
+\begin_inset Quotes erd
+\end_inset
+
+ Problem
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Given data 
+\begin_inset Formula $x_{1},\ldots,x_{n}$
+\end_inset
+
+ drawn i.i.d.
+ from a GMM,
+\end_layout
+
+\begin_layout Itemize
+Estimate the parameters: 
+\begin_inset Formula 
+\begin{eqnarray*}
+\text{Cluster probabilities}: &  & \pi=\left(\pi_{1},\ldots,\pi_{k}\right)\\
+\text{Cluster means}: &  & \mu=\left(\mu_{1},\ldots,\mu_{k}\right)\\
+\text{Cluster covariance matrices:} &  & \Sigma=\left(\Sigma_{1},\ldots\Sigma_{k}\right)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Traditional approach is maximum [marginal] likelihood:
+\begin_inset Formula 
+\[
+\left(\pi,\mu,\Sigma\right)=\argmax_{\pi,\mu,\Sigma}p(x_{1},\ldots,x_{n})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Unfortunately, this is very difficult.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Note that the fully observed problem is easy.
+ That is:
+\begin_inset Formula 
+\[
+\left(\pi,\mu,\Sigma\right)=\argmax_{\pi,\mu,\Sigma}p(x_{1},\ldots,x_{n},z_{1},\ldots,z_{n})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Gaussian Mixture Model: Joint Distribution 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout ColumnsTopAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+.25
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../Figures/clustering/gmm-bayesnet.png
+	lyxscale 30
+	width 40col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+.75
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Factorize the joint distribution:
+\begin_inset Formula 
+\begin{eqnarray*}
+p(x,z) & = & p(z)p(x\mid z)\\
+\pause & = & \pi_{z}\cn\left(x\mid\mu_{z},\Sigma_{z}\right)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\pi_{z}$
+\end_inset
+
+ is probability of choosing cluster 
+\begin_inset Formula $z$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $x\mid z$
+\end_inset
+
+ has distribution 
+\begin_inset Formula $\cn(\mu_{z},\Sigma_{z})$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $z$
+\end_inset
+
+ corresponding to 
+\begin_inset Formula $x$
+\end_inset
+
+ is the true cluster assignment.
+ 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Suppose we know all the model parameters 
+\begin_inset Formula $\pi_{z},\mu_{z},\Sigma_{z}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Then we can easily compute the joint 
+\begin_inset Formula $p(x,z)$
+\end_inset
+
+ and the conditional 
+\begin_inset Formula $p(z\mid x)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Latent Variable Model 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We observe 
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+We don't observe 
+\begin_inset Formula $z$
+\end_inset
+
+.
+ (Cluster assignment).
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Cluster assignment 
+\begin_inset Formula $z$
+\end_inset
+
+ is called a 
+\series bold
+hidden
+\series default
+ 
+\series bold
+variable
+\series default
+ or 
+\series bold
+latent variable
+\series default
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Definition
+A
+\series bold
+ latent variable model 
+\series default
+is a probability model for which certain variables are never observed.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Plain Layout
+e.g.
+ The Gaussian mixture model is a latent variable model.
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 EM Algorithm for Latent Variable Models 
 \end_layout
@@ -722,10 +1537,6 @@ status open
 General Latent Variable Model
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -764,10 +1575,6 @@ hidden variables
 observed variables
 \series default
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -789,7 +1596,30 @@ p(x,z\mid\theta)
 
 \end_inset
 
- 
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Definition
+A
+\series bold
+ latent variable model 
+\series default
+is a probability model for which certain variables are never observed.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+e.g.
+ The Gaussian mixture model is a latent variable model.
 \end_layout
 
 \end_deeper
@@ -811,51 +1641,15 @@ Complete and Incomplete Data
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-An observation of 
-\begin_inset Formula $x$
-\end_inset
-
- is called an 
-\series bold
-incomplete data set
-\series default
-.
-\end_layout
-
-\begin_layout Itemize
-An observation 
-\begin_inset Formula $\left(x,z\right)$
-\end_inset
-
- is called a 
-\series bold
-complete data set
-\series default
-.
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-Suppose we have an incomplete data set 
+Suppose we have a data set 
 \begin_inset Formula $\cd=\left(x_{1},\ldots,x_{n}\right)$
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -892,14 +1686,41 @@ z=\left(z_{1},\ldots,z_{n}\right).
 
 \end_layout
 
+\begin_layout Itemize
+An observation of 
+\begin_inset Formula $x$
+\end_inset
+
+ is called an 
+\series bold
+incomplete data set
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+An observation 
+\begin_inset Formula $\left(x,z\right)$
+\end_inset
+
+ is called a 
+\series bold
+complete data set
+\series default
+.
+\end_layout
+
 \end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset Note Note
 status collapsed
-
-\begin_layout Separator
-
-\end_layout
 
 \begin_layout Frame
 \begin_inset Argument 4
@@ -909,10 +1730,6 @@ status open
 Log-Likelihood and Terminology
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -926,10 +1743,6 @@ Note that
 \argmax_{\theta}p(x\mid\theta)=\argmax_{\theta}\left[\log p(x\mid\theta)\right].
 \]
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -955,10 +1768,6 @@ og-likelihood
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -977,10 +1786,6 @@ We often call
 marginal likelihood
 \series default
 , 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1007,10 +1812,6 @@ marginalized out
 p(x)=\sum_{z}p(x,z)
 \]
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1042,10 +1843,6 @@ joint distribution
 \end_inset
 
 )
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1077,10 +1874,6 @@ marginal log-likelihood
 \begin_inset Note Note
 status collapsed
 
-\begin_layout Separator
-
-\end_layout
-
 \begin_layout Frame
 \begin_inset Argument 4
 status open
@@ -1089,10 +1882,6 @@ status open
 Assumptions for EM Algorithm
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1105,10 +1894,6 @@ Assumptions for EM Algorithm
 Assumption for the EM algorithm
 \series default
 :
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1122,10 +1907,6 @@ Optimization for complete data is relatively easy
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1136,10 +1917,6 @@ Optimization for complete data is relatively easy
 \end_deeper
 \begin_layout Itemize
 Clearly true for Gaussian mixture model.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1160,118 +1937,7 @@ Clearly true for Gaussian mixture model.
 
 \end_inset
 
-
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Complete and Incomplete Data
-\end_layout
-
-\end_inset
-
-
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-An observation of 
-\begin_inset Formula $x$
-\end_inset
-
- is called an 
-\series bold
-incomplete data set
-\series default
-.
-\end_layout
-
-\begin_layout Itemize
-An observation 
-\begin_inset Formula $\left(x,z\right)$
-\end_inset
-
- is called a 
-\series bold
-complete data set
-\series default
-.
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-Suppose we have an incomplete data set 
-\begin_inset Formula $\cd=\left(x_{1},\ldots,x_{n}\right)$
-\end_inset
-
-.
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-To simplify notation, take 
-\begin_inset Formula $x$
-\end_inset
-
- to represent the entire dataset
-\begin_inset Formula 
-\[
-x=\left(x_{1},\ldots,x_{n}\right),
-\]
-
-\end_inset
-
-and 
-\begin_inset Formula $z$
-\end_inset
-
- to represent the corresponding unobserved variables
-\begin_inset Formula 
-\[
-z=\left(z_{1},\ldots,z_{n}\right).
-\]
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
+ 
 \end_layout
 
 \begin_layout Frame
@@ -1285,15 +1951,15 @@ Our Objectives
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Given incomplete dataset 
+
+\series bold
+Learning problem
+\series default
+: Given incomplete dataset 
 \begin_inset Formula $\cd=x=\left(x_{1},\ldots,x_{n}\right)$
 \end_inset
 
@@ -1315,12 +1981,16 @@ Given incomplete dataset
 
 \end_deeper
 \begin_layout Itemize
-Given 
-\begin_inset Formula $x_{i}$
+
+\series bold
+Inference problem
+\series default
+: Given 
+\begin_inset Formula $x$
 \end_inset
 
 , find conditional distribution over 
-\begin_inset Formula $z_{i}$
+\begin_inset Formula $z$
 \end_inset
 
 :
@@ -1339,24 +2009,294 @@ p\left(z_{i}\mid x_{i},\theta\right).
 
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
-For Gaussian mixture model, this is easy once we have 
-\begin_inset Formula $\theta$
+For Gaussian mixture model, learning is hard, inference is easy.
+\end_layout
+
+\begin_layout Itemize
+For more complicated models, inference can also be hard.
+ (See DSGA-1005)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
 \end_inset
 
-:
-\begin_inset Formula 
-\begin{eqnarray*}
-p(z_{i}\mid x_{i},\theta) & \propto & p(z_{i},x_{i}\mid\theta_{i})\\
- & = & \pi(z_{i})\cn\left(x_{i}\mid\mu_{z_{i}},\Sigma_{z_{i}}\right).
-\end{eqnarray*}
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Log-Likelihood and Terminology
+\end_layout
 
 \end_inset
 
 
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+Note that
+\begin_inset Formula 
+\[
+\argmax_{\theta}p(x\mid\theta)=\argmax_{\theta}\left[\log p(x\mid\theta)\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
 \end_deeper
+\begin_layout Itemize
+Often easier to work with this 
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+log-likelihood
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We often call 
+\begin_inset Formula $p(x)$
+\end_inset
+
+ the 
+\series bold
+marginal likelihood
+\series default
+, 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+because it is 
+\begin_inset Formula $p(x,z)$
+\end_inset
+
+ with 
+\begin_inset Formula $z$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+marginalized out
+\begin_inset Quotes erd
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+p(x)=\sum_{z}p(x,z)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+We often call 
+\begin_inset Formula $p(x,y)$
+\end_inset
+
+ the 
+\series bold
+joint
+\series default
+.
+ (for 
+\begin_inset Quotes eld
+\end_inset
+
+joint distribution
+\begin_inset Quotes erd
+\end_inset
+
+)
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Similarly, 
+\begin_inset Formula $\log p(x)$
+\end_inset
+
+ is the 
+\series bold
+marginal log-likelihood
+\series default
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The EM Algorithm 
+\series bold
+Key Idea
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Marginal log-likelihood is hard to optimize:
+\begin_inset Formula 
+\[
+\max_{\theta}\;\log p(x\mid\theta)
+\]
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+\max_{\theta}\;\log\left\{ \sum_{z}p(x,z\mid\theta)\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Typically 
+\series default
+the complete data log-likelihood is easy to optimize:
+\begin_inset Formula 
+\[
+\max_{\theta}\;\log p(x,z\mid\theta)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+What if we had a 
+\series bold
+distribution 
+\series default
+
+\begin_inset Formula $q(z)$
+\end_inset
+
+ for the latent variables 
+\begin_inset Formula $z$
+\end_inset
+
+?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Then maximize the 
+\series bold
+expected complete data log-likelihood
+\series default
+:
+\begin_inset Formula 
+\[
+\max_{\theta}\:\sum_{z}q(z)\log p(x,z\mid\theta)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+EM 
+\series bold
+assumes
+\series default
+ this maximization is relatively easy.
+\end_layout
+
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator parbreak
@@ -1370,13 +2310,9 @@ p(z_{i}\mid x_{i},\theta) & \propto & p(z_{i},x_{i}\mid\theta_{i})\\
 status open
 
 \begin_layout Plain Layout
-Lower Bound for Likelihood
+Lower Bound for Marginal Log-Likelihood
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1393,7 +2329,7 @@ Let
 \end_inset
 
 , the support of 
-\begin_inset Formula $Z$
+\begin_inset Formula $z$
 \end_inset
 
 :
@@ -1409,27 +2345,83 @@ Let
 
 \end_layout
 
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
 \begin_layout Itemize
-We'll maximize the lower 
-\begin_inset Formula $\cl(q,\theta)$
-\end_inset
+Inequality is by Jensen's, by concavity of the log.
+\end_layout
 
- w.r.t.
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+This inequality is the basis
+\series bold
  
-\begin_inset Formula $\theta$
+\series default
+for
+\series bold
+ 
+\begin_inset Quotes eld
 \end_inset
 
- and 
-\begin_inset Formula $q$
+variational methods
+\begin_inset Quotes erd
 \end_inset
 
-.
-\begin_inset Note Note
+
+\series default
+, of which EM is a basic example.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
 status open
 
+\begin_layout Plain Layout
+The ELBO
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Itemize
-[NOT SURE if this is standard terminology outside of setting when we're
- doing variational inference in Bayesian setting
+For any PMF 
+\begin_inset Formula $q(z)$
+\end_inset
+
+, we have a lower bound on the marginal log-likelihood 
+\begin_inset Formula 
+\[
+\log p(x\mid\theta)\ge\underbrace{\sum_{z}q(z)\log\left(\frac{p(x,z\mid\theta)}{q(z)}\right)}_{\cl(q,\theta)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
 \end_layout
 
 \begin_layout Itemize
@@ -1442,18 +2434,12 @@ Marginal log likelihood
 evidence
 \series default
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
-\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 \begin_inset Formula $\cl(q,\theta)$
 \end_inset
@@ -1473,6 +2459,15 @@ ELBO
 \end_inset
 
 .
+\series default
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Itemize
+[NOT SURE if this is standard terminology outside of setting when we're
+ doing variational inference in Bayesian setting,...
+ but giving it anyway
 \end_layout
 
 \end_inset
@@ -1480,9 +2475,29 @@ ELBO
 
 \end_layout
 
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+In EM algorithm (and variational methods more generally), we maximize 
+\begin_inset Formula $\cl(q,\theta)$
+\end_inset
+
+ over 
+\begin_inset Formula $q$
+\end_inset
+
+ and 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+\end_layout
+
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1493,13 +2508,9 @@ ELBO
 status open
 
 \begin_layout Plain Layout
-Lower Bound and Expected Complete Log-Likelihood
+MLE, EM, and the ELBO
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1507,16 +2518,15 @@ Lower Bound and Expected Complete Log-Likelihood
 
 \begin_deeper
 \begin_layout Itemize
-Consider maximizing the lower bound 
-\begin_inset Formula $\cl(q,\theta)$
+For any PMF 
+\begin_inset Formula $q(z)$
 \end_inset
 
-:
+, we have a lower bound on the marginal log-likelihood 
 \begin_inset Formula 
-\begin{eqnarray*}
-\pause\cl(q,\theta) & = & \sum_{z}q(z)\log\left(\frac{p(x,z\mid\theta)}{q(z)}\right)\\
-\pause & = & \underbrace{\sum_{z}q(z)\log p(x,z\mid\theta)}_{\ex\left[\text{complete data log-likelihood}\right]}-\underbrace{\sum_{z}q(z)\log q(z)}_{\text{no }\theta\text{ here}}\pause
-\end{eqnarray*}
+\[
+\log p(x\mid\theta)\ge\cl(q,\theta).
+\]
 
 \end_inset
 
@@ -1524,20 +2534,44 @@ Consider maximizing the lower bound
 \end_layout
 
 \begin_layout Itemize
-Maximizing 
-\begin_inset Formula $\cl(q,\theta)$
+The MLE is defined as a maximum over 
+\begin_inset Formula $\theta$
 \end_inset
 
- equivalent to maximizing 
-\begin_inset Formula $\ex\left[\text{complete data log-likelihood}\right]$
+:
+\begin_inset Formula 
+\[
+\hat{\theta}_{\text{MLE}}=\argmax_{\theta}\log p(x\mid\theta).
+\]
+
 \end_inset
 
-.
+
+\end_layout
+
+\begin_layout Itemize
+In EM algorithm, we maximize the lower bound (ELBO) over 
+\begin_inset Formula $\theta$
+\end_inset
+
+ and 
+\begin_inset Formula $q$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\hat{\theta}_{\text{EM}}=\argmax_{\theta}\left[\max_{q}\cl(q,\theta)\right]
+\]
+
+\end_inset
+
+ 
 \end_layout
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1554,27 +2588,19 @@ A Family of Lower Bounds
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Each 
+For each 
 \begin_inset Formula $q$
 \end_inset
 
- gives a different lower bound: 
-\begin_inset Formula $\log p(x\mid\theta)\ge\cl(q,\theta)$
+, we get a lower bound function: 
+\begin_inset Formula $\log p(x\mid\theta)\ge\cl(q,\theta)\;\forall\theta.$
 \end_inset
 
-
-\begin_inset Separator latexpar
-\end_inset
-
-
+ 
 \end_layout
 
 \begin_deeper
@@ -1584,7 +2610,11 @@ Each
 
 \end_deeper
 \begin_layout Itemize
-Two lower bounds, as functions of 
+Two lower bounds (blue and green curves), 
+\series bold
+as functions of 
+\series default
+
 \begin_inset Formula $\theta$
 \end_inset
 
@@ -1596,11 +2626,16 @@ Two lower bounds, as functions of
 \begin_inset Graphics
 	filename ../Figures/EM-algorithm/lowerBounds-Bishop9.14.png
 	lyxscale 50
-	height 55theight%
+	height 50theight%
 
 \end_inset
 
  
+\end_layout
+
+\begin_layout Itemize
+Ideally, we'd find the maximum of the red curve.
+ Maximum of green is close.
 \end_layout
 
 \begin_layout Standard
@@ -1648,10 +2683,6 @@ EM: Coordinate Ascent on Lower Bound
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1677,10 +2708,6 @@ coordinate ascent
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1691,10 +2718,6 @@ coordinate ascent
 \end_deeper
 \begin_layout Itemize
 EM Algorithm (high level):
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1712,10 +2735,6 @@ Let
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1730,10 +2749,6 @@ Let
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1772,10 +2787,6 @@ status open
 
 \begin_layout Itemize
 Why is this a good idea?
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1821,10 +2832,6 @@ EM: Coordinate Ascent on Lower Bound
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1846,10 +2853,6 @@ Start at
 \end_inset
 
  
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1877,10 +2880,6 @@ Find
 
 .
  
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1924,6 +2923,60 @@ emph{Pattern recognition and machine learning}, Figure 9.14.}}
 
 \end_deeper
 \begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+EM: Next Steps
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We now give 2 different re-expressions of 
+\begin_inset Formula $\cl(q,\theta)$
+\end_inset
+
+ that make it easy to compute
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\argmax_{q}\cl(q,\theta)$
+\end_inset
+
+, for a given 
+\begin_inset Formula $\theta$
+\end_inset
+
+, and
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\argmax_{\theta}\cl(q,\theta)$
+\end_inset
+
+, for a given 
+\begin_inset Formula $q$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
 \begin_inset Separator parbreak
 \end_inset
 
@@ -1935,13 +2988,9 @@ emph{Pattern recognition and machine learning}, Figure 9.14.}}
 status open
 
 \begin_layout Plain Layout
-The Lower Bound
+ELBO in Terms of KL Divergence and Entropy
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1988,13 +3037,17 @@ Amazing! We get back an equality for the marginal likelihood:
 status open
 
 \begin_layout Plain Layout
-The Best Lower Bound
-\end_layout
-
+Maxizing over 
+\begin_inset Formula $q$
 \end_inset
 
+ for fixed 
+\begin_inset Formula $\theta=\theta^{\text{old}}$
+\end_inset
 
-\begin_inset Separator latexpar
+.
+\end_layout
+
 \end_inset
 
 
@@ -2009,13 +3062,9 @@ Find
  maximizing
 \begin_inset Formula 
 \begin{eqnarray*}
-\cl(q,\theta^{\text{old}}) & = & -\kl[q(z),p(z\mid x,\theta^{\text{old}})]+\underbrace{\log p(x\mid\theta^{\text{old}})}_{\text{no }q\text{ here}}
+\cl(q,\theta^{\text{old}}) & = & -\kl[q(z),p(z\mid x,\theta^{\text{old}})]+\underbrace{\log p(x\mid\theta^{\text{old}})\pause}_{\text{no }q\text{ here}}
 \end{eqnarray*}
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2037,10 +3086,6 @@ Recall
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2064,10 +3109,6 @@ Best
 \pause\cl(q^{*},\theta^{\text{old}})=-\underbrace{\kl[p(z\mid x,\theta^{\text{old}}),p(z\mid x,\theta^{\text{old}})]}_{=0}+\log p(x\mid\theta^{\text{old}})
 \]
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2115,10 +3156,6 @@ Tight lower bound for any chosen
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2135,12 +3172,12 @@ Tight lower bound for any chosen
 \end_layout
 
 \begin_layout Standard
-Fix any 
-\begin_inset Formula $\theta'$
+For 
+\begin_inset Formula $\theta^{\text{old}}$
 \end_inset
 
- and take 
-\begin_inset Formula $q'(z)=p(z\mid x,\theta')$
+, take 
+\begin_inset Formula $q(z)=p(z\mid x,\theta^{\text{old}})$
 \end_inset
 
 .
@@ -2148,7 +3185,7 @@ Fix any
 \end_layout
 
 \begin_layout Enumerate
-\begin_inset Formula $\log p(x\mid\theta)\ge\cl(q',\theta)$
+\begin_inset Formula $\log p(x\mid\theta)\ge\cl(q,\theta)$
 \end_inset
 
  
@@ -2160,7 +3197,7 @@ Fix any
 \end_layout
 
 \begin_layout Enumerate
-\begin_inset Formula $\log p(x\mid\theta')=\cl(q',\theta')$
+\begin_inset Formula $\log p(x\mid\theta^{\text{old}})=\cl(q,\theta^{\text{old}})$
 \end_inset
 
 .
@@ -2171,7 +3208,7 @@ tight
 at 
 \series bold
 
-\begin_inset Formula $\theta'$
+\begin_inset Formula $\theta^{\text{old}}$
 \end_inset
 
 
@@ -2213,6 +3250,62 @@ emph{Pattern recognition and machine learning}, Figure 9.14.}}
 
 \end_layout
 
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Maximizing over 
+\begin_inset Formula $\theta$
+\end_inset
+
+ for fixed 
+\begin_inset Formula $q$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Consider maximizing the lower bound 
+\begin_inset Formula $\cl(q,\theta)$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{eqnarray*}
+\pause\cl(q,\theta) & = & \sum_{z}q(z)\log\left(\frac{p(x,z\mid\theta)}{q(z)}\right)\\
+\pause & = & \underbrace{\sum_{z}q(z)\log p(x,z\mid\theta)}_{\ex\left[\text{complete data log-likelihood}\right]}-\underbrace{\sum_{z}q(z)\log q(z)}_{\text{no }\theta\text{ here}}\pause
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Maximizing 
+\begin_inset Formula $\cl(q,\theta)$
+\end_inset
+
+ equivalent to maximizing 
+\begin_inset Formula $\ex\left[\text{complete data log-likelihood}\right]$
+\end_inset
+
+ (for fixed 
+\begin_inset Formula $q$
+\end_inset
+
+).
+\end_layout
+
+\end_deeper
 \begin_layout Standard
 \begin_inset Separator parbreak
 \end_inset
@@ -2231,10 +3324,6 @@ General EM Algorithm
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2250,12 +3339,6 @@ Choose initial
 
 \series bold
 Expectation Step
-\series default
-
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2270,14 +3353,10 @@ Let
 \end_inset
 
  gives best lower bound at 
-\begin_inset Formula $\theta^{\mbox{old}}$
+\begin_inset Formula $\theta^{\text{old}}$
 \end_inset
 
 ]
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2296,10 +3375,6 @@ J(\theta):=\cl(q^{*},\theta)=\underbrace{\sum_{z}q^{*}(z)\log\left(\frac{p(x,z\m
 \end_inset
 
  
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2323,10 +3398,6 @@ Maximization Step
 \end_inset
 
 [Equivalent to maximizing expected complete log-likelihood.]
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2342,7 +3413,7 @@ Go to step 2, until converged.
 \end_deeper
 \begin_layout Standard
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Separator
 
@@ -2359,10 +3430,6 @@ EM and Variational Methods
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2372,10 +3439,6 @@ What makes EM a
 variational method
 \series default
 ?
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2398,10 +3461,6 @@ of distribution
 
 \begin_layout Itemize
 Calculus of variations is the traditional tool.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2434,14 +3493,10 @@ variational lower bound
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
-EM Monotonically Increases Likelihood
+Does EM Work?
 \end_layout
 
 \begin_layout Frame
@@ -2452,10 +3507,6 @@ status open
 EM Gives Monotonically Increasing Likelihood: By Picture
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2519,10 +3570,6 @@ EM Gives Monotonically Increasing Likelihood: By Math
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2549,10 +3596,6 @@ Choose
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2573,10 +3616,6 @@ Choose
 \cl(q^{*},\theta^{\text{new}}) & \ge & \cl(q^{*},\theta^{\text{old}}).
 \end{eqnarray*}
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2615,13 +3654,9 @@ Putting it together, we get
 status open
 
 \begin_layout Plain Layout
-Suppose We Maximize the Lower Bound...
+Suppose We Maximize the ELBO...
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2654,10 +3689,6 @@ q^{*}(z)=p(z\mid x,\theta^{*}).
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2676,10 +3707,6 @@ Claim:
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2763,10 +3790,6 @@ Convergence of EM
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2780,10 +3803,6 @@ Let
 \end_inset
 
  steps.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2810,10 +3829,6 @@ transition function
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2828,10 +3843,6 @@ Suppose log-likelihood function
 \end_inset
 
  is differentiable.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2856,10 +3867,6 @@ Let
 \end_inset
 
 )
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2908,10 +3915,6 @@ http://www3.stat.sinica.edu.tw/statistica/oldpdf/a15n316.pdf
 \end_inset
 
 , 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3005,10 +4008,6 @@ EM Gives Us Two New Problems
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3022,10 +4021,6 @@ E
 \end_inset
 
  Step: Computing
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3063,10 +4058,6 @@ M
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3098,10 +4089,6 @@ Generalized EM (GEM)
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3115,10 +4102,6 @@ M
 \end_inset
 
  step.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3153,10 +4136,6 @@ J(\theta^{\mbox{new}})>J(\theta^{\mbox{old}}).
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3167,10 +4146,6 @@ J(\theta^{\mbox{new}})>J(\theta^{\mbox{old}}).
 \end_deeper
 \begin_layout Itemize
 Can use a standard nonlinear optimization strategy
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3181,10 +4156,6 @@ e.g.
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3218,10 +4189,6 @@ EM and More General Variational Methods
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3235,10 +4202,6 @@ E
 \end_inset
 
  step is difficult:
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3263,10 +4226,6 @@ Solution: Restrict to distributions
 
  that are easy to work with.
  
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3306,10 +4265,6 @@ EM in Bayesian Setting
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3337,10 +4292,6 @@ Want to find MAP estimate:
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3375,10 +4326,6 @@ Maximization step becomes
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3404,7 +4351,7 @@ Homework: Convince yourself our lower bound is still tight at
 \end_layout
 
 \begin_layout Section
-Homework: Gaussian Mixture Model (Hints)
+Summer Homework: Gaussian Mixture Model (Hints)
 \end_layout
 
 \begin_layout Standard
@@ -3425,10 +4372,6 @@ Homework: Derive EM for GMM from General EM Algorithm
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3438,10 +4381,6 @@ Subsequent slides may help set things up.
 
 \begin_layout Itemize
 Key skills:
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3474,10 +4413,6 @@ Gaussian Mixture Model (
  Components)
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3559,9 +4494,6 @@ Soft Assignments
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -3657,9 +4589,6 @@ Expectation Step
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -3721,9 +4650,6 @@ Maximization Step
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 

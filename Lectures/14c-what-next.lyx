@@ -791,7 +791,7 @@ Our course was heavy on model-free methods (i.e.
 \begin_inset Formula $\cp_{\cx\times\cy}$
 \end_inset
 
-.
+.)
 \end_layout
 
 \begin_layout Pause
@@ -808,7 +808,7 @@ Worth looking more into probabilistic approaches
 \end_layout
 
 \begin_layout Itemize
-Sontag's DS-GA 1005: graphical models, probabilistic learning and inference
+Joan Bruna's DS-GA 1005: graphical models, probabilistic learning and inference
 \end_layout
 
 \begin_layout Itemize
@@ -831,6 +831,10 @@ Learn neural networks!
 \begin_deeper
 \begin_layout Itemize
 Cho's DS-GA 3001: Neural networks for NLP
+\end_layout
+
+\begin_layout Itemize
+Bowman's LING-GA 3340-002: Seminar in Semantics: Artificial NNs
 \end_layout
 
 \begin_layout Itemize
@@ -866,7 +870,7 @@ Look at other course notes at this level.
 
 \begin_deeper
 \begin_layout Itemize
-Every course covers different subset of topics.
+Every course covers a different subset of topics.
 \end_layout
 
 \begin_layout Itemize

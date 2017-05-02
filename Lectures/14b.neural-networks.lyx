@@ -3,7 +3,7 @@
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin unavailable
+\origin /Users/drosen/Dropbox/repos/mlcourse/Lectures/
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -33,7 +33,16 @@
 \index_command default
 \paperfontsize default
 \spacing single
-\use_hyperref false
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
 \papersize default
 \use_geometry true
 \use_package amsmath 2
@@ -734,9 +743,6 @@ Objectives
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -775,9 +781,6 @@ Linear Prediction Functions
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -792,10 +795,6 @@ Generate the feature vector
 \end_inset
 
  by hand.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -875,7 +874,7 @@ tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn
 status open
 
 \begin_layout Plain Layout
-Neural Network
+Basic Neural Network (Multilayer Perceptron)
 \end_layout
 
 \end_inset
@@ -884,9 +883,6 @@ Neural Network
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -983,7 +979,7 @@ tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn
 status open
 
 \begin_layout Plain Layout
-Neural Network
+Basic Neural Network
 \end_layout
 
 \end_inset
@@ -992,9 +988,6 @@ Neural Network
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -1026,10 +1019,6 @@ Score is just
 
 \begin_layout Itemize
 This is the basic recipe.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1091,9 +1080,6 @@ Activation Functions
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -1156,9 +1142,6 @@ Activation Functions
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -1229,10 +1212,6 @@ Approximation Ability:
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1260,7 +1239,7 @@ Blue dots are training points; Dashed lines are hidden unit outputs; Final
 \align center
 \begin_inset Graphics
 	filename ../Figures/neural-networks/Figure5.3a.pdf
-	lyxscale 60
+	lyxscale 150
 	width 50text%
 
 \end_inset
@@ -1314,10 +1293,6 @@ Approximation Ability:
 
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1394,10 +1369,6 @@ Approximation Ability:
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1468,10 +1439,6 @@ Approximation Ability:
 
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1547,9 +1514,6 @@ Neural Network: Hidden Nodes as Learned Features
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -1626,9 +1590,6 @@ Facial Recognition: Learned Features
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -1690,19 +1651,12 @@ Neural Network: The Hypothesis Space
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 What hyperparameters describe a neural network?
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1712,10 +1666,6 @@ What hyperparameters describe a neural network?
 
 \begin_layout Itemize
 Number of layers
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1726,10 +1676,6 @@ Number of layers
 \end_deeper
 \begin_layout Itemize
 Number of nodes in each hidden layer
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1740,10 +1686,6 @@ Number of nodes in each hidden layer
 \end_deeper
 \begin_layout Itemize
 Activation function (many to choose from)
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1760,10 +1702,6 @@ Example neural network hypothesis space:
 \cf=\left\{ f:\reals^{d}\to\reals\mid f\text{ is a NN with 2 hidden layers, 500 nodes in each}\right\} 
 \]
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1810,9 +1748,6 @@ Neural Network: Loss Functions and Learning
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -1823,10 +1758,6 @@ Neural networks give a
 new hypothesis space
 \series default
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1841,10 +1772,6 @@ But we can use all the
 same loss functions
 \series default
  we've used before.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1856,14 +1783,10 @@ same loss functions
 \begin_layout Itemize
 Optimization method of choice: 
 \series bold
-mini-batch gradient descent
+mini-batch SGD
 \series default
 .
  
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1899,9 +1822,6 @@ Neural Network: Objective Function
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -1913,10 +1833,6 @@ In our simple network, the output score is given by
 f(x) & = & w_{1}\sigma(v_{1}^{T}\phi(x))+w_{2}\sigma\left(v_{2}^{T}\phi(x)\right)
 \end{eqnarray*}
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1938,10 +1854,6 @@ J(w,v)=\sum_{i=1}^{n}\left(y_{i}-f_{w,v}(x_{i})\right)^{2}
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1960,10 +1872,6 @@ Note:
 not convex
 \series default
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2006,9 +1914,6 @@ Learning with Back-Propagation
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -2019,10 +1924,6 @@ Back-propagation is an
 algorithm
 \series default
  for computing the gradient
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2032,15 +1933,7 @@ algorithm
 
 \end_deeper
 \begin_layout Itemize
-Mathematically, it's not necessary.
-\end_layout
-
-\begin_layout Itemize
-With lots of chain rule, you can work out the gradient by hand.
-\begin_inset Separator latexpar
-\end_inset
-
-
+With lots of chain rule, you could also work out the gradient by hand.
 \end_layout
 
 \begin_deeper
@@ -2051,10 +1944,6 @@ With lots of chain rule, you can work out the gradient by hand.
 \end_deeper
 \begin_layout Itemize
 Back-propagation is 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2064,10 +1953,6 @@ a clean way to organize the computation of the gradient
 
 \begin_layout Itemize
 an efficient way to compute the gradient
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2079,25 +1964,14 @@ an efficient way to compute the gradient
 \end_deeper
 \begin_layout Itemize
 Nice introduction to this perspective:
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Stanford CS221 Lecture 3, Slides 63-96
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Flex URL
-status open
-
-\begin_layout Plain Layout
-
-http://web.stanford.edu/class/cs221/lectures/learning2.pdf
-\end_layout
+\begin_inset CommandInset href
+LatexCommand href
+name "Stanford CS221 Lecture 3 (2016), Slides 75-94"
+target "http://web.stanford.edu/class/cs221/lectures/learning2.pdf#page=59"
 
 \end_inset
 
@@ -2131,9 +2005,6 @@ Neural Network Regularization
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -2173,9 +2044,6 @@ Tikhonov Regularization? Sure.
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -2195,10 +2063,6 @@ Can add an
 J(w,v)=\sum_{i=1}^{n}\left(y_{i}-f_{w,v}(x_{i})\right)^{2}+\lambda_{1}\|w\|^{2}+\lambda_{2}\|v\|^{2}
 \]
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2240,19 +2104,12 @@ Regularization by Early Stopping
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 As we train, check performance on validation set every once in a while.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2263,10 +2120,6 @@ As we train, check performance on validation set every once in a while.
 \end_deeper
 \begin_layout Itemize
 Don't stop immediately after validation error goes back up.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2290,10 +2143,6 @@ patience
 
  parameter: the number training rounds to continue after finding a minimum
  of validation error.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2306,15 +2155,11 @@ Start with patience = 10000.
 \end_layout
 
 \begin_layout Itemize
-Whenever we find a minimum at iteration 
+Whenever we find a minimum at step 
 \begin_inset Formula $T$
 \end_inset
 
 ,
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2331,7 +2176,7 @@ Set
 \end_layout
 
 \begin_layout Itemize
-Then run at least patience extra iterations before stopping.
+Then run at least patience extra steps before stopping.
 \end_layout
 
 \end_deeper
@@ -2384,9 +2229,6 @@ Max-Norm Regularization
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -2403,10 +2245,6 @@ Max-norm regularization
 \|w\|_{2}\le c.
 \]
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2428,10 +2266,6 @@ Project any
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2447,10 +2281,6 @@ It's like
 
 -complexity control, but locally at each node.
  
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2461,10 +2291,6 @@ It's like
 \end_deeper
 \begin_layout Itemize
 Why? 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2530,9 +2356,6 @@ Dropout for Regularization
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -2543,10 +2366,6 @@ A recent trick for improving generalization performance is
 dropout
 \series default
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2565,10 +2384,6 @@ A fixed probability
 
 \begin_layout Itemize
 Before every stochastic gradient step, 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2594,10 +2409,6 @@ dropout
 
 \begin_layout Itemize
 a dropout node is removed, along with its links
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2608,10 +2419,6 @@ a dropout node is removed, along with its links
 \end_deeper
 \begin_layout Itemize
 after the stochastic gradient step, all nodes are restored.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2681,19 +2488,12 @@ Dropout for Regularization
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 At prediction time
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2732,10 +2532,6 @@ Dropout probability set using a validation set, or just set at
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2796,19 +2592,12 @@ Dropout: Why might this help?
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 Since any node may randomly disappear, 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2823,10 +2612,6 @@ spread the knowledge
 
  across the nodes.
  
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2838,10 +2623,6 @@ spread the knowledge
 \end_deeper
 \begin_layout Itemize
 Each hidden only gets a randomly chosen sample of its inputs,
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2877,9 +2658,6 @@ Dropout: Does it help?
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -2944,9 +2722,6 @@ How big a network?
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -2957,10 +2732,6 @@ How many hidden units?
 
 \begin_layout Itemize
 With proper regularization, too many doesn't hurt.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2995,9 +2766,6 @@ Multiple Output Neural Networks
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -3063,9 +2831,6 @@ Multitask Learning
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -3080,10 +2845,6 @@ Suppose
 
 \begin_layout Itemize
 We have two tasks:
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3093,10 +2854,6 @@ Does the image have a cat?
 
 \begin_layout Itemize
 Does the image have a dog?
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3108,10 +2865,6 @@ Does the image have a dog?
 \end_deeper
 \begin_layout Itemize
 Can have one output for each task.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3158,19 +2911,12 @@ Extra Tasks
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 Only one task we're interested in.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3186,10 +2932,6 @@ Gather data from related tasks.
 
 \begin_layout Itemize
 Train them along with the task you're interested in.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3200,10 +2942,6 @@ Train them along with the task you're interested in.
 \end_deeper
 \begin_layout Itemize
 No related tasks? Another trick:
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3252,19 +2990,12 @@ Multiclass Classification
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 Could make each class a separate task / output.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3292,10 +3023,6 @@ Use a one-hot encoding of each
 y_{i}=\left(y_{i1},\ldots,y_{ik}\right)\text{ with }y_{ik}=\ind{y_{i}=k}.
 \]
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3341,10 +3068,6 @@ Predict with
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3381,9 +3104,6 @@ Multiclass Classification: Cross-Entropy Loss
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -3423,10 +3143,6 @@ where
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3436,7 +3152,8 @@ where
 
 \end_deeper
 \begin_layout Itemize
-Same loss as for multinomial logistic regression.
+This is the negative log-likelihood we get for softmax predictions in multinomia
+l logistic regression.
 \end_layout
 
 \end_deeper
@@ -3465,19 +3182,12 @@ OverFeat: Features
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 OverFeat is a neural network for image classification
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3486,7 +3196,7 @@ Trained on the huge ImageNet dataset
 \end_layout
 
 \begin_layout Itemize
-Lots of computing resources into training the network.
+Lots of computing resources used for training the network.
 \end_layout
 
 \begin_layout Pause
@@ -3500,10 +3210,6 @@ All those hidden layers of the network are very valuable
 features
 \series default
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3585,9 +3291,6 @@ Neural Networks Benefit from Big Data
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -3649,9 +3352,6 @@ Big Data Requires Big Resources
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -3721,19 +3421,12 @@ Neural Networks: When to Use?
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 Computer vision problems
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3748,10 +3441,6 @@ All state of the art methods use neural networks
 \end_deeper
 \begin_layout Itemize
 Speech recognition
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3765,17 +3454,17 @@ All state of the art methods use neural networks
 
 \end_deeper
 \begin_layout Itemize
-Natural Language problems?
-\begin_inset Separator latexpar
-\end_inset
-
-
+Natural Language problems
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 Maybe.
- Check out 
+ State-of-the-art, but not as large a margin.
+\end_layout
+
+\begin_layout Itemize
+Check out 
 \begin_inset Quotes eld
 \end_inset
 
@@ -3800,10 +3489,6 @@ https://code.google.com/p/word2vec/
 \begin_layout Itemize
 Represents words using real-valued vectors.
  
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper

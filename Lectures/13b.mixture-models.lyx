@@ -3,7 +3,7 @@
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin unavailable
+\origin /Users/drosen/Dropbox/repos/mlcourse/Lectures/
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -774,9 +774,6 @@ Example: Old Faithful Geyser
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -826,9 +823,6 @@ status open
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -905,9 +899,6 @@ k-means: by example
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -976,9 +967,6 @@ k-means: by example
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -1047,9 +1035,6 @@ k-means: by example
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -1118,9 +1103,6 @@ k-means: by example
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -1189,9 +1171,6 @@ k-means: by example
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -1241,7 +1220,7 @@ emph{Pattern recognition and machine learning}, Figure 9.1(i).}}
 \end_deeper
 \begin_layout Standard
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Separator
 
@@ -1261,9 +1240,6 @@ k-means: formalization
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -1271,10 +1247,6 @@ k-means: formalization
 \begin_layout Itemize
 Dataset 
 \begin_inset Formula $\cd=\left\{ x_{1},\ldots,x_{n}\right\} \in\reals^{d}$
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1292,10 +1264,6 @@ Goal (version 1): Partition data into
 \end_inset
 
  clusters.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1314,10 +1282,6 @@ Goal (version 2): Partition
 \end_inset
 
  regions.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1358,9 +1322,6 @@ k-means: formalization
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -1383,10 +1344,6 @@ r_{i}=\left(0,0,\ldots,0,0,1,0,0\right)\in\reals^{k}
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1402,10 +1359,6 @@ Let
 r_{ic}=\ind{x_{i}\mbox{ assigned to cluster }c}.
 \]
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1448,9 +1401,6 @@ k-means: objective function
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -1465,10 +1415,6 @@ J(r,\mu)=\sum_{i=1}^{n}\sum_{c=1}^{k}r_{ic}\|x_{i}-\mu_{c}\|^{2}.
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1479,10 +1425,6 @@ J(r,\mu)=\sum_{i=1}^{n}\sum_{c=1}^{k}r_{ic}\|x_{i}-\mu_{c}\|^{2}.
 \end_deeper
 \begin_layout Itemize
 Is objective function convex?
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1497,10 +1439,6 @@ What's the domain of
 \end_inset
 
 ?
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1514,10 +1452,6 @@ What's the domain of
 \end_inset
 
 , which is not a convex set...
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1540,10 +1474,6 @@ So domain of
 \end_inset
 
  is not a convex function
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -4160,7 +4090,7 @@ In practice, we end up in local minima that do not have this problem.
 
 \begin_deeper
 \begin_layout Itemize
-Or keep restarting optimization until we do.
+(Provable under mild conditions – see lecture on general EM.)
 \end_layout
 
 \begin_layout Pause

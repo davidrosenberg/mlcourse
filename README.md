@@ -1,6 +1,8 @@
 <!-- # DS-GA 1003: Machine Learning and Computational Statistics -->
 
 ## Notable Changes from [2016](https://davidrosenberg.github.io/ml2016/#home) to [2017](https://davidrosenberg.github.io/ml2017/#home)
+- New lecture on principal component analysis (Brett)
+- Added slide on k-means++ (Brett)
 - Added slides on explicit feature vector for 1-dim RBF kernel
 - Created notebook to regenerate the buggy lasso/elasticnet plots from Hastie's book (Vlad)
 - L2 constraint for linear models gives Lipschitz continuity of prediction function (Thanks to Brian Dalessandro for pointing this out to me). 

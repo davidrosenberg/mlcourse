@@ -752,6 +752,12 @@ hard classification
 .
 \end_layout
 
+\begin_layout Plain Layout
+ADD IN log-cosh loss for regression (twice differentiable, but like Huber)
+ – http://www.cs.cornell.edu/courses/cs4780/2015fa/web/lecturenotes/lecturenote10.ht
+ml and Psuedo-huber
+\end_layout
+
 \end_inset
 
 

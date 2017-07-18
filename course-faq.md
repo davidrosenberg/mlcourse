@@ -140,10 +140,10 @@ immensely useful over the years.
 
 <a name="math"></a> 
 
-This is a good question and worth examining.  You know the 80/20 rule
+This is a good question and worth examining.  You know the 80/20 rule,
 or the "pareto principle"?  Says you can get 80% of the outcome from
-20% of the effort.  Applied here, you can be a pretty decent data
-scientist without without knowing much math.  What's essential (the
+20% of the effort.  Applied here, you can be a decent data
+scientist without knowing a lot of math.  What's essential (the
 "20%") is an understanding of the core principles of machine learning,
 such as discussed in
 [DS-GA 1001](http://cds.nyu.edu/course-pages/ds-ga-1001-intro-data-science/)

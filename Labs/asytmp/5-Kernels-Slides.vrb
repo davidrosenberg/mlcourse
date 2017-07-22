@@ -1,6 +1,0 @@
-\frametitle{RBF Classification}
-  Contours of $f(x) = k(x_1,x)+k(x_2,x)-k(x_3,x)-k(x_4,x)$ where $x_1,x_2$ are positive
-  examples, and $\sigma=1$.
-  \begin{center}
-    \asyinclude[height=0.8\textheight]{5-Kernels/XorFit2.asy}
-  \end{center}

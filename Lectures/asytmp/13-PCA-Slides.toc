@@ -1,7 +1,0 @@
-\beamer@sectionintoc {1}{Lecture 13}{2}{0}{1}
-\beamer@subsectionintoc {1}{1}{Initial Question}{2}{0}{1}
-\beamer@subsectionintoc {1}{2}{Principal Component Analysis (PCA)}{4}{0}{1}
-\beamer@subsectionintoc {1}{3}{Definition of Principal Components}{5}{0}{1}
-\beamer@subsectionintoc {1}{4}{Computing Principal Components}{12}{0}{1}
-\beamer@subsectionintoc {1}{5}{Uses of PCA}{18}{0}{1}
-\beamer@subsectionintoc {1}{6}{Other Comments About PCA}{22}{0}{1}

@@ -853,7 +853,7 @@ featurization
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../2015/Figures/features/feature-extraction.png
+	filename ../Figures/features/feature-extraction.png
 	lyxscale 60
 	width 90text%
 
@@ -866,7 +866,7 @@ status collapsed
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename ../2015/Figures/kernels/feature-extraction.png
+	filename ../Figures/kernels/feature-extraction.png
 	width 80text%
 
 \end_inset

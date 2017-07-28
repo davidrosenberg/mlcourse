@@ -1,0 +1,138 @@
+\title{Recitation 3}
+\subtitle{Geometric Derivation of SVMs}
+\begin{document}
+\begin{frame} 
+  \titlepage 
+\end{frame}
+\section{Recitation 2}
+\subsection{Initial Question}
+\begin{frame}[fragile]
+  \frametitle{Intro Question}
+  \begin{block}{Question}
+    You have been given a data set $(x_i,y_i)$ for $i=1,\ldots,n$ where
+    $x_i\in\RR^d$ and $y_i\in\{-1,1\}$.  Assume $w\in\RR^d$ and
+    $a\in\RR$.
+    \begin{enumerate}
+    \item Suppose $y_i(w^Tx_i+a)>0$ for all $i$.  Use a picture to
+      explain what this means when $d=2$.
+    \item Fix $M>0$.
+      Suppose $y_i(w^Tx_i+a)\geq M$ for all $i$.  Use a picture to
+      explain what this means when $d=2$.
+    \end{enumerate}
+  \end{block}
+\end{frame}
+
+\subsection{Support Vector Machines}
+\subsubsection{Review of Geometry}
+
+\begin{frame}[fragile]
+  \frametitle{Component of $v_1,v_2$ in the direction $w$}
+\begin{center}
+\asyinclude[width=\textwidth,height=0.8\textheight]{3-SVM/Component.asy}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Level Surfaces of $f(v)=w^Tv$ with $\|w\|_2=1$}
+\begin{center}
+\asyinclude[width=\textwidth,height=0.8\textheight]{3-SVM/Level.asy}
+\end{center}
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Sides of the Hyperplane $w^Tv=15$}
+\begin{center}
+\asyinclude[width=\textwidth,height=0.8\textheight]{3-SVM/Sides.asy}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Signed Distance from $x_1,x_2$ to Hyperplane $w^Tv=20$}
+\begin{center}
+\asyinclude[width=2\textwidth,height=0.8\textheight]{3-SVM/DistanceS.asy}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Linearly Separable}
+  \begin{definition}
+    We say $(x_i,y_i)$ for $i=1,\ldots,n$ are \textit{linearly separable} if there
+    is a $w\in\RR^d$ and $a\in\RR$ such that $y_i(w^Tx_i+a)>0$ for all
+    $i$. The set $\{v\in\RR^d\mid w^Tv+a=0\}$ is called a \textit{separating hyperplane}.    
+  \end{definition}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Linearly Separable Data}
+\begin{center}
+\asyinclude[width=\textwidth,height=0.8\textheight]{3-SVM/LinSep.asy}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Many Separating Hyperplanes Exist}
+\begin{center}
+\asyinclude[width=\textwidth,height=0.8\textheight]{3-SVM/ManyLinSep.asy}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Maximum Margin Separating Hyperplane}
+\begin{center}
+\asyinclude[width=\textwidth,height=0.8\textheight]{3-SVM/MaxMargin.asy}
+\end{center}
+\end{frame}
+
+\subsubsection{Soft Margin SVM}
+
+\subsection{Multivariable Calculus}
+
+\begin{frame}[fragile]
+  \frametitle{Soft Margin SVM (unlabeled points have $\xi_i=0$)}
+\begin{center}
+\asyinclude[width=\textwidth,height=0.8\textheight]{3-SVM/SoftMarginS.asy}
+\end{center}
+\end{frame}
+
+\subsection{Regularization Interpretation}
+\begin{frame}[fragile]
+  \frametitle{Questions}
+  \begin{block}{Questions}
+    \begin{enumerate}
+    \item If your data is linearly separable, which SVM (hard margin or
+      soft margin) would you use?
+    \item Explain geometrically what the following optimization
+      problem computes:
+      $$\begin{array}{ll}
+      \text{minimize}_{w,a,\xi} & \frac{1}{n}\sum_{i=1}^n\xi_i\\
+      \text{subject to} & y_i(w^Tx_i+a) \geq 1-\xi_i\quad\text{for all
+        $i$}\\
+      & \|w\|_2^2 \leq r^2\\
+      & \xi_i \geq 0 \quad\text{for all $i$.}
+    \end{array}$$
+    \end{enumerate}
+  \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Optimize Over Cases Where Margin Is At Least $1/r$}
+\begin{center}
+\asyinclude[width=\textwidth,height=0.8\textheight]{3-SVM/Ivanov.asy}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Overfitting: Tight Margin With No Misclassifications}
+\begin{center}
+\asyinclude[width=\textwidth,height=0.8\textheight]{3-SVM/SmallMargin.asy}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Training Error But Large Margin}
+\begin{center}
+\asyinclude[width=\textwidth,height=0.8\textheight]{3-SVM/LargeMargin.asy}
+\end{center}
+\end{frame}
+\end{document}

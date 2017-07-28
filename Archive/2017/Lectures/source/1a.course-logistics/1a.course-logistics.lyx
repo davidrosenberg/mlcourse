@@ -1,0 +1,867 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass beamer
+\begin_preamble
+\usetheme{CambridgeUS} 
+\end_preamble
+\options handout,aspectratio=169
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "eulervm" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Machine Learning and Computational Statistics
+\begin_inset Newline newline
+\end_inset
+
+ (DS-GA 1003)
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+DS-GA 1003
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+optional, use only with long paper titles
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+David Rosenberg
+\end_layout
+
+\begin_layout Institute
+New York University
+\end_layout
+
+\begin_layout Date
+January 24, 2017
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+TODO:
+\end_layout
+
+\begin_layout Plain Layout
+1) Slide for TA
+\end_layout
+
+\begin_layout Plain Layout
+2) Slide for Grader
+\end_layout
+
+\begin_layout Plain Layout
+3) Slide explaining where to find lectures, and my typical posting strategy
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Logistics
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Class webpage: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://davidrosenberg.github.io/ml2017
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Syllabus on the website
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Piazza: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://piazza.com/nyu/spring2017/dsga1003
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+All class announcements via Piazza
+\end_layout
+
+\begin_layout Itemize
+Ask all questions on Piazza
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Class Times
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Tuesdays 
+\begin_inset Quotes eld
+\end_inset
+
+Lecture
+\begin_inset Quotes erd
+\end_inset
+
+: 5:20 - 7pm (GSACL C95)
+\end_layout
+
+\begin_layout Itemize
+Wednesdays 
+\begin_inset Quotes eld
+\end_inset
+
+Lab
+\begin_inset Quotes erd
+\end_inset
+
+: 8:35 - 9:25pm (GSACL C95)
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+(Both are required.) 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Course Staff
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+TAs: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Brett Bernstein (3rd year PhD Student in Math at Courant)
+\end_layout
+
+\begin_layout Itemize
+Vlad Kobzar (grad student in Math and ML at Courant)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Graders:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Ben Jakubowski (Head Grader)
+\end_layout
+
+\begin_layout Itemize
+Hao Liu
+\end_layout
+
+\begin_layout Itemize
+Yuhao Zhao
+\end_layout
+
+\begin_layout Itemize
+Xinyi Gong
+\end_layout
+
+\begin_layout Itemize
+Lanyu Shang
+\end_layout
+
+\begin_layout Itemize
+Prithvi Krishna 
+\begin_inset Quotes eld
+\end_inset
+
+PK
+\begin_inset Quotes erd
+\end_inset
+
+ Gattamaneni
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Project Advisers:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Kurt Miller, Brian d'Alessandro, Bonnie Ray, Daniel Chen, and more TBD.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Evaluation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+About 8 homeworks (35%)
+\end_layout
+
+\begin_layout Itemize
+Two tests (45%)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+One-Hour Test (15%) in Week 6
+\end_layout
+
+\begin_layout Itemize
+Two-Hour Test (30%) in Week 12
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Project (20%) 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Poster session during lecture time in week after classes (Week 15)
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Extra Credit Opportunities
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Optional homework problems
+\end_layout
+
+\begin_layout Itemize
+Significant contributions to Piazza and in-class discussions
+\end_layout
+
+\begin_layout Itemize
+Primarily used to boost a borderline grade
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+At most, increases final grade by half a letter (e.g.
+ B+ to A-)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Lab Sessions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Some led by TA Brett Bernstein, some by me
+\end_layout
+
+\begin_layout Itemize
+Most will be lecture format
+\end_layout
+
+\begin_layout Itemize
+We'll have one test during lab session (and one during lecture)
+\end_layout
+
+\begin_layout Itemize
+Meetings with project advisors
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Homework (45%)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+First assignment out Wednesday – Due week from Thursday 10pm
+\end_layout
+
+\begin_layout Itemize
+Submit with Gradescope (details on website)
+\end_layout
+
+\begin_layout Itemize
+Homeworks should be 
+\series bold
+submitted as a PDF document
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+Late homework: Accepted up to 48 hours late with 20% penalty
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Collaboration is fine, but
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Write up solutions and code on your own
+\end_layout
+
+\begin_layout Itemize
+List names of who you talked to about each problem
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Projects (20%)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Find some new data or new approach to old data
+\end_layout
+
+\begin_layout Itemize
+See notes on website.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Logistics:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+3 students per group
+\end_layout
+
+\begin_layout Itemize
+First meeting with advisors (March 8)
+\end_layout
+
+\begin_layout Itemize
+Project proposal due after Spring Break (March 23) 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Prerequisites
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+DS-GA 1001: Introduction to Data Science
+\end_layout
+
+\begin_layout Itemize
+DS-GA 1002: Statistical and Mathematical Methods
+\end_layout
+
+\begin_layout Itemize
+Math
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Multivariate Calculus
+\end_layout
+
+\begin_layout Itemize
+Linear Algebra
+\end_layout
+
+\begin_layout Itemize
+Probability Theory
+\end_layout
+
+\begin_layout Itemize
+Statistics
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Python programming (numpy)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+High Level Goals of the Class
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Learn fundamental building blocks of machine learning
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Goal is to start seeing
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+fancy new method A 
+\begin_inset Quotes eld
+\end_inset
+
+is just
+\begin_inset Quotes erd
+\end_inset
+
+ familiar thing B + familiar thing C + tweak D
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+SVM 
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+is just
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+ ERM with hinge loss with 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ regularization
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Pegasos 
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+is just
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+ SVM with SGD with a particular step size rule
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Random forest 
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+is just
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+ bagging with trees, with an interesting tweak on choosing splitting variables
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+General Philosophy
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Mastery vs Performance 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+understanding vs just getting it done
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Don't confuse 
+\begin_inset Quotes eld
+\end_inset
+
+kind of understanding
+\begin_inset Quotes erd
+\end_inset
+
+ with 
+\begin_inset Quotes eld
+\end_inset
+
+actual understanding
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+See 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://github.com/davidrosenberg/mlcourse/blob/gh-pages/course-faq.md
+\end_layout
+
+\end_inset
+
+ about partial credit.
+ 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Questions?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+What are you looking to get out of the course?
+\end_layout
+
+\begin_layout Itemize
+Questions for me?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

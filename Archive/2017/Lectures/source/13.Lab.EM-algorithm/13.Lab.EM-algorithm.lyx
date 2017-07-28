@@ -1,0 +1,4934 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass beamer
+\begin_preamble
+\usetheme{CambridgeUS} 
+\beamertemplatenavigationsymbolsempty
+
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+\end_preamble
+\options handout
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman times
+\font_sans default
+\font_typewriter default
+\font_math eulervm
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\reals}{\mathbf{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\integers}{\mathbf{Z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\naturals}{\mathbf{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rationals}{\mathbf{Q}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ca}{\mathcal{A}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cb}{\mathcal{B}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cc}{\mathcal{C}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cd}{\mathcal{D}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ce}{\mathcal{E}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cf}{\mathcal{F}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cg}{\mathcal{G}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ch}{\mathcal{H}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ci}{\mathcal{I}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cj}{\mathcal{J}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ck}{\mathcal{K}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cl}{\mathcal{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cm}{\mathcal{M}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cn}{\mathcal{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\co}{\mathcal{O}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cp}{\mathcal{P}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cq}{\mathcal{Q}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\calr}{\mathcal{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cs}{\mathcal{S}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ct}{\mathcal{T}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cu}{\mathcal{U}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cv}{\mathcal{V}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cw}{\mathcal{W}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cx}{\mathcal{X}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cy}{\mathcal{Y}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cz}{\mathcal{Z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ind}[1]{1(#1)}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand{
+\backslash
+pr}{P}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\pr}{\mathbb{P}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\predsp}{\cy}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%{
+\backslash
+hat{
+\backslash
+cy}}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\outsp}{\cy}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\prxy}{P_{\cx\times\cy}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\prx}{P_{\cx}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\prygivenx}{P_{\cy\mid\cx}}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand{
+\backslash
+ex}{E}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ex}{\mathbb{E}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\var}{\textrm{Var}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cov}{\textrm{Cov}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\sgn}{\textrm{sgn}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\sign}{\textrm{sign}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\kl}{\textrm{KL}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\law}{\mathcal{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\eps}{\varepsilon}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\as}{\textrm{ a.s.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\io}{\textrm{ i.o.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ev}{\textrm{ ev.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\convd}{\stackrel{d}{\to}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\eqd}{\stackrel{d}{=}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\del}{\nabla}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\loss}{\ell}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\risk}{R}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\emprisk}{\hat{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\lossfnl}{L}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\emplossfnl}{\hat{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\empminimizer}[1]{\hat{#1}^{*}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\minimizer}[1]{#1^{*}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\optimizer}[1]{#1^{*}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\etal}{\textrm{et. al.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\tr}{\operatorname{tr}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\trace}{\operatorname{trace}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\diag}{\text{diag}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rank}{\text{rank}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\linspan}{\text{span}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\spn}{\text{span}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\proj}{\text{Proj}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\argmax}{\operatornamewithlimits{arg\, max}}
+{\text{argmax}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\argmin}{\operatornamewithlimits{arg\, min}}
+{\text{argmin}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\bfx}{\mathbf{x}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfy}{\mathbf{y}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfl}{\mathbf{\lambda}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfm}{\mathbf{\mu}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\calL}{\mathcal{L}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\vw}{\boldsymbol{w}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vx}{\boldsymbol{x}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vxi}{\boldsymbol{\xi}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\valpha}{\boldsymbol{\alpha}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vbeta}{\boldsymbol{\beta}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vsigma}{\boldsymbol{\sigma}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vtheta}{\boldsymbol{\theta}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vd}{\boldsymbol{d}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vs}{\boldsymbol{s}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vt}{\boldsymbol{t}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vh}{\boldsymbol{h}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ve}{\boldsymbol{e}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vf}{\boldsymbol{f}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vg}{\boldsymbol{g}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vz}{\boldsymbol{z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vk}{\boldsymbol{k}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\va}{\boldsymbol{a}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vb}{\boldsymbol{b}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vv}{\boldsymbol{v}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vy}{\boldsymbol{y}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\hil}{\ch}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rkhs}{\hil}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ber}{\text{Ber}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+EM Algorithm for Latent Variable Models
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+DS-GA 1003 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+optional, use only with long paper titles
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+David Rosenberg 
+\end_layout
+
+\begin_layout Date
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+today
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Institute
+New York University
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex ArticleMode
+status open
+
+\begin_layout Plain Layout
+Just in article version
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Next time -- refer more to "components" than clusters.
+ talk about vector quantization
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Section
+Gaussian Mixture Model: Review
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Gaussian Mixture Model Parameters (
+\begin_inset Formula $k$
+\end_inset
+
+ Components)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Formula 
+\begin{eqnarray*}
+\text{Cluster probabilities}: &  & \pi=\left(\pi_{1},\ldots,\pi_{k}\right)\\
+\text{Cluster means}: &  & \mu=\left(\mu_{1},\ldots,\mu_{k}\right)\\
+\text{Cluster covariance matrices:} &  & \Sigma=\left(\Sigma_{1},\ldots\Sigma_{k}\right)
+\end{eqnarray*}
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename mixture-3-gaussians.png
+	lyxscale 20
+	height 40theight%
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+GMM: The Joint and the Marginal Likelihood
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Generative model 
+\series default
+description:
+\begin_inset Formula 
+\begin{eqnarray*}
+z & \sim & \text{Categorical}\left(\pi_{1},\ldots,\pi_{k}\right)\qquad\text{ \textbf{Cluster assignment}}\\
+x\mid z & \sim & \cn\left(\mu_{z},\Sigma_{z}\right)\qquad\text{\textbf{Choose point from cluster distribution }}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Joint distribution
+\series default
+ (includes observed 
+\begin_inset Formula $x$
+\end_inset
+
+ and unobserved 
+\begin_inset Formula $z$
+\end_inset
+
+):
+\begin_inset Formula 
+\begin{eqnarray*}
+p(x,z) & = & p(x\mid z)p(z)\\
+\pause & = & \cn\left(x\mid\mu_{z},\Sigma_{z}\right)\pi_{z}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Marginal distribution
+\series default
+ (just observed variable 
+\begin_inset Formula $x$
+\end_inset
+
+):
+\begin_inset Formula 
+\[
+p(x)=\pause\sum_{z=1}^{k}p(x,z)=\pause\sum_{z=1}^{k}\pi_{z}\cn\left(x\mid\mu_{z},\Sigma_{z}\right)
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Maximum Likelihood for the Gaussian Mixture Model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Find parameters that give 
+\series bold
+observed data 
+\series default
+the
+\series bold
+ highest likelihood
+\series default
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+The model likelihood for 
+\begin_inset Formula $\cd=\left\{ x_{1},\ldots,x_{n}\right\} $
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+p(\cd)=\pause\prod_{i=1}^{n}p(x_{i})=\pause\prod_{i=1}^{n}\left[\sum_{z=1}^{k}\pi_{z}\cn\left(x_{i}\mid\mu_{z},\Sigma_{z}\right)\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+The log-likelihood objective function:
+\begin_inset Formula 
+\begin{eqnarray*}
+J(\pi,\mu,\Sigma) & = & \sum_{i=1}^{n}\log\left[\sum_{z=1}^{k}\pi_{z}\cn\left(x_{i}\mid\mu_{z},\Sigma_{z}\right)\right]
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+MLE is 
+\begin_inset Formula $\left(\hat{\pi},\hat{\mu},\hat{\Sigma}\right)=\argmax_{\pi,\mu,\Sigma}J(\pi,\mu,\Sigma)$
+\end_inset
+
+.
+ EM algorithm to find it...
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Section
+The EM Algorithm for GMM 
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Cluster Probabilities and Expected Cluster Sizes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Probability that observed value 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ comes from cluster 
+\begin_inset Formula $c$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\gamma_{i}^{c}:=\pr\left(z_{i}=c\mid x_{i}\right).
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The vector 
+\begin_inset Formula $\left(\gamma_{i}^{1},\ldots,\gamma_{i}^{k}\right)$
+\end_inset
+
+ gives the 
+\series bold
+soft cluster assignments
+\series default
+ for 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $n_{c}$
+\end_inset
+
+ be the 
+\series bold
+expected number
+\series default
+ of points in cluster 
+\begin_inset Formula $c$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{eqnarray*}
+n_{c} & = & \ex\left[\sum_{i}\ind{z_{i}=c}\mid x_{1},\ldots,x_{n}\right]\\
+\pause & = & \sum_{i}\pr\left(z_{i}=c\mid x_{i}\right)\\
+ & = & \sum_{i=1}^{n}\gamma_{i}^{c}
+\end{eqnarray*}
+
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+EM Algorithm for GMM
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Initialize parameters 
+\begin_inset Formula $\mu,\Sigma,\pi$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Quotes eld
+\end_inset
+
+E step
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Evaluate the 
+\series bold
+responsibilities
+\series default
+ using current parameters:
+\begin_inset Formula 
+\[
+\gamma_{i}^{j}=\pr(z_{i}=j\mid x_{i})=\frac{\pi_{j}\cn\left(x_{i}\mid\mu_{j},\Sigma_{j}\right)}{\sum_{c=1}^{k}\pi_{c}\cn\left(x_{i}\mid\mu_{c},\Sigma_{c}\right)},
+\]
+
+\end_inset
+
+for 
+\begin_inset Formula $i=1,\ldots,n$
+\end_inset
+
+ and 
+\begin_inset Formula $j=1,\ldots,k$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Quotes eld
+\end_inset
+
+M step
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Re-estimate the parameters using responsibilities:
+\begin_inset Formula 
+\begin{eqnarray*}
+\mu_{c}^{\text{new}} & = & \frac{1}{n_{c}}\sum_{i=1}^{n}\gamma_{i}^{c}x_{i}\\
+\pause\Sigma_{c}^{\text{new}} & = & \frac{1}{n_{c}}\sum_{i=1}^{n}\gamma_{i}^{c}\left(x_{i}-\mu_{\text{MLE}}\right)\left(x_{i}-\mu_{\text{MLE}}\right)^{T}\\
+\pause\pi_{c}^{\text{new}} & = & \frac{n_{c}}{n},
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Repeat from Step 2, until log-likelihood converges.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Slightly better example of this in Andrew Moore's slides: http://www.autonlab.org/
+tutorials/gmm14.pdf
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+EM for GMM
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Initialization
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename 9.8a.png
+	lyxscale 50
+	height 55theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Bishop's 
+\backslash
+emph{Pattern recognition and machine learning}, Figure 9.8.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+EM for GMM
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+First soft assignment:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename 9.8b.png
+	lyxscale 50
+	height 55theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Bishop's 
+\backslash
+emph{Pattern recognition and machine learning}, Figure 9.8.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+EM for GMM
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+First soft assignment:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename 9.8c.png
+	lyxscale 50
+	height 55theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Bishop's 
+\backslash
+emph{Pattern recognition and machine learning}, Figure 9.8.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+EM for GMM
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+After 5 rounds of EM:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename 9.8e.png
+	lyxscale 50
+	height 55theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Bishop's 
+\backslash
+emph{Pattern recognition and machine learning}, Figure 9.8.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+EM for GMM
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+After 20 rounds of EM:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename 9.8f.png
+	lyxscale 50
+	height 55theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Bishop's 
+\backslash
+emph{Pattern recognition and machine learning}, Figure 9.8.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Relation to 
+\begin_inset Formula $K$
+\end_inset
+
+-Means
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+EM for GMM seems a little like 
+\begin_inset Formula $k$
+\end_inset
+
+-means.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+In fact, there is a precise correspondence.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+First, fix each cluster covariance matrix to be 
+\begin_inset Formula $\sigma^{2}I$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+As we take 
+\begin_inset Formula $\sigma^{2}\to0$
+\end_inset
+
+, the update equations converge to doing 
+\begin_inset Formula $k$
+\end_inset
+
+-means.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+If you do a quick experiment yourself, you'll find
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Soft assignments converge to hard assignments.
+\end_layout
+
+\begin_layout Itemize
+Has to do with the tail behavior (exponential decay) of Gaussian.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+TODO: a little more extraction from EM convergence paper
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Section
+Math Prerequisites
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Convex and Concave Functions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+A function 
+\begin_inset Formula $f:\reals^{n}\to\reals$
+\end_inset
+
+ is 
+\series bold
+convex
+\series default
+ if for all 
+\begin_inset Formula $x,y\in\reals^{n}$
+\end_inset
+
+ and 
+\begin_inset Formula $0\le\theta\le1$
+\end_inset
+
+, we have
+\begin_inset Formula 
+\[
+f(\theta x+(1-\theta)y)\le\theta f(x)+(1-\theta)f(y).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename fig7.5a.pdf
+	lyxscale 50
+	width 40text%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename fig7.5b.pdf
+	lyxscale 50
+	width 40text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{KPM Fig.
+ 7.5}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Jensen's Inequality
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Theorem
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[Jensen's Inequality]
+\end_layout
+
+\end_inset
+
+If 
+\begin_inset Formula $f:\reals\to\reals$
+\end_inset
+
+ is a 
+\series bold
+convex
+\series default
+ function, and 
+\begin_inset Formula $x$
+\end_inset
+
+ is a random variable, then
+\begin_inset Formula 
+\[
+\ex f(x)\ge f(\ex x).\pause
+\]
+
+\end_inset
+
+Moreover, if 
+\begin_inset Formula $f$
+\end_inset
+
+ is 
+\series bold
+strictly convex
+\series default
+, then equality implies that 
+\begin_inset Formula $x=\ex x$
+\end_inset
+
+ with probability 
+\begin_inset Formula $1$
+\end_inset
+
+ (i.e.
+ 
+\begin_inset Formula $x$
+\end_inset
+
+ is a constant).
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+e.g.
+ 
+\begin_inset Formula $f(x)=x^{2}$
+\end_inset
+
+ is convex.
+ So 
+\begin_inset Formula $\ex x^{2}\ge\left(\ex x\right)^{2}$
+\end_inset
+
+.
+ Thus 
+\begin_inset Formula 
+\[
+\var x=\ex x^{2}-\left(\ex x\right)^{2}\ge0.
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Kullback-Leibler Divergence
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $p(x)$
+\end_inset
+
+ and 
+\begin_inset Formula $q(x)$
+\end_inset
+
+ be probability mass functions (PMFs) on 
+\begin_inset Formula $\cx$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+How can we measure how 
+\begin_inset Quotes eld
+\end_inset
+
+different
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Formula $p$
+\end_inset
+
+ and 
+\begin_inset Formula $q$
+\end_inset
+
+ are?
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+The 
+\series bold
+Kullback-Leibler
+\series default
+ or 
+\series bold
+
+\begin_inset Quotes eld
+\end_inset
+
+KL
+\begin_inset Quotes erd
+\end_inset
+
+ Divergence
+\series default
+ is defined by
+\begin_inset Formula 
+\begin{eqnarray*}
+\kl(p\|q) & = & \sum_{x\in\cx}p(x)\log\frac{p(x)}{q(x)}.
+\end{eqnarray*}
+
+\end_inset
+
+(Assumes 
+\begin_inset Formula $q(x)=0$
+\end_inset
+
+ implies 
+\begin_inset Formula $p(x)=0$
+\end_inset
+
+.)
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Can also write this as
+\begin_inset Formula 
+\begin{eqnarray*}
+\kl(p\|q) & = & \ex_{x\sim p}\log\frac{p(x)}{q(x)}.
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Statistical Divergence and Metrics
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Some divergences are proper distance metrics:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+e.g.
+ Hellinger distance: 
+\begin_inset Formula $h^{2}(p,q)=\frac{1}{2}\int\left(\sqrt{p(x)}-\sqrt{q(x)}\right)^{2}dx$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+where 
+\begin_inset Formula $p$
+\end_inset
+
+ and 
+\begin_inset Formula $q$
+\end_inset
+
+ are PMFs.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Kullback-Leibler divergence is an important divergence measure
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Not a proper distance metric.
+\end_layout
+
+\begin_layout Itemize
+Not even symmetric.
+ 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Gibbs Inequality (
+\begin_inset Formula $\kl(p\|q)\ge0$
+\end_inset
+
+ and 
+\begin_inset Formula $\kl(p\|p)=0$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Theorem
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[Gibbs Inequality]
+\end_layout
+
+\end_inset
+
+Let 
+\begin_inset Formula $p(x)$
+\end_inset
+
+ and 
+\begin_inset Formula $q(x)$
+\end_inset
+
+ be PMFs on 
+\begin_inset Formula $\cx$
+\end_inset
+
+.
+ Then
+\begin_inset Formula 
+\[
+\kl(p\|q)\ge0,
+\]
+
+\end_inset
+
+with equality iff 
+\begin_inset Formula $p(x)=q(x)$
+\end_inset
+
+ for all 
+\begin_inset Formula $x\in\cx$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+KL divergence measures the 
+\begin_inset Quotes eld
+\end_inset
+
+distance
+\begin_inset Quotes erd
+\end_inset
+
+ between distributions.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Note:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+KL divergence 
+\series bold
+not a metric
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+KL divergence is 
+\series bold
+not symmetric
+\series default
+.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Gibbs Inequality: Proof
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+\kl(p\|q) & = & \ex_{p}\left[-\log\left(\frac{q(x)}{p(x)}\right)\right]\\
+ & \ge & -\log\left[\ex_{p}\left(\frac{q(x)}{p(x)}\right)\right]\mbox{\qquad\text{(Jensen's)}}\\
+ & = & -\log\left[\sum_{\left\{ x\mid p(x)>0\right\} }p(x)\frac{q(x)}{p(x)}\right]\\
+ & = & -\log\left[\sum_{x\in\cx}q(x)\right]\\
+ & = & -\log1=0.
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Since 
+\begin_inset Formula $-\log$
+\end_inset
+
+ is strictly convex, we have strict equality iff 
+\begin_inset Formula $q(x)/p(x)$
+\end_inset
+
+ is a constant, which implies 
+\begin_inset Formula $q=p$
+\end_inset
+
+ .
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Section
+EM Algorithm for Latent Variable Models 
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+General Latent Variable Model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Two sets of random variables: 
+\begin_inset Formula $z$
+\end_inset
+
+ and 
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $z$
+\end_inset
+
+ consists of unobserved 
+\series bold
+hidden variables
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $x$
+\end_inset
+
+ consists of 
+\series bold
+observed variables
+\series default
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Joint probability model parameterized by 
+\begin_inset Formula $\theta\in\Theta$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+p(x,z\mid\theta)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout AlertBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Notation abuse
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout AlertBlock
+Notation 
+\begin_inset Formula $p(x,z\mid\theta)$
+\end_inset
+
+ suggests a Bayesian setting, in which 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is a r.v.
+ However we are 
+\series bold
+not
+\series default
+ assuming a Bayesian setting.
+ 
+\begin_inset Formula $p(x,z\mid\theta)$
+\end_inset
+
+ is just easier to read than 
+\begin_inset Formula $p_{\theta}(x,z)$
+\end_inset
+
+, once 
+\begin_inset Formula $\theta$
+\end_inset
+
+ gets more complicated.
+ 
+\begin_inset Formula 
+\[
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Complete and Incomplete Data
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+An observation of 
+\begin_inset Formula $x$
+\end_inset
+
+ is called an 
+\series bold
+incomplete data set
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+An observation 
+\begin_inset Formula $\left(x,z\right)$
+\end_inset
+
+ is called a 
+\series bold
+complete data set
+\series default
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+We never have a complete data set for latent variable models.
+\end_layout
+
+\begin_layout Itemize
+But it's a useful construct.
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Suppose we have an incomplete data set 
+\begin_inset Formula $\cd=\left(x_{1},\ldots,x_{n}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+To simplify notation, take 
+\begin_inset Formula $x$
+\end_inset
+
+ to represent the entire dataset
+\begin_inset Formula 
+\[
+x=\left(x_{1},\ldots,x_{n}\right),
+\]
+
+\end_inset
+
+and 
+\begin_inset Formula $z$
+\end_inset
+
+ to represent the corresponding unobserved variables
+\begin_inset Formula 
+\[
+z=\left(z_{1},\ldots,z_{n}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Log-Likelihood and Terminology
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Note that
+\begin_inset Formula 
+\[
+\argmax_{\theta}p(x\mid\theta)=\argmax_{\theta}\left[\log p(x\mid\theta)\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Often easier to work with this 
+\begin_inset Quotes eld
+\end_inset
+
+l
+\series bold
+og-likelihood
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We often call 
+\begin_inset Formula $p(x)$
+\end_inset
+
+ the 
+\series bold
+marginal likelihood
+\series default
+, 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+because it is 
+\begin_inset Formula $p(x,z)$
+\end_inset
+
+ with 
+\begin_inset Formula $z$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+marginalized out
+\begin_inset Quotes erd
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+p(x)=\sum_{z}p(x,z)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+We often call 
+\begin_inset Formula $p(x,y)$
+\end_inset
+
+ the 
+\series bold
+joint
+\series default
+.
+ (for 
+\begin_inset Quotes eld
+\end_inset
+
+joint distribution
+\begin_inset Quotes erd
+\end_inset
+
+)
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Similarly, 
+\begin_inset Formula $\log p(x)$
+\end_inset
+
+ is the 
+\series bold
+marginal log-likelihood
+\series default
+.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Assumptions for EM Algorithm
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Assumption for the EM algorithm
+\series default
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Optimization for complete data is relatively easy
+\begin_inset Formula 
+\[
+\argmax_{\theta\in\Theta}\;\log p(x,z\mid\theta)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Clearly true for Gaussian mixture model.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Plain Layout
+[We'll actually need slightly more than this....]
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The EM Algorithm 
+\series bold
+Key Idea
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Marginal log-likelihood is hard to optimize:
+\begin_inset Formula 
+\[
+\max_{\theta}\;\log\left\{ \sum_{z}p(x,z\mid\theta)\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Assume that 
+\series default
+complete data log-likelihood would be easy to optimize:
+\begin_inset Formula 
+\[
+\max_{\theta}\;\log p(x,z\mid\theta)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+What if we had a 
+\series bold
+distribution 
+\series default
+
+\begin_inset Formula $q(z)$
+\end_inset
+
+ for the latent variables 
+\begin_inset Formula $z$
+\end_inset
+
+?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Then maximize the 
+\series bold
+expected complete data log-likelihood
+\series default
+:
+\begin_inset Formula 
+\[
+\max_{\theta}\:\sum_{z}q(z)\log p(x,z\mid\theta)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+EM 
+\series bold
+assumes
+\series default
+ this maximization is feasible.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Lower Bound for Likelihood
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $q(z)$
+\end_inset
+
+ be any PMF on 
+\begin_inset Formula $\cz$
+\end_inset
+
+, the support of 
+\begin_inset Formula $Z$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{eqnarray*}
+\log p(x\mid\theta) & = & \log\left[\sum_{z}p(x,z\mid\theta)\right]\\
+\pause & = & \log\left[\sum_{z}q(z)\left(\frac{p(x,z\mid\theta)}{q(z)}\right)\right]\mbox{\quad\ (log of an expectation)}\\
+\pause & \ge & \sum_{z}q(z)\log\left(\frac{p(x,z\mid\theta)}{q(z)}\right)\mbox{\quad(expectation of log)}\\
+\pause & =: & \cl(q,\theta).
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The inequality is by Jensen's, by concavity of the 
+\begin_inset Formula $\log$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+This is the 
+\series bold
+key step
+\series default
+ for 
+\begin_inset Quotes eld
+\end_inset
+
+variational methods
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Lower Bound and Expected Complete Log-Likelihood
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Consider maximizing the lower bound 
+\begin_inset Formula $\cl(q,\theta)$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{eqnarray*}
+\pause\cl(q,\theta) & = & \sum_{z}q(z)\log\left(\frac{p(x,z\mid\theta)}{q(z)}\right)\\
+\pause & = & \underbrace{\sum_{z}q(z)\log p(x,z\mid\theta)}_{\ex\left[\text{complete data log-likelihood}\right]}-\underbrace{\sum_{z}q(z)\log q(z)}_{\text{no }\theta\text{ here}}\pause
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Maximizing 
+\begin_inset Formula $\cl(q,\theta)$
+\end_inset
+
+ equivalent to maximizing 
+\begin_inset Formula $\ex\left[\text{complete data log-likelihood}\right]$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+A Family of Lower Bounds
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Each 
+\begin_inset Formula $q$
+\end_inset
+
+ gives a different lower bound: 
+\begin_inset Formula $\log p(x\mid\theta)\ge\cl(q,\theta)$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Two lower bounds, as functions of 
+\begin_inset Formula $\theta$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename lowerBounds-Bishop9.14.png
+	lyxscale 50
+	height 55theight%
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Bishop's 
+\backslash
+emph{Pattern recognition and machine learning}, Figure 9.14.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+EM: Big Picture Idea
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The following inequality holds for all 
+\begin_inset Formula $\theta$
+\end_inset
+
+ and 
+\begin_inset Formula $q$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\log p(x\mid\theta)\ge\cl(q,\theta).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We want to find 
+\begin_inset Formula $\theta$
+\end_inset
+
+ that maximizes 
+\begin_inset Formula $\log p(x\mid\theta)$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\log p(x\mid\theta)$
+\end_inset
+
+ is hard to maximize directly.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Two step version of the EM algorithm:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+We vary 
+\begin_inset Formula $q$
+\end_inset
+
+ and 
+\begin_inset Formula $\theta$
+\end_inset
+
+, searching for the biggest 
+\begin_inset Formula $\cl(q,\theta)$
+\end_inset
+
+ we can find.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Final result is 
+\begin_inset Formula $\hat{\theta}$
+\end_inset
+
+ corresponding to the largest 
+\begin_inset Formula $\cl(q,\theta)$
+\end_inset
+
+ we found.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Often this is a local maximum of the likelihood.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+One question left: How to choose the sequence of 
+\begin_inset Formula $q$
+\end_inset
+
+'s and 
+\begin_inset Formula $\theta$
+\end_inset
+
+'s we try?
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+EM: Coordinate Ascent on Lower Bound
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Choose sequence of 
+\begin_inset Formula $q$
+\end_inset
+
+'s and 
+\begin_inset Formula $\theta$
+\end_inset
+
+'s by 
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+coordinate ascent
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+EM Algorithm (high level):
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Choose initial 
+\begin_inset Formula $\theta^{\text{old}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Let 
+\begin_inset Formula $q^{*}=\argmax_{q}\cl(q,\theta^{\text{old}})$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Let 
+\begin_inset Formula $\theta^{\text{new}}=\argmax_{\theta}\cl(q^{*},\theta^{\text{old}})$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Go to step 2, until converged.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Will show:
+\series bold
+ 
+\begin_inset Formula $p(x\mid\theta^{\text{new}})\ge p(x\mid\theta^{\text{old}})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Get sequence of 
+\begin_inset Formula $\theta$
+\end_inset
+
+'s with monotonically increasing likelihood.
+\series default
+
+\begin_inset Note Note
+status open
+
+\begin_layout Itemize
+Why is this a good idea?
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+In many situations, relatively easier to find 
+\begin_inset Formula $q^{\text{new}}$
+\end_inset
+
+ and 
+\begin_inset Formula $\theta^{\text{new}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+e.g.
+ GMM
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+EM: Coordinate Ascent on Lower Bound
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename EM-twosteps-Bishop9.14.png
+	lyxscale 50
+	height 50theight%
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Enumerate
+Start at 
+\begin_inset Formula $\theta^{\text{old}}.$
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Find 
+\begin_inset Formula $q$
+\end_inset
+
+ giving best lower bound at 
+\begin_inset Formula $\theta^{\text{old}}$
+\end_inset
+
+
+\begin_inset Formula $\implies$
+\end_inset
+
+ 
+\begin_inset Formula $\cl(q,\theta)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Formula $\theta^{\text{new}}=\argmax_{\theta}\cl(q,\theta)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Bishop's 
+\backslash
+emph{Pattern recognition and machine learning}, Figure 9.14.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Lower Bound
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let's investigate the lower bound:
+\begin_inset Formula 
+\begin{eqnarray*}
+\cl(q,\theta) & = & \sum_{z}q(z)\log\left(\frac{p(x,z\mid\theta)}{q(z)}\right)\\
+\pause & = & \sum_{z}q(z)\log\left(\frac{p(z\mid x,\theta)p(x\mid\theta)}{q(z)}\right)\\
+\pause & = & \sum_{z}q(z)\log\left(\frac{p(z\mid x,\theta)}{q(z)}\right)+\sum_{z}q(z)\log p(x\mid\theta)\\
+\pause & = & -\kl[q(z),p(z\mid x,\theta)]+\log p(x\mid\theta)\pause
+\end{eqnarray*}
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Amazing! We get back an equality for the marginal likelihood:
+\begin_inset Formula 
+\[
+\log p(x\mid\theta)=\cl(q,\theta)+\kl[q(z),p(z\mid x,\theta)]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Best Lower Bound
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Find 
+\begin_inset Formula $q$
+\end_inset
+
+ maximizing
+\begin_inset Formula 
+\begin{eqnarray*}
+\cl(q,\theta^{\text{old}}) & = & -\kl[q(z),p(z\mid x,\theta^{\text{old}})]+\underbrace{\log p(x\mid\theta^{\text{old}})}_{\text{no }q\text{ here}}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Recall 
+\begin_inset Formula $\kl(p\|q)\ge0$
+\end_inset
+
+, and 
+\begin_inset Formula $\kl(p\|p)=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Best 
+\begin_inset Formula $q$
+\end_inset
+
+ is 
+\begin_inset Formula $q^{*}(z)=p(z\mid x,\theta^{\text{old}})$
+\end_inset
+
+.
+ Proof:
+\begin_inset Formula 
+\[
+\pause\cl(q^{*},\theta^{\text{old}})=-\underbrace{\kl[p(z\mid x,\theta^{\text{old}}),p(z\mid x,\theta^{\text{old}})]}_{=0}+\log p(x\mid\theta^{\text{old}})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Summary:
+\begin_inset Formula 
+\begin{eqnarray*}
+\log p(x\mid\theta^{\text{old}}) & = & \cl(q^{*},\theta^{\text{old}})\quad(\text{tangent at }\theta^{\text{old}}).\\
+\pause\log p(x\mid\theta) & \ge & \cl(q^{*},\theta)\quad\forall\theta
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Tight lower bound for any chosen 
+\begin_inset Formula $\theta$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename EM-twosteps-Bishop9.14.png
+	lyxscale 50
+	height 50theight%
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Fix any 
+\begin_inset Formula $\theta'$
+\end_inset
+
+ and take 
+\begin_inset Formula $q'(z)=p(z\mid x,\theta')$
+\end_inset
+
+.
+ Then
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\log p(x\mid\theta)\ge\cl(q',\theta)$
+\end_inset
+
+ 
+\begin_inset Formula $\forall\theta$
+\end_inset
+
+.
+ [Global lower bound].
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\log p(x\mid\theta')=\cl(q',\theta')$
+\end_inset
+
+.
+ [Lower bound is 
+\series bold
+tight 
+\series default
+at 
+\series bold
+
+\begin_inset Formula $\theta'$
+\end_inset
+
+
+\series default
+.]
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Bishop's 
+\backslash
+emph{Pattern recognition and machine learning}, Figure 9.14.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+General EM Algorithm
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Choose initial 
+\begin_inset Formula $\theta^{\text{old}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Expectation Step
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $q^{*}(z)=p(z\mid x,\theta^{\text{old}})$
+\end_inset
+
+.
+ [
+\begin_inset Formula $q^{*}$
+\end_inset
+
+ gives best lower bound at 
+\begin_inset Formula $\theta^{\mbox{old}}$
+\end_inset
+
+]
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Let
+\begin_inset Formula 
+\[
+J(\theta):=\cl(q^{*},\theta)=\underbrace{\sum_{z}q^{*}(z)\log\left(\frac{p(x,z\mid\theta)}{q^{*}(z)}\right)}_{\mbox{\textbf{expectation }w.r.t. }z\sim q^{*}(z)}
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Maximization Step
+\series default
+ 
+\begin_inset Formula 
+\[
+\theta^{\text{new}}=\argmax_{\theta}J(\theta).\pause
+\]
+
+\end_inset
+
+[Equivalent to maximizing expected complete log-likelihood.]
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Go to step 2, until converged.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+EM and Variational Methods
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+What makes EM a 
+\series bold
+variational method
+\series default
+?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We're maximizing a lower bound that is a 
+\series bold
+functional 
+\series default
+of distribution 
+\begin_inset Formula $q$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Calculus of variations is the traditional tool.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Then 
+\begin_inset Formula $J(\theta)$
+\end_inset
+
+ is our 
+\series bold
+variational lower bound 
+\series default
+(or approximation) to 
+\begin_inset Formula $\log p(x\mid\theta)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+EM Monotonically Increases Likelihood
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+EM Gives Monotonically Increasing Likelihood: By Picture
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename EM-twosteps-Bishop9.14.png
+	lyxscale 50
+	height 55theight%
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Bishop's 
+\backslash
+emph{Pattern recognition and machine learning}, Figure 9.14.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+EM Gives Monotonically Increasing Likelihood: By Math
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Start at 
+\begin_inset Formula $\theta^{\text{old}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Choose 
+\begin_inset Formula $q^{*}(z)=\argmax_{q}\cl(q,\theta^{\text{old}})$
+\end_inset
+
+.
+ We've shown
+\begin_inset Formula 
+\[
+\log p(x\mid\theta^{\text{old}})=\cl(q^{*},\theta^{\text{old}})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Choose 
+\begin_inset Formula $\theta^{\text{new}}=\argmax_{\theta}\cl(q^{*},\theta^{\text{old}})$
+\end_inset
+
+.
+ So
+\begin_inset Formula 
+\begin{eqnarray*}
+\cl(q^{*},\theta^{\text{new}}) & \ge & \cl(q^{*},\theta^{\text{old}}).
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Putting it together, we get
+\begin_inset Formula 
+\begin{eqnarray*}
+\log p(x\mid\theta^{\text{new}}) & \ge & \cl(q^{*},\theta^{\text{new}})\qquad\cl\text{ is a lower bound}\\
+\pause & \ge & \cl(q^{*},\theta^{\text{old}})\qquad\mbox{By definition of }\theta^{\text{new}}\\
+\pause & = & \log p(x\mid\theta^{\text{old}})\qquad\text{Bound is tight at }\theta^{\text{old}}.
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Suppose We Maximize the Lower Bound...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose we have found a 
+\series bold
+global maximum
+\series default
+ of 
+\begin_inset Formula $\cl(q,\theta)$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+L(q^{*},\theta^{*})\ge L(q,\theta)\;\forall q,\theta,
+\]
+
+\end_inset
+
+where of course
+\begin_inset Formula 
+\[
+q^{*}(z)=p(z\mid x,\theta^{*}).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Claim: 
+\begin_inset Formula $\theta^{*}$
+\end_inset
+
+ is a global maximum of 
+\begin_inset Formula $\log p(x\mid\theta^{*})$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Proof: For any 
+\begin_inset Formula $\theta'$
+\end_inset
+
+, we showed that for 
+\begin_inset Formula $q'(z)=p(z\mid x,\theta')$
+\end_inset
+
+ we have
+\begin_inset Formula 
+\begin{eqnarray*}
+\log p(x\mid\theta') & = & \cl(q',\theta')+\kl[q',p(z\mid x,\theta')]\\
+ & = & \cl(q',\theta')\\
+ & \le & \cl(q^{*},\theta^{*})\\
+ & = & \log p(x\mid\theta^{*})
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Continuity argument can give same result for local.
+ Bishop says if 
+\begin_inset Formula $p(x,z\mid\theta)$
+\end_inset
+
+ is continuous function of 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ I wonder if we need the continuity of the joint to ensure that reasonable
+ thing happen with the 
+\begin_inset Formula $q$
+\end_inset
+
+ piece? Not clear why we don't just need 
+\begin_inset Formula $p(x\mid\theta)$
+\end_inset
+
+.
+ Need to think about this more...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Convergence of EM
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $\theta_{n}$
+\end_inset
+
+ be value of EM algorithm after 
+\begin_inset Formula $n$
+\end_inset
+
+ steps.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Define 
+\begin_inset Quotes eld
+\end_inset
+
+transition function
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Formula $M(\cdot)$
+\end_inset
+
+ such that 
+\begin_inset Formula $\theta_{n+1}=M(\theta_{n})$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Suppose log-likelihood function 
+\begin_inset Formula $\ell(\theta)=\log p(x\mid\theta)$
+\end_inset
+
+ is differentiable.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $S$
+\end_inset
+
+ be the set of stationary points of 
+\begin_inset Formula $\ell(\theta)$
+\end_inset
+
+.
+ (i.e.
+ 
+\begin_inset Formula $\del_{\theta}\ell(\theta)=0$
+\end_inset
+
+)
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Theorem
+Under mild regularity conditions
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+For details, see 
+\begin_inset Quotes eld
+\end_inset
+
+Parameter Convergence for EM and MM Algorithms
+\begin_inset Quotes erd
+\end_inset
+
+ by Florin Vaida in 
+\emph on
+Statistica Sinica
+\emph default
+ (2005).
+ 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www3.stat.sinica.edu.tw/statistica/oldpdf/a15n316.pdf
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, for any starting point 
+\begin_inset Formula $\theta_{0}$
+\end_inset
+
+, 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\lim_{n\to\infty}\theta_{n}=\theta^{*}$
+\end_inset
+
+ for some stationary point 
+\begin_inset Formula $\theta^{*}\in S$
+\end_inset
+
+ and
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\theta^{*}$
+\end_inset
+
+ is a fixed point of the EM algorithm, i.e.
+ 
+\begin_inset Formula $M(\theta^{*})=\theta^{*}$
+\end_inset
+
+.
+ Moreover,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\ell(\theta_{n})$
+\end_inset
+
+ strictly increases to 
+\begin_inset Formula $\ell(\theta^{*})$
+\end_inset
+
+ as 
+\begin_inset Formula $n\to\infty$
+\end_inset
+
+, unless 
+\begin_inset Formula $\theta_{n}\equiv\theta^{*}$
+\end_inset
+
+.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+In practice, can run EM multiple times with random starts.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Section
+Variations on EM
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+EM Gives Us Two New Problems
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The 
+\begin_inset Quotes eld
+\end_inset
+
+E
+\begin_inset Quotes erd
+\end_inset
+
+ Step: Computing
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\[
+J(\theta):=\cl(q^{*},\theta)=\sum_{z}q^{*}(z)\log\left(\frac{p(x,z\mid\theta)}{q^{*}(z)}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The 
+\begin_inset Quotes eld
+\end_inset
+
+M
+\begin_inset Quotes erd
+\end_inset
+
+ Step: Computing
+\begin_inset Formula 
+\[
+\theta^{\text{new}}=\argmax_{\theta}J(\theta).\pause
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Either of these can be too hard to do in practice.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Generalized EM (GEM)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Addresses the problem of a difficult 
+\begin_inset Quotes eld
+\end_inset
+
+M
+\begin_inset Quotes erd
+\end_inset
+
+ step.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Rather than finding 
+\begin_inset Formula 
+\[
+\theta^{\text{new}}=\argmax_{\theta}J(\theta),
+\]
+
+\end_inset
+
+find 
+\series bold
+any
+\series default
+ 
+\begin_inset Formula $\theta^{\mbox{new}}$
+\end_inset
+
+ for which
+\begin_inset Formula 
+\[
+J(\theta^{\mbox{new}})>J(\theta^{\mbox{old}}).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Can use a standard nonlinear optimization strategy
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+e.g.
+ take a gradient step on 
+\begin_inset Formula $J$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+We still get monotonically increasing likelihood.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+EM and More General Variational Methods
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose 
+\begin_inset Quotes eld
+\end_inset
+
+E
+\begin_inset Quotes erd
+\end_inset
+
+ step is difficult:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Hard to take expectation w.r.t.
+ 
+\begin_inset Formula $q^{*}(z)=p(z\mid x,\theta^{\text{old}})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Solution: Restrict to distributions 
+\begin_inset Formula $\cq$
+\end_inset
+
+ that are easy to work with.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Lower bound now looser:
+\begin_inset Formula 
+\[
+q^{*}=\argmin_{q\in\cq}\kl[q(z),p(z\mid x,\theta^{\text{old}})]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+EM in Bayesian Setting
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose we have a prior 
+\begin_inset Formula $p(\theta$
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Itemize
+Want to find MAP estimate: 
+\begin_inset Formula $\hat{\theta}_{\text{MAP}}=\argmax_{\theta}p(\theta\mid x)$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{eqnarray*}
+\pause p(\theta\mid x) & = & p(x\mid\theta)p(\theta)/p(x)\\
+\pause\log p(\theta\mid x) & = & \log p(x\mid\theta)+\log p(\theta)-\log p(x)
+\end{eqnarray*}
+
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Still can use our lower bound on 
+\begin_inset Formula $\log p(x,\theta)$
+\end_inset
+
+.
+\begin_inset Formula 
+\[
+J(\theta):=\cl(q^{*},\theta)=\sum_{z}q^{*}(z)\log\left(\frac{p(x,z\mid\theta)}{q^{*}(z)}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Maximization step becomes 
+\begin_inset Formula 
+\[
+\theta^{\mbox{new}}=\argmax_{\theta}\left[J(\theta)+\log p(\theta)\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Homework: Convince yourself our lower bound is still tight at 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Section
+Homework: Gaussian Mixture Model (Hints)
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Homework: Derive EM for GMM from General EM Algorithm
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Subsequent slides may help set things up.
+\end_layout
+
+\begin_layout Itemize
+Key skills:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+MLE for multivariate Gaussian distributions.
+\end_layout
+
+\begin_layout Itemize
+Lagrange multipliers 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Gaussian Mixture Model (
+\begin_inset Formula $k$
+\end_inset
+
+ Components)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+GMM Parameters 
+\begin_inset Formula 
+\begin{eqnarray*}
+\text{Cluster probabilities}: &  & \pi=\left(\pi_{1},\ldots,\pi_{k}\right)\\
+\text{Cluster means}: &  & \mu=\left(\mu_{1},\ldots,\mu_{k}\right)\\
+\text{Cluster covariance matrices:} &  & \Sigma=\left(\Sigma_{1},\ldots\Sigma_{k}\right)
+\end{eqnarray*}
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Let 
+\begin_inset Formula $\theta=\left(\pi,\mu,\Sigma\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Marginal log-likelihood
+\begin_inset Formula 
+\begin{eqnarray*}
+\log p(x\mid\theta) & = & \log\left\{ \sum_{z=1}^{k}\pi_{z}\cn\left(x\mid\mu_{z},\Sigma_{z}\right)\right\} 
+\end{eqnarray*}
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $q^{*}(z)$
+\end_inset
+
+ are 
+\begin_inset Quotes eld
+\end_inset
+
+Soft Assignments
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose we observe 
+\begin_inset Formula $n$
+\end_inset
+
+ points: 
+\begin_inset Formula $X=\left(x_{1},\ldots,x_{n}\right)\in\reals^{n\times d}$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Let 
+\begin_inset Formula $z_{1},\ldots,z_{n}\in\left\{ 1,\ldots,k\right\} $
+\end_inset
+
+ be corresponding hidden variables.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Optimal distribution 
+\begin_inset Formula $q^{*}$
+\end_inset
+
+ is: 
+\begin_inset Formula 
+\begin{eqnarray*}
+q^{*}(z) & = & p(z\mid x,\theta).
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Convenient to define the conditional distribution for 
+\begin_inset Formula $z_{i}$
+\end_inset
+
+ given 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ as
+\begin_inset Formula 
+\begin{eqnarray*}
+\gamma_{i}^{j} & := & p\left(z=j\mid x_{i}\right)\\
+\pause & = & \frac{\pi_{j}\cn\left(x_{i}\mid\mu_{j},\Sigma_{j}\right)}{\sum_{c=1}^{k}\pi_{c}\cn\left(x_{i}\mid\mu_{c},\Sigma_{c}\right)}
+\end{eqnarray*}
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Expectation Step
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The complete log-likelihood is
+\begin_inset Formula 
+\begin{eqnarray*}
+\log p(x,z\mid\theta) & = & \sum_{i=1}^{n}\log\left[\pi_{z}\cn\left(x_{i}\mid\mu_{z},\Sigma_{z}\right)\right]\\
+ & = & \sum_{i=1}^{n}\left(\log\pi_{z}+\underbrace{\log\cn\left(x_{i}\mid\mu_{z},\Sigma_{z}\right)}_{\text{simplifies nicely}}\right)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Take the expected complete log-likelihood w.r.t.
+ 
+\begin_inset Formula $q^{*}$
+\end_inset
+
+: 
+\begin_inset Formula 
+\begin{eqnarray*}
+J(\theta) & = & \sum_{z}q^{*}(z)\log p(x,z\mid\theta)\\
+ & = & \sum_{i=1}^{n}\sum_{j=1}^{k}\gamma_{i}^{j}\left[\log\pi_{j}+\log\cn\left(x_{i}\mid\mu_{j},\Sigma_{j}\right)\right]
+\end{eqnarray*}
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Maximization Step
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Find 
+\begin_inset Formula $\theta^{*}$
+\end_inset
+
+ maximizing 
+\begin_inset Formula $J(\theta)$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{eqnarray*}
+\mu_{c}^{\text{new}} & = & \frac{1}{n_{c}}\sum_{i=1}^{n}\gamma_{i}^{c}x_{i}\\
+\Sigma_{c}^{\text{new}} & = & \frac{1}{n_{c}}\sum_{i=1}^{n}\gamma_{i}^{c}\left(x_{i}-\mu_{\text{MLE}}\right)\left(x_{i}-\mu_{\text{MLE}}\right)^{T}\\
+\pi_{c}^{\text{new}} & = & \frac{n_{c}}{n},
+\end{eqnarray*}
+
+\end_inset
+
+ for each 
+\begin_inset Formula $c=1,\ldots,k$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\end_body
+\end_document

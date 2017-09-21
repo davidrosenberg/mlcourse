@@ -1,0 +1,103 @@
+\section{Week 7 Lecture: Concept Check Exercises}
+\subsection{Multiclass}
+\begin{enumerate}
+\item Let $\XX=\RR^2$ and $\YY=\{1,2,3,4\}$, with $X$ uniformly
+  distributed on $\{x\mid \|x\|_2\leq 1\}$.  Given $X$, the value of
+  $Y$ is determined according to the following image, where green is
+  $1$, orange is $2$, blue is $3$, and magenta is $4$.
+  \begin{center}
+    \asyinclude{7-Lec-Check/Pie.asy}
+  \end{center}
+  For the problems below we are using the 0-1 loss.
+  \begin{enumerate}
+  \item Consider the multiclass linear hypothesis space
+    $$\FF=\{f\mid f(x) = \argmax_{i\in\{1,2,3,4\}} w_i^Tx\},$$
+    where each $f$ is determined by $w_1,w_2,w_3,w_4\in\RR^2$.
+    Give $f_\FF$, a decision function minimizing the risk over $\FF$,
+    by specifying the corresponding $w_1,w_2,w_3,w_4$.  Then give $R(f_\FF)$.
+  \item Now consider the restricted hypothesis space
+    $$\FF_1=\{f\mid f(x) = \argmax_{i\in\{1,2,3,4\}}
+    w_i^Tx,\|w_1\|=\|w_2\|=\|w_3\|=\|w_4\|=1\}.$$
+    Consider the decision function $f\in\FF_1$ with $w_1,w_2,w_3,w_3$
+    set to the angle bisectors of the corresponding regions.  Give $R(f)$.
+  \item Next consider the class-sensitive version of $\FF$:
+    $$\FF_2=\{f\mid f(x) = \argmax_{i\in\{1,2,3,4\}} w^T\Psi(x,i)\},$$
+    where $w\in\RR^D$ and $\Psi:\RR^2\times\{1,2,3,4\}\to\RR^D$.  Give
+    $w$, $\Psi$ corresponding to $f_{\FF_2}$, the decision function
+    minimizing the risk over $\FF_2$.
+  \end{enumerate}
+\begin{solution}
+\item[]\Sol 
+  \begin{enumerate}
+  \item Let $w_1=(0,1)^T$, $w_2=(-1,0)^T$, $w_3=(0,-c)^T$,
+    $w_4=(1,0)^T$, where $c=\cot\frac{\pi}{12}=2+\sqrt{3}$.  The
+    corresponding risk is $0$.  To see how $c$ was computed, consider
+    the boundary between the magenta and blue regions.  The division
+    occurs along the vector $(\cos(\pi/12),-\sin(\pi/12))$.  Note that
+    $$w_4^T(\cos(\pi/12),-\sin(\pi/12)) = \cos(\pi/12) =
+    w_3^T(\cos(\pi/12),-\sin(\pi/12)).$$
+  \item We have $w_1=(0,1)$, $w_3=(0,-1)$,
+    $w_2=(-\cos(\pi/2),\sin(\pi/12))$,
+    $w_4=(\cos(\pi/12),\sin(\pi/12))$.
+    This gives the image below.
+    \begin{center}
+      \asyinclude{7-Lec-Check/Pie2.asy}
+    \end{center}
+    The dashed lines above are the boundaries of the 4 regions.  The
+    resulting risk is $(7.5+7.5+22.5+22.5)/360 = 1/6$.
+  \item Let $w=(0,1,-1,0,0,-\cot(\pi/12),1,0)\in\RR^8$ and define
+    $$\psi(x,i) = x_1e_{2i-1}+x_2e_{2i}\in\RR^8$$
+    where $e_j$ is the vector with $1$ in the $j$th position and $0$ elsewhere.
+  \end{enumerate}
+\end{solution}
+\item Recall that the standard (featurized) SVM objective is given by
+  $$J_1(w) = \frac{1}{2}\|w\|_2^2+\frac{C}{n}\sum_{i=1}^n [1-y_iw^T\phi(x_i)]_+.$$
+  The 2-class multiclass SVM objective is given by
+  $$J_2(w) = \frac{1}{2}\|w\|_2^2 + \frac{C}{n}\sum_{i=1}^n
+  \max_{y\neq y_i}[1-m_{i,y}(w)]_+,$$
+  where $m_{i,y}(w)=w^T\Psi(x_i,y_i) - w^T\Psi(x_i,y)$.
+  Give a $\Psi$ (in terms of $\phi$) so that multiclass with 2 classes $\{-1,+1\}$ is
+  equivalent to our standard SVM objective.
+\begin{solution}
+\item[]\Sol Let $\Psi(x,y) = \frac{1}{2}yx$ for $y\in\{-1,+1\}$.  Then
+  we have, for $y\neq y_i$,
+  $$1-m_{i,y}(w) = 1-(w^Tx_iy_i - w^Tx_iy)/2 =
+  \left\{\begin{array}{ll} 1 + w^Tx_i & \text{if $y_i=-1$,}\\ 1-w^Tx_i &
+  \text{if $y_i=+1$.}\end{array}\right.$$
+  This gives $1-m_{i,y}(w) =1-y_iw^T\phi(x_i)$.
+\end{solution}
+\item Suppose you trained a decision function $f$ from the hypothesis
+  space $\FF$ given by
+  $$\FF=\{f\mid f(x) = \argmax_{i\in\{1,\ldots,k\}} w^T\psi(x,i)\}.$$
+  Give pseudocode showing how you would use $f$ to forecast the class
+  of a new data point $x$.
+\begin{solution}
+\item[]\Sol 
+  \begin{enumerate}
+  \item Evaluate $w^T\psi(x,i)$ for $i=1,\ldots,k$.
+  \item Forecast the value $i$ that gives the largest $w^T\psi(x,i)$ value.
+  \end{enumerate}
+\end{solution}
+\item Consider a multiclass SVM with objective
+  $$J(w) = \frac{1}{2}\|w\|_2^2 + \frac{C}{n}\sum_{i=1}^n
+  \max_{y\neq y_i}[1-m_{i,y}(w)]_+,$$
+  where $m_{i,y}(w)=w^T\Psi(x_i,y_i) - w^T\Psi(x_i,y)$.
+  Assume $\YY=\{1,\ldots,k\}$, $\XX=\RR^d$, $w\in\RR^D$ and
+  $\psi:\XX\times\YY\to\RR^D$.  Give a kernelized version of the
+  objective.
+\begin{solution}
+\item[]\Sol Let $X\in\RR^{nk\times D}$ matrix that has each
+  $\Psi(x_i,y)^T$ as rows for each $i=1,\ldots,n$ and $y=1,\ldots,k$.
+  More precisely, $\Psi(x_i,y)^T$ will be in row $(i-1)k+y$ of $X$.
+  By the representer theorem, a solution, if it exists, must have the
+  form $w^*=X^T\alpha$.  Let $XX^T=K$, the Gram matrix.  Then we have
+  $$m_{i,y}(w) = w^T\Psi(x_i,y_i) - w^T\Psi(x_i,y) =
+  (K\alpha)_{(i-1)k+y_i} - (K\alpha)_{(i-1)k+y},$$
+  and $\|w\|_2^2=\alpha^TK\alpha$.  Substituting we have
+  $$J(\alpha) = \frac{1}{2}\alpha^TK\alpha + \frac{C}{n}\sum_{i=1}^n
+  \max_{y\neq y_i}(1 - ((K\alpha)_{(i-1)k+y_i} -
+  (K\alpha)_{(i-1)k+y}))_+.$$
+  Note that the Gram matrix $K$ is $nk\times nk$, and thus can be
+  infeasible to store or compute for $nk$ large.
+\end{solution}
+\end{enumerate}

@@ -1,0 +1,144 @@
+\section{Week 11 Lecture: Concept Check Exercises}
+\subsection{Bayesian Methods and Regression}
+\begin{enumerate}
+\item Recall that the gamma function $\Gamma(x)$ is defined to be
+  $$\Gamma(x) = \int_0^\infty t^{x-1}e^{-t}\,dt.$$
+  We say that $X\sim\Gam(a,b)$ (for $a,b>0$) if the PDF $f_X$ is
+  given by
+  $$f_X(x) = \frac{b^a}{\Gamma(a)}x^{a-1}e^{-bx}$$
+  for $x>0$ and $0$ otherwise.  Suppose $X$ has prior distribution
+  $\Gam(a,b)$ and, conditional on $X$, the distribution of $Y$ is
+  Poisson with parameter $X$.
+  What is the posterior distribution of $X$ given $Y$?
+\begin{solution}
+\item[]\Sol Note that
+  $$f_{X|Y}(x|y)\propto f_{Y|X}(y|x)f_X(x) \propto
+  e^{-x}\frac{x^y}{y!}x^{a-1}e^{-bx}
+  \propto x^{y+a-1}e^{-(b+1)x}$$
+  for $y\in\ZZ_{\geq0}$, $x>0$.  Thus $X|Y=y\sim\Gam(y+a,b+1)$ and has
+  PDF
+  $$f_{X|Y}(x|y) =
+  \frac{(b+1)^{y+a}}{\Gamma(y+a)}x^{y+a-1}e^{-(b+1)x}.$$
+  Note that the terms $(b+1)^{y+a}$ and $\Gamma(y+a)$ were determined
+  without any calculations by comparing with the form of the Gamma
+  PDF.  This shows that the Gamma distribution is a conjugate prior
+  for the Poisson likelihood.
+\end{solution}
+\item (From DeGroot and Schervish) Let $\theta$ denote the proportion of registered voters in a large city who are in favor of a certain proposition.  Suppose that the value of $\theta$ is unknown, and two statisticians $A$ and~$B$
+  assign to~$\theta$ the following different prior PDFs $\xi_A(\theta)$ and~$\xi_B(\theta)$, respectively:
+  $$\begin{array}{rcll}
+    \xi_A(\theta)&=&2\theta & \mbox{for $0<\theta<1$,}\\
+    \xi_B(\theta)&=&4\theta^3 & \mbox{for $0<\theta<1$.}
+  \end{array}$$
+  In a random sample of 1000 registered voters from the city, it is found that 710 are in favor of the proposition.
+  \begin{enumerate}
+  \item Find the posterior distribution that each statistician assigns to~$\theta$.
+  \item Find the Bayes estimate of $\theta$ 
+    (minimizer of posterior expected loss)
+    for each statistician based on the squared error loss function.
+  \item Show that after the opinions of the 1000 registered voters in the random sample had been obtained, the Bayes estimates for the two statisticians could not
+    possibly differ by more than $0.002$, regardless of the number in the sample who were in favor of the proposition.
+  \end{enumerate}
+\begin{solution}
+\item[]\Sol Note that both prior distributions are from the Beta family.
+  \begin{enumerate}
+  \item We have
+    $$\xi_A(\theta|x) \propto f(x|\theta)\xi_A(\theta) \propto \theta^{711}(1-\theta)^{290}$$
+    and
+    $$\xi_B(\theta|x)\propto f(x|\theta)\xi_B(\theta) \propto \theta^{713}(1-\theta)^{290}.$$
+    Thus the posteriors from $A$ and~$B$ are both beta with parameters $(712,291)$ and $(714,291)$, respectively.
+  \item The respective means are $\frac{712}{1003}$ and $\frac{714}{1005}$.
+  \item In general the two means are given by
+    $$\frac{a+2}{1003}\quad\mbox{and}\quad\frac{a+4}{1005}.$$
+    The difference is less than $2/1000=.002$.
+  \end{enumerate}
+\end{solution}
+\item Two statistics students decide to compute 95\% confidence
+  intervals for the distribution parameter $\theta$ using an
+  i.i.d.~sample $X_1,\ldots,X_n$.  Student B uses
+  Bayesian methods to find a 95\% credible set $[L_B,R_B]$ for
+  $\theta$.  Student F uses frequentist methods to find a 95\%
+  confidence interval $[L_F,R_F]$ for $\theta$.  Both conclude that
+  parameter $\theta$ is in their respective intervals with probability at least
+  $.95$.  Who is correct? Explain.
+\begin{solution}
+\item[]\Sol The frequentist student is totally incorrect, since they
+  have misunderstood what a frequentist confidence interval is.  Using
+  frequentist methodology, $\theta$ is not a random variable, so it
+  doesn't make sense to say it lies in some fixed interval
+  $[L_F,R_F]$.  The correct interpretation is that if independent experiments like
+  this were repeated, then at least 95\% of the time $[L_F,R_F]$ will
+  contain $\theta$.  That is, the interval is random not $\theta$.
+
+  We can say that the Bayesian student is consistent.
+  Recall that to compute the credible set, the Bayesian student had to
+  introduce some prior distribution $\pi$ on~$\theta$.  What we can say is
+  if someone believes $\pi$ is correct, then it is rational, given the
+  data, to conclude that $\theta$ will lie in the posterior credible set
+  with probability 95\%.
+\end{solution}
+\item Suppose $\theta$ has prior distribution $\Bet(a,b)$ for some $a,b>0$.  Given
+  $\theta$, suppose we make independent coin flips with heads
+  probability $\theta$.  Find values of $a,b$ and the coin flips so that the
+  posterior variance is larger than the prior variance.  [Hint: Recall
+    that a $\Bet(a,b)$ random variable has variance given by
+    $$\frac{ab}{(a+b)^2(a+b+1)}.$$
+    Try $b=1$.]
+\begin{solution}
+\item[]\Sol As hinted, let's try $a=10$, $b=1$ and 9 coin flips all
+  landing tails.  The prior variance is given by
+  $$\frac{10\cdot 1}{(10+1)^2(10+1+1)} = \frac{5}{726}\approx .0069$$
+  while the posterior variance is given by
+  $$\frac{10\cdot 10}{(10+10)^2(10+10+1)} = \frac{1}{84}\approx.0119.$$
+\end{solution}
+\item Fix $\sigma^2>0$. Let $w$, taking values in $\RR^d$, 
+  have prior distribution $\Norm(\mu_0,\Sigma_0)$.
+  Conditional on $w$ and $x_1,\ldots,x_n\in\RR^2$ suppose that $y_1,\ldots,y_n$ are
+  i.i.d.~with $y_i\sim\Norm(w^Tx_i,\sigma^2)$.  Let
+  $\Norm(\mu_1,\Sigma_1)$ denote the posterior distribution of $w$ given
+  the data $\DD=\{(x_1,y_1),\ldots,(y_n,y_n)\}$.
+  \begin{enumerate}
+  \item Given a new $x$-value you want to forecast $y$ to minimize the
+    expected square loss.  That is, we want to find
+    $$\hat{y} = \argmin_y \E_{y'}(y-y')^2,$$
+    where $y'$ has the predictive distribution given $x$ and $\DD$.
+    What is $\hat{y}$, and what is the associated expected loss
+    $\E_{y'}(\hat{y}-y')^2$?
+  \item What types of values for $\sigma$, $\Sigma_0$, $n$ will lead to the
+    prior exerting a lot of influence on our prediction?
+  \item We saw that the Bayesian approach to Gaussian linear
+    regression corresponds to ridge regression.  What values in the
+    Bayesian approach correspond to a large amount of regularization?
+  \end{enumerate}
+\begin{solution}
+\item[]\Sol 
+  \begin{enumerate}
+  \item We have $\hat{y}=\mu_1^Tx$ with expected loss
+    $x^T\Sigma_1x+\sigma^2$, the mean and variance of the predictive
+    distribution.
+  \item 
+    \begin{enumerate}
+    \item High $\sigma$ meaning low certainty in data.
+    \item Small $\Sigma_0$ meaning high certainty in prior.  A
+      covariance matrix is small if its eigenvalues are small.
+    \item Small $n$ meaning not a lot of data to learn from.
+    \end{enumerate}
+  \item Small $\Sigma_0$ meaning high certainty in prior.
+  \end{enumerate}
+\end{solution}
+\item Suppose you are using Bayesian techniques to fit a Poisson
+  regression model.  Conditional on $x,w$, we have
+  $y\sim\Pois(e^{w^Tx})$.  A colleague, working with his own data set
+  and prior, has given you a function $f$ that returns i.i.d.~samples
+  from his posterior distribution on $w$.  Give pseudocode that, given
+  $x$, lets you sample from the predictive distribution of $y$ given
+  $x$.
+\begin{solution}
+\item[]\Sol Pseudocode follows:
+  \begin{enumerate}
+  \item Draw $w$ from $f$.
+  \item Draw $y$ from $\Pois(e^{w^Tx})$.
+  \item Return $y$.
+  \end{enumerate}
+\end{solution}
+\end{enumerate}

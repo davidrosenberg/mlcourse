@@ -1,0 +1,260 @@
+\section{Week 1 Lab: Concept Check Exercises}
+Starred problems are optional.
+\subsection{Multivariable Calculus Exercises}
+\begin{enumerate}
+\item If $f'(x;u)<0$ show that $f(x+hu)<f(x)$ for sufficiently small
+  $h>0$.
+\begin{solution}
+\item[]\Sol The directional derivative is given by
+  $$f'(x;u)=\lim_{h\to0} \frac{f(x+hu)-f(x)}{h}<0.$$
+  By the definition of a limit, there must be a $\delta > 0$ such that 
+  $$\frac{f(x+hu)-f(x)}{h}<0$$
+  whenever $|h|<\delta$.  If we restrict $0<h<\delta$ then we have
+  $$f(x+hu)-f(x)<0 \implies f(x+hu) < f(x)$$
+  as required.
+\end{solution}
+\item Let $f:\RR^n\to\RR$ be differentiable, and assume that $\nabla
+  f(x)\neq 0$.  Prove
+  $$\argmax_{\|u\|_2=1} f'(x;u) = \frac{\nabla f(x)}{\|\nabla f(x)\|_2}
+  \quad\text{and}\quad
+  \argmin_{\|u\|_2=1} f'(x;u) = -\frac{\nabla f(x)}{\|\nabla
+    f(x)\|_2}.$$
+\begin{solution}
+\item[]\Sol By Cauchy-Schwarz we have, for $\|u\|_2=1$,
+  $$|f'(x;u)| = |\nabla f(x)^Tu| \leq \|\nabla f(x)\|_2 \|u\|_2
+  = \|\nabla f(x)\|_2.$$
+  Note that
+  $$\nabla f(x)^T\frac{\nabla f(x)}{\|\nabla f(x)\|_2} = \|\nabla
+  f(x)\|_2
+  \quad\text{and}\quad
+  \nabla f(x)^T\frac{-\nabla f(x)}{\|\nabla f(x)\|_2} = -\|\nabla
+  f(x)\|_2,$$
+  so these achieve the maximum and minimum bounds given by
+  Cauchy-Schwarz. 
+
+  One way to understand the Cauchy-Schwarz inequality is to recall
+  that the dot-product between two vectors $v,w\in\RR^d$ can be
+  written as
+  $$v^Tw = \|v\|_2\|w\|_2\cos(\theta),$$
+  where $\theta$ is the angle between $v$ and~$w$.  This value is
+  maximized at $\cos(0)=1$ and minimized at $\cos(\pi)=-1$.
+\end{solution}
+\item Let $f:\RR^2\to\RR$ be given by $f(x,y) = x^2+4xy+3y^2$.
+  Compute the gradient $\nabla f(x,y)$.
+\begin{solution}
+\item[]\Sol Computing the partial derivatives gives
+  $$\partial_1f(x,y) = 2x+4y\quad\text{and}\quad
+  \partial_2f(x,y)=4x+6y.$$
+  Thus the gradient is given by
+  $$\nabla f(x,y) = \begin{pmatrix}2x+4y\\4x+6y\end{pmatrix}.$$
+\end{solution}
+\item Compute the gradient of $f:\RR^n\to\RR$ where $f(x)=x^TAx$ and
+  $A\in\RR^{n\times n}$ is any matrix.
+\begin{solution}
+\item[]\Sol Here we show two methods.  In either case we can obtain
+  differentiability by noticing the partial derivatives are continuous.
+  \begin{enumerate}
+  \item Since 
+    $$f(x) = x^TAx = \sum_{i,j=1}^na_{ij}x_ix_j$$
+    we have
+    $$\partial_k f(x) = \sum_{j=1}^n (a_{kj}+a_{jk})x_j$$
+    so
+    $$\nabla f(x) = (A+A^T)x.$$
+  \item Note that
+    $$\begin{array}{rcl}
+    f(x+tv) 
+    & = & (x+tv)^TA(x+tv)\\ 
+    & = & x^TAx + tx^TAv + tv^TAx + t^2v^TAv\\
+    & = & f(x) + t(x^TA+x^TA^T)v + t^2(v^TAv).
+    \end{array}$$
+    Thus
+    $$f'(x;v) = \lim_{t\to 0}\frac{f(x+tv)-f(x)}{t}
+    = \lim_{t\to0} (x^TA+x^TA^T)v  +t(v^TAv) = (x^TA+x^TA^T)v.$$
+    This shows
+    $$\nabla f(x) = (A+A^T)x.$$
+  \end{enumerate}
+\end{solution}
+\item Compute the gradient of the quadratic function
+  $f:\RR^n\to\RR$ given by
+  $$f(x) = b + c^Tx + x^TAx,$$
+  where $b\in\RR$, $c\in\RR^n$ and $A\in\RR^{n\times n}$.
+\begin{solution}
+\item[]\Sol First consider the linear function $g(x)=c^Tx$.  Note that
+  $$g(x+tv) = c^T(x+tv) = c^Tx + tc^Tv \implies \nabla f(x) = c.$$
+  As the derivative is linear we can combine this with the previous
+  problem to obtain
+  $$\nabla f(x) = c + (A+A^T)x.$$
+\end{solution}    
+\item Fix $s\in\RR^n$ and consider $f(x) = (x-s)^TA(x-s)$ where
+  $A\in\RR^{n\times n}$.  Compute the gradient of $f$.
+\begin{solution}
+\item[]\Sol We give two methods.
+  \begin{enumerate}
+  \item Let $g(x) = x^TAx$ and $h(x)=x-s$ so that $f(x)=g(h(x))$.  By
+    the vector-valued form of the chain rule we have
+    $$\nabla f(x) = \nabla g(h(x))^TDh(x) = (A+A^T)(x-s),$$
+    where $Dh(x)=\Id_{n\times n}$ is the Jacobian matrix of $h$.
+  \item We have
+    $$(x-s)^TA(x-s) = x^TAx - s^T(A+A^T)x+s^TAs.$$
+    Computing the gradient gives
+    $$\nabla f(x) = (A+A^T)x - (A+A^T)s = (A+A^T)(x-s).$$
+  \end{enumerate}
+\end{solution}
+\item Consider the ridge regression objective function
+  $$f(w) = \|Aw-y\|_2^2 + \lambda\|w\|_2^2,$$
+  where $w\in\RR^n$, $A\in\RR^{m\times n}$, $y\in\RR^m$, and
+  $\lambda\in\RR_{\geq 0}$.  
+  \begin{enumerate}
+  \item Compute the gradient of $f$.
+  \item Express $f$ in the form $f(w)=\|Bw-z\|_2^2$ for some choice of
+    $B,z$.
+  \item Using either of the parts above, compute
+    $$\argmin_{w\in\RR^n} f(w).$$
+  \end{enumerate}
+\begin{solution}
+\item[]\Sol
+  \begin{enumerate}
+  \item We can express $f(w)$ as
+    $$f(w) = (Aw-y)^T(Aw-y) + \lambda w^Tw = w^TA^TAw - 2y^TAw 
+    + y^Ty + \lambda w^Tw.$$
+    Applying our previous results gives (noting $w^Tw =
+    w^T\Id_{n\times n} w$)
+    $$\nabla f(w) = 2A^TAw - 2A^Ty + 2\lambda w =
+    2(A^TA+\lambda\Id_{n\times n})w-2A^Ty.$$
+  \item Let 
+    $$B = \begin{pmatrix} A \\ \sqrt{\lambda}\Id_{n\times
+      n}\end{pmatrix}\quad\text{and}\quad
+    z = \begin{pmatrix} y\\\mathbf{0}_{n\times 1}\end{pmatrix}$$
+    written in block-matrix form.
+  \item The argmin is $w = (A^TA+\lambda\Id_{n\times n})^{-1}A^Ty$.
+    To see why the inverse is valid, see the linear algebra questions below.
+  \end{enumerate}
+\end{solution}
+\item Compute the gradient of
+  $$f(\theta) = \lambda\|\theta\|_2^2 + \sum_{i=1}^n \log(1 + \exp(-y_i\theta^Tx_i)),$$
+  where $y_i\in\RR$ and $\theta\in\RR^m$ and $x_i\in\RR^m$ for
+  $i=1,\ldots,n$.
+\begin{solution}
+\item[]\Sol As the derivative is linear, we can compute the gradient
+  of each term separately and obtain
+  $$\nabla f(\theta) = 2\lambda\theta - \sum_{i=1}^n
+  \frac{\exp(-y_i\theta^Tx_i)}{1+\exp(-y_i\theta^Tx_i)}y_ix_i,$$
+  where we used the techniques from Recitation~1 to differentiate the
+  log terms.
+\end{solution}
+\end{enumerate}
+\subsection{Linear Algebra Exercises}
+\begin{enumerate}
+\item When performing linear regression we obtain the \textit{normal
+  equations} $A^TAx=A^Ty$ where $A\in\RR^{m\times n}$, $x\in \RR^n$,
+  and $y\in\RR^m$.
+  \begin{enumerate}
+  \item If $\rank(A)=n$ then solve the normal equations for $x$.
+  \item $(\star)$ What if $\rank(A)\neq n$?
+  \end{enumerate}
+\begin{solution}
+\item[]\Sol
+  \begin{enumerate}
+  \item We first show that $\rank(A^TA)=n$ to show that we can invert
+    $A^TA$.  By the rank-nullity theorem, we can do this by showing
+    $A^TA$ has trivial nullspace.  Note that for any $x\in\RR^n$ we have
+    $$A^TAx=0\implies x^TA^TAx=0 \implies \|Ax\|_2^2=0 \implies Ax=0
+    \implies x=0.$$
+    This last implication follows since $\rank(A)=n$ so $A$ has
+    trivial nullspace (again by rank-nullity).  This proves
+    $A^TA$ has a trivial nullspace, and thus $A^TA$ is
+    invertible. Applying the inverse we obtain
+    $$x = (A^TA)^{-1}A^Ty.$$
+    Since $A^TA$ is invertible, our answer for $x$ is unique.
+  \item We will show that the equation always has infinitely many
+    solutions~$x$. First note that $\rank(A)\neq n$ implies
+    $\rank(A)<n$ since you cannot have larger rank than the number of
+    columns. By rank-nullity, $A^TA$ has a non-trivial nullspace,
+    which in turn implies that if there is a solution, there must be
+    infinitely many solutions. 
+    
+    We will show that $A^T$ and $A^TA$ have the same column space.
+    This will imply $A^Ty$ is in the column space of $A^TA$ giving
+    the result.  First note that every vector of the form
+    $A^TAx$ must be a linear combination of the columns of $A^T$,
+    and thus lies in the column space of $A^T$.  Above we proved
+    that the column space of $A^TA$ has dimension $n$, the same as
+    the column space of $A^T$ (since $\rank(A^T)=\rank(A)$).  Thus
+    $A^T$ and $A^TA$ have the same column spaces.
+
+    A specific solution can be computed as $x=(A^TA)^+ A^Ty$, where
+    $(A^TA)^+$ is the \textit{pseudoinverse} of $A^TA$.  Of the infinitely
+    many possible solutions $x$, this gives the one that minimizes
+    $\|x\|_2$.  More precisely, $x=(A^TA)^+ A^Ty$ solves the
+    optimization problem
+    $$\begin{array}{ll}
+      \text{minimize} & \|x\|_2\\
+      \text{subject to} & A^TAx=A^Ty.
+    \end{array}$$
+  \end{enumerate}
+\end{solution}
+\item Prove that $A^TA+\lambda \Id_{n\times n}$ is invertible if
+  $\lambda>0$ and $A\in\RR^{n\times n}$.
+\begin{solution}
+\item[]\Sol If $(A^TA+\lambda\Id_{n\times n})x=0$ then 
+  $$0=x^T(A^TA+\lambda\Id_{n\times n})x = \|Ax\|_2^2 + \lambda\|x\|_2^2
+  \implies x=0.$$
+  Thus $A^TA+\lambda\Id_{n\times n}$ has trivial nullspace.
+  Alternatively, we could notice that $A^TA$ is positive semidefinite,
+  so adding $\lambda\Id_{n\times n}$ will give a matrix whose
+  eigenvalues are all at least $\lambda>0$.  A square matrix is
+  invertible iff its eigenvalues are all non-zero.
+\end{solution}
+\item $(\star)$ Describe the following set geometrically:
+  $$\left\{v\in\RR^2\;\middle|\;
+  v^T\pMatt{2&2}{0&2}v = 4\right\}.$$
+\begin{solution}
+\item[]\Sol The set is an ellipse with semi-axis lengths $2/\sqrt{3}$ and $2$
+  rotated counter-clockwise by $\pi/4$.
+Letting $v=(x,y)^T$ and multiplying all terms we get
+$$2x^2+2xy+2y^2=4.$$
+From precalculus we can see this is a conic section, and must be an
+ellipse or a hyperbola, but more work is needed to determine which
+one.  Instead of proceeding along these lines,
+let's use linear algebra to give a cleaner treatment that extends to
+higher dimensions.  
+
+Let $A=\pMatt{2&2}{0&2}$.  Since $v^TAv$ is a number, we must have
+$(v^TAv)^T=v^TAv$.  This gives 
+$$v^TA^Tv=v^TAv = \frac{1}{2}v^T(A^T+A)v = v^T\pMatt{2&1}{1&2}v.$$
+Our new matrix is symmetric, and thus allows us to apply the spectral
+theorem to diagonalize it with an orthonormal basis of eigenvectors.
+In other words, by rotating our axes we can get a diagonal matrix.
+Either doing this by hand, or using a computer (Matlab, Mathematica,
+Numpy) we obtain
+$$\pMatt{2&1}{1&2} = Q\pMatt{3&0}{0&1}Q^T \quad\text{where}\quad
+Q=\frac{1}{\sqrt{2}}\pMatt{1&-1}{1&1}=\pMatt{\cos(\pi/4)&-\sin(\pi/4)}{\sin(\pi/4)&\cos(\pi/4)}.$$
+The set
+$$\left\{w\in\RR^2\;\middle|\;
+  w^T\pMatt{3&0}{0&1}w = 4\right\}$$
+is an ellipse with semi-axis lengths $2/\sqrt{3}$ and $2$ 
+since it corresponds to the equation $3w_1^2+w_2^2=4$.
+Since $Q$ performs a counter-clockwise rotation by $\pi/4$ we obtain
+the answer.  More concretely,
+$$w^T\pMatt{3&0}{0&1}w=4\iff (Qw)^TQ\pMatt{3&0}{0&1}Q^T(Qw)=4\iff
+(Qw)^T\pMatt{2&1}{1&2}(Qw)=4$$
+so
+$$\{v\mid v^TAv=4\} = \left\{Qw\;\middle|\; w^T\pMatt{3&0}{0&1}w=4\right\}.$$
+\begin{figure}[H]
+\centering
+\begin{asy}
+  include "1-Lab-Check/Ellipse.asy";
+\end{asy}
+\qquad
+\begin{asy}
+  include "1-Lab-Check/RotEllipse.asy";
+\end{asy}
+\caption{Rotated Ellipse}
+\end{figure}
+
+More generally, the solution to $v^TAv=c$ for $v\in\RR^n$,
+$A\in\RR^{n\times n}$ and $c>0$ will be an ellipsoid if
+$A$ is positive definite.  The $i$th semi-axis will have length
+$\sqrt{c/\lambda_i}$ where $\lambda_i$ is the $i$th eigenvalue of~$A$.
+\end{solution}
+\end{enumerate}

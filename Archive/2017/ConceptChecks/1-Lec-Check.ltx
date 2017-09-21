@@ -1,0 +1,257 @@
+\section{Week 1 Lecture: Concept Check Exercises}
+Starred problems are optional.
+\subsection{Statistical Learning Theory}
+\begin{enumerate}
+\item Suppose $\AA=\YY=\RR$ and $\XX$ is some other set.  Furthermore, assume
+  $\Pr_{\XX\times \YY}$ is a discrete joint distribution.
+  Compute a Bayes decision function when 
+  the loss function $\ell:\AA\times\YY\to\RR$ is
+  given by
+  $$\ell(a,y) = \Ind(a\neq y),$$
+  the $0-1$ loss.
+\begin{solution}
+\item[]\Sol The Bayes decision function $f^*$ satisfies
+  $$f^* = \argmin_f R(f) = \argmin_f \E[\Ind(f(X)\neq Y)] = \argmin_f
+  \Pr(f(X)\neq Y),$$
+  where $(X,Y)\sim \Pr_{\XX\times\YY}$.
+  Let
+  $$f_1(x) = \argmax_y \Pr(Y=y\mid X=x),$$
+  the maximum a posteriori estimate of $Y$.
+  If there is a tie, we choose any of the maximizers.  If $f_2$ is
+  another decision function we have
+  $$\begin{array}{rcll}
+    \Pr(f_1(X)\neq Y) 
+    & = & \sum_x \Pr(f_1(x)\neq Y|X=x)\Pr(X=x)\\
+    & = & \sum_x (1-\Pr(f_1(x)=Y|X=x))\Pr(X=x)\\
+    & \leq & \sum_x (1-\Pr(f_2(x)=Y|X=x))\Pr(X=x) &\text{(Defn of
+      $f_1$)}\\
+    & = & \sum_x \Pr(f_2(x)\neq Y|X=x)\Pr(X=x)\\
+    & = & \Pr(f_2(X)\neq Y).
+  \end{array}$$
+  Thus $f^*=f_1$.
+\end{solution}
+\item ($\star$) Suppose $\AA=\YY=\RR$, $\XX$ is some other set, 
+  and $\ell:\AA\times\YY\to\RR$ is given by
+  $\ell(a,y)= (a-y)^2$, the square error loss.  What is the Bayes risk
+  and how does it compare with the variance of $Y$?
+\begin{solution}
+\item[]\Sol From Homework~1 we know that the Bayes decision function
+  is given by $f^*(x)=\E[Y|X=x]$.  Thus the Bayes risk is given by
+  $$\E[(f^*(X)-Y)^2]=\E[(\E[Y|X]-Y)^2] = \E[\E[(\E[Y|X]-Y)^2|X]] = \E[\Var(Y|X)],$$
+  where we applied the law of iterated expectations.
+  The law of total variance states that
+  $$\Var(Y) = \E[\Var(Y|X)] + \Var[\E(Y|X)].$$
+  This proves the Bayes risk satisfies
+  $$\E[\Var(Y|X)] = \Var(Y)-\Var[\E(Y|X)] \leq \Var(Y).$$
+  Recall from Homework~1 that $\Var(Y)$ is the Bayes risk when we
+  estimate $Y$ without any input $X$.  This shows that using $X$ in
+  our estimation reduces the Bayes risk, and that the improvement is
+  measured by $\Var[\E(Y|X)]$.  As a sanity check, note that if $X,Y$
+  are independent then $\E(Y|X)=\E(Y)$ so $\Var[\E(Y|X)]=0$.  If $X=Y$
+  then $\E(Y|X)=Y$ and $\Var[\E(Y|X)]=\Var(Y)$. 
+
+  The prominent role of variance in our analysis above is due to the
+  fact that we are using the square loss.
+\end{solution}
+\item Let $\XX=\{1,\ldots,10\}$, let $\YY=\{1,\ldots,10\}$, and let
+  $A=\YY$. Suppose the data generating distribution, $\PP$, has
+  marginal $X\sim \Unif\{1,\ldots,10\}$ and conditional
+  distribution $Y|X=x\sim \Unif\{1,\ldots,x\}$.  For each loss
+  function below give a Bayes decision function.
+  \begin{enumerate}
+  \item $\ell(a,y) = (a-y)^2$,
+  \item $\ell(a,y) = |a-y|$,
+  \item $\ell(a,y) = \Ind(a\neq y)$.
+  \end{enumerate}
+\begin{solution}
+\item[]\Sol
+  \begin{enumerate}
+  \item From Homework~1 we know that $f^*(x)=\E[Y|X=x]=(x+1)/2$.
+  \item From Homework~1, we know that $f^*(x)$ is the conditional
+    median of $Y$ given $X=x$.  If $x$ is odd, then $f^*(x)=(x+1)/2$.
+    If $x$ is even, then we can choose any value in the interval
+    $$\left[\left\lfloor \frac{x+1}{2}\right\rfloor,\left\lceil \frac{x+1}{2}\right\rceil\right].$$
+  \item From question~1 above, we know that $f^*(x)=\argmax_y
+    \Pr(Y=y|X=x)$.  Thus we can choose any integer between $1$ and $x$,
+    inclusive, for $f^*(x)$.
+  \end{enumerate}
+\end{solution}
+\item Show that the empirical risk is an unbiased and
+  consistent estimator of the Bayes risk. You may assume the Bayes
+  risk is finite.
+\begin{solution}
+\item[]\Sol We assume a given loss function $\ell$ and an
+  i.i.d.~sample $(x_1,y_i),\ldots,(x_n,y_n)$. 
+  To show it is unbiased, note that
+  $$\begin{Array}{rcll}
+    \E[\hat{R}_n(f)] 
+    & = & \E\left[\frac{1}{n}\sum_{i=1}^n \ell(f(x_i),y_i)\right]\\ 
+    & = & \frac{1}{n}\sum_{i=1}^n\E[\ell(f(x_i),y_i)] &
+    \text{(Linearity of $\E$)}\\
+    & = & \E[\ell(f(x_1),y_1)] & \text{(i.i.d.)}\\
+    & = & R(f).
+  \end{Array}$$
+  For consistency, we must show that as $n\to\infty$ we have
+  $\hat{R}_n(f)\to R(f)$ with probability~1.  Letting
+  $z_i=\ell(f(x_i),y_i)$, we see that the $z_i$ are i.i.d.~with finite
+  mean.  Thus consistency follows by applying the strong law of large numbers.
+\end{solution}
+\item Let $\XX=[0,1]$ and $\YY=\AA=\RR$.  Suppose you receive the
+  $(x,y)$ data points $(0,5)$, $(.2,3)$, $(.37,4.2)$, $(.9,3)$, $(1,5)$.  Throughout
+  assume we are using the $0-1$ loss.
+  \begin{enumerate}
+  \item Suppose we restrict our decision functions to the hypothesis
+    space $\FF_1$ of constant functions.  Give a decision function that
+    minimizes the empirical risk over $\FF_1$ and the corresponding
+    empirical risk.  Is the empirical risk minimizing function unique?
+  \item Suppose we restrict our decision functions to the hypothesis
+    space $\FF_2$ of piecewise-constant functions with at most 1
+    discontinuity.  Give a decision function that
+    minimizes the empirical risk over $\FF_2$ and the corresponding
+    empirical risk.  Is the empirical risk minimizing function unique?
+  \end{enumerate}
+\begin{solution}
+\item[]\Sol
+  \begin{enumerate}
+  \item We can let $\hat{f}(x)=5$ or $\hat{f}(x)=3$ and obtain the
+    minimal empirical risk of $3/5$.  Thus the empirical risk
+    minimizer is not unique.
+  \item One solution is to let $\hat{f}(x)=5$ for $x\in[0,.1]$ and
+    $\hat{f}(x)=3$ for $x\in(.1,1]$ giving an empirical risk of
+    $2/5$.  There are uncountably many empirical risk minimizers, so
+    again we do not have uniqueness.
+  \end{enumerate}
+\end{solution}
+\item $(\star)$ Let $\XX=[-10,10]$, $\YY=\AA=\RR$ and suppose the data generating
+  distribution has marginal distribution $X\sim\Unif[-10,10]$ and 
+  conditional distribution $Y|X=x\sim
+  \Norm(a+bx,1)$ for some fixed $a,b\in\RR$.  Suppose you are also
+  given the following data points: $(0,1)$, $(0,2)$, $(1,3)$,
+  $(2.5,3.1)$, $(-4,-2.1)$.
+  \begin{enumerate}
+  \item Assuming the $0-1$ loss, what is the Bayes risk?
+  \item Assuming the square error loss $\ell(a,y)=(a-y)^2$, what is the Bayes risk?
+  \item Using the full hypothesis space of all (measurable) functions,
+    what is the minimum achievable empirical risk for the square error loss.
+  \item Using the hypothesis space of all affine functions (i.e., of
+    the form $f(x)=cx+d$ for some $c,d\in\RR$),
+    what is the minimum achievable empirical risk for the square error loss.
+  \item Using the hypothesis space of all quadratic functions (i.e., of
+    the form $f(x)=cx^2+dx+e$ for some $c,d,e\in\RR$),
+    what is the minimum achievable empirical risk for the square error
+    loss.
+  \end{enumerate}
+\begin{solution}
+\item[]\Sol
+  \begin{enumerate}
+  \item For any decision function $f$ the risk is given by
+    $$\E[\Ind(f(X)\neq Y)] = \Pr(f(X)\neq Y) = 1 - \Pr(f(X)=Y)=1.$$
+    To see this note that
+    $$\Pr(f(X)=Y) =
+    \frac{1}{20\sqrt{2\pi}}\int_{-10}^{10}\int_{-\infty}^\infty
+    \Ind(f(x)=y)e^{-(y-a-bx)^2/2}\,dy\,dx
+    = \frac{1}{20\sqrt{2\pi}}\int_{-10}^{10} 0\,dx = 0.$$
+    Thus every decision function is a Bayes decision function, and the
+    Bayes risk is~$1$.
+  \item By problem~2 above we know the Bayes risk is given by
+    $$\E[\Var(Y|X)] = \E[1]=1,$$
+    since $\Var(Y|X=x)=1$. 
+  \item We choose $\hat{f}$ such that
+    $$\hat{f}(0)=1.5, \hat{f}(1)=3, \hat{f}(2.5)=3.1,
+    \hat{f}(-4)=2.1,$$
+    and $\hat{f}(x)=0$ otherwise.  Then we achieve the minimum
+    empirical risk of $1/10$.
+  \item Letting
+    $$A=\begin{pmatrix}1&0\\1&0\\1&1\\1&2.5\\1&-4\end{pmatrix},\quad y =
+    \begin{pmatrix}1\\2\\3\\3.1\\-2.1\end{pmatrix}$$
+    we obtain (using a computer)
+    $$\hat{w}=\begin{pmatrix}\hat{d}\\\hat{c}\end{pmatrix} = (A^TA)^{-1}A^Ty
+    = \begin{pmatrix}1.4856\\0.8556\end{pmatrix}.$$
+    This gives
+    $$\hat{R}_5(\hat{f}) = \frac{1}{5}\|A\hat{w}-y\|_2^2 = 0.2473.$$
+    [Aside: In general, to solve systems like the one above on a computer you shouldn't actually invert
+      the matrix $A^TA$, but use something like \lstinline!w=A\y! in
+      Matlab which performs a QR factorization of $A$.]
+  \item Letting
+    $$A=\begin{pmatrix}1&0&0\\1&0&0\\1&1&1\\1&2.5&6.25\\1&-4&16\end{pmatrix},\quad y =
+    \begin{pmatrix}1\\2\\3\\3.1\\-2.1\end{pmatrix}$$
+    we obtain (using a computer)
+    $$\hat{w}=\begin{pmatrix}\hat{e}\\\hat{d}\\\hat{c}\end{pmatrix} = (A^TA)^{-1}A^Ty
+    = \begin{pmatrix}1.7175\\0.7545\\-0.0521\end{pmatrix}.$$
+    This gives
+    $$\hat{R}_5(\hat{f}) = \frac{1}{5}\|A\hat{w}-y\|_2^2 = 0.1928.$$
+  \end{enumerate}
+\end{solution}
+\end{enumerate}
+\subsection{Stochastic Gradient Descent}
+\begin{enumerate}
+\item When performing mini-batch gradient descent, we often randomly choose
+  the mini-batch from the full training set without replacement.  
+  Show that the resulting  mini-batch gradient is an unbiased estimate of the gradient of the
+  full training set.  Here we assume each decision function $f_w$ in
+  our hypothesis space is determined by a parameter vector $w\in\RR^d$.
+\begin{solution}
+\item[]\Sol Let $(x_{m_1},y_{m_1}),\ldots,(x_{m_n},y_{m_n})$ be our
+  mini-batch selected uniformly without replacement from the full
+  training set $(x_1,y_1),\ldots,(x_n,y_n)$.
+  $$\begin{Array}{rcll}
+    \E\left[\nabla_w\frac{1}{n}\sum_{i=1}^n
+      \ell(f_w(x_{m_i},y_{m_i}))\right]
+    & = & \frac{1}{n}\sum_{i=1}^n\E\left[\nabla_w
+      \ell(f_w(x_{m_i}),y_{m_i})\right] & \text{(Linearity of
+      $\nabla,\E$)}\\
+    & = & \frac{1}{n}\sum_{i=1}^n\E\left[\nabla_w
+      \ell(f_w(x_{m_1}),y_{m_1})\right]    &\text{(Marginals are the same)}\\
+    & = & \E\left[\nabla_w\ell(f_w(x_{m_1}),y_{m_1})\right]\\
+    & = & \sum_{i=1}^N \frac{1}{N}\nabla_w\ell(f_w(x_{i}),y_{i})\\
+    & = & \nabla_w\frac{1}{N}\sum_{i=1}^N
+    \ell(f_w(x_{i}),y_{i})&\text{(Linearity of $\nabla$).}
+  \end{Array}$$
+\end{solution}
+\item You want to estimate the average age of the people visiting your
+  website.  Over a fixed week we will receive a total of $N$
+  visitors (which we will call our full population).  Suppose the population mean $\mu$
+  is unknown but the variance $\sigma^2$ is known.  Since we don't
+  want to bother every visitor, we will ask a small sample what their
+  ages are.  How many visitors must we randomly sample
+  so that our estimator $\hat{\mu}$ has variance at
+  most $\epsilon>0$?  
+\begin{solution}
+\item[]\Sol Let $x_1,\ldots,x_n$ denote our randomly sampled ages, and
+  let $\hat{x}$ denote the sample mean $\frac{1}{n}\sum_{i=1}^n x_i$.
+  Then
+  $$\Var(\hat{x}) = \frac{\sigma^2}{n}.$$
+  Thus we require $n\geq \sigma^2/\epsilon$.  Note that this doesn't
+  depend on $N$, the full population size.
+\end{solution}
+\item ($\star$) Suppose you have been successfully 
+  running mini-batch gradient descent with
+  a full training set size of $10^5$ and a mini-batch size of $100$.
+  After receiving more data your full training set size increases to $10^9$.
+  Give a heuristic argument as to why the mini-batch size need not
+  increase even though we have $10000$ times more data.
+\begin{solution}
+\item[]\Sol Throughout we assume our gradient lies in $\RR^d$.
+  Consider the empirical distribution on the full training
+  set (i.e., each sample is chosen with probability $1/N$ where $N$ is
+  the full training set size).  Assume this distribution has mean
+  vector $\mu\in\RR^d$ (the full-batch gradient) and covariance matrix
+  $\Sigma\in\RR^{d\times d}$.  By the central
+  limit theorem the mini-batch gradient will be approximately normally
+  distributed with mean $\mu$ and covariance $\frac{1}{n}\Sigma$, where
+  $n$ is the mini-batch size.  As $N$ grows the entries of $\Sigma$
+  need not grow, and thus $n$ need not grow.
+  In fact, as $N$ grows, the empirical mean and
+  covariance matrix will converge to their true values.  More
+  precisely, the mean of the empirical distribution
+  will converge to $\E\nabla\ell(f(X),Y)$ and the covariance will
+  converge to
+  $$\E[(\nabla\ell(f(X),Y))(\nabla\ell(f(X),Y))^T]-\E[\nabla\ell(f(X),Y)]\E[\nabla\ell(f(X),Y)]^T$$
+  where $(X,Y)\sim\Pr_{\XX\times\YY}$.  
+  
+  The important takeaway here is that the size of the mini-batch is
+  dependent on the speed of computation, and on the characteristics of
+  the distribution of the gradients (such as the moments), and thus
+  may vary independently of the size of the full training set.
+\end{solution}
+\end{enumerate}

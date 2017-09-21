@@ -3,7 +3,7 @@
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin unavailable
+\origin /Users/drosen/Dropbox/repos/mlcourse/in-prep/
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -868,7 +868,7 @@ original matrix
 noise
 \series default
  added to 
-\begin_inset Formula $Z$
+\begin_inset Formula $M$
 \end_inset
 
 
@@ -880,10 +880,6 @@ We observe
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -894,10 +890,6 @@ We observe
 \end_deeper
 \begin_layout Itemize
 Problem:
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1018,7 +1010,7 @@ status open
 
 \begin_layout Plain Layout
 Some Constraints for 
-\begin_inset Formula $\hat{M}$
+\begin_inset Formula $\hat{Z}$
 \end_inset
 
  (Quick Look)

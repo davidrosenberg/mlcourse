@@ -1632,7 +1632,11 @@ A
 \series bold
 decision function 
 \series default
-gets input 
+(or 
+\series bold
+prediction function)
+\series default
+ gets input 
 \begin_inset Formula $x\in\cx$
 \end_inset
 
@@ -2726,7 +2730,7 @@ f^{*}(x)=\ex[y|x]
 status open
 
 \begin_layout Plain Layout
-From the decomposition of expected square error The dec
+From the decomposition of expected square error
 \end_layout
 
 \end_inset
@@ -3130,7 +3134,7 @@ with probability 1.
 status open
 
 \begin_layout Plain Layout
-Not so happy withe the curse of dimensionality slides right now, because
+Not so happy with the curse of dimensionality slides right now, because
  it's not clear enough why we need to have 10 observations per bin to have
  a 
 \begin_inset Quotes eld
@@ -3141,9 +3145,11 @@ good start
 \end_inset
 
  at estimation.
+ Yeah, in fact it depends on the standard deviation of values in the bin,
+ and also on our tolerance for error.
  I think it's more clear when we have a much easier problem, and even that
  it is extemely difficult.
- Suppose we already kow that 
+ Suppose we already know that 
 \begin_inset Formula $\cp_{\cx}$
 \end_inset
 

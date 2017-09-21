@@ -690,6 +690,53 @@ optional, use only with long paper titles
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Question: what's the difference bewteen a constrained hypothesis space,
+ and just a new hypothesis space.
+ Nothing really, except the amount of constraint is typically specified
+ by a single numerical value.
+ For each numerical cvalue we choose, we can typically refit the model with
+ the same training algorithm.
+ More over, it gives u a nested sequence of classes.
+ IN general, different hypothesis space may reuire entirely different methods
+ to solve the minimzation problem effectively.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+I believe there's a name for a third form of regularization, where we minimize
+ the regularization subject to a bound on the loss.
+ this form comes up in some investigations of neural networks, where we
+ constrain the loss to be exactly zero, because a big enough neural network
+ can fit anything perfectly, and investigate what happens as we change other
+ parameters (e.g.
+ a norm on the weights, but more realistically for NN the size of the model);
+ (based on 
+\begin_inset Quotes eld
+\end_inset
+
+geometry optimization and genrealization in multilayer networks)...
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Author
 David Rosenberg 
 \end_layout
@@ -3168,7 +3215,7 @@ Why is L1 regularization supposed to lead to sparsity than L2? [sic]
 \end_layout
 
 \begin_layout Itemize
-Does this picture have any interpretation that makes sense? ( Aren't those
+Does this picture have any interpretation that makes sense? (Aren't those
  lines supposed to be ellipses?)
 \end_layout
 

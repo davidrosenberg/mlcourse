@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin /Users/drosen/Dropbox/repos/mlcourse/Lectures/
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -26,16 +28,16 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman times
-\font_sans default
-\font_typewriter default
-\font_math eulervm
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "eulervm" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -772,7 +774,10 @@ Optimization by Vector Space Methods.
  
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -792,6 +797,10 @@ Pre-Hilbert
  Spaces)
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -867,7 +876,10 @@ Postive-definiteness:
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -879,6 +891,10 @@ status open
 Norm from Inner Product
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -925,7 +941,10 @@ Norm is
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -937,6 +956,10 @@ status open
 What norms can we get from an inner product?
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -987,6 +1010,10 @@ and if it can, the inner product is given by the
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1024,7 +1051,10 @@ Is
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1036,6 +1066,10 @@ status open
 Pythagorean Theroem
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1132,7 +1166,10 @@ We have
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1144,6 +1181,10 @@ status open
 Projection onto a Plane (Rough Definition)
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1186,6 +1227,12 @@ projection of
 \end_inset
 
 , 
+\series default
+
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1203,6 +1250,10 @@ if
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1248,7 +1299,10 @@ To show: projections exist and characterized by
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1263,11 +1317,19 @@ Hilbert Space
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 Projections exist for all finite-dimensional inner product spaces.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1278,6 +1340,10 @@ Projections exist for all finite-dimensional inner product spaces.
 \end_deeper
 \begin_layout Itemize
 We want to allow infinite-dimensional spaces.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1292,6 +1358,10 @@ Need an extra condition called
 completeness
 \series default
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1306,6 +1376,10 @@ A space is
 complete
 \series default
  if all Cauchy sequences in the space converge.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1320,6 +1394,10 @@ A
 Hilbert space 
 \series default
 is a complete inner product space.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1333,7 +1411,10 @@ Any finite dimensional inner product space is a Hilbert space.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1345,6 +1426,10 @@ status open
 The Projection Theorem
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1367,6 +1452,10 @@ status open
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1383,6 +1472,10 @@ status open
 
  a closed subspace of 
 \begin_inset Formula $\ch$
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1416,6 +1509,10 @@ exists a unique
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1440,6 +1537,12 @@ This
 \end_inset
 
 .
+\series default
+
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1474,9 +1577,9 @@ x-m_{0}\perp M.
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Separator
 
@@ -1492,7 +1595,11 @@ Orthogonal Complements
 
 \end_inset
 
-t
+
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1527,6 +1634,10 @@ orthogonal complement
 \end_inset
 
 ].
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1544,6 +1655,10 @@ orthogonal complement
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1606,7 +1721,7 @@ where
 
 
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Separator
 
@@ -1620,6 +1735,10 @@ status open
 Orthogonal Decomposition
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1657,6 +1776,10 @@ where
 
 .
  
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1671,6 +1794,10 @@ where
 
 \begin_layout Proof
 [We'll prove existence.] 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1714,6 +1841,10 @@ x & = & m+x-m\\
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_layout Frame
@@ -1724,6 +1855,10 @@ status open
 Projection Reduces Norm
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -1775,6 +1910,10 @@ with equality only when
 
 .
  
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1784,6 +1923,9 @@ with equality only when
 
 \end_deeper
 \begin_layout Proof
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -1811,7 +1953,10 @@ If
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 

@@ -566,7 +566,7 @@ figs-within-sections
 \end_layout
 
 \begin_layout Title
-Directional Derivatives and First Order Approximations
+Directional Derivatives and Gradients
 \end_layout
 
 \begin_layout Author
@@ -575,7 +575,7 @@ David S.
 \end_layout
 
 \begin_layout Section
-Directional Derivative and First Order Approximations
+Directional Derivatives and First Order Approximations
 \end_layout
 
 \begin_layout Itemize
@@ -601,13 +601,13 @@ directional derivative
 \end_inset
 
  in the direction 
-\begin_inset Formula $v\in\reals^{d}$
+\begin_inset Formula $u\in\reals^{d}$
 \end_inset
 
  as
 \begin_inset Formula 
 \[
-\del_{v}f(x)=\lim_{\eps\to0}\frac{f(x+\eps v)-f(x)}{\eps}.
+f'(x;u)=\lim_{h\to0}\frac{f(x+hu)-f(x)}{h}.
 \]
 
 \end_inset
@@ -618,21 +618,32 @@ status open
 
 \begin_layout Plain Layout
 Sometimes people require that 
-\begin_inset Formula $v$
+\begin_inset Formula $u$
 \end_inset
 
- be a unit vector, but that is not necessary and we do not assume that here.
- If you prefer, you can always replace 
-\begin_inset Formula $v$
+ be a unit vector, but that is not necessary, and we do not assume that
+ here.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Apostol defines it our way in 
+\emph on
+Mathematical Analysis
+\emph default
+, which is venerable company.
+ As we write it here, the directional derivative may be generalized to spaces
+ that do not have norms, and thus do not have 
+\begin_inset Quotes eld
 \end_inset
 
- by 
-\begin_inset Formula $v/\|v\|$
+unit vectors
+\begin_inset Quotes erd
 \end_inset
 
 .
- As we write it here, the directional derivative has the same form as the
- 
+ See 
 \begin_inset CommandInset href
 LatexCommand href
 name "Gâteaux derivative"
@@ -640,13 +651,36 @@ target "https://en.wikipedia.org/wiki/G%C3%A2teaux_derivative"
 
 \end_inset
 
-, used in functional analysis.
+ from functional analysis.
+ More practically, since we don't require 
+\begin_inset Formula $u$
+\end_inset
+
+ to be a unit vector, 
+\begin_inset Formula $hu$
+\end_inset
+
+ can exactly correspond to our step size (
+\begin_inset Formula $h$
+\end_inset
+
+) and step direction (
+\begin_inset Formula $u$
+\end_inset
+
+) in our iterative optimization methods.
+ 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
 
  that 
-\begin_inset Formula $\del_{v}f(x)$
+\begin_inset Formula $f'(x,u)$
 \end_inset
 
  is a scalar (i.e.
@@ -661,14 +695,14 @@ target "https://en.wikipedia.org/wiki/G%C3%A2teaux_derivative"
 This expression is easy to interpret if we drop the limit and replace equality
  with approximate equality.
  So, let's suppose that 
-\begin_inset Formula $\eps$
+\begin_inset Formula $h$
 \end_inset
 
  is very small.
  Then we can write
 \begin_inset Formula 
 \begin{eqnarray*}
-\frac{f(x+\eps v)-f(x)}{\eps} & \approx & \del_{v}f(x).
+\frac{f(x+hu)-f(x)}{h} & \approx & f'(x;u).
 \end{eqnarray*}
 
 \end_inset
@@ -676,17 +710,17 @@ This expression is easy to interpret if we drop the limit and replace equality
 Rearranging, this implies that
 \begin_inset Formula 
 \[
-f(x+\eps v)-f(x)\approx\eps\del_{v}f(x).
+f(x+hu)-f(x)\approx hf'(x;u).
 \]
 
 \end_inset
 
-In words, we can interpret this as follows: If we start at 
+So if we start at 
 \begin_inset Formula $x$
 \end_inset
 
  and move to 
-\begin_inset Formula $x+\eps v$
+\begin_inset Formula $x+hu$
 \end_inset
 
 , then the value of 
@@ -694,7 +728,7 @@ In words, we can interpret this as follows: If we start at
 \end_inset
 
  increases by approximately 
-\begin_inset Formula $\eps\del_{v}f(x)$
+\begin_inset Formula $hf'(x;u)$
 \end_inset
 
 .
@@ -710,25 +744,179 @@ first order
  
 \end_layout
 
+\begin_layout Exercise
+Suppose we find a direction 
+\begin_inset Formula $u$
+\end_inset
+
+ for which the directional derivative is negative, i.e.
+ 
+\begin_inset Formula $f'(x;u)<0$
+\end_inset
+
+.
+ Show that for small enough step size 
+\begin_inset Formula $h>0$
+\end_inset
+
+, we'll always have 
+\begin_inset Formula $f(x+hu)<f(x)$
+\end_inset
+
+.
+ Such a direction 
+\begin_inset Formula $u$
+\end_inset
+
+ is called a 
+\series bold
+descent direction
+\series default
+.
+ (Hint: This is straightforward from the llimit definition (
+\begin_inset Formula $\eps$
+\end_inset
+
+'s and 
+\begin_inset Formula $\delta$
+\end_inset
+
+'s) of the directional derivative.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+The limit definition of 
+\begin_inset Formula $f'(x;u)$
+\end_inset
+
+ tells us that for any 
+\begin_inset Formula $\eps>0$
+\end_inset
+
+, there exists some 
+\begin_inset Formula $\delta>0$
+\end_inset
+
+ such that for any 
+\begin_inset Formula $h\in(0,\delta)$
+\end_inset
+
+ we have
+\begin_inset Formula 
+\begin{eqnarray*}
+ &  & \left|\frac{f(x+hu)-f(x)}{h}-f'(x;u)\right|<\eps\\
+ & \iff & -\eps<\frac{f(x+hu)-f(x)}{h}-f'(x;u)<\eps\\
+ & \iff & hf'(x;u)-h\eps<f(x+hu)-f(x)<hf'(x;u)+h\eps
+\end{eqnarray*}
+
+\end_inset
+
+In words, for small enough 
+\begin_inset Formula $h>0$
+\end_inset
+
+, the change in 
+\begin_inset Formula $f$
+\end_inset
+
+ when we move from 
+\begin_inset Formula $x$
+\end_inset
+
+ to 
+\begin_inset Formula $x+hu$
+\end_inset
+
+ is in the interval 
+\begin_inset Formula $[hf'(x;u)-h\eps,hf'(x;u)+h\eps]$
+\end_inset
+
+.
+ Now 
+\begin_inset Formula $hf'(x;u)<0$
+\end_inset
+
+, since 
+\begin_inset Formula $h>0$
+\end_inset
+
+ and 
+\begin_inset Formula $f'(x;u)<0$
+\end_inset
+
+ by assumption.
+ Now we just take 
+\begin_inset Formula $\eps$
+\end_inset
+
+ small enough so that 
+\begin_inset Formula $hf'(x;u)+h\eps<0$
+\end_inset
+
+ as we're done.
+ (If this last part isn't obvious, figure out a specific 
+\begin_inset Formula $\eps$
+\end_inset
+
+ you can choose to ensure the change is negative.)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Itemize
 Rearranging again, we can write
 \begin_inset Formula 
 \[
-f(x+\eps v)\approx f(x)+\eps\del_{v}f(x).
+f(x+hu)\approx f(x)+hf'(x;u).
 \]
 
 \end_inset
 
-The expression 
-\begin_inset Formula $f(x)+\eps\del_{v}f(x)$
+Think of each side of the 
+\begin_inset Formula $\approx$
 \end_inset
 
- is a 
+ as a function of 
+\begin_inset Formula $h\in\reals$
+\end_inset
+
+.
+ As we change 
+\begin_inset Formula $h$
+\end_inset
+
+, we're evaluating 
+\begin_inset Formula $f$
+\end_inset
+
+ at different points on the line 
+\begin_inset Formula $\left\{ x+hu\mid h\in\reals\right\} $
+\end_inset
+
+.
+ Note that on the right hand side we have a linear function of 
+\begin_inset Formula $h$
+\end_inset
+
+ (or more precisely an affine function).
+ The affine function 
+\begin_inset Formula $h\mapsto f(x)+hf'(x;u)$
+\end_inset
+
+ is called a 
 \series bold
 first order approximation
 \series default
- to 
-\begin_inset Formula $f(x+\eps v)$
+ to the function 
+\begin_inset Formula $h\mapsto f(x+hu)$
+\end_inset
+
+ at the point 
+\begin_inset Formula $x$
 \end_inset
 
 .
@@ -737,7 +925,7 @@ first order approximation
 \end_inset
 
  at the location 
-\begin_inset Formula $x+\eps v$
+\begin_inset Formula $x+hu$
 \end_inset
 
  using only information about 
@@ -755,12 +943,66 @@ status open
 
 \begin_layout Plain Layout
 This approximation becomes exact as 
-\begin_inset Formula $\eps\to0$
+\begin_inset Formula $h\to0$
 \end_inset
 
 .
  [Removed this sentence because needs more explanation.]
 \end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Let 
+\begin_inset Formula $e_{i}=\left(\underbrace{0,\ldots,0},1,0,\ldots,0\right)$
+\end_inset
+
+, where the 
+\begin_inset Formula $1$
+\end_inset
+
+ is in the 
+\begin_inset Formula $i$
+\end_inset
+
+th position.
+ This vector is called the 
+\begin_inset Formula $i$
+\end_inset
+
+th 
+\series bold
+coordinate vector
+\series default
+ or the 
+\begin_inset Formula $i$
+\end_inset
+
+th 
+\series bold
+standard basis vector
+\series default
+.
+ The directional derivative in the direction 
+\begin_inset Formula $e_{i}$
+\end_inset
+
+ is called the 
+\begin_inset Formula $i$
+\end_inset
+
+th 
+\series bold
+partial derivative
+\series default
+, which you'll see written in various ways: 
+\begin_inset Formula 
+\[
+\frac{\partial}{\partial x_{i}}f(x)=\partial_{x_{i}}f(x)=\partial_{i}f(x)=f'(x;e_{i}).
+\]
 
 \end_inset
 
@@ -780,87 +1022,106 @@ The gradient of
 \begin_inset Formula $x$
 \end_inset
 
- can be written as column vector 
+ can be written as a column vector 
 \begin_inset Formula $\del f(x)\in\reals^{d}$
 \end_inset
 
 , where
 \begin_inset Formula 
 \[
-\del f(x)=\begin{pmatrix}\del_{e_{1}}f(x)\\
+\del f(x)=\begin{pmatrix}\partial_{x_{1}}f(x)\\
 \vdots\\
-\del_{e_{d}}f(x)
-\end{pmatrix},
+\partial_{x_{d}}f(x)
+\end{pmatrix}.
 \]
 
 \end_inset
 
-and where 
-\begin_inset Formula $e_{1},\ldots,e_{d}\in\reals^{d}$
-\end_inset
 
- are the unit coordinate vectors.
- That is, 
-\begin_inset Formula $e_{1}=\left(1,0,0,\ldots,0\right)\in\reals^{d}$
-\end_inset
-
-, and in general 
-\begin_inset Formula $e_{i}=\left(0,\ldots,0,1,0,\ldots,0\right)$
-\end_inset
-
-, where the 
-\begin_inset Formula $1$
-\end_inset
-
- is in the 
-\begin_inset Formula $i$
-\end_inset
-
-th coordinate.
- Note that 
-\begin_inset Formula $\del_{e_{i}}f(x)$
-\end_inset
-
- is also the 
-\series bold
-partial derivative
-\series default
- with respect to 
-\begin_inset Formula $x_{i}$
-\end_inset
-
-, the 
-\begin_inset Formula $i$
-\end_inset
-
-th coordinate of 
-\begin_inset Formula $x$
-\end_inset
-
-.
- 
 \end_layout
 
 \begin_layout Itemize
-One fact you should recall from calculus is that we can get any directional
- derivative from the gradient, simply by taking the inner product between
- the gradient and the direction vector:
+If 
+\begin_inset Formula $f$
+\end_inset
+
+ is differentiable, the gradient can be very useful! We can get the directional
+ derivative in any direction 
+\begin_inset Formula $u$
+\end_inset
+
+ simply by taking the inner product between the gradient and the direction
+ vector:
 \begin_inset Formula 
 \[
-\del_{v}f(x)=\del f(x)^{T}v
+f'(x;u)=\del f(x)^{T}u.
 \]
 
 \end_inset
 
-
+(So once have the gradient, we don't need to take limits to find a directional
+ derivative.)
 \end_layout
 
 \begin_layout Itemize
 Thus we can also write the first order approximation as 
 \begin_inset Formula 
 \[
-f(x+\eps v)\approx f(x)+\eps\del f(x)^{T}v.
+f(x+hu)\approx f(x)+h\del f(x)^{T}u.
 \]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise
+Show that we can get the directions of steepest descent and steepest ascent
+ from 
+\begin_inset Formula $\del f(x)$
+\end_inset
+
+.
+ More precisely, show that
+\begin_inset Formula 
+\[
+\argmin_{\|u\|_{2}=1}f'(x;u)=\frac{\del f(x)}{\|\del f(x)\|_{2}}\quad\text{and}\quad\argmax_{\|u\|_{2}=1}f'(x;u)=-\frac{\del f(x)}{\|\del f(x)\|_{2}}.
+\]
+
+\end_inset
+
+(Hint: 
+\begin_inset Formula $\left|f'(x;u)\right|=\left|\del f(x)^{T}u\right|$
+\end_inset
+
+ and then consider the Cauchy-Schwarz inequaltity.) 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{eqnarray*}
+\left|f'(x;u)\right| & = & \left|\del f(x)^{T}u\right|\\
+ &  & \le\|\del f(x)^{T}\|_{2}\|u\|_{2}=\|\del f(x)^{T}\|_{2}
+\end{eqnarray*}
+
+\end_inset
+
+by Cauchy-Schwarz inequality.
+ These limits are attained by 
+\begin_inset Formula $\pm\frac{\del f(x)}{\|\del f(x)\|_{2}}$
+\end_inset
+
+, so they must be the extrema of 
+\begin_inset Formula $f'(x;u)$
+\end_inset
+
+ over 
+\begin_inset Formula $\|u\|_{2}=1$
+\end_inset
+
+.
+\end_layout
 
 \end_inset
 

@@ -8,6 +8,36 @@
 \begin_preamble
 \usetheme{CambridgeUS} 
 \beamertemplatenavigationsymbolsempty
+
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+
+
+% Set Color ==============================
+\definecolor{BBGblue}{RGB}{13,157,219}
+\definecolor{BBGgreen}{RGB}{77,170,80}
+
+
+\setbeamercolor{title}{fg=BBGblue}
+%\setbeamercolor{frametitle}{fg=BBGblue}
+\setbeamercolor{frametitle}{fg=BBGblue}
+
+\setbeamercolor{background canvas}{fg=BBGblue, bg=white}
+\setbeamercolor{background}{fg=black, bg=BBGblue}
+
+\setbeamercolor{palette primary}{fg=black, bg=gray!30!white}
+\setbeamercolor{palette secondary}{fg=black, bg=gray!20!white}
+\setbeamercolor{palette tertiary}{fg=black, bg=BBGblue}
+
+\setbeamertemplate{headline}{}
 \end_preamble
 \options aspectratio=169,handout
 \use_default_options false
@@ -55,6 +85,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\boxbgcolor #ff31d8
 \index Index
 \shortcut idx
 \color #008000
@@ -622,6 +653,34 @@ ex}{E}
 
 \begin_layout Standard
 \begin_inset FormulaMacro
+\newcommand{\dom}{\textrm{\textbf{dom} }}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\renewcommand{\rank}{\text{\textbf{rank }}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\conv}{\textrm{\textbf{conv} }}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\relint}{\text{\textbf{relint }}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\aff}{\text{\textbf{aff }}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
 \newcommand{\hil}{\ch}
 \end_inset
 
@@ -644,7 +703,6 @@ Introduction to Statistical Learning Theory
 status open
 
 \begin_layout Plain Layout
-DS-GA 1003 
 \begin_inset Note Note
 status open
 
@@ -663,15 +721,16 @@ optional, use only with long paper titles
 \end_layout
 
 \begin_layout Author
-David Rosenberg 
+David S.
+ Rosenberg 
 \end_layout
 
 \begin_layout Date
-January 24, 2017
+September 29, 2017
 \end_layout
 
 \begin_layout Institute
-New York University
+Bloomberg ML EDU
 \end_layout
 
 \begin_layout Standard
@@ -692,32 +751,12 @@ Just in article version
 status open
 
 \begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-let
-\backslash
-thefootnote
-\backslash
-relax
-\backslash
-footnotetext{
-\backslash
-tiny{Plots courtesy of Ningshan Zhang.}}
+note here
 \end_layout
 
 \end_inset
 
-
-\end_layout
-
-\end_inset
-
-
+ 
 \end_layout
 
 \begin_layout Section
@@ -1232,11 +1271,26 @@ input
 status open
 
 \begin_layout Plain Layout
-Outcomes or 
+\begin_inset Quotes eld
+\end_inset
+
+Outcomes
+\begin_inset Quotes erd
+\end_inset
+
+ or 
 \begin_inset Quotes eld
 \end_inset
 
 Output
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+Label
 \begin_inset Quotes erd
 \end_inset
 
@@ -1256,7 +1310,7 @@ outputs
 \emph default
  or 
 \emph on
-outcomes
+outcomes or labels
 \end_layout
 
 \begin_layout ExampleBlock
@@ -1264,7 +1318,7 @@ outcomes
 status open
 
 \begin_layout Plain Layout
-Examples of outputs / outcomes
+Examples of outcomes/outputs/labels
 \end_layout
 
 \end_inset
@@ -1582,7 +1636,7 @@ textwidth
 \begin_inset Formula $\cy$
 \end_inset
 
-: output space 
+: outcome space 
 \end_layout
 
 \begin_layout Column
@@ -1690,7 +1744,7 @@ A
 \series bold
 loss function
 \series default
- evaluates an action in the context of the output 
+ evaluates an action in the context of the outcome 
 \begin_inset Formula $y$
 \end_inset
 
@@ -1736,6 +1790,46 @@ Not sure we want loss to be nonnegative – what about log loss?
 \begin_layout Standard
 \begin_inset Flex ArticleMode
 status open
+
+\begin_layout Plain Layout
+For this course, perhaps the main reason of distinguishing between 
+\begin_inset Quotes eld
+\end_inset
+
+action space
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Formula $\ca$
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+outcome space
+\begin_inset Quotes eld
+\end_inset
+
+ 
+\begin_inset Formula $\cy$
+\end_inset
+
+ is that they will be different as soon as next week, when we study classificati
+on losses.
+ They will be even more different when we study conditional probability
+ models, where the action space 
+\begin_inset Formula $\ca$
+\end_inset
+
+ is probability distributions over the outcome space 
+\begin_inset Formula $\cy$
+\end_inset
+
+.
+ 
+\end_layout
 
 \begin_layout Plain Layout
 Many textbooks, especially more theoretical ones, define loss functions
@@ -2024,8 +2118,8 @@ reinforcement learning
 status open
 
 \begin_layout Plain Layout
-In reinforcement learning, we interact with the world many steps before
- observing any outcome and incurring a loss.
+In reinforcement learning, we may interact with the world for many steps
+ before observing any outcome and incurring a loss.
  Our actions may change the state of the world.
  Think about problems in robotics, or playing a game against an opponent.
 \end_layout
@@ -2066,10 +2160,6 @@ data generating
 \begin_layout Standard
 \begin_inset Note Note
 status open
-
-\begin_layout Separator
-
-\end_layout
 
 \begin_layout Frame
 \begin_inset Argument 4
@@ -2226,10 +2316,6 @@ unknown
 
 \end_layout
 
-\begin_layout Separator
-
-\end_layout
-
 \end_inset
 
 
@@ -2281,6 +2367,33 @@ All input/output pairs
 
 \end_deeper
 \begin_layout Itemize
+i.i.d.
+ means 
+\begin_inset Quotes eld
+\end_inset
+
+independent, and identically distributed'
+\begin_inset Quotes erd
+\end_inset
+
+; practically it means
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+no covariate shift
+\end_layout
+
+\begin_layout Itemize
+no concept drift
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
 Want decision function 
 \begin_inset Formula $f(x)$
 \end_inset
@@ -2316,7 +2429,7 @@ How can we formalize this?
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Itemize
 Possible Issue: We don't know 
@@ -2358,7 +2471,7 @@ sampled i.i.d.
 
 \begin_layout Standard
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -2378,6 +2491,33 @@ status collapsed
 
 \end_deeper
 \begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex ArticleMode
+status open
+
+\begin_layout Plain Layout
+How can we do time series if we require the examples to be iid? Well - we
+ have think very carefully about these situations.
+ Usually you try to reframe the inputs (e.g.
+ by featurization) and outputs so they seem as iid as possible.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Ask aleksei about this.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
@@ -2430,8 +2570,12 @@ expected loss
 \begin_inset Formula $f$
 \end_inset
 
-, where the expectation is over 
-\begin_inset Formula $(x,y)\sim P_{\cx\times\cy}$
+ on a new exampe 
+\begin_inset Formula $(x,y)$
+\end_inset
+
+ drawn randomly from 
+\begin_inset Formula $P_{\cx\times\cy}$
 \end_inset
 
 .
@@ -3970,10 +4114,6 @@ hypothesis space
 \begin_inset Note Note
 status open
 
-\begin_layout Separator
-
-\end_layout
-
 \begin_layout Frame
 \begin_inset Argument 4
 status open
@@ -4040,10 +4180,6 @@ For the function
 \end_layout
 
 \end_deeper
-\begin_layout Separator
-
-\end_layout
-
 \begin_layout Frame
 \begin_inset Argument 4
 status open
@@ -4111,10 +4247,6 @@ smoothness
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
-
-\end_layout
-
 \begin_layout Frame
 \begin_inset Argument 4
 status open
@@ -4196,10 +4328,6 @@ R(\minimizer{f_{\cf}})=\inf_{f\in\cf}R(f)=\inf_{f\in\cf}\ex\loss(f(X),Y)
 \end_layout
 
 \end_deeper
-\begin_layout Separator
-
-\end_layout
-
 \end_inset
 
 
@@ -4415,10 +4543,6 @@ ca$.}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
-
-\end_layout
-
 \end_inset
 
 

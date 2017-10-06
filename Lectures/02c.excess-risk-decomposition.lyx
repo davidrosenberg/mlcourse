@@ -3,13 +3,11 @@
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin /Users/drosen/Dropbox/repos/mlcourse/Lectures/
+\origin unavailable
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
 \beamertemplatenavigationsymbolsempty
-
-
 
 \AtBeginSection[]{
   \begin{frame}
@@ -21,8 +19,27 @@
   \vfill
   \end{frame}
 }
+
+
+% Set Color ==============================
+\definecolor{BBGblue}{RGB}{13,157,219}
+\definecolor{BBGgreen}{RGB}{77,170,80}
+
+
+\setbeamercolor{title}{fg=BBGblue}
+%\setbeamercolor{frametitle}{fg=BBGblue}
+\setbeamercolor{frametitle}{fg=BBGblue}
+
+\setbeamercolor{background canvas}{fg=BBGblue, bg=white}
+\setbeamercolor{background}{fg=black, bg=BBGblue}
+
+\setbeamercolor{palette primary}{fg=black, bg=gray!30!white}
+\setbeamercolor{palette secondary}{fg=black, bg=gray!20!white}
+\setbeamercolor{palette tertiary}{fg=black, bg=BBGblue}
+
+\setbeamertemplate{headline}{}
 \end_preamble
-\options handout,aspectratio=169
+\options aspectratio=169,handout
 \use_default_options false
 \maintain_unincluded_children false
 \language english
@@ -68,6 +85,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\boxbgcolor #ff31d8
 \index Index
 \shortcut idx
 \color #008000
@@ -635,6 +653,34 @@ ex}{E}
 
 \begin_layout Standard
 \begin_inset FormulaMacro
+\newcommand{\dom}{\textrm{\textbf{dom} }}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\renewcommand{\rank}{\text{\textbf{rank }}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\conv}{\textrm{\textbf{conv} }}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\relint}{\text{\textbf{relint }}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\aff}{\text{\textbf{aff }}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
 \newcommand{\hil}{\ch}
 \end_inset
 
@@ -657,7 +703,6 @@ Excess Risk Decomposition
 status open
 
 \begin_layout Plain Layout
-DS-GA 1003 
 \begin_inset Note Note
 status open
 
@@ -676,11 +721,16 @@ optional, use only with long paper titles
 \end_layout
 
 \begin_layout Author
-David Rosenberg 
+David S.
+ Rosenberg 
+\end_layout
+
+\begin_layout Date
+September 29, 2017
 \end_layout
 
 \begin_layout Institute
-New York University
+Bloomberg ML EDU
 \end_layout
 
 \begin_layout Standard
@@ -701,22 +751,23 @@ Just in article version
 status open
 
 \begin_layout Plain Layout
+note here
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
-
-\backslash
-let
-\backslash
-thefootnote
-\backslash
-relax
-\backslash
-footnotetext{
-\backslash
-tiny{Plots courtesy of Ningshan Zhang.}}
+Need to re-run tree simulation to make sure code output agrees with slide
+ results.
 \end_layout
 
 \end_inset
@@ -727,7 +778,8 @@ tiny{Plots courtesy of Ningshan Zhang.}}
 \end_inset
 
 
-\end_layout
+\begin_inset Note Note
+status collapsed
 
 \begin_layout Section
 Review: Statistical Learning Theory
@@ -809,7 +861,7 @@ textwidth
 \begin_inset Formula $\cy$
 \end_inset
 
-: output space 
+: outcome space 
 \end_layout
 
 \begin_layout Column
@@ -871,7 +923,7 @@ produces an action
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Formula 
 \[
 \begin{matrix}f: & \cx & \rightarrow & \ca\\
@@ -913,7 +965,7 @@ A
 \series bold
 loss function
 \series default
- evaluates an action in the context of the output 
+ evaluates an action in the context of the outcome 
 \begin_inset Formula $y$
 \end_inset
 
@@ -921,7 +973,7 @@ loss function
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Formula 
 \[
 \begin{matrix}\loss: & \ca\times\cy & \rightarrow & \reals\\
@@ -936,7 +988,7 @@ loss function
 
 \end_deeper
 \end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Separator parbreak
 \end_inset
 
@@ -1002,7 +1054,7 @@ where the expectation taken is over
 \end_layout
 
 \end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Separator parbreak
 \end_inset
 
@@ -1048,7 +1100,7 @@ But risk function cannot be computed because we don't know
 \end_layout
 
 \end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Separator parbreak
 \end_inset
 
@@ -1120,7 +1172,7 @@ Minimizing empirical risk over all functions leads to overfitting.
 \end_layout
 
 \end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Separator parbreak
 \end_inset
 
@@ -1220,8 +1272,6 @@ f_{\cf} & = & \argmin_{f\in\cf}\ex\loss(f(x),y).
 \end_layout
 
 \end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
 \end_inset
 
 
@@ -1241,6 +1291,10 @@ Error Decomposition
 
 \end_inset
 
+ 
+\end_layout
+
+\begin_layout Frame
 
 \end_layout
 
@@ -1273,7 +1327,8 @@ textwidth
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename ../Figures/ApproxEstError/alexApproxEstErrorPic.png
+	filename ../Figures/ApproxEstError/est-approx.png
+	lyxscale 20
 	width 100col%
 
 \end_inset
@@ -1362,35 +1417,102 @@ Estimation error
  
 \end_layout
 
+\end_deeper
 \begin_layout Standard
-\begin_inset ERT
+\begin_inset Flex ArticleMode
 status open
 
 \begin_layout Plain Layout
-
-
-\backslash
-let
-\backslash
-thefootnote
-\backslash
-relax
-\backslash
-footnotetext{
-\backslash
-tiny{Figure from Sasha Rakhlin's MLSS Lectures (2012):   
-\backslash
-url{http://yosinski.com/mlss12/MLSS-2012-Rakhlin-Statistical-Learning-Theory/}}}
-\end_layout
-
+This diagram shows the space of all functions.
+ The hypothesis space 
+\begin_inset Formula $\cf$
 \end_inset
 
+ carves out a subset of that space.
+ The Bayes prediction function 
+\begin_inset Formula $f^{*}$
+\end_inset
 
+ will not typically be contained in 
+\begin_inset Formula $\cf$
+\end_inset
+
+.
+ The best we can possibly do in terms of risk (i.e.
+ the expected loss on a new randomly chosen data point), which is our ultimate
+ performance measure, is 
+\begin_inset Formula $f_{\cf}$
+\end_inset
+
+.
+ How much worse does 
+\begin_inset Formula $f_{\cf}$
+\end_inset
+
+ perform than 
+\begin_inset Formula $f^{*}$
+\end_inset
+
+? That's our potential penalty for restricting to a hypothesis space 
+\begin_inset Formula $\cf$
+\end_inset
+
+.
+ We hope it will be more than compensated by reduction in overfitting.
+ We can write down that performance gap explicitly, and it's called approximatio
+n error.
+ (Parenthetically, Approximation theory is a field of mathematics that studies
+ how well one can approximate a function by simpler functions – e.g.
+ using polynomials, or sins and cosines or wavelets to approximate a given
+ function.
+ And studying how well these approximations work.) Approximaiton error of
+ a hypothesis space 
+\begin_inset Formula $\cf$
+\end_inset
+
+ is 
+\begin_inset Formula $\risk(f_{\cf})-\risk(f^{*})$
+\end_inset
+
+.
+ 
 \end_layout
 
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
+\begin_layout Plain Layout
+Concept checks: 1) Can approximation error be negative?
+\end_layout
+
+\begin_layout Plain Layout
+2) Is approximation a random quantity?
+\end_layout
+
+\begin_layout Plain Layout
+Now, of course we cannot find 
+\begin_inset Formula $f_{\cf}$
+\end_inset
+
+, since we can't evaluate the true risk 
+\begin_inset Formula $\risk$
+\end_inset
+
+.
+ So in practice, we work with the empirical risk 
+\begin_inset Formula $\hat{R}$
+\end_inset
+
+ based on sample of data, a training set.
+ We find the empirical risk minimizer 
+\begin_inset Formula $\hat{f}_{n}$
+\end_inset
+
+ in the hypothesis space 
+\begin_inset Formula $\cf$
+\end_inset
+
+.
+ 
+\end_layout
+
 \end_inset
 
 
@@ -1578,7 +1700,7 @@ the penalty for restricting to
 \begin_inset Formula $\cf$
 \end_inset
 
- rather than all possible functions
+ (rather than considering all possible functions)
 \end_layout
 
 \begin_layout Pause
@@ -1658,7 +1780,8 @@ is the performance hit for choosing
 
 \end_deeper
 \begin_layout Itemize
-is the performance hit for using empirical risk rather than true risk 
+is the performance hit for minimizing empirical risk rather than true risk
+ 
 \end_layout
 
 \begin_deeper
@@ -1701,7 +1824,8 @@ With infinite training data, estimation error goes to zero.
 \end_inset
 
 
-\end_layout
+\begin_inset Note Note
+status open
 
 \begin_layout Pause
 
@@ -1713,6 +1837,11 @@ With infinite training data, estimation error goes to zero.
 statistical 
 \emph default
 problem, which is not knowing the true risk.]
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Pause
@@ -1736,30 +1865,28 @@ status open
 \end_layout
 
 \begin_layout Itemize
-Estimation error for ERM converges to 
+For classification loss, estimation error of ERM converges to 
 \begin_inset Formula $0$
 \end_inset
 
- as da can sometimes achieve with infinite training data
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-requires conditions on the hypothesis space and loss function
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-e.g.
- for classification loss, true iff 
+ as sample size goes to infinity iff the hypothesis space 
 \begin_inset Formula $\cf$
 \end_inset
 
- has finite VC dimension
+ has finite VC dimension.
+ (see e.g.
+ Shalev-Shwartz and Ben-David's textbook Theorem 6.7 (p.
+ 48) or any book on statistical learning theory.) 
 \end_layout
 
-\end_deeper
-\end_deeper
+\begin_layout Itemize
+We also have his result for locally Lipschitz continuous losses (with some
+ technical conditions).
+ (See Steinwart and Christmann's Support Vector Machines book (Prop 6.22,
+ p.
+ 222)
+\end_layout
+
 \end_inset
 
 
@@ -1954,7 +2081,7 @@ For nice choices of loss functions and classes
 \begin_inset Formula $\cf$
 \end_inset
 
-, the algorithmic problem can be solved to any desired accuracy 
+, we can get arbitrarily close to a minimizer
 \end_layout
 
 \begin_deeper
@@ -2055,7 +2182,11 @@ If
 
 \end_deeper
 \begin_layout Itemize
-Can optimization error be negative? Yes!
+Can optimization error be negative? 
+\begin_inset Formula $\pause$
+\end_inset
+
+Yes!
 \end_layout
 
 \begin_layout Itemize
@@ -2092,7 +2223,7 @@ Error Decomposition in Practice
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
+\begin_layout Itemize
 Excess risk decomposition for function 
 \begin_inset Formula $\tilde{f}_{n}$
 \end_inset
@@ -2106,17 +2237,48 @@ Excess risk decomposition for function
 
 \end_inset
 
- 
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
 \end_layout
 
 \end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
+\begin_layout Itemize
+Concept check: It would be nice to have a concrete example where we find
+ an 
+\begin_inset Formula $\tilde{f}_{n}$
 \end_inset
 
+ and look at it's error decomposition.
+ Why is this usually impossible?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
 
 \end_layout
 
+\end_deeper
+\begin_layout Itemize
+But we could constuct an artificial example, where we know 
+\begin_inset Formula $P_{\cx\times\cy}$
+\end_inset
+
+ and 
+\begin_inset Formula $f^{*}$
+\end_inset
+
+ and 
+\begin_inset Formula $f_{\cf}$
+\end_inset
+
+...
+\end_layout
+
+\end_deeper
 \begin_layout Section
 Excess Risk Decomposition: Example
 \end_layout
@@ -2283,7 +2445,7 @@ status open
 
 \begin_layout Plain Layout
 
-.7
+.5
 \backslash
 textwidth
 \end_layout
@@ -2294,10 +2456,12 @@ textwidth
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename ../Figures/ExcessRiskTreeDemo/2.pointsWithNoise_BayesBoundary.png
 	lyxscale 60
 	height 80theight%
+	clip
 
 \end_inset
 
@@ -2316,7 +2480,7 @@ status open
 
 \begin_layout Plain Layout
 
-.3
+.5
 \backslash
 textwidth
 \end_layout
@@ -2328,17 +2492,20 @@ textwidth
 
 \begin_layout Standard
 \begin_inset Formula 
-\begin{gather*}
-\cy=\{\text{blue},\text{orange}\}\\
-P_{\cx}=\mbox{Uniform}([0,1]^{2})\\
-\pr(\text{orange}\mid x_{1}>x_{2})=.9\\
-\pr(\text{orange}\mid x_{1}<x_{2})=.1\pause
-\end{gather*}
+\begin{eqnarray*}
+\cy & = & \{\text{blue},\text{orange}\}\\
+P_{\cx} & = & \mbox{Uniform}([0,1]^{2})\pause
+\end{eqnarray*}
 
 \end_inset
 
-Bayes Error Rate = 
-\begin_inset Formula $0.1$
+
+\begin_inset Formula 
+\begin{eqnarray*}
+\pr(\text{orange}\mid x_{1}>x_{2}) & = & .9\\
+\pr(\text{orange}\mid x_{1}<x_{2}) & = & .1\pause
+\end{eqnarray*}
+
 \end_inset
 
 
@@ -2346,12 +2513,19 @@ Bayes Error Rate =
 
 \end_deeper
 \begin_layout ColumnsTopAligned
+\begin_inset Formula 
+\[
+\text{Bayes Error Rate}=\pause0.1
+\]
+
+\end_inset
+
 
 \end_layout
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2392,11 +2566,11 @@ Consider a binary tree on
 
 \end_inset
 
-
+ 
 \begin_inset space \qquad{}
 \end_inset
 
-
+ 
 \begin_inset Graphics
 	filename ../Figures/trees/binaryRegions.png
 	lyxscale 50
@@ -2439,10 +2613,6 @@ emph{An Introduction to Statistical Learning, with applications in R} (Springer,
 \begin_layout Standard
 \begin_inset Note Note
 status open
-
-\begin_layout Separator
-
-\end_layout
 
 \begin_layout Frame
 \begin_inset Argument 4
@@ -2504,19 +2674,11 @@ Partition space on one variable at a time
 \end_layout
 
 \end_deeper
-\begin_layout Separator
-
-\end_layout
-
 \end_inset
 
 
 \begin_inset Note Note
 status open
-
-\begin_layout Separator
-
-\end_layout
 
 \begin_layout Frame
 \begin_inset Argument 4
@@ -2587,10 +2749,6 @@ Depth of the tree is one measure of complexity
 \end_layout
 
 \end_deeper
-\begin_layout Separator
-
-\end_layout
-
 \end_inset
 
 
@@ -2640,7 +2798,7 @@ Hypothesis Space: Decision Tree
 We'll consider
 \begin_inset Formula 
 \[
-\cf_{2}\subset\cf_{3}\subset\cf_{4}\cdots\subset\cf_{15}
+\cf_{1}\subset\cf_{2}\subset\cf_{3}\subset\cf_{4}\cdots\subset\cf_{15}
 \]
 
 \end_inset
@@ -2658,11 +2816,102 @@ Bayes error rate = 0.1
 
 \end_deeper
 \begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
 
 \end_layout
 
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Theoretical Best in 
+\begin_inset Formula $\cf_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Plots courtesy of Ningshan Zhang.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\align center
+\begin_inset Graphics
+	filename ../Figures/ExcessRiskTreeDemo/3.optimalTree.1.png
+	height 60theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Risk Minimizer in 
+\begin_inset Formula $\cf_{1}$
+\end_inset
+
+ has 
+\begin_inset Formula $\text{Risk}=\pr(\text{error})=\pause0.3$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\text{Approximation Error}=\pause0.3-0.1=0.2$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2735,12 +2984,11 @@ Risk Minimizer in
 \begin_inset Formula $\cf_{2}$
 \end_inset
 
- (e.g.
- assuming 
-\series bold
-infinite training data
-\series default
-); Risk = P(error) = 0.2
+ has 
+\begin_inset Formula $\text{Risk}=\pr(\text{error})=0.2$
+\end_inset
+
+.
 \end_layout
 
 \begin_deeper
@@ -2799,12 +3047,11 @@ Risk Minimizer in
 \begin_inset Formula $\cf_{3}$
 \end_inset
 
- (e.g.
- assuming 
-\series bold
-infinite training data
-\series default
-); Risk = P(error) = 0.15
+ has 
+\begin_inset Formula $\text{Risk}=\pr(\text{error})=0.15$
+\end_inset
+
+.
 \end_layout
 
 \begin_deeper
@@ -2859,14 +3106,23 @@ Theoretical Best in
 \end_layout
 
 \begin_layout Itemize
-Risk Minimizer (e.g.
- assuming 
-\series bold
-infinite training data
-\series default
-); Risk = P(error) = 0.125
+Risk Minimizer in 
+\begin_inset Formula $\cf_{4}$
+\end_inset
+
+ has 
+\begin_inset Formula $\text{Risk}=\pr(\text{error})=0.125$
+\end_inset
+
+.
 \end_layout
 
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
 \begin_layout Itemize
 Approximation Error = 0.125 - 0.1 = 0.025
 \end_layout
@@ -3409,12 +3665,5 @@ Why do some curves have confidence bands and others not?
 \end_layout
 
 \end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
-\end_layout
-
 \end_body
 \end_document

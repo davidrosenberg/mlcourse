@@ -8,6 +8,36 @@
 \begin_preamble
 \usetheme{CambridgeUS} 
 \beamertemplatenavigationsymbolsempty
+
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+
+
+% Set Color ==============================
+\definecolor{BBGblue}{RGB}{13,157,219}
+\definecolor{BBGgreen}{RGB}{77,170,80}
+
+
+\setbeamercolor{title}{fg=BBGblue}
+%\setbeamercolor{frametitle}{fg=BBGblue}
+\setbeamercolor{frametitle}{fg=BBGblue}
+
+\setbeamercolor{background canvas}{fg=BBGblue, bg=white}
+\setbeamercolor{background}{fg=black, bg=BBGblue}
+
+\setbeamercolor{palette primary}{fg=black, bg=gray!30!white}
+\setbeamercolor{palette secondary}{fg=black, bg=gray!20!white}
+\setbeamercolor{palette tertiary}{fg=black, bg=BBGblue}
+
+\setbeamertemplate{headline}{}
 \end_preamble
 \options aspectratio=169,handout
 \use_default_options false
@@ -33,16 +63,7 @@
 \index_command default
 \paperfontsize default
 \spacing single
-\use_hyperref true
-\pdf_bookmarks true
-\pdf_bookmarksnumbered false
-\pdf_bookmarksopen false
-\pdf_bookmarksopenlevel 1
-\pdf_breaklinks false
-\pdf_pdfborder false
-\pdf_colorlinks true
-\pdf_backref false
-\pdf_pdfusetitle true
+\use_hyperref false
 \papersize default
 \use_geometry true
 \use_package amsmath 2
@@ -64,6 +85,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\boxbgcolor #ff31d8
 \index Index
 \shortcut idx
 \color #008000
@@ -631,6 +653,34 @@ ex}{E}
 
 \begin_layout Standard
 \begin_inset FormulaMacro
+\newcommand{\dom}{\textrm{\textbf{dom} }}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\renewcommand{\rank}{\text{\textbf{rank }}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\conv}{\textrm{\textbf{conv} }}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\relint}{\text{\textbf{relint }}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\aff}{\text{\textbf{aff }}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
 \newcommand{\hil}{\ch}
 \end_inset
 
@@ -653,7 +703,6 @@ Gradient and Stochastic Gradient Descent
 status open
 
 \begin_layout Plain Layout
-DS-GA 1003 
 \begin_inset Note Note
 status open
 
@@ -672,18 +721,42 @@ optional, use only with long paper titles
 \end_layout
 
 \begin_layout Author
-David Rosenberg 
+David S.
+ Rosenberg 
 \end_layout
 
 \begin_layout Date
-January 24, 2017
+September 29, 2017
 \end_layout
 
 \begin_layout Institute
-New York University
+Bloomberg ML EDU
 \end_layout
 
 \begin_layout Standard
+\begin_inset Flex ArticleMode
+status open
+
+\begin_layout Plain Layout
+Just in article version
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Might be useful to pull in some content from sgd-gd-revisited!!!
+\end_layout
+
+\end_inset
+
+ 
 \begin_inset Note Note
 status open
 
@@ -1047,7 +1120,8 @@ Gradient Descent: Step Size
 
 \begin_deeper
 \begin_layout Itemize
-A fixed step size will work, eventually, as long as it's small enough.
+A fixed step size will work, eventually, as long as it's small enough (roughly
+ - details to come)
 \end_layout
 
 \begin_deeper
@@ -1056,7 +1130,7 @@ Too fast, may diverge
 \end_layout
 
 \begin_layout Itemize
-In practice, try a several fixed step sizes
+In practice, try several fixed step sizes
 \end_layout
 
 \end_deeper
@@ -1070,16 +1144,108 @@ Intuition on when to take big steps and when to take small steps?
 
 \begin_deeper
 \begin_layout Itemize
-(See instructor's gradient descent dance.)
+Demo.
 \end_layout
 
 \end_deeper
-\begin_layout Pause
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
 
 \end_layout
 
-\begin_layout Itemize
-Supporting theorems and more intuition to come in Week 4 Lab.
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Convergence Theorem for Fixed Step Size
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Theorem
+Suppose 
+\begin_inset Formula $f:\reals^{d}\to\reals$
+\end_inset
+
+ is convex and differentiable, and 
+\begin_inset Formula $\del f$
+\end_inset
+
+ is 
+\series bold
+Lipschitz continuous
+\series default
+ with constant 
+\begin_inset Formula $L>0$
+\end_inset
+
+, i.e.
+\begin_inset Formula 
+\[
+\|\del f(x)-\del f(y)\|\le L\|x-y\|
+\]
+
+\end_inset
+
+for any 
+\begin_inset Formula $x,y\in\reals^{d}$
+\end_inset
+
+.
+ Then gradient descent with fixed step size 
+\begin_inset Formula $t\le1/L$
+\end_inset
+
+ 
+\series bold
+converges
+\series default
+.
+ In particular,
+\begin_inset Formula 
+\[
+f(x^{(k)}-f(x^{*})\le\frac{\|x^{(0)}-x^{*}\|^{2}}{2tk}.
+\]
+
+\end_inset
+
+
+\begin_inset Flex ArticleMode
+status open
+
+\begin_layout Plain Layout
+Proof sketch: Fit a quadratic at 
+\begin_inset Formula $x$
+\end_inset
+
+ that's tangent to 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ and has Lipschitz constant 
+\begin_inset Formula $L$
+\end_inset
+
+.
+ Taylor remainder theorem to show that 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ is below quadratic.
+ Jump to minimizer of quadratic.
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \end_deeper
@@ -1095,7 +1261,63 @@ Supporting theorems and more intuition to come in Week 4 Lab.
 status open
 
 \begin_layout Plain Layout
-Gradient Descent: Step Size
+Step Size: Practical Note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Although a 
+\begin_inset Formula $1/L$
+\end_inset
+
+ step-size guarantees convergence, 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+it may be 
+\series bold
+much slower
+\series default
+ than necessary.
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+May be worth trying larger step sizes as well.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+But math tells us, no need for anything smaller.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Gradient Descent: Questions to Ponder
 \end_layout
 
 \end_inset
@@ -1147,25 +1369,97 @@ Suppose
 ?
 \end_layout
 
+\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
 \begin_layout Itemize
+Do we want bigger steps or smaller steps?
+\end_layout
 
-\series bold
-Another approach:
+\begin_layout Itemize
+How does the magnitude of the gradient compare between 
+\begin_inset Formula $g(x)$
+\end_inset
+
+ and 
+\begin_inset Formula $f(x)$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Itemize
+How does the Lipschitz constant compare between 
+\begin_inset Formula $g(x)$
+\end_inset
+
+ and 
+\begin_inset Formula $f(x)$
+\end_inset
+
+?
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Backtracking Line Search
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Optimize step size at every step (e.g.
- backtracking line search)
+If we step in negative gradient direction, 
+\begin_inset Formula $\|\del f(x)\|$
+\end_inset
+
+ gives us rate of decrease.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+at least for infinitesimally small step size.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Find step size that gives at least some fixed fraction of instantaneous
+ rate of decrease.
+\end_layout
+
+\begin_layout Pause
+
 \end_layout
 
 \begin_layout Itemize
-Will see this in homework #1.
- 
+We'll discuss 
+\series bold
+backtracking line search, 
+\series default
+based on this idea, in the Lab
+\series bold
+.
 \end_layout
 
 \begin_layout Standard
@@ -1193,7 +1487,6 @@ Steepest descent
 
 \end_layout
 
-\end_deeper
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
@@ -1248,7 +1541,7 @@ For learning setting,
 
 \begin_deeper
 \begin_layout Itemize
-test performance on validation data as you go
+evalute performance on validation data as you go
 \end_layout
 
 \begin_layout Itemize
@@ -1744,9 +2037,9 @@ Gradient descent is an interative procedure anyway.
 
 \begin_layout Itemize
 At every step, we have a chance to recover from previous missteps.
-\end_layout
+\begin_inset Note Note
+status open
 
-\end_deeper
 \begin_layout Pause
 
 \end_layout
@@ -1757,9 +2050,14 @@ Turns out, even terrible estimates will work, so long as they are
 unbiased
 \series default
 .
- (Details in Week 4)
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
@@ -1835,14 +2133,6 @@ Gradient descent on this?
 \end_layout
 
 \end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Separator
-
-\end_layout
-
 \begin_layout Frame
 \begin_inset Argument 4
 status open
@@ -1896,10 +2186,6 @@ Let's return to the general case...
 \end_layout
 
 \end_deeper
-\begin_layout Separator
-
-\end_layout
-
 \begin_layout Frame
 \begin_inset Argument 4
 status open
@@ -1976,10 +2262,6 @@ http://planetmath.org/differentiationundertheintegralsign
 \end_layout
 
 \end_deeper
-\begin_layout Separator
-
-\end_layout
-
 \begin_layout Pause
 
 \end_layout
@@ -2019,14 +2301,6 @@ estimator for Gradient(Risk):
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Separator
-
-\end_layout
-
 \begin_layout Frame
 \begin_inset Argument 4
 status open
@@ -2090,14 +2364,6 @@ Gradient descent on this?
 \end_layout
 
 \end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Separator
-
-\end_layout
-
 \begin_layout Frame
 \begin_inset Argument 4
 status open
@@ -2151,10 +2417,6 @@ Let's return to the general case...
 \end_layout
 
 \end_deeper
-\begin_layout Separator
-
-\end_layout
-
 \begin_layout Frame
 \begin_inset Argument 4
 status open
@@ -2231,10 +2493,6 @@ http://planetmath.org/differentiationundertheintegralsign
 \end_layout
 
 \end_deeper
-\begin_layout Separator
-
-\end_layout
-
 \begin_layout Pause
 
 \end_layout
@@ -2274,10 +2532,6 @@ estimator for Gradient(Risk):
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
-
-\end_layout
-
 \end_inset
 
  
@@ -2402,7 +2656,7 @@ minibatch gradient
 \begin_inset Formula 
 \begin{eqnarray*}
 \pause\ex\left[\del\hat{R}_{N}(w)\right] & = & \frac{1}{N}\sum_{i=1}^{N}\ex\left[\del_{w}\ell(f_{w}(x_{m_{i}}),y_{m_{i}})\right]\\
-\pause & = & \ex\left[\del_{w}\ell(f_{w}(x_{m_{i}}),y_{m_{i}})\right]\\
+\pause & = & \ex\left[\del_{w}\ell(f_{w}(x_{m_{1}}),y_{m_{1}})\right]\\
 \pause & = & \sum_{i=1}^{n}\pr\left(m_{1}=i\right)\del_{w}\ell(f_{w}(x_{i}),y_{i})\\
 \pause & = & \frac{1}{n}\sum_{i=1}^{n}\del_{w}\ell(f_{w}(x_{m_{i}}),y_{m_{i}})\\
 \pause & = & \del\hat{R}_{n}(w)
@@ -2458,7 +2712,8 @@ unbiased estimator
 \begin_layout Itemize
 The bigger the minibatch, the better the estimate.
  
-\end_layout
+\begin_inset Note Note
+status open
 
 \begin_layout Pause
 
@@ -2473,9 +2728,14 @@ In fact, by Strong Law of Large Numbers,
 \begin_inset Formula 
 \begin{eqnarray*}
 \pause\lim_{N\to\infty}\del\hat{R}_{N}(w) & = & \lim_{N\to\infty}\frac{1}{N}\sum_{i=1}^{N}\del_{w}\ell(f_{w}(x_{m_{i}}),y_{m_{i}})\\
-\pause & = & \ex\left[\del_{w}\ell(f_{w}(x_{m_{i}}),y_{m_{i}})\right]\\
+\pause & = & \ex\left[\del_{w}\ell(f_{w}(x_{m_{1}}),y_{m_{1}})\right]\\
  & = & \del\hat{R}_{n}(w)
 \end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -2782,13 +3042,19 @@ randomly choose
 \end_inset
 
 
-\end_layout
+\begin_inset Note Note
+status open
 
-\end_deeper
-\begin_layout Itemize
+\begin_layout Plain Layout
 until stopping criteria met
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \end_deeper
 \end_deeper
 \begin_layout Standard
@@ -2852,13 +3118,19 @@ randomly choose training point
 \end_inset
 
 
-\end_layout
+\begin_inset Note Note
+status open
 
-\end_deeper
-\begin_layout Itemize
+\begin_layout Plain Layout
 until stopping criteria met
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \end_deeper
 \end_deeper
 \begin_layout Standard
@@ -2883,7 +3155,19 @@ Step Size
 
 \begin_deeper
 \begin_layout Itemize
-For SGD we want decreasing step size to dampen noise in step direction
+For SGD, fixed step size can work well in practice, but no theorem.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+For convergence guarantee, use decreasing step sizes (dampens noise in step
+ direction).
 \end_layout
 
 \begin_deeper

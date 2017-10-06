@@ -1,5 +1,9 @@
 <!-- # DS-GA 1003: Machine Learning and Computational Statistics -->
 
+## Notable Changes from [Fall 2017](https://davidrosenberg.github.io/ml2017/#home) to [Spring 2017]
+- New figures illustrating regularization paths in space of all functions.
+- Added lecture on Black Box ML
+
 ## Notable Changes from [2016](https://davidrosenberg.github.io/ml2016/#home) to [2017](https://davidrosenberg.github.io/ml2017/#home)
 - New lecture on principal component analysis (Brett)
 - Added slide on k-means++ (Brett)

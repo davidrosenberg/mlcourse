@@ -1,0 +1,6051 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass beamer
+\begin_preamble
+\usetheme{CambridgeUS} 
+\beamertemplatenavigationsymbolsempty
+
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+
+
+% Set Color ==============================
+\definecolor{BBGblue}{RGB}{13,157,219}
+\definecolor{BBGgreen}{RGB}{77,170,80}
+
+
+\setbeamercolor{title}{fg=BBGblue}
+%\setbeamercolor{frametitle}{fg=BBGblue}
+\setbeamercolor{frametitle}{fg=BBGblue}
+
+\setbeamercolor{background canvas}{fg=BBGblue, bg=white}
+\setbeamercolor{background}{fg=black, bg=BBGblue}
+
+\setbeamercolor{palette primary}{fg=black, bg=gray!30!white}
+\setbeamercolor{palette secondary}{fg=black, bg=gray!20!white}
+\setbeamercolor{palette tertiary}{fg=black, bg=BBGblue}
+
+\setbeamertemplate{headline}{}
+\end_preamble
+\options aspectratio=169,handout
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "eulervm" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\boxbgcolor #ff31d8
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\reals}{\mathbf{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\integers}{\mathbf{Z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\naturals}{\mathbf{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rationals}{\mathbf{Q}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ca}{\mathcal{A}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cb}{\mathcal{B}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cc}{\mathcal{C}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cd}{\mathcal{D}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ce}{\mathcal{E}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cf}{\mathcal{F}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cg}{\mathcal{G}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ch}{\mathcal{H}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ci}{\mathcal{I}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cj}{\mathcal{J}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ck}{\mathcal{K}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cl}{\mathcal{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cm}{\mathcal{M}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cn}{\mathcal{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\co}{\mathcal{O}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cp}{\mathcal{P}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cq}{\mathcal{Q}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\calr}{\mathcal{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cs}{\mathcal{S}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ct}{\mathcal{T}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cu}{\mathcal{U}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cv}{\mathcal{V}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cw}{\mathcal{W}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cx}{\mathcal{X}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cy}{\mathcal{Y}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cz}{\mathcal{Z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ind}[1]{1(#1)}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand{
+\backslash
+pr}{P}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\pr}{\mathbb{P}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\predsp}{\cy}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%{
+\backslash
+hat{
+\backslash
+cy}}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\outsp}{\cy}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\prxy}{P_{\cx\times\cy}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\prx}{P_{\cx}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\prygivenx}{P_{\cy\mid\cx}}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand{
+\backslash
+ex}{E}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ex}{\mathbb{E}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\var}{\textrm{Var}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cov}{\textrm{Cov}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\sgn}{\textrm{sgn}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\sign}{\textrm{sign}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\kl}{\textrm{KL}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\law}{\mathcal{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\eps}{\varepsilon}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\as}{\textrm{ a.s.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\io}{\textrm{ i.o.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ev}{\textrm{ ev.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\convd}{\stackrel{d}{\to}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\eqd}{\stackrel{d}{=}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\del}{\nabla}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\loss}{\ell}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\risk}{R}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\emprisk}{\hat{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\lossfnl}{L}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\emplossfnl}{\hat{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\empminimizer}[1]{\hat{#1}^{*}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\minimizer}[1]{#1^{*}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\optimizer}[1]{#1^{*}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\etal}{\textrm{et. al.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\tr}{\operatorname{tr}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\trace}{\operatorname{trace}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\diag}{\text{diag}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rank}{\text{rank}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\linspan}{\text{span}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\spn}{\text{span}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\proj}{\text{Proj}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\argmax}{\operatornamewithlimits{arg\, max}}
+{\text{argmax}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\argmin}{\operatornamewithlimits{arg\, min}}
+{\text{argmin}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\bfx}{\mathbf{x}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfy}{\mathbf{y}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfl}{\mathbf{\lambda}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfm}{\mathbf{\mu}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\calL}{\mathcal{L}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\vw}{\boldsymbol{w}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vx}{\boldsymbol{x}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vxi}{\boldsymbol{\xi}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\valpha}{\boldsymbol{\alpha}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vbeta}{\boldsymbol{\beta}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vsigma}{\boldsymbol{\sigma}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vtheta}{\boldsymbol{\theta}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vd}{\boldsymbol{d}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vs}{\boldsymbol{s}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vt}{\boldsymbol{t}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vh}{\boldsymbol{h}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ve}{\boldsymbol{e}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vf}{\boldsymbol{f}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vg}{\boldsymbol{g}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vz}{\boldsymbol{z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vk}{\boldsymbol{k}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\va}{\boldsymbol{a}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vb}{\boldsymbol{b}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vv}{\boldsymbol{v}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vy}{\boldsymbol{y}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\dom}{\textrm{\textbf{dom} }}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\renewcommand{\rank}{\text{\textbf{rank }}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\conv}{\textrm{\textbf{conv} }}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\relint}{\text{\textbf{relint }}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\aff}{\text{\textbf{aff }}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\hil}{\ch}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rkhs}{\hil}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ber}{\text{Ber}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+Black Box Machine Learning
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+optional, use only with long paper titles
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+David S.
+ Rosenberg 
+\end_layout
+
+\begin_layout Date
+September 20, 2017
+\end_layout
+
+\begin_layout Institute
+Bloomberg ML EDU
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex ArticleMode
+status open
+
+\begin_layout Plain Layout
+Just in article version
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Enumerate
+overfitting the validation set
+\end_layout
+
+\begin_layout Enumerate
+confusion about cross-fold validation really about assessing the methodology
+ rather than any parrticular prediction function
+\end_layout
+
+\begin_layout Enumerate
+does the standard error from CV actually mean anything? (because of dependence)
+\end_layout
+
+\begin_layout Plain Layout
+Promised:
+\end_layout
+
+\begin_layout Enumerate
+writeup of Mean, SD, Standard error
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Section
+Overview
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Outline
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+What is machine learning for?
+\end_layout
+
+\begin_layout Itemize
+What is machine learning?
+\end_layout
+
+\begin_layout Itemize
+How do I do it? (e.g.
+ properly use an ML library)
+\end_layout
+
+\begin_layout Itemize
+What can go wrong?
+\end_layout
+
+\begin_layout Itemize
+Case study
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Machine Learning Problems
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+What is Machine Learning for?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\series bold
+Common theme
+\series default
+ is to solve a prediction problem:
+\end_layout
+
+\begin_layout Itemize
+given an 
+\series bold
+input
+\series default
+ 
+\begin_inset Formula $x$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+predict
+\series default
+ an 
+\begin_inset Quotes eld
+\end_inset
+
+appropriate
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\series bold
+output 
+\begin_inset Formula $y$
+\end_inset
+
+.
+
+\series default
+ 
+\end_layout
+
+\begin_layout Pause
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We'll start with a few canonical examples...
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Example: Spam Detection
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Input:
+\series default
+ Incoming email
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/black-box-ML/spam-email.png
+	lyxscale 70
+	width 60text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Output: 
+\series default
+
+\begin_inset Quotes eld
+\end_inset
+
+SPAM
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+NOT SPAM
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+A 
+\series bold
+binary classification 
+\series default
+problem
+\series bold
+,
+\series default
+ because only 2 possible outputs.
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Example: Medical Diagnosis
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Input
+\series default
+: Symptoms (fever, cough, fast breathing, shaking, nausea,...)
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Output: 
+\series default
+Diagnosis (pneumonia, flu, common cold, bronchitis, ...)
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+A 
+\series bold
+multiclass classification
+\series default
+ problem: choosing one of several [discrete] outputs.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+How to express uncertainty?
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Probabilistic classification
+\series default
+ or 
+\series bold
+soft classification
+\series default
+:
+\begin_inset Formula 
+\begin{eqnarray*}
+\text{\pr(pneumonia)} & = & 0.7\\
+\text{\pr(flu)} & = & 0.2\\
+\vdots &  & \vdots
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Example: Predicting a Stock Price
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Input:
+\series default
+ History of stock's prices
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Output
+\series default
+: Predict stock's price at close of next day
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+A 
+\series bold
+regression
+\series default
+ problem, because the output is a number.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+(Regression is 
+\series bold
+not
+\series default
+ just 
+\begin_inset Quotes eld
+\end_inset
+
+linear regression
+\begin_inset Quotes erd
+\end_inset
+
+ from basic statistics.)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Prediction Function
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A 
+\series bold
+prediction function
+\series default
+ takes input 
+\begin_inset Formula $x$
+\end_inset
+
+ and produces an output 
+\begin_inset Formula $y$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+We're looking for prediction functions that solve particular problems.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Machine learning
+\series default
+ helps find the
+\series bold
+ best prediction function.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+What is Machine Learning? 
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+What is 
+\series bold
+not
+\series default
+ ML: Rule-Based Approaches
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Consider medical diagnosis.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Enumerate
+Consult textbooks and medical doctors (i.e.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+experts
+\begin_inset Quotes erd
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Enumerate
+Understand their diagnosis process.
+\end_layout
+
+\begin_layout Enumerate
+Implement this as an algorithm (a 
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+rule-based system
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+
+\series bold
+)
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Doesn't sound too bad...
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Very popular in the 1980s.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+(To be fair, these 
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+expert systems
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+ could be much more sophisticated than they sound here.
+ For example, through 
+\begin_inset Quotes eld
+\end_inset
+
+inference
+\begin_inset Quotes erd
+\end_inset
+
+ they could make new logical deductions from knowledge bases.)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Rule-Based Approach
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/black-box-ML/geron-fig1-1.png
+	lyxscale 40
+	height 70theight%
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Fig 1-1 from 
+\backslash
+emph{Hands-On Machine Learning with Scikit-Learn and TensorFlow} by Aurelien
+ Geron (2017).}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Rule-Based Systems
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Issues with
+\series bold
+ rule-based system
+\series default
+s:
+\end_layout
+
+\begin_layout Itemize
+Very labor intensive to build.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Rules work very well for areas they cover
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+But cannot generalize to unanticipated input combinations.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Don't naturally handle uncertainty.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Expert systems seen as 
+\begin_inset Quotes eld
+\end_inset
+
+brittle
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+Disappointment in expert systems (late 80s / early 90s) led to an 
+\series bold
+
+\begin_inset Quotes eld
+\end_inset
+
+AI Winter
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Modern AI: Machine Learning
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Don't reverse engineer an expert's decision process.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Machine 
+\begin_inset Quotes eld
+\end_inset
+
+learns
+\begin_inset Quotes erd
+\end_inset
+
+ on its own.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We provide 
+\series bold
+
+\begin_inset Quotes eld
+\end_inset
+
+training data
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\series default
+i.e.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+many examples of (input 
+\begin_inset Formula $x$
+\end_inset
+
+ , output 
+\begin_inset Formula $y$
+\end_inset
+
+) pairs.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+e.g.
+ A set of videos, and whether or not each has a cat.
+\end_layout
+
+\begin_layout Itemize
+e.g.
+ A set of emails, and whether or not each is SPAM.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Learning from training data of this form is called 
+\series bold
+supervised learning
+\series default
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Machine Learning Algorithm
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A 
+\series bold
+machine learning algorithm:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Input
+\series default
+: Training Data
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes eld
+\end_inset
+
+Learns
+\begin_inset Quotes erd
+\end_inset
+
+ from the training data.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Output
+\series default
+: A 
+\begin_inset Quotes eld
+\end_inset
+
+prediction function
+\begin_inset Quotes erd
+\end_inset
+
+ that produces output 
+\begin_inset Formula $y$
+\end_inset
+
+ given input 
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Machine Learning Approach
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/black-box-ML/geron-fig1-2.png
+	lyxscale 40
+	height 70theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex ArticleMode
+status open
+
+\begin_layout Plain Layout
+We've swapped out rule writing with 
+\begin_inset Quotes eld
+\end_inset
+
+machine learning.
+\begin_inset Quotes erd
+\end_inset
+
+ But how does adjust the ML training process by analyzing errors?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Fig 1-2 from 
+\backslash
+emph{Hands-On Machine Learning with Scikit-Learn and TensorFlow} by Aurelien
+ Geron (2017).}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Key Concepts
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+most common 
+\series bold
+ML problem types
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+classification (hard or soft/probabilistic)
+\end_layout
+
+\begin_layout Itemize
+multiclass (hard or soft/probabilistic)
+\end_layout
+
+\begin_layout Itemize
+regression
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+prediction function
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+predicts output 
+\begin_inset Formula $y$
+\end_inset
+
+ given input 
+\begin_inset Formula $x$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+training data
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+a set of (input 
+\begin_inset Formula $x$
+\end_inset
+
+, output 
+\begin_inset Formula $y$
+\end_inset
+
+) pairs
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+supervised learning algorithm
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+takes training data and produces a prediction function
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Elements of the Machine Learning Pipeline
+\begin_inset Argument 2
+status collapsed
+
+\begin_layout Plain Layout
+Elements of the ML Pipeline
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Feeding Inputs to ML Algorithms 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Raw input types can be
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Text documents
+\end_layout
+
+\begin_layout Itemize
+Variable-length time series
+\end_layout
+
+\begin_layout Itemize
+Image files
+\end_layout
+
+\begin_layout Itemize
+Sound recordings
+\end_layout
+
+\begin_layout Itemize
+DNA sequences
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+But most ML prediction functions like their input as
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+fixed-length arrays of numbers
+\series default
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\texttt{double[d]}$
+\end_inset
+
+ – for the computer scientists
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\reals^{d}$
+\end_inset
+
+ – for the mathematicians
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Feature Extraction
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+Mapping raw input 
+\begin_inset Formula $x$
+\end_inset
+
+ to 
+\begin_inset Formula $\reals^{d}$
+\end_inset
+
+ is called 
+\series bold
+feature extraction
+\series default
+ or 
+\series bold
+featurization
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/features/feature-extraction.png
+	lyxscale 60
+	width 90text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Better features 
+\begin_inset Formula $\implies$
+\end_inset
+
+ less 
+\begin_inset Quotes eld
+\end_inset
+
+smart
+\begin_inset Quotes erd
+\end_inset
+
+ ML needed (makes things easier)
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Limiting case: a single feature is already the correct output
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Feature vectors
+\series default
+ are often called 
+\series bold
+input vectors.
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Example: Detecting Email Addresses 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Task
+\series default
+: Predict whether a string is an email address
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Could use domain knowledge and write down:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/features/emailFeatures.png
+	lyxscale 50
+	width 75col%
+	groupId percyPics
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+This was a bit ad-hoc.
+ Could we be more systematic? Yes ...
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Concept Check
+\series default
+: Is this just an expert system in disguise? What's different?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn
+ 2014.
+ }}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Feature Templates 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[informal]
+\end_layout
+
+\end_inset
+
+A 
+\series bold
+feature template
+\series default
+ is a group of features all computed in a similar way.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Input: 
+\shape slanted
+\color blue
+abc@gmail.com
+\shape default
+\color inherit
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout ExampleBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Feature Templates
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Length greater than ___
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Last three characters equal ___ 
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Contains character ___
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Based on Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn
+ 2014.
+ }}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Feature Template: Last Three Characters Equal ___ 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Don't think about which 3-letter suffixes are meaningful...
+\end_layout
+
+\begin_layout Itemize
+Just 
+\series bold
+include them all.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Archive/2016/Lectures/source/4c.features/last3CharactersFeature.png
+	lyxscale 50
+	width 75col%
+	groupId percyPics
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn
+ 2014.
+ }}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Feature Template: One-Hot Encoding
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+one-hot encoding
+\series default
+:
+\series bold
+ 
+\series default
+a set of binary features that always has 
+\series bold
+exactly one
+\series default
+ nonzero value.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+categorical variable
+\series default
+: a variable that takes one of several discrete possible values:
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Gender
+\emph default
+: 
+\begin_inset Quotes eld
+\end_inset
+
+Male
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+Female
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\emph on
+NYC Boroughs:
+\emph default
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Brooklyn
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+Bronx
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+Queens
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+Manhattan
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+Staten Island
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Categorical variables can be encoded numerically using one-hot encoding.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+In statistics, called a 
+\series bold
+dummy variable encoding
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+
+\series bold
+Concept Check: 
+\series default
+How many features to one-hot encode the boroughs?
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ What values do they take?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Labeled Data
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Package feature vectors together with output 
+\begin_inset Quotes eld
+\end_inset
+
+labels
+\begin_inset Quotes erd
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/black-box-ML/labeledData.png
+	lyxscale 60
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Each 
+\series bold
+row
+\series default
+ is an 
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+example
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+labeled datum
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+The last column is the 
+\series bold
+output
+\series default
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+label
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+ column.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Unlabeled Data
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Just the feature vectors:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/black-box-ML/unlabeledData.png
+	lyxscale 60
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+We want to be able to predict the missing labels.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Prediction Functions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+A 
+\series bold
+prediction function 
+\series default
+has
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+input
+\series default
+: a feature vector (a.k.a.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+input vector
+\begin_inset Quotes erd
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+output
+\series default
+: a 
+\begin_inset Quotes eld
+\end_inset
+
+label
+\begin_inset Quotes erd
+\end_inset
+
+ (a.k.a.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+prediction
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+response
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+action
+\begin_inset Quotes erd
+\end_inset
+
+, or 
+\begin_inset Quotes eld
+\end_inset
+
+output
+\begin_inset Quotes erd
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/black-box-ML/predictionFn.png
+	lyxscale 30
+	width 90text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+The prediction function is what gets 
+\series bold
+deployed
+\series default
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Learning Algorithm
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+A 
+\series bold
+learning algorithm 
+\series default
+has
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+input
+\series default
+: labeled data (i.e.
+ the 
+\series bold
+training set
+\series default
+)
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+output
+\series default
+: a 
+\series bold
+prediction function
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/black-box-ML/learningAlgorithm.png
+	lyxscale 30
+	height 40theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Today is about what's outside the 
+\begin_inset Quotes eld
+\end_inset
+
+purple box
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Rest of course is about the inside.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Key Concepts
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+feature extraction
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+maps raw inputs into arrays of numeric values
+\end_layout
+
+\begin_layout Itemize
+ideally, extracts essential features of the input
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+one-hot encoding 
+\series default
+for 
+\series bold
+categorical variables
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+labeled data / unlabeled data 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Evaluating a Prediction Function
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Evaluating a Prediction Function
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Brilliant data science intern gives you a prediction function.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+How do we evaluate performance?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Very important part of machine learning.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+It can be subtle.
+\end_layout
+
+\begin_layout Itemize
+Evaluation should reflect business goals as closely as possible.
+ 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Evaluating a Single Prediction: The Loss Function
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+A 
+\series bold
+loss function 
+\series default
+scores how far off a prediction is from the desired 
+\begin_inset Quotes eld
+\end_inset
+
+target
+\begin_inset Quotes erd
+\end_inset
+
+ output.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mathtt{loss(prediction,target)}$
+\end_inset
+
+ returns a number called 
+\series bold
+
+\begin_inset Quotes eld
+\end_inset
+
+the loss
+\begin_inset Quotes erd
+\end_inset
+
+
+\series default
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Big Loss = Bad Error
+\end_layout
+
+\begin_layout Itemize
+Small Loss = Minor Error
+\end_layout
+
+\begin_layout Itemize
+Zero Loss = No Error
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Classic Loss Functions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Classification loss 
+\series default
+or 
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+0/1 Loss
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Loss is 
+\begin_inset Formula $1$
+\end_inset
+
+ if prediction is wrong.
+\end_layout
+
+\begin_layout Itemize
+Loss is 
+\begin_inset Formula $0$
+\end_inset
+
+ if prediction is correct.
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Square loss
+\series default
+ for regression
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+loss = (predicted - target)
+\begin_inset Formula $^{2}$
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Evaluating a Prediction Function
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Data science intern gives you a prediction function 
+\begin_inset Formula $f(x)$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Quotes eld
+\end_inset
+
+Average classification loss on training data was 0.01
+\begin_inset Quotes erd
+\end_inset
+
+ (i.e.
+ 1% error)
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Product manager says 
+\begin_inset Quotes eld
+\end_inset
+
+we can deploy if 
+\begin_inset Formula $\le2\%$
+\end_inset
+
+ error.
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Deploy this prediction function?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+No! 
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Prediction function needs to do well on 
+\series bold
+new inputs
+\series default
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+(Don't test somebody with problems they've seen in advance.)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Test Set
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A 
+\series bold
+
+\begin_inset Quotes eld
+\end_inset
+
+test set
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\series default
+is labeled data that is 
+\series bold
+independent
+\series default
+ of training data.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+e.g.
+ Split labeled data 
+\series bold
+randomly 
+\series default
+into 80% training and 20% test.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Training set
+\series default
+: only for 
+\series bold
+training prediction functions
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Test set
+\series default
+: only for for 
+\series bold
+assessing performance
+\series default
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Larger test set gives more accurate assessment of performance.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+(Assuming test set is a good representative of data at deployment!)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+How big? We can review 
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+confidence intervals
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+ from statistics.
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+SD of performance estimate decreases like 
+\begin_inset Formula $1/\sqrt{n}$
+\end_inset
+
+, where 
+\begin_inset Formula $n$
+\end_inset
+
+ is test set size.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Train/Test vs.
+ Train/Deploy
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Train/Test:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Build model on training data (say 80% of all labeled data).
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Get performance estimate on test data (remaining 20%).
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Train/Deploy:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Build model on all labeled data.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Deploy model into wild.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Hope for the best.
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+A large part of real-world machine learning is ensuring that 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Test performance is a good estimate of deployment performance.
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+How can we do this, and what can go wrong?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Main Principal of Train/Test Splitting
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Train/Test setup should represent Train/Deploy scenario as closely as possible.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Random split of labeled data into train/test is usually the right approach.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+(why random?)
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+But consider
+\series bold
+ time series prediction
+\series default
+: 1000 days of historical data
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Should we randomly split the days into training and test?
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Train/Test Split for Time Series
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Consider 
+\series bold
+Train/Deploy
+\series default
+ scenario:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Prediction function trained on days occurring before deployment time period.
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Consider 
+\series bold
+Train/Test
+\series default
+ scenario with 
+\series bold
+random splitting
+\series default
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Some test days occur before some training days.
+\end_layout
+
+\begin_layout Itemize
+No good!
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+What can go wrong with random splitting of time series?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Suppose time series changes slowly over time.
+\end_layout
+
+\begin_layout Itemize
+To predict at test day 
+\begin_inset Formula $d$
+\end_inset
+
+, just predict value at training day closest in time.
+\end_layout
+
+\begin_layout Itemize
+That trick won't work for very long during deployment.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Create train/test split by splitting in time:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Training set is everything before time T
+\end_layout
+
+\begin_layout Itemize
+Test set everything after time T
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/cross-validation/time-series-train-test.png
+	lyxscale 20
+	width 65text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Jatin Garg (
+\backslash
+url{https://stats.stackexchange.com/users/123886/jatin-garg}), Using k-fold
+ cross-validation for time-series model selection, URL (version: 2017-03-22):
+ https://stats.stackexchange.com/q/268847
+\end_layout
+
+\begin_layout Plain Layout
+
+}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Summary: What to Give your Data Science Intern
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Split data into 
+\series bold
+train
+\series default
+ and 
+\series bold
+test
+\series default
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Give training set to intern, you keep the test set.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Intern gives you a prediction function.
+\end_layout
+
+\begin_layout Itemize
+You evaluate prediction function on test set.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+No matter what intern did with training set, 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+test performance should give you good estimate of deployment performance.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+What Should the Intern Do?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Intern wants to try many fancy ML models.
+\end_layout
+
+\begin_layout Itemize
+Each gives a different prediction function.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Intern needs her own test set to evaluate prediction functions.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Intern should randomly split data again into
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+training set
+\series default
+ and
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+validation set
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+This split could again be 80/20.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Validation set is like test set, but used to choose best among many prediction
+ functions.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Test set is just used to evaluate the final chosen prediction function.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+k-Fold Cross Validation
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout ColumnsTopAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+.4
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Suppose test set too small for good performance estimate.
+\end_layout
+
+\begin_layout Itemize
+Use 
+\series bold
+
+\begin_inset Formula $k$
+\end_inset
+
+-fold cross validation:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Randomly partition data 
+\begin_inset Formula $\cd$
+\end_inset
+
+ into 
+\begin_inset Formula $k$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+folds
+\begin_inset Quotes erd
+\end_inset
+
+ of equal size: 
+\begin_inset Formula $\cd_{1},\ldots,\cd_{k}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+For 
+\begin_inset Formula $i=1,\ldots,k$
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Train model 
+\begin_inset Formula $M_{i}$
+\end_inset
+
+ on 
+\begin_inset Formula $\cd-\cd_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Let 
+\begin_inset Formula $T_{i}$
+\end_inset
+
+ be 
+\begin_inset Formula $M_{i}$
+\end_inset
+
+'s performance on 
+\begin_inset Formula $\cd_{i}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Report 
+\begin_inset Formula $\hat{T}\pm\text{SE}(\hat{T})$
+\end_inset
+
+ where 
+\begin_inset Formula 
+\begin{eqnarray*}
+\hat{T} & = & \text{Mean}(T_{1},\ldots,T_{k})\\
+\text{SE}(\hat{T}) & = & \text{SD}(T_{1},\ldots,T_{k})/\sqrt{k}.
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+.4
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout ColumnsTopAligned
+\begin_inset Graphics
+	filename ../Figures/cross-validation/provost-fawcett-fig5-9.png
+	lyxscale 50
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Provost and Fawcett 
+\backslash
+emph{Data science for Business}, Figure 5-9.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Forward Chaining (Cross Validation for Time Series)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/cross-validation/forward-chaining.png
+	lyxscale 60
+	height 60theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Jatin Garg (
+\backslash
+url{https://stats.stackexchange.com/users/123886/jatin-garg}), Using k-fold
+ cross-validation for time-series model selection, URL (version: 2017-03-22):
+ https://stats.stackexchange.com/q/268847
+\end_layout
+
+\begin_layout Plain Layout
+
+}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Key Concepts
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+loss functions
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+e.g.
+
+\series bold
+ 0/1 loss 
+\series default
+(for classification)
+\end_layout
+
+\begin_layout Itemize
+e.g.
+ 
+\series bold
+square loss
+\series default
+ (for regression) 
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+training set, validation set, test set
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+train/test should resemble train/deploy as closely as possible
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+random split often reasonable
+\end_layout
+
+\begin_layout Itemize
+for time series, split data in time, rather than randomly
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+validation and test sets are often called 
+\begin_inset Quotes eld
+\end_inset
+
+hold-out data
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+k-fold cross validation 
+\series default
+for small datasets
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Other Sources of Test 
+\begin_inset Formula $\neq$
+\end_inset
+
+ Deployment
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Leakage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Leakage
+\series default
+: Information about labels sneaks into features.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Examples:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+identifying cat photos by using the title on the page
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+including sales commission as a feature when ranking sales leads
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+using star rating as feature when predicting sentiment of Yelp review 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Sample Bias
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Sample bias
+\series default
+: Test inputs and deployment inputs have different distributions.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Examples:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+create a model to predict US voting patterns, but phone survey only dials
+ landlines
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+building a stock forecasting model, but training using a random selection
+ of companies that exist today – what's the issue? 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+predict overall sentiment about X, just by looking at tweets
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+US census slightly undercounts certain subpopulations in a way that's somewhat
+ predictable based on demographic and geographic features.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+If predictable, can it be corrected? Hotly debated topic ~2000 – some of
+ the world's top statisticians couldn't agree (Stephen Fienberg vs David
+ Freedman).)
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Nonstationarity
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Nonstationarity:
+\series default
+ when the thing you're modeling changes over time
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Nonstationarity often takes one of two forms:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Covariate shift
+\series default
+: input distribution changed between training and deployment.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+(covariate is another term for input feature)
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+e.g.
+ once popular search queries become less popular – new ones appear
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+mathematically similar to sample bias
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Concept drift: 
+\series default
+correct output for given input changes over time
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+e.g.
+ season changes, and given person no longer interested in winter coats
+\end_layout
+
+\begin_layout Itemize
+e.g.
+ last week I was looking for a new car, this week I'm not 
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Model Complexity & Overfitting
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Toy Example
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Green line is truth; Blue points are our noisy data
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/black-box-ML/polyTruth.png
+	lyxscale 30
+	height 50theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+What's the input? What's the output?
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Bishop's 
+\backslash
+emph{Pattern Recognition and Machine Learning}, Ch 1.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Polynomial Curve Fitting (an ML algorithm)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Fit data with a polynomial.
+\begin_inset Formula 
+\[
+f(x)=w_{0}+w_{1}x+w_{2}x^{2}+\cdots+w_{M}x^{M}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Concept Check
+\series default
+: What is 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ in our ML vocabulary?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Polynomial Curve Fitting (an ML algorithm)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Fit with polynomial 
+\begin_inset Formula $f(x)=w_{0}+w_{1}x+w_{2}x^{2}+\cdots+w_{M}x^{M}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Imagine a learning function: 
+\begin_inset Formula 
+\[
+\texttt{double[] fitPolynomial(Data data, int M)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+This function does the 
+\series bold
+
+\begin_inset Quotes eld
+\end_inset
+
+learning
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Returns array of 
+\series bold
+parameters
+\series default
+ 
+\begin_inset Formula $w_{0},w_{1},\ldots,w_{M}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+With parameters and 
+\begin_inset Formula $M$
+\end_inset
+
+ we can create
+\series bold
+ prediction function
+\series default
+:
+\begin_inset Formula 
+\[
+\texttt{double predictPolynomial(double[] w, int M, double x)}
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Polynomial Curve Fitting (an ML algorithm)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A polynomial model 
+\begin_inset Formula $f(x)=w_{0}+w_{1}x+w_{2}x^{2}+\cdots+w_{M}x^{M}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Learning algorithms 
+\series default
+find the best 
+\series bold
+parameters
+\series default
+ 
+\begin_inset Formula $w_{0},w_{1},\ldots,w_{M}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+A 
+\series bold
+hyperparameter
+\series default
+ is a parameter of the ML algorithm itself.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Here, 
+\begin_inset Formula $M$
+\end_inset
+
+ is a hyperparameter.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Generally, the data scientist adjusts the hyperparameters
+\series bold
+.
+\end_layout
+
+\begin_layout Itemize
+Though it can also be chosen by an ML algorithm.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Example: Polynomial Curve Fitting
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Green curve is truth
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/black-box-ML/polyTruth.png
+	lyxscale 30
+	height 50theight%
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Bishop's 
+\backslash
+emph{Pattern Recognition and Machine Learning}, Ch 1.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Example: Polynomial Curve Fitting
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Fit with 
+\begin_inset Formula $M=0$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/black-box-ML/0thOrder.png
+	lyxscale 30
+	height 50theight%
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Bishop's 
+\backslash
+emph{Pattern Recognition and Machine Learning}, Ch 1.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+UNDERFIT (not fitting data well enough)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Example: Polynomial Curve Fitting
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Fit with 
+\begin_inset Formula $M=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/black-box-ML/FirstOrder.png
+	lyxscale 30
+	height 50theight%
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Bishop's 
+\backslash
+emph{Pattern Recognition and Machine Learning}, Ch 1.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+UNDERFIT (not fitting data well enough)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Example: Polynomial Curve Fitting
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Fit with 
+\begin_inset Formula $M=3$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/black-box-ML/3rdOrder.png
+	lyxscale 30
+	height 50theight%
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Bishop's 
+\backslash
+emph{Pattern Recognition and Machine Learning}, Ch 1.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+PRETTY GOOD!
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Example: Polynomial Curve Fitting
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Fit with 
+\begin_inset Formula $M=9$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/black-box-ML/9thOrder.png
+	lyxscale 30
+	height 50theight%
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Bishop's 
+\backslash
+emph{Pattern Recognition and Machine Learning}, Ch 1.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+OVERFIT (fits data 
+\series bold
+too well
+\series default
+)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Polynomial Model Complexity
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $M$
+\end_inset
+
+ controls the 
+\series bold
+model complexity.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Bigger 
+\begin_inset Formula $M$
+\end_inset
+
+ allows more 
+\begin_inset Quotes eld
+\end_inset
+
+complex
+\begin_inset Quotes erd
+\end_inset
+
+ prediction functions.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+i.e.
+ more 
+\begin_inset Quotes eld
+\end_inset
+
+squiggly
+\begin_inset Quotes erd
+\end_inset
+
+ functions
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Larger model complexity means
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Better fit to training data
+\end_layout
+
+\begin_layout Itemize
+NOT necessarily better performance on test data
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Overfitting
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Loosely speaking, we say a model 
+\series bold
+overfits
+\series default
+ when
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+training performance is good but
+\end_layout
+
+\begin_layout Itemize
+test/validation performance is poor.
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Fix overfitting by
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Reducing model complexity
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Getting more training data 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Example: Polynomial Curve Fitting
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Fit with 
+\begin_inset Formula $M=9$
+\end_inset
+
+ (more data)
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/black-box-ML/9thOrderMoreData.png
+	lyxscale 30
+	height 50theight%
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Bishop's 
+\backslash
+emph{Pattern Recognition and Machine Learning}, Ch 1.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+Pretty good - slightly overfit?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Example: Polynomial Curve Fitting
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Fit with 
+\begin_inset Formula $M=9$
+\end_inset
+
+ (even more data)
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/black-box-ML/9thOrderMuchData.png
+	lyxscale 30
+	height 50theight%
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Bishop's 
+\backslash
+emph{Pattern Recognition and Machine Learning}, Ch 1.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+NAILED IT?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Hyperparameters (or 
+\begin_inset Quotes eld
+\end_inset
+
+Tuning Parameters
+\begin_inset Quotes erd
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Almost every learning algorithm has
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+at least one 
+\series bold
+
+\begin_inset Quotes eld
+\end_inset
+
+hyperparameter
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\series default
+or
+\series bold
+ 
+\begin_inset Quotes eld
+\end_inset
+
+tuning parameter
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+You (the data scientist) must tune these values.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Hyperparameter control various things
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+model complexity
+\series default
+ (e.g.
+ polynomial order)
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+type of model complexity
+\series default
+ control (e.g.
+ L1 vs L2 regularization)
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+optimization algorithm 
+\series default
+(e.g.
+ learning rate)
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+model type
+\series default
+ (e.g.
+ loss function, kernel type,...)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Overall Machine Learning Workflow
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Basic Machine Learning Workflow
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Split labeled data into 
+\series bold
+training,
+\series default
+ 
+\series bold
+validation,
+\series default
+ and 
+\series bold
+test
+\series default
+ sets.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Repeat until happy with performance on validation set:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Build / revise your feature extraction methodology.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Choose some ML algorithm.
+\end_layout
+
+\begin_layout Enumerate
+Train ML model with various hyperparameter settings.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Evaluate prediction functions on validation set.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Retrain model on (train + validation)
+\end_layout
+
+\begin_layout Enumerate
+Evaluate performance on test set.
+ [Report this number to product manager.]
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Retrain on all labeled data (training + validation + test).
+\end_layout
+
+\begin_layout Enumerate
+Deploy resulting prediction function.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Fix Errors by Adding More Data
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../Figures/black-box-ML/geron-fig1-3.png
+	lyxscale 40
+	height 70theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex ArticleMode
+status open
+
+\begin_layout Plain Layout
+Suppose SPAM distribution changes.
+ e.g.
+ viagra –> vi@gra.
+ Users start flagging these messages as SPAM.
+ This new data gets fed back into the training data.
+ ML algorithm learns how to identify new messages.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Fig 1-3 from 
+\backslash
+emph{Hands-On Machine Learning with Scikit-Learn and TensorFlow} by Aurelien
+ Geron (2017).}}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Case Study: Cell Phone Churn Prediction
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Cell Phone Churn Problem
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Cell phone customers often switch carriers.
+ Called 
+\begin_inset Quotes eld
+\end_inset
+
+churn
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Often cheaper to retain a customer than to acquire a new one.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+You can try to retain a customer by giving a promotion, such as a discount.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+If you give a discount to somebody who was going to churn, you probably
+ saved money.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+If you give a discount to somebody who was NOT going to churn, you wasted
+ money.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Cell Phone Churn Problem
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose you have 2 years of customer data.
+\end_layout
+
+\begin_layout Itemize
+For each customer, you know whether they 
+\begin_inset Quotes eld
+\end_inset
+
+churned
+\begin_inset Quotes erd
+\end_inset
+
+ (i.e.
+ changed service), and the date of churn if they did churn\SpecialChar endofsentence
+
+\end_layout
+
+\begin_layout Itemize
+How can we use machine learning to find the most likely churners?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Lift Curves for Predicting Churners
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/black-box-ML/lift-curves-churn.png
+	lyxscale 60
+	height 90theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_body
+\end_document

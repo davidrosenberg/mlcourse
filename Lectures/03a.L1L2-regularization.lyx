@@ -3,12 +3,11 @@
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin /Users/drosen/Dropbox/repos/mlcourse/Lectures/
+\origin unavailable
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
 \beamertemplatenavigationsymbolsempty
-
 
 \AtBeginSection[]{
   \begin{frame}
@@ -20,6 +19,25 @@
   \vfill
   \end{frame}
 }
+
+
+% Set Color ==============================
+\definecolor{BBGblue}{RGB}{13,157,219}
+\definecolor{BBGgreen}{RGB}{77,170,80}
+
+
+\setbeamercolor{title}{fg=BBGblue}
+%\setbeamercolor{frametitle}{fg=BBGblue}
+\setbeamercolor{frametitle}{fg=BBGblue}
+
+\setbeamercolor{background canvas}{fg=BBGblue, bg=white}
+\setbeamercolor{background}{fg=black, bg=BBGblue}
+
+\setbeamercolor{palette primary}{fg=black, bg=gray!30!white}
+\setbeamercolor{palette secondary}{fg=black, bg=gray!20!white}
+\setbeamercolor{palette tertiary}{fg=black, bg=BBGblue}
+
+\setbeamertemplate{headline}{}
 \end_preamble
 \options aspectratio=169,handout
 \use_default_options false
@@ -45,16 +63,7 @@
 \index_command default
 \paperfontsize default
 \spacing single
-\use_hyperref true
-\pdf_bookmarks true
-\pdf_bookmarksnumbered false
-\pdf_bookmarksopen false
-\pdf_bookmarksopenlevel 1
-\pdf_breaklinks false
-\pdf_pdfborder false
-\pdf_colorlinks true
-\pdf_backref false
-\pdf_pdfusetitle true
+\use_hyperref false
 \papersize default
 \use_geometry true
 \use_package amsmath 2
@@ -76,6 +85,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\boxbgcolor #ff31d8
 \index Index
 \shortcut idx
 \color #008000
@@ -643,6 +653,34 @@ ex}{E}
 
 \begin_layout Standard
 \begin_inset FormulaMacro
+\newcommand{\dom}{\textrm{\textbf{dom} }}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\renewcommand{\rank}{\text{\textbf{rank }}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\conv}{\textrm{\textbf{conv} }}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\relint}{\text{\textbf{relint }}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\aff}{\text{\textbf{aff }}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
 \newcommand{\hil}{\ch}
 \end_inset
 
@@ -672,7 +710,6 @@ ex}{E}
 status open
 
 \begin_layout Plain Layout
-DS-GA 1003 
 \begin_inset Note Note
 status open
 
@@ -683,6 +720,32 @@ optional, use only with long paper titles
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+David S.
+ Rosenberg 
+\end_layout
+
+\begin_layout Date
+October 5, 2017
+\end_layout
+
+\begin_layout Institute
+Bloomberg ML EDU
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex ArticleMode
+status open
+
+\begin_layout Plain Layout
+Just in article version
 \end_layout
 
 \end_inset
@@ -730,47 +793,6 @@ I believe there's a name for a third form of regularization, where we minimize
 
 geometry optimization and genrealization in multilayer networks)...
  
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Author
-David Rosenberg 
-\end_layout
-
-\begin_layout Institute
-New York University
-\end_layout
-
-\begin_layout Standard
-\begin_inset Flex ArticleMode
-status open
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-let
-\backslash
-thefootnote
-\backslash
-relax
-\backslash
-footnotetext{
-\backslash
-tiny{Plots courtesy of Ningshan Zhang.}}
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \end_inset
@@ -994,7 +1016,12 @@ How about for
 \series bold
 linear
 \series default
- models?
+ decision functions, i.e.
+ 
+\begin_inset Formula $x\mapsto w_{1}x_{1}+\cdots+w_{d}x_{d}$
+\end_inset
+
+?
 \end_layout
 
 \begin_deeper
@@ -1138,10 +1165,10 @@ at most
 \end_inset
 
 
-\end_layout
+\begin_inset Note Note
+status open
 
-\begin_deeper
-\begin_layout Itemize
+\begin_layout Plain Layout
 If 
 \begin_inset Formula $\Omega$
 \end_inset
@@ -1166,12 +1193,16 @@ in
  
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_deeper
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
 \end_deeper
 \begin_layout Itemize
 Increasing complexities: 
@@ -1191,7 +1222,7 @@ Increasing complexities:
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1287,7 +1318,7 @@ Each
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1357,12 +1388,45 @@ Choose
 
 \end_deeper
 \begin_layout Itemize
-(Ridge regression in Homework #1 is of this form.)
+(Ridge regression in homework is of this form.)
 \end_layout
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Connection between Penalty and Constraint Form?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
 \end_inset
 
 
@@ -1486,7 +1550,8 @@ unconstrained
 
 \end_deeper
 \begin_layout Standard
-Proof of equivalence based on Lagrangian duality – a topic of Lecture 3.
+Can get conditions for equivalence from Lagrangian duality theory – details
+ in homework.
 \end_layout
 
 \end_deeper
@@ -1520,10 +1585,10 @@ For any choice of
 \begin_inset Formula $r>0$
 \end_inset
 
-, the Ivanov solution
+, any Ivanov solution
 \begin_inset Formula 
 \[
-\minimizer{f_{r}}=\argmin_{\substack{f\in\cf}
+\minimizer{f_{r}}\in\argmin_{\substack{f\in\cf}
 }L(f)\mbox{ s.t. }\Omega(f)\le r
 \]
 
@@ -1541,7 +1606,7 @@ is also a Tikhonov solution for some
  such that
 \begin_inset Formula 
 \[
-\minimizer{f_{r}}=\argmin_{f\in\cf}L(f)+\lambda\Omega(f).
+\minimizer{f_{r}}\in\argmin_{f\in\cf}L(f)+\lambda\Omega(f).
 \]
 
 \end_inset
@@ -1560,10 +1625,10 @@ Conversely, for any choice of
 \begin_inset Formula $\lambda>0$
 \end_inset
 
-, the Tikhonov solution:
+, any Tikhonov solution:
 \begin_inset Formula 
 \[
-\minimizer{f_{\lambda}}=\argmin_{f\in\cf}L(f)+\lambda\Omega(f)
+\minimizer{f_{\lambda}}\in\argmin_{f\in\cf}L(f)+\lambda\Omega(f)
 \]
 
 \end_inset
@@ -1580,7 +1645,7 @@ is also an Ivanov solution for some
  such that
 \begin_inset Formula 
 \[
-\minimizer{f_{\lambda}}=\argmin_{\substack{f\in\cf}
+\minimizer{f_{\lambda}}\in\argmin_{\substack{f\in\cf}
 }L(f)\mbox{ s.t. }\Omega(f)\le r
 \]
 
@@ -2004,9 +2069,10 @@ relax
 \backslash
 footnotetext{
 \backslash
-tiny{Plot from Hastie, Tibshirani, and Wainwright's Statistical Learning
- with Sparsity, Figure 2.1.
- Data about predicting crime rate in 50 US cities.}}
+tiny{Modified from Hastie, Tibshirani, and Wainwright's 
+\backslash
+emph{Statistical Learning with Sparsity}, Fig 2.1.
+ About predicting crime in 50 US cities.}}
 \end_layout
 
 \end_inset
@@ -2018,33 +2084,13 @@ tiny{Plot from Hastie, Tibshirani, and Wainwright's Statistical Learning
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/L1L2/ridge-regularization-HTW-Fig2.1.png
-	lyxscale 80
-	width 55theight%
+	filename /Users/drosenberg44/Dropbox/repos/mlcourse/Figures/L1L2/ridge-regularization-HTW-Fig2.1-LATEX.png
+	lyxscale 30
+	height 70theight%
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset VSpace -0.7cm
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $\tilde{\beta}$
-\end_inset
-
- is unregularized solution; 
-\begin_inset Formula $\hat{\beta}$
-\end_inset
-
- is the ridge solution.
- (Which side has more regularization?)
+ 
 \end_layout
 
 \end_deeper
@@ -2053,22 +2099,25 @@ tiny{Plot from Hastie, Tibshirani, and Wainwright's Statistical Learning
 status open
 
 \begin_layout Plain Layout
-This plot traces out the paths of coefficients as we vary the amount of
- 
+Do we get lots of regularization with 
+\begin_inset Formula $r$
+\end_inset
+
+ large or 
+\begin_inset Formula $r$
+\end_inset
+
+ small? This plot traces out the paths of coefficients as we vary the amount
+ of 
 \begin_inset Formula $\ell_{2}$
 \end_inset
 
  regularization.
  With no regularization, 
-\begin_inset Formula $\|\hat{\beta}\|_{2}=\|\tilde{\beta}\|_{2}$
+\begin_inset Formula $\|\hat{w}_{\infty}\|_{2}=\|\hat{w}\|_{2}$
 \end_inset
 
 , which corresponds to the right side of the plot.
- With lots of regularization, 
-\begin_inset Formula $\|\hat{\beta}\|$
-\end_inset
-
- is small, which corresponds to the left side of the plot.
  
 \end_layout
 
@@ -2216,8 +2265,10 @@ relax
 \backslash
 footnotetext{
 \backslash
-tiny{Plot from Hastie, Tibshirani, and Wainwright's Statistical Learning
- with Sparsity, Figure 2.1}}
+tiny{Modified from Hastie, Tibshirani, and Wainwright's 
+\backslash
+emph{Statistical Learning with Sparsity}, Fig 2.1.
+ About predicting crime in 50 US cities.}}
 \end_layout
 
 \end_inset
@@ -2229,24 +2280,13 @@ tiny{Plot from Hastie, Tibshirani, and Wainwright's Statistical Learning
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/L1L2/lasso-regularization-HTW-Fig2.1.png
-	lyxscale 80
-	width 55theight%
+	filename /Users/drosenberg44/Dropbox/repos/mlcourse/Figures/L1L2/lasso-regularization-HTW-Fig2.1-LATEX.png
+	lyxscale 30
+	height 70theight%
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $\tilde{\beta}$
-\end_inset
-
- is unregularized solution; 
-\begin_inset Formula $\hat{\beta}$
-\end_inset
-
- is the lasso solution.
 \end_layout
 
 \end_deeper
@@ -2287,8 +2327,10 @@ relax
 \backslash
 footnotetext{
 \backslash
-tiny{Plot from Hastie, Tibshirani, and Wainwright's Statistical Learning
- with Sparsity, Figure 2.1}}
+tiny{Modified from Hastie, Tibshirani, and Wainwright's 
+\backslash
+emph{Statistical Learning with Sparsity}, Fig 2.1.
+ About predicting crime in 50 US cities.}}
 \end_layout
 
 \end_inset
@@ -2300,17 +2342,9 @@ tiny{Plot from Hastie, Tibshirani, and Wainwright's Statistical Learning
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/L1L2/ridge-regularization-HTW-Fig2.1.png
-	lyxscale 80
-	width 60theight%
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/L1L2/lasso-regularization-HTW-Fig2.1.png
-	lyxscale 80
-	width 60theight%
+	filename /Users/drosenberg44/Dropbox/repos/mlcourse/Figures/L1L2/lasso-ridge-paths-side-by-side.png
+	lyxscale 30
+	height 80theight%
 
 \end_inset
 
@@ -2433,7 +2467,7 @@ the Ivanov and Tikhonov formulations are equivalent
 \end_layout
 
 \begin_layout Itemize
-[Homework assignment 3 or 4.]
+[Optional homework problem, upcoming.]
 \end_layout
 
 \end_deeper
@@ -2443,7 +2477,37 @@ We will use whichever form is most convenient.
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Why does Lasso regression give sparse solutions?
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Parameter Space
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Illustrate affine prediction functions in parameter space.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2687,6 +2751,14 @@ tiny{KPM Fig.
 \end_layout
 
 \begin_layout Itemize
+Blue region: Area satisfying complexity constraint: 
+\begin_inset Formula $\left|w_{1}\right|+\left|w_{2}\right|\le r$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
 Red lines: contours of 
 \begin_inset Formula $\hat{R}_{n}(w)=\sum_{i=1}^{n}\left(w^{T}x_{i}-y_{i}\right)^{2}$
 \end_inset
@@ -2695,17 +2767,9 @@ Red lines: contours of
  
 \end_layout
 
-\begin_layout Itemize
-Blue region: Area satisfying complexity constraint: 
-\begin_inset Formula $\left|w_{1}\right|+\left|w_{2}\right|\le r$
-\end_inset
-
-
-\end_layout
-
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2877,7 +2941,7 @@ ellipsoid centered at
 
 \end_deeper
 \begin_layout Itemize
-We'll derive this in homework #2.
+We'll derive this in homework.
 \end_layout
 
 \end_deeper
@@ -2934,20 +2998,20 @@ The Famous Picture for
 \end_layout
 
 \begin_layout Itemize
+Blue region: Area satisfying complexity constraint: 
+\begin_inset Formula $w_{1}^{2}+w_{2}^{2}\le r$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
 Red lines: contours of 
 \begin_inset Formula $\hat{R}_{n}(w)=\sum_{i=1}^{n}\left(w^{T}x_{i}-y_{i}\right)^{2}$
 \end_inset
 
 .
  
-\end_layout
-
-\begin_layout Itemize
-Blue region: Area satisfying complexity constraint: 
-\begin_inset Formula $w_{1}^{2}+w_{2}^{2}\le r$
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -3031,7 +3095,7 @@ href{https://arxiv.org/abs/1411.3230}{Mairal et al.'s Sparse Modeling for Image
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/L1L2/projections-to-L1Ball.png
+	filename ../Figures/L1L2/projections-to-L1Ball.png
 	lyxscale 40
 	height 50theight%
 
@@ -3062,6 +3126,85 @@ Then OLS solution in green or red regions implies
 \end_inset
 
  constrained solution will be at corner
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The 
+\begin_inset Formula $\left(\ell_{q}\right)^{q}$
+\end_inset
+
+ Constraint
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Generalize to 
+\begin_inset Formula $\ell_{q}$
+\end_inset
+
+ : 
+\begin_inset Formula $\left(\|w\|_{q}\right)^{q}=\left|w_{1}\right|^{q}+\left|w_{2}\right|^{q}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Note: 
+\begin_inset Formula $\|w\|_{q}$
+\end_inset
+
+ is a norm if 
+\begin_inset Formula $q\ge1$
+\end_inset
+
+, but not for 
+\begin_inset Formula $q\in\left(0,1\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\cf=\left\{ f(x)=w_{1}x_{1}+w_{2}x_{2}\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Contours of 
+\begin_inset Formula $\|w\|_{q}^{q}=\left|w_{1}\right|^{q}+\left|w_{2}\right|^{q}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename ../Figures/L1L2/LqNormContours.png
+	width 80col%
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
@@ -3119,7 +3262,7 @@ href{https://arxiv.org/abs/1411.3230}{Mairal et al.'s Sparse Modeling for Image
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/L1L2/projections-to-LqBall.png
+	filename ../Figures/L1L2/projections-to-LqBall.png
 	lyxscale 40
 	height 50theight%
 
@@ -3198,7 +3341,7 @@ Why is L1 regularization supposed to lead to sparsity than L2? [sic]
 \begin_inset Quotes erd
 \end_inset
 
-
+ (google it)
 \end_layout
 
 \begin_layout Standard
@@ -3347,7 +3490,7 @@ How to solve the Lasso?
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $\|w\|_{1}$
+\begin_inset Formula $\|w\|_{1}=\left|w_{1}\right|+\left|w_{2}\right|$
 \end_inset
 
  is not differentiable!
@@ -3612,10 +3755,6 @@ The Lasso as a Quadratic Program
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3632,11 +3771,11 @@ We
 \begin_inset Formula $\left|w\right|=w^{+}+w^{-}$
 \end_inset
 
- gives 
+ gives an 
 \series bold
 equivalent
 \series default
- Lasso:
+ problem:
 \begin_inset Formula 
 \begin{align*}
 \min_{w^{+},w^{-}}\quad & \sum_{i=1}^{n}\left(\left(w^{+}-w^{-}\right)^{T}x_{i}-y_{i}\right)^{2}+\lambda1^{T}\left(w^{+}+w^{-}\right)\\
@@ -3709,7 +3848,108 @@ Could plug this into a generic QP solver.
 \end_deeper
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Possible point of confusion
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\series bold
+Equivalent
+\series default
+ to lasso problem:
+\begin_inset Formula 
+\begin{align*}
+\min_{w^{+},w^{-}}\quad & \sum_{i=1}^{n}\left(\left(w^{+}-w^{-}\right)^{T}x_{i}-y_{i}\right)^{2}+\lambda1^{T}\left(w^{+}+w^{-}\right)\\
+\mbox{subject to}\quad & w_{i}^{+}\ge0\mbox{ for all }i\text{\qquad}w_{i}^{-}\ge0\mbox{ for all }i,
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+When we plug this optimization problem into a QP solver,
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+it just sees 
+\begin_inset Formula $2d$
+\end_inset
+
+ variables and 
+\begin_inset Formula $2d$
+\end_inset
+
+ constraints.
+\end_layout
+
+\begin_layout Itemize
+Doesn't wee that we want 
+\begin_inset Formula $w_{i}^{+}$
+\end_inset
+
+ and 
+\begin_inset Formula $w_{i}^{-}$
+\end_inset
+
+ to be positive and negative parts of 
+\begin_inset Formula $w_{i}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Turns out – they will come out that way as a result of the optimization!
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+But to be eliminate confusion, let's start by calling them 
+\begin_inset Formula $a_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $b_{i}$
+\end_inset
+
+ and prove our claim...
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
 \end_inset
 
 
@@ -3868,24 +4108,29 @@ Claim: Don't need constraint
 
 \end_deeper
 \begin_layout Itemize
-If we let 
-\begin_inset Formula $a$
+For any 
+\begin_inset Formula $a,b\ge0$
 \end_inset
 
- and 
-\begin_inset Formula $b$
-\end_inset
-
- vary freely, they'll hit all possible 
-\begin_inset Formula $w$
-\end_inset
-
-'s via 
+, there's some 
 \begin_inset Formula $w=a-b$
 \end_inset
 
 .
- 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+So our constraint set has all 
+\begin_inset Formula $a,b\ge0$
+\end_inset
+
+.
 \end_layout
 
 \end_deeper
@@ -3924,11 +4169,23 @@ So lasso optimization problem is equivalent to
 
 \end_inset
 
+where at the end we take 
+\begin_inset Formula $w^{*}=a^{*}-b^{*}$
+\end_inset
 
-\end_layout
+ (and we've shown above that 
+\begin_inset Formula $a^{*}$
+\end_inset
 
-\begin_layout Standard
-QED
+ and 
+\begin_inset Formula $b^{*}$
+\end_inset
+
+ are positive and negative parts of 
+\begin_inset Formula $w^{*}$
+\end_inset
+
+, respectively.) 
 \end_layout
 
 \end_deeper
@@ -4952,12 +5209,5 @@ Randomly choose a coordinate
 \end_deeper
 \end_deeper
 \end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
-\end_layout
-
 \end_body
 \end_document

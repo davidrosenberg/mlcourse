@@ -9,7 +9,6 @@
 \usetheme{CambridgeUS} 
 \beamertemplatenavigationsymbolsempty
 
-
 \AtBeginSection[]{
   \begin{frame}
   \vfill
@@ -20,8 +19,27 @@
   \vfill
   \end{frame}
 }
+
+
+% Set Color ==============================
+\definecolor{BBGblue}{RGB}{13,157,219}
+\definecolor{BBGgreen}{RGB}{77,170,80}
+
+
+\setbeamercolor{title}{fg=BBGblue}
+%\setbeamercolor{frametitle}{fg=BBGblue}
+\setbeamercolor{frametitle}{fg=BBGblue}
+
+\setbeamercolor{background canvas}{fg=BBGblue, bg=white}
+\setbeamercolor{background}{fg=black, bg=BBGblue}
+
+\setbeamercolor{palette primary}{fg=black, bg=gray!30!white}
+\setbeamercolor{palette secondary}{fg=black, bg=gray!20!white}
+\setbeamercolor{palette tertiary}{fg=black, bg=BBGblue}
+
+\setbeamertemplate{headline}{}
 \end_preamble
-\options handout,aspectratio=169
+\options aspectratio=169,handout
 \use_default_options false
 \maintain_unincluded_children false
 \language english
@@ -67,6 +85,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\boxbgcolor #ff31d8
 \index Index
 \shortcut idx
 \color #008000
@@ -634,6 +653,34 @@ ex}{E}
 
 \begin_layout Standard
 \begin_inset FormulaMacro
+\newcommand{\dom}{\textrm{\textbf{dom} }}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\renewcommand{\rank}{\text{\textbf{rank }}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\conv}{\textrm{\textbf{conv} }}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\relint}{\text{\textbf{relint }}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\aff}{\text{\textbf{aff }}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
 \newcommand{\hil}{\ch}
 \end_inset
 
@@ -656,7 +703,6 @@ Loss Functions for Regression and Classification
 status open
 
 \begin_layout Plain Layout
-DS-GA 1003 
 \begin_inset Note Note
 status open
 
@@ -675,11 +721,16 @@ optional, use only with long paper titles
 \end_layout
 
 \begin_layout Author
-David Rosenberg 
+David S.
+ Rosenberg 
+\end_layout
+
+\begin_layout Date
+October 11, 2017
 \end_layout
 
 \begin_layout Institute
-New York University
+Bloomberg ML EDU
 \end_layout
 
 \begin_layout Standard
@@ -700,32 +751,12 @@ Just in article version
 status open
 
 \begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-let
-\backslash
-thefootnote
-\backslash
-relax
-\backslash
-footnotetext{
-\backslash
-tiny{Plots courtesy of Ningshan Zhang.}}
+note here
 \end_layout
 
 \end_inset
 
-
-\end_layout
-
-\end_inset
-
-
+ 
 \end_layout
 
 \begin_layout Standard
@@ -763,8 +794,116 @@ ml and Psuedo-huber
 
 \end_layout
 
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout FrameTitle
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+presentation
+\end_layout
+
+\end_inset
+
+Contents
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \begin_layout Section
 Regression Loss Functions
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Regression Notation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Regression spaces:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Input space 
+\begin_inset Formula $\cx=\reals^{d}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Action space 
+\begin_inset Formula $\ca=\reals$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Outcome space 
+\begin_inset Formula $\cy=\reals$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Since 
+\begin_inset Formula $\ca=\cy$
+\end_inset
+
+, we can use more traditional notation:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\hat{y}$
+\end_inset
+
+ is the predicted value (the action)
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $y$
+\end_inset
+
+ is the actual observed value (the outcome)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
 \end_layout
 
 \begin_layout Frame
@@ -813,10 +952,20 @@ residual
 .
 \end_layout
 
+\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
+\begin_layout Itemize
+what you have to add to your prediction to get the right answer
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
 \begin_layout Itemize
 Loss 
 \begin_inset Formula $\ell(\hat{y},y)$
@@ -913,13 +1062,15 @@ When might you not want to use a translation-invariant loss?
 \end_layout
 
 \begin_layout Itemize
-e.g.
- Sometimes relative error is a more natural loss (but not translation-invariant)
+Sometimes relative error 
+\begin_inset Formula $\frac{\hat{y}-y}{y}$
+\end_inset
+
+ is a more natural loss (but not translation-invariant)
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-:
 \begin_inset Formula 
 \begin{eqnarray*}
 \frac{\hat{y}-y}{y} & = & \hat{\frac{y}{y}}-1\\
@@ -927,11 +1078,7 @@ status open
 
 \end_inset
 
-If we transform 
-\begin_inset Formula $y\mapsto$
-\end_inset
-
-
+If we change our desired output to 
 \begin_inset Formula $\log y$
 \end_inset
 
@@ -967,6 +1114,12 @@ and
 
 \end_layout
 
+\begin_layout Plain Layout
+But what happens if we do log transform and then square error? So how does
+ this compare to square loss on the logarithms, which seems like the quick
+ and dirty thing to do?
+\end_layout
+
 \end_inset
 
 
@@ -985,12 +1138,6 @@ Often you can transform response
  log transform)
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-See homework or concept check questions.
-\end_layout
-
-\end_deeper
 \begin_layout Standard
 \begin_inset Note Note
 status open
@@ -1026,25 +1173,11 @@ Some Losses for Regression
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
-\begin_inset ERT
-status open
+\begin_layout Itemize
 
-\begin_layout Plain Layout
-
-
-\backslash
-let
-\backslash
-thefootnote
-\backslash
-relax
-\backslash
-footnotetext{
-\backslash
-tiny{KPM Figure 7.6}}
-\end_layout
-
+\series bold
+Residual: 
+\begin_inset Formula $r=y-\hat{y}$
 \end_inset
 
 
@@ -1097,6 +1230,7 @@ Laplace
 
 \end_layout
 
+\end_deeper
 \begin_layout Description
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="4">
@@ -1320,7 +1454,6 @@ Laplace
 \end_layout
 
 \end_deeper
-\end_deeper
 \begin_layout Itemize
 Outliers typically have large residuals.
 \end_layout
@@ -1519,7 +1652,7 @@ robust and differentiable
 \align center
 \begin_inset Graphics
 	filename ../Figures/loss-functions/fig7.6b.pdf
-	height 35theight%
+	height 40theight%
 
 \end_inset
 
@@ -1645,8 +1778,8 @@ real-valued predictions
 :
 \begin_inset Formula 
 \begin{align*}
-f>0\;\implies & \mbox{Predict }1\\
-f<0\;\implies & \mbox{Predict }-1
+f(x)>0\;\implies & \mbox{Predict }1\\
+f(x)<0\;\implies & \mbox{Predict }-1
 \end{align*}
 
 \end_inset
@@ -1681,7 +1814,7 @@ Action space
 \begin_inset Formula $\ca=\reals\qquad$
 \end_inset
 
-Output space 
+ Output space 
 \begin_inset Formula $\cy=\left\{ -1,1\right\} $
 \end_inset
 
@@ -1816,15 +1949,66 @@ The margin often looks like
  is our score function.
 \end_layout
 
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
 \begin_layout Itemize
 The margin is a measure of how 
 \series bold
 correct
 \series default
  we are.
- 
 \end_layout
 
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+If 
+\begin_inset Formula $y$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{y}$
+\end_inset
+
+ are the same sign, prediction is 
+\series bold
+correct
+\series default
+ and margin is 
+\series bold
+positive
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+If 
+\begin_inset Formula $y$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{y}$
+\end_inset
+
+ have different sign, prediction is 
+\series bold
+incorrect
+\series default
+ and margin is 
+\series bold
+negative
+\series default
+.
+\end_layout
+
+\end_deeper
 \begin_layout Pause
 
 \end_layout
@@ -1837,10 +2021,28 @@ maximize the margin
 .
 \end_layout
 
-\begin_layout Pause
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
 
 \end_layout
 
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Margin-Based Losses
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Itemize
 Most classification losses depend only on the margin.
 \end_layout
@@ -1857,12 +2059,12 @@ margin-based loss
 
 \end_layout
 
-\begin_layout Standard
-(In Lab, we will discuss a related concept called the 
+\begin_layout Itemize
+There is a related concept, the 
 \series bold
 geometric margin
 \series default
-.)
+, in the notes on hard-margin SVM.)
 \end_layout
 
 \end_deeper
@@ -1878,7 +2080,11 @@ geometric margin
 status open
 
 \begin_layout Plain Layout
-The Classification Problem: Real-Valued Predictions
+Classification Losses: 
+\begin_inset Formula $0-1$
+\end_inset
+
+ Loss
 \end_layout
 
 \end_inset
@@ -2209,6 +2415,23 @@ margin
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Looking at the x-axis, anything to the right of 
+\begin_inset Formula $0$
+\end_inset
+
+ and we're classifying correctly.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator parbreak
@@ -2294,6 +2517,22 @@ margin error
 \end_layout
 
 \end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Note that we're penalizing for small margin (<1), even if we're getting
+ the prediction correct.
+ We hope that will put a little robustness into the system.
+ Question: What happens with hinge loss without any regularization?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset Separator parbreak
 \end_inset
@@ -2453,7 +2692,7 @@ Turns out, can write this in terms of margin
 :
 \begin_inset Formula 
 \begin{eqnarray*}
-\ell(f(x),y) & = & \left(f(x)-y\right)^{2}=\left(1-m\right)^{2}
+\ell(f(x),y) & = & \left(f(x)-y\right)^{2}=\left(1-f(x)y\right)^{2}=\left(1-m\right)^{2}
 \end{eqnarray*}
 
 \end_inset
@@ -2512,11 +2751,12 @@ What About Square Loss for Classification?
 \end_layout
 
 \begin_layout Standard
-Heavily penalizes outliers.
+Heavily penalizes outliers (e.g.
+ mislabeled examples).
 \end_layout
 
 \begin_layout Standard
-Seems to have higher sample complexity (i.e.
+May have higher sample complexity (i.e.
  needs more data) than hinge & logistic
 \begin_inset Foot
 status open
@@ -2554,6 +2794,20 @@ http://web.mit.edu/lrosasco/www/publications/loss.pdf
 
 \end_deeper
 \begin_layout Frame
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+How could we end up with a very large negative margin? Corresponds to the
+ classifier being very confident (i.e.
+ large score), but incorrect.
+ It could legitimately be incorrect, or it could be a mislabeled example.
+ If we think there's some probability of it being mislabeled, then we don't
+ want the objective function to be very influenced by this example...
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
@@ -2561,9 +2815,19 @@ http://web.mit.edu/lrosasco/www/publications/loss.pdf
 \begin_inset Note Note
 status open
 
-\begin_layout Separator
+\begin_layout Plain Layout
+If you extend margin far to the left, square loss completely dominates.
+ Logistic and hinge look almost exactly the same.
+\end_layout
+
+\end_inset
+
 
 \end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
 
 \begin_layout Frame
 \begin_inset Argument 4
@@ -2628,10 +2892,6 @@ until stopping criteria met
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
-
-\end_layout
-
 \begin_layout Frame
 \begin_inset Argument 4
 status open
@@ -2708,10 +2968,6 @@ subgradient descent
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
-
-\end_layout
-
 \begin_layout Frame
 \begin_inset Argument 4
 status open
@@ -2827,10 +3083,6 @@ sparse
 \end_layout
 
 \end_deeper
-\begin_layout Separator
-
-\end_layout
-
 \end_inset
 
 

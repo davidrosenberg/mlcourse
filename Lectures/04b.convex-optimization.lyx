@@ -9,7 +9,6 @@
 \usetheme{CambridgeUS} 
 \beamertemplatenavigationsymbolsempty
 
-
 \AtBeginSection[]{
   \begin{frame}
   \vfill
@@ -20,8 +19,27 @@
   \vfill
   \end{frame}
 }
+
+
+% Set Color ==============================
+\definecolor{BBGblue}{RGB}{13,157,219}
+\definecolor{BBGgreen}{RGB}{77,170,80}
+
+
+\setbeamercolor{title}{fg=BBGblue}
+%\setbeamercolor{frametitle}{fg=BBGblue}
+\setbeamercolor{frametitle}{fg=BBGblue}
+
+\setbeamercolor{background canvas}{fg=BBGblue, bg=white}
+\setbeamercolor{background}{fg=black, bg=BBGblue}
+
+\setbeamercolor{palette primary}{fg=black, bg=gray!30!white}
+\setbeamercolor{palette secondary}{fg=black, bg=gray!20!white}
+\setbeamercolor{palette tertiary}{fg=black, bg=BBGblue}
+
+\setbeamertemplate{headline}{}
 \end_preamble
-\options handout,aspectratio=169
+\options aspectratio=169,handout
 \use_default_options false
 \maintain_unincluded_children false
 \language english
@@ -76,6 +94,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\boxbgcolor #ff31d8
 \index Index
 \shortcut idx
 \color #008000
@@ -693,7 +712,6 @@ Lagrangian Duality and Convex Optimization
 status open
 
 \begin_layout Plain Layout
-DS-GA 1003 
 \begin_inset Note Note
 status open
 
@@ -712,11 +730,29 @@ optional, use only with long paper titles
 \end_layout
 
 \begin_layout Author
-David Rosenberg 
+David S.
+ Rosenberg 
+\end_layout
+
+\begin_layout Date
+October 11, 2017
 \end_layout
 
 \begin_layout Institute
-New York University
+Bloomberg ML EDU
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex ArticleMode
+status open
+
+\begin_layout Plain Layout
+Just in article version
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -724,27 +760,7 @@ New York University
 status open
 
 \begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-let
-\backslash
-thefootnote
-\backslash
-relax
-\backslash
-footnotetext{
-\backslash
-tiny{Plots courtesy of Ningshan Zhang.}}
-\end_layout
-
-\end_inset
-
-
+note here
 \end_layout
 
 \end_inset
@@ -868,11 +884,13 @@ stochatic methods
 \end_layout
 
 \end_deeper
+\end_deeper
 \begin_layout Itemize
-now nobody's scared to try convex optimization machinery on non-convex problems
+These days, nobody's scared of non-convex problems - SGD seems to work well
+ enough on problems of interest (i.e.
+ neural networks).
 \end_layout
 
-\end_deeper
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator parbreak
@@ -920,7 +938,7 @@ target "https://davidrosenberg.github.io/mlcourse/Notes/convex-optimization.pdf"
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../Figures/convex-optimization/bv_cvxbook_cover.jpg
+	filename ../../../../AeroFS/repos/ml101/mlcourse/Figures/convex-optimization/bv_cvxbook_cover.jpg
 	lyxscale 40
 	height 60theight%
 
@@ -1088,7 +1106,7 @@ convex
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../Figures/convex-optimization/fig7.4a.pdf
+	filename ../../../../AeroFS/repos/ml101/mlcourse/Figures/convex-optimization/fig7.4a.pdf
 	lyxscale 30
 	height 45theight%
 
@@ -1096,7 +1114,7 @@ convex
 
 
 \begin_inset Graphics
-	filename ../Figures/convex-optimization/fig7.4b.pdf
+	filename ../../../../AeroFS/repos/ml101/mlcourse/Figures/convex-optimization/fig7.4b.pdf
 	lyxscale 30
 	height 45theight%
 
@@ -1184,7 +1202,7 @@ f(\theta x+(1-\theta)y)\le\theta f(x)+(1-\theta)f(y).
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../Figures/convex-optimization/fig7.5a.pdf
+	filename ../../../../AeroFS/repos/ml101/mlcourse/Figures/convex-optimization/fig7.5a.pdf
 	lyxscale 50
 	height 45theight%
 
@@ -1192,7 +1210,7 @@ f(\theta x+(1-\theta)y)\le\theta f(x)+(1-\theta)f(y).
 
 
 \begin_inset Graphics
-	filename ../Figures/convex-optimization/fig7.5b.pdf
+	filename ../../../../AeroFS/repos/ml101/mlcourse/Figures/convex-optimization/fig7.5b.pdf
 	lyxscale 50
 	height 45theight%
 
@@ -1942,6 +1960,12 @@ A point
 feasible point.
 \end_layout
 
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
 \begin_layout Itemize
 If 
 \begin_inset Formula $x$
@@ -2373,7 +2397,7 @@ weak duality
 \begin_inset Formula $p^{*}\ge d^{*}$
 \end_inset
 
- for any optimization problem
+ for any optimization problem.
 \end_layout
 
 \end_deeper
@@ -2445,7 +2469,11 @@ any
 \end_layout
 
 \end_deeper
-\begin_layout Proof
+\begin_layout Standard
+
+\series bold
+Proof: 
+\series default
 For any 
 \begin_inset Formula $w_{0}\in W$
 \end_inset
@@ -2465,13 +2493,11 @@ For any
 
 \end_layout
 
-\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
-\begin_layout Proof
+\begin_layout Standard
 Since 
 \begin_inset Formula $\inf_{w\in W}f(w,z_{0})\le\sup_{z\in Z}f(w_{0},z)$
 \end_inset
@@ -2571,11 +2597,136 @@ strong duality
 \end_inset
 
 .
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Weak Min-Max Example
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $f:\text{RowIndex}\times\text{ColumnIndex}\to\reals\qquad f:\left(r,c\right)\mapsto\reals$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Represent 
+\begin_inset Formula $f$
+\end_inset
+
+ as matrix
+\begin_inset Formula 
+\[
+\begin{array}{ccccc}
+-100 & 8 & 3 & 2\\
+0 & 1 & 4 & -300\\
+5 & -200 & 1 & 1\\
+0 & 0 & -300 & 9\\
+\\
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+What's the relationship between 
+\begin_inset Formula 
+\[
+\min_{c}\max_{r}f(r,c)\qquad\text{and}\qquad\max_{r}\min_{c}f(r,c)?
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Weak Min-Max Examples
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Put in column maxima and row minima:
+\begin_inset Formula 
+\[
+\begin{array}{cccc|c}
+-100 & 8 & 3 & 2 & -100\\
+0 & 1 & 4 & -300 & -300\\
+5 & -200 & 1 & 1 & -200\\
+0 & 0 & -300 & 9 & -300\\
+\hline 5 & 8 & 4 & 9
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Easy to see that 
+\begin_inset Formula $\min_{c}\max_{r}f(r,c)\ge\max_{r}\min_{c}f(r,c)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\end_inset
+
+
 \end_layout
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -3095,7 +3246,8 @@ tiny{Example from Laurent El Ghaoui's EE 227A: Lecture 8 Notes, Feb 9, 2012}}
 
 \end_inset
 
-For example:
+e.g.
+ Convex problem without strong duality:
 \begin_inset Formula 
 \begin{eqnarray*}
 \textrm{minimize} &  & e^{-x}\\
@@ -3193,7 +3345,7 @@ status open
 \begin_deeper
 \begin_layout Standard
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Pause
 
@@ -3271,7 +3423,11 @@ For any affine inequality constraints,
 \end_deeper
 \end_deeper
 \begin_layout Itemize
-Otherwise, see notes or BV Section 5.2.3, p.
+If 
+\begin_inset Formula $\cd$
+\end_inset
+
+ not open, see notes or BV Section 5.2.3, p.
  226.
  
 \end_layout
@@ -3485,8 +3641,22 @@ complementary slackness
  
 \end_layout
 
-\end_deeper
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+noted out the following slides because I no longer remember why we need
+ them, or even understand the last slide - seems buggy
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset Separator plain
 \end_inset
 
@@ -3540,7 +3710,7 @@ p^{*}=d^{*}=f_{0}(x^{*})=g(\lambda^{*})=L(x^{*},\lambda^{*})
 and we have complementary slackness
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Formula 
 \[
 \lambda_{i}^{*}f_{i}(x^{*})=0,\quad i=1,\ldots,m.
@@ -3584,7 +3754,7 @@ If
 \end_layout
 
 \end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Separator plain
 \end_inset
 
@@ -3693,7 +3863,7 @@ Only complementary slackness is not obvious.
 \end_layout
 
 \end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Separator plain
 \end_inset
 
@@ -3714,7 +3884,7 @@ KKT Sufficient Conditions for Convex, Differentiable Problems
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 Suppose
 \end_layout
 
@@ -3736,7 +3906,7 @@ Suppose
  satisfy the KKT conditions
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Then we have strong duality and 
 \begin_inset Formula $(\tilde{x},\tilde{\lambda})$
 \end_inset
@@ -3773,6 +3943,12 @@ But
 
 So 
 \begin_inset Formula $g(\tilde{\lambda})=\sup_{\lambda\succeq0}g(\lambda)=\inf_{x}f_{0}(x)=f_{0}(\tilde{x})$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \end_inset
 
 

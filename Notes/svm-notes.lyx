@@ -592,7 +592,7 @@ SVM loss function
 hinge loss
 \series default
 .
- The hinge loss is a margin loss defined as 
+ The hinge loss is a margin-based loss defined as 
 \begin_inset Formula $\ell(m)=\left(1-m\right)_{+}$
 \end_inset
 

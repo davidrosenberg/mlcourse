@@ -14,7 +14,9 @@
   \vfill
   \centering
   \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
-    \usebeamerfont{title}\insertsectionhead\par%
+    \usebeamerfont{title}%
+    \hypersetup{hidelinks}%
+    \insertsectionhead\par%
   \end{beamercolorbox}
   \vfill
   \end{frame}
@@ -121,7 +123,7 @@
 \newcommand{\reals}{\mathbf{R}}
 \end_inset
 
- 
+ conv
 \begin_inset FormulaMacro
 \newcommand{\integers}{\mathbf{Z}}
 \end_inset
@@ -3182,7 +3184,7 @@ where
 status open
 
 \begin_layout Plain Layout
-If we had equality constraints here, they would affine constraints, because
+If we had equality constraints here, they would be affine constraints, because
  we should actually be able to replace the equality constraint with two
  inequality constraints, one in each direction, but unless we have an affine
  function, we can't have the function and its negative both be convex.

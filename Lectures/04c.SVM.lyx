@@ -860,7 +860,7 @@ Most classification losses depend only on the margin.
 \series bold
 geometric margin
 \series default
- from lab.)
+.)
 \end_layout
 
 \end_deeper

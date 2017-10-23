@@ -1925,7 +1925,7 @@ Convex Function
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/subgradient-methods/3d-plot-convex-fn.png
+	filename ../Figures/subgradient-methods/3d-plot-convex-fn.png
 	lyxscale 30
 	height 65theight%
 
@@ -1984,7 +1984,7 @@ Contour Plot Convex Function: Sublevel Set
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/subgradient-methods/contour-plot-convex-fn.png
+	filename ../Figures/subgradient-methods/contour-plot-convex-fn.png
 	lyxscale 30
 	height 65theight%
 
@@ -2051,7 +2051,7 @@ Nonconvex Function
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/subgradient-methods/3d-plot-nonconvex-fn.png
+	filename ../Figures/subgradient-methods/3d-plot-nonconvex-fn.png
 	lyxscale 30
 	height 70theight%
 
@@ -2106,7 +2106,7 @@ Contour Plot Nonconvex Function: Sublevel Set
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/subgradient-methods/contour-plot-nonconvex-fn.png
+	filename ../Figures/subgradient-methods/contour-plot-nonconvex-fn.png
 	lyxscale 30
 	height 65theight%
 
@@ -2173,7 +2173,7 @@ Fact: Intersection of Convex Sets is Convex
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/subgradient-methods/convex-set-intersection.png
+	filename ../Figures/subgradient-methods/convex-set-intersection.png
 	lyxscale 30
 	height 65theight%
 
@@ -2232,19 +2232,9 @@ Level and Superlevel Sets
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/subgradient-methods/superlevel-sets.png
+	filename ../Figures/subgradient-methods/superlevel-sets.png
 	lyxscale 30
 	height 65theight%
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Bug in plot – should be f(x)=-1
-\end_layout
 
 \end_inset
 
@@ -3393,7 +3383,7 @@ Underestimating Hyperplane to
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/subgradient-methods/underestimating-3d-plot-abs-x1-plus-2absx2.png
+	filename ../Figures/subgradient-methods/underestimating-3d-plot-abs-x1-plus-2absx2.png
 	lyxscale 30
 	height 75theight%
 
@@ -3448,7 +3438,7 @@ Subdifferential on Contour Plot
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/subgradient-methods/subdiff-contour-plot-abs-x1-plus-2absx2.png
+	filename ../Figures/subgradient-methods/subdiff-contour-plot-abs-x1-plus-2absx2.png
 	lyxscale 30
 	height 75theight%
 
@@ -3650,7 +3640,7 @@ Gradient orthogonal to sublevel sets
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/subgradient-methods/grad-orthog-to-sublevel-sets.png
+	filename ../Figures/subgradient-methods/grad-orthog-to-sublevel-sets.png
 	lyxscale 30
 	height 75theight%
 
@@ -3781,7 +3771,7 @@ For any
 \end_inset
 
 , we have 
-\begin_inset Formula $f(y)\ge f(x)+g^{T}(y-x)\pause$
+\begin_inset Formula $f(y)\ge f(x_{0})+g^{T}(y-x_{0})\pause$
 \end_inset
 
 .
@@ -3817,7 +3807,7 @@ If
 
 \begin_layout Itemize
 then 
-\begin_inset Formula $g^{T}\left(y-x\right)>0$
+\begin_inset Formula $g^{T}\left(y-x_{0}\right)>0$
 \end_inset
 
 .
@@ -3831,7 +3821,7 @@ then
 \end_deeper
 \begin_layout Itemize
 So 
-\begin_inset Formula $f(y)>f(x)$
+\begin_inset Formula $f(y)>f(x_{0})$
 \end_inset
 
 .
@@ -3914,7 +3904,7 @@ Subgradient of
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/subgradient-methods/contour-plot-abs-x1-plus-2absx2.png
+	filename ../Figures/subgradient-methods/contour-plot-abs-x1-plus-2absx2.png
 	lyxscale 30
 	height 75theight%
 
@@ -3973,9 +3963,30 @@ Subgradient of
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/subgradient-methods/contour-plot-abs-x1-plus-2absx2.png
+	filename ../Figures/subgradient-methods/contour-plot-abs-x1-plus-2absx2.png
 	lyxscale 20
-	height 55theight%
+	height 40theight%
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Plot courtesy of Brett Bernstein.}}
+\end_layout
 
 \end_inset
 
@@ -4046,31 +4057,6 @@ not
 \end_layout
 
 \end_deeper
-\begin_layout Standard
-\align center
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-let
-\backslash
-thefootnote
-\backslash
-relax
-\backslash
-footnotetext{
-\backslash
-tiny{Plot courtesy of Brett Bernstein.}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 Subgradient Descent
 \end_layout

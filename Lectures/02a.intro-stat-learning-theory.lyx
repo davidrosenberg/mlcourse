@@ -2934,7 +2934,7 @@ spaces:
 risk is misclassification error rate 
 \begin_inset Formula 
 \begin{eqnarray*}
-R(f) & = & \ex\left[\ind{f(x)\neq y}\right]\pause\quad=0\cdot\pr\left(f(x)=y\right)+1\cdot\pr\left(f(x\neq y\right)\\
+R(f) & = & \ex\left[\ind{f(x)\neq y}\right]\pause\quad=0\cdot\pr\left(f(x)=y\right)+1\cdot\pr\left(f(x)\neq y\right)\\
 \pause & = & \pr\left(f(x)\neq y\right)
 \end{eqnarray*}
 

@@ -864,7 +864,7 @@ Linearity:
 \end_layout
 
 \begin_layout Itemize
-Postive-definiteness: 
+Positive-definiteness: 
 \begin_inset Formula $\left\langle x,x\right\rangle \ge0$
 \end_inset
 

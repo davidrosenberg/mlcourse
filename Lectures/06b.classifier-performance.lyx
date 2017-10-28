@@ -3361,8 +3361,11 @@ The
 \series bold
 precision
 \series default
- is the accuracy of the positive predictions: TP / (TP + FN) = 100/200 =
- 50%.
+ is the accuracy of the 
+\begin_inset Formula $+$
+\end_inset
+
+ predictions: TP / (TP + FP) = 100/200 = 50%.
 \end_layout
 
 \begin_deeper

@@ -3,7 +3,7 @@
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin unavailable
+\origin /Users/drosen/Dropbox/repos/mlcourse/Lectures/
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -1906,7 +1906,7 @@ How does
 \begin_inset Formula $\ell_{2}$
 \end_inset
 
- penalty induce 
+ regularization induce 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1924,40 +1924,45 @@ regularity
 
 \begin_deeper
 \begin_layout Itemize
-Let 
+For 
 \begin_inset Formula $\hat{f}(x)=\hat{w}^{T}x$
 \end_inset
 
- be a solution to the Ivanov form of ridge regression:
-\begin_inset Formula 
-\[
-\hat{w}=\argmin_{\|w\|_{2}^{2}\le r^{2}}\frac{1}{n}\sum_{i=1}^{n}\left\{ w^{T}x_{i}-y_{i}\right\} ^{2}.
-\]
-
-\end_inset
-
- 
+, 
 \end_layout
 
+\begin_deeper
 \begin_layout Itemize
-Suppose 
+\begin_inset Formula $\hat{f}$
+\end_inset
+
+ is 
+\series bold
+Lipschitz continuous 
+\series default
+with Lipschitz constant 
+\begin_inset Formula $\|\hat{w}\|_{2}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+That is, when moving from 
 \begin_inset Formula $x$
 \end_inset
 
- and 
-\begin_inset Formula $x'$
+ to 
+\begin_inset Formula $x+h$
 \end_inset
 
- are 
-\begin_inset Quotes eld
+, 
+\begin_inset Formula $\hat{f}$
 \end_inset
 
-close
-\begin_inset Quotes erd
-\end_inset
-
- — that is, 
-\begin_inset Formula $\|x-x'\|_{2}<\eps$
+ changes no more than 
+\begin_inset Formula $\|\hat{w}\|_{2}\|h\|$
 \end_inset
 
 .
@@ -1969,48 +1974,34 @@ close
 \end_layout
 
 \begin_layout Itemize
-Then 
-\begin_inset Formula $\hat{f}(x)$
+So 
+\begin_inset Formula $\ell_{2}$
 \end_inset
 
- and 
-\begin_inset Formula $\hat{f}(x')$
+ regularization controls the maximum rate of change of 
+\begin_inset Formula $\hat{f}$
 \end_inset
 
- are also 
-\begin_inset Quotes eld
-\end_inset
+.
+\end_layout
 
-close
-\begin_inset Quotes erd
-\end_inset
+\begin_layout Pause
 
- if 
-\begin_inset Formula $\|\hat{w}\|_{2}\le r$
-\end_inset
+\end_layout
 
- is small:
+\begin_layout Itemize
+Proof:
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
 \begin{eqnarray*}
-\left|\hat{f}(x)-\hat{f}(x')\right| & = & |\hat{w}^{T}x-\hat{w}^{T}x'|=\pause\left|\hat{w}^{T}\left(x-x'\right)\right|\\
-\pause & \le & \|\hat{w}\|_{2}\|x-x'\|_{2}\text{\pause(Cauchy-Schwarz inequality)}\pause
+\left|\hat{f}(x+h)-\hat{f}(x)\right| & = & |\hat{w}^{T}\left(x+h\right)-\hat{w}^{T}x|=\pause\left|\hat{w}^{T}h\right|\\
+\pause & \le & \|\hat{w}\|_{2}\|h\|_{2}\text{\pause(Cauchy-Schwarz inequality)}
 \end{eqnarray*}
 
 \end_inset
 
- 
-\begin_inset Formula $\hat{f}$
-\end_inset
-
- is 
-\series bold
-Lipschitz continuous 
-\series default
-with a Lipschitz constant 
-\begin_inset Formula $\|\hat{w}\|_{2}\le r$
-\end_inset
-
-.
  
 \begin_inset Note Note
 status open

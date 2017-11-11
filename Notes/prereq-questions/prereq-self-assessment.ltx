@@ -1,0 +1,203 @@
+\documentclass[addpoints]{exam}
+\usepackage[utf8]{inputenc}
+\input{macros.tex}
+
+% \printanswers
+
+% Uses boxes instead of circles for multiple choice
+\checkboxchar{$\Box$}
+\checkedchar{$\blacksquare$}
+
+% True/False
+\newcommand{\tf}[1][{}]{%
+  \fillin[#1][0.25in]%
+}
+
+
+\begin{document}
+\pagestyle{foot}
+\footer{}{Page \thepage\ of \numpages}{}
+
+\begin{center}
+  {\LARGE DSGA-1003 Machine Learning and Computational Statistics}\\
+  {\LARGE Prerequisite Questionnaire}
+
+\end{center}
+
+
+% Here, the questions begin
+\section{Doing Data Science in Python}
+\begin{questions}
+
+  \question Rate your comfort level with Python:
+  \begin{checkboxes}
+    \choice Expert - I could (or do) get paid for it.
+    \choice Good enough to get the job done.
+    \choice Mmmm... Haven't used it much, but you know one language, you know them all, right?
+    \choice Weird - why are you asking about snakes?
+  \end{checkboxes}  
+
+  \question Rate your comfort level with numpy (http://www.numpy.org/):
+  \begin{checkboxes}
+    \choice I'm pretty proficient in numpy. 
+    \choice Not so much, but I'm good at matrix/vector stuff in matlab (or
+    something else), and I'm very comfortable with vectorizing mathematical calculations.
+    \choice Can't wait to learn!
+    \choice Not super-excited about programming learning algorithms from scratch -- hasn't somebody else already solved that problem for us?
+  \end{checkboxes}
+
+  \question Rate your fluency in data visualization in Python (e.g.
+  matplotlib, bqplot, etc.)
+  \begin{checkboxes}
+    \choice I make great plots.
+    \choice With enough googling, I can get the job done.
+    \choice I prefer to look at the data numerically, preferably in hex.  ASCII art now and then, but strictly ironically. 
+  \end{checkboxes}
+
+
+  \section{Relevant Coursework}
+  \question Which of the following math courses have you taken (i.e. Things that you presumably knew at one point, and could potentially remember with some review):
+  \begin{checkboxes}
+    \choice Linear algebra (matrix algebra, vector spaces, orthogonal matrices, eigenvalues, projections, span)
+    \choice Linear algebra with proofs
+    \choice  Real analysis 
+    \choice Probability theory (e.g. conditional expectations, law of large numbers, central limit theorem)
+    \choice Statistics (bias, variance, confidence intervals, basic parametric probability distributions)
+    \choice Multivariate [differential] calculus (gradients, Jacobians, chain rule)
+  \end{checkboxes}
+\newpage
+
+  \question Which of the following topics are you already familiar with from
+  machine learning (they are important machine learning topics that you are
+  assumed to know already for this course):
+  \begin{checkboxes}
+    \choice Supervised learning framework
+    \choice Cross-validation
+    \choice Overfitting
+    \choice Sample bias
+    \choice Precision/recall, AUC, ROC curves, confusion matrices
+  \end{checkboxes}
+
+  \question Other relevant coursework or comments on coursework:
+  \begin{solutionorbox}[4in]
+  \end{solutionorbox}
+
+  \section{Current Knowledge}
+  \question When you hear or see the following, what do you think?  (Not whether
+  you already know what's written, but whether you're comfortable with the
+  notation and/or language.)
+  \begin {quote}Let $S$ be the subspace
+    spanned by the orthonormal vectors $a$ and $b$. Let $p$ be the
+    projection of the vector $v$ into $S$. Let $r=v-p$ be the residual
+    vector. Then $r\perp S$ and $\left\{ r,a,b\right\} $ form an orthonormal
+    set.
+  \end{quote}
+  \begin{checkboxes}
+    \choice You're speaking my language - totally comfortable.
+    \choice Familiar, but rusty.  I'll be ready to go by the start of class.
+    \choice Never properly learned this.  I need to get up to speed.
+    \choice Wait, this is what I signed up for? 
+  \end{checkboxes}
+\newpage
+
+  \question When you hear or see the following, what do you think?  (Not whether
+  you already know what's written, but whether you're comfortable with the
+  notation and/or language.)
+  \begin {quote}Given some data $\left(x_{1},y_{1}\right),\ldots,\left(x_{n},y_{n}\right)\in\reals^{d}\times\reals$,
+    the ridge regression solution for regularization parameter $\lambda>0$
+    is given by
+    \[
+      \hat{w}=\argmin_{w\in\reals^{d}}\frac{1}{n}\sum_{i=1}^{n}\left\{ w^{T}x_{i}-y_{i}\right\} ^{2}+\lambda\|w\|_{2}^{2},
+    \]
+    where $\|w\|_{2}^{2}=w_{1}^{2}+\cdots+w_{d}^{2}$ is the square of
+    the $\ell_{2}$-norm of $w$.
+  \end{quote}
+  \begin{checkboxes}
+    \choice You're speaking my language - totally comfortable.
+    \choice Familiar, but rusty.  I'll be ready to go by the start of class.
+    \choice Never properly learned this.  I need to get up to speed.
+    \choice Wait, this is what I signed up for? 
+  \end{checkboxes}
+
+  \question When you hear or see the following, what do you think?  (Not whether
+  you already know what's written, but whether you're comfortable with the
+  notation and/or language.):
+  \begin {quote}For ``loss'' function $\ell:\cy\times\cy\to\reals$,
+    define the ``risk'' of a function $f:\cx\to\cy$ by 
+    \[
+      R(f)=\ex\ell\left(f(x),y\right),
+    \]
+    where the expectation is over $(x,y)\sim P_{\cx\times\cy}$, a distribution
+    over $\cx\times\cy$.
+  \end{quote}
+  \begin{checkboxes}
+    \choice You're speaking my language - totally comfortable.
+    \choice Familiar, but rusty.  I'll be ready to go by the start of class.
+    \choice Never properly learned this.  I need to get up to speed.
+    \choice Wait, this is what I signed up for? 
+  \end{checkboxes}
+
+  \question When you hear or see the following, what do you think?  (Not whether
+  you already know what's written, but whether you're comfortable with the
+  notation and/or language.):
+  \begin {quote}If we fix a direction $u\in\reals^{d}$,
+    we can compute the directional derivative $f'(x;u)$ as
+    \[
+      f'(x;u)=\lim_{h\to0}\frac{f(x+hu)-f(x)}{h}.
+    \]\end{quote}
+  \begin{checkboxes}
+    \choice You're speaking my language - totally comfortable.
+    \choice Familiar, but rusty.  I'll be ready to go by the start of class.
+    \choice Never properly learned this.  I need to get up to speed.
+    \choice Wait, this is what I signed up for? 
+  \end{checkboxes}
+
+\newpage
+
+  \question How comfortable are you answering the following question:
+  \begin {quote}Verify, just by multiplying out the expressions on the RHS, that
+    the following ``completing the square'' identity is true: For any vectors
+    $x,b\in\reals^{d}$ and symmetric invertible matrix $M\in\reals^{d\times d}$,
+    we have
+    \begin{eqnarray}
+      x^{T}Mx-2b^{T}x & = & \left(x-M^{-1}b\right)^{T}M(x-M^{-1}b)-b^{T}M^{-1}b\label{eq:second-quad-form}
+    \end{eqnarray}
+  \end{quote}
+  \begin{checkboxes}
+    \choice So easy. If I had a whiteboard here, I'd do it for you right now.
+    \choice Yeah - easy.  I'll have the answer to you in 5 minutes -- I just have to check something on Google first.  
+    \choice Hmmmm. This will be easy by the first day of class.
+    \choice :( 
+  \end{checkboxes}
+
+  \question How comfortable are you answering the following question: 
+  \begin {quote}Take the gradient of the following w.r.t. $w$:
+    \[
+      L(w,b,\xi,\alpha,\lambda)=\frac{1}{2}||w||^{2}+\frac{c}{n}\sum_{i=1}^{n}\xi_{i}+\sum_{i=1}^{n}\alpha_{i}\left(1-y_{i}\left[w^{T}x_{i}+b\right]-\xi_{i}\right)-\sum_{i=1}^{n}\lambda_{i}\xi_{i}
+    \]\end{quote}
+  \begin{checkboxes}
+    \choice So easy. If I had a whiteboard here, I'd do it for you right now.
+    \choice Yeah - easy.  I'll have the answer to you in 5 minutes -- I just have to check something on Google first.  
+    \choice Hmmmm. This will be easy by the first day of class.
+    \choice :( 
+  \end{checkboxes}
+
+
+
+
+  \question How comfortable are you answering the following question: 
+  \begin{quote}Consider $x_{1},\ldots,x_{n}$ sampled i.i.d.
+    from a distribution $P$ on $\reals$. Write $\mu=\ex x$, for $x\sim P$.
+    Show that the mean $\bar{x}=\frac{1}{n}\sum_{i=1}^{n}x_{i}$ is an unbiased
+    estimate of $\mu$ (i.e. show that $\ex\bar{x}=x$). Similarly, show that the sample variance
+    $\frac{1}{n-1}\sum_{i=1}^{n}\left(x_{i}-\bar{x}\right)^{2}$ is an
+    unbiased estimate for $\var\left(x\right)$. \end{quote}
+  \begin{checkboxes}
+    \choice So easy. If I had a whiteboard here, I'd do it for you right now.
+    \choice Yeah - easy.  I'll have the answer to you in 5 minutes -- I just have to check something on Google first.  
+    \choice Hmmmm. This will be easy by the first day of class.
+    \choice :( 
+  \end{checkboxes}
+  
+\end{questions}
+\end{document}

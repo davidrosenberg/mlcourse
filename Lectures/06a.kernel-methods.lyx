@@ -1318,7 +1318,7 @@ How many features will we end up with?
 \begin_inset Quotes eld
 \end_inset
 
-flower shop probem
+flower shop problem
 \begin_inset Quotes erd
 \end_inset
 
@@ -1541,11 +1541,11 @@ A method is
 kernelized 
 \series default
 if inputs only appear inside inner products: 
-\begin_inset Formula $\left\langle \psi(x),\psi(y)\right\rangle $
+\begin_inset Formula $\left\langle \psi(x),\psi(x')\right\rangle $
 \end_inset
 
  for 
-\begin_inset Formula $x,y\in\cx$
+\begin_inset Formula $x,x'\in\cx$
 \end_inset
 
 .
@@ -1571,7 +1571,7 @@ kernel function
  is 
 \begin_inset Formula 
 \[
-k(x,y)=\left\langle \psi(x),\psi(y)\right\rangle .
+k(x,x')=\left\langle \psi(x),\psi(x')\right\rangle .
 \]
 
 \end_inset
@@ -1585,7 +1585,7 @@ k(x,y)=\left\langle \psi(x),\psi(y)\right\rangle .
 
 \begin_layout Itemize
 Why introduce this new notation 
-\begin_inset Formula $k(x,y)$
+\begin_inset Formula $k(x,x')$
 \end_inset
 
 ?
@@ -1597,7 +1597,7 @@ Why introduce this new notation
 
 \begin_layout Itemize
 Turns out, we can often evaluate 
-\begin_inset Formula $k(x,y)$
+\begin_inset Formula $k(x,x')$
 \end_inset
 
  directly,
@@ -1605,12 +1605,12 @@ Turns out, we can often evaluate
 
 \begin_deeper
 \begin_layout Itemize
-without explicilty computing 
+without explicitly computing 
 \begin_inset Formula $\psi(x)$
 \end_inset
 
  and 
-\begin_inset Formula $\psi(y)$
+\begin_inset Formula $\psi(x')$
 \end_inset
 
 .
@@ -2436,8 +2436,7 @@ Alphabet set
 \end_layout
 
 \begin_layout Itemize
-Feature map - indiciator variable for every substring of length at most
- 
+Feature map - indicator variable for every substring of length at most 
 \begin_inset Formula $d$
 \end_inset
 
@@ -3020,7 +3019,7 @@ Is
 status open
 
 \begin_layout Plain Layout
-Pythagorean Theroem
+Pythagorean Theorem
 \end_layout
 
 \end_inset

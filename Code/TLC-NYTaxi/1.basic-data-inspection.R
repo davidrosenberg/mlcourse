@@ -1,3 +1,6 @@
+BBGblue = rgb(13,157,219, maxColorValue=255)
+BBGgreen = rgb(77,170,80, maxColorValue=255)
+
 cnts[, length(unique(gridid)) ]  # number of unique grid cells
 cnts[, max(cnt)] # max number of counts in an hour 
 
@@ -12,6 +15,7 @@ a = cnts[J(sgc[["PennStation"]],1075)]
 all = a[, CJ(gridid=unique(gridid), week=unique(week), wkhr=0:167)]
 a = a[all]
 a[is.na(cnt), cnt:=0]
+## Plot
 p = ggplot(a, aes(wkhr,cnt))
 p = p + xlab("Week Hour (0 = Sunday 00:00-00:59)")
 p = p + ylab("Taxi Pickups (Per Hour)")
@@ -22,7 +26,6 @@ p = p + annotate("text", x = 12+(0:6)*24, y = 140, label = c('Sun','Mon','Tues',
 fname = paste0(figFolder,"/pennStationWeek1075.png")
 ggsave(filename=fname,plot=p, units="in", width=10, height = 6)
 cat(fname)
-p
 
 ## Multiple weeks
 a = cnts[.(gridid=sgc[["PennStation"]],week=c(1071:1074)), on=c("gridid", "week")]
@@ -64,6 +67,44 @@ fname = paste0(figFolder,"/pennStationWeek-72Hrs-AllWeeks.png")
 ggsave(filename=fname,plot=p, units="in", width=18, height = 12)
 cat(fname)
 p
+
+## Plot all weeks by week hour
+a = cnts[gridid == sgc[["PennStation"]]]
+a = a[CJ(gridid=gridid, week=week, wkhr=0:167, unique=TRUE), on=c("gridid", "week", "wkhr")]
+a[is.na(cnt), cnt:=0]
+
+a[, Week := as.factor(week)]
+p = ggplot(a, aes(wkhr,cnt))
+p = p + xlab("Week Hour (0 = Sunday 00:00-00:59)")
+p = p + ylab("Taxi Pickups (Per Hour)")
+p = p + labs(title = "Penn Station Taxi Pickups, by Hour-of-Week (27 Weeks)")
+p = p + annotate("text", x = 13+(0:6)*24, y = 155, label = c('Sun','Mon','Tues','Wed','Thurs','Fri','Sat'),color=BBGblue)
+p = p + geom_vline(xintercept = (0:7)*24, colour="slategrey", linetype = "longdash")
+p = p + geom_point(size=.5, col="grey44")
+p
+fname = paste0(figFolder,"/pennStation27Weeks.png")
+ggsave(filename=fname,plot=p, units="in", width=10, height = 4.5)
+cat(fname)
+## Run loess smooths
+library(msir)
+l <- loess.sd(a[,wkhr],a[,cnt], nsigma=1, span=.1)
+p = p + geom_line(aes(x=l$x, y=l$y), col="deeppink3", size=1)
+fname = paste0(figFolder,"/pennStation27Weeks-pred.png")
+ggsave(filename=fname,plot=p, units="in", width=8.5, height = 3.5 )
+cat(fname)
+p = p + geom_line(aes(x=l$x, y=l$lower), col="deeppink3", size=.6)
+p = p + geom_line(aes(x=l$x, y=l$upper), col="deeppink3", size=.6)
+p
+fname = paste0(figFolder,"/pennStation27Weeks-pred-interval.png")
+ggsave(filename=fname,plot=p, units="in", width=10, height = 4.5)
+cat(fname)
+
+## 
+ll = as.data.table(l)[,.SD[1,list(y,sd,upper,lower)],by=x]
+ll[x==10]
+library(MASS)
+
+
 
 ## Drill in to see the shape of the distributions
 ## Penn Station, Monday 7pm-8pm

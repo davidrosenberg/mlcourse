@@ -3,7 +3,7 @@
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin unavailable
+\origin /Users/drosen/Dropbox/repos/mlcourse/Lectures/
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -817,7 +817,7 @@ Case study
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -899,7 +899,7 @@ We'll start with a few canonical examples...
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -993,7 +993,7 @@ problem
 \end_layout
 
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1087,7 +1087,7 @@ soft classification
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1157,7 +1157,7 @@ linear regression
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1217,7 +1217,7 @@ Machine learning
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2074,7 +2074,7 @@ input vectors.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2411,7 +2411,7 @@ tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2465,36 +2465,6 @@ categorical variable
 
 \end_layout
 
-\begin_layout Itemize
-
-\emph on
-Gender
-\emph default
-: 
-\begin_inset Quotes eld
-\end_inset
-
-Male
-\begin_inset Quotes erd
-\end_inset
-
-, 
-\begin_inset Quotes eld
-\end_inset
-
-Female
-\begin_inset Quotes erd
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
 \begin_layout Itemize
 
 \emph on
@@ -2590,7 +2560,7 @@ status open
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2692,7 +2662,7 @@ label
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2738,7 +2708,7 @@ We want to be able to predict the missing labels.
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2862,7 +2832,7 @@ deployed
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2950,7 +2920,7 @@ purple box
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -3156,7 +3126,7 @@ Zero Loss = No Error
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -3340,7 +3310,7 @@ new inputs
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -4682,7 +4652,7 @@ emph{Pattern Recognition and Machine Learning}, Ch 1.}}
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -4918,7 +4888,7 @@ Though it can also be chosen by an ML algorithm.
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -4979,7 +4949,7 @@ emph{Pattern Recognition and Machine Learning}, Ch 1.}}
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -5052,7 +5022,7 @@ UNDERFIT (not fitting data well enough)
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -5125,7 +5095,7 @@ UNDERFIT (not fitting data well enough)
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -5198,7 +5168,7 @@ PRETTY GOOD!
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -5275,7 +5245,7 @@ too well
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -5363,7 +5333,7 @@ NOT necessarily better performance on test data
 \end_deeper
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -5429,7 +5399,7 @@ Getting more training data
 \end_deeper
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -5502,7 +5472,7 @@ Pretty good - slightly overfit?
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 

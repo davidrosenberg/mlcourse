@@ -8,12 +8,38 @@
 \begin_preamble
 \usetheme{CambridgeUS} 
 \beamertemplatenavigationsymbolsempty
+
+
+% Set Color ==============================
+\definecolor{BBGblue}{RGB}{13,157,219}
+\definecolor{BBGgreen}{RGB}{77,170,80}
+
+
+\setbeamercolor{title}{fg=BBGblue}
+%\setbeamercolor{frametitle}{fg=BBGblue}
+\setbeamercolor{frametitle}{fg=BBGblue}
+
+\setbeamercolor{background canvas}{fg=BBGblue, bg=white}
+\setbeamercolor{background}{fg=black, bg=BBGblue}
+
+\setbeamercolor{palette primary}{fg=black, bg=gray!30!white}
+\setbeamercolor{palette secondary}{fg=black, bg=gray!20!white}
+\setbeamercolor{palette tertiary}{fg=black, bg=BBGblue}
+
+\setbeamertemplate{headline}{}
+
+\setbeamercolor{parttitle}{fg=BBGblue}
+\setbeamercolor{sectiontitle}{fg=BBGblue}
+\setbeamercolor{sectionname}{fg=BBGblue}
+\setbeamercolor{section page}{fg=BBGblue}
+
 \AtBeginSection[]{
   \begin{frame}
   \vfill
   \centering
-  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
-    \usebeamerfont{title}\insertsectionhead\par%
+\setbeamercolor{section title}{fg=BBGblue}
+ \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\usebeamercolor[fg]{title}\insertsectionhead\par%
   \end{beamercolorbox}
   \vfill
   \end{frame}
@@ -43,7 +69,17 @@
 \index_command default
 \paperfontsize default
 \spacing single
-\use_hyperref false
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "allcolors=BBGblue,urlcolor=BBGgreen"
 \papersize default
 \use_geometry true
 \use_package amsmath 2
@@ -65,6 +101,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\boxbgcolor #ff31d8
 \index Index
 \shortcut idx
 \color #008000
@@ -632,6 +669,34 @@ ex}{E}
 
 \begin_layout Standard
 \begin_inset FormulaMacro
+\newcommand{\dom}{\textrm{\textbf{dom} }}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\renewcommand{\rank}{\text{\textbf{rank }}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\conv}{\textrm{\textbf{conv} }}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\relint}{\text{\textbf{relint }}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\aff}{\text{\textbf{aff }}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
 \newcommand{\hil}{\ch}
 \end_inset
 
@@ -654,9 +719,9 @@ Bayesian Regression
 status open
 
 \begin_layout Plain Layout
-DS-GA 1003 
+ML 101
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 optional, use only with long paper titles
@@ -673,15 +738,16 @@ optional, use only with long paper titles
 \end_layout
 
 \begin_layout Author
-David Rosenberg 
+David S.
+ Rosenberg 
 \end_layout
 
 \begin_layout Date
-April 11, 2017
+November 16, 2017
 \end_layout
 
 \begin_layout Institute
-New York University
+Bloomberg ML EDU
 \end_layout
 
 \begin_layout Standard
@@ -700,6 +766,10 @@ Just in article version
 \begin_layout Standard
 \begin_inset Note Note
 status open
+
+\begin_layout Plain Layout
+Still need to get rid of references to probability models
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -727,11 +797,11 @@ tiny{Plots courtesy of Ningshan Zhang.}}
 
 \end_inset
 
- 
+
 \end_layout
 
 \begin_layout Section
-Bayesian Statistics: Recap 
+Recap: Conditional Probability Models
 \end_layout
 
 \begin_layout Frame
@@ -739,37 +809,24 @@ Bayesian Statistics: Recap
 status open
 
 \begin_layout Plain Layout
-The Bayesian Method
+Parametric Family of Conditional Densities
 \end_layout
 
 \end_inset
 
- 
-\end_layout
 
-\begin_deeper
-\begin_layout Enumerate
-Define the model:
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Choose a probability model or 
-\begin_inset Quotes eld
-\end_inset
-
-
+A 
 \series bold
-likelihood model
+parametric family of conditional densities 
 \series default
-
-\begin_inset Quotes erd
-\end_inset
-
-: 
+is a set 
 \begin_inset Formula 
 \[
-\left\{ p(\cd\mid\theta)\mid\theta\in\Theta\right\} .
+\left\{ p(y\mid x,\theta):\theta\in\Theta\right\} ,
 \]
 
 \end_inset
@@ -777,450 +834,78 @@ likelihood model
 
 \end_layout
 
+\begin_deeper
 \begin_layout Itemize
-Choose a distribution 
-\begin_inset Formula $p(\theta)$
+where 
+\begin_inset Formula $p(y\mid x,\theta)$
 \end_inset
 
-, called the 
+ is a density on 
 \series bold
-prior distribution
+outcome space 
 \series default
-.
-\end_layout
 
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Enumerate
-After observing 
-\begin_inset Formula $\cd$
-\end_inset
-
-, compute the 
-\series bold
-posterior distribution
-\series default
- 
-\begin_inset Formula $p(\theta\mid\cd)$
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-Choose  
-\series bold
-action
-\series default
- based on 
-\begin_inset Formula $p(\theta\mid\cd)$
-\end_inset
-
-.
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-e.g.
- 
-\begin_inset Formula $\ex\left[\theta\mid\cd\right]$
-\end_inset
-
- as point estimate for 
-\begin_inset Formula $\theta$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-e.g.
- interval 
-\begin_inset Formula $[a,b]$
-\end_inset
-
-, where 
-\begin_inset Formula $p(\theta\in[a,b]\mid\cd)=0.95$
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Frame
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-
-\emph on
-Likelihood model
-\emph default
- 
-\begin_inset Formula $p(x\mid\theta)$
-\end_inset
-
- [PDF or PMF on 
-\begin_inset Formula $x$
+\begin_inset Formula $\cy$
 \end_inset
 
  for each 
-\begin_inset Formula $\theta\in\Theta$
+\begin_inset Formula $x$
 \end_inset
 
-]
-\end_layout
-
-\begin_layout Itemize
-
-\emph on
-Prior distribution
-\emph default
- 
-\begin_inset Formula $p(\theta)$
-\end_inset
-
- [a probability distribution on 
-\begin_inset Formula $\Theta$
-\end_inset
-
-]
-\end_layout
-
-\begin_layout Itemize
-
-\emph on
-Data
-\emph default
-
-\begin_inset Formula $\cd=(X_{1},\ldots,X_{n})$
-\end_inset
-
-, where 
-\begin_inset Formula $X_{i}$
-\end_inset
-
- are conditionally i.i.d.
- 
-\begin_inset Formula $p(x\mid\theta)$
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-This means 
-\begin_inset Formula $p(X_{1},\ldots,X_{n}\mid\theta)=\prod_{i=1}^{n}p(X_{i}\mid\theta)$
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-
-\emph on
-Posterior distribution
-\emph default
- is 
-\begin_inset Formula $p(\theta\mid\cd)$
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-The Posterior Distribution
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-By Bayes rule, can write the posterior distribution as
-\begin_inset Formula 
-\[
-p(\theta\mid\cd)\pause=\frac{p(\cd\mid\theta)p(\theta)}{p(\cd)}.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-
+ in 
 \series bold
-likelihood:
+input space 
+\begin_inset Formula $\cx$
+\end_inset
+
+
 \series default
- 
-\begin_inset Formula $p(\cd\mid\theta)$
-\end_inset
-
-
+, and
 \end_layout
 
 \begin_layout Itemize
-
-\series bold
-prior: 
-\begin_inset Formula $p(\theta)$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-marginal likelihood
-\series default
-: 
-\begin_inset Formula $p(\cd)$
-\end_inset
-
-.
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Note: 
-\begin_inset Formula $p(\cd)$
-\end_inset
-
- is just a normalizing constant for 
-\begin_inset Formula $p(\theta\mid\cd)$
-\end_inset
-
-.
- Can write
-\begin_inset Formula 
-\[
-\underbrace{p(\theta\mid\cd)}_{\text{posterior}}\propto\underbrace{p(\cd\mid\theta)}_{\text{likelihood}}\underbrace{p(\theta)}_{\text{prior}}.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Summary
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Prior represents belief about 
 \begin_inset Formula $\theta$
 \end_inset
 
- before observing data 
-\begin_inset Formula $\cd$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-Posterior represents the
+ is a 
 \series bold
- rationally 
-\begin_inset Quotes eld
-\end_inset
-
-updated
-\begin_inset Quotes erd
-\end_inset
-
- beliefs
+parameter
 \series default
- after seeing 
-\begin_inset Formula $\cd$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-All inferences and action-taking are based on posterior distribution.
-\begin_inset Note Note
-status open
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-No issue of 
-\begin_inset Quotes eld
-\end_inset
-
-choosing a procedure
-\begin_inset Quotes erd
-\end_inset
-
- or justifying an estimator.
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-vs.
- in frequentist approach, we can use MLE, method of moments, regularized
- empirical risk minimization...
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Only choices are the
+ in a [finite dimensional] 
 \series bold
- prior
-\series default
- and the
-\series bold
- likelihood model
-\series default
-.
-\end_layout
-
-\begin_layout Itemize
-Information in data is summarized by 
-\begin_inset Formula $p(\theta\mid\cd)$
+parameter space 
+\begin_inset Formula $\Theta$
 \end_inset
 
-.
-\end_layout
-
-\begin_layout Itemize
-For decision making, need a 
-\series bold
-loss function
-\series default
-.
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Everything after that is 
-\series bold
-computation
-\series default
 .
 \end_layout
 
 \end_deeper
-\end_inset
-
+\begin_layout Pause
 
 \end_layout
 
+\begin_layout Itemize
+This is the common starting point for a treatment of classical or Bayesian
+ statistics.
+\end_layout
+
+\end_deeper
 \begin_layout Standard
-
-\emph on
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-Show pictures of probability distribution on 
-\begin_inset Formula $\theta,$
-\end_inset
-
-prior & posterior
+need to find more standard terminology for this
 \end_layout
 
 \end_inset
 
 
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
-\end_layout
-
-\begin_layout Section
-Bayesian Gaussian Linear Regression
 \end_layout
 
 \begin_layout Frame
@@ -1228,7 +913,7 @@ Bayesian Gaussian Linear Regression
 status open
 
 \begin_layout Plain Layout
-Bayesian Conditional Models
+Density vs Mass Functions
 \end_layout
 
 \end_inset
@@ -1238,107 +923,75 @@ Bayesian Conditional Models
 
 \begin_deeper
 \begin_layout Itemize
-Input space 
-\begin_inset Formula $\cx=\reals^{d}$
-\end_inset
-
-
-\begin_inset space \qquad{}
-\end_inset
-
-Output space 
-\begin_inset Formula $\cy=\reals$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-Conditional probability model
-\series default
-, or 
-\series bold
-likelihood model
-\series default
-:
-\begin_inset Formula 
-\[
-\left\{ p(y\mid x,\theta)\mid\theta\in\Theta\right\} 
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-Conditional here refers to the conditioning on the input 
-\begin_inset Formula $x$
-\end_inset
-
-.
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Formula $x$
-\end_inset
-
-'s are not governed by our probability model.
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-Everything conditioned on 
-\begin_inset Formula $x$
-\end_inset
-
- means 
+In this lecture, whenever we say 
 \begin_inset Quotes eld
 \end_inset
 
-
-\begin_inset Formula $x$
-\end_inset
-
- is known
+density
 \begin_inset Quotes erd
 \end_inset
 
+, we could replace it with 
+\begin_inset Quotes eld
+\end_inset
 
-\begin_inset Note Note
-status open
+mass function.
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\end_layout
 
 \begin_layout Pause
 
 \end_layout
 
 \begin_layout Itemize
-For simplicity, can leave 
-\begin_inset Formula $x$
+Corresponding integrals would be replaced by summations.
+
+\size scriptsize
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\size small
+(In more advanced, measure-theoretic treatments, they are each considered
+ densities w.r.t.
+ different base measures.)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
 \end_inset
 
- out of conditional:
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Parameters 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A parametric family of conditional densities: 
 \begin_inset Formula 
 \[
-\left\{ p(y\mid\theta)\mid\theta\in\Theta\right\} 
+\left\{ p(y\mid x,\theta):\theta\in\Theta\right\} 
 \]
 
 \end_inset
@@ -1346,35 +999,58 @@ For simplicity, can leave
 
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
-
-\series bold
-Prior distribution
-\series default
-: 
-\begin_inset Formula $p(\theta)$
+Assume that 
+\begin_inset Formula $p(y\mid x,\theta)$
 \end_inset
 
- on 
+ governs the world we are observing, for some 
 \begin_inset Formula $\theta\in\Theta$
 \end_inset
 
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
 
 \end_layout
 
 \end_deeper
+\begin_layout Itemize
+If we knew the right 
+\begin_inset Formula $\theta\in\Theta$
+\end_inset
+
+, there would be no need for statistics.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Instead of 
+\begin_inset Formula $\theta$
+\end_inset
+
+, we have data 
+\begin_inset Formula $\cd$
+\end_inset
+
+...
+ how is it generated?
+\end_layout
+
+\end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1385,7 +1061,299 @@ Prior distribution
 status open
 
 \begin_layout Plain Layout
-Gaussian Regression Model
+Our Data
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Data: 
+\series default
+Suppose we have 
+\begin_inset Formula $n$
+\end_inset
+
+ inputs 
+\series bold
+
+\begin_inset Formula $x_{1},\ldots,x_{n}\in\cx$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+For now, 
+\begin_inset Formula $x$
+\end_inset
+
+ can be chosen randomly, by hand, or adversarially.
+\end_layout
+
+\begin_layout Itemize
+Our entire development will consider 
+\begin_inset Formula $x$
+\end_inset
+
+'s fixed and known.
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+For each input 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+, we observe 
+\begin_inset Formula $y_{i}$
+\end_inset
+
+ sampled randomly from 
+\begin_inset Formula $p(y\mid x_{i},\theta)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+We assume the outcomes 
+\begin_inset Formula $y_{1},\ldots,y_{n}$
+\end_inset
+
+ are independent.
+ (Once we know the 
+\begin_inset Formula $x$
+\end_inset
+
+'s.)
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Data: 
+\series default
+
+\begin_inset Formula $\cd=\left((y_{1},\ldots,,y_{n})\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Notation
+\series default
+: 
+\begin_inset Formula $y=\left(y_{1},\ldots,y_{n}\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $x=\left(x_{1},\ldots,x_{n}\right)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Likelihood Function
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Data: 
+\series default
+
+\begin_inset Formula $\cd=(y_{1},\ldots,,y_{n})$
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+Data: 
+\series default
+
+\begin_inset Formula $\cd=\left((x_{1},y_{1}),\ldots,(x_{n},y_{n})\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+Notation
+\series default
+: 
+\begin_inset Formula $x=\left(x_{1},\ldots,x_{n}\right)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The probability density for our data 
+\begin_inset Formula $\cd$
+\end_inset
+
+ is
+\begin_inset Formula 
+\begin{eqnarray*}
+p(\cd\mid x_{1},\ldots,x_{n},\theta) & = & \prod_{i=1}^{n}p(y_{i}\mid x_{i},\theta).
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+For fixed 
+\begin_inset Formula $\cd$
+\end_inset
+
+, the function 
+\begin_inset Formula $\theta\mapsto p(\cd\mid x,\theta)$
+\end_inset
+
+ is the 
+\series bold
+likelihood function
+\series default
+:
+\begin_inset Formula 
+\[
+L_{\cd}(\theta)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The 
+\series bold
+maximum likelihood estimator (MLE)
+\series default
+ for 
+\begin_inset Formula $\theta$
+\end_inset
+
+ in the model 
+\begin_inset Formula $\left\{ p(y\mid x,\theta)\mid\theta\in\Theta\right\} $
+\end_inset
+
+ is
+\begin_inset Formula 
+\begin{eqnarray*}
+\hat{\theta}_{\text{MLE}} & = & \argmax_{\theta\in\Theta}L_{\cd}(\theta).
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Example: Gaussian Linear Regression
 \end_layout
 
 \end_inset
@@ -1403,7 +1371,7 @@ Input space
 \begin_inset space \qquad{}
 \end_inset
 
-Output space 
+Outcome space 
 \begin_inset Formula $\cy=\reals$
 \end_inset
 
@@ -1419,13 +1387,9 @@ Output space
 \begin_layout Itemize
 
 \series bold
-Conditional probability model
+Family of conditional probability densities:
 \series default
-, or 
-\series bold
-likelihood model
-\series default
-:
+
 \begin_inset Formula 
 \begin{eqnarray*}
 y\mid x,w & \sim & \cn\left(w^{T}x,\sigma^{2}\right),
@@ -1471,6 +1435,43 @@ Parameter space?
 Data: 
 \series default
 
+\begin_inset Formula $\cd=(y_{1},\ldots,,y_{n})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Assume 
+\begin_inset Formula $y_{i}$
+\end_inset
+
+'s are 
+\series bold
+conditionally independent
+\series default
+, given 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+'s and 
+\begin_inset Formula $w$
+\end_inset
+
+.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Itemize
+
+\series bold
+Data: 
+\series default
+
 \begin_inset Formula $\cd=\left\{ (x_{1},y_{1}),\ldots,(x_{n},y_{n})\right\} $
 \end_inset
 
@@ -1499,33 +1500,285 @@ Notation
  
 \end_layout
 
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Gaussian Likelihood and MLE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The 
+\series bold
+likelihood
+\series default
+ of 
+\begin_inset Formula $w\in\reals^{d}$
+\end_inset
+
+ for the data 
+\begin_inset Formula $\cd$
+\end_inset
+
+ is given by the likelihood function:
+\begin_inset Formula 
+\begin{eqnarray*}
+L_{\cd}(w) & = & \pause\prod_{i=1}^{n}p(y_{i}\mid x_{i},w)\qquad\text{by conditional independence.}\\
+\pause & = & \prod_{i=1}^{n}\left[\frac{1}{\sigma\sqrt{2\pi}}\exp\left(-\frac{(y_{i}-w^{T}x_{i})^{2}}{2\sigma^{2}}\right)\right]
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+You should see 
+\series bold
+in your head
+\series default
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+See 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://davidrosenberg.github.io/ml2015/docs/8.Lab.glm.pdf
+\end_layout
+
+\end_inset
+
+, slide 5.
+\end_layout
+
+\end_inset
+
+ that the 
+\series bold
+MLE
+\series default
+ is
+\begin_inset Formula 
+\begin{eqnarray*}
+\pause\hat{w}_{\text{MLE}} & = & \argmax_{w\in\reals^{d}}L_{\cd}(w)\\
+\pause & = & \argmin_{w\in\reals^{d}}\sum_{i=1}^{n}(y_{i}-w^{T}x_{i})^{2}.
+\end{eqnarray*}
+
+\end_inset
+
+
+\series bold
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Bayesian Conditional Probability Models
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Bayesian Conditional Models
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Input space 
+\begin_inset Formula $\cx=\reals^{d}$
+\end_inset
+
+
+\begin_inset space \qquad{}
+\end_inset
+
+Outcome space 
+\begin_inset Formula $\cy=\reals$
+\end_inset
+
+
+\end_layout
+
 \begin_layout Pause
 
 \end_layout
 
 \begin_layout Itemize
-Assume 
-\begin_inset Formula $y_{i}$
-\end_inset
+Two components to Bayesian conditional model:
+\end_layout
 
-'s are 
+\begin_deeper
+\begin_layout Itemize
+A 
 \series bold
-conditionally independent
+parametric family of conditional densities
 \series default
-, given 
-\begin_inset Formula $x$
+: 
+\begin_inset Formula 
+\[
+\left\{ p(y\mid x,\theta):\theta\in\Theta\right\} 
+\]
+
 \end_inset
 
- and 
-\begin_inset Formula $w$
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+A 
+\series bold
+prior distribution
+\series default
+ for 
+\begin_inset Formula $\theta\in\Theta$
+\end_inset
+
+.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Itemize
+Conditional here refers to the conditioning on the input 
+\begin_inset Formula $x$
 \end_inset
 
 .
 \end_layout
 
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $x$
+\end_inset
+
+'s are not governed by our probability model.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Everything conditioned on 
+\begin_inset Formula $x$
+\end_inset
+
+ means 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $x$
+\end_inset
+
+ is known
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
 \end_deeper
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+For simplicity, can leave 
+\begin_inset Formula $x$
+\end_inset
+
+ out of conditional:
+\begin_inset Formula 
+\[
+\left\{ p(y\mid\theta)\mid\theta\in\Theta\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_deeper
-\begin_layout Standard
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Prior distribution
+\series default
+: 
+\begin_inset Formula $p(\theta)$
+\end_inset
+
+ on 
+\begin_inset Formula $\theta\in\Theta$
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 \begin_inset Separator plain
 \end_inset
 
@@ -1588,7 +1841,7 @@ p(w,s\mid r)=p(w\mid r)p(s\mid r).
 \end_layout
 
 \end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 Also holds when 
 \begin_inset Formula $W$
 \end_inset
@@ -1625,8 +1878,14 @@ Can have independence without conditional independence.
 \end_layout
 
 \end_deeper
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1637,7 +1896,17 @@ Can have independence without conditional independence.
 status open
 
 \begin_layout Plain Layout
-Gaussian Likelihood and MLE
+The Posterior Distribution
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ and Predictive Distribution
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1649,26 +1918,27 @@ Gaussian Likelihood and MLE
 \begin_layout Itemize
 The 
 \series bold
-likelihood
+posterior distribution 
 \series default
- of 
-\begin_inset Formula $w\in\reals^{d}$
+for 
+\begin_inset Formula $\theta$
 \end_inset
 
- for the data 
-\begin_inset Formula $\cd$
-\end_inset
-
- is
+ is 
 \begin_inset Formula 
 \begin{eqnarray*}
-p(y\mid x,w) & = & \pause\prod_{i=1}^{n}p(y_{i}\mid x_{i},w)\qquad\text{by conditional independence.}\\
-\pause & = & \prod_{i=1}^{n}\left[\frac{1}{\sigma\sqrt{2\pi}}\exp\left(-\frac{(y_{i}-w^{T}x_{i})^{2}}{2\sigma^{2}}\right)\right]
+p(\theta\mid\cd,x_{1},\ldots,x_{n})\pause & \propto & p(\cd\mid\theta,x_{1},\ldots,x_{n})p(\theta)\\
+\pause & = & \underbrace{L_{\cd}(\theta)}_{\text{likelihood}}\underbrace{p(\theta)}_{\text{prior }}
 \end{eqnarray*}
 
 \end_inset
 
 
+\begin_inset Note Note
+status open
+
+\begin_layout Itemize
+.
 \end_layout
 
 \begin_deeper
@@ -1678,52 +1948,63 @@ p(y\mid x,w) & = & \pause\prod_{i=1}^{n}p(y_{i}\mid x_{i},w)\qquad\text{by condi
 
 \end_deeper
 \begin_layout Itemize
-You should see 
+Each 
+\begin_inset Formula $\theta$
+\end_inset
+
+ gives us a conditional density.
+\end_layout
+
+\begin_layout Itemize
+The predictive distribution for a new 
+\begin_inset Formula $ $
+\end_inset
+
+Prior represents belief about 
+\begin_inset Formula $\theta$
+\end_inset
+
+ before observing data 
+\begin_inset Formula $\cd$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Posterior represents the
 \series bold
-in your head
+ rationally 
+\begin_inset Quotes eld
+\end_inset
+
+updated
+\begin_inset Quotes erd
+\end_inset
+
+ beliefs
 \series default
+ after seeing 
+\begin_inset Formula $\cd$
+\end_inset
 
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-See 
-\begin_inset Flex URL
-status open
-
-\begin_layout Plain Layout
-
-https://davidrosenberg.github.io/ml2015/docs/8.Lab.glm.pdf
+.
 \end_layout
 
 \end_inset
 
-, slide 5.
-\end_layout
 
-\end_inset
-
- that the 
-\series bold
-MLE
-\series default
- is
-\begin_inset Formula 
-\begin{eqnarray*}
-\pause w_{\text{MLE}}^{*} & = & \argmax_{w\in\reals^{d}}p(y\mid x,w)\\
-\pause & = & \argmin_{w\in\reals^{d}}\sum_{i=1}^{n}(y_{i}-w^{T}x_{i})^{2}.
-\end{eqnarray*}
-
-\end_inset
-
-
-\series bold
- 
 \end_layout
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1734,7 +2015,7 @@ MLE
 status open
 
 \begin_layout Plain Layout
-Priors and Posteriors
+Gaussian Example: Priors and Posteriors
 \end_layout
 
 \end_inset
@@ -1792,9 +2073,8 @@ covariance matrix
 Posterior distribution
 \begin_inset Formula 
 \begin{eqnarray*}
-p(w\mid\cd) & = & p(w\mid x,y)\\
-\pause & = & p\left(y\mid x,w\right)p(w)/p(y\mid x)\\
-\pause & \propto & p(y\mid x,w)p(w)\\
+p(w\mid\cd,x_{1},\ldots,x_{n}) & = & p(w\mid\cd,x_{1},\ldots,x_{n})\\
+\pause & \propto & L_{\cd}(w)p(w)\\
 \pause & = & \prod_{i=1}^{n}\left[\frac{1}{\sigma\sqrt{2\pi}}\exp\left(-\frac{(y_{i}-w^{T}x_{i})^{2}}{2\sigma^{2}}\right)\right]\text{ (likelihood)}\\
  & \pause & \times\left|2\pi\Sigma_{0}\right|^{-1/2}\exp\left(-\frac{1}{2}w^{T}\Sigma_{0}^{-1}w)\right)\text{ (prior)}
 \end{eqnarray*}
@@ -1806,7 +2086,7 @@ p(w\mid\cd) & = & p(w\mid x,y)\\
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1827,32 +2107,10 @@ Predictive Distributions
 
 \begin_deeper
 \begin_layout Itemize
-
-\series bold
-Likelihood model
-\series default
-: 
-\begin_inset Formula $y\mid x,w\sim\cn\left(w^{T}x,\sigma^{2}\right)$
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-If we knew 
-\begin_inset Formula $w$
-\end_inset
-
-, best prediction function (for square loss) is
+We have a parametric family of conditional densities: 
 \begin_inset Formula 
 \[
-\hat{y}(x)=\pause\ex\left[y\mid x,w\right]=\pause w^{T}x.
+\left\{ p(y\mid x,\theta):\theta\in\Theta\right\} 
 \]
 
 \end_inset
@@ -1867,32 +2125,25 @@ If we knew
 
 \end_deeper
 \begin_layout Itemize
-In Bayesian statistics we have
+Each 
+\begin_inset Formula $p(y\mid x,\theta)$
+\end_inset
+
+ is a conditional density, but also a prediction function:
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-
-\series bold
-Prior distribution:
-\series default
- 
-\begin_inset Formula $w\sim\cn\left(0,\Sigma_{0}\right)$
+For 
+\begin_inset Formula $x\in\cx$
 \end_inset
 
-, and 
-\end_layout
-
-\begin_layout Itemize
-Given data, we can compute the 
-\series bold
-posterior distribution
-\series default
-: 
-\begin_inset Formula $p(w\mid\cd)$
+, the action produced is a probability density on 
+\begin_inset Formula $y$
 \end_inset
 
 .
+ 
 \end_layout
 
 \begin_deeper
@@ -1903,22 +2154,90 @@ posterior distribution
 \end_deeper
 \end_deeper
 \begin_layout Itemize
-Prior 
-\begin_inset Formula $p(w)$
+In Bayesian statistics we have two distributions on 
+\begin_inset Formula $\Theta$
 \end_inset
 
- and posterior 
-\begin_inset Formula $p(w\mid\cd)$
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+the prior distribution 
+\begin_inset Formula $p(\theta)$
 \end_inset
 
- give 
+ 
+\end_layout
+
+\begin_layout Itemize
+the posterior distribution 
+\begin_inset Formula $p(\theta\mid\cd,x_{1},\ldots,x_{n}$
+\end_inset
+
+).
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Each distribution on 
+\begin_inset Formula $\Theta$
+\end_inset
+
+ induces a 
 \series bold
 distributions over prediction functions.
 \end_layout
 
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+For any give 
+\begin_inset Formula $x$
+\end_inset
+
+, this gives a single distribution on 
+\begin_inset Formula $y$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+This distribution is called a 
+\series bold
+predictive distribution
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+So we can have a 
+\series bold
+prior predictive distribution
+\series default
+ and a 
+\series bold
+posterior predictive distribution
+\series default
+.
+ 
+\end_layout
+
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1991,7 +2310,7 @@ where
 \begin_layout Itemize
 Written another way, the 
 \series bold
-likelihood model
+conditional probability model
 \series default
  is
 \begin_inset Formula 
@@ -2032,7 +2351,7 @@ Prior distribution:
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2125,7 +2444,7 @@ tiny{Bishop's PRML Fig 3.7}}
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2191,7 +2510,7 @@ tiny{Bishop's PRML Fig 3.7}}
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2249,7 +2568,7 @@ tiny{Bishop's PRML Fig 3.7}}
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2297,7 +2616,7 @@ Design matrix
 \begin_inset Formula $X$
 \end_inset
 
-; 
+ 
 \begin_inset Formula $\qquad$
 \end_inset
 
@@ -2381,7 +2700,7 @@ url{http://www.gaussianprocess.org/gpml/chapters/RW2.pdf}}}
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2703,7 +3022,7 @@ Which is the ridge regression objective.
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2768,7 +3087,7 @@ For Gaussian regression, predictive distribution has closed form.
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2859,16 +3178,20 @@ y_{\text{new}}\mid x_{\text{new}},\cd & \sim & \cn\left(\eta_{\text{new}}\,,\,\s
 \end_inset
 
 
-\end_layout
+\begin_inset Note Note
+status open
 
-\begin_deeper
 \begin_layout Pause
  
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 (In frequentist framework, could get same thing by bootstrap.)
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
@@ -2902,7 +3225,7 @@ With predictive distributions, can give mean prediction with error bands:
 \begin_inset Graphics
 	filename ../Figures/bayesian-methods/predictiveDistWithErrorBands.png
 	lyxscale 60
-	width 50text%
+	height 70theight%
 
 \end_inset
 
@@ -2936,12 +3259,5 @@ emph{Gaussian Processes for Machine Learning}, Fig.2.1(b) }}
 \end_layout
 
 \end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
-\end_layout
-
 \end_body
 \end_document

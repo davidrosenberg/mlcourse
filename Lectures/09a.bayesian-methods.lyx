@@ -8,18 +8,44 @@
 \begin_preamble
 \usetheme{CambridgeUS} 
 \beamertemplatenavigationsymbolsempty
+
+
+% Set Color ==============================
+\definecolor{BBGblue}{RGB}{13,157,219}
+\definecolor{BBGgreen}{RGB}{77,170,80}
+
+
+\setbeamercolor{title}{fg=BBGblue}
+%\setbeamercolor{frametitle}{fg=BBGblue}
+\setbeamercolor{frametitle}{fg=BBGblue}
+
+\setbeamercolor{background canvas}{fg=BBGblue, bg=white}
+\setbeamercolor{background}{fg=black, bg=BBGblue}
+
+\setbeamercolor{palette primary}{fg=black, bg=gray!30!white}
+\setbeamercolor{palette secondary}{fg=black, bg=gray!20!white}
+\setbeamercolor{palette tertiary}{fg=black, bg=BBGblue}
+
+\setbeamertemplate{headline}{}
+
+\setbeamercolor{parttitle}{fg=BBGblue}
+\setbeamercolor{sectiontitle}{fg=BBGblue}
+\setbeamercolor{sectionname}{fg=BBGblue}
+\setbeamercolor{section page}{fg=BBGblue}
+
 \AtBeginSection[]{
   \begin{frame}
   \vfill
   \centering
-  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
-    \usebeamerfont{title}\insertsectionhead\par%
+\setbeamercolor{section title}{fg=BBGblue}
+ \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\usebeamercolor[fg]{title}\insertsectionhead\par%
   \end{beamercolorbox}
   \vfill
   \end{frame}
 }
 \end_preamble
-\options handout,aspectratio=169
+\options aspectratio=169,handout
 \use_default_options false
 \maintain_unincluded_children false
 \language english
@@ -43,7 +69,17 @@
 \index_command default
 \paperfontsize default
 \spacing single
-\use_hyperref false
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "allcolors=BBGblue,urlcolor=BBGgreen"
 \papersize default
 \use_geometry true
 \use_package amsmath 2
@@ -65,6 +101,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\boxbgcolor #ff31d8
 \index Index
 \shortcut idx
 \color #008000
@@ -632,6 +669,34 @@ ex}{E}
 
 \begin_layout Standard
 \begin_inset FormulaMacro
+\newcommand{\dom}{\textrm{\textbf{dom} }}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\renewcommand{\rank}{\text{\textbf{rank }}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\conv}{\textrm{\textbf{conv} }}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\relint}{\text{\textbf{relint }}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\aff}{\text{\textbf{aff }}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
 \newcommand{\hil}{\ch}
 \end_inset
 
@@ -654,9 +719,9 @@ Bayesian Methods
 status open
 
 \begin_layout Plain Layout
-DS-GA 1003 
+ML 101
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 optional, use only with long paper titles
@@ -673,15 +738,16 @@ optional, use only with long paper titles
 \end_layout
 
 \begin_layout Author
-David Rosenberg 
+David S.
+ Rosenberg 
 \end_layout
 
 \begin_layout Date
-April 11, 2017
+November 16, 2017
 \end_layout
 
 \begin_layout Institute
-New York University
+Bloomberg ML EDU
 \end_layout
 
 \begin_layout Standard
@@ -739,6 +805,168 @@ Classical Statistics
 status open
 
 \begin_layout Plain Layout
+Parametric Family of Densities
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A 
+\series bold
+parametric family of densities 
+\series default
+is a set 
+\begin_inset Formula 
+\[
+\left\{ p(y\mid\theta):\theta\in\Theta\right\} ,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+where 
+\begin_inset Formula $p(y\mid\theta)$
+\end_inset
+
+ is a density on a 
+\series bold
+sample space 
+\series default
+
+\begin_inset Formula $\cy$
+\end_inset
+
+, and
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\theta$
+\end_inset
+
+ is a 
+\series bold
+parameter
+\series default
+ in a [finite dimensional] 
+\series bold
+parameter space 
+\begin_inset Formula $\Theta$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+This is the common starting point for a treatment of classical or Bayesian
+ statistics.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+see Efron & Hastie p.
+ 22; Schervish pp 1-2; Christian Robert p.
+ 7
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Density vs Mass Functions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+In this lecture, whenever we say 
+\begin_inset Quotes eld
+\end_inset
+
+density
+\begin_inset Quotes erd
+\end_inset
+
+, we could replace it with 
+\begin_inset Quotes eld
+\end_inset
+
+mass function.
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Corresponding integrals would be replaced by summations.
+
+\size scriptsize
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\size small
+(In more advanced, measure-theoretic treatments, they are each considered
+ densities w.r.t.
+ different base measures.)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
 Frequentist or 
 \begin_inset Quotes eld
 \end_inset
@@ -757,14 +985,10 @@ Classical
 
 \begin_deeper
 \begin_layout Itemize
-Probability model with parameter 
-\begin_inset Formula $\theta\in\Theta$
-\end_inset
-
- 
+Parametric family of densities 
 \begin_inset Formula 
 \[
-\left\{ p(y;\theta)\mid\theta\in\Theta\right\} ,
+\left\{ p(y\mid\theta)\mid\theta\in\Theta\right\} .
 \]
 
 \end_inset
@@ -773,14 +997,6 @@ Probability model with parameter
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
-where 
-\begin_inset Formula $p(y;\theta)$
-\end_inset
-
- is either a PDF or a PMF.
-\end_layout
-
 \begin_layout Pause
 
 \end_layout
@@ -788,18 +1004,35 @@ where
 \end_deeper
 \begin_layout Itemize
 Assume that 
-\begin_inset Formula $p(y;\theta)$
+\begin_inset Formula $p(y\mid\theta)$
 \end_inset
 
- governs the world we are observing.
+ governs the world we are observing, for some 
+\begin_inset Formula $\theta\in\Theta$
+\end_inset
+
+.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Or at least the part that's of interest to us.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Pause
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 In 
 \series bold
@@ -826,6 +1059,7 @@ fixed constant
  not random) and is
 \end_layout
 
+\begin_deeper
 \begin_layout Itemize
 
 \series bold
@@ -841,9 +1075,16 @@ to us.
 
 \end_deeper
 \end_deeper
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \begin_layout Itemize
-If we knew 
-\begin_inset Formula $\theta$
+If we knew the right 
+\begin_inset Formula $\theta\in\Theta$
 \end_inset
 
 , there would be no need for statistics.
@@ -860,17 +1101,17 @@ Instead of
 \begin_inset Formula $\theta$
 \end_inset
 
-, we have a 
-\series bold
-sample
-\series default
- 
-\begin_inset Formula $\cd=\left\{ y_{1},\ldots,y_{n}\right\} $
+, we have data 
+\begin_inset Formula $\cd$
 \end_inset
 
- i.i.d.
+: 
+\begin_inset Formula $y_{1},\ldots,y_{n}$
+\end_inset
+
+ sampled i.i.d.
  
-\begin_inset Formula $p(y;\theta)$
+\begin_inset Formula $p(y\mid\theta)$
 \end_inset
 
 .
@@ -883,7 +1124,7 @@ sample
 
 \end_deeper
 \begin_layout Itemize
-Statistics is about how to use 
+Statistics is about how to get by with 
 \begin_inset Formula $\cd$
 \end_inset
 
@@ -896,7 +1137,7 @@ Statistics is about how to use
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -904,10 +1145,10 @@ Statistics is about how to use
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1064,7 +1305,7 @@ What to do?
 
 \end_deeper
 \begin_layout Plain Layout
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1117,6 +1358,17 @@ statistic
 \end_inset
 
  is any function of the data.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Schervish p.
+ 83
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1130,15 +1382,30 @@ A statistic
 \begin_inset Formula $\hat{\theta}=\hat{\theta}(\cd)$
 \end_inset
 
+ taking values in 
+\begin_inset Formula $\Theta$
+\end_inset
+
  is a
 \series bold
- point estimator
+ point estimator of
 \series default
- if 
-\begin_inset Formula $\hat{\theta}\approx\theta$
+ 
+\begin_inset Formula $\theta$
 \end_inset
 
 .
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Schervish p.
+ 3
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1146,7 +1413,37 @@ A statistic
 
 \end_layout
 
+\begin_layout Itemize
+A good point estimator will have 
+\begin_inset Formula $\hat{\theta}\approx\theta$
+\end_inset
+
+.
+\end_layout
+
 \end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Desirable Properties of Point Estimators
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Itemize
 Desirable statistical properties of point estimators:
 \end_layout
@@ -1166,18 +1463,16 @@ As data size
 \end_inset
 
 , we get 
-\begin_inset Formula $\hat{\theta}\to\theta$
+\begin_inset Formula $\hat{\theta}_{n}\to\theta$
 \end_inset
 
 .
 \end_layout
 
-\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 
 \series bold
@@ -1194,7 +1489,6 @@ Efficiency:
 .
 \end_layout
 
-\begin_deeper
 \begin_layout Pause
 
 \end_layout
@@ -1204,130 +1498,14 @@ Efficiency:
 e.g.
 
 \series bold
- maximum likelihood estimation 
+ Maximum likelihood estimators 
 \series default
-is consistent and efficient under reasonable conditions.
+are consistent and efficient under reasonable conditions.
 \end_layout
 
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Itemize
-In frequentist statistics, you can make up any estimator you want.
- 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Justify its use by showing it has desirable properties.
-\end_layout
-
-\end_deeper
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Bayesian Statistics: Introduction
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Bayesian Statistics
-\end_layout
-
-\end_inset
-
- 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Major viewpoint change in 
-\series bold
-Bayesian statistics
-\series default
-:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-parameter
-\series bold
- 
-\series default
-
-\begin_inset Formula $\theta\in\Theta$
-\end_inset
-
- is a 
-\series bold
-random variable
-\series default
-.
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Itemize
-New ingredient is the 
-\series bold
-prior distribution:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-It is a distribution on parameter space 
-\begin_inset Formula $\Theta$
-\end_inset
-
-.
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Reflects our belief about 
-\begin_inset Formula $\theta$
-\end_inset
-
-.
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Must be chosen before seeing any data.
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1338,54 +1516,26 @@ Must be chosen before seeing any data.
 status open
 
 \begin_layout Plain Layout
-The Bayesian Method
+The Likelihood Function
 \end_layout
 
 \end_inset
 
- 
-\end_layout
 
-\begin_deeper
-\begin_layout Enumerate
-Define the model:
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Choose a distribution 
-\begin_inset Formula $p(\theta)$
+For parametric family 
+\begin_inset Formula $\left\{ p(y\mid\theta):\theta\in\Theta\right\} $
 \end_inset
 
-, called the 
-\series bold
-prior distribution
-\series default
+ and i.i.d.
+ sample 
+\begin_inset Formula $\cd=\left(y_{1},\ldots,y_{n}\right)$
+\end_inset
+
 .
-\end_layout
-
-\begin_layout Itemize
-Choose a probability model or 
-\begin_inset Quotes eld
-\end_inset
-
-
-\series bold
-likelihood model
-\series default
-
-\begin_inset Quotes erd
-\end_inset
-
-, now written as: 
-\begin_inset Formula 
-\[
-\left\{ p(\cd\mid\theta)\mid\theta\in\Theta\right\} .
-\]
-
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1394,214 +1544,19 @@ likelihood model
 \end_layout
 
 \end_deeper
-\end_deeper
-\begin_layout Enumerate
-After observing 
+\begin_layout Itemize
+The density for sample 
 \begin_inset Formula $\cd$
 \end_inset
 
-, compute the 
-\series bold
-posterior distribution
-\series default
- 
-\begin_inset Formula $p(\theta\mid\cd)$
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-Choose  
-\series bold
-action
-\series default
- based on 
-\begin_inset Formula $p(\theta\mid\cd)$
-\end_inset
-
-.
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Enumerate
-e.g.
- 
-\begin_inset Formula $\argmax_{\theta\in\Theta}p(\theta\mid\cd)$
-\end_inset
-
- would be a 
-\series bold
-point estimator
-\series default
  for 
-\begin_inset Formula $\hat{\theta}$
-\end_inset
-
-.
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Enumerate
-e.g.
- A 
-\begin_inset Formula $95\%$
-\end_inset
-
-
-\series bold
- credible interval: 
-\begin_inset Formula $\pr\left(\theta\in[a,b]\mid\cd\right)\ge0.95$
-\end_inset
-
-
-\series default
- 
-\end_layout
-
-\end_deeper
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Frame
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-
-\emph on
-Likelihood model
-\emph default
- 
-\begin_inset Formula $p(x\mid\theta)$
-\end_inset
-
- [PDF or PMF on 
-\begin_inset Formula $x$
-\end_inset
-
- for each 
 \begin_inset Formula $\theta\in\Theta$
 \end_inset
 
-]
-\end_layout
-
-\begin_layout Itemize
-
-\emph on
-Prior distribution
-\emph default
- 
-\begin_inset Formula $p(\theta)$
-\end_inset
-
- [a probability distribution on 
-\begin_inset Formula $\Theta$
-\end_inset
-
-]
-\end_layout
-
-\begin_layout Itemize
-
-\emph on
-Data
-\emph default
-
-\begin_inset Formula $\cd=(X_{1},\ldots,X_{n})$
-\end_inset
-
-, where 
-\begin_inset Formula $X_{i}$
-\end_inset
-
- are conditionally i.i.d.
- 
-\begin_inset Formula $p(x\mid\theta)$
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-This means 
-\begin_inset Formula $p(X_{1},\ldots,X_{n}\mid\theta)=\prod_{i=1}^{n}p(X_{i}\mid\theta)$
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-
-\emph on
-Posterior distribution
-\emph default
- is 
-\begin_inset Formula $p(\theta\mid\cd)$
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-The Posterior Distribution
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-By Bayes rule, can write the posterior distribution as
+ is
 \begin_inset Formula 
 \[
-p(\theta\mid\cd)\pause=\frac{p(\cd\mid\theta)p(\theta)}{p(\cd)}.
+p(\cd\mid\theta)\pause=\prod_{i=1}^{n}p(y_{i}\mid\theta).
 \]
 
 \end_inset
@@ -1616,34 +1571,38 @@ p(\theta\mid\cd)\pause=\frac{p(\cd\mid\theta)p(\theta)}{p(\cd)}.
 
 \end_deeper
 \begin_layout Itemize
-
-\series bold
-likelihood:
-\series default
- 
 \begin_inset Formula $p(\cd\mid\theta)$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-prior: 
-\begin_inset Formula $p(\theta)$
+ is a function of 
+\begin_inset Formula $\cd$
 \end_inset
 
+ and 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
 
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
+For fixed 
+\begin_inset Formula $\theta$
+\end_inset
 
-\series bold
-marginal likelihood
-\series default
-: 
-\begin_inset Formula $p(\cd)$
+, 
+\begin_inset Formula $p(\cd\mid\theta$
+\end_inset
+
+) is a density function on 
+\begin_inset Formula $\cy^{n}$
 \end_inset
 
 .
@@ -1656,19 +1615,20 @@ marginal likelihood
 
 \end_deeper
 \begin_layout Itemize
-Note: 
-\begin_inset Formula $p(\cd)$
+For fixed 
+\begin_inset Formula $\cd$
 \end_inset
 
- is just a normalizing constant for 
-\begin_inset Formula $p(\theta\mid\cd)$
+, the function 
+\begin_inset Formula $\theta\mapsto p(\cd\mid\theta)$
 \end_inset
 
-.
- Can write
+ is called the 
+\series bold
+likelihood function:
 \begin_inset Formula 
 \[
-\underbrace{p(\theta\mid\cd)}_{\text{posterior}}\propto\underbrace{p(\cd\mid\theta)}_{\text{likelihood}}\underbrace{p(\theta)}_{\text{prior}}.
+L_{\cd}(\theta):=p(\cd\mid\theta).
 \]
 
 \end_inset
@@ -1678,7 +1638,7 @@ Note:
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1689,7 +1649,7 @@ Note:
 status open
 
 \begin_layout Plain Layout
-Recap and Interpretation
+Maximum Likelihood Estimation
 \end_layout
 
 \end_inset
@@ -1698,33 +1658,40 @@ Recap and Interpretation
 \end_layout
 
 \begin_deeper
-\begin_layout Itemize
-Prior represents belief about 
+\begin_layout Definition
+The 
+\series bold
+maximum likelihood estimator (MLE)
+\series default
+ for 
 \begin_inset Formula $\theta$
 \end_inset
 
- before observing data 
-\begin_inset Formula $\cd$
+ in the model 
+\begin_inset Formula $\left\{ p(y,\theta)\mid\theta\in\Theta\right\} $
 \end_inset
 
-.
+ is
+\begin_inset Formula 
+\begin{eqnarray*}
+\hat{\theta}_{\text{MLE}} & = & \argmax_{\theta\in\Theta}L_{\cd}(\theta).
+\end{eqnarray*}
+
+\end_inset
+
+
 \end_layout
 
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
 \begin_layout Itemize
-Posterior represents the
-\series bold
- rationally 
-\begin_inset Quotes eld
-\end_inset
-
-updated
-\begin_inset Quotes erd
-\end_inset
-
- beliefs
-\series default
- after seeing 
-\begin_inset Formula $\cd$
+Maximum likelihood is just one approach to getting a point estimator for
+ 
+\begin_inset Formula $\theta$
 \end_inset
 
 .
@@ -1737,7 +1704,11 @@ updated
 
 \end_deeper
 \begin_layout Itemize
-All inferences and action-taking are based on the posterior distribution.
+
+\series bold
+Method of moments
+\series default
+ is another general approach one learns about in statistics.
 \end_layout
 
 \begin_deeper
@@ -1747,84 +1718,26 @@ All inferences and action-taking are based on the posterior distribution.
 
 \end_deeper
 \begin_layout Itemize
-In the Bayesian approach,
+Later we'll talk about 
+\series bold
+MAP 
+\series default
+and 
+\series bold
+posterior mean 
+\series default
+as approaches to point estimation.
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-No issue of 
-\begin_inset Quotes eld
-\end_inset
-
-choosing a procedure
-\begin_inset Quotes erd
-\end_inset
-
- or justifying an estimator.
-\end_layout
-
-\begin_layout Itemize
-Only choices are the
-\series bold
- prior
-\series default
- and the
-\series bold
- likelihood model
-\series default
-.
-\end_layout
-
-\begin_layout Itemize
-For decision making, need a 
-\series bold
-loss function
-\series default
-.
-\end_layout
-
-\begin_layout Itemize
-Everything after that is 
-\series bold
-computation
-\series default
-.
+These arise naturally in Bayesian settings.
 \end_layout
 
 \end_deeper
-\begin_layout Standard
-
-\emph on
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Show pictures of probability distribution on 
-\begin_inset Formula $\theta,$
-\end_inset
-
-prior & posterior
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Coin Flipping: The Beta-Binomial Model
-\end_layout
-
-\begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1845,23 +1758,19 @@ Coin Flipping: Setup
 
 \begin_deeper
 \begin_layout Itemize
-
-\series bold
-Parameter space 
-\series default
-
-\begin_inset Formula $\theta\in\Theta=[0,1]$
-\end_inset
-
-: 
+Parametric family of mass functions:
 \begin_inset Formula 
 \[
-\pr(\mbox{Heads}\mid\theta)=\theta.
+p(\text{Heads}\mid\theta)=\theta,
 \]
 
 \end_inset
 
+for 
+\begin_inset Formula $\theta\in\Theta=\left(0,1\right)$
+\end_inset
 
+.
 \end_layout
 
 \begin_layout Pause
@@ -1869,8 +1778,38 @@ Parameter space
 \end_layout
 
 \begin_layout Itemize
+Note that every 
+\begin_inset Formula $\theta\in\Theta$
+\end_inset
+
+ gives us a different probability model for a coin.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Coin Flipping: Likelihood function
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
 Data 
-\begin_inset Formula $\cd=\left\{ H,H,T,T,T,T,T,H,\ldots,T\right\} $
+\begin_inset Formula $\cd=\left(H,H,T,T,T,T,T,H,\ldots,T\right)$
 \end_inset
 
 
@@ -1901,12 +1840,16 @@ Data
 \begin_layout Itemize
 
 \series bold
-Likelihood model
+Likelihood function 
 \series default
- (Bernoulli Distribution):
+for data 
+\begin_inset Formula $\cd$
+\end_inset
+
+:
 \begin_inset Formula 
 \[
-p(\cd\mid\theta)=\theta^{n_{h}}\left(1-\theta\right)^{n_{t}}
+L_{\cd}(\theta)=\pause p(\cd\mid\theta)=\theta^{n_{h}}\left(1-\theta\right)^{n_{t}}
 \]
 
 \end_inset
@@ -1950,7 +1893,492 @@ Conditioned on
 \end_deeper
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Coin Flipping: MLE
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+As usual, easier to maximize the log-likelihood function:
+\begin_inset Formula 
+\begin{eqnarray*}
+\hat{\theta}_{\text{MLE}} & = & \argmax_{\theta\in\Theta}\log L_{\cd}(\theta)\\
+ & = & \argmax_{\theta\in\Theta}\left[n_{h}\log\theta+n_{t}\log(1-\theta)\right]
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+First order condition:
+\begin_inset Formula 
+\begin{eqnarray*}
+\frac{n_{h}}{\theta}-\frac{n_{t}}{1-\theta} & = & 0\\
+\iff\theta & = & \frac{n_{h}}{n_{h}+n_{t}}.
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+So 
+\begin_inset Formula $\hat{\theta}_{\text{MLE}}$
+\end_inset
+
+ is the empirical fraction of heads.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Bayesian Statistics: Introduction
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Bayesian Statistics
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Itemize
+Major viewpoint change in 
+\series bold
+Bayesian statistics
+\series default
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+parameter
+\series bold
+ 
+\series default
+
+\begin_inset Formula $\theta\in\Theta$
+\end_inset
+
+ is a 
+\series bold
+random variable
+\series default
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Introduces a new ingredient: the 
+\series bold
+prior distribution.
+\end_layout
+
+\begin_layout Itemize
+A 
+\series bold
+prior distribution
+\series default
+ 
+\begin_inset Formula $p(\theta)$
+\end_inset
+
+ is a distribution on parameter space 
+\begin_inset Formula $\Theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+A prior reflects our belief about 
+\begin_inset Formula $\theta$
+\end_inset
+
+, 
+\series bold
+before seeing any data
+\series default
+..
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+A Bayesian Model 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A Bayesian model consists of two pieces:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+a parametric family of densities 
+\begin_inset Formula 
+\[
+\left\{ p(\cd\mid\theta)\mid\theta\in\Theta\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+A 
+\series bold
+prior distribution
+\series default
+ 
+\begin_inset Formula $p(\theta)$
+\end_inset
+
+ on parameter space 
+\begin_inset Formula $\Theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Putting pieces together, we get a joint density on 
+\begin_inset Formula $\theta$
+\end_inset
+
+ and 
+\begin_inset Formula $\cd$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+p(\cd,\theta)=p(\cd\mid\theta)p(\theta).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Posterior Distribution
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The 
+\series bold
+posterior distribution 
+\series default
+for 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is 
+\begin_inset Formula $p(\theta\mid\cd)$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Prior represents belief about 
+\begin_inset Formula $\theta$
+\end_inset
+
+ before observing data 
+\begin_inset Formula $\cd$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Posterior represents the
+\series bold
+ rationally 
+\begin_inset Quotes eld
+\end_inset
+
+updated
+\begin_inset Quotes erd
+\end_inset
+
+ beliefs
+\series default
+ after seeing 
+\begin_inset Formula $\cd$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Expressing the Posterior Distribution
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+By Bayes rule, can write the posterior distribution as
+\begin_inset Formula 
+\[
+p(\theta\mid\cd)\pause=\frac{p(\cd\mid\theta)p(\theta)}{p(\cd)}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Let's consider both sides as functions of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ for fixed 
+\begin_inset Formula $\cd$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Then both sides are densities on 
+\begin_inset Formula $\Theta$
+\end_inset
+
+ and we can write
+\begin_inset Formula 
+\[
+\underbrace{p(\theta\mid\cd)}_{\text{posterior}}\propto\underbrace{p(\cd\mid\theta)}_{\text{likelihood}}\underbrace{p(\theta)}_{\text{prior}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Where 
+\begin_inset Formula $\propto$
+\end_inset
+
+ means we've dropped factors independent of 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Coin Flipping: Bayesian Model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Parametric family of mass functions:
+\begin_inset Formula 
+\[
+p(\text{Heads}\mid\theta)=\theta,
+\]
+
+\end_inset
+
+for 
+\begin_inset Formula $\theta\in\Theta=\left(0,1\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Need a prior distribution 
+\begin_inset Formula $p(\theta)$
+\end_inset
+
+ on 
+\begin_inset Formula $\Theta=(0,1)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+A distribution from the Beta family will do the trick...
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1998,7 +2426,7 @@ p(\theta) & \propto & \theta^{\alpha-1}\left(1-\theta\right)^{\beta-1}
 \begin_inset Graphics
 	filename ../Figures/SenseNetworks/betaFamily.png
 	lyxscale 30
-	width 40text%
+	height 55theight%
 
 \end_inset
 
@@ -2034,7 +2462,7 @@ url{http://commons.wikimedia.org/wiki/File:Beta_distribution_pdf.svg}.}}
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2093,9 +2521,35 @@ Mean of Beta distribution:
 
 \end_layout
 
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Mode of Beta distribution:
+\series default
+ 
+\begin_inset Formula 
+\[
+\argmax_{\theta}p(\theta)=\frac{h-1}{h+t-2}
+\]
+
+\end_inset
+
+for 
+\begin_inset Formula $h,t>1$
+\end_inset
+
+.
+\end_layout
+
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2176,7 +2630,7 @@ p(\theta\mid\cd) & \propto & p(\theta)p(\cd\mid\theta)\\
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2290,7 +2744,7 @@ Posterior increments counts by observed
 \end_deeper
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2301,7 +2755,7 @@ Posterior increments counts by observed
 status open
 
 \begin_layout Plain Layout
-Example: Coin Flipping
+Sidebar: Conjugate Priors
 \end_layout
 
 \end_inset
@@ -2311,10 +2765,141 @@ Example: Coin Flipping
 
 \begin_deeper
 \begin_layout Itemize
-Suppose we have a coin, possibly biased
+Interesting that posterior is in same distribution family as prior.
+\end_layout
+
+\begin_layout Itemize
+Let 
+\begin_inset Formula $\pi$
+\end_inset
+
+ be a family of prior distributions on 
+\begin_inset Formula $\Theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $P$
+\end_inset
+
+ parametric family of distributions with parameter space 
+\begin_inset Formula $\Theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Definition
+A family of distributions 
+\series bold
+
+\begin_inset Formula $\pi$
+\end_inset
+
+ is conjugate to 
+\series default
+parametric model 
+\series bold
+
+\begin_inset Formula $P$
+\end_inset
+
+
+\series default
+ if for any prior in 
+\begin_inset Formula $\pi$
+\end_inset
+
+, the posterior is always in 
+\begin_inset Formula $\pi$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The beta family is conjugate to the coin-flipping (i.e.
+ Bernoulli) model.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The family of all probability distributions is conjugate to any parametric
+ model.
+ [Trvially]
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Every exponential family has a nontrivial conjugate prior family.
+ (KPM Section 9.2)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Example: Coin Flipping - Concrete Example
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose we have a coin, possibly biased (
+\series bold
+parametric probability model
+\series default
+):
 \begin_inset Formula 
 \[
-\pr(\mbox{Heads}\mid\theta)=\theta.
+p(\mbox{Heads}\mid\theta)=\theta.
 \]
 
 \end_inset
@@ -2373,7 +2958,7 @@ Prior distribution:
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2456,7 +3041,181 @@ Posterior distribution:
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Marginal Likelihood
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+In
+\begin_inset Formula 
+\[
+p(\theta\mid\cd)\pause=\frac{p(\cd\mid\theta)p(\theta)}{p(\cd)},
+\]
+
+\end_inset
+
+
+\begin_inset Formula $p(\cd)$
+\end_inset
+
+ is called the 
+\series bold
+marginal likelihood.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+What is 
+\begin_inset Formula $p(\cd)$
+\end_inset
+
+
+\begin_inset Formula 
+\begin{eqnarray*}
+\pause p(\cd) & = & \pause\int p(\cd,\theta)\,d\theta\\
+ & = & \int p(\cd\mid\theta)p(\theta)\,d\theta
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Plain Layout
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Itemize
+Marginal likelihood of data is beautiful for model selection
+\end_layout
+
+\begin_layout Plain Layout
+Suppose we have data 
+\begin_inset Formula $w=(w_{1},w_{2},\ldots,w_{n})$
+\end_inset
+
+.
+ In a generative model, we can consider 
+\begin_inset Formula $p(w)$
+\end_inset
+
+ as a 
+\begin_inset Quotes eld
+\end_inset
+
+score
+\begin_inset Quotes erd
+\end_inset
+
+ for the model.
+ Note that 
+\begin_inset Formula 
+\[
+p(w)=p(w_{1})p(w_{2}\mid w_{1})p(w_{3}\mid w_{1},w_{2})\cdots p(w_{n}\mid w_{1},\ldots w_{n-1})
+\]
+
+\end_inset
+
+If we take the log of this, we get a sum of log-likelhoods of points that
+ we didn't see during training.
+ So it should be something like an estimate of holdout performance.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+For example, if we compute 
+\begin_inset Formula $p(w\mid T)$
+\end_inset
+
+ for different values of 
+\begin_inset Formula $T$
+\end_inset
+
+, we could use that quantity to choose 
+\begin_inset Formula $T$
+\end_inset
+
+.
+ Seems crazy.
+\end_layout
+
+\begin_layout Itemize
+Model Scoring
+\end_layout
+
+\begin_layout Plain Layout
+(Baesd on discussion with Mahdi Pakdaman).
+ Let's take a Bayesian perspective.
+ Suppose we have a prior on models 
+\begin_inset Formula $p(m)$
+\end_inset
+
+.
+ Then we can select the model that has the maximum probability, conditioned
+ on the data:
+\begin_inset Formula 
+\begin{eqnarray*}
+\argmax_{i}p(m_{i}\mid\cd) & = & \argmax_{i}p(\cd\mid m_{i})p(m_{i}),
+\end{eqnarray*}
+
+\end_inset
+
+where 
+\begin_inset Formula $p(\cd\mid m_{i})$
+\end_inset
+
+ is the marginal likelihood for model 
+\begin_inset Formula $m_{i}$
+\end_inset
+
+, discussed above.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2477,7 +3236,7 @@ Bayesian Point Estimates
 
 \begin_deeper
 \begin_layout Itemize
-Suppose we have posterior 
+So we have posterior 
 \begin_inset Formula $\theta\mid\cd$
 \end_inset
 
@@ -2489,7 +3248,7 @@ But we want a point estimate
 \begin_inset Formula $\hat{\theta}$
 \end_inset
 
- or 
+ for 
 \begin_inset Formula $\theta$
 \end_inset
 
@@ -2554,7 +3313,7 @@ mode
 \end_deeper
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2702,12 +3461,6 @@ url{http://davidrosenberg.github.io/mlcourse/2015/Lectures/12.bayesian-methods.p
 \end_layout
 
 \end_deeper
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-
-
 \begin_layout Section
 Bayesian Decision Theory
 \end_layout
@@ -2846,11 +3599,16 @@ r(a^{*})=\min_{a\in\ca}r(a)
 
 \end_inset
 
- 
+
 \end_layout
 
 \end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
 
+
+\end_layout
 
 \begin_layout Frame
 \begin_inset Argument 4
@@ -2985,7 +3743,12 @@ r(\hat{\theta}) & = & \ex\left[\left(\theta-\hat{\theta}\right)^{2}\mid\cd\right
 \end_layout
 
 \end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
 
+
+\end_layout
 
 \begin_layout Frame
 \begin_inset Argument 4
@@ -3035,7 +3798,7 @@ r(\hat{\theta}) & = & \int\left(\theta-\hat{\theta}\right)^{2}p(\theta\mid\cd)\,
 Differentiate:
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 \begin_inset Formula 
 \begin{eqnarray*}
 \frac{dr(\hat{\theta})}{d\hat{\theta}} & = & -\int2\left(\theta-\hat{\theta}\right)p(\theta\mid\cd)\,d\theta\\
@@ -3045,11 +3808,16 @@ Differentiate:
 
 \end_inset
 
- 
+
 \end_layout
 
 \end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
 
+
+\end_layout
 
 \begin_layout Frame
 \begin_inset Argument 4
@@ -3137,7 +3905,12 @@ No assumptions on probability model and prior distribution.
 \end_layout
 
 \end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
 
+
+\end_layout
 
 \begin_layout Frame
 \begin_inset Argument 4
@@ -3203,13 +3976,8 @@ That is, the median of the distribution
 \end_deeper
 \begin_layout Itemize
 Show with approach similar to what was used in Homework #1.
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Plain Layout
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Itemize
 https://www.dropbox.com/s/zwguypl8nn96ryr/Screenshot%202015-04-21%2011.28.51.png?dl=0
@@ -3225,7 +3993,14 @@ http://www.cogsci.ucsd.edu/~ajyu/Teaching/Tutorials/bayes_dt.pdf
 
 \end_layout
 
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
 
+
+\end_layout
 
 \begin_layout Frame
 \begin_inset Argument 4
@@ -3338,10 +4113,15 @@ The MAP estimate is the
 mode
 \series default
  of the posterior distribution.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
 \end_layout
-
-\end_deeper
-
 
 \begin_layout Frame
 \begin_inset Argument 4
@@ -3445,12 +4225,444 @@ p\left(\text{english}\mid\cd\right)<\frac{1}{10}p\left(\mbox{french}\mid\cd\righ
 
 \end_inset
 
+
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Summary
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Recap and Interpretation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Prior represents belief about 
+\begin_inset Formula $\theta$
+\end_inset
+
+ before observing data 
+\begin_inset Formula $\cd$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Posterior represents the
+\series bold
+ rationally 
+\begin_inset Quotes eld
+\end_inset
+
+updated
+\begin_inset Quotes erd
+\end_inset
+
+ beliefs
+\series default
+ after seeing 
+\begin_inset Formula $\cd$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+All inferences and action-taking are based on the posterior distribution.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+In the Bayesian approach,
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+No issue of 
+\begin_inset Quotes eld
+\end_inset
+
+choosing a procedure
+\begin_inset Quotes erd
+\end_inset
+
+ or justifying an estimator.
+\end_layout
+
+\begin_layout Itemize
+Only choices are the
+\series bold
+ prior
+\series default
+ and the
+\series bold
+ likelihood model
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+For decision making, need a 
+\series bold
+loss function
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+Everything after that is 
+\series bold
+computation
+\series default
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+
+\emph on
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Show pictures of probability distribution on 
+\begin_inset Formula $\theta,$
+\end_inset
+
+prior & posterior
+\end_layout
+
+\end_inset
+
+
+\emph default
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+In 2017 there was some crazy question about what can happen to a posterior
+ distribution, but I'd have to check the video...
+ it was can the vriance ever get bigger - it can - see Brett's solutions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Bayesian Method
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+
+\series bold
+Define the model
+\series default
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Choose a parametric family of densities: 
+\begin_inset Formula 
+\[
+\left\{ p(\cd\mid\theta)\mid\theta\in\Theta\right\} .
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Choose a distribution 
+\begin_inset Formula $p(\theta)$
+\end_inset
+
+ on 
+\begin_inset Formula $\Theta$
+\end_inset
+
+, called the 
+\series bold
+prior distribution
+\series default
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+After observing 
+\begin_inset Formula $\cd$
+\end_inset
+
+, compute the 
+\series bold
+posterior distribution
+\series default
+ 
+\begin_inset Formula $p(\theta\mid\cd)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Choose  
+\series bold
+action
+\series default
+ based on 
+\begin_inset Formula $p(\theta\mid\cd)$
+\end_inset
+
+.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Enumerate
+e.g.
+ 
+\begin_inset Formula $\argmax_{\theta\in\Theta}p(\theta\mid\cd)$
+\end_inset
+
+ would be a 
+\series bold
+point estimator
+\series default
+ for 
+\begin_inset Formula $\hat{\theta}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Enumerate
+e.g.
+ A 
+\begin_inset Formula $95\%$
+\end_inset
+
+
+\series bold
+ credible interval: 
+\begin_inset Formula $\pr\left(\theta\in[a,b]\mid\cd\right)\ge0.95$
+\end_inset
+
+
+\series default
  
 \end_layout
 
 \end_deeper
+\end_inset
 
 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+Likelihood model
+\emph default
+ 
+\begin_inset Formula $p(x\mid\theta)$
+\end_inset
+
+ [PDF or PMF on 
+\begin_inset Formula $x$
+\end_inset
+
+ for each 
+\begin_inset Formula $\theta\in\Theta$
+\end_inset
+
+]
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Prior distribution
+\emph default
+ 
+\begin_inset Formula $p(\theta)$
+\end_inset
+
+ [a probability distribution on 
+\begin_inset Formula $\Theta$
+\end_inset
+
+]
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Data
+\emph default
+
+\begin_inset Formula $\cd=(X_{1},\ldots,X_{n})$
+\end_inset
+
+, where 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+ are conditionally i.i.d.
+ 
+\begin_inset Formula $p(x\mid\theta)$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This means 
+\begin_inset Formula $p(X_{1},\ldots,X_{n}\mid\theta)=\prod_{i=1}^{n}p(X_{i}\mid\theta)$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\emph on
+Posterior distribution
+\emph default
+ is 
+\begin_inset Formula $p(\theta\mid\cd)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+likelihood:
+\series default
+ 
+\begin_inset Formula $p(\cd\mid\theta)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+prior: 
+\begin_inset Formula $p(\theta)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+marginal likelihood
+\series default
+: 
+\begin_inset Formula $p(\cd)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
 \end_inset
 
 

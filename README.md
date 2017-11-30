@@ -1,6 +1,7 @@
 <!-- # DS-GA 1003: Machine Learning and Computational Statistics -->
 
 ## Notable Changes from [Fall 2017](https://davidrosenberg.github.io/ml2017/#home) to [Spring 2017]
+- Added lecture on standard methods of evaluating classifier performance.
 - New figures illustrating regularization paths in space of all functions.
 - Added lecture on Black Box ML
 

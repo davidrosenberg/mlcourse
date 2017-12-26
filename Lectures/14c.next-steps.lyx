@@ -10,18 +10,42 @@
 \beamertemplatenavigationsymbolsempty
 
 
+% Set Color ==============================
+\definecolor{BBGblue}{RGB}{13,157,219}
+\definecolor{BBGgreen}{RGB}{77,170,80}
+
+
+\setbeamercolor{title}{fg=BBGblue}
+%\setbeamercolor{frametitle}{fg=BBGblue}
+\setbeamercolor{frametitle}{fg=BBGblue}
+
+\setbeamercolor{background canvas}{fg=BBGblue, bg=white}
+\setbeamercolor{background}{fg=black, bg=BBGblue}
+
+\setbeamercolor{palette primary}{fg=black, bg=gray!30!white}
+\setbeamercolor{palette secondary}{fg=black, bg=gray!20!white}
+\setbeamercolor{palette tertiary}{fg=black, bg=BBGblue}
+
+\setbeamertemplate{headline}{}
+
+\setbeamercolor{parttitle}{fg=BBGblue}
+\setbeamercolor{sectiontitle}{fg=BBGblue}
+\setbeamercolor{sectionname}{fg=BBGblue}
+\setbeamercolor{section page}{fg=BBGblue}
+
 \AtBeginSection[]{
   \begin{frame}
   \vfill
   \centering
-  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
-    \usebeamerfont{title}\insertsectionhead\par%
+\setbeamercolor{section title}{fg=BBGblue}
+ \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\usebeamercolor[fg]{title}\insertsectionhead\par%
   \end{beamercolorbox}
   \vfill
   \end{frame}
 }
 \end_preamble
-\options handout
+\options aspectratio=169
 \use_default_options false
 \maintain_unincluded_children false
 \language english
@@ -45,7 +69,17 @@
 \index_command default
 \paperfontsize default
 \spacing single
-\use_hyperref false
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "allcolors=BBGblue,urlcolor=BBGgreen"
 \papersize default
 \use_geometry true
 \use_package amsmath 2
@@ -67,6 +101,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\boxbgcolor #ff31d8
 \index Index
 \shortcut idx
 \color #008000
@@ -679,14 +714,14 @@ ex}{E}
 \end_layout
 
 \begin_layout Title
-What's Next?
+Next Steps
 \begin_inset Argument 1
 status open
 
 \begin_layout Plain Layout
-DS-GA 1003 
+ML 101
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 optional, use only with long paper titles
@@ -703,27 +738,16 @@ optional, use only with long paper titles
 \end_layout
 
 \begin_layout Author
-David Rosenberg 
+David S.
+ Rosenberg 
 \end_layout
 
 \begin_layout Date
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-today
-\end_layout
-
-\end_inset
-
-
+December 19, 2017
 \end_layout
 
 \begin_layout Institute
-New York University
+Bloomberg ML EDU
 \end_layout
 
 \begin_layout Standard
@@ -777,7 +801,7 @@ tiny{Plots courtesy of Ningshan Zhang.}}
 status open
 
 \begin_layout Plain Layout
-Machine Learning
+Machine Learning: What else to learn?
 \end_layout
 
 \end_inset
@@ -809,11 +833,8 @@ Worth looking more into probabilistic approaches
 \end_layout
 
 \begin_layout Itemize
-Joan Bruna's DS-GA 1005: graphical models, probabilistic learning and inference
-\end_layout
-
-\begin_layout Itemize
-Petrov's CSCI-GA 3033-001: Statistical NLP
+graphical models, probabilistic learning and inference, probabilistic programmin
+g 
 \end_layout
 
 \begin_layout Itemize
@@ -826,20 +847,20 @@ books by David Barber and Kevin Murphy
 
 \end_deeper
 \begin_layout Itemize
-Learn neural networks!
+Learn more about neural networks
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Cho's DS-GA 3001: Neural networks for NLP
+Neural networks for NLP (Yoav Goldberg's book)
 \end_layout
 
 \begin_layout Itemize
-Bowman's LING-GA 3340-002: Seminar in Semantics: Artificial NNs
+Deep learning book (Goodfellow et al.)
 \end_layout
 
 \begin_layout Itemize
-LeCun's Neural networks / vision course
+Stanford's CS231n: Neural Networks for Vision (lecture on YouTube)
 \end_layout
 
 \end_deeper
@@ -856,7 +877,7 @@ LeCun's Neural networks / vision course
 status open
 
 \begin_layout Plain Layout
-Machine Learning
+Machine Learning: What else to learn?
 \end_layout
 
 \end_inset
@@ -880,6 +901,10 @@ Different perspectives.
  Bayesian / Probabilistic) 
 \end_layout
 
+\begin_layout Pause
+
+\end_layout
+
 \end_deeper
 \begin_layout Enumerate
 Read on some 
@@ -895,11 +920,12 @@ second semester
 
 \begin_deeper
 \begin_layout Itemize
-LDA / Topic Models (DS-GA 1005)
+Latent Dirichlet Allocation (LDA) / Topic Models
 \end_layout
 
 \begin_layout Itemize
-Sequence models: Hidden Markov Models / MEMMs / CRFs (DS-GA 1005)
+Sequence models: Hidden Markov Models / MEMMs / CRFs (Amanda Stent's NLP
+ course in 2018)
 \end_layout
 
 \begin_layout Itemize
@@ -920,11 +946,10 @@ Bandit problems (Thompson sampling / UCB methods)
 
 \begin_layout Itemize
 Gaussian processes
-\end_layout
+\begin_inset Note Note
+status open
 
-\end_deeper
-\end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Separator parbreak
 \end_inset
 
@@ -946,6 +971,10 @@ Other Stuff To Learn
 
 \begin_deeper
 \begin_layout Itemize
+Amanda Stent's NLP lectures – coming in early 2018.
+\end_layout
+
+\begin_layout Itemize
 Statistics
 \end_layout
 
@@ -959,12 +988,12 @@ Some production programming language (e.g.
 \end_layout
 
 \end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
 \end_inset
 
 
 \end_layout
 
+\end_deeper
+\end_deeper
 \end_body
 \end_document

@@ -1,0 +1,4154 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin /Users/drosen/Dropbox/repos/mlcourse/Notes/
+\textclass paper
+\use_default_options false
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding iso8859-1
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize letterpaper
+\use_geometry false
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 5
+\tocdepth 5
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\reals}{\mathbf{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\integers}{\mathbf{Z}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\naturals}{\mathbf{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rationals}{\mathbf{Q}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ca}{\mathcal{A}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cb}{\mathcal{B}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cc}{\mathcal{C}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cd}{\mathcal{D}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ce}{\mathcal{E}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cf}{\mathcal{F}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cg}{\mathcal{G}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ch}{\mathcal{H}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ci}{\mathcal{I}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cj}{\mathcal{J}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ck}{\mathcal{K}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cl}{\mathcal{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cm}{\mathcal{M}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cn}{\mathcal{N}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\co}{\mathcal{O}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cp}{\mathcal{P}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cq}{\mathcal{Q}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\calr}{\mathcal{R}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cs}{\mathcal{S}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ct}{\mathcal{T}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cu}{\mathcal{U}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cv}{\mathcal{V}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cw}{\mathcal{W}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cx}{\mathcal{X}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cy}{\mathcal{Y}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cz}{\mathcal{Z}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ind}[1]{1(#1)}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\pr}{\mathbb{P}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\predsp}{\cy}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\outsp}{\cy}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\prxy}{P_{\cx\times\cy}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\prx}{P_{\cx}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\prygivenx}{P_{\cy\mid\cx}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ex}{\mathbb{E}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\var}{\textrm{Var}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cov}{\textrm{Cov}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\sgn}{\textrm{sgn}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\sign}{\textrm{sign}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\kl}{\textrm{KL}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\law}{\mathcal{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\eps}{\varepsilon}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\as}{\textrm{ a.s.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\io}{\textrm{ i.o.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ev}{\textrm{ ev.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\convd}{\stackrel{d}{\to}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\eqd}{\stackrel{d}{=}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\del}{\nabla}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\loss}{V}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\risk}{R}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\emprisk}{\hat{R}_{\ell}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\lossfnl}{L}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\emplossfnl}{\hat{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\empminimizer}[1]{\hat{#1}_{\ell}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\minimizer}[1]{#1_{*}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\etal}{\textrm{et. al.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\tr}{\operatorname{tr}}
+{\text{tr}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\trace}{\operatorname{trace}}
+{\text{trace}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\diag}{\text{diag}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\rank}{\text{rank}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\linspan}{\text{span}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\proj}{\text{Proj}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\argmax}{\operatornamewithlimits{arg\, max}}
+{\mbox{argmax}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\argmin}{\operatornamewithlimits{arg\, min}}
+{\mbox{argmin}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfx}{\mathbf{x}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfy}{\mathbf{y}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfl}{\mathbf{\lambda}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfm}{\mathbf{\mu}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\calL}{\mathcal{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vw}{\boldsymbol{w}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vx}{\boldsymbol{x}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vxi}{\boldsymbol{\xi}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\valpha}{\boldsymbol{\alpha}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vbeta}{\boldsymbol{\beta}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vsigma}{\boldsymbol{\sigma}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vmu}{\boldsymbol{\mu}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vtheta}{\boldsymbol{\theta}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vd}{\boldsymbol{d}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vs}{\boldsymbol{s}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vt}{\boldsymbol{t}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vh}{\boldsymbol{h}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ve}{\boldsymbol{e}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vf}{\boldsymbol{f}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vg}{\boldsymbol{g}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vz}{\boldsymbol{z}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vk}{\boldsymbol{k}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\va}{\boldsymbol{a}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vb}{\boldsymbol{b}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vv}{\boldsymbol{v}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vy}{\boldsymbol{y}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\hil}{\ch}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\rkhs}{\hil}
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Title
+Jacobians and Stuff
+\end_layout
+
+\begin_layout Author
+David S.
+ Rosenberg
+\end_layout
+
+\begin_layout Date
+November 22, 2017
+\end_layout
+
+\begin_layout Section
+Derivative of a function 
+\begin_inset Formula $f:\reals\to\reals$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Directional derivative of a function 
+\begin_inset Formula $f:\reals^{n}\to\reals^{m}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The 
+\series bold
+directional derivative
+\series default
+ of 
+\begin_inset Formula $f:\reals^{n}\to\reals^{m}$
+\end_inset
+
+ at 
+\begin_inset Formula $c$
+\end_inset
+
+ in the direction 
+\begin_inset Formula $u$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+f'(c;u)=\lim_{h\to0}\frac{f(c+hu)-f(c)}{h},
+\]
+
+\end_inset
+
+whenever the limit on the right exists.
+ 
+\end_layout
+
+\begin_layout Standard
+To gain some intuition, let's drop the limit and replace equality with approxima
+te equality.
+ Then we can rearrange the expression as
+\begin_inset Formula 
+\[
+f(c+hu)-f(c)\approx hf'(c;u).
+\]
+
+\end_inset
+
+This has an easy interpretation: if we start at 
+\begin_inset Formula $c$
+\end_inset
+
+ and move to 
+\begin_inset Formula $c+hu$
+\end_inset
+
+, then the value of 
+\begin_inset Formula $f$
+\end_inset
+
+ increases by approximately 
+\begin_inset Formula $hf'(c;u)$
+\end_inset
+
+.
+ This is called a 
+\series bold
+first order
+\series default
+ approximation, because we used the first derivative information at 
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $u=u_{k}$
+\end_inset
+
+, the 
+\begin_inset Formula $k$
+\end_inset
+
+th unit coordinate vector with a 
+\begin_inset Formula $1$
+\end_inset
+
+ in the 
+\begin_inset Formula $k$
+\end_inset
+
+th position and 
+\begin_inset Formula $0$
+\end_inset
+
+'s elsewhere, then 
+\begin_inset Formula $f'(c;u_{k})$
+\end_inset
+
+ is a special directional derivative called a 
+\series bold
+partial derivative
+\series default
+ and is denoted by 
+\begin_inset Formula $D_{k}f(c)$
+\end_inset
+
+.
+ Note that 
+\begin_inset Formula $D_{k}f(c)$
+\end_inset
+
+ is vector valued.
+ 
+\end_layout
+
+\begin_layout Section
+Total derivative of a function 
+\begin_inset Formula $f:\reals^{n}\to\reals^{m}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The function 
+\begin_inset Formula $f:\reals^{n}\to\reals^{m}$
+\end_inset
+
+ is said to be 
+\series bold
+differentiable
+\series default
+ at 
+\begin_inset Formula $c$
+\end_inset
+
+ if there exists a 
+\emph on
+linear
+\emph default
+ function 
+\begin_inset Formula $T_{c}:\reals^{n}\to\reals^{m}$
+\end_inset
+
+ such that
+\begin_inset Formula 
+\[
+f(c+v)=f(c)+T_{c}(v)+\|v\|E_{c}(v),
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $E_{c}(v)\to0$
+\end_inset
+
+ as 
+\begin_inset Formula $v\to0$
+\end_inset
+
+.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+This expression is called a 
+\series bold
+first-order Taylor formula
+\series default
+.
+ 
+\end_layout
+
+\end_inset
+
+The linear function 
+\begin_inset Formula $T_{c}$
+\end_inset
+
+ is called the 
+\series bold
+total derivative
+\series default
+ of 
+\begin_inset Formula $f$
+\end_inset
+
+ at 
+\begin_inset Formula $c$
+\end_inset
+
+.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+ We can also write this expression as
+\begin_inset Formula 
+\[
+f(c+v)-f(c)=T_{c}(v)+o(||v||)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can get all directional derivatives from a total derivative: If 
+\begin_inset Formula $f$
+\end_inset
+
+ is differentiable at 
+\begin_inset Formula $c\in\reals^{n}$
+\end_inset
+
+ with total derivative 
+\begin_inset Formula $T_{c}$
+\end_inset
+
+, then the directional derivative 
+\begin_inset Formula $f'(c;v)$
+\end_inset
+
+ exists for every 
+\begin_inset Formula $v$
+\end_inset
+
+ in 
+\begin_inset Formula $\reals^{n}$
+\end_inset
+
+ and we have 
+\begin_inset Formula 
+\[
+T_{c}(v)=f'(c;v).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can also write the total derivative 
+\begin_inset Formula $T_{c}$
+\end_inset
+
+ as 
+\begin_inset Formula $f'(c)$
+\end_inset
+
+.
+ With this notation, we can write
+\begin_inset Formula 
+\[
+f'(c)(v)=f'(c;v).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Total derivative in terms of partial derivatives (i.e.
+ do we really understand linearity?)
+\end_layout
+
+\begin_layout Standard
+Note that 
+\begin_inset Formula $f'(c)(v)\in\reals^{m}$
+\end_inset
+
+.
+ In fact, it's a linear combination of the partial derivatives of 
+\begin_inset Formula $f$
+\end_inset
+
+: If 
+\begin_inset Formula $v=\left(v_{1},\ldots,v_{n}\right)\in\reals^{n}$
+\end_inset
+
+, then the directional derivative at 
+\begin_inset Formula $c$
+\end_inset
+
+ in the direction 
+\begin_inset Formula $v$
+\end_inset
+
+ is 
+\begin_inset Formula 
+\[
+f'(c)(v)=\sum_{k=1}^{n}v_{k}D_{k}f(c).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let's ponder the significance of his for a moment.
+ 
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $f$
+\end_inset
+
+ is real-valued (i.e.
+ 
+\begin_inset Formula $m=1$
+\end_inset
+
+) then
+\begin_inset Formula 
+\[
+f'(c)(v)=\del f(c)\cdot v,
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\del f(c)=\left(D_{1}f(c),\ldots,D_{n}f(c)\right)$
+\end_inset
+
+ is called the 
+\series bold
+gradient vector 
+\series default
+of 
+\begin_inset Formula $f$
+\end_inset
+
+ at 
+\begin_inset Formula $c$
+\end_inset
+
+.
+ It is defined at each point where the partials exist.
+ 
+\end_layout
+
+\begin_layout Standard
+It is also convenient to write the first-order Taylor formula as 
+\begin_inset Formula 
+\begin{eqnarray*}
+f(x) & \approx & f(c)+f'(c)(x-c)\\
+ & = & \left[f(c)-f'(c)(c)\right]+f'(c)(x)
+\end{eqnarray*}
+
+\end_inset
+
+where in the first line we have simply taken 
+\begin_inset Formula $x=c+v$
+\end_inset
+
+ in the definition of total derivative, and dropped the 
+\begin_inset Formula $E_{c}(v)$
+\end_inset
+
+ term, which quickly converges to 
+\begin_inset Formula $0$
+\end_inset
+
+.
+ In the second line, we used the linearity of 
+\begin_inset Formula $f'(c)$
+\end_inset
+
+ to break up it's application to 
+\begin_inset Formula $x-c$
+\end_inset
+
+ into two terms.
+ If 
+\begin_inset Formula $f$
+\end_inset
+
+ is real-valued, this looks like
+\begin_inset Formula 
+\begin{eqnarray*}
+f(x) & \approx & \left[f(c)-\del f(c)\cdot c\right]+\del f(c)\cdot v.
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+[I think it will be easier to just start right in with the partial derivatives
+ stuff, and then say that the larger groups follow trivially.
+ ]
+\end_layout
+
+\begin_layout Standard
+We defined the total derivative of a function 
+\begin_inset Formula $f:\reals^{n}\to\reals^{m}$
+\end_inset
+
+.
+ Suppose an input 
+\begin_inset Formula $c\in\reals^{n}$
+\end_inset
+
+ naturally divides into two pieces, say 
+\begin_inset Formula $c=\begin{pmatrix}c_{1}\\
+c_{2}
+\end{pmatrix}$
+\end_inset
+
+ where 
+\begin_inset Formula $c_{1}\in\reals^{n_{1}}$
+\end_inset
+
+ and 
+\begin_inset Formula $c_{2}\in\reals^{n_{2}}$
+\end_inset
+
+, and 
+\begin_inset Formula $n=n_{1}+n_{2}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Define 
+\begin_inset Formula $f_{c_{2}}(c_{1})=f\begin{pmatrix}c_{1}\\
+c_{2}
+\end{pmatrix}$
+\end_inset
+
+ as a function of 
+\begin_inset Formula $c_{1}$
+\end_inset
+
+ for fixed 
+\begin_inset Formula $c_{2}$
+\end_inset
+
+.
+ And similarly define 
+\begin_inset Formula $f_{c_{1}}(c_{2})$
+\end_inset
+
+.
+ And suppose we have 
+\begin_inset Formula $f_{c_{2}}'(c_{1})$
+\end_inset
+
+ and 
+\begin_inset Formula $f_{c_{1}}'(c_{2})$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula 
+\[
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Concept Check Question: Can we put these together to get the total derivative
+ 
+\begin_inset Formula $f'(c)$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+Let's decompose 
+\begin_inset Formula $v=v_{1}^{0}+v_{2}^{0}$
+\end_inset
+
+.
+ By the linearity of total derivatives, we have
+\begin_inset Formula 
+\begin{eqnarray*}
+f'(c)(v) & = & f'(c)(v_{1}^{0})+f'(c)(v_{2}^{0})\\
+ & = & f'_{c_{2}}(c_{1})(v_{1})+f'_{c_{1}}(c_{2})(v_{2})\\
+\end{eqnarray*}
+
+\end_inset
+
+So there were two key steps.
+ In the first step we used linearity to divide up the contribution The key
+ step was th 
+\end_layout
+
+\begin_layout Standard
+The simplest idea would be that if you know how 
+\begin_inset Formula $f$
+\end_inset
+
+ changes in response to a change in 
+\begin_inset Formula $c_{1}$
+\end_inset
+
+ (with all else fixed) and also how 
+\begin_inset Formula $f$
+\end_inset
+
+ changes in response to a change in 
+\begin_inset Formula $c_{2}$
+\end_inset
+
+ (with all else fixed), then perhaps the change in 
+\begin_inset Formula $f$
+\end_inset
+
+ when we change both 
+\begin_inset Formula $c_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $c_{2}$
+\end_inset
+
+ is just the sum of the changes due to 
+\begin_inset Formula $c_{1}$
+\end_inset
+
+ and the changes due to 
+\begin_inset Formula $c_{2}$
+\end_inset
+
+.
+ On the other hand, what if something non-obvious happens when we change
+ 
+\begin_inset Formula $c_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $c_{2}$
+\end_inset
+
+ simultaneously.
+ Could there be some interaction that leads to some different behavior when
+ we change 
+\begin_inset Formula $c_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $c_{2}$
+\end_inset
+
+ simultaneously? The answer is that although there can certainly be interactions
+ between the effects of 
+\begin_inset Formula $c_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $c_{2}$
+\end_inset
+
+, these will not show up in a first-order Taylor approximation.
+ This idea is built right into the definition of the total derivative as
+ a 
+\series bold
+linear 
+\series default
+function, which we'll expand on now.
+\end_layout
+
+\begin_layout Standard
+Let's make this concrete.
+ Let 
+\begin_inset Formula $c_{1}^{0}=\begin{pmatrix}c_{1}\\
+0
+\end{pmatrix}\in\reals^{n}$
+\end_inset
+
+ and 
+\begin_inset Formula $c_{2}^{0}=\begin{pmatrix}0\\
+c_{2}
+\end{pmatrix}\in\reals^{n}$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $c=c_{1}^{0}+c_{2}^{0}$
+\end_inset
+
+.
+ In the same way, let's decompose 
+\begin_inset Formula $v=v_{1}^{0}+v_{2}^{0}$
+\end_inset
+
+.
+ By the linearity of total derivatives, we have
+\begin_inset Formula 
+\begin{eqnarray*}
+f'(c)(v) & = & f'(c)(v_{1}^{0})+f'(c)(v_{2}^{0})
+\end{eqnarray*}
+
+\end_inset
+
+anybody 
+\end_layout
+
+\begin_layout Standard
+Let's work with the directional derivative characterization 
+\begin_inset Formula $f'(c)(v)=f'(c;v)$
+\end_inset
+
+, where 
+\begin_inset Formula $v=(v_{1},v_{2})$
+\end_inset
+
+ with 
+\begin_inset Formula $v_{1}\in\reals^{n_{1}}$
+\end_inset
+
+ and 
+\begin_inset Formula $v_{2}\in\reals^{n_{2}}$
+\end_inset
+
+.
+ 
+\begin_inset Formula 
+\begin{eqnarray*}
+f(c_{1}+v_{1},c_{2}+v_{2})
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f(c+v)=f(c)+T_{c}(v)+\|v\|E_{c}(v),
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $E_{c}(v)\to0$
+\end_inset
+
+ as 
+\begin_inset Formula $v\to0$
+\end_inset
+
+.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+This expression is called a 
+\series bold
+first-order Taylor formula
+\series default
+.
+ 
+\end_layout
+
+\end_inset
+
+The linear function 
+\begin_inset Formula $T_{c}$
+\end_inset
+
+ is called the 
+\series bold
+total derivative
+\series default
+ of 
+\begin_inset Formula $f$
+\end_inset
+
+ at 
+\begin_inset Formula $c$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Concept check:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $g_{1}:\reals^{p}\to\reals^{n_{1}}$
+\end_inset
+
+ is differentiable at 
+\begin_inset Formula $a$
+\end_inset
+
+ with total derivative 
+\begin_inset Formula $g'_{1}(a)$
+\end_inset
+
+, and 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $g_{2}:\reals^{p}\to\reals^{n_{2}}$
+\end_inset
+
+ is differentiable at 
+\begin_inset Formula $a$
+\end_inset
+
+ with total derivative 
+\begin_inset Formula $g'_{2}(a)$
+\end_inset
+
+, where
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $n=n_{1}+n_{2}$
+\end_inset
+
+.
+ And suppose we define the vector-valued function 
+\begin_inset Formula $g:\reals^{p}\to\reals^{n}$
+\end_inset
+
+ by 
+\begin_inset Formula $g(a)=\left(g_{1}(a),g_{2}(a)\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Consider the function 
+\begin_inset Formula $f(x)=1-x+x^{2}$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $D_{1}f(x)=2x-1$
+\end_inset
+
+.
+ The total derivative of 
+\begin_inset Formula $f$
+\end_inset
+
+ at 
+\begin_inset Formula $c$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+f'(c)(h)=\frac{df(c)}{dx}v=\left(2c-1\right)h.
+\]
+
+\end_inset
+
+for 
+\begin_inset Formula $v\in\reals$
+\end_inset
+
+.
+ The interpretation is that if we start at 
+\begin_inset Formula $c$
+\end_inset
+
+ and move to 
+\begin_inset Formula $c+h$
+\end_inset
+
+, 
+\begin_inset Formula $f$
+\end_inset
+
+ change by 
+\begin_inset Formula $\left(2c-1\right)h$
+\end_inset
+
+.
+ The first-order Taylor approximation to 
+\begin_inset Formula $f$
+\end_inset
+
+ at 
+\begin_inset Formula $c$
+\end_inset
+
+ is then given by
+\begin_inset Formula 
+\begin{eqnarray*}
+f(x) & \approx & f(c)+\left(2c-1\right)\left(x-c\right)\\
+ & = & \left[1-c+c^{2}-2c^{2}+c\right]+\left(2c-1\right)x\\
+ & = & \left[1-c^{2}\right]+\left(2c-1\right)x
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In the table below, 
+\begin_inset Formula $D_{1}f(c)$
+\end_inset
+
+ is the usual derivative of 
+\begin_inset Formula $f$
+\end_inset
+
+ at 
+\begin_inset Formula $c$
+\end_inset
+
+, 
+\begin_inset Formula $f'(c)(h)$
+\end_inset
+
+ is the total derivative of 
+\begin_inset Formula $f$
+\end_inset
+
+ at 
+\begin_inset Formula $c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $c$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f(c)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $D_{1}f(c)$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f'(c)(h)$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+st-Order Taylor Approximation to 
+\begin_inset Formula $f$
+\end_inset
+
+ at 
+\begin_inset Formula $c$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f'(0)(h)=-h$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f(x)\approx1+\left(-1\right)\left(x-0\right)=1-x$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f'(1)(h)=h$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f(x)\approx1+\left(1\right)\left(x-1\right)=x$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f'(2)(h)=3h$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f(x)\approx1+3\left(x-2\right)=-5+3x$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+The chain rule
+\end_layout
+
+\begin_layout Standard
+Suppose 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $g:\reals^{p}\to\reals^{n}$
+\end_inset
+
+ is differentiable at 
+\begin_inset Formula $a$
+\end_inset
+
+ with total derivative 
+\begin_inset Formula $g'(a)$
+\end_inset
+
+, and 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $f:\reals^{n}\to\reals^{m}$
+\end_inset
+
+ is differentiable at 
+\begin_inset Formula $b=g(a)$
+\end_inset
+
+ with total derivative 
+\begin_inset Formula $f'(b)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Then the composition 
+\begin_inset Formula $h=f\circ g$
+\end_inset
+
+ is differentiable at 
+\begin_inset Formula $a$
+\end_inset
+
+ and has total derivative given by
+\begin_inset Formula 
+\[
+h'(a)=f'(b)\circ g'(a).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The figure below depicts a computation graph corresponding to the this theorem:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/backpropagation/chain-rule-comp-graph.png
+	lyxscale 15
+	width 2.5in
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We have 
+\begin_inset Formula $b=g(a)$
+\end_inset
+
+ is the output of function 
+\begin_inset Formula $g$
+\end_inset
+
+, and also the input of function 
+\begin_inset Formula $f$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $c=f(b)=f(g(a))$
+\end_inset
+
+ is the output of the function 
+\begin_inset Formula $f$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Section
+Chain rule with multiple inputs
+\end_layout
+
+\begin_layout Standard
+Let's introduce the following two functions
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $g_{1}:\reals^{p}\to\reals^{n_{1}}$
+\end_inset
+
+ is differentiable at 
+\begin_inset Formula $a$
+\end_inset
+
+ with total derivative 
+\begin_inset Formula $g'_{1}(a)$
+\end_inset
+
+, and 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $g_{2}:\reals^{p}\to\reals^{n_{2}}$
+\end_inset
+
+ is differentiable at 
+\begin_inset Formula $a$
+\end_inset
+
+ with total derivative 
+\begin_inset Formula $g'_{2}(a)$
+\end_inset
+
+, where
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $n=n_{1}+n_{2}$
+\end_inset
+
+.
+ And suppose we define the vector-valued function 
+\begin_inset Formula $g:\reals^{p}\to\reals^{n}$
+\end_inset
+
+ by 
+\begin_inset Formula $g(a)=\left(g_{1}(a),g_{2}(a)\right)$
+\end_inset
+
+.
+ As before, let's take 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $f:\reals^{n}\to\reals^{m}$
+\end_inset
+
+ is differentiable at 
+\begin_inset Formula $b=(g_{1}(a),g_{2}(a))$
+\end_inset
+
+ with total derivative 
+\begin_inset Formula $f'(b)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+So 
+\begin_inset Formula 
+\[
+g'(a)(v_{1},v_{2})=g_{1}'(a)(v_{1})+g_{2}'(a)(v_{2}).
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Then the composition 
+\begin_inset Formula $h=f\circ g$
+\end_inset
+
+ is differentiable at 
+\begin_inset Formula $a$
+\end_inset
+
+ and has total derivative given by
+\begin_inset Formula 
+\[
+h'(a)=f'(b)\circ g'(a).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The figure below depicts a computation graph corresponding to the this theorem:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/backpropagation/chain-rule-comp-graph.png
+	lyxscale 15
+	width 2.5in
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We have 
+\begin_inset Formula $b=g(a)$
+\end_inset
+
+ is the output of function 
+\begin_inset Formula $g$
+\end_inset
+
+, and also the input of function 
+\begin_inset Formula $f$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $c=f(b)=f(g(a))$
+\end_inset
+
+ is the output of the function 
+\begin_inset Formula $f$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Section
+affine transformation 
+\end_layout
+
+\begin_layout Standard
+Consider the function
+\begin_inset Formula 
+\begin{eqnarray*}
+f(x) & = & w^{T}x+b
+\end{eqnarray*}
+
+\end_inset
+
+where 
+\begin_inset Formula $w=\left(w_{1},\ldots,w_{d}\right)\in\reals^{d}$
+\end_inset
+
+, 
+\begin_inset Formula $x=\left(x_{1},\ldots,x_{d}\right)\in\reals^{d}$
+\end_inset
+
+, and 
+\begin_inset Formula $b\in\reals$
+\end_inset
+
+.
+ It's useful to keep in mind that each entry 
+\begin_inset Formula $w_{i}$
+\end_inset
+
+ in the vector 
+\begin_inset Formula $w$
+\end_inset
+
+ has a very specific meaning in relation to the function 
+\begin_inset Formula $f$
+\end_inset
+
+.
+ In particular, it tells us the rate of change of 
+\begin_inset Formula $f$
+\end_inset
+
+ as we change 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+.
+ To see that precisely, let 
+\begin_inset Formula $e_{i}=\left(0,0,\ldots,1,\ldots,0\right)$
+\end_inset
+
+ be the 
+\begin_inset Formula $i$
+\end_inset
+
+th unit coordinate vector, which has a 
+\begin_inset Formula $1$
+\end_inset
+
+ in the 
+\begin_inset Formula $i$
+\end_inset
+
+th position and 
+\begin_inset Formula $0$
+\end_inset
+
+'s elsewhere.
+ Then for any 
+\begin_inset Formula $h\in\reals$
+\end_inset
+
+ , the change in the function value when we add 
+\begin_inset Formula $h$
+\end_inset
+
+ to the 
+\begin_inset Formula $i$
+\end_inset
+
+th coordinate of 
+\begin_inset Formula $x$
+\end_inset
+
+ is
+\begin_inset Formula 
+\begin{eqnarray*}
+f(x+he_{i})-f(x) & = & w^{T}\left(x+he_{i}\right)+b-\left(w^{T}x+b\right)\\
+ & = & hw^{T}e_{i}=hw_{i}.
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now consider a more general linear mapping 
+\begin_inset Formula $f(x)=Wx$
+\end_inset
+
+, where 
+\begin_inset Formula $W\in\reals^{r\times d}$
+\end_inset
+
+ and 
+\begin_inset Formula $w_{ij}$
+\end_inset
+
+ is the 
+\begin_inset Formula $ij$
+\end_inset
+
+'th entry of 
+\begin_inset Formula $W$
+\end_inset
+
+.
+ Then if we again consider the change in the function evaluation when we
+ increment 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ by 
+\begin_inset Formula $h\in\reals$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{eqnarray*}
+f(x+he_{i})-f(x) & = & W\left(x+he_{i}\right)-Wx=hWe_{i}\\
+ & = & h\begin{pmatrix}w_{1i}\\
+w_{2i}\\
+\vdots\\
+w_{ri}
+\end{pmatrix}.
+\end{eqnarray*}
+
+\end_inset
+
+So when we change 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ by 
+\begin_inset Formula $h$
+\end_inset
+
+, each of the the 
+\begin_inset Formula $j$
+\end_inset
+
+th output changes by 
+\begin_inset Formula $w_{ji}h$
+\end_inset
+
+.
+ In words, the 
+\begin_inset Formula $w$
+\end_inset
+
+ in the 
+\begin_inset Formula $i$
+\end_inset
+
+th row tells us how the 
+\begin_inset Formula $i$
+\end_inset
+
+th output changes, and the 
+\begin_inset Formula $j$
+\end_inset
+
+th column tells us the effect of changing the 
+\begin_inset Formula $j$
+\end_inset
+
+th input.
+\end_layout
+
+\begin_layout Standard
+why is this important?
+\end_layout
+
+\begin_layout Section
+Linear Mappings
+\end_layout
+
+\begin_layout Standard
+Consider the simple linear neural network acting on a single input 
+\begin_inset Formula $x\in\reals^{d}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+h=W_{1}x
+\]
+
+\end_inset
+
+ and 
+\begin_inset Formula $W_{1}\in\reals^{r\times d}$
+\end_inset
+
+ and 
+\begin_inset Formula 
+\[
+y=w^{T}h.
+\]
+
+\end_inset
+
+ for 
+\begin_inset Formula $w\in\reals^{r\times1}.$
+\end_inset
+
+ Suppose we've already calculated the matrix 
+\begin_inset Formula $D_{h}y$
+\end_inset
+
+.
+ It's the row vector 
+\begin_inset Formula $w^{T}$
+\end_inset
+
+.
+ Then
+\begin_inset Formula 
+\begin{eqnarray*}
+D_{W_{1}}y & = & \left(D_{h}y\right)\left(D_{W_{1}}h\right)\\
+ & = & w^{T}
+\end{eqnarray*}
+
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+\frac{\partial y}{\partial W_{1}}=\frac{\partial y}{\partial h}\left(\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\]
+
+\end_inset
+
+So we w 
+\begin_inset Formula 
+\[
+f(x;W_{1},W_{2})=W_{2}W_{1}x
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Chain rule in two pieces
+\end_layout
+
+\begin_layout Standard
+Consider a function 
+\begin_inset Formula $f:\reals^{n}\to\reals^{m}$
+\end_inset
+
+, where the o.
+\end_layout
+
+\begin_layout Section
+Total derivative in two pieces
+\end_layout
+
+\begin_layout Section
+Affine Mapping
+\end_layout
+
+\begin_layout Standard
+Consider the simple affine unit acting on a single input 
+\begin_inset Formula $x\in\reals^{d}$
+\end_inset
+
+ and producing 
+\begin_inset Formula $b$
+\end_inset
+
+ affine transformations of 
+\begin_inset Formula $x$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+g(x,W,b)=Wx+b
+\]
+
+\end_inset
+
+for 
+\begin_inset Formula $x\in\reals^{d\times1}$
+\end_inset
+
+, 
+\begin_inset Formula $W\in\reals^{r\times d}$
+\end_inset
+
+ and 
+\begin_inset Formula $b\in\reals^{r\times1}$
+\end_inset
+
+.
+ And suppose the rest of the network is represented by a function 
+\begin_inset Formula $f:\reals^{r}\to\reals$
+\end_inset
+
+.
+ So the full network is represented by the function
+\begin_inset Formula 
+\[
+\left(f\circ g\right)(x,W,b)=f(g(x,W,b)
+\]
+
+\end_inset
+
+Now let's fix some values of 
+\begin_inset Formula $x$
+\end_inset
+
+, 
+\begin_inset Formula $W$
+\end_inset
+
+, and 
+\begin_inset Formula $b$
+\end_inset
+
+, say 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+, 
+\begin_inset Formula $W_{0}$
+\end_inset
+
+, and 
+\begin_inset Formula $b_{0}$
+\end_inset
+
+.
+ Now let 
+\begin_inset Formula 
+\begin{eqnarray*}
+h & = & g(x_{0},W_{0},b_{0})\\
+y & = & f(h)
+\end{eqnarray*}
+
+\end_inset
+
+We want to find the gradient of 
+\begin_inset Formula $y$
+\end_inset
+
+ with respect to 
+\begin_inset Formula $W$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+ and the points 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+, 
+\begin_inset Formula $W_{0}$
+\end_inset
+
+, 
+\begin_inset Formula $b_{0}$
+\end_inset
+
+.
+ Equivalently, we want to know the total derivative of 
+\begin_inset Formula $(f\circ g)$
+\end_inset
+
+ at 
+\begin_inset Formula $(x_{0},W_{0},b_{0})$
+\end_inset
+
+.
+ Suppose we've already calculated the total derivative of 
+\begin_inset Formula $f$
+\end_inset
+
+ at the point 
+\begin_inset Formula $h$
+\end_inset
+
+, namely 
+\begin_inset Formula $f'(h)$
+\end_inset
+
+.
+ We can represent this by 
+\begin_inset Formula $\frac{\partial f}{\partial h}$
+\end_inset
+
+ or 
+\begin_inset Formula $D_{h}f$
+\end_inset
+
+.
+ In either case, it's a 
+\begin_inset Formula $1\times r$
+\end_inset
+
+ row matrix.
+ It's transpose would be the gradient 
+\begin_inset Formula $\del_{h}f$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $f'(h)(v)$
+\end_inset
+
+ is a first-order approximation to the difference 
+\begin_inset Formula $f(h+v)-f(h)$
+\end_inset
+
+.
+ Then by the chain rule, the total derivative of 
+\begin_inset Formula $\left(f\circ g\right)$
+\end_inset
+
+ at 
+\begin_inset Formula $(x_{0},W_{0},b_{0})$
+\end_inset
+
+ is
+\begin_inset Formula 
+\begin{eqnarray*}
+\left(f\circ g\right)'(x_{0},W_{0},b_{0})(\Delta_{x},\Delta_{W},\Delta_{b}) & = & f'(h)(g'(x_{0},W_{0},b_{0})(\Delta_{x},\Delta_{W},\Delta_{b})).
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Glad we simplified everything into such an easy notation.
+ 
+\end_layout
+
+\begin_layout Standard
+As argued above, it's sufficient to compute the total derivative w.r.t.
+ each input, and then just add them together.
+ 
+\begin_inset Formula 
+\begin{eqnarray*}
+g(x,W+\Delta_{W},b) & = & \left(W+\Delta_{W}\right)x+b\\
+ & = & g(x,W,b)+\Delta_{W}x
+\end{eqnarray*}
+
+\end_inset
+
+So
+\begin_inset Formula 
+\[
+g_{W}'(x,W,b)(\Delta_{W})=\Delta_{W}x
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now 
+\begin_inset Formula 
+\begin{eqnarray*}
+(f\circ g_{x,b})'(W)(\Delta_{W}) & = & f'(g_{x,b}(W))\circ g'_{x,b}(W)(\Delta_{W})\\
+ & = & f'(g_{x,b}(W))(\Delta_{W}x)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And for 
+\begin_inset Formula $b$
+\end_inset
+
+ we have
+\begin_inset Formula 
+\begin{eqnarray*}
+g(x,W,b+\Delta_{b})-g(x,W,b) & = & Wx+b+\Delta_{b}-\left(Wx+b\right)\\
+ & = & \Delta_{b}
+\end{eqnarray*}
+
+\end_inset
+
+So
+\begin_inset Formula 
+\[
+g_{b}'(x,W,b)(\Delta_{b})=\Delta_{b}
+\]
+
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+\]
+
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+\frac{\partial g}{}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+g(x+\Delta_{x},W+\Delta_{W},b+\Delta_{b}) & = & \left(W+\Delta_{W}\right)\left(x+\Delta_{x}\right)+b+\Delta_{b}\\
+ & = & g(x,W,b)+W\Delta_{x}+\Delta_{W}\left(x+\Delta_{x}\right)+\Delta_{b}
+\end{eqnarray*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{eqnarray*}
+(f\circ g)(x+\Delta_{x},W+\Delta_{W},b+\Delta_{b}) & = & f\left(\right)\\
+(f\circ g)(x,W,b)\\
+\end{eqnarray*}
+
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+(x,W,b)
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+Suppose our network output is 
+\begin_inset Formula $y\in\reals$
+\end_inset
+
+, and our ultimate goal is to compute 
+\begin_inset Formula $D_{W}y$
+\end_inset
+
+ and 
+\begin_inset Formula $D_{b}y$
+\end_inset
+
+, for use in gradient descent.
+ Suppose also that we've already calculated 
+\begin_inset Formula $D_{h}y$
+\end_inset
+
+.
+ 
+\begin_inset Formula $h\in\reals^{r\times1}$
+\end_inset
+
+, so 
+\begin_inset Formula $D_{h}y\in\reals^{1\times r}$
+\end_inset
+
+.
+ By the chain rule, 
+\begin_inset Formula 
+\[
+D_{W}y=D_{h}yD
+\]
+
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+y=w^{T}h.
+\]
+
+\end_inset
+
+ for 
+\begin_inset Formula $w\in\reals^{r\times1}.$
+\end_inset
+
+ Suppose we've already calculated the matrix 
+\begin_inset Formula $D_{h}y$
+\end_inset
+
+.
+ It's the row vector 
+\begin_inset Formula $w^{T}$
+\end_inset
+
+.
+ Then
+\begin_inset Formula 
+\begin{eqnarray*}
+D_{W_{1}}y & = & \left(D_{h}y\right)\left(D_{W_{1}}h\right)\\
+ & = & w^{T}
+\end{eqnarray*}
+
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+\frac{\partial y}{\partial W_{1}}=\frac{\partial y}{\partial h}\left(\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\]
+
+\end_inset
+
+So we w 
+\begin_inset Formula 
+\[
+f(x;W_{1},W_{2})=W_{2}W_{1}x
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Linear mapping with a minibatch
+\end_layout
+
+\begin_layout Standard
+Now supposed 
+\begin_inset Formula $X\in\reals^{n\times d}$
+\end_inset
+
+ and 
+\begin_inset Formula $W_{1}\in\reals^{r\times d}$
+\end_inset
+
+ and 
+\begin_inset Formula 
+\[
+H=XW_{1}^{T}
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $H\in\reals^{n\times r}$
+\end_inset
+
+ and 
+\begin_inset Formula 
+\[
+y=\frac{1}{n}1^{T}Hw
+\]
+
+\end_inset
+
+for 
+\begin_inset Formula $w\in\reals^{r\times1}.$
+\end_inset
+
+ Now
+\begin_inset Formula 
+\begin{eqnarray*}
+\frac{1}{n}1^{T}\left(H+\Delta\right)w-\frac{1}{n}1^{T}Hw & = & \frac{1}{n}1^{T}\Delta w\\
+ & = & \tr\left(\frac{1}{n}w1^{T}\Delta\right)
+\end{eqnarray*}
+
+\end_inset
+
+So 
+\begin_inset Formula 
+\[
+D_{H}y=\frac{1}{n}1w^{T}.
+\]
+
+\end_inset
+
+Now 
+\begin_inset Formula 
+\begin{eqnarray*}
+D_{W_{1}}y & = & \left(D_{H}y\right)\left(D_{W_{1}}H\right)
+\end{eqnarray*}
+
+\end_inset
+
+and what's 
+\begin_inset Formula $D_{W_{1}}H$
+\end_inset
+
+? This woudl be a 4-dimensional array.
+ Let's avoid thinking about it explicitly.
+ And go back to the transformation view.
+ Suppose we change 
+\begin_inset Formula $W_{1}$
+\end_inset
+
+ by 
+\begin_inset Formula $\Delta$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $H$
+\end_inset
+
+ changes by
+\begin_inset Formula 
+\begin{eqnarray*}
+X\left(W_{1}+\Delta\right)^{T}-XW_{1}^{T} & = & X\Delta^{T}
+\end{eqnarray*}
+
+\end_inset
+
+and then from teh way linear maps work (and this should be clearly established
+ above), we know that when we compose this with the next mapping the changes
+ compose.
+ So when 
+\begin_inset Formula $W_{1}$
+\end_inset
+
+ increases by 
+\begin_inset Formula $\Delta$
+\end_inset
+
+, 
+\begin_inset Formula $y$
+\end_inset
+
+ increases by
+\begin_inset Formula 
+\begin{eqnarray*}
+\tr\left(\left(D_{H}y\right)^{T}X\Delta^{T}\right) & = & \tr\left(\Delta X^{T}\left(D_{H}y\right)\right)\\
+ & = & \tr\left(X^{T}\left(D_{H}y\right)\Delta\right)
+\end{eqnarray*}
+
+\end_inset
+
+So 
+\begin_inset Formula 
+\[
+D_{W_{1}}y=\left(D_{H}y\right)^{T}X
+\]
+
+\end_inset
+
+Does this mean 
+\begin_inset Formula $D_{W_{1}}H=X$
+\end_inset
+
+? that doesn't make sense...
+ does it? shouldn't it be a 4-dim array?
+\end_layout
+
+\begin_layout Standard
+Anyway, doesn't seem we're actually using this form: 
+\begin_inset Formula $D_{W_{1}}y=\left(D_{H}y\right)\left(D_{W_{1}}H\right)$
+\end_inset
+
+ of the chain rule, but rather the more basic composition of total derivatives
+ form.
+\end_layout
+
+\begin_layout Section
+Affine mapping with a minibatch
+\end_layout
+
+\begin_layout Standard
+Now supposed 
+\begin_inset Formula $X\in\reals^{n\times d}$
+\end_inset
+
+ and 
+\begin_inset Formula $W\in\reals^{r\times d}$
+\end_inset
+
+ and 
+\begin_inset Formula $b\in\reals^{r\times1}$
+\end_inset
+
+.
+ We need to add 
+\begin_inset Formula $b^{T}$
+\end_inset
+
+ to every row of 
+\begin_inset Formula $H$
+\end_inset
+
+.
+ For math purposes, 
+\begin_inset Formula 
+\[
+H=XW_{1}^{T}
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $H\in\reals^{n\times r}$
+\end_inset
+
+ and 
+\begin_inset Formula 
+\[
+y=\frac{1}{n}1^{T}Hw
+\]
+
+\end_inset
+
+for 
+\begin_inset Formula $w\in\reals^{r\times1}.$
+\end_inset
+
+ Now
+\begin_inset Formula 
+\begin{eqnarray*}
+\frac{1}{n}1^{T}\left(H+\Delta\right)w-\frac{1}{n}1^{T}Hw & = & \frac{1}{n}1^{T}\Delta w\\
+ & = & \tr\left(\frac{1}{n}w1^{T}\Delta\right)
+\end{eqnarray*}
+
+\end_inset
+
+So 
+\begin_inset Formula 
+\[
+D_{H}y=\frac{1}{n}1w^{T}.
+\]
+
+\end_inset
+
+Now 
+\begin_inset Formula 
+\begin{eqnarray*}
+D_{W_{1}}y & = & \left(D_{H}y\right)\left(D_{W_{1}}H\right)
+\end{eqnarray*}
+
+\end_inset
+
+and what's 
+\begin_inset Formula $D_{W_{1}}H$
+\end_inset
+
+? This woudl be a 4-dimensional array.
+ Let's avoid thinking about it explicitly.
+ And go back to the transformation view.
+ Suppose we change 
+\begin_inset Formula $W_{1}$
+\end_inset
+
+ by 
+\begin_inset Formula $\Delta$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $H$
+\end_inset
+
+ changes by
+\begin_inset Formula 
+\begin{eqnarray*}
+X\left(W_{1}+\Delta\right)^{T}-XW_{1}^{T} & = & X\Delta^{T}
+\end{eqnarray*}
+
+\end_inset
+
+and then from teh way linear maps work (and this should be clearly established
+ above), we know that when we compose this with the next mapping the changes
+ compose.
+ So when 
+\begin_inset Formula $W_{1}$
+\end_inset
+
+ increases by 
+\begin_inset Formula $\Delta$
+\end_inset
+
+, 
+\begin_inset Formula $y$
+\end_inset
+
+ increases by
+\begin_inset Formula 
+\begin{eqnarray*}
+\tr\left(\left(D_{H}y\right)^{T}X\Delta^{T}\right) & = & \tr\left(\Delta X^{T}\left(D_{H}y\right)\right)\\
+ & = & \tr\left(X^{T}\left(D_{H}y\right)\Delta\right)
+\end{eqnarray*}
+
+\end_inset
+
+So 
+\begin_inset Formula 
+\[
+D_{W_{1}}y=\left(D_{H}y\right)^{T}X
+\]
+
+\end_inset
+
+Does this mean 
+\begin_inset Formula $D_{W_{1}}H=X$
+\end_inset
+
+? that doesn't make sense...
+ does it? shouldn't it be a 4-dim array?
+\end_layout
+
+\begin_layout Standard
+Anyway, doesn't seem we're actually using this form: 
+\begin_inset Formula $D_{W_{1}}y=\left(D_{H}y\right)\left(D_{W_{1}}H\right)$
+\end_inset
+
+ of the chain rule, but rather the more basic composition of total derivatives
+ form.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+asdf
+\end_layout
+
+\begin_layout Standard
+Consider the linear function 
+\begin_inset Formula $f(x;w)=w^{T}x$
+\end_inset
+
+, for 
+\begin_inset Formula $w,x\in\reals^{d\times1}$
+\end_inset
+
+.
+ So the total derivative w.r.t.
+ 
+\begin_inset Formula $w$
+\end_inset
+
+ is a linear mapping from 
+\begin_inset Formula $\reals^{d}$
+\end_inset
+
+ to 
+\begin_inset Formula $\reals$
+\end_inset
+
+, which is represented by the gradient 
+\begin_inset Formula $\del_{w}f=x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Now suppose we want to compute this function for a batch of 
+\begin_inset Formula $x$
+\end_inset
+
+'s, which we stack into a design matrix 
+\begin_inset Formula $X\in\reals^{n\times d}$
+\end_inset
+
+ in the usual way.
+ Then we have the linear mapping 
+\begin_inset Formula $f(X;w)=Xw$
+\end_inset
+
+ for 
+\begin_inset Formula $w\in\reals^{d}$
+\end_inset
+
+ and 
+\begin_inset Formula $X\in\reals^{n\times d}$
+\end_inset
+
+.
+ As a function of 
+\begin_inset Formula $w$
+\end_inset
+
+, this is a mapping from 
+\begin_inset Formula $\reals^{d}\to\reals^{n}$
+\end_inset
+
+, and thus the total derivative w.r.t.
+ 
+\begin_inset Formula $w$
+\end_inset
+
+ is a linear mapping from 
+\begin_inset Formula $\reals^{d}$
+\end_inset
+
+ to 
+\begin_inset Formula $\reals^{n}$
+\end_inset
+
+, which we can represent naturally by the 
+\begin_inset Formula $n\times d$
+\end_inset
+
+ Jacobian matrix, which is actually just 
+\begin_inset Formula $X$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Now suppose we have a vector-valued function 
+\begin_inset Formula $f(x;W)=Wx$
+\end_inset
+
+, where 
+\begin_inset Formula $W\in\reals^{r\times d}$
+\end_inset
+
+ and 
+\begin_inset Formula $x\in\reals^{d\times1}$
+\end_inset
+
+.
+ As a function of 
+\begin_inset Formula $W$
+\end_inset
+
+, this is a mapping from 
+\begin_inset Formula $\reals^{r\times d}$
+\end_inset
+
+ to 
+\begin_inset Formula $\reals^{r}$
+\end_inset
+
+we have Then the total derivative w.r.t.
+ 
+\begin_inset Formula $W$
+\end_inset
+
+ is a linear mapping from 
+\begin_inset Formula $\reals^{r\times d}$
+\end_inset
+
+ to 
+\begin_inset Formula $\reals^{r}$
+\end_inset
+
+.
+ So representing this linear mapping requires a tensor 
+\begin_inset Formula $\reals^{r\times d\times r}$
+\end_inset
+
+.
+ This is a little confusing, so let's introduce some notation.
+ Let 
+\begin_inset Formula $y=Wx$
+\end_inset
+
+, where 
+\begin_inset Formula $y=\left(y_{1},\ldots,y_{r}\right)\in\reals^{r}$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\del_{W}y_{i}$
+\end_inset
+
+ is an 
+\begin_inset Formula $\reals^{r\times d}$
+\end_inset
+
+ matrix.
+ And we'll get one of those for each 
+\begin_inset Formula $y_{i}$
+\end_inset
+
+.
+ And then we'd stack them in an array of shape 
+\begin_inset Formula $r\times d\times r$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $y_{i}=\left(Wx\right)_{i}=\sum_{j=1}^{d}W_{ij}x_{j}$
+\end_inset
+
+.
+ So 
+\begin_inset Formula 
+\[
+\frac{\partial y_{i}}{\partial W_{ab}}=\begin{cases}
+x_{b} & \text{if }a=i\\
+0 & \text{otherwise.}
+\end{cases}.
+\]
+
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+\del_{W}y_{i}=\begin{pmatrix}0 & 0 & 0 & 0 & 0\\
+x_{1} & x_{2} & \cdots &  & x_{d}\\
+ & 0 & 0\\
+\\
+\end{pmatrix}
+\]
+
+\end_inset
+
+ In other words, all rows are 
+\begin_inset Formula $0$
+\end_inset
+
+ except the 
+\begin_inset Formula $i$
+\end_inset
+
+th row, since only the 
+\begin_inset Formula $i$
+\end_inset
+
+th row contributes to the 
+\begin_inset Formula $i$
+\end_inset
+
+th output 
+\begin_inset Formula $y_{i}$
+\end_inset
+
+.
+ And the 
+\begin_inset Formula $i$
+\end_inset
+
+th row is just going to be 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+But what we really want to compute is
+\begin_inset Formula 
+\[
+\del_{w}J=\left(\del_{y}J\right)\del_{w}y
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+J'
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So we have 
+\begin_inset Formula $W\mapsto y\mapsto J$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula 
+\begin{eqnarray*}
+T_{W}J(\Delta) & = & T_{y}J(T_{W}y(\Delta))\\
+ & = & T_{y}J\left(\Delta x\right)\\
+ & = & \left(\del_{y}J\right)^{T}\Delta x\\
+ & = & \trace\left(x\left(\del_{y}J\right)^{T}\Delta\right).
+\end{eqnarray*}
+
+\end_inset
+
+ Suppose 
+\begin_inset Formula $\Delta$
+\end_inset
+
+ is 
+\begin_inset Formula $1$
+\end_inset
+
+ in the 
+\begin_inset Formula $ij$
+\end_inset
+
+th entry, and 
+\begin_inset Formula $0$
+\end_inset
+
+ elsewhere.
+ Then we have the partial derivative in the direction 
+\begin_inset Formula $\Delta_{ij}$
+\end_inset
+
+.
+ Which is 
+\begin_inset Formula $\left[\left(\del_{y}J\right)x^{T}\right]_{ij}$
+\end_inset
+
+.
+ And so the gradient can be represented as the matrix 
+\begin_inset Formula $\left(\del_{y}J\right)x^{T}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+\start_of_appendix
+Linear mappings between 
+\begin_inset Formula $f:\reals^{a\times b}\to\reals^{m\times n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Is there even anything new going on here?
+\end_layout
+
+\begin_layout Standard
+On the one hand, there really is nothing new going on with 
+\begin_inset Formula $f:\reals^{a\times b}\to\reals^{m\times n}$
+\end_inset
+
+ compared to 
+\begin_inset Formula $f:\reals^{n}\to\reals^{m}$
+\end_inset
+
+.
+ A matrix is nothing but a particular way of arranging as presenting a vector
+ of numbers.
+ Given a matrix, one can convert it to a vector just by stacking the columns
+ into one giant vector.
+ In fact, there is a standard notation for that operation.
+ Formally, if 
+\begin_inset Formula $A$
+\end_inset
+
+ is an 
+\begin_inset Formula $m\times n$
+\end_inset
+
+ matrix, and we write 
+\begin_inset Formula $a_{i}$
+\end_inset
+
+ for the 
+\begin_inset Formula $i$
+\end_inset
+
+th column of 
+\begin_inset Formula $A$
+\end_inset
+
+, then we define the vec of 
+\begin_inset Formula $A$
+\end_inset
+
+ as the column 
+\begin_inset Formula $mn\times1$
+\end_inset
+
+ column vector
+\begin_inset FormulaMacro
+\newcommand{\vec}{\text{vec}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\vec(A)=\begin{pmatrix}a_{1}\\
+a_{2}\\
+\vdots\\
+a_{n}
+\end{pmatrix}.
+\]
+
+\end_inset
+
+So we can always think of a function 
+\begin_inset Formula $f:\reals^{a\times b}\to\reals^{m\times n}$
+\end_inset
+
+ mapping matrices to matrices as a function 
+\begin_inset Formula $f:\reals^{ab}\to\reals^{mn}$
+\end_inset
+
+ mapping vectors to vectors.
+ 
+\end_layout
+
+\begin_layout Standard
+However, this vectorized version of matrix functions is not always convenient.
+ Many matrix functions are much easier to work with and express in matrix
+ form.
+ For example, a function 
+\begin_inset Formula $f:X\mapsto X^{-1}$
+\end_inset
+
+ defined on the space of 
+\begin_inset Formula $n\times n$
+\end_inset
+
+ invertible matrices.
+ Expressing this function explicity in terms of entries of 
+\begin_inset Formula $X$
+\end_inset
+
+ will be very difficult except for very small matrices.
+\end_layout
+
+\begin_layout Subsection
+Ok, seems worthwhile.
+ Let's Investigate.
+\end_layout
+
+\begin_layout Standard
+How can we represent a general linear function from 
+\begin_inset Formula $a\times b$
+\end_inset
+
+ matrices to 
+\begin_inset Formula $m\times n$
+\end_inset
+
+ matrices? Let's go through some false starts.
+ First, it definitely can't be of the form 
+\begin_inset Formula $f(X)=MX$
+\end_inset
+
+, for some matrix 
+\begin_inset Formula $M$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $M\in\reals^{m\times a}$
+\end_inset
+
+ so that at least 
+\begin_inset Formula $MX$
+\end_inset
+
+ is defined.
+ But the product matrix will be 
+\begin_inset Formula $m\times b$
+\end_inset
+
+, rather tham 
+\begin_inset Formula $m\times n$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+To end up with an 
+\begin_inset Formula $m\times n$
+\end_inset
+
+ matrix, the simplest thing we can do is 
+\begin_inset Formula $f(X)=MXN^{T}$
+\end_inset
+
+, for 
+\begin_inset Formula $M\in\reals^{m\times a}$
+\end_inset
+
+ and 
+\begin_inset Formula $N\in\reals^{n\times b}$
+\end_inset
+
+.
+ Now every entry of 
+\begin_inset Formula $f(X)$
+\end_inset
+
+ is given by 
+\begin_inset Formula 
+\[
+\left[f(X)\right]_{ij}=m_{i}Xn_{j}^{T},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $m_{i}$
+\end_inset
+
+ is the 
+\begin_inset Formula $i$
+\end_inset
+
+th row of 
+\begin_inset Formula $M$
+\end_inset
+
+ and 
+\begin_inset Formula $n_{j}$
+\end_inset
+
+ is the 
+\begin_inset Formula $j$
+\end_inset
+
+th row of 
+\begin_inset Formula $N$
+\end_inset
+
+.
+ It's the right shape, but clearly not the most general function we could
+ have.
+ The most general form we could have is
+\begin_inset Formula 
+\[
+\left[f(X)\right]_{ij}=\tr\left(A_{ij}^{T}X\right),
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $A_{ij}$
+\end_inset
+
+ is an 
+\begin_inset Formula $a\times b$
+\end_inset
+
+ matrix, and we have a different one for every output coordinate 
+\begin_inset Formula $ij$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+So to specify such a linear mapping, we'd need a whole matrix of matrices.
+ 
+\end_layout
+
+\begin_layout Section
+\start_of_appendix
+Derivative of a function 
+\begin_inset Formula $f:\reals^{a\times b}\to\reals^{m\times n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Affine transformation
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y=Wx+b
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $y$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+ are 
+\begin_inset Formula $m\times1$
+\end_inset
+
+, 
+\begin_inset Formula $x$
+\end_inset
+
+ is 
+\begin_inset Formula $d\times1$
+\end_inset
+
+, and 
+\begin_inset Formula $W$
+\end_inset
+
+ is 
+\begin_inset Formula $m\times d$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Now there is also some function 
+\begin_inset Formula $f:\reals^{m}\to\reals$
+\end_inset
+
+, and let's write 
+\begin_inset Formula $J=f(Wx+b)$
+\end_inset
+
+.
+ Our goal is to find the partial derivative of 
+\begin_inset Formula $J$
+\end_inset
+
+ with respect to each element of 
+\begin_inset Formula $W$
+\end_inset
+
+, namely 
+\begin_inset Formula $\partial J/\partial W_{ij}$
+\end_inset
+
+ .
+ Suppose we have already computed the of all partial derivatives of 
+\begin_inset Formula $J$
+\end_inset
+
+ with respect to the intermediate variable 
+\begin_inset Formula $y$
+\end_inset
+
+, namely 
+\begin_inset Formula $\frac{\partial J}{\partial y_{i}}$
+\end_inset
+
+ for 
+\begin_inset Formula $i=1,\ldots,m$
+\end_inset
+
+.
+ Then by the chain rule, we have
+\begin_inset Formula 
+\[
+\frac{\partial J}{\partial W_{ij}}=\sum_{r=1}^{m}\frac{\partial J}{\partial y_{r}}\frac{\partial y_{r}}{\partial W_{ij}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now 
+\begin_inset Formula $y_{r}=W_{r\cdot}x+b_{r}=b_{r}+\sum_{k=1}^{d}W_{rk}x_{k}$
+\end_inset
+
+.
+ So 
+\begin_inset Formula 
+\begin{eqnarray*}
+\frac{\partial y_{r}}{\partial W_{ij}} & = & x_{k}\delta_{ir}\delta_{jk}=x_{j}\delta_{ir}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Putting it together we get
+\begin_inset Formula 
+\begin{eqnarray*}
+\frac{\partial J}{\partial W_{ij}} & = & \sum_{r=1}^{m}\frac{\partial J}{\partial y_{r}}x_{j}\delta_{ir}\\
+ & = & \frac{\partial J}{\partial y_{i}}x_{j}
+\end{eqnarray*}
+
+\end_inset
+
+We can represent these partial derivatives as a matrix and compute it where
+ the 
+\begin_inset Formula $ij$
+\end_inset
+
+'th entry of 
+\begin_inset Formula $\frac{\partial J}{\partial W}$
+\end_inset
+
+ is 
+\begin_inset Formula $\frac{\partial J}{\partial W_{ij}}$
+\end_inset
+
+, i.e.
+ the partial derivative of 
+\begin_inset Formula $J$
+\end_inset
+
+ w.r.t.
+ the parameter 
+\begin_inset Formula $W_{ij}$
+\end_inset
+
+.
+ It's gonna be
+\begin_inset Formula 
+\begin{eqnarray*}
+\frac{\partial J}{\partial W} & = & \frac{\partial J}{\partial y}x^{T},
+\end{eqnarray*}
+
+\end_inset
+
+where 
+\begin_inset Formula $\frac{\partial J}{\partial y}$
+\end_inset
+
+ is 
+\begin_inset Formula $m\times1$
+\end_inset
+
+ and 
+\begin_inset Formula $x$
+\end_inset
+
+ is 
+\begin_inset Formula $d\times1$
+\end_inset
+
+.
+ So this is an outer product of two vectors, yielding an 
+\begin_inset Formula $m\times d$
+\end_inset
+
+ matrix.
+ 
+\end_layout
+
+\begin_layout Standard
+We'll also need the derivative w.r.t 
+\begin_inset Formula $x$
+\end_inset
+
+ – if it's actually data, we don't need the derivative w.r.t.
+ 
+\begin_inset Formula $x$
+\end_inset
+
+, but when we chain things together, 
+\begin_inset Formula $x$
+\end_inset
+
+ will be the output of another unit: 
+\begin_inset Formula 
+\[
+\frac{\partial y_{r}}{x_{i}}=W_{ri}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{eqnarray*}
+\frac{\partial J}{\partial x_{i}} & = & \sum_{r=1}^{m}\frac{\partial J}{\partial y_{r}}\frac{\partial y_{r}}{\partial x_{i}}\\
+ & = & \sum_{r=1}^{m}\frac{\partial J}{\partial y_{r}}W_{ri}\\
+ & = & \left(\frac{\partial J}{\partial y}\right)^{T}W_{\cdot i}
+\end{eqnarray*}
+
+\end_inset
+
+and
+\begin_inset Formula 
+\[
+\frac{\partial J}{\partial x}=W^{T}\left(\frac{\partial J}{\partial y}\right)
+\]
+
+\end_inset
+
+will give us a column vector.
+\end_layout
+
+\begin_layout Standard
+Similarly, 
+\begin_inset Formula 
+\begin{eqnarray*}
+\frac{\partial J}{\partial b_{i}} & = & \sum_{r=1}^{m}\frac{\partial J}{\partial y_{r}}\frac{\partial y_{r}}{\partial b_{i}}\\
+ & = & \sum_{r=1}^{m}\frac{\partial J}{\partial y_{r}}\delta_{ir}\\
+ & = & \frac{\partial J}{\partial y_{i}}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let's repeat the same calculations for a minibatch.
+ Let's suppose we have 
+\begin_inset Formula $n$
+\end_inset
+
+ inputs 
+\begin_inset Formula $x_{1},\ldots,x_{n}\in\reals^{d}$
+\end_inset
+
+, and we stack them in the usual way as rows in a 
+\begin_inset Formula $n\times d$
+\end_inset
+
+ design matrix 
+\begin_inset Formula $X$
+\end_inset
+
+.
+ For each 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ there's an intermediate output 
+\begin_inset Formula $y_{i}=Wx_{i}+b$
+\end_inset
+
+.
+ Let's consider stacking these as rows as well, so each row is 
+\begin_inset Formula $y_{i}^{T}=x_{i}^{T}W^{T}+b^{T}$
+\end_inset
+
+.
+ Let's write 
+\begin_inset Formula $Y$
+\end_inset
+
+ for the 
+\begin_inset Formula $n\times m$
+\end_inset
+
+ matrix, which stacks the 
+\begin_inset Formula $n$
+\end_inset
+
+ row vectors 
+\begin_inset Formula $y_{i}^{T}$
+\end_inset
+
+ on top of each other.
+ Then we have
+\begin_inset Formula 
+\[
+Y=XW^{T}+b^{T},
+\]
+
+\end_inset
+
+and the 
+\begin_inset Formula $rs$
+\end_inset
+
+'th entry is given by
+\begin_inset Formula 
+\begin{eqnarray*}
+Y_{rs} & = & X_{r\cdot}\left(W^{T}\right)_{\cdot s}+1b^{T},\\
+ & = & \sum_{k=1}^{d}X_{rk}\left(W^{T}\right)_{ks}+b_{s}\\
+ & = & \sum_{k=1}^{d}X_{rk}W_{sk}+b_{s}
+\end{eqnarray*}
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $ $
+\end_inset
+
+whee 
+\begin_inset Formula $1$
+\end_inset
+
+ is an 
+\begin_inset Formula $n\times1$
+\end_inset
+
+ column vector.
+ where the notation 
+\begin_inset Formula $X_{r\cdot}$
+\end_inset
+
+ refers the the 
+\begin_inset Formula $r$
+\end_inset
+
+th row of 
+\begin_inset Formula $X$
+\end_inset
+
+, as a row matrix, and similarly 
+\begin_inset Formula $X_{\cdot s}$
+\end_inset
+
+ refers to the 
+\begin_inset Formula $s$
+\end_inset
+
+th column of 
+\begin_inset Formula $X$
+\end_inset
+
+, as a column matrix.
+ Now 
+\begin_inset Formula 
+\begin{eqnarray*}
+\frac{\partial Y_{rs}}{\partial W_{ij}} & = & X_{rk}\delta_{is}\delta_{jk}=X_{rj}\delta_{is}\\
+\frac{\partial Y_{rs}}{\partial b_{i}} & = & \delta_{is}\\
+\frac{\partial Y_{rs}}{\partial X_{ij}} & = & \sum_{k=1}^{d}W_{sk}\delta_{ir}\delta_{jk}=W_{sj}\delta_{ir}
+\end{eqnarray*}
+
+\end_inset
+
+(Note – the necessity for the 
+\begin_inset Formula $\delta_{ir}$
+\end_inset
+
+ should be obvious if we understand what rows of 
+\begin_inset Formula $Y$
+\end_inset
+
+ and 
+\begin_inset Formula $X$
+\end_inset
+
+ are.) 
+\end_layout
+
+\begin_layout Standard
+Now we have a function 
+\begin_inset Formula $f:\reals^{n\times m}\to\reals$
+\end_inset
+
+ that operates on a full minibatch and produces a single scalar.
+ This would typically be the average of the 
+\begin_inset Formula $f(Wx_{i}+b)$
+\end_inset
+
+ over 
+\begin_inset Formula $i=1,\ldots,n$
+\end_inset
+
+.
+ So
+\begin_inset Formula 
+\begin{eqnarray*}
+\frac{\partial J}{\partial W_{ij}} & = & \sum_{r=1}^{n}\sum_{s=1}^{m}\frac{\partial J}{\partial Y_{rs}}\frac{\partial Y_{rs}}{\partial W_{ij}}\\
+ & = & \sum_{r=1}^{n}\sum_{s=1}^{m}\frac{\partial J}{\partial Y_{rs}}X_{rj}\delta_{is}\\
+ & = & \sum_{r=1}^{n}\frac{\partial J}{\partial Y_{ri}}X_{rj}\\
+ & = & \left[\left(\frac{\partial J}{\partial Y}\right)_{\cdot i}\right]^{T}X_{\cdot j}
+\end{eqnarray*}
+
+\end_inset
+
+where 
+\begin_inset Formula $\frac{\partial J}{\partial Y}$
+\end_inset
+
+ is the 
+\begin_inset Formula $n\times m$
+\end_inset
+
+ matrix with 
+\begin_inset Formula $\frac{\partial J}{\partial Y_{ij}}$
+\end_inset
+
+ in the 
+\begin_inset Formula $ij$
+\end_inset
+
+'th entry.
+ So
+\begin_inset Formula 
+\[
+\frac{\partial J}{\partial W}=\left(\frac{\partial J}{\partial Y}\right)^{T}X
+\]
+
+\end_inset
+
+ and
+\begin_inset Formula 
+\begin{eqnarray*}
+\frac{\partial J}{\partial b_{i}} & = & \sum_{r=1}^{n}\sum_{s=1}^{m}\frac{\partial J}{\partial Y_{rs}}\frac{\partial Y_{rs}}{\partial b_{i}}\\
+ & = & \sum_{r=1}^{n}\sum_{s=1}^{m}\frac{\partial J}{\partial Y_{rs}}\delta_{is}\\
+ & = & \sum_{r=1}^{n}\frac{\partial J}{\partial Y_{ri}}\\
+ & = & 1^{T}\left(\frac{\partial J}{\partial Y}\right)_{\cdot i}
+\end{eqnarray*}
+
+\end_inset
+
+and if we let 
+\begin_inset Formula $\frac{\partial J}{\partial b}$
+\end_inset
+
+ be the 
+\begin_inset Formula $b\times1$
+\end_inset
+
+ vector of derivatives 
+\begin_inset Formula $\frac{\partial J}{\partial b_{i}}$
+\end_inset
+
+, then we can write
+\begin_inset Formula 
+\[
+\frac{\partial J}{\partial b}=\left(\frac{\partial J}{\partial Y}\right)^{T}1.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finally, 
+\begin_inset Formula 
+\begin{eqnarray*}
+\frac{\partial J}{\partial X_{ij}} & = & \sum_{r=1}^{n}\sum_{s=1}^{m}\frac{\partial J}{\partial Y_{rs}}\frac{\partial Y_{rs}}{\partial X_{ij}}\\
+ & = & \sum_{r=1}^{n}\sum_{s=1}^{m}\frac{\partial J}{\partial Y_{rs}}W_{sj}\delta_{ir}\\
+ & = & \sum_{s=1}^{m}\frac{\partial J}{\partial Y_{is}}W_{sj}
+\end{eqnarray*}
+
+\end_inset
+
+So
+\begin_inset Formula 
+\begin{eqnarray*}
+\frac{\partial J}{\partial X} & = & \frac{\partial J}{\partial Y}W
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Softmax
+\end_layout
+
+\begin_layout Standard
+Consider an input vector of scores 
+\begin_inset Formula $s$
+\end_inset
+
+ is 
+\begin_inset Formula $d\times1$
+\end_inset
+
+ and output vector 
+\begin_inset Formula $y$
+\end_inset
+
+ also 
+\begin_inset Formula $d\times1$
+\end_inset
+
+, where 
+\begin_inset Formula $y$
+\end_inset
+
+ encodes a probability distribution over 
+\begin_inset Formula $d$
+\end_inset
+
+ classes.
+ Then the 
+\begin_inset Formula $i$
+\end_inset
+
+th entry of the output is given by
+\begin_inset Formula 
+\begin{eqnarray*}
+d(ab^{-1}) & = & \left(da\right)b^{-1}+ad\left(b^{-1}\right)=\left(da\right)b^{-1}-ab^{-2}d(b)\\
+ & = & \frac{bda-adb}{b^{2}}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y_{i}=\frac{\exp\left(s_{i}\right)}{\sum_{c=1}^{k}\exp\left(s_{c}\right)}.
+\]
+
+\end_inset
+
+ Then 
+\begin_inset Formula 
+\begin{eqnarray*}
+\frac{\partial y_{i}}{\partial s_{j}} & = & \frac{\frac{\partial}{\partial s_{j}}\left(\exp\left(s_{i}\right)\right)}{\sum_{c=1}^{k}\exp\left(s_{c}\right)}-\frac{\exp\left(s_{i}\right)\frac{\partial}{\partial s_{j}}\left(\sum_{c=1}^{k}\exp\left(s_{c}\right)\right)}{\left[\sum_{c=1}^{k}\exp\left(s_{c}\right)\right]^{2}}\\
+ & = & \frac{\exp\left(s_{i}\right)\delta_{ij}}{\sum_{c=1}^{k}\exp\left(s_{c}\right)}-\frac{\exp\left(s_{i}\right)\exp\left(s_{j}\right)}{\left[\sum_{c=1}^{k}\exp\left(s_{c}\right)\right]^{2}}\\
+ & = & \sigma(s_{i})\delta_{ij}-\sigma(s_{i})\sigma(s_{j})\\
+ & = & \sigma(s_{i})\left(\delta_{ij}-\sigma(s_{j})\right)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now there is also some function 
+\begin_inset Formula $f:\reals^{d}\to\reals$
+\end_inset
+
+, and let's write 
+\begin_inset Formula $J=f(\sigma(s))$
+\end_inset
+
+.
+ Our goal is to find the partial derivative of 
+\begin_inset Formula $J$
+\end_inset
+
+ with respect to each element of 
+\begin_inset Formula $s$
+\end_inset
+
+, namely 
+\begin_inset Formula $\partial J/\partial s_{j}$
+\end_inset
+
+.
+ Suppose we have already computed all partial derivatives of 
+\begin_inset Formula $J$
+\end_inset
+
+ with respect to the intermediate vector 
+\begin_inset Formula $y=\sigma(s)$
+\end_inset
+
+, namely 
+\begin_inset Formula $\frac{\partial J}{\partial y_{i}}$
+\end_inset
+
+ for 
+\begin_inset Formula $i=1,\ldots,d$
+\end_inset
+
+.
+ Then by the chain rule, we have
+\begin_inset Formula 
+\begin{eqnarray*}
+\frac{\partial J}{\partial s_{j}} & = & \sum_{r=1}^{m}\frac{\partial J}{\partial y_{r}}\frac{\partial y_{r}}{\partial s_{j}}\\
+ & = & \sum_{r=1}^{m}\frac{\partial J}{\partial y_{r}}\sigma(s_{r})\left(\delta_{rj}-\sigma(s_{j})\right)\\
+ & = & \frac{\partial J}{\partial y_{j}}\sigma(s_{j})-\sum_{r=1}^{m}\frac{\partial J}{\partial y_{r}}\sigma(s_{r})\sigma(s_{j})
+\end{eqnarray*}
+
+\end_inset
+
+so
+\begin_inset Formula 
+\begin{eqnarray*}
+\frac{\partial J}{\partial s} & = & \left(\frac{\partial J}{\partial y}-\left[\left(\frac{\partial J}{\partial y}\right)^{T}\sigma(s)\right]1\right)*\sigma(s)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now suppose we are using a minibatch, in which case we have
+\end_layout
+
+\end_body
+\end_document

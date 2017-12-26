@@ -3601,6 +3601,23 @@ TF-IDF
 Linear Multiclass SVM
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Should definitely do a full version of multiclass SVM without class-specific
+ losses and class-specific margins.
+ Then introduce this additional complication with a new major section.
+ Perhaps continue the previous section with an easier verson of the multiclass
+ SVM.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Frame
 \begin_inset Argument 4
 status open
@@ -3655,7 +3672,7 @@ between correct class and each other class:
 
 \end_deeper
 \begin_layout Definition
-The 
+The [class-specific] 
 \series bold
 margin
 \series default
@@ -3955,7 +3972,7 @@ target margin
 
 .
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Itemize
 is the 

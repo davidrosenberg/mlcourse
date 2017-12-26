@@ -9,18 +9,43 @@
 \usetheme{CambridgeUS} 
 \beamertemplatenavigationsymbolsempty
 
+
+% Set Color ==============================
+\definecolor{BBGblue}{RGB}{13,157,219}
+\definecolor{BBGgreen}{RGB}{77,170,80}
+
+
+\setbeamercolor{title}{fg=BBGblue}
+%\setbeamercolor{frametitle}{fg=BBGblue}
+\setbeamercolor{frametitle}{fg=BBGblue}
+
+\setbeamercolor{background canvas}{fg=BBGblue, bg=white}
+\setbeamercolor{background}{fg=black, bg=BBGblue}
+
+\setbeamercolor{palette primary}{fg=black, bg=gray!30!white}
+\setbeamercolor{palette secondary}{fg=black, bg=gray!20!white}
+\setbeamercolor{palette tertiary}{fg=black, bg=BBGblue}
+
+\setbeamertemplate{headline}{}
+
+\setbeamercolor{parttitle}{fg=BBGblue}
+\setbeamercolor{sectiontitle}{fg=BBGblue}
+\setbeamercolor{sectionname}{fg=BBGblue}
+\setbeamercolor{section page}{fg=BBGblue}
+
 \AtBeginSection[]{
   \begin{frame}
   \vfill
   \centering
-  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
-    \usebeamerfont{title}\insertsectionhead\par%
+\setbeamercolor{section title}{fg=BBGblue}
+ \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\usebeamercolor[fg]{title}\insertsectionhead\par%
   \end{beamercolorbox}
   \vfill
   \end{frame}
 }
 \end_preamble
-\options handout
+\options aspectratio=169,handout
 \use_default_options false
 \maintain_unincluded_children false
 \language english
@@ -44,7 +69,17 @@
 \index_command default
 \paperfontsize default
 \spacing single
-\use_hyperref false
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "allcolors=BBGblue,urlcolor=BBGgreen"
 \papersize default
 \use_geometry true
 \use_package amsmath 2
@@ -66,6 +101,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\boxbgcolor #ff31d8
 \index Index
 \shortcut idx
 \color #008000
@@ -295,7 +331,7 @@ cy}}
 \newcommand{\outsp}{\cy}
 \end_inset
 
-
+ 
 \end_layout
 
 \begin_layout Standard
@@ -633,6 +669,34 @@ ex}{E}
 
 \begin_layout Standard
 \begin_inset FormulaMacro
+\newcommand{\dom}{\textrm{\textbf{dom} }}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\renewcommand{\rank}{\text{\textbf{rank }}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\conv}{\textrm{\textbf{conv} }}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\relint}{\text{\textbf{relint }}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\aff}{\text{\textbf{aff }}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
 \newcommand{\hil}{\ch}
 \end_inset
 
@@ -650,17 +714,14 @@ ex}{E}
 \end_layout
 
 \begin_layout Title
-\begin_inset Formula $K$
-\end_inset
-
--Means and Gaussian Mixture Models
+Gaussian Mixture Models
 \begin_inset Argument 1
 status open
 
 \begin_layout Plain Layout
-DS-GA 1003 
+ML 101
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 optional, use only with long paper titles
@@ -677,27 +738,29 @@ optional, use only with long paper titles
 \end_layout
 
 \begin_layout Author
-David Rosenberg 
+David S.
+ Rosenberg 
 \end_layout
 
 \begin_layout Date
-\begin_inset ERT
+December 15, 2017
+\end_layout
+
+\begin_layout Institute
+Bloomberg ML EDU
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex ArticleMode
 status open
 
 \begin_layout Plain Layout
-
-
-\backslash
-today
+Just in article version
 \end_layout
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Institute
-New York University
 \end_layout
 
 \begin_layout Standard
@@ -710,9 +773,37 @@ status open
 
 \begin_layout Plain Layout
 
-Next time -- refer more to "components" than clusters (or maybe 'components'
- for the mixture model part, but clusters for the actual clustering alorithm
- k-means).
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Plots courtesy of Ningshan Zhang.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Next time -- refer more to "components" than clusters.
  talk about vector quantization
 \end_layout
 
@@ -721,1662 +812,6 @@ Next time -- refer more to "components" than clusters (or maybe 'components'
 
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-TODO: initialization of k-means actually can be very important.
-  Introduce k-means++ for seeding (arthur et al 2007).
-  Issue is it's slow; Refer to NIPS 2016 paper for a fast minibatch/MCMC
- approach.
- (fast and provably good seedings for k-means)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-\begin_inset Formula $K$
-\end_inset
-
--Means Clustering
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Example: Old Faithful Geyser
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename ../Figures/clustering/oldfaithful.png
-	lyxscale 20
-	width 65text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Looks like two clusters.
-\end_layout
-
-\begin_layout Itemize
-How to find these clusters algorithmically?
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-\begin_inset Formula $k$
-\end_inset
-
--Means: By Example
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Standardize the data.
-\end_layout
-
-\begin_layout Itemize
-Choose two cluster centers.
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename ../Figures/clustering/faithful-9.1a.png
-	lyxscale 50
-	height 55theight%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-let
-\backslash
-thefootnote
-\backslash
-relax
-\backslash
-footnotetext{
-\backslash
-tiny{From Bishop's 
-\backslash
-emph{Pattern recognition and machine learning}, Figure 9.1(a).}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Frame
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-k-means: by example
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Assign each point to closest center.
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename ../Figures/clustering/faithful-9.1b.png
-	lyxscale 50
-	height 55theight%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-let
-\backslash
-thefootnote
-\backslash
-relax
-\backslash
-footnotetext{
-\backslash
-tiny{From Bishop's 
-\backslash
-emph{Pattern recognition and machine learning}, Figure 9.1(b).}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-k-means: by example
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Compute new class centers.
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename ../Figures/clustering/faithful-9.1c.png
-	lyxscale 50
-	height 55theight%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-let
-\backslash
-thefootnote
-\backslash
-relax
-\backslash
-footnotetext{
-\backslash
-tiny{From Bishop's 
-\backslash
-emph{Pattern recognition and machine learning}, Figure 9.1(c).}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-k-means: by example
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Assign points to closest center.
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename ../Figures/clustering/faithful-9.1d.png
-	lyxscale 50
-	height 55theight%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-let
-\backslash
-thefootnote
-\backslash
-relax
-\backslash
-footnotetext{
-\backslash
-tiny{From Bishop's 
-\backslash
-emph{Pattern recognition and machine learning}, Figure 9.1(d).}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-k-means: by example
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Compute cluster centers.
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename ../Figures/clustering/faithful-9.1e.png
-	lyxscale 50
-	height 55theight%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-let
-\backslash
-thefootnote
-\backslash
-relax
-\backslash
-footnotetext{
-\backslash
-tiny{From Bishop's 
-\backslash
-emph{Pattern recognition and machine learning}, Figure 9.1(e).}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-k-means: by example
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Iterate until convergence.
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename ../Figures/clustering/faithful-9.1i.png
-	lyxscale 50
-	height 55theight%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-let
-\backslash
-thefootnote
-\backslash
-relax
-\backslash
-footnotetext{
-\backslash
-tiny{From Bishop's 
-\backslash
-emph{Pattern recognition and machine learning}, Figure 9.1(i).}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-k-means: formalization
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Dataset 
-\begin_inset Formula $\cd=\left\{ x_{1},\ldots,x_{n}\right\} \in\reals^{d}$
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Goal (version 1): Partition data into 
-\begin_inset Formula $k$
-\end_inset
-
- clusters.
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Goal (version 2): Partition 
-\begin_inset Formula $\reals^{d}$
-\end_inset
-
- into 
-\begin_inset Formula $k$
-\end_inset
-
- regions.
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Let 
-\begin_inset Formula $\mu_{1},\ldots,$
-\end_inset
-
-
-\begin_inset Formula $\mu_{k}$
-\end_inset
-
- denote cluster centers.
- 
-\end_layout
-
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-k-means: formalization
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-For each 
-\begin_inset Formula $x_{i}$
-\end_inset
-
-, use a 
-\series bold
-one-hot encoding
-\series default
- to designate membership:
-\begin_inset Formula 
-\[
-r_{i}=\left(0,0,\ldots,0,0,1,0,0\right)\in\reals^{k}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Let 
-\begin_inset Formula 
-\[
-r_{ic}=\ind{x_{i}\mbox{ assigned to cluster }c}.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Then
-\begin_inset Formula 
-\[
-r_{i}=\left(r_{i1},r_{i2},\ldots,r_{ik}\right).
-\]
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-k-means: objective function
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Find cluster centers and cluster assignments minimizing
-\begin_inset Formula 
-\[
-J(r,\mu)=\sum_{i=1}^{n}\sum_{c=1}^{k}r_{ic}\|x_{i}-\mu_{c}\|^{2}.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Is objective function convex?
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-What's the domain of 
-\begin_inset Formula $J$
-\end_inset
-
-?
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-\begin_inset Formula $r\in\left\{ 0,1\right\} ^{n\times k}$
-\end_inset
-
-, which is not a convex set...
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-So domain of 
-\begin_inset Formula $J$
-\end_inset
-
- is not convex 
-\begin_inset Formula $\implies$
-\end_inset
-
- 
-\begin_inset Formula $J$
-\end_inset
-
- is not a convex function
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-\begin_inset Formula $k$
-\end_inset
-
--means will not find global minimum of 
-\begin_inset Formula $J(r,\mu)$
-\end_inset
-
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-Could replace 
-\begin_inset Formula $\|\cdot\|^{2}$
-\end_inset
-
- with something else:
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-e.g.
- using 
-\begin_inset Formula $\|\cdot\|$
-\end_inset
-
- (or any distance metric) gives 
-\series bold
-
-\begin_inset Formula $k$
-\end_inset
-
--medoids
-\series default
-.
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Formula $k$
-\end_inset
-
--medoids chooses data points as cluster centers and minimizes sum of distances
- for any metric, rather than Euclidean distance
-\end_layout
-
-\end_deeper
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Note Note
-status open
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-What if we did soft assignments? 
-\begin_inset Formula $r_{ic}\in[0,1]$
-\end_inset
-
-?
-\end_layout
-
-\begin_layout Itemize
-Then it's 
-\series bold
-biconvex:
-\series default
- 
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-convex in 
-\begin_inset Formula $r$
-\end_inset
-
- with 
-\begin_inset Formula $\mu$
-\end_inset
-
- fixed
-\end_layout
-
-\begin_layout Itemize
-convex in 
-\begin_inset Formula $\mu$
-\end_inset
-
- with 
-\begin_inset Formula $r$
-\end_inset
-
- fixed
-\end_layout
-
-\end_deeper
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-k-means algorithm
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-For fixed 
-\begin_inset Formula $r$
-\end_inset
-
- (cluster assignments), minimizing over 
-\begin_inset Formula $\mu$
-\end_inset
-
- is easy:
-\begin_inset Formula 
-\begin{eqnarray*}
-J(r,\mu) & = & \sum_{i=1}^{n}\sum_{c=1}^{k}r_{ic}\|x_{i}-\mu_{c}\|^{2}\\
-\pause & = & \sum_{c=1}^{k}\underbrace{\sum_{i=1}^{n}r_{ic}\|x_{i}-\mu_{c}\|^{2}}_{=J_{c}}\\
-\pause J_{c}(\mu_{c}) & = & \sum_{\left\{ i\mid x_{i}\text{belongs to cluster }c\right\} }\|x_{i}-\mu_{c}\|^{2}\pause
-\end{eqnarray*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Formula $J_{c}$
-\end_inset
-
- is minimized by
-\begin_inset Formula 
-\[
-\pause\mu_{c}=\text{mean}\left(\left\{ x_{i}\mid x_{i}\text{ belongs to cluster }c\right\} \right)
-\]
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-k-means algorithm
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-For fixed 
-\begin_inset Formula $\mu$
-\end_inset
-
- (cluster centers), minimizing over 
-\begin_inset Formula $r$
-\end_inset
-
- is easy:
-\begin_inset Formula 
-\begin{eqnarray*}
-J(r,\mu) & = & \sum_{i=1}^{n}\sum_{c=1}^{k}r_{ic}\|x_{i}-\mu_{c}\|^{2}
-\end{eqnarray*}
-
-\end_inset
-
-
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-For each 
-\begin_inset Formula $i$
-\end_inset
-
-, exactly one of the following terms is nonzero:
-\begin_inset Formula 
-\[
-r_{i1}\|x_{i}-\mu_{1}\|^{2},r_{i2}\|x_{i}-\mu_{2}\|^{2},\ldots,r_{ik}\|x_{i}-\mu_{k}\|^{2}
-\]
-
-\end_inset
-
-
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Take
-\begin_inset Formula 
-\[
-r_{ic}=\ind{c=\argmin_{j}\|x_{i}-\mu_{j}\|^{2}}
-\]
-
-\end_inset
-
-
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-That is, assign 
-\begin_inset Formula $x_{i}$
-\end_inset
-
- to cluster 
-\begin_inset Formula $c$
-\end_inset
-
- with minimum distance 
-\begin_inset Formula 
-\[
-\|x_{i}-\mu_{c}\|^{2}
-\]
-
-\end_inset
-
- 
-\end_layout
-
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-k-means algorithm (summary)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-We will use an 
-\series bold
-alternating minimization
-\series default
- algorithm: 
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Enumerate
-Choose initial cluster centers 
-\begin_inset Formula $\mu=\left(\mu_{1},\ldots,\mu_{k}\right)$
-\end_inset
-
-.
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-e.g.
- choose 
-\begin_inset Formula $k$
-\end_inset
-
- randomly chosen data points
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-Repeat
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Enumerate
-For given cluster centers, find optimal cluster assignments:
-\begin_inset Formula 
-\[
-r_{ic}^{\text{new}}=\ind{c=\argmin_{j}\|x_{i}-\mu_{j}\|^{2}}
-\]
-
-\end_inset
-
-
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-Given cluster assignments, find optimal cluster centers:
-\begin_inset Formula 
-\[
-\mu_{c}^{\text{new}}=\argmin_{m\in\reals^{d}};\sum_{\left\{ i\mid r_{ic}=1\right\} }\|x_{i}-\mu_{c}\|^{2}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\end_deeper
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-\begin_inset Formula $k$
-\end_inset
-
--Means Algorithm: Convergence
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Note: Objective value never increases in an update.
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-(Obvious: worst case, everything stays the same)
-\end_layout
-
-\end_deeper
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-Consider the sequence of objective values: 
-\begin_inset Formula $J_{1},J_{2},J_{3},\ldots$
-\end_inset
-
-
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-monotonically decreasing
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-bounded below by zero
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Itemize
-Therefore, 
-\series bold
-
-\begin_inset Formula $k$
-\end_inset
-
--Means objective value converges
-\series default
- to 
-\begin_inset Formula $\inf_{t}J_{t}$
-\end_inset
-
-.
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-Do the cluster assignments converge? The cluster centers?
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-In fact, convergence in a 
-\series bold
-finite number of steps
-\series default
-!
-\end_layout
-
-\end_inset
-
-
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-
-\series bold
-Reminder
-\series default
-: May not converge to global minimizer.
-\end_layout
-
-\begin_layout Itemize
-Best to repeat 
-\begin_inset Formula $k$
-\end_inset
-
--means several times, with different starting points
-\end_layout
-
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Separator
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-\begin_inset Formula $k$
-\end_inset
-
--Means: Objective Function Convergence
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Blue circles after 
-\series bold
-
-\begin_inset Quotes eld
-\end_inset
-
-E
-\begin_inset Quotes erd
-\end_inset
-
- step
-\series default
-: assigning each point to a cluster
-\end_layout
-
-\begin_layout Itemize
-Red circles after 
-\series bold
-
-\begin_inset Quotes eld
-\end_inset
-
-M
-\begin_inset Quotes erd
-\end_inset
-
- step
-\series default
-: recomputing the cluster centers
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename ../Figures/clustering/figure-9.2.png
-	lyxscale 50
-	height 45theight%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-let
-\backslash
-thefootnote
-\backslash
-relax
-\backslash
-footnotetext{
-\backslash
-tiny{From Bishop's 
-\backslash
-emph{Pattern recognition and machine learning}, Figure 9.2.}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-\begin_inset Formula $k$
-\end_inset
-
--Means Algorithm: Standardizing the data
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Without standardizing:
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename ../Figures/clustering/oldfaithful-clusterNoRescale.png
-	lyxscale 20
-	width 65text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Blue and black show results of k-means clustering
-\end_layout
-
-\begin_layout Itemize
-Wait time dominates the distance metric
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-\begin_inset Formula $k$
-\end_inset
-
--Means Algorithm: Standardizing the data
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-With standardizing:
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename ../Figures/clustering/oldfaithful-clusterStandardize.png
-	lyxscale 20
-	width 65text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Note several points have been reassigned from black to blue cluster.
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-\begin_inset Formula $k$
-\end_inset
-
--Means: Failure Cases
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-\begin_inset Formula $k$
-\end_inset
-
--Means: Suboptimal Local Minimum
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-The clustering for 
-\begin_inset Formula $k=3$
-\end_inset
-
- below is a local minimum, but suboptimal:
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename ../Figures/clustering/k-means-local-optimum.png
-	lyxscale 50
-	width 80text%
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-let
-\backslash
-thefootnote
-\backslash
-relax
-\backslash
-footnotetext{
-\backslash
-tiny{From Sontag's DS-GA 1003, 2014, Lecture 8.}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
 \end_inset
 
 
@@ -2400,9 +835,6 @@ Probabilistic Model for Clustering
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -2417,10 +849,6 @@ generative model
 
 \begin_layout Itemize
 Suppose 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2439,10 +867,6 @@ We have a probability density for each cluster.
 \end_deeper
 \begin_layout Itemize
 Generate a point as follows
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2457,7 +881,7 @@ Choose a random cluster
 
 \begin_layout Enumerate
 Choose a point from the distribution for cluster 
-\begin_inset Formula $Z$
+\begin_inset Formula $z$
 \end_inset
 
 .
@@ -2467,7 +891,7 @@ Choose a point from the distribution for cluster
 \end_deeper
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2491,9 +915,6 @@ Gaussian Mixture Model (
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -2520,11 +941,11 @@ Choose
 \end_layout
 
 \begin_layout Standard
-\align center
+\align left
 \begin_inset Graphics
-	filename ../Figures/clustering/mixture-3-gaussians.png
+	filename ../Archive/2016/Lectures/source/13b.mixture-models/mixture-3-gaussians.png
 	lyxscale 30
-	width 70text%
+	height 60theight%
 
 \end_inset
 
@@ -2533,14 +954,7 @@ Choose
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2561,15 +975,11 @@ Gaussian Mixture Model Parameters (
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
 \begin_layout Standard
-\align center
+\align left
 \begin_inset Formula 
 \begin{eqnarray*}
 \text{Cluster probabilities}: &  & \pi=\left(\pi_{1},\ldots,\pi_{k}\right)\\
@@ -2581,7 +991,7 @@ Gaussian Mixture Model Parameters (
 
 
 \begin_inset Graphics
-	filename ../Figures/clustering/mixture-3-gaussians.png
+	filename ../Archive/2016/Lectures/source/13b.mixture-models/mixture-3-gaussians.png
 	lyxscale 20
 	height 40theight%
 
@@ -2617,7 +1027,7 @@ them later.
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2633,21 +1043,130 @@ Gaussian Mixture Model: Joint Distribution
 
 \end_inset
 
-
+ 
 \end_layout
 
-\begin_layout Frame
-\begin_inset Separator latexpar
+\begin_deeper
+\begin_layout Itemize
+Factorize the joint density:
+\begin_inset Formula 
+\begin{eqnarray*}
+p(x,z) & = & p(z)p(x\mid z)\\
+\pause & = & \pi_{z}\cn\left(x\mid\mu_{z},\Sigma_{z}\right)
+\end{eqnarray*}
+
 \end_inset
 
 
 \end_layout
 
 \begin_deeper
-\begin_layout ColumnsTopAligned
-\begin_inset Separator latexpar
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\pi_{z}$
 \end_inset
 
+ is probability of choosing cluster 
+\begin_inset Formula $z$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $x\mid z$
+\end_inset
+
+ has distribution 
+\begin_inset Formula $\cn(\mu_{z},\Sigma_{z})$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $z$
+\end_inset
+
+ corresponding to 
+\begin_inset Formula $x$
+\end_inset
+
+ is the true cluster assignment.
+ 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Suppose we know the model parameters 
+\begin_inset Formula $\pi_{z},\mu_{z},\Sigma_{z}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Then we can easily evaluate the joint density 
+\begin_inset Formula $p(x,z)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Gaussian Mixture Model: Joint Distribution 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout ColumnsTopAligned
 
 \end_layout
 
@@ -2668,10 +1187,10 @@ textwidth
 
 \end_layout
 
-\begin_layout Standard
-\align center
+\begin_layout Plain Layout
+\align left
 \begin_inset Graphics
-	filename ../Figures/clustering/gmm-bayesnet.png
+	filename ../Archive/2016/Lectures/source/13b.mixture-models/gmm-bayesnet.png
 	lyxscale 30
 	width 40col%
 
@@ -2711,10 +1230,6 @@ p(x,z) & = & p(z)p(x\mid z)\\
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2731,10 +1246,6 @@ p(x,z) & = & p(z)p(x\mid z)\\
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2752,10 +1263,6 @@ p(x,z) & = & p(z)p(x\mid z)\\
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2803,13 +1310,14 @@ Then we can easily compute the joint
 \end_layout
 
 \end_deeper
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset Note Note
 status collapsed
-
-\begin_layout Separator
-
-\end_layout
 
 \begin_layout Frame
 \begin_inset Argument 4
@@ -2825,17 +1333,11 @@ Latent Variable Model
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
 \begin_deeper
 \begin_layout ColumnsTopAligned
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -2857,9 +1359,9 @@ textwidth
 \end_layout
 
 \begin_layout Plain Layout
-\align center
+\align left
 \begin_inset Graphics
-	filename ../Figures/clustering/gmm-bayesnet.png
+	filename ../Archive/2016/Lectures/source/13b.mixture-models/gmm-bayesnet.png
 	lyxscale 30
 	width 60col%
 
@@ -2894,10 +1396,6 @@ Back in reality, we observe
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2928,10 +1426,6 @@ latent variable models
 \series default
 .
  
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2942,14 +1436,6 @@ latent variable models
 \end_deeper
 \end_deeper
 \end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2969,9 +1455,6 @@ Latent Variable Model
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -2989,12 +1472,7 @@ We don't observe
 \begin_inset Formula $z$
 \end_inset
 
-.
- (Cluster assignment).
-\begin_inset Separator latexpar
-\end_inset
-
-
+ (the cluster assignment).
 \end_layout
 
 \begin_deeper
@@ -3021,10 +1499,6 @@ variable
 latent variable
 \series default
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3039,10 +1513,6 @@ A
  latent variable model 
 \series default
 is a probability model for which certain variables are never observed.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3058,7 +1528,7 @@ e.g.
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -3086,9 +1556,6 @@ Inference
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -3099,15 +1566,11 @@ We observe
 \end_inset
 
 .
- We want to know 
+ We want to know its cluster assignment 
 \begin_inset Formula $z$
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3117,7 +1580,7 @@ We observe
 
 \end_deeper
 \begin_layout Itemize
-The conditional distribution of the cluster 
+The conditional probability for cluster 
 \begin_inset Formula $z$
 \end_inset
 
@@ -3167,10 +1630,6 @@ Could say: can't compute this because
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3185,10 +1644,6 @@ The conditional distribution is a
  soft assignment 
 \series default
 to clusters.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3211,10 +1666,6 @@ z^{*}=\argmin_{z\in\left\{ 1,\ldots,k\right\} }p(z\mid x).
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3229,7 +1680,7 @@ So if we have the model, clustering is trival.
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -3253,9 +1704,6 @@ Gaussian Mixture Model: Marginal Distribution
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -3281,12 +1729,6 @@ p(x) & = & \sum_{z=1}^{k}p(x,z)\\
 \end_inset
 
 
-\series default
-
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3302,10 +1744,6 @@ Note that
 
  is a convex combination of probability densities.
  
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3320,7 +1758,7 @@ This is a common form for a probability model...
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -3340,9 +1778,6 @@ Mixture Distributions (or Mixture Models)
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -3386,10 +1821,6 @@ where
 \end_inset
 
  is a probability density.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3409,10 +1840,6 @@ mixture distribution
 \series default
 .
  
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3427,10 +1854,6 @@ More constructively, let
 \end_inset
 
  be a set of probability distributions:
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3461,7 +1884,7 @@ Then
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -3472,7 +1895,7 @@ Learning in Gaussian Mixture Models
 \end_layout
 
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -3494,10 +1917,6 @@ Learning
  Problem
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3524,10 +1943,6 @@ Estimate the parameters:
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3539,10 +1954,6 @@ Estimate the parameters:
 \begin_layout Itemize
 Once we have the parameters, we're done.
  
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3568,10 +1979,6 @@ inference
 \begin_inset Note Note
 status open
 
-\begin_layout Separator
-
-\end_layout
-
 \begin_layout Frame
 \begin_inset Argument 4
 status open
@@ -3583,10 +1990,6 @@ Estimating/Learning the Gaussian Mixture Model
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3594,12 +1997,6 @@ Estimating/Learning the Gaussian Mixture Model
 One approach to learning in probabilistic models is 
 \series bold
 maximum likelihood
-\series default
-
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3629,14 +2026,6 @@ Let
 \end_layout
 
 \end_deeper
-\begin_layout Separator
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3664,10 +2053,6 @@ p(\cd)=\prod_{i=1}^{n}p(x_{i})=\prod_{i=1}^{n}\sum_{z=1}^{k}p(x_{i},z)\pause=\pr
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3683,10 +2068,6 @@ In principle, just need to find
 \argmax_{\pi,\mu,\Sigma}\prod_{i=1}^{n}\sum_{z=1}^{k}\pi_{z}\cn\left(x\mid\mu_{z},\Sigma_{z}\right).
 \]
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3718,10 +2099,6 @@ Estimating/Learning the Gaussian Mixture Model
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3729,23 +2106,17 @@ Estimating/Learning the Gaussian Mixture Model
 One approach to learning is 
 \series bold
 maximum likelihood
-\series default
-
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-find parameter values that give 
+find parameter values with 
 \series bold
-observed data 
+highest likelihood
 \series default
-the
+ for the 
 \series bold
- highest likelihood
+observed data
 \series default
 .
 \end_layout
@@ -3753,20 +2124,16 @@ the
 \end_deeper
 \begin_layout Itemize
 The model likelihood for 
-\begin_inset Formula $\cd=\left\{ x_{1},\ldots,x_{n}\right\} $
+\begin_inset Formula $\cd=\left(x_{1},\ldots,x_{n}\right)$
 \end_inset
 
- is
+ sampled iid from a GMM is
 \begin_inset Formula 
 \begin{eqnarray*}
 L(\pi,\mu,\Sigma) & = & \prod_{i=1}^{n}p(x_{i})\\
 \pause & = & \prod_{i=1}^{n}\sum_{z=1}^{k}\pi_{z}\cn\left(x_{i}\mid\mu_{z},\Sigma_{z}\right).
 \end{eqnarray*}
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3787,12 +2154,223 @@ J(\pi,\mu,\Sigma) & = & \sum_{i=1}^{n}\log\left\{ \sum_{z=1}^{k}\pi_{z}\cn\left(
 
 \end_inset
 
- 
+
 \end_layout
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Review: Estimating a Gaussian Distribution
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Recall that the density for 
+\begin_inset Formula $x\sim\cn\left(\mu,\Sigma\right)$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+p(x\mid\mu,\Sigma)=\frac{1}{\sqrt{|2\pi\Sigma|}}\exp\left(-\frac{1}{2}(x-\mu)^{T}\Sigma^{-1}(x-\mu)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+And the log-density is
+\begin_inset Formula 
+\[
+\log p(x\mid\mu,\Sigma)=-\frac{1}{2}\log\left|2\pi\Sigma\right|-\frac{1}{2}(x-\mu)^{T}\Sigma^{-1}(x-\mu)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+To estimate 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ from a sample 
+\begin_inset Formula $x_{1},\ldots,x_{n}$
+\end_inset
+
+ i.i.d.
+ 
+\begin_inset Formula $\cn\left(\mu,\Sigma\right)$
+\end_inset
+
+, we'll maximize the log joint density:
+\begin_inset Formula 
+\[
+\sum_{i=1}^{n}\log p(x\mid\mu,\Sigma)=-\frac{n}{2}\log\left|2\pi\Sigma\right|-\frac{1}{2}\sum_{i=1}^{n}(x_{i}-\mu)^{T}\Sigma^{-1}(x_{i}-\mu)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Review: Estimating a Gaussian Distribution
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+To estimate 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ from a sample 
+\begin_inset Formula $x_{1},\ldots,x_{n}$
+\end_inset
+
+ i.i.d.
+ 
+\begin_inset Formula $\cn\left(\mu,\Sigma\right)$
+\end_inset
+
+, we'll maximize the log joint density:
+\begin_inset Formula 
+\[
+J(\mu,\Sigma)=\sum_{i=1}^{n}\log p(x\mid\mu,\Sigma)=-\frac{n}{2}\log\left|2\pi\Sigma\right|-\frac{1}{2}\sum_{i=1}^{n}(x_{i}-\mu)^{T}\Sigma^{-1}(x_{i}-\mu)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+This is a solid exercise in vector and matrix differentiation.
+ Find 
+\begin_inset Formula $\hat{\mu}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{\Sigma}$
+\end_inset
+
+ satisfying
+\begin_inset Formula 
+\[
+\del_{\mu}J(\mu,\Sigma)=0\qquad\del_{\Sigma}J(\mu,\Sigma)=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We get a closed form solution:
+\begin_inset Formula 
+\begin{eqnarray*}
+\hat{\mu}_{\text{MLE}} & = & \frac{1}{n}\sum_{i=1}^{n}x_{i}\\
+\hat{\Sigma}_{\text{MLE}} & = & \frac{1}{n}\sum_{i=1}^{n}\left(x_{i}-\hat{\mu}\right)^{T}\left(x_{i}-\hat{\mu}\right)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ 
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\begin_inset Separator plain
 \end_inset
 
 
@@ -3823,10 +2401,6 @@ Properties of the GMM Log-Likelihood
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3834,13 +2408,9 @@ Properties of the GMM Log-Likelihood
 GMM log-likelihood:
 \begin_inset Formula 
 \begin{eqnarray*}
-J(\pi,\mu,\Sigma) & = & \sum_{i=1}^{n}\log\left\{ \sum_{z=1}^{k}\pi_{z}\cn\left(x_{i}\mid\mu_{z},\Sigma_{z}\right)\right\} 
+J(\pi,\mu,\Sigma) & = & \sum_{i=1}^{n}\log\left\{ \sum_{z=1}^{k}\frac{\pi_{z}}{\sqrt{|2\pi\Sigma|}}\exp\left(-\frac{1}{2}(x-\mu)^{T}\Sigma^{-1}(x-\mu)\right)\right\} 
 \end{eqnarray*}
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3855,15 +2425,10 @@ J(\pi,\mu,\Sigma) & = & \sum_{i=1}^{n}\log\left\{ \sum_{z=1}^{k}\pi_{z}\cn\left(
 \begin_layout Itemize
 Let's compare to the log-likelihood for a single Gaussian:
 \begin_inset Formula 
-\begin{eqnarray*}
-\pause &  & \sum_{i=1}^{n}\log\cn\left(x_{i}\mid\mu,\Sigma\right)\\
-\pause & = & -\frac{nd}{2}\log\left(2\pi\right)-\frac{n}{2}\log\left|\Sigma\right|-\frac{1}{2}\sum_{i=1}^{n}(x_{i}-\mu)'\Sigma^{-1}(x_{i}-\mu)
-\end{eqnarray*}
+\[
+J(\mu,\Sigma)=-\frac{n}{2}\log\left|2\pi\Sigma\right|-\frac{1}{2}\sum_{i=1}^{n}(x_{i}-\mu)^{T}\Sigma^{-1}(x_{i}-\mu)
+\]
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3885,10 +2450,6 @@ For a single Gaussian, the
 \end_inset
 
  in the Gaussian density.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3910,10 +2471,6 @@ For the GMM, the sum inside the
 \end_inset
 
  prevents this cancellation.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3928,7 +2485,7 @@ For the GMM, the sum inside the
 \end_deeper
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -3946,10 +2503,6 @@ status open
 Identifiability Issues for GMM
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -4005,12 +2558,16 @@ Assuming all clusters are distinct, there are
 \end_layout
 
 \begin_layout Itemize
-Not a problem per se, but something to be aware of.
+Not a problem 
+\emph on
+per se
+\emph default
+, b ut something to be aware of.
 \end_layout
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -4027,10 +2584,6 @@ Singularities for GMM
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -4039,9 +2592,9 @@ Consider the following GMM for 7 data points:
 \end_layout
 
 \begin_layout Standard
-\align center
+\align left
 \begin_inset Graphics
-	filename ../Figures/clustering/gmm-singularity.png
+	filename ../Archive/2016/Lectures/source/13b.mixture-models/gmm-singularity.png
 	lyxscale 50
 	height 40theight%
 
@@ -4068,10 +2621,6 @@ What happens to the likelihood as
 \end_inset
 
 ?
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -4082,15 +2631,11 @@ What happens to the likelihood as
 \end_deeper
 \begin_layout Itemize
 In practice, we end up in local minima that do not have this problem.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-(Provable under mild conditions – see lecture on general EM.)
+Or keep restarting optimization until we do.
 \end_layout
 
 \begin_layout Pause
@@ -4130,7 +2675,7 @@ emph{Pattern recognition and machine learning}, Figure 9.7.}}
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -4162,10 +2707,6 @@ Gradient Descent / SGD for GMM
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -4188,7 +2729,7 @@ J(\pi,\mu,\Sigma) & = & -\sum_{i=1}^{n}\log\left\{ \sum_{z=1}^{k}\pi_{z}\cn\left
 
 \end_deeper
 \begin_layout Itemize
-Can be done – but need to be clever about it.
+Can be done, in principle – but need to be clever about it.
 \end_layout
 
 \begin_deeper
@@ -4256,16 +2797,38 @@ Then
 \end_deeper
 \end_deeper
 \begin_layout Itemize
-But we actually prefer positive definite, to avoid singularities.
+Even then, pure gradient-based methods have trouble.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+See Hosseini and Sra's 
+\begin_inset CommandInset href
+LatexCommand href
+name "Manifold Optimization for Gaussian Mixture Models"
+target "https://arxiv.org/abs/1506.07677"
+
+\end_inset
+
+ for discussion and further references.
 \end_layout
 
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
 \end_inset
 
 
 \end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
 
 \begin_layout Frame
 \begin_inset Argument 4
@@ -4275,10 +2838,6 @@ status open
 Cholesky Decomposition for SPD Matrices
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -4311,10 +2870,6 @@ where
 lower triangular matrix
 \series default
  with positive diagonal elements.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -4326,10 +2881,6 @@ lower triangular matrix
 \begin_layout Itemize
 A lower triangular matrix has half the number of parameters.
  
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -4340,10 +2891,6 @@ A lower triangular matrix has half the number of parameters.
 \end_deeper
 \begin_layout Itemize
 Symmetric positive definite is better because avoids singularities.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -4354,10 +2901,6 @@ Symmetric positive definite is better because avoids singularities.
 \end_deeper
 \begin_layout Itemize
 Requires a non-negativity constraint on diagonal elements.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -4372,8 +2915,6 @@ e.g.
 
 \end_deeper
 \end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
 \end_inset
 
 
@@ -4391,10 +2932,6 @@ status open
 MLE for Gaussian Model
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -4419,10 +2956,6 @@ For data
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -4439,10 +2972,6 @@ With some calculus, we find that the MLE parameters are
 \pause\Sigma_{\text{MLE}} & = & \frac{1}{n}\sum_{i=1}^{n}\left(x_{i}-\mu_{\text{MLE}}\right)\left(x_{i}-\mu_{\text{MLE}}\right)^{T}
 \end{eqnarray*}
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -4464,10 +2993,6 @@ For GMM, If we knew the cluster assignment
 \end_inset
 
 , 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -4479,7 +3004,83 @@ we could compute the MLEs for each cluster.
 \end_deeper
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Estimating a Fully-Observed GMM
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose we observe 
+\begin_inset Formula $\left(x_{1},z_{1}\right),\ldots,\left(x_{n},z_{n}\right)$
+\end_inset
+
+ i.i.d.
+ from GMM 
+\begin_inset Formula $p(x,z)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Them find MLE is easy:
+\begin_inset Formula 
+\begin{eqnarray*}
+\pause n_{z} & = & \sum_{i=1}^{n}\ind{z_{i}=z}\\
+\pause\hat{\pi}(z) & = & \frac{n_{z}}{n}\\
+\pause\hat{\mu}_{z} & = & \frac{1}{n_{z}}\sum_{i:z_{i}=z}x_{i}\\
+\pause\hat{\Sigma}_{z} & = & \frac{1}{n_{z}}\sum_{i:z_{i}=z}\left(x_{i}-\hat{\mu}_{z}\right)\left(x_{i}-\hat{\mu}_{z}\right)^{T}.
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+In the EM algorithm we will modify the equations to handle our evolving
+ 
+\series bold
+soft assignments
+\series default
+, which we will call 
+\series bold
+responsibilities
+\series default
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
 \end_inset
 
 
@@ -4499,9 +3100,6 @@ Cluster Responsibilities: Some New Notation
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -4518,13 +3116,9 @@ Denote the probability that observed value
  by
 \begin_inset Formula 
 \[
-\gamma_{i}^{j}=\pr\left(Z=j\mid X=x_{i}\right).
+\gamma_{i}^{j}=p\left(z=j\mid x=x_{i}\right).
 \]
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -4550,10 +3144,6 @@ that cluster
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -4566,15 +3156,11 @@ that cluster
 Computationally, 
 \begin_inset Formula 
 \begin{eqnarray*}
-\gamma_{i}^{j} & = & \pr\left(Z=j\mid X=x_{i}\right).\\
-\pause & = & p\left(Z=j,X=x_{i}\right)/p(x)\\
+\gamma_{i}^{j} & = & p\left(z=j\mid x_{i}\right).\\
+\pause & = & p\left(z=j,x_{i}\right)/p(x_{i})\\
 \pause & = & \frac{\pi_{j}\cn\left(x_{i}\mid\mu_{j},\Sigma_{j}\right)}{\sum_{c=1}^{k}\pi_{c}\cn\left(x_{i}\mid\mu_{c},\Sigma_{c}\right)}
 \end{eqnarray*}
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -4600,10 +3186,6 @@ soft assignment
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -4617,7 +3199,15 @@ Let
 \begin_inset Formula $n_{c}=\sum_{i=1}^{n}\gamma_{i}^{c}$
 \end_inset
 
- be the number of points 
+ be the 
+\begin_inset Quotes eld
+\end_inset
+
+number
+\begin_inset Quotes erd
+\end_inset
+
+ of points 
 \begin_inset Quotes eld
 \end_inset
 
@@ -4634,7 +3224,7 @@ soft assigned
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -4654,9 +3244,76 @@ EM Algorithm for GMM: Overview
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If we know 
+\begin_inset Formula $\mu_{j},\Sigma_{j},\pi_{j}$
 \end_inset
 
+ for all clusters 
+\begin_inset Formula $j$
+\end_inset
+
+, then easy to find
+\begin_inset Formula 
+\[
+\gamma_{i}^{j}=p(z=j\mid x_{i})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+If we know the (soft) assignments, we can easily find estimates for 
+\begin_inset Formula $\pi,\Sigma,\mu$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Repeatedly alternate these two steps.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+EM Algorithm for GMM: Overview
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
 
 \end_layout
 
@@ -4667,10 +3324,6 @@ Initialize parameters
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -4705,10 +3358,6 @@ for
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -4730,7 +3379,7 @@ M step
 \begin_inset Formula 
 \begin{eqnarray*}
 \mu_{c}^{\text{new}} & = & \frac{1}{n_{c}}\sum_{i=1}^{n}\gamma_{i}^{c}x_{i}\\
-\pause\Sigma_{c}^{\text{new}} & = & \frac{1}{n_{c}}\sum_{i=1}^{n}\gamma_{i}^{c}\left(x_{i}-\mu_{\text{MLE}}\right)\left(x_{i}-\mu_{\text{MLE}}\right)^{T}\\
+\pause\Sigma_{c}^{\text{new}} & = & \frac{1}{n_{c}}\sum_{i=1}^{n}\gamma_{i}^{c}\left(x_{i}-\mu_{c}^{\text{new}}\right)\left(x_{i}-\mu_{c}^{\text{new}}\right)^{T}\\
 \pause\pi_{c}^{\text{new}} & = & \frac{n_{c}}{n},
 \end{eqnarray*}
 
@@ -4746,7 +3395,7 @@ Repeat from Step 2, until log-likelihood converges.
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -4766,9 +3415,6 @@ EM for GMM
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -4778,9 +3424,9 @@ Initialization
 \end_layout
 
 \begin_layout Standard
-\align center
+\align left
 \begin_inset Graphics
-	filename ../Figures/clustering/9.8a.png
+	filename ../Archive/2016/Lectures/source/13b.mixture-models/9.8a.png
 	lyxscale 50
 	height 55theight%
 
@@ -4821,7 +3467,7 @@ emph{Pattern recognition and machine learning}, Figure 9.8.}}
 \end_layout
 
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -4841,9 +3487,6 @@ EM for GMM
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -4853,9 +3496,9 @@ First soft assignment:
 \end_layout
 
 \begin_layout Standard
-\align center
+\align left
 \begin_inset Graphics
-	filename ../Figures/clustering/9.8b.png
+	filename ../Archive/2016/Lectures/source/13b.mixture-models/9.8b.png
 	lyxscale 50
 	height 55theight%
 
@@ -4896,7 +3539,7 @@ emph{Pattern recognition and machine learning}, Figure 9.8.}}
 \end_layout
 
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -4916,9 +3559,6 @@ EM for GMM
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -4928,9 +3568,9 @@ First soft assignment:
 \end_layout
 
 \begin_layout Standard
-\align center
+\align left
 \begin_inset Graphics
-	filename ../Figures/clustering/9.8c.png
+	filename ../Archive/2016/Lectures/source/13b.mixture-models/9.8c.png
 	lyxscale 50
 	height 55theight%
 
@@ -4971,7 +3611,14 @@ emph{Pattern recognition and machine learning}, Figure 9.8.}}
 \end_layout
 
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
 \end_inset
 
 
@@ -4991,9 +3638,6 @@ EM for GMM
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -5003,9 +3647,9 @@ After 5 rounds of EM:
 \end_layout
 
 \begin_layout Standard
-\align center
+\align left
 \begin_inset Graphics
-	filename ../Figures/clustering/9.8e.png
+	filename ../Archive/2016/Lectures/source/13b.mixture-models/9.8e.png
 	lyxscale 50
 	height 55theight%
 
@@ -5046,7 +3690,7 @@ emph{Pattern recognition and machine learning}, Figure 9.8.}}
 \end_layout
 
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -5066,9 +3710,6 @@ EM for GMM
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -5078,9 +3719,9 @@ After 20 rounds of EM:
 \end_layout
 
 \begin_layout Standard
-\align center
+\align left
 \begin_inset Graphics
-	filename ../Figures/clustering/9.8f.png
+	filename ../Archive/2016/Lectures/source/13b.mixture-models/9.8f.png
 	lyxscale 50
 	height 55theight%
 
@@ -5121,7 +3762,7 @@ emph{Pattern recognition and machine learning}, Figure 9.8.}}
 \end_layout
 
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -5145,9 +3786,6 @@ Relation to
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -5158,10 +3796,6 @@ EM for GMM seems a little like
 \end_inset
 
 -means.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -5172,10 +3806,6 @@ EM for GMM seems a little like
 \end_deeper
 \begin_layout Itemize
 In fact, there is a precise correspondence.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -5191,10 +3821,6 @@ First, fix each cluster covariance matrix to be
 
 .
  
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -5213,10 +3839,6 @@ As we take
 \end_inset
 
 -means.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -5227,10 +3849,6 @@ As we take
 \end_deeper
 \begin_layout Itemize
 If you do a quick experiment yourself, you'll find
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -5244,12 +3862,5 @@ Has to do with the tail behavior (exponential decay) of Gaussian.
 
 \end_deeper
 \end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
-\end_layout
-
 \end_body
 \end_document

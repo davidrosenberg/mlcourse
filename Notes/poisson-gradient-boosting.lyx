@@ -16,10 +16,10 @@ figs-within-sections
 \language_package default
 \inputencoding iso8859-1
 \fontencoding global
-\font_roman "default" "default"
+\font_roman "times" "default"
 \font_sans "default" "default"
 \font_typewriter "default" "default"
-\font_math "auto" "auto"
+\font_math "eulervm" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
@@ -557,156 +557,154 @@ figs-within-sections
 \end_layout
 
 \begin_layout Title
-Conditional Gamma Distribution: Bond Balance Prediction Problem
+Gradient Boosting Practice: Poisson Response
+\end_layout
+
+\begin_layout Author
+David S.
+ Rosenberg
 \end_layout
 
 \begin_layout Date
-November 20, 2017
-\end_layout
-
-\begin_layout Section
-Problem setup
-\end_layout
-
-\begin_layout Itemize
-Input space: 
-\begin_inset Formula $\cx=\reals^{d}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Outcome space: 
-\begin_inset Formula $\cy=\left\{ y\in\reals\mid y\ge0\right\} $
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Action space: Distributions on 
-\begin_inset Formula $\cy$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Section
-Modeling Decisions
+November 30, 2017
 \end_layout
 
 \begin_layout Standard
-We went to google to find a family of densities that has the right support
- (
-\begin_inset Formula $\cy$
+Suppose we're trying to predict a distribution of count from some input
+ covariates.
+ The simplest distribution in this situation is the Poisson distribution:
+ 
+\begin_inset Formula 
+\begin{eqnarray*}
+p(k;\lambda) & = & \frac{e^{-\lambda}\lambda^{k}}{k!}
+\end{eqnarray*}
+
 \end_inset
 
-) and seems appropriate for the problem.
- We came up with the family of Gamma distributions with shape parameter
+on 
+\begin_inset Formula $k=0,1,2,3,\ldots$
+\end_inset
+
  
-\begin_inset Formula $\theta=1$
+\begin_inset Formula $\lambda\in\left(0,\infty\right)$
 \end_inset
 
 .
- The density is then
+\end_layout
+
+\begin_layout Section
+Linear Conditional Probability Model 
+\end_layout
+
+\begin_layout Itemize
+Input: 
+\begin_inset Formula $x\in\reals^{d}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Output: 
+\begin_inset Formula $y\in\left\{ 0,1,2,\ldots\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Data:
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
 \[
-p(y\mid k)=\frac{1}{\Gamma(k)}y^{k-1}e^{-y},
+\cd=\left((x_{1},y_{1}),\ldots,(x_{n},y_{n})\right)\in\left(\reals^{d}\times\left\{ 0,1,2,\ldots\right\} \right)^{n}
 \]
 
 \end_inset
 
-for parameter 
-\begin_inset Formula $k\in(0,\infty)$
+assume is sampled i.i.d.
+ from some distribution 
+\begin_inset Formula $P_{\cx\times\cy}$
 \end_inset
 
 .
- Support for this density is 
-\begin_inset Formula $y\in\left(0,\infty\right)$
-\end_inset
-
-.
+ 
 \end_layout
 
-\begin_layout Standard
-We want to find a prediction function 
-\begin_inset Formula $f:x\mapsto k$
+\begin_layout Itemize
+Action: 
+\begin_inset Formula $\lambda\in\left(0,\infty\right)$
 \end_inset
 
 , where 
-\begin_inset Formula $k$
+\begin_inset Formula $\lambda$
 \end_inset
 
- is the parameter of our parametric family.
- Once we have 
-\begin_inset Formula $k$
-\end_inset
-
-, the final probability distribution produced is the Gamma distribution
- with parameter 
-\begin_inset Formula $k=f(x)$
-\end_inset
-
- and 
-\begin_inset Formula $\theta=1$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-We will use a linear model, in the sense that all information we are extracting
- from 
-\begin_inset Formula $x$
-\end_inset
-
- can be summarized by a single linear function of 
-\begin_inset Formula $x$
-\end_inset
-
-.
- From there, we'll need to produce the parameter estimate 
-\begin_inset Formula $k$
-\end_inset
-
-.
- So, introducing 
-\begin_inset Formula $w\in\reals^{d}$
-\end_inset
-
- to give us the linear function, and write
-\begin_inset Formula 
-\[
-x\mapsto\underbrace{w^{T}x}_{\reals}\mapsto\underbrace{\sigma(w^{T}x)}_{\left(0,\infty\right)}=k,
-\]
-
-\end_inset
-
-for some transfer function 
-\begin_inset Formula $\sigma:\reals\to\reals^{>0}$
-\end_inset
-
-, which we still need to determine.
- Remember the transfer function maps us from output of our linear function,
- which can be anything in 
-\begin_inset Formula $\reals$
-\end_inset
-
-, to our parameter space, which is 
-\begin_inset Formula $(0,\infty)$
-\end_inset
-
-.
+ is the parameter of a Poisson distribution.
  
 \end_layout
 
 \begin_layout Standard
-How about 
+We've got to map input 
+\begin_inset Formula $x$
+\end_inset
+
+ to action 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ in our action space, which is 
+\begin_inset Formula $\left(0,\infty\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
 \[
-\sigma(s)=e^{s}.
+x\mapsto\underbrace{w^{T}x}_{\text{score }s\in\reals}\mapsto\underbrace{\lambda}_{\in(0,\infty)}
 \]
+
+\end_inset
+
+To map the score 
+\begin_inset Formula $s$
+\end_inset
+
+ into our action space, we could use the transfer function 
+\begin_inset Formula $\psi(s)=\exp(s)$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula 
+\[
+\lambda=\exp\left(w^{T}x\right).
+\]
+
+\end_inset
+
+So if we predict 
+\begin_inset Formula $\lambda$
+\end_inset
+
+, what's the probability of an observed count 
+\begin_inset Formula $k$
+\end_inset
+
+ for input vector 
+\begin_inset Formula $x$
+\end_inset
+
+?
+\begin_inset Formula 
+\begin{eqnarray*}
+p(y=k\mid x;w) & = & \frac{e^{-\lambda(x)}\lambda(x)^{k}}{k!}\\
+ & = & \frac{e^{-\exp\left(w^{T}x\right)}\left[\exp\left(w^{T}x\right)\right]^{k}}{k!}.
+\end{eqnarray*}
 
 \end_inset
 
@@ -714,11 +712,123 @@ How about
 \end_layout
 
 \begin_layout Standard
-So the final prediction function is
+The conditional likelihood for particular example 
+\begin_inset Formula $\left(x_{i},y_{i}\right)$
+\end_inset
+
+, (where 
+\begin_inset Formula $y_{i}$
+\end_inset
+
+ is a count) is 
+\begin_inset Formula 
+\begin{eqnarray*}
+p(y=y_{i}\mid x_{i};w) & = & \frac{e^{-\exp\left(w^{T}x_{i}\right)}\left[\exp\left(w^{T}x_{i}\right)\right]^{y_{i}}}{y_{i}!}.
+\end{eqnarray*}
+
+\end_inset
+
+Easier to work with the log:
+\begin_inset Formula 
+\begin{eqnarray*}
+\log p(y=y_{i}\mid x_{i};w) & = & -\exp\left(w^{T}x_{i}\right)+y_{i}w^{T}x_{i}-\log\left(y_{i}!\right)
+\end{eqnarray*}
+
+\end_inset
+
+What do we need to find to fit this model? 
+\begin_inset Formula $w$
+\end_inset
+
+.
+ our strategy is to use maximum log-likelihood: 
+\begin_inset Formula 
+\begin{eqnarray*}
+\log L_{\cd}(w) & = & \log p(\cd;w)\\
+ & = & \sum_{i=1}^{n}\log p(y=y_{i}\mid x_{i};w)\\
+ & = & \sum_{i=1}^{n}\left[-\exp\left(w^{T}x_{i}\right)+y_{i}w^{T}x_{i}-\log\left(y_{i}!\right)\right]
+\end{eqnarray*}
+
+\end_inset
+
+So find 
+\begin_inset Formula $w$
+\end_inset
+
+ maximizing this log-likelihood and we're done.
+ Can use standard gradient based methods.
+\end_layout
+
+\begin_layout Section
+Nonlinear approach
+\end_layout
+
+\begin_layout Standard
+In a nonlinear approach, we'll replace the linear score function 
+\begin_inset Formula $s=w^{T}x$
+\end_inset
+
+ with a nonlinear function 
+\begin_inset Formula $s=f(x)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
 \[
-f(x;w)=\exp(w^{T}x).
+x\mapsto\underbrace{f(x)}_{\text{score }s\in\reals}\mapsto\underbrace{\lambda}_{\in(0,\infty)}.
 \]
+
+\end_inset
+
+Again, we can use the transfer function 
+\begin_inset Formula $\psi(s)=\exp(s)$
+\end_inset
+
+.
+ So 
+\begin_inset Formula 
+\[
+\lambda=\exp\left(f(x)\right).
+\]
+
+\end_inset
+
+For score function 
+\begin_inset Formula $f$
+\end_inset
+
+, the probability of 
+\begin_inset Formula $y_{i}\mid x_{i}$
+\end_inset
+
+ is:
+\begin_inset Formula 
+\begin{eqnarray*}
+p(y=y_{i}\mid x_{i};f) & = & \frac{e^{-\exp\left(f(x_{i})\right)}\left[\exp\left(f(x_{i})\right)\right]^{y_{i}}}{y_{i}!}.
+\end{eqnarray*}
+
+\end_inset
+
+Easier to work with the log:
+\begin_inset Formula 
+\begin{eqnarray*}
+\log p(y=y_{i}\mid x_{i};f) & = & -\exp\left(f(x_{i})\right)+y_{i}f(x_{i})-\log\left(y_{i}!\right)
+\end{eqnarray*}
+
+\end_inset
+
+Somehow we want to find a function 
+\begin_inset Formula $f$
+\end_inset
+
+ that gives high log-likelihood to our observed data:
+\begin_inset Formula 
+\begin{eqnarray*}
+\log L_{\cd}(w) & = & \sum_{i=1}^{n}\left[-\exp\left(f(x_{i})\right)+y_{i}f(x_{i})-\log\left(y_{i}!\right)\right]
+\end{eqnarray*}
 
 \end_inset
 
@@ -726,133 +836,131 @@ f(x;w)=\exp(w^{T}x).
 \end_layout
 
 \begin_layout Section
-Model Fitting
+Gradient Boosting Approach
 \end_layout
 
 \begin_layout Standard
-Our final prediction function is 
-\begin_inset Formula $f(x;w)=\exp(w^{T}x)$
+Let's differentiate 
+\begin_inset Formula $\log p(y=y_{i}\mid x_{i};f)$
 \end_inset
 
-, but we still need to choose 
-\begin_inset Formula $w\in\reals^{d}$
-\end_inset
-
-.
+ w.r.t.
  
-\end_layout
-
-\begin_layout Standard
-Suppose we have a training sample 
-\begin_inset Formula 
-\[
-\cd=\left(\left(x_{1},y_{1}\right),\ldots,\left(x_{n},y_{n}\right)\right)
-\]
-
-\end_inset
-
- sampled i.i.d.
- (so the 
-\begin_inset Formula $y_{i}$
-\end_inset
-
-'s are independent given the 
-\begin_inset Formula $x$
-\end_inset
-
-'s) where 
-\begin_inset Formula $\left(x_{i},y_{i}\right)\in\reals^{d}\times\left(0,\infty\right)$
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Standard
-We'll follow the maximum likelihood approach.
- We start by writing down the likelihood function, which gives us the density
- for 
-\begin_inset Formula $\cd$
-\end_inset
-
- for any 
-\begin_inset Formula $w$
+\begin_inset Formula $f(x_{i})$
 \end_inset
 
 :
 \begin_inset Formula 
 \begin{eqnarray*}
-L_{\cd}(w) & = & \prod_{i=1}^{n}p(y_{i}\mid x_{i},w)\\
- & = & \prod_{i=1}^{n}\frac{1}{\Gamma(\exp(w^{T}x_{i}))}y_{i}^{\exp(w^{T}x_{i})-1}e^{-y_{i}}.
+\frac{\partial}{\partial f(x_{i})}\log p(y=y_{i}\mid x_{i};f) & = & -\exp\left(f(x_{i})\right)+y_{i}
 \end{eqnarray*}
 
 \end_inset
 
-It will be convenient to compute the log of this, so start with
+Now differentating the full log-likelihooed is 
 \begin_inset Formula 
 \begin{eqnarray*}
-\log p(y_{i}\mid x_{i},w) & = & \log\left[\frac{1}{\Gamma(\exp(w^{T}x_{i}))}y_{i}^{\exp(w^{T}x_{i})-1}e^{-y_{i}}\right]\\
- & = & \log\left[\frac{1}{\Gamma(\exp(w^{T}x_{i}))}\right]\\
- &  & +\log\left[y_{i}^{\exp(w^{T}x_{i})-1}\right]-y_{i}\\
- & = & -\log\left[\Gamma(\exp(w^{T}x_{i}))\right]\\
- &  & +\left[\exp(w^{T}x_{i})-1\right]\log y_{i}-y_{i}
+\frac{\partial}{\partial f(x_{i})}\left[\log L_{\cd}(f)\right] & = & \frac{\partial}{\partial f(x_{i})}\left[-\exp\left(f(x_{i})\right)+y_{i}f(x_{i})-\log\left(y_{i}!\right)\right]\\
+ & = & -\exp\left(f(x_{i})\right)+y_{i}
 \end{eqnarray*}
 
 \end_inset
 
-Following the approach of maximum likelihood, let's choose 
-\begin_inset Formula $w$
+So optimal unconstrained step direction for changing the vector of evaluations
+ 
+\begin_inset Formula $\mathbf{f}=\left(f(x_{1}),\ldots,f(x_{n})\right)$
 \end_inset
 
- to maximize 
-\begin_inset Formula $L_{\cd}(w)$
-\end_inset
-
-.
- Equivalently, let's maximize the log-likelihood.
- So
-\begin_inset Formula 
-\begin{eqnarray*}
-w_{\text{MLE}}^{*} & = & \argmax_{w\in\reals^{d}}\log L_{\cd}(w)
-\end{eqnarray*}
-
-\end_inset
-
-where 
-\begin_inset Formula 
-\begin{eqnarray*}
-\log L_{\cd}(w) & = & \sum_{i=1}^{n}[-\log\left[\Gamma(\exp(w^{T}x_{i}))\right]\\
- &  & +\left[\exp(w^{T}x_{i})-1\right]\log y_{i}-y_{i}]
-\end{eqnarray*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Equivalent to find
+ is 
 \begin_inset Formula 
 \[
-\argmax_{w\in\reals^{d}}\sum_{i=1}^{n}[-\log\left[\Gamma(\exp(w^{T}x_{i}))+\exp(w^{T}x_{i})\log y_{i}\right]
+-\mathbf{g}=\left(-y_{1}+\exp\left(f(x_{1})\right),\ldots,-y_{n}+\exp\left(f(x_{n})\right)\right)
 \]
 
 \end_inset
 
-So we just need to optimize this over 
-\begin_inset Formula $w$
+Fix some base hypothesis space 
+\begin_inset Formula $\ch$
 \end_inset
 
-, and we've got our prediction functions.
+ of functions 
+\begin_inset Formula $h:\reals^{d}\to\reals$
+\end_inset
+
+.
+ Then, our actual step direction will be the 
+\begin_inset Formula $h\in\ch$
+\end_inset
+
+ that best fits 
+\begin_inset Formula $-\mathbf{g}$
+\end_inset
+
+ in the least squares sense:
+\begin_inset Formula 
+\begin{eqnarray*}
+ &  & \argmin_{h\in\ch}\sum_{i=1}^{n}\left(-\mathbf{g}_{i}-h(x_{i})\right)^{2}\\
+ & = & \argmin_{h\in\ch}\sum_{i=1}^{n}\left(\left[-y_{i}+\exp\left(f(x_{i})\right)\right]-h(x_{i})\right)^{2}
+\end{eqnarray*}
+
+\end_inset
+
+ So to recap:
+\end_layout
+
+\begin_layout Enumerate
+Up to this point, our score function is 
+\begin_inset Formula $f$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+We want to improve 
+\begin_inset Formula $f$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+The optimal step direction for 
+\begin_inset Formula $f(x_{i})$
+\end_inset
+
+ is 
+\begin_inset Formula $-y_{i}+\exp\left(f(x_{i})\right)$
+\end_inset
+
+.
+ We can evaluate this.
+ It's a real number.
+ 
+\end_layout
+
+\begin_layout Enumerate
+So we have a bunch of 
+\begin_inset Formula $(x_{i},-\mathbf{g}_{i})$
+\end_inset
+
+ pairs that we will use regression over 
+\begin_inset Formula $\ch$
+\end_inset
+
+ to fit.
 \end_layout
 
 \begin_layout Standard
-In the future, we'll learn how to swap out the linear piece 
-\begin_inset Formula $w^{T}x$
+Then we add something like 
+\begin_inset Formula $0.1h$
 \end_inset
 
- with something nonlinear, such as a gradient boosted regression tree model
- or a neural network.
+ to 
+\begin_inset Formula $f$
+\end_inset
+
+ and repeat.
 \end_layout
 
 \end_body

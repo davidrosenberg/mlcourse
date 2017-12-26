@@ -16,10 +16,10 @@ figs-within-sections
 \language_package default
 \inputencoding iso8859-1
 \fontencoding global
-\font_roman "default" "default"
+\font_roman "times" "default"
 \font_sans "default" "default"
 \font_typewriter "default" "default"
-\font_math "auto" "auto"
+\font_math "eulervm" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
@@ -557,302 +557,563 @@ figs-within-sections
 \end_layout
 
 \begin_layout Title
-Conditional Gamma Distribution: Bond Balance Prediction Problem
+Lab Notes: Multiclass Review and an Approach to Ranking
+\end_layout
+
+\begin_layout Author
+David S.
+ Rosenberg
 \end_layout
 
 \begin_layout Date
-November 20, 2017
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+today
 \end_layout
 
-\begin_layout Section
-Problem setup
-\end_layout
-
-\begin_layout Itemize
-Input space: 
-\begin_inset Formula $\cx=\reals^{d}$
 \end_inset
 
 
-\end_layout
-
-\begin_layout Itemize
-Outcome space: 
-\begin_inset Formula $\cy=\left\{ y\in\reals\mid y\ge0\right\} $
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Action space: Distributions on 
-\begin_inset Formula $\cy$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Section
-Modeling Decisions
 \end_layout
 
 \begin_layout Standard
-We went to google to find a family of densities that has the right support
+Let's review the multiclass classification framework, and then attempt to
+ use the framework we developed for multiclass classification to address
+ the ranking problem.
+\end_layout
+
+\begin_layout Section
+Multiclass Review
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+General [Discrete] Output Space: 
+\series default
+
+\begin_inset Formula $\cy$
+\end_inset
+
+ (e.g 
+\begin_inset Formula $\cy=\left\{ 1,\ldots,k\right\} $
+\end_inset
+
+ for multiclass)
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Base Hypothesis Space
+\series default
+: 
+\begin_inset Formula $\ch=\left\{ h:\cx\to\reals\right\} $
+\end_inset
+
  (
-\begin_inset Formula $\cy$
+\begin_inset Quotes eld
 \end_inset
 
-) and seems appropriate for the problem.
- We came up with the family of Gamma distributions with shape parameter
- 
-\begin_inset Formula $\theta=1$
+score functions
+\begin_inset Quotes erd
 \end_inset
 
-.
- The density is then
-\begin_inset Formula 
-\[
-p(y\mid k)=\frac{1}{\Gamma(k)}y^{k-1}e^{-y},
-\]
-
-\end_inset
-
-for parameter 
-\begin_inset Formula $k\in(0,\infty)$
-\end_inset
-
-.
- Support for this density is 
-\begin_inset Formula $y\in\left(0,\infty\right)$
-\end_inset
-
-.
+).
 \end_layout
 
-\begin_layout Standard
-We want to find a prediction function 
-\begin_inset Formula $f:x\mapsto k$
-\end_inset
+\begin_layout Itemize
 
-, where 
+\series bold
+Multiclass Hypothesis Space
+\series default
+ (for 
 \begin_inset Formula $k$
 \end_inset
 
- is the parameter of our parametric family.
- Once we have 
-\begin_inset Formula $k$
-\end_inset
-
-, the final probability distribution produced is the Gamma distribution
- with parameter 
-\begin_inset Formula $k=f(x)$
-\end_inset
-
- and 
-\begin_inset Formula $\theta=1$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-We will use a linear model, in the sense that all information we are extracting
- from 
-\begin_inset Formula $x$
-\end_inset
-
- can be summarized by a single linear function of 
-\begin_inset Formula $x$
-\end_inset
-
-.
- From there, we'll need to produce the parameter estimate 
-\begin_inset Formula $k$
-\end_inset
-
-.
- So, introducing 
-\begin_inset Formula $w\in\reals^{d}$
-\end_inset
-
- to give us the linear function, and write
+ classes): 
 \begin_inset Formula 
 \[
-x\mapsto\underbrace{w^{T}x}_{\reals}\mapsto\underbrace{\sigma(w^{T}x)}_{\left(0,\infty\right)}=k,
+\cf=\left\{ x\mapsto\argmax_{i}h_{i}(x)\mid h_{1},\ldots,h_{k}\in\ch\right\} .
 \]
 
 \end_inset
 
-for some transfer function 
-\begin_inset Formula $\sigma:\reals\to\reals^{>0}$
+In words, we have one score function for each class, and we predict the
+ class that has the highest score.
+\end_layout
+
+\begin_layout Itemize
+How to fit the 
+\begin_inset Formula $h$
 \end_inset
 
-, which we still need to determine.
- Remember the transfer function maps us from output of our linear function,
- which can be anything in 
-\begin_inset Formula $\reals$
+'s?
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+One approach is one-vs-all.
+\end_layout
+
+\begin_layout Itemize
+But we can also train them jointly
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+We get the example 
+\begin_inset Formula $\left(x_{i},y_{i}\right)$
 \end_inset
 
-, to our parameter space, which is 
-\begin_inset Formula $(0,\infty)$
+ correct, if 
+\begin_inset Formula 
+\[
+h_{y_{i}}(x_{i})>h_{j}(x_{i})
+\]
+
+\end_inset
+
+for all 
+\begin_inset Formula $j\neq y_{i}$
 \end_inset
 
 .
- 
-\end_layout
-
-\begin_layout Standard
-How about 
-\begin_inset Formula 
-\[
-\sigma(s)=e^{s}.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-So the final prediction function is
-\begin_inset Formula 
-\[
-f(x;w)=\exp(w^{T}x).
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Model Fitting
-\end_layout
-
-\begin_layout Standard
-Our final prediction function is 
-\begin_inset Formula $f(x;w)=\exp(w^{T}x)$
-\end_inset
-
-, but we still need to choose 
-\begin_inset Formula $w\in\reals^{d}$
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Standard
-Suppose we have a training sample 
-\begin_inset Formula 
-\[
-\cd=\left(\left(x_{1},y_{1}\right),\ldots,\left(x_{n},y_{n}\right)\right)
-\]
-
-\end_inset
-
- sampled i.i.d.
- (so the 
+ In words, the score function for the correct class 
 \begin_inset Formula $y_{i}$
 \end_inset
 
-'s are independent given the 
-\begin_inset Formula $x$
-\end_inset
-
-'s) where 
-\begin_inset Formula $\left(x_{i},y_{i}\right)\in\reals^{d}\times\left(0,\infty\right)$
-\end_inset
-
-.
- 
+ is higher than the score functions for the incorrect classes.
+ Equivalently,
 \end_layout
 
 \begin_layout Standard
-We'll follow the maximum likelihood approach.
- We start by writing down the likelihood function, which gives us the density
- for 
-\begin_inset Formula $\cd$
-\end_inset
-
- for any 
-\begin_inset Formula $w$
-\end_inset
-
-:
-\begin_inset Formula 
-\begin{eqnarray*}
-L_{\cd}(w) & = & \prod_{i=1}^{n}p(y_{i}\mid x_{i},w)\\
- & = & \prod_{i=1}^{n}\frac{1}{\Gamma(\exp(w^{T}x_{i}))}y_{i}^{\exp(w^{T}x_{i})-1}e^{-y_{i}}.
-\end{eqnarray*}
-
-\end_inset
-
-It will be convenient to compute the log of this, so start with
-\begin_inset Formula 
-\begin{eqnarray*}
-\log p(y_{i}\mid x_{i},w) & = & \log\left[\frac{1}{\Gamma(\exp(w^{T}x_{i}))}y_{i}^{\exp(w^{T}x_{i})-1}e^{-y_{i}}\right]\\
- & = & \log\left[\frac{1}{\Gamma(\exp(w^{T}x_{i}))}\right]\\
- &  & +\log\left[y_{i}^{\exp(w^{T}x_{i})-1}\right]-y_{i}\\
- & = & -\log\left[\Gamma(\exp(w^{T}x_{i}))\right]\\
- &  & +\left[\exp(w^{T}x_{i})-1\right]\log y_{i}-y_{i}
-\end{eqnarray*}
-
-\end_inset
-
-Following the approach of maximum likelihood, let's choose 
-\begin_inset Formula $w$
-\end_inset
-
- to maximize 
-\begin_inset Formula $L_{\cd}(w)$
-\end_inset
-
-.
- Equivalently, let's maximize the log-likelihood.
- So
-\begin_inset Formula 
-\begin{eqnarray*}
-w_{\text{MLE}}^{*} & = & \argmax_{w\in\reals^{d}}\log L_{\cd}(w)
-\end{eqnarray*}
-
-\end_inset
-
-where 
-\begin_inset Formula 
-\begin{eqnarray*}
-\log L_{\cd}(w) & = & \sum_{i=1}^{n}[-\log\left[\Gamma(\exp(w^{T}x_{i}))\right]\\
- &  & +\left[\exp(w^{T}x_{i})-1\right]\log y_{i}-y_{i}]
-\end{eqnarray*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Equivalent to find
 \begin_inset Formula 
 \[
-\argmax_{w\in\reals^{d}}\sum_{i=1}^{n}[-\log\left[\Gamma(\exp(w^{T}x_{i}))+\exp(w^{T}x_{i})\log y_{i}\right]
+h_{y_{i}}(x_{i})>\max_{j\neq y_{i}}h_{j}(x_{i}).
 \]
 
 \end_inset
 
-So we just need to optimize this over 
-\begin_inset Formula $w$
+Also equivalently, we want:
+\begin_inset Formula 
+\[
+h_{y_{i}}(x_{i})-\max_{j\neq y_{i}}h_{j}(x_{i})>0.
+\]
+
 \end_inset
 
-, and we've got our prediction functions.
+This should remind us of margin, which is positive iff our prediction has
+ the right sign.
+ Let 
+\begin_inset Formula $\ell$
+\end_inset
+
+ be a margin-based loss (e.g.
+ hinge loss or logistic loss), and try to minimize
+\begin_inset Formula 
+\[
+\frac{1}{n}\sum_{i=1}^{n}\ell\left(h_{y_{i}}(x_{i})-\max_{j\neq y_{i}}h_{j}(x_{i})\right)
+\]
+
+\end_inset
+
+by searching over 
+\begin_inset Formula $h_{1},\ldots,h_{k}\in\ch$
+\end_inset
+
+.
+ This is a reasonable first approach to multiclass classification.
+\end_layout
+
+\begin_layout Section
+Reformulation with Compatibility Scores
 \end_layout
 
 \begin_layout Standard
-In the future, we'll learn how to swap out the linear piece 
-\begin_inset Formula $w^{T}x$
+The idea here is that, rather than having 
+\begin_inset Formula $k$
 \end_inset
 
- with something nonlinear, such as a gradient boosted regression tree model
- or a neural network.
+ score functions for 
+\begin_inset Formula $k$
+\end_inset
+
+ classes, let's have a single function that takes an input 
+\begin_inset Formula $x$
+\end_inset
+
+ and a class 
+\begin_inset Formula $y$
+\end_inset
+
+ as input, and produces a score measuring how 
+\begin_inset Quotes eld
+\end_inset
+
+compatible
+\begin_inset Quotes erd
+\end_inset
+
+ the class 
+\begin_inset Formula $y$
+\end_inset
+
+ is with the input 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ We will call this a 
+\series bold
+compatibility score function
+\series default
+
+\begin_inset Formula 
+\[
+h(x,y)\mapsto\reals.
+\]
+
+\end_inset
+
+(NOTE: In 
+\begin_inset Formula $h(x,y)$
+\end_inset
+
+, the second argument 
+\begin_inset Formula $y$
+\end_inset
+
+ takes discrete values in 
+\begin_inset Formula $\left\{ 1,\ldots,k\right\} $
+\end_inset
+
+.)
+\end_layout
+
+\begin_layout Standard
+The compatibility score approach absorbs the separate score function approach
+ as a special case: Suppose we had 
+\begin_inset Formula $h_{1},\ldots,h_{k}\in\ch$
+\end_inset
+
+ from the previous approach, we can construct an equivalent compatibility
+ function by defining: 
+\begin_inset Formula 
+\[
+h(x,y)=h_{y}(x),
+\]
+
+\end_inset
+
+for 
+\begin_inset Formula $y\in\left\{ 1,\ldots,k\right\} $
+\end_inset
+
+.
+ So then
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $h(x,y)$
+\end_inset
+
+ classifies
+\series bold
+
+\begin_inset Formula $\left(x_{i},y_{i}\right)$
+\end_inset
+
+ 
+\series default
+correctly iff
+\series bold
+ 
+\series default
+
+\begin_inset Formula 
+\[
+h(x_{i},y_{i})>h(x_{i},y)\,\forall y\neq y_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Equivalently, if we define
+\begin_inset Formula 
+\[
+m_{i}=h(x_{i},y_{i})-\max_{y\neq y_{i}}h(x_{i},y),
+\]
+
+\end_inset
+
+ then classification is correct if 
+\begin_inset Formula $m_{i}>0$
+\end_inset
+
+.
+ Generally want 
+\begin_inset Formula $m_{i}$
+\end_inset
+
+ to be large.
+\begin_inset Note Note
+status open
+
+\begin_layout Itemize
+We may want to have a class-sensitive loss function, such as
+\begin_inset Formula 
+\[
+\Delta:\cy\times\ca\to\reals^{\ge0}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Example: Suppose 
+\begin_inset Formula $k=3$
+\end_inset
+
+.
+ By hand we write down a loss function capturing different penalties for
+ misclassifications.
+ 
+\begin_inset Formula 
+\begin{eqnarray*}
+\Delta(\text{1},1) & = & 0\\
+\Delta\left(1,2\right) & = & 1\\
+\Delta(1,3) & = & 5\\
+\Delta(2,1) & = & ...\text{}\\
+ & \vdots
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Let's examine our evolving loss
+\begin_inset Formula 
+\begin{eqnarray*}
+ &  & \max\left(0,-\left[h(x_{i},y_{i})-h(x_{i},y)-\Delta(y_{i},y)\right]\right)\\
+ & = & \max\left(0,\Delta(y_{i},y)-\left[h(x_{i},y_{i})-h(x_{i},y)\right]\right)
+\end{eqnarray*}
+
+\end_inset
+
+ Can set loss for a single example as
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+\max_{y}\left[\max\left(0,\Delta(y_{i},y)-\left[h(x_{i},y_{i})-h(x_{i},y)\right]\right)\right]
+\]
+
+\end_inset
+
+ can also do
+\begin_inset Formula 
+\[
+\sum_{y\neq y_{i}}\left[\max\left(0,\Delta(y_{i},y)-\left[h(x_{i},y_{i})-h(x_{i},y)\right]\right)\right].
+\]
+
+\end_inset
+
+This is the example-loss for multiclass SVM with class-sensitive loss.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Consider ranking problem
+\end_layout
+
+\begin_layout Enumerate
+For a search query, retrieve 
+\begin_inset Formula $100$
+\end_inset
+
+ results that are keyword matches.
+ (Or use some other fast approach with high recall.)
+\end_layout
+
+\begin_layout Enumerate
+Let 
+\begin_inset Formula $x$
+\end_inset
+
+ represent the search query, any information about the user, user browser,
+ user browsing history, etc.
+\end_layout
+
+\begin_layout Enumerate
+Let 
+\begin_inset Formula $y$
+\end_inset
+
+ represent a particular webpage.
+ (or item, etc.)
+\end_layout
+
+\begin_layout Enumerate
+Use a compatibility score function 
+\begin_inset Formula $h(x,y)$
+\end_inset
+
+ to rank the 100 pages, by plugging each of them in (as different 
+\begin_inset Formula $y$
+\end_inset
+
+'s with 
+\begin_inset Formula $x$
+\end_inset
+
+ remaining the same) to 
+\begin_inset Formula $h(x,y)$
+\end_inset
+
+ to get 100 scores.
+\end_layout
+
+\begin_layout Standard
+For a given user/query 
+\begin_inset Formula $x$
+\end_inset
+
+, we need to evaluate 
+\begin_inset Formula $h(x,y)$
+\end_inset
+
+ for each of the 100 pages we've identified as possibly related:
+\begin_inset Formula 
+\begin{align*}
+h(x & =\text{User 104232 with Query }q,\text{y=mathwords.com})\\
+h(x & =\text{User 104232 with Query }q,\text{y=mathematica.com})\\
+h(x & =\text{User 104232 with Query }q,\text{y=mathcad.com})
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To create the compatibility function 
+\begin_inset Formula $h(x,y)$
+\end_inset
+
+, we will use features that depend jointly on 
+\begin_inset Formula $x$
+\end_inset
+
+ and 
+\begin_inset Formula $y$
+\end_inset
+
+, such as:
+\end_layout
+
+\begin_layout Enumerate
+A binary indicator feature for whether or not this user has clicked on page
+ 
+\begin_inset Formula $y$
+\end_inset
+
+ before.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Page 
+\begin_inset Formula $y$
+\end_inset
+
+ has a topic category that's related to query 
+\begin_inset Formula $q$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $h(x,y)$
+\end_inset
+
+ could be q linear or nonlinear function of these features.
+ 
+\end_layout
+
+\begin_layout Standard
+A labeled example would be a triple:
+\begin_inset Formula 
+\[
+(x_{i},\left\{ y_{i1},\ldots,y_{i5}\right\} ,y_{i}^{*}),
+\]
+
+\end_inset
+
+ where 
+\begin_inset Formula $y_{i1},\ldots,y_{i5}$
+\end_inset
+
+ were 
+\begin_inset Formula $5$
+\end_inset
+
+ results shown to the user, and 
+\begin_inset Formula $y_{i}^{*}$
+\end_inset
+
+ is the result clicked.
+ So loss for this example could be something like
+\begin_inset Formula 
+\begin{eqnarray*}
+L(x_{i},\left\{ y_{i1},\ldots,y_{i5}\right\} ,y_{i}^{*}) & = & \ell\left(m_{i}\right)\\
+ & = & \ell\left(h(x_{i},y_{i}^{*})-\max_{y\in\left\{ y_{i1},\ldots,y_{i5}\right\} -\left\{ y_{i}^{*}\right\} }h(x_{i},y)\right),
+\end{eqnarray*}
+
+\end_inset
+
+for some margin-based loss function 
+\begin_inset Formula $\ell$
+\end_inset
+
+, such as hinge loss.
+ 
+\end_layout
+
+\begin_layout Standard
+NOTE: In practice the approach described above is naive and should be adjusted.
+ One major issue is that the ordering of the search results 
+\begin_inset Formula $y_{i1},\ldots,y_{yi5}$
+\end_inset
+
+ has a large influence on which is most likely to be clicked.
+ Burges's paper 
+\begin_inset CommandInset href
+LatexCommand href
+name "From RankNet to LambdaRank to LambdaMART: An Overview"
+target "https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/MSR-TR-2010-82.pdf"
+
+\end_inset
+
+ is a good reference for more practical models.
 \end_layout
 
 \end_body

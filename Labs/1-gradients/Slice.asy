@@ -3,7 +3,7 @@ settings.render = 5;
 import three;
 import graph3;
 size(12cm);
-
+defaultpen(fontsize(20));
 currentprojection=orthographic(
 camera=(6.62203780548222,3.37617776300693,2.37564492689527),
 up=(-0.00306094018461684,-0.00148823274902149,0.0106472981925521),

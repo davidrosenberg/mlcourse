@@ -1,11 +1,9 @@
 settings.prc = false;
-//settings.render = 3;
+settings.render = 5;
 import three;
 import graph3;
 size(12cm);
 
-//currentprojection=perspective((30,15,20));
-//currentlight = light(lightgray,ambient=white,specular=lightblue,specularfactor=1,(30,25,20));
 currentprojection=orthographic(
 camera=(6.62203780548222,3.37617776300693,2.37564492689527),
 up=(-0.00306094018461684,-0.00148823274902149,0.0106472981925521),
@@ -27,7 +25,7 @@ triple q(real t) {
   real v = (1+exp(-(x^2+y^2)/(5*.1))/(2*pi*.1)) + (t-y)*(-2*y)*exp(-(x^2+y^2)/(5*.1))/(2*pi*.1);
   return (0,t,v);
 }
-draw(surface(g,(-1,-1),(0,1),50,Notaknot,Notaknot),surfacepen=lightblue,black);
+draw(surface(g,(-1,-1),(0,1),50,Notaknot,Notaknot),surfacepen=lightblue,black+0.5);
 draw(surface(h,(-1,0),(1,1),50,Notaknot,Notaknot),surfacepen=green+opacity(.3));
 draw(graph(f,-1,1),p=black+2);
 draw(graph(q,-1,1),p=black+2);

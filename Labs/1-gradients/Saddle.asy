@@ -1,5 +1,5 @@
 settings.prc = false;
-//settings.render = 3;
+settings.render = 5;
 import three;
 import graph3;
 size(12cm);
@@ -28,7 +28,7 @@ triple f(pair p) {
   real z = (.6*x^2-y^2)/10+ 6*g(p-(5,5)).z - 6*g(p+(5,5)).z;
   return (x,y,z);
 }
-draw(surface(f,(-8,-8),(8,8),100,Notaknot,Notaknot),surfacepen=lightblue+opacity(.75),black);
+draw(surface(f,(-8,-8),(8,8),100,Notaknot,Notaknot),surfacepen=lightblue+opacity(.75),black+0.5);
 real low = f((-5,-5)).z, high = f((5,5)).z;
 draw((-5,-10,low-1)--(-5,-5,low),red+1,Arrow3);
 draw((5,15,high+1)--(5,5,high),red+1,Arrow3);

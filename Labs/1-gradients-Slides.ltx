@@ -107,7 +107,6 @@
   \item What is the intuitive meaning of $\partial_{x_i}f(x)$?
   \end{itemize}
 \end{frame}
-
 \begin{frame}
   \frametitle{Differentiability}
   \begin{itemize}
@@ -187,6 +186,7 @@
 \includegraphics[width=\textwidth,height=0.8\textheight]{1-gradients/Saddle.pdf}
 \end{center}
 \end{frame}
+\subsection{Computing Gradients}
 \begin{frame}[fragile]
   \frametitle{Computing Gradients}
   \begin{block}{Question}
@@ -201,5 +201,75 @@
       What is the critical point of $f$?
     \end{enumerate}
   \end{block}
+\end{frame}
+\begin{frame}
+  \frametitle{$f(x_1,x_2,x_3)=\log(1+e^{x_1+2x_2+3x_3})$ Solution 1}
+  We can compute the partial derivatives directly:
+  $$\begin{Array}{rcl}
+    \partial_{x_1} f(x_1,x_2,x_3) &=&\frac{e^{x_1+2x_2+3x_3}}{1+e^{x_1+2x_2+3x_3}}\\
+    \partial_{x_2} f(x_1,x_2,x_3) &=&\frac{2e^{x_1+2x_2+3x_3}}{1+e^{x_1+2x_2+3x_3}}\\
+    \partial_{x_3} f(x_1,x_2,x_3) &=&
+    \frac{3e^{x_1+2x_2+3x_3}}{1+e^{x_1+2x_2+3x_3}}
+    \end{Array}$$
+  and obtain
+  $$\nabla f(x_1,x_2,x_3) =
+  \PMattt{\frac{e^{x_1+2x_2+3x_3}}{1+e^{x_1+2x_2+3x_3}}}
+         {\frac{2e^{x_1+2x_2+3x_3}}{1+e^{x_1+2x_2+3x_3}}}
+         {\frac{3e^{x_1+2x_2+3x_3}}{1+e^{x_1+2x_2+3x_3}}}.$$         
+\end{frame}
+\begin{frame}
+  \frametitle{$f(x_1,x_2,x_3)=\log(1+e^{x_1+2x_2+3x_3})$ Solution 2}
+  \begin{itemize}
+  \item Let $w=(1,2,3)^T$.
+  \item Write $f(x) = \log(1+e^{w^Tx})$.
+  \item Apply a version of the chain rule:
+    $$\nabla f(x) = \frac{e^{w^Tx}}{1+e^{w^Tx}}w.$$
+  \end{itemize}
+  \begin{theorem}[Chain Rule]
+    If $g:\RR\to\RR$ and $h:\RR^n\to\RR$ are differentiable then
+    $$\nabla (g\circ h)(x) = g'(h(x))\nabla h(x).$$
+  \end{theorem}
+\end{frame}
+\begin{frame}
+  \frametitle{$f(x) = \|Ax-y\|_2^2$ Solution}
+  \begin{itemize}
+  \item We could use techniques similar to the previous problem, but
+    instead we show a different method using directional derivatives.
+  \item Note that
+    $$\hspace{-.5cm}\begin{array}{rcl}
+    \multicolumn{3}{l}{f(x+tv)}\\
+    & = & (x+tv)^TA^TA(x+tv) - 2y^TA(x+tv)+y^Ty \\
+    & = & x^TA^TAx + t^2v^TA^TAv + 2tx^TA^TAv-2y^TAx-2ty^TAv+y^Ty\\
+    & = & f(x) + t(2x^TA^TA - 2y^TA)v + t^2v^TA^TAv.
+  \end{array}$$
+  \item This gives
+    $$f'(x;v)=\lim_{t\to0}\frac{f(x+tv)-f(x)}{t}
+    = (2x^TA^TA - 2y^TA)v$$
+  \item Thus $\nabla f(x) = 2(A^TAx-A^Ty) = 2A^T(Ax-y)$.
+  \end{itemize}
+\end{frame}
+\begin{frame}
+  \frametitle{Critical Points of $f(x)=\|Ax-y\|_2^2$}
+  \begin{itemize}
+  \item Need $\nabla f(x) = 2A^TAx-2A^Ty=0$.
+  \item Since $A$ is assumed to have full column rank, we see that
+    $A^TA$ is invertible.
+  \item Thus we have $x=(A^TA)^{-1}A^Ty$.
+  \item As we will see later, this function is strictly convex (Hessian
+    $\nabla^2f(x) = A^TA$ is positive definite).
+  \item Thus we have found the unique minimizer (least squares solution).
+  \end{itemize}
+\end{frame}
+\begin{frame}
+  \frametitle{Technical Aside: Differentiability}
+  \begin{itemize}
+  \item When computing the gradients above we assumed the functions were
+    differentiable.
+  \item Can use the following theorem to be completely rigorous.
+  \end{itemize}
+  \begin{theorem}
+    Let $f:\RR^n\to\RR$ and suppose $\partial_{x_i}f:\RR^n\to\RR$ is
+    continuous for $i=1,\ldots,n$. Then $f$ is differentiable.
+  \end{theorem}
 \end{frame}
 \end{document}

@@ -2,14 +2,14 @@ USESOLUTIONS = "\def\USESOLUTIONS{1} \input{VarMain.ltx}"
 PARAMS =
 MACROS = Macros.ltx Theorems.ltx
 
-nall : 
+nall :
 
-%.pdf : %.ltx ${MACROS}
+%.pdf : %.ltx ${MACROS} VarMain.ltx
 	cat $< >VarFill.ltx
-	pdflatex -jobname=$(basename $@) VarMain.ltx 
-	ls $(basename $@)-*.asy && asy -compact $(basename $@)-*.asy || echo "No asymptote files"
-	pdflatex -jobname=$(basename $@) VarMain.ltx 
-	pdflatex -jobname=$(basename $@) VarMain.ltx 
+	pdflatex -jobname=$(basename $@) VarMain.ltx
+	ls $(basename $@)/*.asy && asy -compact $(basename $@)/*.asy || echo "No asymptote files"
+	pdflatex -jobname=$(basename $@) VarMain.ltx
+	pdflatex -jobname=$(basename $@) VarMain.ltx
 	rm -f $(basename $@).log
 	rm -f $(basename $@).out
 	rm -f $(basename $@).pre
@@ -17,10 +17,10 @@ nall :
 	rm -f comment.cut
 	rm -f $(basename $@)-*.*
 
-%_sol.pdf : %.ltx ${MACROS}
+%_sol.pdf : %.ltx ${MACROS} VarMain.ltx
 	cat $< >VarFill.ltx
 	pdflatex -jobname=$(basename $@) ${USESOLUTIONS}
-	ls $(basename $@)-*.asy && python Runner.py asy -compact $(basename $@)-*.asy || echo "No asymptote files"
+	ls $(basename $@)/*.asy && python Runner.py asy -compact $(basename $@)/*.asy || echo "No asymptote files"
 	pdflatex -jobname=$(basename $@) ${USESOLUTIONS}
 	pdflatex -jobname=$(basename $@) ${USESOLUTIONS}
 	rm -f $(basename $@).log
@@ -30,12 +30,12 @@ nall :
 	rm -f comment.cut
 	rm -f $(basename $@)-*.*
 
-clean : 
+clean :
 	rm -f *.log
 	rm -f *.out
 	rm -f *.*~
 	rm -f *.aux
-	rm -f *~	
+	rm -f *~
 	rm -f *.pre
 	rm -f *.prc
 	rm -f *.js

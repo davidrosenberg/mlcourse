@@ -1,10 +1,21 @@
-\section{Week 1 Lecture: Concept Check Exercises}
-Starred problems are optional.
-\subsection{Statistical Learning Theory}
+\section{Lecture 1: Introduction to Statistical Learning Theory}
+\subsection{Topic 1: Statistical Learning Theory}
+\subsubsection{Learning Objectives} % This is new.
+\begin{enumerate}
+\item Identify the input, action, and outcome spaces for a given machine learning problem.
+\item Provide an example for which the action space and outcome spaces are the same and one for which they are different.
+\item Explain the relationships between the decision function, the loss function, the input space, the action space, and the outcome space.
+\item Define the risk of a decision function and a Bayes decision function.
+\item Provide example decision problems for which the Bayes risk is 0 and the Bayes risk is nonzero.
+\item Know the Bayes decision functions for square loss and multiclass 0/1 loss.
+\item Define the empirical risk for a decision function and the empirical risk minimizer.
+\item Explain what a hypothesis space is, and how it can be used with constrained empirical risk minimization to control overfitting.
+\end{enumerate}
+\subsubsection{Concept Check Questions}
 \begin{enumerate}
 \item Suppose $\AA=\YY=\RR$ and $\XX$ is some other set.  Furthermore, assume
   $\Pr_{\XX\times \YY}$ is a discrete joint distribution.
-  Compute a Bayes decision function when 
+  Compute a Bayes decision function when
   the loss function $\ell:\AA\times\YY\to\RR$ is
   given by
   $$\ell(a,y) = \Ind(a\neq y),$$
@@ -20,7 +31,7 @@ Starred problems are optional.
   If there is a tie, we choose any of the maximizers.  If $f_2$ is
   another decision function we have
   $$\begin{array}{rcll}
-    \Pr(f_1(X)\neq Y) 
+    \Pr(f_1(X)\neq Y)
     & = & \sum_x \Pr(f_1(x)\neq Y|X=x)\Pr(X=x)\\
     & = & \sum_x (1-\Pr(f_1(x)=Y|X=x))\Pr(X=x)\\
     & \leq & \sum_x (1-\Pr(f_2(x)=Y|X=x))\Pr(X=x) &\text{(Defn of
@@ -30,7 +41,7 @@ Starred problems are optional.
   \end{array}$$
   Thus $f^*=f_1$.
 \end{solution}
-\item ($\star$) Suppose $\AA=\YY=\RR$, $\XX$ is some other set, 
+\item ($\star$) Suppose $\AA=\YY=\RR$, $\XX$ is some other set,
   and $\ell:\AA\times\YY\to\RR$ is given by
   $\ell(a,y)= (a-y)^2$, the square error loss.  What is the Bayes risk
   and how does it compare with the variance of $Y$?
@@ -48,7 +59,7 @@ Starred problems are optional.
   our estimation reduces the Bayes risk, and that the improvement is
   measured by $\Var[\E(Y|X)]$.  As a sanity check, note that if $X,Y$
   are independent then $\E(Y|X)=\E(Y)$ so $\Var[\E(Y|X)]=0$.  If $X=Y$
-  then $\E(Y|X)=Y$ and $\Var[\E(Y|X)]=\Var(Y)$. 
+  then $\E(Y|X)=Y$ and $\Var[\E(Y|X)]=\Var(Y)$.
 
   The prominent role of variance in our analysis above is due to the
   fact that we are using the square loss.
@@ -81,11 +92,11 @@ Starred problems are optional.
   risk is finite.
 \begin{solution}
 \item[]\Sol We assume a given loss function $\ell$ and an
-  i.i.d.~sample $(x_1,y_i),\ldots,(x_n,y_n)$. 
+  i.i.d.~sample $(x_1,y_i),\ldots,(x_n,y_n)$.
   To show it is unbiased, note that
   $$\begin{Array}{rcll}
-    \E[\hat{R}_n(f)] 
-    & = & \E\left[\frac{1}{n}\sum_{i=1}^n \ell(f(x_i),y_i)\right]\\ 
+    \E[\hat{R}_n(f)]
+    & = & \E\left[\frac{1}{n}\sum_{i=1}^n \ell(f(x_i),y_i)\right]\\
     & = & \frac{1}{n}\sum_{i=1}^n\E[\ell(f(x_i),y_i)] &
     \text{(Linearity of $\E$)}\\
     & = & \E[\ell(f(x_1),y_1)] & \text{(i.i.d.)}\\
@@ -123,7 +134,7 @@ Starred problems are optional.
   \end{enumerate}
 \end{solution}
 \item $(\star)$ Let $\XX=[-10,10]$, $\YY=\AA=\RR$ and suppose the data generating
-  distribution has marginal distribution $X\sim\Unif[-10,10]$ and 
+  distribution has marginal distribution $X\sim\Unif[-10,10]$ and
   conditional distribution $Y|X=x\sim
   \Norm(a+bx,1)$ for some fixed $a,b\in\RR$.  Suppose you are also
   given the following data points: $(0,1)$, $(0,2)$, $(1,3)$,
@@ -155,7 +166,7 @@ Starred problems are optional.
     Bayes risk is~$1$.
   \item By problem~2 above we know the Bayes risk is given by
     $$\E[\Var(Y|X)] = \E[1]=1,$$
-    since $\Var(Y|X=x)=1$. 
+    since $\Var(Y|X=x)=1$.
   \item We choose $\hat{f}$ such that
     $$\hat{f}(0)=1.5, \hat{f}(1)=3, \hat{f}(2.5)=3.1,
     \hat{f}(-4)=2.1,$$
@@ -183,10 +194,16 @@ Starred problems are optional.
   \end{enumerate}
 \end{solution}
 \end{enumerate}
-\subsection{Stochastic Gradient Descent}
+\subsection{Topic 2: Stochastic Gradient Descent}
+\subsubsection{Learning Objectives} % This is new.
+\begin{enumerate}
+\item Be able to write the empirical risk for a particular loss function over a particular parameterized hypothesis space, such as for square loss over a hypothesis space of linear functions.
+\item Compare and constrast gradient descent, minibatch gradient descent, and stochastic gradient descent.
+\end{enumerate}
+\subsubsection{Concept Check Questions}
 \begin{enumerate}
 \item When performing mini-batch gradient descent, we often randomly choose
-  the mini-batch from the full training set without replacement.  
+  the mini-batch from the full training set without replacement.
   Show that the resulting  mini-batch gradient is an unbiased estimate of the gradient of the
   full training set.  Here we assume each decision function $f_w$ in
   our hypothesis space is determined by a parameter vector $w\in\RR^d$.
@@ -215,7 +232,7 @@ Starred problems are optional.
   want to bother every visitor, we will ask a small sample what their
   ages are.  How many visitors must we randomly sample
   so that our estimator $\hat{\mu}$ has variance at
-  most $\epsilon>0$?  
+  most $\epsilon>0$?
 \begin{solution}
 \item[]\Sol Let $x_1,\ldots,x_n$ denote our randomly sampled ages, and
   let $\hat{x}$ denote the sample mean $\frac{1}{n}\sum_{i=1}^n x_i$.
@@ -224,7 +241,7 @@ Starred problems are optional.
   Thus we require $n\geq \sigma^2/\epsilon$.  Note that this doesn't
   depend on $N$, the full population size.
 \end{solution}
-\item ($\star$) Suppose you have been successfully 
+\item ($\star$) Suppose you have been successfully
   running mini-batch gradient descent with
   a full training set size of $10^5$ and a mini-batch size of $100$.
   After receiving more data your full training set size increases to $10^9$.
@@ -247,8 +264,8 @@ Starred problems are optional.
   will converge to $\E\nabla\ell(f(X),Y)$ and the covariance will
   converge to
   $$\E[(\nabla\ell(f(X),Y))(\nabla\ell(f(X),Y))^T]-\E[\nabla\ell(f(X),Y)]\E[\nabla\ell(f(X),Y)]^T$$
-  where $(X,Y)\sim\Pr_{\XX\times\YY}$.  
-  
+  where $(X,Y)\sim\Pr_{\XX\times\YY}$.
+
   The important takeaway here is that the size of the mini-batch is
   dependent on the speed of computation, and on the characteristics of
   the distribution of the gradients (such as the moments), and thus

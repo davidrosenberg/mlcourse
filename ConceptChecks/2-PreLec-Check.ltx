@@ -13,14 +13,14 @@
   \item Give an expression for $a$ in terms of $a^+,a^-$.
   \item Give an expression for $|a|$ in terms of $a^+,a^-$.
   \item[] For $x\in\RR^d$ define $x^+=(x_1^+,\ldots,x_d^+)$ and
-    $x^-=(x_1^-,\ldots,x_d^-)$.  
+    $x^-=(x_1^-,\ldots,x_d^-)$.
   \item Give an expression for $x$ in terms of $x^+,x^-$.
   \item Give an expression for $\|x\|_1$ without using any summations
     or absolute values. [Hint: Use $x^+,x^-$ and the
       vector $\mathbf{1}=(1,1,\ldots,1)\in\RR^d$.]
   \end{enumerate}
 \begin{solution}
-\item[]\Sol 
+\item[]\Sol
   \begin{enumerate}
   \item $a=a^+-a^-$
   \item $|a|=a^++a^-$
@@ -55,7 +55,7 @@
     that $p_1^*=p_2^*$.
   \end{enumerate}
 \begin{solution}
-\item[]\Sol 
+\item[]\Sol
   \begin{enumerate}
   \item Let $a=x^+$ and $b=x^-$.  Then $a+b=|x|$ and $a-b=x$.
   \item Let $x=a-b$ and note that $|x|=|a-b|\leq |a|+|b|=a+b$.
@@ -68,7 +68,7 @@
   \text{minimize}_{x\in\RR^d} & \|x\|_1 \\
   \text{subject to} & f(x)\in S,
   \end{array}$$
-  where $\|x\|_1 = \sum_{i=1}^d |x_i|$.  
+  where $\|x\|_1 = \sum_{i=1}^d |x_i|$.
   Give a new optimization problem with a linear objective function and the same minimum
   value.  Show how to convert a solution to your new problem into a
   solution to the given problem. [Hint: Use the previous two problems.]
@@ -91,5 +91,120 @@
 
   Finally, given a minimizer $(a,b)$ for the new problem we recover a
   minimizer $x$ for the original problem by letting $x=a-b$.
+\end{solution}
+\end{enumerate}
+
+\subsection{Linear Algebra Exercises}
+
+Note these problems provide a review of key lienar algebra concepts used in lecture and lab 2. As such
+
+\begin{enumerate}
+\item When performing linear regression we obtain the \textit{normal
+  equations} $A^TAx=A^Ty$ where $A\in\RR^{m\times n}$, $x\in \RR^n$,
+  and $y\in\RR^m$.
+  \begin{enumerate}
+  \item If $\rank(A)=n$ then solve the normal equations for $x$.
+  \item $(\star)$ What if $\rank(A)\neq n$?
+  \end{enumerate}
+\begin{solution}
+\item[]\Sol
+  \begin{enumerate}
+  \item We first show that $\rank(A^TA)=n$ to show that we can invert
+    $A^TA$.  By the rank-nullity theorem, we can do this by showing
+    $A^TA$ has trivial nullspace.  Note that for any $x\in\RR^n$ we have
+    $$A^TAx=0\implies x^TA^TAx=0 \implies \|Ax\|_2^2=0 \implies Ax=0
+    \implies x=0.$$
+    This last implication follows since $\rank(A)=n$ so $A$ has
+    trivial nullspace (again by rank-nullity).  This proves
+    $A^TA$ has a trivial nullspace, and thus $A^TA$ is
+    invertible. Applying the inverse we obtain
+    $$x = (A^TA)^{-1}A^Ty.$$
+    Since $A^TA$ is invertible, our answer for $x$ is unique.
+  \item We will show that the equation always has infinitely many
+    solutions~$x$. First note that $\rank(A)\neq n$ implies
+    $\rank(A)<n$ since you cannot have larger rank than the number of
+    columns. Next, recall $\rank(A) = \rank(A^TA)$. Hence, by rank-nullity, $A^TA$ has a non-trivial nullspace,
+    which in turn implies that if there is a solution, there must be
+    infinitely many solutions.\\
+
+    Next note $A^T$ and $A^TA$ have the same column space. To see this, first note that every vector of the form
+    $A^TAx$ must be a linear combination of the columns of $A^T$,
+    and thus lies in the column space of $A^T$.  Since $\rank(A^TA) = \rank(A) = \rank(A^T)$, this implies
+    $A^T$ and $A^TA$ have the same column spaces.
+
+    A specific solution can be computed as $x=(A^TA)^+ A^Ty$, where
+    $(A^TA)^+$ is the \textit{pseudoinverse} of $A^TA$.  Of the infinitely
+    many possible solutions $x$, this gives the one that minimizes
+    $\|x\|_2$.  More precisely, $x=(A^TA)^+ A^Ty$ solves the
+    optimization problem
+    $$\begin{array}{ll}
+      \text{minimize} & \|x\|_2\\
+      \text{subject to} & A^TAx=A^Ty.
+    \end{array}$$
+  \end{enumerate}
+\end{solution}
+\item Prove that $A^TA+\lambda \Id_{n\times n}$ is invertible if
+  $\lambda>0$ and $A\in\RR^{n\times n}$.
+\begin{solution}
+\item[]\Sol If $(A^TA+\lambda\Id_{n\times n})x=0$ then
+  $$0=x^T(A^TA+\lambda\Id_{n\times n})x = \|Ax\|_2^2 + \lambda\|x\|_2^2
+  \implies x=0.$$
+  Thus $A^TA+\lambda\Id_{n\times n}$ has trivial nullspace.
+  Alternatively, we could notice that $A^TA$ is positive semidefinite,
+  so adding $\lambda\Id_{n\times n}$ will give a matrix whose
+  eigenvalues are all at least $\lambda>0$.  A square matrix is
+  invertible iff its eigenvalues are all non-zero.
+\end{solution}
+\item $(\star)$ Describe the following set geometrically:
+  $$\left\{v\in\RR^2\;\middle|\;
+  v^T\pMatt{2&2}{0&2}v = 4\right\}.$$
+\begin{solution}
+\item[]\Sol The set is an ellipse with semi-axis lengths $2/\sqrt{3}$ and $2$
+  rotated counter-clockwise by $\pi/4$.
+Letting $v=(x,y)^T$ and multiplying all terms we get
+$$2x^2+2xy+2y^2=4.$$
+From precalculus we can see this is a conic section, and must be an
+ellipse or a hyperbola, but more work is needed to determine which
+one.  Instead of proceeding along these lines,
+let's use linear algebra to give a cleaner treatment that extends to
+higher dimensions.
+
+Let $A=\pMatt{2&2}{0&2}$.  Since $v^TAv$ is a number, we must have
+$(v^TAv)^T=v^TA^Tv$.  This gives
+$$v^TA^Tv=v^TAv = \frac{1}{2}v^T(A^T+A)v = v^T\pMatt{2&1}{1&2}v.$$
+Our new matrix is symmetric, and thus allows us to apply the spectral
+theorem to diagonalize it with an orthonormal basis of eigenvectors.
+In other words, by rotating our axes we can get a diagonal matrix.
+Either doing this by hand, or using a computer (Matlab, Mathematica,
+Numpy) we obtain
+$$\pMatt{2&1}{1&2} = Q\pMatt{3&0}{0&1}Q^T \quad\text{where}\quad
+Q=\frac{1}{\sqrt{2}}\pMatt{1&-1}{1&1}=\pMatt{\cos(\pi/4)&-\sin(\pi/4)}{\sin(\pi/4)&\cos(\pi/4)}.$$
+The set
+$$\left\{w\in\RR^2\;\middle|\;
+  w^T\pMatt{3&0}{0&1}w = 4\right\}$$
+is an ellipse with semi-axis lengths $2/\sqrt{3}$ and $2$
+since it corresponds to the equation $3w_1^2+w_2^2=4$.
+Since $Q$ performs a counter-clockwise rotation by $\pi/4$ we obtain
+the answer.  More concretely,
+$$w^T\pMatt{3&0}{0&1}w=4\iff (Qw)^TQ\pMatt{3&0}{0&1}Q^T(Qw)=4\iff
+(Qw)^T\pMatt{2&1}{1&2}(Qw)=4$$
+so
+$$\{v\mid v^TAv=4\} = \left\{Qw\;\middle|\; w^T\pMatt{3&0}{0&1}w=4\right\}.$$
+\begin{figure}[H]
+\centering
+\begin{asy}
+  include "1-Lab-Check/Ellipse.asy";
+\end{asy}
+\qquad
+\begin{asy}
+  include "1-Lab-Check/RotEllipse.asy";
+\end{asy}
+\caption{Rotated Ellipse}
+\end{figure}
+
+More generally, the solution to $v^TAv=c$ for $v\in\RR^n$,
+$A\in\RR^{n\times n}$ and $c>0$ will be an ellipsoid if
+$A$ is positive definite.  The $i$th semi-axis will have length
+$\sqrt{c/\lambda_i}$ where $\lambda_i$ is the $i$th eigenvalue of~$A$.
 \end{solution}
 \end{enumerate}

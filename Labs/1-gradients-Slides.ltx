@@ -18,46 +18,93 @@
     parameter vector, how could we improve our guess?
   \end{block}
 \begin{center}
-\asyinclude[width=\textwidth,height=0.4\textheight]{1-gradients/Data.asy}
+\includegraphics[width=0.7\textwidth,height=0.4\textheight]{1-gradients/Data.pdf}
 \end{center}
 \end{frame}
-
+\begin{frame}
+  \frametitle{Intro Solution}
+  \begin{block}{Solution}
+    \begin{itemize}
+    \item The empirical risk is given by
+      $$\hat{R}_n(f) = \frac{1}{n}\sum_{i=1}^n \ell(f(x_i),y_i) =
+      \frac{1}{n}\sum_{i=1}^n (w^Tx_i-y_i)^2
+      = \frac{1}{n}\|Xw-y\|_2^2,$$
+      where $X\in\RR^{n\times d}$ is the matrix whose $i$th row is
+      given by $x_i$.
+    \item Can improve a non-optimal guess $\tilde{w}$ by taking a
+      small step in the direction of the negative gradient.
+    \end{itemize}
+  \end{block}  
+\end{frame}
 \subsection{Single Variable Calculus}
-
+\begin{frame}
+  \frametitle{Single Variable Differentiation}
+  \begin{itemize}
+  \item For $f:\RR\to\RR$ differentiable, the derivative is given by
+    $$f'(x) = \lim_{h\to 0} \frac{f(x+h)-f(x)}{h}.$$
+  \item Can also be written as
+    $$f(x+h) = f(x) + hf'(x) + o(h)\quad\text{as $h\to 0$,}$$
+    where $o(h)$ denotes a function $g(h)$ with $g(h)/h\to 0$ as
+    $h\to0$.
+  \item Points with $f'(x) = 0$ are called \textit{critical points}.
+  \end{itemize}
+\end{frame}
 \begin{frame}[fragile]
   \frametitle{1D Linear Approximation By Derivative}
 \begin{center}
-\asyinclude[width=\textwidth,height=0.8\textheight]{1-gradients/Taylor1d.asy}
+\includegraphics[width=\textwidth,height=0.8\textheight]{1-gradients/Taylor1d.pdf}
 \end{center}
 \end{frame}
 
 \subsection{Multivariable Calculus}
-
+\begin{frame}
+  \frametitle{Multivariable Differentiation}
+  \begin{itemize}
+  \item Consider now a function $f:\RR^n\to\RR$ with inputs of the
+    form $x=(x_1,\ldots,x_n)\in\RR^n$.
+  \item Unlike the 1-dimensional case, we cannot assign a single
+    number to the slope at a point since there are many directions we can move in.
+  \end{itemize}
+\end{frame}
 \begin{frame}[fragile]
   \frametitle{Multiple Possible Directions for $f:\RR^2\to\RR$}
 \begin{center}
-\asyinclude[width=\textwidth,height=0.8\textheight]{1-gradients/Directions.asy}
+\includegraphics[width=\textwidth,height=0.8\textheight]{1-gradients/Directions.pdf}
 \end{center}
 \end{frame}
-
+\begin{frame}
+  \frametitle{Directional Derivative}
+  \begin{block}{Definition}
+    Let $f:\RR^n\to\RR$.  The directional derivative $f'(x;u)$ of $f$ at $x\in\RR^n$ in
+    the direction $u\in\RR^n$ is given by
+    $$f'(x;u) = \lim_{h\to0}\frac{f(x+hu)-f(x)}{h}.$$
+  \end{block}
+  \begin{itemize}
+  \item By fixing a direction $u$ we turned our multidimensional
+    problem into a 1-dimensional problem.
+  \item Similar to 1-d we have
+    $$f(x+hu) = f(x) + hf'(x;u) + o(h).$$
+  \item We say that $u$ is a \textit{descent direction} of $f$ at $x$ if $f'(x;u)<0$.
+  \end{itemize}
+\end{frame}
 \begin{frame}[fragile]
   \frametitle{Directional Derivative as a Slope of a Slice}
 \begin{center}
-\asyinclude[width=\textwidth,height=0.8\textheight]{1-gradients/Slice.asy}
+\includegraphics[width=0.7\textwidth,height=0.8\textheight]{1-gradients/Slice.pdf}
 \end{center}
 \end{frame}
 
 \begin{frame}[fragile]
   \frametitle{Tangent Plane for $f:\RR^2\to\RR$}
 \begin{center}
-\asyinclude[width=\textwidth,height=0.8\textheight]{1-gradients/Tangent.asy}
+\includegraphics[width=\textwidth,height=0.8\textheight]{1-gradients/Tangent.pdf}
 \end{center}
 \end{frame}
 
 \begin{frame}[fragile]
   \frametitle{Critical Points of $f:\RR^2\to\RR$}
 \begin{center}
-\asyinclude[width=\textwidth,height=0.8\textheight]{1-gradients/Saddle.asy}
+\includegraphics[width=\textwidth,height=0.8\textheight]{1-gradients/Saddle.pdf}
 \end{center}
 \end{frame}
 \begin{frame}[fragile]

@@ -12,7 +12,7 @@ dot((c,h(c)),p=black+5);
 draw(f(d)--g(d),p=blue+1);
 pair cen = (f(d)+g(d))/2;
 draw( cen..(cen+(.03,-.005))..(cen+(.05,-.02))..(cen+(.1,-.1)));
-label("$|f(t)-(f(x_0)+(t-x_0)f'(x_0))|$",cen+(.1,-.1),S);
+label("$f(t)-(f(x_0)+(t-x_0)f'(x_0))$",cen+(.1,-.1),S);
 draw((c,-.05)--(c,h(c)));
 label("$(x_0,f(x_0))$",(c,-.07));
 label("$f(t)$",f(.5)+(.02,.02),E);

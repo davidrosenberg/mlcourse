@@ -94,13 +94,93 @@
 \end{center}
 \end{frame}
 
+\begin{frame}
+  \frametitle{Partial Derivative}
+  \begin{itemize}
+  \item Let $e_i=(\overbrace{0,0,\ldots,0}^{i-1},1,0,\ldots,0)$ denote the $i$th
+    standard basis vector.
+  \item The $i$th \textit{partial derivative} is defined to be the
+    directional derivative along $e_i$.
+  \item It can be written many ways:
+    $$f'(x;e_i) = \frac{\partial}{\partial x_i}f(x) =
+    \partial_{x_i}f(x) = \partial_if(x).$$
+  \item What is the intuitive meaning of $\partial_{x_i}f(x)$?
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Differentiability}
+  \begin{itemize}
+  \item We say a function $f:\RR^n\to\RR$ is \textit{differentiable}
+    at $x\in\RR^n$ if
+    $$\lim_{v\to0}\frac{f(x+v)-f(x) -g^Tv}{\|v\|_2} = 0,$$
+    for some $g\in\RR^n$.
+  \item If it exists, this $g$ is unique and is called the \textit{gradient} of $f$ at
+    $x$ with notation
+    $$g = \nabla f(x).$$
+  \item It can be shown that
+    $$\nabla f(x) =
+    \pMattt{\partial_{x_1}f(x)}{\vdots}{\partial_{x_n}f(x)}.$$
+  \end{itemize}
+\end{frame}
+\begin{frame}
+  \frametitle{Useful Convention}
+  \begin{itemize}
+  \item Consider $f:\RR^{p+q}\to\RR$.
+  \item Split the input to $f$ into parts $w\in\RR^p$ and $z\in\RR^q$.
+  \item Define the partial gradients
+    $$\hspace{-.5cm}\nabla_w f(w,z) :=
+    \pMattt{\partial_{w_1}f(w,z)}{\vdots}{\partial_{w_p}f(w,z)}
+    \quad\text{and}\quad
+    \nabla_z f(w,z) :=
+    \pMattt{\partial_{z_1}f(w,z)}{\vdots}{\partial_{z_q}f(w,z)}.
+    $$
+  \end{itemize}
+\end{frame}
+\begin{frame}
+  \frametitle{Tangent Plane}
+  \begin{itemize}
+  \item Analogous to the 1-d case we can express differentiability as
+    $$f(x+v) = f(x) + \nabla f(x)^Tv + o(\|v\|_2).$$
+  \item The approximation $f(x+v)\approx f(x)+\nabla f(x)^Tv$ gives a
+    tangent plane at the point $x$.
+  \item The tangent plane of $f$ at $x$ is given by
+    $$P = \{(x+v,f(x)+\nabla f(x)^Tv)\mid v\in\RR^n\}\subseteq \RR^{n+1}.$$
+  \end{itemize}
+\end{frame}
 \begin{frame}[fragile]
   \frametitle{Tangent Plane for $f:\RR^2\to\RR$}
 \begin{center}
 \includegraphics[width=\textwidth,height=0.8\textheight]{1-gradients/Tangent.pdf}
 \end{center}
 \end{frame}
-
+\begin{frame}
+  \frametitle{Directional Derivatives from Gradients}
+  \begin{itemize}
+  \item If $f$ is differentiable we have
+    $$f'(x;u) = \nabla f(x)^Tu.$$
+  \item If $\nabla f(x)\neq 0$ this implies that
+    $$\argmax_{\|u\|_2=1} f'(x;u) = \frac{\nabla f(x)}{\|\nabla f(x)\|_2}
+    \quad\text{and}\quad
+    \argmin_{\|u\|_2=1} f'(x;u) = -\frac{\nabla f(x)}{\|\nabla
+      f(x)\|_2}.$$
+  \item The gradient points in the direction of
+    steepest ascent.
+  \item The negative gradient points in the direction of
+    steepest descent.
+  \end{itemize}
+\end{frame}
+\begin{frame}
+  \frametitle{Critical Points}
+  \begin{itemize}
+  \item Analogous to 1-d, if $f:\RR^n\to\RR$ is differentiable and $x$
+    is a local extremum then we must have $\nabla f(x)=0$.
+  \item Points with $\nabla f(x)=0$ are called \textit{critical
+    points}.
+  \item Later we will see that for a convex differentiable function,
+    $x$ is a critical point if and only if it is a global minimizer.
+  \end{itemize}
+\end{frame}
 \begin{frame}[fragile]
   \frametitle{Critical Points of $f:\RR^2\to\RR$}
 \begin{center}
@@ -110,13 +190,15 @@
 \begin{frame}[fragile]
   \frametitle{Computing Gradients}
   \begin{block}{Question}
-    For each of the following functions, compute the gradient.
+    For questions 1 and 2, compute the gradient of the given function.
     \begin{enumerate}
     \item $f:\RR^3\to\RR$ is given by
       $$f(x_1,x_2,x_3) = \log(1+e^{x_1+2x_2+3x_3}).$$
     \item $f:\RR^n\to\RR$ is given by
       $$f(x) = \|Ax-y\|_2^2 = (Ax-y)^T(Ax-y) = x^TA^TAx - 2y^TAx+y^Ty,$$
       for some $A\in\RR^{m\times n}$ and $y\in\RR^m$.
+    \item Assume $A$ in the previous question has full column rank.
+      What is the critical point of $f$?
     \end{enumerate}
   \end{block}
 \end{frame}

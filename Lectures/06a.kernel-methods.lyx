@@ -767,27 +767,171 @@ Just in article version
 status open
 
 \begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-let
-\backslash
-thefootnote
-\backslash
-relax
-\backslash
-footnotetext{
-\backslash
-tiny{Plots courtesy of Ningshan Zhang.}}
+TODO:
 \end_layout
 
+\begin_layout Plain Layout
+URGENT: using 3 notations to specify to elements of input space: 
+\begin_inset Formula $x,w$
+\end_inset
+
+, 
+\begin_inset Formula $x^{(1)},x^{(2)}$
+\end_inset
+
+ and 
+\begin_inset Formula $x,x'$
+\end_inset
+
+.
+ Choose one and stick to it.
+ Do NOT choose 
+\begin_inset Formula $x,w$
+\end_inset
+
+ , because 
+\begin_inset Formula $w$
+\end_inset
+
+ is our weight vector, which is very confusing.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+1) definition of 
+\begin_inset Quotes eld
+\end_inset
+
+kernelized
+\begin_inset Quotes erd
+\end_inset
+
+ – should we extend it? what about prediction? 
+\end_layout
+
+\begin_layout Plain Layout
+2) work on transitions between SVM, linear kernel, kernel matrix – motivations
+ etc.
+\end_layout
+
+\begin_layout Plain Layout
+Maybe define the kernel matix in terms of kernel evaluations first and then
+ plug in the linear inner product? Or introduce the Gram matrix of linear
+ inner products very early on, and then later say we can replace it with
+ a kernel matrix of inner products for a nonlinear inner product?
+\end_layout
+
+\begin_layout Plain Layout
+3) I did some board work to show that the gram matri is XX^T.
+ (XX^T)_{ij} = ? discussion of dimensionality nxn vs dxd to decide between
+ kernel methods and primal form
+\end_layout
+
+\begin_layout Plain Layout
+4) would be cool to demonstrate some kernel matrix substitutions and the
+ effects on the output – maybe pull from the homework?
+\end_layout
+
+\begin_layout Plain Layout
+5) the quadratic kernel shows up twice with different notations?
+\end_layout
+
+\begin_layout Plain Layout
+6) discussion of coefficients of the monomials in the equivalent feature
+ maps fro the polynomial kernels; these coefficients interact with the regulariz
+ation;
+\end_layout
+
+\begin_layout Plain Layout
+7) board work to explain what it would mean to have RBF kernel representable
+ as an 
+\begin_inset Quotes eld
+\end_inset
+
+inner product of feature vectors
+\begin_inset Quotes erd
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
+8) very interesrting treatment of the interaction between the kernel and
+ the regularization described in Scholkopf and Smola's book 
+\begin_inset Quotes eld
+\end_inset
+
+Learning with kernels
+\begin_inset Quotes erd
+\end_inset
+
+ SECTION 4.3.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+9) need to rehearse the kernel trick summary
+\end_layout
+
+\begin_layout Plain Layout
+10) are there situations where we can kernelize, but the representer theorem
+ doesn't work? 
+\end_layout
+
+\begin_layout Plain Layout
+11) should we break out the deck on representer theorem?
+\end_layout
+
+\begin_layout Plain Layout
+12) prove that l1 norm does not obey the parallelogram law
+\end_layout
+
+\begin_layout Plain Layout
+13) illustrated projection on the board of 
+\begin_inset Formula $x$
+\end_inset
+
+ onto subspace 
+\begin_inset Formula $M$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+14) In looking at the 
+\begin_inset Quotes eld
+\end_inset
+
+generalized objective
+\begin_inset Quotes erd
+\end_inset
+
+ form, we say 
+\begin_inset Quotes eld
+\end_inset
+
+what is 
+\begin_inset Formula $\left\langle w,\psi(x_{i})\right\rangle $
+\end_inset
+
+ – it should be familiar.
+ It's the score on 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+.
+ So we have a general function L of the scores/predictions.
+ Where are the labels 
+\begin_inset Formula $y_{i}$
+\end_inset
+
+? theyr'e built into the function 
+\begin_inset Formula $L$
+\end_inset
+
+.
 \end_layout
 
 \end_inset
@@ -1648,7 +1792,11 @@ Kernel Evaluation Can Be Fast
 
 \begin_deeper
 \begin_layout Example
-Quadratic feature map
+Quadratic feature map for 
+\begin_inset Formula $x=\left(x_{1},\ldots,x_{d}\right)\in\reals^{d}$
+\end_inset
+
+.
 \begin_inset Formula 
 \[
 \ensuremath{\phi(x)=(x_{1},\ldots,x_{d},x_{1}^{2},\ldots,x_{d}^{2},\sqrt{2}x_{1}x_{2},\ldots,\sqrt{2}x_{i}x_{j},\ldots\sqrt{2}x_{d-1}x_{d})^{T}}
@@ -1657,17 +1805,17 @@ Quadratic feature map
 \end_inset
 
 has dimension 
-\begin_inset Formula $O(d^{2})$
+\begin_inset Formula $O(d^{2})\pause$
 \end_inset
 
 , but for any 
-\begin_inset Formula $x^{(1)},x^{(2)}\in\reals^{d}$
+\begin_inset Formula $x,x'\in\reals^{d}$
 \end_inset
 
 
 \begin_inset Formula 
 \[
-k(x^{\left(1\right)},x^{\left(2\right)})=\left\langle \phi(x^{\left(1\right)}),\phi(x^{\left(2\right)})\right\rangle =\left\langle x^{\left(1\right)},x^{\left(2\right)}\right\rangle +\left\langle x^{\left(1\right)},x^{\left(2\right)}\right\rangle ^{2}
+k(x,x')=\left\langle \phi(x),\phi(x')\right\rangle =\left\langle x,x'\right\rangle +\left\langle x,x'\right\rangle ^{2}
 \]
 
 \end_inset
@@ -1683,7 +1831,7 @@ k(x^{\left(1\right)},x^{\left(2\right)})=\left\langle \phi(x^{\left(1\right)}),\
 \end_deeper
 \begin_layout Itemize
 Naively explicit computation of 
-\begin_inset Formula $k(w,x)$
+\begin_inset Formula $k(x,x')$
 \end_inset
 
 : 
@@ -1695,7 +1843,7 @@ Naively explicit computation of
 
 \begin_layout Itemize
 Implicit computation of 
-\begin_inset Formula $k(w,x)$
+\begin_inset Formula $k(x,x')$
 \end_inset
 
 : 
@@ -1860,7 +2008,11 @@ SVM Dual
 
 \begin_deeper
 \begin_layout Itemize
-Recall the SVM dual optimization problem
+Recall the SVM dual optimization problem for training set 
+\begin_inset Formula $(x_{1},y_{1}),\ldots,(x_{n},y_{n})$
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
@@ -1949,7 +2101,7 @@ Feature space:
 Feature map
 \begin_inset Formula 
 \[
-\psi(x)=x.
+\psi(x)=x
 \]
 
 \end_inset
@@ -1961,7 +2113,7 @@ Feature map
 Kernel: 
 \begin_inset Formula 
 \[
-k(x_{1},x_{2})=x_{1}^{T}x_{2}
+k(x,x')=x^{T}x'
 \]
 
 \end_inset
@@ -1992,15 +2144,19 @@ The Kernel Matrix (or the Gram Matrix)
 
 \begin_deeper
 \begin_layout Definition
-For a set of 
-\begin_inset Formula $\left\{ x_{1},\ldots,x_{n}\right\} $
+For points of 
+\begin_inset Formula $x_{1},\ldots,x_{n}\in\cx$
 \end_inset
 
  and an inner product 
 \begin_inset Formula $\left\langle \cdot,\cdot\right\rangle $
 \end_inset
 
- on the set, the 
+ on 
+\begin_inset Formula $\cx$
+\end_inset
+
+, the 
 \series bold
 kernel matrix
 \series default
@@ -2312,14 +2468,14 @@ Feature map:
 \end_deeper
 \begin_layout Itemize
 Then for 
-\begin_inset Formula $\forall w,x\in\reals^{d}$
+\begin_inset Formula $\forall x,x'\in\reals^{d}$
 \end_inset
 
 
 \begin_inset Formula 
 \begin{eqnarray*}
-k(w,x) & = & \left\langle \phi(w),\phi(x)\right\rangle \\
-\pause & = & \left\langle w,x\right\rangle +\left\langle w,x\right\rangle ^{2}
+k(x,x') & = & \left\langle \phi(x),\phi(x')\right\rangle \\
+\pause & = & \left\langle x,x'\right\rangle +\left\langle x,x'\right\rangle ^{2}
 \end{eqnarray*}
 
 \end_inset
@@ -2479,7 +2635,7 @@ Input space
 Kernel function:
 \begin_inset Formula 
 \[
-k(w,x)=\left(1+\left\langle w,x\right\rangle \right)^{M}
+k(x,x')=\left(1+\left\langle x,x'\right\rangle \right)^{M}
 \]
 
 \end_inset
@@ -2558,13 +2714,13 @@ Input space
 
 .
  
-\begin_inset Formula $\forall w,x\in\reals^{d}$
+\begin_inset Formula $\forall x,x'\in\reals^{d}$
 \end_inset
 
 ,
 \begin_inset Formula 
 \[
-k(w,x)=\exp\left(-\frac{\|w-x\|^{2}}{2\sigma^{2}}\right),
+k(w,x)=\exp\left(-\frac{\|x-x'\|^{2}}{2\sigma^{2}}\right),
 \]
 
 \end_inset
@@ -2938,21 +3094,21 @@ status open
 \end_inset
 
  A norm 
-\begin_inset Formula $\|v\|$
+\begin_inset Formula $\|\cdot\|$
 \end_inset
 
- can be generated by an inner product on 
+ can be written in terms of an inner product on 
 \begin_inset Formula $\cv$
 \end_inset
 
  iff 
-\begin_inset Formula $\forall x,y\in\cv$
+\begin_inset Formula $\forall x,x'\in\cv$
 \end_inset
 
  
 \begin_inset Formula 
 \[
-2\|x\|^{2}+2\|y\|^{2}=\|x+y\|^{2}+\|x-y\|^{2},
+2\|x\|^{2}+2\|x'\|^{2}=\|x+x'\|^{2}+\|x-x'\|^{2},
 \]
 
 \end_inset
@@ -2964,7 +3120,7 @@ and if it can, the inner product is given by the
 
 \begin_inset Formula 
 \[
-\left\langle x,y\right\rangle =\frac{||x||^{2}+||y||^{2}-||x-y||^{2}}{2}.
+\left\langle x,x'\right\rangle =\frac{||x||^{2}+||x'||^{2}-||x-x'||^{2}}{2}.
 \]
 
 \end_inset
@@ -3034,12 +3190,12 @@ Two vectors are
 orthogonal
 \series default
  if 
-\begin_inset Formula $\left\langle x,y\right\rangle =0$
+\begin_inset Formula $\left\langle x,x'\right\rangle =0$
 \end_inset
 
 .
  We denote this by 
-\begin_inset Formula $x\perp y$
+\begin_inset Formula $x\perp x'$
 \end_inset
 
 .
@@ -3089,11 +3245,11 @@ status open
 \end_inset
 
  If 
-\begin_inset Formula $x\perp y$
+\begin_inset Formula $x\perp x'$
 \end_inset
 
 , then 
-\begin_inset Formula $\|x+y\|^{2}=\|x\|^{2}+\|y\|^{2}.$
+\begin_inset Formula $\|x+x'\|^{2}=\|x\|^{2}+\|x'\|^{2}.$
 \end_inset
 
 
@@ -3107,9 +3263,9 @@ status open
 We have
 \begin_inset Formula 
 \begin{eqnarray*}
-\|x+y\|^{2} & = & \left\langle x+y,x+y\right\rangle \\
-\pause & = & \left\langle x,x\right\rangle +\left\langle x,y\right\rangle +\left\langle y,x\right\rangle +\left\langle y,y\right\rangle \\
-\pause & = & \|x\|^{2}+\|y\|^{2}.
+\|x+x'\|^{2} & = & \left\langle x+x',x+x'\right\rangle \\
+\pause & = & \left\langle x,x\right\rangle +\left\langle x,x'\right\rangle +\left\langle x',x\right\rangle +\left\langle x',x'\right\rangle \\
+\pause & = & \|x\|^{2}+\|x'\|^{2}.
 \end{eqnarray*}
 
 \end_inset
@@ -3133,10 +3289,6 @@ status open
 Projection onto a Plane (Rough Definition)
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3795,12 +3947,21 @@ with equality only when
 \begin{eqnarray*}
 \|x\|^{2} & = & \|m_{0}+(x-m_{0})\|^{2}\pause\;(\mbox{note: }x-m_{0}\perp m_{0}\text{ by Projection theorem})\\
  & = & \|m_{0}\|^{2}+\|x-m_{0}\|^{2}\mbox{\pause}\ \mbox{by Pythagorean theorem}\\
-\pause\|m_{0}\|^{2} & = & \|x\|^{2}-\|x-m_{0}\|^{2}
+\pause\|m_{0}\|^{2} & = & \|x\|^{2}-\|x-m_{0}\|^{2}\pause
 \end{eqnarray*}
 
 \end_inset
 
-If 
+Then 
+\begin_inset Formula $\|x-m_{0}\|^{2}\ge0$
+\end_inset
+
+ implies 
+\begin_inset Formula $\|m_{0}\|^{2}\le\|x\|^{2}\pause$
+\end_inset
+
+.
+ If 
 \begin_inset Formula $\|x-m_{0}\|^{2}=0$
 \end_inset
 
@@ -3835,7 +3996,7 @@ Generalize from SVM Objective
 Featurized SVM objective: 
 \begin_inset Formula 
 \[
-\min_{w\in\reals^{d}}\frac{1}{2}||w||^{2}+\frac{c}{n}\sum_{i=1}^{n}\left(1-y_{i}\left[\left\langle w,\psi\left(x_{i}\right)\right\rangle \right]\right)_{+}.
+\min_{w\in\reals^{d}}\frac{1}{2}||w||^{2}+\frac{c}{n}\sum_{i=1}^{n}\max\left(0,1-y_{i}\left[\left\langle w,\psi\left(x_{i}\right)\right\rangle \right]\right).
 \]
 
 \end_inset
@@ -3908,7 +4069,7 @@ Loss term
 status open
 
 \begin_layout Plain Layout
-Generalized Linear Objective Function (Details)
+General Objective Function for Linear Hypothesis Space (Details)
 \end_layout
 
 \end_inset
@@ -3968,7 +4129,7 @@ where
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $R:\reals^{\ge0}\to\reals$
+\begin_inset Formula $R:[0,\infty)\to\reals$
 \end_inset
 
  is nondecreasing (
@@ -4003,7 +4164,7 @@ Loss term
 status open
 
 \begin_layout Plain Layout
-Generalized Linear Objective Function
+General Objective Function for Linear Hypothesis Space (Details)
 \end_layout
 
 \end_inset
@@ -4029,7 +4190,7 @@ Generalized objective
 \end_layout
 
 \begin_layout Itemize
-Why 
+What's 
 \begin_inset Quotes eld
 \end_inset
 
@@ -4038,20 +4199,61 @@ linear
 \end_inset
 
 ? 
-\begin_inset Formula $\left\langle w,\psi(x_{i})\right\rangle $
+\end_layout
+
+\begin_layout Itemize
+The prediction/score function 
+\begin_inset Formula $x\mapsto\left\langle w,\psi(x_{i})\right\rangle $
 \end_inset
 
- is a generalization of predictions 
-\begin_inset Formula $w^{T}\psi(x_{i})$
-\end_inset
-
-
+ is linear – in what?
 \end_layout
 
 \begin_deeper
+\begin_layout Pause
+
+\end_layout
+
 \begin_layout Itemize
-a linear function of 
-\begin_inset Formula $\psi(x_{i})\in\reals^{d}$
+in parameter vector 
+\begin_inset Formula $w$
+\end_inset
+
+, and
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+in the feature vector 
+\begin_inset Formula $\psi(x_{i})$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Why? [Real-valued] inner products are linear in each argument.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+The important part is the linearity in the parameter
+\series default
+ 
+\begin_inset Formula $w$
 \end_inset
 
 .
@@ -4063,17 +4265,94 @@ a linear function of
 \end_layout
 
 \end_deeper
-\end_deeper
 \begin_layout Itemize
-Ridge regression and SVM are of this form.
+When we discuss neural networks, we'll mention a 
+\begin_inset Quotes eld
+\end_inset
+
+linear network
+\begin_inset Quotes erd
+\end_inset
+
+ in which prediction functions are linear in the feature vector 
+\begin_inset Formula $\psi(x)$
+\end_inset
+
+, but nonlinear in the parameter vector 
+\begin_inset Formula $w$
+\end_inset
+
+.
+ In other words, we have something like 
+\begin_inset Formula 
+\[
+\min_{w\in\ch}R\left(\|w\|\right)+L\left(\left\langle f(w),\psi(x_{1})\right\rangle ,\ldots,\left\langle f(w),\psi(x_{n})\right\rangle \right),
+\]
+
+\end_inset
+
+ for some (known) nonlinear function 
+\begin_inset Formula $f$
+\end_inset
+
+.
+ 
+\series bold
+Our discussion will not apply to this situation
+\series default
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+General Objective Function for Linear Hypothesis Space (Details)
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
+\begin_layout Itemize
+
+\series bold
+Generalized objective
+\series default
+: 
+\begin_inset Formula 
+\[
+\min_{w\in\ch}R\left(\|w\|\right)+L\left(\left\langle w,\psi(x_{1})\right\rangle ,\ldots,\left\langle w,\psi(x_{n})\right\rangle \right),
+\]
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
+\begin_layout Itemize
+Ridge regression and SVM are of this form.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
 \begin_layout Itemize
 What if we penalize with 
 \begin_inset Formula $\lambda\|w\|_{2}$
@@ -5488,7 +5767,7 @@ The Infinite Dimensional Feature Vector for RBF
 \begin_deeper
 \begin_layout Itemize
 Consider RBF kernel (1-dim): 
-\begin_inset Formula $k(w,x)=\exp\left(-\left(w-x\right)^{2}/2\right)$
+\begin_inset Formula $k(x,x')=\exp\left(-\left(x-x'\right)^{2}/2\right)$
 \end_inset
 
 
@@ -5593,10 +5872,10 @@ Does feature vector
 Yes! Proof:
 \begin_inset Formula 
 \begin{eqnarray*}
-\left\langle \psi(w),\psi(x)\right\rangle  & = & \sum_{n=0}^{\infty}\frac{1}{n!}e^{-\left(x^{2}+w^{2}\right)/2}x^{n}w^{n}\\
- & = & e^{-\left(x^{2}+w^{2}\right)/2}\sum_{n=0}^{\infty}\frac{\left(xw\right)^{n}}{n!}\\
- & = & \exp\left(-\left[x^{2}+w^{2}\right]/2\right)\exp\left(xw\right)\\
- & = & \exp\left(-\left[(x-w)^{2}/2\right]\right)
+\left\langle \psi(x),\psi(x')\right\rangle  & = & \sum_{n=0}^{\infty}\frac{1}{n!}e^{-\left(x^{2}+\left(x'\right)^{2}\right)/2}x^{n}\left(x'\right)^{n}\\
+ & = & e^{-\left(x^{2}+\left(x'\right)^{2}\right)/2}\sum_{n=0}^{\infty}\frac{\left(xx'\right)^{n}}{n!}\\
+ & = & \exp\left(-\left[x^{2}+\left(x'\right)^{2}\right]/2\right)\exp\left(xx'\right)\\
+ & = & \exp\left(-\left[(x-x')^{2}/2\right]\right)
 \end{eqnarray*}
 
 \end_inset
@@ -5618,7 +5897,7 @@ QED
 
 \begin_layout Section
 When is 
-\begin_inset Formula $k(x,w)$
+\begin_inset Formula $k(x,x')$
 \end_inset
 
  a kernel function? (Mercer's Theorem)
@@ -5651,7 +5930,7 @@ Explicitly construct
 \end_inset
 
  and define 
-\begin_inset Formula $k(x,w)=\psi(x)^{T}\psi(w)$
+\begin_inset Formula $k(x,x')=\psi(x)^{T}\psi(x')$
 \end_inset
 
 .
@@ -5665,11 +5944,11 @@ Explicitly construct
 \end_deeper
 \begin_layout Enumerate
 Directly define the kernel function 
-\begin_inset Formula $k(x,w)$
+\begin_inset Formula $k(x,x')$
 \end_inset
 
 , and verify it corresponds to 
-\begin_inset Formula $\left\langle \psi(x),\psi(w)\right\rangle $
+\begin_inset Formula $\left\langle \psi(x),\psi(x')\right\rangle $
 \end_inset
 
  for some 
@@ -5865,13 +6144,13 @@ Mercer's Theorem
 \begin_deeper
 \begin_layout Theorem
 A symmetric function 
-\begin_inset Formula $k(w,x)$
+\begin_inset Formula $k(x,x')$
 \end_inset
 
  can be expressed as an inner product
 \begin_inset Formula 
 \[
-k(w,x)=\left\langle \psi(w),\psi(x)\right\rangle 
+k(x,x')=\left\langle \psi(x),\psi(x')\right\rangle 
 \]
 
 \end_inset
@@ -5881,7 +6160,7 @@ for some
 \end_inset
 
  if and only if 
-\begin_inset Formula $k(w,x)$
+\begin_inset Formula $k(x,x')$
 \end_inset
 
  is 
@@ -5951,10 +6230,10 @@ Suppose
  Then so are the following:
 \begin_inset Formula 
 \begin{eqnarray*}
-k_{\mbox{new}}(w,x) & = & k_{1}(w,x)+k_{2}(w,x)\\
-k_{\mbox{new}}(w,x) & = & \alpha k(w,x)\\
-k_{\mbox{new}}(w,x) & = & f(w)f(x)\mbox{ for any function \ensuremath{f(x)}}\\
-k_{\mbox{new}}(w,x) & = & k_{1}(w,x)k_{2}(w,x)
+k_{\mbox{new}}(x,x') & = & k_{1}(x,x')+k_{2}(x,x')\\
+k_{\mbox{new}}(x,x') & = & \alpha k(x,x')\\
+k_{\mbox{new}}(x,x') & = & f(x)f(x')\mbox{ for any function \ensuremath{f(\cdot)}}\\
+k_{\mbox{new}}(x,x') & = & k_{1}(x,x')k_{2}(x,x')
 \end{eqnarray*}
 
 \end_inset
@@ -6021,7 +6300,7 @@ Suppose
 Then 
 \begin_inset Formula 
 \[
-k_{1}(w,x)+k_{2}(w,x)
+k_{1}(x,x')+k_{2}(x,x')
 \]
 
 \end_inset
@@ -6158,7 +6437,7 @@ For any function
 , 
 \begin_inset Formula 
 \[
-k(w,x)=f(w)f(x)
+k(x,x')=f(x)f(x')
 \]
 
 \end_inset
@@ -6181,7 +6460,7 @@ Proof: Let
  (It maps into a 1-dimensional feature space.)
 \begin_inset Formula 
 \[
-\left\langle f(x),f(w)\right\rangle =f(x)f(w)=k(w,x).
+\left\langle f(x),f(x')\right\rangle =f(x)f(x')=k(x,x').
 \]
 
 \end_inset
@@ -6235,7 +6514,7 @@ Suppose
 Then 
 \begin_inset Formula 
 \[
-k_{1}(w,x)k_{2}(w,x)
+k_{1}(x,x')k_{2}(x,x')
 \]
 
 \end_inset
@@ -6295,11 +6574,11 @@ Closure under Hadamard Products
 Then
 \begin_inset Formula 
 \begin{eqnarray*}
-\left\langle \phi(x),\phi(w)\right\rangle  & = & \sum_{i,j}\phi(x)\phi(w)\\
- & = & \sum_{i,j}\left[\phi_{1}(x)\left[\phi_{2}(x)\right]^{T}\right]_{ij}\left[\phi_{1}(w)\left[\phi_{2}(w)\right]^{T}\right]_{ij}\\
- & = & \sum_{i,j}\left[\phi_{1}(x)\right]_{i}\left[\phi_{2}(x)\right]_{j}\left[\phi_{1}(w)\right]_{i}\left[\phi_{2}(w)\right]_{j}\\
- & = & \left(\sum_{i}\left[\phi_{1}(x)\right]_{i}\left[\phi_{1}(w)\right]_{i}\right)\left(\sum_{j}\left[\phi_{2}(x)\right]_{j}\left[\phi_{2}(w)\right]_{j}\right)\\
- & = & k_{1}(w,x)k_{2}(w,x)
+\left\langle \phi(x),\phi(x')\right\rangle  & = & \sum_{i,j}\phi(x)\phi(x')\\
+ & = & \sum_{i,j}\left[\phi_{1}(x)\left[\phi_{2}(x)\right]^{T}\right]_{ij}\left[\phi_{1}(x')\left[\phi_{2}(x')\right]^{T}\right]_{ij}\\
+ & = & \sum_{i,j}\left[\phi_{1}(x)\right]_{i}\left[\phi_{2}(x)\right]_{j}\left[\phi_{1}(x')\right]_{i}\left[\phi_{2}(x')\right]_{j}\\
+ & = & \left(\sum_{i}\left[\phi_{1}(x)\right]_{i}\left[\phi_{1}(x')\right]_{i}\right)\left(\sum_{j}\left[\phi_{2}(x)\right]_{j}\left[\phi_{2}(x')\right]_{j}\right)\\
+ & = & k_{1}(x,x')k_{2}(x,x')
 \end{eqnarray*}
 
 \end_inset

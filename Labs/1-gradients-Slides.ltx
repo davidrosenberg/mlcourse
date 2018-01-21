@@ -40,6 +40,7 @@
 \begin{frame}
   \frametitle{Single Variable Differentiation}
   \begin{itemize}
+  \item Calculus lets us turn non-linear problems into linear algebra.
   \item For $f:\RR\to\RR$ differentiable, the derivative is given by
     $$f'(x) = \lim_{h\to 0} \frac{f(x+h)-f(x)}{h}.$$
   \item Can also be written as
@@ -104,7 +105,8 @@
   \item It can be written many ways:
     $$f'(x;e_i) = \frac{\partial}{\partial x_i}f(x) =
     \partial_{x_i}f(x) = \partial_if(x).$$
-  \item What is the intuitive meaning of $\partial_{x_i}f(x)$?
+  \item What is the intuitive meaning of $\partial_{x_i}f(x)$?  For
+    example, what does a large value of $\partial_{x_3}f(x)$ imply?
   \end{itemize}
 \end{frame}
 \begin{frame}
@@ -126,7 +128,8 @@
   \frametitle{Useful Convention}
   \begin{itemize}
   \item Consider $f:\RR^{p+q}\to\RR$.
-  \item Split the input to $f$ into parts $w\in\RR^p$ and $z\in\RR^q$.
+  \item Split the input $x\in\RR^{p+q}$ into parts $w\in\RR^p$ and $z\in\RR^q$
+    so that~$x=(w,z)$.
   \item Define the partial gradients
     $$\hspace{-.5cm}\nabla_w f(w,z) :=
     \pMattt{\partial_{w_1}f(w,z)}{\vdots}{\partial_{w_p}f(w,z)}

@@ -7362,6 +7362,22 @@ area under the PR curve
 
 \end_deeper
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename ../Figures/performance-evaluation/AUC-mohri-slide.png
+	lyxscale 40
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \begin_inset Separator plain
 \end_inset
 

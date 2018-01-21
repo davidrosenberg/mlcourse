@@ -3,7 +3,7 @@
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin unavailable
+\origin /Users/drosen/Dropbox/repos/mlcourse/Lectures/
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -937,7 +937,7 @@ complexity-constrained hypothesis space
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename /Users/drosenberg44/Dropbox/repos/mlcourse/Figures/ApproxEstError/F_r-constrained-space.png
+	filename ../Figures/ApproxEstError/F_r-constrained-space.png
 	lyxscale 20
 	width 90col%
 
@@ -971,7 +971,7 @@ Risk Decomposition Figure: Complexity Constrained
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename /Users/drosenberg44/Dropbox/repos/mlcourse/Figures/ApproxEstError/approx-est-r-constrained.png
+	filename ../Figures/ApproxEstError/approx-est-r-constrained.png
 	lyxscale 20
 	width 90col%
 
@@ -1033,7 +1033,7 @@ Risk Decomposition Figure: Complexity Constrained
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename /Users/drosenberg44/Dropbox/repos/mlcourse/Figures/ApproxEstError/approx-est-r-constrained.png
+	filename ../Figures/ApproxEstError/approx-est-r-constrained.png
 	lyxscale 20
 	width 90col%
 
@@ -1132,7 +1132,7 @@ We get corresponding sequence of ERMs:
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename /Users/drosenberg44/Dropbox/repos/mlcourse/Figures/ApproxEstError/constrained-reg-seq.png
+	filename ../Figures/ApproxEstError/constrained-reg-seq.png
 	lyxscale 20
 	width 90col%
 
@@ -1226,7 +1226,7 @@ where
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename /Users/drosenberg44/Dropbox/repos/mlcourse/Figures/ApproxEstError/constrained-reg-path.png
+	filename ../Figures/ApproxEstError/constrained-reg-path.png
 	lyxscale 20
 	width 90col%
 

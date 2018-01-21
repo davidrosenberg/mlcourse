@@ -147,7 +147,10 @@
   \item The approximation $f(x+v)\approx f(x)+\nabla f(x)^Tv$ gives a
     tangent plane at the point $x$.
   \item The tangent plane of $f$ at $x$ is given by
-    $$P = \{(x+v,f(x)+\nabla f(x)^Tv)\mid v\in\RR^n\}\subseteq \RR^{n+1}.$$
+    $$P = \{(x+v,f(x)+\nabla f(x)^Tv)\mid v\in\RR^n\}\subseteq
+    \RR^{n+1}.$$
+  \item Methods like gradient descent approximate a function locally
+    by its tangent plane, and then take a step accordingly.
   \end{itemize}
 \end{frame}
 \begin{frame}[fragile]

@@ -174,7 +174,10 @@ $$\frac{f(x+tv)-f(x)}{t} = (2x^TA^TA- 2y^TA)v + tv^TA^TAv.$$
 Taking the limit as $t\to0$ shows
 $$f'(x;v) = (2x^TA^TA- 2y^TA)v \implies \nabla f(x) = (2x^TA^TA-
 2y^TA)^T = 2A^TAx - 2A^Ty.$$
-Using this we can determine the critical points of $f$.
+We can interpret $\nabla f(x)=2A^T(Ax-y)$ as (up to scaling) the
+covariance between the features and the residual.
+
+Using the above calculation we can determine the critical points of $f$.
 Let's assume here that $A$ has full column rank.  Then $A^TA$ is
 invertible, and the unique critical point is
 $x = (A^TA)^{-1}A^Ty$.  As we will see later in the course, this is a

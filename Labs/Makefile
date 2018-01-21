@@ -3,7 +3,9 @@ MACROS = Macros.ltx Theorems.ltx
 
 %Slides.pdf : %Slides.ltx ${MACROS} testtarg
 	cat $< >VarFill.ltx
-	latexmk -pdf -auxdir=./asytmp -jobname=$(basename $@) VarMainSlides.ltx
+#	latexmk -f -pdf -auxdir=./asytmp -jobname=$(basename $@)
+#	VarMainSlides.ltx
+	pdflatex -jobname=$(basename $@) VarMainSlides.ltx
 
 %.pdf : %.ltx ${MACROS} testtarg
 	cat $< >VarFill.ltx

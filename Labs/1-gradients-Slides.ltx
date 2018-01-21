@@ -241,7 +241,7 @@
   \begin{itemize}
   \item We could use techniques similar to the previous problem, but
     instead we show a different method using directional derivatives.
-  \item Note that
+  \item For arbitrary $t\in\RR$ and $x,v\in\RR^n$ we have
     $$\hspace{-.5cm}\begin{array}{rcl}
     \multicolumn{3}{l}{f(x+tv)}\\
     & = & (x+tv)^TA^TA(x+tv) - 2y^TA(x+tv)+y^Ty \\
@@ -250,8 +250,9 @@
   \end{array}$$
   \item This gives
     $$f'(x;v)=\lim_{t\to0}\frac{f(x+tv)-f(x)}{t}
-    = (2x^TA^TA - 2y^TA)v$$
+    = (2x^TA^TA - 2y^TA)v = \nabla f(x)^Tv$$
   \item Thus $\nabla f(x) = 2(A^TAx-A^Ty) = 2A^T(Ax-y)$.
+  \item Data science interpretation of $\nabla f(x)$?
   \end{itemize}
 \end{frame}
 \begin{frame}
@@ -262,7 +263,7 @@
     $A^TA$ is invertible.
   \item Thus we have $x=(A^TA)^{-1}A^Ty$.
   \item As we will see later, this function is strictly convex (Hessian
-    $\nabla^2f(x) = A^TA$ is positive definite).
+    $\nabla^2f(x) = 2A^TA$ is positive definite).
   \item Thus we have found the unique minimizer (least squares solution).
   \end{itemize}
 \end{frame}

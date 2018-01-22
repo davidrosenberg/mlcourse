@@ -751,6 +751,61 @@ Just in article version
 status open
 
 \begin_layout Plain Layout
+TODO:
+\end_layout
+
+\begin_layout Itemize
+Get rid of mention of decision theory?
+\end_layout
+
+\begin_layout Itemize
+replace with a section on 'terminoogy
+\begin_inset Quotes erd
+\end_inset
+
+ and highlight input space / action space
+\end_layout
+
+\begin_layout Itemize
+give example of a classification problem? We say 
+\begin_inset Quotes eld
+\end_inset
+
+fitting a curve
+\begin_inset Quotes erd
+\end_inset
+
+.
+ But from an ML perspective, we think of this as a prediction problem.
+ We're given an x from input space, and we need to figure out what to prediction
+ to produce.
+ 
+\end_layout
+
+\begin_layout Itemize
+give example of a 2-dim regression problem.
+ We say 
+\begin_inset Quotes eld
+\end_inset
+
+fitting a curve
+\begin_inset Quotes erd
+\end_inset
+
+.
+ But from an ML perspective, we think of this as a prediction problem.
+ We're given an x from input space, and we need to figure out what to prediction
+ to produce.
+ 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 Other people who use 
 \begin_inset Quotes eld
 \end_inset
@@ -785,7 +840,11 @@ For density estimation, the action space is the space of densities...
 
 \end_inset
 
- 
+
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Section
@@ -1420,11 +1479,15 @@ Observe outcome
 \end_layout
 
 \begin_layout Enumerate
-Evaluate action in relation to the outcome: 
+Evaluate action in relation to the outcome (via a 
+\series bold
+loss function
+\series default
+
 \begin_inset Formula $\ell(a,y)$
 \end_inset
 
-.
+)
 \end_layout
 
 \begin_layout Pause

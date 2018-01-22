@@ -1,0 +1,39 @@
+#!/bin/bash
+
+set -e
+
+usage(){
+    cat <<EOM
+Usage: notebook_to_pdf /PATH/TO/NOTEBOOK.ipynb
+Convert your IPython Notebook to a PDF
+EOM
+    exit 0
+}
+
+NOTEBOOK="$1"
+if [[ ! -f ${NOTEBOOK} || ${NOTEBOOK} != *.ipynb ]]
+then
+    echo "Invalid notebook filepath"
+    usage
+fi
+
+NOTEBOOK_PATH=$(readlink -f ${NOTEBOOK})
+NOTEBOOK_DIR=$(dirname ${NOTEBOOK_PATH})
+NOTEBOOK_NAME=$(basename ${NOTEBOOK_PATH} .ipynb)
+
+echo "Processing ${NOTEBOOK_NAME}.ipynb in ${NOTEBOOK_DIR}"
+cd ${NOTEBOOK_DIR}
+
+echo "Generating tex file"
+jupyter nbconvert --log-level=ERROR --to latex ${NOTEBOOK_NAME}.ipynb
+
+echo "Beautifying layout"
+# Expand margins, shrink font-size
+sed -r -i 's/documentclass\[11pt\]\{article\}/documentclass[8pt]{extarticle}/' ${NOTEBOOK_NAME}.tex
+sed -r -i 's/geometry\{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}/geometry{verbose,tmargin=0.5in,bmargin=0.5in,lmargin=0.2in,rmargin=0.2in}/' ${NOTEBOOK_NAME}.tex
+
+echo "Generating PDF"
+xelatex ${NOTEBOOK_NAME} > /dev/null
+
+echo "Cleaning up"
+rm ${NOTEBOOK_NAME}.tex; rm ${NOTEBOOK_NAME}.out; rm ${NOTEBOOK_NAME}.aux; rm ${NOTEBOOK_NAME}.log; rm -rf ${NOTEBOOK_NAME}_files/

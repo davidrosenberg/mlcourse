@@ -4,7 +4,7 @@
 cd ~/Dropbox/repos/mlcourse
 FLATTEN="python Code/admin/flatten_lyx.py"
 LYX2LYX="python /Applications/LyX.app/Contents/Resources/lyx2lyx/lyx2lyx"
-YEAR=2017
+YEAR="2017Fall"
 ORIGIN="." 
 ##ORIGIN="2017" 
 DEST="Archive"/$YEAR
@@ -38,8 +38,6 @@ rm -rf $DEST/Code/admin
 
 ## Copy Concept Checks
 rsync -av ConceptChecks $DEST/
-
-
 
 ## Convert to newest LyX version
 ##find $DEST/Lectures -name "*.lyx" |  parallel --verbose 'echo cp {} {//}/old; '

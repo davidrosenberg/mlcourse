@@ -1212,7 +1212,7 @@ converges
  In particular,
 \begin_inset Formula 
 \[
-f(x^{(k)}-f(x^{*})\le\frac{\|x^{(0)}-x^{*}\|^{2}}{2tk}.
+f(x^{(k)})-f(x^{*})\le\frac{\|x^{(0)}-x^{*}\|^{2}}{2tk}.
 \]
 
 \end_inset

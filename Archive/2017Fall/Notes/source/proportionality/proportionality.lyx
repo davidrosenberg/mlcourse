@@ -1,0 +1,924 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass paper
+\use_default_options false
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding iso8859-1
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize letterpaper
+\use_geometry false
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 5
+\tocdepth 5
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\reals}{\mathbf{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\integers}{\mathbf{Z}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\naturals}{\mathbf{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rationals}{\mathbf{Q}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ca}{\mathcal{A}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cb}{\mathcal{B}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cc}{\mathcal{C}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cd}{\mathcal{D}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ce}{\mathcal{E}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cf}{\mathcal{F}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cg}{\mathcal{G}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ch}{\mathcal{H}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ci}{\mathcal{I}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cj}{\mathcal{J}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ck}{\mathcal{K}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cl}{\mathcal{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cm}{\mathcal{M}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cn}{\mathcal{N}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\co}{\mathcal{O}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cp}{\mathcal{P}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cq}{\mathcal{Q}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\calr}{\mathcal{R}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cs}{\mathcal{S}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ct}{\mathcal{T}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cu}{\mathcal{U}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cv}{\mathcal{V}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cw}{\mathcal{W}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cx}{\mathcal{X}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cy}{\mathcal{Y}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cz}{\mathcal{Z}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ind}[1]{1(#1)}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\pr}{\mathbb{P}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\predsp}{\cy}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\outsp}{\cy}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\prxy}{P_{\cx\times\cy}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\prx}{P_{\cx}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\prygivenx}{P_{\cy\mid\cx}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ex}{\mathbb{E}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\var}{\textrm{Var}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cov}{\textrm{Cov}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\sgn}{\textrm{sgn}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\sign}{\textrm{sign}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\kl}{\textrm{KL}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\law}{\mathcal{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\eps}{\varepsilon}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\as}{\textrm{ a.s.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\io}{\textrm{ i.o.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ev}{\textrm{ ev.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\convd}{\stackrel{d}{\to}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\eqd}{\stackrel{d}{=}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\del}{\nabla}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\loss}{V}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\risk}{R}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\emprisk}{\hat{R}_{\ell}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\lossfnl}{L}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\emplossfnl}{\hat{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\empminimizer}[1]{\hat{#1}_{\ell}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\minimizer}[1]{#1_{*}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\etal}{\textrm{et. al.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\tr}{\operatorname{tr}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\trace}{\operatorname{trace}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\diag}{\text{diag}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\rank}{\text{rank}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\linspan}{\text{span}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\proj}{\text{Proj}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\argmax}{\operatornamewithlimits{arg\, max}}
+{\mbox{argmax}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\argmin}{\operatornamewithlimits{arg\, min}}
+{\mbox{argmin}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfx}{\mathbf{x}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfy}{\mathbf{y}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfl}{\mathbf{\lambda}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfm}{\mathbf{\mu}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\calL}{\mathcal{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vw}{\boldsymbol{w}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vx}{\boldsymbol{x}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vxi}{\boldsymbol{\xi}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\valpha}{\boldsymbol{\alpha}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vbeta}{\boldsymbol{\beta}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vsigma}{\boldsymbol{\sigma}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vmu}{\boldsymbol{\mu}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vtheta}{\boldsymbol{\theta}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vd}{\boldsymbol{d}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vs}{\boldsymbol{s}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vt}{\boldsymbol{t}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vh}{\boldsymbol{h}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ve}{\boldsymbol{e}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vf}{\boldsymbol{f}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vg}{\boldsymbol{g}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vz}{\boldsymbol{z}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vk}{\boldsymbol{k}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\va}{\boldsymbol{a}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vb}{\boldsymbol{b}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vv}{\boldsymbol{v}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vy}{\boldsymbol{y}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\hil}{\ch}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\rkhs}{\hil}
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Title
+Proportionality for Probability Distributions
+\end_layout
+
+\begin_layout Author
+David S.
+ Rosenberg
+\end_layout
+
+\begin_layout Date
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+today
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Abstract
+Expressions involving the proportionality symbol 
+\begin_inset Formula $\propto$
+\end_inset
+
+ are very common in mathematics, especially those involving probability
+ models.
+ It's an easy idea, and it can greatly simplify mathematical expressions.
+ On the other hand, there is some ambiguity in the notation, that takes
+ a bit of experience to get used to.
+\end_layout
+
+\begin_layout Section
+Basics
+\end_layout
+
+\begin_layout Standard
+Let's start with an unambiguous example, with a single variable on each
+ side:
+\begin_inset Formula 
+\[
+f(x)\propto g(x)
+\]
+
+\end_inset
+
+means there exists a constant 
+\begin_inset Formula $k$
+\end_inset
+
+ such that
+\begin_inset Formula 
+\[
+f(x)=kg(x)\;\forall x.
+\]
+
+\end_inset
+
+We can also have multiple variables, such as
+\begin_inset Formula 
+\[
+f(x,y)\propto g(x,y),
+\]
+
+\end_inset
+
+which means 
+\begin_inset Formula $\exists k$
+\end_inset
+
+ such that
+\begin_inset Formula 
+\[
+f(x,y)=kg(x,y)\;\forall x,y.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Some variables fixed
+\end_layout
+
+\begin_layout Standard
+Sometimes we want the proportionality constant to depend on one or more
+ of the variables in our expression.
+ For example, we can write the gamma density function as
+\begin_inset Formula 
+\begin{equation}
+p(x;\alpha,\beta)\propto x^{\alpha-1}e^{-\beta x}\ind{x>0},\label{eq:gamma-prop}
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\ind{x>0}$
+\end_inset
+
+ is an 
+\series bold
+indicator function
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+This indicator function designates the 
+\series bold
+support
+\series default
+ of the density, which is the region where the density is nonzero.
+ 
+\end_layout
+
+\end_inset
+
+ 
+\series default
+that takes the value 
+\begin_inset Formula $1$
+\end_inset
+
+ when 
+\begin_inset Formula $x>0$
+\end_inset
+
+ and is 
+\begin_inset Formula $0$
+\end_inset
+
+ otherwise.
+ When we write proportionality in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:gamma-prop"
+
+\end_inset
+
+, we are thinking of each side as a function of 
+\begin_inset Formula $x$
+\end_inset
+
+ alone, with 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta$
+\end_inset
+
+ held fixed.
+ The proportionality constant will depend on 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta$
+\end_inset
+
+.
+ Thus 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:gamma-prop"
+
+\end_inset
+
+ means that there exists a function 
+\begin_inset Formula $k(\alpha,\beta)$
+\end_inset
+
+ such that
+\begin_inset Formula 
+\[
+p(x;\alpha,\beta)=k(\alpha,\beta)x^{\alpha-1}e^{-\beta x}\ind{x>0},\;\forall x,\alpha,\beta.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Recovering the proportionality constant by integration
+\end_layout
+
+\begin_layout Standard
+Without additional information, we have no way to recover the proportionality
+ constant in an expression like 
+\begin_inset Formula $f(x)\propto g(x)$
+\end_inset
+
+.
+ However, if we know something additional about 
+\begin_inset Formula $f(x)$
+\end_inset
+
+, such as its integral or its value for a particular 
+\begin_inset Formula $x$
+\end_inset
+
+, then we can determine 
+\begin_inset Formula $k$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Let's consider the gamma density in 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:gamma-prop"
+
+\end_inset
+
+.
+ Since 
+\begin_inset Formula $p(x;\alpha,\beta)$
+\end_inset
+
+ is a density in 
+\begin_inset Formula $x$
+\end_inset
+
+, its integral over 
+\begin_inset Formula $x$
+\end_inset
+
+ must be 
+\begin_inset Formula $1$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\int_{0}^{\infty}k(\alpha,\beta)x^{\alpha-1}e^{-\beta x}\,dx=1
+\]
+
+\end_inset
+
+Since the proportionality constant is, by definition, independent of 
+\begin_inset Formula $x$
+\end_inset
+
+, it comes out of the integral and we can solve for it:
+\begin_inset Formula 
+\begin{equation}
+k(\alpha,\beta)=\left[\int_{0}^{\infty}x^{\alpha-1}e^{-\beta x}\,dx\right]^{-1}\label{eq:gamma-constant-integral}
+\end{equation}
+
+\end_inset
+
+If we can work out this integral, we are done.
+ In this context, 
+\begin_inset Formula $k(\alpha,\beta)$
+\end_inset
+
+ is called the 
+\series bold
+normalizing constant
+\series default
+, since multiplying the function by this factor makes the integral 
+\begin_inset Formula $1$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Section
+Recovering the proportionality constant by comparison
+\end_layout
+
+\begin_layout Standard
+Suppose the integral in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:gamma-constant-integral"
+
+\end_inset
+
+ is a bit too much for us.
+ If we didn't know that the density was a gamma density, we could look through
+ a table of known probability densities and do some pattern matching.
+ We would need to find a density proportional to 
+\begin_inset Formula $x^{\alpha-1}e^{-\beta x}\ind{x>0}$
+\end_inset
+
+.
+ We would find that the gamma density is
+\begin_inset Formula 
+\[
+p(x;\alpha,\beta)=\frac{\beta^{\alpha}}{\Gamma(\alpha)}x^{\alpha-1}e^{-\beta x}\ind{x>0}.
+\]
+
+\end_inset
+
+Thus 
+\begin_inset Formula $k(\alpha,\beta)=\beta^{\alpha}/\Gamma(\alpha)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Remark*
+It's 
+\series bold
+very important
+\series default
+ to make sure that the supports of the densities are the same.
+ With different supports, the normalizing constants would be different,
+ and we cannot use this approach.
+ Although here we use the indicator function to give the support directly
+ in the expression for the density, sometimes the support for the distribution
+ is given separately.
+ For example, in Wikipedia the density for the Gamma distribution is given
+ simply as
+\begin_inset Formula 
+\[
+p(x;\alpha,\beta)=\frac{\beta^{\alpha}}{\Gamma(\alpha)}x^{\alpha-1}e^{-\beta x},
+\]
+
+\end_inset
+
+with the support indicated separately as 
+\begin_inset Formula $x\in(0,\infty)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Exercise
+\series default
+: Justify this approach by showing that if we have two probability densities,
+ 
+\begin_inset Formula $p(x)$
+\end_inset
+
+ and 
+\begin_inset Formula $q(x)$
+\end_inset
+
+, both of which have the same support and are proportional to the same function
+ 
+\begin_inset Formula $f(x)$
+\end_inset
+
+, then 
+\begin_inset Formula $p(x)=q(x)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_body
+\end_document

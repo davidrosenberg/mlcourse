@@ -10,7 +10,7 @@
   parameter vector, how could we improve our guess?
 \begin{figure}[H]
 \centering
-\asyinclude[width=\textwidth,height=0.4\textheight]{1-gradients/Data.asy}
+\includegraphics[width=\textwidth,height=0.4\textheight]{1-gradients/Data.pdf}
 \caption{Data Set With $d=1$}
 \end{figure}
 \begin{solution}
@@ -43,7 +43,7 @@ $h\to0$.  This can be used to show that if $x$ is a local extremum of
 $f$ then $f'(x)=0$.  Points with $f'(x)=0$ are called \textit{critical points}.
 \begin{figure}[H]
 \centering
-\asyinclude{1-gradients/Taylor1d.asy}
+\includegraphics{1-gradients/Taylor1d.pdf}
 \caption{1D Linear Approximation By Derivative}
 \end{figure}
 \subsubsection{Multivariate Differentiation}
@@ -54,7 +54,7 @@ $x$-direction.  In the multivariable case, we have many possible
 directions we can move along from a given point $x=(x_1,\ldots,x_n)\in\RR^n$.
 \begin{figure}[H]
 \centering
-\asyinclude{1-gradients/Directions.asy}
+\includegraphics{1-gradients/Directions.pdf}
 \caption{Multiple Possible Directions for $f:\RR^2\to\RR$}
 \end{figure}
 If we fix a direction $u$
@@ -69,7 +69,7 @@ $f(x)+hf'(x;u)$.  In particular, if $f'(x;u)<0$ (such a $u$ is called
 a \textit{descent direction}) then for sufficiently small $h>0$ we have $f(x+hu)<f(x)$.
 \begin{figure}[H]
 \centering
-\asyinclude{1-gradients/Slice.asy}
+\includegraphics{1-gradients/Slice.pdf}
 \caption{Directional Derivative as a Slope of a Slice}
 \end{figure}
 Let $e_i=(\overbrace{0,0,\ldots,0}^{i-1},1,0,\ldots,0)$ be the $i$th
@@ -108,7 +108,7 @@ The approximation $f(x+v) \approx f(x)+\nabla f(x)^Tv$ gives a tangent
 plane at the point $x$ as we let $v$ vary.
 \begin{figure}[H]
 \centering
-\asyinclude{1-gradients/Tangent.asy}
+\includegraphics{1-gradients/Tangent.pdf}
 \caption{Tangent Plane for $f:\RR^2\to\RR$}
 \end{figure}
 If $f$ is differentiable, we can use the gradient to compute an arbitrary directional derivative:
@@ -129,7 +129,7 @@ As we will see later in the course, if a function is differentiable
 and convex, then a point is critical if and only if it is a global minimum.
 \begin{figure}[H]
 \centering
-\asyinclude{1-gradients/Saddle.asy}
+\includegraphics{1-gradients/Saddle.pdf}
 \caption{Critical Points of $f:\RR^2\to\RR$}
 \end{figure}
 \subsubsection{Computing Gradients}
@@ -174,7 +174,10 @@ $$\frac{f(x+tv)-f(x)}{t} = (2x^TA^TA- 2y^TA)v + tv^TA^TAv.$$
 Taking the limit as $t\to0$ shows
 $$f'(x;v) = (2x^TA^TA- 2y^TA)v \implies \nabla f(x) = (2x^TA^TA-
 2y^TA)^T = 2A^TAx - 2A^Ty.$$
-Using this we can determine the critical points of $f$.
+We can interpret $\nabla f(x)=2A^T(Ax-y)$ as (up to scaling) the
+covariance between the features and the residual.
+
+Using the above calculation we can determine the critical points of $f$.
 Let's assume here that $A$ has full column rank.  Then $A^TA$ is
 invertible, and the unique critical point is
 $x = (A^TA)^{-1}A^Ty$.  As we will see later in the course, this is a

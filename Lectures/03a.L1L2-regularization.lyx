@@ -758,6 +758,24 @@ Just in article version
 status open
 
 \begin_layout Plain Layout
+1) why is shooting algorithm called the shooting algorithm?
+\end_layout
+
+\begin_layout Plain Layout
+2) change proof of equivalence of Lasso optimization problem to involve
+ changing the order of optimization
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 Rather than saying 'under technical conditions', can I give some specific
  technical conditions and quote them as a theorem (proven in homework?),
  that doesn't reference duality directly?)
@@ -1028,7 +1046,7 @@ linear
 \series default
  decision functions, i.e.
  
-\begin_inset Formula $x\mapsto w_{1}x_{1}+\cdots+w_{d}x_{d}$
+\begin_inset Formula $x\mapsto w^{T}x=w_{1}x_{1}+\cdots+w_{d}x_{d}$
 \end_inset
 
 ?
@@ -1043,7 +1061,11 @@ linear
 \begin_inset Formula $\ell_{0}$
 \end_inset
 
- complexity: number of non-zero coefficients
+ complexity: number of non-zero coefficients 
+\begin_inset Formula $\sum_{i=1}^{d}\ind{w_{i}\neq0}$
+\end_inset
+
+.
 \end_layout
 
 \begin_deeper

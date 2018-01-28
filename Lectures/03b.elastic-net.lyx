@@ -3,7 +3,7 @@
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin unavailable
+\origin /Users/drosen/Dropbox/repos/mlcourse/Lectures/
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -1520,7 +1520,6 @@ So
 \end_inset
 
  are the same.
- 
 \end_layout
 
 \end_inset
@@ -2089,6 +2088,10 @@ We get
 \begin_inset Formula $z_{1}$
 \end_inset
 
+, call them 
+\begin_inset Formula $x_{1},x_{2},x_{3}$
+\end_inset
+
 .
 \end_layout
 
@@ -2099,6 +2102,10 @@ We get
 
  noisy observations of 
 \begin_inset Formula $z_{2}$
+\end_inset
+
+, call them 
+\begin_inset Formula $x_{4},x_{5},x_{6}$
 \end_inset
 
 .
@@ -2116,6 +2123,22 @@ We want to predict
 
  from our noisy observations.
  
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+That is, we want an estimator 
+\begin_inset Formula $\hat{y}=f(x_{1},x_{2},x_{3},x_{4},x_{5},x_{6})$
+\end_inset
+
+ that is good for estimating 
+\begin_inset Formula $y$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -2228,6 +2251,67 @@ Oracle would first select
 
 .
  
+\end_layout
+
+\begin_layout Plain Layout
+Some calculations: Consider estimator 
+\begin_inset Formula $\hat{y}_{1}=x_{1}+x_{4}$
+\end_inset
+
+.
+ Then
+\begin_inset Formula 
+\begin{eqnarray*}
+\ex\left[\hat{y}_{1}\mid x_{1},x_{2},x_{3},x_{4},x_{5},x_{6}\right] & = & \ex x_{1}+\ex x_{4}\\
+ & = & \ex\left(z_{1}+\eps_{1}/5\right)+\ex\left(z_{2}+\eps_{4}/5\right)\\
+ & = & 0+0=0=\ex
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Could use some more explantion in the problem setup – for example, the above
+ definition is the procedure for generating each 
+\begin_inset Formula $\left(x,y\right)$
+\end_inset
+
+ pair - -could be slightly confusing – e.g.
+ do we keep 
+\begin_inset Formula $z_{1},z_{2}$
+\end_inset
+
+ the same for every 
+\begin_inset Formula $x,y$
+\end_inset
+
+ draw? shoud lclarify
+\end_layout
+
+\begin_layout Plain Layout
+Also - should clarify what we're trying to come up with – a prediction function
+ function 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+'s to 
+\begin_inset Formula $y$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+I think I might need to give some definitions on bias in this regression
+ setting...
+ and maybe variance as well
+\end_layout
+
+\begin_layout Plain Layout
+- might need a review on conditional expectations...
 \end_layout
 
 \end_inset
@@ -2673,7 +2757,7 @@ Let
 , then
 \begin_inset Formula 
 \[
-|\hat{w}_{i}-\hat{w}_{j}|\le\frac{\|y\|\sqrt{2}}{\lambda_{2}}\sqrt{1-\rho_{ij}}.
+|\hat{w}_{i}-\hat{w}_{j}|\le\frac{\|y\|_{2}\sqrt{2}}{\lambda_{2}}\sqrt{1-\rho_{ij}}.
 \]
 
 \end_inset
@@ -2682,6 +2766,80 @@ Let
 \end_layout
 
 \begin_layout Theorem
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Could replace the L2 norm of 
+\begin_inset Formula $y$
+\end_inset
+
+ with 
+\begin_inset Formula $L1$
+\end_inset
+
+ norm of 
+\begin_inset Formula $y$
+\end_inset
+
+, since
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename ../Figures/L1L2/l1l2-norm-inequality.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Suppose 
+\begin_inset Formula $x$
+\end_inset
+
+ is standardized and 
+\begin_inset Formula $x'$
+\end_inset
+
+ is not.
+ What is the correlation?
+\begin_inset Formula 
+\[
+\rho(x,x')=\frac{1}{n}x^{T}\left[\frac{1}{s}\left(x'-m1\right)\right]=\frac{1}{ns}x^{T}x'-\frac{m}{ns}x^{T}1=
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename ../Figures/L1L2/elastic-net-correlation-vars-proof.png
+	lyxscale 60
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
 
 \end_layout
 

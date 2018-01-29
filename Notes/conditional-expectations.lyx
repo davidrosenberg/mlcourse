@@ -880,6 +880,15 @@ We can now interpret
 \end_inset
 
  is just a number – it's not random, and not a random variable.
+ Let's expand it out a bit:
+\begin_inset Formula 
+\begin{eqnarray*}
+\ex\left[\ex\left[Y\mid X\right]\right] & = & \sum_{x\in\cx}p(x)\ex\left[Y\mid X=x\right]
+\end{eqnarray*}
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -891,16 +900,23 @@ law of iterated expectations
 \begin_inset Quotes erd
 \end_inset
 
- which states that 
+ (
+\begin_inset CommandInset href
+LatexCommand href
+name "Wikipedia article"
+target "https://en.wikipedia.org/wiki/Law_of_total_expectation"
+
+\end_inset
+
+) which states that 
 \begin_inset Formula 
 \[
-\ex\left[\ex\left[Y\mid X\right]\right]=\ex\left[Y\right]
+\ex\left[\ex\left[Y\mid X\right]\right]=\ex\left[Y\right].
 \]
 
 \end_inset
 
-.
- It's easy to prove in the case of finite 
+It's easy to prove in the case of finite 
 \begin_inset Formula $\cx$
 \end_inset
 
@@ -909,15 +925,20 @@ law of iterated expectations
 \end_inset
 
 .
- (See 
-\begin_inset CommandInset href
-LatexCommand href
-name "Wikipedia article"
-target "https://en.wikipedia.org/wiki/Law_of_total_expectation"
+ Continuing the expansion above, we get
+\begin_inset Formula 
+\begin{eqnarray*}
+\ex\left[\ex\left[Y\mid X\right]\right] & = & \sum_{x\in\cx}p(x)\ex\left[Y\mid X=x\right]\\
+ & = & \sum_{x\in\cx}p(x)\sum_{y\in\cy}p(y|x)y\\
+ & = & \sum_{x\in\cx}\sum_{y\in\cy}yp(x,y)\\
+ & = & \sum_{y\in\cy}y\sum_{x\in\cx}p(x,y)\\
+ & = & \sum_{y\in\cy}yp(y)\\
+ & = & \ex Y
+\end{eqnarray*}
 
 \end_inset
 
-.)
+
 \end_layout
 
 \end_body

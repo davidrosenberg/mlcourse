@@ -691,12 +691,64 @@ Under the conditions described above, if
 
 \end_inset
 
-[original also assumes that 
+ 
+\end_layout
+
+\begin_layout Standard
+In the original theorem statement from the paper, they also require that
+ 
 \begin_inset Formula $y$
 \end_inset
 
- is centered, but I don't see why we need that...
- although it will make the bound better.]
+ is centered, although their proof does not use that.
+ However, one can replace 
+\begin_inset Formula $y$
+\end_inset
+
+ be a centered version of 
+\begin_inset Formula $y$
+\end_inset
+
+ without changing the solution 
+\begin_inset Formula $\hat{w}$
+\end_inset
+
+, and the bound will get tighter.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Further comments from Brett Bernstein: 
+\end_layout
+
+\begin_layout Enumerate
+(On Theorem statement) If we multiply J by n we remove the averaging and
+ obtain n*lambda_2 instead of lambda_2.
+ If you think of the data being generated like y = Xw + noise for w fixed
+ then you expect ||y|| to grow like sqrt(n).
+ I think your formula is fine.
+ 
+\end_layout
+
+\begin_layout Enumerate
+(on centering 
+\begin_inset Formula $y$
+\end_inset
+
+) Note that the minimization problem is unchanged if we project y onto the
+ column space of X.
+ Also note that the vector of all ones lies orthogonal to the column space
+ of X since X is centered.
+ Thus centering has no effect on the value of w but does improve the bound.
+ The best improvement (of this sort) occurs by replacing y with its orthogonal
+ projection onto the column space of X.
+ 
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Proof

@@ -2007,10 +2007,6 @@ For
 \end_inset
 
 , 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
 \begin_inset Formula $\hat{f}$
 \end_inset
 
@@ -2019,10 +2015,15 @@ For
 Lipschitz continuous 
 \series default
 with Lipschitz constant 
-\begin_inset Formula $\|\hat{w}\|_{2}$
+\begin_inset Formula $L=\|\hat{w}\|_{2}$
 \end_inset
 
 .
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
 \end_layout
 
 \end_deeper
@@ -2032,7 +2033,7 @@ That is, when moving from
 \end_inset
 
  to 
-\begin_inset Formula $x+h$
+\begin_inset Formula $x+h\pause$
 \end_inset
 
 , 
@@ -2040,17 +2041,19 @@ That is, when moving from
 \end_inset
 
  changes no more than 
-\begin_inset Formula $\|\hat{w}\|_{2}\|h\|$
+\begin_inset Formula $L\|h\|$
 \end_inset
 
 .
  
 \end_layout
 
+\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
 So 
 \begin_inset Formula $\ell_{2}$
@@ -2063,14 +2066,17 @@ So
 .
 \end_layout
 
+\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
 Proof:
 \end_layout
 
+\begin_deeper
 \begin_layout Standard
 \begin_inset Formula 
 \begin{eqnarray*}
@@ -2080,11 +2086,15 @@ Proof:
 
 \end_inset
 
- 
-\begin_inset Note Note
-status open
 
-\begin_layout Plain Layout
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
 Since 
 \begin_inset Formula $\|\hat{w}\|_{1}\ge\|\hat{w}\|_{2}$
 \end_inset
@@ -2096,14 +2106,9 @@ Since
  constraint will also give a Lipschitz bound.
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -3529,7 +3534,7 @@ From http://www.cs.cmu.edu/~./10701/exams/final_sol_f08.pdf http://www.cs.cmu.ed
 \end_layout
 
 \begin_layout Section
-Finding the Lasso Solution
+Finding the Lasso Solution: Lasso as Quadratic Program
 \end_layout
 
 \begin_layout Frame
@@ -4162,7 +4167,11 @@ The Lasso as a Quadratic Program
 \end_layout
 
 \begin_layout Itemize
-Claim: Don't need constraint 
+Claim: Can remove 
+\begin_inset Formula $\min_{w}$
+\end_inset
+
+ and the constraint 
 \begin_inset Formula $a-b=w$
 \end_inset
 
@@ -4170,12 +4179,20 @@ Claim: Don't need constraint
  
 \end_layout
 
-\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
+\begin_layout Itemize
+One way to see this is by switching the order of minimization...
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+
+\end_layout
+
 \begin_layout Itemize
 For any 
 \begin_inset Formula $a,b\ge0$
@@ -4202,6 +4219,11 @@ So our constraint set has all
 .
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
@@ -4221,42 +4243,73 @@ The Lasso as a Quadratic Program
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
-\begin_layout Itemize
-So lasso optimization problem is equivalent to 
+\begin_layout Standard
 \begin_inset Formula 
 \begin{align*}
-\min_{a,b}\quad & \sum_{i=1}^{n}\left(\left(a-b\right)^{T}x_{i}-y_{i}\right)^{2}+\lambda1^{T}\left(a+b\right)\\
-\mbox{subject to}\quad & a_{i}\ge0\mbox{ for all }i\text{\qquad}b_{i}\ge0\mbox{ for all }i,
+\min_{a,b}\;\min_{w}\quad & \sum_{i=1}^{n}\left(\left(a-b\right)^{T}x_{i}-y_{i}\right)^{2}+\lambda1^{T}\left(a+b\right)\\
+\mbox{subject to}\quad & a_{i}\ge0\mbox{ for all }i\text{\qquad}b_{i}\ge0\mbox{ for all }i,\\
+ & a-b=w
 \end{align*}
 
 \end_inset
 
-where at the end we take 
-\begin_inset Formula $w^{*}=a^{*}-b^{*}$
-\end_inset
 
- (and we've shown above that 
-\begin_inset Formula $a^{*}$
-\end_inset
-
- and 
-\begin_inset Formula $b^{*}$
-\end_inset
-
- are positive and negative parts of 
-\begin_inset Formula $w^{*}$
-\end_inset
-
-, respectively.) 
 \end_layout
 
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+For any 
+\begin_inset Formula $a\ge0,b\ge0$
+\end_inset
+
+, there's always a single 
+\begin_inset Formula $w$
+\end_inset
+
+ that satisfies the constraints.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+So the inner minimum is always attained at 
+\begin_inset Formula $w=a-b$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Since 
+\begin_inset Formula $w$
+\end_inset
+
+ doesn't show up in the objective function, 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+nothing changes if we drop 
+\begin_inset Formula $\min_{w}$
+\end_inset
+
+ and the constraint.
+\end_layout
+
+\end_deeper
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
@@ -4346,6 +4399,10 @@ Note: Sparsity pattern may change frequently as we iterate
 \end_inset
 
 
+\end_layout
+
+\begin_layout Section
+Finding the Lasso Solution: Coordinate Descent (Shooting Method)
 \end_layout
 
 \begin_layout Frame

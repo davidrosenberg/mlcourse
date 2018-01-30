@@ -1142,7 +1142,8 @@ The risk of a Bayes prediction function is called the
 Bayes risk
 \series default
 .
-\end_layout
+\begin_inset Note Note
+status open
 
 \begin_layout AlertBlock
 \begin_inset Argument 2
@@ -1158,7 +1159,7 @@ Risk function cannot be computed
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 Since we don't know 
 \begin_inset Formula $P_{\cx\times\cy}$
 \end_inset
@@ -1172,6 +1173,11 @@ But we can estimate it...
 \end_layout
 
 \end_deeper
+\end_inset
+
+
+\end_layout
+
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
@@ -2530,7 +2536,7 @@ Technical note:
 \begin_inset Formula $N$
 \end_inset
 
- times, though not a great idea.
+ times.
 \end_layout
 
 \end_deeper
@@ -3064,7 +3070,6 @@ Step Size: In practice
 For SGD, fixed step size can work well in practice.
 \end_layout
 
-\begin_deeper
 \begin_layout Pause
 
 \end_layout
@@ -3079,17 +3084,14 @@ Typical approach:
  
 \end_layout
 
-\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
-But no theorem giving performance guarantees (to my knowledge).
+But no theorem for this giving performance guarantees (to my knowledge).
 \end_layout
 
-\end_deeper
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
@@ -3300,23 +3302,15 @@ Ridge regression objective function value for GD and SGD with various stepsizes
 \end_layout
 
 \begin_layout Itemize
-Why doesn't SGD catch up to batch GD?
-\end_layout
+Why doesn't SGD catch up to batch GD? 
+\begin_inset Formula $\pause$
+\end_inset
 
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-Short answer: It does, just takes a very long time.
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-Is it worth the wait? 
+ It does, just takes a 
+\series bold
+very
+\series default
+ long time.
 \end_layout
 
 \begin_deeper
@@ -3324,15 +3318,15 @@ Is it worth the wait?
 
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
-As we'll discuss further in the module on 
-\series bold
-excess risk decomposition
-\series default
-, probably not...
+Is it worth the wait? 
+\begin_inset Formula $\pause$
+\end_inset
+
+ As we discuss in next module, probably not...
 \end_layout
 
-\end_deeper
 \end_deeper
 \begin_layout Standard
 \begin_inset Note Note

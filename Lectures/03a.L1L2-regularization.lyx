@@ -4697,6 +4697,22 @@ where
 
 .
  
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+If 
+\begin_inset Formula $x_{\cdot j}$
+\end_inset
+
+'s are standardized – i.e.
+ the features are centered and scaled, then This is like the covariance
+ 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper

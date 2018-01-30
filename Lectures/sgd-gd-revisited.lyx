@@ -3,7 +3,7 @@
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin unavailable
+\origin /Users/drosen/Dropbox/repos/mlcourse/Lectures/
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -1782,10 +1782,6 @@ status open
 Does SGD Catch Up to GD?
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 

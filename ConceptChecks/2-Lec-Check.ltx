@@ -1,6 +1,13 @@
-\section{Week 2 Lecture: Concept Check Exercises}
-Starred problems are optional.
-\subsection{Excess Risk Decomposition}
+\section{Lecture 2: Excess Risk Decomposition and Regularization}
+\subsection{Topic 1: Excess Risk Decomposition}
+\subsubsection{Learning Objectives}
+\begin{enumerate}
+  \item Give precise definitions for excess risk, approximation error, estimation error, and optimization error.
+\item Suppose we have nested hypothesis spaces, say $\mathcal{H}_1 \subset \mathcal{H}_2$. Explain how we would expect the approximation error and estimation error to change when we change from $\mathcal{H}_1$ to $\mathcal{H}_2$, all else fixed.
+\item Explain how we would expect the approximation error and estimation error to change when we increase the sample size, all else fixed.
+\item Explain optimization error, and write down an excess risk decomposition that incorporates approximation error, estimation error, and optimization error. Why might we have negative optimization error but never negative estimation error?
+\end{enumerate}
+\subsubsection{Concept Check Questions}
 \begin{enumerate}
 \item Let $\XX=\YY=\{1,2,\ldots,10\}$, $\AA=\{1,\ldots,10,11\}$ and suppose the data
   distribution has marginal distribution $X\sim\Unif\{1,\ldots,10\}$.
@@ -17,7 +24,7 @@ Starred problems are optional.
     \end{enumerate}
   \end{enumerate}
 \begin{solution}
-\item[]\Sol 
+\item[]\Sol
   \begin{enumerate}
   \item The best decision function is $f^*(x)=x$.  The
     associated risk is $0$.
@@ -26,11 +33,11 @@ Starred problems are optional.
     $$\E[(Y-5.5)^2]=\Var(Y) = \frac{33}{4},$$
     by using (or deriving) the formula for the variance of a discrete
     uniform distribution.  Thus the approximation error is $33/4$.
-  \item 
+  \item
     \begin{enumerate}
     \item The Bayes decision function is affine, so the approximation
       error is $0$.
-    \item The risk is 
+    \item The risk is
       $$R(\hat{f}) = \E[(Y-\hat{f}(X))^2] = \E[(X-(X+1))^2] = 1.$$
       Thus the answer is $1$.
     \end{enumerate}
@@ -59,7 +66,7 @@ Starred problems are optional.
     risk
     $$\E[(Y-a-bX)^2] = \E[\E[(Y-a-bX)^2|X]] = \E[1] = 1.$$
   \item The best constant function is given by
-    $\E[Y]=\E[\E[Y|X]]=a+b\E[X]=a$.  This has risk 
+    $\E[Y]=\E[\E[Y|X]]=a+b\E[X]=a$.  This has risk
     $$\E[(Y-a)^2]=\E[\E[(Y-a)^2|X]]=\E[1+b^2X^2] = 1+b^2\E[X^2],$$
     where
     $$\E[X^2] = \int_{-10}^{10}\frac{x^2}{20}\,dx =
@@ -71,7 +78,7 @@ Starred problems are optional.
       approximation error is 0.
     \item Note that
       $$\begin{array}{rcl}
-      R(\hat{f}_n) 
+      R(\hat{f}_n)
       & = & \E[(Y-c-dX)^2] = \E[\E[(Y-c-dX)^2|X]]\\
       & = & \E[1 + ((a-c)+(b-d)X)^2] = 1 + (a-c)^2 + 100(b-d)^2/3.
       \end{array}$$
@@ -148,7 +155,7 @@ Starred problems are optional.
     $$\E\ell(\hat{f}_n(x_i),y_i) \neq \E\ell(\hat{f}_n(x),y)$$
     where $x,y$ is a new random draw from the data distribution that
     isn't in the training data.
-  \item 
+  \item
     \begin{enumerate}
     \item The space of training sets (i.e., samples of size $n$ from
       the data generating distribution).
@@ -165,7 +172,7 @@ Starred problems are optional.
   or if the relationship cannot be determined.
   Throughout assume $\FF_1,\FF_2$ are hypothesis spaces with
   $\FF_1\subseteq \FF_2$, and assume we are working with a fixed loss
-  function $\ell$.  
+  function $\ell$.
   \begin{enumerate}
   \item The estimation errors of two decision functions $f_1,f_2$ that
     minimize the empirical risk over the same hypothesis space,
@@ -182,7 +189,7 @@ Starred problems are optional.
     minimize the empirical risk over $\FF_1,\FF_2$, respectively.
   \end{enumerate}
 \begin{solution}
-\item[]\Sol 
+\item[]\Sol
   \begin{enumerate}
   \item Roughly speaking, more data is better, so we would tend to expect
     that $f_2$ will have lower estimation error.  That said, this is
@@ -216,7 +223,7 @@ Starred problems are optional.
     $.004$.
   \end{enumerate}
 \begin{solution}
-\item[]\Sol 
+\item[]\Sol
   \begin{enumerate}
   \item Since the output space is discrete and we are using the $0-1$
     loss, our best prediction is the highest probability output
@@ -237,7 +244,7 @@ Starred problems are optional.
         data generating distribution.
       \item Obtain a decision function $\tilde{f}$ by running our
         training algorithm on the generated sample.
-      \item Draw a new random sample $(x'_1,y'_1),\ldots,(x'_S,y'_S)$ 
+      \item Draw a new random sample $(x'_1,y'_1),\ldots,(x'_S,y'_S)$
         of size $S$ where $S$ is sufficiently large.
       \item Compute $e=|\{i\mid \tilde{f}(x'_i)\neq y'_i\}|$.  That is,
         the number of times $\tilde{f}$ is incorrect on our new
@@ -253,7 +260,16 @@ Starred problems are optional.
   \end{enumerate}
 \end{solution}
 \end{enumerate}
-\subsection{$L_1$ and $L_2$ Regularization}
+\subsection{Topic 2: $L_1$ and $L_2$ Regularization}
+\subsubsection{Learning Objectives}
+\begin{enumerate}
+  \item Explain the concept of a sequence of nested hypothesis spaces, and explain how a complexity measure (of a function) can be used to create such a sequence.
+\item Given a base hypothesis space of decision functions (e.g. affine functions), a performance measure for a decision function (e.g. empirical risk on a training set), and a function complexity measure (e.g. Lipschitz continuity constant of decision function), give the corresponding optimization problem in Tikhonov and Ivanov forms.
+\item For some situations (i.e. combinations of base hypothesis space, performance measure, and complexity measure), we claimed that Tikhonov and Ivanov forms are equivalent. Be able to explain what this means and write it down mathematically.
+\item In particular, the Tikhonov and Ivanov formulations are equivalent for lasso and ridge regression. Be comfortable switching between the formulations to assist with interpretations (e.g. the classic L1 regularization picture with the norm ball is based on the Ivanov formulation).
+
+\end{enumerate}
+\subsubsection{Concept Check Questions}
 \begin{enumerate}
 \item Consider the following two minimization problems:
   $$\argmin_w \Omega(w) + \frac{\lambda}{n}\sum_{i=1}^n L(f_w(x_i),y_i)$$
@@ -300,20 +316,20 @@ Starred problems are optional.
   = \|w\|_2^2.$$
 \end{solution}
 \item Two of the plots in the lecture slides use the fact that
-  $\|\hat{\beta}\|/\|\tilde{\beta}\|$ is always between $0$ and
-  $1$.  Here $\hat{\beta}$ is the parameter vector of the linear model
+  $\|\hat{w}\|/\|\tilde{w}\|$ is always between $0$ and
+  $1$.  Here $\hat{w}$ is the parameter vector of the linear model
   resulting from the regularized least squares problem.  Analgously,
-  $\tilde{\beta}$ is the parameter vector from the unregularized
-  problem.  Why is this true that the quotient lies in $[0,1]$? 
+  $\tilde{w}$ is the parameter vector from the unregularized
+  problem.  Why is this true that the quotient lies in $[0,1]$?
 \begin{solution}
 \item[]\Sol We assume Ivanov regularization (since Tikhonov is equivalent). We know that
-  $$\frac{1}{n}\sum_{i=1}^n (\tilde{\beta}^Tx_i-y_i)^2 \leq
-  \frac{1}{n}\sum_{i=1}^n (\hat{\beta}^Tx_i-y_i)^2$$
-  since $\tilde{\beta}$ is the solution to the unconstrained
-  minimization.  But if $\|\tilde{\beta}\| \leq \|\hat{\beta}\|$ then
-  $\|\tilde{\beta}\|$ is feasible for the regularized problem, so
-  $\|\hat{\beta}\|=\|\tilde{\beta}\|$.  
-  Thus $\|\tilde{\beta}\|\geq\|\hat{\beta}\|$.
+  $$\frac{1}{n}\sum_{i=1}^n (\tilde{w}^Tx_i-y_i)^2 \leq
+  \frac{1}{n}\sum_{i=1}^n (\hat{w}^Tx_i-y_i)^2$$
+  since $\tilde{w}$ is the solution to the unconstrained
+  minimization.  But if $\|\tilde{w}\| \leq \|\hat{w}\|$ then
+  $\|\tilde{w}\|$ is feasible for the regularized problem, so
+  $\|\hat{w}\|=\|\tilde{w}\|$.
+  Thus $\|\tilde{w}\|\geq\|\hat{w}\|$.
 \end{solution}
 \item Explain why feature normalization is important if you are using
   $L_1$ or $L_2$ regularization.
@@ -324,9 +340,9 @@ Starred problems are optional.
   in $x_1$ by $1$ meter yields an increase in $y$ by $4$.  Now suppose
   we change the units of $w_1$ to kilometers by scaling it.  This
   would require us to
-  change $w_1$ to $4000$ to achieve the same decision function.  
+  change $w_1$ to $4000$ to achieve the same decision function.
   While this has no effect on the loss
-  $(y-w^Tx)^2$ it has a significant effect on $\lambda\|w\|_2^2$ or 
+  $(y-w^Tx)^2$ it has a significant effect on $\lambda\|w\|_2^2$ or
   $\lambda\|w\|_1$.  For example, even if $x_2,\ldots,x_n$ had very
   little relationship with $y$, we would still undervalue $w_1$ due to
   the regularization.

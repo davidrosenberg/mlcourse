@@ -95,7 +95,64 @@
 \end{solution}
 \end{enumerate}
 
-\subsection{Linear Algebra Prerequisites for Linear Regressions}
+%
+\subsection{Ellipsoids}
+\begin{enumerate}
+\item $(\star)$ Describe the following set geometrically:
+  $$\left\{v\in\RR^2\;\middle|\;
+  v^T\pMatt{2&2}{0&2}v = 4\right\}.$$
+\begin{solution}
+\item[]\Sol The set is an ellipse with semi-axis lengths $2/\sqrt{3}$ and $2$
+  rotated counter-clockwise by $\pi/4$.
+Letting $v=(x,y)^T$ and multiplying all terms we get
+$$2x^2+2xy+2y^2=4.$$
+From precalculus we can see this is a conic section, and must be an
+ellipse or a hyperbola, but more work is needed to determine which
+one.  Instead of proceeding along these lines,
+let's use linear algebra to give a cleaner treatment that extends to
+higher dimensions.
+
+Let $A=\pMatt{2&2}{0&2}$.  Since $v^TAv$ is a number, we must have
+$(v^TAv)^T=v^TA^Tv$.  This gives
+$$v^TA^Tv=v^TAv = \frac{1}{2}v^T(A^T+A)v = v^T\pMatt{2&1}{1&2}v.$$
+Our new matrix is symmetric, and thus allows us to apply the spectral
+theorem to diagonalize it with an orthonormal basis of eigenvectors.
+In other words, by rotating our axes we can get a diagonal matrix.
+Either doing this by hand, or using a computer (Matlab, Mathematica,
+Numpy) we obtain
+$$\pMatt{2&1}{1&2} = Q\pMatt{3&0}{0&1}Q^T \quad\text{where}\quad
+Q=\frac{1}{\sqrt{2}}\pMatt{1&-1}{1&1}=\pMatt{\cos(\pi/4)&-\sin(\pi/4)}{\sin(\pi/4)&\cos(\pi/4)}.$$
+The set
+$$\left\{w\in\RR^2\;\middle|\;
+  w^T\pMatt{3&0}{0&1}w = 4\right\}$$
+is an ellipse with semi-axis lengths $2/\sqrt{3}$ and $2$
+since it corresponds to the equation $3w_1^2+w_2^2=4$.
+Since $Q$ performs a counter-clockwise rotation by $\pi/4$ we obtain
+the answer.  More concretely,
+$$w^T\pMatt{3&0}{0&1}w=4\iff (Qw)^TQ\pMatt{3&0}{0&1}Q^T(Qw)=4\iff
+(Qw)^T\pMatt{2&1}{1&2}(Qw)=4$$
+so
+$$\{v\mid v^TAv=4\} = \left\{Qw\;\middle|\; w^T\pMatt{3&0}{0&1}w=4\right\}.$$
+\begin{figure}[H]
+\centering
+\begin{asy}
+  include "2-PreLec-Check/Ellipse.asy";
+\end{asy}
+\qquad
+\begin{asy}
+  include "2-PreLec-Check/RotEllipse.asy";
+\end{asy}
+\caption{Rotated Ellipse}
+\end{figure}
+
+More generally, the solution to $v^TAv=c$ for $v\in\RR^n$,
+$A\in\RR^{n\times n}$ and $c>0$ will be an ellipsoid if
+$A$ is positive definite.  The $i$th semi-axis will have length
+$\sqrt{c/\lambda_i}$ where $\lambda_i$ is the $i$th eigenvalue of~$A$.
+\end{solution}
+\end{enumerate}
+
+\subsection{($\star$) Linear Algebra Prerequisites for Linear Regressions}
 
 \begin{enumerate}
 \item When performing linear regression we obtain the \textit{normal
@@ -153,57 +210,5 @@
   so adding $\lambda\Id_{n\times n}$ will give a matrix whose
   eigenvalues are all at least $\lambda>0$.  A square matrix is
   invertible iff its eigenvalues are all non-zero.
-\end{solution}
-\item $(\star)$ Describe the following set geometrically:
-  $$\left\{v\in\RR^2\;\middle|\;
-  v^T\pMatt{2&2}{0&2}v = 4\right\}.$$
-\begin{solution}
-\item[]\Sol The set is an ellipse with semi-axis lengths $2/\sqrt{3}$ and $2$
-  rotated counter-clockwise by $\pi/4$.
-Letting $v=(x,y)^T$ and multiplying all terms we get
-$$2x^2+2xy+2y^2=4.$$
-From precalculus we can see this is a conic section, and must be an
-ellipse or a hyperbola, but more work is needed to determine which
-one.  Instead of proceeding along these lines,
-let's use linear algebra to give a cleaner treatment that extends to
-higher dimensions.
-
-Let $A=\pMatt{2&2}{0&2}$.  Since $v^TAv$ is a number, we must have
-$(v^TAv)^T=v^TA^Tv$.  This gives
-$$v^TA^Tv=v^TAv = \frac{1}{2}v^T(A^T+A)v = v^T\pMatt{2&1}{1&2}v.$$
-Our new matrix is symmetric, and thus allows us to apply the spectral
-theorem to diagonalize it with an orthonormal basis of eigenvectors.
-In other words, by rotating our axes we can get a diagonal matrix.
-Either doing this by hand, or using a computer (Matlab, Mathematica,
-Numpy) we obtain
-$$\pMatt{2&1}{1&2} = Q\pMatt{3&0}{0&1}Q^T \quad\text{where}\quad
-Q=\frac{1}{\sqrt{2}}\pMatt{1&-1}{1&1}=\pMatt{\cos(\pi/4)&-\sin(\pi/4)}{\sin(\pi/4)&\cos(\pi/4)}.$$
-The set
-$$\left\{w\in\RR^2\;\middle|\;
-  w^T\pMatt{3&0}{0&1}w = 4\right\}$$
-is an ellipse with semi-axis lengths $2/\sqrt{3}$ and $2$
-since it corresponds to the equation $3w_1^2+w_2^2=4$.
-Since $Q$ performs a counter-clockwise rotation by $\pi/4$ we obtain
-the answer.  More concretely,
-$$w^T\pMatt{3&0}{0&1}w=4\iff (Qw)^TQ\pMatt{3&0}{0&1}Q^T(Qw)=4\iff
-(Qw)^T\pMatt{2&1}{1&2}(Qw)=4$$
-so
-$$\{v\mid v^TAv=4\} = \left\{Qw\;\middle|\; w^T\pMatt{3&0}{0&1}w=4\right\}.$$
-\begin{figure}[H]
-\centering
-\begin{asy}
-  include "1-Lab-Check/Ellipse.asy";
-\end{asy}
-\qquad
-\begin{asy}
-  include "1-Lab-Check/RotEllipse.asy";
-\end{asy}
-\caption{Rotated Ellipse}
-\end{figure}
-
-More generally, the solution to $v^TAv=c$ for $v\in\RR^n$,
-$A\in\RR^{n\times n}$ and $c>0$ will be an ellipsoid if
-$A$ is positive definite.  The $i$th semi-axis will have length
-$\sqrt{c/\lambda_i}$ where $\lambda_i$ is the $i$th eigenvalue of~$A$.
 \end{solution}
 \end{enumerate}

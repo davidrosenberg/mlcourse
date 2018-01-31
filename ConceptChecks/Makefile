@@ -4,10 +4,10 @@ MACROS = Macros.ltx Theorems.ltx
 
 nall :
 
-%.pdf : %.ltx ${MACROS} VarMain.ltx
+%.pdf : %.ltx ${MACROS}
 	cat $< >VarFill.ltx
 	pdflatex -jobname=$(basename $@) VarMain.ltx
-	ls $(basename $@)/*.asy && asy -compact $(basename $@)/*.asy || echo "No asymptote files"
+	ls $(basename $@)-*.asy && asy -compact $(basename $@)-*.asy || echo "No asymptote files"
 	pdflatex -jobname=$(basename $@) VarMain.ltx
 	pdflatex -jobname=$(basename $@) VarMain.ltx
 	rm -f $(basename $@).log
@@ -17,10 +17,10 @@ nall :
 	rm -f comment.cut
 	rm -f $(basename $@)-*.*
 
-%_sol.pdf : %.ltx ${MACROS} VarMain.ltx
+%_sol.pdf : %.ltx ${MACROS}
 	cat $< >VarFill.ltx
 	pdflatex -jobname=$(basename $@) ${USESOLUTIONS}
-	ls $(basename $@)/*.asy && python Runner.py asy -compact $(basename $@)/*.asy || echo "No asymptote files"
+	ls $(basename $@)-*.asy && python Runner.py asy -compact $(basename $@)-*.asy || echo "No asymptote files"
 	pdflatex -jobname=$(basename $@) ${USESOLUTIONS}
 	pdflatex -jobname=$(basename $@) ${USESOLUTIONS}
 	rm -f $(basename $@).log

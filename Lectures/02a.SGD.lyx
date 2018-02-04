@@ -768,27 +768,9 @@ Just in article version
 status open
 
 \begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-let
-\backslash
-thefootnote
-\backslash
-relax
-\backslash
-footnotetext{
-\backslash
-tiny{Plots courtesy of Ningshan Zhang.}}
-\end_layout
-
-\end_inset
-
-
+definitely need a a slide clarifying that, in practice, we don't exactly
+ draw randomly, we iterate through the whole dataset in a shuffled order.
+ 
 \end_layout
 
 \end_inset

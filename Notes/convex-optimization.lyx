@@ -2886,7 +2886,7 @@ strictly feasible
 \begin_layout Corollary
 For a convex optimization problem in standard form, if the domain
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Recall the domain 
@@ -2919,7 +2919,12 @@ For example,
 , all equality and inequality constraints are linear, and the problem is
  feasible (i.e.
  there is some point in the domain that satisifies all the constraints),
- then we have strong duality and the dual optimum is attained.
+ then we have strong duality and the dual optimum is attained (!!! when
+ 
+\begin_inset Formula $d^{*}>-\infty$
+\end_inset
+
+!!! – MUST FIX).
 \end_layout
 
 \begin_layout Standard

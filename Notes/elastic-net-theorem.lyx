@@ -33,7 +33,16 @@ figs-within-sections
 \index_command default
 \paperfontsize 12
 \spacing single
-\use_hyperref false
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
 \papersize letterpaper
 \use_geometry false
 \use_package amsmath 2
@@ -566,11 +575,52 @@ David S.
 \end_layout
 
 \begin_layout Date
-January 28, 2018
+February 5, 2018
+\end_layout
+
+\begin_layout Abstract
+Zou and Hastie introduce the elastic net in a 2005 paper 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Regularization and variable selection via the elastic net"
+target "https://web.stanford.edu/~hastie/Papers/B67.2%20(2005)%20301-320%20Zou%20&%20Hastie.pdf"
+
+\end_inset
+
+.
+\begin_inset Quotes erd
+\end_inset
+
+ What they call the 
+\begin_inset Quotes eld
+\end_inset
+
+naive
+\begin_inset Quotes erd
+\end_inset
+
+ elastic net, is what most people just call 
+\begin_inset Quotes eld
+\end_inset
+
+elastic net
+\begin_inset Quotes erd
+\end_inset
+
+ these days.
+ Theorem 1 in their paper makes precise the statement that for [naive] elastic
+ net, the more positively correlated two features are, the closer their
+ parameter values.
+ The original proof is quite readable, but here we've translated it to use
+ our notation and standard definitions.
 \end_layout
 
 \begin_layout Standard
-Recall the Elastic Net Lasso objective function
+Recall the elastic net objective function:
 \begin_inset Formula 
 \[
 J(w)=\frac{1}{n}\|Xw-y\|_{2}^{2}+\lambda_{1}\|w\|_{1}+\lambda_{2}\|w\|_{2}^{2},
@@ -578,8 +628,17 @@ J(w)=\frac{1}{n}\|Xw-y\|_{2}^{2}+\lambda_{1}\|w\|_{1}+\lambda_{2}\|w\|_{2}^{2},
 
 \end_inset
 
-and let 
-\begin_inset Formula $\hat{w}=\left(\hat{w}_{1},\ldots,\hat{w}_{d}\right)$
+where 
+\begin_inset Formula $X\in\reals^{n\times d}$
+\end_inset
+
+ is a design matrix and 
+\begin_inset Formula $y\in\reals^{n\times1}$
+\end_inset
+
+ is the vector of responses.
+ Let 
+\begin_inset Formula $\hat{w}=\left(\hat{w}_{1},\ldots,\hat{w}_{d}\right)^{T}\in\reals^{d\times1}$
 \end_inset
 
  be an elastic net solution – that is, 
@@ -604,8 +663,24 @@ and let
 \end_inset
 
 .
- As we would in practice, let's assume the data are standardized so that
- for every column 
+ (Note the change from our usual notation, in which 
+\begin_inset Formula $x_{i}\in\reals^{d}$
+\end_inset
+
+ is the 
+\begin_inset Formula $i$
+\end_inset
+
+th training example – here 
+\begin_inset Formula $x_{i}\in\reals^{n}$
+\end_inset
+
+ is the 
+\begin_inset Formula $i$
+\end_inset
+
+th feature, across all training data.) As we often do in practice, let's
+ assume the data are standardized so that every column 
 \begin_inset Formula $x_{i}$
 \end_inset
 
@@ -637,11 +712,11 @@ and let
 \end_inset
 
  as 
-\begin_inset Formula $\rho_{ij}=\rho(x_{i},x_{j})=\frac{1}{n}x_{i}^{T}x_{j}$
+\begin_inset Formula $\rho_{ij}=\frac{1}{n}x_{i}^{T}x_{j}$
 \end_inset
 
 .
- In the Theorem below, we find that if 
+ In the theorem below, we find that if 
 \begin_inset Formula $x_{i}$
 \end_inset
 
@@ -661,24 +736,6 @@ and let
 \end_layout
 
 \begin_layout Theorem
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-Theorem 1 in 
-\begin_inset Quotes eld
-\end_inset
-
-Regularization and variable selection via the elastic net
-\begin_inset Quotes erd
-\end_inset
-
-: https://web.stanford.edu/~hastie/Papers/B67.2%20(2005)%20301-320%20Zou%20&%20Hast
-ie.pdf
-\end_layout
-
-\end_inset
-
 Under the conditions described above, if 
 \begin_inset Formula $\hat{w}_{i}\hat{w}_{j}>0$
 \end_inset
@@ -700,20 +757,82 @@ In the original theorem statement from the paper, they also require that
 \begin_inset Formula $y$
 \end_inset
 
- is centered, although their proof does not use that.
- However, one can replace 
+ is centered.
+ Although this is not required for the theorem to be true, replacing 
 \begin_inset Formula $y$
 \end_inset
 
- be a centered version of 
+ with a centered version does not change the solution
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+The minimizer of 
+\begin_inset Formula $J(w)$
+\end_inset
+
+ is unchanged if we replace 
 \begin_inset Formula $y$
 \end_inset
 
- without changing the solution 
+ by its projection onto the column space of 
+\begin_inset Formula $X$
+\end_inset
+
+.
+ Since the columns of 
+\begin_inset Formula $X$
+\end_inset
+
+ are centered, 
+\begin_inset Formula $X^{T}1=0$
+\end_inset
+
+, so 
+\begin_inset Formula $1$
+\end_inset
+
+ is orthogonal to the column space of 
+\begin_inset Formula $X$
+\end_inset
+
+.
+ Thus 
+\begin_inset Formula $y-\bar{y}1$
+\end_inset
+
+ has the same projection onto the column space of 
+\begin_inset Formula $X$
+\end_inset
+
+ as 
+\begin_inset Formula $y$
+\end_inset
+
+ does.
+ So centering 
+\begin_inset Formula $y$
+\end_inset
+
+ does not change the solution 
 \begin_inset Formula $\hat{w}$
 \end_inset
 
-, and the bound will get tighter.
+.
+ (Thanks Brett Bernstein for suggesting this.) 
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\hat{w}$
+\end_inset
+
+, though it will reduce 
+\begin_inset Formula $\|y\|_{2}$
+\end_inset
+
+ in the bound.
  
 \begin_inset Note Note
 status open
@@ -739,7 +858,12 @@ Further comments from Brett Bernstein:
 ) Note that the minimization problem is unchanged if we project y onto the
  column space of X.
  Also note that the vector of all ones lies orthogonal to the column space
- of X since X is centered.
+ of X since X is centered (centered means that the sum of entries in each
+ column is 0, so 
+\begin_inset Formula $X^{T}1=0$
+\end_inset
+
+.
  Thus centering has no effect on the value of w but does improve the bound.
  The best improvement (of this sort) occurs by replacing y with its orthogonal
  projection onto the column space of X.

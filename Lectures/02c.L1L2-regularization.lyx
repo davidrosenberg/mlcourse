@@ -4323,6 +4323,65 @@ nothing changes if we drop
 status open
 
 \begin_layout Plain Layout
+The Lasso as a Quadratic Program
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+So lasso optimization problem is equivalent to 
+\begin_inset Formula 
+\begin{align*}
+\min_{a,b}\quad & \sum_{i=1}^{n}\left(\left(a-b\right)^{T}x_{i}-y_{i}\right)^{2}+\lambda1^{T}\left(a+b\right)\\
+\mbox{subject to}\quad & a_{i}\ge0\mbox{ for all }i\text{\qquad}b_{i}\ge0\mbox{ for all }i,
+\end{align*}
+
+\end_inset
+
+where at the end we take 
+\begin_inset Formula $w^{*}=a^{*}-b^{*}$
+\end_inset
+
+ (and we've shown above that 
+\begin_inset Formula $a^{*}$
+\end_inset
+
+ and 
+\begin_inset Formula $b^{*}$
+\end_inset
+
+ are positive and negative parts of 
+\begin_inset Formula $w^{*}$
+\end_inset
+
+, respectively.) 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Has constraints – how do we optimize?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
 Projected SGD
 \end_layout
 
@@ -5075,7 +5134,7 @@ Luckily there are weaker conditions...
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -5104,6 +5163,27 @@ Coordinate Descent: The Separability Condition
 status open
 
 \begin_layout Plain Layout
+Tseng 2001: 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Convergence of a Block Coordinate Descent Method for Nondifferentiable Minimization"
+target "https://link.springer.com/article/10.1023/A:1017501703105"
+
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 Tseng 1988: 
 \begin_inset Quotes eld
 \end_inset
@@ -5113,6 +5193,11 @@ Coordinate ascent for maximizing nondifferentiable concave functions
 \end_inset
 
 , Technical Report LIDS-P
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -5159,6 +5244,7 @@ status open
 From Brett: I followed up with Tibshirani's slides.
  I think you referenced the wrong paper.
  This is the correct one: http://link.springer.com/article/10.1023/A:1017501703105
+ [fixed 1/30/2018 - DR]
 \end_layout
 
 \end_inset
@@ -5167,12 +5253,8 @@ From Brett: I followed up with Tibshirani's slides.
 \end_layout
 
 \end_deeper
-\begin_layout Frame
-
-\end_layout
-
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 

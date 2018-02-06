@@ -9,35 +9,41 @@
 \usetheme{CambridgeUS} 
 \beamertemplatenavigationsymbolsempty
 
+
+% Set Color ==============================
+\definecolor{NYUPurple}{RGB}{87,6,140}
+\definecolor{LightPurple}{RGB}{165,11,255}
+
+
+\setbeamercolor{title}{fg=NYUPurple}
+%\setbeamercolor{frametitle}{fg=NYUPurple}
+\setbeamercolor{frametitle}{fg=NYUPurple}
+
+\setbeamercolor{background canvas}{fg=NYUPurple, bg=white}
+\setbeamercolor{background}{fg=black, bg=NYUPurple}
+
+\setbeamercolor{palette primary}{fg=black, bg=gray!30!white}
+\setbeamercolor{palette secondary}{fg=black, bg=gray!20!white}
+\setbeamercolor{palette tertiary}{fg=gray!20!white, bg=NYUPurple}
+
+\setbeamertemplate{headline}{}
+
+\setbeamercolor{parttitle}{fg=NYUPurple}
+\setbeamercolor{sectiontitle}{fg=NYUPurple}
+\setbeamercolor{sectionname}{fg=NYUPurple}
+\setbeamercolor{section page}{fg=NYUPurple}
+
 \AtBeginSection[]{
   \begin{frame}
   \vfill
   \centering
-  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
-    \usebeamerfont{title}\insertsectionhead\par%
+\setbeamercolor{section title}{fg=NYUPurple}
+ \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\usebeamercolor[fg]{title}\insertsectionhead\par%
   \end{beamercolorbox}
   \vfill
   \end{frame}
 }
-
-
-% Set Color ==============================
-\definecolor{BBGblue}{RGB}{13,157,219}
-\definecolor{BBGgreen}{RGB}{77,170,80}
-
-
-\setbeamercolor{title}{fg=BBGblue}
-%\setbeamercolor{frametitle}{fg=BBGblue}
-\setbeamercolor{frametitle}{fg=BBGblue}
-
-\setbeamercolor{background canvas}{fg=BBGblue, bg=white}
-\setbeamercolor{background}{fg=black, bg=BBGblue}
-
-\setbeamercolor{palette primary}{fg=black, bg=gray!30!white}
-\setbeamercolor{palette secondary}{fg=black, bg=gray!20!white}
-\setbeamercolor{palette tertiary}{fg=black, bg=BBGblue}
-
-\setbeamertemplate{headline}{}
 \end_preamble
 \options aspectratio=169,handout
 \use_default_options false
@@ -63,7 +69,17 @@
 \index_command default
 \paperfontsize default
 \spacing single
-\use_hyperref false
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "allcolors=NYUPurple,urlcolor=LightPurple"
 \papersize default
 \use_geometry true
 \use_package amsmath 2
@@ -703,8 +719,9 @@ Loss Functions for Regression and Classification
 status open
 
 \begin_layout Plain Layout
+DS-GA 1003 / CSCI-GA 2567
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 optional, use only with long paper titles
@@ -726,11 +743,11 @@ David S.
 \end_layout
 
 \begin_layout Date
-October 11, 2017
+February 6, 2018
 \end_layout
 
 \begin_layout Institute
-Bloomberg ML EDU
+New York University
 \end_layout
 
 \begin_layout Standard
@@ -744,19 +761,6 @@ Just in article version
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-note here
-\end_layout
-
-\end_inset
-
- 
 \end_layout
 
 \begin_layout Standard
@@ -795,23 +799,19 @@ ml and Psuedo-huber
 \end_layout
 
 \begin_layout Frame
-
-\end_layout
-
-\begin_deeper
-\begin_layout FrameTitle
-\begin_inset Argument 1
+\begin_inset Argument 4
 status open
 
 \begin_layout Plain Layout
-presentation
+Contents
 \end_layout
 
 \end_inset
 
-Contents
+
 \end_layout
 
+\begin_deeper
 \begin_layout Standard
 \begin_inset CommandInset toc
 LatexCommand tableofcontents
@@ -1041,7 +1041,7 @@ Distance-based losses are translation-invariant.
  That is,
 \begin_inset Formula 
 \[
-\ell(\hat{y}+a,y+a)=\ell\left(\hat{y},y\right).
+\ell(\hat{y}+b,y+b)=\ell\left(\hat{y},y\right)\qquad\forall b\in\reals.
 \]
 
 \end_inset
@@ -2109,6 +2109,10 @@ Empirical risk for
 
 \end_layout
 
+\begin_layout Pause
+
+\end_layout
+
 \begin_layout AlertBlock
 \begin_inset Argument 2
 status open
@@ -2456,7 +2460,7 @@ Classification Losses
 \begin_deeper
 \begin_layout Standard
 SVM/Hinge loss: 
-\begin_inset Formula $\loss_{\text{Hinge}}=\max\left\{ 1-m,0\right\} =\left(1-m\right)_{+}$
+\begin_inset Formula $\loss_{\text{Hinge}}=\max\left(1-m,0\right)$
 \end_inset
 
 
@@ -2555,29 +2559,38 @@ status open
 
 \begin_deeper
 \begin_layout Itemize
-Hypothesis space 
-\begin_inset Formula $\cf=\left\{ f(x)=w^{T}x\mid w\in\reals^{d}\right\} $
+Hypothesis space: 
+\begin_inset Formula $\cf=\left\{ f_{w}(x)=w^{T}x\mid w\in\reals^{d}\right\} $
 \end_inset
 
 .
 \end_layout
 
 \begin_layout Itemize
-Loss 
-\begin_inset Formula $\ell(m)=\left(1-m\right)_{+}$
+Loss: 
+\begin_inset Formula $\ell(m)=\max\left(1-m,0\right)$
 \end_inset
 
-
+ [
+\series bold
+Hinge loss
+\series default
+ – sometimes called 
+\series bold
+SVM loss
+\series default
+]
 \end_layout
 
 \begin_layout Itemize
+Regularization: 
 \begin_inset Formula $\ell_{2}$
 \end_inset
 
- regularization
+
 \begin_inset Formula 
 \[
-\min_{w\in\reals^{d}}\sum_{i=1}^{n}\left(1-y_{i}f_{w}(x_{i})\right)_{+}+\lambda\|w\|_{2}^{2}
+\min_{w\in\reals^{d}}\frac{1}{n}\sum_{i=1}^{n}\max\left(1-y_{i}f_{w}(x_{i})\,,0\right)+\lambda\|w\|_{2}^{2}
 \]
 
 \end_inset
@@ -2684,6 +2697,12 @@ Loss
 .
 \end_layout
 
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
 \begin_layout Itemize
 Turns out, can write this in terms of margin 
 \begin_inset Formula $m=f(x)y$
@@ -2692,7 +2711,7 @@ Turns out, can write this in terms of margin
 :
 \begin_inset Formula 
 \begin{eqnarray*}
-\ell(f(x),y) & = & \left(f(x)-y\right)^{2}=\left(1-f(x)y\right)^{2}=\left(1-m\right)^{2}
+\ell(f(x),y) & = & \left(f(x)-y\right)^{2}\pause=\left(1-f(x)y\right)^{2}\pause=\left(1-m\right)^{2}\pause
 \end{eqnarray*}
 
 \end_inset

@@ -9,35 +9,41 @@
 \usetheme{CambridgeUS} 
 \beamertemplatenavigationsymbolsempty
 
+
+% Set Color ==============================
+\definecolor{NYUPurple}{RGB}{87,6,140}
+\definecolor{LightPurple}{RGB}{165,11,255}
+
+
+\setbeamercolor{title}{fg=NYUPurple}
+%\setbeamercolor{frametitle}{fg=NYUPurple}
+\setbeamercolor{frametitle}{fg=NYUPurple}
+
+\setbeamercolor{background canvas}{fg=NYUPurple, bg=white}
+\setbeamercolor{background}{fg=black, bg=NYUPurple}
+
+\setbeamercolor{palette primary}{fg=black, bg=gray!30!white}
+\setbeamercolor{palette secondary}{fg=black, bg=gray!20!white}
+\setbeamercolor{palette tertiary}{fg=gray!20!white, bg=NYUPurple}
+
+\setbeamertemplate{headline}{}
+
+\setbeamercolor{parttitle}{fg=NYUPurple}
+\setbeamercolor{sectiontitle}{fg=NYUPurple}
+\setbeamercolor{sectionname}{fg=NYUPurple}
+\setbeamercolor{section page}{fg=NYUPurple}
+
 \AtBeginSection[]{
   \begin{frame}
   \vfill
   \centering
-  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
-    \usebeamerfont{title}\insertsectionhead\par%
+\setbeamercolor{section title}{fg=NYUPurple}
+ \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\usebeamercolor[fg]{title}\insertsectionhead\par%
   \end{beamercolorbox}
   \vfill
   \end{frame}
 }
-
-
-% Set Color ==============================
-\definecolor{BBGblue}{RGB}{13,157,219}
-\definecolor{BBGgreen}{RGB}{77,170,80}
-
-
-\setbeamercolor{title}{fg=BBGblue}
-%\setbeamercolor{frametitle}{fg=BBGblue}
-\setbeamercolor{frametitle}{fg=BBGblue}
-
-\setbeamercolor{background canvas}{fg=BBGblue, bg=white}
-\setbeamercolor{background}{fg=black, bg=BBGblue}
-
-\setbeamercolor{palette primary}{fg=black, bg=gray!30!white}
-\setbeamercolor{palette secondary}{fg=black, bg=gray!20!white}
-\setbeamercolor{palette tertiary}{fg=black, bg=BBGblue}
-
-\setbeamertemplate{headline}{}
 \end_preamble
 \options aspectratio=169,handout
 \use_default_options false
@@ -63,7 +69,17 @@
 \index_command default
 \paperfontsize default
 \spacing single
-\use_hyperref false
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "allcolors=NYUPurple,urlcolor=LightPurple"
 \papersize default
 \use_geometry true
 \use_package amsmath 2
@@ -698,13 +714,14 @@ ex}{E}
 \end_layout
 
 \begin_layout Title
-Lasso, Ridge, and Elastic Net
+Lasso, Ridge, and Elastic Net: A Deeper Dive
 \begin_inset Argument 1
 status open
 
 \begin_layout Plain Layout
+DS-GA 1003 / CSCI-GA 2567
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 optional, use only with long paper titles
@@ -726,19 +743,19 @@ David S.
 \end_layout
 
 \begin_layout Date
-October 5, 2017
+February 5, 2018
 \end_layout
 
 \begin_layout Institute
-Bloomberg ML EDU
+New York University
 \end_layout
 
-\begin_layout Standard
-\begin_inset Flex ArticleMode
+\begin_layout Frame
+\begin_inset Argument 4
 status open
 
 \begin_layout Plain Layout
-Just in article version
+Contents
 \end_layout
 
 \end_inset
@@ -746,21 +763,19 @@ Just in article version
 
 \end_layout
 
+\begin_deeper
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-note here
-\end_layout
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
 
 \end_inset
 
- 
+
 \end_layout
 
+\end_deeper
 \begin_layout Section
-Linearly Dependent Features - Algebraic View
+Repeated Features
 \end_layout
 
 \begin_layout Frame
@@ -841,7 +856,7 @@ but we always have
 \end_deeper
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -921,7 +936,7 @@ What if we introduce
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1243,23 +1258,19 @@ Math proof: Lagrange multipliers
 \end_deeper
 \begin_layout Itemize
 Picture proof: Level sets of loss are lines of the form 
-\begin_inset Formula $w_{1}+w_{2}=c$
+\begin_inset Formula $w_{1}+w_{2}=4$
 \end_inset
 
 ...
-\end_layout
-
-\end_deeper
-\begin_layout Section
-Linearly Dependent Features - Geometric View
-\end_layout
+\begin_inset Note Note
+status open
 
 \begin_layout Frame
 \begin_inset Argument 4
 status open
 
 \begin_layout Plain Layout
-Suppose We Have 2 Equal Features
+2 Equal Features: Summary
 \end_layout
 
 \end_inset
@@ -1324,7 +1335,7 @@ give same predictions and have same empirical risk
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 What function will we select if we do ERM with 
 \begin_inset Formula $\ell_{1}$
 \end_inset
@@ -1337,6 +1348,12 @@ What function will we select if we do ERM with
 \end_layout
 
 \end_deeper
+\end_deeper
+\end_inset
+
+
+\end_layout
+
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
@@ -1366,7 +1383,8 @@ Equal Features,
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../Figures/L1L2/L2Eq.pdf
+	filename ../Figures/L1L2/L2Eq.png
+	lyxscale 20
 	height 40theight%
 
 \end_inset
@@ -1435,7 +1453,8 @@ Equal Features,
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../Figures/L1L2/L1Eq.pdf
+	filename ../Figures/L1L2/L1Eq.png
+	lyxscale 20
 	height 40theight%
 
 \end_inset
@@ -1479,6 +1498,10 @@ Note that the solution set is
 
 \end_layout
 
+\begin_layout Section
+Linearly Dependent Features
+\end_layout
+
 \begin_layout Frame
 \begin_inset Argument 4
 status open
@@ -1493,6 +1516,14 @@ Linearly Related Features
 \end_layout
 
 \begin_deeper
+\begin_layout Itemize
+Linear prediction functions: 
+\begin_inset Formula $f(x)=w_{1}x_{2}+w_{2}x_{2}$
+\end_inset
+
+
+\end_layout
+
 \begin_layout Itemize
 Same setup, now suppose 
 \begin_inset Formula $x_{2}=2x_{1}$
@@ -1536,16 +1567,17 @@ Then all functions with
  
 \end_layout
 
+\begin_deeper
 \begin_layout Itemize
 give same predictions and have same empirical risk
 \end_layout
 
-\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
-\begin_layout Standard
+\end_deeper
+\begin_layout Itemize
 What function will we select if we do ERM with 
 \begin_inset Formula $\ell_{1}$
 \end_inset
@@ -1557,7 +1589,6 @@ What function will we select if we do ERM with
  constraint?
 \end_layout
 
-\end_deeper
 \begin_layout Standard
 \begin_inset Note Note
 status open
@@ -1628,7 +1659,8 @@ Linearly Related Features,
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../Figures/L1L2/L2Doub.pdf
+	filename ../Figures/L1L2/L2Doub.png
+	lyxscale 40
 	height 40theight%
 
 \end_inset
@@ -1692,7 +1724,8 @@ Linearly Related Features,
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../Figures/L1L2/L1Doub.pdf
+	filename ../Figures/L1L2/L1Doub.png
+	lyxscale 30
 	height 40theight%
 
 \end_inset
@@ -1809,7 +1842,7 @@ Recall
 \begin_inset CommandInset href
 LatexCommand href
 name "our discussion"
-target "https://davidrosenberg.github.io/mlcourse/Lectures/2b.L1L2-regularization.pdf#page=23"
+target "https://davidrosenberg.github.io/mlcourse/Archive/2017/Lectures/2b.L1L2-regularization.pdf#page=21"
 
 \end_inset
 
@@ -1882,6 +1915,38 @@ With
  linearly related, we get a degenerate ellipse.
 \end_layout
 
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Level set 
+\begin_inset Formula $\left\{ w\mid\left(w-\hat{w}\right)^{T}X^{T}X\left(w-\hat{w}\right)=nc\right\} $
+\end_inset
+
+, 
+\begin_inset Formula $X^{T}X$
+\end_inset
+
+ has a 0 eigenvalue (like ellipsoid with an infinite principal axis)
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Eigenvalues are the reciprocals of the squares of the semi-axes.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
 \begin_layout Itemize
 That's why level sets were lines (actually pairs of lines, one on each side
  of ERM).
@@ -1893,6 +1958,10 @@ That's why level sets were lines (actually pairs of lines, one on each side
 \end_inset
 
 
+\end_layout
+
+\begin_layout Section
+Correlated Features
 \end_layout
 
 \begin_layout Frame
@@ -1977,8 +2046,8 @@ Correlated Features,
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../Figures/L1L2/L1Corr.pdf
-	lyxscale 70
+	filename ../Figures/L1L2/L1Corr.png
+	lyxscale 20
 	height 40theight%
 
 \end_inset
@@ -1990,8 +2059,8 @@ Correlated Features,
 
 
 \begin_inset Graphics
-	filename ../Figures/L1L2/L1Corr2.pdf
-	lyxscale 70
+	filename ../Figures/L1L2/L1Corr2.png
+	lyxscale 20
 	height 40theight%
 
 \end_inset
@@ -2020,13 +2089,337 @@ If
 \begin_inset Formula $x_{1}\approx2x_{2}$
 \end_inset
 
-, ellipse changes orientation and we probably hit a corner.
+, ellipse changes orientation and we hit a corner.
+ (Which one?)
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Plugging into 
+\begin_inset Formula $w_{1}x_{2}+w_{2}x_{2}=k$
+\end_inset
+
+, we get 
+\begin_inset Formula $\left(2w_{1}+w_{2}\right)x_{2}=k$
+\end_inset
+
+, when 
+\begin_inset Formula $x_{1}=2x_{2}$
+\end_inset
+
+, so we get equivalent predictors for all parameter values on the line 
+\begin_inset Formula $2w_{1}+w_{2}=c$
+\end_inset
+
+, which has slope negative 
+\begin_inset Formula $2$
+\end_inset
+
+, so we'll hit the corner on the 
+\begin_inset Formula $w_{1}$
+\end_inset
+
+ axis, which corresponds to 
+\begin_inset Formula $w_{2}=0$
+\end_inset
+
+, which makes sense, since 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+ has smaller scale.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
 \end_deeper
 \begin_layout Section
-Correlated Features and the Grouping Issue
+The Case Against Sparsity
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+A Case Against Sparsity
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose there's some unknown value 
+\begin_inset Formula $\theta\in\reals$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We get 
+\begin_inset Formula $3$
+\end_inset
+
+ noisy observations of 
+\begin_inset Formula $\theta$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+x_{1},x_{2},x_{3}\sim\cn\left(\theta,1\right)\text{ (i.i.d)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+What's a good estimator 
+\begin_inset Formula $\hat{\theta}$
+\end_inset
+
+ for 
+\begin_inset Formula $\theta$
+\end_inset
+
+?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Would you prefer 
+\begin_inset Formula $\hat{\theta}=x_{1}$
+\end_inset
+
+ or 
+\begin_inset Formula $\hat{\theta}=\frac{1}{3}\left(x_{1}+x_{2}+x_{3}\right)$
+\end_inset
+
+?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Estimator Performance Analysis
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\ex\left[x_{1}\right]=\theta$
+\end_inset
+
+ and 
+\begin_inset Formula $\ex\left[\frac{1}{3}\left(x_{1}+x_{2}+x_{3}\right)\right]=\theta$
+\end_inset
+
+.
+ So both unbiased.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\var\left[x_{1}\right]=\pause1$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\var\left[\frac{1}{3}\left(x_{1}+x_{2}+x_{3}\right)\right]=\pause\frac{1}{9}\left(1+1+1\right)=\frac{1}{3}.$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Average has a smaller variance — the independent errors cancel each other
+ out.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Similar thing happens in regression with correlated features:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+e.g.
+ If 3 features are correlated, we could keep just one of them.
+\end_layout
+
+\begin_layout Itemize
+But we can potentially do better by using all 
+\begin_inset Formula $3$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Simple Regression Problem with Correlated Features
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Input space: 
+\begin_inset Formula $\cx=\reals^{3}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Each example 
+\begin_inset Formula $\left(\left(x_{1},x_{2},x_{3}\right),y\right)$
+\end_inset
+
+ is generated as follows:
+\begin_inset Formula 
+\begin{eqnarray*}
+y & \sim & \cn(0,1)\\
+\eps_{1},\eps_{2},\eps_{3} & \sim & \cn(0,1)\mbox{ (iid)}\\
+x_{i} & = & y+\eps_{i}\text{ for }i=1,2,3
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We want a prediction function 
+\begin_inset Formula $\hat{y}=f(x_{1},x_{2},x_{3})$
+\end_inset
+
+ that is good for estimating 
+\begin_inset Formula $y$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We want a prediction function 
+\begin_inset Formula $\hat{y}=f(x_{1},x_{2},x_{3})$
+\end_inset
+
+ that is good for estimating 
+\begin_inset Formula $y$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\begin_inset Separator plain
+\end_inset
+
+
 \end_layout
 
 \begin_layout Frame
@@ -2052,7 +2445,7 @@ Model in words:
 \begin_inset Formula $y$
 \end_inset
 
- is a linear combination of 
+ is some unknown linear combination of 
 \begin_inset Formula $z_{1}$
 \end_inset
 
@@ -2060,7 +2453,7 @@ Model in words:
 \begin_inset Formula $z_{2}$
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Itemize
@@ -2134,7 +2527,7 @@ That is, we want an estimator
 \begin_inset Formula $\hat{y}=f(x_{1},x_{2},x_{3},x_{4},x_{5},x_{6})$
 \end_inset
 
- that is good for estimating 
+ for estimating 
 \begin_inset Formula $y$
 \end_inset
 
@@ -2168,12 +2561,8 @@ emph{Statistical Learning with Sparsity}.}}
 \end_layout
 
 \end_deeper
-\begin_layout Frame
-
-\end_layout
-
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2221,50 +2610,221 @@ z_{2}+\eps_{j}/5 & \mbox{ for }j=4,5,6
 
 \begin_layout Itemize
 Generated a sample of 
-\begin_inset Formula $(x,y)$
+\begin_inset Formula $(\left(x_{1},\ldots,x_{6}\right),y)$
 \end_inset
 
  pairs of size 
-\begin_inset Formula $100$
+\begin_inset Formula $n=100$
 \end_inset
 
 .
 \end_layout
 
+\begin_layout Pause
+
+\end_layout
+
 \begin_layout Itemize
-Correlations within the groups of 
+That is, we want an estimator 
+\begin_inset Formula $\hat{y}=f(x_{1},x_{2},x_{3},x_{4},x_{5},x_{6})$
+\end_inset
+
+ that is good for estimating 
+\begin_inset Formula $y$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+High feature correlation
+\series default
+: Correlations within the groups of 
 \begin_inset Formula $x$
 \end_inset
 
-'s were around 
+'s is around 
 \begin_inset Formula $0.97$
 \end_inset
 
 .
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
-Oracle would first select 
-\begin_inset Formula $x_{1},x_{2},x_{3}$
+Note: as presented, this is basically a Bayesian inference problem, since
+ we have a full probability distribution over everything.
+ Can think of 
+\begin_inset Formula $z's$
 \end_inset
 
-.
+ as the unknown parameters, and they have priors.
+ If we were to think of this in a frequentist setting, we could drop the
  
+\begin_inset Quotes eld
+\end_inset
+
+prior
+\begin_inset Quotes erd
+\end_inset
+
+ and ask whether for each setting of 
+\begin_inset Formula $z_{1},z_{2}$
+\end_inset
+
+ is our estimator unbiased (i.e.
+ does the expectation f 
 \end_layout
 
 \begin_layout Plain Layout
-Some calculations: Consider estimator 
-\begin_inset Formula $\hat{y}_{1}=x_{1}+x_{4}$
+—
+\end_layout
+
+\begin_layout Plain Layout
+What's the variance of our estimator if we just plug in 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{4}$
+\end_inset
+
+ for 
+\begin_inset Formula $z_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $z_{2}$
+\end_inset
+
+? How does that compare to plugging in the average?
+\end_layout
+
+\begin_layout Plain Layout
+So the regression problem is to predict 
+\begin_inset Formula $y$
+\end_inset
+
+ given 
+\begin_inset Formula $x_{1},x_{2},x_{3},x_{4},x_{5},x_{6}$
 \end_inset
 
 .
- Then
+ Under square loss, the Bayes optimal prediction function is the conditional
+ mean of 
+\begin_inset Formula $y$
+\end_inset
+
+ given 
+\begin_inset Formula $x_{1},\ldots,x_{6}$
+\end_inset
+
+.
+ That is, we should predict
 \begin_inset Formula 
 \begin{eqnarray*}
-\ex\left[\hat{y}_{1}\mid x_{1},x_{2},x_{3},x_{4},x_{5},x_{6}\right] & = & \ex x_{1}+\ex x_{4}\\
- & = & \ex\left(z_{1}+\eps_{1}/5\right)+\ex\left(z_{2}+\eps_{4}/5\right)\\
- & = & 0+0=0=\ex
+\ex\left[y\mid x_{1},x_{2},x_{3},x_{4},x_{5},x_{6}\right] & = & \ex\left[y\mid x_{1},x_{2},x_{3},x_{4},x_{5},x_{6}\right]\\
+ & = & \ex\left[3\left(x_{1}-\frac{\eps_{1}}{5}\right)-1.5\left(x_{4}-\frac{\eps_{4}}{5}\right)+2\eps_{0}\mid x_{1},x_{2},x_{3},x_{4},x_{5},x_{6}\right]\\
+ & = & 3x_{1}-1.5x_{4}-\frac{3}{5}\ex\left[\eps_{1}\mid x_{1},x_{2},x_{3}\right]+\frac{1.5}{5}\ex\left[\eps_{4}\mid x_{4},x_{5},x_{6}\right]
+\end{eqnarray*}
+
+\end_inset
+
+We can solve these expectations, since the variables involved are all jointly
+ Gaussian...
+ 
+\begin_inset Formula 
+\[
+\begin{pmatrix}z_{1}\\
+\eps_{1}\\
+\eps_{2}\\
+\eps_{3}
+\end{pmatrix}\sim\cn\left(0,I\right)
+\]
+
+\end_inset
+
+And 
+\begin_inset Formula 
+\[
+\begin{pmatrix}\eps_{1}\\
+x_{1}\\
+x_{2}\\
+x_{3}
+\end{pmatrix}=\begin{pmatrix}0 & 1 & 0 & 0\\
+1 & \frac{1}{5} & 0 & 0\\
+1 & 0 & \frac{1}{5} & 0\\
+1 & 0 & 0 & \frac{1}{5}
+\end{pmatrix}\begin{pmatrix}z_{1}\\
+\eps_{1}\\
+\eps_{2}\\
+\eps_{3}
+\end{pmatrix}
+\]
+
+\end_inset
+
+So
+\begin_inset Formula 
+\[
+\cov\begin{pmatrix}\eps_{1}\\
+x_{1}\\
+x_{2}\\
+x_{3}
+\end{pmatrix}=\begin{pmatrix}0 & 1 & 0 & 0\\
+1 & \frac{1}{5} & 0 & 0\\
+1 & 0 & \frac{1}{5} & 0\\
+1 & 0 & 0 & \frac{1}{5}
+\end{pmatrix}\begin{pmatrix}0 & 1 & 0 & 0\\
+1 & \frac{1}{5} & 0 & 0\\
+1 & 0 & \frac{1}{5} & 0\\
+1 & 0 & 0 & \frac{1}{5}
+\end{pmatrix}^{T}=\begin{pmatrix}1 & .2 & 0 & 0\\
+.2 & 1.04 & 1 & 1\\
+0 & 1 & 1.04 & 1\\
+0 & 1 & 1 & 1.04
+\end{pmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+The expectation is all zeros.
+ So the conditional expectation of 
+\begin_inset Formula $\eps_{1}$
+\end_inset
+
+ given 
+\begin_inset Formula $x_{1},x_{2},x_{3}$
+\end_inset
+
+ is 
+\begin_inset Formula $\cn\left(\mu,\Sigma\right)$
+\end_inset
+
+ with
+\begin_inset Formula 
+\begin{eqnarray*}
+\mu & = & \left(.2\,0\,0\right)\begin{pmatrix}1.04 & 1 & 1\\
+1 & 1.04 & 1\\
+1 & 1 & 1.04
+\end{pmatrix}^{-1}\begin{pmatrix}x_{1}\\
+x_{2}\\
+x_{3}
+\end{pmatrix}\approx\left(3.35\,-1.64\,-1.64\right)\begin{pmatrix}x_{1}\\
+x_{2}\\
+x_{3}
+\end{pmatrix}\\
+\Sigma & = & \text{don't care because we're just taking expectations}
 \end{eqnarray*}
 
 \end_inset
@@ -2273,45 +2833,36 @@ Some calculations: Consider estimator
 \end_layout
 
 \begin_layout Plain Layout
-Could use some more explantion in the problem setup – for example, the above
- definition is the procedure for generating each 
-\begin_inset Formula $\left(x,y\right)$
+We end up getting that 
+\begin_inset Formula 
+\begin{eqnarray*}
+\ex\left[y\mid x_{1},x_{2},x_{3},x_{4},x_{5},x_{6}\right] & = & 3(\frac{1}{3.04}\left(x_{1}+x_{2}+x_{3}\right))-1.5\left(\frac{1}{3.04}\left(x_{4}+x_{5}+x_{6}\right)\right)
+\end{eqnarray*}
+
 \end_inset
 
- pair - -could be slightly confusing – e.g.
- do we keep 
-\begin_inset Formula $z_{1},z_{2}$
-\end_inset
 
- the same for every 
-\begin_inset Formula $x,y$
-\end_inset
-
- draw? shoud lclarify
 \end_layout
 
 \begin_layout Plain Layout
-Also - should clarify what we're trying to come up with – a prediction function
- function 
-\begin_inset Formula $x_{i}$
-\end_inset
-
-'s to 
-\begin_inset Formula $y$
-\end_inset
-
-.
- 
+—–
 \end_layout
 
 \begin_layout Plain Layout
-I think I might need to give some definitions on bias in this regression
- setting...
- and maybe variance as well
-\end_layout
+Let's go simpler, what's 
+\begin_inset Formula $\ex\left[z_{1}\mid x_{1},x_{2},x_{3}\right]$
+\end_inset
 
-\begin_layout Plain Layout
-- might need a review on conditional expectations...
+? Turns out it's not the average of the 
+\begin_inset Formula $x$
+\end_inset
+
+'s, it.s teh average shrunk towards 0.
+ Shrunk more when the variance of 
+\begin_inset Formula $\eps$
+\end_inset
+
+'s increase 
 \end_layout
 
 \end_inset
@@ -2378,7 +2929,8 @@ Lasso regularization paths:
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../Figures/L1L2/L1regpaths-correlated-vars.pdf
+	filename ../Figures/L1L2/L1regpaths-correlated-vars.png
+	lyxscale 25
 	height 60theight%
 
 \end_inset
@@ -2418,8 +2970,8 @@ Hedge Bets When Variables Highly Correlated
 
 \begin_deeper
 \begin_layout Itemize
-When variables are highly correlated (and same scale, after normalization),
- 
+When variables are highly correlated (and same scale – assume we've standardized
+ features), 
 \end_layout
 
 \begin_deeper
@@ -2456,6 +3008,10 @@ How can we get the weight spread more evenly?
 \end_inset
 
 
+\end_layout
+
+\begin_layout Section
+Elastic Net
 \end_layout
 
 \begin_layout Frame
@@ -2521,8 +3077,9 @@ Highly Correlated Features, Elastic Net Constraint
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../Figures/L1L2/EnetCorr.pdf
-	height 40theight%
+	filename ../Figures/L1L2/EnetCorr.png
+	lyxscale 18
+	height 50theight%
 
 \end_inset
 
@@ -2540,6 +3097,68 @@ Elastic net solution is closer to
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Elastic Net Results on Model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/L1L2/L1regpaths-correlated-vars.png
+	lyxscale 20
+	height 60theight%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../Figures/L1L2/elasticNetregpaths-correlated-vars.png
+	lyxscale 20
+	height 60theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Lasso on left; Elastic net on right.
+\end_layout
+
+\begin_layout Itemize
+Ratio of 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ to 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ regularization roughly 
+\begin_inset Formula $2:1$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
 \end_inset
 
 
@@ -2640,66 +3259,6 @@ Then OLS solution in green or red regions implies elastic-net constrained
 status open
 
 \begin_layout Plain Layout
-Elastic Net Results on Model
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename ../Figures/L1L2/L1regpaths-correlated-vars.pdf
-	height 60theight%
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename ../Figures/L1L2/elasticNetregpaths-correlated-vars.pdf
-	height 60theight%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Lasso on left; Elastic net on right.
-\end_layout
-
-\begin_layout Itemize
-Ratio of 
-\begin_inset Formula $\ell_{2}$
-\end_inset
-
- to 
-\begin_inset Formula $\ell_{1}$
-\end_inset
-
- regularization roughly 
-\begin_inset Formula $2:1$
-\end_inset
-
-.
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
 Elastic Net – A Theorem for Correlated Variables
 \end_layout
 
@@ -2710,30 +3269,16 @@ Elastic Net – A Theorem for Correlated Variables
 
 \begin_deeper
 \begin_layout Theorem
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-Theorem 1 in 
-\begin_inset Quotes eld
-\end_inset
-
-Regularization and variable selection via the elastic net
-\begin_inset Quotes erd
-\end_inset
-
-: https://web.stanford.edu/~hastie/Papers/B67.2%20(2005)%20301-320%20Zou%20&%20Hast
-ie.pdf
-\end_layout
-
-\end_inset
-
 Let 
 \begin_inset Formula $\rho_{ij}=\widehat{\mbox{corr}}(x_{i},x_{j})$
 \end_inset
 
 .
- Suppose 
+ Suppose features 
+\begin_inset Formula $x_{1},\ldots,x_{d}$
+\end_inset
+
+ are standardized and 
 \begin_inset Formula $\hat{w}_{i}$
 \end_inset
 
@@ -2742,22 +3287,14 @@ Let
 \end_inset
 
  are selected by elastic net, with 
-\begin_inset Formula $y$
-\end_inset
-
- centered and predictors 
-\begin_inset Formula $x_{1},\ldots,x_{d}$
-\end_inset
-
- standardized.
- If 
 \begin_inset Formula $\hat{w}_{i}\hat{w}_{j}>0$
 \end_inset
 
-, then
+.
+ Then
 \begin_inset Formula 
 \[
-|\hat{w}_{i}-\hat{w}_{j}|\le\frac{\|y\|_{2}\sqrt{2}}{\lambda_{2}}\sqrt{1-\rho_{ij}}.
+|\hat{w}_{i}-\hat{w}_{j}|\le\frac{\|y\|_{2}\sqrt{2}}{\sqrt{n}\lambda_{2}}\sqrt{1-\rho_{ij}}.
 \]
 
 \end_inset
@@ -2765,9 +3302,38 @@ Let
 
 \end_layout
 
-\begin_layout Theorem
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Proof
+See Theorem 1 in Zou and Hastie's 2005 paper 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Regularization and variable selection via the elastic net"
+target "https://web.stanford.edu/~hastie/Papers/B67.2%20(2005)%20301-320%20Zou%20&%20Hastie.pdf"
+
+\end_inset
+
+.
+\begin_inset Quotes erd
+\end_inset
+
+ Or see these 
+\begin_inset CommandInset href
+LatexCommand href
+name "notes"
+target "https://davidrosenberg.github.io/mlcourse/Notes/elastic-net-theorem.pdf"
+
+\end_inset
+
+ that adapt their proof to our notation.
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Could replace the L2 norm of 
@@ -2791,10 +3357,6 @@ Could replace the L2 norm of
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -2844,13 +3406,6 @@ Suppose
 \end_layout
 
 \end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 \start_of_appendix
 Extra Pictures

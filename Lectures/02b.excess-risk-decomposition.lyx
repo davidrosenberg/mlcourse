@@ -2230,7 +2230,7 @@ Yes!
 But
 \begin_inset Formula 
 \[
-\hat{R}(\tilde{f}_{n})-\hat{R}(\hat{f}(n))\ge0.
+\hat{R}(\tilde{f}_{n})-\hat{R}(\hat{f}_{n})\ge0.
 \]
 
 \end_inset

@@ -743,7 +743,7 @@ David S.
 \end_layout
 
 \begin_layout Date
-February 5, 2018
+February 6, 2018
 \end_layout
 
 \begin_layout Institute
@@ -1587,6 +1587,33 @@ What function will we select if we do ERM with
 \end_inset
 
  constraint?
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Compare on board 1 solution that puts all weight on w1 and another all weight
+ on w2.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Compare a solution that just uses 
+\begin_inset Formula $w_{1}$
+\end_inset
+
+ to a solution that just uses 
+\begin_inset Formula $w_{2}$
+\end_inset
+
+...
 \end_layout
 
 \begin_layout Standard
@@ -1912,7 +1939,23 @@ With
 \begin_inset Formula $x_{2}$
 \end_inset
 
- linearly related, we get a degenerate ellipse.
+ linearly related, 
+\begin_inset Formula $X^{T}X$
+\end_inset
+
+ has a 0 eigenvalue.
+\end_layout
+
+\begin_layout Itemize
+So the level set 
+\begin_inset Formula $\left\{ w\mid\left(w-\hat{w}\right)^{T}X^{T}X\left(w-\hat{w}\right)=nc\right\} $
+\end_inset
+
+ is no longer an ellipsoid.
+\end_layout
+
+\begin_layout Itemize
+We could call it a degenerate ellipsoid – 
 \end_layout
 
 \begin_deeper

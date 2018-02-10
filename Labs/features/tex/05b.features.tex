@@ -10,6 +10,9 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage{bbm}
+\usepackage{bbm}
+
 \ifx\hypersetup\undefined
   \AtBeginDocument{%
     \hypersetup{unicode=true,pdfusetitle,
@@ -212,7 +215,7 @@
 
 \title[]{Features}
 
-\author{David S. Rosenberg }
+\author{David S. Rosenberg and Ben Jakubowski}
 
 \date{October 18, 2017}
 
@@ -222,16 +225,11 @@
 \begin{frame}{Learning Objectives}
 \begin{itemize}
 \item Understand where a \textit{feature map} sits in a machine learning pipeline.
+\item Understand that featurization/featuring mapping is inherently required to allow predictors to ingest many types of data.
 \item Understand how feature extraction can be used to extend the power of linear methods.
 \item Build pipelines with expanded feature spaces using the sklearn ecosystem.
 \end{itemize}
 \end{frame}
-
-\begin{frame}
-\begin{center}\includegraphics[width=0.4\textwidth]{../figures/deep_learning_feats.png}\end{center}
-\let\thefootnote\relax\footnotetext{\tiny{From Goodfellow, Bengio, and Courville's \textit{Deep Learning}. }}
-\end{frame}
-
 
 \section{Feature Extraction}
 \begin{frame}{The Input Space $\cx$}
@@ -250,50 +248,24 @@
 \end{itemize}
 \end{frame}
 
+\begin{frame}{Feature Extraction}
+\begin{definition}
+Mapping an input from $\cx$ to a vector in $\reals^{d}$ is called
+\textbf{feature extraction} or \textbf{featurization}. 
+\end{definition}
 
-\begin{frame}{Motivation}
-\begin{itemize}
-\item Two motivations for thinking about feature extraction:
-\begin{itemize}
-	\item Motive 1 -- Improving performance.
-	\end{itemize}
-\end{itemize}
 \begin{center}
-\includegraphics[width=0.9\textwidth]{../Figures/boston_DESCR.png}
+\includegraphics[width=0.9\textwidth]{../Figures/features/feature-extraction}
 \par\end{center}
-\end{frame}
 
+\end{frame}
 
 \begin{frame}{Motivation}
-\begin{itemize}
-\item Two motivations for thinking about feature extraction:
-\begin{itemize}
-	\item Motive 1 -- Improving performance.
-\end{itemize}
-\end{itemize}
-\begin{center}
-\includegraphics[width=0.9\textwidth]{../Figures/boston_toy_ex.png}
-\par\end{center}
-\end{frame}
-
-
-\begin{frame}{Motivation}
-\begin{itemize}
-\item Key idea: instead of using more flexible models, use better features.
-\end{itemize}
-\begin{tabular}{l r}
-\includegraphics[width=0.4\textwidth]{../Figures/untransformed_lstat.png} &
-\includegraphics[width=0.4\textwidth]{../Figures/transformed_lstat.png}
-\end{tabular}
-\end{frame}
-
-
-\begin{frame}{The Input Space $\cx$}
 
 \begin{itemize}
 \item Two motivations for thinking about feature extraction:
 	\begin{itemize}
-		\item Motive 2 -- consuming inputs that are not natively in $\reals^{d}$ -- examples?
+		\item Motivation 1 -- consuming inputs that are not natively in $\reals^{d}$ -- examples?
 		\begin{itemize}
 		\pause{}
 			\item Text documents
@@ -313,18 +285,14 @@
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Feature Extraction}
-\begin{definition}
-Mapping an input from $\cx$ to a vector in $\reals^{d}$ is called
-\textbf{feature extraction} or \textbf{featurization}. 
-\end{definition}
 
+
+\begin{frame}
 \begin{center}
-\includegraphics[width=0.9\textwidth]{../Figures/features/feature-extraction}
+\includegraphics[width=0.9\textwidth]{../Figures/alice_zheng.png}
 \par\end{center}
-
+\let\thefootnote\relax\footnotetext{\tiny{\url{https://www.slideshare.net/AliceZheng3/understanding-feature-space-in-machine-learning}}}
 \end{frame}
-
 
 \section{Feature Templates}
 \begin{frame}{Example: Detecting Email Addresses }
@@ -396,38 +364,6 @@ computed in a similar way.
 \let\thefootnote\relax\footnotetext{\tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn 2014. }}
 \end{frame}
 
-\begin{frame}{Feature Template: One-Hot Encoding}
-\begin{definition}
-A \textbf{one-hot encoding }is a set of features (e.g. a feature template)
-that always has \textbf{exactly one} non-zero value. 
-
-\pause{}
-\end{definition}
-
-\begin{center}
-\includegraphics[height=0.5\textheight]{../Figures/features/lastCharacter\lyxdot oneHot} 
-\par\end{center}
-\let\thefootnote\relax\footnotetext{\tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn 2014. }}
-\end{frame}
-
-\begin{frame}{Feature Template: Count-based}
-\begin{itemize}
-	\item Imagine you are trying to validate a credit card transaction.
-	\item One feature in raw data consumed by pipeline: zip code of transaction.
-	\item There are approximately 43,000 zip codes in the USA.
-	\item What might be a problem with one-hot encoding this feature?
-	\pause
-	\item Even worse -- think about internet scale problems.
-\end{itemize}
-\end{frame}
-
-
-\begin{frame}
-\begin{center}
-\includegraphics[height=0.9\textheight]{../Figures/learn_with_counts.png} 
-\par\end{center}
-\let\thefootnote\relax\footnotetext{\tiny{From Misha Bilenko/Microsoft Azure ML's ``Many Shades of Scale: Big Learning Beyond Big Data"}}
-\end{frame}
 
 \begin{frame}{Feature Vector Representations}
 \begin{center}
@@ -477,6 +413,108 @@ we'd get \texttt{\textcolor{black}{\{\textquotedbl{}endsWith\_ing\textquotedbl{}
 \let\thefootnote\relax\footnotetext{\tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn 2014. }}
 \end{frame}
 
+
+\section{Feature Map -- ingesting inputs not natively in $\reals^d$}
+\begin{frame}{Example: Classifying documents from 20 newsgroups}
+\begin{itemize}
+\item Context: The newsgroups dataset comprises around 18000 newsgroups posts on 20 topics.
+\pause{}
+\item We'll restrict ourselves to classifying posts within 4 topics:
+\begin{itemize}
+	\item 'alt.atheism'
+	\item 'soc.religion.christian'
+	\item 'comp.graphics'
+	\item 'sci.med'.
+\end{itemize}
+\item Thanks to the sklearn team for this worked example (at \url{http://scikit-learn.org/stable/tutorial/text_analytics/working_with_text_data.html}).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example: Classifying documents from 20 newsgroups}
+\textbf{Example Document}:
+\begin{center}
+\includegraphics[height=0.8\textheight]{../Figures/first_doc.png}
+\par\end{center}
+\end{frame}
+
+
+\begin{frame}{Example: Classifying documents from 20 newsgroups}
+\includegraphics[height=0.4\textheight,trim={0 5cm 0 0},clip]{../Figures/first_doc.png}
+\begin{itemize}
+	\item What feature maps could we apply over these sorts of documents?
+	\pause{}
+	\item A simple approach -- bag-of-words (BOW). 
+	\begin{itemize}
+		\item Assign a fixed integer id to each word occurring in any document of the training set.
+		\item For each document $i$, count the number of occurrences of each word $w$ and store it (sparsely) as $doc_i[w] = j_w$ == count of word $w$ in document $i$.
+		\item The BOW representation implies that $n_{features}$ is the number of distinct words in the corpus.
+		\item What is the feature map $\phi(X)$?
+		\pause{}
+		\item $\phi(X) = [j_{word_{1}},\cdots,j_{word_{n_{words}}}]$
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Example: Classifying documents from 20 newsgroups}
+\begin{itemize}
+	\item Here's the classifier we'll fit (note we're adding the \texttt{TfidfTransformer} to scale by inverse document frequency, since it improves performance on this task -- if you're not familiar with TF-IDF see the docs).
+\end{itemize}
+\begin{center}
+\includegraphics[width=0.9\textwidth]{../Figures/bow_clf.png}
+\begin{itemize}
+	\item Which named steps in this Pipeline comprise our feature map $\phi$?
+\end{itemize}
+\par\end{center}
+
+\end{frame}
+
+\begin{frame}{Example: Classifying documents from 20 newsgroups}
+\begin{center}
+\includegraphics[width=0.7\textwidth]{../Figures/bow_clf_performance.png}
+\begin{itemize}
+	\item Key takeaway: need feature map  $\phi$ when dealing with inputs not natively in $\reals^d$.
+\end{itemize}
+\par\end{center}
+
+\end{frame}
+
+
+\begin{frame}{Motivation}
+\begin{itemize}
+\item Two motivations for thinking about feature extraction:
+\begin{itemize}
+	\item Motive 2 -- Improving performance. Toy Example:
+	\end{itemize}
+\end{itemize}
+\begin{center}
+\includegraphics[width=0.9\textwidth]{../Figures/boston_DESCR.png}
+\par\end{center}
+\end{frame}
+
+
+\begin{frame}{Motivation}
+\begin{itemize}
+\item Two motivations for thinking about feature extraction:
+\begin{itemize}
+	\item Motive 2 -- Improving performance. Toy Example:
+\end{itemize}
+\end{itemize}
+\begin{center}
+\includegraphics[width=0.9\textwidth]{../Figures/boston_toy_ex.png}
+\par\end{center}
+\end{frame}
+
+
+\begin{frame}{Motivation}
+\begin{itemize}
+\item Key idea: instead of using more flexible (i.e. non-linear) models, build better features.
+\end{itemize}
+\begin{tabular}{l r}
+\includegraphics[width=0.4\textwidth]{../Figures/untransformed_lstat.png} &
+\includegraphics[width=0.4\textwidth]{../Figures/transformed_lstat.png}
+\end{tabular}
+\end{frame}
 
 \section{Handling Nonlinearity with Linear Methods}
 \begin{frame}{Example Task: Predicting Health}
@@ -819,12 +857,206 @@ We can grow the linear hypothesis space $\cf$ by adding more features.
 \let\thefootnote\relax\footnotetext{\tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn 2014. }}
 \end{frame}
 
-\section{Example 1: Boston housing}
+\section{Example 1: Boston housing and Abalone}
 
 \begin{frame}{Boston Housing}
 \begin{itemize}
 	\item Let's revisit the Boston housing dataset from the start of lab.
-	\item Test set performance
+	\item We're going to be predicting the median house values in Boston suburbs.
+	\item We'll build our feature map using \texttt{sklearn} and \texttt{sklearn\_pandas}
 \end{itemize}
+\begin{center}
+\includegraphics[width=0.75\columnwidth]{../Figures/boston_dependencies} 
+\par\end{center}
+\end{frame}
+
+
+\begin{frame}{Boston Housing}
+\begin{itemize}
+	\item Set up data:
+\end{itemize}
+\begin{center}
+\includegraphics[width=0.75\columnwidth]{../Figures/boston_setup.png} 
+\par\end{center}
+\end{frame}
+
+\begin{frame}{Boston Housing}
+\begin{itemize}
+	\item Feature map 1-- looking at the code, what is the feature map $\phi_1$?
+\end{itemize}
+\begin{center}
+\includegraphics[width=0.55\columnwidth]{../Figures/boston_map1.png} 
+\par\end{center}
+\pause{}
+\begin{itemize}
+	\item $\phi_1(X)$ dummy encodes categoricals and passes numeric features untouched.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Boston Housing}
+\begin{itemize}
+	\item Feature map 2-- looking at the code, what is the feature map $\phi_2$?
+\end{itemize}
+\begin{center}
+\includegraphics[width=0.55\columnwidth]{../Figures/boston_map2.png} 
+\par\end{center}
+\pause{}
+\begin{itemize}
+	\item $\phi_2(X)$ dummy encodes categoricals and maps numeric features to polynomial features of degree $d \leq 2$.
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Abalone}
+\begin{itemize}
+	\item Here we are using the abalone dataset -- predicting the number of rings on an abalone (a kind of shellfish).
+	\item Set up data:
+\end{itemize}
+\begin{center}
+\includegraphics[width=0.7\columnwidth]{../Figures/abalone_setup.png} 
+\par\end{center}
+\end{frame}
+
+\begin{frame}{Abalone}
+\begin{itemize}
+	\item $\phi_1(X)$ dummy encodes categoricals and passes numeric features untouched.
+\end{itemize}
+\begin{center}
+\includegraphics[width=0.55\columnwidth]{../Figures/abalone_map1.png} 
+\par\end{center}
+\end{frame}
+
+\begin{frame}{Abalone}
+\begin{itemize}
+	\item $\phi_2(X)$ dummy encodes categoricals and maps numeric features to polynomial features of degree $d \leq 2$.
+\end{itemize}
+\begin{center}
+\includegraphics[width=0.55\columnwidth]{../Figures/abalone_map2.png} 
+\par\end{center}
+\end{frame}
+
+
+\begin{frame}{Comparing performance}
+\begin{itemize}
+	\item Why did the performance improve much more for the Boston Housing dataset versus the Abalone dataset when we used map 2?
+\end{itemize}
+\pause{}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{.5\textwidth}
+        \begin{itemize}
+        		\item What is the Bayes prediction function for square loss?
+		\pause{}
+		\item If $E[Y|X]$ is linear in $\phi_1(X)$, will we improve performance using $\phi_2(X)$?
+		\pause{}
+		\item Do we typically know in advance the structure of $E[Y|X]$?
+        \end{itemize}
+    \end{minipage}%
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \includegraphics[width=0.7\linewidth]{../Figures/abalone_linear.png}
+    \end{minipage}
+\end{figure}
+\end{frame}
+
+\section{Example 2: Two moons data}
+
+\begin{frame}{Two moons setup}
+\begin{center}
+\includegraphics[width=0.5\columnwidth]{../Figures/moons_setup.png} 
+\par\end{center}
+\begin{itemize}
+	\item What feature maps might be helpful for this problem?
+	\pause{}
+	\item We'll try binning data instances using k-means (and for fun random tree embeddings) -- let's look at the transformers (\textit{in notebook}).
+\end{itemize}
+\let\thefootnote\relax\footnotetext{\tiny{From Alice Zheng, Amanda Casari, \textit{Feature Engineering for Machine Learning}}}
+
+\end{frame}
+
+
+\begin{frame}{Two moons setup}
+\begin{itemize}
+	\item Here's the pipeline. First, notice the sklearn class \texttt{FeatureUnion}, which let's us easily apply multiple feature maps over an input array.
+	\item What is the feature map $\phi(X)$? What will \texttt{transformed.shape[1]} equal?
+\end{itemize}
+\begin{center}
+\includegraphics[width=0.6\columnwidth]{../Figures/two_moons_map1.png} 
+\par\end{center}
+\pause{}
+\begin{itemize}
+	\item $\phi(X) = \left[X_1, X_2, \mathbbm{1}[(X_1,X_2)\textrm{ binned to centroid 1}], \cdots, \mathbbm{1}[(X_1,X_2)\textrm{ binned to centroid 100}]\right]$
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Two moons setup}
+\begin{itemize}
+	\item Here's the pipeline. First, notice the sklearn class \texttt{FeatureUnion}, which let's us easily apply multiple feature maps over an input array.
+	\item What is the feature map $\phi(X)$? What will \texttt{transformed.shape[1]} equal?
+\end{itemize}
+\begin{center}
+\includegraphics[width=0.6\columnwidth]{../Figures/two_moons_map2.png} 
+\par\end{center}
+\end{frame}
+
+\begin{frame}{Two moons feature map}
+\begin{itemize}
+	\item Let's fit this pipe, and compare to a baseline logistic regression over just $\phi_I(X) = X$.
+\end{itemize}
+\begin{center}
+\includegraphics[width=0.5\columnwidth]{../Figures/two_moons_roc.png} \par\end{center}
+\begin{itemize}
+	\item We see performance improve.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Two moons feature map}
+\begin{itemize}
+	\item Here's the voronoi diagram after fitting the \texttt{KMeansFeaturizer} (fit in \texttt{pipe.fit} call).
+\end{itemize}
+\begin{center}
+\includegraphics[width=0.5\columnwidth]{../Figures/two_moons_voronoi.png} \par\end{center}
+
+\begin{itemize}
+	\item Intuitively, why did this improve performance?
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Two moons feature map}
+\begin{itemize}
+	\item Here's a comparison of decision boundaries (note made using \texttt{mlexend}).
+\end{itemize}
+\begin{center}
+\includegraphics[width=0.7\columnwidth]{../Figures/decision_boundaries.png} \par\end{center}
+\begin{itemize}
+	\item What's with the plotted decision boundaries? I thought logistic regression was linear?
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Two moons feature map}
+\begin{itemize}
+	\item What's with the plotted decision boundaries? I thought logistic regression was linear?
+\end{itemize}
+\begin{center}
+\includegraphics[width=0.7\columnwidth]{../Figures/decision_boundaries.png} \par\end{center}
+	\pause{}
+\begin{itemize}
+	\item Both decision boundaries are affine, but with k-means embedding it's affine in $\reals^{102}$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Learning Objectives}
+\begin{itemize}
+\item Understand where a \textit{feature map} sits in a machine learning pipeline.
+\item Understand that featurization/featuring mapping is inherently required to allow predictors to ingest many types of data.
+\item Understand how feature extraction can be used to extend the power of linear methods.
+\item Build pipelines with expanded feature spaces using the sklearn ecosystem.
+\end{itemize}
+\end{frame}
 
 \end{document}
+
+

@@ -934,6 +934,53 @@ what is
 .
 \end_layout
 
+\begin_layout Plain Layout
+15) I need some rhyme or reason to when I use raw elements of input space
+ 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{j}$
+\end_inset
+
+ and when I use 
+\begin_inset Formula $\phi(x_{i})$
+\end_inset
+
+ and 
+\begin_inset Formula $\phi(x_{j})$
+\end_inset
+
+.
+ I think I can take a few slides to explain that generically 
+\begin_inset Formula $\cx$
+\end_inset
+
+ is arbitrary, but all our methods use 
+\begin_inset Formula $\reals^{d}$
+\end_inset
+
+.
+ So for simplicity we'll usually just say 
+\begin_inset Formula $\cx=\reals^{d}$
+\end_inset
+
+ .
+ But sometimes, e.g.
+ in kernel context, it makes sense to talk abou kernels acting directly
+ on 
+\begin_inset Formula $\cx$
+\end_inset
+
+.
+ So really only in kernel context is it worth taling about 
+\begin_inset Formula $\phi$
+\end_inset
+
+.
+\end_layout
+
 \end_inset
 
 
@@ -1943,6 +1990,16 @@ Computational (e.g.
 
  larger than sample size 
 \begin_inset Formula $n$
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+(WAIT– not sure we're prepared yet for this n vs d claim)
+\end_layout
+
 \end_inset
 
 ).

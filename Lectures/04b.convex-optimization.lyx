@@ -895,7 +895,7 @@ These days, nobody's scared of non-convex problems - SGD seems to work well
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -906,7 +906,7 @@ These days, nobody's scared of non-convex problems - SGD seems to work well
 status open
 
 \begin_layout Plain Layout
-Your Reference for Convex Optimization
+Main Reference for Convex Optimization
 \end_layout
 
 \end_inset
@@ -938,9 +938,8 @@ target "https://davidrosenberg.github.io/mlcourse/Notes/convex-optimization.pdf"
 
 \end_deeper
 \begin_layout Standard
-\align center
 \begin_inset Graphics
-	filename ../../../../AeroFS/repos/ml101/mlcourse/Figures/convex-optimization/bv_cvxbook_cover.jpg
+	filename ../Figures/convex-optimization/bv_cvxbook_cover.jpg
 	lyxscale 40
 	height 60theight%
 
@@ -951,7 +950,7 @@ target "https://davidrosenberg.github.io/mlcourse/Notes/convex-optimization.pdf"
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1010,7 +1009,7 @@ namely
 \end_deeper
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1149,7 +1148,7 @@ tiny{KPM Fig.
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1245,7 +1244,7 @@ tiny{KPM Fig.
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1256,7 +1255,7 @@ tiny{KPM Fig.
 status open
 
 \begin_layout Plain Layout
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1344,7 +1343,7 @@ f(x) & x\in\dom f\\
 
 \end_deeper
 \begin_layout Plain Layout
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1483,7 +1482,7 @@ Max:
 \end_deeper
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1561,7 +1560,7 @@ Log-Sum-Exp:
 \end_deeper
 \end_deeper
 \begin_layout Plain Layout
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1650,7 +1649,7 @@ f(\theta x+\left(1-\theta\right)y) & = & \max\left\{ f_{1}(\theta x+\left(1-\the
 
 \end_deeper
 \begin_layout Plain Layout
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1757,7 +1756,7 @@ If
 \end_deeper
 \end_deeper
 \begin_layout Plain Layout
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1838,7 +1837,7 @@ unique global
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1924,7 +1923,7 @@ Assume
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2048,7 +2047,7 @@ optimal point
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2126,7 +2125,7 @@ For simplicity, we'll drop equality contraints from this presentation.
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2203,7 +2202,7 @@ dual variables
 \end_deeper
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2318,7 +2317,7 @@ Therefore, equivalent expression is
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2404,7 +2403,7 @@ weak duality
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2525,7 +2524,7 @@ Since
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2829,7 +2828,7 @@ since pointwise min of affine functions
 \end_deeper
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2912,7 +2911,7 @@ p^{*}\ge g(\lambda)\text{ for all }\lambda\ge0
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -3035,7 +3034,7 @@ Dual can reveal hidden structure in the solution.
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -3127,7 +3126,7 @@ A fundamental property of convex optimization problems is that any locally
 
 \end_deeper
 \begin_layout Plain Layout
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -3197,7 +3196,7 @@ If we had equality constraints here, they would be affine constraints, because
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -3274,7 +3273,7 @@ constraint qualifications
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -3436,7 +3435,7 @@ If
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -3551,7 +3550,7 @@ or
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 

@@ -9,35 +9,41 @@
 \usetheme{CambridgeUS} 
 \beamertemplatenavigationsymbolsempty
 
+
+% Set Color ==============================
+\definecolor{NYUPurple}{RGB}{87,6,140}
+\definecolor{LightPurple}{RGB}{165,11,255}
+
+
+\setbeamercolor{title}{fg=NYUPurple}
+%\setbeamercolor{frametitle}{fg=NYUPurple}
+\setbeamercolor{frametitle}{fg=NYUPurple}
+
+\setbeamercolor{background canvas}{fg=NYUPurple, bg=white}
+\setbeamercolor{background}{fg=black, bg=NYUPurple}
+
+\setbeamercolor{palette primary}{fg=black, bg=gray!30!white}
+\setbeamercolor{palette secondary}{fg=black, bg=gray!20!white}
+\setbeamercolor{palette tertiary}{fg=gray!20!white, bg=NYUPurple}
+
+\setbeamertemplate{headline}{}
+
+\setbeamercolor{parttitle}{fg=NYUPurple}
+\setbeamercolor{sectiontitle}{fg=NYUPurple}
+\setbeamercolor{sectionname}{fg=NYUPurple}
+\setbeamercolor{section page}{fg=NYUPurple}
+
 \AtBeginSection[]{
   \begin{frame}
   \vfill
   \centering
-  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
-    \usebeamerfont{title}\insertsectionhead\par%
+\setbeamercolor{section title}{fg=NYUPurple}
+ \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\usebeamercolor[fg]{title}\insertsectionhead\par%
   \end{beamercolorbox}
   \vfill
   \end{frame}
 }
-
-
-% Set Color ==============================
-\definecolor{BBGblue}{RGB}{13,157,219}
-\definecolor{BBGgreen}{RGB}{77,170,80}
-
-
-\setbeamercolor{title}{fg=BBGblue}
-%\setbeamercolor{frametitle}{fg=BBGblue}
-\setbeamercolor{frametitle}{fg=BBGblue}
-
-\setbeamercolor{background canvas}{fg=BBGblue, bg=white}
-\setbeamercolor{background}{fg=black, bg=BBGblue}
-
-\setbeamercolor{palette primary}{fg=black, bg=gray!30!white}
-\setbeamercolor{palette secondary}{fg=black, bg=gray!20!white}
-\setbeamercolor{palette tertiary}{fg=black, bg=BBGblue}
-
-\setbeamertemplate{headline}{}
 \end_preamble
 \options aspectratio=169,handout
 \use_default_options false
@@ -63,7 +69,17 @@
 \index_command default
 \paperfontsize default
 \spacing single
-\use_hyperref false
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "allcolors=NYUPurple,urlcolor=LightPurple"
 \papersize default
 \use_geometry true
 \use_package amsmath 2
@@ -703,8 +719,9 @@ Support Vector Machines
 status open
 
 \begin_layout Plain Layout
+DS-GA 1003 / CSCI-GA 2567
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 optional, use only with long paper titles
@@ -726,11 +743,11 @@ David S.
 \end_layout
 
 \begin_layout Date
-October 11, 2017
+February 13, 2018
 \end_layout
 
 \begin_layout Institute
-Bloomberg ML EDU
+New York University
 \end_layout
 
 \begin_layout Standard
@@ -751,14 +768,58 @@ Just in article version
 status open
 
 \begin_layout Plain Layout
-note here
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Plots courtesy of Ningshan Zhang.}}
 \end_layout
 
 \end_inset
 
- 
+
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Contents
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \begin_layout Section
 The SVM as a Quadratic Program
 \end_layout
@@ -1626,8 +1687,7 @@ Thus optimal point iff
 \end_inset
 
 
-\begin_inset Note Note
-status open
+\end_layout
 
 \begin_layout Pause
 
@@ -1650,11 +1710,6 @@ Note:
 ).
  This inf is NOT an optimum because it is never attained.
  
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \end_deeper
@@ -1711,11 +1766,11 @@ Lagrange dual function is the inf over primal variables of
 \end_inset
 
 
-\begin_inset Note Note
-status collapsed
+\end_layout
 
-\begin_layout Plain Layout
-\begin_inset Separator parbreak
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1787,7 +1842,7 @@ g(\alpha,\lambda)=\begin{cases}
 \end_layout
 
 \end_deeper
-\begin_layout Plain Layout
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
@@ -1815,8 +1870,8 @@ otherwise
 \end_layout
 
 \end_deeper
-\begin_layout Plain Layout
-\begin_inset Separator parbreak
+\begin_layout Standard
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1884,12 +1939,6 @@ is
 
 \end_inset
 
- 
-\end_layout
-
-\end_deeper
-\end_inset
-
 
 \end_layout
 
@@ -1906,7 +1955,7 @@ is
 status open
 
 \begin_layout Plain Layout
-The SVM Dual Problem
+SVM Dual Problem: Eliminating a Variable
 \end_layout
 
 \end_inset
@@ -1916,7 +1965,11 @@ The SVM Dual Problem
 
 \begin_deeper
 \begin_layout Itemize
-Using 1st order conditions, and some massaging, the SVM dual problem is:
+Can eliminate the 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ variables:
 \begin_inset Formula 
 \begin{eqnarray*}
 \sup_{\alpha} &  & \sum_{i=1}^{n}\alpha_{i}-\frac{1}{2}\sum_{i,j=1}^{n}\alpha_{i}\alpha_{j}y_{i}y_{j}x_{j}^{T}x_{i}\\
@@ -1987,11 +2040,36 @@ Note
 \end_inset
 
  controls max weight on each example.
- (
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+(
 \series bold
 Robustness
 \series default
 !)
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Efficient minimization algorithm: SMO (sequential minimal optimization)
+ 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper

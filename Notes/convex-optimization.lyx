@@ -2827,7 +2827,7 @@ Recall the domain of a function
 
  is open
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 For example, 
@@ -2839,7 +2839,7 @@ For example,
 
 \end_inset
 
-, and exists an 
+, and there exists an 
 \begin_inset Formula $x\in\cd$
 \end_inset
 
@@ -2859,7 +2859,21 @@ For example,
 \series bold
 strictly feasible
 \series default
-), then strong duality holds and the dual optimum is attained.
+), then strong duality holds.
+ Moreover, if 
+\begin_inset Formula $d^{*}>-\infty$
+\end_inset
+
+, then the dual optimum is attained – that is, there exists a dual feasible
+ 
+\begin_inset Formula $\left(\lambda^{*},\nu^{*}\right)$
+\end_inset
+
+ with 
+\begin_inset Formula $g(\lambda^{*},\nu^{*})=d^{*}=p^{*}$
+\end_inset
+
+.
  If 
 \begin_inset Formula $f_{1},\ldots,f_{k}$
 \end_inset
@@ -2877,59 +2891,31 @@ strictly feasible
 \begin_inset Formula $i=1,\ldots,k$
 \end_inset
 
-, while the other conditions remain the same.all equality and inequality
- constraints are linear, and the problem is feasible (i.e.
- there is some point in the domain that satisifies all the constraints),
- then we have strong duality and the dual optimum is attained.
-\end_layout
-
-\begin_layout Corollary
-For a convex optimization problem in standard form, if the domain
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-Recall the domain 
-\begin_inset Formula $\cd$
-\end_inset
-
- is the set where the function is defined, NOT the feasible set.
-\end_layout
-
-\end_inset
-
- of 
-\begin_inset Formula $f_{0}$
-\end_inset
-
- is open
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-For example, 
-\begin_inset Formula $\reals^{d}$
-\end_inset
-
- is an open set, and is the domain we encounter most often.
-\end_layout
-
-\end_inset
-
-, all equality and inequality constraints are linear, and the problem is
- feasible (i.e.
- there is some point in the domain that satisifies all the constraints),
- then we have strong duality and the dual optimum is attained (!!! when
+, while the other conditions remain the same.
  
-\begin_inset Formula $d^{*}>-\infty$
-\end_inset
-
-!!! – MUST FIX).
 \end_layout
 
 \begin_layout Standard
-This is all we will need for SVM's, for example.
- For a more general statement, let's define the 
+Simplifed version appropriate for SVM:
+\end_layout
+
+\begin_layout Corollary
+For a convex optimization problem in standard form, if the domain of 
+\begin_inset Formula $f_{0}$
+\end_inset
+
+ is open, all equality and inequality constraints are linear, and the problem
+ is feasible (i.e.
+ there is some point in the domain that satisifies all the constraints),
+ then we have strong duality and, if 
+\begin_inset Formula $d^{*}>-\infty$
+\end_inset
+
+, then the dual optimum is attained.
+\end_layout
+
+\begin_layout Standard
+For a more general statement, let's define the 
 \series bold
 affine dimension
 \series default
@@ -3014,7 +3000,11 @@ For a convex optimization problem, if there exists an
 \end_inset
 
  (such a point is sometimes called strictly feasible), then strong duality
- holds and the dual optimum is attained.
+ holds and, if 
+\begin_inset Formula $d^{*}>-\infty$
+\end_inset
+
+, then the dual optimum is attained.
  If 
 \begin_inset Formula $f_{1},\ldots,f_{k}$
 \end_inset

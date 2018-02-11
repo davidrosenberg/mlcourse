@@ -1164,7 +1164,7 @@ Hypothesis space
 
 \begin_layout Itemize
 Loss 
-\begin_inset Formula $\ell(m)=\max\left(1,m\right)$
+\begin_inset Formula $\ell(m)=\max\left(0,1-m\right)$
 \end_inset
 
 
@@ -3260,10 +3260,6 @@ subdifferential:
 \end_inset
 
  
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3299,10 +3295,6 @@ Basic Facts
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3325,10 +3317,6 @@ Any point
 \end_inset
 
 , or infinitely many subgradients.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3408,10 +3396,6 @@ f(z)\ge f(x)+g^{T}(z-x).
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3456,10 +3440,6 @@ status open
 Subdifferential of Absolute Value
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 

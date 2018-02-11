@@ -480,6 +480,25 @@ we'd get \texttt{\textcolor{black}{\{\textquotedbl{}endsWith\_ing\textquotedbl{}
 \end{frame}
 
 
+
+\begin{frame}{Motivation}
+\begin{itemize}
+\item Two motivations for thinking about feature extraction:
+\begin{itemize}
+	\item Motive 2 -- Improving performance. Think about HW2.
+	\end{itemize}
+\end{itemize}
+\begin{center}
+\includegraphics[width=0.5\textwidth]{../Figures/training-data-and-target-fn.png}
+\par\end{center}
+\begin{itemize}
+	\item What was our feature map $\phi(X)$? $\phi(X) \in \reals^k$ for what $k$?
+	\pause{}
+	\item $\phi(X) = \left[\mathbbm{1}(X \leq \frac{1}{400}), \cdots,\mathbbm{1}(X \leq \frac{399}{400}) \right]$
+\end{itemize}
+\end{frame}
+
+
 \begin{frame}{Motivation}
 \begin{itemize}
 \item Two motivations for thinking about feature extraction:

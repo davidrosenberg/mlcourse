@@ -1,5 +1,16 @@
-\section{Week 4 Lecture: Concept Check Exercises}
+\section{Lecture 4: Concept Checks}
 \subsection{Convexity}
+
+\subsubsection{Learning Objectives}
+
+\begin{itemize}
+\item Define a convex set, a convex function, and a strictly convex function. (Don't forget that the domain of a convex function must be a convex set!)
+\item For an optimization problem, define the terms feasible set, feasible point, active constraint, optimal value, and optimal point.
+\item Give the form for a general inequality-constrained optimization problem (there are many ways to do this, but our convention is to have inequality constraints of the form $f_i(x)\leq0$).
+\item Define the Lagrangian for this optimization problem, and explain how the Lagrangian encodes all the information in the original optimization problem.
+\item Write the primal and dual optimization problem in terms of the Lagrangian.
+\end{itemize}
+\subsubsection{Convexity Concept Check Problems}
 \begin{enumerate}
 \item If $A,B\subseteq\RR^n$ are convex, then $A\cap B$ is convex.
 \begin{solution}
@@ -13,7 +24,7 @@
 \begin{solution}
 \item[]\Sol Let $x,y\in\RR^n$ and $\theta\in(0,1)$.  Then
   $$\begin{array}{rcl}
-  (af+bg)((1-\theta)x+\theta y) = 
+  (af+bg)((1-\theta)x+\theta y)
   & = & af((1-\theta)x+\theta y)+bg((1-\theta)x+\theta y)\\
   & \leq & a[(1-\theta)f(x) + \theta f(y)] + b[(1-\theta)g(x) + \theta
     g(y)]\\
@@ -32,7 +43,7 @@
 \item Prove that if $f:\RR^n\to\RR$ is strictly convex and $x$ is a global
   minimizer, then it is the unique global minimizer.
 \begin{solution}
-\item[]\Sol Suppose $y$ is also a global minimizer with $y\neq x$.  Then 
+\item[]\Sol Suppose $y$ is also a global minimizer with $y\neq x$.  Then
   $$f( (y+x)/2 ) < f(y)/2 + f(x)/2 = f(x)$$
   contradicting the fact that $f(x)$ was a global minimizer.
 \end{solution}
@@ -41,7 +52,7 @@
 \begin{solution}
 \item[]\Sol Recall that $f$ has the form $f(x)=w^Tx+b$ where
   $w\in\RR^n$ and $b\in\RR$.  Then, for $x,y\in\RR^n$ and $\theta\in(0,1)$,
-  $$f((1-\theta)x+\theta y) = w^T((1-\theta)x+\theta y)+b = 
+  $$f((1-\theta)x+\theta y) = w^T((1-\theta)x+\theta y)+b =
   (1-\theta)(w^Tx+b) + \theta(w^Ty+b) = (1-\theta)f(x) + \theta
   f(y).$$
   This shows $f$ is convex.  But the same holds if we replace $w$ with
@@ -67,12 +78,12 @@
     directional derivatives at every point.
   \item Let $f:\RR^n\to\RR$ be convex.  Show that if $x$ is not a
     minimizer of $f$ then $f$ has a descent direction at $x$ (i.e., a
-    direction whose corresponding one-sided directional derivative is negative). 
+    direction whose corresponding one-sided directional derivative is negative).
   \end{enumerate}
 \begin{solution}
 \item[]\Sol We first prove the following lemma.
   \begin{lem}\label{lem:secant}
-    If $f:\RR\to\RR$ is convex and $x < y < z$ then 
+    If $f:\RR\to\RR$ is convex and $x < y < z$ then
     $$\frac{f(y)-f(x)}{y-x} \leq \frac{f(z)-f(x)}{z-x}.$$
   \end{lem}
   \begin{proof}
@@ -80,14 +91,14 @@
     $$f(y) = f( (1-t)x+tz ) \leq (1-t)f(x) + tf(z)$$
     giving
     $$\frac{f(y)-f(x)}{y-x} \leq \frac{(1-t)f(x) +
-      tf(z)-f(x)}{(1-t)x+tz-x} = \frac{t(f(z)-f(x))}{t(z-x)} 
+      tf(z)-f(x)}{(1-t)x+tz-x} = \frac{t(f(z)-f(x))}{t(z-x)}
     =\frac{f(z)-f(x)}{z-x}.$$
   \end{proof}
   \begin{enumerate}
   \item For the right derivative, we will show
     $$\lim_{y\downto x} \frac{f(y)-f(x)}{y-x} =
     \inf_{y>x}\frac{f(y)-f(x)}{y-x}=:L.$$
-    Fix $\epsilon>0$ and choose $y'>x$ so that 
+    Fix $\epsilon>0$ and choose $y'>x$ so that
     $$\frac{f(y')-f(x)}{y'-x} < L+\epsilon.$$
     Letting $\delta = y'-x$, the lemma shows that
     $$\frac{f(y)-f(x)}{y-x} < L+\epsilon$$
@@ -132,7 +143,7 @@
   the center and radius of the smallest sphere that encloses all of
   the points.  Express this problem as a convex optimization problem.
 \begin{solution}
-\item[]\Sol 
+\item[]\Sol
   $$\begin{array}{ll}
   \text{minimize}_{r,c} & r \\
   \text{subject to} & \|x_i-c\|_2 \leq r\quad\text{for $i=1,\ldots,n$.}
@@ -147,7 +158,7 @@
   and $v^Tx_i<a$ for $y_i=-1$.  Give a method for determining if the
   given data points are linearly separable.
 \begin{solution}
-\item[]\Sol Solve the hard-margin SVM problem 
+\item[]\Sol Solve the hard-margin SVM problem
   $$\begin{array}{ll}
   \text{minimize}_{w,b} & \|w\|_2^2 \\
   \text{subject to} & y_i(w^Tx_i+b) \geq 1\quad\text{for all $i=1,\ldots,n$.}
@@ -170,7 +181,7 @@
   \begin{enumerate}
   \item $L(x,\lambda) = \|Ax-y\|_2^2 + \lambda(\|x\|_2^2-r^2)$.  Note that
     this is a shifted version of the Tikhonov objective.
-  \item 
+  \item
     $$\sup_{\lambda\succeq 0} L(x,\lambda) = \left\{\begin{array}{ll}
     +\infty & \text{if $\|x\|_2^2>r^2$,}\\
     \|Ax-y\|_2^2 & \text{otherwise.}\end{array}\right.$$

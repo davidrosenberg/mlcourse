@@ -1394,7 +1394,7 @@ p(x)=\sum_{z}p(x,z)
 \end_deeper
 \begin_layout Itemize
 We often call 
-\begin_inset Formula $p(x,y)$
+\begin_inset Formula $p(x,z)$
 \end_inset
 
  the 

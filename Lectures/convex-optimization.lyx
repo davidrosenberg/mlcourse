@@ -3531,7 +3531,7 @@ strong duality
 \begin_deeper
 \begin_layout Itemize
 the optimal Lagrange multiplier 
-\begin_inset Formula $\lambda_{i}$
+\begin_inset Formula $\lambda_{i}^{*}$
 \end_inset
 
  and

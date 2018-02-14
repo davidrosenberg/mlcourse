@@ -448,9 +448,9 @@ we'd get \texttt{\textcolor{black}{\{\textquotedbl{}endsWith\_ing\textquotedbl{}
 		\item Assign a fixed integer id to each word occurring in any document of the training set.
 		\item For each document $i$, count the number of occurrences of each word $w$ and store it (sparsely) as $doc_i[w] = j_w$ == count of word $w$ in document $i$.
 		\item The BOW representation implies that $n_{features}$ is the number of distinct words in the corpus.
-		\item What is the feature map $\phi(X)$?
+		\item What is the feature map $\phi(x)$?
 		\pause{}
-		\item $\phi(X) = [j_{word_{1}},\cdots,j_{word_{n_{words}}}]$
+		\item $\phi(x) = [j_{word_{1}},\cdots,j_{word_{n_{words}}}]$
 	\end{itemize}
 \end{itemize}
 \end{frame}
@@ -492,9 +492,24 @@ we'd get \texttt{\textcolor{black}{\{\textquotedbl{}endsWith\_ing\textquotedbl{}
 \includegraphics[width=0.5\textwidth]{../Figures/training-data-and-target-fn.png}
 \par\end{center}
 \begin{itemize}
-	\item What was our feature map $\phi(X)$? $\phi(X) \in \reals^k$ for what $k$?
+	\item What was our feature map $\phi(x)$? $\phi(x) \in \reals^k$ for what $k$?
 	\pause{}
-	\item $\phi(X) = \left[\mathbbm{1}(X \leq \frac{1}{400}), \cdots,\mathbbm{1}(X \leq \frac{399}{400}) \right]$
+	\item $\phi(x) = \left[\mathbbm{1}(x \geq \frac{1}{400}), \cdots,\mathbbm{1}(x \geq \frac{399}{400}) \right]$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Motivation}
+\begin{itemize}
+\item Two motivations for thinking about feature extraction:
+\begin{itemize}
+	\item Motive 2 -- Improving performance. Think about HW2.
+	\end{itemize}
+\end{itemize}
+\begin{center}
+\includegraphics[width=0.5\textwidth]{../Figures/training-data-and-target-fn.png}
+\par\end{center}
+\begin{itemize}
+	\item Why did we use this feature map instead of just learning a prediction function $y\sim x$?
 \end{itemize}
 \end{frame}
 
@@ -521,6 +536,17 @@ we'd get \texttt{\textcolor{black}{\{\textquotedbl{}endsWith\_ing\textquotedbl{}
 \end{itemize}
 \begin{center}
 \includegraphics[width=0.9\textwidth]{../Figures/boston_toy_ex.png}
+\par\end{center}
+\end{frame}
+
+\begin{frame}{Motivation}
+\begin{itemize}
+\item We'll be looking at regression examples throughout this lab.
+\item Using Elastic Net in sklearn, the default score method returns the coefficient of determination $R^2$ of the prediction.
+\item Recall:
+\end{itemize}
+\begin{center}
+\includegraphics[width=0.6\textwidth]{../Figures/r_2_reminder.png}
 \par\end{center}
 \end{frame}
 
@@ -1041,6 +1067,21 @@ We can grow the linear hypothesis space $\cf$ by adding more features.
 \begin{itemize}
 	\item Intuitively, why did this improve performance?
 \end{itemize}
+\end{frame}
+
+\begin{frame}{Two moons feature map}
+\begin{center}
+\includegraphics[width=0.5\columnwidth]{../Figures/two_moons_voronoi.png} \par\end{center}
+
+\begin{itemize}
+\item Think back to the 1D discretization discussed earlier -- which map is this analogous to?
+\end{itemize}
+\[
+\phi_2(x)=\left(\ind{5\le N(x)<10},\ind{10\le N(x)<100},\ind{100\le N(x)}\right)
+\]
+\[
+\phi_1(x)=\left(\ind{5\le N(x)},\ind{10\le N(x)},\ind{100\le N(x)}\right)
+\]
 \end{frame}
 
 

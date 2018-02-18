@@ -879,11 +879,11 @@ Learning with kernels
 \end_layout
 
 \begin_layout Plain Layout
-11) should we break out the deck on representer theorem?
+11) should we break out the deck on representer theorem? YES [done]
 \end_layout
 
 \begin_layout Plain Layout
-12) prove that l1 norm does not obey the parallelogram law
+12) prove that l1 norm does not obey the parallelogram law [Homework?]
 \end_layout
 
 \begin_layout Plain Layout
@@ -896,7 +896,7 @@ Learning with kernels
 \end_inset
 
 .
- 
+ [Would be nice to have an image of that in the slides, just for the record]
 \end_layout
 
 \begin_layout Plain Layout

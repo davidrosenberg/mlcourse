@@ -7,7 +7,10 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
-
+*~
+\#*\#
+.ipynb_checkpoints
+.Rapp.history
 # Other stuff
 stubs
 publishLecture.sh

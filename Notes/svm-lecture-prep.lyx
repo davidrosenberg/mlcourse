@@ -566,19 +566,7 @@ David S.
 \end_layout
 
 \begin_layout Date
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-today
-\end_layout
-
-\end_inset
-
-
+February 18, 2018
 \end_layout
 
 \begin_layout Standard
@@ -840,7 +828,7 @@ Second problem:
 \end_layout
 
 \begin_layout Section
-Lagrangian Encodes Objective and Constraints
+Lagrangian Encodes Objective and Constraints (OPTIONAL)
 \end_layout
 
 \begin_layout Standard

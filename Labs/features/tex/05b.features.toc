@@ -1,4 +1,0 @@
-\select@language {english}
-\beamer@sectionintoc {1}{Feature Extraction}{4}{0}{1}
-\beamer@sectionintoc {2}{Feature Templates}{16}{0}{2}
-\beamer@sectionintoc {3}{Handling Nonlinearity with Linear Methods}{42}{0}{3}

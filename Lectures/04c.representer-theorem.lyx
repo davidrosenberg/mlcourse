@@ -1985,7 +1985,7 @@ where
 
 \begin_deeper
 \begin_layout Itemize
-\begin_inset Formula $R:\reals^{\ge0}\to\reals$
+\begin_inset Formula $R:[0,\infty)\to\reals$
 \end_inset
 
  is nondecreasing (
@@ -2429,7 +2429,7 @@ where
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $R:\reals^{\ge0}\to\reals$
+\begin_inset Formula $R:[0,\infty)\to\reals$
 \end_inset
 
  is nondecreasing (
@@ -2474,6 +2474,51 @@ has a minimizer of the form
 
  is strictly increasing, then all minimizers have this form.
  (Proof in homework.)]
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+[If 
+\begin_inset Formula $w_{M}^{*}$
+\end_inset
+
+ is a minimizer of 
+\begin_inset Formula $J(w)$
+\end_inset
+
+ constrained to 
+\begin_inset Formula $M=\linspan\left(x_{1},\ldots,x_{n}\right)$
+\end_inset
+
+ then it is also an unconstrained minimizer of 
+\begin_inset Formula $J(w)$
+\end_inset
+
+.
+ Proof again by representer theorem type argument.
+ But note that if 
+\begin_inset Formula $\alpha^{*}$
+\end_inset
+
+ is a minimum of 
+\begin_inset Formula $J$
+\end_inset
+
+ over 
+\begin_inset Formula $\alpha$
+\end_inset
+
+'s, then it must also be a minimum over all 
+\begin_inset Formula $w$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper

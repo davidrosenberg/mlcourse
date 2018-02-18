@@ -136,3 +136,4 @@ following:
 - Give the form for a general inequality-constrained optimization problem (there are many ways to do this, but our convention is to have inequality constraints of the form fᵢ(x)≤0).
 - Define the Lagrangian for this optimization problem, and explain how the Lagrangian encodes all the information in the original optimization problem.
 - Write the primal and dual optimization problem in terms of the Lagrangian.
+

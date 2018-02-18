@@ -570,10 +570,10 @@ October 12, 2017
 \end_layout
 
 \begin_layout Abstract
-The lectures on SVM were a bit brutal, as they include a development of
- convex optimization and Lagrangian duality.
- In this short note, we first recap the setup and the results we derived,
- and in the last section we'll highlight the main takeaways.
+A traditional standard presentation on SVM can be a bit brutal, as it typically
+ includes a development of convex optimization and Lagrangian duality.
+ In this short note, we first recap the setup and the results derived in
+ such a lecture, and in the last section we'll highlight the practical takeaways.
 \end_layout
 
 \begin_layout Section
@@ -788,10 +788,9 @@ While this is
 \series bold
 not
 \series default
- unique to SVMs, and there are much simpler ways to derive this result (as
- we'll do in a couple weeks with the representer theorem), it's the first
- time we're seeing it, and we need this to understand some of the other
- takeaways.
+ unique to SVMs, and there are much simpler ways to derive this result (such
+ as with basic linear algebra via the representer theorem), we need this
+ to understand some of the other takeaways.
 \end_layout
 
 \begin_layout Enumerate

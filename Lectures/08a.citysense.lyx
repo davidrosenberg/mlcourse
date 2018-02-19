@@ -1624,9 +1624,9 @@ For input
 \begin_inset Formula $x$
 \end_inset
 
-, suppose we produce a 
+, suppose we produce a
 \series bold
-conditional probability density
+ probability density
 \series default
  on 
 \begin_inset Formula $\cy$
@@ -1635,12 +1635,30 @@ conditional probability density
 :
 \begin_inset Formula 
 \[
-x\mapsto p(y\mid x)
+x\mapsto p(y)
 \]
 
 \end_inset
 
 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We can interpret this setting as modeling the 
+\series bold
+conditional probability density
+\series default
+ 
+\begin_inset Formula $p(y\mid x)$
+\end_inset
+
+.
 \end_layout
 
 \begin_deeper
@@ -1658,7 +1676,11 @@ If we know
 \begin_inset Formula $\hat{y}$
 \end_inset
 
- that minimizes any other loss function:
+ that minimizes any loss function for a given 
+\begin_inset Formula $x$
+\end_inset
+
+:
 \end_layout
 
 \begin_deeper

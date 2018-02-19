@@ -5746,7 +5746,7 @@ Hilbert space
 
 \begin_layout Standard
 \begin_inset Flex ArticleMode
-status collapsed
+status open
 
 \begin_layout Plain Layout
 We know the inner product between 
@@ -5835,10 +5835,10 @@ We claim that
 \begin_inset Formula $\psi:\reals\to\ell_{2}$
 \end_inset
 
- defined by 
+, defined by 
 \begin_inset Formula 
 \[
-\left[\psi(x)\right]_{n}=\frac{1}{\sqrt{n!}}e^{-x^{2}/2}x^{n}
+\left[\psi(x)\right]_{j}=\frac{1}{\sqrt{j!}}e^{-x^{2}/2}x^{j}
 \]
 
 \end_inset
@@ -5886,7 +5886,7 @@ Is this mapping even well-defined? Is
 Yes: 
 \begin_inset Formula 
 \[
-\sum_{n=0}^{\infty}\frac{1}{n!}e^{-x^{2}}x^{2n}=e^{-x^{2}}\sum_{n=0}^{\infty}\frac{\left(x^{2}\right)^{n}}{n!}=1<\infty
+\sum_{j=0}^{\infty}\frac{1}{j!}e^{-x^{2}}x^{2j}=e^{-x^{2}}\sum_{j=0}^{\infty}\frac{\left(x^{2}\right)^{j}}{j!}=1<\infty
 \]
 
 \end_inset
@@ -5919,7 +5919,7 @@ The Infinite Dimensional Feature Vector for RBF
 \begin_deeper
 \begin_layout Itemize
 Does feature vector 
-\begin_inset Formula $\left[\psi(x)\right]_{n}=\frac{1}{\sqrt{n!}}e^{-x^{2}/2}x^{n}$
+\begin_inset Formula $\left[\psi(x)\right]_{n}=\frac{1}{\sqrt{j!}}e^{-x^{2}/2}x^{j}$
 \end_inset
 
  actually correspond to the RBF kernel?
@@ -5929,8 +5929,8 @@ Does feature vector
 Yes! Proof:
 \begin_inset Formula 
 \begin{eqnarray*}
-\left\langle \psi(x),\psi(x')\right\rangle  & = & \sum_{n=0}^{\infty}\frac{1}{n!}e^{-\left(x^{2}+\left(x'\right)^{2}\right)/2}x^{n}\left(x'\right)^{n}\\
- & = & e^{-\left(x^{2}+\left(x'\right)^{2}\right)/2}\sum_{n=0}^{\infty}\frac{\left(xx'\right)^{n}}{n!}\\
+\left\langle \psi(x),\psi(x')\right\rangle  & = & \sum_{j=0}^{\infty}\frac{1}{j!}e^{-\left(x^{2}+\left(x'\right)^{2}\right)/2}x^{j}\left(x'\right)^{j}\\
+ & = & e^{-\left(x^{2}+\left(x'\right)^{2}\right)/2}\sum_{j=0}^{\infty}\frac{\left(xx'\right)^{j}}{j!}\\
  & = & \exp\left(-\left[x^{2}+\left(x'\right)^{2}\right]/2\right)\exp\left(xx'\right)\\
  & = & \exp\left(-\left[(x-x')^{2}/2\right]\right)
 \end{eqnarray*}

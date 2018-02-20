@@ -2422,7 +2422,7 @@ Histogram (Bin width = 7)
 \begin_inset Text
 
 \begin_layout Plain Layout
-95% Histogram +.05 NegBin
+.95 Histogram +.05 NegBin
 \end_layout
 
 \end_inset

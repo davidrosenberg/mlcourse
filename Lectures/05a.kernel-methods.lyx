@@ -1335,7 +1335,7 @@ Geometric Example: Two class problem, nonlinear boundary
 \end_layout
 
 \begin_layout Itemize
-With linear feature map 
+With identity feature map 
 \begin_inset Formula $\psi(x)=\left(x_{1},x_{2}\right)$
 \end_inset
 
@@ -1430,12 +1430,10 @@ Expressivity of Hypothesis Space
 For linear models, to grow the hypothesis spaces, we must add features.
 \end_layout
 
-\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 Sometimes we say a larger hypothesis is 
 \begin_inset Quotes eld
@@ -1454,12 +1452,10 @@ more expressive
 (can fit more relationships between input and action)
 \end_layout
 
-\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
 \end_deeper
 \begin_layout Itemize
 The previous lecture on 
@@ -1747,14 +1743,14 @@ SVM Dual Problem
 
 \begin_deeper
 \begin_layout Itemize
-By Lagrangian duality, it is equivalent to solve following optimization
+By Lagrangian duality, it is equivalent to solve the following optimization
  problem:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \begin{eqnarray*}
-\sup_{\alpha} &  & \sum_{i=1}^{n}\alpha_{i}-\frac{1}{2}\sum_{i,j=1}^{n}\alpha_{i}\alpha_{j}y_{i}y_{j}\psi\left(x_{j}\right)^{T}\psi(x_{i})\\
+\max_{\alpha\in\reals^{n}} &  & \sum_{i=1}^{n}\alpha_{i}-\frac{1}{2}\sum_{i,j=1}^{n}\alpha_{i}\alpha_{j}y_{i}y_{j}\psi\left(x_{j}\right)^{T}\psi(x_{i})\\
 \mbox{s.t.} &  & \sum_{i=1}^{n}\alpha_{i}y_{i}=0\qquad\text{and}\qquad\alpha_{i}\in\left[0,\frac{c}{n}\right]\;i=1,\ldots,n.
 \end{eqnarray*}
 
@@ -1843,8 +1839,7 @@ if every feature vector
 \end_inset
 
 .
- In particular, this applies to both the optimization problem and the prediction
- function.
+ This applies to both the optimization problem and the prediction function.
 \end_layout
 
 \begin_layout Pause
@@ -1854,6 +1849,18 @@ if every feature vector
 \begin_layout Itemize
 The SVM Dual is a kernelization of the original SVM formulation.
  
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+We'll now introduce some special notation for these inner products 
+\begin_inset Formula $\left\langle \psi(x),\psi(x')\right\rangle $
+\end_inset
+
+...
 \end_layout
 
 \end_deeper
@@ -1979,7 +1986,7 @@ where
 status open
 
 \begin_layout Plain Layout
-The Kernel Function: Why?
+The Kernel Function: Why do we need this?
 \end_layout
 
 \end_inset
@@ -2020,12 +2027,10 @@ k(x,x')=\left\langle \psi(x),\psi(x')\right\rangle .
 
 \end_layout
 
-\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 Why introduce this new notation 
 \begin_inset Formula $k(x,x')$
@@ -2034,12 +2039,10 @@ Why introduce this new notation
 ?
 \end_layout
 
-\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 We can often evaluate 
 \begin_inset Formula $k(x,x')$
@@ -2178,25 +2181,34 @@ similarity score
 .
 \end_layout
 
-\begin_layout Itemize
-But this is not a mathematically precise statement.
-\end_layout
-
-\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
+\begin_layout Itemize
+But this is not a mathematically precise statement.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
 \begin_layout Itemize
 There are many ways to design a similarity score.
  
 \end_layout
 
-\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
 \begin_layout Itemize
-We will kernel functions which correspond to inner products in some feature
+We will use kernel functions that correspond to inner products in some feature
  space.
+\end_layout
+
+\begin_layout Pause
+
 \end_layout
 
 \begin_layout Itemize
@@ -2205,7 +2217,6 @@ These are called
 Mercer kernels.
 \end_layout
 
-\end_deeper
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
@@ -2229,16 +2240,15 @@ What are the Benefits of Kernelization?
 
 \begin_deeper
 \begin_layout Enumerate
-Computational (e.g.
- when feature space dimension 
-\begin_inset Formula $d$
+Computational (when optimizing over 
+\begin_inset Formula $\reals^{n}$
 \end_inset
 
- larger than sample size 
-\begin_inset Formula $n$
+ is better than over 
+\begin_inset Formula $\reals^{d}$
 \end_inset
 
-
+)
 \begin_inset Note Note
 status open
 
@@ -2329,21 +2339,6 @@ The Kernel Matrix
 The 
 \series bold
 kernel matrix
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-This is also called a 
-\series bold
-Gram matrix,
-\series default
- though usually Gram matrices are defined without reference to a kernel
- function or a feature map.
-\end_layout
-
-\end_inset
-
-
 \series default
  for a kernel 
 \begin_inset Formula $k$
@@ -2374,19 +2369,57 @@ k(x_{n},x_{1}) & \cdots & k(x_{n},x_{n})
 
 \end_deeper
 \begin_layout Itemize
-The kernel matrix summarizes all the information we need about the inputs
- to solve a kernelized optimization problem.
+In ML this is also called a 
+\series bold
+Gram matrix
+\series default
+, but traditionally (in linear algebra)
 \end_layout
 
 \begin_deeper
+\begin_layout Itemize
+Gram matrices are defined without reference to a kernel or feature map.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Kernel Matrix
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The kernel matrix summarizes all the information we need about the training
+ inputs 
+\begin_inset Formula $x_{1},\ldots,x_{n}$
+\end_inset
+
+ to solve a kernelized optimization problem.
+\end_layout
+
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 e.g.
- in the kernelized SVM replace 
+ in the kernelized SVM, we can replace 
 \begin_inset Formula $\psi(x_{i})^{T}\psi(x_{j})$
 \end_inset
 
@@ -2476,7 +2509,7 @@ New kernel may correspond to a very high-dimensional feature space.
 
 \end_deeper
 \begin_layout Enumerate
-Once all inner products are computed, computational cost depends on number
+Once the kernel matrix is computed, the computational cost depends on number
  of data points, rather than the dimension of feature space.
 \end_layout
 
@@ -2527,43 +2560,39 @@ Present our principal tool for kernelization: the
 representer theorem
 \end_layout
 
-\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 To keep things clean, we'll drop the explicit feature map until we need
- it.
+ it: 
+\begin_inset Formula $\psi(x)=x$
+\end_inset
+
+.
 \end_layout
 
-\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 Discuss specific cases of kernel ridge regression and kernel SVM
 \end_layout
 
-\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 Discuss several kernels, including the famous RBF kernel.
 \end_layout
 
-\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 Discuss how to create a kernel without an explicit feature map.
 \end_layout
@@ -3033,7 +3062,7 @@ The Gram matrix is a special case of a
 \series bold
 kernel matrix 
 \series default
-with an identity feature map.
+for the identity feature map.
 \end_layout
 
 \begin_deeper
@@ -3051,7 +3080,7 @@ That's why we write
 \begin_inset Formula $G$
 \end_inset
 
-, as done elsewhere.
+, as done in elsewhere.
 \end_layout
 
 \begin_deeper
@@ -3699,17 +3728,16 @@ A method is
 \series bold
 kernelized 
 \series default
-if every input 
-\begin_inset Formula $x\in\ch$
+if every feature vector 
+\begin_inset Formula $\psi(x)$
 \end_inset
 
- only appears inside an inner products with another 
-\begin_inset Formula $x'\in\ch$
+ only appears inside an inner product with another feature vector 
+\begin_inset Formula $\psi(x')$
 \end_inset
 
 .
- In particular, this applies to both the optimization problem and the prediction
- function.
+ This applies to both the optimization problem and the prediction function.
 \end_layout
 
 \begin_layout Pause
@@ -3717,7 +3745,12 @@ if every input
 \end_layout
 
 \begin_layout Itemize
-Thus finding 
+Here we are using 
+\begin_inset Formula $\psi(x)=x$
+\end_inset
+
+.
+ Thus finding 
 \begin_inset Formula 
 \[
 \alpha^{*}\in\argmin_{\alpha\in\reals^{n}}R\left(\sqrt{\alpha^{T}K\alpha}\right)+L\left(K\alpha\right)
@@ -3746,30 +3779,6 @@ w^{*}\in\argmin_{w\in\ch}R\left(\|w\|\right)+L\left(\left\langle w,x_{1}\right\r
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-Will give some more explanation for the terms 
-\begin_inset Quotes eld
-\end_inset
-
-kernelized
-\begin_inset Quotes erd
-\end_inset
-
- and 
-\begin_inset Quotes eld
-\end_inset
-
-kernelization
-\begin_inset Quotes erd
-\end_inset
-
- later on.
 \begin_inset Note Note
 status open
 
@@ -3780,6 +3789,104 @@ status open
 \begin_layout Itemize
 Now let's now consider some kernelizations of specific methods.
 \end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Kernelization
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Once we have kernelized:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\alpha^{*}\in\argmin_{\alpha\in\reals^{n}}R\left(\sqrt{\alpha^{T}K\alpha}\right)+L\left(K\alpha\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\hat{f}(x)=k_{x}^{T}\alpha^{*}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We can do the 
+\begin_inset Quotes eld
+\end_inset
+
+kernel trick
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Replace each 
+\begin_inset Formula $\left\langle x,x'\right\rangle $
+\end_inset
+
+ by 
+\begin_inset Formula $k(x,x')$
+\end_inset
+
+, for any kernel function 
+\begin_inset Formula $k$
+\end_inset
+
+, where 
+\begin_inset Formula $k(x,x')=\left\langle \psi(x),\psi(x')\right\rangle $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Predictions 
+\begin_inset Formula 
+\[
+\hat{f}(x)=\sum_{i=1}^{n}\alpha_{i}^{*}k(x_{i},x)
+\]
 
 \end_inset
 
@@ -4313,37 +4420,6 @@ support vectors
 \end_layout
 
 \end_deeper
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Kernelization
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Kernelization
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 Kernels
 \end_layout

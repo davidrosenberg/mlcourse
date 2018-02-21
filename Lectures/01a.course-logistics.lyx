@@ -1114,7 +1114,19 @@ Grade-wise
 
 \begin_deeper
 \begin_layout Itemize
-Primarily used to boost a borderline grade
+Optional problems 
+\series bold
+do not
+\series default
+ contribute to your homework grade.
+\end_layout
+
+\begin_layout Itemize
+They are a separate grade category
+\end_layout
+
+\begin_layout Itemize
+Primarily used to boost a borderline grade at the end of the term
 \end_layout
 
 \begin_layout Itemize

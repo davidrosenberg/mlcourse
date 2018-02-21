@@ -566,12 +566,12 @@ David S.
 \end_layout
 
 \begin_layout Date
-October 12, 2017
+February 19, 2018
 \end_layout
 
 \begin_layout Abstract
-A traditional standard presentation on SVM can be a bit brutal, as it typically
- includes a development of convex optimization and Lagrangian duality.
+A traditional presentation on SVM can be a bit brutal, as it typically includes
+ a development of convex optimization and Lagrangian duality.
  In this short note, we first recap the setup and the results derived in
  such a lecture, and in the last section we'll highlight the practical takeaways.
 \end_layout

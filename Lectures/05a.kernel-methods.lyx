@@ -1512,7 +1512,7 @@ To get a more expressive hypothesis space, we want to add interaction terms.
 \end_layout
 
 \begin_layout Itemize
-Consider adding add all monomials up to degree 
+Consider adding all monomials of degree 
 \begin_inset Formula $M$
 \end_inset
 
@@ -1521,7 +1521,7 @@ Consider adding add all monomials up to degree
 \end_inset
 
 , with 
-\begin_inset Formula $p_{1}+\cdots+p_{d}\le M$
+\begin_inset Formula $p_{1}+\cdots+p_{d}=M$
 \end_inset
 
 .
@@ -4734,7 +4734,7 @@ Input space
 
 \begin_inset Formula 
 \[
-k(w,x)=\exp\left(-\frac{\|w-x\|^{2}}{2\sigma^{2}}\right),
+k(x,x')=\exp\left(-\frac{\|x-x'\|^{2}}{2\sigma^{2}}\right),
 \]
 
 \end_inset

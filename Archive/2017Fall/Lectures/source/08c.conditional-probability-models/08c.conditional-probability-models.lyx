@@ -3,7 +3,7 @@
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin /Users/drosen/Dropbox/repos/mlcourse/Lectures/
+\origin /Users/drosen/Dropbox/repos/mlcourse/Archive/2017Fall/Lectures/source/08c.conditional-probability-models/
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -1139,7 +1139,7 @@ Sufficient to specify the
 Bernoulli parameter
 \series default
  
-\begin_inset Formula $\theta=p(y=1\mid x)$
+\begin_inset Formula $\theta=p(y=1)$
 \end_inset
 
 .
@@ -1286,7 +1286,7 @@ linear method
 , this extraction is done with a linear function:
 \begin_inset Formula 
 \[
-\underbrace{x}_{\in\reals^{D}}\mapsto\underbrace{w^{T}x}_{\in\reals}
+\underbrace{x}_{\in\reals^{d}}\mapsto\underbrace{w^{T}x}_{\in\reals}
 \]
 
 \end_inset
@@ -1370,7 +1370,7 @@ Need a function to map the linear predictor in
 :
 \begin_inset Formula 
 \[
-\underbrace{x}_{\in\reals^{D}}\mapsto\underbrace{w^{T}x}_{\in\reals}\mapsto\underbrace{f(w^{T}x)}_{\in[0,1]}=\theta,
+\underbrace{x}_{\in\reals^{d}}\mapsto\underbrace{w^{T}x}_{\in\reals}\mapsto\underbrace{f(w^{T}x)}_{\in[0,1]}=\theta,
 \]
 
 \end_inset
@@ -1803,7 +1803,11 @@ Maximum Likelihood Estimation (MLE) finds
 
 \end_deeper
 \begin_layout Itemize
-Equivalently, minimize the objective function
+Equivalently, minimize the 
+\series bold
+negative log-likelihood 
+\series default
+objective function
 \begin_inset Formula 
 \[
 J(w)=-\left[\sum_{i=1}^{n}y_{i}\log f(w^{T}x_{i})+\left(1-y_{i}\right)\log\left[1-f(w^{T}x_{i})\right]\right]
@@ -2069,10 +2073,18 @@ Suppose we have data
 \end_layout
 
 \begin_layout Itemize
-Recall the log-likelihood for Poisson is:
+Recall the log-likelihood for Poisson, allowing different 
+\begin_inset Formula $\lambda_{i}$
+\end_inset
+
+ for each 
+\begin_inset Formula $i$
+\end_inset
+
+:
 \begin_inset Formula 
 \begin{eqnarray*}
-\log p(\cd,\lambda) & = & \sum_{i=1}^{n}\left[y_{i}\log\lambda-\lambda-\log\left(y_{i}!\right)\right]
+\log p(\cd,\lambda) & = & \sum_{i=1}^{n}\left[y_{i}\log\lambda_{i}-\lambda_{i}-\log\left(y_{i}!\right)\right]
 \end{eqnarray*}
 
 \end_inset
@@ -2088,18 +2100,14 @@ Recall the log-likelihood for Poisson is:
 \end_deeper
 \begin_layout Itemize
 Plugging in 
-\begin_inset Formula $f(w^{T}x)=\exp\left(w^{T}x\right)$
+\begin_inset Formula $\lambda_{i}=f(w^{T}x_{i})=\exp\left(w^{T}x_{i}\right)$
 \end_inset
 
- for 
-\begin_inset Formula $\lambda$
-\end_inset
-
-, we get
+ we get
 \begin_inset Formula 
 \begin{eqnarray*}
-\log p(\cd,\lambda) & = & \sum_{i=1}^{n}\left[y_{i}\log\left[\exp\left(w^{T}x\right)\right]-\exp\left(w^{T}x\right)-\log\left(y_{i}!\right)\right]\\
- & = & \sum_{i=1}^{n}\left[y_{i}w^{T}x-\exp\left(w^{T}x\right)-\log\left(y_{i}!\right)\right]
+\log p(\cd;w) & = & \sum_{i=1}^{n}\left[y_{i}\log\left[\exp\left(w^{T}x_{i}\right)\right]-\exp\left(w^{T}x_{i}\right)-\log\left(y_{i}!\right)\right]\\
+ & = & \sum_{i=1}^{n}\left[y_{i}w^{T}x_{i}-\exp\left(w^{T}x_{i}\right)-\log\left(y_{i}!\right)\right]
 \end{eqnarray*}
 
 \end_inset
@@ -2627,7 +2635,7 @@ From here, can use usual approaches to solve for
 \begin_inset Formula $w^{*}$
 \end_inset
 
-(SGD, linear algebra, calculus, etc.) 
+ (SGD, linear algebra, calculus, etc.) 
 \end_layout
 
 \begin_layout Standard
@@ -2871,12 +2879,16 @@ From each
 , we compute a linear score function for each class: 
 \begin_inset Formula 
 \[
-x\mapsto\left(\left\langle w_{1},x\right\rangle ,\ldots,\left\langle w_{k},x\right\rangle \right)\in\reals^{k}
+x\mapsto\left(\left\langle w_{1},x\right\rangle ,\ldots,\left\langle w_{k},x\right\rangle \right)\in\reals^{k},
 \]
 
 \end_inset
 
+for parameter vectors 
+\begin_inset Formula $w_{1},\ldots,w_{k}\in\reals^{d}$
+\end_inset
 
+.
 \end_layout
 
 \begin_layout Itemize
@@ -3096,7 +3108,7 @@ Maximum Likelihood as ERM
 status open
 
 \begin_layout Plain Layout
-Generalized Regression as Statistical Learning
+Conditional Probability Modeling as Statistical Learning
 \end_layout
 
 \end_inset
@@ -3164,10 +3176,10 @@ Action space
 \end_deeper
 \begin_layout Itemize
 Hypothesis space 
-\begin_inset Formula $\ch$
+\begin_inset Formula $\cf$
 \end_inset
 
- contains decision functions 
+ contains prediction functions 
 \begin_inset Formula $f:\cx\to\ca$
 \end_inset
 
@@ -3252,7 +3264,7 @@ Write the MLE optimization as empirical risk minimization.
 status open
 
 \begin_layout Plain Layout
-Generalized Regression as Statistical Learning
+Conditional Probability Modeling as Statistical Learning
 \end_layout
 
 \end_inset
@@ -3336,7 +3348,7 @@ where
 status open
 
 \begin_layout Plain Layout
-Generalized Regression as Statistical Learning
+Conditional Probability Modeling as Statistical Learning
 \end_layout
 
 \end_inset

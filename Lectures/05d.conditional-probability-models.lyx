@@ -1314,7 +1314,7 @@ linear method
 , this extraction is done with a linear function:
 \begin_inset Formula 
 \[
-\underbrace{x}_{\in\reals^{D}}\mapsto\underbrace{w^{T}x}_{\in\reals}
+\underbrace{x}_{\in\reals^{d}}\mapsto\underbrace{w^{T}x}_{\in\reals}
 \]
 
 \end_inset
@@ -1398,7 +1398,7 @@ Need a function to map the linear predictor in
 :
 \begin_inset Formula 
 \[
-\underbrace{x}_{\in\reals^{D}}\mapsto\underbrace{w^{T}x}_{\in\reals}\mapsto\underbrace{f(w^{T}x)}_{\in[0,1]}=\theta,
+\underbrace{x}_{\in\reals^{d}}\mapsto\underbrace{w^{T}x}_{\in\reals}\mapsto\underbrace{f(w^{T}x)}_{\in[0,1]}=\theta,
 \]
 
 \end_inset
@@ -1687,6 +1687,539 @@ We can choose
 status open
 
 \begin_layout Plain Layout
+Bernoulli Regression: Likelihood Scoring Example
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose we have 
+\begin_inset Formula $\cx=\reals$
+\end_inset
+
+ and data 
+\begin_inset Formula $\cd$
+\end_inset
+
+: 
+\begin_inset Formula $(-3,0),\left(0,0\right),(1,1),(2,0)\in\reals\times\left\{ 0,1\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Our model is 
+\begin_inset Formula $\hat{p}(y=1\mid x)=f(wx)$
+\end_inset
+
+, for some parameter 
+\begin_inset Formula $w\in\reals$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Compute the likelihood for each observation:
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Draw table on board before showing it on slide
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $y$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $wx$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\theta=f(wx)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\hat{p}(y)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-3$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-3w$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f(-3w)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1-f(-3w)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f(0)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1-f(0)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $w$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f(w)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f(w)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2w$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f(2w)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1-f(2w)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+The likelihood of 
+\begin_inset Formula $w$
+\end_inset
+
+ for the data 
+\begin_inset Formula $\cd$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+\hat{p}(\cd;w)=\left[1-f(-3w)\right]\cdot\left[1-f(0)\right]\cdot\left[f(w)\right]\cdot\left[1-f(2w)\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+The MLE 
+\begin_inset Formula $\hat{w}$
+\end_inset
+
+ is the 
+\begin_inset Formula $w\in\reals$
+\end_inset
+
+ maximizing 
+\begin_inset Formula $\hat{p}(\cd;w)$
+\end_inset
+
+ for the given 
+\begin_inset Formula $\cd$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+A Clever Way To Write 
+\begin_inset Formula $\hat{p}(y\mid x;w)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For a given 
+\begin_inset Formula $x,w\in\reals^{d}$
+\end_inset
+
+ and 
+\begin_inset Formula $y\in\left\{ 0,1\right\} $
+\end_inset
+
+, the likelihood of 
+\begin_inset Formula $w$
+\end_inset
+
+ for 
+\begin_inset Formula $\left(x,y\right)$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+\hat{p}(y\mid x;w)=\pause\begin{cases}
+f(w^{T}x) & y=1\\
+1-f(w^{T}x) & y=0
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+It will be convenient to write this as
+\begin_inset Formula 
+\[
+\hat{p}(y\mid x;w)=\left[f(w^{T}x)\right]^{y}\left[1-f(w^{T}x)\right]^{1-y}\pause,
+\]
+
+\end_inset
+
+which is obvious as long as you remember 
+\begin_inset Formula $y\in\left\{ 0,1\right\} $
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
 Bernoulli Regression: Likelihood Scoring
 \end_layout
 
@@ -1698,45 +2231,33 @@ Bernoulli Regression: Likelihood Scoring
 \begin_deeper
 \begin_layout Itemize
 Suppose we have data 
-\begin_inset Formula $\cd=\left((x_{1},y_{1}),\ldots,(x_{n},y_{n})\right)$
+\begin_inset Formula $\cd:\;(x_{1},y_{1}),\ldots,(x_{n},y_{n})\in\reals^{d}\times\left\{ 0,1\right\} $
 \end_inset
 
 .
 \end_layout
 
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
 \begin_layout Itemize
-Compute the model likelihood for 
+The likelihood of 
+\begin_inset Formula $w\in\reals^{d}$
+\end_inset
+
+ for data 
 \begin_inset Formula $\cd$
 \end_inset
 
-:
+ is
 \begin_inset Formula 
 \begin{eqnarray*}
-p_{w}(\cd) & = & \prod_{i=1}^{n}p_{w}(y_{i}\mid x_{i})\text{ [by independence]}\\
+\hat{p}(\cd;w) & = & \prod_{i=1}^{n}\hat{p}(y_{i}\mid x_{i};w)\text{ [by independence]}\\
 \pause & = & \prod_{i=1}^{n}\left[f(w^{T}x_{i})\right]^{y_{i}}\left[1-f(w^{T}x_{i})\right]^{1-y_{i}}.
 \end{eqnarray*}
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Draw table on board showing 
-\begin_inset Formula $x_{i}$
-\end_inset
-
-,
-\begin_inset Formula $y_{i}\in\left\{ 0,1\right\} $
-\end_inset
-
-, 
-\begin_inset Formula $\hat{\theta}_{i}=f(w^{T}x),p(y_{i};\hat{\theta}_{i})$
-\end_inset
-
-
-\end_layout
 
 \end_inset
 
@@ -1750,7 +2271,7 @@ Draw table on board showing
 
 \end_deeper
 \begin_layout Itemize
-Huh? Remember 
+Remember 
 \begin_inset Formula $y_{i}\in\left\{ 0,1\right\} $
 \end_inset
 
@@ -1767,7 +2288,7 @@ Huh? Remember
 Easier to work with the log-likelihood:
 \begin_inset Formula 
 \[
-\log p_{w}(\cd)=\sum_{i=1}^{n}y_{i}\log f(w^{T}x_{i})+\left(1-y_{i}\right)\log\left[1-f(w^{T}x_{i})\right]
+\log\hat{p}(\cd;w)=\sum_{i=1}^{n}\left(y_{i}\log f(w^{T}x_{i})+\left(1-y_{i}\right)\log\left[1-f(w^{T}x_{i})\right]\right)
 \]
 
 \end_inset
@@ -1775,7 +2296,6 @@ Easier to work with the log-likelihood:
 
 \end_layout
 
-\end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
 \end_inset
@@ -1783,6 +2303,7 @@ Easier to work with the log-likelihood:
 
 \end_layout
 
+\end_deeper
 \begin_layout Frame
 \begin_inset Argument 4
 status open
@@ -1803,7 +2324,7 @@ Maximum Likelihood Estimation (MLE) finds
 \end_inset
 
  maximizing 
-\begin_inset Formula $\log p_{w}(\cd)$
+\begin_inset Formula $\log\hat{p}(\cd,w)$
 \end_inset
 
 .
@@ -1816,10 +2337,14 @@ Maximum Likelihood Estimation (MLE) finds
 
 \end_deeper
 \begin_layout Itemize
-Equivalently, minimize the objective function
+Equivalently, minimize the 
+\series bold
+negative log-likelihood
+\series default
+ objective function
 \begin_inset Formula 
 \[
-J(w)=-\left[\sum_{i=1}^{n}y_{i}\log f(w^{T}x_{i})+\left(1-y_{i}\right)\log\left[1-f(w^{T}x_{i})\right]\right]
+J(w)=-\left[\sum_{i=1}^{n}y_{i}\log f(w^{T}x_{i})+\left(1-y_{i}\right)\log\left[1-f(w^{T}x_{i})\right]\right].
 \]
 
 \end_inset
@@ -2074,10 +2599,18 @@ Suppose we have data
 \end_layout
 
 \begin_layout Itemize
-Recall the log-likelihood for Poisson is:
+Recall the log-likelihood for Poisson parameter 
+\begin_inset Formula $\lambda_{i}$
+\end_inset
+
+ on observation 
+\begin_inset Formula $y_{i}$
+\end_inset
+
+ is:
 \begin_inset Formula 
 \begin{eqnarray*}
-\log p(\cd,\lambda) & = & \sum_{i=1}^{n}\left[y_{i}\log\lambda-\lambda-\log\left(y_{i}!\right)\right]
+\log\hat{p}(y_{i};\lambda_{i}) & = & \left[y_{i}\log\lambda_{i}-\lambda_{i}-\log\left(y_{i}!\right)\right]
 \end{eqnarray*}
 
 \end_inset
@@ -2092,19 +2625,45 @@ Recall the log-likelihood for Poisson is:
 
 \end_deeper
 \begin_layout Itemize
-Plugging in 
-\begin_inset Formula $f(w^{T}x)=\exp\left(w^{T}x\right)$
+Now we want to predict a different 
+\begin_inset Formula $\lambda_{i}$
 \end_inset
 
- for 
-\begin_inset Formula $\lambda$
+ for every 
+\begin_inset Formula $x_{i}$
 \end_inset
 
-, we get
+ with the model
+\begin_inset Formula 
+\[
+\lambda_{i}=f(w^{T}x_{i})=\exp\left(w^{T}x_{i}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The likelihood for 
+\begin_inset Formula $w$
+\end_inset
+
+ on the full dataset 
+\begin_inset Formula $\cd$
+\end_inset
+
+ is
 \begin_inset Formula 
 \begin{eqnarray*}
-\log p(\cd,\lambda) & = & \sum_{i=1}^{n}\left[y_{i}\log\left[\exp\left(w^{T}x\right)\right]-\exp\left(w^{T}x\right)-\log\left(y_{i}!\right)\right]\\
- & = & \sum_{i=1}^{n}\left[y_{i}w^{T}x-\exp\left(w^{T}x\right)-\log\left(y_{i}!\right)\right]
+\log\hat{p}(\cd;w) & = & \sum_{i=1}^{n}\left[y_{i}\log\left[\exp\left(w^{T}x_{i}\right)\right]-\exp\left(w^{T}x_{i}\right)-\log\left(y_{i}!\right)\right]\\
+ & = & \sum_{i=1}^{n}\left[y_{i}w^{T}x_{i}-\exp\left(w^{T}x_{i}\right)-\log\left(y_{i}!\right)\right]
 \end{eqnarray*}
 
 \end_inset
@@ -2505,7 +3064,7 @@ Compute the model likelihood for
 :
 \begin_inset Formula 
 \begin{align*}
-p_{w}(\cd)= & \prod_{i=1}^{n}p_{w}(y_{i}\mid x_{i})\text{ [by independence]}
+\hat{p}(\cd;w)= & \prod_{i=1}^{n}p(y_{i}\mid x_{i};w)\text{ [by independence]}
 \end{align*}
 
 \end_inset
@@ -2525,7 +3084,7 @@ Maximum Likelihood Estimation (MLE) finds
 \end_inset
 
  maximizing 
-\begin_inset Formula $p_{w}(\cd)$
+\begin_inset Formula $\hat{p}(\cd;w)$
 \end_inset
 
 .
@@ -2535,7 +3094,7 @@ Maximum Likelihood Estimation (MLE) finds
 Equivalently, maximize the data log-likelihood:
 \begin_inset Formula 
 \[
-\minimizer w=\argmax_{w\in\reals^{d}}\sum_{i=1}^{n}\log p_{w}(y_{i}\mid x_{i})
+\minimizer w=\argmax_{w\in\reals^{d}}\sum_{i=1}^{n}\log\hat{p}(y_{i}\mid x_{i};w)
 \]
 
 \end_inset
@@ -2579,7 +3138,7 @@ Gaussian Regression: MLE
 The conditional log-likelihood is:
 \begin_inset Formula 
 \begin{eqnarray*}
- &  & \sum_{i=1}^{n}\log p_{w}(y_{i}\mid x_{i})\\
+ &  & \sum_{i=1}^{n}\log\hat{p}(y_{i}\mid x_{i};w)\\
 \pause & = & \sum_{i=1}^{n}\log\left[\frac{1}{\sigma\sqrt{2\pi}}\exp\left(-\frac{(y_{i}-w^{T}x_{i})^{2}}{2\sigma^{2}}\right)\right]\\
 \pause & = & \underbrace{\sum_{i=1}^{n}\log\left[\frac{1}{\sigma\sqrt{2\pi}}\right]}_{\mbox{independent of }w}+\sum_{i=1}^{n}\left(-\frac{(y_{i}-w^{T}x_{i})^{2}}{2\sigma^{2}}\right)
 \end{eqnarray*}
@@ -3016,7 +3575,7 @@ Multinomial Logistic Regression
 Putting this together, we write multinomial logistic regression as
 \begin_inset Formula 
 \[
-p(y\mid x)=\frac{\exp\left(w_{y}^{T}x\right)}{\sum_{i=1}^{k}\exp\left(w_{i}^{T}x\right)},
+p(y\mid x;w)=\frac{\exp\left(w_{y}^{T}x\right)}{\sum_{i=1}^{k}\exp\left(w_{i}^{T}x\right)},
 \]
 
 \end_inset
@@ -3156,7 +3715,7 @@ Maximum Likelihood as ERM
 status open
 
 \begin_layout Plain Layout
-Generalized Regression as Statistical Learning
+Conditional Probability Modeling as Statistical Learning
 \end_layout
 
 \end_inset
@@ -3312,7 +3871,7 @@ Write the MLE optimization as empirical risk minimization.
 status open
 
 \begin_layout Plain Layout
-Generalized Regression as Statistical Learning
+Conditional Probability Modeling as Statistical Learning
 \end_layout
 
 \end_inset
@@ -3396,7 +3955,7 @@ where
 status open
 
 \begin_layout Plain Layout
-Generalized Regression as Statistical Learning
+Conditional Probability Modeling as Statistical Learning
 \end_layout
 
 \end_inset

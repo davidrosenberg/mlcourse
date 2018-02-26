@@ -1918,6 +1918,19 @@ Feature space
 \begin_inset Formula $\reals^{d}$
 \end_inset
 
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+a pre-Hilbert space (i.e.
+ not necessarily complete) can still have projections, in the sense of a
+ vector that's closer than all the others with residual orthogonal to subspace...
+ but need Hilbert space to guarantee existence
+\end_layout
+
+\end_inset
+
 )
 \end_layout
 
@@ -2128,7 +2141,7 @@ k(x,x')=\left\langle \psi(x),\psi(x')\right\rangle =\left\langle x,x'\right\rang
 
 \end_deeper
 \begin_layout Itemize
-Naively explicit computation of 
+Explicit computation of 
 \begin_inset Formula $k(x,x')$
 \end_inset
 
@@ -2373,7 +2386,7 @@ In ML this is also called a
 \series bold
 Gram matrix
 \series default
-, but traditionally (in linear algebra)
+, but traditionally (in linear algebra),
 \end_layout
 
 \begin_deeper

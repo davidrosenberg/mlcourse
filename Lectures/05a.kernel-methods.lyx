@@ -2123,7 +2123,7 @@ has dimension
 \begin_inset Formula $x,x'\in\reals^{d}$
 \end_inset
 
-
+ and the standard Euclidean dot products, 
 \begin_inset Formula 
 \[
 k(x,x')=\left\langle \psi(x),\psi(x')\right\rangle =\left\langle x,x'\right\rangle +\left\langle x,x'\right\rangle ^{2}

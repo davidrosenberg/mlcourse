@@ -4303,13 +4303,6 @@ w^{*}=\sum_{i=1}^{n}\alpha_{i}^{*}y_{i}x_{i}\qquad\text{and}\qquad\hat{f}(x)=\su
 \end_deeper
 \begin_layout Itemize
 Note that the prediction function is also kernelized.
-\begin_inset Formula 
-\[
-\]
-
-\end_inset
-
-
 \end_layout
 
 \end_deeper

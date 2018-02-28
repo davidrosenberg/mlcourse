@@ -2046,7 +2046,7 @@ target "https://davidrosenberg.github.io/mlcourse/Notes/convex-optimization.pdf"
 \end_deeper
 \begin_layout Standard
 \begin_inset Graphics
-	filename ../../../../AeroFS/repos/ml101/mlcourse/Figures/convex-optimization/bv_cvxbook_cover.jpg
+	filename ../Figures/convex-optimization/bv_cvxbook_cover.jpg
 	lyxscale 40
 	height 60theight%
 

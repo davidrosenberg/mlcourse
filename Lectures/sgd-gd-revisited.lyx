@@ -2310,7 +2310,7 @@ TRON is a 2nd order method (very fast close to the optimum)
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/optimization-rates/optimizationerr-vs-risk.png
+	filename ../Figures/optimization-rates/optimizationerr-vs-risk.png
 	lyxscale 50
 	height 60theight%
 

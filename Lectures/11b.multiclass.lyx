@@ -1296,7 +1296,7 @@ Linear Binary Classifier Review
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/multiclass/linear-separator.png
+	filename ../Figures/multiclass/linear-separator.png
 	lyxscale 30
 	height 45theight%
 
@@ -1360,7 +1360,7 @@ Three Class Example
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/multiclass/three-classes.png
+	filename ../Figures/multiclass/three-classes.png
 	lyxscale 30
 	height 60theight%
 
@@ -1442,7 +1442,7 @@ Three Class Example: One-vs-Rest
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/multiclass/three-classes-one-separator.png
+	filename ../Figures/multiclass/three-classes-one-separator.png
 	lyxscale 30
 	height 60theight%
 
@@ -1496,7 +1496,7 @@ Three Class Example: One-vs-Rest
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/multiclass/three-classes-one-vs-all.png
+	filename ../Figures/multiclass/three-classes-one-vs-all.png
 	lyxscale 30
 	height 60theight%
 
@@ -1589,7 +1589,7 @@ One-vs-Rest: Predictions
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/multiclass/three-classes-one-vs-all.png
+	filename ../Figures/multiclass/three-classes-one-vs-all.png
 	lyxscale 30
 	height 60theight%
 
@@ -1725,7 +1725,7 @@ Then
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/multiclass/One-vs-all-classboundaries.png
+	filename ../Figures/multiclass/One-vs-all-classboundaries.png
 	lyxscale 30
 	height 60theight%
 
@@ -1763,7 +1763,7 @@ One-vs-Rest: Class Boundaries
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/multiclass/One-vs-all-classboundaries.png
+	filename ../Figures/multiclass/One-vs-all-classboundaries.png
 	lyxscale 30
 	height 60theight%
 
@@ -1907,7 +1907,7 @@ One-vs-Rest: Class Boundaries
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/multiclass/One-vs-all-classboundaries.png
+	filename ../Figures/multiclass/One-vs-all-classboundaries.png
 	lyxscale 30
 	height 60theight%
 
@@ -1963,7 +1963,7 @@ A Solution with Linear Functions
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/multiclass/three-classes-multiclass.jpg
+	filename ../Figures/multiclass/three-classes-multiclass.jpg
 	lyxscale 20
 	height 60theight%
 
@@ -2818,7 +2818,7 @@ Example:
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/multiclass/three-classes-multiclass.jpg
+	filename ../Figures/multiclass/three-classes-multiclass.jpg
 	lyxscale 15
 	height 40theight%
 
@@ -4249,7 +4249,7 @@ Then score function
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/multiclass/Feature-vec-projection.jpg
+	filename ../Figures/multiclass/Feature-vec-projection.jpg
 	lyxscale 15
 	height 40theight%
 

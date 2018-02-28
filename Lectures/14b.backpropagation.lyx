@@ -964,7 +964,7 @@ Broken out into components:
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/backpropagation/one-fn-comp-graph-partials.png
+	filename ../Figures/backpropagation/one-fn-comp-graph-partials.png
 	lyxscale 20
 	scale 7
 
@@ -1027,7 +1027,7 @@ textwidth
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/backpropagation/one-fn-comp-graph-partials.png
+	filename ../Figures/backpropagation/one-fn-comp-graph-partials.png
 	lyxscale 20
 	scale 7
 
@@ -1205,7 +1205,7 @@ textwidth
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/backpropagation/one-fn-comp-graph-partials.png
+	filename ../Figures/backpropagation/one-fn-comp-graph-partials.png
 	lyxscale 20
 	scale 6.25
 
@@ -1654,7 +1654,7 @@ textwidth
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/backpropagation/linear-sqr-loss-comp-graph-labels.png
+	filename ../Figures/backpropagation/linear-sqr-loss-comp-graph-labels.png
 	lyxscale 30
 	height 45theight%
 
@@ -1875,7 +1875,7 @@ textwidth
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/backpropagation/ridge-regression-comp-graph-labels.png
+	filename ../Figures/backpropagation/ridge-regression-comp-graph-labels.png
 	lyxscale 30
 	height 45theight%
 
@@ -1948,7 +1948,7 @@ textwidth
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/backpropagation/ridge-regression-comp-graph-labels.png
+	filename ../Figures/backpropagation/ridge-regression-comp-graph-labels.png
 	lyxscale 30
 	width 100col%
 
@@ -2095,7 +2095,7 @@ textwidth
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/backpropagation/split-output-2copies.png
+	filename ../Figures/backpropagation/split-output-2copies.png
 	lyxscale 30
 	width 100col%
 
@@ -2213,7 +2213,7 @@ textwidth
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/backpropagation/ridge-regression-comp-graph-labels-2copies.png
+	filename ../Figures/backpropagation/ridge-regression-comp-graph-labels-2copies.png
 	lyxscale 30
 	width 100col%
 
@@ -2434,7 +2434,7 @@ textwidth
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/backpropagation/backprop-general-node.png
+	filename ../Figures/backpropagation/backprop-general-node.png
 	lyxscale 50
 	width 100col%
 
@@ -2561,7 +2561,7 @@ textwidth
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/backpropagation/backprop-general-node.png
+	filename ../Figures/backpropagation/backprop-general-node.png
 	lyxscale 50
 	width 100col%
 

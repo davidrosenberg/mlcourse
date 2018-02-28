@@ -2765,7 +2765,7 @@ Poisson Regression Example
 \begin_layout Standard
 \align left
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/conditional-probability-models/poissonBumps2.pdf
+	filename ../Figures/conditional-probability-models/poissonBumps2.pdf
 	height 55pheight%
 
 \end_inset
@@ -2862,7 +2862,7 @@ Nonlinear Score Function: Sneak Preview
 \begin_layout Standard
 \align left
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/conditional-probability-models/poissonBumps.pdf
+	filename ../Figures/conditional-probability-models/poissonBumps.pdf
 	height 55pheight%
 
 \end_inset
@@ -4340,7 +4340,7 @@ Uniform Example?
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/conditional-probability-models/uniform.pdf
+	filename ../Figures/conditional-probability-models/uniform.pdf
 	height 70pheight%
 
 \end_inset

@@ -804,7 +804,7 @@ textwidth
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/SVM/linearly-separated-data.png
+	filename ../Figures/SVM/linearly-separated-data.png
 	lyxscale 30
 	height 70theight%
 
@@ -1439,7 +1439,7 @@ textwidth
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/SVM/linearFnLevelSets.png
+	filename ../Figures/SVM/linearFnLevelSets.png
 	lyxscale 30
 	height 70theight%
 
@@ -1580,7 +1580,7 @@ textwidth
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/SVM/sidesOfTheHyperplane.png
+	filename ../Figures/SVM/sidesOfTheHyperplane.png
 	lyxscale 30
 	height 70theight%
 
@@ -1706,7 +1706,7 @@ textwidth
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/SVM/distPointToHyperplane.png
+	filename ../Figures/SVM/distPointToHyperplane.png
 	lyxscale 30
 	height 70theight%
 

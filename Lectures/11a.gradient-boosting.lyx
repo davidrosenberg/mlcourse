@@ -2296,7 +2296,7 @@ status open
 \begin_layout Standard
 \align left
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/boosting/l2boosting-stage1.png
+	filename ../Figures/boosting/l2boosting-stage1.png
 	lyxscale 40
 	height 80theight%
 
@@ -2308,7 +2308,7 @@ status open
 
 
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/boosting/l2boosting-stage2.png
+	filename ../Figures/boosting/l2boosting-stage2.png
 	lyxscale 40
 	height 80theight%
 
@@ -2366,7 +2366,7 @@ status open
 \begin_layout Standard
 \align left
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/boosting/l2boosting-stage3.png
+	filename ../Figures/boosting/l2boosting-stage3.png
 	lyxscale 40
 	height 80theight%
 
@@ -2378,7 +2378,7 @@ status open
 
 
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/boosting/l2boosting-stage4.png
+	filename ../Figures/boosting/l2boosting-stage4.png
 	lyxscale 40
 	height 80theight%
 
@@ -2436,7 +2436,7 @@ status open
 \begin_layout Standard
 \align left
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/boosting/l2boosting-stage5.png
+	filename ../Figures/boosting/l2boosting-stage5.png
 	lyxscale 40
 	height 80theight%
 
@@ -2448,7 +2448,7 @@ status open
 
 
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/boosting/l2boosting-stage50.png
+	filename ../Figures/boosting/l2boosting-stage50.png
 	lyxscale 40
 	height 80theight%
 
@@ -3623,7 +3623,7 @@ Projected
 \begin_layout Standard
 \align left
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/boosting/projected-fnl-grad-SeniElderFigB.2.png
+	filename ../Figures/boosting/projected-fnl-grad-SeniElderFigB.2.png
 	lyxscale 50
 	height 55theight%
 
@@ -4412,7 +4412,7 @@ Step Size as Regularization
 \begin_layout Standard
 \align left
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/boosting/sinc-regression-train-validation.png
+	filename ../Figures/boosting/sinc-regression-train-validation.png
 	lyxscale 35
 	width 90text%
 

@@ -1157,7 +1157,7 @@ convex
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../../../AeroFS/repos/ml101/mlcourse/Figures/convex-optimization/fig7.4a.pdf
+	filename ../Figures/convex-optimization/fig7.4a.pdf
 	lyxscale 30
 	height 45theight%
 
@@ -1165,7 +1165,7 @@ convex
 
 
 \begin_inset Graphics
-	filename ../../../../AeroFS/repos/ml101/mlcourse/Figures/convex-optimization/fig7.4b.pdf
+	filename ../Figures/convex-optimization/fig7.4b.pdf
 	lyxscale 30
 	height 45theight%
 
@@ -1253,7 +1253,7 @@ f(\theta x+(1-\theta)y)\le\theta f(x)+(1-\theta)f(y).
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../../../AeroFS/repos/ml101/mlcourse/Figures/convex-optimization/fig7.5a.pdf
+	filename ../Figures/convex-optimization/fig7.5a.pdf
 	lyxscale 50
 	height 45theight%
 
@@ -1261,7 +1261,7 @@ f(\theta x+(1-\theta)y)\le\theta f(x)+(1-\theta)f(y).
 
 
 \begin_inset Graphics
-	filename ../../../../AeroFS/repos/ml101/mlcourse/Figures/convex-optimization/fig7.5b.pdf
+	filename ../Figures/convex-optimization/fig7.5b.pdf
 	lyxscale 50
 	height 45theight%
 

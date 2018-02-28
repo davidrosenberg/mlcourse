@@ -11,33 +11,33 @@
 
 
 % Set Color ==============================
-\definecolor{BBGblue}{RGB}{13,157,219}
-\definecolor{BBGgreen}{RGB}{77,170,80}
+\definecolor{NYUPurple}{RGB}{87,6,140}
+\definecolor{LightPurple}{RGB}{165,11,255}
 
 
-\setbeamercolor{title}{fg=BBGblue}
-%\setbeamercolor{frametitle}{fg=BBGblue}
-\setbeamercolor{frametitle}{fg=BBGblue}
+\setbeamercolor{title}{fg=NYUPurple}
+%\setbeamercolor{frametitle}{fg=NYUPurple}
+\setbeamercolor{frametitle}{fg=NYUPurple}
 
-\setbeamercolor{background canvas}{fg=BBGblue, bg=white}
-\setbeamercolor{background}{fg=black, bg=BBGblue}
+\setbeamercolor{background canvas}{fg=NYUPurple, bg=white}
+\setbeamercolor{background}{fg=black, bg=NYUPurple}
 
 \setbeamercolor{palette primary}{fg=black, bg=gray!30!white}
 \setbeamercolor{palette secondary}{fg=black, bg=gray!20!white}
-\setbeamercolor{palette tertiary}{fg=black, bg=BBGblue}
+\setbeamercolor{palette tertiary}{fg=gray!20!white, bg=NYUPurple}
 
 \setbeamertemplate{headline}{}
 
-\setbeamercolor{parttitle}{fg=BBGblue}
-\setbeamercolor{sectiontitle}{fg=BBGblue}
-\setbeamercolor{sectionname}{fg=BBGblue}
-\setbeamercolor{section page}{fg=BBGblue}
+\setbeamercolor{parttitle}{fg=NYUPurple}
+\setbeamercolor{sectiontitle}{fg=NYUPurple}
+\setbeamercolor{sectionname}{fg=NYUPurple}
+\setbeamercolor{section page}{fg=NYUPurple}
 
 \AtBeginSection[]{
   \begin{frame}
   \vfill
   \centering
-\setbeamercolor{section title}{fg=BBGblue}
+\setbeamercolor{section title}{fg=NYUPurple}
  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
     \usebeamerfont{title}\usebeamercolor[fg]{title}\insertsectionhead\par%
   \end{beamercolorbox}
@@ -79,7 +79,7 @@
 \pdf_colorlinks true
 \pdf_backref false
 \pdf_pdfusetitle true
-\pdf_quoted_options "allcolors=BBGblue,urlcolor=BBGgreen"
+\pdf_quoted_options "allcolors=NYUPurple,urlcolor=LightPurple"
 \papersize default
 \use_geometry true
 \use_package amsmath 2
@@ -719,7 +719,7 @@ Bayesian Methods
 status open
 
 \begin_layout Plain Layout
-ML 101
+DS-GA 1003 / CSCI-GA 2567
 \begin_inset Note Note
 status collapsed
 
@@ -743,11 +743,11 @@ David S.
 \end_layout
 
 \begin_layout Date
-November 16, 2017
+February 27, 2018
 \end_layout
 
 \begin_layout Institute
-Bloomberg ML EDU
+New York University
 \end_layout
 
 \begin_layout Standard
@@ -796,6 +796,30 @@ tiny{Plots courtesy of Ningshan Zhang.}}
 
 \end_layout
 
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Contents
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \begin_layout Section
 Classical Statistics
 \end_layout
@@ -996,12 +1020,10 @@ Parametric family of densities
 
 \end_layout
 
-\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 Assume that 
 \begin_inset Formula $p(y\mid\theta)$
@@ -1024,7 +1046,6 @@ Or at least the part that's of interest to us.
 
 \end_layout
 
-\begin_deeper
 \begin_layout Pause
 \begin_inset Note Note
 status open
@@ -1081,7 +1102,6 @@ to us.
 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 If we knew the right 
 \begin_inset Formula $\theta\in\Theta$
@@ -1090,12 +1110,10 @@ If we knew the right
 , there would be no need for statistics.
 \end_layout
 
-\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 Instead of 
 \begin_inset Formula $\theta$
@@ -1117,12 +1135,10 @@ Instead of
 .
 \end_layout
 
-\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 Statistics is about how to get by with 
 \begin_inset Formula $\cd$
@@ -1342,12 +1358,10 @@ One type of statistical problem is
 .
 \end_layout
 
-\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 A 
 \series bold
@@ -1371,12 +1385,10 @@ Schervish p.
 
 \end_layout
 
-\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 A statistic 
 \begin_inset Formula $\hat{\theta}=\hat{\theta}(\cd)$
@@ -1408,7 +1420,6 @@ Schervish p.
 
 \end_layout
 
-\begin_deeper
 \begin_layout Pause
 
 \end_layout
@@ -1421,7 +1432,6 @@ A good point estimator will have
 .
 \end_layout
 
-\end_deeper
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
@@ -1489,16 +1499,15 @@ Efficiency:
 .
 \end_layout
 
+\end_deeper
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
-e.g.
 
 \series bold
- Maximum likelihood estimators 
+Maximum likelihood estimators 
 \series default
 are consistent and efficient under reasonable conditions.
 \end_layout
@@ -1526,7 +1535,7 @@ The Likelihood Function
 
 \begin_deeper
 \begin_layout Itemize
-For parametric family 
+Consider parametric family 
 \begin_inset Formula $\left\{ p(y\mid\theta):\theta\in\Theta\right\} $
 \end_inset
 
@@ -1832,6 +1841,19 @@ Data
  
 \end_layout
 
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Assume these were i.i.d.
+ flips.
+\end_layout
+
+\begin_deeper
 \begin_layout Pause
 
 \end_layout
@@ -1858,8 +1880,13 @@ L_{\cd}(\theta)=\pause p(\cd\mid\theta)=\theta^{n_{h}}\left(1-\theta\right)^{n_{
 \end_layout
 
 \begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
 \begin_layout Itemize
-(probability of getting the flips in the order they were received)
+This is the probability of getting the flips in the order they were received.
 \begin_inset Note Note
 status open
 
@@ -1890,7 +1917,6 @@ Conditioned on
 
 \end_layout
 
-\end_deeper
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
@@ -2017,6 +2043,10 @@ Introduces a new ingredient: the
 prior distribution.
 \end_layout
 
+\begin_layout Pause
+
+\end_layout
+
 \begin_layout Itemize
 A 
 \series bold
@@ -2033,12 +2063,10 @@ prior distribution
 .
 \end_layout
 
-\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 A prior reflects our belief about 
 \begin_inset Formula $\theta$
@@ -2074,15 +2102,15 @@ A Bayesian Model
 
 \begin_deeper
 \begin_layout Itemize
-A Bayesian model consists of two pieces:
+A [parametric] Bayesian model consists of two pieces:
 \end_layout
 
 \begin_deeper
 \begin_layout Enumerate
-a parametric family of densities 
+A parametric family of densities 
 \begin_inset Formula 
 \[
-\left\{ p(\cd\mid\theta)\mid\theta\in\Theta\right\} 
+\left\{ p(\cd\mid\theta)\mid\theta\in\Theta\right\} .
 \]
 
 \end_inset
@@ -2177,12 +2205,10 @@ for
 .
 \end_layout
 
-\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 Prior represents belief about 
 \begin_inset Formula $\theta$
@@ -2195,12 +2221,10 @@ Prior represents belief about
 .
 \end_layout
 
-\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 Posterior represents the
 \series bold
@@ -2212,9 +2236,13 @@ updated
 \begin_inset Quotes erd
 \end_inset
 
- beliefs
+ belief
 \series default
- after seeing 
+ about 
+\begin_inset Formula $\theta$
+\end_inset
+
+, after seeing 
 \begin_inset Formula $\cd$
 \end_inset
 
@@ -2266,7 +2294,7 @@ Let's consider both sides as functions of
 \begin_inset Formula $\theta$
 \end_inset
 
- for fixed 
+, for fixed 
 \begin_inset Formula $\cd$
 \end_inset
 

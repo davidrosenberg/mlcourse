@@ -1628,7 +1628,7 @@ Histogram of
 \begin_layout Standard
 \align left
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/bagging/independent-estimates.png
+	filename ../Figures/bagging/independent-estimates.png
 	lyxscale 30
 	height 45theight%
 

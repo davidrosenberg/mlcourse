@@ -7104,7 +7104,7 @@ Receiver Operating Characteristic (ROC) Curve
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/performance-evaluation/ROC-curve.png
+	filename ../Figures/performance-evaluation/ROC-curve.png
 	lyxscale 30
 	height 70theight%
 

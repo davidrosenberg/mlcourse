@@ -1264,7 +1264,7 @@ hyperbolic tangent
 \begin_layout Standard
 \align left
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/neural-networks/activationFn-Tanh.png
+	filename ../Figures/neural-networks/activationFn-Tanh.png
 	lyxscale 30
 	height 55theight%
 

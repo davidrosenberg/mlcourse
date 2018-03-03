@@ -1,5 +1,20 @@
 \section{Week 10 Lab: Concept Check Exercises}
 \subsection{Conditional Probability Models}
+\subsubsection{MLE Learning Objectives}
+\begin{itemize}
+\item Define the likelihood of an estimate of a probability distribution for some data $\mathcal{D}$.
+\item Define a parameteric model, and some common parameteric families.
+\item Define the MLE for some parameter $\theta$ of a probability model.
+\item Be able to find the MLE using first order conditions on the log-likelihood.
+\end{itemize}
+\subsubsection{Conditional Probability Models}
+\begin{itemize}
+\item Describe the basic structure of a linear probabilistic model, in terms of (i) a parameter $\theta$ of the probablistic model, (ii) a linear score function, (iii) a transfer function (kin to a "response function" or "inverse link" function, though we've relaxed requirements on the parameter theta).
+\item Explain how we can use MLE to choose $w$, the weight vector in our linear function (in (ii) above).
+\item Give common transfer functions for (i) bernoulli, (ii) poisson, (iii) gaussian, and (iv) categorical distributions. Explain why these common transfer functions make sense (in terms of their codomains).
+\item Explain the equivalence of EMR and MLE for negative log-likelihood loss.
+\end{itemize}
+\subsubsection{MLE/Conditional Probability Model Concept Check Question}
 \begin{enumerate}
 \item In each of the following, assume $X_1,\ldots,X_n$ are an
   i.i.d.~sample from the given distribution.
@@ -85,4 +100,25 @@
   while
   $$\ArgMax(1,-3,5) = (0,0,1).$$
 \end{solution}
+
+
+\item Suppose $x$ has a Poisson distribution with unknown mean $\theta$:
+\[p(x | \theta) = \frac{\theta^x}{x!}\exp(-\theta),\qquad x= 0, 1, \cdots\]
+Let the prior for $\theta$ be a gamma distribution:
+\[p(\theta | \alpha, \beta) = \frac{\beta^\alpha \theta^{\alpha-1}}{\Gamma(\alpha)}\exp(-\beta\theta), \qquad \theta>0\]
+where $\Gamma$ is the gamma function. Show that, given an observation $x$, the posterior $p(\theta | x, \alpha, \beta)$ is a gamma distribution with updated parameters $(\alpha', \beta') = (\alpha + x, \beta + 1)$. What does this tell you about the Poisson and gamma distributions?
+
+\begin{solution}
+\item[]\Sol From Bayes' theorem\footnote{Actually from Roman Garnett, from whom this problem was taken.}, we have:
+\begin{align*}
+p(\theta | x) &\propto p(x | \theta)p(\theta)\\
+	&\propto \left(\theta^x \exp(-\theta)\right)\left(\theta^{\alpha-1}\exp(-\beta\theta)\right) \\
+	&=\theta^{x + \alpha  -1} \exp\left(-(\beta+1)\theta)\right) \\
+	& \propto \mathcal{G}(\alpha + x, \beta + 1)
+\end{align*}
+This shows that the gamma is the conjugate prior to the Poisson. Also, note here we exploit a common trick: we manipulate the numerator, ignoring constants independent of
+$\theta$. If we can recognize the functional form as belonging to a distribution family we know, we can
+simply identify the parameters and trust that the distribution normalizes!
+\end{solution}
+
 \end{enumerate}

@@ -1,5 +1,22 @@
 \section{Week 5 Lab: Concept Check Exercises}
 \subsection{Kernels}
+
+\subsubsection{Kernel Learning Objectives}
+\begin{itemize}
+\item Explain how explicit feature maps can be used to extend the expressivity of linear models.
+\item Explain potential issues explicitly computing large feature spaces.
+\item State and explain the definition of a 'kernelized' method.
+\item Explain why the SVM dual is kernelized, while the primal is not (ignoring the representer theorem).
+\item Give the relationship between a feature map and kernel function.
+\item Explain the computational benefits of kernelization based on costs of optimizing over $\RR^n$ vs $\RR^d$.
+\item Be able to apply the kernel trick using the kernel matrix $K$.
+\item Be able to apply the elements of our proof of the representer theorem (ex: projections decrease norms) to prove related theorems.
+\item Compare using the representer theorem and duality to kernelized SVM.
+\item Describe common kernels (RBF/polynomial) and their properties (i.e. equivalent feature maps, computational benefits relative to explicit computation (if possible),...).
+\item Describe some general recipes for deriving "new" kernel function.
+\end{itemize}
+
+\subsubsection{Kernel Concept Check Questions}
 \begin{enumerate}
 \item Fix $n>0$.  For $x,y\in\{1,2,\ldots,n\}$ define
   $k(x,y)=\min(x,y)$.  Give an explicit feature map

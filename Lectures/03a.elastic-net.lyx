@@ -1919,7 +1919,7 @@ tiny{KPM Fig.
 \begin_inset Graphics
 	filename ../Figures/L1L2/l1LossConstraintPic.png
 	lyxscale 60
-	height 50theight%
+	height 40theight%
 
 \end_inset
 
@@ -1955,12 +1955,14 @@ So the level set
 \end_layout
 
 \begin_layout Itemize
-We could call it a degenerate ellipsoid – 
-\end_layout
+It's a degenerate ellipsoid – that's why level sets were pairs of lines
+ in this case
+\begin_inset Note Note
+status open
 
-\begin_deeper
 \begin_layout Pause
-
+THIS SLIDE NEEDS WORK - -BE MORE PRECISE IN DERIVATION OF CLAIM ABOVE ABOUT
+ 'pairs of lines' _- give generalization to higher dimensions
 \end_layout
 
 \begin_layout Itemize
@@ -1985,6 +1987,7 @@ Eigenvalues are the reciprocals of the squares of the semi-axes.
 
 \end_layout
 
+\begin_deeper
 \begin_layout Pause
 
 \end_layout
@@ -1993,6 +1996,11 @@ Eigenvalues are the reciprocals of the squares of the semi-axes.
 \begin_layout Itemize
 That's why level sets were lines (actually pairs of lines, one on each side
  of ERM).
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper

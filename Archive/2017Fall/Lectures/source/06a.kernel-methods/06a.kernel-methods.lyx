@@ -3,7 +3,7 @@
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin /Users/drosen/Dropbox/repos/mlcourse/Lectures/
+\origin /Users/drosen/Dropbox/repos/mlcourse/Archive/2017Fall/Lectures/source/06a.kernel-methods/
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -1431,7 +1431,7 @@ Suppose we start with
 \end_layout
 
 \begin_layout Itemize
-We want to add all monomials up to degree 
+We want to add all monomials of degree 
 \begin_inset Formula $M$
 \end_inset
 
@@ -1440,7 +1440,7 @@ We want to add all monomials up to degree
 \end_inset
 
 , with 
-\begin_inset Formula $p_{1}+\cdots+p_{d}\le M$
+\begin_inset Formula $p_{1}+\cdots+p_{d}=M$
 \end_inset
 
 .
@@ -1455,7 +1455,7 @@ How many features will we end up with?
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula ${M+d \choose M}$
+\begin_inset Formula ${M+d-1 \choose M}$
 \end_inset
 
  (
@@ -1479,7 +1479,7 @@ For
 \end_inset
 
 , we get 
-\begin_inset Formula $377348994$
+\begin_inset Formula $314457495$
 \end_inset
 
  features.

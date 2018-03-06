@@ -1540,7 +1540,7 @@ How many features will we end up with?
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula ${M+d \choose M}$
+\begin_inset Formula ${M+d-1 \choose M}$
 \end_inset
 
  (
@@ -1552,6 +1552,16 @@ flower shop problem
 \end_inset
 
  from combinatorics)
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+(M+d-1) c (d-1) = (M+d-1) c (M
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -1564,7 +1574,7 @@ For
 \end_inset
 
 , we get 
-\begin_inset Formula $377348994$
+\begin_inset Formula $314457495$
 \end_inset
 
  features.

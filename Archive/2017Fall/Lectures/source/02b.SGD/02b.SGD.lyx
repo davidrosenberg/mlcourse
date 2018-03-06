@@ -3,7 +3,7 @@
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin unavailable
+\origin /Users/drosen/Dropbox/repos/mlcourse/Archive/2017Fall/Lectures/source/02b.SGD/
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -2658,13 +2658,36 @@ minibatch gradient
 \pause\ex\left[\del\hat{R}_{N}(w)\right] & = & \frac{1}{N}\sum_{i=1}^{N}\ex\left[\del_{w}\ell(f_{w}(x_{m_{i}}),y_{m_{i}})\right]\\
 \pause & = & \ex\left[\del_{w}\ell(f_{w}(x_{m_{1}}),y_{m_{1}})\right]\\
 \pause & = & \sum_{i=1}^{n}\pr\left(m_{1}=i\right)\del_{w}\ell(f_{w}(x_{i}),y_{i})\\
-\pause & = & \frac{1}{n}\sum_{i=1}^{n}\del_{w}\ell(f_{w}(x_{m_{i}}),y_{m_{i}})\\
+\pause & = & \frac{1}{n}\sum_{i=1}^{n}\del_{w}\ell(f_{w}(x_{i}),y_{i})\\
 \pause & = & \del\hat{R}_{n}(w)
 \end{eqnarray*}
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Technical note:
+\emph default
+ We only assumed that each point in the minibatch is equally likely to be
+ any of the 
+\begin_inset Formula $n$
+\end_inset
+
+ points in the batch – no independence needed.
+ So still true if we're sampling without replacement.
+ Still true if we sample one point randomly and reuse it 
+\begin_inset Formula $N$
+\end_inset
+
+ times.
 \end_layout
 
 \end_deeper

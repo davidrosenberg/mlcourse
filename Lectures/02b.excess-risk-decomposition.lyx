@@ -1392,8 +1392,8 @@ textwidth
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align*}
-f^{*}= & \argmin_{f}\ex\ell(f(X),Y)\\
-f_{\cf}= & \argmin_{f\in\cf}\ex\ell(f(X),Y))\\
+f^{*}= & \argmin_{f}\ex\ell(f(x),y)\\
+f_{\cf}= & \argmin_{f\in\cf}\ex\ell(f(x),y))\\
 \hat{f}_{n}= & \argmin_{f\in\cf}\frac{1}{n}\sum_{i=1}^{n}\ell(f(x_{i}),y_{i})
 \end{align*}
 

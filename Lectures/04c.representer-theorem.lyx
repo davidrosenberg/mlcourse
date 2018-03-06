@@ -2452,6 +2452,28 @@ Loss term
 
 \end_deeper
 \begin_layout Theorem
+Then 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If 
+\begin_inset Formula $M=\linspan\left(x_{1},\ldots,x_{n}\right)$
+\end_inset
+
+, then 
+\begin_inset Formula $J(\proj_{M}w)\le J(w)$
+\end_inset
+
+ for any 
+\begin_inset Formula $w\in\ch$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
 If 
 \begin_inset Formula $J(w)$
 \end_inset
@@ -2465,55 +2487,20 @@ has a minimizer of the form
 \end_inset
 
 
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-[If 
+\begin_layout Itemize
+If 
 \begin_inset Formula $R$
 \end_inset
 
  is strictly increasing, then all minimizers have this form.
  (Proof in homework.)]
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
-[If 
-\begin_inset Formula $w_{M}^{*}$
-\end_inset
 
- is a minimizer of 
-\begin_inset Formula $J(w)$
-\end_inset
-
- constrained to 
-\begin_inset Formula $M=\linspan\left(x_{1},\ldots,x_{n}\right)$
-\end_inset
-
- then it is also an unconstrained minimizer of 
-\begin_inset Formula $J(w)$
-\end_inset
-
-.
- Proof again by representer theorem type argument.
- But note that if 
-\begin_inset Formula $\alpha^{*}$
-\end_inset
-
- is a minimum of 
-\begin_inset Formula $J$
-\end_inset
-
- over 
-\begin_inset Formula $\alpha$
-\end_inset
-
-'s, then it must also be a minimum over all 
-\begin_inset Formula $w$
-\end_inset
-
-.
- 
 \end_layout
 
 \end_inset
@@ -2521,6 +2508,7 @@ status open
 
 \end_layout
 
+\end_deeper
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
@@ -2543,13 +2531,20 @@ The Representer Theorem (Proof)
 \end_layout
 
 \begin_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
 \begin_layout Enumerate
 Let 
 \begin_inset Formula $w^{*}$
 \end_inset
 
- be a minimizer.
- 
+ be a minimizer of 
+\begin_inset Formula $J(w)$
+\end_inset
+
+.
 \end_layout
 
 \begin_deeper
@@ -2579,6 +2574,19 @@ span of the data
 ]
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Fix any 
+\begin_inset Formula $w\in\ch$
+\end_inset
+
+.
+\end_layout
+
 \begin_deeper
 \begin_layout Pause
 
@@ -2587,20 +2595,11 @@ span of the data
 \end_deeper
 \begin_layout Enumerate
 Let 
-\begin_inset Formula $w=\proj_{M}w^{*}$
+\begin_inset Formula $w_{M}=\proj_{M}w$
 \end_inset
 
 .
- So 
-\begin_inset Formula $\exists\alpha$
-\end_inset
-
- s.t.
  
-\begin_inset Formula $w=\sum_{i=1}^{n}\alpha_{i}x_{i}$
-\end_inset
-
-.
 \end_layout
 
 \begin_deeper
@@ -2610,14 +2609,8 @@ Let
 
 \end_deeper
 \begin_layout Enumerate
-\begin_inset CommandInset label
-LatexCommand label
-name "enu:residual-is-orthogonal"
-
-\end_inset
-
 Then 
-\begin_inset Formula $w^{\perp}:=w^{*}-w$
+\begin_inset Formula $w_{M}^{\perp}:=w-w_{M}$
 \end_inset
 
  is orthogonal to 
@@ -2634,8 +2627,39 @@ Then
 
 \end_deeper
 \begin_layout Enumerate
+So 
+\begin_inset Formula $\left\langle w,x_{i}\right\rangle =\pause\left\langle w_{M}+w_{M}^{\perp},x_{i}\right\rangle =\pause\left\langle w_{M},x_{i}\right\rangle $
+\end_inset
+
+ 
+\begin_inset Formula $\forall i$
+\end_inset
+
+, and
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Formula $L\left(\left\langle w,x_{1}\right\rangle ,\ldots,\left\langle w,x_{n}\right\rangle \right)=L\left(\left\langle w_{M},x_{1}\right\rangle ,\ldots,\left\langle w_{M},x_{n}\right\rangle \right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
 Projections decrease norms: 
-\begin_inset Formula $\|w\|\le\|w^{*}\|$
+\begin_inset Formula $\|w_{M}\|\le\|w\|$
 \end_inset
 
 .
@@ -2653,7 +2677,7 @@ Since
 \end_inset
 
  is nondecreasing, 
-\begin_inset Formula $R(\|w\|)\le R(\|w^{*}\|)$
+\begin_inset Formula $R(\|w_{M}\|)\le R(\|w\|)$
 \end_inset
 
 .
@@ -2666,44 +2690,326 @@ Since
 
 \end_deeper
 \begin_layout Enumerate
-By 
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "enu:residual-is-orthogonal"
+\begin_inset Formula $J(w_{M})\le J(w)$
+\end_inset
 
+.
+ [Proves first result.]
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+If 
+\begin_inset Formula $w^{*}$
+\end_inset
+
+ minimizes 
+\begin_inset Formula $J(w)$
+\end_inset
+
+, then 
+\begin_inset Formula $w_{M}^{*}=\proj_{M}w^{*}$
+\end_inset
+
+ is also a minimizer, since 
+\begin_inset Formula $J(w_{M}^{*})\le J(w^{*})$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+So 
+\begin_inset Formula $\exists\alpha$
+\end_inset
+
+ s.t.
+ 
+\begin_inset Formula $w_{M}^{*}=\sum_{i=1}^{n}\alpha_{i}x_{i}$
+\end_inset
+
+ is a minimizer of 
+\begin_inset Formula $J(w)$
+\end_inset
+
+.
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\end_layout
+
+\begin_layout Standard
+Q.E.D.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status collapsed
+
+\begin_layout Plain Layout
+The Representer Theorem (Strong Converse)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Theorem
+Let 
+\begin_inset Formula 
+\[
+J(w)=R\left(\|w\|\right)+L\left(\left\langle w,x_{1}\right\rangle ,\ldots,\left\langle w,x_{n}\right\rangle \right),
+\]
+
+\end_inset
+
+under the some conditions as in the Representer theorem.
+ Let 
+\begin_inset Formula $M=\linspan\left(x_{1},\ldots,x_{n}\right)$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $w_{M}^{*}$
+\end_inset
+
+ minimizes 
+\begin_inset Formula $J(w)$
+\end_inset
+
+ 
+\series bold
+over the set
+\series default
+ 
+\begin_inset Formula $M$
+\end_inset
+
+, then 
+\begin_inset Formula $w_{M}^{*}$
+\end_inset
+
+ minimizes 
+\begin_inset Formula $J(w)$
+\end_inset
+
+ over all 
+\begin_inset Formula $\ch$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+One consequence of the Representer theorem only applies if 
+\begin_inset Formula $J(w)$
+\end_inset
+
+ has a minimizer over 
+\begin_inset Formula $\ch$
+\end_inset
+
+.
+ This theorem tells us that it's sufficient to check for a constrained minimizer
+ of 
+\begin_inset Formula $J(w)$
+\end_inset
+
+ over 
+\begin_inset Formula $M$
+\end_inset
+
+.
+ If one exists, then it's also an unconstrained minimizer of 
+\begin_inset Formula $J(w)$
+\end_inset
+
+ over 
+\begin_inset Formula $\ch$
+\end_inset
+
+.
+ If there is no constrained minimizer over 
+\begin_inset Formula $M$
+\end_inset
+
+, then, 
+\begin_inset Formula $J(w)$
+\end_inset
+
+ has no minimizer over 
+\begin_inset Formula $\ch$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Bottom Line: We can jump straight to minimizing over 
+\begin_inset Formula $M$
+\end_inset
+
+, the 
+\begin_inset Quotes eld
+\end_inset
+
+span of the data
+\begin_inset Quotes erd
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status collapsed
+
+\begin_layout Plain Layout
+The Representer Theorem (Strong Converse - Proof)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Let 
+\begin_inset Formula $w_{M}^{*}\in\argmin_{w\in M}J(w)$
+\end_inset
+
+.
+ [constrained minimizer
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Consider any 
+\begin_inset Formula $w\in\ch$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Let 
+\begin_inset Formula $w_{M}=\proj_{M}w$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+By the Representer theorem, 
+\begin_inset Formula $J(w_{M})\le J(w)$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Formula $J(w_{M}^{*})\le J(w_{M})$
+\end_inset
+
+ by definition of 
+\begin_inset Formula $w_{M}^{*}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Thus for any 
+\begin_inset Formula $w\in\ch$
 \end_inset
 
 , 
-\begin_inset Formula $\left\langle w^{*},x_{i}\right\rangle =\pause\left\langle w+w^{\perp},x_{i}\right\rangle =\pause\left\langle w,x_{i}\right\rangle $
+\begin_inset Formula $J(w_{M}^{*})\le J(w)$
 \end_inset
 
 .
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-\begin_inset Formula $L\left(\left\langle w^{*},x_{1}\right\rangle ,\ldots,\left\langle w^{*},x_{n}\right\rangle \right)=L\left(\left\langle w,x_{1}\right\rangle ,\ldots,\left\langle w,x_{n}\right\rangle \right)$
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-\begin_inset Formula $J(w)\le J(w^{*})$
-\end_inset
-
-.
+ 
 \end_layout
 
 \begin_deeper
@@ -2738,7 +3044,7 @@ Therefore
 \noun default
 \color inherit
 
-\begin_inset Formula $w=\sum_{i=1}^{n}\alpha_{i}x_{i}$
+\begin_inset Formula $w_{M}^{*}$
 \end_inset
 
 
@@ -2753,17 +3059,19 @@ Therefore
 \uwave off
 \noun off
 \color none
- is also a minimizer.
+ minimizes 
+\begin_inset Formula $J(w)$
+\end_inset
+
+ over 
+\begin_inset Formula $\ch$
+\end_inset
+
+
 \end_layout
 
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
 \begin_layout Standard
-Q.E.D.
+QED
 \end_layout
 
 \end_deeper

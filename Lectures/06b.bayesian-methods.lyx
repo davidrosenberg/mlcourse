@@ -768,6 +768,18 @@ Just in article version
 status open
 
 \begin_layout Plain Layout
+Need to be more precise on the 
+\begin_inset Quotes eld
+\end_inset
+
+prior count
+\begin_inset Quotes erd
+\end_inset
+
+ thing for the Beta distribution.
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -2621,12 +2633,12 @@ p(\theta) & \propto & \theta^{h-1}\left(1-\theta\right)^{t-1}
 \begin_layout Itemize
 
 \series bold
-Likelihood model
+Likelihood function
 \series default
-:
+
 \begin_inset Formula 
 \[
-p(\cd\mid\theta)=\theta^{n_{h}}\left(1-\theta\right)^{n_{t}}
+L(\theta)=p(\cd\mid\theta)=\theta^{n_{h}}\left(1-\theta\right)^{n_{t}}
 \]
 
 \end_inset
@@ -3703,17 +3715,24 @@ Choose the following:
 \end_layout
 
 \begin_deeper
+\begin_layout Pause
+
+\end_layout
+
 \begin_layout Itemize
 
 \series bold
-Loss
+Prior
 \series default
-\emph on
  
-\begin_inset Formula $\ell(\hat{\theta},\theta)=\left(\theta-\hat{\theta}\right)^{2}$
+\begin_inset Formula $p(\theta)$
 \end_inset
 
- 
+ on 
+\begin_inset Formula $\Theta=\reals$
+\end_inset
+
+.
 \end_layout
 
 \begin_deeper
@@ -3725,17 +3744,14 @@ Loss
 \begin_layout Itemize
 
 \series bold
-Prior
+Loss
 \series default
+\emph on
  
-\begin_inset Formula $p(\theta)$
+\begin_inset Formula $\ell(\hat{\theta},\theta)=\left(\theta-\hat{\theta}\right)^{2}$
 \end_inset
 
- on 
-\begin_inset Formula $\Theta$
-\end_inset
-
-.
+ 
 \end_layout
 
 \begin_deeper
@@ -4005,7 +4021,7 @@ That is, the median of the distribution
 \begin_layout Itemize
 Show with approach similar to what was used in Homework #1.
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Itemize
 https://www.dropbox.com/s/zwguypl8nn96ryr/Screenshot%202015-04-21%2011.28.51.png?dl=0
@@ -4346,18 +4362,48 @@ choosing a procedure
  or justifying an estimator.
 \end_layout
 
-\begin_layout Itemize
-Only choices are the
-\series bold
- prior
-\series default
- and the
-\series bold
- likelihood model
-\series default
-.
+\begin_deeper
+\begin_layout Pause
+
 \end_layout
 
+\end_deeper
+\begin_layout Itemize
+Only choices are
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+family of distributions
+\series default
+, indexed by 
+\begin_inset Formula $\Theta$
+\end_inset
+
+, and the
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+prior distribution 
+\series default
+on 
+\begin_inset Formula $\Theta$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
 \begin_layout Itemize
 For decision making, need a 
 \series bold

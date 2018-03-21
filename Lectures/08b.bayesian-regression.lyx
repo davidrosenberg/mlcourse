@@ -800,8 +800,8 @@ It's a bit confusing about why here we don't assume a joint distribution
 \end_layout
 
 \begin_layout Enumerate
-Could use a diagram connecting prior distribution to prior-predictive distribuit
-ion and posterior to posterior predictive distribution
+Could use a diagram connecting prior distribution to prior-predictive distributi
+on and posterior to posterior predictive distribution
 \end_layout
 
 \begin_layout Enumerate
@@ -1182,32 +1182,23 @@ motivates empirical risk minimization
 \end_deeper
 \end_deeper
 \begin_layout Itemize
-But none of our development of ML methods depended on it
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Most properties we discussed about ridge/lasso/elastic-net regression, optimizat
-ion methods, SVMs, and kernel methods are all true 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-for arbitrary data sets 
-\begin_inset Formula $\left(x_{1},y_{1}\right),\ldots,\left(x_{n},y_{n}\right)\in\cx,\cy$
+The large majority of things we've learned about ridge/lasso/elastic-net
+ regression, optimization, SVMs, and kernel methods are true for arbitrary
+ training data sets 
+\begin_inset Formula $\cd:\left(x_{1},y_{1}\right),\ldots,\left(x_{n},y_{n}\right)\in\cx\times\cy$
 \end_inset
 
-
+.
 \end_layout
 
+\begin_deeper
 \begin_layout Itemize
 i.e.
- they can be chosen by hand, by an adversary, or randomly
+ 
+\begin_inset Formula $\cd$
+\end_inset
+
+ could be created by hand, by an adversary, or randomly.
 \end_layout
 
 \begin_deeper
@@ -1217,6 +1208,19 @@ i.e.
 
 \end_deeper
 \end_deeper
+\begin_layout Itemize
+We rely on the i.i.d.
+ 
+\begin_inset Formula $\cp_{\cx\times\cy}$
+\end_inset
+
+ assumption when it comes to 
+\series bold
+generalization
+\series default
+.
+\end_layout
+
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
@@ -1230,7 +1234,7 @@ i.e.
 status open
 
 \begin_layout Plain Layout
-Our Data
+The Data: Conditional Probability Modeling
 \end_layout
 
 \end_inset
@@ -1240,42 +1244,38 @@ Our Data
 
 \begin_deeper
 \begin_layout Itemize
-
-\series bold
-Data: 
-\series default
-Suppose we have 
-\begin_inset Formula $n$
+To get generalization, we'll still need our usual i.i.d.
+ 
+\begin_inset Formula $\cp_{\cx\times\cy}$
 \end_inset
 
- inputs 
-\series bold
-
-\begin_inset Formula $x_{1},\ldots,x_{n}\in\cx$
-\end_inset
-
-.
+ assumption.
 \end_layout
 
-\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
 \begin_layout Itemize
-For now, 
-\begin_inset Formula $x$
-\end_inset
+This time, for developing the model, we'll make some assumptions about the
+ training data...
+\end_layout
 
- can be chosen randomly, by hand, or adversarially.
+\begin_layout Pause
+
 \end_layout
 
 \begin_layout Itemize
-Our entire development will consider 
+We do not need any assumptions on 
 \begin_inset Formula $x$
 \end_inset
 
-'s fixed and known.
+'s .
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+They can be random, chosen by hand, or chosen adversarially.
 \end_layout
 
 \end_deeper
@@ -1288,7 +1288,12 @@ For each input
 \begin_inset Formula $x_{i}$
 \end_inset
 
-, we observe 
+, 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+we observe 
 \begin_inset Formula $y_{i}$
 \end_inset
 
@@ -1296,10 +1301,15 @@ For each input
 \begin_inset Formula $p(y\mid x_{i},\theta)$
 \end_inset
 
+, for some unknown 
+\begin_inset Formula $\theta\in\Theta$
+\end_inset
+
 .
  
 \end_layout
 
+\end_deeper
 \begin_layout Pause
 
 \end_layout
@@ -2276,7 +2286,7 @@ The Hypothesis Space
 
 \begin_deeper
 \begin_layout Itemize
-We have a parametric family of condiitonal densities: 
+We have a parametric family of conditional densities: 
 \begin_inset Formula 
 \[
 \left\{ p(y\mid x,\theta):\theta\in\Theta\right\} 
@@ -2461,7 +2471,7 @@ Suppose we have a conditional probability modeling problem.
 \end_deeper
 \begin_layout Itemize
 We choose a parametric family (i.e.
- set) of condiitonal densities
+ set) of conditional densities
 \begin_inset Formula 
 \[
 \left\{ p(y\mid x,\theta):\theta\in\Theta\right\} ,

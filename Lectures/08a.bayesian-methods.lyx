@@ -2892,7 +2892,7 @@ The beta family is conjugate to the coin-flipping (i.e.
 \begin_layout Itemize
 The family of all probability distributions is conjugate to any parametric
  model.
- [Trvially]
+ [Trivially]
 \end_layout
 
 \begin_layout Standard
@@ -3187,7 +3187,7 @@ p(w)=p(w_{1})p(w_{2}\mid w_{1})p(w_{3}\mid w_{1},w_{2})\cdots p(w_{n}\mid w_{1},
 
 \end_inset
 
-If we take the log of this, we get a sum of log-likelhoods of points that
+If we take the log of this, we get a sum of log-likelihoods of points that
  we didn't see during training.
  So it should be something like an estimate of holdout performance.
  
@@ -3400,7 +3400,7 @@ credible set
 \begin_inset Formula $\theta$
 \end_inset
 
- (a Bayesian confidence interval).
+ (Bayesian version of a confidence interval).
 \end_layout
 
 \begin_deeper
@@ -4446,7 +4446,7 @@ status collapsed
 \begin_layout Plain Layout
 In 2017 there was some crazy question about what can happen to a posterior
  distribution, but I'd have to check the video...
- it was can the vriance ever get bigger - it can - see Brett's solutions
+ it was can the variance ever get bigger - it can - see Brett's solutions
 \end_layout
 
 \end_inset

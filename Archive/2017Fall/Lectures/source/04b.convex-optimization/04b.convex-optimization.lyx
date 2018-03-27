@@ -3,7 +3,7 @@
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin /Users/drosen/Dropbox/repos/mlcourse/Lectures/
+\origin /Users/drosen/Dropbox/repos/mlcourse/Archive/2017Fall/Lectures/source/04b.convex-optimization/
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -3482,7 +3482,7 @@ strong duality
 \begin_deeper
 \begin_layout Itemize
 the optimal Lagrange multiplier 
-\begin_inset Formula $\lambda_{i}$
+\begin_inset Formula $\lambda_{i}^{*}$
 \end_inset
 
  and

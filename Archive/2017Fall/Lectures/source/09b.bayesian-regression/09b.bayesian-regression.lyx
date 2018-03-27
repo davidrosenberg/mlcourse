@@ -3,7 +3,7 @@
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin /Users/drosen/Dropbox/repos/mlcourse/Lectures/
+\origin /Users/drosen/Dropbox/repos/mlcourse/Archive/2017Fall/Lectures/source/09b.bayesian-regression/
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -3170,9 +3170,9 @@ Closed form:
 
 \begin_inset Formula 
 \begin{eqnarray*}
-y_{\text{new}}\mid x_{\text{new}},\cd & \sim & \cn\left(\eta_{\text{new}}\,,\,\sigma_{\text{new}}\right)\\
+y_{\text{new}}\mid x_{\text{new}},\cd & \sim & \cn\left(\eta_{\text{new}}\,,\,\sigma_{\text{new}}^{2}\right)\\
 \pause\eta_{\text{new}} & = & \mu_{\text{P}}^{T}x_{\text{new}}\\
-\pause\sigma_{\text{new}} & = & \underbrace{x_{\text{new}}^{T}\Sigma_{\text{P}}x_{\text{new}}}_{\text{from variance in }w}+\underbrace{\sigma^{2}}_{\text{inherent variance in }y}
+\pause\sigma_{\text{new}}^{2} & = & \underbrace{x_{\text{new}}^{T}\Sigma_{\text{P}}x_{\text{new}}}_{\text{from variance in }w}+\underbrace{\sigma^{2}}_{\text{inherent variance in }y}
 \end{eqnarray*}
 
 \end_inset

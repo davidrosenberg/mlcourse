@@ -4,7 +4,7 @@
 cd ~/Dropbox/repos/mlcourse
 FLATTEN="python Code/admin/flatten_lyx.py"
 LYX2LYX="python /Applications/LyX.app/Contents/Resources/lyx2lyx/lyx2lyx"
-YEAR="2017Fall"
+YEAR="2018"
 ORIGIN="." 
 ##ORIGIN="2017" 
 DEST="Archive"/$YEAR

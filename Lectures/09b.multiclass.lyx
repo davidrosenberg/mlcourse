@@ -1044,10 +1044,12 @@ Our approaches to multiclass problems so far:
 multinomial / softmax logistic regression 
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
-trees and random forests
+Soon: trees and random forests
 \end_layout
 
+\begin_deeper
 \begin_layout Pause
 
 \end_layout
@@ -1075,17 +1077,6 @@ exponentially large
 \end_layout
 
 \end_deeper
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 Reduction to Binary Classification
 \end_layout

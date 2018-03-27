@@ -25,7 +25,7 @@ following:
 - coordinate descent : what was special about the coordinate descent for Lasso.
 
 
-## Lecture 1 (1/20/2018)
+## Week 1 (1/20/2018)
 ### 1b: Basic Setup for Statistical Learning Theory
 - Identify the input, action, and outcome spaces for a given machine
   learning problem.
@@ -44,8 +44,6 @@ following:
 - Explain what a hypothesis space is, and how it can be used with
   constrained empirical risk minimization to control overfitting.
 
-## Recitation 1 (1/21/2018)
-
 ### Multivariate Differentiation
 - Define the directional derivative, and use it to find a linear
   approximation to f(x+hu).
@@ -63,7 +61,7 @@ following:
   general directional derivative.
 
 
-## Lecture 2 (1/31/2017)
+## Week 2 (1/31/2017)
 ### 2a: Gradient and Stochastic Gradient Descent
 - Be able to write the empirical risk for a particular loss function over a
   particular parameterized hypothesis space, such as for square loss over a
@@ -97,7 +95,7 @@ following:
 - The penalty form (i.e. Tikhonov form) for the Lasso optimization problem does not have a differentiable objective function.  Give an equivalent formulation that has a differentiable objective function by dividing the weight vector into positive and negative parts. Explain how we could solve this optimization problem with techniques from our class.
 - Explain what coordinate descent is, and why it is of particular interest for the Lasso.
 
-## Lecture 3 (2/6/2018)
+## Week 3 (2/6/2018)
 ### 3a: Lasso, Ridge, and Elastic Net
 - Explain what happens when we do linear, lasso, and ridge regression with 2 identical features.
 - If features x1 and x2 are linearly related (e.g. x2 = 2 x1), then there are infinitely many ways to express the same function of x1 and x2.  Give the relation between the corresponding parameters for the set of equivalent prediction functions. If x1 and x2 are our only two features, what solutions are selected if have L1 regularization?  L2 regularization?
@@ -115,18 +113,18 @@ following:
 - Explain the concepts of the score function and the margin (functional margin, not geometric margin), and define a margin-based loss.
 - Define the hinge loss and compare it to the logistic loss.  In particular, explain what we mean by "logistic loss always wants more margin, while hinge loss is satisfied with 1."
 
-## Lecture 4 (2/13/2018)
+## Week 4 (2/13/2018)
 
-### Lecture 4a (Continuing 3c): Subgradient Descent
+### 4a (Continuing 3c): Subgradient Descent
 - Explain motivation for our exploration of subgradient descent (i.e. thinking about "gradient" of SVM objective)
 - Understand where everything lives (i.e. for a function f:R^D to R, the subdifferentials are sets of vectors in R^d; subgradients are vecctors in R^d, level sets are in R^d, underestimating hyperpplanes/graph of function in R^(d+1), etc)
 - For a subgradient g, explain that -g may not be a descent direction, but it for small enough step size it will take us closer to minimizer -- be able to explain the two proofs from class.
 
-### Lecture 4b: SVM -- consequences of lagrangian duality
+### 4b: SVM -- consequences of lagrangian duality
 - Be able to identify characterize support vectors given margins.
 - Compare and contrast the "sparsity in input examples" that we might observe from SVM with the sparsity we've discussed around, for example, Lasso.
 
-### Lecture 4c: Representer Theorem:
+### 4c: Representer Theorem:
 - Explain Lasso isn't an instance of the "generalized objective" defined on slides 14-16
 - Explain the significance of the representer theorem -- given an objective function that is an instance of the "generalized objective", what do we know about the set of minimizers?
 
@@ -137,3 +135,55 @@ following:
 - Define the Lagrangian for this optimization problem, and explain how the Lagrangian encodes all the information in the original optimization problem.
 - Write the primal and dual optimization problem in terms of the Lagrangian.
 
+## Week 5 (2/20/2018)
+
+### 5a: Kernel Methods
+- Explain how explicit feature maps can be used to extend the expressivity of linear models.
+- Explain potential issues explicitly computing large feature spaces.
+- State and explain the definition of a 'kernelized' method.
+- Explain why the SVM dual is kernelized, while the primal is not (ignoring the representer theorem).
+- Give the relationship between a feature map and kernel function.
+- Explain the computational benefits of kernelization based on costs of optimizing over R^n vs R^d.
+- Be able to apply the kernel trick using the kernel matrix K.
+- Be able to apply the elements of our proof of the representer theorem (ex: projections decrease norms) to prove related theorems.
+- Compare using the representer theorem and duality to kernelized SVM.
+- Describe common kernels (RBF/polynomial) and their properties (i.e. equivalent feature maps, computational benefits relative to explicit computation (if possible),...).
+- Describe some general recipes for deriving "new" kernel function.
+
+### 5b: Citysense
+- Explain what's new here (specifically defining our action space as probability distributions on y).
+
+### 5c: MLE
+- Define the likelihood of an estimate of a probability distribution for some data D.
+- Define a parameteric model, and some common parameteric families.
+- Define the MLE for some parameter theta of a probability model.
+- Be able to find the MLE using first order conditions on the log-likelihood.
+
+## Week 6 (2/27/2018)
+
+### 6a: Conditional Probability Models
+- Describe the basic structure of a linear probabilistic model, in terms of (i) a parameter theta of the probablistic model, (ii) a linear score function, (iii) a transfer function (kin to a "response function" or "inverse link" function, though we've relaxed requirements on the parameter theta).
+- Explain how we can use MLE to choose w, the weight vector in our linear function (in (ii) above).
+- Give common transfer functions for (i) bernoulli, (ii) poisson, (iii) gaussian, and (iv) categorical distributions. Explain why these common transfer functions make sense (in terms of their codomains).
+- Explain the equivalence of EMR and MLE for negative log-likelihood loss.
+
+
+### 6b: Bayesian Methods
+- Explain basic setup for point estimation, and desirable properties of point estimators.
+- Be able to find MLE for simple problems using log-likelihood.
+- Exlain what's new with bayesian statistic (relative to classical/frequentist approaches).
+- Be able to unpack the joint distribution on a parameter and data using the prior and likelihood.
+- Express and manipulate the posterior distribution using proportionality.
+- Define conjugate priors, and why they're useful.
+- Give the setup for Bayesian decision theory, and derive bayes action for standard loss functions.
+
+
+## Week 7 (3/6/2018): Midterm
+
+## Week 7 (3/20/2018)
+
+### 8b: Bayesian Regression
+- (Recap) Recall the basic Bayesian setup (likelihood and prior), and be able to write the posterior distribution using proportionality -- (see slide 15 for Gaussian Example).
+- Explain the difference between the posterior predictive distribution function and the MAP or posterior mean estimator.
+- Be able to show the relationship between Gaussian regression and ridge regression.
+- Explain what a predictive distribution is, and how it gives additional information (relative to the prediction functions we've learned in our ridge/lasso homework, for example).

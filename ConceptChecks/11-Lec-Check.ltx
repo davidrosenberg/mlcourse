@@ -1,29 +1,38 @@
-\section{Week 11 Lecture: Concept Check Exercises}
+\section{Bayesian Methods and Regression: Concept Check}
 \subsection{Bayesian Methods and Regression}
+\subsubsection{Bayesian Methods and Regression Learning Objectives}
+\begin{itemize}
+  \item (Recap) Recall the basic Bayesian setup (likelihood and prior), and be able to write the posterior distribution using proportionality -- (see slide 15 for Gaussian Example).
+  \item Explain the difference between the posterior predictive distribution function and the MAP or posterior mean estimator.
+  \item Be able to show the relationship between Gaussian regression and ridge regression.
+  \item Explain what a predictive distribution is, and how it gives additional information (relative to the prediction functions we've learned in our ridge/lasso homework, for example).
+\end{itemize}
+\subsubsection{Bayesian Methods and Regression Concept Check Questions}
 \begin{enumerate}
-\item Recall that the gamma function $\Gamma(x)$ is defined to be
-  $$\Gamma(x) = \int_0^\infty t^{x-1}e^{-t}\,dt.$$
-  We say that $X\sim\Gam(a,b)$ (for $a,b>0$) if the PDF $f_X$ is
-  given by
-  $$f_X(x) = \frac{b^a}{\Gamma(a)}x^{a-1}e^{-bx}$$
-  for $x>0$ and $0$ otherwise.  Suppose $X$ has prior distribution
-  $\Gam(a,b)$ and, conditional on $X$, the distribution of $Y$ is
-  Poisson with parameter $X$.
-  What is the posterior distribution of $X$ given $Y$?
-\begin{solution}
-\item[]\Sol Note that
-  $$f_{X|Y}(x|y)\propto f_{Y|X}(y|x)f_X(x) \propto
-  e^{-x}\frac{x^y}{y!}x^{a-1}e^{-bx}
-  \propto x^{y+a-1}e^{-(b+1)x}$$
-  for $y\in\ZZ_{\geq0}$, $x>0$.  Thus $X|Y=y\sim\Gam(y+a,b+1)$ and has
-  PDF
-  $$f_{X|Y}(x|y) =
-  \frac{(b+1)^{y+a}}{\Gamma(y+a)}x^{y+a-1}e^{-(b+1)x}.$$
-  Note that the terms $(b+1)^{y+a}$ and $\Gamma(y+a)$ were determined
-  without any calculations by comparing with the form of the Gamma
-  PDF.  This shows that the Gamma distribution is a conjugate prior
-  for the Poisson likelihood.
-\end{solution}
+% Pushed into lab 10 check
+% \item Recall that the gamma function $\Gamma(x)$ is defined to be
+%   $$\Gamma(x) = \int_0^\infty t^{x-1}e^{-t}\,dt.$$
+%   We say that $X\sim\Gam(a,b)$ (for $a,b>0$) if the PDF $f_X$ is
+%   given by
+%   $$f_X(x) = \frac{b^a}{\Gamma(a)}x^{a-1}e^{-bx}$$
+%   for $x>0$ and $0$ otherwise.  Suppose $X$ has prior distribution
+%   $\Gam(a,b)$ and, conditional on $X$, the distribution of $Y$ is
+%   Poisson with parameter $X$.
+%   What is the posterior distribution of $X$ given $Y$?
+% \begin{solution}
+% \item[]\Sol Note that
+%   $$f_{X|Y}(x|y)\propto f_{Y|X}(y|x)f_X(x) \propto
+%   e^{-x}\frac{x^y}{y!}x^{a-1}e^{-bx}
+%   \propto x^{y+a-1}e^{-(b+1)x}$$
+%   for $y\in\ZZ_{\geq0}$, $x>0$.  Thus $X|Y=y\sim\Gam(y+a,b+1)$ and has
+%   PDF
+%   $$f_{X|Y}(x|y) =
+%   \frac{(b+1)^{y+a}}{\Gamma(y+a)}x^{y+a-1}e^{-(b+1)x}.$$
+%   Note that the terms $(b+1)^{y+a}$ and $\Gamma(y+a)$ were determined
+%   without any calculations by comparing with the form of the Gamma
+%   PDF.  This shows that the Gamma distribution is a conjugate prior
+%   for the Poisson likelihood.
+% \end{solution}
 \item (From DeGroot and Schervish) Let $\theta$ denote the proportion of registered voters in a large city who are in favor of a certain proposition.  Suppose that the value of $\theta$ is unknown, and two statisticians $A$ and~$B$
   assign to~$\theta$ the following different prior PDFs $\xi_A(\theta)$ and~$\xi_B(\theta)$, respectively:
   $$\begin{array}{rcll}
@@ -33,7 +42,7 @@
   In a random sample of 1000 registered voters from the city, it is found that 710 are in favor of the proposition.
   \begin{enumerate}
   \item Find the posterior distribution that each statistician assigns to~$\theta$.
-  \item Find the Bayes estimate of $\theta$ 
+  \item Find the Bayes estimate of $\theta$
     (minimizer of posterior expected loss)
     for each statistician based on the squared error loss function.
   \item Show that after the opinions of the 1000 registered voters in the random sample had been obtained, the Bayes estimates for the two statisticians could not
@@ -91,7 +100,7 @@
   while the posterior variance is given by
   $$\frac{10\cdot 10}{(10+10)^2(10+10+1)} = \frac{1}{84}\approx.0119.$$
 \end{solution}
-\item Fix $\sigma^2>0$. Let $w$, taking values in $\RR^d$, 
+\item Fix $\sigma^2>0$. Let $w$, taking values in $\RR^d$,
   have prior distribution $\Norm(\mu_0,\Sigma_0)$.
   Conditional on $w$ and $x_1,\ldots,x_n\in\RR^2$ suppose that $y_1,\ldots,y_n$ are
   i.i.d.~with $y_i\sim\Norm(w^Tx_i,\sigma^2)$.  Let
@@ -111,12 +120,12 @@
     Bayesian approach correspond to a large amount of regularization?
   \end{enumerate}
 \begin{solution}
-\item[]\Sol 
+\item[]\Sol
   \begin{enumerate}
   \item We have $\hat{y}=\mu_1^Tx$ with expected loss
     $x^T\Sigma_1x+\sigma^2$, the mean and variance of the predictive
     distribution.
-  \item 
+  \item
     \begin{enumerate}
     \item High $\sigma$ meaning low certainty in data.
     \item Small $\Sigma_0$ meaning high certainty in prior.  A

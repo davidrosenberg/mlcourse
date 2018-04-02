@@ -2906,7 +2906,7 @@ Learning
 : Maximize the log-likelihood of training data
 \begin_inset Formula 
 \[
-\argmax_{w_{1},\ldots,w_{k}}\sum_{i=1}^{n}\log\left[\softmax\left(\left\langle w_{1},x_{i}\right\rangle ,\ldots,\left\langle w_{k},x_{i}\right\rangle \right)_{y_{i}}\right].
+\argmax_{w_{1},\ldots,w_{k}\in\reals^{d}}\sum_{i=1}^{n}\log\left[\softmax\left(\left\langle w_{1},x_{i}\right\rangle ,\ldots,\left\langle w_{k},x_{i}\right\rangle \right)_{y_{i}}\right].
 \]
 
 \end_inset
@@ -3038,7 +3038,7 @@ Learning
 : Maximize the log-likelihood of training data
 \begin_inset Formula 
 \[
-\argmax_{w_{1},\ldots,w_{k}}\sum_{i=1}^{n}\log\left[\softmax\left(f_{1}(x),\ldots,f_{k}(x)\right)_{y_{i}}\right].
+\argmax_{f_{1},\ldots,f_{k}}\sum_{i=1}^{n}\log\left[\softmax\left(f_{1}(x),\ldots,f_{k}(x)\right)_{y_{i}}\right].
 \]
 
 \end_inset
@@ -3335,7 +3335,7 @@ To train this we maximize the conditional log-likelihood for the training
  data:
 \begin_inset Formula 
 \[
-J(\theta)=\frac{1}{n}\sum_{i=1}^{n}\text{\softmax}(f(x_{i}))_{y_{i}},
+J(\theta)=\frac{1}{n}\sum_{i=1}^{n}\log\left[\text{\softmax}(f(x_{i}))_{y_{i}}\right],
 \]
 
 \end_inset

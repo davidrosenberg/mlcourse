@@ -857,7 +857,7 @@ don't have this restriction (Murthy et al
 \begin_inset Quotes eld
 \end_inset
 
-A system for the iduction of oblique decision trees
+A system for the induction of oblique decision trees
 \begin_inset Quotes erd
 \end_inset
 
@@ -3424,15 +3424,42 @@ For binary classification
  
 \end_layout
 
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Categorical Features in Binary Classification
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_deeper
 \begin_layout Itemize
-Assign each category a number, the proportion of class 
+Assign each category a number
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+the proportion of class 
 \begin_inset Formula $0$
 \end_inset
 
-.
+ among training examples with that category.
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
 Then find optimal split as though it were a numeric feature.
 \end_layout
@@ -3442,13 +3469,14 @@ Proved to be equivalent to search over all splits in (Breiman et al.
  1984).
 \end_layout
 
+\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-Otherwise, can use approximations..
+(This trick doesn't work for multiclass – would have to use approximations...)
 \end_layout
 
 \begin_deeper
@@ -3458,7 +3486,7 @@ Otherwise, can use approximations..
 
 \end_deeper
 \begin_layout Itemize
-Statistical issues?
+Statistical issues with categorical features?
 \end_layout
 
 \begin_deeper
@@ -3823,7 +3851,7 @@ Feature scale irrelevant
 \end_deeper
 \end_deeper
 \begin_layout Itemize
-Predictions are not continuous
+Prediction functions are not continuous
 \end_layout
 
 \begin_deeper
@@ -3865,7 +3893,7 @@ The discussion above focuses on the CART (classification and regression
 
 \begin_layout Section
 \start_of_appendix
-Tree Pruning
+Appendix: Tree Pruning 
 \end_layout
 
 \begin_layout Frame
@@ -3916,7 +3944,11 @@ Node has
 \begin_inset Formula $C=1$
 \end_inset
 
-)
+) OR
+\end_layout
+
+\begin_layout Itemize
+All inputs in node are identical (and thus we cannot split more)
 \end_layout
 
 \end_deeper
@@ -4050,7 +4082,7 @@ To prune the subtree rooted at
 
 \begin_deeper
 \begin_layout Itemize
-eliminate all descendents of 
+eliminate all descendants of 
 \begin_inset Formula $n$
 \end_inset
 
@@ -4645,7 +4677,7 @@ Then find proper subtree
 
 \end_deeper
 \begin_layout Itemize
-Repeat until we have removed all interal nodes are left with just a single
+Repeat until we have removed all internal nodes are left with just a single
  node (a leaf node).
 \end_layout
 

@@ -11,33 +11,33 @@
 
 
 % Set Color ==============================
-\definecolor{BBGblue}{RGB}{13,157,219}
-\definecolor{BBGgreen}{RGB}{77,170,80}
+\definecolor{NYUPurple}{RGB}{87,6,140}
+\definecolor{LightPurple}{RGB}{165,11,255}
 
 
-\setbeamercolor{title}{fg=BBGblue}
-%\setbeamercolor{frametitle}{fg=BBGblue}
-\setbeamercolor{frametitle}{fg=BBGblue}
+\setbeamercolor{title}{fg=NYUPurple}
+%\setbeamercolor{frametitle}{fg=NYUPurple}
+\setbeamercolor{frametitle}{fg=NYUPurple}
 
-\setbeamercolor{background canvas}{fg=BBGblue, bg=white}
-\setbeamercolor{background}{fg=black, bg=BBGblue}
+\setbeamercolor{background canvas}{fg=NYUPurple, bg=white}
+\setbeamercolor{background}{fg=black, bg=NYUPurple}
 
 \setbeamercolor{palette primary}{fg=black, bg=gray!30!white}
 \setbeamercolor{palette secondary}{fg=black, bg=gray!20!white}
-\setbeamercolor{palette tertiary}{fg=black, bg=BBGblue}
+\setbeamercolor{palette tertiary}{fg=gray!20!white, bg=NYUPurple}
 
 \setbeamertemplate{headline}{}
 
-\setbeamercolor{parttitle}{fg=BBGblue}
-\setbeamercolor{sectiontitle}{fg=BBGblue}
-\setbeamercolor{sectionname}{fg=BBGblue}
-\setbeamercolor{section page}{fg=BBGblue}
+\setbeamercolor{parttitle}{fg=NYUPurple}
+\setbeamercolor{sectiontitle}{fg=NYUPurple}
+\setbeamercolor{sectionname}{fg=NYUPurple}
+\setbeamercolor{section page}{fg=NYUPurple}
 
 \AtBeginSection[]{
   \begin{frame}
   \vfill
   \centering
-\setbeamercolor{section title}{fg=BBGblue}
+\setbeamercolor{section title}{fg=NYUPurple}
  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
     \usebeamerfont{title}\usebeamercolor[fg]{title}\insertsectionhead\par%
   \end{beamercolorbox}
@@ -79,7 +79,7 @@
 \pdf_colorlinks true
 \pdf_backref false
 \pdf_pdfusetitle true
-\pdf_quoted_options "allcolors=BBGblue,urlcolor=BBGgreen"
+\pdf_quoted_options "allcolors=NYUPurple,urlcolor=LightPurple"
 \papersize default
 \use_geometry true
 \use_package amsmath 2
@@ -716,10 +716,10 @@ ex}{E}
 \begin_layout Title
 Bagging and Random Forests
 \begin_inset Argument 1
-status open
+status collapsed
 
 \begin_layout Plain Layout
-ML 101
+DS-GA 1003 / CSCI-GA 2567
 \begin_inset Note Note
 status collapsed
 
@@ -743,11 +743,11 @@ David S.
 \end_layout
 
 \begin_layout Date
-November 21, 2017
+April 3, 2018
 \end_layout
 
 \begin_layout Institute
-Bloomberg ML EDU
+New York University
 \end_layout
 
 \begin_layout Standard
@@ -794,6 +794,33 @@ tiny{Plots courtesy of Ningshan Zhang.}}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Contents
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
@@ -2920,12 +2947,5 @@ For large
 \end_layout
 
 \end_deeper
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
 \end_body
 \end_document

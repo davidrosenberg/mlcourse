@@ -845,6 +845,19 @@ Generally speaking, this lecture needs a real shakeup – maybe more pictures
  and demonstrations of more of the concepts? prediction intervals?
 \end_layout
 
+\begin_layout Enumerate
+Really need to clarify the conditional independence stuff...
+ maybe I should leave 
+\begin_inset Formula $x$
+\end_inset
+
+ out of the conditional? And then clarify the relationship to the 
+\begin_inset Formula $\left(x,y\right)$
+\end_inset
+
+ iid setting of machine learning.
+\end_layout
+
 \begin_layout Plain Layout
 \begin_inset ERT
 status open

@@ -842,6 +842,16 @@ TODO:
 \end_layout
 
 \begin_layout Plain Layout
+0) Clarify surrogate splits – how to evaluate a split if some examples are
+ missing from the evaluation?
+\end_layout
+
+\begin_layout Plain Layout
+.1) Give a precise statement of the binary classification with categorical
+ varaibles equivalence – requires some condition on the impurity measures.
+\end_layout
+
+\begin_layout Plain Layout
 1) fix pruning explanation to say: each step of pruning eliminates one split.
  Generally this means eliminates two leaf nodes, and converting an internal
  node to a leaf node.
@@ -900,18 +910,7 @@ questions:
 \end_layout
 
 \begin_layout Plain Layout
-–
-\end_layout
-
-\begin_layout Plain Layout
-Should give example of how misclassification error can be the same, but
- gini or entropy can have preference for more pure classes.
- examples in the HTF or the more elementary book.
- 
-\end_layout
-
-\begin_layout Plain Layout
-–
+– 
 \end_layout
 
 \begin_layout Plain Layout
@@ -934,6 +933,21 @@ best
 \begin_layout Plain Layout
 Potentially good reference: https://sebastianraschka.com/faq/docs/decision-tree-b
 inary.html
+\end_layout
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\begin_layout Plain Layout
+Need more details on the surrogate split stuff – what to do with missing
+ feature values in the first place? 
+\end_layout
+
+\begin_layout Plain Layout
+Also, could be interesting to discuss the variable importance using surrogate
+ splits (CART book section 5.3.4 p.
+ 146)
 \end_layout
 
 \end_inset
@@ -3296,48 +3310,277 @@ missing
 \end_deeper
 \end_deeper
 \begin_layout Itemize
-For trees, we can use 
+For trees we can do something else...
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Building a Tree when we have Missing Features
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Method suggested in the CART book (Breiman et al 1984):
+\end_layout
+
+\begin_layout Itemize
+When we're finding the best split using a particular feature,
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+we only use the examples that are not missing that feature.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Performance evaluation for the split is made only on the data available
+ for that split.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Totally unclear how to evaluate in this case – what if we have very few
+ examples with a particular feature, but it has a great impurity measure
+ – is that good? 
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{I found the CART book a bit vague on this, so this is my best guess
+ for what is intended.
+ If somebody finds a clear statement, please let me know.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Surrogate Splits for Missing Data
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For any non-terminal node that splits using feature 
+\begin_inset Formula $f$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Itemize
+we can find a 
+\series bold
+surrogate split 
+\series default
+using each of the other features.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+To make a surrogate using 
+\begin_inset Formula $f'$
+\end_inset
+
+, we find the split using 
+\begin_inset Formula $f'$
+\end_inset
+
+ that best approximates the split using 
+\begin_inset Formula $f$
+\end_inset
+
+\SpecialChar endofsentence
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Define 
+\begin_inset Quotes eld
+\end_inset
+
+best
+\begin_inset Quotes erd
+\end_inset
+
+ in term of 0/1 loss on the examples for which neither 
+\begin_inset Formula $f$
+\end_inset
+
+ nor 
+\begin_inset Formula $f'$
+\end_inset
+
+ is missing.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+If there are 
+\begin_inset Formula $d$
+\end_inset
+
+ features, we'll have 
+\begin_inset Formula $d-1$
+\end_inset
+
+ 
 \series bold
 surrogate splits
-\end_layout
+\series default
+ to approximate the split on 
+\begin_inset Formula $f$
+\end_inset
 
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-For every internal node, form a list of surrogate features and split points
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Goal is to approximate the original split as well as possible
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Surrogates ordered by how well they approximate the original split.
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-In terms of how many examples are sent in the same direction by each split
-\series bold
 .
 \end_layout
 
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
 \end_deeper
+\begin_layout Itemize
+We can rank these splits by how well they approximate the original split.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We repeat the above process for every non-terminal node.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+So each node has the primary split and 
+\begin_inset Formula $d-1$
+\end_inset
+
+ surrogate splits, where 
+\begin_inset Formula $d$
+\end_inset
+
+ is the number of features.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+If we're predicting on an example and the feature needed to evaluate a split
+ is missing,
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+simply go down the list of surrogate splits until we get to one for which
+ the feature is not missing.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{I found the CART book a bit vague on this, so this is my best guess
+ for what is intended.
+ If somebody finds a clear statement, please let me know.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_deeper
 \end_deeper
 \begin_layout Standard
@@ -3465,11 +3708,15 @@ Then find optimal split as though it were a numeric feature.
 \end_layout
 
 \begin_layout Itemize
-Proved to be equivalent to search over all splits in (Breiman et al.
- 1984).
+For binary classification, this is equivalent to searching over all splits
 \end_layout
 
 \begin_deeper
+\begin_layout Itemize
+at least for certain for node impurity measures of a certain class, including
+ square error, gini and entropy.
+\end_layout
+
 \begin_layout Pause
 
 \end_layout

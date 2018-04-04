@@ -1,5 +1,14 @@
-\section{Week 7 Lecture: Concept Check Exercises}
-\subsection{Multiclass}
+\section{Multiclass: Concept Check}
+\subsubsection{Multiclass Learning Objectives}
+\begin{itemize}
+  \item Be able to give pseudocode to fit and apply a one-vs-all/one-vs-rest prediction function.
+  \item Be able to describe an example where one-vs-all fails.
+  \item Be able to explain our reframing of multiclass learning in terms of a compatability score function.
+  \item Be able to define the class-specific margin of a data instance using the compatability score function.
+  \item Be able to map a set of linear score functions onto a single linear class-sensitive score function using a class-sensitive feature map. Give some intuition for the value of this feature map (based on features related to the target classes).
+  \item Be able to state the multiclass SVM objective with 1 as the target margin, and be able to generalize using a class-specific target-margin and explain this generalization using the intuition of this target-margin as a lookup table.
+\end{itemize}
+\subsubsection{Multiclass Concept Check Questions}
 \begin{enumerate}
 \item Let $\XX=\RR^2$ and $\YY=\{1,2,3,4\}$, with $X$ uniformly
   distributed on $\{x\mid \|x\|_2\leq 1\}$.  Given $X$, the value of
@@ -27,7 +36,7 @@
     minimizing the risk over $\FF_2$.
   \end{enumerate}
 \begin{solution}
-\item[]\Sol 
+\item[]\Sol
   \begin{enumerate}
   \item Let $w_1=(0,1)^T$, $w_2=(-1,0)^T$, $w_3=(0,-c)^T$,
     $w_4=(1,0)^T$, where $c=\cot\frac{\pi}{12}=2+\sqrt{3}$.  The
@@ -72,7 +81,7 @@
   Give pseudocode showing how you would use $f$ to forecast the class
   of a new data point $x$.
 \begin{solution}
-\item[]\Sol 
+\item[]\Sol
   \begin{enumerate}
   \item Evaluate $w^T\psi(x,i)$ for $i=1,\ldots,k$.
   \item Forecast the value $i$ that gives the largest $w^T\psi(x,i)$ value.

@@ -180,10 +180,25 @@ following:
 
 ## Week 7 (3/6/2018): Midterm
 
-## Week 7 (3/20/2018)
+## Week 8 (3/20/2018)
 
 ### 8b: Bayesian Regression
 - (Recap) Recall the basic Bayesian setup (likelihood and prior), and be able to write the posterior distribution using proportionality -- (see slide 15 for Gaussian Example).
 - Explain the difference between the posterior predictive distribution function and the MAP or posterior mean estimator.
 - Be able to show the relationship between Gaussian regression and ridge regression.
 - Explain what a predictive distribution is, and how it gives additional information (relative to the prediction functions we've learned in our ridge/lasso homework, for example).
+
+## Week 9 (3/27/2018)
+
+### 9a: Bayesian Regression continued
+- See objectives for 8b.
+
+### 9b: Multiclass
+- Be able to give pseudocode to fit and apply a one-vs-all/one-vs-rest prediction function.
+- Be able to describe an example where one-vs-all fails.
+- Be able to explain our reframing of multiclass learning in terms of a compatability score function.
+- Be able to define the class-specific margin of a data instance using the compatability score function.
+- Be able to map a set of linear score functions onto a single linear class-sensitive score function using a class-sensitive feature map. Give some intuition for the value of this feature map (based on features related to the target classes).
+- Be able to state the multiclass SVM objective with 1 as the target margin, and be able to generalize using a class-specific target-margin and explain this generalization using the intuition of this target-margin as a lookup table.
+
+

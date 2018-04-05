@@ -201,4 +201,20 @@ following:
 - Be able to map a set of linear score functions onto a single linear class-sensitive score function using a class-sensitive feature map. Give some intuition for the value of this feature map (based on features related to the target classes).
 - Be able to state the multiclass SVM objective with 1 as the target margin, and be able to generalize using a class-specific target-margin and explain this generalization using the intuition of this target-margin as a lookup table.
 
+## Week 10 (4/04/2018)
 
+### 10a: Trees
+
+- Be able to describe the structure of a binary tree (ex: put bounds on number of leaves given height; describe the geometry of the resulting prediction function; etc.).
+- Give pseudocode for finding the optimal split for (a) a continuous feature, and (b) a categorical feature for a binary classification problem.
+- Describe some reasonable strategies for controlling the complexity of a tree.
+- In particular, describe the regularization approach used in CART (pruning and use of number of leaves as complexity measure), recognize the cost complexity criterion as our standard regularized ERM.
+- Recall the entropy, Gini, and misclassification error splitting criteria. Give some intuition around preference for Gini/entropy (i.e. purity measures) over misclassification.
+
+### 10b and 10c: Bootstrap, Bagging, and Random Forests
+
+- Recall from basic statics concepts related to an estimator (e.g. bias) and its variance.
+- Describe (outside the context of bagging/RFs) how the bootstrap is a useful method for estimating the variance of an estimator, and have some intuition on how it can be applied across many problems.
+- Again recalling basic statistics, understand why bagging (averaging predictions) reduces variance.
+- Recalling that the bootstrap ignores an expected 37% of data in each bootstrap sample, explain how we can use out-of-bag observations to approximate test performance.
+- Describe how RF reduces correlation between trees using column sampling while training on bootstrap samples.

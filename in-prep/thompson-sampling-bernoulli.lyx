@@ -740,8 +740,8 @@ Which bandit should we play at the
 \end_inset
 
  is a sample from the posterior distribution over which bandit is the best.
- As we become more confident about which is the best, we'll choose that
- more frequently.
+ As we become more confident about which is the best bandit, we'll choose
+ that bandit more frequently.
  All that's left is to work out the details for computing the posterior
  distributions.
 \end_layout

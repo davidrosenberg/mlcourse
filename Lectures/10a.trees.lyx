@@ -852,6 +852,15 @@ TODO:
 \end_layout
 
 \begin_layout Plain Layout
+.2) Idea for next time: speak more generally about splitting values of a
+ particular feature : categorical – arbitrary subset; discrete ordered feature,
+ split at any particular feature value; continuous ordered feature, generally
+ split halfway between two distinct, consecutive feature values that appear
+ in the training data.
+ 
+\end_layout
+
+\begin_layout Plain Layout
 1) fix pruning explanation to say: each step of pruning eliminates one split.
  Generally this means eliminates two leaf nodes, and converting an internal
  node to a leaf node.

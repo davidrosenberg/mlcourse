@@ -768,27 +768,42 @@ Just in article version
 status open
 
 \begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-let
-\backslash
-thefootnote
-\backslash
-relax
-\backslash
-footnotetext{
-\backslash
-tiny{Plots courtesy of Ningshan Zhang.}}
-\end_layout
-
+TODO: when doing bootstrapping, should we just use 
+\begin_inset Formula $\alpha\left(\hat{\cd}\right)$
 \end_inset
 
+ as our point estimate, or should we use 
+\begin_inset Formula $\frac{1}{B}\sum_{i=1}^{B}\alpha\left(\hat{\cd}^{(B)}\right)$
+\end_inset
 
+? I claim to don't have the context to answer this question.
+ How could we decide which is better? We'd need to set up criteria, etc.
+ This was in fact never the question.
+ The question is, given an estimator, what are some parameters of its sampling
+ distribution.
+ We can estimate its mean with 
+\begin_inset Formula $\frac{1}{B}\sum_{i=1}^{B}\alpha\left(\hat{\cd}^{(B)}\right)$
+\end_inset
+
+.
+ And thus we can use 
+\begin_inset Formula $\frac{1}{B}\sum_{i=1}^{B}\alpha\left(\hat{\cd}^{(B)}\right)-\alpha\left(\hat{\cd}\right)$
+\end_inset
+
+ as a bootstrap estimate for the bias of 
+\begin_inset Formula $\alpha(\hat{\cd})$
+\end_inset
+
+ as an estimator for 
+\begin_inset Formula $\alpha\left(\cd\right)$
+\end_inset
+
+: 
+\begin_inset Formula $\ex\alpha(\hat{\cd})-\alpha(\cd)$
+\end_inset
+
+.
+ 
 \end_layout
 
 \end_inset

@@ -1421,8 +1421,8 @@ The average prediction on
  has smaller variance:
 \begin_inset Formula 
 \begin{eqnarray*}
-\mbox{\var}(\hat{f}_{\mbox{avg}}(x)) & = & \frac{1}{B^{2}}\var\left(\sum_{b=1}^{B}\hat{f}_{b}(x)\right)\\
-\pause & = & \frac{1}{B}\var\left(\hat{f}_{1}(x)\right)
+\mbox{\var}(\hat{f}_{\mbox{avg}}(x_{0})) & = & \frac{1}{B^{2}}\var\left(\sum_{b=1}^{B}\hat{f}_{b}(x_{0})\right)\\
+\pause & = & \frac{1}{B}\var\left(\hat{f}_{1}(x_{0})\right)
 \end{eqnarray*}
 
 \end_inset
@@ -1491,9 +1491,9 @@ the bootstrap
 \series default
 ....
  
-\begin_inset Note Note
-status open
+\end_layout
 
+\end_deeper
 \begin_layout Section
 Review: Bootstrap
 \end_layout
@@ -1616,7 +1616,7 @@ So we expect ~63.2% of elements of
 \end_layout
 
 \end_deeper
-\begin_layout Plain Layout
+\begin_layout Standard
 \begin_inset Separator plain
 \end_inset
 
@@ -1741,12 +1741,6 @@ Amazing fact:
 \end_inset
 
 .
-\end_layout
-
-\end_deeper
-\end_inset
-
-
 \end_layout
 
 \end_deeper
@@ -2838,7 +2832,7 @@ Usual approach is to build very deep trees (low bias)
 
 \end_deeper
 \begin_layout Itemize
-Diversity in individual tree predictions functions from
+Diversity in individual tree prediction functions from
 \end_layout
 
 \begin_deeper

@@ -840,7 +840,7 @@ homogeneous ensemble
 \series default
  (e.g.
  boosting, bagging, random forests), but there are also methods that use
- ultiple laerning algorithms to produce 
+ multiple learning algorithms to produce 
 \series bold
 hetereogeneous ensembles
 \series default
@@ -1237,6 +1237,25 @@ Define the average prediction function as:
 What's random here? 
 \end_layout
 
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The 
+\begin_inset Formula $B$
+\end_inset
+
+ independent training sets are random, which gives rise to variation among
+ the 
+\begin_inset Formula $\hat{f}_{b}$
+\end_inset
+
+'s.
+\end_layout
+
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
@@ -1260,8 +1279,8 @@ Averaging Independent Prediction Functions
 
 \begin_deeper
 \begin_layout Itemize
-Fix some 
-\begin_inset Formula $x\in\cx$
+Fix some particular 
+\begin_inset Formula $x_{0}\in\cx$
 \end_inset
 
 .
@@ -1269,13 +1288,13 @@ Fix some
 
 \begin_layout Itemize
 Then average prediction on 
-\begin_inset Formula $x$
+\begin_inset Formula $x_{0}$
 \end_inset
 
  is
 \begin_inset Formula 
 \[
-\hat{f}_{\text{avg}}(x)=\frac{1}{B}\sum_{b=1}^{B}\hat{f}_{b}(x).
+\hat{f}_{\text{avg}}(x_{0})=\frac{1}{B}\sum_{b=1}^{B}\hat{f}_{b}(x_{0}).
 \]
 
 \end_inset
@@ -1291,14 +1310,32 @@ Then average prediction on
 \end_deeper
 \begin_layout Itemize
 Consider 
-\begin_inset Formula $\hat{f}_{\text{avg}}(x)$
+\begin_inset Formula $\hat{f}_{\text{avg}}(x_{0})$
 \end_inset
 
  and 
-\begin_inset Formula $\hat{f}_{1}(x),\ldots,\hat{f}_{B}(x)$
+\begin_inset Formula $\hat{f}_{1}(x_{0}),\ldots,\hat{f}_{B}(x_{0})$
 \end_inset
 
- as random variables (since training data random).
+ as random variables
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Since the training sets were random
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We have no idea about the distributions of 
+\begin_inset Formula $\hat{f}_{1}(x_{0}),\ldots,\hat{f}_{B}(x_{0})$
+\end_inset
+
+ – they could be crazy...
 \end_layout
 
 \begin_deeper
@@ -1308,10 +1345,50 @@ Consider
 
 \end_deeper
 \begin_layout Itemize
-\begin_inset Formula $\hat{f}_{1}(x),\ldots,\hat{f}_{B}(x)$
+But we do know that 
+\begin_inset Formula $\hat{f}_{1}(x_{0}),\ldots,\hat{f}_{B}(x_{0})$
 \end_inset
 
  are i.i.d.
+ And that's all we need here...
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Averaging Independent Prediction Functions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The average prediction on 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+\hat{f}_{\text{avg}}(x_{0})=\frac{1}{B}\sum_{b=1}^{B}\hat{f}_{b}(x_{0}).
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1321,11 +1398,11 @@ Consider
 
 \end_deeper
 \begin_layout Itemize
-\begin_inset Formula $\hat{f}_{\text{avg}}(x)$
+\begin_inset Formula $\hat{f}_{\text{avg}}(x_{0})$
 \end_inset
 
  and 
-\begin_inset Formula $\hat{f}_{b}(x)$
+\begin_inset Formula $\hat{f}_{b}(x_{0})$
 \end_inset
 
  have the same expected value, but
@@ -1338,7 +1415,7 @@ Consider
 
 \end_deeper
 \begin_layout Itemize
-\begin_inset Formula $\hat{f}_{\text{avg}}(x)$
+\begin_inset Formula $\hat{f}_{\text{avg}}(x_{0})$
 \end_inset
 
  has smaller variance:
@@ -1415,7 +1492,7 @@ the bootstrap
 ....
  
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Section
 Review: Bootstrap
@@ -1719,7 +1796,7 @@ Let
 \begin_inset Formula $\hat{f}_{1},\hat{f}_{2},\ldots,\hat{f}_{B}$
 \end_inset
 
- be the decision functions for each set.
+ be the prediction functions for each set.
 \end_layout
 
 \begin_deeper
@@ -1731,7 +1808,7 @@ Let
 \begin_layout Itemize
 The 
 \series bold
-bagged decision function
+bagged prediction function
 \series default
  is a 
 \series bold
@@ -1760,7 +1837,7 @@ How might we combine
 
 \begin_deeper
 \begin_layout Itemize
-decision functions for regression?
+prediction functions for regression?
 \end_layout
 
 \begin_layout Itemize
@@ -1856,6 +1933,12 @@ Bagged prediction function is given as
 
 \end_layout
 
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
 \begin_layout Itemize
 Empirically, 
 \begin_inset Formula $\hat{f}_{\text{bag}}$
@@ -2125,17 +2208,25 @@ Input space
 \end_layout
 
 \begin_deeper
-\begin_layout Pause
+\begin_layout ColumnsTopAligned
 
 \end_layout
 
-\end_deeper
-\begin_layout Itemize
-Sample size 
-\begin_inset Formula $N=30$
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+.5
+\backslash
+textwidth
+\end_layout
+
 \end_inset
 
- (simulated data)
+
 \end_layout
 
 \begin_layout Standard
@@ -2143,13 +2234,79 @@ Sample size
 \begin_inset Graphics
 	filename ../Figures/bagging/baggedTrees.png
 	lyxscale 40
-	height 55theight%
+	width 100col%
 
 \end_inset
 
 
 \end_layout
 
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+.4
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Sample size 
+\begin_inset Formula $n=30$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Each bootstrap tree is quite different
+\end_layout
+
+\begin_layout Itemize
+Different splitting variable at the root
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+This high degree of variability from small perturbations of the training
+ data is why tree methods are described as 
+\series bold
+high variance
+\series default
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \begin_layout Standard
 \begin_inset ERT
 status open
@@ -2166,7 +2323,7 @@ relax
 \backslash
 footnotetext{
 \backslash
-tiny{From ESL Figure 8.9}}
+tiny{From HTF Figure 8.9}}
 \end_layout
 
 \end_inset
@@ -2225,7 +2382,7 @@ relax
 \backslash
 footnotetext{
 \backslash
-tiny{From ESL Figure 8.10}}
+tiny{From HTF Figure 8.10}}
 \end_layout
 
 \end_inset
@@ -2498,12 +2655,18 @@ Bootstrap samples are
 independent samples from the training set, but
 \end_layout
 
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
 \begin_layout Itemize
 are 
 \series bold
 not
 \series default
- indepedendent samples from 
+ independent samples from 
 \begin_inset Formula $P_{\cx\times\cy}$
 \end_inset
 
@@ -2577,7 +2740,7 @@ Use
 \series bold
 bagged decision trees
 \series default
-, but modify the tree-growing procedure to reduce the correlation between
+, but modify the tree-growing procedure to reduce the dependence between
  trees.
 \end_layout
 
@@ -2645,6 +2808,180 @@ Can choose
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Random Forest
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Usual approach is to build very deep trees (low bias)
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Diversity in individual tree predictions functions from
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+bootstrap samples (somewhat different training data) and
+\end_layout
+
+\begin_layout Itemize
+randomized tree building
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Bagging seems to work better when we are combining a diverse set of prediction
+ functions.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Extremely Randomized Trees 
+\begin_inset Quotes eld
+\end_inset
+
+extra-trees
+\begin_inset Quotes erd
+\end_inset
+
+ and Forests
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Extremely randomized trees (
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "extra-trees"
+target "https://orbi.uliege.be/bitstream/2268/9357/1/geurts-mlj-advance.pdf"
+
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Choose 
+\begin_inset Formula $m$
+\end_inset
+
+ features randomly
+\end_layout
+
+\begin_layout Itemize
+For each of the 
+\begin_inset Formula $m$
+\end_inset
+
+ features, choose a 
+\series bold
+random
+\series default
+ split point
+\end_layout
+
+\begin_layout Itemize
+Choose the feature / random split point that's the best.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+For extreme trees, can take 
+\begin_inset Formula $m=1$
+\end_inset
+
+, so 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+tree structure almost completely completely ignores the data
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Add note on extremely randomized trees (extra-trees) () that choose attribute
+ and cut-point randomly.
+ Or attribute can be chosen as the best of K randomly chosen attributes,
+ though we're still selecting split points randomly for each of those K,
+ so 
+\begin_inset Quotes eld
+\end_inset
+
+best
+\begin_inset Quotes erd
+\end_inset
+
+ is also a random thing.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
 \end_inset
 
 
@@ -2784,7 +3121,7 @@ Scalable random forests on TensorFlow'
 
 \begin_deeper
 \begin_layout Itemize
-New tree building algorihtm –> 
+New tree building algorithm –> 
 \begin_inset Quotes eld
 \end_inset
 
@@ -2812,7 +3149,7 @@ When we have accumulated enough points (atmost 2000) we decide on the best
 
 \begin_layout Itemize
 These points could then be pushed down to the nodes of the lower layers,
- but I think theyr'e thrown out.
+ but I think they're thrown out.
 \end_layout
 
 \begin_layout Itemize

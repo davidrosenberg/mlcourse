@@ -2142,7 +2142,7 @@ If we can do regression with our base hypothesis space
 status open
 
 \begin_layout Plain Layout
-Recall: Regression Stumps
+Regression Stumps
 \end_layout
 
 \end_inset
@@ -2156,13 +2156,21 @@ A
 \series bold
 regression stump 
 \series default
+is a regression tree with a single split.
+\end_layout
+
+\begin_layout Itemize
+A
+\series bold
+ regression stump 
+\series default
 is a function of the form 
 \series bold
 
 \begin_inset Formula $h(x)=a\ind{x_{i}\le c}+b\ind{x_{i}>c}$
 \end_inset
 
- 
+.
 \end_layout
 
 \begin_layout Standard
@@ -2720,6 +2728,18 @@ Let
 \end_layout
 
 \begin_deeper
+\begin_layout Itemize
+(Also assume 
+\begin_inset Formula $\ch$
+\end_inset
+
+ closed under negation: 
+\begin_inset Formula $h\in\ch\implies-h\in\ch$
+\end_inset
+
+)
+\end_layout
+
 \begin_layout Pause
 
 \end_layout
@@ -3015,7 +3035,8 @@ e.g square loss, absolute loss, exponential loss,...
 
 \end_deeper
 \begin_layout Itemize
-In each case, happens to reduce to another problem we know how to solve.
+In each case, happens to reduce to another problem we know how to solve,
+ at least approximately.
 \end_layout
 
 \begin_deeper
@@ -3422,10 +3443,10 @@ Solve both of these problems by projecting
 \end_inset
 
 
-\end_layout
+\begin_inset Note Note
+status open
 
-\end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Separator plain
 \end_inset
 
@@ -3446,7 +3467,7 @@ Unconstrained Functional Gradient Stepping
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \align left
 \begin_inset Graphics
 	filename ../Figures/boosting/unconstrained-fnl-gradient-steps-SeniElderFigB.1.png
@@ -3458,7 +3479,7 @@ Unconstrained Functional Gradient Stepping
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Formula $R(\mathbf{f})$
 \end_inset
 
@@ -3477,7 +3498,7 @@ Issue:
  only defined at training points.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -3498,6 +3519,12 @@ tiny{From Seni and Elder's
 emph{Ensemble Methods in Data Mining}, Fig B.1.}}
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \end_inset
 
 
@@ -3617,6 +3644,10 @@ Take the
 
 \end_deeper
 \begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 \begin_inset Separator plain
 \end_inset
 
@@ -3644,7 +3675,7 @@ Projected
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \align left
 \begin_inset Graphics
 	filename ../Figures/boosting/projected-fnl-grad-SeniElderFigB.2.png
@@ -3656,7 +3687,7 @@ Projected
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Formula $T(x;p)\in\ch$
 \end_inset
 
@@ -3671,7 +3702,7 @@ Projected
 .
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -3698,8 +3729,6 @@ emph{Ensemble Methods in Data Mining}, Fig B.2.}}
 \end_layout
 
 \end_deeper
-\begin_layout Standard
-\begin_inset Separator plain
 \end_inset
 
 
@@ -3819,7 +3848,8 @@ The Gradient Boosting Machine Ingredients (Recap)
 
 \begin_deeper
 \begin_layout Itemize
-Take any [sub]differentiable loss function.
+Take any loss function [sub]differentiable w.r.t.
+ the prediction
 \end_layout
 
 \begin_layout Itemize

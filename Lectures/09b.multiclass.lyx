@@ -4146,7 +4146,7 @@ Rather than
  Loss, we may be interested in a more general loss
 \begin_inset Formula 
 \[
-\Delta:\cy\times\ca\to\reals^{\ge0}
+\Delta:\cy\times\ca\to[0,\infty)
 \]
 
 \end_inset
@@ -4176,7 +4176,7 @@ for multiclass SVM.
 Multiclass SVM (Version 2):
 \begin_inset Formula 
 \[
-\min_{w\in\reals^{d}}\frac{1}{2}||w||^{2}+\frac{c}{n}\sum_{i=1}^{n}\max_{y}\left[\max\left(0,\Delta(y_{i},y)-m_{i,y}(w)\right)\right]
+\min_{w\in\reals^{d}}\frac{1}{2}||w||^{2}+\frac{c}{n}\sum_{i=1}^{n}\max_{y\neq y_{i}}\left[\max\left(0,\Delta(y_{i},y)-m_{i,y}(w)\right)\right]
 \]
 
 \end_inset
@@ -4185,36 +4185,47 @@ Multiclass SVM (Version 2):
 \end_layout
 
 \begin_layout Itemize
-We can think of 
-\begin_inset Formula $\Delta(y_{i},y)$
-\end_inset
-
- as the 
-\begin_inset Quotes eld
-\end_inset
-
-target margin
-\begin_inset Quotes erd
-\end_inset
-
- for example 
-\begin_inset Formula $i$
-\end_inset
-
- and class 
-\begin_inset Formula $y$
-\end_inset
-
- because if each margin 
+If margin 
 \begin_inset Formula $m_{i,y}(w)$
 \end_inset
 
- meets or exceeds its corresponding target 
+ meets or exceeds its target 
 \begin_inset Formula $\Delta(y_{i},y)$
 \end_inset
 
-, then we don't incur a loss on example 
+ 
+\begin_inset Formula $\forall y\neq y_{i}$
+\end_inset
+
+, then no loss on example 
 \begin_inset Formula $i$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Note: If 
+\begin_inset Formula $\Delta(y,y)=0$
+\end_inset
+
+ 
+\begin_inset Formula $\forall y\in\cy$
+\end_inset
+
+, then we can replace 
+\begin_inset Formula $\max_{y\neq y_{i}}$
+\end_inset
+
+ with 
+\begin_inset Formula $\max_{y}$
 \end_inset
 
 .

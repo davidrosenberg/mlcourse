@@ -11,33 +11,33 @@
 
 
 % Set Color ==============================
-\definecolor{BBGblue}{RGB}{13,157,219}
-\definecolor{BBGgreen}{RGB}{77,170,80}
+\definecolor{NYUPurple}{RGB}{87,6,140}
+\definecolor{LightPurple}{RGB}{165,11,255}
 
 
-\setbeamercolor{title}{fg=BBGblue}
-%\setbeamercolor{frametitle}{fg=BBGblue}
-\setbeamercolor{frametitle}{fg=BBGblue}
+\setbeamercolor{title}{fg=NYUPurple}
+%\setbeamercolor{frametitle}{fg=NYUPurple}
+\setbeamercolor{frametitle}{fg=NYUPurple}
 
-\setbeamercolor{background canvas}{fg=BBGblue, bg=white}
-\setbeamercolor{background}{fg=black, bg=BBGblue}
+\setbeamercolor{background canvas}{fg=NYUPurple, bg=white}
+\setbeamercolor{background}{fg=black, bg=NYUPurple}
 
 \setbeamercolor{palette primary}{fg=black, bg=gray!30!white}
 \setbeamercolor{palette secondary}{fg=black, bg=gray!20!white}
-\setbeamercolor{palette tertiary}{fg=black, bg=BBGblue}
+\setbeamercolor{palette tertiary}{fg=gray!20!white, bg=NYUPurple}
 
 \setbeamertemplate{headline}{}
 
-\setbeamercolor{parttitle}{fg=BBGblue}
-\setbeamercolor{sectiontitle}{fg=BBGblue}
-\setbeamercolor{sectionname}{fg=BBGblue}
-\setbeamercolor{section page}{fg=BBGblue}
+\setbeamercolor{parttitle}{fg=NYUPurple}
+\setbeamercolor{sectiontitle}{fg=NYUPurple}
+\setbeamercolor{sectionname}{fg=NYUPurple}
+\setbeamercolor{section page}{fg=NYUPurple}
 
 \AtBeginSection[]{
   \begin{frame}
   \vfill
   \centering
-\setbeamercolor{section title}{fg=BBGblue}
+\setbeamercolor{section title}{fg=NYUPurple}
  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
     \usebeamerfont{title}\usebeamercolor[fg]{title}\insertsectionhead\par%
   \end{beamercolorbox}
@@ -79,7 +79,7 @@
 \pdf_colorlinks true
 \pdf_backref false
 \pdf_pdfusetitle true
-\pdf_quoted_options "allcolors=BBGblue,urlcolor=BBGgreen"
+\pdf_quoted_options "allcolors=NYUPurple,urlcolor=LightPurple"
 \papersize default
 \use_geometry true
 \use_package amsmath 2
@@ -665,11 +665,6 @@ ex}{E}
 \end_inset
 
 
-\begin_inset FormulaMacro
-\newcommand{\softmax}{\text{Softmax}}
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -724,7 +719,7 @@ Neural Networks
 status open
 
 \begin_layout Plain Layout
-ML 101
+DS-GA 1003 / CSCI-GA 2567
 \begin_inset Note Note
 status collapsed
 
@@ -748,11 +743,11 @@ David S.
 \end_layout
 
 \begin_layout Date
-December 19, 2017
+April 10, 2018
 \end_layout
 
 \begin_layout Institute
-Bloomberg ML EDU
+New York University
 \end_layout
 
 \begin_layout Standard
@@ -788,7 +783,7 @@ relax
 \backslash
 footnotetext{
 \backslash
-tiny{Plots courtesy of Ningshan Zhang.}}d
+tiny{Plots courtesy of Ningshan Zhang.}}
 \end_layout
 
 \end_inset
@@ -796,6 +791,38 @@ tiny{Plots courtesy of Ningshan Zhang.}}d
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Contents
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\softmax}{\text{Softmax}}
 \end_inset
 
 
@@ -820,7 +847,7 @@ Objectives
 
 \begin_deeper
 \begin_layout Itemize
-What are neural networks?
+What are neural networks, specifically multilayer perceptrons?
 \end_layout
 
 \begin_layout Itemize
@@ -3546,7 +3573,8 @@ l logistic regression.
 \end_inset
 
 
-\end_layout
+\begin_inset Note Note
+status collapsed
 
 \begin_layout Section
 Neural Network Regularization
@@ -3583,7 +3611,7 @@ Many approaches are used for regularization.
 \end_layout
 
 \end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Separator plain
 \end_inset
 
@@ -3644,7 +3672,7 @@ weight decay
 \end_layout
 
 \end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Separator plain
 \end_inset
 
@@ -3665,7 +3693,7 @@ Regularization by Early Stopping
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 A particular recipe for early stopping:
 \end_layout
 
@@ -3742,7 +3770,7 @@ Then run at least patience extra steps before stopping.
 
 \end_deeper
 \end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -3769,7 +3797,7 @@ url{http://arxiv.org/pdf/1206.5533v2.pdf} for details.}}
 \end_layout
 
 \end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Separator plain
 \end_inset
 
@@ -3868,7 +3896,7 @@ We'll see below.
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -3896,7 +3924,7 @@ url{http://www.cs.toronto.edu/~rsalakhu/papers/srivastava14a.pdf} for details.}}
 
 \end_deeper
 \end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Separator plain
 \end_inset
 
@@ -3988,7 +4016,7 @@ after the stochastic gradient step, all nodes are restored.
 \end_layout
 
 \end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \align left
 \begin_inset Graphics
 	filename ../Figures/neural-networks/dropout.png
@@ -4001,7 +4029,7 @@ after the stochastic gradient step, all nodes are restored.
 \end_layout
 
 \end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -4028,7 +4056,7 @@ url{http://www.cs.toronto.edu/~rsalakhu/papers/srivastava14a.pdf}.}}
 \end_layout
 
 \end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Separator plain
 \end_inset
 
@@ -4070,7 +4098,7 @@ outgoing weights are multiplied by
 .
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \align left
 \begin_inset Graphics
 	filename ../Figures/neural-networks/dropout-reweighting.png
@@ -4105,7 +4133,7 @@ Closer to
 \end_layout
 
 \end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -4132,7 +4160,7 @@ url{http://www.cs.toronto.edu/~rsalakhu/papers/srivastava14a.pdf}.}}
 \end_layout
 
 \end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Separator plain
 \end_inset
 
@@ -4198,7 +4226,7 @@ More robust.
 
 \end_deeper
 \end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Separator plain
 \end_inset
 
@@ -4219,11 +4247,11 @@ Dropout: Does it help?
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 Results from MNIST (handwritten digit recognition) 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \align left
 \begin_inset Graphics
 	filename ../Figures/neural-networks/dropout-results.png
@@ -4235,7 +4263,7 @@ Results from MNIST (handwritten digit recognition)
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -4262,7 +4290,7 @@ url{http://www.cs.toronto.edu/~rsalakhu/papers/srivastava14a.pdf}.}}
 \end_layout
 
 \end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Separator plain
 \end_inset
 
@@ -4312,7 +4340,22 @@ Except in computation time.
 
 \end_deeper
 \end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \begin_inset Separator plain
 \end_inset
 
@@ -4450,6 +4493,17 @@ Seems plausible that basic pixel features would be shared by tasks.
 
 \begin_layout Itemize
 Learn them on the same neural network – benefit both tasks.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Objective function must combine losses from both predictions, e.g.
+ by averaging.
 \end_layout
 
 \end_deeper
@@ -4882,12 +4936,5 @@ Potentially much better than bag of words.
 \end_deeper
 \end_deeper
 \end_deeper
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
 \end_body
 \end_document

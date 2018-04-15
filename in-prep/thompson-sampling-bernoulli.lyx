@@ -764,11 +764,20 @@ We'll use the following parameterization of the Beta family of distributions:
 \begin_inset Formula 
 \begin{eqnarray*}
 \theta & \sim & \text{Beta}(\alpha,\beta)\\
-\pi(\theta) & \propto & \theta^{\alpha-1}\left(1-\theta\right)^{\beta-1}
+\pi(\theta) & \propto & \theta^{\alpha-1}\left(1-\theta\right)^{\beta-1},
 \end{eqnarray*}
 
 \end_inset
 
+for 
+\begin_inset Formula $\alpha,\beta>0$
+\end_inset
+
+, and where the support of the distribution is 
+\begin_inset Formula $\left(0,1\right)$
+\end_inset
+
+.
  Some probability densities are shown in the Figure
 \begin_inset Foot
 status open

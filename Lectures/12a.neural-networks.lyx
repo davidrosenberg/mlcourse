@@ -798,9 +798,18 @@ overfeat example?
 \end_layout
 
 \begin_layout Enumerate
-In regularized ridge regression, emphasize that the computation graph is
- for the objective function, and highlight the subgraph that we would actually
- use for inference/prediction
+Draw new linear / MLP example computation graphs with bias term.
+\end_layout
+
+\begin_layout Enumerate
+Define a computation graph
+\end_layout
+
+\begin_layout Enumerate
+Dont love the MLP computation graph figure on slide 11 because doesn't have
+ nodes for the parameters, when that's really the way we need to think about
+ these things.
+ 
 \end_layout
 
 \end_inset
@@ -838,11 +847,8 @@ LatexCommand tableofcontents
 \end_inset
 
 
-\end_layout
-
-\begin_layout Section
-Neural Networks Overview
-\end_layout
+\begin_inset Note Note
+status collapsed
 
 \begin_layout Frame
 \begin_inset Argument 4
@@ -871,11 +877,24 @@ When should we consider using them?
 \end_layout
 
 \end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Separator plain
 \end_inset
 
 
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Neural Networks Overview
 \end_layout
 
 \begin_layout Frame
@@ -1090,7 +1109,7 @@ tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn
 status open
 
 \begin_layout Plain Layout
-Basic Neural Network
+Basic Neural Network (Multilayer Perceptron)
 \end_layout
 
 \end_inset
@@ -3506,7 +3525,7 @@ Then the we know that
 
 \begin_layout Standard
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Separator plain
@@ -4810,7 +4829,7 @@ Best results always involve GPU processing.
 \end_layout
 
 \begin_layout Itemize
-Typically on huge networks.
+Often on large networks.
 \end_layout
 
 \begin_layout Standard
@@ -4846,10 +4865,10 @@ url{http://cs229.stanford.edu/materials/CS229-DeepLearning.pdf})}}
 \end_inset
 
 
-\end_layout
+\begin_inset Note Note
+status open
 
-\end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Separator plain
 \end_inset
 
@@ -4947,6 +4966,12 @@ Potentially much better than bag of words.
 
 \end_deeper
 \end_deeper
+\end_deeper
+\end_inset
+
+
+\end_layout
+
 \end_deeper
 \end_body
 \end_document

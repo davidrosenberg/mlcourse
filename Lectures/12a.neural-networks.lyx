@@ -743,7 +743,7 @@ David S.
 \end_layout
 
 \begin_layout Date
-April 10, 2018
+April 17, 2018
 \end_layout
 
 \begin_layout Institute
@@ -767,28 +767,40 @@ Just in article version
 \begin_inset Note Note
 status open
 
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-let
-\backslash
-thefootnote
-\backslash
-relax
-\backslash
-footnotetext{
-\backslash
-tiny{Plots courtesy of Ningshan Zhang.}}
-\end_layout
-
+\begin_layout Enumerate
+Add in a better picture of MLP in the
+\begin_inset Quotes erd
 \end_inset
 
+standard recipe
+\begin_inset Quotes erd
+\end_inset
 
+ section?
+\end_layout
+
+\begin_layout Enumerate
+Add in extra slide (based on MLP diagram) on using interior nodes as nonlinear
+ features that we can use elsewhere...
+\end_layout
+
+\begin_layout Enumerate
+give word2vec example?
+\end_layout
+
+\begin_layout Enumerate
+Add in slide to multinomial section on cross-entropy loss and connection
+ to log-likelihood
+\end_layout
+
+\begin_layout Enumerate
+overfeat example?
+\end_layout
+
+\begin_layout Enumerate
+In regularized ridge regression, emphasize that the computation graph is
+ for the objective function, and highlight the subgraph that we would actually
+ use for inference/prediction
 \end_layout
 
 \end_inset
@@ -4363,6 +4375,115 @@ status open
 \end_layout
 
 \begin_layout Section
+Neural Networks for Features 
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+OverFeat: Features
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+OverFeat is a neural network for image classification
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Trained on the huge ImageNet dataset
+\end_layout
+
+\begin_layout Itemize
+Lots of computing resources used for training the network.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+All those hidden layers of the network are very valuable 
+\series bold
+features
+\series default
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Paper: 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+CNN Features off-the-shelf: an Astounding Baseline for Recognition
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Showed that using features from OverFeat makes it easy to achieve state-of-the-a
+rt performance on new vision tasks.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{OverFeat code is at 
+\backslash
+url{https://github.com/sermanet/OverFeat}}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
 Multiple Output Networks
 \end_layout
 
@@ -4593,115 +4714,6 @@ Can help make model more robust (not depending too heavily on any single
 \end_layout
 
 \end_deeper
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Neural Networks for Features 
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-OverFeat: Features
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-OverFeat is a neural network for image classification
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Trained on the huge ImageNet dataset
-\end_layout
-
-\begin_layout Itemize
-Lots of computing resources used for training the network.
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-All those hidden layers of the network are very valuable 
-\series bold
-features
-\series default
-.
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-Paper: 
-\begin_inset Quotes eld
-\end_inset
-
-
-\emph on
-CNN Features off-the-shelf: an Astounding Baseline for Recognition
-\emph default
-
-\begin_inset Quotes erd
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Showed that using features from OverFeat makes it easy to achieve state-of-the-a
-rt performance on new vision tasks.
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-let
-\backslash
-thefootnote
-\backslash
-relax
-\backslash
-footnotetext{
-\backslash
-tiny{OverFeat code is at 
-\backslash
-url{https://github.com/sermanet/OverFeat}}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator plain

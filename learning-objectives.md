@@ -211,10 +211,45 @@ following:
 - In particular, describe the regularization approach used in CART (pruning and use of number of leaves as complexity measure), recognize the cost complexity criterion as our standard regularized ERM.
 - Recall the entropy, Gini, and misclassification error splitting criteria. Give some intuition around preference for Gini/entropy (i.e. purity measures) over misclassification.
 
-### 10b and 10c: Bootstrap, Bagging, and Random Forests
+### 10b: Intro to the Bootstrap
 
 - Recall from basic statics concepts related to an estimator (e.g. bias) and its variance.
 - Describe (outside the context of bagging/RFs) how the bootstrap is a useful method for estimating the variance of an estimator, and have some intuition on how it can be applied across many problems.
-- Again recalling basic statistics, understand why bagging (averaging predictions) reduces variance.
+
+## Week 11 (4/10/2018)
+
+### 11a: Bagging and RFs
+- Give an intuitive explanation for parallel ensembles (in terms of variance reduction), and sequential ensembles (in terms of adding new models that do well where previous models did not).
+- Recalling basic statistics, understand why bagging (averaging predictions) reduces variance.
 - Recalling that the bootstrap ignores an expected 37% of data in each bootstrap sample, explain how we can use out-of-bag observations to approximate test performance.
-- Describe how RF reduces correlation between trees using column sampling while training on bootstrap samples.
+- Understand what the out-of-bag observations are and how we can use them to estimate test error.
+- Recognize that bagged prediction function is one way to combine many base prediction functions.
+- Explain how random feature subsetting in RFs reduces dependence between trees.
+
+### 11b: Gradient Boosting
+- Compare learning a linear model on a fixed set of basis functions on the input space, and an "adaptive basis function model" where the basis functions are learned.
+- In particular, explain the "recipe" for an adaptive basis function model in terms of the base hypothesis space, and combined hypothesis space.
+- Give psuedo-code for forward stagewise additive modeling (FSAM).
+- Give the ingredients for gradient boosting machines; in particular, be able to explain why we need a [sub]differentiable loss function w.r.t. the prediction.
+- Explain how gradient boosting uses "functional" gradient descent -- i.e. learning the basis function (i.e. function in the base hypothesis space) that is closest to the negative gradient step direction given the current prediction function.
+- Explain options for step sizes (line search and shrinkage parameter/learning rate).
+- Explain variations on gradient boosting (stochastic gradient boosting, and column subsampling).
+
+
+## Week 12 (4/17/2018)
+
+### 12a: Neural Networks
+
+- Be able to explain the recipe for a basic neural network (MLP), including common activation functions.
+- Be able to explain the intuition that hidden layers are essentially features or basis functions (and can be extracted and used as such in other predition functions).
+- Be able to set up ERM objective function and defend that we can use gradient-based methods even though the objective is not convex w.r.t. parameters (i.e. we might still find a sufficiently good solution).
+- Be able to state the universal approximation theorem presented in class.
+- Be able to give the standard recipe for MLP for multinomial logistic regression.
+- Be able to explain how to easily extend MLP for multiple outputs.
+
+### 12b: Back Propagation and the Chain Rule
+
+- Be able to give an intuitive explanation for the partial derivatives of a function mapping from R^p --> R^n.
+- Be able to give the chain rule in terms of partial derivatives, and explain in terms of a computation graph.
+- Be able to work out partials using a computation graph, and give the partials returns by backwards method of a node.
+- Explain the role of topological sort in backprop.

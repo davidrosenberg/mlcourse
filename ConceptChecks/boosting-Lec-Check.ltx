@@ -1,4 +1,15 @@
-\subsection{Boosting}
+\section{Boosting: Concept Check}
+\subsubsection{Boosting Learning Objectives}
+\begin{itemize}
+  \item Compare learning a linear model on a fixed set of basis functions on the input space, and an "adaptive basis function model" where the basis functions are learned.
+  \item In particular, explain the "recipe" for an adaptive basis function model in terms of the base hypothesis space, and combined hypothesis space.
+  \item Give psuedo-code for forward stagewise additive modeling (FSAM).
+  \item Give the ingredients for gradient boosting machines; in particular, be able to explain why we need a [sub]differentiable loss function w.r.t. the prediction.
+  \item Explain how gradient boosting uses "functional" gradient descent - i.e. learning the basis function (i.e. function in the base hypothesis space) that is closest to the negative gradient step direction given the current prediction function.
+  \item Explain options for step sizes (line search and shrinkage parameter/learning rate).
+  \item Explain variations on gradient boosting (stochastic gradient boosting, and column subsampling).
+\end{itemize}
+
 \begin{enumerate}
 \item $(\star)$ Show the exponential margin loss is a convex upper bound for the
   $0-1$ loss.

@@ -19,7 +19,7 @@ figs-within-sections
 \font_roman "times" "default"
 \font_sans "default" "default"
 \font_typewriter "default" "default"
-\font_math "eulervm" "auto"
+\font_math "default" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
@@ -857,7 +857,7 @@ Let's differentiate
 
 \end_inset
 
-Now differentating the full log-likelihooed is 
+Now differentating the full log-likelihood is 
 \begin_inset Formula 
 \begin{eqnarray*}
 \frac{\partial}{\partial f(x_{i})}\left[\log L_{\cd}(f)\right] & = & \frac{\partial}{\partial f(x_{i})}\left[-\exp\left(f(x_{i})\right)+y_{i}f(x_{i})-\log\left(y_{i}!\right)\right]\\

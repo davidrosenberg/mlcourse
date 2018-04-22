@@ -11,33 +11,33 @@
 
 
 % Set Color ==============================
-\definecolor{BBGblue}{RGB}{13,157,219}
-\definecolor{BBGgreen}{RGB}{77,170,80}
+\definecolor{NYUPurple}{RGB}{87,6,140}
+\definecolor{LightPurple}{RGB}{165,11,255}
 
 
-\setbeamercolor{title}{fg=BBGblue}
-%\setbeamercolor{frametitle}{fg=BBGblue}
-\setbeamercolor{frametitle}{fg=BBGblue}
+\setbeamercolor{title}{fg=NYUPurple}
+%\setbeamercolor{frametitle}{fg=NYUPurple}
+\setbeamercolor{frametitle}{fg=NYUPurple}
 
-\setbeamercolor{background canvas}{fg=BBGblue, bg=white}
-\setbeamercolor{background}{fg=black, bg=BBGblue}
+\setbeamercolor{background canvas}{fg=NYUPurple, bg=white}
+\setbeamercolor{background}{fg=black, bg=NYUPurple}
 
 \setbeamercolor{palette primary}{fg=black, bg=gray!30!white}
 \setbeamercolor{palette secondary}{fg=black, bg=gray!20!white}
-\setbeamercolor{palette tertiary}{fg=black, bg=BBGblue}
+\setbeamercolor{palette tertiary}{fg=gray!20!white, bg=NYUPurple}
 
 \setbeamertemplate{headline}{}
 
-\setbeamercolor{parttitle}{fg=BBGblue}
-\setbeamercolor{sectiontitle}{fg=BBGblue}
-\setbeamercolor{sectionname}{fg=BBGblue}
-\setbeamercolor{section page}{fg=BBGblue}
+\setbeamercolor{parttitle}{fg=NYUPurple}
+\setbeamercolor{sectiontitle}{fg=NYUPurple}
+\setbeamercolor{sectionname}{fg=NYUPurple}
+\setbeamercolor{section page}{fg=NYUPurple}
 
 \AtBeginSection[]{
   \begin{frame}
   \vfill
   \centering
-\setbeamercolor{section title}{fg=BBGblue}
+\setbeamercolor{section title}{fg=NYUPurple}
  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
     \usebeamerfont{title}\usebeamercolor[fg]{title}\insertsectionhead\par%
   \end{beamercolorbox}
@@ -79,7 +79,7 @@
 \pdf_colorlinks true
 \pdf_backref false
 \pdf_pdfusetitle true
-\pdf_quoted_options "allcolors=BBGblue,urlcolor=BBGgreen"
+\pdf_quoted_options "allcolors=NYUPurple,urlcolor=LightPurple"
 \papersize default
 \use_geometry true
 \use_package amsmath 2
@@ -331,7 +331,7 @@ cy}}
 \newcommand{\outsp}{\cy}
 \end_inset
 
- 
+
 \end_layout
 
 \begin_layout Standard
@@ -719,7 +719,7 @@ Gaussian Mixture Models
 status open
 
 \begin_layout Plain Layout
-ML 101
+DS-GA 1003 / CSCI-GA 2567
 \begin_inset Note Note
 status collapsed
 
@@ -743,11 +743,11 @@ David S.
 \end_layout
 
 \begin_layout Date
-December 15, 2017
+April 24, 2018
 \end_layout
 
 \begin_layout Institute
-Bloomberg ML EDU
+New York University
 \end_layout
 
 \begin_layout Standard
@@ -794,26 +794,78 @@ tiny{Plots courtesy of Ningshan Zhang.}}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
 Next time -- refer more to "components" than clusters.
  talk about vector quantization
 \end_layout
 
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+For board work, wrote down
+\end_layout
+
+\begin_layout Enumerate
+Picture on why gradient descent may not work well for GMM, because size
+ of the variance dictates 
+\begin_inset Quotes eld
+\end_inset
+
+reasonable
+\begin_inset Quotes erd
+\end_inset
+
+ step sizes for the corresponding means.
+ Suggest natural gradient methods?
+\end_layout
+
+\begin_layout Enumerate
+parameter estimates for GMM in fully observed case, to compare to the soft
+ assignment case
+\end_layout
+
 \end_inset
 
 
 \end_layout
 
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Contents
+\end_layout
+
 \end_inset
 
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
 
 \end_layout
 
@@ -1695,7 +1747,145 @@ Mixture Models
 status open
 
 \begin_layout Plain Layout
-Gaussian Mixture Model: Marginal Distribution
+General Mixture Models: Generative Construction
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $S$
+\end_inset
+
+ be a set of 
+\begin_inset Formula $K$
+\end_inset
+
+ probability distributions (
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+mixture components
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+).
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $\pi=\left(\pi_{1},\ldots,\pi_{K}\right)$
+\end_inset
+
+ be a distribution on 
+\begin_inset Formula $\left\{ 1,\ldots,K\right\} $
+\end_inset
+
+ (
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+mixture weights
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+)
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Suppose we generate 
+\begin_inset Formula $x$
+\end_inset
+
+ with the following procedure:
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Enumerate
+Choose a distribution randomly from 
+\begin_inset Formula $S$
+\end_inset
+
+ according to 
+\begin_inset Formula $\pi$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Sample 
+\begin_inset Formula $x$
+\end_inset
+
+ from the chosen distribution.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Then we say 
+\begin_inset Formula $x$
+\end_inset
+
+ has a
+\series bold
+ mixture distribution
+\series default
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Mixture Densities 
 \end_layout
 
 \end_inset
@@ -1709,6 +1899,129 @@ Gaussian Mixture Model: Marginal Distribution
 
 \begin_deeper
 \begin_layout Itemize
+Suppose we have a mixture distribution with
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+mixture components represented as densities 
+\begin_inset Formula $p_{1},\ldots,p_{K}$
+\end_inset
+
+, and
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+mixture weights 
+\begin_inset Formula $\pi=\left(\pi_{1},\ldots,\pi_{K}\right)$
+\end_inset
+
+ , then 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+the corresponding probability density for 
+\begin_inset Formula $x$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+p(x)=\sum_{i=1}^{K}\pi_{i}p_{i}(x).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Note that 
+\begin_inset Formula $p$
+\end_inset
+
+ is a convex combination of the mixture component densities.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $p(x)$
+\end_inset
+
+ is called a 
+\series bold
+mixture density
+\series default
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Conversely, if 
+\begin_inset Formula $x$
+\end_inset
+
+ has a density of this form, then 
+\begin_inset Formula $x$
+\end_inset
+
+ has a mixture distribution.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Gaussian Mixture Model: Marginal Distribution
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+For example:
+\end_layout
+
+\begin_layout Itemize
 The 
 \series bold
 marginal distribution
@@ -1717,7 +2030,7 @@ marginal distribution
 \begin_inset Formula $x$
 \end_inset
 
- is
+ in a GMM is
 \series bold
 
 \begin_inset Formula 
@@ -1744,142 +2057,20 @@ Note that
 
  is a convex combination of probability densities.
  
-\end_layout
+\begin_inset Note Note
+status open
 
-\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 This is a common form for a probability model...
 \end_layout
 
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator plain
 \end_inset
 
 
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Mixture Distributions (or Mixture Models)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-
-\end_layout
-
-\begin_deeper
-\begin_layout Definition
-A probability density 
-\begin_inset Formula $p(x)$
-\end_inset
-
- represents a 
-\series bold
-mixture distribution 
-\series default
-or 
-\series bold
-mixture model, 
-\series default
-if we can write it as a 
-\series bold
-convex combination
-\series default
- of probability densities.
- That is, 
-\begin_inset Formula 
-\[
-p(x)=\sum_{i=1}^{k}w_{i}p_{i}(x),
-\]
-
-\end_inset
-
-where 
-\begin_inset Formula $w_{i}\ge0$
-\end_inset
-
-, 
-\begin_inset Formula $\sum_{i=1}^{k}w_{i}=1$
-\end_inset
-
-, and each 
-\begin_inset Formula $p_{i}$
-\end_inset
-
- is a probability density.
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-In our Gaussian mixture model, 
-\begin_inset Formula $x$
-\end_inset
-
- has a 
-\series bold
-mixture distribution
-\series default
-.
- 
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-More constructively, let 
-\begin_inset Formula $S$
-\end_inset
-
- be a set of probability distributions:
-\end_layout
-
-\begin_deeper
-\begin_layout Enumerate
-Choose a distribution randomly from 
-\begin_inset Formula $S$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Enumerate
-Sample 
-\begin_inset Formula $x$
-\end_inset
-
- from the chosen distribution.
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Then 
-\begin_inset Formula $x$
-\end_inset
-
- has a mixture distribution.
 \end_layout
 
 \end_deeper
@@ -2240,7 +2431,7 @@ To estimate
 , we'll maximize the log joint density:
 \begin_inset Formula 
 \[
-\sum_{i=1}^{n}\log p(x\mid\mu,\Sigma)=-\frac{n}{2}\log\left|2\pi\Sigma\right|-\frac{1}{2}\sum_{i=1}^{n}(x_{i}-\mu)^{T}\Sigma^{-1}(x_{i}-\mu)
+\sum_{i=1}^{n}\log p(x_{i}\mid\mu,\Sigma)=-\frac{n}{2}\log\left|2\pi\Sigma\right|-\frac{1}{2}\sum_{i=1}^{n}(x_{i}-\mu)^{T}\Sigma^{-1}(x_{i}-\mu)
 \]
 
 \end_inset
@@ -2337,7 +2528,7 @@ We get a closed form solution:
 \begin_inset Formula 
 \begin{eqnarray*}
 \hat{\mu}_{\text{MLE}} & = & \frac{1}{n}\sum_{i=1}^{n}x_{i}\\
-\hat{\Sigma}_{\text{MLE}} & = & \frac{1}{n}\sum_{i=1}^{n}\left(x_{i}-\hat{\mu}\right)^{T}\left(x_{i}-\hat{\mu}\right)
+\hat{\Sigma}_{\text{MLE}} & = & \frac{1}{n}\sum_{i=1}^{n}\left(x_{i}-\hat{\mu}_{\text{MLE}}\right)^{T}\left(x_{i}-\hat{\mu}_{\text{MLE}}\right)
 \end{eqnarray*}
 
 \end_inset
@@ -2361,12 +2552,6 @@ status open
 
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
- 
-\end_layout
-
-\end_deeper
 \end_inset
 
 
@@ -2408,7 +2593,7 @@ Properties of the GMM Log-Likelihood
 GMM log-likelihood:
 \begin_inset Formula 
 \begin{eqnarray*}
-J(\pi,\mu,\Sigma) & = & \sum_{i=1}^{n}\log\left\{ \sum_{z=1}^{k}\frac{\pi_{z}}{\sqrt{|2\pi\Sigma|}}\exp\left(-\frac{1}{2}(x-\mu)^{T}\Sigma^{-1}(x-\mu)\right)\right\} 
+J(\pi,\mu,\Sigma) & = & \sum_{i=1}^{n}\log\left\{ \sum_{z=1}^{k}\frac{\pi_{z}}{\sqrt{|2\pi\Sigma_{z}|}}\exp\left(-\frac{1}{2}(x-\mu_{z})^{T}\Sigma_{z}^{-1}(x-\mu_{z})\right)\right\} 
 \end{eqnarray*}
 
 \end_inset
@@ -2460,10 +2645,12 @@ For a single Gaussian, the
  Things simplify a lot.
 \end_layout
 
+\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
+\end_deeper
 \end_deeper
 \begin_layout Itemize
 For the GMM, the sum inside the 
@@ -3323,7 +3510,12 @@ Initialize parameters
 \begin_inset Formula $\mu,\Sigma,\pi$
 \end_inset
 
-.
+ (e.g.
+ using 
+\begin_inset Formula $k$
+\end_inset
+
+-means).
 \end_layout
 
 \begin_deeper
@@ -3606,17 +3798,6 @@ emph{Pattern recognition and machine learning}, Figure 9.8.}}
 \end_layout
 
 \end_deeper
-\begin_layout Frame
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
 \begin_layout Standard
 \begin_inset Separator plain
 \end_inset
@@ -3774,7 +3955,7 @@ status open
 
 \begin_layout Plain Layout
 Relation to 
-\begin_inset Formula $K$
+\begin_inset Formula $k$
 \end_inset
 
 -Means
@@ -3805,7 +3986,15 @@ EM for GMM seems a little like
 
 \end_deeper
 \begin_layout Itemize
-In fact, there is a precise correspondence.
+In fact, 
+\begin_inset Formula $k$
+\end_inset
+
+-means is a limiting case of a 
+\series bold
+restricted
+\series default
+ version of GMM.
 \end_layout
 
 \begin_deeper
@@ -3824,6 +4013,15 @@ First, fix each cluster covariance matrix to be
 \end_layout
 
 \begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+(This is the restriction: covariance matrices are fixed, and not iteratively
+ estimated.)
+\end_layout
+
 \begin_layout Pause
 
 \end_layout

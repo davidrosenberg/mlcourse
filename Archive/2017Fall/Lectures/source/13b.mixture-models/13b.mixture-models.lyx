@@ -3,7 +3,7 @@
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin /Users/drosen/Dropbox/repos/mlcourse/Lectures/
+\origin /Users/drosen/Dropbox/repos/mlcourse/Archive/2017Fall/Lectures/source/13b.mixture-models/
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -2240,7 +2240,7 @@ To estimate
 , we'll maximize the log joint density:
 \begin_inset Formula 
 \[
-\sum_{i=1}^{n}\log p(x\mid\mu,\Sigma)=-\frac{n}{2}\log\left|2\pi\Sigma\right|-\frac{1}{2}\sum_{i=1}^{n}(x_{i}-\mu)^{T}\Sigma^{-1}(x_{i}-\mu)
+\sum_{i=1}^{n}\log p(x_{i}\mid\mu,\Sigma)=-\frac{n}{2}\log\left|2\pi\Sigma\right|-\frac{1}{2}\sum_{i=1}^{n}(x_{i}-\mu)^{T}\Sigma^{-1}(x_{i}-\mu)
 \]
 
 \end_inset
@@ -2337,7 +2337,7 @@ We get a closed form solution:
 \begin_inset Formula 
 \begin{eqnarray*}
 \hat{\mu}_{\text{MLE}} & = & \frac{1}{n}\sum_{i=1}^{n}x_{i}\\
-\hat{\Sigma}_{\text{MLE}} & = & \frac{1}{n}\sum_{i=1}^{n}\left(x_{i}-\hat{\mu}\right)^{T}\left(x_{i}-\hat{\mu}\right)
+\hat{\Sigma}_{\text{MLE}} & = & \frac{1}{n}\sum_{i=1}^{n}\left(x_{i}-\hat{\mu}_{\text{MLE}}\right)^{T}\left(x_{i}-\hat{\mu}_{\text{MLE}}\right)
 \end{eqnarray*}
 
 \end_inset
@@ -2408,7 +2408,7 @@ Properties of the GMM Log-Likelihood
 GMM log-likelihood:
 \begin_inset Formula 
 \begin{eqnarray*}
-J(\pi,\mu,\Sigma) & = & \sum_{i=1}^{n}\log\left\{ \sum_{z=1}^{k}\frac{\pi_{z}}{\sqrt{|2\pi\Sigma|}}\exp\left(-\frac{1}{2}(x-\mu)^{T}\Sigma^{-1}(x-\mu)\right)\right\} 
+J(\pi,\mu,\Sigma) & = & \sum_{i=1}^{n}\log\left\{ \sum_{z=1}^{k}\frac{\pi_{z}}{\sqrt{|2\pi\Sigma_{z}|}}\exp\left(-\frac{1}{2}(x-\mu_{z})^{T}\Sigma^{-1}(x-\mu_{z})\right)\right\} 
 \end{eqnarray*}
 
 \end_inset

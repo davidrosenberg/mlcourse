@@ -3,7 +3,7 @@
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin /Users/drosen/Dropbox/repos/mlcourse/Lectures/
+\origin /Users/drosen/Dropbox/repos/mlcourse/Archive/2017Fall/Lectures/source/04c.SVM/
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -2560,7 +2560,7 @@ If
 \end_inset
 
 , which implies no loss, so 
-\begin_inset Formula $y_{i}f^{*}(x)\ge1$
+\begin_inset Formula $y_{i}f^{*}(x_{i})\ge1$
 \end_inset
 
 .

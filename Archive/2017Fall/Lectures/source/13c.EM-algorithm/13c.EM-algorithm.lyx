@@ -3,7 +3,7 @@
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin /Users/drosen/Dropbox/repos/mlcourse/Lectures/
+\origin /Users/drosen/Dropbox/repos/mlcourse/Archive/2017Fall/Lectures/source/13c.EM-algorithm/
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -2930,7 +2930,7 @@ global maximum
 :
 \begin_inset Formula 
 \[
-L(q^{*},\theta^{*})\ge L(q,\theta)\;\forall q,\theta,
+\cl(q^{*},\theta^{*})\ge\cl(q,\theta)\;\forall q,\theta,
 \]
 
 \end_inset
@@ -3234,13 +3234,6 @@ In practice, can run EM multiple times with random starts.
 
 \end_deeper
 \end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 Variations on EM
 \end_layout

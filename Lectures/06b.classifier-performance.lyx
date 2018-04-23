@@ -1151,8 +1151,8 @@ Often helpful to get an upper bound on achievable performance.
 
 \end_deeper
 \begin_layout Itemize
-What's the best performance function you can get, looking at your validation/tes
-t data?
+What's the best performance function you can get, looking at your validation
+ data?
 \end_layout
 
 \begin_deeper
@@ -1190,7 +1190,7 @@ Using same model class as your ML model,
 
 \begin_deeper
 \begin_layout Itemize
-fit to the validation/test data without regularization.
+fit to the validation data without regularization.
 \end_layout
 
 \begin_layout Itemize

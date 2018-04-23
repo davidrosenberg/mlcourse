@@ -768,27 +768,27 @@ Just in article version
 status open
 
 \begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-let
-\backslash
-thefootnote
-\backslash
-relax
-\backslash
-footnotetext{
-\backslash
-tiny{Plots courtesy of Ningshan Zhang.}}
-\end_layout
-
+Some board work that worked nicely: draw 
+\begin_inset Formula $\log p(x\mid\theta)$
 \end_inset
 
+ as a function of 
+\begin_inset Formula $\theta$
+\end_inset
 
+.
+ Then show a whole bunch of lower bounds (say concave).
+ This family of lower bounds is indexedc by the distributions distribution
+ 
+\begin_inset Formula $q$
+\end_inset
+
+ on 
+\begin_inset Formula $z$
+\end_inset
+
+.
+ 
 \end_layout
 
 \end_inset
@@ -821,7 +821,7 @@ LatexCommand tableofcontents
 
 \end_deeper
 \begin_layout Section
-EM Algorithm for Latent Variable Models 
+Latent Variable Models 
 \end_layout
 
 \begin_layout Frame
@@ -940,8 +940,8 @@ Complete and Incomplete Data
 
 \begin_deeper
 \begin_layout Itemize
-Suppose we have a data set 
-\begin_inset Formula $\cd=\left(x_{1},\ldots,x_{n}\right)$
+Suppose we observe some data 
+\begin_inset Formula $\left(x_{1},\ldots,x_{n}\right)$
 \end_inset
 
 .
@@ -1163,7 +1163,7 @@ marginal log-likelihood
 
 
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Frame
 \begin_inset Argument 4
@@ -1463,14 +1463,291 @@ marginal log-likelihood
 
 \end_layout
 
+\begin_layout Section
+EM Algorithm (and Variational Methods) – The Big Picture
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
 \begin_layout Frame
 \begin_inset Argument 4
 status open
 
 \begin_layout Plain Layout
-The EM Algorithm 
+Big Picture Idea
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Want to find 
+\begin_inset Formula $\theta$
+\end_inset
+
+ by maximizing the likelihood of the observed data 
+\begin_inset Formula $x$
+\end_inset
+
+: 
+\begin_inset Formula 
+\[
+\hat{\theta}=\argmax_{\theta\in\Theta}\left[\log p(x\mid\theta)\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Unfortunately this may be hard to do directly.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Approach: Generate a 
 \series bold
-Key Idea
+family of lower bounds
+\series default
+ on 
+\begin_inset Formula $\theta\mapsto\log p(x\mid\theta)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+For every 
+\begin_inset Formula $q\in\cq$
+\end_inset
+
+, we will have a lower bound:
+\begin_inset Formula 
+\[
+\log p(x\mid\theta)\ge\cl_{q}(\theta)\qquad\forall\theta\in\Theta
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+We will try to find the maximum over all lower bounds:
+\begin_inset Formula 
+\[
+\hat{\theta}=\argmax_{\theta\in\Theta}\left[\sup_{q\in\cq}\cl_{q}(\theta)\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Marginal Log-Likelihood Function
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/EM-algorithm/margLL.pdf
+	width 85page%
+	clip
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Maximum Likelihood Estimator
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/EM-algorithm/margLL-withMax.pdf
+	width 85page%
+	clip
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Lower Bounds on Marginal Log-Likelihood
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/EM-algorithm/margLL-with-lowerbounds.pdf
+	width 85page%
+	clip
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Supremum over Lower Bounds is a Lower Bound
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/EM-algorithm/margLL-sup-lowerbound.pdf
+	width 85page%
+	clip
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Parameter Estimate: Max over all lower bounds
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/EM-algorithm/margLL-argmax-lowerbound.pdf
+	width 85page%
+	clip
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Expected Complete Data Log-Likelihood
 \end_layout
 
 \end_inset
@@ -1548,6 +1825,40 @@ distribution
 ?
 \end_layout
 
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Expected Complete Data Log-Likelihood
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose we have a distribution 
+\begin_inset Formula $q(z)$
+\end_inset
+
+ on latent variable 
+\begin_inset Formula $z$
+\end_inset
+
+.
+\end_layout
+
 \begin_deeper
 \begin_layout Pause
 
@@ -1577,16 +1888,728 @@ expected complete data log-likelihood
 
 \end_deeper
 \begin_layout Itemize
+If 
+\begin_inset Formula $q$
+\end_inset
+
+ puts lots of weight on actual 
+\begin_inset Formula $z$
+\end_inset
+
+, this could be a good approximation to MLE
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
 EM 
 \series bold
 assumes
 \series default
- this maximization is relatively easy.
+ 
+\series bold
+this maximization is relatively easy
+\series default
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+(This is true for GMM.)
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Expected Complete Data Log-Likelihood
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Remember for every 
+\begin_inset Formula $q\in\cq$
+\end_inset
+
+, we will have a lower bound:
+\begin_inset Formula 
+\[
+\log p(x\mid\theta)\ge\cl_{q}(\theta)\qquad\forall\theta\in\Theta
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+In EM algorithm, 
+\begin_inset Formula $q$
+\end_inset
+
+ is a 
+\series bold
+distribution over the latent variable
+\series default
+ 
+\begin_inset Formula $z$
+\end_inset
+
+.
+  
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Math Prerequisites
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Convex and Concave Functions
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+A function 
+\begin_inset Formula $f:\reals^{n}\to\reals$
+\end_inset
+
+ is 
+\series bold
+convex
+\series default
+ if for all 
+\begin_inset Formula $x,y\in\reals^{n}$
+\end_inset
+
+ and 
+\begin_inset Formula $0\le\theta\le1$
+\end_inset
+
+, we have
+\begin_inset Formula 
+\[
+f(\theta x+(1-\theta)y)\le\theta f(x)+(1-\theta)f(y).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../Archive/2017/Lectures/source/13.Lab.EM-algorithm/fig7.5a.pdf
+	lyxscale 50
+	width 40text%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../Archive/2017/Lectures/source/13.Lab.EM-algorithm/fig7.5b.pdf
+	lyxscale 50
+	width 40text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{KPM Fig.
+ 7.5}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Jensen's Inequality
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Theorem
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[Jensen's Inequality]
+\end_layout
+
+\end_inset
+
+If 
+\begin_inset Formula $f:\reals\to\reals$
+\end_inset
+
+ is a 
+\series bold
+convex
+\series default
+ function, and 
+\begin_inset Formula $x$
+\end_inset
+
+ is a random variable, then
+\begin_inset Formula 
+\[
+\ex f(x)\ge f(\ex x).\pause
+\]
+
+\end_inset
+
+Moreover, if 
+\begin_inset Formula $f$
+\end_inset
+
+ is 
+\series bold
+strictly convex
+\series default
+, then equality implies that 
+\begin_inset Formula $x=\ex x$
+\end_inset
+
+ with probability 
+\begin_inset Formula $1$
+\end_inset
+
+ (i.e.
+ 
+\begin_inset Formula $x$
+\end_inset
+
+ is a constant).
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+e.g.
+ 
+\begin_inset Formula $f(x)=x^{2}$
+\end_inset
+
+ is convex.
+ So 
+\begin_inset Formula $\ex x^{2}\ge\left(\ex x\right)^{2}$
+\end_inset
+
+.
+ Thus 
+\begin_inset Formula 
+\[
+\var\left(x\right)=\ex x^{2}-\left(\ex x\right)^{2}\ge0.
+\]
+
+\end_inset
+
+ 
 \end_layout
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Kullback-Leibler Divergence
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $p(x)$
+\end_inset
+
+ and 
+\begin_inset Formula $q(x)$
+\end_inset
+
+ be probability mass functions (PMFs) on 
+\begin_inset Formula $\cx$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+How can we measure how 
+\begin_inset Quotes eld
+\end_inset
+
+different
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Formula $p$
+\end_inset
+
+ and 
+\begin_inset Formula $q$
+\end_inset
+
+ are?
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+The 
+\series bold
+Kullback-Leibler
+\series default
+ or 
+\series bold
+
+\begin_inset Quotes eld
+\end_inset
+
+KL
+\begin_inset Quotes erd
+\end_inset
+
+ Divergence
+\series default
+ is defined by
+\begin_inset Formula 
+\begin{eqnarray*}
+\kl(p\|q) & = & \sum_{x\in\cx}p(x)\log\frac{p(x)}{q(x)}.
+\end{eqnarray*}
+
+\end_inset
+
+(Assumes 
+\begin_inset Formula $q(x)=0$
+\end_inset
+
+ implies 
+\begin_inset Formula $p(x)=0$
+\end_inset
+
+.)
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Can also write this as
+\begin_inset Formula 
+\begin{eqnarray*}
+\kl(p\|q) & = & \ex_{x\sim p}\log\frac{p(x)}{q(x)}.
+\end{eqnarray*}
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Best explanation I've heard for the double bar notation: so that if you
+ want to find the KL divergence between two joint distributions referred
+ by their random variables, you can write 
+\begin_inset Formula $\kl((X,Y)\|(X',Y')),$
+\end_inset
+
+ rather than 
+\begin_inset Formula $\kl((X,Y),(X',Y'))$
+\end_inset
+
+.
+ Which doesn't actually look much worse to me.
+ https://math.stackexchange.com/questions/1597380/origin-of-the-notation-for-stati
+stical-divergence
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Statistical Divergence and Metrics
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Some divergences are proper distance metrics:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+e.g.
+ Hellinger distance: 
+\begin_inset Formula $h^{2}(p,q)=\frac{1}{2}\int\left(\sqrt{p(x)}-\sqrt{q(x)}\right)^{2}dx$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+where 
+\begin_inset Formula $p$
+\end_inset
+
+ and 
+\begin_inset Formula $q$
+\end_inset
+
+ are PMFs.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Kullback-Leibler divergence is an important divergence measure
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Not a proper distance metric.
+\end_layout
+
+\begin_layout Itemize
+Not even symmetric.
+ 
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Gibbs Inequality (
+\begin_inset Formula $\kl(p\|q)\ge0$
+\end_inset
+
+ and 
+\begin_inset Formula $\kl(p\|p)=0$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Theorem
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[Gibbs Inequality]
+\end_layout
+
+\end_inset
+
+Let 
+\begin_inset Formula $p(x)$
+\end_inset
+
+ and 
+\begin_inset Formula $q(x)$
+\end_inset
+
+ be PMFs on 
+\begin_inset Formula $\cx$
+\end_inset
+
+.
+ Then
+\begin_inset Formula 
+\[
+\kl(p\|q)\ge0,
+\]
+
+\end_inset
+
+with equality iff 
+\begin_inset Formula $p(x)=q(x)$
+\end_inset
+
+ for all 
+\begin_inset Formula $x\in\cx$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+KL divergence measures the 
+\begin_inset Quotes eld
+\end_inset
+
+distance
+\begin_inset Quotes erd
+\end_inset
+
+ between distributions.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Note:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+KL divergence 
+\series bold
+not a metric
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+KL divergence is 
+\series bold
+not symmetric
+\series default
+.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Gibbs Inequality: Proof
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+\kl(p\|q) & = & \ex_{p}\left[-\log\left(\frac{q(x)}{p(x)}\right)\right]\\
+ & \ge & -\log\left[\ex_{p}\left(\frac{q(x)}{p(x)}\right)\right]\mbox{\qquad\text{(Jensen's)}}\\
+ & = & -\log\left[\sum_{\left\{ x\mid p(x)>0\right\} }p(x)\frac{q(x)}{p(x)}\right]\\
+ & = & -\log\left[\sum_{x\in\cx}q(x)\right]\\
+ & = & -\log1=0.
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Since 
+\begin_inset Formula $-\log$
+\end_inset
+
+ is strictly convex, we have strict equality iff 
+\begin_inset Formula $q(x)/p(x)$
+\end_inset
+
+ is a constant, which implies 
+\begin_inset Formula $q=p$
+\end_inset
+
+ .
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Section
+The ELBO: Family of Lower Bounds on 
+\begin_inset Formula $\log p(x\mid\theta)$
 \end_inset
 
 
@@ -1749,7 +2772,7 @@ ELBO
 \series default
 
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Itemize
 [NOT SURE if this is standard terminology outside of setting when we're
@@ -1828,7 +2851,7 @@ The MLE is defined as a maximum over
 :
 \begin_inset Formula 
 \[
-\hat{\theta}_{\text{MLE}}=\argmax_{\theta}\log p(x\mid\theta).
+\hat{\theta}_{\text{MLE}}=\argmax_{\theta}\left[\log p(x\mid\theta)\right].
 \]
 
 \end_inset
@@ -1848,12 +2871,28 @@ In EM algorithm, we maximize the lower bound (ELBO) over
 :
 \begin_inset Formula 
 \[
-\hat{\theta}_{\text{EM}}=\argmax_{\theta}\left[\max_{q}\cl(q,\theta)\right]
+\hat{\theta}_{\text{EM}}\approx\argmax_{\theta}\left[\max_{q}\cl(q,\theta)\right]
 \]
 
 \end_inset
 
- 
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+In EM algorithm, 
+\begin_inset Formula $q$
+\end_inset
+
+ ranges over all distributions on 
+\begin_inset Formula $z$
+\end_inset
+
+.
 \end_layout
 
 \end_deeper
@@ -2231,11 +3270,7 @@ EM: Next Steps
 
 \begin_deeper
 \begin_layout Itemize
-We now give 2 different re-expressions of 
-\begin_inset Formula $\cl(q,\theta)$
-\end_inset
-
- that make it easy to compute
+In EM algorithm, we need to repeatedly solve the following steps:
 \end_layout
 
 \begin_deeper
@@ -2261,7 +3296,21 @@ We now give 2 different re-expressions of
 .
 \end_layout
 
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
 \end_deeper
+\end_deeper
+\begin_layout Itemize
+We now give two re-expressions of ELBO 
+\begin_inset Formula $\cl(q,\theta)$
+\end_inset
+
+ that make these easy to compute...
+\end_layout
+
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator parbreak
@@ -2313,7 +3362,7 @@ Amazing! We get back an equality for the marginal likelihood:
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2324,12 +3373,12 @@ Amazing! We get back an equality for the marginal likelihood:
 status open
 
 \begin_layout Plain Layout
-Maxizing over 
+Maximizing over 
 \begin_inset Formula $q$
 \end_inset
 
  for fixed 
-\begin_inset Formula $\theta=\theta^{\text{old}}$
+\begin_inset Formula $\theta$
 \end_inset
 
 .
@@ -2349,7 +3398,7 @@ Find
  maximizing
 \begin_inset Formula 
 \begin{eqnarray*}
-\cl(q,\theta^{\text{old}}) & = & -\kl[q(z),p(z\mid x,\theta^{\text{old}})]+\underbrace{\log p(x\mid\theta^{\text{old}})\pause}_{\text{no }q\text{ here}}
+\cl(q,\theta) & = & -\kl[q(z),p(z\mid x,\theta)]+\underbrace{\log p(x\mid\theta)\pause}_{\text{no }q\text{ here}}
 \end{eqnarray*}
 
 \end_inset
@@ -2387,13 +3436,13 @@ Best
 \end_inset
 
  is 
-\begin_inset Formula $q^{*}(z)=p(z\mid x,\theta^{\text{old}})$
+\begin_inset Formula $q^{*}(z)=p(z\mid x,\theta)$
 \end_inset
 
  and
 \begin_inset Formula 
 \[
-\pause\cl(q^{*},\theta^{\text{old}})=-\underbrace{\kl[p(z\mid x,\theta^{\text{old}}),p(z\mid x,\theta^{\text{old}})]}_{=0}+\log p(x\mid\theta^{\text{old}})
+\pause\cl(q^{*},\theta)=-\underbrace{\kl[p(z\mid x,\theta),p(z\mid x,\theta)]}_{=0}+\log p(x\mid\theta)
 \]
 
 \end_inset
@@ -2410,10 +3459,225 @@ Best
 \begin_layout Itemize
 Summary:
 \begin_inset Formula 
+\[
+\log p(x\mid\theta)=\sup_{q}\cl(q,\theta)\qquad\forall\theta
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+For any 
+\begin_inset Formula $\theta$
+\end_inset
+
+, 
+\series bold
+sup is attained
+\series default
+ at 
+\begin_inset Formula $q(z)=p(z\mid x,\theta)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Marginal Log-Likelihood 
+\series bold
+IS
+\size largest
+\color blue
+ 
+\series default
+\size default
+\color inherit
+the Supremum over Lower Bounds
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/EM-algorithm/sup-margLL.pdf
+	width 75page%
+	clip
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Maximum of ELBO is MLE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose we find a
+\series bold
+ maximum
+\series default
+ of 
+\begin_inset Formula $\cl(q,\theta)$
+\end_inset
+
+ over 
+\series bold
+all distributions
+\series default
+ 
+\begin_inset Formula $q$
+\end_inset
+
+ on 
+\begin_inset Formula $z$
+\end_inset
+
+ and all 
+\begin_inset Formula $\theta\in\Theta$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\cl(q^{*},\theta^{*})=\sup_{\theta}\sup_{q}\cl(q,\theta).
+\]
+
+\end_inset
+
+(where of course
+\begin_inset Formula $q^{*}(z)=p(z\mid x,\theta^{*}).)$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Claim: 
+\begin_inset Formula $\theta^{*}$
+\end_inset
+
+ is a maximizes 
+\begin_inset Formula $\log p(x\mid\theta)$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Proof: Trivial, since 
+\begin_inset Formula $\log p(x\mid\theta)=\sup_{q}\cl(q,\theta)$
+\end_inset
+
+.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+For any 
+\begin_inset Formula $\theta'$
+\end_inset
+
+, we showed that for 
+\begin_inset Formula $q'(z)=p(z\mid x,\theta')$
+\end_inset
+
+ we have
+\begin_inset Formula 
 \begin{eqnarray*}
-\log p(x\mid\theta^{\text{old}}) & = & \cl(q^{*},\theta^{\text{old}})\quad(\text{tangent at }\theta^{\text{old}}).\\
-\pause\log p(x\mid\theta) & \ge & \cl(q^{*},\theta)\quad\forall\theta
+\log p(x\mid\theta') & = & \cl(q',\theta')+\kl[q',p(z\mid x,\theta')]\\
+ & = & \cl(q',\theta')\\
+ & \le & \cl(q^{*},\theta^{*})\\
+ & = & \log p(x\mid\theta^{*})
 \end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Continuity argument can give same result for local.
+ Bishop says if 
+\begin_inset Formula $p(x,z\mid\theta)$
+\end_inset
+
+ is continuous function of 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ I wonder if we need the continuity of the joint to ensure that reasonable
+ thing happen with the 
+\begin_inset Formula $q$
+\end_inset
+
+ piece? Not clear why we don't just need 
+\begin_inset Formula $p(x\mid\theta)$
+\end_inset
+
+.
+ Need to think about this more...
+\end_layout
 
 \end_inset
 
@@ -2422,7 +3686,112 @@ Summary:
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Summary: Maximizing over 
+\begin_inset Formula $q$
+\end_inset
+
+ for fixed 
+\begin_inset Formula $\theta=\theta^{\text{old}}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+At given 
+\begin_inset Formula $\theta=\theta^{\text{old}}$
+\end_inset
+
+, want to find 
+\begin_inset Formula $q$
+\end_inset
+
+ giving best lower bound.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Answer is 
+\begin_inset Formula $q^{*}=p(z\mid x,\theta^{\text{old}})$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+This gives lower bound 
+\begin_inset Formula $\cl(q^{*},\theta)$
+\end_inset
+
+ that is tight (equality) at 
+\begin_inset Formula $\theta^{\text{old}}$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\log p(x\mid\theta^{\text{old}})=\cl(q^{*},\theta^{\text{old}})\quad(\text{tangent at }\theta^{\text{old}}).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+And elsewhere, of course, 
+\begin_inset Formula $\cl(q^{*},\theta)$
+\end_inset
+
+ is just a lower bound:
+\begin_inset Formula 
+\[
+\pause\log p(x\mid\theta)\ge\cl(q^{*},\theta)\quad\forall\theta
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2472,18 +3841,6 @@ For
 \end_layout
 
 \begin_layout Enumerate
-\begin_inset Formula $\log p(x\mid\theta)\ge\cl(q,\theta)$
-\end_inset
-
- 
-\begin_inset Formula $\forall\theta$
-\end_inset
-
-.
- [Global lower bound].
-\end_layout
-
-\begin_layout Enumerate
 \begin_inset Formula $\log p(x\mid\theta^{\text{old}})=\cl(q,\theta^{\text{old}})$
 \end_inset
 
@@ -2501,6 +3858,18 @@ at
 
 \series default
 .]
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\log p(x\mid\theta)\ge\cl(q,\theta)$
+\end_inset
+
+ 
+\begin_inset Formula $\forall\theta$
+\end_inset
+
+.
+ [Global lower bound].
 \end_layout
 
 \begin_layout Standard
@@ -2700,7 +4069,7 @@ Go to step 2, until converged.
 \end_deeper
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Frame
 \begin_inset Argument 4
@@ -2914,136 +4283,6 @@ Putting it together, we get
 \pause & \ge & \cl(q^{*},\theta^{\text{old}})\qquad\mbox{By definition of }\theta^{\text{new}}\\
 \pause & = & \log p(x\mid\theta^{\text{old}})\qquad\text{Bound is tight at }\theta^{\text{old}}.
 \end{eqnarray*}
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Suppose We Maximize the ELBO...
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Suppose we have found a 
-\series bold
-global maximum
-\series default
- of 
-\begin_inset Formula $\cl(q,\theta)$
-\end_inset
-
-:
-\begin_inset Formula 
-\[
-L(q^{*},\theta^{*})\ge L(q,\theta)\;\forall q,\theta,
-\]
-
-\end_inset
-
-where of course
-\begin_inset Formula 
-\[
-q^{*}(z)=p(z\mid x,\theta^{*}).
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Claim: 
-\begin_inset Formula $\theta^{*}$
-\end_inset
-
- is a global maximum of 
-\begin_inset Formula $\log p(x\mid\theta^{*})$
-\end_inset
-
-.
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Proof: For any 
-\begin_inset Formula $\theta'$
-\end_inset
-
-, we showed that for 
-\begin_inset Formula $q'(z)=p(z\mid x,\theta')$
-\end_inset
-
- we have
-\begin_inset Formula 
-\begin{eqnarray*}
-\log p(x\mid\theta') & = & \cl(q',\theta')+\kl[q',p(z\mid x,\theta')]\\
- & = & \cl(q',\theta')\\
- & \le & \cl(q^{*},\theta^{*})\\
- & = & \log p(x\mid\theta^{*})
-\end{eqnarray*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Continuity argument can give same result for local.
- Bishop says if 
-\begin_inset Formula $p(x,z\mid\theta)$
-\end_inset
-
- is continuous function of 
-\begin_inset Formula $\theta$
-\end_inset
-
-.
- I wonder if we need the continuity of the joint to ensure that reasonable
- thing happen with the 
-\begin_inset Formula $q$
-\end_inset
-
- piece? Not clear why we don't just need 
-\begin_inset Formula $p(x\mid\theta)$
-\end_inset
-
-.
- Need to think about this more...
-\end_layout
 
 \end_inset
 

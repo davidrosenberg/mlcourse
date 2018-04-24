@@ -1947,7 +1947,7 @@ For
 Compute:
 \begin_inset Formula 
 \[
-\left(\nu_{m},h_{m}\right)=\argmin_{\nu\in\reals,h\in\ch}\frac{1}{n}\sum\ell\left(y_{i},f_{m-1}(x_{i})\underbrace{+\nu h(x_{i})}_{\text{new piece}}\right).
+\left(\nu_{m},h_{m}\right)=\argmin_{\nu\in\reals,h\in\ch}\frac{1}{n}\sum_{i=1}^{n}\ell\left(y_{i},f_{m-1}(x_{i})\underbrace{+\nu h(x_{i})}_{\text{new piece}}\right).
 \]
 
 \end_inset

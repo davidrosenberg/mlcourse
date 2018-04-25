@@ -10,21 +10,6 @@ know." (Teaching and Learning STEM: A practical guide)
 By the end of each lecture/homework, you should be able to do the
 following:
 
-
-## Big Picture Objectives
-- SGD for subgradient
-- Lagrangian
-- number of nonzero coefficients in lasso
-- scale of features and l1/l2 regularization
-- svm sparsity & lasso sparsity
-- write down the objective functions
-- outliers vs loss
-- geometric of SVM
-- lagrangian duality --
-- reworking objective functions
-- coordinate descent : what was special about the coordinate descent for Lasso.
-
-
 ## Week 1 (1/20/2018)
 ### 1b: Basic Setup for Statistical Learning Theory
 - Identify the input, action, and outcome spaces for a given machine
@@ -253,3 +238,29 @@ following:
 - Be able to give the chain rule in terms of partial derivatives, and explain in terms of a computation graph.
 - Be able to work out partials using a computation graph, and give the partials returns by backwards method of a node.
 - Explain the role of topological sort in backprop.
+
+
+# Week 13 (4/25/2018)
+
+### 13a: K-means
+- Be able to give pseudocode for k-means (i.e. an intuitive explanation).
+- Understand the importance of standardizing in k-means.
+- Be able to give the k-means objective formally.
+- Be able to summarize we can say about the k-means solution -- i.e. each iteration the objective does not increase, but we can converge to local optimum.
+- Be able to describe k-means++ initialization.
+
+### 13b: Gaussian Mixture Models
+- Be able to set up the GMM probelm (multinomial distribution on z, Gaussian x|z).
+- Be able to give and factorize the joint density p(x,z) for this problem.
+- Be able to give pseudocode for the EM Algorithm for GMM (as in slide 29).
+- Be able to state the relationship of EM for GMM to k-means.
+
+### 13c: EM-algorithm:
+- Be able to set up problem (in terms of observed Xs, unobserved Zs, and parameter theta).
+- Be able to state Jensen's inequality, and define KL divergence (prereqs for ELBO).
+- Be able to give EM algorithm pseudocode (as in slide 27).
+- Explain how we can compute the two arg maxes needed in this algorithm (i.e. using bound on KL divergence).
+- Be able to show that EM gives monotonically increasing likelihood.
+- Be able to summarize variations on EM, including generalied EM (address optimization in "M" step), and restriction to a set Q of distributions (addressing optimization in "E" step).
+
+

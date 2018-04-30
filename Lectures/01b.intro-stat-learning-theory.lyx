@@ -890,7 +890,7 @@ And who don't:
 
 \begin_layout Plain Layout
 Bartlett's formulation is that the action space is the hypothesis space...
- There's only one round of plan, mapping from training data to the hypothesis
+ There's only one round of play, mapping from training data to the hypothesis
  space.
  Then the loss function takes a prediction function and a new example.
  
@@ -2881,6 +2881,21 @@ target function
 \end_inset
 
 , since it's the best prediction function we can possibly produce.
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+(Math detail: Bayes prediction function may not exist for any particular
+ risk function.)
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper

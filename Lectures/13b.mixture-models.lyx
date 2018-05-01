@@ -892,13 +892,20 @@ Probabilistic Model for Clustering
 
 \begin_deeper
 \begin_layout Itemize
-Let's consider a 
+Let's consider the following 
 \series bold
 generative model
 \series default
- for the data.
+ (i.e.
+ a way to generate data).
 \end_layout
 
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
 \begin_layout Itemize
 Suppose 
 \end_layout
@@ -909,13 +916,37 @@ There are
 \begin_inset Formula $k$
 \end_inset
 
- clusters.
+ clusters (or 
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+mixture components
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+).
 \end_layout
 
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
 \begin_layout Enumerate
 We have a probability density for each cluster.
 \end_layout
 
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
 \end_deeper
 \begin_layout Itemize
 Generate a point as follows
@@ -931,6 +962,12 @@ Choose a random cluster
  
 \end_layout
 
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
 \begin_layout Enumerate
 Choose a point from the distribution for cluster 
 \begin_inset Formula $z$
@@ -940,7 +977,19 @@ Choose a point from the distribution for cluster
  
 \end_layout
 
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
 \end_deeper
+\end_deeper
+\begin_layout Itemize
+Data generated in this way is said to have a 
+\series bold
+mixture distribution.
+\end_layout
+
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
@@ -1117,6 +1166,7 @@ p(x,z) & = & p(z)p(x\mid z)\\
 
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
 \begin_inset Formula $\pi_{z}$
 \end_inset
@@ -1133,6 +1183,7 @@ p(x,z) & = & p(z)p(x\mid z)\\
 
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
 \begin_inset Formula $x\mid z$
 \end_inset
@@ -1162,8 +1213,6 @@ p(x,z) & = & p(z)p(x\mid z)\\
  
 \end_layout
 
-\end_deeper
-\end_deeper
 \begin_layout Pause
 
 \end_layout
@@ -1653,17 +1702,20 @@ p(z\mid x)=p(x,z)/p(x)
 status open
 
 \begin_layout Plain Layout
-Could say: can't compute this because 
+Could compute 
 \begin_inset Formula $p(x)$
 \end_inset
 
- is hard.
- But we don't actually need 
-\begin_inset Formula $p(x)$
+ by summing out over 
+\begin_inset Formula $z$
+\end_inset
+
+ in 
+\begin_inset Formula $p(x,z)$
 \end_inset
 
 .
- Since 
+ But conceptually we don't need to, since 
 \begin_inset Formula $p(z\mid x)\propto p(x,z)$
 \end_inset
 
@@ -1727,7 +1779,7 @@ z^{*}=\argmin_{z\in\left\{ 1,\ldots,k\right\} }p(z\mid x).
 
 \end_deeper
 \begin_layout Itemize
-So if we have the model, clustering is trival.
+So if we know the model parameters, clustering is trival.
 \end_layout
 
 \end_deeper
@@ -1762,7 +1814,7 @@ Let
 \end_inset
 
  be a set of 
-\begin_inset Formula $K$
+\begin_inset Formula $k$
 \end_inset
 
  probability distributions (
@@ -1788,11 +1840,11 @@ mixture components
 \end_deeper
 \begin_layout Itemize
 Let 
-\begin_inset Formula $\pi=\left(\pi_{1},\ldots,\pi_{K}\right)$
+\begin_inset Formula $\pi=\left(\pi_{1},\ldots,\pi_{k}\right)$
 \end_inset
 
  be a distribution on 
-\begin_inset Formula $\left\{ 1,\ldots,K\right\} $
+\begin_inset Formula $\left\{ 1,\ldots,k\right\} $
 \end_inset
 
  (
@@ -1904,8 +1956,12 @@ Suppose we have a mixture distribution with
 
 \begin_deeper
 \begin_layout Itemize
-mixture components represented as densities 
-\begin_inset Formula $p_{1},\ldots,p_{K}$
+
+\series bold
+mixture components
+\series default
+ represented as densities 
+\begin_inset Formula $p_{1},\ldots,p_{k}$
 \end_inset
 
 , and
@@ -1918,8 +1974,12 @@ mixture components represented as densities
 
 \end_deeper
 \begin_layout Itemize
-mixture weights 
-\begin_inset Formula $\pi=\left(\pi_{1},\ldots,\pi_{K}\right)$
+
+\series bold
+mixture weights
+\series default
+ 
+\begin_inset Formula $\pi=\left(\pi_{1},\ldots,\pi_{k}\right)$
 \end_inset
 
  , then 
@@ -1940,7 +2000,7 @@ the corresponding probability density for
  is
 \begin_inset Formula 
 \[
-p(x)=\sum_{i=1}^{K}\pi_{i}p_{i}(x).
+p(x)=\sum_{i=1}^{k}\pi_{i}p_{i}(x).
 \]
 
 \end_inset
@@ -2008,7 +2068,7 @@ Conversely, if
 status open
 
 \begin_layout Plain Layout
-Gaussian Mixture Model: Marginal Distribution
+Gaussian Mixture Model (GMM): Marginal Distribution
 \end_layout
 
 \end_inset
@@ -2042,26 +2102,25 @@ p(x) & = & \sum_{z=1}^{k}p(x,z)\\
 \end_inset
 
 
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Note that 
-\begin_inset Formula $p(x)$
-\end_inset
-
- is a convex combination of probability densities.
+\series default
  
 \begin_inset Note Note
 status open
 
 \begin_layout Pause
 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Note that 
+\begin_inset Formula $p(x)$
+\end_inset
+
+ is a convex combination of probability densities.
 \end_layout
 
 \begin_layout Itemize
@@ -2083,13 +2142,6 @@ This is a common form for a probability model...
 
 \begin_layout Section
 Learning in Gaussian Mixture Models
-\end_layout
-
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
 \end_layout
 
 \begin_layout Frame
@@ -2312,6 +2364,12 @@ observed data
 .
 \end_layout
 
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
 \end_deeper
 \begin_layout Itemize
 The model likelihood for 
@@ -2749,7 +2807,7 @@ Not a problem
 \emph on
 per se
 \emph default
-, b ut something to be aware of.
+, but something to be aware of.
 \end_layout
 
 \end_deeper

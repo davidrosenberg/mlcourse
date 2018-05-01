@@ -1660,7 +1660,7 @@ hard assignment
 is
 \begin_inset Formula 
 \[
-z^{*}=\argmin_{z\in\left\{ 1,\ldots,k\right\} }p(z\mid x).
+z^{*}=\argmax_{z\in\left\{ 1,\ldots,k\right\} }p(z\mid x).
 \]
 
 \end_inset

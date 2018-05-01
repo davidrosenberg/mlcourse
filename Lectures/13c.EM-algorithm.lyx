@@ -767,7 +767,7 @@ Just in article version
 \begin_inset Note Note
 status open
 
-\begin_layout Plain Layout
+\begin_layout Enumerate
 Some board work that worked nicely: draw 
 \begin_inset Formula $\log p(x\mid\theta)$
 \end_inset
@@ -788,6 +788,11 @@ Some board work that worked nicely: draw
 \end_inset
 
 .
+ 
+\end_layout
+
+\begin_layout Enumerate
+Too much repetition and review on these slides.
  
 \end_layout
 
@@ -1247,13 +1252,13 @@ Our Objectives
 Learning problem
 \series default
 : Given incomplete dataset 
-\begin_inset Formula $\cd=x=\left(x_{1},\ldots,x_{n}\right)$
+\begin_inset Formula $x$
 \end_inset
 
 , find MLE
 \begin_inset Formula 
 \[
-\hat{\theta}=\argmax_{\theta}p(\cd\mid\theta).
+\hat{\theta}=\argmax_{\theta}p(x\mid\theta).
 \]
 
 \end_inset
@@ -1283,7 +1288,7 @@ Inference problem
 :
 \begin_inset Formula 
 \[
-p\left(z_{i}\mid x_{i},\theta\right).
+p\left(z\mid x,\theta\right).
 \]
 
 \end_inset
@@ -3033,6 +3038,10 @@ coordinate ascent
 \begin_inset Quotes erd
 \end_inset
 
+ on 
+\begin_inset Formula $\cl(q,\theta)$
+\end_inset
+
 .
 \end_layout
 
@@ -3163,6 +3172,21 @@ EM: Coordinate Ascent on Lower Bound
 \begin_deeper
 \begin_layout Standard
 \align center
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+should draw another version with lots of lower bounds, and we're taking
+ the highest at 
+\begin_inset Formula $\theta old$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \begin_inset Graphics
 	filename ../Figures/EM-algorithm/EM-twosteps-Bishop9.14.png
 	lyxscale 50

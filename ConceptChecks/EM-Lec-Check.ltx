@@ -1,16 +1,41 @@
 \section{EM: Concept Check}
+TODO:
+\begin{itemize}
+\item Define $\lambda = (\lambda_1 ,\ldots,\lambda_k)$ at some point
+\item Make sure to include $\lambda$ or $\lambda_z$ in every probability
+  expression.  Follow my notation from lecture and write $p(x\mid
+  \lambda_z)$ rather than $p(x;\lambda_z)$, for consistency.
+\item In poisson mixture model setup, make the second step depend on z by
+  writing $lambda_z$.
+\item Instead of ``factorize'' $p(x,z)$, how about ``given an expression for ...
+  in terms of p(z) and p(x|z)''  
+\item For the actual EM algorithm, let's put things more in terms of terminology
+  and perspective of slide 37 on general em.  The solutions need to be more
+  complete -- if it's too hard, maybe it's not a good example.  Might be easier
+  to start with a training set of size 1.  
+\item If we want to have a training set of size $n$, we should explicitly
+  introduce it. 
+
+\end{itemize}
+
 \subsubsection{EM/Mixture Model Objectives}
 \begin{itemize}
-\item Be able to set up the GMM problem (multinomial distribution on $z$, Gaussian $x|z$).
-\item Be able to give and factorize the joint density $p(x,z)$ for this problem.
-\item Be able to give pseudocode for the EM Algorithm for GMM (as in slide 29).
-\item Be able to state the relationship of EM for GMM to k-means.
-\item Be able to set up problem (in terms of observed Xs, unobserved Zs, and parameter theta).
-\item Be able to state Jensen's inequality, and define KL divergence (prereqs for ELBO).
-\item Be able to give EM algorithm pseudocode (as in slide 27).
-\item Explain how we can compute the two arg maxes needed in this algorithm (i.e. using bound on KL divergence).
-\item Be able to show that EM gives monotonically increasing likelihood.
-\item Be able to summarize variations on EM, including generalied EM (address optimization in ``M" step), and restriction to a set Q of distributions (addressing optimization in ``E" step).
+\item Write down the probability model corresponding to the GMM problem
+  (multinomial distribution on mixture component $z$, multivariate Gaussian
+  conditionals $x|z$).
+\item Write down the joint density $p(x,z)$ for the GMM model.
+\item Give an expression for the marginal log-likelihood for the observed data
+  $x$ for the GMM model, and explain why it doesn't simplify as nicely as the
+  log-likelihood of a multivariate Gaussian model.
+\item Give pseudocode for the EM Algorithm for GMM (as in slide 29).
+%\item Be able to state the relationship of EM for GMM to k-means.
+\item Give an expression for the probability model for a generic latent variable model,
+  where $x$ is observed, $z$ is latent (i.e. unobserved), and the parameters are represented by $\theta$.
+%\item Be able to state Jensen's inequality, and define KL divergence (prereqs for ELBO).
+\item Give EM algorithm pseudocode (as in slide 27).
+%\item Explain how we can compute the two arg maxes needed in this algorithm (i.e. using bound on KL divergence).
+%\item Be able to show that EM gives monotonically increasing likelihood.
+%\item Be able to summarize variations on EM, including generalied EM (address optimization in ``M" step), and restriction to a set Q of distributions (addressing optimization in ``E" step).
 \end{itemize}
 
 \subsubsection{EM Question}

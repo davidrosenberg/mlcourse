@@ -96,7 +96,6 @@ found Justin Johnson's [Numpy Tutorial](http://cs231n.github.io/python-numpy-tut
 helpful, but please share additional recommended resources.
 
 ## Partial Credit and Concept Mastery
-<a name="concept-mastery"></a> 
 [//]: # (Original discussion: https://piazza.com/class?cid=ioafvb6pm2h7dz&nid=ii99b8o57me5jo&token=UBVy4GpzZ0f)
 
 I receive a lot of questions and comments related to partial credit on

@@ -94,8 +94,8 @@ using built in operations for multiplying matrices, vectors, and
 arrays, rather than coding it yourself with loops.  Some people have
 found Justin Johnson's [Numpy Tutorial](http://cs231n.github.io/python-numpy-tutorial/)
 helpful, but please share additional recommended resources.
-## Partial Credit and Concept Mastery
 
+## Partial Credit and Concept Mastery
 <a name="concept-mastery"></a> 
 [//]: # (Original discussion: https://piazza.com/class?cid=ioafvb6pm2h7dz&nid=ii99b8o57me5jo&token=UBVy4GpzZ0f)
 
@@ -157,8 +157,7 @@ computer programming, this is not a very difficult level to achieve.
 With data science becoming so popular, this level of mastery is
 getting pretty common.
  
-This course, and the Masters in Data Science curriculum more
-generally, is really aimed at getting people much further past this
+This course is really aimed at getting people much further past this
 level, deeper into that last 20% of success.  You're right, that 80%
 of the time, possibly even 95% of the time, you can do just fine
 without perfectly understanding the details of how/why things work.
@@ -169,6 +168,4 @@ I'm sure there are other paths to success.
 
 As a specific example, here Andrej Karpathy
 [makes the case](https://medium.com/@karpathy/yes-you-should-understand-backprop-e2f06eab496b#.cqsiru2ei)
-for really understanding the math of backprop.  I'll collect more as I
-find them. (Please let [me](mailto:dr129@nyu.edu) know of good
-specific examples.)
+for really understanding the math of backprop. 

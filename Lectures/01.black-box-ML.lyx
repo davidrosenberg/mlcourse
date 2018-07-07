@@ -1,9 +1,9 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin /Users/drosen/Dropbox/repos/mlcourse/Lectures/
+\origin unavailable
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -56,6 +56,8 @@
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -85,6 +87,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_minted 0
 \boxbgcolor #ff31d8
 \index Index
 \shortcut idx
@@ -94,7 +97,10 @@
 \tocdepth 2
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -726,7 +732,7 @@ David S.
 \end_layout
 
 \begin_layout Date
-September 20, 2017
+May 31, 2018
 \end_layout
 
 \begin_layout Institute
@@ -1465,13 +1471,16 @@ brittle
 \end_inset
 
 
-\end_layout
+\series bold
+
+\begin_inset Note Note
+status open
 
 \begin_layout Pause
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Disappointment in expert systems (late 80s / early 90s) led to an 
 \series bold
 
@@ -1483,6 +1492,11 @@ AI Winter
 \end_inset
 
 .
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
@@ -1874,7 +1888,7 @@ takes training data and produces a prediction function
 \begin_layout Section
 Elements of the Machine Learning Pipeline
 \begin_inset Argument 2
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Elements of the ML Pipeline
@@ -1997,7 +2011,20 @@ Mapping raw input
 \end_inset
 
  to 
+\begin_inset Formula $\texttt{double[d]}$
+\end_inset
+
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset Formula $\reals^{d}$
+\end_inset
+
+
+\end_layout
+
 \end_inset
 
  is called 
@@ -2340,10 +2367,6 @@ status open
 Feature Template: Last Three Characters Equal ___ 
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2915,7 +2938,19 @@ purple box
 \end_inset
 
 .
- Rest of course is about the inside.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+Rest of course is about the inside.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
@@ -3293,13 +3328,31 @@ No!
 \end_layout
 
 \begin_layout Itemize
-Prediction function needs to do well on 
+Prediction function needs to do well on new or 
 \series bold
-new inputs
+
+\begin_inset Quotes eld
+\end_inset
+
+out-of-sample
+\begin_inset Quotes erd
+\end_inset
+
+ 
 \series default
-.
+inputs
 \end_layout
 
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+out-of-sample means not in the training settings
+\end_layout
+
+\end_deeper
 \begin_layout Pause
 
 \end_layout
@@ -3422,7 +3475,7 @@ status open
 
 \end_deeper
 \begin_layout Itemize
-How big? We can review 
+How big? We could review 
 \begin_inset Quotes eld
 \end_inset
 
@@ -3916,7 +3969,25 @@ training set
 \begin_layout Itemize
 
 \series bold
-validation set
+validation set 
+\series default
+(also called the 
+\series bold
+development
+\series default
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+dev
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+ set)
 \end_layout
 
 \begin_deeper
@@ -5858,6 +5929,40 @@ emph{Hands-On Machine Learning with Scikit-Learn and TensorFlow} by Aurelien
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Section
+Neural Networks
+\end_layout
+
+\begin_layout Itemize
+more data and more computational power
+\end_layout
+
+\begin_layout Itemize
+ng's diagrams (reference to ML Yearning book)
+\end_layout
+
+\begin_layout Itemize
+optimizng nd satisficing metrics
+\end_layout
+
+\begin_layout Itemize
+validation set sometimes called hold out set or development (
+\begin_inset Quotes eld
+\end_inset
+
+dev
+\begin_inset Quotes erd
+\end_inset
+
+) set
 \end_layout
 
 \end_inset

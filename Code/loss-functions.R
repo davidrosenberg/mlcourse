@@ -69,6 +69,26 @@ p = p + geom_line(size=1.6)+ xlab("Margin m=yf(x)") + ylab("Loss(m)")+xlim(-3,3)
 p = p + theme(legend.justification=c(0,0), legend.position=c(0.6,.6))
 
 
+## Huber Loss delta=1
+xmin=-3
+xmax=3
+delta = 1
+d = data.table(residual = seq(xmin,xmax,length.out=3000))
+d[, Huber := ifelse(abs(residual) <= delta, .5 * residual^2, delta*(abs(residual)-.5 * delta^2))]
+dd = as.data.table(melt(d, id.vars="residual"))#, variable.name="Loss")
+setnames(dd, "variable", "Loss")
+p = ggplot(dd, aes(x=residual, y=value))
+p = p + geom_line()+ xlab("Residual r=y-a") + ylab("Loss(r)")
+p = p + ggtitle("Huber Loss") + theme(legend.position="none")
+p + coord_fixed()
+p+xlim(-3,3)+ylim(0,3)
+
+#p = p + theme(legend.justification=c(0,0), legend.position=c(.4,.6))
+
+fname = "/Users/dr9512/Dropbox/NYU.ML.Class/Homeworks/Midterm/Figures/huberizedSqrHinge.png"
+ggsave(filename=fname,plot=p, units="in", width=6, height = 4)
+
+
 
 print(fname)
 fname = paste0(jobFolder,"/loss.",paste(plotOrder[1:i],collapse="."),".png")

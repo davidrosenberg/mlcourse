@@ -1,9 +1,9 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin /Users/drosen/Dropbox/repos/mlcourse/Archive/2017Fall/Lectures/source/04b.convex-optimization/
+\origin unavailable
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -58,6 +58,8 @@
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -96,6 +98,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_minted 0
 \boxbgcolor #ff31d8
 \index Index
 \shortcut idx
@@ -105,7 +108,10 @@
 \tocdepth 2
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -123,7 +129,7 @@
 \newcommand{\reals}{\mathbf{R}}
 \end_inset
 
- conv
+
 \begin_inset FormulaMacro
 \newcommand{\integers}{\mathbf{Z}}
 \end_inset
@@ -930,6 +936,7 @@ See the
 LatexCommand href
 name "Extreme Abridgement of Boyd and Vandenberghe"
 target "https://davidrosenberg.github.io/mlcourse/Notes/convex-optimization.pdf"
+literal "false"
 
 \end_inset
 

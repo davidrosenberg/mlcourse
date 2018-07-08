@@ -3,7 +3,7 @@
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin /Users/drosen/Dropbox/repos/mlcourse/Lectures/
+\origin /Users/drosen/Dropbox/repos/mlcourse/Archive/2017Fall/Lectures/source/11b.multiclass/
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -2536,7 +2536,7 @@ Learning in a Multiclass Hypothesis Space: In Math
 
  classifies
 \series bold
-
+ 
 \begin_inset Formula $\left(x_{i},y_{i}\right)$
 \end_inset
 
@@ -2549,7 +2549,7 @@ correctly iff
 
 \begin_inset Formula 
 \[
-h(x_{i},y_{i})>h(x_{i},y)\,\forall y\neq y_{i}
+h(x_{i},y_{i})>h(x_{i},y)\quad\forall y\neq y_{i}
 \]
 
 \end_inset
@@ -2695,7 +2695,7 @@ Linear Multiclass Prediction Function
 \begin_layout Itemize
 A
 \series bold
- linear class-sensitive score function
+ linear compatibility score function
 \series default
  is given by
 \begin_inset Formula 
@@ -2711,8 +2711,26 @@ where
 
  is a 
 \series bold
-class-sensitive feature map
+compatibility feature map
 \series default
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Called 
+\begin_inset Quotes eld
+\end_inset
+
+class-sensitive
+\begin_inset Quotes erd
+\end_inset
+
+ score function and feature map in our SSBD reference.
+\end_layout
+
+\end_inset
+
 .
 \end_layout
 
@@ -4085,12 +4103,12 @@ Rather than
  Loss, we may be interested in a more general loss
 \begin_inset Formula 
 \[
-\Delta:\cy\times\ca\to\reals^{\ge0}
+\Delta:\cy\times\ca\to[0,\infty)
 \]
 
 \end_inset
 
- 
+
 \end_layout
 
 \begin_deeper
@@ -4115,7 +4133,7 @@ for multiclass SVM.
 Multiclass SVM (Version 2):
 \begin_inset Formula 
 \[
-\min_{w\in\reals^{d}}\frac{1}{2}||w||^{2}+\frac{c}{n}\sum_{i=1}^{n}\max_{y}\left[\max\left(0,\Delta(y_{i},y)-m_{i,y}(w)\right)\right]
+\min_{w\in\reals^{d}}\frac{1}{2}||w||^{2}+\frac{c}{n}\sum_{i=1}^{n}\max_{y\neq y_{i}}\left[\max\left(0,\Delta(y_{i},y)-m_{i,y}(w)\right)\right]
 \]
 
 \end_inset
@@ -4124,36 +4142,47 @@ Multiclass SVM (Version 2):
 \end_layout
 
 \begin_layout Itemize
-We can think of 
-\begin_inset Formula $\Delta(y_{i},y)$
-\end_inset
-
- as the 
-\begin_inset Quotes eld
-\end_inset
-
-target margin
-\begin_inset Quotes erd
-\end_inset
-
- for example 
-\begin_inset Formula $i$
-\end_inset
-
- and class 
-\begin_inset Formula $y$
-\end_inset
-
- because if each margin 
+If margin 
 \begin_inset Formula $m_{i,y}(w)$
 \end_inset
 
- meets or exceeds its corresponding target 
+ meets or exceeds its target 
 \begin_inset Formula $\Delta(y_{i},y)$
 \end_inset
 
-, then we don't incur a loss on example 
+ 
+\begin_inset Formula $\forall y\neq y_{i}$
+\end_inset
+
+, then no loss on example 
 \begin_inset Formula $i$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Note: If 
+\begin_inset Formula $\Delta(y,y)=0$
+\end_inset
+
+ 
+\begin_inset Formula $\forall y\in\cy$
+\end_inset
+
+, then we can replace 
+\begin_inset Formula $\max_{y\neq y_{i}}$
+\end_inset
+
+ with 
+\begin_inset Formula $\max_{y}$
 \end_inset
 
 .

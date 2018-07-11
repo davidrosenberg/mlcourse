@@ -1,9 +1,9 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin /Users/drosen/Dropbox/repos/mlcourse/Notes/
+\origin unavailable
 \textclass paper
 \use_default_options false
 \begin_modules
@@ -26,6 +26,8 @@ figs-within-sections
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -55,6 +57,7 @@ figs-within-sections
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -67,7 +70,10 @@ figs-within-sections
 \tocdepth 5
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 2
 \paperpagestyle default
@@ -589,7 +595,7 @@ figs-within-sections
 \end_layout
 
 \begin_layout Title
-Extreme Abridgement of Boyd and Vandenberghe's 
+Extreme Abridgment of Boyd and Vandenberghe's 
 \emph on
 Convex Optimization
 \end_layout
@@ -896,8 +902,8 @@ dimension of an affine set
 
 \begin_layout Standard
 We note that the solution set of a system of linear equations is an affine
- set, and every affine set can be expessed as the solution of a system of
- linear equations [BV Example 2.1, p.
+ set, and every affine set can be expressed as the solution of a system
+ of linear equations [BV Example 2.1, p.
  22].
 \end_layout
 
@@ -1363,7 +1369,7 @@ convex:
 \series bold
 unique global
 \series default
- minumum
+ minimum
 \end_layout
 
 \begin_layout Labeling
@@ -2896,7 +2902,7 @@ strictly feasible
 \end_layout
 
 \begin_layout Standard
-Simplifed version appropriate for SVM:
+Simplified version appropriate for SVM:
 \end_layout
 
 \begin_layout Corollary
@@ -2906,7 +2912,7 @@ For a convex optimization problem in standard form, if the domain of
 
  is open, all equality and inequality constraints are linear, and the problem
  is feasible (i.e.
- there is some point in the domain that satisifies all the constraints),
+ there is some point in the domain that satisfies all the constraints),
  then we have strong duality and, if 
 \begin_inset Formula $d^{*}>-\infty$
 \end_inset

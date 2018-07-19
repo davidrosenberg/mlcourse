@@ -51,5 +51,26 @@ selection via the elastic net." into the notation of our class, dropping an unne
 - Dropped formal discussion of [k-means objective function (slide 9)](https://davidrosenberg.github.io/mlcourse/Archive/2015/Lectures/13.mixture-models.pdf#page=9)
 - Dropped the [brief introduction to **information theory**](https://davidrosenberg.github.io/mlcourse/Archive/2015/Lectures/14a.information-theory.pdf). Initially included, since we needed to introduce KL divergence and Gibbs inequality anyway, for the EM algorithm. The mathematical prerequisites are now given [here (slide 15)](https://davidrosenberg.github.io/mlcourse/Archive/2016/Lectures/13.Lab.EM-algorithm.pdf#page=15).
 
+## Possible Future Topics
+- Quantile Regression (as part of loss functions homework or Notes); conditional prediction intervals more generally
+- Gaussian processes
+    - GP Hyperparameter tuning
+    - [Metric-Optimized Example Weights](https://arxiv.org/abs/1805.10582)
+- Active learning
+- Collaborative filtering / matrix factorization
+- Learning to rank and associated concepts
+- Simulation methods and more variational methods for probabilistic modeling
+- Reinforcement learning (minimal path to REINFORCE)
+- More depth on basic neural network stuff: weight initialization, vanishing / exploding gradient, possibly batch normalization
+- Density ratio estimation -- ginsu knife of ML? (for covariate shift, anomoly detection, conditional probability modeling)
+- Bandits
+    - Importance weights / learning from logged data?
+- Something about causality?
+- Generalized additive models for interpretable nonlinear fits (smoothing way, basis function way, and gradient boosting way)
+- Finish up 'strucured prediction' with beam search / viterbi
+    - give probabilistic analogue with MEMM's/CRF's 
+- Black box Feature importance measures
+- Naive Bayes vs Logistic Regression (Jordan & Ng, plus new experiments including regularization)
+
 ## Citation Information
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Machine Learning Course Materials</span> by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Various Authors</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.  The author of each document in this repository is considered the license holder for that document.

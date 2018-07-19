@@ -65,7 +65,7 @@ Michael Orlitzky's also has some
 [nice notes](http://michael.orlitzky.com/articles/the_derivative_of_a_quadratic_form.php) on
 finding derivatives (note that he mentions gradient as an aside).
 
-So now -- does it matter? Well, to some people, of course it matters. But in this couse, we have two primary uses for the gradient:
+So now -- does it matter? Well, to some people, of course it matters. But in this course, we have two primary uses for the gradient:
 
 1. Find the directional derivative in a particular direction. To do this, we only need to take the inner product of the gradient with the direction. If you have a row vector (i.e. the Jacobian) instead of a column vector (the gradient), it's still pretty clear what you're supposed to do. In fact, when you're programming, row and column vectors are often just represented as "vectors" rather than matrices that happen to have only 1 column or 1 row. You then just keep track yourself of whether it's a row or a column vector.
 
@@ -140,7 +140,7 @@ immensely useful over the years.
 <a name="math"></a> 
 
 This is a good question and worth examining.  You know the 80/20 rule,
-or the "pareto principle"?  Says you can get 80% of the outcome from
+or the "Pareto principle"?  Says you can get 80% of the outcome from
 20% of the effort.  Applied here, you can be a decent data
 scientist without knowing a lot of math.  What's essential (the
 "20%") is an understanding of the core principles of machine learning,

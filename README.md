@@ -10,7 +10,7 @@ selection via the elastic net." into the notation of our class, dropping an unne
 <!-- - New figures illustrating regularization paths in space of all functions.-->
 - Added lecture on [Black Box ML](https://davidrosenberg.github.io/mlcourse/Archive/2017Fall/Lectures/01.black-box-ML.pdf).
 - Treatment of [the representer theorem](https://davidrosenberg.github.io/mlcourse/Lectures/04c.representer-theorem.pdf) is now well before any mention of kernels, and is described as an interesting consequence of basic linear algebra:  "Look how the solution always lies in the subspace spanned by the data.  That's interesting (and obvious with enough practice). We can now constrain our optimization problem to this subspace..."
-- The [kernel methods](https://davidrosenberg.github.io/mlcourse/Lectures/05a.kernel-methods.pdf) lecture was rewritten to signifcantly reduce references to the feature map.  When we're just talking about kernelization, it seems like unneeded extra notation. 
+- The [kernel methods](https://davidrosenberg.github.io/mlcourse/Lectures/05a.kernel-methods.pdf) lecture was rewritten to significantly reduce references to the feature map.  When we're just talking about kernelization, it seems like unneeded extra notation. 
 - Dropped most of [the AdaBoost lecture](https://davidrosenberg.github.io/mlcourse/Archive/2017/Lectures/9b.adaboost.pdf), except to mention it as a special case of forward stagewise additive modeling with an exponential loss [(slides 24-29)](https://davidrosenberg.github.io/mlcourse/Lectures/11b.gradient-boosting.pdf#page=23). 
 - Dropped the [geometric derivation of SVMs](https://davidrosenberg.github.io/mlcourse/Archive/2017/Labs/3-SVM-Slides.pdf) and all mention of hard-margin SVM. It was always a crowd-pleaser, but I don't think it's worth the time. Seemed most useful as a review of affine spaces, projections, and other basic linear algebra.
 - Replaced the [1-hour crash course in Lagrangian duality](https://davidrosenberg.github.io/mlcourse/Archive/2017/Lectures/4a.convex-optimization.pdf) with a [10-minute summary of Lagrangian duality](https://davidrosenberg.github.io/mlcourse/Lectures/04d.lagrangian-duality-in-ten-minutes.pdf), which I actually never presented and left as optional reading.
@@ -25,7 +25,7 @@ selection via the elastic net." into the notation of our class, dropping an unne
 - New lecture on principal component analysis (Brett)
 - Added slide on k-means++ (Brett)
 - Added slides on explicit feature vector for 1-dim RBF kernel
-- Created notebook to regenerate the buggy lasso/elasticnet plots from Hastie's book (Vlad)
+- Created notebook to regenerate the buggy lasso/elastic net plots from Hastie's book (Vlad)
 - L2 constraint for linear models gives Lipschitz continuity of prediction function (Thanks to Brian Dalessandro for pointing this out to me). 
 - Expanded discussion of L1/L2/ElasticNet with correlated random variables (Thanks Brett for the figures)
 
@@ -62,12 +62,12 @@ selection via the elastic net." into the notation of our class, dropping an unne
 - Simulation methods and more variational methods for probabilistic modeling
 - Reinforcement learning (minimal path to REINFORCE)
 - More depth on basic neural network stuff: weight initialization, vanishing / exploding gradient, possibly batch normalization
-- Density ratio estimation -- ginsu knife of ML? (for covariate shift, anomoly detection, conditional probability modeling)
+- Density ratio estimation -- Ginsu knife of ML? (for covariate shift, anomaly detection, conditional probability modeling)
 - Bandits
     - Importance weights / learning from logged data?
 - Something about causality?
 - Generalized additive models for interpretable nonlinear fits (smoothing way, basis function way, and gradient boosting way)
-- Finish up 'strucured prediction' with beam search / viterbi
+- Finish up 'structured prediction' with beam search / Viterbi
     - give probabilistic analogue with MEMM's/CRF's 
 - Black box Feature importance measures
 - Naive Bayes vs Logistic Regression (Jordan & Ng, plus new experiments including regularization)

@@ -1,9 +1,9 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin /Users/drosen/Dropbox/repos/mlcourse/Lectures/
+\origin unavailable
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -62,6 +62,8 @@
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -101,6 +103,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_minted 0
 \boxbgcolor #ff31d8
 \index Index
 \shortcut idx
@@ -110,7 +113,10 @@
 \tocdepth 2
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -1641,7 +1647,7 @@ Convex and Concave Functions
 \begin_deeper
 \begin_layout Definition
 A function 
-\begin_inset Formula $f:\reals^{n}\to\reals$
+\begin_inset Formula $f:\reals^{d}\to\reals$
 \end_inset
 
  is 
@@ -2454,7 +2460,7 @@ First-Order Approximation
 \begin_deeper
 \begin_layout Itemize
 Suppose 
-\begin_inset Formula $f:\reals^{n}\to\reals$
+\begin_inset Formula $f:\reals^{d}\to\reals$
 \end_inset
 
  is 
@@ -2476,10 +2482,6 @@ Predict
 \end_inset
 
 ?
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2581,7 +2583,7 @@ First-Order Condition for Convex, Differentiable Function
 \begin_deeper
 \begin_layout Itemize
 Suppose 
-\begin_inset Formula $f:\reals^{n}\to\reals$
+\begin_inset Formula $f:\reals^{d}\to\reals$
 \end_inset
 
  is 
@@ -2595,7 +2597,7 @@ differentiable.
 
 \begin_layout Itemize
 Then for any 
-\begin_inset Formula $x,y\in\reals^{n}$
+\begin_inset Formula $x,y\in\reals^{d}$
 \end_inset
 
 
@@ -2698,7 +2700,7 @@ First-Order Condition for Convex, Differentiable Function
 \begin_deeper
 \begin_layout Itemize
 Suppose 
-\begin_inset Formula $f:\reals^{n}\to\reals$
+\begin_inset Formula $f:\reals^{d}\to\reals$
 \end_inset
 
  is 
@@ -2712,7 +2714,7 @@ differentiable
 
 \begin_layout Itemize
 Then for any 
-\begin_inset Formula $x,y\in\reals^{n}$
+\begin_inset Formula $x,y\in\reals^{d}$
 \end_inset
 
 
@@ -2786,7 +2788,7 @@ Subgradients
 \begin_deeper
 \begin_layout Definition
 A vector 
-\begin_inset Formula $g\in\reals^{n}$
+\begin_inset Formula $g\in\reals^{d}$
 \end_inset
 
  is a 
@@ -2794,7 +2796,7 @@ A vector
 subgradient
 \series default
  of 
-\begin_inset Formula $f:\reals^{n}\to\reals$
+\begin_inset Formula $f:\reals^{d}\to\reals$
 \end_inset
 
  at 
@@ -2877,17 +2879,11 @@ Subdifferential
 \end_layout
 
 \begin_layout Frame
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
 \begin_deeper
 \begin_layout Definitions
-\begin_inset Separator latexpar
-\end_inset
-
 
 \end_layout
 
@@ -2930,18 +2926,12 @@ subdifferential:
 \end_inset
 
  
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
-\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
 \end_deeper
 \begin_layout Block
 \begin_inset Argument 2
@@ -2969,10 +2959,6 @@ Basic Facts
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2995,10 +2981,6 @@ Any point
 \end_inset
 
 , or infinitely many subgradients.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3041,16 +3023,12 @@ Globla Optimality Condition
 \end_inset
 
 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
 \begin_layout Definition
 A vector 
-\begin_inset Formula $g\in\reals^{n}$
+\begin_inset Formula $g\in\reals^{d}$
 \end_inset
 
  is a 
@@ -3058,7 +3036,7 @@ A vector
 subgradient
 \series default
  of 
-\begin_inset Formula $f:\reals^{n}\to\reals$
+\begin_inset Formula $f:\reals^{d}\to\reals$
 \end_inset
 
  at 
@@ -3075,10 +3053,6 @@ subgradient
 f(z)\ge f(x)+g^{T}(z-x).
 \]
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3126,10 +3100,6 @@ status open
 Subdifferential of Absolute Value
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -4421,7 +4391,7 @@ Convergence Theorem for Fixed Step Size
 \begin_deeper
 \begin_layout Standard
 Assume 
-\begin_inset Formula $f:\reals^{n}\to\reals$
+\begin_inset Formula $f:\reals^{d}\to\reals$
 \end_inset
 
  is convex and
@@ -4513,7 +4483,7 @@ Convergence Theorems for Decreasing Step Sizes
 \begin_deeper
 \begin_layout Standard
 Assume 
-\begin_inset Formula $f:\reals^{n}\to\reals$
+\begin_inset Formula $f:\reals^{d}\to\reals$
 \end_inset
 
  is convex and

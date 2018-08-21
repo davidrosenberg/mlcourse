@@ -54,9 +54,11 @@ selection via the elastic net." into the notation of our class, dropping an unne
 ## Possible Future Topics
 - Collaborative filtering / matrix factorization (building on [this lecture on matrix factorization](https://github.com/davidrosenberg/mlcourse/blob/gh-pages/in-prep/matrix-factorization.pdf) and [Brett's lecture on PCA](https://davidrosenberg.github.io/mlcourse/Archive/2017/Lectures/13-PCA-Slides.pdf))
 - Learning to rank and associated concepts
+- Class imbalance
 - Black box feature importance measures (building on [Ben's 2018 lecture](https://davidrosenberg.github.io/mlcourse/Labs/FeatureImportance/feature-importance-slides.ipynb))
 - Quantile regression and conditional prediction intervals (perhaps integrated into homework on loss functions); 
 - More depth on basic neural networks: weight initialization, vanishing / exploding gradient, possibly batch normalization
+- Latent variable model as autoencoder
 - Finish up 'structured prediction' with beam search / Viterbi
     - give probabilistic analogue with MEMM's/CRF's 
 - Bandits

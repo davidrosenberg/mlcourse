@@ -3,7 +3,7 @@
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin /Users/drosen/Dropbox/repos/mlcourse/Archive/2017Fall/Lectures/source/13c.EM-algorithm/
+\origin unavailable
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -2861,7 +2861,7 @@ Choose
 \end_deeper
 \begin_layout Enumerate
 Choose 
-\begin_inset Formula $\theta^{\text{new}}=\argmax_{\theta}\cl(q^{*},\theta^{\text{old}})$
+\begin_inset Formula $\theta^{\text{new}}=\argmax_{\theta}\cl(q^{*},\theta)$
 \end_inset
 
 .

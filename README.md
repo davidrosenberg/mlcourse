@@ -49,7 +49,7 @@ selection via the elastic net." into the notation of our class, dropping an unne
   simplify, but check [here](https://davidrosenberg.github.io/mlcourse/Archive/2015/Lectures/3b.convex-optimization.pdf) if you want them back
 - Dropped content on [Bayesian Naive Bayes](https://davidrosenberg.github.io/mlcourse/Archive/2015/Lectures/12.Lab.bayesian-methods.pdf), for lack of time
 - Dropped formal discussion of [k-means objective function (slide 9)](https://davidrosenberg.github.io/mlcourse/Archive/2015/Lectures/13.mixture-models.pdf#page=9)
-- Dropped the [brief introduction to **information theory**](https://davidrosenberg.github.io/mlcourse/Archive/2015/Lectures/14a.information-theory.pdf). Initially included, since we needed to introduce KL divergence and Gibbs inequality anyway, for the EM algorithm. The mathematical prerequisites are now given [here (slide 15)](https://davidrosenberg.github.io/mlcourse/Archive/2016/Lectures/13.Lab.EM-algorithm.pdf#page=15**.
+- Dropped the [brief introduction to **information theory**](https://davidrosenberg.github.io/mlcourse/Archive/2015/Lectures/14a.information-theory.pdf). Initially included, since we needed to introduce KL divergence and Gibbs inequality anyway, for the EM algorithm. The mathematical prerequisites are now given [here (slide 15)](https://davidrosenberg.github.io/mlcourse/Archive/2016/Lectures/13.Lab.EM-algorithm.pdf#page=15).
 
 ## Possible Future Topics
 ### Basic Techniques

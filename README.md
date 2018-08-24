@@ -49,29 +49,44 @@ selection via the elastic net." into the notation of our class, dropping an unne
   simplify, but check [here](https://davidrosenberg.github.io/mlcourse/Archive/2015/Lectures/3b.convex-optimization.pdf) if you want them back
 - Dropped content on [Bayesian Naive Bayes](https://davidrosenberg.github.io/mlcourse/Archive/2015/Lectures/12.Lab.bayesian-methods.pdf), for lack of time
 - Dropped formal discussion of [k-means objective function (slide 9)](https://davidrosenberg.github.io/mlcourse/Archive/2015/Lectures/13.mixture-models.pdf#page=9)
-- Dropped the [brief introduction to **information theory**](https://davidrosenberg.github.io/mlcourse/Archive/2015/Lectures/14a.information-theory.pdf). Initially included, since we needed to introduce KL divergence and Gibbs inequality anyway, for the EM algorithm. The mathematical prerequisites are now given [here (slide 15)](https://davidrosenberg.github.io/mlcourse/Archive/2016/Lectures/13.Lab.EM-algorithm.pdf#page=15).
+- Dropped the [brief introduction to **information theory**](https://davidrosenberg.github.io/mlcourse/Archive/2015/Lectures/14a.information-theory.pdf). Initially included, since we needed to introduce KL divergence and Gibbs inequality anyway, for the EM algorithm. The mathematical prerequisites are now given [here (slide 15)](https://davidrosenberg.github.io/mlcourse/Archive/2016/Lectures/13.Lab.EM-algorithm.pdf#page=15**.
 
 ## Possible Future Topics
+### Basic Techniques
+- Gaussian processes
+- MCMC (or at least Gibbs sampling)
+- Importance sampling
+- Density ratio estimation (for covariate shift, anomaly detection, conditional probability modeling)
+### Applications
 - Collaborative filtering / matrix factorization (building on [this lecture on matrix factorization](https://github.com/davidrosenberg/mlcourse/blob/gh-pages/in-prep/matrix-factorization.pdf) and [Brett's lecture on PCA](https://davidrosenberg.github.io/mlcourse/Archive/2017/Lectures/13-PCA-Slides.pdf))
 - Learning to rank and associated concepts
+- Bandits / learning from logged data?
+- Generalized additive models for interpretable nonlinear fits (smoothing way, basis function way, and gradient boosting way)
+- Automated hyperparameter search (with GPs, random, hyperband,...)
+- Active learning
+- Domain shift / covariate shift adaptation
+- Reinforcement learning (minimal path to REINFORCE)
+#### Latent Variable Models
+- PPCA / Factor Analysis and non-Gaussian generalizations 
+- Latent Dirichlet Allocation / topic models
+- Latent variable model as autoencoder
+#### Bayesian Models
+- Relevance vector machines
+- BART
+- Gaussian process regression and conditional probability models
+### Technical Points
+- Overfitting the validation set?
+- Link to paper on [subgradient convergence for tame functions](https://arxiv.org/pdf/1804.07795.pdf)
+### Other
 - Class imbalance
 - Black box feature importance measures (building on [Ben's 2018 lecture](https://davidrosenberg.github.io/mlcourse/Labs/FeatureImportance/feature-importance-slides.ipynb))
 - Quantile regression and conditional prediction intervals (perhaps integrated into homework on loss functions); 
 - More depth on basic neural networks: weight initialization, vanishing / exploding gradient, possibly batch normalization
-- Latent variable model as autoencoder
 - Finish up 'structured prediction' with beam search / Viterbi
     - give probabilistic analogue with MEMM's/CRF's 
-- Bandits
-    - Importance weights / learning from logged data?
-- Active learning
-- Generalized additive models for interpretable nonlinear fits (smoothing way, basis function way, and gradient boosting way)
 - Generative vs discriminative (Jordan & Ng's naive bayes vs logistic regression, plus new experiments including regularization)
-- Gaussian processes
-    - GP Hyperparameter tuning
-    - Simulation methods and more variational methods for probabilistic modeling
-- Reinforcement learning (minimal path to REINFORCE)
-- Density ratio estimation -- Ginsu knife of ML? (for covariate shift, anomaly detection, conditional probability modeling)
 - Something about causality?
+
 
 <!-- #    - [Metric-Optimized Example Weights](https://arxiv.org/abs/1805.10582) -->
 

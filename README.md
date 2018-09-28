@@ -73,8 +73,8 @@ selection via the elastic net." into the notation of our class, dropping an unne
 - Reinforcement learning (minimal path to REINFORCE)
 #### Latent Variable Models
 - PPCA / Factor Analysis and non-Gaussian generalizations 
+- Variational Autoencoders 
 - Latent Dirichlet Allocation / topic models
-- Latent variable model as autoencoder
 #### Bayesian Models
 - Relevance vector machines
 - BART

@@ -1,27 +1,32 @@
 <!-- # DS-GA 1003: Machine Learning and Computational Statistics -->
 
-## Notable Changes from [2017](https://davidrosenberg.github.io/ml2017/#home) to [2018](https://davidrosenberg.github.io/ml2018/#home)
-- New module on [back propagation](https://davidrosenberg.github.io/mlcourse/Lectures/12b.backpropagation.pdf).
+## Notable Changes from [2017FOML](https://bloomberg.github.io/foml/#home) to [2018](https://davidrosenberg.github.io/ml2018/#home)
 - Added a [note on conditional expectations](https://davidrosenberg.github.io/mlcourse/Notes/conditional-expectations.pdf), since many students find the notation confusing.
 - Added a [note on the correlated features theorem for elastic net](https://davidrosenberg.github.io/mlcourse/Notes/elastic-net-theorem.pdf), which was basically a translation of Zou and Hastie's 2005 paper "Regularization and variable
 selection via the elastic net." into the notation of our class, dropping an unnecessary centering condition, and using a more standard definition of correlation.
 - Changes to EM Algorithm presentation: Added [several diagrams](https://davidrosenberg.github.io/mlcourse//Lectures/13c.EM-algorithm.pdf#page=10) (slides 10-14) to give the general idea of a variational method, and made explicit that the marginal log-likelihood is exactly the pointwise supremum over the variational lower bounds [(slides 31 and 32)](https://davidrosenberg.github.io/mlcourse//Lectures/13c.EM-algorithm.pdf#page=31)).
-- New [worked example](https://davidrosenberg.github.io/mlcourse/Notes/poisson-gradient-boosting.pdf) for predicting Poisson distributions with linear and gradient boosting models.
 <!-- - New figures illustrating regularization paths in space of all functions.-->
-- Added lecture on [Black Box ML](https://davidrosenberg.github.io/mlcourse/Archive/2017Fall/Lectures/01.black-box-ML.pdf).
 - Treatment of [the representer theorem](https://davidrosenberg.github.io/mlcourse/Lectures/04c.representer-theorem.pdf) is now well before any mention of kernels, and is described as an interesting consequence of basic linear algebra:  "Look how the solution always lies in the subspace spanned by the data.  That's interesting (and obvious with enough practice). We can now constrain our optimization problem to this subspace..."
 - The [kernel methods](https://davidrosenberg.github.io/mlcourse/Lectures/05a.kernel-methods.pdf) lecture was rewritten to significantly reduce references to the feature map.  When we're just talking about kernelization, it seems like unneeded extra notation. 
-- Dropped most of [the AdaBoost lecture](https://davidrosenberg.github.io/mlcourse/Archive/2017/Lectures/9b.adaboost.pdf), except to mention it as a special case of forward stagewise additive modeling with an exponential loss [(slides 24-29)](https://davidrosenberg.github.io/mlcourse/Lectures/11b.gradient-boosting.pdf#page=23). 
-- Dropped the [geometric derivation of SVMs](https://davidrosenberg.github.io/mlcourse/Archive/2017/Labs/3-SVM-Slides.pdf) and all mention of hard-margin SVM. It was always a crowd-pleaser, but I don't think it's worth the time. Seemed most useful as a review of affine spaces, projections, and other basic linear algebra.
 - Replaced the [1-hour crash course in Lagrangian duality](https://davidrosenberg.github.io/mlcourse/Archive/2017/Lectures/4a.convex-optimization.pdf) with a [10-minute summary of Lagrangian duality](https://davidrosenberg.github.io/mlcourse/Lectures/04d.lagrangian-duality-in-ten-minutes.pdf), which I actually never presented and left as optional reading.
-- Rather than go through the [full derivation of the SVM dual](https://davidrosenberg.github.io/mlcourse/Archive/2017/Lectures/4b.SVM.pdf), in [the new lecture](https://davidrosenberg.github.io/mlcourse/Lectures/04b.SVM-summary.pdf), I just state the dual formulation and highlight the insights we get from the complementary slackness conditions, with an emphasis on the "sparsity in the data". 
-- Added a note on the [main takeaways from duality for the SVM](https://davidrosenberg.github.io/mlcourse/Notes/SVM-main-points.pdf). 
 - Added a [brief note on Thompson sampling for Bernoulli Bandits](https://davidrosenberg.github.io/mlcourse/in-prep/thompson-sampling-bernoulli.pdf) as a fun application for our [unit on Bayesian statistics](https://davidrosenberg.github.io/mlcourse/Lectures/08a.bayesian-methods.pdf).
 - Significant improvement of the programming problem for lasso regression in [Homework #2](https://davidrosenberg.github.io/mlcourse/Homework/hw2.pdf).
 - New written and programming problems on logistic regression in [Homework #5](https://davidrosenberg.github.io/mlcourse/Homework/hw5.pdf) (showing the equivalence of the ERM and the conditional probability model formulations, as well as implementing regularized logistic regression).
-- Added lecture on standard methods of [evaluating classifier performance](https://davidrosenberg.github.io/mlcourse/Archive/2017Fall/Lectures/06b.classifier-performance.pdf).
+- New homework on backpropagation [Homework #7](https://davidrosenberg.github.io/mlcourse/Homework/hw7.pdf) (with Philipp Meerkamp and Pierre Garapon).
+
+## Notable Changes from [2017](https://davidrosenberg.github.io/ml2017/#home) to [2017FOML](https://bloomberg.github.io/foml/#home)
+- This version of the course didn't have any ML prerequisites, so added a couple lectures on the basics:
+    - Added lecture on [Black Box ML](https://davidrosenberg.github.io/mlcourse/Archive/2017Fall/Lectures/01.black-box-ML.pdf).
+    - Added lecture on standard methods of [evaluating classifier performance](https://davidrosenberg.github.io/mlcourse/Archive/2017Fall/Lectures/06b.classifier-performance.pdf).
+- Added a note on the [main takeaways from duality for the SVM](https://davidrosenberg.github.io/mlcourse/Notes/SVM-main-points.pdf). 
+- Rather than go through the [full derivation of the SVM dual](https://davidrosenberg.github.io/mlcourse/Archive/2017/Lectures/4b.SVM.pdf), in [the new lecture](https://davidrosenberg.github.io/mlcourse/Lectures/04b.SVM-summary.pdf), I just state the dual formulation and highlight the insights we get from the complementary slackness conditions, with an emphasis on the "sparsity in the data". 
+- Dropped the [geometric derivation of SVMs](https://davidrosenberg.github.io/mlcourse/Archive/2017/Labs/3-SVM-Slides.pdf) and all mention of hard-margin SVM. It was always a crowd-pleaser, but I don't think it's worth the time. Seemed most useful as a review of affine spaces, projections, and other basic linear algebra.
+- Dropped most of [the AdaBoost lecture](https://davidrosenberg.github.io/mlcourse/Archive/2017/Lectures/9b.adaboost.pdf), except to mention it as a special case of forward stagewise additive modeling with an exponential loss [(slides 24-29)](https://davidrosenberg.github.io/mlcourse/Lectures/11b.gradient-boosting.pdf#page=23). 
+- New [worked example](https://davidrosenberg.github.io/mlcourse/Notes/poisson-gradient-boosting.pdf) for predicting Poisson distributions with linear and gradient boosting models.
+- New module on [back propagation](https://davidrosenberg.github.io/mlcourse/Lectures/12b.backpropagation.pdf).
 
 ## Notable Changes from [2016](https://davidrosenberg.github.io/ml2016/#home) to [2017](https://davidrosenberg.github.io/ml2017/#home)
+- New lecture on geometric approach to SVMs (Brett)
 - New lecture on principal component analysis (Brett)
 - Added slide on k-means++ (Brett)
 - Added slides on explicit feature vector for 1-dim RBF kernel

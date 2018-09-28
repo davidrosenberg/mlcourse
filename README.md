@@ -2,6 +2,7 @@
 <!-- - New figures illustrating regularization paths in space of all functions.-->
 
 ## Notable Changes from [2017FOML](https://bloomberg.github.io/foml/#home) to [2018](https://davidrosenberg.github.io/ml2018/#home)
+- Elaborated on the [case against sparsity](https://davidrosenberg.github.io/mlcourse/Lectures/03a.elastic-net.pdf#page=18) in the lecture on elastic net, to complement the reasons *for* sparsity on the slide [Lasso Gives Feature Sparsity: So What?](https://davidrosenberg.github.io/mlcourse/Lectures/02c.L1L2-regularization.pdf).
 - Added a [note on conditional expectations](https://davidrosenberg.github.io/mlcourse/Notes/conditional-expectations.pdf), since many students find the notation confusing.
 - Added a [note on the correlated features theorem for elastic net](https://davidrosenberg.github.io/mlcourse/Notes/elastic-net-theorem.pdf), which was basically a translation of Zou and Hastie's 2005 paper "Regularization and variable
 selection via the elastic net." into the notation of our class, dropping an unnecessary centering condition, and using a more standard definition of correlation.

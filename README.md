@@ -1,11 +1,11 @@
 <!-- # DS-GA 1003: Machine Learning and Computational Statistics -->
+<!-- - New figures illustrating regularization paths in space of all functions.-->
 
 ## Notable Changes from [2017FOML](https://bloomberg.github.io/foml/#home) to [2018](https://davidrosenberg.github.io/ml2018/#home)
 - Added a [note on conditional expectations](https://davidrosenberg.github.io/mlcourse/Notes/conditional-expectations.pdf), since many students find the notation confusing.
 - Added a [note on the correlated features theorem for elastic net](https://davidrosenberg.github.io/mlcourse/Notes/elastic-net-theorem.pdf), which was basically a translation of Zou and Hastie's 2005 paper "Regularization and variable
 selection via the elastic net." into the notation of our class, dropping an unnecessary centering condition, and using a more standard definition of correlation.
 - Changes to EM Algorithm presentation: Added [several diagrams](https://davidrosenberg.github.io/mlcourse//Lectures/13c.EM-algorithm.pdf#page=10) (slides 10-14) to give the general idea of a variational method, and made explicit that the marginal log-likelihood is exactly the pointwise supremum over the variational lower bounds [(slides 31 and 32)](https://davidrosenberg.github.io/mlcourse//Lectures/13c.EM-algorithm.pdf#page=31)).
-<!-- - New figures illustrating regularization paths in space of all functions.-->
 - Treatment of [the representer theorem](https://davidrosenberg.github.io/mlcourse/Lectures/04c.representer-theorem.pdf) is now well before any mention of kernels, and is described as an interesting consequence of basic linear algebra:  "Look how the solution always lies in the subspace spanned by the data.  That's interesting (and obvious with enough practice). We can now constrain our optimization problem to this subspace..."
 - The [kernel methods](https://davidrosenberg.github.io/mlcourse/Lectures/05a.kernel-methods.pdf) lecture was rewritten to significantly reduce references to the feature map.  When we're just talking about kernelization, it seems like unneeded extra notation. 
 - Replaced the [1-hour crash course in Lagrangian duality](https://davidrosenberg.github.io/mlcourse/Archive/2017/Lectures/4a.convex-optimization.pdf) with a [10-minute summary of Lagrangian duality](https://davidrosenberg.github.io/mlcourse/Lectures/04d.lagrangian-duality-in-ten-minutes.pdf), which I actually never presented and left as optional reading.

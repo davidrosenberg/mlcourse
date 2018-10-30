@@ -2024,10 +2024,6 @@ Loss term
 \end_layout
 
 \begin_layout Frame
-
-\end_layout
-
-\begin_layout Frame
 \begin_inset Argument 4
 status open
 
@@ -2501,17 +2497,7 @@ If
 \end_inset
 
  is strictly increasing, then all minimizers have this form.
- (Proof in homework.)]
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
+ (Proof in homework.)
 \end_layout
 
 \end_deeper
@@ -2782,7 +2768,7 @@ Q.E.D.
 status collapsed
 
 \begin_layout Plain Layout
-The Representer Theorem (Strong Converse)
+Sufficient Condition for Existence of a Minimizer
 \end_layout
 
 \end_inset
@@ -2792,6 +2778,24 @@ The Representer Theorem (Strong Converse)
 
 \begin_deeper
 \begin_layout Theorem
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Thanks to 
+\begin_inset CommandInset href
+LatexCommand href
+name "Mingsi Long"
+target "https://www.linkedin.com/in/mingsi-long-4ba83b30/"
+literal "false"
+
+\end_inset
+
+ for suggesting this nice theorem and proof.
+\end_layout
+
+\end_inset
+
 Let 
 \begin_inset Formula 
 \[
@@ -2800,13 +2804,12 @@ J(w)=R\left(\|w\|\right)+L\left(\left\langle w,x_{1}\right\rangle ,\ldots,\left\
 
 \end_inset
 
-under the same conditions as in the Representer theorem.
- Let 
+and let 
 \begin_inset Formula $M=\linspan\left(x_{1},\ldots,x_{n}\right)$
 \end_inset
 
 .
- If 
+ Then under the same conditions given in the Representer theorem, if 
 \begin_inset Formula $w_{M}^{*}$
 \end_inset
 
@@ -2876,7 +2879,7 @@ One consequence of the Representer theorem only applies if
 \begin_inset Formula $M$
 \end_inset
 
-, then, 
+, then 
 \begin_inset Formula $J(w)$
 \end_inset
 
@@ -2884,7 +2887,7 @@ One consequence of the Representer theorem only applies if
 \begin_inset Formula $\ch$
 \end_inset
 
-.
+ (by the Representer theorem).
 \end_layout
 
 \begin_layout Pause
@@ -2921,7 +2924,7 @@ span of the data
 status collapsed
 
 \begin_layout Plain Layout
-The Representer Theorem (Strong Converse - Proof)
+Sufficient Condition for Existence of a Minimizer (Proof)
 \end_layout
 
 \end_inset
@@ -2936,7 +2939,7 @@ Let
 \end_inset
 
 .
- [constrained minimizer
+ [the constrained minimizer]
 \end_layout
 
 \begin_deeper

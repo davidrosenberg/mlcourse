@@ -73,7 +73,8 @@ selection via the elastic net." into the notation of our class, dropping an unne
 - Domain shift / covariate shift adaptation
 - Reinforcement learning (minimal path to REINFORCE)
 #### Latent Variable Models
-- PPCA / Factor Analysis and non-Gaussian generalizations 
+- PPCA / Factor Analysis and non-Gaussian generalizations
+    - Personality types as example of factor analysis if we can get data?
 - Variational Autoencoders 
 - Latent Dirichlet Allocation / topic models
 #### Bayesian Models
@@ -92,7 +93,7 @@ selection via the elastic net." into the notation of our class, dropping an unne
     - give probabilistic analogue with MEMM's/CRF's 
 - Generative vs discriminative (Jordan & Ng's naive bayes vs logistic regression, plus new experiments including regularization)
 - Something about causality?
-
+- [DART](http://proceedings.mlr.press/v38/korlakaivinayak15.pdf)
 
 <!-- #    - [Metric-Optimized Example Weights](https://arxiv.org/abs/1805.10582) -->
 

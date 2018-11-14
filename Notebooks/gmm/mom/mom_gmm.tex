@@ -1,0 +1,194 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\title{Method of Moments for Mixture of Gaussians}
+\author{Yao Zhu\thanks{yzhu221@bloomberg.net}\\ Derivatives Pricing, Bloomberg LP}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Mixture of Spherical Gaussians with the same variance parameter $\sigma^2$}
+For clarity of presenting the idea of method of moments, we consider the mixture of spherical Gaussians with the same covariance. Under this setting, a random variable $X\in R^{d}$ is generated as follows:
+\begin{align}
+p(Z=i) &= w_i
+\label{eq-mog-gen}
+\\
+\nonumber
+X|Z=i &\sim \mathcal{N}(\mu_i,\sigma^2 I_{d})
+\end{align}
+for $i=1,\ldots,k$, where $k$ is a known number and $k\leq d$, $I_d$ is the $d\times d$ identity matrix, and $\sigma^2$ is the variance parameter common to all $k$ components. We further assume the following non-degeneracy condition:
+\par
+\textbf{Non-degeneracy Condition}: $\mu_i,i=1,\ldots,k$ are linearly independent, and $w_i>0$ for all $i=1,\ldots,k$.
+\par
+We target to recover the parameters $\{w_i,\mu_i\}_{i=1}^k$ and $\sigma^2$ from a sample of data points $\{x_n\}_{n=1}^N$ generated according to \eqref{eq-mog-gen}.
+\section{Raw Moments}
+\subsection{Tensor product}
+In order to work with moments (especially moments of order higher than $2$), we need to the notion of \textit{tensor product}, denoted by $\otimes$. Let $X_1,X_2,X_3\in R^{d}$, we define $X_1\otimes X_2\otimes X_3$ such that
+\begin{align}
+\left(X_1\otimes X_2\otimes X_3\right)_{jlm} &= (X_1)_{j}(X_2)_{l}(X_3)_{m}
+\end{align}
+for $j,l,m=1,\ldots, d$. In a similar style, we define $X_1\otimes X_2=X_1 X_2^{T}$.
+\subsection{Moments of Mixture of Gaussians}
+Given \eqref{eq-mog-gen}, when $Z=i$ we can write and
+\begin{align}
+X&=\mu_i + Y \\
+\nonumber
+Y&\sim \mathcal{N}(0,\sigma^2 I_{d})
+\end{align}
+We can compute the following raw moments up to order $3$
+\begin{align}
+\mathbb{E}[X]&=\sum_{i=1}^k w_i \mu_i
+\end{align}
+We will denote $M_1 = \mathbb{E}[X]$ in the following.
+\begin{align}
+\mathbb{E}[X\otimes X]&=\sum_{i=1}^k w_i \mathbb{E}[X\otimes X|Z=i]\\
+&= \sum_{i=1}^k w_i \mathbb{E}[(\mu_i + Y)\otimes (\mu_i + Y)]\\
+&=\sum_{i=1}^k w_i \mu_i\otimes \mu_i +  \sigma^2 I_d
+\end{align}
+Note we have used the fact that $\mathbb{E}[Y]=0$, and $\mathbb{E}[Y\otimes Y]=\sigma^2 I_d$. Plus the fact that $\mathbb{E}[Y\otimes Y\otimes Y]=0$, we compute the $3$rd order moment
+\begin{align}
+\mathbb{E}[X\otimes X \otimes X]&=\sum_{i=1}^k w_i \mathbb{E}[X\otimes X\otimes X|Z=i]\\
+&= \sum_{i=1}^k w_i \mathbb{E}[(\mu_i + Y)\otimes (\mu_i + Y)\otimes (\mu_i + Y)]\\
+&=\sum_{i=1}^k w_i \mu_i\otimes \mu_i\otimes \mu_i + \\
+\nonumber
+& \sum_{i=1}^k w_i\left( \mathbb{E}[\mu_i\otimes Y\otimes Y] + \mathbb{E}[ Y\otimes\mu_i\otimes Y] + \mathbb{E}[Y\otimes Y\otimes\mu_i]\right) 
+\end{align}
+Now let's take a closer look at the term
+\begin{align*}
+\sum_{i=1}^k w_i  \mathbb{E}[ Y\otimes\mu_i\otimes Y] &= \mathbb{E}[ Y\otimes(\sum_{i=1}^k w_i\mu_i)\otimes Y]\\
+&= \mathbb{E}[ Y\otimes M_1\otimes Y]
+\end{align*}
+In order to further simplify it, we look at a particular cell
+\begin{align*}
+\mathbb{E}[ (Y\otimes M_1\otimes Y)_{jlm}] &= (M_1)_l \mathbb{E}[ Y_j Y_m]\\
+&= (M_1)_l \sigma^2 \delta_{jm}
+\end{align*}
+where $\delta_{jm}$ is the Kronecker delta. Thus, in tensor form we have
+\begin{align}
+\mathbb{E}[ Y\otimes M_1\otimes Y] &= \sigma^2\sum_{j=1}^d e_j \otimes M_1 \otimes e_j
+\end{align}
+where $\{e_1,\ldots,e_d\}$ is the canonical basis of $d$ dimension. Similarly we have
+\begin{align}
+\mathbb{E}[ M_1 \otimes Y\otimes Y] &= \sigma^2\sum_{j=1}^d  M_1 \otimes e_j \otimes e_j\\
+\mathbb{E}[Y\otimes Y\otimes M_1] &= \sigma^2\sum_{j=1}^d   e_j \otimes e_j \otimes M_1
+\end{align}
+Thus, in summary we have
+\begin{align}
+\mathbb{E}[X\otimes X \otimes X]&=\sum_{i=1}^k w_i \mu_i\otimes \mu_i\otimes \mu_i +\\
+\nonumber
+&\sigma^2\sum_{j=1}^d  (M_1 \otimes e_j \otimes e_j + e_j \otimes M_1 \otimes e_j + e_j \otimes e_j \otimes M_1)
+\end{align}
+\section{Parameter identification from the moments}
+From the data sample $\{x_n\}_{n=1}^N$, we can compute the empirical moments $\widetilde{\mathbb{E}}[X]$, $\widetilde{\mathbb{E}}[X\otimes X]$, and $\widetilde{\mathbb{E}}[X\otimes X \otimes X]$ as estimates of the theoretical moments. For this reason, we say $\mathbb{E}[X]$, $\mathbb{E}[X\otimes X]$, and $\mathbb{E}[X\otimes X \otimes X]$ are observable. We want to come up with a recipe to identify the parameters $\{w_i,\mu_i\}_{i=1}^k$ and $\sigma^2$ from these observable moments.
+\subsection{Identify $\sigma^2$}
+Let's compute the covariance matrix of $X$
+\begin{align}
+cov(X)&=\mathbb{E}[(X-M_1)\otimes (X-M_1)]\\
+&=\sum_{i=1}^k w_i \mathbb{E}[(X-M_1)\otimes (X-M_1)|Z=i]\\
+&=\sum_{i=1}^k w_i \mathbb{E}[(\mu_i-M_1+Y)\otimes (\mu_i-M_1+Y)]\\
+&=\sum_{i=1}^k w_i (\mu_i-M_1)\otimes (\mu_i-M_1) + \sigma^2 I_d
+\label{eq-cov-X}
+\end{align}
+Note that because $\sum_{i=1}^k w_i (\mu_i-M_1)=0$, the $k$ vectors $(\mu_i-M_1)$ for $i=1,\ldots,k$ are linearly dependent. Thus, from \eqref{eq-cov-X} we know $\sigma^2=\lambda_{\min}(cov(X))$, i.e., $\sigma^2$ is the smallest eigenvalue of $cov(X)$. Note because $cov(X)=\mathbb{E}[X\otimes X]-M_1\otimes M_1$, $cov(X)$ is also observable.
+\subsection{Identify $\{w_i,\mu_i\}_{i=1}^k$}
+We define the following two purified moments
+\begin{align}
+M_2&=\mathbb{E}[X\otimes X] - \sigma^2 I_d
+\label{eq-M2-obs}
+\\
+&=\sum_{i=1}^k w_i \mu_i\otimes \mu_i
+\label{eq-M2-tensor-decomp}
+\end{align}
+\begin{align}
+M_3&=\mathbb{E}[X\otimes X\otimes X] - \sigma^2\sum_{j=1}^d  (M_1 \otimes e_j \otimes e_j + e_j \otimes M_1 \otimes e_j + e_j \otimes e_j \otimes M_1)
+\label{eq-M3-obs}
+\\
+&=\sum_{i=1}^k w_i \mu_i\otimes \mu_i \otimes \mu_i
+\label{eq-M3-tensor-decomp}
+\end{align}
+Once we have identified $\sigma^2$, $M_2$ is observable thanks to equation \eqref{eq-M2-obs}, and $M_3$ is observable thanks to equation \eqref{eq-M3-obs}. In the \textbf{Non-degeneracy Condition}, we only assume $\mu_i,i=1,\ldots,k$ to be linearly independent, which is not strong enough for us to extract $\mu_i$ directly through the tensor decomposition in equation \eqref{eq-M3-tensor-decomp}. We want to cook up another tensor that admits an \textit{orthogonal tensor decomposition}, on which we can apply the \textit{tensor power method}. From \eqref{eq-M2-tensor-decomp}, we see that $M_2$ is a symmetric positive semidefinite matrix with rank $k$. Thus, it admits a thin eigendecomposition
+\begin{align}
+M_2 &= U\Lambda U^{T}
+\label{eq-M2-thin-eigendecomp}
+\end{align}
+where $U=(u_1,\ldots,u_k)\in R^{d\times k}$, and $\Lambda=diag(\lambda_1,\ldots,\lambda_k)$ is a diagonal matrix with $\lambda_i>0$ for $i=1,\ldots, k$.
+Now let's define whitening matrix
+\begin{align}
+B&=U\Lambda^{-1/2}
+\label{eq-whiten-matrix}
+\end{align}
+and the following whitened vectors
+\begin{align}
+\widehat{\mu_i}&=\sqrt{w_i}B^{T}\mu_i
+\label{eq-whiten-vector}
+\end{align}
+Also note that because $\mu_i\in span(U)$, and $w_i>0$, we recover $\mu_i$ by
+\begin{align}
+\mu_i&=\frac{1}{\sqrt{w_i}}(B^{T})^{\dagger}\widehat{\mu_i}
+\label{eq-whiten-vector-recover}
+\end{align}
+where $B^{T})^{\dagger}$ is the Moore-Penrose pseudoinverse on the right of $B^{T}$ such that $B^{T}(B^{T})^{\dagger}=I_k$. From the definition of \eqref{eq-whiten-matrix}, we have
+\begin{align}
+I_k&=B^{T}M_2 B=M_2(B,B)\\
+&=\sum_{i=1}^k w_i (B^{T}\mu_i)\otimes (B^{T}\mu_i)\\
+&=\sum_{i=1}^k (\sqrt{w_i}B^{T}\mu_i)\otimes (\sqrt{w_i}B^{T}\mu_i)\\
+&=\sum_{i=1}^k \widehat{\mu_i}\otimes \widehat{\mu_i}
+\end{align}
+Thus, the vectors $\widehat{\mu_i},i=1,\ldots,k$ are orthogonal. Now we apply the whitening to $M_3$ as follows:
+\begin{align}
+M_3(B,B,B)&=\sum_{i=1}^k w_i (B^{T}\mu_i)\otimes (B^{T}\mu_i)\\
+&=\sum_{i=1}^k \frac{1}{\sqrt{w_i}} \widehat{\mu_i}\otimes \widehat{\mu_i}\otimes \widehat{\mu_i}
+\label{eq-M3-whiten-orth-tensor-decomp}
+\end{align}
+Thus, the whitened tensor $M_3(B,B,B)$ admits an orthogonal decomposition \eqref{eq-M3-whiten-orth-tensor-decomp}, which is the merit we need in order to apply the tensor power method for identifying $\widehat{\mu_i}$, for $i=1,\ldots,k$. We denote $M_3(B,B,B)=\widehat{M_3}$. The tensor power method is given by the following iteration
+\begin{align}
+\theta_{t+1} & \leftarrow \frac{\widehat{M_3}(:,\theta_{t}, \theta_{t})}{\|\widehat{M_3}(:,\theta_{t}, \theta_{t})\|}
+\label{eq-tensor-power-iter}
+\end{align}
+starting from an initial random vector $\theta_0$ on the unit sphere $\mathcal{S}^{k}$. It can be proved that $\theta_t$ will converge to a certain eigenvector $\widehat{\mu_i}$ of $\widehat{M_3}$. Once we have an estimate of $\widehat{\mu_i}$, we can identify $w_i$ by
+\begin{align}
+\frac{1}{\sqrt{w_i}}&=\widehat{M_3}(\widehat{\mu_i},\widehat{\mu_i},\widehat{\mu_i})
+\label{eq-wi-estimate}
+\end{align}
+Now we want to find another $\widehat{\mu_j}$ different from $\widehat{\mu_i}$. For this purpose, we need to \textit{deflate} $\widehat{\mu_i}$ from $\widehat{M_3}$. Let $\mathcal{I}$ be the index set such that $i\in \mathcal{I}$ if and only if $(\widehat{\mu_i}, w_i)$ have been identified. The deflation is defined by
+\begin{align}
+\widehat{M_3} &\leftarrow \widehat{M_3} - \sum_{i\in \mathcal{I}}\frac{1}{\sqrt{w_i}} \widehat{\mu_i}\otimes \widehat{\mu_i} \otimes \widehat{\mu_i}
+\label{eq-deflation}
+\end{align}
+Please see~\cite{AnandkumarG2014} for the details of orthogonal tensor decomposition and the tensor power method.
+\subsection{Recipe}
+In summary, our recipe using the method of moments are as follows:
+\begin{enumerate}
+\item Compute the empirical moments explicitly $\widetilde{M_1}=\widetilde{\mathbb{E}}[X]$ and $\widetilde{\mathbb{E}}[X\otimes X]$.
+\item Identify $\sigma^2$ by extracting the smallest eigenvalue of $\widetilde{\mathbb{E}}[X\otimes X]-\widetilde{M_1}\otimes \widetilde{M_1}$.
+\item Form $M_2$ explicitly by \eqref{eq-M2-obs}, and do the thin eigendecomposition \eqref{eq-M2-thin-eigendecomp} to extract the whitening matrix $B$ in \eqref{eq-whiten-matrix}.
+\item Start with $\mathcal{I}=\emptyset$. For $i=1,\ldots,k$, do the tensor power iteration \eqref{eq-tensor-power-iter} using the deflated version \eqref{eq-deflation} until converge (or maximum number of iterations met). We can estimate $w_i$ by \eqref{eq-wi-estimate}. Let $\mathcal{I}=\mathcal{I}\cup {i}$. 
+\par
+Note because in the tensor power iteration, only the action $\widehat{M_3}(:,\theta_{t}, \theta_{t})$ is needed, we don't need to explicitly form $\widehat{M_3}$. Instead, from \eqref{eq-M3-obs}, we have
+\begin{align}
+\widehat{M_3}(:,\theta_{t}, \theta_{t}) &= \mathbb{E}[B^{T}X (\theta_t^{T}B^{T}X)^2] -\\
+\nonumber
+& \sigma^2\sum_{j=1}^d  \left(B^{T}M_1 (\theta_t^{T}B^{T}e_j)^2  +  2 B^{T}e_j (\theta_t^{T}B^{T}e_j)(\theta_t^{T}B^{T}M_1) \right)
+\end{align}
+\item Recover $\mu_i$ from $\widehat{\mu_i}$ by \eqref{eq-whiten-vector-recover}.
+\end{enumerate}
+\section{More general Gaussians}
+\subsection{Differing $\sigma_i^2$ for $i=1,\ldots,k$}
+The method presented above can be straightforwardly extended to the case where each mixture component has as different variance parameter $\sigma_i^2$, with some tweaks to the form of the observed moments $M_2$ and $M_3$. Please see~\cite{HsuK2013} for the details.
+\subsection{General covariance matrices $\Sigma_i$}
+Intuitively, when we have general covariance matrices $\Sigma_i$ for $i=1,\ldots,k$, we have many more parameters to estimate (each $\Sigma_i$ have $\frac{d(d+1)}{2}$ entries) than the case of spherical Gaussians. It turns out we need the $4$th and $6$th order moments in order to approximately recover $\Sigma_i$ (with the assumption that $d=O(k^2)$). The algorithm is much more complicated and non-trivial to implement, please see~\cite{GeHK2015} for the details.
+
+\begin{thebibliography}{6}
+
+\bibitem{AnandkumarG2014}A. Anandkumar and R. Ge and D. Hsu and S. M. Kakade and M. Telgarsky, Tensor decompositions for learning latent variable models. \textit{Journal of Machine Learning Research}, Vol. 15, Issue 1, pp. 2773-2832, January 2014.
+
+\bibitem{HsuK2013} D. Hsu and S. M. Kakade, Learning mixtures of spherical Gaussians: moment methods and spectral decompositions, \textit{Proceedings of the fourth Innovations in Theoretical Computer Science}, pp. 11-20, January, 2013.
+
+\bibitem{GeHK2015} R. Ge and Q. Huang and S. M. Kakade, Learning mixtures of Gaussians in high dimensions, \textit{Proceedings of the forty-seventh annual ACM symposium on Theory of computing}, pp. 761-770, June, 2015.
+
+\end{thebibliography}
+\end{document}
+
+\end{document}

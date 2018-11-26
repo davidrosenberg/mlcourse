@@ -208,20 +208,20 @@
   full training set.  Here we assume each decision function $f_w$ in
   our hypothesis space is determined by a parameter vector $w\in\RR^d$.
 \begin{solution}
-\item[]\Sol Let $(x_{m_1},y_{m_1}),\ldots,(x_{m_n},y_{m_n})$ be our
+\item[]\Sol Let $(x_{m_1},y_{m_1}),\ldots,(x_{m_N},y_{m_N})$ be our
   mini-batch selected uniformly without replacement from the full
   training set $(x_1,y_1),\ldots,(x_n,y_n)$.
   $$\begin{Array}{rcll}
-    \E\left[\nabla_w\frac{1}{n}\sum_{i=1}^n
+    \E\left[\nabla_w\frac{1}{N}\sum_{i=1}^N
       \ell(f_w(x_{m_i},y_{m_i}))\right]
-    & = & \frac{1}{n}\sum_{i=1}^n\E\left[\nabla_w
+    & = & \frac{1}{N}\sum_{i=1}^N\E\left[\nabla_w
       \ell(f_w(x_{m_i}),y_{m_i})\right] & \text{(Linearity of
       $\nabla,\E$)}\\
-    & = & \frac{1}{n}\sum_{i=1}^n\E\left[\nabla_w
+    & = & \frac{1}{N}\sum_{i=1}^N\E\left[\nabla_w
       \ell(f_w(x_{m_1}),y_{m_1})\right]    &\text{(Marginals are the same)}\\
     & = & \E\left[\nabla_w\ell(f_w(x_{m_1}),y_{m_1})\right]\\
-    & = & \sum_{i=1}^N \frac{1}{N}\nabla_w\ell(f_w(x_{i}),y_{i})\\
-    & = & \nabla_w\frac{1}{N}\sum_{i=1}^N
+    & = & \sum_{i=1}^n \frac{1}{n}\nabla_w\ell(f_w(x_{i}),y_{i})\\
+    & = & \nabla_w\frac{1}{n}\sum_{i=1}^n
     \ell(f_w(x_{i}),y_{i})&\text{(Linearity of $\nabla$).}
   \end{Array}$$
 \end{solution}

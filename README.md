@@ -63,6 +63,7 @@ selection via the elastic net." into the notation of our class, dropping an unne
 - MCMC (or at least Gibbs sampling)
 - Importance sampling
 - Density ratio estimation (for covariate shift, anomaly detection, conditional probability modeling)
+- Local methods (knn, locally weighted regression, etc.)
 ### Applications
 - Collaborative filtering / matrix factorization (building on [this lecture on matrix factorization](https://github.com/davidrosenberg/mlcourse/blob/gh-pages/in-prep/matrix-factorization.pdf) and [Brett's lecture on PCA](https://davidrosenberg.github.io/mlcourse/Archive/2017/Lectures/13-PCA-Slides.pdf))
 - Learning to rank and associated concepts
@@ -77,6 +78,7 @@ selection via the elastic net." into the notation of our class, dropping an unne
     - Personality types as example of factor analysis if we can get data?
 - Variational Autoencoders 
 - Latent Dirichlet Allocation / topic models
+- Generative models for images and text (where we care about the human-perceived quality of what's generated rather than the likelihood given to test examples) (GANs and friends)
 #### Bayesian Models
 - Relevance vector machines
 - BART
@@ -94,6 +96,7 @@ selection via the elastic net." into the notation of our class, dropping an unne
 - Generative vs discriminative (Jordan & Ng's naive bayes vs logistic regression, plus new experiments including regularization)
 - Something about causality?
 - [DART](http://proceedings.mlr.press/v38/korlakaivinayak15.pdf)
+- LightGBM and [CatBoost](http://learningsys.org/nips17/assets/papers/paper_11.pdf) efficient handling of categorical features (i.e. handling categorical features in regression trees )
 
 <!-- #    - [Metric-Optimized Example Weights](https://arxiv.org/abs/1805.10582) -->
 

@@ -1,0 +1,4129 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass beamer
+\begin_preamble
+\usetheme{CambridgeUS} 
+\beamertemplatenavigationsymbolsempty
+
+
+% Set Color ==============================
+\definecolor{NYUPurple}{RGB}{87,6,140}
+\definecolor{LightPurple}{RGB}{165,11,255}
+
+
+\setbeamercolor{title}{fg=NYUPurple}
+%\setbeamercolor{frametitle}{fg=NYUPurple}
+\setbeamercolor{frametitle}{fg=NYUPurple}
+
+\setbeamercolor{background canvas}{fg=NYUPurple, bg=white}
+\setbeamercolor{background}{fg=black, bg=NYUPurple}
+
+\setbeamercolor{palette primary}{fg=black, bg=gray!30!white}
+\setbeamercolor{palette secondary}{fg=black, bg=gray!20!white}
+\setbeamercolor{palette tertiary}{fg=gray!20!white, bg=NYUPurple}
+
+\setbeamertemplate{headline}{}
+
+\setbeamercolor{parttitle}{fg=NYUPurple}
+\setbeamercolor{sectiontitle}{fg=NYUPurple}
+\setbeamercolor{sectionname}{fg=NYUPurple}
+\setbeamercolor{section page}{fg=NYUPurple}
+
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+\setbeamercolor{section title}{fg=NYUPurple}
+ \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\usebeamercolor[fg]{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+\end_preamble
+\options aspectratio=169,handout
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "eulervm" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "allcolors=NYUPurple,urlcolor=LightPurple"
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\boxbgcolor #ff31d8
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\reals}{\mathbf{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\integers}{\mathbf{Z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\naturals}{\mathbf{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rationals}{\mathbf{Q}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ca}{\mathcal{A}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cb}{\mathcal{B}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cc}{\mathcal{C}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cd}{\mathcal{D}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ce}{\mathcal{E}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cf}{\mathcal{F}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cg}{\mathcal{G}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ch}{\mathcal{H}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ci}{\mathcal{I}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cj}{\mathcal{J}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ck}{\mathcal{K}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cl}{\mathcal{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cm}{\mathcal{M}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cn}{\mathcal{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\co}{\mathcal{O}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cp}{\mathcal{P}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cq}{\mathcal{Q}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\calr}{\mathcal{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cs}{\mathcal{S}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ct}{\mathcal{T}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cu}{\mathcal{U}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cv}{\mathcal{V}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cw}{\mathcal{W}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cx}{\mathcal{X}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cy}{\mathcal{Y}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cz}{\mathcal{Z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ind}[1]{1(#1)}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand{
+\backslash
+pr}{P}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\pr}{\mathbb{P}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\predsp}{\cy}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%{
+\backslash
+hat{
+\backslash
+cy}}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\outsp}{\cy}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\prxy}{P_{\cx\times\cy}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\prx}{P_{\cx}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\prygivenx}{P_{\cy\mid\cx}}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand{
+\backslash
+ex}{E}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ex}{\mathbb{E}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\var}{\textrm{Var}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cov}{\textrm{Cov}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\sgn}{\textrm{sgn}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\sign}{\textrm{sign}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\kl}{\textrm{KL}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\law}{\mathcal{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\eps}{\varepsilon}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\as}{\textrm{ a.s.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\io}{\textrm{ i.o.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ev}{\textrm{ ev.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\convd}{\stackrel{d}{\to}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\eqd}{\stackrel{d}{=}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\del}{\nabla}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\loss}{\ell}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\risk}{R}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\emprisk}{\hat{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\lossfnl}{L}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\emplossfnl}{\hat{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\empminimizer}[1]{\hat{#1}^{*}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\minimizer}[1]{#1^{*}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\optimizer}[1]{#1^{*}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\etal}{\textrm{et. al.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\tr}{\operatorname{tr}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\trace}{\operatorname{trace}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\diag}{\text{diag}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rank}{\text{rank}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\linspan}{\text{span}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\spn}{\text{span}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\proj}{\text{Proj}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\argmax}{\operatornamewithlimits{arg\, max}}
+{\text{argmax}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\argmin}{\operatornamewithlimits{arg\, min}}
+{\text{argmin}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\bfx}{\mathbf{x}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfy}{\mathbf{y}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfl}{\mathbf{\lambda}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfm}{\mathbf{\mu}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\calL}{\mathcal{L}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\vw}{\boldsymbol{w}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vx}{\boldsymbol{x}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vxi}{\boldsymbol{\xi}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\valpha}{\boldsymbol{\alpha}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vbeta}{\boldsymbol{\beta}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vsigma}{\boldsymbol{\sigma}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vtheta}{\boldsymbol{\theta}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vd}{\boldsymbol{d}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vs}{\boldsymbol{s}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vt}{\boldsymbol{t}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vh}{\boldsymbol{h}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ve}{\boldsymbol{e}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vf}{\boldsymbol{f}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vg}{\boldsymbol{g}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vz}{\boldsymbol{z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vk}{\boldsymbol{k}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\va}{\boldsymbol{a}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vb}{\boldsymbol{b}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vv}{\boldsymbol{v}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vy}{\boldsymbol{y}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\dom}{\textrm{\textbf{dom} }}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\renewcommand{\rank}{\text{\textbf{rank }}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\conv}{\textrm{\textbf{conv} }}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\relint}{\text{\textbf{relint }}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\aff}{\text{\textbf{aff }}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\hil}{\ch}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rkhs}{\hil}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ber}{\text{Ber}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+Gaussian Mixture Models
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+DS-GA 1003 / CSCI-GA 2567
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+optional, use only with long paper titles
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+David S.
+ Rosenberg 
+\end_layout
+
+\begin_layout Date
+April 24, 2018
+\end_layout
+
+\begin_layout Institute
+New York University
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex ArticleMode
+status open
+
+\begin_layout Plain Layout
+Just in article version
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Plots courtesy of Ningshan Zhang.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Next time -- refer more to "components" than clusters.
+ talk about vector quantization
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+For board work, wrote down
+\end_layout
+
+\begin_layout Enumerate
+Picture on why gradient descent may not work well for GMM, because size
+ of the variance dictates 
+\begin_inset Quotes eld
+\end_inset
+
+reasonable
+\begin_inset Quotes erd
+\end_inset
+
+ step sizes for the corresponding means.
+ Suggest natural gradient methods?
+\end_layout
+
+\begin_layout Enumerate
+parameter estimates for GMM in fully observed case, to compare to the soft
+ assignment case
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Contents
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Section
+Gaussian Mixture Models
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Probabilistic Model for Clustering
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let's consider the following 
+\series bold
+generative model
+\series default
+ (i.e.
+ a way to generate data).
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Suppose 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+There are 
+\begin_inset Formula $k$
+\end_inset
+
+ clusters (or 
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+mixture components
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+).
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+We have a probability density for each cluster.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Generate a point as follows
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Choose a random cluster 
+\begin_inset Formula $z\in\left\{ 1,2,\ldots,k\right\} $
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Choose a point from the distribution for cluster 
+\begin_inset Formula $z$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Data generated in this way is said to have a 
+\series bold
+mixture distribution.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Gaussian Mixture Model (
+\begin_inset Formula $k=3$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Choose 
+\begin_inset Formula $z\in\left\{ 1,2,3\right\} $
+\end_inset
+
+ with 
+\begin_inset Formula $p(1)=p(2)=p(3)=\frac{1}{3}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Choose 
+\begin_inset Formula $x\mid z\sim\cn\left(X\mid\mu_{z},\Sigma_{z}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename mixture-3-gaussians.png
+	lyxscale 30
+	height 60theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Gaussian Mixture Model Parameters (
+\begin_inset Formula $k$
+\end_inset
+
+ Components)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align left
+\begin_inset Formula 
+\begin{eqnarray*}
+\text{Cluster probabilities}: &  & \pi=\left(\pi_{1},\ldots,\pi_{k}\right)\\
+\text{Cluster means}: &  & \mu=\left(\mu_{1},\ldots,\mu_{k}\right)\\
+\text{Cluster covariance matrices:} &  & \Sigma=\left(\Sigma_{1},\ldots\Sigma_{k}\right)
+\end{eqnarray*}
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename mixture-3-gaussians.png
+	lyxscale 20
+	height 40theight%
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+For now, 
+\series bold
+suppose all these parameters are known
+\series default
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+We'll discuss how to 
+\series bold
+learn
+\series default
+ or 
+\series bold
+estimate 
+\series default
+them later.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Gaussian Mixture Model: Joint Distribution 
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Factorize the joint density:
+\begin_inset Formula 
+\begin{eqnarray*}
+p(x,z) & = & p(z)p(x\mid z)\\
+\pause & = & \pi_{z}\cn\left(x\mid\mu_{z},\Sigma_{z}\right)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\pi_{z}$
+\end_inset
+
+ is probability of choosing cluster 
+\begin_inset Formula $z$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $x\mid z$
+\end_inset
+
+ has distribution 
+\begin_inset Formula $\cn(\mu_{z},\Sigma_{z})$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $z$
+\end_inset
+
+ corresponding to 
+\begin_inset Formula $x$
+\end_inset
+
+ is the true cluster assignment.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Suppose we know the model parameters 
+\begin_inset Formula $\pi_{z},\mu_{z},\Sigma_{z}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Then we can easily evaluate the joint density 
+\begin_inset Formula $p(x,z)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Gaussian Mixture Model: Joint Distribution 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout ColumnsTopAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+.25
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align left
+\begin_inset Graphics
+	filename gmm-bayesnet.png
+	lyxscale 30
+	width 40col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+.75
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Factorize the joint distribution:
+\begin_inset Formula 
+\begin{eqnarray*}
+p(x,z) & = & p(z)p(x\mid z)\\
+\pause & = & \pi_{z}\cn\left(x\mid\mu_{z},\Sigma_{z}\right)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\pi_{z}$
+\end_inset
+
+ is probability of choosing cluster 
+\begin_inset Formula $z$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $x\mid z$
+\end_inset
+
+ has distribution 
+\begin_inset Formula $\cn(\mu_{z},\Sigma_{z})$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $z$
+\end_inset
+
+ corresponding to 
+\begin_inset Formula $x$
+\end_inset
+
+ is the true cluster assignment.
+ 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Suppose we know the model parameters 
+\begin_inset Formula $\pi_{z},\mu_{z},\Sigma_{z}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Then we can easily compute the joint 
+\begin_inset Formula $p(x,z)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Latent Variable Model 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout ColumnsTopAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+.25
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align left
+\begin_inset Graphics
+	filename gmm-bayesnet.png
+	lyxscale 30
+	width 60col%
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+.75
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Back in reality, we observe 
+\begin_inset Formula $X$
+\end_inset
+
+, not 
+\begin_inset Formula $\left(X,Z\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $Z$
+\end_inset
+
+ is called a 
+\series bold
+hidden
+\series default
+ 
+\series bold
+variable
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+Models with hidden variables are called 
+\series bold
+latent variable models
+\series default
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Latent Variable Model 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We observe 
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+We don't observe 
+\begin_inset Formula $z$
+\end_inset
+
+ (the cluster assignment).
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Cluster assignment 
+\begin_inset Formula $z$
+\end_inset
+
+ is called a 
+\series bold
+hidden
+\series default
+ 
+\series bold
+variable
+\series default
+ or 
+\series bold
+latent variable
+\series default
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Definition
+A
+\series bold
+ latent variable model 
+\series default
+is a probability model for which certain variables are never observed.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+e.g.
+ The Gaussian mixture model is a latent variable model.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The GMM 
+\begin_inset Quotes eld
+\end_inset
+
+Inference
+\begin_inset Quotes erd
+\end_inset
+
+ Problem
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We observe 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ We want to know its cluster assignment 
+\begin_inset Formula $z$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The conditional probability for cluster 
+\begin_inset Formula $z$
+\end_inset
+
+ given 
+\begin_inset Formula $x$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+p(z\mid x)=p(x,z)/p(x)
+\]
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Could compute 
+\begin_inset Formula $p(x)$
+\end_inset
+
+ by summing out over 
+\begin_inset Formula $z$
+\end_inset
+
+ in 
+\begin_inset Formula $p(x,z)$
+\end_inset
+
+.
+ But conceptually we don't need to, since 
+\begin_inset Formula $p(z\mid x)\propto p(x,z)$
+\end_inset
+
+, which is easy.
+ And we can just renormalize over 
+\begin_inset Formula $z$
+\end_inset
+
+, which is a simple sum for discrete 
+\begin_inset Formula $z$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The conditional distribution is a
+\series bold
+ soft assignment 
+\series default
+to clusters.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+A 
+\series bold
+hard assignment 
+\series default
+is
+\begin_inset Formula 
+\[
+z^{*}=\argmax_{z\in\left\{ 1,\ldots,k\right\} }p(z\mid x).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+So if we know the model parameters, clustering is trival.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Mixture Models
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+General Mixture Models: Generative Construction
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $S$
+\end_inset
+
+ be a set of 
+\begin_inset Formula $k$
+\end_inset
+
+ probability distributions (
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+mixture components
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+).
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $\pi=\left(\pi_{1},\ldots,\pi_{k}\right)$
+\end_inset
+
+ be a distribution on 
+\begin_inset Formula $\left\{ 1,\ldots,k\right\} $
+\end_inset
+
+ (
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+mixture weights
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+)
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Suppose we generate 
+\begin_inset Formula $x$
+\end_inset
+
+ with the following procedure:
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Enumerate
+Choose a distribution randomly from 
+\begin_inset Formula $S$
+\end_inset
+
+ according to 
+\begin_inset Formula $\pi$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Sample 
+\begin_inset Formula $x$
+\end_inset
+
+ from the chosen distribution.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Then we say 
+\begin_inset Formula $x$
+\end_inset
+
+ has a
+\series bold
+ mixture distribution
+\series default
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Mixture Densities 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose we have a mixture distribution with
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+mixture components
+\series default
+ represented as densities 
+\begin_inset Formula $p_{1},\ldots,p_{k}$
+\end_inset
+
+, and
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+mixture weights
+\series default
+ 
+\begin_inset Formula $\pi=\left(\pi_{1},\ldots,\pi_{k}\right)$
+\end_inset
+
+ , then 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+the corresponding probability density for 
+\begin_inset Formula $x$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+p(x)=\sum_{i=1}^{k}\pi_{i}p_{i}(x).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Note that 
+\begin_inset Formula $p$
+\end_inset
+
+ is a convex combination of the mixture component densities.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $p(x)$
+\end_inset
+
+ is called a 
+\series bold
+mixture density
+\series default
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Conversely, if 
+\begin_inset Formula $x$
+\end_inset
+
+ has a density of this form, then 
+\begin_inset Formula $x$
+\end_inset
+
+ has a mixture distribution.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Gaussian Mixture Model (GMM): Marginal Distribution
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+For example:
+\end_layout
+
+\begin_layout Itemize
+The 
+\series bold
+marginal distribution
+\series default
+ for a single observation 
+\begin_inset Formula $x$
+\end_inset
+
+ in a GMM is
+\series bold
+
+\begin_inset Formula 
+\begin{eqnarray*}
+p(x) & = & \sum_{z=1}^{k}p(x,z)\\
+\pause & = & \sum_{z=1}^{k}\pi_{z}\cn\left(x\mid\mu_{z},\Sigma_{z}\right)
+\end{eqnarray*}
+
+\end_inset
+
+
+\series default
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Note that 
+\begin_inset Formula $p(x)$
+\end_inset
+
+ is a convex combination of probability densities.
+\end_layout
+
+\begin_layout Itemize
+This is a common form for a probability model...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Learning in Gaussian Mixture Models
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The GMM 
+\begin_inset Quotes eld
+\end_inset
+
+Learning
+\begin_inset Quotes erd
+\end_inset
+
+ Problem
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Given data 
+\begin_inset Formula $x_{1},\ldots,x_{n}$
+\end_inset
+
+ drawn from a GMM,
+\end_layout
+
+\begin_layout Itemize
+Estimate the parameters: 
+\begin_inset Formula 
+\begin{eqnarray*}
+\text{Cluster probabilities}: &  & \pi=\left(\pi_{1},\ldots,\pi_{k}\right)\\
+\text{Cluster means}: &  & \mu=\left(\mu_{1},\ldots,\mu_{k}\right)\\
+\text{Cluster covariance matrices:} &  & \Sigma=\left(\Sigma_{1},\ldots\Sigma_{k}\right)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Once we have the parameters, we're done.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Just do 
+\begin_inset Quotes eld
+\end_inset
+
+inference
+\begin_inset Quotes erd
+\end_inset
+
+ to get cluster assignments.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Estimating/Learning the Gaussian Mixture Model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+One approach to learning in probabilistic models is 
+\series bold
+maximum likelihood
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+find parameter values that give 
+\series bold
+observed data 
+\series default
+the
+\series bold
+ highest likelihood
+\series default
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $\theta=\left(\pi,\mu,\Sigma\right)$
+\end_inset
+
+ be the parameters for GMM.
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Observed likelihood for 
+\begin_inset Formula $\cd=\left(x_{1},\ldots,x_{n}\right)$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+p(\cd)=\prod_{i=1}^{n}p(x_{i})=\prod_{i=1}^{n}\sum_{z=1}^{k}p(x_{i},z)\pause=\prod_{i=1}^{n}\sum_{z=1}^{k}\pi_{z}\cn\left(x\mid\mu_{z},\Sigma_{z}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+In principle, just need to find
+\begin_inset Formula 
+\[
+\argmax_{\pi,\mu,\Sigma}\prod_{i=1}^{n}\sum_{z=1}^{k}\pi_{z}\cn\left(x\mid\mu_{z},\Sigma_{z}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Unfortunately, this is very difficult.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Estimating/Learning the Gaussian Mixture Model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+One approach to learning is 
+\series bold
+maximum likelihood
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+find parameter values with 
+\series bold
+highest likelihood
+\series default
+ for the 
+\series bold
+observed data
+\series default
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+The model likelihood for 
+\begin_inset Formula $\cd=\left(x_{1},\ldots,x_{n}\right)$
+\end_inset
+
+ sampled iid from a GMM is
+\begin_inset Formula 
+\begin{eqnarray*}
+L(\pi,\mu,\Sigma) & = & \prod_{i=1}^{n}p(x_{i})\\
+\pause & = & \prod_{i=1}^{n}\sum_{z=1}^{k}\pi_{z}\cn\left(x_{i}\mid\mu_{z},\Sigma_{z}\right).
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+As usual, we'll take our objective function to be the log of this:
+\begin_inset Formula 
+\begin{eqnarray*}
+J(\pi,\mu,\Sigma) & = & \sum_{i=1}^{n}\log\left\{ \sum_{z=1}^{k}\pi_{z}\cn\left(x_{i}\mid\mu_{z},\Sigma_{z}\right)\right\} 
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Review: Estimating a Gaussian Distribution
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Recall that the density for 
+\begin_inset Formula $x\sim\cn\left(\mu,\Sigma\right)$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+p(x\mid\mu,\Sigma)=\frac{1}{\sqrt{|2\pi\Sigma|}}\exp\left(-\frac{1}{2}(x-\mu)^{T}\Sigma^{-1}(x-\mu)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+And the log-density is
+\begin_inset Formula 
+\[
+\log p(x\mid\mu,\Sigma)=-\frac{1}{2}\log\left|2\pi\Sigma\right|-\frac{1}{2}(x-\mu)^{T}\Sigma^{-1}(x-\mu)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+To estimate 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ from a sample 
+\begin_inset Formula $x_{1},\ldots,x_{n}$
+\end_inset
+
+ i.i.d.
+ 
+\begin_inset Formula $\cn\left(\mu,\Sigma\right)$
+\end_inset
+
+, we'll maximize the log joint density:
+\begin_inset Formula 
+\[
+\sum_{i=1}^{n}\log p(x_{i}\mid\mu,\Sigma)=-\frac{n}{2}\log\left|2\pi\Sigma\right|-\frac{1}{2}\sum_{i=1}^{n}(x_{i}-\mu)^{T}\Sigma^{-1}(x_{i}-\mu)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Review: Estimating a Gaussian Distribution
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+To estimate 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ from a sample 
+\begin_inset Formula $x_{1},\ldots,x_{n}$
+\end_inset
+
+ i.i.d.
+ 
+\begin_inset Formula $\cn\left(\mu,\Sigma\right)$
+\end_inset
+
+, we'll maximize the log joint density:
+\begin_inset Formula 
+\[
+J(\mu,\Sigma)=\sum_{i=1}^{n}\log p(x\mid\mu,\Sigma)=-\frac{n}{2}\log\left|2\pi\Sigma\right|-\frac{1}{2}\sum_{i=1}^{n}(x_{i}-\mu)^{T}\Sigma^{-1}(x_{i}-\mu)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+This is a solid exercise in vector and matrix differentiation.
+ Find 
+\begin_inset Formula $\hat{\mu}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{\Sigma}$
+\end_inset
+
+ satisfying
+\begin_inset Formula 
+\[
+\del_{\mu}J(\mu,\Sigma)=0\qquad\del_{\Sigma}J(\mu,\Sigma)=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We get a closed form solution:
+\begin_inset Formula 
+\begin{eqnarray*}
+\hat{\mu}_{\text{MLE}} & = & \frac{1}{n}\sum_{i=1}^{n}x_{i}\\
+\hat{\Sigma}_{\text{MLE}} & = & \frac{1}{n}\sum_{i=1}^{n}\left(x_{i}-\hat{\mu}_{\text{MLE}}\right)^{T}\left(x_{i}-\hat{\mu}_{\text{MLE}}\right)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Point of the next slide is to illustate that the sum blocks the log from
+ simplifying things (the log and the exp canceling out)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Properties of the GMM Log-Likelihood
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+GMM log-likelihood:
+\begin_inset Formula 
+\begin{eqnarray*}
+J(\pi,\mu,\Sigma) & = & \sum_{i=1}^{n}\log\left\{ \sum_{z=1}^{k}\frac{\pi_{z}}{\sqrt{|2\pi\Sigma_{z}|}}\exp\left(-\frac{1}{2}(x-\mu_{z})^{T}\Sigma_{z}^{-1}(x-\mu_{z})\right)\right\} 
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Let's compare to the log-likelihood for a single Gaussian:
+\begin_inset Formula 
+\[
+J(\mu,\Sigma)=-\frac{n}{2}\log\left|2\pi\Sigma\right|-\frac{1}{2}\sum_{i=1}^{n}(x_{i}-\mu)^{T}\Sigma^{-1}(x_{i}-\mu)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+For a single Gaussian, the 
+\begin_inset Formula $\log$
+\end_inset
+
+ cancels the 
+\begin_inset Formula $\exp$
+\end_inset
+
+ in the Gaussian density.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\implies$
+\end_inset
+
+ Things simplify a lot.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+For the GMM, the sum inside the 
+\begin_inset Formula $\log$
+\end_inset
+
+ prevents this cancellation.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\implies$
+\end_inset
+
+ Expression more complicated.
+ No closed form expression for MLE.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Issues with MLE for GMM
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Identifiability Issues for GMM
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose we have found parameters 
+\begin_inset Formula 
+\begin{eqnarray*}
+\text{Cluster probabilities}: &  & \pi=\left(\pi_{1},\ldots,\pi_{k}\right)\\
+\text{Cluster means}: &  & \mu=\left(\mu_{1},\ldots,\mu_{k}\right)\\
+\text{Cluster covariance matrices:} &  & \Sigma=\left(\Sigma_{1},\ldots\Sigma_{k}\right)
+\end{eqnarray*}
+
+\end_inset
+
+ that are at a local minimum.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+What happens if we shuffle the clusters? e.g.
+ Switch the labels for clusters 1 and 2.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+We'll get the same likelihood.
+ How many such equivalent settings are there?
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Assuming all clusters are distinct, there are 
+\begin_inset Formula $k!$
+\end_inset
+
+ equivalent solutions.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Not a problem 
+\emph on
+per se
+\emph default
+, but something to be aware of.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Singularities for GMM
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Consider the following GMM for 7 data points:
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename gmm-singularity.png
+	lyxscale 50
+	height 40theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Let 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ be the variance of the skinny component.
+\end_layout
+
+\begin_layout Itemize
+What happens to the likelihood as 
+\begin_inset Formula $\sigma^{2}\to0$
+\end_inset
+
+?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+In practice, we end up in local minima that do not have this problem.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Or keep restarting optimization until we do.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Bayesian approach or regularization will also solve the problem.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Bishop's 
+\backslash
+emph{Pattern recognition and machine learning}, Figure 9.7.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Really need a reference or something to see if this thing actually even
+ works...
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Gradient Descent / SGD for GMM
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+What about running gradient descent or SGD on
+\begin_inset Formula 
+\begin{eqnarray*}
+J(\pi,\mu,\Sigma) & = & -\sum_{i=1}^{n}\log\left\{ \sum_{z=1}^{k}\pi_{z}\cn\left(x_{i}\mid\mu_{z},\Sigma_{z}\right)\right\} ?
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Can be done, in principle – but need to be clever about it.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Each matrix 
+\begin_inset Formula $\Sigma_{1},\ldots,\Sigma_{k}$
+\end_inset
+
+ has to be positive semidefinite.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+How to maintain that constraint?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Rewrite 
+\begin_inset Formula $\Sigma_{i}=M_{i}M_{i}^{T}$
+\end_inset
+
+, where 
+\begin_inset Formula $M_{i}$
+\end_inset
+
+ is an unconstrained matrix.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Then 
+\begin_inset Formula $\Sigma_{i}$
+\end_inset
+
+ is positive semidefinite.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Even then, pure gradient-based methods have trouble.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+See Hosseini and Sra's 
+\begin_inset CommandInset href
+LatexCommand href
+name "Manifold Optimization for Gaussian Mixture Models"
+target "https://arxiv.org/abs/1506.07677"
+literal "false"
+
+\end_inset
+
+ for discussion and further references.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Cholesky Decomposition for SPD Matrices
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Theorem
+Every symmetric positive definite matrix 
+\begin_inset Formula $A\in\reals^{d\times d}$
+\end_inset
+
+ has a unique 
+\series bold
+Cholesky decomposition
+\series default
+:
+\begin_inset Formula 
+\[
+A=LL^{T},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $L$
+\end_inset
+
+ a 
+\series bold
+lower triangular matrix
+\series default
+ with positive diagonal elements.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+A lower triangular matrix has half the number of parameters.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Symmetric positive definite is better because avoids singularities.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Requires a non-negativity constraint on diagonal elements.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+e.g.
+ Use projected SGD method like we did for the Lasso.
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+The EM Algorithm for GMM
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+MLE for Gaussian Model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let's start by considering the MLE for the Gaussian model.
+\end_layout
+
+\begin_layout Itemize
+For data 
+\begin_inset Formula $\cd=\left\{ x_{1},\ldots,x_{n}\right\} $
+\end_inset
+
+, the log likelihood is given by
+\begin_inset Formula 
+\[
+\sum_{i=1}^{n}\log\cn\left(x_{i}\mid\mu,\Sigma\right)=-\frac{nd}{2}\log\left(2\pi\right)-\frac{n}{2}\log\left|\Sigma\right|-\frac{1}{2}\sum_{i=1}^{n}(x_{i}-\mu)'\Sigma^{-1}(x_{i}-\mu).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+With some calculus, we find that the MLE parameters are
+\begin_inset Formula 
+\begin{eqnarray*}
+\mu_{\text{MLE}} & = & \frac{1}{n}\sum_{i=1}^{n}x_{i}\\
+\pause\Sigma_{\text{MLE}} & = & \frac{1}{n}\sum_{i=1}^{n}\left(x_{i}-\mu_{\text{MLE}}\right)\left(x_{i}-\mu_{\text{MLE}}\right)^{T}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+For GMM, If we knew the cluster assignment 
+\begin_inset Formula $z_{i}$
+\end_inset
+
+ for each 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+, 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+we could compute the MLEs for each cluster.
+ 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Estimating a Fully-Observed GMM
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose we observe 
+\begin_inset Formula $\left(x_{1},z_{1}\right),\ldots,\left(x_{n},z_{n}\right)$
+\end_inset
+
+ i.i.d.
+ from GMM 
+\begin_inset Formula $p(x,z)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Them find MLE is easy:
+\begin_inset Formula 
+\begin{eqnarray*}
+\pause n_{z} & = & \sum_{i=1}^{n}\ind{z_{i}=z}\\
+\pause\hat{\pi}(z) & = & \frac{n_{z}}{n}\\
+\pause\hat{\mu}_{z} & = & \frac{1}{n_{z}}\sum_{i:z_{i}=z}x_{i}\\
+\pause\hat{\Sigma}_{z} & = & \frac{1}{n_{z}}\sum_{i:z_{i}=z}\left(x_{i}-\hat{\mu}_{z}\right)\left(x_{i}-\hat{\mu}_{z}\right)^{T}.
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+In the EM algorithm we will modify the equations to handle our evolving
+ 
+\series bold
+soft assignments
+\series default
+, which we will call 
+\series bold
+responsibilities
+\series default
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Cluster Responsibilities: Some New Notation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Denote the probability that observed value 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ comes from cluster 
+\begin_inset Formula $j$
+\end_inset
+
+ by
+\begin_inset Formula 
+\[
+\gamma_{i}^{j}=p\left(z=j\mid x=x_{i}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The 
+\series bold
+responsibility 
+\series default
+that cluster 
+\begin_inset Formula $j$
+\end_inset
+
+ takes for observation 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Computationally, 
+\begin_inset Formula 
+\begin{eqnarray*}
+\gamma_{i}^{j} & = & p\left(z=j\mid x_{i}\right).\\
+\pause & = & p\left(z=j,x_{i}\right)/p(x_{i})\\
+\pause & = & \frac{\pi_{j}\cn\left(x_{i}\mid\mu_{j},\Sigma_{j}\right)}{\sum_{c=1}^{k}\pi_{c}\cn\left(x_{i}\mid\mu_{c},\Sigma_{c}\right)}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The vector 
+\begin_inset Formula $\left(\gamma_{i}^{1},\ldots,\gamma_{i}^{k}\right)$
+\end_inset
+
+ is exactly the 
+\series bold
+soft assignment
+\series default
+ for 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $n_{c}=\sum_{i=1}^{n}\gamma_{i}^{c}$
+\end_inset
+
+ be the 
+\begin_inset Quotes eld
+\end_inset
+
+number
+\begin_inset Quotes erd
+\end_inset
+
+ of points 
+\begin_inset Quotes eld
+\end_inset
+
+soft assigned
+\begin_inset Quotes erd
+\end_inset
+
+ to cluster 
+\begin_inset Formula $c$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+EM Algorithm for GMM: Overview
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If we know 
+\begin_inset Formula $\mu_{j},\Sigma_{j},\pi_{j}$
+\end_inset
+
+ for all clusters 
+\begin_inset Formula $j$
+\end_inset
+
+, then easy to find
+\begin_inset Formula 
+\[
+\gamma_{i}^{j}=p(z=j\mid x_{i})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+If we know the (soft) assignments, we can easily find estimates for 
+\begin_inset Formula $\pi,\Sigma,\mu$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Repeatedly alternate these two steps.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+EM Algorithm for GMM: Overview
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Initialize parameters 
+\begin_inset Formula $\mu,\Sigma,\pi$
+\end_inset
+
+ (e.g.
+ using 
+\begin_inset Formula $k$
+\end_inset
+
+-means).
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Quotes eld
+\end_inset
+
+E step
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Evaluate the responsibilities using current parameters:
+\begin_inset Formula 
+\[
+\gamma_{i}^{j}=\frac{\pi_{j}\cn\left(x_{i}\mid\mu_{j},\Sigma_{j}\right)}{\sum_{c=1}^{k}\pi_{c}\cn\left(x_{i}\mid\mu_{c},\Sigma_{c}\right)},
+\]
+
+\end_inset
+
+for 
+\begin_inset Formula $i=1,\ldots,n$
+\end_inset
+
+ and 
+\begin_inset Formula $j=1,\ldots,k$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Quotes eld
+\end_inset
+
+M step
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Re-estimate the parameters using responsibilities:
+\begin_inset Formula 
+\begin{eqnarray*}
+\mu_{c}^{\text{new}} & = & \frac{1}{n_{c}}\sum_{i=1}^{n}\gamma_{i}^{c}x_{i}\\
+\pause\Sigma_{c}^{\text{new}} & = & \frac{1}{n_{c}}\sum_{i=1}^{n}\gamma_{i}^{c}\left(x_{i}-\mu_{c}^{\text{new}}\right)\left(x_{i}-\mu_{c}^{\text{new}}\right)^{T}\\
+\pause\pi_{c}^{\text{new}} & = & \frac{n_{c}}{n},
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Repeat from Step 2, until log-likelihood converges.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+EM for GMM
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Initialization
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename 9.8a.png
+	lyxscale 50
+	height 55theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Bishop's 
+\backslash
+emph{Pattern recognition and machine learning}, Figure 9.8.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+EM for GMM
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+First soft assignment:
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename 9.8b.png
+	lyxscale 50
+	height 55theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Bishop's 
+\backslash
+emph{Pattern recognition and machine learning}, Figure 9.8.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+EM for GMM
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+First soft assignment:
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename 9.8c.png
+	lyxscale 50
+	height 55theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Bishop's 
+\backslash
+emph{Pattern recognition and machine learning}, Figure 9.8.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+EM for GMM
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+After 5 rounds of EM:
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename 9.8e.png
+	lyxscale 50
+	height 55theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Bishop's 
+\backslash
+emph{Pattern recognition and machine learning}, Figure 9.8.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+EM for GMM
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+After 20 rounds of EM:
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename 9.8f.png
+	lyxscale 50
+	height 55theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Bishop's 
+\backslash
+emph{Pattern recognition and machine learning}, Figure 9.8.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Relation to 
+\begin_inset Formula $k$
+\end_inset
+
+-Means
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+EM for GMM seems a little like 
+\begin_inset Formula $k$
+\end_inset
+
+-means.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+In fact, 
+\begin_inset Formula $k$
+\end_inset
+
+-means is a limiting case of a 
+\series bold
+restricted
+\series default
+ version of GMM.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+First, fix each cluster covariance matrix to be 
+\begin_inset Formula $\sigma^{2}I$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+(This is the restriction: covariance matrices are fixed, and not iteratively
+ estimated.)
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+As we take 
+\begin_inset Formula $\sigma^{2}\to0$
+\end_inset
+
+, the update equations converge to doing 
+\begin_inset Formula $k$
+\end_inset
+
+-means.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+If you do a quick experiment yourself, you'll find
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Soft assignments converge to hard assignments.
+\end_layout
+
+\begin_layout Itemize
+Has to do with the tail behavior (exponential decay) of Gaussian.
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_body
+\end_document

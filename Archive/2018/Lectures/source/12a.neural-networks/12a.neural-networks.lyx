@@ -1,0 +1,4977 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin /Users/drosen/Dropbox/repos/mlcourse/Lectures/
+\textclass beamer
+\begin_preamble
+\usetheme{CambridgeUS} 
+\beamertemplatenavigationsymbolsempty
+
+
+% Set Color ==============================
+\definecolor{NYUPurple}{RGB}{87,6,140}
+\definecolor{LightPurple}{RGB}{165,11,255}
+
+
+\setbeamercolor{title}{fg=NYUPurple}
+%\setbeamercolor{frametitle}{fg=NYUPurple}
+\setbeamercolor{frametitle}{fg=NYUPurple}
+
+\setbeamercolor{background canvas}{fg=NYUPurple, bg=white}
+\setbeamercolor{background}{fg=black, bg=NYUPurple}
+
+\setbeamercolor{palette primary}{fg=black, bg=gray!30!white}
+\setbeamercolor{palette secondary}{fg=black, bg=gray!20!white}
+\setbeamercolor{palette tertiary}{fg=gray!20!white, bg=NYUPurple}
+
+\setbeamertemplate{headline}{}
+
+\setbeamercolor{parttitle}{fg=NYUPurple}
+\setbeamercolor{sectiontitle}{fg=NYUPurple}
+\setbeamercolor{sectionname}{fg=NYUPurple}
+\setbeamercolor{section page}{fg=NYUPurple}
+
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+\setbeamercolor{section title}{fg=NYUPurple}
+ \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\usebeamercolor[fg]{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+\end_preamble
+\options aspectratio=169,handout
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "eulervm" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "allcolors=NYUPurple,urlcolor=LightPurple"
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\boxbgcolor #ff31d8
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\reals}{\mathbf{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\integers}{\mathbf{Z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\naturals}{\mathbf{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rationals}{\mathbf{Q}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ca}{\mathcal{A}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cb}{\mathcal{B}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cc}{\mathcal{C}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cd}{\mathcal{D}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ce}{\mathcal{E}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cf}{\mathcal{F}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cg}{\mathcal{G}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ch}{\mathcal{H}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ci}{\mathcal{I}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cj}{\mathcal{J}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ck}{\mathcal{K}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cl}{\mathcal{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cm}{\mathcal{M}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cn}{\mathcal{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\co}{\mathcal{O}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cp}{\mathcal{P}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cq}{\mathcal{Q}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\calr}{\mathcal{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cs}{\mathcal{S}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ct}{\mathcal{T}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cu}{\mathcal{U}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cv}{\mathcal{V}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cw}{\mathcal{W}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cx}{\mathcal{X}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cy}{\mathcal{Y}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cz}{\mathcal{Z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ind}[1]{1(#1)}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand{
+\backslash
+pr}{P}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\pr}{\mathbb{P}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\predsp}{\cy}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%{
+\backslash
+hat{
+\backslash
+cy}}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\outsp}{\cy}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\prxy}{P_{\cx\times\cy}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\prx}{P_{\cx}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\prygivenx}{P_{\cy\mid\cx}}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand{
+\backslash
+ex}{E}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ex}{\mathbb{E}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\var}{\textrm{Var}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cov}{\textrm{Cov}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\sgn}{\textrm{sgn}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\sign}{\textrm{sign}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\kl}{\textrm{KL}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\law}{\mathcal{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\eps}{\varepsilon}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\as}{\textrm{ a.s.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\io}{\textrm{ i.o.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ev}{\textrm{ ev.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\convd}{\stackrel{d}{\to}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\eqd}{\stackrel{d}{=}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\del}{\nabla}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\loss}{\ell}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\risk}{R}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\emprisk}{\hat{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\lossfnl}{L}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\emplossfnl}{\hat{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\empminimizer}[1]{\hat{#1}^{*}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\minimizer}[1]{#1^{*}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\optimizer}[1]{#1^{*}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\etal}{\textrm{et. al.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\tr}{\operatorname{tr}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\trace}{\operatorname{trace}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\diag}{\text{diag}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rank}{\text{rank}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\linspan}{\text{span}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\spn}{\text{span}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\proj}{\text{Proj}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\argmax}{\operatornamewithlimits{arg\, max}}
+{\text{argmax}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\argmin}{\operatornamewithlimits{arg\, min}}
+{\text{argmin}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\bfx}{\mathbf{x}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfy}{\mathbf{y}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfl}{\mathbf{\lambda}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfm}{\mathbf{\mu}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\calL}{\mathcal{L}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\vw}{\boldsymbol{w}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vx}{\boldsymbol{x}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vxi}{\boldsymbol{\xi}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\valpha}{\boldsymbol{\alpha}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vbeta}{\boldsymbol{\beta}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vsigma}{\boldsymbol{\sigma}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vtheta}{\boldsymbol{\theta}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vd}{\boldsymbol{d}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vs}{\boldsymbol{s}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vt}{\boldsymbol{t}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vh}{\boldsymbol{h}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ve}{\boldsymbol{e}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vf}{\boldsymbol{f}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vg}{\boldsymbol{g}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vz}{\boldsymbol{z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vk}{\boldsymbol{k}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\va}{\boldsymbol{a}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vb}{\boldsymbol{b}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vv}{\boldsymbol{v}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vy}{\boldsymbol{y}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\dom}{\textrm{\textbf{dom} }}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\renewcommand{\rank}{\text{\textbf{rank }}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\conv}{\textrm{\textbf{conv} }}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\relint}{\text{\textbf{relint }}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\aff}{\text{\textbf{aff }}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\hil}{\ch}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rkhs}{\hil}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ber}{\text{Ber}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+Neural Networks
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+DS-GA 1003 / CSCI-GA 2567
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+optional, use only with long paper titles
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+David S.
+ Rosenberg 
+\end_layout
+
+\begin_layout Date
+April 17, 2018
+\end_layout
+
+\begin_layout Institute
+New York University
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex ArticleMode
+status open
+
+\begin_layout Plain Layout
+Just in article version
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Enumerate
+Add in a better picture of MLP in the
+\begin_inset Quotes erd
+\end_inset
+
+standard recipe
+\begin_inset Quotes erd
+\end_inset
+
+ section?
+\end_layout
+
+\begin_layout Enumerate
+Add in extra slide (based on MLP diagram) on using interior nodes as nonlinear
+ features that we can use elsewhere...
+\end_layout
+
+\begin_layout Enumerate
+give word2vec example?
+\end_layout
+
+\begin_layout Enumerate
+Add in slide to multinomial section on cross-entropy loss and connection
+ to log-likelihood
+\end_layout
+
+\begin_layout Enumerate
+overfeat example?
+\end_layout
+
+\begin_layout Enumerate
+Draw new linear / MLP example computation graphs with bias term.
+\end_layout
+
+\begin_layout Enumerate
+Define a computation graph
+\end_layout
+
+\begin_layout Enumerate
+Dont love the MLP computation graph figure on slide 11 because doesn't have
+ nodes for the parameters, when that's really the way we need to think about
+ these things.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Contents
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\softmax}{\text{Softmax}}
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Objectives
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+What are neural networks, specifically multilayer perceptrons?
+\end_layout
+
+\begin_layout Itemize
+How do they fit into our toolbox?
+\end_layout
+
+\begin_layout Itemize
+When should we consider using them?
+\end_layout
+
+\end_deeper
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Neural Networks Overview
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Linear Prediction Functions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Linear prediction functions: SVM, ridge regression, Lasso
+\end_layout
+
+\begin_layout Itemize
+Generate the feature vector 
+\begin_inset Formula $\phi(x)$
+\end_inset
+
+ by hand.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Learn parameter vector 
+\begin_inset Formula $w$
+\end_inset
+
+ from data.
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename linear-classifier.png
+	lyxscale 40
+	height 40theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+So for 
+\begin_inset Formula $w\in\reals^{3}$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+\text{score}=w^{T}\phi(x)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn
+ 2014.
+ }}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Basic Neural Network (Multilayer Perceptron)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Add an extra layer with 
+\series bold
+hidden nodes 
+\begin_inset Formula $h_{1}$
+\end_inset
+
+ 
+\series default
+and 
+\begin_inset Formula $h_{2}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename neural-network-percy.png
+	lyxscale 40
+	width 60text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+For parameter vector 
+\begin_inset Formula $v_{i}\in\reals^{3}$
+\end_inset
+
+, define 
+\begin_inset Formula 
+\[
+h_{i}=\sigma\left(v_{i}^{T}\phi(x)\right),
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ is a nonlinear 
+\series bold
+activation function
+\series default
+.
+ (We'll come back to this.) 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn
+ 2014.
+ }}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Basic Neural Network (Multilayer Perceptron)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename neural-network-percy.png
+	lyxscale 40
+	width 55text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+For parameters 
+\begin_inset Formula $w_{1},w_{2}\in\reals$
+\end_inset
+
+, score is just
+\begin_inset Formula 
+\begin{eqnarray*}
+\text{score} & = & w_{1}h_{1}+w_{2}h_{2}\\
+\pause & = & w_{1}\sigma(v_{1}^{T}\phi(x))+w_{2}\sigma\left(v_{2}^{T}\phi(x)\right)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+This is the basic recipe.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We can add more hidden nodes.
+\end_layout
+
+\begin_layout Itemize
+We can add more hidden layers.
+ (
+\begin_inset Formula $>1$
+\end_inset
+
+ hidden layer is a 
+\begin_inset Quotes eld
+\end_inset
+
+deep network
+\begin_inset Quotes erd
+\end_inset
+
+.) 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn
+ 2014.
+ }}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Activation Functions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The 
+\series bold
+nonlinearity 
+\series default
+of the activation function is a key ingredient.
+\end_layout
+
+\begin_layout Itemize
+The 
+\series bold
+logistic sigmoid
+\series default
+ function is a classic activation function:
+\begin_inset Formula 
+\[
+\sigma(x)=\frac{1}{1+e^{-x}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align left
+\begin_inset Graphics
+	filename activationFn-Sigmoid.png
+	lyxscale 30
+	height 55theight%
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Activation Functions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The 
+\series bold
+hyperbolic tangent
+\series default
+ is a common activation function these days:
+\begin_inset Formula 
+\[
+\sigma(x)=\tanh\left(x\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename activationFn-Tanh.png
+	lyxscale 30
+	height 55theight%
+
+\end_inset
+
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+(Shape exactly the same – notice just the axis scales have changed)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Activation Functions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+More recently, the 
+\series bold
+rectified linear
+\series default
+ function has been very popular:
+\begin_inset Formula 
+\[
+\sigma(x)=\max(0,x).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+ReLU
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+ is much faster to calculate, and to calculate its derivatives.
+\end_layout
+
+\begin_layout Itemize
+Also often seems to work better.
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename activationFn-Rectified_Linear.png
+	lyxscale 30
+	height 55theight%
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Example: Regression with Multilayer Perceptrons (MLPs)
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+MLP Regression 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Input space
+\series default
+: 
+\begin_inset Formula $\cx=\reals$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Action Space / Output space
+\series default
+: 
+\begin_inset Formula $\ca=\cy=\reals$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Hypothesis space
+\series default
+: MLPs with a single 3-node hidden layer:
+\begin_inset Formula 
+\[
+f(x)=w_{0}+w_{1}h_{1}(x)+w_{2}h_{2}(x)+w_{3}h_{3}(x),
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula 
+\[
+h_{i}(x)=\sigma(v_{i}x+b_{i})\text{ for }i=1,2,3,
+\]
+
+\end_inset
+
+for some fixed nonlinear 
+\begin_inset Quotes eld
+\end_inset
+
+activation function
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Formula $\sigma:\reals\to\reals$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+What are the parameters we need to fit?
+\begin_inset Formula 
+\[
+\pause b_{1},b_{2},b_{3},v_{1},v_{2},v_{3},w_{0},w_{1},w_{2},w_{3}\in\reals
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Multilayer Perceptron for 
+\begin_inset Formula $f:\reals\to\reals$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+MLP with one hidden layer; 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ typically 
+\begin_inset Formula $\tanh$
+\end_inset
+
+ or 
+\begin_inset Formula $\text{RELU}$
+\end_inset
+
+; 
+\begin_inset Formula $x,h_{1},h_{2},h_{3,}\hat{y}\in\reals$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename mlp-1d-regression.png
+	lyxscale 30
+	height 65theight%
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Hidden Layer as Feature/Basis Functions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Can think of 
+\begin_inset Formula $h_{i}=h_{i}(x)=\sigma(v_{i}x+b_{i})$
+\end_inset
+
+ as a feature of 
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Learned by fitting the parameters 
+\begin_inset Formula $v_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $b_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Here are some 
+\begin_inset Formula $h_{i}(x)$
+\end_inset
+
+'s for 
+\begin_inset Formula $\sigma=\tanh$
+\end_inset
+
+ and randomly chosen 
+\begin_inset Formula $v_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $b_{i}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename tanh-hidden-functions.png
+	lyxscale 40
+	height 60theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Samples from the Hypothesis Space
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Choosing 6 sets of random settings for 
+\begin_inset Formula $b_{1},b_{2},b_{3},v_{1},v_{2},v_{3},w_{0},w_{1},w_{2},w_{3}\in\reals$
+\end_inset
+
+, we get the following score functions:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename random-NN-scorefns.png
+	lyxscale 40
+	height 60theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+How to choose the best hypothesis?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+As usual, choose our prediction function using empirical risk minimization.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Our hypothesis space is parameterized by 
+\begin_inset Formula $\theta=\left(b_{1},b_{2},b_{3},v_{1},v_{2},v_{3},w_{0},w_{1},w_{2},w_{3}\right)\in\Theta=\reals^{10}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+For a training set 
+\begin_inset Formula $(x_{1},y_{1}),\ldots,(x_{n},y_{n})$
+\end_inset
+
+, find
+\begin_inset Formula 
+\[
+\hat{\theta}=\argmin_{\theta\in\reals^{10}}\frac{1}{n}\sum_{i=1}^{n}\left(f_{\theta}(x_{i})-y_{i}\right)^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Do we have the tools to find 
+\begin_inset Formula $\hat{\theta}$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Not quite, but close enough...
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Gradient Methods for MLPs
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Note that
+\begin_inset Formula 
+\begin{eqnarray*}
+f(x) & = & w_{0}+\sum_{i=1}^{3}w_{i}h_{i}(x)\\
+\pause & = & w_{0}+\sum_{i=1}^{3}w_{i}\tanh(v_{i}x+b_{i})
+\end{eqnarray*}
+
+\end_inset
+
+is differentiable w.r.t.
+ all parameters.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+We can use gradient-based methods as usual.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+However, the objective function is not convex w.r.t.
+ parameters.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+So we can only hope to converge to a local minimum.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+In practice, this seems to be good enough.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Approximation Properties of Multilayer Perceptrons
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+name "Michael Nielsen's online book (Chapter 4)"
+target "http://neuralnetworksanddeeplearning.com/chap4.html"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Approximation Ability: 
+\begin_inset Formula $f(x)=x^{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+3 hidden units; tanh activation functions 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+The colors in this pic look different in PDF.
+ Blue and Red reverse for some reason.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Blue dots are training points; Dashed lines are hidden unit outputs; Final
+ output in Red.
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename Figure5.3a.pdf
+	lyxscale 150
+	height 60theight%
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Bishop's 
+\backslash
+emph{Pattern Recognition and Machine Learning}, Fig 5.3 }}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Approximation Ability: 
+\begin_inset Formula $f(x)=\sin(x)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+3 hidden units; logistic activation function
+\end_layout
+
+\begin_layout Itemize
+Blue dots are training points; Dashed lines are hidden unit outputs; Final
+ output in Red.
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename Figure5.3b.pdf
+	lyxscale 60
+	height 60theight%
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Bishop's 
+\backslash
+emph{Pattern Recognition and Machine Learning}, Fig 5.3 }}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Approximation Ability: 
+\begin_inset Formula $f(x)=\left|x\right|$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+3 hidden units; logistic activation functions 
+\end_layout
+
+\begin_layout Itemize
+Blue dots are training points; Dashed lines are hidden unit outputs; Final
+ output in Red.
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename Figure5.3c.pdf
+	lyxscale 60
+	height 60theight%
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Bishop's 
+\backslash
+emph{Pattern Recognition and Machine Learning}, Fig 5.3 }}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Approximation Ability: 
+\begin_inset Formula $f(x)=\ind{x>0}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+3 hidden units; logistic activation function
+\end_layout
+
+\begin_layout Itemize
+Blue dots are training points; Dashed lines are hidden unit outputs; Final
+ output in Red.
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename Figure5.3d.pdf
+	lyxscale 60
+	height 60theight%
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Bishop's 
+\backslash
+emph{Pattern Recognition and Machine Learning}, Fig 5.3 }}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Universal Approximation Theorems
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Leshno and Schocken (1991) showed: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A neural network with one [possibly huge] hidden layer can uniformly approximate
+ any continuous function on a compact set iff the activation function is
+ not a polynomial (i.e.
+ tanh, logistic, and ReLU all work, as do 
+\begin_inset Formula $\sin,$
+\end_inset
+
+
+\begin_inset Formula $\cos$
+\end_inset
+
+, 
+\begin_inset Formula $\exp$
+\end_inset
+
+, etc.).
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+In more words:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $\varphi(\cdot)$
+\end_inset
+
+ be any non-polynomial function (an activation function).
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Let 
+\begin_inset Formula $K$
+\end_inset
+
+ be any compact set in 
+\begin_inset Formula $\reals^{m}$
+\end_inset
+
+.
+ (Such as the unit hypercube 
+\begin_inset Formula $[0,1]^{m}.$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Let 
+\begin_inset Formula $f:K\to\reals$
+\end_inset
+
+ be any continuous function on a compact set 
+\begin_inset Formula $K\subset\reals^{m}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Then 
+\begin_inset Formula $\forall\eps>0$
+\end_inset
+
+, there exists an integer 
+\begin_inset Formula $N$
+\end_inset
+
+ (the number of hidden units), and parameters 
+\begin_inset Formula $v_{i},b_{i}\in\reals$
+\end_inset
+
+ and 
+\begin_inset Formula $w_{i}\in\reals^{m}$
+\end_inset
+
+ such that the function
+\begin_inset Formula 
+\[
+F(x)=\sum_{i=1}^{N}v_{i}\varphi(w_{i}^{T}x+b_{i})
+\]
+
+\end_inset
+
+satisfies 
+\begin_inset Formula $\left|F(x)-f(x)\right|<\eps$
+\end_inset
+
+ for all 
+\begin_inset Formula $x\in K$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Leshno & Schocken note that this 
+\series bold
+doesn't work without the bias term
+\series default
+ 
+\begin_inset Formula $b_{i}$
+\end_inset
+
+ (they call it the 
+\series bold
+threshold 
+\series default
+term).
+ (e.g.
+ consider 
+\begin_inset Formula $\varphi=\sin$
+\end_inset
+
+: then we always have 
+\begin_inset Formula $F(-x)=-F(x)$
+\end_inset
+
+) 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Hornik et al and concurrently by Cybenko in 1989 showed we get uniform approxima
+tion for activation functions that are nonconstant, bounded, nondecreasing,
+ and continuous.
+ These functions are known as 
+\series bold
+squashing functions.)
+\series default
+.
+ http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.441.7873&rep=rep1&type=pdf
+ Leshno: https://archive.nyu.edu/bitstream/2451/14384/1/IS-91-26.pdf points
+ out that the bias term (they call the threshold) is essential.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Multilayer Perceptron: The Hypothesis Space
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+What hyperparameters describe a neural network?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Number of hidden layers
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Number of nodes in each hidden layer
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Whether to use bias/intercept terms
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Activation function (typically 
+\begin_inset Formula $\tanh$
+\end_inset
+
+ or ReLU)
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Example neural network hypothesis space:
+\begin_inset Formula 
+\[
+\cf=\left\{ f:\reals^{d}\to\reals\mid f\text{ is a NN with 2 hidden layers, 500 nodes in each}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Functions in 
+\begin_inset Formula $\cf$
+\end_inset
+
+ 
+\series bold
+parameterized by the weights between nodes
+\series default
+ 
+\series bold
+and bias terms
+\series default
+.
+ 
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Neural Network: Loss Functions and Learning
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Neural networks give a 
+\series bold
+new hypothesis space
+\series default
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+But we can use all the 
+\series bold
+same loss functions
+\series default
+ we've used before.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Optimization method of choice: 
+\series bold
+mini-batch SGD
+\series default
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+In practice, lots of little tweaks; see e.g.
+ AdaGrad and Adam
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Neural Network: Objective Function
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+In our simple network, the output score is given by 
+\begin_inset Formula 
+\begin{eqnarray*}
+f(x) & = & w_{1}\sigma(v_{1}^{T}\phi(x))+w_{2}\sigma\left(v_{2}^{T}\phi(x)\right)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Objective with square loss is then
+\begin_inset Formula 
+\[
+J(w,v)=\sum_{i=1}^{n}\left(y_{i}-f_{w,v}(x_{i})\right)^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Note: 
+\begin_inset Formula $J(w,v)$
+\end_inset
+
+ is 
+\series bold
+not convex
+\series default
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+makes optimization much more difficult
+\end_layout
+
+\begin_layout Itemize
+accounts for many of the 
+\begin_inset Quotes eld
+\end_inset
+
+tricks of the trade
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_inset
+
+ 
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Review: Multinomial Logistic Regression
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Recall: Multinomial Logistic Regression
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Setting: 
+\begin_inset Formula $\cx=\reals^{d}$
+\end_inset
+
+, 
+\begin_inset Formula $\cy=\left\{ 1,\ldots,k\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+For each 
+\begin_inset Formula $x$
+\end_inset
+
+, we want to produce a distribution on 
+\begin_inset Formula $k$
+\end_inset
+
+ classes.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Such a distribution is called a 
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+multinoulli
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+categorical
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+ distribution.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Represent categorical distribution by probability vector 
+\begin_inset Formula $\theta=\left(\theta_{1},\ldots,\theta_{k}\right)\in\reals^{k}$
+\end_inset
+
+, where
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\sum_{y=1}^{k}\theta_{y}=1$
+\end_inset
+
+ and 
+\begin_inset Formula $\theta_{y}\ge0$
+\end_inset
+
+ for 
+\begin_inset Formula $y\in\left\{ 1,\ldots,k\right\} $
+\end_inset
+
+.
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+That is, for each 
+\begin_inset Formula $x$
+\end_inset
+
+ and each 
+\begin_inset Formula $y\in\left\{ 1,\ldots,k\right\} $
+\end_inset
+
+, we want to produce a probability where 
+\begin_inset Formula $\sum_{y=1}^{k}\theta_{y}=1$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Multinomial Logistic Regression
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+From each 
+\begin_inset Formula $x$
+\end_inset
+
+, we compute a linear score function for each class: 
+\begin_inset Formula 
+\[
+x\mapsto\left(\left\langle w_{1},x\right\rangle ,\ldots,\left\langle w_{k},x\right\rangle \right)\in\reals^{k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+We need to map this 
+\begin_inset Formula $\reals^{k}$
+\end_inset
+
+ vector into a probability vector 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The 
+\series bold
+softmax function
+\series default
+ maps scores 
+\begin_inset Formula $s=\left(s_{1},\ldots,s_{k}\right)\in\reals^{k}$
+\end_inset
+
+ to a categorical distribution
+\series bold
+: 
+\begin_inset Formula 
+\[
+\left(s_{1},\ldots,s_{k}\right)\mapsto\theta=\softmax\left(s_{1},\ldots,s_{k}\right)=\left(\frac{\exp\left(s_{1}\right)}{\sum_{i=1}^{k}\exp\left(s_{i}\right)},\ldots,\frac{\exp\left(s_{k}\right)}{\sum_{i=1}^{k}\exp\left(s_{i}\right)}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Multinomial Logistic Regression: Learning
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $y\in\left\{ 1,\ldots,k\right\} $
+\end_inset
+
+ be an index denoting a class.
+\end_layout
+
+\begin_layout Itemize
+Then predicted probability for class 
+\begin_inset Formula $y$
+\end_inset
+
+ given 
+\begin_inset Formula $x$
+\end_inset
+
+ is 
+\begin_inset Formula 
+\[
+\hat{p}(y\mid x)=\softmax\left(\left\langle w_{1},x\right\rangle ,\ldots,\left\langle w_{k},x\right\rangle \right)_{y},
+\]
+
+\end_inset
+
+where the 
+\begin_inset Formula $y$
+\end_inset
+
+ subscript indicates taking the 
+\begin_inset Formula $y$
+\end_inset
+
+'th entry of the vector produced 
+\begin_inset Formula $\softmax$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Learning
+\series default
+: Maximize the log-likelihood of training data
+\begin_inset Formula 
+\[
+\argmax_{w_{1},\ldots,w_{k}\in\reals^{d}}\sum_{i=1}^{n}\log\left[\softmax\left(\left\langle w_{1},x_{i}\right\rangle ,\ldots,\left\langle w_{k},x_{i}\right\rangle \right)_{y_{i}}\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+This objective function is concave in 
+\begin_inset Formula $w$
+\end_inset
+
+'s and straightforward to optimize.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Standard MLP for Multiclass
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Nonlinear Generalization of Multinomial Logistic Regression
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Could make each class a separate task / output.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Key change
+\series default
+: Rather than 
+\begin_inset Formula $k$
+\end_inset
+
+ linear score functions
+\begin_inset Formula 
+\[
+x\mapsto\left(\left\langle w_{1},x\right\rangle ,\ldots,\left\langle w_{k},x\right\rangle \right)\in\reals^{k},
+\]
+
+\end_inset
+
+use nonlinear score functions:
+\begin_inset Formula 
+\[
+x\mapsto\left(f_{1}(x),\ldots,f_{k}(x)\right)\in\reals^{k},
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Then predicted probability for class 
+\begin_inset Formula $y\in\left\{ 1,\ldots,k\right\} $
+\end_inset
+
+ given 
+\begin_inset Formula $x$
+\end_inset
+
+ is 
+\begin_inset Formula 
+\[
+\hat{p}(y\mid x)=\softmax\left(f_{1}(x),\ldots,f_{k}(x)\right)_{y}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Nonlinear Generalization of Multinomial Logistic Regression
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Learning
+\series default
+: Maximize the log-likelihood of training data
+\begin_inset Formula 
+\[
+\argmax_{f_{1},\ldots,f_{k}}\sum_{i=1}^{n}\log\left[\softmax\left(f_{1}(x),\ldots,f_{k}(x)\right)_{y_{i}}\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+We could use gradient boosting to get 
+\begin_inset Formula $f_{i}$
+\end_inset
+
+'s as ensembles of regression trees.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Today we'll learn to use a multilayer perceptron for 
+\begin_inset Formula $f:\reals^{d}\to\reals^{k}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Unfortunately, this objective function will not be concave or convex.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+But we can still use gradient methods to find a good local optimum.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Multilayer Perceptron: Standard Recipe
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Input space
+\series default
+: 
+\begin_inset Formula $\cx=\reals^{d}$
+\end_inset
+
+
+\begin_inset Formula $\qquad$
+\end_inset
+
+
+\series bold
+Action space
+\series default
+ 
+\begin_inset Formula $\ca=\reals^{k}$
+\end_inset
+
+ (for 
+\begin_inset Formula $k$
+\end_inset
+
+-class classification).
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $\sigma:\reals\to\reals$
+\end_inset
+
+ be a non-polynomial activation function (e.g.
+ 
+\begin_inset Formula $\tanh$
+\end_inset
+
+ or ReLU).
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Let's take all hidden layers to have 
+\begin_inset Formula $m$
+\end_inset
+
+ units.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+First hidden layer is given by
+\begin_inset Formula 
+\[
+h^{(1)}(x)=\sigma\left(W^{(1)}x+b^{(1)}\right),
+\]
+
+\end_inset
+
+for parameters 
+\begin_inset Formula $W^{(1)}\in\reals^{m\times d}$
+\end_inset
+
+ and 
+\begin_inset Formula $b\in\reals^{m}$
+\end_inset
+
+, and where 
+\begin_inset Formula $\sigma\left(\cdot\right)$
+\end_inset
+
+ is applied to each entry of its argument.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Multilayer Perceptron: Standard Recipe
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Each subsequent hidden layer takes the output 
+\begin_inset Formula $o\in\reals^{m}$
+\end_inset
+
+ of previous layer and produces
+\begin_inset Formula 
+\[
+h^{(j)}(o)=\sigma\left(W^{(j)}o+b^{(j)}\right),\text{ for }j=1,\ldots,D
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $W^{(j)}\in\reals^{m\times m}$
+\end_inset
+
+, 
+\begin_inset Formula $b^{(j)}\in\reals^{m}$
+\end_inset
+
+, and 
+\begin_inset Formula $D$
+\end_inset
+
+ is the number of hidden layers.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Last layer is an affine mapping: 
+\begin_inset Formula 
+\[
+a(o)=W^{(D+1)}o+b^{(D+1)},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $W^{(D+1)}\in\reals^{k\times m}$
+\end_inset
+
+ and 
+\begin_inset Formula $b^{(D+1)}\in\reals^{k}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Multilayer Perceptron: Standard Recipe
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+So the full neural network function is given by the composition of layers:
+\begin_inset Formula 
+\begin{eqnarray*}
+f(x) & = & \left(a\circ h^{(D)}\circ\cdots\circ h^{(1)}\right)(x)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+This gives us the 
+\begin_inset Formula $k$
+\end_inset
+
+ score functions we need.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+To train this we maximize the conditional log-likelihood for the training
+ data:
+\begin_inset Formula 
+\[
+J(\theta)=\frac{1}{n}\sum_{i=1}^{n}\log\left[\text{\softmax}(f(x_{i}))_{y_{i}}\right],
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\theta=\left(W^{(1)},\ldots,W^{(D+1)},b^{(1)},\ldots,b^{(D+1)}\right)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Gradient of a Hidden Computation Node
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For simplicity, consider the a hidden layer with a single node and tanh
+ nonlinearity:
+\begin_inset Formula 
+\[
+o(x)=\tanh(w^{T}x+b)
+\]
+
+\end_inset
+
+for parameters 
+\begin_inset Formula $b\in\reals$
+\end_inset
+
+ and 
+\begin_inset Formula $w\in\reals^{d}$
+\end_inset
+
+.
+ We can represent this in a computation graph as
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename hidden-comp-node.png
+	lyxscale 20
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Suppose we can write a first order approximation to 
+\begin_inset Formula $o$
+\end_inset
+
+ as
+\begin_inset Formula 
+\[
+o\approx g_{w}^{T}w+g_{b}b+c,
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $c,g_{b}\in\reals$
+\end_inset
+
+ and 
+\begin_inset Formula $g_{w}\in\reals^{d}$
+\end_inset
+
+ may depend on 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Then the we know that 
+\begin_inset Formula $g_{w}$
+\end_inset
+
+ and 
+\begin_inset Formula $g_{b}$
+\end_inset
+
+ are the gradients of 
+\begin_inset Formula $o$
+\end_inset
+
+ w.r.t.
+ 
+\begin_inset Formula $w$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+ respectively.
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Multiclass Classification: Cross-Entropy Loss
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Network can do better if it 
+\begin_inset Quotes eld
+\end_inset
+
+knows
+\begin_inset Quotes erd
+\end_inset
+
+ that classes are mutually exclusive.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Need to introduce a joint loss across the outputs.
+ 
+\end_layout
+
+\begin_layout Itemize
+Joint loss function (cross-entropy/deviance):
+\begin_inset Formula 
+\[
+\ell(w,v)=-\sum_{i=1}^{n}\sum_{i=1}^{K}y_{ik}\log f_{k}(x_{i}),
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $y_{ik}=\ind{y_{i}=k}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+This is the negative log-likelihood we get for softmax predictions in multinomia
+l logistic regression.
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Section
+Neural Network Regularization
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Neural Network Regularization
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Neural networks are very expressive.
+\end_layout
+
+\begin_layout Itemize
+Correspond to big hypothesis spaces.
+\end_layout
+
+\begin_layout Itemize
+Many approaches are used for regularization.
+\end_layout
+
+\end_deeper
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Tikhonov Regularization? Sure.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Can add an 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ and/or 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ regularization terms to our objective:
+\begin_inset Formula 
+\[
+J(w,v)=\sum_{i=1}^{n}\left(y_{i}-f_{w,v}(x_{i})\right)^{2}+\lambda_{1}\|w\|^{2}+\lambda_{2}\|v\|^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+In neural network literature, this is often called 
+\series bold
+weight decay
+\series default
+.
+\end_layout
+
+\end_deeper
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Regularization by Early Stopping
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Plain Layout
+A particular recipe for early stopping:
+\end_layout
+
+\begin_layout Itemize
+As we train, check performance on validation set every once in a while.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Don't stop immediately after validation error goes back up.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The 
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+patience
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+ parameter: the number of training steps to continue after finding a minimum
+ of validation error.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Start with patience = 10000.
+\end_layout
+
+\begin_layout Itemize
+Whenever we find a minimum at step 
+\begin_inset Formula $T$
+\end_inset
+
+,
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Set 
+\begin_inset Formula $\text{patience}\gets\text{patience}+cT$
+\end_inset
+
+, for some constant 
+\begin_inset Formula $c$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Then run at least patience extra steps before stopping.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{See 
+\backslash
+url{http://arxiv.org/pdf/1206.5533v2.pdf} for details.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Max-Norm Regularization
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Max-norm regularization
+\series default
+: Enforce max norm of incoming weight vector at every hidden node to be
+ bounded:
+\begin_inset Formula 
+\[
+\|w\|_{2}\le c.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Project any 
+\begin_inset Formula $w$
+\end_inset
+
+ that's too large onto ball of radius 
+\begin_inset Formula $c$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+It's like 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+-complexity control, but locally at each node.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Why? 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+There are heuristic justifications, but proof is in the performance.
+\end_layout
+
+\begin_layout Itemize
+We'll see below.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{See 
+\backslash
+url{http://www.cs.toronto.edu/~rsalakhu/papers/srivastava14a.pdf} for details.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Dropout for Regularization
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A recent trick for improving generalization performance is 
+\series bold
+dropout
+\series default
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+A fixed probability 
+\begin_inset Formula $p$
+\end_inset
+
+ is chosen.
+\end_layout
+
+\begin_layout Itemize
+Before every stochastic gradient step, 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+each node is selected for 
+\begin_inset Quotes eld
+\end_inset
+
+dropout
+\begin_inset Quotes erd
+\end_inset
+
+ with probability 
+\begin_inset Formula $p$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+a dropout node is removed, along with its links
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+after the stochastic gradient step, all nodes are restored.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Plain Layout
+\align left
+\begin_inset Graphics
+	filename dropout.png
+	lyxscale 40
+	height 40theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Figure from 
+\backslash
+url{http://www.cs.toronto.edu/~rsalakhu/papers/srivastava14a.pdf}.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Dropout for Regularization
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+At prediction time
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+all nodes are present
+\end_layout
+
+\begin_layout Itemize
+outgoing weights are multiplied by 
+\begin_inset Formula $p$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+\align left
+\begin_inset Graphics
+	filename dropout-reweighting.png
+	lyxscale 40
+	width 60text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Dropout probability set using a validation set, or just set at 
+\begin_inset Formula $0.5$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Closer to 
+\begin_inset Formula $0.8$
+\end_inset
+
+ usually works better for input units.
+\end_layout
+
+\end_deeper
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Figure from 
+\backslash
+url{http://www.cs.toronto.edu/~rsalakhu/papers/srivastava14a.pdf}.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Dropout: Why might this help?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Since any node may randomly disappear, 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+forced to 
+\begin_inset Quotes eld
+\end_inset
+
+spread the knowledge
+\begin_inset Quotes erd
+\end_inset
+
+ across the nodes.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Each hidden node only gets a randomly chosen sample of its inputs,
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+so won't become too reliant on any single input.
+\end_layout
+
+\begin_layout Itemize
+More robust.
+ 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Dropout: Does it help?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Plain Layout
+Results from MNIST (handwritten digit recognition) 
+\end_layout
+
+\begin_layout Plain Layout
+\align left
+\begin_inset Graphics
+	filename dropout-results.png
+	lyxscale 40
+	width 90text%
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Figure from 
+\backslash
+url{http://www.cs.toronto.edu/~rsalakhu/papers/srivastava14a.pdf}.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+How big a network?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+How many hidden units?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Current conventional wisdom: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+With proper regularization, too many doesn't hurt.
+\end_layout
+
+\begin_layout Itemize
+Except in computation time.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Plain Layout
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Neural Networks for Features 
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+OverFeat: Features
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+OverFeat is a neural network for image classification
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Trained on the huge ImageNet dataset
+\end_layout
+
+\begin_layout Itemize
+Lots of computing resources used for training the network.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+All those hidden layers of the network are very valuable 
+\series bold
+features
+\series default
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Paper: 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+CNN Features off-the-shelf: an Astounding Baseline for Recognition
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Showed that using features from OverFeat makes it easy to achieve state-of-the-a
+rt performance on new vision tasks.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{OverFeat code is at 
+\backslash
+url{https://github.com/sermanet/OverFeat}}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Multiple Output Networks
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Multiple Output Neural Networks
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Very easy to add extra outputs to neural network structure.
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename multiple-output-nn.png
+	lyxscale 50
+	height 70theight%
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Andrew Ng's CS229 Deep Learning slides (
+\backslash
+url{http://cs229.stanford.edu/materials/CS229-DeepLearning.pdf})}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Multitask Learning
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose 
+\begin_inset Formula $\cx=\left\{ \mbox{Natural Images}\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+We have two tasks:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Does the image have a cat?
+\end_layout
+
+\begin_layout Itemize
+Does the image have a dog?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Can have one output for each task.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Seems plausible that basic pixel features would be shared by tasks.
+\end_layout
+
+\begin_layout Itemize
+Learn them on the same neural network – benefit both tasks.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Objective function must combine losses from both predictions, e.g.
+ by averaging.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Single Task with 
+\begin_inset Quotes eld
+\end_inset
+
+Extra Tasks
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Only one task we're interested in.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Gather data from related tasks.
+ 
+\end_layout
+
+\begin_layout Itemize
+Train them along with the task you're interested in.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+No related tasks? Another trick:
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Choose any input feature.
+\end_layout
+
+\begin_layout Itemize
+Change it's value to zero.
+\end_layout
+
+\begin_layout Itemize
+Make the prediction problem to predict the value of that feature.
+\end_layout
+
+\begin_layout Itemize
+Can help make model more robust (not depending too heavily on any single
+ input).
+ 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Neural Networks: When and why?
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Neural Networks Benefit from Big Data
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename andrew-ng-big-data.png
+	lyxscale 50
+	width 80text%
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Andrew Ng's CS229 Deep Learning slides (
+\backslash
+url{http://cs229.stanford.edu/materials/CS229-DeepLearning.pdf})}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Big Data Requires Big Resources
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Best results always involve GPU processing.
+\end_layout
+
+\begin_layout Itemize
+Often on large networks.
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename google-brain.png
+	lyxscale 50
+	height 65theight%
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Andrew Ng's CS229 Deep Learning slides (
+\backslash
+url{http://cs229.stanford.edu/materials/CS229-DeepLearning.pdf})}}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Neural Networks: When to Use?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Computer vision problems
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+All state of the art methods use neural networks
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Speech recognition
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+All state of the art methods use neural networks
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Natural Language problems
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Maybe.
+ State-of-the-art, but not as large a margin.
+\end_layout
+
+\begin_layout Itemize
+Check out 
+\begin_inset Quotes eld
+\end_inset
+
+word2vec
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://code.google.com/p/word2vec/
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Represents words using real-valued vectors.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Potentially much better than bag of words.
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_body
+\end_document

@@ -1,0 +1,891 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin /Users/drosen/Dropbox/repos/mlcourse/Notes/
+\textclass paper
+\use_default_options false
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding iso8859-1
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize letterpaper
+\use_geometry false
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 5
+\tocdepth 5
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\reals}{\mathbf{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\integers}{\mathbf{Z}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\naturals}{\mathbf{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rationals}{\mathbf{Q}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ca}{\mathcal{A}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cb}{\mathcal{B}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cc}{\mathcal{C}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cd}{\mathcal{D}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ce}{\mathcal{E}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cf}{\mathcal{F}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cg}{\mathcal{G}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ch}{\mathcal{H}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ci}{\mathcal{I}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cj}{\mathcal{J}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ck}{\mathcal{K}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cl}{\mathcal{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cm}{\mathcal{M}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cn}{\mathcal{N}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\co}{\mathcal{O}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cp}{\mathcal{P}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cq}{\mathcal{Q}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\calr}{\mathcal{R}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cs}{\mathcal{S}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ct}{\mathcal{T}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cu}{\mathcal{U}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cv}{\mathcal{V}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cw}{\mathcal{W}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cx}{\mathcal{X}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cy}{\mathcal{Y}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cz}{\mathcal{Z}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ind}[1]{1(#1)}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\pr}{\mathbb{P}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\predsp}{\cy}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\outsp}{\cy}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\prxy}{P_{\cx\times\cy}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\prx}{P_{\cx}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\prygivenx}{P_{\cy\mid\cx}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ex}{\mathbb{E}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\var}{\textrm{Var}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cov}{\textrm{Cov}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\sgn}{\textrm{sgn}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\sign}{\textrm{sign}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\kl}{\textrm{KL}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\law}{\mathcal{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\eps}{\varepsilon}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\as}{\textrm{ a.s.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\io}{\textrm{ i.o.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ev}{\textrm{ ev.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\convd}{\stackrel{d}{\to}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\eqd}{\stackrel{d}{=}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\del}{\nabla}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\loss}{V}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\risk}{R}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\emprisk}{\hat{R}_{\ell}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\lossfnl}{L}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\emplossfnl}{\hat{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\empminimizer}[1]{\hat{#1}_{\ell}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\minimizer}[1]{#1_{*}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\etal}{\textrm{et. al.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\tr}{\operatorname{tr}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\trace}{\operatorname{trace}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\diag}{\text{diag}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\rank}{\text{rank}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\linspan}{\text{span}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\proj}{\text{Proj}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\argmax}{\operatornamewithlimits{arg\, max}}
+{\mbox{argmax}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\argmin}{\operatornamewithlimits{arg\, min}}
+{\mbox{argmin}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfx}{\mathbf{x}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfy}{\mathbf{y}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfl}{\mathbf{\lambda}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfm}{\mathbf{\mu}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\calL}{\mathcal{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vw}{\boldsymbol{w}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vx}{\boldsymbol{x}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vxi}{\boldsymbol{\xi}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\valpha}{\boldsymbol{\alpha}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vbeta}{\boldsymbol{\beta}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vsigma}{\boldsymbol{\sigma}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vmu}{\boldsymbol{\mu}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vtheta}{\boldsymbol{\theta}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vd}{\boldsymbol{d}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vs}{\boldsymbol{s}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vt}{\boldsymbol{t}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vh}{\boldsymbol{h}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ve}{\boldsymbol{e}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vf}{\boldsymbol{f}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vg}{\boldsymbol{g}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vz}{\boldsymbol{z}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vk}{\boldsymbol{k}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\va}{\boldsymbol{a}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vb}{\boldsymbol{b}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vv}{\boldsymbol{v}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vy}{\boldsymbol{y}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\hil}{\ch}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\rkhs}{\hil}
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Title
+SVM: Main Takeaways from Duality
+\end_layout
+
+\begin_layout Author
+David S.
+ Rosenberg
+\end_layout
+
+\begin_layout Date
+February 19, 2018
+\end_layout
+
+\begin_layout Abstract
+A traditional presentation on SVM can be a bit brutal, as it typically includes
+ a development of convex optimization and Lagrangian duality.
+ In this short note, we first recap the setup and the results derived in
+ such a lecture, and in the last section we'll highlight the practical takeaways.
+\end_layout
+
+\begin_layout Section
+The Support Vector Machine
+\end_layout
+
+\begin_layout Standard
+For a linear support vector machine (SVM), we use the hypothesis space of
+ affine functions
+\begin_inset Formula 
+\[
+\cf=\left\{ f(x)=w^{T}x+b\mid w\in\reals^{d},b\in\reals\right\} 
+\]
+
+\end_inset
+
+and evaluate them with respect to the 
+\series bold
+SVM loss function
+\series default
+, also known as the 
+\series bold
+hinge loss
+\series default
+.
+ The hinge loss is a margin-based loss defined as 
+\begin_inset Formula $\ell(m)=\max\left(0,1-m\right)$
+\end_inset
+
+, where 
+\begin_inset Formula $m=yf(x)$
+\end_inset
+
+ is the margin for the prediction function 
+\begin_inset Formula $f$
+\end_inset
+
+ on the example 
+\begin_inset Formula $(x,y)$
+\end_inset
+
+.
+ The SVM traditionally uses an 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ regularization term, and the objective function is written as
+\begin_inset Formula 
+\[
+J(w,b)=\frac{1}{2}||w||^{2}+\frac{c}{n}\sum_{i=1}^{n}\max\left(0,1-y_{i}\left[w^{T}x_{i}+b\right]\right).
+\]
+
+\end_inset
+
+Note that the 
+\begin_inset Formula $w$
+\end_inset
+
+ parameter is regularized, while the bias term 
+\begin_inset Formula $b$
+\end_inset
+
+ is not regularized.
+ 
+\end_layout
+
+\begin_layout Standard
+Rather than the typical 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ regularization parameter attached to the 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ penalty, for SVMs it's traditional to have a 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $c$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ parameter attached to the empirical risk component.
+ The larger 
+\begin_inset Formula $c$
+\end_inset
+
+ is, the more relative importance we attach to minimizing the empirical
+ risk compared to finding a 
+\begin_inset Quotes eld
+\end_inset
+
+simple
+\begin_inset Quotes erd
+\end_inset
+
+ hypothesis with small 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ norm.
+ 
+\end_layout
+
+\begin_layout Section
+Lagrangian Duality: What we did
+\end_layout
+
+\begin_layout Standard
+We reformulated the SVM optimization problem as a quadratic program, and
+ then we found the dual optimization problem:
+\begin_inset Formula 
+\begin{align*}
+\sup_{\alpha} & \sum_{i=1}^{n}\alpha_{i}-\frac{1}{2}\sum_{i,j=1}^{n}\alpha_{i}\alpha_{j}y_{i}y_{j}x_{j}^{T}x_{i}\\
+\mbox{s.t.} & \sum_{i=1}^{n}\alpha_{i}y_{i}=0\\
+ & \alpha_{i}\in\left[0,\frac{c}{n}\right].
+\end{align*}
+
+\end_inset
+
+We noted that the primal problem satisfies Slater's condition, and thus
+ we have strong duality.
+ This allowed us to find a relationship between the primal optimal solution
+ and the dual optimal solution:
+\begin_inset Formula 
+\begin{eqnarray*}
+w^{*} & = & \sum_{i=1}^{n}\alpha_{i}^{*}y_{i}x_{i}\\
+b^{*} & = & y_{j}-x_{j}^{T}w^{*},
+\end{eqnarray*}
+
+\end_inset
+
+where 
+\begin_inset Formula $j$
+\end_inset
+
+ is any index for which 
+\begin_inset Formula $\alpha_{i}^{*}\in\left(0,\frac{c}{n}\right)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+We then applied the complementary slackness conditions (guaranteed by strong
+ duality) to derive the following relations between the margin of a training
+ point 
+\begin_inset Formula $\left(x_{i},y_{i}\right)$
+\end_inset
+
+ and the corresponding weight for that training point 
+\begin_inset Formula $\alpha_{i}^{*}$
+\end_inset
+
+, in the expression for 
+\begin_inset Formula $w^{*}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{eqnarray*}
+\alpha_{i}^{*}=0 & \implies & y_{i}f^{*}(x_{i})\ge1\\
+\alpha_{i}^{*}\in\left(0,\frac{c}{n}\right) & \implies & y_{i}f^{*}(x_{i})=1\\
+\alpha_{i}^{*}=\frac{c}{n} & \implies & y_{i}f^{*}(x_{i})\le1
+\end{eqnarray*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{eqnarray*}
+y_{i}f^{*}(x_{i})<1 & \implies & \alpha_{i}^{*}=\frac{c}{n}\\
+y_{i}f^{*}(x_{i})=1 & \implies & \alpha_{i}^{*}\in\left[0,\frac{c}{n}\right]\\
+y_{i}f^{*}(x_{i})>1 & \implies & \alpha_{i}^{*}=0
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Key Takeaways
+\end_layout
+
+\begin_layout Enumerate
+The solution 
+\begin_inset Formula $w^{*}=\sum_{i=1}^{n}\alpha_{i}^{*}y_{i}x_{i}$
+\end_inset
+
+ is a linear combination of the training input vectors 
+\begin_inset Formula $x_{1},\ldots,x_{n}$
+\end_inset
+
+.
+ People often say that 
+\begin_inset Formula $w^{*}$
+\end_inset
+
+ is 
+\series bold
+in the span of the data.
+ 
+\series default
+While this is 
+\series bold
+not
+\series default
+ unique to SVMs, and there are much simpler ways to derive this result (such
+ as with basic linear algebra via the representer theorem), we need this
+ to understand some of the other takeaways.
+\end_layout
+
+\begin_layout Enumerate
+While finding 
+\begin_inset Formula $w^{*}$
+\end_inset
+
+ to be in the span of the data is common with linear methods, with SVMs
+ we find that the expansion is often 
+\series bold
+sparse
+\series default
+ in the data.
+ In other words, many of the 
+\begin_inset Formula $\alpha_{i}^{*}$
+\end_inset
+
+'s may be exactly 
+\begin_inset Formula $0$
+\end_inset
+
+.
+ The complementary slackness conditions tell us exactly when this happens:
+ it is guaranteed to happen for any training point with 
+\begin_inset Formula $y_{i}f^{*}(x_{i})>1$
+\end_inset
+
+ (i.e.
+ on the 
+\begin_inset Quotes eld
+\end_inset
+
+good side of the margin
+\begin_inset Quotes erd
+\end_inset
+
+) and may also happen with 
+\begin_inset Formula $y_{i}f^{*}(x_{i})=1$
+\end_inset
+
+ (exactly on the margin).
+ The 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+'s that have nonzero coefficients (i.e.
+ 
+\begin_inset Formula $\alpha_{i}^{*}>0$
+\end_inset
+
+) are called 
+\series bold
+support vectors.
+ 
+\series default
+The sparsity of the support vectors becomes more important when we introduce
+ the 
+\begin_inset Quotes eld
+\end_inset
+
+kernelized SVM
+\begin_inset Quotes erd
+\end_inset
+
+, for which we need to store all the support vectors to make new predictions.
+ So sparsity can be important when we have a very large training set.
+\end_layout
+
+\begin_layout Enumerate
+The amount of weight we can put on any single example in the final solution
+ is controlled by 
+\begin_inset Formula $c$
+\end_inset
+
+, since 
+\begin_inset Formula $\alpha_{i}^{*}\in\left[0,\frac{c}{n}\right]$
+\end_inset
+
+.
+ So, in a certain sense, no single training point can have too much influence
+ on the final solution.
+ However, we shouldn't read too much into this.
+ Note that a single training point can still dominate the expression for
+ 
+\begin_inset Formula $w^{*}$
+\end_inset
+
+ just by being very far away from the other points in input space.
+ To investigate: How does the influence of a single extreme training point
+ on 
+\begin_inset Formula $w^{*}$
+\end_inset
+
+ change if we use square loss rather than hinge loss?
+\end_layout
+
+\end_body
+\end_document

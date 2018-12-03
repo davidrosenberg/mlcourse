@@ -1,0 +1,1012 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin /Users/drosen/Dropbox/repos/mlcourse/in-prep/
+\textclass paper
+\use_default_options false
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding iso8859-1
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "default" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize letterpaper
+\use_geometry false
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 5
+\tocdepth 5
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\reals}{\mathbf{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\integers}{\mathbf{Z}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\naturals}{\mathbf{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rationals}{\mathbf{Q}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ca}{\mathcal{A}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cb}{\mathcal{B}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cc}{\mathcal{C}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cd}{\mathcal{D}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ce}{\mathcal{E}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cf}{\mathcal{F}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cg}{\mathcal{G}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ch}{\mathcal{H}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ci}{\mathcal{I}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cj}{\mathcal{J}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ck}{\mathcal{K}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cl}{\mathcal{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cm}{\mathcal{M}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cn}{\mathcal{N}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\co}{\mathcal{O}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cp}{\mathcal{P}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cq}{\mathcal{Q}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\calr}{\mathcal{R}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cs}{\mathcal{S}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ct}{\mathcal{T}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cu}{\mathcal{U}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cv}{\mathcal{V}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cw}{\mathcal{W}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cx}{\mathcal{X}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cy}{\mathcal{Y}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cz}{\mathcal{Z}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ind}[1]{1(#1)}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\pr}{\mathbb{P}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\predsp}{\cy}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\outsp}{\cy}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\prxy}{P_{\cx\times\cy}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\prx}{P_{\cx}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\prygivenx}{P_{\cy\mid\cx}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ex}{\mathbb{E}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\var}{\textrm{Var}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cov}{\textrm{Cov}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\sgn}{\textrm{sgn}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\sign}{\textrm{sign}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\kl}{\textrm{KL}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\law}{\mathcal{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\eps}{\varepsilon}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\as}{\textrm{ a.s.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\io}{\textrm{ i.o.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ev}{\textrm{ ev.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\convd}{\stackrel{d}{\to}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\eqd}{\stackrel{d}{=}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\del}{\nabla}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\loss}{V}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\risk}{R}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\emprisk}{\hat{R}_{\ell}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\lossfnl}{L}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\emplossfnl}{\hat{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\empminimizer}[1]{\hat{#1}_{\ell}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\minimizer}[1]{#1_{*}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\etal}{\textrm{et. al.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\tr}{\operatorname{tr}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\trace}{\operatorname{trace}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\diag}{\text{diag}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\rank}{\text{rank}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\linspan}{\text{span}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\proj}{\text{Proj}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\argmax}{\operatornamewithlimits{arg\, max}}
+{\mbox{argmax}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\argmin}{\operatornamewithlimits{arg\, min}}
+{\mbox{argmin}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfx}{\mathbf{x}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfy}{\mathbf{y}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfl}{\mathbf{\lambda}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfm}{\mathbf{\mu}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\calL}{\mathcal{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vw}{\boldsymbol{w}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vx}{\boldsymbol{x}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vxi}{\boldsymbol{\xi}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\valpha}{\boldsymbol{\alpha}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vbeta}{\boldsymbol{\beta}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vsigma}{\boldsymbol{\sigma}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vmu}{\boldsymbol{\mu}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vtheta}{\boldsymbol{\theta}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vd}{\boldsymbol{d}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vs}{\boldsymbol{s}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vt}{\boldsymbol{t}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vh}{\boldsymbol{h}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ve}{\boldsymbol{e}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vf}{\boldsymbol{f}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vg}{\boldsymbol{g}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vz}{\boldsymbol{z}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vk}{\boldsymbol{k}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\va}{\boldsymbol{a}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vb}{\boldsymbol{b}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vv}{\boldsymbol{v}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vy}{\boldsymbol{y}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\hil}{\ch}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\rkhs}{\hil}
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Title
+Parameters for Correlated Features in Elastic Net
+\end_layout
+
+\begin_layout Author
+David S.
+ Rosenberg
+\end_layout
+
+\begin_layout Date
+February 5, 2018
+\end_layout
+
+\begin_layout Abstract
+Zou and Hastie introduce the elastic net in a 2005 paper 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Regularization and variable selection via the elastic net"
+target "https://web.stanford.edu/~hastie/Papers/B67.2%20(2005)%20301-320%20Zou%20&%20Hastie.pdf"
+
+\end_inset
+
+.
+\begin_inset Quotes erd
+\end_inset
+
+ What they call the 
+\begin_inset Quotes eld
+\end_inset
+
+naive
+\begin_inset Quotes erd
+\end_inset
+
+ elastic net, is what most people just call 
+\begin_inset Quotes eld
+\end_inset
+
+elastic net
+\begin_inset Quotes erd
+\end_inset
+
+ these days.
+ Theorem 1 in their paper makes precise the statement that for [naive] elastic
+ net, the more positively correlated two features are, the closer their
+ parameter values.
+ The original proof is quite readable, but here we've translated it to use
+ our notation and standard definitions.
+\end_layout
+
+\begin_layout Standard
+Recall the elastic net objective function:
+\begin_inset Formula 
+\[
+J(w)=\frac{1}{n}\|Xw-y\|_{2}^{2}+\lambda_{1}\|w\|_{1}+\lambda_{2}\|w\|_{2}^{2},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $X\in\reals^{n\times d}$
+\end_inset
+
+ is a design matrix and 
+\begin_inset Formula $y\in\reals^{n\times1}$
+\end_inset
+
+ is the vector of responses.
+ Let 
+\begin_inset Formula $\hat{w}=\left(\hat{w}_{1},\ldots,\hat{w}_{d}\right)^{T}\in\reals^{d\times1}$
+\end_inset
+
+ be an elastic net solution – that is, 
+\begin_inset Formula $\hat{w}$
+\end_inset
+
+ minimizes 
+\begin_inset Formula $J(w)$
+\end_inset
+
+.
+ Let's write 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ as the 
+\begin_inset Formula $i$
+\end_inset
+
+'th column of the design matrix 
+\begin_inset Formula $X$
+\end_inset
+
+.
+ (Note the change from our usual notation, in which 
+\begin_inset Formula $x_{i}\in\reals^{d}$
+\end_inset
+
+ is the 
+\begin_inset Formula $i$
+\end_inset
+
+th training example – here 
+\begin_inset Formula $x_{i}\in\reals^{n}$
+\end_inset
+
+ is the 
+\begin_inset Formula $i$
+\end_inset
+
+th feature, across all training data.) As we often do in practice, let's
+ assume the data are standardized so that every column 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ has mean 
+\begin_inset Formula $0$
+\end_inset
+
+, i.e.
+ 
+\begin_inset Formula $1^{T}x_{i}=0$
+\end_inset
+
+, and standard deviation 
+\begin_inset Formula $1$
+\end_inset
+
+, i.e.
+ 
+\begin_inset Formula $\frac{1}{n}x_{i}^{T}x_{i}=1$
+\end_inset
+
+.
+ Then we can denote the correlation between any pair of columns 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{j}$
+\end_inset
+
+ as 
+\begin_inset Formula $\rho_{ij}=\frac{1}{n}x_{i}^{T}x_{j}$
+\end_inset
+
+.
+ In the theorem below, we find that if 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{j}$
+\end_inset
+
+ have high correlation, then their corresponding parameters 
+\begin_inset Formula $\hat{w}_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{w}_{j}$
+\end_inset
+
+ are close in value, assuming they have the same sign:
+\end_layout
+
+\begin_layout Theorem
+Under the conditions described above, if 
+\begin_inset Formula $\hat{w}_{i}\hat{w}_{j}>0$
+\end_inset
+
+, then
+\begin_inset Formula 
+\[
+|\hat{w}_{i}-\hat{w}_{j}|\le\frac{\|y\|_{2}\sqrt{2}}{\sqrt{n}\lambda_{2}}\sqrt{1-\rho_{ij}}.
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+In the original theorem statement from the paper, they also require that
+ 
+\begin_inset Formula $y$
+\end_inset
+
+ is centered.
+ Although this is not required for the theorem to be true, replacing 
+\begin_inset Formula $y$
+\end_inset
+
+ with a centered version does not change the solution
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+The minimizer of 
+\begin_inset Formula $J(w)$
+\end_inset
+
+ is unchanged if we replace 
+\begin_inset Formula $y$
+\end_inset
+
+ by its projection onto the column space of 
+\begin_inset Formula $X$
+\end_inset
+
+.
+ Since the columns of 
+\begin_inset Formula $X$
+\end_inset
+
+ are centered, 
+\begin_inset Formula $X^{T}1=0$
+\end_inset
+
+, so 
+\begin_inset Formula $1$
+\end_inset
+
+ is orthogonal to the column space of 
+\begin_inset Formula $X$
+\end_inset
+
+.
+ Thus 
+\begin_inset Formula $y-\bar{y}1$
+\end_inset
+
+ has the same projection onto the column space of 
+\begin_inset Formula $X$
+\end_inset
+
+ as 
+\begin_inset Formula $y$
+\end_inset
+
+ does.
+ So centering 
+\begin_inset Formula $y$
+\end_inset
+
+ does not change the solution 
+\begin_inset Formula $\hat{w}$
+\end_inset
+
+.
+ (Thanks Brett Bernstein for suggesting this.) 
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\hat{w}$
+\end_inset
+
+, though it will reduce 
+\begin_inset Formula $\|y\|_{2}$
+\end_inset
+
+ in the bound.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Further comments from Brett Bernstein: 
+\end_layout
+
+\begin_layout Enumerate
+(On Theorem statement) If we multiply J by n we remove the averaging and
+ obtain n*lambda_2 instead of lambda_2.
+ If you think of the data being generated like y = Xw + noise for w fixed
+ then you expect ||y|| to grow like sqrt(n).
+ I think your formula is fine.
+ 
+\end_layout
+
+\begin_layout Enumerate
+(on centering 
+\begin_inset Formula $y$
+\end_inset
+
+) Note that the minimization problem is unchanged if we project y onto the
+ column space of X.
+ Also note that the vector of all ones lies orthogonal to the column space
+ of X since X is centered (centered means that the sum of entries in each
+ column is 0, so 
+\begin_inset Formula $X^{T}1=0$
+\end_inset
+
+.
+ Thus centering has no effect on the value of w but does improve the bound.
+ The best improvement (of this sort) occurs by replacing y with its orthogonal
+ projection onto the column space of X.
+ 
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Proof
+By assumption, 
+\begin_inset Formula $\hat{w}_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{w}_{j}$
+\end_inset
+
+ are nonzero, and thus 
+\begin_inset Formula $J(w)$
+\end_inset
+
+ has partial derivatives w.r.t.
+ 
+\begin_inset Formula $\hat{w}_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{w}_{j}$
+\end_inset
+
+.
+ Moreover, we must have 
+\begin_inset Formula $\frac{\partial J}{\partial w_{i}}(\hat{w})=\frac{\partial J}{\partial w_{j}}(\hat{w})=0$
+\end_inset
+
+.
+ That is, 
+\begin_inset Formula 
+\[
+\frac{\partial J}{\partial w_{i}}\left(\hat{w}\right)=\frac{2}{n}\left(X\hat{w}-y\right)^{T}x_{i}+\lambda_{1}\sign\left(\hat{w}_{i}\right)+2\lambda_{2}\hat{w}_{i}=0
+\]
+
+\end_inset
+
+ and 
+\begin_inset Formula 
+\[
+\frac{\partial J}{\partial w_{j}}\left(\hat{w}\right)=\frac{2}{n}\left(X\hat{w}-y\right)^{T}x_{j}+\lambda_{1}\sign\left(\hat{w}_{j}\right)+2\lambda_{2}\hat{w}_{j}=0.
+\]
+
+\end_inset
+
+ Subtracting the first equation from the second, we get
+\begin_inset Formula 
+\begin{eqnarray*}
+\frac{2}{n}\left(X\hat{w}-y\right)^{T}\left(x_{j}-x_{i}\right)+2\lambda_{2}\left(\hat{w}_{j}-\hat{w}_{i}\right) & = & 0\\
+\iff\left(\hat{w}_{i}-\hat{w}_{j}\right) & = & \frac{1}{n\lambda_{2}}\left(X\hat{w}-y\right)^{T}\left(x_{j}-x_{i}\right)
+\end{eqnarray*}
+
+\end_inset
+
+Since 
+\begin_inset Formula $\hat{w}$
+\end_inset
+
+ is a minimizer of 
+\begin_inset Formula $J$
+\end_inset
+
+, we must have 
+\begin_inset Formula $J(\hat{w})\le J(0)$
+\end_inset
+
+, so
+\begin_inset Formula 
+\[
+\frac{1}{n}\|Xw-y\|_{2}^{2}+\lambda_{1}\|\hat{w}\|_{1}+\lambda_{2}\|\hat{w}\|_{2}^{2}\le\frac{1}{n}\|y\|_{2}^{2}.
+\]
+
+\end_inset
+
+Since the regularization terms are nonnegative, we must have 
+\begin_inset Formula $\|Xw-y\|_{2}^{2}\le\|y\|_{2}^{2}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Proof
+Meanwhile, 
+\begin_inset Formula 
+\[
+\|x_{j}-x_{i}\|_{2}^{2}=x_{j}^{T}x_{j}+x_{i}^{T}x_{i}-2x_{j}^{T}x_{i}.
+\]
+
+\end_inset
+
+Recall our standardization assumptions were that 
+\begin_inset Formula $1^{T}x_{i}=1^{T}x_{j}=0$
+\end_inset
+
+ and 
+\begin_inset Formula $\frac{1}{n}x_{i}^{T}x_{i}=\frac{1}{n}x_{j}^{T}x_{j}=1$
+\end_inset
+
+, and the correlation between 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{j}$
+\end_inset
+
+ is 
+\begin_inset Formula $\rho_{ij}=\frac{1}{n}x_{i}^{T}x_{j}$
+\end_inset
+
+.
+ So
+\begin_inset Formula 
+\[
+\|x_{j}-x_{i}\|_{2}^{2}=2n-2n\rho_{ij}.
+\]
+
+\end_inset
+
+Putting things together, 
+\begin_inset Formula 
+\begin{eqnarray*}
+\left|\hat{w}_{i}-\hat{w}_{j}\right| & = & \frac{1}{n\lambda_{2}}\left|\left(X\hat{w}-y\right)^{T}\left(x_{j}-x_{i}\right)\right|\\
+ & \le & \frac{1}{n\lambda_{2}}\left\Vert X\hat{w}-y\right\Vert _{2}\left\Vert x_{j}-x_{i}\right\Vert _{2}\text{ by Cauchy-Schwarz inequality}\\
+ & \le & \frac{1}{n\lambda_{2}}\left\Vert y\right\Vert _{2}\sqrt{2n\left(1-\rho_{ij}\right)}\\
+ & = & \frac{1}{\sqrt{n}}\frac{\sqrt{2}\left\Vert y\right\Vert _{2}}{\lambda_{2}}\sqrt{1-\rho_{ij}}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,269 @@
+\section{Recitation 3: Geometric Derivation of SVMs}
+\subsection{Intro Question}
+\begin{enumerate}
+\item You have been given a data set $(x_i,y_i)$ for $i=1,\ldots,n$ where
+  $x_i\in\RR^d$ and $y_i\in\{-1,1\}$.  Assume $w\in\RR^d$ and
+  $a\in\RR$.
+  \begin{enumerate}
+  \item Suppose $y_i(w^Tx_i+a)>0$ for all $i$.  Use a picture to
+    explain what this means when $d=2$.
+  \item Fix $M>0$.
+    Suppose $y_i(w^Tx_i+a)\geq M$ for all $i$.  Use a picture to
+    explain what this means when $d=2$.
+  \end{enumerate}
+\begin{figure}[H]
+\centering
+\asyinclude{3-SVM/Data.asy}
+\caption{Data set with $x_i\in\RR^2$ and $y_i\in\{+1,-1\}$}
+\end{figure}
+\begin{solution}
+\item[]\Sol 
+  \begin{enumerate}
+  \item The data is linearly separable.
+  \item The data is separable with geometric margin at least $M/\|w\|_2$.
+  \end{enumerate}
+  Both of these answers will be fleshed out in the upcoming sections.
+\end{solution}
+\end{enumerate}
+\subsection{Support Vector Machines}
+\subsubsection{Review of Geometry}
+If $v,w\in\RR^d$ then the component (also called scalar projection) of $v$ in the direction $w$ is
+given by the scalar $\displaystyle{\frac{w^Tv}{\|w\|_2}}$.  This can also be thought of as the
+signed length of $v$ when orthogonally projected onto the line through
+the vector $w$.
+\begin{figure}[H]
+\centering
+\asyinclude{3-SVM/Component.asy}
+\caption{Component of $v_1,v_2$ in the direction $w$}
+\end{figure}
+Assuming $w\neq 0$ we can use this to interpret the set
+$$S=\{x\in\RR^d\mid w^Tx=b\}.$$
+Noting that $w^Tx=b\iff \frac{w^Tx}{\|w\|_2} = \frac{b}{\|w\|_2}$ we
+see that $S$ contains all vectors whose component in the direction $w$
+is $\frac{b}{\|w\|_2}$.  
+Using linear algebra we can see this is the hyperplane orthogonal
+to the vector $w$ that passes through the point
+$\frac{bw}{\|w\|_2^2}$.  Note also that there are infinitely many
+pairs $(w,b)$ that give the same hyperplane.  If $c\neq0$ then
+$$\{x\in\RR^d\mid w^Tx=b\}\quad\text{and}\quad\{x\in\RR^d\mid
+(cw)^Tx=(cb)\}$$
+result in the same hyperplanes.
+\begin{figure}[H]
+\centering
+\asyinclude{3-SVM/Level.asy}
+\caption{Level Surfaces of $f(v)=w^Tv$ with $\|w\|_2=1$}
+\end{figure}
+Given a hyperplane $\{v\mid w^Tv=b\}$, we can distinguish points
+$x\in\RR^d$ depending on whether $w^Tx-b$ is zero, positive, or
+negative, or in other words, whether $x$ is on the hyperplane, on the
+side $w$ is pointing at, or on the side $-w$ is pointing at. 
+\begin{figure}[H]
+\centering
+\asyinclude{3-SVM/Sides.asy}
+\caption{Sides of the Hyperplane $w^Tv=15$}
+\end{figure}
+If we have a vector $x\in\RR^d$ and a hyperplane $H=\{v\mid w^Tv=b\}$ we
+can measure the distance from $x$ to $H$ by
+$$d(x,H) = \left|\frac{w^Tx-b}{\|w\|_2}\right|.$$
+Without the absolute values we get the \textit{signed distance}: a
+positive distance if $w^Tx>b$ and a negative distance if $w^Tx<b$.  To
+see why this formula is correct, note that we are computing
+$$\frac{w^Tx}{\|w\|_2} - \frac{w^Tv}{\|w\|_2},$$
+where $v$ is any vector in the hyperplane $\{v\mid w^Tv=b\}$.  This
+is the difference between their components in the direction $w$.
+\begin{figure}[H]
+\centering
+\asyinclude{3-SVM/Distance.asy}
+\caption{Signed Distance from $x_1,x_2$ to Hyperplane $w^Tv=20$}
+\end{figure}
+\subsection{Hard Margin SVM}
+Returning to the initial question, suppose we have the data set
+$(x_i,y_i)$ for $i=1,\ldots,n$ where $x_i\in\RR^d$ and
+$y_i\in\{-1,1\}$.
+\begin{dfn}[Linearly Separable]
+  We say $(x_i,y_i)$ for $i=1,\ldots,n$ are \textit{linearly separable} if there
+  is a $w\in\RR^d$ and $a\in\RR$ such that $y_i(w^Tx_i+a)>0$ for all
+  $i$. The set $\{v\in\RR^d\mid w^Tv+a=0\}$ is called a \textit{separating hyperplane}.
+\end{dfn}
+Let's examine what this definition says.  If $y_i=+1$ then we require
+that $w^Tx_i>-a$ and if $y_i=-1$ we require that $w^Tx_i<-a$.  Thus
+linearly separable means that we can separate all of the $+1$'s from
+the $-1$'s using the hyperplane $\{v\mid w^Tv=-a\}$.  For the rest of this section, we
+assume our data is linearly separable.
+\begin{figure}[H]
+\centering
+\asyinclude{3-SVM/LinSep.asy}
+\caption{Linearly Separable Data}
+\end{figure}
+If we can find the $w,a$ corresponding to a hyperplane that separates
+the data, we then have a decision function for classifiying elements
+of $\XX$: $f(x) = \sgn(w^Tx+a)$.  Before we look for such a
+hyperplane, we must address another issue.  If the data is linearly
+separable, then there are infinitely many choices of separating
+hyperplanes. 
+\begin{figure}[H]
+\centering
+\asyinclude{3-SVM/ManyLinSep.asy}
+\caption{Many Separating Hyperplanes Exist}
+\end{figure}
+We will choose the hyperplane that maximizes a quantity called the
+\textit{geometric margin}.
+\begin{dfn}[Geometric Margin]
+  Let $H$ be a hyperplane that separates the data $(x_i,y_i)$ for
+  $i=1,\ldots,n$.  The geometric margin of this hyperplane is 
+  $$\min_i d(x_i,H),$$
+  the distance from the hyperplane to the closest data point.
+\end{dfn}
+Fix $w\in\RR^d$ and $a\in\RR$ with $y_i(w^Tx_i+a)>0$ for all $i$.
+Then we saw earlier that
+$$d(x_i,H) = \left|\frac{w^Tx_i+a}{\|w\|_2}\right| =
+\frac{y_i(w^Tx_i+a)}{\|w\|_2}.$$
+This gives us the following optimization problem:
+$$\begin{Array}{ll}
+  \text{maximize}_{w,a} & \min_i\frac{y_i(w^Tx_i+a)}{\|w\|_2}.
+\end{Array}$$
+We can rewrite this in a more standard form:
+$$\begin{Array}{ll}
+  \text{maximize}_{w,a,M} & M\\
+  \text{subject to} & \frac{y_i(w^Tx_i+a)}{\|w\|_2} \geq
+  M\quad\text{for all $i$.}
+\end{Array}$$
+\begin{figure}[H]
+\centering
+\asyinclude{3-SVM/MaxMargin.asy}
+\caption{Maximum Margin Separating Hyperplane}
+\end{figure}
+Note above how the geometric margin is achieved on both sides of the optimal
+hyperplane.  This must be the case, as otherwise we could slightly
+move the hyperplane and obtain a better solution.
+The expression $y_i(w^Tx_i+a)/\|w\|_2$ allows us to choose any
+positive value for $\|w\|_2$ by changing $a$ accordingly (e.g., we can
+replace $w\to 2w$ and $a\to 2a$ and get the same value for all $(x_i,y_i)$).  Thus we can
+fix $\|w\|_2=1/M$ and obtain
+$$\begin{array}{ll}
+  \text{maximize}_{w,a} & 1/\|w\|_2\\
+  \text{subject to} & y_i(w^Tx_i+a) \geq 1\quad\text{for all $i$.}
+\end{array}$$
+To find the optimal $w,a$ we can instead solve the minimization
+problem
+$$\begin{array}{ll}
+  \text{minimize}_{w,a} & \|w\|_2^2\\
+  \text{subject to} & y_i(w^Tx_i+a) \geq 1\quad\text{for all $i$.}
+\end{array}$$
+This is a quadratic program that can be solved by standard
+packages.
+
+Here the geometric margin is $\frac{1}{\|w\|_2}$ which is also the minimum of
+$\frac{y_i(w^Tx_i+a)}{\|w\|_2}$ over the training data.  The concept
+of margin used in class (also called \textit{functional margin}) is
+slightly different, but clearly related.  It is the value $y_i(w^Tx_i+a)$ denoting the
+score we give to a given training example.
+\subsubsection{Soft Margin SVM}
+The methods developed thus far require linearly separable data.  To
+remove this restriction, we will allow vectors to violate the
+geometric margin
+requirements, but at a penalty.  More precisely, we replace our
+previous SVM formulation
+$$\begin{array}{ll}
+  \text{minimize}_{w,a} & \|w\|_2^2\\
+  \text{subject to} & y_i(w^Tx_i+a) \geq 1\quad\text{for all $i$}
+\end{array}$$
+with
+$$\begin{array}{ll}
+  \text{minimize}_{w,a,\xi} & \|w\|_2^2 + \frac{C}{n}\sum_{i=1}^n\xi_i\\
+  \text{subject to} & y_i(w^Tx_i+a) \geq 1-\xi_i\quad\text{for all
+    $i$}\\
+  & \xi_i \geq 0 \quad\text{for all $i$.}
+\end{array}$$
+This is the standard formulation of a support vector machine.
+When $\xi_i>0$ the corresponding $x_i$ violates the geometric margin
+condition.
+Each $\xi_i$ is called a slack variable.
+The constant $C$ controls how much we penalize violations.
+Rewriting the condition as
+$$\frac{y_i(w^Tx_i+a)}{\|w\|_2} \geq \frac{1-\xi_i}{\|w\|_2}$$
+shows that $\xi_i$ measures the size of the violation in multiples of
+the geometric margin.  For example, $\xi_i=1$ means $x_i$ lies on the decision hyperplane
+$w^Tv+a=0$, and $\xi_i=3$ means $x_i$ lies 2 margin widths past the
+decision hyperplane. 
+\begin{figure}[H]
+\centering
+\asyinclude{3-SVM/SoftMargin.asy}
+\caption{Soft Margin SVM (unlabeled points have $\xi_i=0$)}
+\end{figure}
+Recall from the treatment in class, that the minimizer $w$ will be a
+linear combination of some of the $x_i$, called support vectors.  More
+precisely, the support vectors will be some subset of the $x_i$ that
+either lie on the margin boundary ($y_i(w^Tx_i+a)=1$) or violate the
+margin boundary ($y_i(w^Tx_i+a)<1$, $\xi_i>0$).
+\subsection{Regularization Interpretation}
+Consider the following two questions:
+\begin{enumerate}
+\item If your data is linearly separable, which SVM (hard margin or
+  soft margin) would you use?
+\begin{solution}
+\item[]\Sol While a hard margin SVM will work, it still often makes
+  sense to use the soft margin SVM to avoid overfitting. We will
+  discuss this below.
+\end{solution}
+\item Explain geometrically what the following optimization problem computes:
+$$\begin{array}{ll}
+  \text{minimize}_{w,a,\xi} & \frac{1}{n}\sum_{i=1}^n\xi_i\\
+  \text{subject to} & y_i(w^Tx_i+a) \geq 1-\xi_i\quad\text{for all
+    $i$}\\
+  & \|w\|_2^2 \leq r^2\\
+  & \xi_i \geq 0 \quad\text{for all $i$.}
+\end{array}$$
+\begin{solution}
+\item[]\Sol Minimizes the average slack over all decision functions
+  where the geometric margin is at least $1/r$.
+\end{solution}
+\end{enumerate}
+By dividing the soft margin objective by $C$ and writing $\lambda=1/C$ we obtain
+the equivalent minimization problem
+$$\begin{array}{ll}
+  \text{minimize}_{w,a,\xi} & \lambda \|w\|_2^2 + \frac{1}{n}\sum_{i=1}^n\xi_i\\
+  \text{subject to} & y_i(w^Tx_i+a) \geq 1-\xi_i\quad\text{for all
+    $i$}\\
+  & \xi_i \geq 0 \quad\text{for all $i$.}
+\end{array}$$
+This has the form of a regularized objective where the average slack
+is the loss and $\lambda\|w\|_2^2$ is the $L_2$ regularization.  By
+choosing $\lambda$ we determine
+the trade-off between minimizing the slack of the violations,
+while keeping the other points at a reasonable margin
+from the decision boundary.
+As with linear regression, there is an equivalent Ivanov formulation:
+$$\begin{array}{ll}
+  \text{minimize}_{w,a,\xi} & \frac{1}{n}\sum_{i=1}^n\xi_i\\
+  \text{subject to} & y_i(w^Tx_i+a) \geq 1-\xi_i\quad\text{for all
+    $i$}\\
+  & \|w\|_2^2 \leq r^2\\
+  & \xi_i \geq 0 \quad\text{for all $i$.}
+\end{array}$$
+Recall that the geometric margin is $1/\|w\|_2$.  Thus the Ivanov
+regularized problem is to minimize the average slack, but only among
+classifiers that have a margin of at least $1/r$.
+\begin{figure}[H]
+\centering
+\asyinclude{3-SVM/Ivanov.asy}
+\caption{Optimize Over Cases Where Margin Is At Least $1/r$}
+\end{figure}
+To see the value of regularization, consider the following examples.
+\begin{figure}[H]
+\centering
+\asyinclude{3-SVM/SmallMargin.asy}
+\caption{Overfitting: Tight Margin With No Misclassifications}
+\end{figure}
+\begin{figure}[H]
+\centering
+\asyinclude{3-SVM/LargeMargin.asy}
+\caption{Training Error But Large Margin}
+\end{figure}
+Although the first figure above has no misclassifications on the
+training set, it has an incredibly small geometric margin.  As a
+result, we may be willing to suffer a single training mistake in
+return for a large buffer region for most training examples.  
+Note that the the data here was linearly separable, but we still may prefer the
+soft margin SVM.  By using cross-validation we can use data to find
+the correct tradeoff.

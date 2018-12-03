@@ -1,0 +1,126 @@
+\section{Trees, Bootstrap, Bagging, and RFs}
+\subsection{Trees}
+\subsubsection{Trees Learning Objectives}
+\begin{itemize}
+  \item Be able to describe the structure of a binary tree (ex: put bounds on number of leaves given height; describe the geometry of the resulting prediction function; etc.).
+  \item Give pseudocode for finding the optimal split for (a) a continuous feature, and (b) a categorical feature for a binary classification problem.
+  \item Describe some reasonable strategies for controlling the complexity of a tree.
+  \item In particular, describe the regularization approach used in CART (pruning and use of number of leaves as complexity measure), recognize the cost complexity criterion as our standard regularized ERM.
+  \item Recall the entropy, Gini, and misclassification error splitting criteria. Give some intuition around preference for Gini/entropy (i.e. purity measures) over misclassification.
+\end{itemize}
+\subsubsection{Trees Concept Check Questions}
+\begin{enumerate}
+\item
+  \begin{enumerate}
+  \item How many regions (leaves) will a tree with $k$ node splits have?
+  \item What is the maximum number of regions a tree of height $k$ can
+    have?  Recall that the height of a tree is the number of edges in
+    the longest path from the root to any leaf.
+  \item Give an upper bound on the depth needed to exactly classify
+    $n$ distinct points in $\RR^d$.  [Hint: In the worst case each
+    leaf will have a single training point.]
+  \end{enumerate}
+\begin{solution}
+\item[]\Sol
+  \begin{enumerate}
+  \item Given a  fixed tree, if we split a leaf node we add a single
+    leaf to the tree.  Thus $k$ splits corresponds to $k+1$ leaves.
+  \item A tree of height $k$ can have at most $2^k$ regions (leaves).
+  \item A tree of height $\lceil\log_2(n)\rceil$ is sufficient to
+    distinguish all possible values for the first feature.  At each
+    leaf we can then put another tree of this height that
+    distinguishes the second feature, and so forth.
+    These give an upper bound of $d\lceil \log_2(n)\rceil$.
+  \end{enumerate}
+\end{solution}
+\item This question involves fitting a regression tree using the
+  square loss. Assume the $n$ data points for the current node are sorted by
+  the first feature.  Give pseudocode with $O(n)$ runtime
+  for optimally splitting the current node with respect to the first
+  feature.
+\begin{solution}
+\item[]\Sol
+\lstinputlisting[language=Python,tabsize=2,basicstyle=\small,columns=fullflexible]{9-Lec-Check/buildnode.py}
+\end{solution}
+\item Suppose we are looking at a fixed node of a classification tree,
+  and the class labels are, sorted by the first feature values,
+  $$4,1,0,0,1,0,2,3,3.$$
+  We are currently testing splitting the node into a left node
+  containing $4,1,0,0,1,0$ and a right node containing
+  $2,3,3$.  For each of the following impurity measures, give the
+  value for the left and right parts, along with the total score for
+  the split.
+  \begin{enumerate}
+  \item Misclassification error.
+  \item Gini index.
+  \item Entropy.
+  \end{enumerate}
+\begin{solution}
+\item[]\Sol
+  \begin{enumerate}
+  \item Left: $3/6$, Right: $1/3$, Total: $6(3/6)+3(1/3)=4$
+  \item Left: $3/6(3/6)+2/6(4/6)+1/6(5/6)=22/36$, Right:
+    $1/3(2/3)+2/3(1/3)=4/9$, Total: $6(22/36)+3(4/9)=30/6=5$
+  \item Left: $-3/6\log(3/6)-2/6\log(2/6)-1/6\log(1/6)$, Right:
+    $-1/3\log(1/3)-2/3\log(2/3)$, Total:
+    $$6[-3/6\log(3/6)-2/6\log(2/6)-1/6\log(1/6)] + 3[-1/3\log(1/3)-2/3\log(2/3)].$$
+  \end{enumerate}
+\end{solution}
+\end{enumerate}
+\subsection{Bootstrap and Bagging}
+\subsubsection{Bootstrap and Bagging Learning Objectives}
+\begin{itemize}
+  \item Recall from basic statics concepts related to an estimator (e.g. bias) and its variance.
+  \item Describe (outside the context of bagging/RFs) how the bootstrap is a useful method for estimating the variance of an estimator, and have some intuition on how it can be applied across many problems.
+  \item Again recalling basic statistics, understand why bagging (averaging predictions) reduces variance.
+  \item Recalling that the bootstrap ignores an expected 37\% of data in each bootstrap sample, explain how we can use out-of-bag observations to approximate test performance.
+  \item Describe how RF reduces correlation between trees using column sampling while training on bootstrap samples.
+\end{itemize}
+\subsubsection{Bootstrap and Bagging Concept Check Questions}
+\begin{enumerate}
+\item Let $X_1,\ldots,X_n$ be an i.i.d.~sample from a distribution
+  with mean $\mu$ and variance $\sigma^2$.  How large must $n$ be so
+  that the sample mean has standard error smaller than $.01$?
+\begin{solution}
+\item[]\Sol Recall that the sample mean has variance
+  $$\Var\left(\frac{1}{n}\sum_{i=1}^n X_i\right) =
+  \frac{\Var(X_1)}{n} = \frac{\sigma^2}{n},$$
+  with standard error $\sigma/\sqrt{n}$.  Thus we have
+  $$\sigma/\sqrt{n} < .01 \iff n > 10000\sigma^2.$$
+\end{solution}
+\item Let $X_1,\ldots,X_{2n+1}$ be an i.i.d.~sample from a distribution.
+  To estimate the median of the distribution, you can compute the sample
+  median of the data.
+  \begin{enumerate}
+  \item Give pseudocode that computes an estimate of the variance of
+    the sample median.
+  \item Give pseudocode that computes an estimate of a 95\% confidence
+    interval for the median.
+  \end{enumerate}
+\begin{solution}
+\item[]\Sol
+  \begin{enumerate}
+  \item
+    \begin{enumerate}
+    \item Draw $B$ bootstrap samples $D^{1},\ldots,D^B$ each of size
+      $2n+1$.  The samples are formed by drawing uniformly with replacement from
+      the original data set $X_1,\ldots,X_{2n+1}$.
+      We will make a total of $B(2n+1)$ draws.
+    \item For each $D^{i}$ compute the corresponding median $\hat{m}_i$.
+    \item Compute the sample variance of the $B$ medians $m_1,\ldots,m_B$.
+    \end{enumerate}
+  \item
+    \begin{enumerate}
+    \item Draw $B$ bootstrap samples $D^{1},\ldots,D^B$ each of size
+      $2n+1$.  The samples are formed by drawing uniformly with replacement from
+      the original data set $X_1,\ldots,X_{2n+1}$.
+      We will make a total of $B(2n+1)$ draws.
+    \item For each $D^{i}$ compute the corresponding median $\hat{m}_i$.
+    \item Compute the $2.5\%$ and $97.5\%$ sample quantiles of the
+      list $\hat{m}_1,\ldots,\hat{m}_B$.
+      Use these as the estimates of the left and right endpoints of
+      the confidence interval, respectively.
+    \end{enumerate}
+  \end{enumerate}
+\end{solution}
+\end{enumerate}

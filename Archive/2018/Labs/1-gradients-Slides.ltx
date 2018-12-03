@@ -1,0 +1,282 @@
+\title{Recitation 1}
+\subtitle{Gradients and Directional Derivatives}
+\begin{document}
+\begin{frame} 
+  \titlepage 
+\end{frame}
+\section{Recitation 1}
+\subsection{Initial Question}
+\begin{frame}[fragile]
+  \frametitle{Intro Question}
+  \begin{block}{Question}
+    We are given the data set $(x_1,y_1),\ldots,(x_n,y_n)$ where
+    $x_i\in\RR^d$ and $y_i\in\RR$.  We want to fit a linear function to
+    this data by performing empirical risk minimization.  More
+    precisely, we are using the hypothesis space $\FF=\{f(x)=w^Tx\mid
+    w\in\RR^d\}$ and the loss function $\ell(a,y)=(a-y)^2$.  Given an
+    initial guess $\tilde{w}$ for the empirical risk minimizing
+    parameter vector, how could we improve our guess?
+  \end{block}
+\begin{center}
+\includegraphics[width=0.7\textwidth,height=0.4\textheight]{1-gradients/Data.pdf}
+\end{center}
+\end{frame}
+\begin{frame}
+  \frametitle{Intro Solution}
+  \begin{block}{Solution}
+    \begin{itemize}
+    \item The empirical risk is given by
+      $$\hat{R}_n(f) = \frac{1}{n}\sum_{i=1}^n \ell(f(x_i),y_i) =
+      \frac{1}{n}\sum_{i=1}^n (w^Tx_i-y_i)^2
+      = \frac{1}{n}\|Xw-y\|_2^2,$$
+      where $X\in\RR^{n\times d}$ is the matrix whose $i$th row is
+      given by $x_i$.
+    \item Can improve a non-optimal guess $\tilde{w}$ by taking a
+      small step in the direction of the negative gradient.
+    \end{itemize}
+  \end{block}  
+\end{frame}
+\subsection{Single Variable Calculus}
+\begin{frame}
+  \frametitle{Single Variable Differentiation}
+  \begin{itemize}
+  \item Calculus lets us turn non-linear problems into linear algebra.
+  \item For $f:\RR\to\RR$ differentiable, the derivative is given by
+    $$f'(x) = \lim_{h\to 0} \frac{f(x+h)-f(x)}{h}.$$
+  \item Can also be written as
+    $$f(x+h) = f(x) + hf'(x) + o(h)\quad\text{as $h\to 0$,}$$
+    where $o(h)$ denotes a function $g(h)$ with $g(h)/h\to 0$ as
+    $h\to0$.
+  \item Points with $f'(x) = 0$ are called \textit{critical points}.
+  \end{itemize}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{1D Linear Approximation By Derivative}
+\begin{center}
+\includegraphics[width=\textwidth,height=0.8\textheight]{1-gradients/Taylor1d.pdf}
+\end{center}
+\end{frame}
+
+\subsection{Multivariable Calculus}
+\begin{frame}
+  \frametitle{Multivariable Differentiation}
+  \begin{itemize}
+  \item Consider now a function $f:\RR^n\to\RR$ with inputs of the
+    form $x=(x_1,\ldots,x_n)\in\RR^n$.
+  \item Unlike the 1-dimensional case, we cannot assign a single
+    number to the slope at a point since there are many directions we can move in.
+  \end{itemize}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{Multiple Possible Directions for $f:\RR^2\to\RR$}
+\begin{center}
+\includegraphics[width=\textwidth,height=0.8\textheight]{1-gradients/Directions.pdf}
+\end{center}
+\end{frame}
+\begin{frame}
+  \frametitle{Directional Derivative}
+  \begin{block}{Definition}
+    Let $f:\RR^n\to\RR$.  The directional derivative $f'(x;u)$ of $f$ at $x\in\RR^n$ in
+    the direction $u\in\RR^n$ is given by
+    $$f'(x;u) = \lim_{h\to0}\frac{f(x+hu)-f(x)}{h}.$$
+  \end{block}
+  \begin{itemize}
+  \item By fixing a direction $u$ we turned our multidimensional
+    problem into a 1-dimensional problem.
+  \item Similar to 1-d we have
+    $$f(x+hu) = f(x) + hf'(x;u) + o(h).$$
+  \item We say that $u$ is a \textit{descent direction} of $f$ at $x$ if $f'(x;u)<0$.
+  \end{itemize}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{Directional Derivative as a Slope of a Slice}
+\begin{center}
+\includegraphics[width=0.7\textwidth,height=0.8\textheight]{1-gradients/Slice.pdf}
+\end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Partial Derivative}
+  \begin{itemize}
+  \item Let $e_i=(\overbrace{0,0,\ldots,0}^{i-1},1,0,\ldots,0)$ denote the $i$th
+    standard basis vector.
+  \item The $i$th \textit{partial derivative} is defined to be the
+    directional derivative along $e_i$.
+  \item It can be written many ways:
+    $$f'(x;e_i) = \frac{\partial}{\partial x_i}f(x) =
+    \partial_{x_i}f(x) = \partial_if(x).$$
+  \item What is the intuitive meaning of $\partial_{x_i}f(x)$?  For
+    example, what does a large value of $\partial_{x_3}f(x)$ imply?
+  \end{itemize}
+\end{frame}
+\begin{frame}
+  \frametitle{Differentiability}
+  \begin{itemize}
+  \item We say a function $f:\RR^n\to\RR$ is \textit{differentiable}
+    at $x\in\RR^n$ if
+    $$\lim_{v\to0}\frac{f(x+v)-f(x) -g^Tv}{\|v\|_2} = 0,$$
+    for some $g\in\RR^n$.
+  \item If it exists, this $g$ is unique and is called the \textit{gradient} of $f$ at
+    $x$ with notation
+    $$g = \nabla f(x).$$
+  \item It can be shown that
+    $$\nabla f(x) =
+    \pMattt{\partial_{x_1}f(x)}{\vdots}{\partial_{x_n}f(x)}.$$
+  \end{itemize}
+\end{frame}
+\begin{frame}
+  \frametitle{Useful Convention}
+  \begin{itemize}
+  \item Consider $f:\RR^{p+q}\to\RR$.
+  \item Split the input $x\in\RR^{p+q}$ into parts $w\in\RR^p$ and $z\in\RR^q$
+    so that~$x=(w,z)$.
+  \item Define the partial gradients
+    $$\hspace{-.5cm}\nabla_w f(w,z) :=
+    \pMattt{\partial_{w_1}f(w,z)}{\vdots}{\partial_{w_p}f(w,z)}
+    \quad\text{and}\quad
+    \nabla_z f(w,z) :=
+    \pMattt{\partial_{z_1}f(w,z)}{\vdots}{\partial_{z_q}f(w,z)}.
+    $$
+  \end{itemize}
+\end{frame}
+\begin{frame}
+  \frametitle{Tangent Plane}
+  \begin{itemize}
+  \item Analogous to the 1-d case we can express differentiability as
+    $$f(x+v) = f(x) + \nabla f(x)^Tv + o(\|v\|_2).$$
+  \item The approximation $f(x+v)\approx f(x)+\nabla f(x)^Tv$ gives a
+    tangent plane at the point $x$.
+  \item The tangent plane of $f$ at $x$ is given by
+    $$P = \{(x+v,f(x)+\nabla f(x)^Tv)\mid v\in\RR^n\}\subseteq
+    \RR^{n+1}.$$
+  \item Methods like gradient descent approximate a function locally
+    by its tangent plane, and then take a step accordingly.
+  \end{itemize}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{Tangent Plane for $f:\RR^2\to\RR$}
+\begin{center}
+\includegraphics[width=\textwidth,height=0.8\textheight]{1-gradients/Tangent.pdf}
+\end{center}
+\end{frame}
+\begin{frame}
+  \frametitle{Directional Derivatives from Gradients}
+  \begin{itemize}
+  \item If $f$ is differentiable we have
+    $$f'(x;u) = \nabla f(x)^Tu.$$
+  \item If $\nabla f(x)\neq 0$ this implies that
+    $$\argmax_{\|u\|_2=1} f'(x;u) = \frac{\nabla f(x)}{\|\nabla f(x)\|_2}
+    \quad\text{and}\quad
+    \argmin_{\|u\|_2=1} f'(x;u) = -\frac{\nabla f(x)}{\|\nabla
+      f(x)\|_2}.$$
+  \item The gradient points in the direction of
+    steepest ascent.
+  \item The negative gradient points in the direction of
+    steepest descent.
+  \end{itemize}
+\end{frame}
+\begin{frame}
+  \frametitle{Critical Points}
+  \begin{itemize}
+  \item Analogous to 1-d, if $f:\RR^n\to\RR$ is differentiable and $x$
+    is a local extremum then we must have $\nabla f(x)=0$.
+  \item Points with $\nabla f(x)=0$ are called \textit{critical
+    points}.
+  \item Later we will see that for a convex differentiable function,
+    $x$ is a critical point if and only if it is a global minimizer.
+  \end{itemize}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{Critical Points of $f:\RR^2\to\RR$}
+\begin{center}
+\includegraphics[width=\textwidth,height=0.8\textheight]{1-gradients/Saddle.pdf}
+\end{center}
+\end{frame}
+\subsection{Computing Gradients}
+\begin{frame}[fragile]
+  \frametitle{Computing Gradients}
+  \begin{block}{Question}
+    For questions 1 and 2, compute the gradient of the given function.
+    \begin{enumerate}
+    \item $f:\RR^3\to\RR$ is given by
+      $$f(x_1,x_2,x_3) = \log(1+e^{x_1+2x_2+3x_3}).$$
+    \item $f:\RR^n\to\RR$ is given by
+      $$f(x) = \|Ax-y\|_2^2 = (Ax-y)^T(Ax-y) = x^TA^TAx - 2y^TAx+y^Ty,$$
+      for some $A\in\RR^{m\times n}$ and $y\in\RR^m$.
+    \item Assume $A$ in the previous question has full column rank.
+      What is the critical point of $f$?
+    \end{enumerate}
+  \end{block}
+\end{frame}
+\begin{frame}
+  \frametitle{$f(x_1,x_2,x_3)=\log(1+e^{x_1+2x_2+3x_3})$ Solution 1}
+  We can compute the partial derivatives directly:
+  $$\begin{Array}{rcl}
+    \partial_{x_1} f(x_1,x_2,x_3) &=&\frac{e^{x_1+2x_2+3x_3}}{1+e^{x_1+2x_2+3x_3}}\\
+    \partial_{x_2} f(x_1,x_2,x_3) &=&\frac{2e^{x_1+2x_2+3x_3}}{1+e^{x_1+2x_2+3x_3}}\\
+    \partial_{x_3} f(x_1,x_2,x_3) &=&
+    \frac{3e^{x_1+2x_2+3x_3}}{1+e^{x_1+2x_2+3x_3}}
+    \end{Array}$$
+  and obtain
+  $$\nabla f(x_1,x_2,x_3) =
+  \PMattt{\frac{e^{x_1+2x_2+3x_3}}{1+e^{x_1+2x_2+3x_3}}}
+         {\frac{2e^{x_1+2x_2+3x_3}}{1+e^{x_1+2x_2+3x_3}}}
+         {\frac{3e^{x_1+2x_2+3x_3}}{1+e^{x_1+2x_2+3x_3}}}.$$         
+\end{frame}
+\begin{frame}
+  \frametitle{$f(x_1,x_2,x_3)=\log(1+e^{x_1+2x_2+3x_3})$ Solution 2}
+  \begin{itemize}
+  \item Let $w=(1,2,3)^T$.
+  \item Write $f(x) = \log(1+e^{w^Tx})$.
+  \item Apply a version of the chain rule:
+    $$\nabla f(x) = \frac{e^{w^Tx}}{1+e^{w^Tx}}w.$$
+  \end{itemize}
+  \begin{theorem}[Chain Rule]
+    If $g:\RR\to\RR$ and $h:\RR^n\to\RR$ are differentiable then
+    $$\nabla (g\circ h)(x) = g'(h(x))\nabla h(x).$$
+  \end{theorem}
+\end{frame}
+\begin{frame}
+  \frametitle{$f(x) = \|Ax-y\|_2^2$ Solution}
+  \begin{itemize}
+  \item We could use techniques similar to the previous problem, but
+    instead we show a different method using directional derivatives.
+  \item For arbitrary $t\in\RR$ and $x,v\in\RR^n$ we have
+    $$\hspace{-.5cm}\begin{array}{rcl}
+    \multicolumn{3}{l}{f(x+tv)}\\
+    & = & (x+tv)^TA^TA(x+tv) - 2y^TA(x+tv)+y^Ty \\
+    & = & x^TA^TAx + t^2v^TA^TAv + 2tx^TA^TAv-2y^TAx-2ty^TAv+y^Ty\\
+    & = & f(x) + t(2x^TA^TA - 2y^TA)v + t^2v^TA^TAv.
+  \end{array}$$
+  \item This gives
+    $$f'(x;v)=\lim_{t\to0}\frac{f(x+tv)-f(x)}{t}
+    = (2x^TA^TA - 2y^TA)v = \nabla f(x)^Tv$$
+  \item Thus $\nabla f(x) = 2(A^TAx-A^Ty) = 2A^T(Ax-y)$.
+  \item Data science interpretation of $\nabla f(x)$?
+  \end{itemize}
+\end{frame}
+\begin{frame}
+  \frametitle{Critical Points of $f(x)=\|Ax-y\|_2^2$}
+  \begin{itemize}
+  \item Need $\nabla f(x) = 2A^TAx-2A^Ty=0$.
+  \item Since $A$ is assumed to have full column rank, we see that
+    $A^TA$ is invertible.
+  \item Thus we have $x=(A^TA)^{-1}A^Ty$.
+  \item As we will see later, this function is strictly convex (Hessian
+    $\nabla^2f(x) = 2A^TA$ is positive definite).
+  \item Thus we have found the unique minimizer (least squares solution).
+  \end{itemize}
+\end{frame}
+\begin{frame}
+  \frametitle{Technical Aside: Differentiability}
+  \begin{itemize}
+  \item When computing the gradients above we assumed the functions were
+    differentiable.
+  \item Can use the following theorem to be completely rigorous.
+  \end{itemize}
+  \begin{theorem}
+    Let $f:\RR^n\to\RR$ and suppose $\partial_{x_i}f:\RR^n\to\RR$ is
+    continuous for $i=1,\ldots,n$. Then $f$ is differentiable.
+  \end{theorem}
+\end{frame}
+\end{document}

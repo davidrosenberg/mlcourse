@@ -1,0 +1,3984 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass beamer
+\begin_preamble
+\usetheme{CambridgeUS} 
+\beamertemplatenavigationsymbolsempty
+
+
+% Set Color ==============================
+\definecolor{NYUPurple}{RGB}{87,6,140}
+\definecolor{LightPurple}{RGB}{165,11,255}
+
+
+\setbeamercolor{title}{fg=NYUPurple}
+%\setbeamercolor{frametitle}{fg=NYUPurple}
+\setbeamercolor{frametitle}{fg=NYUPurple}
+
+\setbeamercolor{background canvas}{fg=NYUPurple, bg=white}
+\setbeamercolor{background}{fg=black, bg=NYUPurple}
+
+\setbeamercolor{palette primary}{fg=black, bg=gray!30!white}
+\setbeamercolor{palette secondary}{fg=black, bg=gray!20!white}
+\setbeamercolor{palette tertiary}{fg=gray!20!white, bg=NYUPurple}
+
+\setbeamertemplate{headline}{}
+
+\setbeamercolor{parttitle}{fg=NYUPurple}
+\setbeamercolor{sectiontitle}{fg=NYUPurple}
+\setbeamercolor{sectionname}{fg=NYUPurple}
+\setbeamercolor{section page}{fg=NYUPurple}
+
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+\setbeamercolor{section title}{fg=NYUPurple}
+ \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\usebeamercolor[fg]{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+\end_preamble
+\options aspectratio=169,handout
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "eulervm" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "allcolors=NYUPurple,urlcolor=LightPurple"
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\boxbgcolor #ff31d8
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\reals}{\mathbf{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\integers}{\mathbf{Z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\naturals}{\mathbf{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rationals}{\mathbf{Q}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ca}{\mathcal{A}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cb}{\mathcal{B}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cc}{\mathcal{C}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cd}{\mathcal{D}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ce}{\mathcal{E}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cf}{\mathcal{F}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cg}{\mathcal{G}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ch}{\mathcal{H}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ci}{\mathcal{I}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cj}{\mathcal{J}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ck}{\mathcal{K}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cl}{\mathcal{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cm}{\mathcal{M}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cn}{\mathcal{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\co}{\mathcal{O}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cp}{\mathcal{P}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cq}{\mathcal{Q}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\calr}{\mathcal{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cs}{\mathcal{S}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ct}{\mathcal{T}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cu}{\mathcal{U}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cv}{\mathcal{V}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cw}{\mathcal{W}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cx}{\mathcal{X}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cy}{\mathcal{Y}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cz}{\mathcal{Z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ind}[1]{1(#1)}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand{
+\backslash
+pr}{P}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\pr}{\mathbb{P}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\predsp}{\cy}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%{
+\backslash
+hat{
+\backslash
+cy}}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\outsp}{\cy}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\prxy}{P_{\cx\times\cy}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\prx}{P_{\cx}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\prygivenx}{P_{\cy\mid\cx}}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand{
+\backslash
+ex}{E}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ex}{\mathbb{E}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\var}{\textrm{Var}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cov}{\textrm{Cov}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\sgn}{\textrm{sgn}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\sign}{\textrm{sign}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\kl}{\textrm{KL}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\law}{\mathcal{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\eps}{\varepsilon}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\as}{\textrm{ a.s.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\io}{\textrm{ i.o.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ev}{\textrm{ ev.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\convd}{\stackrel{d}{\to}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\eqd}{\stackrel{d}{=}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\del}{\nabla}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\loss}{\ell}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\risk}{R}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\emprisk}{\hat{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\lossfnl}{L}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\emplossfnl}{\hat{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\empminimizer}[1]{\hat{#1}^{*}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\minimizer}[1]{#1^{*}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\optimizer}[1]{#1^{*}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\etal}{\textrm{et. al.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\tr}{\operatorname{tr}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\trace}{\operatorname{trace}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\diag}{\text{diag}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rank}{\text{rank}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\linspan}{\text{span}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\spn}{\text{span}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\proj}{\text{Proj}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\argmax}{\operatornamewithlimits{arg\, max}}
+{\text{argmax}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\argmin}{\operatornamewithlimits{arg\, min}}
+{\text{argmin}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\bfx}{\mathbf{x}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfy}{\mathbf{y}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfl}{\mathbf{\lambda}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfm}{\mathbf{\mu}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\calL}{\mathcal{L}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\vw}{\boldsymbol{w}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vx}{\boldsymbol{x}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vxi}{\boldsymbol{\xi}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\valpha}{\boldsymbol{\alpha}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vbeta}{\boldsymbol{\beta}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vsigma}{\boldsymbol{\sigma}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vtheta}{\boldsymbol{\theta}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vd}{\boldsymbol{d}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vs}{\boldsymbol{s}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vt}{\boldsymbol{t}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vh}{\boldsymbol{h}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ve}{\boldsymbol{e}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vf}{\boldsymbol{f}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vg}{\boldsymbol{g}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vz}{\boldsymbol{z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vk}{\boldsymbol{k}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\va}{\boldsymbol{a}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vb}{\boldsymbol{b}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vv}{\boldsymbol{v}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vy}{\boldsymbol{y}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\dom}{\textrm{\textbf{dom} }}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\renewcommand{\rank}{\text{\textbf{rank }}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\conv}{\textrm{\textbf{conv} }}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\relint}{\text{\textbf{relint }}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\aff}{\text{\textbf{aff }}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\hil}{\ch}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rkhs}{\hil}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ber}{\text{Ber}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+Subgradient Descent
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+DS-GA 1003 / CSCI-GA 2567
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+optional, use only with long paper titles
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+David S.
+ Rosenberg 
+\end_layout
+
+\begin_layout Date
+February 7, 2018
+\end_layout
+
+\begin_layout Institute
+New York University
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex ArticleMode
+status open
+
+\begin_layout Plain Layout
+Just in article version
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Plots courtesy of Ningshan Zhang.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Contents
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+To cut out subgradients, can do first section, with hand-wavey support for
+ not really needing to worry about gradient descent, and then the theorems
+ at the end? With a note that 'ignoring it' is actually taking the subgradient?
+ Maybe actually giving the subgradient for all of our objective functions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Plots courtesy of Brett Bernstein.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Motivation and Review: Support Vector Machines
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Classification Problem
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Output space 
+\begin_inset Formula $\cy=\left\{ -1,1\right\} \qquad$
+\end_inset
+
+Action space 
+\begin_inset Formula $\ca=\reals\qquad$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Real-valued prediction function
+\series default
+ 
+\begin_inset Formula $f:\cx\to\reals$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+The value 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ is called the 
+\series bold
+score
+\series default
+ for the input 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Intuitively, magnitude of the score represents the 
+\series bold
+confidence of our prediction
+\series default
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Typical convention:
+\begin_inset Formula 
+\begin{align*}
+f(x)>0\;\implies & \mbox{Predict }1\\
+f(x)<0\;\implies & \mbox{Predict }-1
+\end{align*}
+
+\end_inset
+
+(But we can choose other thresholds...)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Margin
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The 
+\series bold
+margin
+\series default
+ (or 
+\series bold
+functional margin
+\series default
+)
+\series bold
+ 
+\series default
+for predicted score 
+\begin_inset Formula $\hat{y}$
+\end_inset
+
+ and true class 
+\begin_inset Formula $y\in\left\{ -1,1\right\} $
+\end_inset
+
+ is 
+\begin_inset Formula $y\hat{y}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+The margin often looks like 
+\begin_inset Formula $yf(x)$
+\end_inset
+
+, where 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ is our score function.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+The margin is a measure of how 
+\series bold
+correct
+\series default
+ we are.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+We want to 
+\series bold
+maximize the margin
+\series default
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+[Margin-Based] Classification Losses
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+SVM/Hinge loss: 
+\begin_inset Formula $\loss_{\text{Hinge}}=\max\left\{ 1-m,0\right\} =\left(1-m\right)_{+}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename loss.Zero_One.Hinge.png
+	lyxscale 30
+	height 60theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Not differentiable at 
+\begin_inset Formula $m=1$
+\end_inset
+
+.
+ We have a 
+\series bold
+
+\begin_inset Quotes eld
+\end_inset
+
+margin error
+\begin_inset Quotes erd
+\end_inset
+
+
+\series default
+ when 
+\begin_inset Formula $m<1$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Note that we're penalizing for small margin (<1), even if we're getting
+ the prediction correct.
+ We hope that will put a little robustness into the system.
+ Question: What happens with hinge loss without any regularization?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+[Soft Margin] Linear Support Vector Machine (No Intercept)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Hypothesis space 
+\begin_inset Formula $\cf=\left\{ f(x)=w^{T}x\mid w\in\reals^{d}\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Loss 
+\begin_inset Formula $\ell(m)=\max\left(0,1-m\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ regularization
+\begin_inset Formula 
+\[
+\min_{w\in\reals^{d}}\sum_{i=1}^{n}\max\left(0,1-y_{i}w^{T}x_{i}\right)+\lambda\|w\|_{2}^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+SVM Optimization Problem (no intercept)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+SVM objective function:
+\begin_inset Formula 
+\[
+J(w)=\frac{1}{n}\sum_{i=1}^{n}\max\left(0,1-y_{i}\left[w^{T}x_{i}\right]\right)+\lambda||w||^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Not differentiable...
+ but let's think about gradient descent anyway.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Derivative of hinge loss 
+\begin_inset Formula $\ell(m)=\max(0,1-m)$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\ell'(m)=\begin{cases}
+0 & m>1\\
+-1 & m<1\\
+\text{undefined} & m=1
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+Gradient
+\begin_inset Quotes erd
+\end_inset
+
+ of SVM Objective
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We need gradient with respect to parameter vector 
+\begin_inset Formula $w\in\reals^{d}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{eqnarray*}
+\del_{w}\ell\left(y_{i}w^{T}x_{i}\right)\pause & = & \ell'\left(y_{i}w^{T}x_{i}\right)y_{i}x_{i}\text{ (chain rule)}\\
+\pause & = & \left(\begin{cases}
+0 & y_{i}w^{T}x_{i}>1\\
+-1 & y_{i}w^{T}x_{i}<1\\
+\text{undefined} & y_{i}w^{T}x_{i}=1
+\end{cases}\right)y_{i}x_{i}\text{ (expanded \ensuremath{m} in \ensuremath{\ell'(m))}}\\
+\pause & = & \begin{cases}
+0 & y_{i}w^{T}x_{i}>1\\
+-y_{i}x_{i} & y_{i}w^{T}x_{i}<1\\
+\text{undefined} & y_{i}w^{T}x_{i}=1
+\end{cases}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+Gradient
+\begin_inset Quotes erd
+\end_inset
+
+ of SVM Objective
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+\del_{w}\ell\left(y_{i}w^{T}x_{i}\right) & = & \begin{cases}
+0 & y_{i}w^{T}x_{i}>1\\
+-y_{i}x_{i} & y_{i}w^{T}x_{i}<1\\
+\text{undefined} & y_{i}w^{T}x_{i}=1
+\end{cases}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So 
+\begin_inset Formula 
+\begin{eqnarray*}
+\del_{w}J(w) & = & \del_{w}\left(\frac{1}{n}\sum_{i=1}^{n}\ell\left(y_{i}w^{T}x_{i}\right)+\lambda||w||^{2}\right)\\
+\pause & = & \frac{1}{n}\sum_{i=1}^{n}\del_{w}\ell\left(y_{i}w^{T}x_{i}\right)+2\lambda w\\
+\pause & = & \begin{cases}
+\frac{1}{n}\sum_{i:y_{i}w^{T}x_{i}<1}\left(-y_{i}x_{i}\right)+2\lambda w & \text{all }y_{i}w^{T}x_{i}\neq1\\
+\text{undefined} & \text{otherwise}
+\end{cases}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Gradient Descent on SVM Objective?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The gradient of the SVM objective is
+\begin_inset Formula 
+\[
+\del_{w}J(w)=\frac{1}{n}\sum_{i:y_{i}w^{T}x_{i}<1}\left(-y_{i}x_{i}\right)+2\lambda w
+\]
+
+\end_inset
+
+ when 
+\begin_inset Formula $y_{i}w^{T}x_{i}\neq1$
+\end_inset
+
+ for all 
+\begin_inset Formula $i$
+\end_inset
+
+, and 
+\series bold
+otherwise is undefined
+\series default
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+Potential arguments for why we shouldn't care about the points of nondifferentia
+bility:
+\end_layout
+
+\begin_layout Itemize
+If we start with a random 
+\begin_inset Formula $w$
+\end_inset
+
+, will we ever hit exactly 
+\begin_inset Formula $y_{i}w^{T}x_{i}=1$
+\end_inset
+
+?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+If we did, could we perturb the step size by 
+\begin_inset Formula $\eps$
+\end_inset
+
+ to miss such a point?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Does it even make sense to check 
+\begin_inset Formula $y_{i}w^{T}x_{i}=1$
+\end_inset
+
+ with floating point numbers?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Gradient Descent on SVM Objective?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If we blindly apply gradient descent from a random starting point
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+seems unlikely that we'll hit a point where the gradient is undefined.
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Still, doesn't mean that gradient descent will work if objective not differentia
+ble!
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Theory of subgradients and subgradient descent will clear up any uncertainty.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Convexity and Sublevel Sets
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Next time: emphasize the directional derivative more so than subgradient?
+ In particular, directional derivative exists, have to check all directions,
+ not just a basis of directions, because not differentiable.
+ (c.f.
+ Guillaume's slides Obozinski4a.pdf) Optimality if all directional derivatives
+ are >=0.
+ Include counter example for subgradient descent being a descent direction
+ (boyd notes) and include proof that we're always moving closer to an optimum;
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex ArticleMode
+status open
+
+\begin_layout Plain Layout
+Just in article version
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Plots courtesy of Ningshan Zhang.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Convex Sets
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+A set 
+\begin_inset Formula $C$
+\end_inset
+
+ is 
+\series bold
+convex
+\series default
+ if the line segment between any two points in 
+\begin_inset Formula $C$
+\end_inset
+
+ lies in 
+\begin_inset Formula $C$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename fig7.4a.pdf
+	lyxscale 30
+	height 55theight%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename fig7.4b.pdf
+	lyxscale 30
+	height 55theight%
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{KPM Fig.
+ 7.4}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Convex and Concave Functions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+A function 
+\begin_inset Formula $f:\reals^{d}\to\reals$
+\end_inset
+
+ is 
+\series bold
+convex
+\series default
+ if the line segment connecting any two points on the graph of 
+\begin_inset Formula $f$
+\end_inset
+
+ lies above the graph.
+ 
+\begin_inset Formula $f$
+\end_inset
+
+ is 
+\series bold
+concave 
+\series default
+if 
+\begin_inset Formula $-f$
+\end_inset
+
+ is convex.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename fig7.5a.pdf
+	lyxscale 30
+	height 50theight%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename fig7.5b.pdf
+	lyxscale 30
+	height 50theight%
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{KPM Fig.
+ 7.5}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Examples of Convex Functions on 
+\begin_inset Formula $\reals$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Examples
+
+\end_layout
+
+\begin_layout Examples
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $x\mapsto ax+b$
+\end_inset
+
+ is both convex and concave on 
+\begin_inset Formula $\reals$
+\end_inset
+
+ for all 
+\begin_inset Formula $a,b\in\reals$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $x\mapsto\left|x\right|^{p}$
+\end_inset
+
+ for 
+\begin_inset Formula $p\ge1$
+\end_inset
+
+ is convex on 
+\begin_inset Formula $\reals$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $x\mapsto e^{ax}$
+\end_inset
+
+ is convex on 
+\begin_inset Formula $\reals$
+\end_inset
+
+ for all 
+\begin_inset Formula $a\in\reals$
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Every norm on 
+\begin_inset Formula $\reals^{n}$
+\end_inset
+
+ is convex (e.g.
+ 
+\begin_inset Formula $\|x\|_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\|x\|_{2}$
+\end_inset
+
+)
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Max: 
+\begin_inset Formula $\left(x_{1},\ldots,x_{n}\right)\mapsto\max\left\{ x_{1}\ldots,x_{n}\right\} $
+\end_inset
+
+ is convex on 
+\begin_inset Formula $\reals^{n}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Simple Composition Rules 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Examples
+
+\end_layout
+
+\begin_layout Examples
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If 
+\begin_inset Formula $g$
+\end_inset
+
+ is convex, and 
+\begin_inset Formula $Ax+b$
+\end_inset
+
+ is an affine mapping, then 
+\begin_inset Formula $g(Ax+b)$
+\end_inset
+
+ is convex.
+\end_layout
+
+\begin_layout Itemize
+If 
+\begin_inset Formula $g$
+\end_inset
+
+ is convex then 
+\begin_inset Formula $\exp g(x)$
+\end_inset
+
+ is convex.
+\end_layout
+
+\begin_layout Itemize
+If 
+\begin_inset Formula $g$
+\end_inset
+
+ is convex and nonnegative and 
+\begin_inset Formula $p\ge1$
+\end_inset
+
+ then 
+\begin_inset Formula $g(x)^{p}$
+\end_inset
+
+ is convex.
+ 
+\end_layout
+
+\begin_layout Itemize
+If 
+\begin_inset Formula $g$
+\end_inset
+
+ is concave and positive then 
+\begin_inset Formula $\log g(x)$
+\end_inset
+
+ is concave
+\end_layout
+
+\begin_layout Itemize
+If 
+\begin_inset Formula $g$
+\end_inset
+
+ is concave and positive then 
+\begin_inset Formula $1/g(x)$
+\end_inset
+
+ is convex.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Main Reference for Convex Optimization
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Boyd and Vandenberghe (2004)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Very clearly written, but has a ton of detail for a first pass.
+\end_layout
+
+\begin_layout Itemize
+See the 
+\begin_inset CommandInset href
+LatexCommand href
+name "Extreme Abridgement of Boyd and Vandenberghe"
+target "https://davidrosenberg.github.io/mlcourse/Notes/convex-optimization.pdf"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename bv_cvxbook_cover.jpg
+	lyxscale 40
+	height 60theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Convex Optimization Problem: Standard Form
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Convex Optimization Problem: Standard Form
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{eqnarray*}
+\textrm{minimize} &  & f_{0}(x)\\
+\textrm{subject to} &  & f_{i}(x)\le0,\;\;i=1,\ldots,m
+\end{eqnarray*}
+
+\end_inset
+
+where 
+\begin_inset Formula $f_{0},\ldots,f_{m}$
+\end_inset
+
+ are convex functions.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+If we had equality constraints here, they would be affine constraints, because
+ we should actually be able to replace the equality constraint with two
+ inequality constraints, one in each direction, but unless we have an affine
+ function, we can't have the function and its negative both be convex.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Question: Is the 
+\begin_inset Formula $\le$
+\end_inset
+
+ in the constraint just a convention? Could we also have used 
+\begin_inset Formula $\ge$
+\end_inset
+
+ or 
+\begin_inset Formula $=$
+\end_inset
+
+?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Level Sets and Sublevel Sets
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Let 
+\begin_inset Formula $f:\reals^{d}\to\reals$
+\end_inset
+
+ be a function.
+ Then we have the following definitions:
+\end_layout
+
+\begin_layout Definition
+A 
+\series bold
+level set
+\series default
+ or 
+\series bold
+contour line
+\series default
+ for the value 
+\begin_inset Formula $c$
+\end_inset
+
+ is the set of points 
+\begin_inset Formula $x\in\reals^{d}$
+\end_inset
+
+ for which 
+\begin_inset Formula $f(x)=c$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Definition
+A 
+\series bold
+sublevel
+\series default
+ set for the value 
+\begin_inset Formula $c$
+\end_inset
+
+ is the set of points 
+\begin_inset Formula $x\in\reals^{d}$
+\end_inset
+
+ for which 
+\begin_inset Formula $f(x)\le c$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Theorem
+If 
+\begin_inset Formula $f:\reals^{d}\to\reals$
+\end_inset
+
+ is 
+\series bold
+convex
+\series default
+, then the 
+\series bold
+sublevel sets are convex
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+(Proof straight from definitions.)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Convex Function
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename 3d-plot-convex-fn.png
+	lyxscale 30
+	height 65theight%
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Plot courtesy of Brett Bernstein.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Contour Plot Convex Function: Sublevel Set
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename contour-plot-convex-fn.png
+	lyxscale 30
+	height 65theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Is the sublevel set 
+\begin_inset Formula $\left\{ x\mid f(x)\le1\right\} $
+\end_inset
+
+ convex?
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Plot courtesy of Brett Bernstein.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Nonconvex Function
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename 3d-plot-nonconvex-fn.png
+	lyxscale 30
+	height 70theight%
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Plot courtesy of Brett Bernstein.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Contour Plot Nonconvex Function: Sublevel Set
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename contour-plot-nonconvex-fn.png
+	lyxscale 30
+	height 65theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Is the sublevel set 
+\begin_inset Formula $\left\{ x\mid f(x)\le1\right\} $
+\end_inset
+
+ convex?
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Plot courtesy of Brett Bernstein.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Fact: Intersection of Convex Sets is Convex
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename convex-set-intersection.png
+	lyxscale 30
+	height 65theight%
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Plot courtesy of Brett Bernstein.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Level and Superlevel Sets
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename superlevel-sets.png
+	lyxscale 30
+	height 65theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Level sets and superlevel sets of convex functions are 
+\series bold
+not
+\series default
+ generally convex.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Plot courtesy of Brett Bernstein.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Convex Optimization Problem: Standard Form
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Convex Optimization Problem: Standard Form
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{eqnarray*}
+\textrm{minimize} &  & f_{0}(x)\\
+\textrm{subject to} &  & f_{i}(x)\le0,\;\;i=1,\ldots,m
+\end{eqnarray*}
+
+\end_inset
+
+where 
+\begin_inset Formula $f_{0},\ldots,f_{m}$
+\end_inset
+
+ are convex functions.
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+If we had equality constraints here, they would be affine constraints, because
+ we should actually be able to replace the equality constraint with two
+ inequality constraints, one in each direction, but unless we have an affine
+ function, we can't have the function and its negative both be convex.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+What can we say about each constraint set 
+\begin_inset Formula $\left\{ x\mid f_{i}(x)\le0\right\} ?\pause$
+\end_inset
+
+ (convex)
+\end_layout
+
+\begin_layout Itemize
+What can we say about the feasible set 
+\begin_inset Formula $\left\{ x\mid f_{i}(x)\le0,\,i=1,\ldots,m\right\} ?\pause$
+\end_inset
+
+ (convex)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Convex Optimization Problem: Implicit Form
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Convex Optimization Problem: Implicit Form
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{eqnarray*}
+\textrm{minimize} &  & f(x)\\
+\textrm{subject to} &  & x\in C
+\end{eqnarray*}
+
+\end_inset
+
+where 
+\begin_inset Formula $f$
+\end_inset
+
+ is a convex function and 
+\begin_inset Formula $C$
+\end_inset
+
+ is a convex set.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Block
+An alternative 
+\begin_inset Quotes eld
+\end_inset
+
+generic
+\begin_inset Quotes erd
+\end_inset
+
+ convex optimization problem.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Convex and Differentiable Functions
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+First-Order Approximation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose 
+\begin_inset Formula $f:\reals^{d}\to\reals$
+\end_inset
+
+ is 
+\series bold
+differentiable.
+\end_layout
+
+\begin_layout Itemize
+Predict 
+\begin_inset Formula $f(y)$
+\end_inset
+
+ given 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ and 
+\begin_inset Formula $\del f(x)$
+\end_inset
+
+?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Linear (i.e.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+first order
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+) approximation:
+\begin_inset Formula 
+\[
+f(y)\approx f(x)+\del f(x)^{T}(y-x)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Boyd 
+\backslash
+& Vandenberghe Fig.
+ 3.2}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename BVFig3.2-convexTangent.png
+	lyxscale 60
+	width 70col%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+First-Order Condition for Convex, Differentiable Function
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose 
+\begin_inset Formula $f:\reals^{d}\to\reals$
+\end_inset
+
+ is 
+\series bold
+convex
+\series default
+ and 
+\series bold
+differentiable.
+\end_layout
+
+\begin_layout Itemize
+Then for any 
+\begin_inset Formula $x,y\in\reals^{d}$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+f(y)\ge f(x)+\del f(x)^{T}(y-x)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The linear approximation to 
+\begin_inset Formula $f$
+\end_inset
+
+ at 
+\begin_inset Formula $x$
+\end_inset
+
+ is a 
+\series bold
+global underestimator 
+\series default
+of 
+\begin_inset Formula $f$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Figure from Boyd 
+\backslash
+& Vandenberghe Fig.
+ 3.2; Proof in Section 3.1.3 }}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename BVFig3.2-convexTangent.png
+	lyxscale 60
+	width 70col%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+First-Order Condition for Convex, Differentiable Function
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose 
+\begin_inset Formula $f:\reals^{d}\to\reals$
+\end_inset
+
+ is 
+\series bold
+convex
+\series default
+ and 
+\series bold
+differentiable
+\end_layout
+
+\begin_layout Itemize
+Then for any 
+\begin_inset Formula $x,y\in\reals^{d}$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+f(y)\ge f(x)+\del f(x)^{T}(y-x)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Corollary
+If 
+\begin_inset Formula $\del f(x)=0$
+\end_inset
+
+ then 
+\begin_inset Formula $x$
+\end_inset
+
+ is a global minimizer of 
+\begin_inset Formula $f$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+For convex functions, 
+\series bold
+local information gives global information.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Subgradients 
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Subgradients
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+A vector 
+\begin_inset Formula $g\in\reals^{d}$
+\end_inset
+
+ is a 
+\series bold
+subgradient
+\series default
+ of 
+\begin_inset Formula $f:\reals^{d}\to\reals$
+\end_inset
+
+ at 
+\begin_inset Formula $x$
+\end_inset
+
+ if for all 
+\begin_inset Formula $z$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+f(z)\ge f(x)+g^{T}(z-x).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Subderivative_illustration.png
+	lyxscale 60
+	height 40theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Blue is a graph of 
+\begin_inset Formula $f(x)$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Each red line 
+\begin_inset Formula $x\mapsto f(x_{0})+g^{T}\left(x-x_{0}\right)$
+\end_inset
+
+ is a global lower bound on 
+\begin_inset Formula $f(x)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Subdifferential
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definitions
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $f$
+\end_inset
+
+ is 
+\series bold
+subdifferentiable
+\series default
+ at 
+\begin_inset Formula $x$
+\end_inset
+
+ if 
+\begin_inset Formula $\exists$
+\end_inset
+
+ at least one subgradient at 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+The set of all subgradients at 
+\begin_inset Formula $x$
+\end_inset
+
+ is called the 
+\series bold
+subdifferential:
+\series default
+ 
+\begin_inset Formula $\partial f(x)$
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Basic Facts
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $f$
+\end_inset
+
+ is convex and differentiable 
+\begin_inset Formula $\implies$
+\end_inset
+
+ 
+\begin_inset Formula $\partial f(x)=\left\{ \del f(x)\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Any point 
+\begin_inset Formula $x$
+\end_inset
+
+, there can be 
+\begin_inset Formula $0$
+\end_inset
+
+, 
+\begin_inset Formula $1$
+\end_inset
+
+, or infinitely many subgradients.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\partial f(x)=\emptyset$
+\end_inset
+
+ 
+\begin_inset Formula $\implies$
+\end_inset
+
+ 
+\begin_inset Formula $f$
+\end_inset
+
+ is not convex.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Globla Optimality Condition
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+A vector 
+\begin_inset Formula $g\in\reals^{d}$
+\end_inset
+
+ is a 
+\series bold
+subgradient
+\series default
+ of 
+\begin_inset Formula $f:\reals^{d}\to\reals$
+\end_inset
+
+ at 
+\begin_inset Formula $x$
+\end_inset
+
+ if for all 
+\begin_inset Formula $z$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+f(z)\ge f(x)+g^{T}(z-x).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Corollary
+If 
+\begin_inset Formula $0\in\partial f(x)$
+\end_inset
+
+, then 
+\begin_inset Formula $x$
+\end_inset
+
+ is a 
+\series bold
+global minimizer
+\series default
+ of 
+\begin_inset Formula $f$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Subdifferential of Absolute Value
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Consider 
+\begin_inset Formula $f(x)=\left|x\right|$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Boyd EE364b: Subgradients Slides}}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename subgradient-absolute-value.png
+	width 80col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Plot on right shows 
+\begin_inset Formula $\left\{ (x,g)\mid x\in\reals,\;g\in\partial f(x)\right\} $
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $f(x_{1},x_{2})=\left|x_{1}\right|+2\left|x_{2}\right|$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename 3d-plot-abs-x1-plus-2absx2.png
+	lyxscale 30
+	height 75theight%
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Plot courtesy of Brett Bernstein.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Subgradients of 
+\begin_inset Formula $f(x_{1},x_{2})=\left|x_{1}\right|+2\left|x_{2}\right|$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let's find the subdifferential of 
+\begin_inset Formula $f(x_{1},x_{2})=\left|x_{1}\right|+2\left|x_{2}\right|$
+\end_inset
+
+ at 
+\begin_inset Formula $\left(3,0\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+First coordinate of subgradient must be 
+\begin_inset Formula $1$
+\end_inset
+
+, from 
+\begin_inset Formula $\left|x_{1}\right|$
+\end_inset
+
+ part (at 
+\begin_inset Formula $x_{1}=3$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Second coordinate of subgradient can be anything in 
+\begin_inset Formula $\left[-2,2\right]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+So graph of 
+\begin_inset Formula $h(x_{1},x_{2})=f(3,0)+g^{T}\left(x_{1}-3,x_{2}-0\right)$
+\end_inset
+
+ is a global underestimate of 
+\begin_inset Formula $f(x_{1},x_{2})$
+\end_inset
+
+, for any 
+\begin_inset Formula $g=\left(g_{1},g_{2}\right),$
+\end_inset
+
+ where 
+\begin_inset Formula $g_{1}=1$
+\end_inset
+
+ and 
+\begin_inset Formula $g_{2}\in[-2,2]$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Underestimating Hyperplane to 
+\begin_inset Formula $f(x_{1},x_{2})=\left|x_{1}\right|+2\left|x_{2}\right|$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename underestimating-3d-plot-abs-x1-plus-2absx2.png
+	lyxscale 30
+	height 75theight%
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Plot courtesy of Brett Bernstein.}}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Subdifferential on Contour Plot
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename subdiff-contour-plot-abs-x1-plus-2absx2.png
+	lyxscale 30
+	height 75theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Contour plot of 
+\begin_inset Formula $f(x_{1},x_{2})=\left|x_{1}\right|+2\left|x_{2}\right|$
+\end_inset
+
+, with set of subgradients at 
+\begin_inset Formula $(3,0)$
+\end_inset
+
+.
+ .
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Plot courtesy of Brett Bernstein.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Contour Lines and Gradients
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For function 
+\begin_inset Formula $f:\reals^{d}\to\reals$
+\end_inset
+
+, 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+graph
+\series default
+ of function lives in 
+\begin_inset Formula $\pause\reals^{d+1}$
+\end_inset
+
+,
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+gradient
+\series default
+ and 
+\series bold
+subgradient
+\series default
+ of 
+\begin_inset Formula $f$
+\end_inset
+
+ live in 
+\begin_inset Formula $\pause\reals^{d}$
+\end_inset
+
+, and
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+contours
+\series default
+, 
+\series bold
+level sets,
+\series default
+ and 
+\series bold
+sublevel sets
+\series default
+ are in 
+\begin_inset Formula $\reals^{d}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $f:\reals^{d}\to\reals$
+\end_inset
+
+ continuously differentiable, 
+\begin_inset Formula $\del f(x_{0})\neq0$
+\end_inset
+
+, then 
+\begin_inset Formula $\del f(x_{0})$
+\end_inset
+
+ normal to level set
+\begin_inset Formula 
+\[
+S=\left\{ x\in\reals^{d}\mid f(x)=f(x_{0})\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Proof sketch in notes.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Gradient orthogonal to sublevel sets
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename grad-orthog-to-sublevel-sets.png
+	lyxscale 30
+	height 75theight%
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Plot courtesy of Brett Bernstein.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_body
+\end_document

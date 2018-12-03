@@ -1,0 +1,7 @@
+\select@language {english}
+\beamer@sectionintoc {1}{Feature Extraction}{3}{0}{1}
+\beamer@sectionintoc {2}{Feature Templates}{13}{0}{2}
+\beamer@sectionintoc {3}{Feature Map -- ingesting inputs not natively in $\mathbf {R}^d$}{34}{0}{3}
+\beamer@sectionintoc {4}{Handling Nonlinearity with Linear Methods}{51}{0}{4}
+\beamer@sectionintoc {5}{Example 1: Boston housing and Abalone}{104}{0}{5}
+\beamer@sectionintoc {6}{Example 2: Two moons data}{118}{0}{6}

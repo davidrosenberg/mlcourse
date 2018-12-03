@@ -3600,6 +3600,48 @@ pseudo-residuals
 
 \end_deeper
 \begin_layout Itemize
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+One common question is, instead of fitting 
+\begin_inset Quotes eld
+\end_inset
+
+pseudo-residuals
+\begin_inset Quotes erd
+\end_inset
+
+, why not directly fit the residual? Well, this is a reasonable thing to
+ try in the regression setting, and for 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ loss, the pseudoresidual is exactly this! but what should the 
+\begin_inset Quotes eld
+\end_inset
+
+residual
+\begin_inset Quotes erd
+\end_inset
+
+ be in, say, a logistic regression setting? To minimize the loss on a single
+ input, you'd have to set the score function to produce 
+\begin_inset Formula $\pm\infty$
+\end_inset
+
+.
+ So that doesn't make much sense...
+ The gradient gives us a way to have a reasonable relative magnitude of
+ change for each of the 
+\begin_inset Formula $f$
+\end_inset
+
+'s.
+\end_layout
+
+\end_inset
+
 Find the closest base hypothesis 
 \begin_inset Formula $h\in\ch$
 \end_inset
@@ -3654,7 +3696,7 @@ Take the
 \end_deeper
 \begin_layout Standard
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Separator plain

@@ -49,6 +49,6 @@ for (int i = 0; i < T; ++i) {
   w -= s*g;
   ws.push(w);
   label("$T="+string(i)+"$",(-10,max(ys)));
-  if (i%5==0) shipout("Data"+string(i));
+  if (i%5==0 || i < 5) shipout("Data"+string(i));
   restore();
 }

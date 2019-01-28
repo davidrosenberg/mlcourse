@@ -12,9 +12,9 @@
     We are given the data set $(x_1,y_1),\ldots,(x_n,y_n)$ where
     $x_i\in\RR^d$ and $y_i\in\RR$.  We want to fit a linear function to
     this data by performing empirical risk minimization.  More
-    precisely, we are using the hypothesis space $\FF=\{f(x)=w^Tx\mid
-    w\in\RR^d\}$ and the loss function $\ell(a,y)=(a-y)^2$.  Given an
-    initial guess $\tilde{w}$ for the empirical risk minimizing
+    precisely, we are using the hypothesis space $\FF=\{h_\theta(x)=\theta^Tx\mid
+    \theta\in\RR^d\}$ and the loss function $\ell(a,y)=(a-y)^2$.  Given an
+    initial guess $\tilde{\theta}$ for the empirical risk minimizing
     parameter vector, how could we improve our guess?
   \end{block}
 \begin{center}
@@ -26,12 +26,12 @@
   \begin{block}{Solution}
     \begin{itemize}
     \item The empirical risk is given by
-      $$\hat{R}_n(f) = \frac{1}{n}\sum_{i=1}^n \ell(f(x_i),y_i) =
-      \frac{1}{n}\sum_{i=1}^n (w^Tx_i-y_i)^2
-      = \frac{1}{n}\|Xw-y\|_2^2,$$
+      $$\hat{R}_n(h_\theta) = \frac{1}{n}\sum_{i=1}^n \ell(h_\theta(x_i),y_i) =
+      \frac{1}{n}\sum_{i=1}^n (\theta^Tx_i-y_i)^2
+      = \frac{1}{n}\|X\theta-y\|_2^2,$$
       where $X\in\RR^{n\times d}$ is the matrix whose $i$th row is
-      given by $x_i$.
-    \item Can improve a non-optimal guess $\tilde{w}$ by taking a
+      given by $x_i^T$.
+    \item Can improve a non-optimal guess $\tilde{\theta}$ by taking a
       small step in the direction of the negative gradient.
     \end{itemize}
   \end{block}  
@@ -122,7 +122,7 @@
   \frametitle{Multivariable Differentiation}
   \begin{itemize}
   \item Consider now a function $f:\RR^n\to\RR$ with inputs of the
-    form $x=(x_1,\ldots,x_n)\in\RR^n$.
+    form $x=(x_1,\ldots,x_n)^T\in\RR^n$.
   \item Unlike the 1-dimensional case, we cannot assign a single
     number to the slope at a point since there are many directions we can move in.
   \end{itemize}

@@ -272,6 +272,21 @@
 \includegraphics[width=\textwidth,height=0.8\textheight]{1-gradients/Saddle.pdf}
 \end{center}
 \end{frame}
+\begin{frame}
+  \frametitle{Recap}
+  \begin{itemize}
+  \item To find a good decision function we will minimize the
+    empirical loss on the training data.
+  \item Having fixed a hypothesis space parameterized by $\theta$,
+    finding a good decision function means finding a good $\theta$.
+  \item Given a current guess for $\theta$, we will use the gradient
+    of the empirical loss (w.r.t.~$\theta$)
+    to get a local linear approximation.
+  \item If the gradient is non-zero, taking a small step in the direction of the negative
+    gradient is guaranteed to decrease the empirical loss.
+  \item This motivates the minimization algorithm called gradient descent.
+  \end{itemize}
+\end{frame}
 \subsection{Computing Gradients}
 \begin{frame}[fragile]
   \frametitle{Computing Gradients}
@@ -306,6 +321,7 @@
 \begin{frame}
   \frametitle{$J(\theta_1,\theta_2,\theta_3)=\log(1+e^{\theta_1+2\theta_2+3\theta_3})$ Solution 2}
   \begin{itemize}
+  \item Spot the linear algebra!
   \item Let $w=(1,2,3)^T$.
   \item Write $J(\theta) = \log(1+e^{w^T\theta})$.
   \item Apply a version of the chain rule:

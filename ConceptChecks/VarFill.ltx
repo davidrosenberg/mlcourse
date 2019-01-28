@@ -1,0 +1,163 @@
+%updating.
+\section{Lab 1: Gradients and Directional Derivatives}
+\subsection{Multivariate Differentiation}
+\subsubsection{Learning Objectives} % This is new.
+\begin{enumerate}
+\item Define the directional derivative, and use it to find a linear approximation to $f(\mathbf{x}+h\mathbf{u})$.
+\item Define partial derivative and the gradient. Show how to compute an arbitrary directional derivative using the gradient.
+\item For a differentiable function, give a linear approximation near a point $\mathbf{x}$ using the gradient.
+\item Show that the gradient gives the direction of steepest ascent, and the negative gradient gives the direction of steepest descent.
+\end{enumerate}
+\subsubsection{Concept Check Questions}
+\begin{enumerate}
+\item If $f'(x;u)<0$ show that $f(x+hu)<f(x)$ for sufficiently small
+  $h>0$.
+\begin{solution}
+\item[]\Sol The directional derivative is given by
+  $$f'(x;u)=\lim_{h\to0} \frac{f(x+hu)-f(x)}{h}<0.$$
+  By the definition of a limit, there must be a $\delta > 0$ such that
+  $$\frac{f(x+hu)-f(x)}{h}<0$$
+  whenever $|h|<\delta$.  If we restrict $0<h<\delta$ then we have
+  $$f(x+hu)-f(x)<0 \implies f(x+hu) < f(x)$$
+  as required.
+\end{solution}
+\item Let $f:\RR^n\to\RR$ be differentiable, and assume that $\nabla
+  f(x)\neq 0$.  Prove
+  $$\argmax_{\|u\|_2=1} f'(x;u) = \frac{\nabla f(x)}{\|\nabla f(x)\|_2}
+  \quad\text{and}\quad
+  \argmin_{\|u\|_2=1} f'(x;u) = -\frac{\nabla f(x)}{\|\nabla
+    f(x)\|_2}.$$
+\begin{solution}
+\item[]\Sol By Cauchy-Schwarz we have, for $\|u\|_2=1$,
+  $$|f'(x;u)| = |\nabla f(x)^Tu| \leq \|\nabla f(x)\|_2 \|u\|_2
+  = \|\nabla f(x)\|_2.$$
+  Note that
+  $$\nabla f(x)^T\frac{\nabla f(x)}{\|\nabla f(x)\|_2} = \|\nabla
+  f(x)\|_2
+  \quad\text{and}\quad
+  \nabla f(x)^T\frac{-\nabla f(x)}{\|\nabla f(x)\|_2} = -\|\nabla
+  f(x)\|_2,$$
+  so these achieve the maximum and minimum bounds given by
+  Cauchy-Schwarz.
+
+  One way to understand the Cauchy-Schwarz inequality is to recall
+  that the dot-product between two vectors $v,w\in\RR^d$ can be
+  written as
+  $$v^Tw = \|v\|_2\|w\|_2\cos(\theta),$$
+  where $\theta$ is the angle between $v$ and~$w$.  This value is
+  maximized at $\cos(0)=1$ and minimized at $\cos(\pi)=-1$.
+\end{solution}
+\end{enumerate}
+\subsection{Computing Gradients}
+\subsubsection{Learning Objectives} % This is new.
+\begin{enumerate}
+\item Find the gradient of a function by computing each partial derivative separately.
+\item Use the chain rule to perform gradient computations.
+\item Compute the gradient of a differentiable function by determining the form of a general directional derivative.
+\end{enumerate}
+\subsubsection{Concept Check Questions}
+\begin{enumerate}
+\item Let $f:\RR^2\to\RR$ be given by $f(x,y) = x^2+4xy+3y^2$.
+  Compute the gradient $\nabla f(x,y)$.
+\begin{solution}
+\item[]\Sol Computing the partial derivatives gives
+  $$\partial_1f(x,y) = 2x+4y\quad\text{and}\quad
+  \partial_2f(x,y)=4x+6y.$$
+  Thus the gradient is given by
+  $$\nabla f(x,y) = \begin{pmatrix}2x+4y\\4x+6y\end{pmatrix}.$$
+\end{solution}
+\item Compute the gradient of $f:\RR^n\to\RR$ where $f(x)=x^TAx$ and
+  $A\in\RR^{n\times n}$ is any matrix.
+\begin{solution}
+\item[]\Sol Here we show two methods.  In either case we can obtain
+  differentiability by noticing the partial derivatives are continuous.
+  \begin{enumerate}
+  \item Since
+    $$f(x) = x^TAx = \sum_{i,j=1}^na_{ij}x_ix_j$$
+    we have
+    $$\partial_k f(x) = \sum_{j=1}^n (a_{kj}+a_{jk})x_j$$
+    so
+    $$\nabla f(x) = (A+A^T)x.$$
+  \item Note that
+    $$\begin{array}{rcl}
+    f(x+tv)
+    & = & (x+tv)^TA(x+tv)\\
+    & = & x^TAx + tx^TAv + tv^TAx + t^2v^TAv\\
+    & = & f(x) + t(x^TA+x^TA^T)v + t^2(v^TAv).
+    \end{array}$$
+    Thus
+    $$f'(x;v) = \lim_{t\to 0}\frac{f(x+tv)-f(x)}{t}
+    = \lim_{t\to0} (x^TA+x^TA^T)v  +t(v^TAv) = (x^TA+x^TA^T)v.$$
+    This shows
+    $$\nabla f(x) = (A+A^T)x.$$
+  \end{enumerate}
+\end{solution}
+\item Compute the gradient of the quadratic function
+  $f:\RR^n\to\RR$ given by
+  $$f(x) = b + c^Tx + x^TAx,$$
+  where $b\in\RR$, $c\in\RR^n$ and $A\in\RR^{n\times n}$.
+\begin{solution}
+\item[]\Sol First consider the linear function $g(x)=c^Tx$.  Note that
+  $$g(x+tv) = c^T(x+tv) = c^Tx + tc^Tv \implies \nabla f(x) = c.$$
+  As the derivative is linear we can combine this with the previous
+  problem to obtain
+  $$\nabla f(x) = c + (A+A^T)x.$$
+\end{solution}
+\item Fix $s\in\RR^n$ and consider $f(x) = (x-s)^TA(x-s)$ where
+  $A\in\RR^{n\times n}$.  Compute the gradient of $f$.
+\begin{solution}
+\item[]\Sol We give two methods.
+  \begin{enumerate}
+  \item Let $g(x) = x^TAx$ and $h(x)=x-s$ so that $f(x)=g(h(x))$.  By
+    the vector-valued form of the chain rule we have
+    $$\nabla f(x) = \nabla g(h(x))^TDh(x) = (A+A^T)(x-s),$$
+    where $Dh(x)=\Id_{n\times n}$ is the Jacobian matrix of $h$.
+  \item We have
+    $$(x-s)^TA(x-s) = x^TAx - s^T(A+A^T)x+s^TAs.$$
+    Computing the gradient gives
+    $$\nabla f(x) = (A+A^T)x - (A+A^T)s = (A+A^T)(x-s).$$
+  \end{enumerate}
+\end{solution}
+\item Consider the ridge regression objective function
+  $$f(w) = \|Aw-y\|_2^2 + \lambda\|w\|_2^2,$$
+  where $w\in\RR^n$, $A\in\RR^{m\times n}$, $y\in\RR^m$, and
+  $\lambda\in\RR_{\geq 0}$.
+  \begin{enumerate}
+  \item Compute the gradient of $f$.
+  \item Express $f$ in the form $f(w)=\|Bw-z\|_2^2$ for some choice of $B,z$. What do you notice about $B$?
+  \item Using either of the parts above, compute
+    $$\argmin_{w\in\RR^n} f(w).$$
+  \end{enumerate}
+\begin{solution}
+\item[]\Sol
+  \begin{enumerate}
+  \item We can express $f(w)$ as
+    $$f(w) = (Aw-y)^T(Aw-y) + \lambda w^Tw = w^TA^TAw - 2y^TAw
+    + y^Ty + \lambda w^Tw.$$
+    Applying our previous results gives (noting $w^Tw =
+    w^T\Id_{n\times n} w$)
+    $$\nabla f(w) = 2A^TAw - 2A^Ty + 2\lambda w =
+    2(A^TA+\lambda\Id_{n\times n})w-2A^Ty.$$
+  \item Let
+    $$B = \begin{pmatrix} A \\ \sqrt{\lambda}\Id_{n\times
+      n}\end{pmatrix}\quad\text{and}\quad
+    z = \begin{pmatrix} y\\\mathbf{0}_{n\times 1}\end{pmatrix}$$
+    written in block-matrix form. Note $B$ is full rank.
+  \item The argmin is $w = (A^TA+\lambda\Id_{n\times n})^{-1}A^Ty$.
+    To see why the inverse is valid, see the linear algebra questions below.
+  \end{enumerate}
+\end{solution}
+\item Compute the gradient of
+  $$f(\theta) = \lambda\|\theta\|_2^2 + \sum_{i=1}^n \log(1 + \exp(-y_i\theta^Tx_i)),$$
+  where $y_i\in\RR$ and $\theta\in\RR^m$ and $x_i\in\RR^m$ for
+  $i=1,\ldots,n$.
+\begin{solution}
+\item[]\Sol As the derivative is linear, we can compute the gradient
+  of each term separately and obtain
+  $$\nabla f(\theta) = 2\lambda\theta - \sum_{i=1}^n
+  \frac{\exp(-y_i\theta^Tx_i)}{1+\exp(-y_i\theta^Tx_i)}y_ix_i,$$
+  where we used the techniques from Recitation~1 to differentiate the
+  log terms.
+\end{solution}
+\end{enumerate}
+

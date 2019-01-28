@@ -26,13 +26,13 @@
   \begin{block}{Solution}
     \begin{itemize}
     \item The empirical risk is given by
-      $$\hat{R}_n(h_\theta) = \frac{1}{n}\sum_{i=1}^n \ell(h_\theta(x_i),y_i) =
+      $$\hspace{-0.5cm}J(\theta):=\hat{R}_n(h_\theta) = \frac{1}{n}\sum_{i=1}^n \ell(h_\theta(x_i),y_i) =
       \frac{1}{n}\sum_{i=1}^n (\theta^Tx_i-y_i)^2
       = \frac{1}{n}\|X\theta-y\|_2^2,$$
       where $X\in\RR^{n\times d}$ is the matrix whose $i$th row is
       given by $x_i^T$.
     \item Can improve a non-optimal guess $\tilde{\theta}$ by taking a
-      small step in the direction of the negative gradient.
+      small step in the direction of the negative gradient $-\nabla J(\theta)$.
     \end{itemize}
   \end{block}  
 \end{frame}
@@ -134,6 +134,19 @@
 \end{center}
 \end{frame}
 \begin{frame}
+  \frametitle{Multivariable Differentiation}
+  \begin{enumerate}
+  \item We will look at two (related) methods for understanding
+    multivarible differentiation:
+    \begin{enumerate}
+    \item Directional Derivatives: Derivative computed along a single
+      direction
+    \item Gradient: Gives multidimensional linear approximation and
+      the steepest ascent direction
+    \end{enumerate}
+  \end{enumerate}
+\end{frame}
+\begin{frame}
   \frametitle{Directional Derivative}
   \begin{block}{Definition}
     Let $f:\RR^n\to\RR$.  The directional derivative $f'(x;u)$ of $f$ at $x\in\RR^n$ in
@@ -145,7 +158,10 @@
     problem into a 1-dimensional problem.
   \item Similar to 1-d we have
     $$f(x+hu) = f(x) + hf'(x;u) + o(h).$$
-  \item We say that $u$ is a \textit{descent direction} of $f$ at $x$ if $f'(x;u)<0$.
+  \item We say that $u$ is a \textit{descent direction} of $f$ at $x$
+    if $f'(x;u)<0$.
+  \item Taking a small enough step in a descent
+    direction causes the function value decreases.
   \end{itemize}
 \end{frame}
 \begin{frame}[fragile]
@@ -170,7 +186,7 @@
   \end{itemize}
 \end{frame}
 \begin{frame}
-  \frametitle{Differentiability}
+  \frametitle{Differentiability and Gradients}
   \begin{itemize}
   \item We say a function $f:\RR^n\to\RR$ is \textit{differentiable}
     at $x\in\RR^n$ if
@@ -200,13 +216,14 @@
   \end{itemize}
 \end{frame}
 \begin{frame}
-  \frametitle{Tangent Plane}
+  \frametitle{Linear Approximation and Tangent Plane}
   \begin{itemize}
+  \item Gradient gives us a linear approximation of $f$ near the point
+    $x$:
+    $$f(x+v)\approx f(x)+\nabla f(x)^Tv.$$
   \item Analogous to the 1-d case we can express differentiability as
     $$f(x+v) = f(x) + \nabla f(x)^Tv + o(\|v\|_2).$$
-  \item The approximation $f(x+v)\approx f(x)+\nabla f(x)^Tv$ gives a
-    tangent plane at the point $x$.
-  \item The tangent plane of $f$ at $x$ is given by
+  \item The gradient approximation can be seen as a tangent plane given by
     $$P = \{(x+v,f(x)+\nabla f(x)^Tv)\mid v\in\RR^n\}\subseteq
     \RR^{n+1}.$$
   \item Methods like gradient descent approximate a function locally
@@ -222,9 +239,12 @@
 \begin{frame}
   \frametitle{Directional Derivatives from Gradients}
   \begin{itemize}
-  \item If $f$ is differentiable we have
+  \item If $f$ is differentiable we obtain a formula for any
+    directional derivative in terms of the gradient
     $$f'(x;u) = \nabla f(x)^Tu.$$
-  \item If $\nabla f(x)\neq 0$ this implies that
+  \item This means a direction is a descent direction if and only if
+    it makes an acute angle with the negative gradient.
+  \item If $\nabla f(x)\neq 0$ applying Cauchy-Schwarz gives
     $$\argmax_{\|u\|_2=1} f'(x;u) = \frac{\nabla f(x)}{\|\nabla f(x)\|_2}
     \quad\text{and}\quad
     \argmin_{\|u\|_2=1} f'(x;u) = -\frac{\nabla f(x)}{\|\nabla
@@ -242,7 +262,7 @@
     is a local extremum then we must have $\nabla f(x)=0$.
   \item Points with $\nabla f(x)=0$ are called \textit{critical
     points}.
-  \item Later we will see that for a convex differentiable function,
+  \item Later in the course we will see that for a convex differentiable function,
     $x$ is a critical point if and only if it is a global minimizer.
   \end{itemize}
 \end{frame}
@@ -258,38 +278,38 @@
   \begin{block}{Question}
     For questions 1 and 2, compute the gradient of the given function.
     \begin{enumerate}
-    \item $f:\RR^3\to\RR$ is given by
-      $$f(x_1,x_2,x_3) = \log(1+e^{x_1+2x_2+3x_3}).$$
-    \item $f:\RR^n\to\RR$ is given by
-      $$f(x) = \|Ax-y\|_2^2 = (Ax-y)^T(Ax-y) = x^TA^TAx - 2y^TAx+y^Ty,$$
-      for some $A\in\RR^{m\times n}$ and $y\in\RR^m$.
-    \item Assume $A$ in the previous question has full column rank.
-      What is the critical point of $f$?
+    \item $J:\RR^3\to\RR$ is given by
+      $$J(\theta_1,\theta_2,\theta_3) = \log(1+e^{\theta_1+2\theta_2+3\theta_3}).$$
+    \item $J:\RR^n\to\RR$ is given by
+      $$J(\theta) = \|X\theta-y\|_2^2 = (X\theta-y)^T(X\theta-y) = \theta^TX^TX\theta - 2y^TX\theta+y^Ty,$$
+      for some $X\in\RR^{m\times n}$ and $y\in\RR^m$.
+    \item Assume $X$ in the previous question has full column rank.
+      What is the critical point of $J$?
     \end{enumerate}
   \end{block}
 \end{frame}
 \begin{frame}
-  \frametitle{$f(x_1,x_2,x_3)=\log(1+e^{x_1+2x_2+3x_3})$ Solution 1}
+  \frametitle{$J(\theta_1,\theta_2,\theta_3)=\log(1+e^{\theta_1+2\theta_2+3\theta_3})$ Solution 1}
   We can compute the partial derivatives directly:
   $$\begin{Array}{rcl}
-    \partial_{x_1} f(x_1,x_2,x_3) &=&\frac{e^{x_1+2x_2+3x_3}}{1+e^{x_1+2x_2+3x_3}}\\
-    \partial_{x_2} f(x_1,x_2,x_3) &=&\frac{2e^{x_1+2x_2+3x_3}}{1+e^{x_1+2x_2+3x_3}}\\
-    \partial_{x_3} f(x_1,x_2,x_3) &=&
-    \frac{3e^{x_1+2x_2+3x_3}}{1+e^{x_1+2x_2+3x_3}}
+    \partial_{\theta_1} J(\theta_1,\theta_2,\theta_3) &=&\frac{e^{\theta_1+2\theta_2+3\theta_3}}{1+e^{\theta_1+2\theta_2+3\theta_3}}\\
+    \partial_{\theta_2} J(\theta_1,\theta_2,\theta_3) &=&\frac{2e^{\theta_1+2\theta_2+3\theta_3}}{1+e^{\theta_1+2\theta_2+3\theta_3}}\\
+    \partial_{\theta_3} J(\theta_1,\theta_2,\theta_3) &=&
+    \frac{3e^{\theta_1+2\theta_2+3\theta_3}}{1+e^{\theta_1+2\theta_2+3\theta_3}}
     \end{Array}$$
   and obtain
-  $$\nabla f(x_1,x_2,x_3) =
-  \PMattt{\frac{e^{x_1+2x_2+3x_3}}{1+e^{x_1+2x_2+3x_3}}}
-         {\frac{2e^{x_1+2x_2+3x_3}}{1+e^{x_1+2x_2+3x_3}}}
-         {\frac{3e^{x_1+2x_2+3x_3}}{1+e^{x_1+2x_2+3x_3}}}.$$         
+  $$\nabla J(\theta_1,\theta_2,\theta_3) =
+  \PMattt{\frac{e^{\theta_1+2\theta_2+3\theta_3}}{1+e^{\theta_1+2\theta_2+3\theta_3}}}
+         {\frac{2e^{\theta_1+2\theta_2+3\theta_3}}{1+e^{\theta_1+2\theta_2+3\theta_3}}}
+         {\frac{3e^{\theta_1+2\theta_2+3\theta_3}}{1+e^{\theta_1+2\theta_2+3\theta_3}}}.$$         
 \end{frame}
 \begin{frame}
-  \frametitle{$f(x_1,x_2,x_3)=\log(1+e^{x_1+2x_2+3x_3})$ Solution 2}
+  \frametitle{$J(\theta_1,\theta_2,\theta_3)=\log(1+e^{\theta_1+2\theta_2+3\theta_3})$ Solution 2}
   \begin{itemize}
   \item Let $w=(1,2,3)^T$.
-  \item Write $f(x) = \log(1+e^{w^Tx})$.
+  \item Write $J(\theta) = \log(1+e^{w^T\theta})$.
   \item Apply a version of the chain rule:
-    $$\nabla f(x) = \frac{e^{w^Tx}}{1+e^{w^Tx}}w.$$
+    $$\nabla J(\theta) = \frac{e^{w^T\theta}}{1+e^{w^T\theta}}w.$$
   \end{itemize}
   \begin{theorem}[Chain Rule]
     If $g:\RR\to\RR$ and $h:\RR^n\to\RR$ are differentiable then
@@ -297,33 +317,34 @@
   \end{theorem}
 \end{frame}
 \begin{frame}
-  \frametitle{$f(x) = \|Ax-y\|_2^2$ Solution}
+  \frametitle{$J(\theta) = \|X\theta-y\|_2^2$ Solution}
   \begin{itemize}
   \item We could use techniques similar to the previous problem, but
     instead we show a different method using directional derivatives.
-  \item For arbitrary $t\in\RR$ and $x,v\in\RR^n$ we have
+  \item For arbitrary $t\in\RR$ and $\theta,v\in\RR^n$ we have
     $$\hspace{-.5cm}\begin{array}{rcl}
-    \multicolumn{3}{l}{f(x+tv)}\\
-    & = & (x+tv)^TA^TA(x+tv) - 2y^TA(x+tv)+y^Ty \\
-    & = & x^TA^TAx + t^2v^TA^TAv + 2tx^TA^TAv-2y^TAx-2ty^TAv+y^Ty\\
-    & = & f(x) + t(2x^TA^TA - 2y^TA)v + t^2v^TA^TAv.
+    \multicolumn{3}{l}{J(\theta+tv)}\\
+    & = & (\theta+tv)^TX^TX(\theta+tv) - 2y^TX(\theta+tv)+y^Ty \\
+    & = & \underline{\theta^TX^TX\theta} + t^2v^TX^TXv + 2t\theta^TX^TXv-\underline{2y^TX\theta}-2ty^TXv+\underline{y^Ty}\\
+    & = & \underline{J(\theta)} + t(2\theta^TX^TX - 2y^TX)v + t^2v^TX^TXv.
   \end{array}$$
   \item This gives
-    $$f'(x;v)=\lim_{t\to0}\frac{f(x+tv)-f(x)}{t}
-    = (2x^TA^TA - 2y^TA)v = \nabla f(x)^Tv$$
-  \item Thus $\nabla f(x) = 2(A^TAx-A^Ty) = 2A^T(Ax-y)$.
-  \item Data science interpretation of $\nabla f(x)$?
+    $$J'(\theta;v)=\lim_{t\to0}\frac{J(\theta+tv)-J(\theta)}{t}
+    = (2\theta^TX^TX - 2y^TX)v = \nabla J(\theta)^Tv$$
+  \item Thus $\nabla J(\theta) = 2(X^TX\theta-X^Ty) = 2X^T(X\theta-y)$.
+  \item Data science interpretation of $\nabla J(\theta)$ (assuming
+    columns of $X$ are centered)?
   \end{itemize}
 \end{frame}
 \begin{frame}
-  \frametitle{Critical Points of $f(x)=\|Ax-y\|_2^2$}
+  \frametitle{Critical Points of $J(\theta)=\|X\theta-y\|_2^2$}
   \begin{itemize}
-  \item Need $\nabla f(x) = 2A^TAx-2A^Ty=0$.
-  \item Since $A$ is assumed to have full column rank, we see that
-    $A^TA$ is invertible.
-  \item Thus we have $x=(A^TA)^{-1}A^Ty$.
+  \item Need $\nabla J(\theta) = 2X^TX\theta-2X^Ty=0$.
+  \item Since $X$ is assumed to have full column rank, we see that
+    $X^TX$ is invertible.
+  \item Thus we have $\theta=(X^TX)^{-1}X^Ty$.
   \item As we will see later, this function is strictly convex (Hessian
-    $\nabla^2f(x) = 2A^TA$ is positive definite).
+    $\nabla^2J(\theta) = 2X^TX$ is positive definite).
   \item Thus we have found the unique minimizer (least squares solution).
   \end{itemize}
 \end{frame}
@@ -335,7 +356,7 @@
   \item Can use the following theorem to be completely rigorous.
   \end{itemize}
   \begin{theorem}
-    Let $f:\RR^n\to\RR$ and suppose $\partial_{x_i}f:\RR^n\to\RR$ is
+    Let $f:\RR^n\to\RR$ and suppose $\partial_if:\RR^n\to\RR$ is
     continuous for $i=1,\ldots,n$. Then $f$ is differentiable.
   \end{theorem}
 \end{frame}

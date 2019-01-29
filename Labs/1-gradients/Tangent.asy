@@ -1,5 +1,5 @@
 settings.prc = false;
-settings.render = 5;
+settings.render = 30;
 import three;
 import graph3;
 size(12cm);

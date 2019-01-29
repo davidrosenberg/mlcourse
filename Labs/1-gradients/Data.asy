@@ -51,7 +51,7 @@ ws = ws[times];
 for (int i = 0; i < times.length; ++i) {
   save();
   for (int j = 0; j < i; ++j)
-    draw((xm,xm*ws[j].x+ws[j].y)--(xM,xM*ws[j].x+ws[j].y),lightgreen+0.25);
+    draw((xm,xm*ws[j].x+ws[j].y)--(xM,xM*ws[j].x+ws[j].y),darkgreen+0.25);
   draw((xm,xm*ws[i].x+ws[i].y)--(xM,xM*ws[i].x+ws[i].y),darkgreen+1);
   label("$T="+string(times[i])+"$",(-10,max(ys)));
   shipout("Data"+string(times[i]));
@@ -66,10 +66,10 @@ for (int i = 0; i < ws.length; ++i) {
   save();
   for (int j = 0; j < i; ++j) {
     dot(ws[j],black+3);
-    if (j > 0) draw(ws[j-1]--ws[j],darkgreen+1);
+    if (j > 0) draw(ws[j-1]--ws[j],red+1);
   }
   dot(ws[i],black+3);
-  if (i > 0) draw(ws[i-1]--ws[i],darkgreen+1,EndArrow);
+  if (i > 0) draw(ws[i-1]--ws[i],red+1,EndArrow);
   xaxis("$\theta_1$",EndArrow);
   yaxis("$\theta_2$",EndArrow);
   shipout("contour"+string(times[i]));

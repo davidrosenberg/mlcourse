@@ -51,7 +51,7 @@ ws = ws[times];
 for (int i = 0; i < times.length; ++i) {
   save();
   for (int j = 0; j < i; ++j)
-    draw((xm,xm*ws[j].x+ws[j].y)--(xM,xM*ws[j].x+ws[j].y),lightgreen+0.1);
+    draw((xm,xm*ws[j].x+ws[j].y)--(xM,xM*ws[j].x+ws[j].y),lightgreen+0.25);
   draw((xm,xm*ws[i].x+ws[i].y)--(xM,xM*ws[i].x+ws[i].y),darkgreen+1);
   label("$T="+string(times[i])+"$",(-10,max(ys)));
   shipout("Data"+string(times[i]));

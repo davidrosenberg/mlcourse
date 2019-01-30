@@ -259,7 +259,7 @@
   \item If $f$ is differentiable we obtain a formula for any
     directional derivative in terms of the gradient
     $$f'(x;u) = \nabla f(x)^Tu.$$
-  \item This means a direction is a descent direction if and only if
+  \item This implies that a direction is a descent direction if and only if
     it makes an acute angle with the negative gradient.
   \item If $\nabla f(x)\neq 0$ applying Cauchy-Schwarz gives
     $$\argmax_{\|u\|_2=1} f'(x;u) = \frac{\nabla f(x)}{\|\nabla f(x)\|_2}
@@ -341,7 +341,7 @@
   \item Spot the linear algebra!
   \item Let $w=(1,2,3)^T$.
   \item Write $J(\theta) = \log(1+e^{w^T\theta})$.
-  \item Apply a version of the chain rule:
+  \item Apply a version of the chain rule (twice):
     $$\nabla J(\theta) = \frac{e^{w^T\theta}}{1+e^{w^T\theta}}w.$$
   \end{itemize}
   \begin{theorem}[Chain Rule]

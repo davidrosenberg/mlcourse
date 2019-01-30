@@ -9,11 +9,11 @@ MACROS = Macros.ltx Theorems.ltx
 
 %.pdf : %.ltx ${MACROS} testtarg
 	cat $< >VarFill.ltx
-	latexmk -pdf -auxdir=./asytmp -jobname=$(basename $@) VarMain.ltx 
+	pdflatex -jobname=$(basename $@) VarMain.ltx
 
 %_sol.pdf : %.ltx ${MACROS} testtarg
 	cat $< >VarFill.ltx
-	latexmk -pdf -auxdir=./asytmp -jobname=$(basename $@) VarMainSol.ltx
+	pdflatex -jobname=$(basename $@) VarMain.ltx
 
 clean :
 	rm VarFill.ltx

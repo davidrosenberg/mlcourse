@@ -4,6 +4,16 @@
 \begin{frame} 
   \titlepage 
 \end{frame}
+\section{Administrative}
+\begin{frame}
+  \frametitle{Administrative Info}
+  \begin{itemize}
+  \item Make sure you are signed up for the Spring 2019 instance of
+    the class on Piazza.  The link is on the class webpage (link is fixed now).
+  \item Students on the waitlist can submit the first homework on
+    Gradescope using an access code available on Piazza.
+  \end{itemize}
+\end{frame}
 \section{Recitation 1}
 \subsection{Initial Question}
 \begin{frame}[fragile]
@@ -18,7 +28,7 @@
     parameter vector, how could we improve our guess?
   \end{block}
 \begin{center}
-\includegraphics[width=0.7\textwidth,height=0.4\textheight]{1-gradients/Data.pdf}
+\includegraphics[width=0.4\textwidth,height=0.4\textheight]{1-gradients/Data.pdf}
 \end{center}
 \end{frame}
 \begin{frame}
@@ -259,7 +269,7 @@
   \item If $f$ is differentiable we obtain a formula for any
     directional derivative in terms of the gradient
     $$f'(x;u) = \nabla f(x)^Tu.$$
-  \item This means a direction is a descent direction if and only if
+  \item This implies that a direction is a descent direction if and only if
     it makes an acute angle with the negative gradient.
   \item If $\nabla f(x)\neq 0$ applying Cauchy-Schwarz gives
     $$\argmax_{\|u\|_2=1} f'(x;u) = \frac{\nabla f(x)}{\|\nabla f(x)\|_2}
@@ -341,7 +351,7 @@
   \item Spot the linear algebra!
   \item Let $w=(1,2,3)^T$.
   \item Write $J(\theta) = \log(1+e^{w^T\theta})$.
-  \item Apply a version of the chain rule:
+  \item Apply a version of the chain rule (twice):
     $$\nabla J(\theta) = \frac{e^{w^T\theta}}{1+e^{w^T\theta}}w.$$
   \end{itemize}
   \begin{theorem}[Chain Rule]

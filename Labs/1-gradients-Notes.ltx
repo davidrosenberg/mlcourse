@@ -10,7 +10,7 @@
   parameter vector, how could we improve our guess?
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth,height=0.4\textheight]{1-gradients/Data.pdf}
+\includegraphics[width=0.6\textwidth,height=0.4\textheight]{1-gradients/Data.pdf}
 \caption{Data Set With $d=1$}
 \end{figure}
 \begin{solution}
@@ -51,7 +51,7 @@ More generally, we will look at functions $f:\RR^n\to\RR$.  In the
 single-variable case, the derivative was just a number that signified
 how much the function increased when we moved in the positive
 $x$-direction.  In the multivariable case, we have many possible
-directions we can move along from a given point $x=(x_1,\ldots,x_n)\in\RR^n$.
+directions we can move along from a given point $x=(x_1,\ldots,x_n)^T\in\RR^n$.
 \begin{figure}[H]
 \centering
 \includegraphics{1-gradients/Directions.pdf}
@@ -83,13 +83,15 @@ We say that $f$ is differentiable at $x$ if
 $$\lim_{v\to0}\frac{f(x+v)-f(x)-g^Tv}{\|v\|_2}=0,$$
 for some $g\in\RR^n$ (note that the limit for $v$ is taken in
 $\RR^n$).  This $g$ is uniquely determined, and is called
-the gradient of $f$ at $x$ denoted by $\nabla f(x)$.  It is easy to
-show that the gradient is the vector of partial derivatives:
+the gradient of $f$ at $x$ denoted by $\nabla f(x)$.  It can be
+shown that the gradient is the vector of partial derivatives:
 $$\nabla f(x) =
 \pMattt{\partial_{x_1}f(x)}{\vdots}{\partial_{x_n}f(x)}.$$
 The $k$th entry of the gradient (i.e., the $k$th partial derivative)
 is the approximate change in $f$ due to a small positive change in
-$x_k$.  Sometimes we will split the variables of $f$ into two parts.
+$x_k$.
+
+Sometimes we will split the variables of $f$ into two parts.
 For instance, we could write $f(x,w)$ with $x\in\RR^p$ and
 $w\in\RR^q$.  It is often useful to take the gradient with respect to
 some of the variables.  Here we would write $\nabla_x$ or $\nabla_w$
@@ -113,7 +115,7 @@ plane at the point $x$ as we let $v$ vary.
 \end{figure}
 If $f$ is differentiable, we can use the gradient to compute an arbitrary directional derivative:
 $$f'(x;u) = \nabla f(x)^T u.$$
-From this expression we can quickly see that (assuming $\nabla f(x)\neq0$)
+From this expression we can prove that (assuming $\nabla f(x)\neq0$)
 $$\argmax_{\|u\|_2=1} f'(x;u) = \frac{\nabla f(x)}{\|\nabla f(x)\|_2}
 \quad\text{and}\quad
 \argmin_{\|u\|_2=1} f'(x;u) = -\frac{\nabla f(x)}{\|\nabla

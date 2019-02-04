@@ -40,9 +40,6 @@ clean :
 	rm -f *.prc
 	rm -f *.js
 	rm -f *.m9
-	rm -f *-*.tex
-	rm -f *-*.pdf
-	rm -f *.asy
 	rm -f comment.cut
 
 fullclean : clean

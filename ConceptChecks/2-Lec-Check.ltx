@@ -1,4 +1,5 @@
-\section{Lecture 2: Excess Risk Decomposition and Regularization}
+\section{Lecture 2: Excess Risk Decomposition, Stochastic Gradient Descent and Regularization}
+%%%%% Topic 1 %%%%%%%
 \subsection{Topic 1: Excess Risk Decomposition}
 \subsubsection{Learning Objectives}
 \begin{enumerate}
@@ -260,7 +261,89 @@
   \end{enumerate}
 \end{solution}
 \end{enumerate}
-\subsection{Topic 2: $L_1$ and $L_2$ Regularization}
+
+%%%%% Topic 2 %%%%%%%%
+\subsection{Topic 2: Stochastic Gradient Descent}
+\subsubsection{Learning Objectives} % This is new.
+\begin{enumerate}
+\item Be able to write the empirical risk for a particular loss function over a particular parameterized hypothesis space, such as for square loss over a hypothesis space of linear functions.
+\item Compare and constrast gradient descent, minibatch gradient descent, and stochastic gradient descent.
+\end{enumerate}
+\subsubsection{Concept Check Questions}
+\begin{enumerate}
+\item When performing mini-batch gradient descent, we often randomly choose
+  the mini-batch from the full training set without replacement.
+  Show that the resulting  mini-batch gradient is an unbiased estimate of the gradient of the
+  full training set.  Here we assume each decision function $f_w$ in
+  our hypothesis space is determined by a parameter vector $w\in\RR^d$.
+\begin{solution}
+\item[]\Sol Let $(x_{m_1},y_{m_1}),\ldots,(x_{m_N},y_{m_N})$ be our
+  mini-batch selected uniformly without replacement from the full
+  training set $(x_1,y_1),\ldots,(x_n,y_n)$.
+  $$\begin{Array}{rcll}
+    \E\left[\nabla_w\frac{1}{N}\sum_{i=1}^N
+      \ell(f_w(x_{m_i},y_{m_i}))\right]
+    & = & \frac{1}{N}\sum_{i=1}^N\E\left[\nabla_w
+      \ell(f_w(x_{m_i}),y_{m_i})\right] & \text{(Linearity of
+      $\nabla,\E$)}\\
+    & = & \frac{1}{N}\sum_{i=1}^N\E\left[\nabla_w
+      \ell(f_w(x_{m_1}),y_{m_1})\right]    &\text{(Marginals are the same)}\\
+    & = & \E\left[\nabla_w\ell(f_w(x_{m_1}),y_{m_1})\right]\\
+    & = & \sum_{i=1}^n \frac{1}{n}\nabla_w\ell(f_w(x_{i}),y_{i})\\
+    & = & \nabla_w\frac{1}{n}\sum_{i=1}^n
+    \ell(f_w(x_{i}),y_{i})&\text{(Linearity of $\nabla$).}
+  \end{Array}$$
+\end{solution}
+\item You want to estimate the average age of the people visiting your
+  website.  Over a fixed week we will receive a total of $N$
+  visitors (which we will call our full population).  Suppose the population mean $\mu$
+  is unknown but the variance $\sigma^2$ is known.  Since we don't
+  want to bother every visitor, we will ask a small sample what their
+  ages are.  How many visitors must we randomly sample
+  so that our estimator $\hat{\mu}$ has variance at
+  most $\epsilon>0$?
+\begin{solution}
+\item[]\Sol Let $x_1,\ldots,x_n$ denote our randomly sampled ages, and
+  let $\hat{x}$ denote the sample mean $\frac{1}{n}\sum_{i=1}^n x_i$.
+  Then
+  $$\Var(\hat{x}) = \frac{\sigma^2}{n}.$$
+  Thus we require $n\geq \sigma^2/\epsilon$.  Note that this doesn't
+  depend on $N$, the full population size.
+\end{solution}
+\item ($\star$) Suppose you have been successfully
+  running mini-batch gradient descent with
+  a full training set size of $10^5$ and a mini-batch size of $100$.
+  After receiving more data your full training set size increases to $10^9$.
+  Give a heuristic argument as to why the mini-batch size need not
+  increase even though we have $10000$ times more data.
+\begin{solution}
+\item[]\Sol Throughout we assume our gradient lies in $\RR^d$.
+  Consider the empirical distribution on the full training
+  set (i.e., each sample is chosen with probability $1/N$ where $N$ is
+  the full training set size).  Assume this distribution has mean
+  vector $\mu\in\RR^d$ (the full-batch gradient) and covariance matrix
+  $\Sigma\in\RR^{d\times d}$.  By the central
+  limit theorem the mini-batch gradient will be approximately normally
+  distributed with mean $\mu$ and covariance $\frac{1}{n}\Sigma$, where
+  $n$ is the mini-batch size.  As $N$ grows the entries of $\Sigma$
+  need not grow, and thus $n$ need not grow.
+  In fact, as $N$ grows, the empirical mean and
+  covariance matrix will converge to their true values.  More
+  precisely, the mean of the empirical distribution
+  will converge to $\E\nabla\ell(f(X),Y)$ and the covariance will
+  converge to
+  $$\E[(\nabla\ell(f(X),Y))(\nabla\ell(f(X),Y))^T]-\E[\nabla\ell(f(X),Y)]\E[\nabla\ell(f(X),Y)]^T$$
+  where $(X,Y)\sim\Pr_{\XX\times\YY}$.
+
+  The important takeaway here is that the size of the mini-batch is
+  dependent on the speed of computation, and on the characteristics of
+  the distribution of the gradients (such as the moments), and thus
+  may vary independently of the size of the full training set.
+\end{solution}
+\end{enumerate}
+
+%%%%%% Topic 3 %%%%%%%%
+\subsection{Topic 3: $L_1$ and $L_2$ Regularization}
 \subsubsection{Learning Objectives}
 \begin{enumerate}
   \item Explain the concept of a sequence of nested hypothesis spaces, and explain how a complexity measure (of a function) can be used to create such a sequence.

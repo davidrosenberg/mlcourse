@@ -1,6 +1,6 @@
 %% LyX 2.3.2 created this file.  For more info, see http://www.lyx.org/.
 %% Do not edit unless you really know what you are doing.
-\documentclass[english,aspectratio=169,handout]{beamer}
+\documentclass[english,aspectratio=169, handout]{beamer}
 \usepackage{mathptmx}
 \usepackage{eulervm}
 \usepackage[T1]{fontenc}
@@ -301,20 +301,22 @@
 \[
 \min_{w\in\reals^{d}}J(w) = \frac{1}{n}\sum_{i=1}^{n}\left\{ w^{T}x_{i}-y_{i}\right\} ^{2}+\lambda\|w\|_{1}
 \]
+\pause{}
 \item We could solve Lasso by Shooting Method and Projected SGD.
+\pause{}
 \item How about using SGD?
+\pause{}
 \item $\|w\|_{1}=\mid w_{1}\mid+\mid w_{2}\mid$ is not differentiable!
 \end{itemize}
 \end{frame}
 %
 \begin{frame}{Gradient Descent on Lasso Objective?}
 \begin{itemize}
-\item The gradient of the Lasso objective is
+\item The partial gradient of the Lasso objective is
 \[
-\del_{w}J(w)=\frac{1}{n}\sum_{i=1}^n 2\{w^Tx_i-y_i\}x_i+\lambda\sum_{i=1}^d\text{sign}(w_i)
+\del_{w}J(w)=\frac{1}{n}\sum_{j=1}^n 2\{w^Tx_j-y_j\}x_j+\lambda \cdot\text{sign}(w) 
 \]
-
- when $w_i\neq 0$ for all $i$, and \textbf{otherwise
+when $w_i\neq 0$ for all $i$, and \textbf{otherwise
 is undefined}.
 \end{itemize}
 
@@ -340,6 +342,7 @@ point numbers?
 \item If we blindly apply gradient descent from a random starting point
 \begin{itemize}
 \item seems unlikely that we'll hit a point where the gradient is undefined.
+\item So it's clear how we could apply gradient descent or SGD to a function that's not differentiable everywhere
 \end{itemize}
 \end{itemize}
 
@@ -435,21 +438,6 @@ convex.
 \end{itemize}
 \end{itemize}
 \includegraphics[height=0.6\textheight]{../Figures/convex-optimization/bv_cvxbook_cover}
-\end{frame}
-%
-\begin{frame}{Convex Optimization Problem: Standard Form}
-\begin{block}{Convex Optimization Problem: Standard Form}
-\begin{eqnarray*}
-\textrm{minimize} &  & f_{0}(x)\\
-\textrm{subject to} &  & f_{i}(x)\le0,\;\;i=1,\ldots,m
-\end{eqnarray*}
-where $f_{0},\ldots,f_{m}$ are convex functions. 
-
-\pause{}
-
-\end{block}
-Question: Is the $\le$ in the constraint just a convention? Could
-we also have used $\ge$ or $=$?
 \end{frame}
 %
 \begin{frame}{Level Sets and Sublevel Sets}
@@ -766,54 +754,34 @@ where $g_{1}=1$ and $g_{2}\in[-2,2]$.
 \par\end{center}
 
 \end{frame}
-%
-\begin{frame}{Subdifferential on Contour Plot}
-\begin{center}
-\includegraphics[height=0.75\textheight]{../Figures/subgradient-methods/subdiff-contour-plot-abs-x1-plus-2absx2}
-\par\end{center}
 
-\begin{center}
-Contour plot of $f(x_{1},x_{2})=\left|x_{1}\right|+2\left|x_{2}\right|$,
-with set of subgradients at $(3,0)$. .\let\thefootnote\relax\footnotetext{\tiny{Plot courtesy of Brett Bernstein.}}
-\par\end{center}
-
+\begin{frame}{Important Properties of Subdifferential}
+\begin{itemize}
+\item If $f_1,\dots,f_m:\reals^d \rightarrow \reals$ are convex functions and $f = f_1+\cdots + f_m$, then $\partial f(x) = \partial f_1(x) + \cdots +\partial f_m(x)$.
+\item For $\alpha \geq 0$, $\partial (\alpha f) (x) = \alpha \partial f(x)$. 	
+\end{itemize}
+	
 \end{frame}
-%
-\begin{frame}{Contour Lines and Gradients}
-\begin{itemize}
-\item For function $f:\reals^{d}\to\reals$, 
-\begin{itemize}
-\item \textbf{graph} of function lives in $\pause\reals^{d+1}$,
 
-\pause{}
-\item \textbf{gradient} and \textbf{subgradient} of $f$ live in $\pause\reals^{d}$,
-and
-
-\pause{}
-\item \textbf{contours}, \textbf{level sets,} and \textbf{sublevel sets}
-are in $\reals^{d}$.
-\end{itemize}
-\end{itemize}
-
-\pause{}
+\begin{frame}{Subgradients of $f(x) = \|x\|_1$}
 \begin{itemize}
-\item $f:\reals^{d}\to\reals$ continuously differentiable, $\del f(x_{0})\neq0$,
-then $\del f(x_{0})$ normal to level set
+\item Let's find the subdifferential of $f(x) = \|x\|_1 = \sum_{i=1}^d |x_i|$ at any given point $x^0 = (x^0_1,x^0_2, \dots, x^0_d)$.
+\item By an important property of subdifferential: If $f = f_1+\cdots+f_m$, then $\partial f(x) = \partial f_1(x) + \cdots \partial f_m(x)$. 
+\item We could calculate the subgradient of $f^i(x) = |x_i|$ and sum them up.
+\item The subgradient $g^i = (g^i_1,\dots, g^i_d)$ of $f^i(x) = |x_i|$ at $x^0 = (x^0_1,x^0_2, \dots, x^0_d)$ is:
 \[
-S=\left\{ x\in\reals^{d}\mid f(x)=f(x_{0})\right\} .
+g_j^i = 0 \quad {j\neq i}; \quad g_j^i = \text{sign}(x^0_j) \quad j = i
 \]
-
-
-\pause{}
-\item Proof sketch in notes.
+\item We sum all the $g^i$ up to get the subgradient $g = (g_1,\dots, g_d)$ of $f(x)$ at $x^0$:
+\[
+g_i = \text{sign}(x^0_i) \quad \text{for all } i
+\]
 \end{itemize}
+
 \end{frame}
+
 %
-\begin{frame}{Gradient orthogonal to sublevel sets}
-\begin{center}
-\includegraphics[height=0.75\textheight]{../Figures/subgradient-methods/grad-orthog-to-sublevel-sets}\let\thefootnote\relax\footnotetext{\tiny{Plot courtesy of Brett Bernstein.}}
-\par\end{center}
-\end{frame}
+
 \section{Subgradient Descent}
 \begin{frame}{Subgradient Descent}
 \begin{itemize}
@@ -831,54 +799,6 @@ where $t>0$ is the step size and $g\in\partial f(x_{0})$.
 \pause{}
 \begin{itemize}
 \item $-g$ not a descent direction -- can this work?
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Subgradient Gets Us Closer To Minimizer}
-\begin{theorem}
-Suppose $f$ is convex.
-\begin{itemize}
-\item Let $x=x_{0}-tg$, for $g\in\partial f(x_{0})$.
-\item Let $z$ be any point for which $f(z)<f(x_{0})$.
-\item Then for small enough $t>0$,
-\[
-\|x-z\|_{2}<\|x_{0}-z\|_{2}.
-\]
-\end{itemize}
-
-\pause{}
-\end{theorem}
-
-\begin{itemize}
-\item Apply this with $z=x^{*}\in\argmin_{x}f(x)$. 
-\end{itemize}
-$\implies$\textbf{Negative subgradient step gets us closer to minimizer}.
-\end{frame}
-
-\begin{frame}{Subgradient Gets Us Closer To Minimizer (Proof)}
-\begin{itemize}
-\item Let $x=x_{0}-tg$, for $g\in\partial f(x_{0})$ and $t>0$.
-\item Let $z$ be any point for which $f(z)<f(x_{0})$.
-\item Then
-\begin{eqnarray*}
-\|x-z\|_{2}^{2} & = & \|x_{0}-tg-z\|_{2}^{2}\\
-\pause & = & \|x_{0}-z\|_{2}^{2}-2tg^{T}\left(x_{0}-z\right)+t^{2}\|g\|_{2}^{2}\\
-\pause & \le & \|x_{0}-z\|_{2}^{2}-2t\left[f(x_{0})-f(z)\right]+t^{2}\|g\|_{2}^{2}
-\end{eqnarray*}
-
-
-\pause{}
-\item Consider $-2t\left[f(x_{0})-f(z)\right]+t^{2}\|g\|_{2}^{2}$. 
-\begin{itemize}
-\item It's a convex quadratic (facing upwards).
-\item Has zeros at $t=0$ and $t=2\left(f(x_{0})-f(z)\right)/\|g\|_{2}^{2}>0$.
-\item Therefore, it's negative for any 
-\[
-t\in\left(0,\frac{2\left(f(x_{0})-f(z)\right)}{\|g\|_{2}^{2}}\right).
-\]
-\end{itemize}
-
-\let\thefootnote\relax\footnotetext{\tiny{Based on Boyd EE364b: Subgradients Slides}}
 \end{itemize}
 \end{frame}
 
@@ -931,9 +851,10 @@ For step size respecting Robbins-Monro conditions,
 \[
 \min_{w\in\reals^{d}}J(w) = \frac{1}{n}\sum_{i=1}^{n}\left\{ w^{T}x_{i}-y_{i}\right\} ^{2}+\lambda\|w\|_{1}
 \]
+\pause{}
 \item Subgradients of $J(w)$ are
 \[
-\frac{1}{n}\sum_{i=1}^n 2\{w^Tx_i-y_i\}x_i+\lambda\sum_{i=1}^ds_i,
+\frac{1}{n}\sum_{i=1}^n 2\{w^Tx_i-y_i\}x_i+\lambda s,
 \]
 where $s_i = \text{sign}(w_i)$ if $w_i\neq 0$ and $s_i \in [-1,1]$ if $w_i=0$.
 \end{itemize}
@@ -941,12 +862,64 @@ where $s_i = \text{sign}(w_i)$ if $w_i\neq 0$ and $s_i \in [-1,1]$ if $w_i=0$.
 
 \begin{frame}{Subgradient Descent for Lasso Problem: Potential Issues}
 \begin{itemize}
-\item Subgradient descent has very poor convergence properties for non-smooth functions	(Like Lasso)
-\item Subgradient descent ignores problem structure
-\item Taking small steps in the direction of the (sub)gradient usually may not lead to zero coordinates
-\item Use Shooting Method or Projected SGD instead!
+\item Subgradient descent will work for all convex and Lipschitz continuous objective functions.
+\pause{}
+\item BUT, convergence can be very \textbf{slow} for non-differentiable functions
+\pause{}
+\item One can often find better approaches by closer examination of the objective function. For example, shooting method or projected SGD.
+\pause{}
+\item Taking small steps in the direction of the (sub)gradient usually may \textbf{not} lead to zero coordinates.
+\pause{}
+\item BUT, in practice, we can threshold small values.
 \end{itemize}
 	
+\end{frame}
+\begin{frame}{Appendix: Subgradient Gets Us Closer To Minimizer}
+\begin{theorem}
+Suppose $f$ is convex.
+\begin{itemize}
+\item Let $x=x_{0}-tg$, for $g\in\partial f(x_{0})$.
+\item Let $z$ be any point for which $f(z)<f(x_{0})$.
+\item Then for small enough $t>0$,
+\[
+\|x-z\|_{2}<\|x_{0}-z\|_{2}.
+\]
+\end{itemize}
+
+\pause{}
+\end{theorem}
+
+\begin{itemize}
+\item Apply this with $z=x^{*}\in\argmin_{x}f(x)$. 
+\end{itemize}
+$\implies$\textbf{Appendix: Negative subgradient step gets us closer to minimizer}.
+\end{frame}
+
+\begin{frame}{Subgradient Gets Us Closer To Minimizer (Proof)}
+\begin{itemize}
+\item Let $x=x_{0}-tg$, for $g\in\partial f(x_{0})$ and $t>0$.
+\item Let $z$ be any point for which $f(z)<f(x_{0})$.
+\item Then
+\begin{eqnarray*}
+\|x-z\|_{2}^{2} & = & \|x_{0}-tg-z\|_{2}^{2}\\
+\pause & = & \|x_{0}-z\|_{2}^{2}-2tg^{T}\left(x_{0}-z\right)+t^{2}\|g\|_{2}^{2}\\
+\pause & \le & \|x_{0}-z\|_{2}^{2}-2t\left[f(x_{0})-f(z)\right]+t^{2}\|g\|_{2}^{2}
+\end{eqnarray*}
+
+
+\pause{}
+\item Consider $-2t\left[f(x_{0})-f(z)\right]+t^{2}\|g\|_{2}^{2}$. 
+\begin{itemize}
+\item It's a convex quadratic (facing upwards).
+\item Has zeros at $t=0$ and $t=2\left(f(x_{0})-f(z)\right)/\|g\|_{2}^{2}>0$.
+\item Therefore, it's negative for any 
+\[
+t\in\left(0,\frac{2\left(f(x_{0})-f(z)\right)}{\|g\|_{2}^{2}}\right).
+\]
+\end{itemize}
+
+\let\thefootnote\relax\footnotetext{\tiny{Based on Boyd EE364b: Subgradients Slides}}
+\end{itemize}
 \end{frame}
 
 \end{document}

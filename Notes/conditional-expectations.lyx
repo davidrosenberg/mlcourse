@@ -816,6 +816,10 @@ Note that for every value of
 \begin_inset Formula $\reals$
 \end_inset
 
+, namely the expectation of the distribution 
+\begin_inset Formula $p(y\mid x)$
+\end_inset
+
 .
 \end_layout
 

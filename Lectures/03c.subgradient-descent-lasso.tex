@@ -770,11 +770,12 @@ where $g_{1}=1$ and $g_{2}\in[-2,2]$.
 \item We could calculate the subgradient of $f^i(x) = |x_i|$ and sum them up.
 \item The subgradient $g^i = (g^i_1,\dots, g^i_d)$ of $f^i(x) = |x_i|$ at $x^0 = (x^0_1,x^0_2, \dots, x^0_d)$ is:
 \[
-g_j^i = 0 \quad {j\neq i}; \quad g_j^i = \text{sign}(x^0_j) \quad j = i
+g_j^i = 0, \quad {j\neq i}; \quad g_j^i = s(x^0_j), \quad j = i,
 \]
+where $s(x) = \text{sign}(x)$ if $x\neq 0$ and $s(x) \in [-1,1]$ if $x = 0$
 \item We sum all the $g^i$ up to get the subgradient $g = (g_1,\dots, g_d)$ of $f(x)$ at $x^0$:
 \[
-g_i = \text{sign}(x^0_i) \quad \text{for all } i
+g_i = s(x^0_i) \quad \text{for all } i
 \]
 \end{itemize}
 

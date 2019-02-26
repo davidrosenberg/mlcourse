@@ -884,7 +884,7 @@ Given solution
 \end_inset
 
  to dual, primal solution is 
-\begin_inset Formula $w^{*}=\sum_{i=1}^{n}\alpha_{i}^{*}y_{i}x_{i}$
+\begin_inset Formula $\mbox{w^{*}=\sum_{i=1}^{n}\alpha_{i}^{*}y_{i}x_{i}}$
 \end_inset
 
 .
@@ -917,6 +917,10 @@ Notice:
 \end_deeper
 \begin_layout Itemize
 We refer to this phenomenon by saying 
+\begin_inset Quotes eld
+\end_inset
+
+
 \begin_inset Formula $w^{*}$
 \end_inset
 
@@ -925,6 +929,10 @@ We refer to this phenomenon by saying
  span of the data
 \series default
 .
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1225,8 +1233,8 @@ So let's replace
  in our optimization problem:
 \begin_inset Formula 
 \begin{eqnarray*}
-\text{[original] }w^{*} & = & \argmin_{w\in\reals^{d}}\frac{1}{n}\sum_{i=1}^{n}\left\{ w^{T}x_{i}-y_{i}\right\} ^{2}+\lambda\|w\|_{2}^{2}\\
-\text{[reparameterized] }\alpha^{*} & = & \argmin_{\alpha\in\reals^{n}}\frac{1}{n}\sum_{i=1}^{n}\left\{ \left(X^{T}\alpha\right)^{T}x_{i}-y_{i}\right\} ^{2}+\lambda\|X^{T}\alpha\|_{2}^{2}.
+\text{[original] }w^{*} & = & \argmin_{w\in\reals^{d}}\frac{1}{n}\sum_{i=1}^{n}\left\{ w^{T}x_{i}-y_{i}\right\} ^{2}+\lambda\|w\|_{2}^{2}\pause\\
+\text{[reparameterized] }\alpha^{*} & = & \argmin_{\alpha\in\reals^{n}}\frac{1}{n}\sum_{i=1}^{n}\left\{ \left(X^{T}\alpha\right)^{T}x_{i}-y_{i}\right\} ^{2}+\lambda\|X^{T}\alpha\|_{2}^{2}.\pause
 \end{eqnarray*}
 
 \end_inset
@@ -3070,11 +3078,11 @@ w^{*}=\argmin_{w\in\ch}R\left(\|w\|\right)+L\left(\left\langle w,x_{1}\right\ran
 \end_layout
 
 \begin_layout Itemize
-Representer theorem tells us that 
+Representer theorem tells us we can look for 
 \begin_inset Formula $w^{*}$
 \end_inset
 
- is in the span of the data:
+ in the span of the data:
 \begin_inset Formula 
 \[
 w^{*}=\argmin_{w\in\linspan\left(x_{1},\ldots,x_{n}\right)}R\left(\|w\|\right)+L\left(\left\langle w,x_{1}\right\rangle ,\ldots,\left\langle w,x_{n}\right\rangle \right).
@@ -5488,7 +5496,7 @@ support vectors
 
 \end_deeper
 \begin_layout Section
-What's next?
+Are we done yet?
 \end_layout
 
 \begin_layout Frame

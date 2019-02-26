@@ -1889,7 +1889,7 @@ trick
 status open
 
 \begin_layout Plain Layout
-Our Plan
+The Kernel Trick(s)
 \end_layout
 
 \end_inset
@@ -1898,56 +1898,130 @@ Our Plan
 \end_layout
 
 \begin_deeper
-\begin_layout Itemize
-Present our principal tool for kernelization: the 
-\series bold
-representer theorem
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-To keep things clean, we'll drop the explicit feature map until we need
- it: 
-\begin_inset Formula $\psi(x)=x$
+\begin_layout Enumerate
+Given a kernelized ML algorithm (i.e.
+ all 
+\begin_inset Formula $\psi(x)$
 \end_inset
 
-.
+'s show up as 
+\begin_inset Formula $\left\langle \psi(x),\psi(x')\right\rangle $
+\end_inset
+
+).
 \end_layout
 
+\begin_deeper
 \begin_layout Pause
 
-\end_layout
-
-\begin_layout Itemize
-Discuss specific cases of kernel ridge regression and kernel SVM
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-Discuss several kernels, including the famous RBF kernel.
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-Discuss how to create a kernel without an explicit feature map.
 \end_layout
 
 \end_deeper
-\begin_layout Frame
+\begin_layout Enumerate
+Can write training function to depend on 
+\begin_inset Formula $x$
+\end_inset
+
+'s only through kernel matrix:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\family typewriter
+kernelized_train(kernel_matrix K, training_labels y)
+\end_layout
+
+\begin_layout Pause
 
 \end_layout
 
+\end_deeper
+\begin_layout Enumerate
+One 
+\begin_inset Quotes eld
+\end_inset
+
+kernel trick
+\begin_inset Quotes erd
+\end_inset
+
+ is that whether the kernel corresponds to a small feature vector, a very
+ large feature vector, or even an infinite dimensional feature vector (to
+ be discussed), the training code and training time remain the same (
+\series bold
+once the kernel matrix is computed
+\series default
+).
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Another 
+\begin_inset Quotes eld
+\end_inset
+
+kernel trick
+\begin_inset Quotes erd
+\end_inset
+
+ is that often we can compute the entries of the kernel matrix without the
+ computational cost of explicilty working in the feature space.
+ 
+\end_layout
+
+\end_deeper
 \begin_layout Section
 Kernels
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Choose a kernel instead of choosing a feature map
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Once a method is kernelized, we can effectively change the feature map by
+ changing the kernel function.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+This will allow us to run linear methods with kernels that correspond to
+ infinite dimensional feature maps.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Below we discuss the most commonly used kernels.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
 \end_layout
 
 \begin_layout Frame

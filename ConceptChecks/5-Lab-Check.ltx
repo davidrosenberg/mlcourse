@@ -23,8 +23,8 @@
   $\phi:\{1,2,\ldots,n\}$ to $\RR^D$ (for some $D$) such that
   $k(x,y)=\phi(x)^T\phi(y)$.
 \begin{solution}
-\item[]\Sol Define $\phi(x) = (\Ind(x\leq 1),\Ind(x\leq
-  2),\ldots,\Ind(x\leq n))$.  Then $\phi(x)^T\phi(y)=\min(x,y)$.
+\item[]\Sol Define $\phi(x) = (\Ind(x\geq 1),\Ind(x\geq
+  2),\ldots,\Ind(x\geq n))$.  Then $\phi(x)^T\phi(y)=\min(x,y)$.
 \end{solution}
 \item Show that $k(x,y) = (x^Ty)^4$ is a positive semidefinite kernel
   on $\RR^d\times\RR^d$.
@@ -77,9 +77,14 @@
   $\sigma$ you can achieve perfect $0-1$ loss on the training data
   using a linear decision function and the RBF kernel.
 \begin{solution}
-\item[]\Sol By selecting $\sigma$ sufficiently small (say, much
+\item[]\Sol  By selecting $\sigma$ sufficiently small (say, much
   smaller than $\min_{i\neq j}\|x_i-x_j\|_2$) we can use
-  $\alpha_i=y_i$ and get very pointy spikes at each data point. [Note:
+  $\alpha_i=y_i$ and get very pointy spikes at each data point. Kernelized prediction function will be:
+  \begin{align*}
+  f(x) &= \sum_{i=1}^n y_i \exp(-\|x-x_i\|_2^2/\sigma^2),\\
+  f(x_j) & = y_j + \sum_{i\neq j} y_i \exp(-\|x_j-x_i\|^2_2/\sigma^2) , 
+  \end{align*}
+  where $|y_j|>> |\sum_{i\neq j} y_i \exp(-\|x_j-x_i\|^2_2/\sigma^2)|$. [Note:
     This is not possible if any repeated points have different labels,
     which is not unusual in real data.]
 \end{solution}

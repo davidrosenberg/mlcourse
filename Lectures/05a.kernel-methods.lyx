@@ -744,16 +744,16 @@ optional, use only with long paper titles
 \end_layout
 
 \begin_layout Author
-David S.
+Julia Kempe & David S.
  Rosenberg 
 \end_layout
 
 \begin_layout Date
-February 20, 2018
+February 19, 2019
 \end_layout
 
 \begin_layout Institute
-New York University
+CDS, NYU
 \end_layout
 
 \begin_layout Standard
@@ -1165,6 +1165,94 @@ What if we want to do prediction on inputs not natively in
 status open
 
 \begin_layout Plain Layout
+The Input Space 
+\begin_inset Formula $\cx$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Often want to use inputs not natively in 
+\begin_inset Formula $\reals^{d}$
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Text documents
+\end_layout
+
+\begin_layout Itemize
+Image files
+\end_layout
+
+\begin_layout Itemize
+Sound recordings
+\end_layout
+
+\begin_layout Itemize
+DNA sequences
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+But everything in a computer is a sequence of numbers?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+The 
+\begin_inset Formula $i$
+\end_inset
+
+th entry of each sequence should have the same 
+\begin_inset Quotes eld
+\end_inset
+
+meaning
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+All the sequences should have the same length
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
 Feature Extraction
 \end_layout
 
@@ -1464,20 +1552,1342 @@ more expressive
 
 \end_deeper
 \begin_layout Itemize
-The previous lecture on 
-\begin_inset Quotes eld
-\end_inset
-
-Features
-\begin_inset Quotes erd
-\end_inset
-
- suggests many ways to create new features.
+Many ways to create new features.
 \end_layout
 
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Handling with Nonlinearity with Linear Methods
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Example Task: Predicting Health
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+General Philosophy: Extract every feature that might be relevant
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Features for medical diagnosis
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+height
+\end_layout
+
+\begin_layout Itemize
+weight
+\end_layout
+
+\begin_layout Itemize
+body temperature
+\end_layout
+
+\begin_layout Itemize
+blood pressure
+\end_layout
+
+\begin_layout Itemize
+etc...
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn
+ 2014.
+ }}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Feature Issues for Linear Predictors
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For linear predictors, it's important 
+\series bold
+how
+\series default
+ features are added
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Three types of nonlinearities can cause problems:
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Enumerate
+Non-monotonicity
+\end_layout
+
+\begin_layout Enumerate
+Saturation
+\end_layout
+
+\begin_layout Enumerate
+Interactions between features
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn
+ 2014.
+ }}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Non-monotonicity: The Issue
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Feature Map: 
+\begin_inset Formula $\phi(x)=\left[1,\text{temperature}(x)\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Action: Predict health score 
+\begin_inset Formula $y\in\reals$
+\end_inset
+
+ (positive is good)
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Hypothesis Space 
+\begin_inset Formula $\cf{=}\left\{ \mbox{affine functions of temperature}\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Issue: 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Health is not an affine function of temperature.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Affine function can either say
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Very high is bad and very low is good, or
+\end_layout
+
+\begin_layout Itemize
+Very low is bad and very high is good,
+\end_layout
+
+\begin_layout Itemize
+But here, both extremes are bad.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn
+ 2014.
+ }}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Non-monotonicity: Solution 1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Transform the input:
+\begin_inset Formula 
+\[
+\phi(x)=\left[1,\left\{ \text{temperature(x)-37}\right\} ^{2}\right],
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $37$
+\end_inset
+
+ is 
+\begin_inset Quotes eld
+\end_inset
+
+normal
+\begin_inset Quotes erd
+\end_inset
+
+ temperature in Celsius.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Ok, but requires manually-specified domain knowledge
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Do we really need that?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn
+ 2014.
+ }}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Non-monotonicity: Solution 2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Think less, put in more:
+\begin_inset Formula 
+\[
+\phi(x)=\left[1,\text{temperature}(x),\left\{ \text{temperature}(x)\right\} ^{2}\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+More expressive
+\series default
+ than Solution 1.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+General Rule
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+Features should be simple building blocks that can be pieced together.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn
+ 2014.
+ }}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Saturation: The Issue
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Setting: Find products relevant to user's query
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Input: Product 
+\begin_inset Formula $x$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Action: Score the relevance of 
+\begin_inset Formula $x$
+\end_inset
+
+ to user's query
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Feature Map:
+\begin_inset Formula 
+\[
+\phi(x)=\left[1,N(x)\right],
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $N(x)=\text{number of people who bought }x$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We expect a monotonic relationship between 
+\begin_inset Formula $N(x)$
+\end_inset
+
+ and relevance, but...
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn
+ 2014.
+ }}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Saturation: The Issue
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout AlertBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Is relevance linear in N(x)?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Relevance score reflects confidence in relevance prediction.
+\end_layout
+
+\begin_layout Itemize
+Are we 10 times more confident if 
+\begin_inset Formula $N(x)=1000$
+\end_inset
+
+ vs 
+\begin_inset Formula $N(x)=100$
+\end_inset
+
+?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Bigger is better...
+ but not that much better.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn
+ 2014.
+ }}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Saturation: Solve with nonlinear transform
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Smooth nonlinear transformation:
+\begin_inset Formula 
+\[
+\phi(x)=\left[1,\log\left\{ 1+N(x)\right\} \right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\log\left(\cdot\right)$
+\end_inset
+
+ good for values with large dynamic ranges
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\emph on
+Does it matter what base we use in the log?
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn
+ 2014.
+ }}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Saturation: Solve by discretization
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Discretization (a discontinuous transformation):
+\begin_inset Formula 
+\[
+\phi(x)=\left(\ind{0\le N(x)<10},\ind{10\le N(x)<100},\ldots\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Note Note
+status open
+
+\begin_layout Itemize
+Sometimes we might prefer one-sided buckets (e.g.
+ if the extreme buckets won't have much data):
+\begin_inset Formula 
+\[
+\phi(x)=\left(\ind{N(x)\ge0},\ind{N(x)\ge10},\ind{N(x)\ge100}\ldots\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_inset
+
+Small buckets allow quite flexible relationship
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn
+ 2014.
+ }}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Interactions: The Issue
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Input: Patient information 
+\begin_inset Formula $x$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Action: Health score 
+\begin_inset Formula $y\in\reals$
+\end_inset
+
+ (higher is better)
+\end_layout
+
+\begin_layout Itemize
+Feature Map
+\begin_inset Formula 
+\[
+\phi(x)=\left[\mbox{height}(x),\mbox{weight}(x)\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Issue: It's the weight 
+\series bold
+relative
+\series default
+ to the height that's important.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Impossible to get with these features and a linear classifier.
+\end_layout
+
+\begin_layout Itemize
+Need some 
+\series bold
+interaction
+\series default
+ between height and weight.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn
+ 2014.
+ }}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Interactions: Approach 1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Google 
+\begin_inset Quotes eld
+\end_inset
+
+ideal weight from height
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+J.
+ D.
+ Robinson's 
+\begin_inset Quotes eld
+\end_inset
+
+ideal weight
+\begin_inset Quotes erd
+\end_inset
+
+ formula (for a male):
+\begin_inset Formula 
+\[
+\mbox{weight}\mbox{(kg)}=52+1.9\left[\mbox{height(in)}-60\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Make score square deviation between height(
+\begin_inset Formula $h$
+\end_inset
+
+) and ideal weight(
+\begin_inset Formula $w$
+\end_inset
+
+)
+\begin_inset Formula 
+\[
+f(x)=\left(52+1.9\left[h(x)-60\right]-w(x)\right)^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+WolframAlpha for complicated Mathematics:
+\begin_inset Formula 
+\[
+f(x)=3.61h(x)^{2}-3.8h(x)w(x)-235.6h(x)+w(x)^{2}+124w(x)+3844
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn
+ 2014.
+ }}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Interactions: Approach 2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Just include all second order features:
+\begin_inset Formula 
+\[
+\phi(x)=\left[1,h(x),w(x),h(x)^{2},w(x)^{2},\underbrace{h(x)w(x)}_{\mbox{cross term}}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+More flexible, no Google, no WolframAlpha.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+General Principle
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+Simpler building blocks replace a single 
+\begin_inset Quotes eld
+\end_inset
+
+smart
+\begin_inset Quotes erd
+\end_inset
+
+ feature.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn
+ 2014.
+ }}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Predicate Features and Interaction Terms
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+A 
+\series bold
+predicate
+\series default
+ on the input space 
+\begin_inset Formula $\cx$
+\end_inset
+
+ is a function 
+\begin_inset Formula $P:\cx\to\left\{ \mbox{True},\mbox{False}\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Many features take this form:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $x\mapsto s(x)=\ind{\mbox{subject is sleeping}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $x\mapsto d(x)=\ind{\mbox{subject is driving}}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+For predicates, interaction terms correspond to 
+\series bold
+AND
+\series default
+ conjunctions:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $x\mapsto s(x)d(x)=\ind{\mbox{subject is sleeping AND subject is driving}}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Percy Liang's "Lecture 3" slides from Stanford's CS221, Autumn
+ 2014.
+ }}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
 \end_inset
 
 

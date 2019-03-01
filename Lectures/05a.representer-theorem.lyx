@@ -1064,7 +1064,7 @@ Rearranging
  we can show that (also Homework #4):
 \begin_inset Formula 
 \begin{eqnarray*}
-w^{*} & = & X^{T}\underbrace{\left(\frac{1}{\lambda}y-\frac{1}{\lambda}X^{T}Xw^{*}\right)\pause}_{\alpha^{*}}\\
+w^{*} & = & X^{T}\underbrace{\left(\frac{1}{\lambda}y-\frac{1}{\lambda}Xw^{*}\right)\pause}_{\alpha^{*}}\\
 \pause & = & X^{T}\alpha^{*}\pause=\sum_{i=1}^{n}\alpha_{i}^{*}x_{i}.
 \end{eqnarray*}
 

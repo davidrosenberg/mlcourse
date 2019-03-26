@@ -1,0 +1,5681 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass beamer
+\begin_preamble
+\usetheme{CambridgeUS} 
+\beamertemplatenavigationsymbolsempty
+
+
+% Set Color ==============================
+\definecolor{NYUPurple}{RGB}{87,6,140}
+\definecolor{LightPurple}{RGB}{165,11,255}
+
+
+\setbeamercolor{title}{fg=NYUPurple}
+%\setbeamercolor{frametitle}{fg=NYUPurple}
+\setbeamercolor{frametitle}{fg=NYUPurple}
+
+\setbeamercolor{background canvas}{fg=NYUPurple, bg=white}
+\setbeamercolor{background}{fg=black, bg=NYUPurple}
+
+\setbeamercolor{palette primary}{fg=black, bg=gray!30!white}
+\setbeamercolor{palette secondary}{fg=black, bg=gray!20!white}
+\setbeamercolor{palette tertiary}{fg=gray!20!white, bg=NYUPurple}
+
+\setbeamertemplate{headline}{}
+
+\setbeamercolor{parttitle}{fg=NYUPurple}
+\setbeamercolor{sectiontitle}{fg=NYUPurple}
+\setbeamercolor{sectionname}{fg=NYUPurple}
+\setbeamercolor{section page}{fg=NYUPurple}
+
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+\setbeamercolor{section title}{fg=NYUPurple}
+ \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\usebeamercolor[fg]{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+\end_preamble
+\options aspectratio=169,handout
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "eulervm" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "allcolors=NYUPurple,urlcolor=LightPurple"
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\boxbgcolor #ff31d8
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\reals}{\mathbf{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\integers}{\mathbf{Z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\naturals}{\mathbf{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rationals}{\mathbf{Q}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ca}{\mathcal{A}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cb}{\mathcal{B}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cc}{\mathcal{C}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cd}{\mathcal{D}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ce}{\mathcal{E}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cf}{\mathcal{F}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cg}{\mathcal{G}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ch}{\mathcal{H}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ci}{\mathcal{I}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cj}{\mathcal{J}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ck}{\mathcal{K}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cl}{\mathcal{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cm}{\mathcal{M}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cn}{\mathcal{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\co}{\mathcal{O}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cp}{\mathcal{P}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cq}{\mathcal{Q}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\calr}{\mathcal{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cs}{\mathcal{S}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ct}{\mathcal{T}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cu}{\mathcal{U}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cv}{\mathcal{V}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cw}{\mathcal{W}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cx}{\mathcal{X}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cy}{\mathcal{Y}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cz}{\mathcal{Z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ind}[1]{1(#1)}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand{
+\backslash
+pr}{P}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\pr}{\mathbb{P}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\predsp}{\cy}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%{
+\backslash
+hat{
+\backslash
+cy}}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\outsp}{\cy}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\prxy}{P_{\cx\times\cy}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\prx}{P_{\cx}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\prygivenx}{P_{\cy\mid\cx}}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand{
+\backslash
+ex}{E}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ex}{\mathbb{E}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\var}{\textrm{Var}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cov}{\textrm{Cov}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\sgn}{\textrm{sgn}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\sign}{\textrm{sign}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\kl}{\textrm{KL}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\law}{\mathcal{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\eps}{\varepsilon}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\as}{\textrm{ a.s.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\io}{\textrm{ i.o.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ev}{\textrm{ ev.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\convd}{\stackrel{d}{\to}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\eqd}{\stackrel{d}{=}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\del}{\nabla}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\loss}{\ell}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\risk}{R}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\emprisk}{\hat{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\lossfnl}{L}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\emplossfnl}{\hat{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\empminimizer}[1]{\hat{#1}^{*}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\minimizer}[1]{#1^{*}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\optimizer}[1]{#1^{*}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\etal}{\textrm{et. al.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\tr}{\operatorname{tr}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\trace}{\operatorname{trace}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\diag}{\text{diag}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rank}{\text{rank}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\linspan}{\text{span}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\spn}{\text{span}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\proj}{\text{Proj}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\argmax}{\operatornamewithlimits{arg\, max}}
+{\text{argmax}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\argmin}{\operatornamewithlimits{arg\, min}}
+{\text{argmin}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\bfx}{\mathbf{x}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfy}{\mathbf{y}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfl}{\mathbf{\lambda}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfm}{\mathbf{\mu}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\calL}{\mathcal{L}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\vw}{\boldsymbol{w}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vx}{\boldsymbol{x}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vxi}{\boldsymbol{\xi}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\valpha}{\boldsymbol{\alpha}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vbeta}{\boldsymbol{\beta}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vsigma}{\boldsymbol{\sigma}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vtheta}{\boldsymbol{\theta}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vd}{\boldsymbol{d}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vs}{\boldsymbol{s}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vt}{\boldsymbol{t}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vh}{\boldsymbol{h}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ve}{\boldsymbol{e}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vf}{\boldsymbol{f}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vg}{\boldsymbol{g}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vz}{\boldsymbol{z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vk}{\boldsymbol{k}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\va}{\boldsymbol{a}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vb}{\boldsymbol{b}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vv}{\boldsymbol{v}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vy}{\boldsymbol{y}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\dom}{\textrm{\textbf{dom} }}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\renewcommand{\rank}{\text{\textbf{rank }}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\conv}{\textrm{\textbf{conv} }}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\relint}{\text{\textbf{relint }}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\aff}{\text{\textbf{aff }}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\hil}{\ch}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rkhs}{\hil}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ber}{\text{Ber}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+The Representer Theorem and Kernelization
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+DS-GA 1003
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+optional, use only with long paper titles
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+David S.
+ Rosenberg 
+\end_layout
+
+\begin_layout Date
+February 26, 2019
+\end_layout
+
+\begin_layout Institute
+New York University
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex ArticleMode
+status open
+
+\begin_layout Plain Layout
+Just in article version
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Plots courtesy of Ningshan Zhang.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Contents
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Solutions in the 
+\begin_inset Quotes eld
+\end_inset
+
+span of the data,
+\begin_inset Quotes erd
+\end_inset
+
+ and so what?
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+SVM solution is in the 
+\begin_inset Quotes eld
+\end_inset
+
+span of the data
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We found the SVM dual problem can be written as:
+\begin_inset Formula 
+\begin{eqnarray*}
+\sup_{\alpha\in\reals^{n}} &  & \sum_{i=1}^{n}\alpha_{i}-\frac{1}{2}\sum_{i,j=1}^{n}\alpha_{i}\alpha_{j}y_{i}y_{j}x_{j}^{T}x_{i}\\
+\mbox{s.t.} &  & \sum_{i=1}^{n}\alpha_{i}y_{i}=0\\
+ & \quad & \alpha_{i}\in\left[0,\frac{c}{n}\right]\;i=1,\ldots,n.
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Given solution 
+\begin_inset Formula $\alpha^{*}$
+\end_inset
+
+ to dual, primal solution is 
+\begin_inset Formula $\mbox{w^{*}=\sum_{i=1}^{n}\alpha_{i}^{*}y_{i}x_{i}}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Notice: 
+\begin_inset Formula $w^{*}$
+\end_inset
+
+ is a linear combination of training inputs 
+\begin_inset Formula $x_{1},\ldots,x_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We refer to this phenomenon by saying 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $w^{*}$
+\end_inset
+
+ is in the
+\series bold
+ span of the data
+\series default
+.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Or in math, 
+\begin_inset Formula $w^{*}\in\linspan\left(x_{1},\ldots,x_{n}\right)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Ridge regression solution is in the 
+\begin_inset Quotes eld
+\end_inset
+
+span of the data
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The ridge regression solution for regularization parameter 
+\begin_inset Formula $\lambda>0$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+w^{*}=\argmin_{w\in\reals^{d}}\frac{1}{n}\sum_{i=1}^{n}\left\{ w^{T}x_{i}-y_{i}\right\} ^{2}+\lambda\|w\|_{2}^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+This has a closed form solution (Homework #4):
+\begin_inset Formula 
+\[
+\pause w^{*}=\left(X^{T}X+\lambda I\right)^{-1}X^{T}y,
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $X$
+\end_inset
+
+ is the design matrix, with 
+\begin_inset Formula $x_{1},\ldots,x_{n}$
+\end_inset
+
+ as rows.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Ridge regression solution is in the 
+\begin_inset Quotes eld
+\end_inset
+
+span of the data
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Rearranging 
+\begin_inset Formula $w^{*}=\left(X^{T}X+\lambda I\right)^{-1}X^{T}y,$
+\end_inset
+
+ we can show that (also Homework #4):
+\begin_inset Formula 
+\begin{eqnarray*}
+w^{*} & = & X^{T}\underbrace{\left(\frac{1}{\lambda}y-\frac{1}{\lambda}Xw^{*}\right)\pause}_{\alpha^{*}}\\
+\pause & = & X^{T}\alpha^{*}\pause=\sum_{i=1}^{n}\alpha_{i}^{*}x_{i}.
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+So 
+\begin_inset Formula $w^{*}$
+\end_inset
+
+ is in the span of the data.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+i.e.
+ 
+\begin_inset Formula $w^{*}\in\linspan\left(x_{1},\ldots,x_{n}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+If solution is in the span of the data, we can reparameterize
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The ridge regression solution for regularization parameter 
+\begin_inset Formula $\lambda>0$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+w^{*}=\argmin_{w\in\reals^{d}}\frac{1}{n}\sum_{i=1}^{n}\left\{ w^{T}x_{i}-y_{i}\right\} ^{2}+\lambda\|w\|_{2}^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+We now know that 
+\begin_inset Formula $w^{*}\in\linspan\left(x_{1},\ldots,x_{n}\right)\subset\reals^{d}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+So rather than minimizing over all of 
+\begin_inset Formula $\reals^{d}$
+\end_inset
+
+, we can minimize over 
+\begin_inset Formula $\linspan\left(x_{1},\ldots,x_{n}\right)$
+\end_inset
+
+.
+\begin_inset Formula 
+\[
+w^{*}=\argmin_{w\in\linspan\left(x_{1},\ldots,x_{n}\right)}\frac{1}{n}\sum_{i=1}^{n}\left\{ w^{T}x_{i}-y_{i}\right\} ^{2}+\lambda\|w\|_{2}^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+How can we conveniently write an optimization problem over the span of some
+ vectors?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+If solution is in the span of the data, we can reparameterize
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Note that for any 
+\begin_inset Formula $w\in\linspan\left(x_{1},\ldots,x_{n}\right)$
+\end_inset
+
+, we have 
+\begin_inset Formula $w=X^{T}\alpha$
+\end_inset
+
+, for some 
+\begin_inset Formula $\alpha\in\reals^{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+So let's replace 
+\begin_inset Formula $w$
+\end_inset
+
+ with 
+\begin_inset Formula $X^{T}\alpha$
+\end_inset
+
+ in our optimization problem:
+\begin_inset Formula 
+\begin{eqnarray*}
+\text{[original] }w^{*} & = & \argmin_{w\in\reals^{d}}\frac{1}{n}\sum_{i=1}^{n}\left\{ w^{T}x_{i}-y_{i}\right\} ^{2}+\lambda\|w\|_{2}^{2}\pause\\
+\text{[reparameterized] }\alpha^{*} & = & \argmin_{\alpha\in\reals^{n}}\frac{1}{n}\sum_{i=1}^{n}\left\{ \left(X^{T}\alpha\right)^{T}x_{i}-y_{i}\right\} ^{2}+\lambda\|X^{T}\alpha\|_{2}^{2}.\pause
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+To get 
+\begin_inset Formula $w^{*}$
+\end_inset
+
+ from the reparameterized optimization problem, we just take 
+\begin_inset Formula $w^{*}=X^{T}\alpha^{*}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+We changed the dimension of our optimization variable from 
+\begin_inset Formula $d$
+\end_inset
+
+ to 
+\begin_inset Formula $n$
+\end_inset
+
+.
+ Is this useful?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Consider very large feature spaces 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Itemize
+Suppose we start with 
+\begin_inset Formula $x=\left(1,x_{1},\ldots,x_{d}\right)\in\reals^{d+1}=\cx$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Consider adding all monomials of degree 
+\begin_inset Formula $M$
+\end_inset
+
+: 
+\begin_inset Formula $x_{1}^{p_{1}}\cdots x_{d}^{p_{d}}$
+\end_inset
+
+, with 
+\begin_inset Formula $p_{1}+\cdots+p_{d}=M$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Recall that this is 
+\begin_inset Formula ${M+d-1 \choose M}$
+\end_inset
+
+ new features....
+ that can be a lot.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+(M+d-1) c (d-1) = (M+d-1) c (M).
+ If we wanted to have 
+\begin_inset Formula $p_{1}+\cdots+p_{d}\le M$
+\end_inset
+
+, then that's equivalent to having an extra variable 
+\begin_inset Formula $p_{d+1}=1$
+\end_inset
+
+, so it doesn't increase the degree.
+ In which case the number of these monomials is 
+\begin_inset Formula $\binom{M+d}{M}=\binom{M+d}{d}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+For 
+\begin_inset Formula $d=40$
+\end_inset
+
+ and 
+\begin_inset Formula $M=8$
+\end_inset
+
+, we get about 300 million features.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Suppose we have a 300-million dimension feature space [very large]
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+(e.g.
+ using high order monomial interaction terms as features, as described last
+ lecture)
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Suppose we have a training set of 300,000 examples [fairly large]
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+In the original formulation, we solve a 300-million dimension optimization
+ problem.
+\end_layout
+
+\begin_layout Itemize
+In the reparameterized formulation, we solve a 300,000-dimension optimization
+ problem.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+This is why we care
+\series default
+ about when the solution is in the span of the data.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+This reparameterization is interesting when we have more features than data
+ (
+\begin_inset Formula $d\gg n$
+\end_inset
+
+).
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+What's next?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For SVM and ridge regression, we found that the solution is in the span
+ of the data.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+derived in two rather ad-hoc ways
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Up next: The Representer Theorem, which shows that this 
+\begin_inset Quotes eld
+\end_inset
+
+span of the data
+\begin_inset Quotes erd
+\end_inset
+
+ result occurs far more generally, and we prove it using basic linear algebra.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Math Review: Inner Product Spaces and Projections (Hilbert Spaces)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+This development is based on Luenberger's 
+\emph on
+Optimization by Vector Space Methods.
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Inner Product Space (or 
+\begin_inset Quotes eld
+\end_inset
+
+Pre-Hilbert
+\begin_inset Quotes erd
+\end_inset
+
+ Spaces)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+An
+\series bold
+ inner product space
+\series default
+ (over reals) is a vector space 
+\begin_inset Formula $\cv$
+\end_inset
+
+ and an 
+\series bold
+inner product
+\series default
+, which is a mapping
+\begin_inset Formula 
+\[
+\left\langle \cdot,\cdot\right\rangle :\cv\times\cv\to\reals
+\]
+
+\end_inset
+
+that has the following properties 
+\begin_inset Formula $\forall x,y,z\in\cv$
+\end_inset
+
+ and 
+\begin_inset Formula $a,b\in\reals$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Itemize
+Symmetry: 
+\begin_inset Formula $\left\langle x,y\right\rangle =\left\langle y,x\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Linearity: 
+\begin_inset Formula $\left\langle ax+by,z\right\rangle =a\left\langle x,z\right\rangle +b\left\langle y,z\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Positive-definiteness: 
+\begin_inset Formula $\left\langle x,x\right\rangle \ge0$
+\end_inset
+
+ and 
+\begin_inset Formula $\left\langle x,x\right\rangle =0\iff x=0$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Norm from Inner Product
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+For an inner product space, we define a norm as
+\begin_inset Formula 
+\[
+\|x\|=\sqrt{\left\langle x,x\right\rangle }.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $\reals^{d}$
+\end_inset
+
+ with standard Euclidean inner product is an inner product space:
+\begin_inset Formula 
+\[
+\left\langle x,y\right\rangle :=x^{T}y\qquad\forall x,y\in\reals^{d}.
+\]
+
+\end_inset
+
+Norm is
+\begin_inset Formula 
+\[
+\|x\|=\sqrt{x^{T}x}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+What norms can we get from an inner product?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Theorem
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[Parallelogram Law]
+\end_layout
+
+\end_inset
+
+ A norm 
+\begin_inset Formula $\|\cdot\|$
+\end_inset
+
+ can be written in terms of an inner product on 
+\begin_inset Formula $\cv$
+\end_inset
+
+ iff 
+\begin_inset Formula $\forall x,x'\in\cv$
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+2\|x\|^{2}+2\|x'\|^{2}=\|x+x'\|^{2}+\|x-x'\|^{2},
+\]
+
+\end_inset
+
+and if it can, the inner product is given by the
+\series bold
+ polarization identity
+\series default
+
+\begin_inset Formula 
+\[
+\left\langle x,x'\right\rangle =\frac{||x||^{2}+||x'||^{2}-||x-x'||^{2}}{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Example
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ norm on 
+\begin_inset Formula $\reals^{d}$
+\end_inset
+
+ is NOT generated by an inner product.
+ [Exercise] 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+Is 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ norm on 
+\begin_inset Formula $\reals^{d}$
+\end_inset
+
+ generated by an inner product?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Orthogonality (Definitions)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+Two vectors are 
+\series bold
+orthogonal
+\series default
+ if 
+\begin_inset Formula $\left\langle x,x'\right\rangle =0$
+\end_inset
+
+.
+ We denote this by 
+\begin_inset Formula $x\perp x'$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula $x$
+\end_inset
+
+ is orthogonal to a set 
+\begin_inset Formula $S$
+\end_inset
+
+, i.e.
+ 
+\begin_inset Formula $x\perp S$
+\end_inset
+
+, if 
+\begin_inset Formula $x\perp s$
+\end_inset
+
+ for all 
+\begin_inset Formula $x\in S$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Pythagorean Theorem
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Theorem
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[Pythagorean Theorem]
+\end_layout
+
+\end_inset
+
+ If 
+\begin_inset Formula $x\perp x'$
+\end_inset
+
+, then 
+\begin_inset Formula $\|x+x'\|^{2}=\|x\|^{2}+\|x'\|^{2}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Proof
+We have
+\begin_inset Formula 
+\begin{eqnarray*}
+\|x+x'\|^{2} & = & \left\langle x+x',x+x'\right\rangle \\
+\pause & = & \left\langle x,x\right\rangle +\left\langle x,x'\right\rangle +\left\langle x',x\right\rangle +\left\langle x',x'\right\rangle \\
+\pause & = & \|x\|^{2}+\|x'\|^{2}.
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Projection onto a Plane (Rough Definition)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Choose some 
+\begin_inset Formula $x\in\cv$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Let 
+\begin_inset Formula $M$
+\end_inset
+
+ be a subspace of inner product space 
+\begin_inset Formula $\cv$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Then 
+\begin_inset Formula $m_{0}$
+\end_inset
+
+ is the 
+\series bold
+projection of 
+\begin_inset Formula $x$
+\end_inset
+
+ onto 
+\begin_inset Formula $M$
+\end_inset
+
+,
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+if 
+\begin_inset Formula $m_{0}\in M$
+\end_inset
+
+ and is the closest point to 
+\begin_inset Formula $x$
+\end_inset
+
+ in 
+\begin_inset Formula $M$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+In math: For all 
+\begin_inset Formula $m\in M$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+\|x-m_{0}\|\le\|x-m\|.
+\]
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+To show: projections exist and characterized by 
+\begin_inset Formula $x-m_{0}\perp M$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Hilbert Space
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Projections exist for all finite-dimensional inner product spaces.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We want to allow infinite-dimensional spaces.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Need an extra condition called 
+\series bold
+completeness
+\series default
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+A space is 
+\series bold
+complete
+\series default
+ if all Cauchy sequences in the space converge.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Definition
+A 
+\series bold
+Hilbert space 
+\series default
+is a complete inner product space.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Example
+Any finite dimensional inner product space is a Hilbert space.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Projection Theorem
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Theorem
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[Classical Projection Theorem]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\ch$
+\end_inset
+
+ a Hilbert space
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $M$
+\end_inset
+
+ a closed subspace of 
+\begin_inset Formula $\ch$
+\end_inset
+
+ (picture a hyperplane through the origin)
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+For any 
+\begin_inset Formula $x\in\ch$
+\end_inset
+
+, there 
+\series bold
+exists a unique 
+\series default
+
+\begin_inset Formula $m_{0}\in M$
+\end_inset
+
+ for which 
+\begin_inset Formula 
+\[
+\|x-m_{0}\|\le\|x-m\|\;\forall m\in M.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+This 
+\begin_inset Formula $m_{0}$
+\end_inset
+
+ is called the 
+\series bold
+[orthogonal] projection of 
+\begin_inset Formula $x$
+\end_inset
+
+ onto 
+\begin_inset Formula $M$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Furthermore, 
+\begin_inset Formula $m_{0}\in M$
+\end_inset
+
+ is the projection of 
+\begin_inset Formula $x$
+\end_inset
+
+ onto 
+\begin_inset Formula $M$
+\end_inset
+
+ iff
+\begin_inset Formula 
+\[
+x-m_{0}\perp M.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Orthogonal Complements
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+Consider 
+\begin_inset Formula $S\subset\cv$
+\end_inset
+
+, for an inner product space 
+\begin_inset Formula $\cv$
+\end_inset
+
+.
+ The set
+\begin_inset Formula 
+\[
+S^{\perp}=\left\{ v\in\cv\mid v\perp S\right\} 
+\]
+
+\end_inset
+
+is called the 
+\series bold
+orthogonal complement
+\series default
+ of 
+\begin_inset Formula $S$
+\end_inset
+
+ [in 
+\begin_inset Formula $\cv$
+\end_inset
+
+].
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Theorem
+\begin_inset Formula $S^{\perp}$
+\end_inset
+
+ is a closed subspace of 
+\begin_inset Formula $\cv$
+\end_inset
+
+.
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Theorem
+
+\end_layout
+
+\begin_layout Theorem
+If 
+\begin_inset Formula $M$
+\end_inset
+
+ is a closed subspace of a Hilbert space 
+\begin_inset Formula $\ch$
+\end_inset
+
+, then every 
+\begin_inset Formula $x\in\ch$
+\end_inset
+
+ has a unique representation of the form
+\begin_inset Formula 
+\[
+x=m+m^{\perp},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $m\in M$
+\end_inset
+
+ and 
+\begin_inset Formula $m^{\perp}\in M^{\perp}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Orthogonal Decomposition
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Theorem
+If 
+\begin_inset Formula $M$
+\end_inset
+
+ is a closed subspace of a Hilbert space 
+\begin_inset Formula $\ch$
+\end_inset
+
+, then every 
+\begin_inset Formula $x\in\ch$
+\end_inset
+
+ has a unique representation of the form
+\begin_inset Formula 
+\[
+x=m+m^{\perp},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $m\in M$
+\end_inset
+
+ and 
+\begin_inset Formula $m^{\perp}\perp M$
+\end_inset
+
+.
+ 
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Theorem
+
+\end_layout
+
+\begin_layout Proof
+[We'll prove existence.] 
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $m=\proj_{M}x$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+By Projection Theorem, 
+\begin_inset Formula $m^{\perp}=x-m\perp M$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+So 
+\begin_inset Formula 
+\begin{eqnarray*}
+x & = & m+x-m\\
+ & = & m+m^{\perp}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Projection Reduces Norm
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Theorem
+Let 
+\begin_inset Formula $M$
+\end_inset
+
+ be a closed subspace of 
+\begin_inset Formula $\ch$
+\end_inset
+
+.
+ For any 
+\begin_inset Formula $x\in\ch$
+\end_inset
+
+, let 
+\begin_inset Formula $m_{0}=\proj_{M}x$
+\end_inset
+
+ be the projection of 
+\begin_inset Formula $x$
+\end_inset
+
+ onto 
+\begin_inset Formula $M$
+\end_inset
+
+.
+ Then
+\begin_inset Formula 
+\[
+\|m_{0}\|\le\|x\|,
+\]
+
+\end_inset
+
+with equality only when 
+\begin_inset Formula $m_{0}=x$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Proof
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+\|x\|^{2} & = & \|m_{0}+(x-m_{0})\|^{2}\pause\;(\mbox{note: }x-m_{0}\perp m_{0}\text{ by Projection theorem})\\
+ & = & \|m_{0}\|^{2}+\|x-m_{0}\|^{2}\mbox{\pause}\ \mbox{by Pythagorean theorem}\\
+\pause\|m_{0}\|^{2} & = & \|x\|^{2}-\|x-m_{0}\|^{2}\pause
+\end{eqnarray*}
+
+\end_inset
+
+Then 
+\begin_inset Formula $\|x-m_{0}\|^{2}\ge0$
+\end_inset
+
+ implies 
+\begin_inset Formula $\|m_{0}\|^{2}\le\|x\|^{2}\pause$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $\|x-m_{0}\|^{2}=0$
+\end_inset
+
+, then 
+\begin_inset Formula $x=m_{0}$
+\end_inset
+
+, by definition of norm.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Section
+The Representer Theorem
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Generalize from SVM Objective
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+SVM objective: 
+\begin_inset Formula 
+\[
+\min_{w\in\reals^{d}}\frac{1}{2}\|w\|^{2}+\frac{c}{n}\sum_{i=1}^{n}\max\left(0,1-y_{i}\left[\left\langle w,x_{i}\right\rangle \right]\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Generalized objective
+\series default
+: 
+\begin_inset Formula 
+\[
+\min_{w\in\ch}R\left(\|w\|\right)+L\left(\left\langle w,x_{1}\right\rangle ,\ldots,\left\langle w,x_{n}\right\rangle \right),\pause
+\]
+
+\end_inset
+
+where
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $R:[0,\infty)\to\reals$
+\end_inset
+
+ is nondecreasing (
+\series bold
+Regularization term
+\series default
+)
+\end_layout
+
+\begin_layout Itemize
+and 
+\begin_inset Formula $L:\reals^{n}\to\reals$
+\end_inset
+
+ is arbitrary.
+ (
+\series bold
+Loss term
+\series default
+)
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Exercise: Write expressions for 
+\begin_inset Formula $R$
+\end_inset
+
+ and 
+\begin_inset Formula $L$
+\end_inset
+
+ corresponding to SVM and ridge regression.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+General Objective Function for Linear Hypothesis Space (Details)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Generalized objective
+\series default
+: 
+\begin_inset Formula 
+\[
+\min_{w\in\ch}R\left(\|w\|\right)+L\left(\left\langle w,x_{1}\right\rangle ,\ldots,\left\langle w,x_{n}\right\rangle \right),
+\]
+
+\end_inset
+
+where
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $w,x_{1},\ldots,x_{n}\in\ch$
+\end_inset
+
+ for some Hilbert space 
+\begin_inset Formula $\ch$
+\end_inset
+
+.
+ (We typically have 
+\begin_inset Formula $\ch=\reals^{d}.)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\|\cdot\|$
+\end_inset
+
+ is the norm corresponding to the inner product of 
+\begin_inset Formula $\ch$
+\end_inset
+
+.
+ (i.e.
+ 
+\begin_inset Formula $\|w\|=\sqrt{\left\langle w,w\right\rangle }$
+\end_inset
+
+) 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $R:[0,\infty)\to\reals$
+\end_inset
+
+ is nondecreasing (
+\series bold
+Regularization term
+\series default
+), and
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $L:\reals^{n}\to\reals$
+\end_inset
+
+ is arbitrary (
+\series bold
+Loss term
+\series default
+).
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+General Objective Function for Linear Hypothesis Space (Details)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Generalized objective
+\series default
+: 
+\begin_inset Formula 
+\[
+\min_{w\in\ch}R\left(\|w\|\right)+L\left(\left\langle w,x_{1}\right\rangle ,\ldots,\left\langle w,x_{n}\right\rangle \right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+What's 
+\begin_inset Quotes eld
+\end_inset
+
+linear
+\begin_inset Quotes erd
+\end_inset
+
+? 
+\end_layout
+
+\begin_layout Itemize
+The prediction/score function 
+\begin_inset Formula $x\mapsto\left\langle w,x\right\rangle $
+\end_inset
+
+ is linear – in what?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+in parameter vector 
+\begin_inset Formula $w$
+\end_inset
+
+, and
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+in the feature vector 
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Why? [Real-valued] inner products are linear in each argument.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+The important part is the linearity in the parameter
+\series default
+ 
+\begin_inset Formula $w$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+When we discuss neural networks, we'll mention a 
+\begin_inset Quotes eld
+\end_inset
+
+linear network
+\begin_inset Quotes erd
+\end_inset
+
+ in which prediction functions are linear in the feature vector 
+\begin_inset Formula $x$
+\end_inset
+
+, but nonlinear in the parameter vector 
+\begin_inset Formula $w$
+\end_inset
+
+.
+ In other words, we have something like 
+\begin_inset Formula 
+\[
+\min_{w\in\ch}R\left(\|w\|\right)+L\left(\left\langle f(w),x_{1}\right\rangle ,\ldots,\left\langle f(w),x_{n}\right\rangle \right),
+\]
+
+\end_inset
+
+ for some (known) nonlinear function 
+\begin_inset Formula $f$
+\end_inset
+
+.
+ 
+\series bold
+Our discussion will not apply to this situation
+\series default
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+General Objective Function for Linear Hypothesis Space (Details)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Generalized objective
+\series default
+: 
+\begin_inset Formula 
+\[
+\min_{w\in\ch}R\left(\|w\|\right)+L\left(\left\langle w,x_{1}\right\rangle ,\ldots,\left\langle w,x_{n}\right\rangle \right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Ridge regression and SVM are of this form.
+ (Verify this!)
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+What if we penalize with 
+\begin_inset Formula $\lambda\|w\|_{2}$
+\end_inset
+
+ instead of 
+\begin_inset Formula $\lambda\|w\|_{2}^{2}$
+\end_inset
+
+? 
+\begin_inset Formula $\pause$
+\end_inset
+
+Yes!.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+What if we use lasso regression? 
+\begin_inset Formula $\pause$
+\end_inset
+
+No! 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ norm does not correspond to an inner product.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Representer Theorem: Quick Summary
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Generalized objective
+\series default
+: 
+\begin_inset Formula 
+\[
+w^{*}=\argmin_{w\in\ch}R\left(\|w\|\right)+L\left(\left\langle w,x_{1}\right\rangle ,\ldots,\left\langle w,x_{n}\right\rangle \right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Representer theorem tells us we can look for 
+\begin_inset Formula $w^{*}$
+\end_inset
+
+ in the span of the data:
+\begin_inset Formula 
+\[
+w^{*}=\argmin_{w\in\linspan\left(x_{1},\ldots,x_{n}\right)}R\left(\|w\|\right)+L\left(\left\langle w,x_{1}\right\rangle ,\ldots,\left\langle w,x_{n}\right\rangle \right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+So we can reparameterize as before:
+\begin_inset Formula 
+\[
+\alpha^{*}=\argmin_{\alpha\in\reals^{n}}R\left(\left\Vert \sum_{i=1}^{n}\alpha_{i}x_{i}\right\Vert \right)+L\left(\left\langle \sum_{i=1}^{n}\alpha_{i}x_{i},x_{1}\right\rangle ,\ldots,\left\langle \sum_{i=1}^{n}\alpha_{i}x_{i},x_{n}\right\rangle \right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Our reparameterization trick applies much more broadly than SVM and ridge.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status collapsed
+
+\begin_layout Plain Layout
+The Representer Theorem
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Theorem
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[Representer Theorem]
+\end_layout
+
+\end_inset
+
+ Let 
+\begin_inset Formula 
+\[
+J(w)=R\left(\|w\|\right)+L\left(\left\langle w,x_{1}\right\rangle ,\ldots,\left\langle w,x_{n}\right\rangle \right),
+\]
+
+\end_inset
+
+where
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $w,x_{1},\ldots,x_{n}\in\ch$
+\end_inset
+
+ for some Hilbert space 
+\begin_inset Formula $\ch$
+\end_inset
+
+.
+ (We typically have 
+\begin_inset Formula $\ch=\reals^{d}.)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\|\cdot\|$
+\end_inset
+
+ is the norm corresponding to the inner product of 
+\begin_inset Formula $\ch$
+\end_inset
+
+.
+ (i.e.
+ 
+\begin_inset Formula $\|w\|=\sqrt{\left\langle w,w\right\rangle }$
+\end_inset
+
+) 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $R:[0,\infty)\to\reals$
+\end_inset
+
+ is nondecreasing (
+\series bold
+Regularization term
+\series default
+), and
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $L:\reals^{n}\to\reals$
+\end_inset
+
+ is arbitrary (
+\series bold
+Loss term
+\series default
+).
+\end_layout
+
+\end_deeper
+\begin_layout Theorem
+Then 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+If 
+\begin_inset Formula $M=\linspan\left(x_{1},\ldots,x_{n}\right)$
+\end_inset
+
+, then 
+\begin_inset Formula $J(\proj_{M}w)\le J(w)$
+\end_inset
+
+ for any 
+\begin_inset Formula $w\in\ch$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+If 
+\begin_inset Formula $J(w)$
+\end_inset
+
+ has a minimizer, then it 
+\series bold
+has a minimizer of the form
+\series default
+ 
+\begin_inset Formula $w^{*}=\sum_{i=1}^{n}\alpha_{i}x_{i}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+If 
+\begin_inset Formula $R$
+\end_inset
+
+ is strictly increasing, then all minimizers have this form.
+ (Proof in homework.)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status collapsed
+
+\begin_layout Plain Layout
+The Representer Theorem (Proof)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Enumerate
+Let 
+\begin_inset Formula $w^{*}$
+\end_inset
+
+ be a minimizer of 
+\begin_inset Formula $J(w)$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Let 
+\begin_inset Formula $M=\linspan\left(x_{1},\ldots,x_{n}\right)$
+\end_inset
+
+.
+ [the 
+\series bold
+
+\begin_inset Quotes eld
+\end_inset
+
+span of the data
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Fix any 
+\begin_inset Formula $w\in\ch$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Let 
+\begin_inset Formula $w_{M}=\proj_{M}w$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Residual 
+\begin_inset Formula $w-w_{M}$
+\end_inset
+
+ is orthogonal to 
+\begin_inset Formula $x$
+\end_inset
+
+ for all 
+\begin_inset Formula $x\in M$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Formula $\left\langle w,x_{i}\right\rangle =\pause\left\langle w_{M}+w-w_{M},x_{i}\right\rangle =\pause\left\langle w_{M},x_{i}\right\rangle +\left\langle w-w_{M},x_{i}\right\rangle =\pause\left\langle w_{M},x_{i}\right\rangle $
+\end_inset
+
+ 
+\begin_inset Formula $\forall i$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Formula $L\left(\left\langle w,x_{1}\right\rangle ,\ldots,\left\langle w,x_{n}\right\rangle \right)=L\left(\left\langle w_{M},x_{1}\right\rangle ,\ldots,\left\langle w_{M},x_{n}\right\rangle \right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Projections decrease norms 
+\begin_inset Formula $\implies$
+\end_inset
+
+ 
+\begin_inset Formula $\|w_{M}\|\le\|w\|$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Since 
+\begin_inset Formula $R$
+\end_inset
+
+ is nondecreasing, 
+\begin_inset Formula $R(\|w_{M}\|)\le R(\|w\|)$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Formula $J(w_{M})\le J(w)$
+\end_inset
+
+.
+ [Proves first result.]
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+If 
+\begin_inset Formula $w^{*}$
+\end_inset
+
+ minimizes 
+\begin_inset Formula $J(w)$
+\end_inset
+
+, then 
+\begin_inset Formula $w_{M}^{*}=\proj_{M}w^{*}$
+\end_inset
+
+ is also a minimizer, since 
+\begin_inset Formula $J(w_{M}^{*})\le J(w^{*})$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+So 
+\begin_inset Formula $\exists\alpha$
+\end_inset
+
+ s.t.
+ 
+\begin_inset Formula $w_{M}^{*}=\sum_{i=1}^{n}\alpha_{i}x_{i}$
+\end_inset
+
+ is a minimizer of 
+\begin_inset Formula $J(w)$
+\end_inset
+
+.
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\end_layout
+
+\begin_layout Standard
+Q.E.D.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status collapsed
+
+\begin_layout Plain Layout
+Sufficient Condition for Existence of a Minimizer
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Theorem
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Thanks to 
+\begin_inset CommandInset href
+LatexCommand href
+name "Mingsi Long"
+target "https://www.linkedin.com/in/mingsi-long-4ba83b30/"
+literal "false"
+
+\end_inset
+
+ for suggesting this nice theorem and proof.
+\end_layout
+
+\end_inset
+
+Let 
+\begin_inset Formula 
+\[
+J(w)=R\left(\|w\|\right)+L\left(\left\langle w,x_{1}\right\rangle ,\ldots,\left\langle w,x_{n}\right\rangle \right),
+\]
+
+\end_inset
+
+and let 
+\begin_inset Formula $M=\linspan\left(x_{1},\ldots,x_{n}\right)$
+\end_inset
+
+.
+ Then under the same conditions given in the Representer theorem, if 
+\begin_inset Formula $w_{M}^{*}$
+\end_inset
+
+ minimizes 
+\begin_inset Formula $J(w)$
+\end_inset
+
+ 
+\series bold
+over the set
+\series default
+ 
+\begin_inset Formula $M$
+\end_inset
+
+, then 
+\begin_inset Formula $w_{M}^{*}$
+\end_inset
+
+ minimizes 
+\begin_inset Formula $J(w)$
+\end_inset
+
+ over all 
+\begin_inset Formula $\ch$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+One consequence of the Representer theorem only applies if 
+\begin_inset Formula $J(w)$
+\end_inset
+
+ has a minimizer over 
+\begin_inset Formula $\ch$
+\end_inset
+
+.
+ This theorem tells us that it's sufficient to check for a constrained minimizer
+ of 
+\begin_inset Formula $J(w)$
+\end_inset
+
+ over 
+\begin_inset Formula $M$
+\end_inset
+
+.
+ If one exists, then it's also an unconstrained minimizer of 
+\begin_inset Formula $J(w)$
+\end_inset
+
+ over 
+\begin_inset Formula $\ch$
+\end_inset
+
+.
+ If there is no constrained minimizer over 
+\begin_inset Formula $M$
+\end_inset
+
+, then 
+\begin_inset Formula $J(w)$
+\end_inset
+
+ has no minimizer over 
+\begin_inset Formula $\ch$
+\end_inset
+
+ (by the Representer theorem).
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Bottom Line: We can jump straight to minimizing over 
+\begin_inset Formula $M$
+\end_inset
+
+, the 
+\begin_inset Quotes eld
+\end_inset
+
+span of the data
+\begin_inset Quotes erd
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status collapsed
+
+\begin_layout Plain Layout
+Sufficient Condition for Existence of a Minimizer (Proof)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Let 
+\begin_inset Formula $w_{M}^{*}\in\argmin_{w\in M}J(w)$
+\end_inset
+
+.
+ [the constrained minimizer]
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Consider any 
+\begin_inset Formula $w\in\ch$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Let 
+\begin_inset Formula $w_{M}=\proj_{M}w$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+By the Representer theorem, 
+\begin_inset Formula $J(w_{M})\le J(w)$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Formula $J(w_{M}^{*})\le J(w_{M})$
+\end_inset
+
+ by definition of 
+\begin_inset Formula $w_{M}^{*}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Thus for any 
+\begin_inset Formula $w\in\ch$
+\end_inset
+
+, 
+\begin_inset Formula $J(w_{M}^{*})\le J(w)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Therefore 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+
+\begin_inset Formula $w_{M}^{*}$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ minimizes 
+\begin_inset Formula $J(w)$
+\end_inset
+
+ over 
+\begin_inset Formula $\ch$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+QED
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Reparameterizing our Generalized Objective Function
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Rewriting the Objective Function
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Define the training score function 
+\begin_inset Formula $s:\reals^{d}\to\reals^{n}$
+\end_inset
+
+ by
+\begin_inset Formula 
+\[
+s(w)=\begin{pmatrix}\left\langle w,x_{1}\right\rangle \\
+\vdots\\
+\left\langle w,x_{n}\right\rangle 
+\end{pmatrix},
+\]
+
+\end_inset
+
+which gives the 
+\series bold
+training score vector
+\series default
+ for any 
+\begin_inset Formula $w$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+We can then rewrite the objective function as
+\begin_inset Formula 
+\[
+J(w)=R\left(\|w\|\right)+L\left(s(w)\right),
+\]
+
+\end_inset
+
+where now 
+\begin_inset Formula $L:\reals^{n\times1}\to\reals$
+\end_inset
+
+ takes a column vector as input.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+This will allow us to have a slick reparameterized version...
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Reparameterize the Generalized Objective
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+By the Representer Theorem, it's sufficient to minimize 
+\begin_inset Formula $J(w)$
+\end_inset
+
+ for 
+\begin_inset Formula $w$
+\end_inset
+
+ of the form 
+\begin_inset Formula $\sum_{i=1}^{n}\alpha_{i}x_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Plugging this form into 
+\begin_inset Formula $J(w)$
+\end_inset
+
+, we see we can just minimize
+\begin_inset Formula 
+\[
+J_{0}(\alpha)=R\left(\left\Vert \sum_{i=1}^{n}\alpha_{i}x_{i}\right\Vert \right)+L\left(s\left(\sum_{i=1}^{n}\alpha_{i}x_{i}\right)\right)
+\]
+
+\end_inset
+
+ over 
+\begin_inset Formula $\alpha=\left(\alpha_{1},\ldots,\alpha_{n}\right)^{T}\in\reals^{n\times1}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+With some new notation, we can substantially simplify 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+the norm piece 
+\begin_inset Formula $\|w\|=\left\Vert \sum_{i=1}^{n}\alpha_{i}x_{i}\right\Vert $
+\end_inset
+
+, and
+\end_layout
+
+\begin_layout Itemize
+the score piece 
+\begin_inset Formula $s(w)=s\left(\sum_{i=1}^{n}\alpha_{i}x_{i}\right)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Simplifying the Reparameterized Norm
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For the norm piece 
+\begin_inset Formula $\|w\|=\left\Vert \sum_{i=1}^{n}\alpha_{i}x_{i}\right\Vert $
+\end_inset
+
+, we have
+\begin_inset Formula 
+\begin{eqnarray*}
+\pause\|w\|^{2} & = & \left\langle w,w\right\rangle \\
+ & = & \left\langle \sum_{i=1}^{n}\alpha_{i}x_{i},\sum_{j=1}^{n}\alpha_{j}x_{j}\right\rangle \\
+\pause & = & \sum_{i,j=1}^{n}\alpha_{i}\alpha_{j}\left\langle x_{i},x_{j}\right\rangle .
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+This expression involves the 
+\begin_inset Formula $n^{2}$
+\end_inset
+
+ inner products between all pairs of input vectors.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We often put those values together into a matrix...
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Gram Matrix
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+The 
+\series bold
+Gram matrix
+\series default
+ of a set of points 
+\begin_inset Formula $x_{1},\ldots,x_{n}$
+\end_inset
+
+ in an inner product space is defined as
+\begin_inset Formula 
+\[
+K=\begin{pmatrix}\left\langle x_{i},x_{j}\right\rangle \end{pmatrix}_{i,j}=\begin{pmatrix}\left\langle x_{1},x_{1}\right\rangle  & \cdots & \left\langle x_{1},x_{n}\right\rangle \\
+\vdots & \ddots & \cdots\\
+\left\langle x_{n},x_{1}\right\rangle  & \cdots & \left\langle x_{n},x_{n}\right\rangle 
+\end{pmatrix}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+This is the traditional definition from linear algebra.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Later today we'll introduce the notion of a 
+\begin_inset Quotes eld
+\end_inset
+
+kernel matrix
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The Gram matrix is a special case of a 
+\series bold
+kernel matrix 
+\series default
+for the identity feature map.
+\end_layout
+
+\begin_layout Itemize
+That's why we write 
+\begin_inset Formula $K$
+\end_inset
+
+ for the Gram matrix instead of 
+\begin_inset Formula $G$
+\end_inset
+
+, as done elsewhere.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+NOTE: In ML, we often use Gram matrix and kernel matrix to mean the same
+ thing.
+ Don't get too hung up on the definitions.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Example: Gram Matrix for the Dot Product
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Consider 
+\begin_inset Formula $x_{1},\ldots,x_{n}\in\reals^{d\times1}$
+\end_inset
+
+ with the standard inner product 
+\begin_inset Formula $\left\langle x,x'\right\rangle =x^{T}x'$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $X\in\reals^{n\times d}$
+\end_inset
+
+ be the 
+\series bold
+design matrix
+\series default
+, which has each input vector as a row: 
+\begin_inset Formula 
+\[
+X=\begin{pmatrix}-x_{1}^{T}-\\
+\vdots\\
+-x_{n}^{T}-
+\end{pmatrix}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Then the Gram matrix is
+\begin_inset Formula 
+\begin{eqnarray*}
+K & = & \begin{pmatrix}x_{1}^{T}x_{1} & \cdots & x_{1}^{T}x_{n}\\
+\vdots & \ddots & \cdots\\
+x_{n}^{T}x_{1} & \cdots & x_{n}^{T}x_{n}
+\end{pmatrix}\pause=\begin{pmatrix}-x_{1}^{T}-\\
+\vdots\\
+-x_{n}^{T}-
+\end{pmatrix}\begin{pmatrix}| & \cdots & |\\
+x_{1} & \cdots & x_{n}\\
+| & \cdots & |
+\end{pmatrix}\pause\\
+ & = & XX^{T}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Simplifying the Reparametrized Norm
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+With 
+\begin_inset Formula $w=\sum_{i=1}^{n}\alpha_{i}x_{i}$
+\end_inset
+
+, we have
+\begin_inset Formula 
+\begin{eqnarray*}
+\|w\|^{2} & = & \left\langle w,w\right\rangle \\
+ & = & \left\langle \sum_{i=1}^{n}\alpha_{i}x_{i},\sum_{j=1}^{n}\alpha_{j}x_{j}\right\rangle \\
+ & = & \sum_{i,j=1}^{n}\alpha_{i}\alpha_{j}\left\langle x_{i},x_{j}\right\rangle \pause\\
+ & = & \alpha^{T}K\alpha.
+\end{eqnarray*}
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Simplifying the Training Score Vector
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The score for 
+\begin_inset Formula $x_{j}$
+\end_inset
+
+ for 
+\begin_inset Formula $w=\sum_{i=1}^{n}\alpha_{i}x_{i}$
+\end_inset
+
+ is
+\begin_inset Formula 
+\begin{eqnarray*}
+\left\langle w,x_{j}\right\rangle  & =\pause & \left\langle \sum_{i=1}^{n}\alpha_{i}x_{i},x_{j}\right\rangle =\pause\sum_{i=1}^{n}\alpha_{i}\left\langle x_{i},x_{j}\right\rangle 
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The training score vector is
+\begin_inset Formula 
+\begin{eqnarray*}
+\pause s\left(\sum_{i=1}^{n}\alpha_{i}x_{i}\right) & = & \begin{pmatrix}\sum_{i=1}^{n}\alpha_{i}\left\langle x_{i},x_{1}\right\rangle \\
+\vdots\\
+\sum_{i=1}^{n}\alpha_{i}\left\langle x_{i},x_{n}\right\rangle 
+\end{pmatrix}\pause=\begin{pmatrix}\alpha_{1}\left\langle x_{1},x_{1}\right\rangle +\cdots+\alpha_{n}\left\langle x_{n},x_{1}\right\rangle \\
+\vdots\\
+\alpha_{1}\left\langle x_{1},x_{n}\right\rangle +\cdots+\alpha_{n}\left\langle x_{n},x_{n}\right\rangle 
+\end{pmatrix}\\
+\pause & = & \begin{pmatrix}\left\langle x_{1},x_{1}\right\rangle  & \cdots & \left\langle x_{1},x_{n}\right\rangle \\
+\vdots & \ddots & \cdots\\
+\left\langle x_{n},x_{1}\right\rangle  & \cdots & \left\langle x_{n},x_{n}\right\rangle 
+\end{pmatrix}\begin{pmatrix}\alpha_{1}\\
+\vdots\\
+\alpha_{n}
+\end{pmatrix}\\
+\pause & = & K\alpha
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Reparameterized Objective
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Putting it all together, our reparameterized objective function can be written
+ as
+\begin_inset Formula 
+\begin{eqnarray*}
+J_{0}(\alpha) & = & R\left(\left\Vert \sum_{i=1}^{n}\alpha_{i}x_{i}\right\Vert \right)+L\left(s\left(\sum_{i=1}^{n}\alpha_{i}x_{i}\right)\right)\\
+\pause & = & R\left(\sqrt{\alpha^{T}K\alpha}\right)+L\left(K\alpha\right),
+\end{eqnarray*}
+
+\end_inset
+
+which we minimize over 
+\begin_inset Formula $\alpha\in\reals^{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+All information
+\series default
+ needed about 
+\begin_inset Formula $x_{1},\ldots,x_{n}$
+\end_inset
+
+ is summarized in the Gram matrix 
+\begin_inset Formula $K$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We're now minimizing over 
+\begin_inset Formula $\reals^{n}$
+\end_inset
+
+ rather than 
+\begin_inset Formula $\reals^{d}$
+\end_inset
+
+\SpecialChar endofsentence
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+If 
+\begin_inset Formula $d\gg n$
+\end_inset
+
+, this can be a big win computationally (at least once 
+\begin_inset Formula $K$
+\end_inset
+
+ is computed).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+(Assumes 
+\begin_inset Formula $R$
+\end_inset
+
+ and 
+\begin_inset Formula $L$
+\end_inset
+
+ do not hide any references to 
+\begin_inset Formula $\psi(x_{i})$
+\end_inset
+
+.) 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Reparameterizing Predictions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose we've found 
+\begin_inset Formula 
+\[
+\alpha^{*}\in\argmin_{\alpha\in\reals^{n}}R\left(\sqrt{\alpha^{T}K\alpha}\right)+L\left(K\alpha\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Then we know 
+\begin_inset Formula $w^{*}=\sum_{i=1}^{n}\alpha^{*}x_{i}$
+\end_inset
+
+ is a solution to
+\begin_inset Formula 
+\[
+\argmin_{w\in\ch}R\left(\|w\|\right)+L\left(\left\langle w,x_{1}\right\rangle ,\ldots,\left\langle w,x_{n}\right\rangle \right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The prediction on a new point 
+\begin_inset Formula $x\in\ch$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+\hat{f}(x)=\left\langle w^{*},x\right\rangle \pause=\sum_{i=1}^{n}\alpha_{i}^{*}\left\langle x_{i},x\right\rangle .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+To make a new prediction, we may need to touch all the training inputs 
+\begin_inset Formula $x_{1},\ldots,x_{n}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+More Notation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+It will be convenient to define the following column vector for any 
+\begin_inset Formula $x\in\ch$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+k_{x}=\begin{pmatrix}\left\langle x_{1},x\right\rangle \\
+\vdots\\
+\left\langle x_{n},x\right\rangle 
+\end{pmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Then we can write our predictions on a new point 
+\begin_inset Formula $x$
+\end_inset
+
+ as
+\begin_inset Formula 
+\[
+\hat{f}(x)=k_{x}^{T}\alpha^{*}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Summary So Far
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Original plan: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Find 
+\begin_inset Formula $w^{*}\in\argmin_{w\in\ch}R\left(\|w\|\right)+L\left(\left\langle w,x_{1}\right\rangle ,\ldots,\left\langle w,x_{n}\right\rangle \right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Predict with 
+\begin_inset Formula $\hat{f}(x)=\left\langle w^{*},x\right\rangle $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We showed that the following is equivalent:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Find 
+\begin_inset Formula $\alpha^{*}\in\argmin_{\alpha\in\reals^{n}}R\left(\sqrt{\alpha^{T}K\alpha}\right)+L\left(K\alpha\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Predict with 
+\begin_inset Formula $\hat{f}(x)=k_{x}^{T}\alpha^{*}\pause$
+\end_inset
+
+, where
+\begin_inset Formula 
+\[
+K=\begin{pmatrix}\left\langle x_{1},x_{1}\right\rangle  & \cdots & \left\langle x_{1},x_{n}\right\rangle \\
+\vdots & \ddots & \cdots\\
+\left\langle x_{n},x_{1}\right\rangle  & \cdots & \left\langle x_{n},x_{n}\right\rangle 
+\end{pmatrix}\qquad\text{and}\qquad k_{x}=\begin{pmatrix}\left\langle x_{1},x\right\rangle \\
+\vdots\\
+\left\langle x_{n},x\right\rangle 
+\end{pmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Every element 
+\begin_inset Formula $x\in\ch$
+\end_inset
+
+ occurs inside an inner products with a training input 
+\begin_inset Formula $x_{i}\in\ch$
+\end_inset
+
+.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Note that we could replace any 
+\begin_inset Formula $x$
+\end_inset
+
+ with the projection of 
+\begin_inset Formula $x$
+\end_inset
+
+ into 
+\begin_inset Formula $\linspan\left(x_{1},\ldots,x_{n}\right)$
+\end_inset
+
+ without changing anything.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Kernelization
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+A method is 
+\series bold
+kernelized 
+\series default
+if every feature vector 
+\begin_inset Formula $\psi(x)$
+\end_inset
+
+ only appears inside an inner product with another feature vector 
+\begin_inset Formula $\psi(x')$
+\end_inset
+
+.
+ This applies to both the optimization problem and the prediction function.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Here we are using 
+\begin_inset Formula $\psi(x)=x$
+\end_inset
+
+.
+ Thus finding 
+\begin_inset Formula 
+\[
+\alpha^{*}\in\argmin_{\alpha\in\reals^{n}}R\left(\sqrt{\alpha^{T}K\alpha}\right)+L\left(K\alpha\right)
+\]
+
+\end_inset
+
+ and making predictions with 
+\begin_inset Formula $\hat{f}(x)=k_{x}^{T}\alpha^{*}$
+\end_inset
+
+ is a 
+\series bold
+kernelization
+\series default
+ of finding
+\begin_inset Formula 
+\[
+w^{*}\in\argmin_{w\in\ch}R\left(\|w\|\right)+L\left(\left\langle w,x_{1}\right\rangle ,\ldots,\left\langle w,x_{n}\right\rangle \right)
+\]
+
+\end_inset
+
+ and making predictions with 
+\begin_inset Formula $\hat{f}(x)=\left\langle w^{*},x\right\rangle $
+\end_inset
+
+.
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Now let's now consider some kernelizations of specific methods.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+How to kernelize?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Our principle tool for kernelization is reparameterization by the representer
+ theorem.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+There are other methods – we used duality for SVM and bare hands for ridge
+ regression.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Below, we highlight key differences between 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+kernelized ridge regression and kernelized SVM at prediction time..
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Now let's now consider some kernelizations of specific methods.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Kernel Ridge Regression
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Kernelizing Ridge Regression
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Ridge Regression:
+\begin_inset Formula 
+\[
+\min_{w\in\reals^{d}}\frac{1}{n}\|Xw-y\|^{2}+\lambda\|w\|^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Plugging in 
+\begin_inset Formula $w=\sum_{i=1}^{n}\alpha_{i}x_{i}$
+\end_inset
+
+, we get the kernelized ridge regression objective function:
+\begin_inset Formula 
+\[
+\min_{\alpha\in\reals^{n}}\frac{1}{n}\|K\alpha-y\|^{2}+\lambda\alpha^{T}K\alpha
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+This is usually just called 
+\series bold
+kernel ridge regression
+\series default
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Kernel Ridge Regression Solutions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For 
+\begin_inset Formula $\lambda>0$
+\end_inset
+
+, the 
+\series bold
+ridge regression solution
+\series default
+ is 
+\begin_inset Formula 
+\[
+w^{*}=(X^{T}X+\lambda I)^{-1}X^{T}y
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+and the 
+\series bold
+kernel ridge regression solution
+\series default
+ is
+\begin_inset Formula 
+\begin{eqnarray*}
+\alpha^{*} & = & (XX^{T}+\lambda I)^{-1}y\\
+\pause & = & (K+\lambda I)^{-1}y
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+(Shown in homework.)
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+For ridge regression we're dealing with a 
+\begin_inset Formula $d\times d$
+\end_inset
+
+ matrix.
+\end_layout
+
+\begin_layout Itemize
+For kernel ridge regression we're dealing an 
+\begin_inset Formula $n\times n$
+\end_inset
+
+ matix.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Predictions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Predictions in terms of 
+\begin_inset Formula $w^{*}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\hat{f}(x)=x^{T}w^{*}\pause
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Predictions in terms of 
+\begin_inset Formula $\alpha^{*}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\hat{f}(x)=k_{x}^{T}\alpha^{*}=\sum_{i=1}^{n}\alpha_{i}^{*}x_{i}^{T}x\pause
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+For kernel ridge regression, need to access all training inputs 
+\begin_inset Formula $x_{1},\ldots,x_{n}$
+\end_inset
+
+ to predict.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+For SVM, we may not...
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Kernel SVM
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Kernelized SVM (From Representer Theorem) 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The SVM objective:
+\begin_inset Formula 
+\[
+\min_{w\in\reals^{d}}\frac{1}{2}||w||^{2}+\frac{c}{n}\sum_{i=1}^{n}\max\left(0,1-y_{i}w^{T}x_{i}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Plugging in 
+\begin_inset Formula $w=\sum_{i=1}^{n}\alpha_{i}x_{i}$
+\end_inset
+
+, we get
+\begin_inset Formula 
+\[
+\min_{\alpha\in\reals^{n}}\frac{1}{2}\alpha^{T}K\alpha+\frac{c}{n}\sum_{i=1}^{n}\max\left(0,1-y_{i}\left(K\alpha\right)_{i}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Predictions with
+\begin_inset Formula 
+\[
+\hat{f}(x)=x^{T}w^{*}\pause=\sum_{i=1}^{n}\alpha_{i}^{*}x_{i}^{T}x.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+This is one way to kernelize SVM...
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Kernelized SVM (From Lagrangian Duality) 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Kernelized SVM from computing the Lagrangian Dual Problem:
+\begin_inset Formula 
+\begin{eqnarray*}
+\max_{\alpha\in\reals^{n}} &  & \sum_{i=1}^{n}\alpha_{i}-\frac{1}{2}\sum_{i,j=1}^{n}\alpha_{i}\alpha_{j}y_{i}y_{j}x_{j}^{T}x_{i}\\
+\mbox{s.t.} &  & \sum_{i=1}^{n}\alpha_{i}y_{i}=0\\
+ & \quad & \alpha_{i}\in\left[0,\frac{c}{n}\right]\;i=1,\ldots,n.
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+If 
+\begin_inset Formula $\alpha^{*}$
+\end_inset
+
+ is an optimal value, then
+\begin_inset Formula 
+\[
+w^{*}=\sum_{i=1}^{n}\alpha_{i}^{*}y_{i}x_{i}\qquad\text{and}\qquad\hat{f}(x)=\sum_{i=1}^{n}\alpha_{i}^{*}y_{i}x_{i}^{T}x.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Note that the prediction function is also kernelized.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Sparsity in the Data from Complementary Slackness
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Kernelized predictions given by
+\begin_inset Formula 
+\[
+\hat{f}(x)=\sum_{i=1}^{n}\alpha_{i}^{*}y_{i}x_{i}^{T}x.
+\]
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Seems to need all training inputs 
+\begin_inset Formula $x_{1},\ldots,x_{n}$
+\end_inset
+
+ to make a prediction on a new 
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+By a Lagrangian duality analysis (specifically from complementary slackness),
+ we find 
+\begin_inset Formula 
+\begin{eqnarray*}
+y_{i}\hat{f}(x_{i})<1 & \implies & \alpha_{i}^{*}=\frac{c}{n}\\
+y_{i}\hat{f}(x_{i})=1 & \implies & \alpha_{i}^{*}\in\left[0,\frac{c}{n}\right]\\
+y_{i}\hat{f}(x_{i})>1 & \implies & \alpha_{i}^{*}=0
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+So we can leave out any 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+on the good side of the margin
+\begin_inset Quotes erd
+\end_inset
+
+ (
+\begin_inset Formula $y_{i}\hat{f}(x_{i})>1$
+\end_inset
+
+).
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $x_{i}$
+\end_inset
+
+'s that we must keep, because 
+\begin_inset Formula $\alpha_{i}^{*}\neq0$
+\end_inset
+
+, are called 
+\series bold
+support vectors
+\series default
+.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Are we done yet?
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Computational considerations – we're not really done yet
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose our feature space is 
+\begin_inset Formula $\ch=\reals^{d}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+And we use representer theorem to kernelize.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Get optimization problem over 
+\begin_inset Formula $\reals^{n}$
+\end_inset
+
+ rather than over 
+\begin_inset Formula $\reals^{d}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{eqnarray*}
+\text{[original] }w^{*} & = & \argmin_{w\in\reals^{d}}R\left(\|w\|\right)+L\left(\left\langle w,x_{1}\right\rangle ,\ldots,\left\langle w,x_{n}\right\rangle \right)\\{}
+[\text{kernelized] }\alpha^{*} & = & \argmin_{\alpha\in\reals^{n}}R\left(\sqrt{\alpha^{T}K\alpha}\right)+L\left(K\alpha\right)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+This seems like a good move if 
+\begin_inset Formula $d\gg n$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+However, there is still a hidden dependence on 
+\begin_inset Formula $d$
+\end_inset
+
+ in the kernelized form – do you see it?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Computational considerations – we're not really done yet
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Get optimization problem over 
+\begin_inset Formula $\reals^{n}$
+\end_inset
+
+ rather than over 
+\begin_inset Formula $\reals^{d}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{eqnarray*}
+\text{[original] }w^{*} & = & \argmin_{w\in\reals^{d}}R\left(\|w\|\right)+L\left(\left\langle w,x_{1}\right\rangle ,\ldots,\left\langle w,x_{n}\right\rangle \right)\\{}
+[\text{kernelized] }\alpha^{*} & = & \argmin_{\alpha\in\reals^{n}}R\left(\sqrt{\alpha^{T}K\alpha}\right)+L\left(K\alpha\right)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+For the standard inner product, 
+\begin_inset Formula $K_{ij}=\left\langle x_{i},x_{j}\right\rangle =x_{i}^{T}x_{j}$
+\end_inset
+
+, where 
+\begin_inset Formula $x_{i},x_{j}\in\reals^{d}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+This is still 
+\begin_inset Formula $O(d)$
+\end_inset
+
+, and can be too slow for huge feature spaces.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The essence of the 
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+kernel trick
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+ is getting around this 
+\begin_inset Formula $O(d)$
+\end_inset
+
+ dependence.
+\end_layout
+
+\end_deeper
+\end_body
+\end_document

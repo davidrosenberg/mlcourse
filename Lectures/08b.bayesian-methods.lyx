@@ -1695,7 +1695,7 @@ maximum likelihood estimator (MLE)
 \end_inset
 
  in the model 
-\begin_inset Formula $\left\{ p(y,\theta)\mid\theta\in\Theta\right\} $
+\begin_inset Formula $\left\{ p(y\mid\theta):\theta\in\Theta\right\} $
 \end_inset
 
  is

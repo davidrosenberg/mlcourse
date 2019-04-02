@@ -2352,7 +2352,7 @@ Maximum Likelihood Estimation (MLE) finds
 \end_inset
 
  maximizing 
-\begin_inset Formula $\log p(\cd,w)$
+\begin_inset Formula $\log p(\cd;w)$
 \end_inset
 
 .

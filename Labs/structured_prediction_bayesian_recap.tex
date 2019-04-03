@@ -1,6 +1,6 @@
 %% LyX 2.3.2 created this file.  For more info, see http://www.lyx.org/.
 %% Do not edit unless you really know what you are doing.
-\documentclass[english,aspectratio=169,handout]{beamer}
+\documentclass[english,aspectratio=169]{beamer}
 \usepackage{mathptmx}
 \usepackage{eulervm}
 \usepackage[T1]{fontenc}
@@ -8,6 +8,7 @@
 \usepackage{babel}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{dsfont}
 \ifx\hypersetup\undefined
   \AtBeginDocument{%
     \hypersetup{unicode=true,pdfusetitle,
@@ -279,7 +280,7 @@
  
 \global\long\def\ber{\text{Ber}}%
 
-\title[DS-GA 1003 / CSCI-GA 2567]{Introduction to Structured Prediction}
+\title[DS-GA 1003 / CSCI-GA 2567]{Introduction to Structured Prediction and Recap of Bayesian}
 \author{Xintian Han}
 \date{April 3, 2019}
 \institute{CDS, NYU}
@@ -603,6 +604,23 @@ by the posterior.
     possibly differ by more than $0.002$, regardless of the number in the sample who were in favor of the proposition.
   \end{enumerate}	
 \end{frame}
+\begin{frame}{Question 1: Solution}
+Note that both prior distributions are from the Beta family.
+  \begin{enumerate}
+  \item We have
+    $$\xi_A(\theta|x) \propto f(x|\theta)\xi_A(\theta) \propto \theta^{711}(1-\theta)^{290}$$
+    and
+    $$\xi_B(\theta|x)\propto f(x|\theta)\xi_B(\theta) \propto \theta^{713}(1-\theta)^{290}.$$
+    Thus the posteriors from $A$ and~$B$ are both beta with parameters $(712,291)$ and $(714,291)$, respectively.
+    \pause{}
+  \item The respective means are $\frac{712}{1003}$ and $\frac{714}{1005}$.
+    \pause{}
+  \item In general the two means are given by
+    $$\frac{a+2}{1003}\quad\mbox{and}\quad\frac{a+4}{1005}.$$
+    The difference is less than $2/1000=.002$.
+  \end{enumerate}	
+\end{frame}
+
 \begin{frame}{Question 2 and 3}
 \begin{itemize}
 \item \textbf{Question 2.} Two statistics students decide to compute 95\% confidence
@@ -623,9 +641,80 @@ by the posterior.
 \end{itemize}
 \end{frame}
 
+\begin{frame}{Question 2: Solution}
+\begin{itemize}
+\item \textbf{Question 2.} Two statistics students decide to compute 95\% confidence
+  intervals for the distribution parameter $\theta$ using an
+  i.i.d.~sample $X_1,\ldots,X_n$.  Student B uses
+  Bayesian methods to find a 95\% credible set $[L_B,R_B]$ for
+  $\theta$.  Student F uses frequentist methods to find a 95\%
+  confidence interval $[L_F,R_F]$ for $\theta$.  Both conclude that
+  parameter $\theta$ is in their respective intervals with probability at least
+  $.95$.  Who is correct? Explain.
+\item[] \textbf{Solution:} 
+\begin{itemize}
+\item The frequentist student is totally incorrect, since they
+  have misunderstood what a frequentist confidence interval is.  Using
+  frequentist methodology, $\theta$ is not a random variable, so it
+  doesn't make sense to say it lies in some fixed interval
+  $[L_F,R_F]$.  The correct interpretation is that if independent experiments like
+  this were repeated, then at least 95\% of the time $[L_F,R_F]$ will
+  contain $\theta$.  \textbf{That is, the interval is random not $\theta$.}
+\item   We can say that the Bayesian student is consistent.
+  Recall that to compute the credible set, the Bayesian student had to
+  introduce some prior distribution $\pi$ on~$\theta$.  What we can say is
+  if someone believes $\pi$ is correct, then it is rational, given the
+  data, to conclude that $\theta$ will lie in the posterior credible set
+  with probability 95\%.
+\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Question 3: Solution}
+\begin{itemize}
+\item \textbf{Question 3.}	Suppose $\theta$ has prior distribution $\text{Beta}(a,b)$ for some $a,b>0$.  Given
+  $\theta$, suppose we make independent coin flips with heads
+  probability $\theta$.  Find values of $a,b$ and the coin flips so that the
+  posterior variance is larger than the prior variance.  [Hint: Recall
+    that a $\text{Beta}(a,b)$ random variable has variance given by
+    $$\frac{ab}{(a+b)^2(a+b+1)}.$$
+    Try $b=1$.]
+\item[] \textbf{Solution:} As hinted, let's try $a=10$, $b=1$ and 9 coin flips all
+  landing tails.  The prior variance is given by
+  $$\frac{10\cdot 1}{(10+1)^2(10+1+1)} = \frac{5}{726}\approx .0069$$
+  while the posterior variance is given by
+  $$\frac{10\cdot 10}{(10+10)^2(10+10+1)} = \frac{1}{84}\approx.0119.$$
+	
+\end{itemize}
+	
+\end{frame}
+
 \begin{frame}{Question 4}
 \textbf{Question 4.} What would be the Maximum a Posteriori (MAP) estimator for $\lambda$ for i.i.d. $\{x_1, x_2, \dots, x_N\}$ where $x_i \sim \exp(\lambda)$ with prior $\lambda \sim \text{Uniform}[u_0,u_1]$?	
 \end{frame}
 
+\begin{frame}{Question 4: Solution}	
+\begin{itemize}
+\item Likelihood: $L(x_1,\dots,x_N|\lambda) = \lambda e^{-\lambda(x_1+\cdots+x_N)}$
+\item log-likelihood: $\ell(\lambda|x_1,\dots,x_N) = n \ln\lambda-\lambda(x_1+\cdots+x_N)$
+\item $\ell'(\lambda) = \frac{n}{\lambda}-(x_1+\dots+x_N)\begin{cases}
+ 	>0 \quad \text{if}~0<\lambda<\bar{x}=(x_1+\cdots+x_N/N),\\
+ 	=0 \quad \text{if}~\lambda=\bar{x}\\
+ 	<0 \quad \text{if}~\lambda>\bar{x}
+ \end{cases}
+$
+\item Prior: $p(\lambda) = \frac{1}{u_1-u_0} \mathds{1}_{[u_0,u_1]}(\lambda)$.
+\item Posterior: $p(\lambda|x_1,\dots,x_N)\propto L(x_1,\dots,x_N|\lambda)p(\lambda) = \lambda e^{-\lambda(x_1+\cdots+x_N)} \mathds{1}_{[u_0,u_1]}(\lambda)$
+\item Maximum value of posterior is attained at 
+\[
+\lambda = \begin{cases}
+ 	u_0 \quad \text{if}~u_0>\bar{x},\\
+ 	\bar{x} \quad \text{if}~u_0\leq\bar{x}\leq u_1\\
+ 	u_1 \quad \text{if}~u_1<\bar{x}.
+ \end{cases}
+ \]
+\end{itemize}
+\end{frame}
 
 \end{document}

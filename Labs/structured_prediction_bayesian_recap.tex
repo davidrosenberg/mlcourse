@@ -1,6 +1,6 @@
 %% LyX 2.3.2 created this file.  For more info, see http://www.lyx.org/.
 %% Do not edit unless you really know what you are doing.
-\documentclass[english,aspectratio=169]{beamer}
+\documentclass[english,aspectratio=169, handout]{beamer}
 \usepackage{mathptmx}
 \usepackage{eulervm}
 \usepackage[T1]{fontenc}
@@ -696,12 +696,12 @@ Note that both prior distributions are from the Beta family.
 
 \begin{frame}{Question 4: Solution}	
 \begin{itemize}
-\item Likelihood: $L(x_1,\dots,x_N|\lambda) = \lambda e^{-\lambda(x_1+\cdots+x_N)}$
-\item log-likelihood: $\ell(\lambda|x_1,\dots,x_N) = n \ln\lambda-\lambda(x_1+\cdots+x_N)$
-\item $\ell'(\lambda) = \frac{n}{\lambda}-(x_1+\dots+x_N)\begin{cases}
- 	>0 \quad \text{if}~0<\lambda<\bar{x}=(x_1+\cdots+x_N/N),\\
- 	=0 \quad \text{if}~\lambda=\bar{x}\\
- 	<0 \quad \text{if}~\lambda>\bar{x}
+\item Likelihood: $L(x_1,\dots,x_N|\lambda) = \lambda^N e^{-\lambda(x_1+\cdots+x_N)}$
+\item log-likelihood: $\ell(\lambda|x_1,\dots,x_N) = N \ln\lambda-\lambda(x_1+\cdots+x_N)$
+\item $\ell'(\lambda) = \frac{N}{\lambda}-(x_1+\dots+x_N)\begin{cases}
+ 	>0 \quad \text{if}~0<\lambda<1/\bar{x}=N/(x_1+\cdots+x_N),\\
+ 	=0 \quad \text{if}~\lambda=1/\bar{x}\\
+ 	<0 \quad \text{if}~\lambda>1/\bar{x}
  \end{cases}
 $
 \item Prior: $p(\lambda) = \frac{1}{u_1-u_0} \mathds{1}_{[u_0,u_1]}(\lambda)$.
@@ -709,9 +709,9 @@ $
 \item Maximum value of posterior is attained at 
 \[
 \lambda = \begin{cases}
- 	u_0 \quad \text{if}~u_0>\bar{x},\\
- 	\bar{x} \quad \text{if}~u_0\leq\bar{x}\leq u_1\\
- 	u_1 \quad \text{if}~u_1<\bar{x}.
+ 	u_0 \quad \text{if}~u_0>1/\bar{x},\\
+ 	1/\bar{x} \quad \text{if}~u_0\leq1/\bar{x}\leq u_1\\
+ 	u_1 \quad \text{if}~u_1<1/\bar{x}.
  \end{cases}
  \]
 \end{itemize}

@@ -45,7 +45,7 @@
   \end{frame}
 }
 \end_preamble
-\options aspectratio=169,handout
+\options aspectratio=169, handout
 \use_default_options false
 \maintain_unincluded_children false
 \language english
@@ -749,7 +749,7 @@ Julia Kempe & David S.
 \end_layout
 
 \begin_layout Date
-April 2, 2019
+April 9, 2019
 \end_layout
 
 \begin_layout Institute

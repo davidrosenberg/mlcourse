@@ -725,7 +725,17 @@ Basic Statistics and a Bit of Bootstrap
 status open
 
 \begin_layout Plain Layout
-DS-GA 1003 / CSCI-GA 2567
+DS-GA 1003
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+optional, use only with long paper titles
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -734,12 +744,12 @@ DS-GA 1003 / CSCI-GA 2567
 \end_layout
 
 \begin_layout Author
-Julia Kempe & David S.
+David S.
  Rosenberg 
 \end_layout
 
 \begin_layout Date
-April 9, 2019
+April 16, 2019
 \end_layout
 
 \begin_layout Institute
@@ -772,8 +782,7 @@ TODO: when doing bootstrapping, should we just use
 \begin_inset Formula $\frac{1}{B}\sum_{i=1}^{B}\alpha\left(\hat{\cd}^{(B)}\right)$
 \end_inset
 
-? I claim to don't have the context to answer this question.
- How could we decide which is better? We'd need to set up criteria, etc.
+? How could we decide which is better? We'd need to set up criteria, etc.
  This was in fact never the question.
  The question is, given an estimator, what are some parameters of its sampling
  distribution.
@@ -1268,40 +1277,28 @@ Bias and Variance for Real-Valued Estimators
 \begin_deeper
 \begin_layout Itemize
 Let 
-\begin_inset Formula $\mu:P\mapsto\reals$
+\begin_inset Formula $\mu=\mu(P)$
 \end_inset
 
- be a real-valued parameter.
+ be a real-valued parameter of distribution 
+\begin_inset Formula $P$
+\end_inset
+
+.
  
 \end_layout
 
 \begin_layout Itemize
 Let 
-\begin_inset Formula $\hat{\mu}:\cd_{n}\mapsto\reals$
+\begin_inset Formula $\hat{\mu}=\hat{\mu}(\cd_{n})$
 \end_inset
 
- be an estimator of 
+ be a point estimator of 
 \begin_inset Formula $\mu$
 \end_inset
 
 .
  
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-For short, write 
-\begin_inset Formula $\mu=\mu(P)$
-\end_inset
-
- and 
-\begin_inset Formula $\hat{\mu}=\hat{\mu}(\cd_{n})$
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Pause
@@ -1324,6 +1321,25 @@ of
 .
 \end_layout
 
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+An estimator is 
+\series bold
+unbiased
+\series default
+ if 
+\begin_inset Formula $\mbox{Bias}(\hat{\mu})=\ex\hat{\mu}-\mu=0$
+\end_inset
+
+.
+ 
+\end_layout
+
 \begin_layout Itemize
 We define the 
 \series bold
@@ -1338,23 +1354,6 @@ of
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-An estimator is 
-\series bold
-unbiased
-\series default
- if 
-\begin_inset Formula $\mbox{Bias}(\hat{\mu})=\ex\hat{\mu}-\mu=0$
-\end_inset
-
-.
- 
 \end_layout
 
 \begin_deeper
@@ -1385,6 +1384,88 @@ Neither bias nor variance depend on a specific sample
 
 \end_layout
 
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Why might we care about the bias and variance of an estimator?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Putting 
+\begin_inset Quotes eld
+\end_inset
+
+Error Bars
+\begin_inset Quotes erd
+\end_inset
+
+ on Estimators
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Why do we even care about estimating variance?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+May want to report a confidence interval for our point estimate, e.g.
+\begin_inset Formula 
+\[
+\hat{\mu}\pm\sqrt{\widehat{\var(\hat{\mu})}}
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Where 
+\begin_inset Formula $\sqrt{\widehat{\var(\hat{\mu})}}$
+\end_inset
+
+ is our 
+\series bold
+estimate of the standard error
+\series default
+ of 
+\begin_inset Formula $\hat{\mu}$
+\end_inset
+
+.
+\end_layout
+
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
@@ -1412,7 +1493,7 @@ To estimate
 \begin_inset Formula $\mbox{Var}(\hat{\mu})$
 \end_inset
 
- we need estimates of 
+, we can use estimates of 
 \begin_inset Formula $\ex\hat{\mu}$
 \end_inset
 
@@ -1483,90 +1564,6 @@ and
 \end_inset
 
  
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Putting 
-\begin_inset Quotes eld
-\end_inset
-
-Error Bars
-\begin_inset Quotes erd
-\end_inset
-
- on Estimator
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Why do we even care about estimating variance?
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Would like to report a confidence interval for our point estimate:
-\begin_inset Formula 
-\[
-\hat{\mu}\pm\sqrt{\widehat{\var(\hat{\mu})}}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-(This confidence interval assumes 
-\begin_inset Formula $\hat{\mu}$
-\end_inset
-
- is unbiased.)
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Our 
-\series bold
-estimate of standard error
-\series default
- is 
-\begin_inset Formula $\sqrt{\widehat{\var(\hat{\mu})}}$
-\end_inset
-
-.
 \end_layout
 
 \end_deeper
@@ -1759,11 +1756,11 @@ We could divide it into
 
 \end_deeper
 \begin_layout Itemize
-Our estimator would be 
-\begin_inset Formula $\hat{\mu}=\hat{\mu}\left(\cd_{n/B}\right)$
+Could use first group as point estimator 
+\begin_inset Formula $\hat{\mu}=\hat{\mu}\left(\cd_{n/B}^{(1)}\right)$
 \end_inset
 
-.
+,
 \end_layout
 
 \begin_deeper
@@ -1773,20 +1770,12 @@ Our estimator would be
 
 \end_deeper
 \begin_layout Itemize
-And we could get a variance estimate for 
-\begin_inset Formula $\hat{\mu}$
+And use the remaining groups 
+\begin_inset Formula $\cd_{n/B}^{(2)},\ldots,\cd_{n/B}^{(B)}$
 \end_inset
 
-.
-\end_layout
-
-\begin_layout Itemize
-But the estimator itself would not be as good as if we used all data:
-\begin_inset Formula 
-\[
-\hat{\mu}=\hat{\mu}(\cd_{n}).
-\]
-
+ to get a variance estimate for 
+\begin_inset Formula $\hat{\mu}(\cd_{n/B}^{(1)})$
 \end_inset
 
 
@@ -1798,6 +1787,28 @@ But the estimator itself would not be as good as if we used all data:
 \end_layout
 
 \end_deeper
+\begin_layout Itemize
+But then our point estimate only uses a fraction of the data.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Would be much better if we used all the data: 
+\begin_inset Formula $\hat{\mu}=\hat{\mu}(\cd_{n}).$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
 \begin_layout Itemize
 Can we get the best of both worlds?
 \end_layout
@@ -1889,7 +1900,7 @@ some won't show up at all.
 \end_deeper
 \begin_layout Itemize
 Each 
-\begin_inset Formula $X_{i}$
+\begin_inset Formula $x_{i}$
 \end_inset
 
  has a probability of 

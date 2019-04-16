@@ -1,26 +1,51 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin /Users/drosen/Dropbox/repos/mlcourse/Lectures/
+\origin unavailable
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
 \beamertemplatenavigationsymbolsempty
 
+
+% Set Color ==============================
+\definecolor{NYUPurple}{RGB}{87,6,140}
+\definecolor{LightPurple}{RGB}{165,11,255}
+
+
+\setbeamercolor{title}{fg=NYUPurple}
+%\setbeamercolor{frametitle}{fg=NYUPurple}
+\setbeamercolor{frametitle}{fg=NYUPurple}
+
+\setbeamercolor{background canvas}{fg=NYUPurple, bg=white}
+\setbeamercolor{background}{fg=black, bg=NYUPurple}
+
+\setbeamercolor{palette primary}{fg=black, bg=gray!30!white}
+\setbeamercolor{palette secondary}{fg=black, bg=gray!20!white}
+\setbeamercolor{palette tertiary}{fg=gray!20!white, bg=NYUPurple}
+
+\setbeamertemplate{headline}{}
+
+\setbeamercolor{parttitle}{fg=NYUPurple}
+\setbeamercolor{sectiontitle}{fg=NYUPurple}
+\setbeamercolor{sectionname}{fg=NYUPurple}
+\setbeamercolor{section page}{fg=NYUPurple}
+
 \AtBeginSection[]{
   \begin{frame}
   \vfill
   \centering
-  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
-    \usebeamerfont{title}\insertsectionhead\par%
+\setbeamercolor{section title}{fg=NYUPurple}
+ \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\usebeamercolor[fg]{title}\insertsectionhead\par%
   \end{beamercolorbox}
   \vfill
   \end{frame}
 }
 \end_preamble
-\options handout,aspectratio=169
+\options aspectratio=169,handout
 \use_default_options false
 \maintain_unincluded_children false
 \language english
@@ -37,6 +62,8 @@
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -44,7 +71,17 @@
 \index_command default
 \paperfontsize default
 \spacing single
-\use_hyperref false
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "allcolors=NYUPurple,urlcolor=LightPurple"
 \papersize default
 \use_geometry true
 \use_package amsmath 2
@@ -66,6 +103,8 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_minted 0
+\boxbgcolor #ff31d8
 \index Index
 \shortcut idx
 \color #008000
@@ -74,7 +113,10 @@
 \tocdepth 2
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -633,6 +675,34 @@ ex}{E}
 
 \begin_layout Standard
 \begin_inset FormulaMacro
+\newcommand{\dom}{\textrm{\textbf{dom} }}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\renewcommand{\rank}{\text{\textbf{rank }}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\conv}{\textrm{\textbf{conv} }}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\relint}{\text{\textbf{relint }}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\aff}{\text{\textbf{aff }}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
 \newcommand{\hil}{\ch}
 \end_inset
 
@@ -655,14 +725,14 @@ ex}{E}
 \end_layout
 
 \begin_layout Title
-Boosting
+Adaboost
 \begin_inset Argument 1
 status open
 
 \begin_layout Plain Layout
-DS-GA 1003 
+DS-GA 1003
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 optional, use only with long paper titles
@@ -678,16 +748,17 @@ optional, use only with long paper titles
 
 \end_layout
 
-\begin_layout Date
-March 28, 2017
+\begin_layout Author
+David S.
+ Rosenberg 
 \end_layout
 
-\begin_layout Author
-David Rosenberg 
+\begin_layout Date
+April 16, 2019
 \end_layout
 
 \begin_layout Institute
-New York University
+CDS, NYU
 \end_layout
 
 \begin_layout Standard
@@ -741,23 +812,20 @@ tiny{Plots courtesy of Ningshan Zhang.}}
 status open
 
 \begin_layout Plain Layout
-Shoudl we get rid of 
+Currently using 
 \begin_inset Formula $G_{m}$
 \end_inset
 
- and replace it by 
+ instead of 
 \begin_inset Formula $h_{m}$
 \end_inset
 
- throughout? And wy using 
-\begin_inset Formula $\cf$
-\end_inset
-
- for base hypothsis space instead of 
-\begin_inset Formula $\ch$
-\end_inset
-
- ?
+ to refer to base classifier.
+ This is inconsistent with usual notation, but is done to align with HTF.
+ Would prefer to change formulation to align with more traditional approach
+ in boosting literature (e.g.
+ freund & schapire's book)...
+ will clean this up when that transformation is made.
 \end_layout
 
 \end_inset
@@ -803,10 +871,8 @@ generalization error of AdaBoost is upper bounded by
 
 Empirical studies, however, show that AdaBoost often does not overfit; that
  is, the test error often tends to decrease even after the training eror
- reaches zero, even after a large numer of rounds such as 1000.
- .
- ..
- explaining why AdaBoost seems resistant ot overfitting becomes one of the
+ reaches zero, even after a large number of rounds such as 1000...
+ explaining why AdaBoost seems resistant to overfitting becomes one of the
  central theoretical issues and has attracted much attention..
  [then there's the margin story, which seems to be overturned by Breiman's
  work with arc-gv, but 7 years later is finally explained away by Reyzin
@@ -818,9 +884,9 @@ Empirical studies, however, show that AdaBoost often does not overfit; that
 \begin_inset Quotes eld
 \end_inset
 
-Gao and Zhou (2012) gave a new generalization error bound based on emprical
+Gao and Zhou (2012) gave a new generalization error bound based on empirical
  Bernstein inequality ...
- that further defends the margin-based explanation aainst Breiman's doubts.
+ that further defends the margin-based explanation against Breiman's doubts.
 \begin_inset Quotes erd
 \end_inset
 
@@ -862,10 +928,10 @@ t.pdf
 status open
 
 \begin_layout Plain Layout
-Seems funny that reweighting only accounts for misclassifications of the
- most recent classifier.
- But I suspect this is a peculiarity of the exponential loss and it wouldn't
- be that way for other losses.
+At first seems funny that reweighting only accounts for misclassifications
+ of the most recent classifier.
+ But this is a peculiarity of the exponential loss and it wouldn't be that
+ way for other losses.
  – Indeed, the reweightings are also proportional to the exponential loss
  [NOT weighted exponential loss] of the previous full ensemble's score function
  (i.e.
@@ -998,8 +1064,8 @@ AdaBoost train/test learning curves (seems resistant to overfitting)
 \end_layout
 
 \begin_layout Itemize
-(If time) AdaBoost is minimizing exponential loss function (but in a special
- way)
+(If time) AdaBoost is minimizing exponential loss function but in a special
+ way (forward stagewise additive modeling)
 \begin_inset Note Note
 status open
 
@@ -1017,14 +1083,10 @@ status open
 \end_layout
 
 \begin_layout Itemize
-Tomorrow
+Next week 
 \end_layout
 
 \begin_deeper
-\begin_layout Itemize
-Forward stagewise additive modeling
-\end_layout
-
 \begin_layout Itemize
 Gradient Boosting (generalizes beyond exponential loss function)
 \end_layout
@@ -1032,20 +1094,7 @@ Gradient Boosting (generalizes beyond exponential loss function)
 \end_deeper
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Example of sequential ensemble scenario???
-\end_layout
-
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1209,13 +1258,6 @@ weak learners
 \end_layout
 
 \end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 AdaBoost: The Algorithm
 \end_layout
@@ -1349,7 +1391,7 @@ Linear decision functions
 \end_deeper
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1375,7 +1417,7 @@ Weighted Training Set
 \begin_deeper
 \begin_layout Itemize
 Training set 
-\begin_inset Formula $\cd=\left\{ \left(x_{1},y_{1}\right),\ldots,\left(x_{n},y_{n}\right)\right\} $
+\begin_inset Formula $\cd=\left(\left(x_{1},y_{1}\right),\ldots,\left(x_{n},y_{n}\right)\right)$
 \end_inset
 
 .
@@ -1418,7 +1460,7 @@ Weighted empirical risk
 
 \end_deeper
 \begin_layout Itemize
-Can train a model to minimize weighted empirical risk.
+Can often minimize weighted empirical risk directly
 \end_layout
 
 \begin_deeper
@@ -1451,7 +1493,7 @@ Can sample a new data set from
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1477,7 +1519,7 @@ AdaBoost - Rough Sketch
 \begin_deeper
 \begin_layout Itemize
 Training set 
-\begin_inset Formula $\cd=\left\{ \left(x_{1},y_{1}\right),\ldots,\left(x_{n},y_{n}\right)\right\} $
+\begin_inset Formula $\cd=\left(\left(x_{1},y_{1}\right),\ldots,\left(x_{n},y_{n}\right)\right)$
 \end_inset
 
 .
@@ -1549,15 +1591,37 @@ So far, we've generated
 \end_inset
 
  classifiers: 
-\begin_inset Formula $G_{1}(x),\ldots,G_{m}(x)$
+\begin_inset Formula $G_{1},\ldots,G_{M}:\cx\to\left\{ -1,1\right\} $
+\end_inset
+
+.
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Final classifier is 
+\begin_inset Formula $G(x)=\sign\left[\sum_{m=1}^{M}\alpha_{m}G_{m}(x)\right]$
+\end_inset
+
+, for some weights 
+\begin_inset Formula $\alpha_{m}$
 \end_inset
 
 .
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1581,7 +1645,7 @@ AdaBoost: Schematic
 \align center
 \begin_inset Graphics
 	filename ../Figures/boosting/adaboostSchematic.png
-	lyxscale 40
+	lyxscale 60
 	height 70theight%
 
 \end_inset
@@ -1694,12 +1758,10 @@ Final prediction
 )
 \end_layout
 
-\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 The 
 \begin_inset Formula $\alpha_{m}$
@@ -1757,7 +1819,7 @@ Important: Each
 \end_deeper
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1791,7 +1853,7 @@ Returns a base classifier
 \begin_inset Formula $G_{m}(x)$
 \end_inset
 
- that roughly minimizes weighted 
+ that minimizes weighted 
 \begin_inset Formula $0-1$
 \end_inset
 
@@ -1888,7 +1950,7 @@ weak-learner
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1977,6 +2039,15 @@ The weight of classifier
 \end_layout
 
 \begin_layout Itemize
+Higher weighted error 
+\begin_inset Formula $\implies$
+\end_inset
+
+ lower weight
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 Note that weight 
 \begin_inset Formula $\alpha_{m}\to0$
 \end_inset
@@ -1988,9 +2059,33 @@ Note that weight
  (random guessing).
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+If we continued the x-axis to 1 instead of stopping at 
+\begin_inset Formula $0$
+\end_inset
+
+, we'd see the alpha weights going negative.
+ So adaboost will flip the sign of our classifier for us if we're doing
+ worse than random.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2110,12 +2205,26 @@ For
 \end_inset
 
 , this always increases the weight.
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Weight increase much larger for classifiers that are generally doing well
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2166,7 +2275,7 @@ The smaller
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2308,7 +2417,7 @@ Ouptut
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2396,7 +2505,7 @@ tiny{KPM Figure 16.10}}
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2485,7 +2594,7 @@ tiny{KPM Figure 16.10}}
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -2610,7 +2719,8 @@ Trees
 
 \end_deeper
 \begin_layout Itemize
-GD and SGD converge to minimizers of objective function on training data
+GD and SGD converge to minimizers of convex objective function on training
+ data
 \end_layout
 
 \begin_layout Pause
@@ -2624,7 +2734,7 @@ Trees achieve 0 training error unless same input occurs with different outputs
 
 \begin_deeper
 \begin_layout Itemize
-without any limit on tree complexity
+if we don't limit tree complexity
 \end_layout
 
 \begin_layout Pause
@@ -2657,7 +2767,7 @@ Does an AdaBoost classifier
 
 \end_deeper
 \begin_layout Itemize
-Yes, if our weak classifiers have an 
+Yes, if our base classifiers have an 
 \begin_inset Quotes eld
 \end_inset
 
@@ -2796,7 +2906,7 @@ The empirical 0-1 risk of the AdaBoost classifier
 \end_layout
 
 \begin_layout Itemize
-What's are the possible values for 
+What's the range of possible values for 
 \begin_inset Formula $\sqrt{1-4\gamma_{m}^{2}}$
 \end_inset
 
@@ -2808,7 +2918,7 @@ What's are the possible values for
 \end_layout
 
 \begin_layout Itemize
-Proof is an optional homework problem on Homework 6.
+Proof may be an optional homework problem.
 \end_layout
 
 \begin_layout Standard
@@ -3210,7 +3320,7 @@ tiny{From Rob Schapire's NIPS 2007 Boosting tutorial.}}
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -3276,21 +3386,28 @@ tiny{From Rob Schapire's NIPS 2007 Boosting tutorial.}}
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Possible point of confusion: once we hit 0 training error, does the algorithm
+ stop, or does anything blow up? No — things blow up if we get a base classifier
+ with 0 error on the weighted training set.
+ But that's not what we're talking about here.
+ We're talking about the combined classifier having 0 training error.
+ At each round, we'll still have weights on all our training examples.
+ We can view the points being reweighed either by the weighed error, or
+ by the exponential loss of the combined classifier, neither of which is
+ likely to blow up.
+\end_layout
+
 \end_inset
 
 
 \end_layout
 
 \begin_layout Section
-Boosting Fits an Additive Model 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
+Adaboost Fits an Additive Model 
 \end_layout
 
 \begin_layout Frame
@@ -3357,7 +3474,7 @@ Let's move beyond classification models...
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -3476,7 +3593,7 @@ Functions in
 \end_deeper
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -3569,7 +3686,7 @@ We'll proceed in stages, adding a new
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -3666,12 +3783,12 @@ f_{m}=f_{m-1}+\nu_{i}h_{m}
 
 \end_inset
 
-minimizes empirical risk.
+reduces empirical risk as much as possible.
 \end_layout
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -3759,7 +3876,7 @@ Return:
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -3821,7 +3938,7 @@ Then Forward Stagewise Additive Modeling (FSAM) reduces to AdaBoost!
 
 \begin_deeper
 \begin_layout Itemize
-Proof on Homework #6 (and see HTF Section 10.4).
+Possible homework problem (and see HTF Section 10.4).
 \end_layout
 
 \begin_layout Pause
@@ -3868,13 +3985,6 @@ G_{m}=\argmin_{G\in\ch}\sum_{i=1}^{N}w_{i}^{(m)}\ind{y_{i}\neq G(x_{i})}
 
 \end_deeper
 \end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 Robustness and AdaBoost
 \end_layout
@@ -3911,7 +4021,7 @@ Note that exponential loss puts a very large weight on bad misclassifications.
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -4109,7 +4219,7 @@ Bound suggests that we may overfit as number of rounds
 
 \end_deeper
 \begin_layout Plain Layout
-\begin_inset Separator parbreak
+\begin_inset Separator plain
 \end_inset
 
 
@@ -4178,7 +4288,8 @@ Bound suggests that we may overfit as number of rounds
 \end_inset
 
 
-\end_layout
+\begin_inset Note Note
+status open
 
 \begin_layout Section
 Population Minimizer
@@ -4292,7 +4403,7 @@ By solving for
 \end_layout
 
 \end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Separator parbreak
 \end_inset
 
@@ -4380,8 +4491,6 @@ Because of the
 \end_layout
 
 \end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
 \end_inset
 
 

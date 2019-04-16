@@ -953,6 +953,86 @@ Try to add new models that do well where previous models lack
 \end_deeper
 \end_deeper
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Tree-based Ensemble Methods
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+In the next two lectures, we'll discuss many methods for creating ensembles
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Many methods we'll discuss (bagging, Adaboost, and gradient boosting)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+can be used with a wide range of base model types.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+However,
+\series bold
+ in practice, they're almost always used with trees.
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+not even sure this is true for bagging though...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
 
 \end_layout
 

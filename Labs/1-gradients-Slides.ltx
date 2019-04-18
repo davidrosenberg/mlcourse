@@ -10,8 +10,10 @@
   \begin{itemize}
   \item Make sure you are signed up for the Spring 2019 instance of
     the class on Piazza.  The link is on the class webpage (link is fixed now).
-  \item Students on the waitlist can submit the first homework on
+  \item All students must submit the first homework on
     Gradescope using an access code available on Piazza.
+  \item Students on the waiting list expecting to enroll must also
+    submit the first homework on Gradescope using the access code on Piazza.
   \end{itemize}
 \end{frame}
 \section{Recitation 1}
@@ -20,10 +22,10 @@
   \frametitle{Intro Question}
   \begin{block}{Question}
     We are given the data set $(x_1,y_1),\ldots,(x_n,y_n)$ where
-    $x_i\in\RR^d$ and $y_i\in\RR$.  We want to fit a linear function to
+    $x_i\in\RR$ and $y_i\in\RR$.  We want to fit a linear function to
     this data by performing empirical risk minimization.  More
-    precisely, we are using the hypothesis space $\FF=\{h_\theta(x)=\theta^Tx\mid
-    \theta\in\RR^d\}$ and the loss function $\ell(a,y)=(a-y)^2$.  Given an
+    precisely, we are using the hypothesis space $\FF=\{h_\theta(x)=\theta_1x+\theta_2\mid
+    \theta\in\RR^2\}$ and the loss function $\ell(a,y)=(a-y)^2$.  Given an
     initial guess $\tilde{\theta}$ for the empirical risk minimizing
     parameter vector, how could we improve our guess?
   \end{block}
@@ -36,11 +38,13 @@
   \begin{block}{Solution}
     \begin{itemize}
     \item The empirical risk is given by
-      $$\hspace{-0.5cm}J(\theta):=\hat{R}_n(h_\theta) = \frac{1}{n}\sum_{i=1}^n \ell(h_\theta(x_i),y_i) =
-      \frac{1}{n}\sum_{i=1}^n (\theta^Tx_i-y_i)^2
-      = \frac{1}{n}\|X\theta-y\|_2^2,$$
-      where $X\in\RR^{n\times d}$ is the matrix whose $i$th row is
-      given by $x_i^T$.
+      $$\begin{Array}{rcl}
+      \hspace{-0.5cm}J(\theta) & := & \hat{R}_n(h_\theta) = \frac{1}{n}\sum_{i=1}^n \ell(\theta_1x_i+\theta_2,y_i) =
+      \frac{1}{n}\sum_{i=1}^n (\theta_1x_i+\theta_2-y_i)^2\\
+      & = & \frac{1}{n}\|X\theta-y\|_2^2,
+      \end{Array}$$
+      where $X\in\RR^{n\times 2}$ is the matrix whose $i$th row is
+      given by $(x_i,1)$.
     \item Can improve a non-optimal guess $\tilde{\theta}$ by taking a
       small step in the direction of the negative gradient $-\nabla J(\theta)$.
     \end{itemize}

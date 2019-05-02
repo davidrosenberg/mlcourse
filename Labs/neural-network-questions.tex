@@ -429,8 +429,8 @@ where $\bh_t$ is the hidden state and $\bx_t$ is the input at time step $t$. $\b
 \begin{frame}{[Solution] Question 4: Backpropagation in RNN}
 \begin{itemize}
 \item \begin{align*}
-\frac{\partial \mathcal{L}}{\partial U} &= \sum_{t=1}^T \left(\Pi_{k=t-1}^{T-1} (\bU^T D_k) \right ) \bh_{t-1}^T\\
-\frac{\partial \mathcal{L}}{\partial W} &= \sum_{t=1}^T \left(\Pi_{k=t-1}^{T-1} (\bU^T D_k) \right ) \bx_{t-1}^T\
+\frac{\partial \mathcal{L}}{\partial U} &= \sum_{t=1}^T \left(\Pi_{k=t-1}^{T-1} (\bU^T D_k) \right ) \frac{\partial \mathcal{L}}{\partial \bh_T} \bh_{t-1}^T\\
+\frac{\partial \mathcal{L}}{\partial W} &= \sum_{t=1}^T \left(\Pi_{k=t-1}^{T-1} (\bU^T D_k) \right ) \frac{\partial \mathcal{L}}{\partial \bh_T}\bx_{t-1}^T\
 \end{align*}
 $D_{k} = \text{diag}(g'(\bz_{k}))$ is the Jacobian matrix of the element-wise activation function.
 \item The smallest singular value of the $\bU^TD_{k-1}$ will be greater than one. So the smallest singular value of the gradient $\frac{\partial h_s}{\partial h_t}$ will be larger than $a^{s-t}$ for some $a>1$. So the gradient is going to be exponentially large. This is called exploding gradient.

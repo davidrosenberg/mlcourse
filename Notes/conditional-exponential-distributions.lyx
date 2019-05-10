@@ -1,9 +1,9 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin /Users/drosen/Dropbox/repos/mlcourse/Notes/
+\origin unavailable
 \textclass paper
 \use_default_options false
 \begin_modules
@@ -26,6 +26,8 @@ figs-within-sections
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -55,6 +57,7 @@ figs-within-sections
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -63,7 +66,10 @@ figs-within-sections
 \tocdepth 5
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 2
 \paperpagestyle default
@@ -1062,17 +1068,18 @@ Solution
 \end_inset
 
 This is the unconstrained gradient.
- We want to find the best fit to this gradient direction among functions
- in 
+ We want to find the best fit to the negative of this gradient direction
+ among functions in 
 \begin_inset Formula $\ch$
 \end_inset
 
 .
  This is the following regression problem:
 \begin_inset Formula 
-\[
-h^{*}=\argmin_{h\in\ch}\sum_{i=1}^{n}\left[\left(1-y_{i}\exp\left[f(x_{i})\right]\right)-h(x_{i})\right]^{2}
-\]
+\begin{eqnarray*}
+h^{*} & = & \argmin_{h\in\ch}\sum_{i=1}^{n}\left[-\frac{\partial}{\partial f(x_{i})}J(f)-h(x_{i})\right]^{2}\\
+ & = & \argmin_{h\in\ch}\sum_{i=1}^{n}\left[-\left(1-y_{i}\exp\left[f(x_{i})\right]\right)-h(x_{i})\right]^{2}
+\end{eqnarray*}
 
 \end_inset
 
@@ -1147,19 +1154,15 @@ Compute:
 
 \begin_layout Enumerate
 Fit regression model to 
-\begin_inset Formula ${\bf g}_{m}$
+\begin_inset Formula $-{\bf g}_{m}$
 \end_inset
 
 :
 \begin_inset Formula 
 \[
-h_{m}=\argmin_{h\in\cf}\sum_{i=1}^{n}\left(\left({\bf g}_{m}\right)_{i}-h(x_{i})\right)^{2}.
+h_{m}=\argmin_{h\in\cf}\sum_{i=1}^{n}\left(-\left({\bf g}_{m}\right)_{i}-h(x_{i})\right)^{2}.
 \]
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 

@@ -2415,6 +2415,27 @@ Possible Homework: Derive the SGD step directions for logistic regression
  and [harder] probit regression.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Gradient is
+\begin_inset Formula 
+\begin{eqnarray*}
+\del\left[\log p(\cd;w)\right]=\sum_{i=1}^{n}\left(\frac{y_{i}}{f(w^{T}x_{i})}x_{i}^{T}\del f(w^{T}x_{i})+\frac{\left(1-y_{i}\right)}{}\log\right)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_deeper
 \begin_layout Section
 Poisson Regression

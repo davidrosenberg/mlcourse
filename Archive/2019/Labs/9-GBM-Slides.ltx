@@ -1,0 +1,188 @@
+\title{Recitation 9}
+\subtitle{Gradient Boosting}
+\begin{document}
+\begin{frame} 
+  \titlepage 
+\end{frame}
+\section{Recitation 9}
+\subsection{Initial Question}
+\begin{frame}
+  \frametitle{Intro Question}
+  \begin{block}{Question}
+    Suppose 10 different meteorologists have produced functions
+    $f_1,\ldots,f_{10}:\RR^d\to\RR$ that forecast tomorrow's noon-time
+    temperature using the same $d$ features.  Given a validation set
+    containing 1000 data points
+    $(x_i,y_i)\in\RR^d\times\RR$ of similar forecast situations, describe
+    a method to forecast tomorrow's noon-time temperature.  Would you
+    use boosting, bagging or neither?
+  \end{block}
+\end{frame}
+\begin{frame}
+  \frametitle{Intro Solution}
+  \begin{block}{Solution}
+    Let $\hat{x}_i =
+    (x_i,f_1(x_i),\ldots,f_{10}(x_i))\in\RR^{d+10}$.  Then use any
+    fitting method you like to produce an
+    aggregate decision function $f:\RR^{d+10}\to\RR$.  This method is
+    sometimes called stacking.
+  \end{block}
+  \begin{enumerate}
+  \item This isn't bagging - we didn't generate bootstrap samples and
+    learn a decision function on each of them.
+  \item This isn't boosting - boosting learns decision functions on varying
+    datasets to produce an aggregate classifier.
+  \end{enumerate}
+\end{frame}
+\begin{frame}
+  \frametitle{Different Ensembles}
+  \begin{enumerate}
+  \item Parallel ensemble: each base model is fit independently of the
+    other models.  Examples are bagging and stacking.
+  \item Sequential ensemble: each base model is fit in stages
+    depending on the previous fits.  Examples are AdaBoost and
+    Gradient Boosting.
+  \end{enumerate}
+\end{frame}
+\begin{frame}
+  \frametitle{AdaBoost Review}
+  \begin{enumerate}
+  \item Recall that a learner, or learning algorithm take a dataset as
+    input and produces a decision function in some hypothesis space.
+  \end{enumerate}
+  \begin{block}{Question}
+    Suppose we had a learner that given a dataset, and a weighting (importance)
+    scheme on that dataset, would produce a classifier $h$ that has lower
+    than $.5$ loss using the weighted $0-1$ loss:
+    $$\frac{1}{n}\sum_{i=1}^n w_i\Ind(y_i\neq h(x_i)) \leq \gamma < .5.$$
+    Can we use this learner to create an ensemble that makes accurate predictions?
+  \end{block}
+  \pause
+  \begin{itemize}
+  \item We saw that AdaBoost solves this problem.
+  \item Can get around weighted loss functions using sampling trick.
+  \end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Additive Models}
+\begin{enumerate}
+\item \emph{Additive models} over a \emph{base hypothesis space} $\HH$ take the form
+  $$\FF = \left\{ f(x)=\sum_{m=1}^M \nu_m h_m(x)\mid
+  h_m\in\HH,\nu_m\in\RR\right\}.$$
+\item Since we are taking linear combinations, we assume the $h_m$ functions take values
+  in $\RR$ or some other vector space.  
+\item Empirical risk minimization over $\FF$ tries to find
+  $$\argmin_{f\in\FF} \frac{1}{n}\sum_{i=1}^n \ell(y_i,f(x_i)).$$
+\item This in general is a difficult task, as the number of base hypotheses
+  $M$ is unknown, and each base hypothesis $h_m$ ranges over all of $\HH$.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+  \frametitle{Forward Stagewise Additive Modeling (FSAM)}
+  The FSAM method fits additive models using the following (greedy) algorithmic
+  structure:
+  \begin{enumerate}
+  \item Initialize $f_0\equiv 0$.
+  \item For stage $m=1,\ldots,M$:
+    \begin{enumerate}
+    \item Choose $h_m\in\HH$ and $\nu_m\in\RR$ so that  
+      $$f_m = f_{m-1}+\nu_m h_m$$
+      has the minimum empirical risk.
+    \item The function $f_m$ has the form
+      $$f_m = \nu_1h_1 + \cdots + \nu_mh_m.$$
+    \end{enumerate}
+  \end{enumerate}
+  \pause
+  \begin{itemize}
+  \item When choosing $h_m,\nu_m$ during stage $m$, we must solve the
+    minimization
+    $$(\nu_m,h_m) = \argmin_{\nu\in\RR,h\in\HH}\sum_{i=1}^n
+    \ell(y_i,f_{m-1}(x_i)+\nu h(x_i)).$$
+  \end{itemize}
+\end{frame}
+\subsection{Gradient Boosting}
+\begin{frame}
+  \frametitle{Gradient Boosting}
+  \begin{enumerate}
+  \item Can we simplify the following minimization problem:
+    $$(\nu_m,h_m) = \argmin_{\nu\in\RR,h\in\HH}\sum_{i=1}^n
+    \ell(y_i,f_{m-1}(x_i)+\nu h(x_i)).$$
+  \item What if we linearize the problem and take a step along the
+    steepest descent direction?
+  \item Good idea, but how do we handle the constraint that $h$ is a
+    function that lies in $\HH$, the base hypothesis space?
+    \pause
+  \item First idea: since we are doing empirical risk
+    minimization, we only care about the values $h$ takes on the
+    training set.  Thus we can think of $h$ as a vector
+    $(h(x_1),\ldots,h(x_n))$.
+  \item Second idea: first compute unconstrained steepest descent
+    direction, and then constrain (project) onto possible choices from $\HH$. 
+  \end{enumerate}
+\end{frame}
+\begin{frame}
+  \frametitle{Gradient Boosting Machine}
+  \begin{enumerate}
+  \item Initialize $f_0\equiv 0$.
+  \item For stage $m=1,\ldots,M$:
+    \begin{enumerate}
+    \item Compute the steepest descent direction (also called
+      \emph{pseudoresiduals}):
+      $$r_m = -\left(\partial_2 \ell(y_1,f_{m-1}(x_1)),\ldots,\partial_2\ell(y_n,f_{m-1}(x_n))\right).$$
+    \item Find the closest base hypothesis (using Euclidean distance):
+      $$h_m = \argmin_{h\in\HH} \sum_{i=1}^n ((r_m)_i - h(x_i))^2.$$
+    \item Choose fixed step size $\nu_m\in (0,1]$ or line search:
+      $$\nu_m = \argmin_{\nu\geq
+        0}\sum_{i=1}^n\ell(y_i,f_{m-1}(x_i)+\nu h_m(x_i)).$$
+    \item Take the step:
+      $$f_m(x) = f_{m-1}(x) + \nu_mh_m(x).$$
+    \end{enumerate}
+  \end{enumerate}
+\end{frame}
+\begin{frame}
+  \frametitle{Gradient Boosting Machine}
+  \begin{enumerate}
+  \item Each stage we need to solve the following step:
+    $$h_m = \argmin_{h\in\HH} \sum_{i=1}^n ((r_m)_i - h(x_i))^2.$$
+    How do we do this?
+    \pause
+  \item This is a standard least squares regression task on the ``mock'' dataset
+    $$\DD^{(m)} = \{(x_1,(r_m)_1),\ldots,(x_n,(r_m)_n)\}.$$
+  \item We assume that we have a learner that (approximately) solves
+    least squares regression over $\HH$.
+  \end{enumerate}
+\end{frame}
+\begin{frame}
+  \frametitle{Gradient Boosting Comments}
+  \begin{enumerate}
+  \item The algorithm above is sometimes called AnyBoost or Functional
+    Gradient Descent.
+  \item The most commonly used base hypothesis space is small
+    regression trees (HTF recommends between 4 and 8 leaves).
+  \end{enumerate}
+\end{frame}
+\begin{frame}
+  \frametitle{Practice With Different Loss Functions}
+  \begin{block}{Question}
+    Explain how to perform gradient boosting with the following loss
+    functions:
+    \begin{enumerate}
+    \item Square loss: $\ell(y,a)=(y-a)^2/2$.
+    \item Absolute loss: $\ell(y,a) = |y-a|$.
+    \item Exponential margin loss: $\ell(y,a)=e^{-ya}$.
+    \end{enumerate}
+  \end{block}
+\end{frame}
+\begin{frame}
+  \frametitle{Demonstration Using Decision Stumps}
+  Below is an example of a decision stump for functions $h:\RR\to\RR$.
+  \asyinclude{9-GBM/stump.asy}
+\end{frame}
+\begin{frame}
+  \frametitle{Demonstration Using Decision Stumps}
+  Below is the dataset we will use.
+  \begin{center}
+    \asyinclude[height=0.6\textheight]{9-GBM/data.asy}
+  \end{center}
+\end{frame}
+\end{document}

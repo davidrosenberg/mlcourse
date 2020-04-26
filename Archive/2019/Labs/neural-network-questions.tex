@@ -1,0 +1,443 @@
+%% LyX 2.3.2 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[english,aspectratio=169,handout]{beamer}
+\usepackage{mathptmx}
+\usepackage{eulervm}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amstext}
+\usepackage{dsfont}
+\usepackage[textsize=tiny]{todonotes}
+\usepackage{dsfont}
+\usepackage{bm}
+\renewcommand{\v}[1]{\boldsymbol{#1}}
+\ifx\hypersetup\undefined
+  \AtBeginDocument{%
+    \hypersetup{unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=false,pdfborder={0 0 0},pdfborderstyle={},backref=false,colorlinks=true,
+ allcolors=NYUPurple,urlcolor=LightPurple}
+  }
+\else
+  \hypersetup{unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=false,pdfborder={0 0 0},pdfborderstyle={},backref=false,colorlinks=true,
+ allcolors=NYUPurple,urlcolor=LightPurple}
+\fi
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+% this default might be overridden by plain title style
+\newcommand\makebeamertitle{\frame{\maketitle}}%
+% (ERT) argument for the TOC
+\AtBeginDocument{%
+  \let\origtableofcontents=\tableofcontents
+  \def\tableofcontents{\@ifnextchar[{\origtableofcontents}{\gobbletableofcontents}}
+  \def\gobbletableofcontents#1{\origtableofcontents}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\usetheme{CambridgeUS} 
+\beamertemplatenavigationsymbolsempty
+
+
+% Set Color ==============================
+\definecolor{NYUPurple}{RGB}{87,6,140}
+\definecolor{LightPurple}{RGB}{165,11,255}
+
+
+\setbeamercolor{title}{fg=NYUPurple}
+%\setbeamercolor{frametitle}{fg=NYUPurple}
+\setbeamercolor{frametitle}{fg=NYUPurple}
+
+\setbeamercolor{background canvas}{fg=NYUPurple, bg=white}
+\setbeamercolor{background}{fg=black, bg=NYUPurple}
+
+\setbeamercolor{palette primary}{fg=black, bg=gray!30!white}
+\setbeamercolor{palette secondary}{fg=black, bg=gray!20!white}
+\setbeamercolor{palette tertiary}{fg=gray!20!white, bg=NYUPurple}
+
+\setbeamertemplate{headline}{}
+
+\setbeamercolor{parttitle}{fg=NYUPurple}
+\setbeamercolor{sectiontitle}{fg=NYUPurple}
+\setbeamercolor{sectionname}{fg=NYUPurple}
+\setbeamercolor{section page}{fg=NYUPurple}
+
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+\setbeamercolor{section title}{fg=NYUPurple}
+ \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\usebeamercolor[fg]{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+
+\makeatother
+
+\begin{document}
+\newcommand{\bU}{\boldsymbol{U}}
+\newcommand{\bh}{\boldsymbol{h}}
+\newcommand{\bW}{\boldsymbol{W}}
+\newcommand{\bz}{\boldsymbol{z}}
+\newcommand{\bx}{\boldsymbol{x}}
+\global\long\def\reals{\mathbf{R}}%
+ 
+\global\long\def\integers{\mathbf{Z}}%
+ 
+\global\long\def\naturals{\mathbf{N}}%
+ 
+\global\long\def\rationals{\mathbf{Q}}%
+ 
+\global\long\def\ca{\mathcal{A}}%
+ 
+\global\long\def\cb{\mathcal{B}}%
+ 
+\global\long\def\cc{\mathcal{C}}%
+ 
+\global\long\def\cd{\mathcal{D}}%
+ 
+\global\long\def\ce{\mathcal{E}}%
+ 
+\global\long\def\cf{\mathcal{F}}%
+ 
+\global\long\def\cg{\mathcal{G}}%
+ 
+\global\long\def\ch{\mathcal{H}}%
+ 
+\global\long\def\ci{\mathcal{I}}%
+ 
+\global\long\def\cj{\mathcal{J}}%
+ 
+\global\long\def\ck{\mathcal{K}}%
+ 
+\global\long\def\cl{\mathcal{L}}%
+ 
+\global\long\def\cm{\mathcal{M}}%
+ 
+\global\long\def\cn{\mathcal{N}}%
+ 
+\global\long\def\co{\mathcal{O}}%
+ 
+\global\long\def\cp{\mathcal{P}}%
+ 
+\global\long\def\cq{\mathcal{Q}}%
+ 
+\global\long\def\calr{\mathcal{R}}%
+ 
+\global\long\def\cs{\mathcal{S}}%
+ 
+\global\long\def\ct{\mathcal{T}}%
+ 
+\global\long\def\cu{\mathcal{U}}%
+ 
+\global\long\def\cv{\mathcal{V}}%
+ 
+\global\long\def\cw{\mathcal{W}}%
+ 
+\global\long\def\cx{\mathcal{X}}%
+ 
+\global\long\def\cy{\mathcal{Y}}%
+ 
+\global\long\def\cz{\mathcal{Z}}%
+ 
+\global\long\def\ind#1{1(#1)}%
+ %\newcommand{\pr}{P}
+\global\long\def\pr{\mathbb{P}}%
+ 
+\global\long\def\predsp{\cy}%
+ %{\hat{\cy}}
+\global\long\def\outsp{\cy}%
+
+\global\long\def\prxy{P_{\cx\times\cy}}%
+ 
+\global\long\def\prx{P_{\cx}}%
+ 
+\global\long\def\prygivenx{P_{\cy\mid\cx}}%
+ %\newcommand{\ex}{E}
+\global\long\def\ex{\mathbb{E}}%
+ 
+\global\long\def\var{\textrm{Var}}%
+ 
+\global\long\def\cov{\textrm{Cov}}%
+ 
+\global\long\def\sgn{\textrm{sgn}}%
+ 
+\global\long\def\sign{\textrm{sign}}%
+ 
+\global\long\def\kl{\textrm{KL}}%
+ 
+\global\long\def\law{\mathcal{L}}%
+ 
+\global\long\def\eps{\varepsilon}%
+ 
+\global\long\def\as{\textrm{ a.s.}}%
+ 
+\global\long\def\io{\textrm{ i.o.}}%
+ 
+\global\long\def\ev{\textrm{ ev.}}%
+ 
+\global\long\def\convd{\stackrel{d}{\to}}%
+ 
+\global\long\def\eqd{\stackrel{d}{=}}%
+ 
+\global\long\def\del{\nabla}%
+ 
+\global\long\def\loss{\ell}%
+ 
+\global\long\def\risk{R}%
+ 
+\global\long\def\emprisk{\hat{R}}%
+ 
+\global\long\def\lossfnl{L}%
+ 
+\global\long\def\emplossfnl{\hat{L}}%
+ 
+\global\long\def\empminimizer#1{\hat{#1}^{*}}%
+ 
+\global\long\def\minimizer#1{#1^{*}}%
+\global\long\def\optimizer#1{#1^{*}}%
+ 
+\global\long\def\etal{\textrm{et. al.}}%
+ 
+\global\long\def\tr{\operatorname{tr}}%
+
+\global\long\def\trace{\operatorname{trace}}%
+ 
+\global\long\def\diag{\text{diag}}%
+ 
+\global\long\def\rank{\text{rank}}%
+ 
+\global\long\def\linspan{\text{span}}%
+ 
+\global\long\def\spn{\text{span}}%
+ 
+\global\long\def\proj{\text{Proj}}%
+ 
+\global\long\def\argmax{\operatornamewithlimits{arg\, max}}%
+ 
+\global\long\def\argmin{\operatornamewithlimits{arg\, min}}%
+
+\global\long\def\bfx{\mathbf{x}}%
+ 
+\global\long\def\bfy{\mathbf{y}}%
+ 
+\global\long\def\bfl{\mathbf{\lambda}}%
+ 
+\global\long\def\bfm{\mathbf{\mu}}%
+ 
+\global\long\def\calL{\mathcal{L}}%
+
+\global\long\def\vw{\boldsymbol{w}}%
+ 
+\global\long\def\vx{\boldsymbol{x}}%
+ 
+\global\long\def\vxi{\boldsymbol{\xi}}%
+ 
+\global\long\def\valpha{\boldsymbol{\alpha}}%
+ 
+\global\long\def\vbeta{\boldsymbol{\beta}}%
+ 
+\global\long\def\vsigma{\boldsymbol{\sigma}}%
+\global\long\def\vtheta{\boldsymbol{\theta}}%
+ 
+\global\long\def\vd{\boldsymbol{d}}%
+ 
+\global\long\def\vs{\boldsymbol{s}}%
+ 
+\global\long\def\vt{\boldsymbol{t}}%
+ 
+\global\long\def\vh{\boldsymbol{h}}%
+ 
+\global\long\def\ve{\boldsymbol{e}}%
+ 
+\global\long\def\vf{\boldsymbol{f}}%
+ 
+\global\long\def\vg{\boldsymbol{g}}%
+ 
+\global\long\def\vz{\boldsymbol{z}}%
+ 
+\global\long\def\vk{\boldsymbol{k}}%
+ 
+\global\long\def\va{\boldsymbol{a}}%
+ 
+\global\long\def\vb{\boldsymbol{b}}%
+ 
+\global\long\def\vv{\boldsymbol{v}}%
+ 
+\global\long\def\vy{\boldsymbol{y}}%
+
+\global\long\def\dom{\textrm{\textbf{dom} }}%
+\global\long\def\rank{\text{\textbf{rank }}}%
+\global\long\def\conv{\textrm{\textbf{conv} }}%
+\global\long\def\relint{\text{\textbf{relint }}}%
+\global\long\def\aff{\text{\textbf{aff }}}%
+
+\global\long\def\hil{\ch}%
+ 
+\global\long\def\rkhs{\hil}%
+ 
+\global\long\def\ber{\text{Ber}}%
+
+\title[DS-GA 1003 / CSCI-GA 2567]{Neural Network and Backpropagation Questions\\}
+\author{Xintian Han}
+\date{}
+\institute{CDS, NYU}
+
+\makebeamertitle
+\mode<article>{Just in article version}
+
+%\begin{frame}{Contents}
+%
+%\tableofcontents{}
+%\end{frame}
+\begin{frame}{Question 1: Step Activation Function \footnote{From CMU}}
+Suppose we have a neural network with one hidden layer.
+ \[f(x) = w_0+\sum_i w_i h_i(x);\quad  h_i(x) = g(b_i + v_i x), \] where activation function $g$ is defined as
+ \[
+ g(z) = \begin{cases}
+ 1 & \text{if } z \geq 0\\
+ 0 &  \text{if } z < 0
+ \end{cases}
+\]
+Which of the following functions can be exactly represented by this neural network?
+\begin{itemize}
+\item polynomials of degree one: $l(x) = ax+b$
+\item hinge loss: $l(x) = max(1-x,0)$
+\item polynomials of degree two: $l(x) = ax^2+bx+c$
+\item piecewise constant functions
+\end{itemize}
+ \end{frame}
+%
+\begin{frame}{[Solution] Question 1: Step Activation Function}
+Suppose we have a neural network with one hidden layer.
+ \[f(x) = w_0+\sum_i w_i h_i(x);\quad  h_i(x) = g(b_i + v_i x), \] where activation function $g$ is defined as
+ \[
+ g(z) = \begin{cases}
+ 1 & \text{if } z \geq 0\\
+ 0 &  \text{if } z < 0
+ \end{cases}
+\]
+Which of the following functions can be exactly represented by this neural network?
+\begin{itemize}
+\item polynomials of degree one: $l(x) = ax+b$ \textbf{No} \\
+If $g$ can be identity function, then the answer is \textbf{Yes}
+\item hinge loss: $l(x) = max(1-x,0)$ \textbf{No}
+\item polynomials of degree two: $l(x) = ax^2+bx+c$ \textbf{No}
+\item piecewise constant functions \textbf{Yes}\\
+ $(-c) \cdot g(x-b) + (c) \cdot g(x-a)$ can represent $l(x) = c , a\leq x <b$.
+\end{itemize}
+ \end{frame}
+%
+\begin{frame}{Question 2: Power of ReLU \footnote{From Harvard}}
+\noindent Consider the following small NN:
+\begin{align*}
+w_2^\top\textbf{ReLU}\left(W_1 x + b_1\right) + b_2
+\end{align*}
+
+\noindent where the data is 2D, $W_1$ is 2 by 2, $b_1$ is 2D, $w_2$ is 2D and $b_2$ is 1D.
+\[x_1 = \left(1,1\right)\:\: y_1 = 1; ~~x_2 = \left(1, -1\right)\:\: y_2 = -1; ~~x_3 = \left(-1, 1\right)\:\: y_3 = -1; ~~x_4 = \left(-1,-1\right)\:\: y_4 = 1\]
+Find $b_1,b_2,W_1,w_2$ to solve the problem. (Separate points from class $y=1$ and $y=-1$.)
+%
+\begin{center}
+\begin{tikzpicture}[scale=.45]
+\fill [blue!60] (6, 6) circle (.15); 
+\fill [red!60] (6, 2) circle (.15);
+\fill [red!60] (2, 6) circle (.15);
+\fill [blue!60] (2, 2) circle (.15);
+\draw[<->] (4, 0) -- (4, 8);
+\draw[<->] (0, 4) -- (8, 4);
+\end{tikzpicture}
+\end{center}
+\end{frame}
+%
+\begin{frame}{[Solution] Question 2: Power of ReLU \footnote{From Harvard}}
+\begin{align*}
+w_2^\top\textbf{ReLU}\left(W_1 x + b_1\right) + b_2
+\end{align*}
+%
+\begin{center}
+\begin{tikzpicture}[scale=.45]
+\fill [blue!60] (6, 6) circle (.15); 
+\fill [red!60] (6, 2) circle (.15);
+\fill [red!60] (2, 6) circle (.15);
+\fill [blue!60] (2, 2) circle (.15);
+\draw[<->] (4, 0) -- (4, 8);
+\draw[<->] (0, 4) -- (8, 4);
+\end{tikzpicture}
+\end{center}
+One choice is \[W_1 = \left(\begin{matrix} 1 & 1 \\ -1 & -1\end{matrix} \right), b_1 = \left( \begin{matrix} 0 \\ 0 \end{matrix} \right)\]
+\[w_2 = \left(\begin{matrix} 1 \\ 1 \end{matrix} \right),  b_2 = -1\]
+\end{frame}
+%
+\begin{frame}{Question 3: Backpropagation \footnote{From Stanford}}
+Suppose we have a one hidden layer network and computation is:
+\begin{align*}
+h & = \text{RELU} (Wx+b1)	 \\
+\hat{y} &= \text{softmax}(Uh+b_2) \\
+J &= \text{Cross entropy}(y,\hat{y}) = -\sum_i y_i \log \hat{y}_i
+\end{align*}
+The dimensions of the matrices are:
+\[
+W \in \mathbb{R}^{m\times n} \quad x \in \mathbb{R}^n \quad b_1 \in \mathbb{R}^m \quad U \in \mathbb{R}^{k\times m} \quad b_2 \in \mathbb{R}^k
+\]
+Use backpropagation to calculate these four gradients 
+\[
+\frac{\partial J}{\partial b_2} \quad \frac{\partial J}{\partial U} \quad \frac{\partial{J}}{\partial b_1} \quad \frac{\partial J}{\partial W}
+\]
+\end{frame}
+%
+\begin{frame}{[Solution] Question 3: Backpropagation}
+\begin{align*}
+z_2 &= Uh+b2 \quad \delta_1 = \frac{\partial J}{\partial z_2} = \hat{y}-y \\
+\frac{\partial J}{\partial b_2} &= \delta_1 \\
+\frac{\partial J}{\partial U} &= \delta_1 h^T \\
+\frac{\partial J}{\partial h} &= U^T \delta_1 \\
+z_1 &= Wx+b_1  \quad \delta_2 = \frac{\partial J}{\partial z_1} = U^T \delta_1 \circ 1\{h>0\} \\
+\frac{\partial J}{\partial b_1} &= \delta_2 \\
+\frac{\partial J}{\partial W}&= \delta_2 x^T 
+\end{align*}
+
+\end{frame}
+%
+\begin{frame}{Question 4: Backpropagation in RNN}
+Suppose we have a recurrent neural network (RNN). The recursive function is: 
+\begin{align*}
+\bz_{t-1} &= \bW\bx_{t-1}+\bU\bh_{t-1},\\
+\bh_t &= g(\bz_{t-1}),
+\end{align*}
+where $\bh_t$ is the hidden state and $\bx_t$ is the input at time step $t$. $\bW$ and $\bU$ are the weighted matrix. $g$ is an element-wise activation function. And $\bh_0$ is a given fixed initial hidden state. 
+\begin{itemize}
+\item Assume loss function $\mathcal{L}$ is a function of $\bh_T$. Given $\partial \mathcal{L}/\partial \bh_T$, calculate $\partial \mathcal{L}/\partial \bU$ and $\partial \mathcal{L}/\partial \bW$.	
+\item Suppose $g'$ is always greater than $\lambda$ and the smallest singular value of $U$ is larger than $1/\lambda$. What will happen to the gradient $\partial \mathcal{L}/\partial \bU$ and $\partial \mathcal{L}/\partial \bW$?
+\item Suppose $g'$ is always smaller than $\lambda$ and the largest singular value of $U$ is smaller than $1/\lambda$. What will happen to the gradient $\partial \mathcal{L}/\partial \bU$ and $\partial \mathcal{L}/\partial \bW$?
+\end{itemize}
+
+\end{frame}
+%
+\begin{frame}{[Solution] Question 4: Backpropagation in RNN}
+\begin{itemize}
+\item \begin{align*}
+\frac{\partial \mathcal{L}}{\partial U} &= \sum_{t=1}^T \left(\Pi_{k=t-1}^{T-1} (\bU^T D_k) \right ) \frac{\partial \mathcal{L}}{\partial \bh_T} \bh_{t-1}^T\\
+\frac{\partial \mathcal{L}}{\partial W} &= \sum_{t=1}^T \left(\Pi_{k=t-1}^{T-1} (\bU^T D_k) \right ) \frac{\partial \mathcal{L}}{\partial \bh_T}\bx_{t-1}^T\
+\end{align*}
+$D_{k} = \text{diag}(g'(\bz_{k}))$ is the Jacobian matrix of the element-wise activation function.
+\item The smallest singular value of the $\bU^TD_{k-1}$ will be greater than one. So the smallest singular value of the gradient $\frac{\partial h_s}{\partial h_t}$ will be larger than $a^{s-t}$ for some $a>1$. So the gradient is going to be exponentially large. This is called exploding gradient.
+\item The largest singular value of the $\bU^TD_{k-1}$ will be smaller than one. So the largest singular value of the gradient $\frac{\partial h_s}{\partial h_t}$ will be smaller than $a^{s-t}$ for some $a<1$. So the gradient is going to be exponentially small. This is called vanishing gradient.	
+\end{itemize}
+
+
+\end{frame}
+
+\end{document}

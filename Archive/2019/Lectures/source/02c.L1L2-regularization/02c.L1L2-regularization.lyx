@@ -1,0 +1,6093 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass beamer
+\begin_preamble
+\usetheme{CambridgeUS} 
+\beamertemplatenavigationsymbolsempty
+
+
+% Set Color ==============================
+\definecolor{NYUPurple}{RGB}{87,6,140}
+\definecolor{LightPurple}{RGB}{165,11,255}
+
+
+\setbeamercolor{title}{fg=NYUPurple}
+%\setbeamercolor{frametitle}{fg=NYUPurple}
+\setbeamercolor{frametitle}{fg=NYUPurple}
+
+\setbeamercolor{background canvas}{fg=NYUPurple, bg=white}
+\setbeamercolor{background}{fg=black, bg=NYUPurple}
+
+\setbeamercolor{palette primary}{fg=black, bg=gray!30!white}
+\setbeamercolor{palette secondary}{fg=black, bg=gray!20!white}
+\setbeamercolor{palette tertiary}{fg=gray!20!white, bg=NYUPurple}
+
+\setbeamertemplate{headline}{}
+
+\setbeamercolor{parttitle}{fg=NYUPurple}
+\setbeamercolor{sectiontitle}{fg=NYUPurple}
+\setbeamercolor{sectionname}{fg=NYUPurple}
+\setbeamercolor{section page}{fg=NYUPurple}
+
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+\setbeamercolor{section title}{fg=NYUPurple}
+ \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\usebeamercolor[fg]{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+\end_preamble
+\options aspectratio=169,handout
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "eulervm" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "allcolors=NYUPurple,urlcolor=LightPurple"
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\boxbgcolor #ff31d8
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\reals}{\mathbf{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\integers}{\mathbf{Z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\naturals}{\mathbf{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rationals}{\mathbf{Q}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ca}{\mathcal{A}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cb}{\mathcal{B}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cc}{\mathcal{C}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cd}{\mathcal{D}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ce}{\mathcal{E}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cf}{\mathcal{F}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cg}{\mathcal{G}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ch}{\mathcal{H}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ci}{\mathcal{I}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cj}{\mathcal{J}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ck}{\mathcal{K}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cl}{\mathcal{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cm}{\mathcal{M}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cn}{\mathcal{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\co}{\mathcal{O}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cp}{\mathcal{P}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cq}{\mathcal{Q}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\calr}{\mathcal{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cs}{\mathcal{S}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ct}{\mathcal{T}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cu}{\mathcal{U}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cv}{\mathcal{V}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cw}{\mathcal{W}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cx}{\mathcal{X}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cy}{\mathcal{Y}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cz}{\mathcal{Z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ind}[1]{1(#1)}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand{
+\backslash
+pr}{P}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\pr}{\mathbb{P}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\predsp}{\cy}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%{
+\backslash
+hat{
+\backslash
+cy}}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\outsp}{\cy}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\prxy}{P_{\cx\times\cy}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\prx}{P_{\cx}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\prygivenx}{P_{\cy\mid\cx}}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand{
+\backslash
+ex}{E}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ex}{\mathbb{E}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\var}{\textrm{Var}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cov}{\textrm{Cov}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\sgn}{\textrm{sgn}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\sign}{\textrm{sign}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\kl}{\textrm{KL}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\law}{\mathcal{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\eps}{\varepsilon}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\as}{\textrm{ a.s.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\io}{\textrm{ i.o.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ev}{\textrm{ ev.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\convd}{\stackrel{d}{\to}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\eqd}{\stackrel{d}{=}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\del}{\nabla}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\loss}{\ell}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\risk}{R}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\emprisk}{\hat{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\lossfnl}{L}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\emplossfnl}{\hat{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\empminimizer}[1]{\hat{#1}^{*}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\minimizer}[1]{#1^{*}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\optimizer}[1]{#1^{*}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\etal}{\textrm{et. al.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\tr}{\operatorname{tr}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\trace}{\operatorname{trace}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\diag}{\text{diag}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rank}{\text{rank}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\linspan}{\text{span}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\spn}{\text{span}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\proj}{\text{Proj}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\argmax}{\operatornamewithlimits{arg\, max}}
+{\text{argmax}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\argmin}{\operatornamewithlimits{arg\, min}}
+{\text{argmin}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\bfx}{\mathbf{x}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfy}{\mathbf{y}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfl}{\mathbf{\lambda}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfm}{\mathbf{\mu}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\calL}{\mathcal{L}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\vw}{\boldsymbol{w}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vx}{\boldsymbol{x}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vxi}{\boldsymbol{\xi}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\valpha}{\boldsymbol{\alpha}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vbeta}{\boldsymbol{\beta}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vsigma}{\boldsymbol{\sigma}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vtheta}{\boldsymbol{\theta}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vd}{\boldsymbol{d}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vs}{\boldsymbol{s}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vt}{\boldsymbol{t}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vh}{\boldsymbol{h}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ve}{\boldsymbol{e}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vf}{\boldsymbol{f}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vg}{\boldsymbol{g}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vz}{\boldsymbol{z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vk}{\boldsymbol{k}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\va}{\boldsymbol{a}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vb}{\boldsymbol{b}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vv}{\boldsymbol{v}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vy}{\boldsymbol{y}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\dom}{\textrm{\textbf{dom} }}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\renewcommand{\rank}{\text{\textbf{rank }}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\conv}{\textrm{\textbf{conv} }}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\relint}{\text{\textbf{relint }}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\aff}{\text{\textbf{aff }}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\hil}{\ch}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rkhs}{\hil}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ber}{\text{Ber}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ Regularization
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+DS-GA 1003 / CSCI-GA 2567
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+optional, use only with long paper titles
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+Julia Kempe & David S.
+ Rosenberg 
+\end_layout
+
+\begin_layout Date
+February 5, 2019
+\end_layout
+
+\begin_layout Institute
+CDS, NYU
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex ArticleMode
+status open
+
+\begin_layout Plain Layout
+Just in article version
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Plots courtesy of Ningshan Zhang.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+1) why is shooting algorithm called the shooting algorithm?
+\end_layout
+
+\begin_layout Plain Layout
+2) change proof of equivalence of Lasso optimization problem to involve
+ changing the order of optimization
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Rather than saying 'under technical conditions', can I give some specific
+ technical conditions and quote them as a theorem (proven in homework?),
+ that doesn't reference duality directly?)
+\end_layout
+
+\begin_layout Plain Layout
+Question: what's the difference bewteen a constrained hypothesis space,
+ and just a new hypothesis space.
+ Nothing really, except the amount of constraint is typically specified
+ by a single numerical value.
+ For each numerical cvalue we choose, we can typically refit the model with
+ the same training algorithm.
+ More over, it gives u a nested sequence of classes.
+ IN general, different hypothesis space may reuire entirely different methods
+ to solve the minimzation problem effectively.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+I believe there's a name for a third form of regularization, where we minimize
+ the regularization subject to a bound on the loss.
+ this form comes up in some investigations of neural networks, where we
+ constrain the loss to be exactly zero, because a big enough neural network
+ can fit anything perfectly, and investigate what happens as we change other
+ parameters (e.g.
+ a norm on the weights, but more realistically for NN the size of the model);
+ (based on 
+\begin_inset Quotes eld
+\end_inset
+
+geometry optimization and genrealization in multilayer networks)...
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Tikhonov and Ivanov Regularization
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Hypothesis Spaces
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We've spoken vaguely about 
+\begin_inset Quotes eld
+\end_inset
+
+bigger
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+smaller
+\begin_inset Quotes erd
+\end_inset
+
+ hypothesis spaces
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+In practice, convenient to work with a 
+\series bold
+nested sequence 
+\series default
+of spaces:
+\begin_inset Formula 
+\[
+\cf_{1}\subset\cf_{2}\subset\cf_{n}\cdots\subset\cf
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout ExampleBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Polynomial Functions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\cf=\left\{ \mbox{all polynomial functions}\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\cf_{d}=\left\{ \mbox{all polynomials of degree }\le d\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout ExampleBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Decision Trees
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\cf=\left\{ \mbox{all decision trees}\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\cf_{n}=\left\{ \mbox{all decision trees of depth }\le n\right\} $
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Complexity Measures for Decision Functions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Number of variables / features
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Depth of a decision tree
+\end_layout
+
+\begin_layout Itemize
+Degree of polynomial
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+A measure of smoothness:
+\begin_inset Formula 
+\[
+f\mapsto\int\left\{ f''(t)\right\} ^{2}\,dt
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+How about for 
+\series bold
+linear
+\series default
+ decision functions, i.e.
+ 
+\begin_inset Formula $x\mapsto w^{T}x=w_{1}x_{1}+\cdots+w_{d}x_{d}$
+\end_inset
+
+?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\ell_{0}$
+\end_inset
+
+ complexity: number of non-zero coefficients 
+\begin_inset Formula $\sum_{i=1}^{d}\ind{w_{i}\neq0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+lasso
+\begin_inset Quotes erd
+\end_inset
+
+ complexity: 
+\begin_inset Formula $\sum_{i=1}^{d}\left|w_{i}\right|$
+\end_inset
+
+, for coefficients 
+\begin_inset Formula $w_{1},\ldots,w_{d}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+ridge
+\begin_inset Quotes erd
+\end_inset
+
+ complexity: 
+\begin_inset Formula $\sum_{i=1}^{d}w_{i}^{2}$
+\end_inset
+
+ for coefficients 
+\begin_inset Formula $w_{1},\ldots,w_{d}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Nested Hypothesis Spaces from Complexity Measure
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Hypothesis space: 
+\begin_inset Formula $\cf$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Complexity measure 
+\begin_inset Formula $\Omega:\cf\to[0,\infty)$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Consider all functions in 
+\begin_inset Formula $\cf$
+\end_inset
+
+ with
+\emph on
+ 
+\emph default
+complexity 
+\series bold
+at most 
+\begin_inset Formula $r$
+\end_inset
+
+:
+\series default
+
+\begin_inset Formula 
+\[
+\cf_{r}=\left\{ f\in\cf\mid\Omega(f)\le r\right\} 
+\]
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+If 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ is a norm on 
+\begin_inset Formula $\cf$
+\end_inset
+
+, this is a 
+\series bold
+ball of radius 
+\begin_inset Formula $r$
+\end_inset
+
+ 
+\series default
+in 
+\begin_inset Formula $\cf$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Increasing complexities: 
+\begin_inset Formula $r=0,1.2,2.6,5.4,\ldots$
+\end_inset
+
+ gives nested spaces:
+\begin_inset Formula 
+\[
+\cf_{0}\subset\cf_{1.2}\subset\cf_{2.6}\subset\cf_{5.4}\subset\cdots\subset\cf
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Constrained Empirical Risk Minimization
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Constrained ERM (Ivanov regularization)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+For complexity measure 
+\begin_inset Formula $\Omega:\cf\to[0,\infty)$
+\end_inset
+
+ and fixed 
+\begin_inset Formula $r\ge0$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\min_{f\in\cf}\; & \frac{1}{n}\sum_{i=1}^{n}\ell(f(x_{i}),y_{i})\\
+\mbox{s.t.}\; & \Omega(f)\le r
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Choose 
+\begin_inset Formula $r$
+\end_inset
+
+ using validation data or cross-validation.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Each 
+\begin_inset Formula $r$
+\end_inset
+
+ corresponds to a different hypothesis spaces.
+ Could also write:
+\begin_inset Formula 
+\[
+\min_{f\in\cf_{r}}\frac{1}{n}\sum_{i=1}^{n}\ell(f(x_{i}),y_{i})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Penalized Empirical Risk Minimization
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Penalized ERM (Tikhonov regularization)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+For complexity measure 
+\begin_inset Formula $\Omega:\cf\to[0,\infty)$
+\end_inset
+
+ and fixed 
+\begin_inset Formula $\lambda\ge0$
+\end_inset
+
+,
+\begin_inset Formula 
+\begin{align*}
+\min_{f\in\cf} & \frac{1}{n}\sum_{i=1}^{n}\ell(f(x_{i}),y_{i})+\lambda\Omega(f)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Choose 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ using validation data or cross-validation.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+(Ridge regression in homework is of this form.)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Connection between Penalty and Constraint Form?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Ivanov vs Tikhonov Regularization 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $L:\cf\to\reals$
+\end_inset
+
+ be any performance measure of 
+\begin_inset Formula $f$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+e.g.
+ 
+\begin_inset Formula $L(f)$
+\end_inset
+
+ could be the empirical risk of 
+\begin_inset Formula $f$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+For many 
+\begin_inset Formula $L$
+\end_inset
+
+ and 
+\begin_inset Formula $\Omega$
+\end_inset
+
+, Ivanov and Tikhonov are 
+\begin_inset Quotes eld
+\end_inset
+
+equivalent
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+What does this mean?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Any solution 
+\begin_inset Formula $f^{*}$
+\end_inset
+
+ you could get from Ivanov, can also get from Tikhonov.
+\end_layout
+
+\begin_layout Itemize
+Any solution 
+\begin_inset Formula $f^{*}$
+\end_inset
+
+ you could get from Tikhonov, can also get from Ivanov.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+In practice, both approaches are effective.
+\end_layout
+
+\begin_layout Itemize
+Tikhonov convenient because it's 
+\emph on
+unconstrained
+\emph default
+ minimization.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Can get conditions for equivalence from Lagrangian duality theory – details
+ in homework.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Ivanov vs Tikhonov Regularization (Details) 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Ivanov and Tikhonov regularization are equivalent if:
+\end_layout
+
+\begin_layout Enumerate
+For any choice of 
+\begin_inset Formula $r>0$
+\end_inset
+
+, any Ivanov solution
+\begin_inset Formula 
+\[
+\minimizer{f_{r}}\in\argmin_{\substack{f\in\cf}
+}L(f)\mbox{ s.t. }\Omega(f)\le r
+\]
+
+\end_inset
+
+is also a Tikhonov solution for some 
+\begin_inset Formula $\lambda>0$
+\end_inset
+
+.
+ That is, 
+\begin_inset Formula $\exists\lambda>0$
+\end_inset
+
+ such that
+\begin_inset Formula 
+\[
+\minimizer{f_{r}}\in\argmin_{f\in\cf}L(f)+\lambda\Omega(f).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Conversely, for any choice of 
+\begin_inset Formula $\lambda>0$
+\end_inset
+
+, any Tikhonov solution:
+\begin_inset Formula 
+\[
+\minimizer{f_{\lambda}}\in\argmin_{f\in\cf}L(f)+\lambda\Omega(f)
+\]
+
+\end_inset
+
+is also an Ivanov solution for some 
+\begin_inset Formula $r>0$
+\end_inset
+
+.
+ That is, 
+\begin_inset Formula $\exists r>0$
+\end_inset
+
+ such that
+\begin_inset Formula 
+\[
+\minimizer{f_{\lambda}}\in\argmin_{\substack{f\in\cf}
+}L(f)\mbox{ s.t. }\Omega(f)\le r
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+NIPS2009-0879_extra.pdf 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ Regularization
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Linear Least Squares Regression
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Consider linear models
+\begin_inset Formula 
+\[
+\cf=\left\{ f:\reals^{d}\to\reals\mid f(x)=w^{T}x\mbox{ for }w\in\reals^{d}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Loss: 
+\begin_inset Formula $\loss(\hat{y},y)=\left(y-\hat{y}\right)^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Training data 
+\begin_inset Formula $\cd_{n}=\left((x_{1},y_{1}),\ldots,(x_{n},y_{n})\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Linear least squares regression is ERM for 
+\begin_inset Formula $\ell$
+\end_inset
+
+ over 
+\begin_inset Formula $\cf$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\hat{w}=\argmin_{w\in\reals^{d}}\frac{1}{n}\sum_{i=1}^{n}\left\{ w^{T}x_{i}-y_{i}\right\} ^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Can 
+\series bold
+overfit 
+\series default
+when 
+\begin_inset Formula $d$
+\end_inset
+
+ is large compared to 
+\begin_inset Formula $n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+e.g.: 
+\begin_inset Formula $d\gg n$
+\end_inset
+
+ very common in Natural Language Processing problems (e.g.
+ a 1M features for 10K documents).
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Ridge Regression: Workhorse of Modern Data Science
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Ridge Regression (Tikhonov Form)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+The ridge regression solution for regularization parameter 
+\begin_inset Formula $\lambda\ge0$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+\hat{w}=\argmin_{w\in\reals^{d}}\frac{1}{n}\sum_{i=1}^{n}\left\{ w^{T}x_{i}-y_{i}\right\} ^{2}+\lambda\|w\|_{2}^{2},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\|w\|_{2}^{2}=w_{1}^{2}+\cdots+w_{d}^{2}$
+\end_inset
+
+ is the square of the 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+-norm.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Ridge Regression (Ivanov Form)
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+The ridge regression solution for complexity parameter 
+\begin_inset Formula $r\ge0$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+\hat{w}=\argmin_{\|w\|_{2}^{2}\le r^{2}}\frac{1}{n}\sum_{i=1}^{n}\left\{ w^{T}x_{i}-y_{i}\right\} ^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+How does 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ regularization induce 
+\begin_inset Quotes eld
+\end_inset
+
+regularity
+\begin_inset Quotes erd
+\end_inset
+
+?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For 
+\begin_inset Formula $\hat{f}(x)=\hat{w}^{T}x$
+\end_inset
+
+, 
+\begin_inset Formula $\hat{f}$
+\end_inset
+
+ is 
+\series bold
+Lipschitz continuous 
+\series default
+with Lipschitz constant 
+\begin_inset Formula $L=\|\hat{w}\|_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+That is, when moving from 
+\begin_inset Formula $x$
+\end_inset
+
+ to 
+\begin_inset Formula $x+h\pause$
+\end_inset
+
+, 
+\begin_inset Formula $\hat{f}$
+\end_inset
+
+ changes no more than 
+\begin_inset Formula $L\|h\|$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+So 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ regularization controls the maximum rate of change of 
+\begin_inset Formula $\hat{f}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Proof:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+\left|\hat{f}(x+h)-\hat{f}(x)\right| & = & |\hat{w}^{T}\left(x+h\right)-\hat{w}^{T}x|=\pause\left|\hat{w}^{T}h\right|\\
+\pause & \le & \|\hat{w}\|_{2}\|h\|_{2}\text{\pause(Cauchy-Schwarz inequality)}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Since 
+\begin_inset Formula $\|\hat{w}\|_{1}\ge\|\hat{w}\|_{2}$
+\end_inset
+
+, an 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ constraint will also give a Lipschitz bound.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Ridge Regression: Regularization Path
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Modified from Hastie, Tibshirani, and Wainwright's 
+\backslash
+emph{Statistical Learning with Sparsity}, Fig 2.1.
+ About predicting crime in 50 US cities.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ridge-regularization-HTW-Fig2.1-LATEX.png
+	lyxscale 30
+	height 70theight%
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Flex ArticleMode
+status open
+
+\begin_layout Plain Layout
+Do we get lots of regularization with 
+\begin_inset Formula $r$
+\end_inset
+
+ large or 
+\begin_inset Formula $r$
+\end_inset
+
+ small? This plot traces out the paths of coefficients as we vary the amount
+ of 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ regularization.
+ With no regularization, 
+\begin_inset Formula $\|\hat{w}_{\infty}\|_{2}=\|\hat{w}\|_{2}$
+\end_inset
+
+, which corresponds to the right side of the plot.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Lasso Regression: Workhorse (2) of Modern Data Science
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Lasso Regression (Tikhonov Form)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+The lasso regression solution for regularization parameter 
+\begin_inset Formula $\lambda\ge0$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+\hat{w}=\argmin_{w\in\reals^{d}}\frac{1}{n}\sum_{i=1}^{n}\left\{ w^{T}x_{i}-y_{i}\right\} ^{2}+\lambda\|w\|_{1},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\|w\|_{1}=\left|w_{1}\right|+\cdots+\left|w_{d}\right|$
+\end_inset
+
+ is the 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+-norm.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Lasso Regression (Ivanov Form)
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+The lasso regression solution for complexity parameter 
+\begin_inset Formula $r\ge0$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+\hat{w}=\argmin_{\|w\|_{1}\le r}\frac{1}{n}\sum_{i=1}^{n}\left\{ w^{T}x_{i}-y_{i}\right\} ^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Lasso Regression: Regularization Path
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Modified from Hastie, Tibshirani, and Wainwright's 
+\backslash
+emph{Statistical Learning with Sparsity}, Fig 2.1.
+ About predicting crime in 50 US cities.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename lasso-regularization-HTW-Fig2.1-LATEX.png
+	lyxscale 30
+	height 70theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Ridge vs.
+ Lasso: Regularization Paths
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Modified from Hastie, Tibshirani, and Wainwright's 
+\backslash
+emph{Statistical Learning with Sparsity}, Fig 2.1.
+ About predicting crime in 50 US cities.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename lasso-ridge-paths-side-by-side.png
+	lyxscale 30
+	height 80theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Lasso Gives Feature Sparsity: So What?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Coefficient are 
+\begin_inset Formula $0$
+\end_inset
+
+ 
+\begin_inset Formula $\implies$
+\end_inset
+
+don't need those features.
+ What's the gain?
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Time/expense to compute/buy features
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Memory to store features (e.g.
+ real-time deployment)
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Identifies the important features
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Better prediction? sometimes
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+As a feature-selection step for training a slower non-linear model
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Ivanov and Tikhonov Equivalent?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For ridge regression and lasso regression (and much more) 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+the Ivanov and Tikhonov formulations are equivalent
+\end_layout
+
+\begin_layout Itemize
+[Optional homework problem, upcoming.]
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We will use whichever form is most convenient.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Why does Lasso regression give sparse solutions?
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Parameter Space
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Illustrate affine prediction functions in parameter space.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ Norm Constraints
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For visualization, restrict to 2-dimensional input space
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\cf=\left\{ f(x)=w_{1}x_{1}+w_{2}x_{2}\right\} $
+\end_inset
+
+ (linear hypothesis space)
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Represent 
+\begin_inset Formula $\cf$
+\end_inset
+
+ by 
+\begin_inset Formula $\left\{ \left(w_{1},w_{2}\right)\in\reals^{2}\right\} .$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout ColumnsTopAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+.3
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ contour: 
+\begin_inset Formula $w_{1}^{2}+w_{2}^{2}=r$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout ColumnsTopAligned
+\begin_inset Graphics
+	filename l2Contour.png
+	height 25theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout ColumnsTopAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+.3
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ contour: 
+\begin_inset Formula $\left|w_{1}\right|+\left|w_{2}\right|=r$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename l1Countour.png
+	height 25theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+Where are the 
+\begin_inset Quotes eld
+\end_inset
+
+sparse
+\begin_inset Quotes erd
+\end_inset
+
+ solutions?
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Famous Picture for 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ Regularization
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{KPM Fig.
+ 13.3}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\minimizer{f_{r}}=\argmin_{w\in\reals^{2}}\frac{1}{n}\sum_{i=1}^{n}\left(w^{T}x_{i}-y_{i}\right)^{2}\text{subject to}\left|w_{1}\right|+\left|w_{2}\right|\le r$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename l1LossConstraintPic.png
+	lyxscale 60
+	height 50theight%
+
+\end_inset
+
+
+\begin_inset VSpace -0.3cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Blue region: Area satisfying complexity constraint: 
+\begin_inset Formula $\left|w_{1}\right|+\left|w_{2}\right|\le r$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Red lines: contours of 
+\begin_inset Formula $\hat{R}_{n}(w)=\sum_{i=1}^{n}\left(w^{T}x_{i}-y_{i}\right)^{2}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Empirical Risk for Square Loss
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Denote the empirical risk of 
+\begin_inset Formula $f(x)=w^{T}x$
+\end_inset
+
+ by
+\begin_inset Formula 
+\[
+\hat{R}_{n}(w)=\frac{1}{n}\|Xw-y\|^{2},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $X$
+\end_inset
+
+ is the 
+\series bold
+design matrix
+\series default
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\hat{R}_{n}$
+\end_inset
+
+ is minimized by 
+\begin_inset Formula $\hat{w}=\left(X^{T}X\right)^{-1}X^{T}y$
+\end_inset
+
+, the OLS solution.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+What does 
+\begin_inset Formula $\hat{R}_{n}$
+\end_inset
+
+ look like around 
+\begin_inset Formula $\hat{w}$
+\end_inset
+
+?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Empirical Risk for Square Loss
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+By 
+\begin_inset Quotes eld
+\end_inset
+
+completing the square
+\begin_inset Quotes erd
+\end_inset
+
+, we can show for any 
+\begin_inset Formula $w\in\reals^{d}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\hat{R}_{n}(w)=\frac{1}{n}\left(w-\hat{w}\right)^{T}X^{T}X\left(w-\hat{w}\right)+\hat{R}_{n}(\hat{w})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Set of 
+\begin_inset Formula $w$
+\end_inset
+
+ with 
+\begin_inset Formula $\hat{R}_{n}(w)$
+\end_inset
+
+ exceeding 
+\begin_inset Formula $\hat{R}_{n}(\hat{w})$
+\end_inset
+
+ by 
+\begin_inset Formula $c>0$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+\left\{ w\mid\hat{R}_{n}(w)=c+\hat{R}_{n}(\hat{w})\right\} =\left\{ w\mid\left(w-\hat{w}\right)^{T}X^{T}X\left(w-\hat{w}\right)=nc\right\} ,
+\]
+
+\end_inset
+
+which is an 
+\series bold
+ellipsoid centered at 
+\begin_inset Formula $\hat{w}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We'll derive this in homework.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Famous Picture for 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ Regularization
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\minimizer{f_{r}}=\argmin_{w\in\reals^{2}}\sum_{i=1}^{n}\left(w^{T}x_{i}-y_{i}\right)^{2}\text{subject to }w_{1}^{2}+w_{2}^{2}\le r$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename l2LossConstraintPic.png
+	lyxscale 60
+	height 50theight%
+
+\end_inset
+
+
+\begin_inset VSpace -0.3cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Blue region: Area satisfying complexity constraint: 
+\begin_inset Formula $w_{1}^{2}+w_{2}^{2}\le r$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Red lines: contours of 
+\begin_inset Formula $\hat{R}_{n}(w)=\sum_{i=1}^{n}\left(w^{T}x_{i}-y_{i}\right)^{2}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{KPM Fig.
+ 13.3}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Why are Lasso Solutions Often Sparse?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Fig from 
+\backslash
+href{https://arxiv.org/abs/1411.3230}{Mairal et al.'s Sparse Modeling for Image
+ and Vision Processing} Fig 1.6}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename projections-to-L1Ball.png
+	lyxscale 40
+	height 50theight%
+
+\end_inset
+
+
+\begin_inset VSpace -0.3cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Suppose design matrix 
+\begin_inset Formula $X$
+\end_inset
+
+ is orthogonal, so 
+\begin_inset Formula $X^{T}X=I$
+\end_inset
+
+, and contours are circles.
+\end_layout
+
+\begin_layout Itemize
+Then OLS solution in green or red regions implies 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ constrained solution will be at corner
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The 
+\begin_inset Formula $\left(\ell_{q}\right)^{q}$
+\end_inset
+
+ Constraint
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Generalize to 
+\begin_inset Formula $\ell_{q}$
+\end_inset
+
+ : 
+\begin_inset Formula $\left(\|w\|_{q}\right)^{q}=\left|w_{1}\right|^{q}+\left|w_{2}\right|^{q}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Note: 
+\begin_inset Formula $\|w\|_{q}$
+\end_inset
+
+ is a norm if 
+\begin_inset Formula $q\ge1$
+\end_inset
+
+, but not for 
+\begin_inset Formula $q\in\left(0,1\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\cf=\left\{ f(x)=w_{1}x_{1}+w_{2}x_{2}\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Contours of 
+\begin_inset Formula $\|w\|_{q}^{q}=\left|w_{1}\right|^{q}+\left|w_{2}\right|^{q}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename LqNormContours.png
+	width 80col%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ell_{q}$
+\end_inset
+
+ Even Sparser
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Fig from 
+\backslash
+href{https://arxiv.org/abs/1411.3230}{Mairal et al.'s Sparse Modeling for Image
+ and Vision Processing} Fig 1.9}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename projections-to-LqBall.png
+	lyxscale 40
+	height 50theight%
+
+\end_inset
+
+
+\begin_inset VSpace -0.3cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Suppose design matrix 
+\begin_inset Formula $X$
+\end_inset
+
+ is orthogonal, so 
+\begin_inset Formula $X^{T}X=I$
+\end_inset
+
+, and contours are circles.
+\end_layout
+
+\begin_layout Itemize
+Then OLS solution in green or red regions implies 
+\begin_inset Formula $\ell_{q}$
+\end_inset
+
+ constrained solution will be at corner
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\ell_{q}$
+\end_inset
+
+-ball constraint is not convex, so more difficult to optimize.
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Quora Picture
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+From Quora: 
+\begin_inset Quotes eld
+\end_inset
+
+Why is L1 regularization supposed to lead to sparsity than L2? [sic]
+\begin_inset Quotes erd
+\end_inset
+
+ (google it)
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename L0L1.jpg
+	lyxscale 60
+	width 46col%
+	height 35theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Does this picture have any interpretation that makes sense? (Aren't those
+ lines supposed to be ellipses?)
+\end_layout
+
+\begin_layout Itemize
+Yes...
+ we can revisit.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+e.g.
+ What if 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+ are linearly related? What if the empirical risk minimizer has huge norm
+ (i.e.
+ is very far from the origin).
+ Then the ellipse around that point may look like a straight line in the
+ vicinity of the relevant level sets of 
+\begin_inset Formula $\|w\|_{1}$
+\end_inset
+
+.
+ In this situation, we see it is even more likely to hit a corner.
+ Translation for intuition: When regularization is significantly changing
+ the least squares solution, we're more likely to be sparse.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Figure from 
+\backslash
+url{https://www.quora.com/Why-is-L1-regularization-supposed-to-lead-to-sparsity-th
+an-L2}.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+From http://www.cs.cmu.edu/~./10701/exams/final_sol_f08.pdf http://www.cs.cmu.edu/~zivbj
+/
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Graphics
+	filename contour-plots.png
+	lyxscale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Finding the Lasso Solution: Lasso as Quadratic Program
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+How to find the Lasso solution?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+How to solve the Lasso?
+\begin_inset Formula 
+\[
+\min_{w\in\reals^{d}}\sum_{i=1}^{n}\left(w^{T}x_{i}-y_{i}\right)^{2}+\lambda\|w\|_{1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\|w\|_{1}=\left|w_{1}\right|+\left|w_{2}\right|$
+\end_inset
+
+ is not differentiable!
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Splitting a Number into Positive and Negative Parts
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Consider any number 
+\begin_inset Formula $a\in\reals$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Let the 
+\series bold
+positive part
+\series default
+ of 
+\begin_inset Formula $a$
+\end_inset
+
+ be
+\begin_inset Formula 
+\[
+a^{+}=a\ind{a\ge0}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Let the 
+\series bold
+negative part
+\series default
+ of 
+\begin_inset Formula $a$
+\end_inset
+
+ be
+\begin_inset Formula 
+\[
+a^{-}=-a\ind{a\le0}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Do you see why 
+\begin_inset Formula $a^{+}\ge0$
+\end_inset
+
+ and 
+\begin_inset Formula $a^{-}\ge0$
+\end_inset
+
+?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+How do you write 
+\begin_inset Formula $a$
+\end_inset
+
+ in terms of 
+\begin_inset Formula $a^{+}$
+\end_inset
+
+ and 
+\begin_inset Formula $a^{-}$
+\end_inset
+
+?
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+a=a^{+}-a^{-}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+How do you write 
+\begin_inset Formula $\left|a\right|$
+\end_inset
+
+ in terms of 
+\begin_inset Formula $a^{+}$
+\end_inset
+
+ and 
+\begin_inset Formula $a^{-}$
+\end_inset
+
+?
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ 
+\begin_inset Formula 
+\[
+\left|a\right|=a^{+}+a^{-}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Some people found it confusing that the formulation that follows doesn't
+ actually maintain the definition of positive and negative parts, as they
+ can range freely over positive numbers.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+How to find the Lasso solution?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The Lasso problem
+\begin_inset Formula 
+\[
+\min_{w\in\reals^{d}}\sum_{i=1}^{n}\left(w^{T}x_{i}-y_{i}\right)^{2}+\lambda\|w\|_{1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Replace each 
+\begin_inset Formula $w_{i}$
+\end_inset
+
+ by 
+\begin_inset Formula $w_{i}^{+}-w_{i}^{-}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Write 
+\begin_inset Formula $w^{+}=\left(w_{1}^{+},\ldots,w_{d}^{+}\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $w^{-}=\left(w_{1}^{-},\ldots,w_{d}^{-}\right).$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Lasso as a Quadratic Program
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+We
+\series bold
+ will show:
+\series default
+ substituting 
+\begin_inset Formula $w=w^{+}-w^{-}$
+\end_inset
+
+ and 
+\begin_inset Formula $\left|w\right|=w^{+}+w^{-}$
+\end_inset
+
+ gives an 
+\series bold
+equivalent
+\series default
+ problem:
+\begin_inset Formula 
+\begin{align*}
+\min_{w^{+},w^{-}}\quad & \sum_{i=1}^{n}\left(\left(w^{+}-w^{-}\right)^{T}x_{i}-y_{i}\right)^{2}+\lambda1^{T}\left(w^{+}+w^{-}\right)\\
+\mbox{subject to}\quad & w_{i}^{+}\ge0\mbox{ for all }i\text{\qquad}w_{i}^{-}\ge0\mbox{ for all }i,
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Objective is 
+\series bold
+differentiable
+\series default
+ (in fact, 
+\series bold
+convex and quadratic
+\series default
+)
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $2d$
+\end_inset
+
+ variables vs 
+\begin_inset Formula $d$
+\end_inset
+
+ variables and 
+\begin_inset Formula $2d$
+\end_inset
+
+ constraints vs no constraints
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+A 
+\series bold
+
+\begin_inset Quotes eld
+\end_inset
+
+quadratic program
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+: a convex quadratic objective with linear constraints.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Could plug this into a generic QP solver.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Possible point of confusion
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\series bold
+Equivalent
+\series default
+ to lasso problem:
+\begin_inset Formula 
+\begin{align*}
+\min_{w^{+},w^{-}}\quad & \sum_{i=1}^{n}\left(\left(w^{+}-w^{-}\right)^{T}x_{i}-y_{i}\right)^{2}+\lambda1^{T}\left(w^{+}+w^{-}\right)\\
+\mbox{subject to}\quad & w_{i}^{+}\ge0\mbox{ for all }i\text{\qquad}w_{i}^{-}\ge0\mbox{ for all }i,
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+When we plug this optimization problem into a QP solver,
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+it just sees 
+\begin_inset Formula $2d$
+\end_inset
+
+ variables and 
+\begin_inset Formula $2d$
+\end_inset
+
+ constraints.
+\end_layout
+
+\begin_layout Itemize
+Doesn't know we want 
+\begin_inset Formula $w_{i}^{+}$
+\end_inset
+
+ and 
+\begin_inset Formula $w_{i}^{-}$
+\end_inset
+
+ to be positive and negative parts of 
+\begin_inset Formula $w_{i}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Turns out – they will come out that way as a result of the optimization!
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+But to eliminate confusion, let's start by calling them 
+\begin_inset Formula $a_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $b_{i}$
+\end_inset
+
+ and prove our claim...
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Lasso as a Quadratic Program
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Lasso problem is trivially equivalent to the following: 
+\begin_inset Formula 
+\begin{align*}
+\min_{w}\;\min_{a,b}\quad & \sum_{i=1}^{n}\left(\left(a-b\right)^{T}x_{i}-y_{i}\right)^{2}+\lambda1^{T}\left(a+b\right)\\
+\mbox{subject to}\quad & a_{i}\ge0\mbox{ for all }i\text{\qquad}b_{i}\ge0\mbox{ for all }i,\\
+ & a-b=w\\
+ & a+b=|w|
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Claim: Don't need constraint 
+\begin_inset Formula $a+b=|w|$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $a'\gets a-\min(a,b)$
+\end_inset
+
+ and 
+\begin_inset Formula $b'\gets b-\min(a,b)$
+\end_inset
+
+ at least as good
+\end_layout
+
+\begin_layout Itemize
+So if 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+ are minimizers, at least one is 
+\begin_inset Formula $0$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Since 
+\begin_inset Formula $a-b=w$
+\end_inset
+
+, we must have 
+\begin_inset Formula $a=w^{+}$
+\end_inset
+
+ and 
+\begin_inset Formula $b=w^{-}$
+\end_inset
+
+.
+ So also 
+\begin_inset Formula $a+b=|w|$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Lasso as a Quadratic Program
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\min_{w}\;\min_{a,b}\quad & \sum_{i=1}^{n}\left(\left(a-b\right)^{T}x_{i}-y_{i}\right)^{2}+\lambda1^{T}\left(a+b\right)\\
+\mbox{subject to}\quad & a_{i}\ge0\mbox{ for all }i\text{\qquad}b_{i}\ge0\mbox{ for all }i,\\
+ & a-b=w
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Claim: Can remove 
+\begin_inset Formula $\min_{w}$
+\end_inset
+
+ and the constraint 
+\begin_inset Formula $a-b=w$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+One way to see this is by switching the order of minimization...
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+For any 
+\begin_inset Formula $a,b\ge0$
+\end_inset
+
+, there's some 
+\begin_inset Formula $w=a-b$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+So our constraint set has all 
+\begin_inset Formula $a,b\ge0$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Lasso as a Quadratic Program
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\min_{a,b}\;\min_{w}\quad & \sum_{i=1}^{n}\left(\left(a-b\right)^{T}x_{i}-y_{i}\right)^{2}+\lambda1^{T}\left(a+b\right)\\
+\mbox{subject to}\quad & a_{i}\ge0\mbox{ for all }i\text{\qquad}b_{i}\ge0\mbox{ for all }i,\\
+ & a-b=w
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+For any 
+\begin_inset Formula $a\ge0,b\ge0$
+\end_inset
+
+, there's always a single 
+\begin_inset Formula $w$
+\end_inset
+
+ that satisfies the constraints.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+So the inner minimum is always attained at 
+\begin_inset Formula $w=a-b$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Since 
+\begin_inset Formula $w$
+\end_inset
+
+ doesn't show up in the objective function, 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+nothing changes if we drop 
+\begin_inset Formula $\min_{w}$
+\end_inset
+
+ and the constraint.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Lasso as a Quadratic Program
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+So lasso optimization problem is equivalent to 
+\begin_inset Formula 
+\begin{align*}
+\min_{a,b}\quad & \sum_{i=1}^{n}\left(\left(a-b\right)^{T}x_{i}-y_{i}\right)^{2}+\lambda1^{T}\left(a+b\right)\\
+\mbox{subject to}\quad & a_{i}\ge0\mbox{ for all }i\text{\qquad}b_{i}\ge0\mbox{ for all }i,
+\end{align*}
+
+\end_inset
+
+where at the end we take 
+\begin_inset Formula $w^{*}=a^{*}-b^{*}$
+\end_inset
+
+ (and we've shown above that 
+\begin_inset Formula $a^{*}$
+\end_inset
+
+ and 
+\begin_inset Formula $b^{*}$
+\end_inset
+
+ are positive and negative parts of 
+\begin_inset Formula $w^{*}$
+\end_inset
+
+, respectively.) 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Has constraints – how do we optimize?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Projected SGD
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\min_{w^{+},w^{-}\in\reals^{d}} & \sum_{i=1}^{n}\left(\left(w^{+}-w^{-}\right)^{T}x_{i}-y_{i}\right)^{2}+\lambda1^{T}\left(w^{+}+w^{-}\right)\\
+\mbox{subject to } & w_{i}^{+}\ge0\mbox{ for all }i\\
+ & w_{i}^{-}\ge0\mbox{ for all }i
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Just like SGD, but after each step
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Project 
+\begin_inset Formula $w^{+}$
+\end_inset
+
+ and 
+\begin_inset Formula $w^{-}$
+\end_inset
+
+ into the constraint set.
+\end_layout
+
+\begin_layout Itemize
+In other words, if any component of 
+\begin_inset Formula $w^{+}$
+\end_inset
+
+ or 
+\begin_inset Formula $w^{-}$
+\end_inset
+
+ becomes negative, set it back to 0.
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Note: Sparsity pattern may change frequently as we iterate
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Finding the Lasso Solution: Coordinate Descent (Shooting Method)
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Coordinate Descent Method
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Goal: 
+\series default
+Minimize 
+\begin_inset Formula $L(w)=L(w_{1},\ldots,w_{d})$
+\end_inset
+
+ over 
+\begin_inset Formula $w=\left(w_{1},\ldots,w_{d}\right)\in\reals^{d}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+In gradient descent or SGD, 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+each step potentially changes all entries of 
+\begin_inset Formula $w$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+In each step of 
+\series bold
+coordinate descent
+\series default
+, 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+we adjust only a single 
+\begin_inset Formula $w_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+In each step, solve
+\begin_inset Formula 
+\[
+w_{i}^{\mbox{new}}=\argmin_{w_{i}}L(w_{1},\ldots,w_{i-1},\mathbf{w_{i}},w_{i+1},\ldots,w_{d})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Solving this argmin may itself be an iterative process.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Coordinate descent is great when 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+it's easy or easier to minimize w.r.t.
+ one coordinate at a time 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Coordinate Descent Method
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Coordinate Descent Method
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\series bold
+Goal: 
+\series default
+Minimize 
+\begin_inset Formula $L(w)=L(w_{1},\ldots w_{d})$
+\end_inset
+
+ over 
+\begin_inset Formula $w=\left(w_{1},\ldots,w_{d}\right)\in\reals^{d}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Initialize
+\series default
+ 
+\begin_inset Formula $w^{(0)}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+while
+\series default
+ not converged:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Choose a coordinate 
+\begin_inset Formula $j\in\left\{ 1,\ldots,d\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $w_{j}^{\mbox{new}}\gets\argmin_{w_{j}}L(w_{1}^{(t)},\ldots,w_{j-1}^{(t)},\mathbf{w_{j}},w_{j+1}^{(t)},\ldots,w_{d}^{(t)})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $w_{j}^{(t+1)}\gets w_{j}^{\mbox{new}}$
+\end_inset
+
+ and 
+\begin_inset Formula $w^{(t+1)}\gets w^{(t)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $t\gets t+1$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Random coordinate choice 
+\begin_inset Formula $\implies$
+\end_inset
+
+
+\series bold
+stochastic coordinate descent
+\end_layout
+
+\begin_layout Itemize
+Cyclic coordinate choice 
+\begin_inset Formula $\implies$
+\end_inset
+
+ 
+\series bold
+cyclic coordinate descent
+\end_layout
+
+\begin_layout Standard
+In general, 
+\series bold
+we will adjust each coordinate several times
+\series default
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Coordinate Descent Method for Lasso
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Why mention coordinate descent for Lasso?
+\end_layout
+
+\begin_layout Itemize
+In Lasso, the coordinate minimization has a 
+\series bold
+closed form solution
+\series default
+!
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Coordinate Descent Method for Lasso
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Closed Form Coordinate Minimization for Lasso
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{w}_{j}=\argmin_{w_{j}\in\reals}\sum_{i=1}^{n}\left(w^{T}x_{i}-y_{i}\right)^{2}+\lambda\left|w\right|_{1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+Then
+\begin_inset Formula 
+\[
+\hat{w}_{j}=\begin{cases}
+(c_{j}+\lambda)/a_{j} & \mbox{if }c_{j}<-\lambda\\
+0 & \mbox{if }c_{j}\in[-\lambda,\lambda]\\
+(c_{j}-\lambda)/a_{j} & \mbox{if }c_{j}>\lambda
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+a_{j} & =2\sum_{i=1}^{n}x_{i,j}^{2}\qquad & c_{j} & =2\sum_{i=1}^{n}x_{i,j}(y_{i}-w_{-j}^{T}x_{i,-j})
+\end{align*}
+
+\end_inset
+
+where 
+\begin_inset Formula $w_{-j}$
+\end_inset
+
+ is 
+\begin_inset Formula $w$
+\end_inset
+
+ without component 
+\begin_inset Formula $j$
+\end_inset
+
+ and similarly for 
+\begin_inset Formula $x_{i,-j}$
+\end_inset
+
+.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+If 
+\begin_inset Formula $x_{\cdot j}$
+\end_inset
+
+'s are standardized – i.e.
+ the features are centered and scaled, then This is like the covariance
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Coordinate Minimizer for Lasso
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{KPM Figure 13.5}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+\hat{w}_{j}(c_{j})=\begin{cases}
+(c_{j}+\lambda)/a_{j} & \mbox{if }c_{j}<-\lambda\\
+0 & \mbox{if }c_{j}\in[-\lambda,\lambda]\\
+(c_{j}-\lambda)/a_{j} & \mbox{if }c_{j}>\lambda
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename L1softThreshold.jpg
+	lyxscale 40
+	width 50theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Closed Form Solution
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose we're solving for 
+\begin_inset Formula $w_{j}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Consider the expression
+\begin_inset Formula 
+\[
+c_{j}=2\sum_{i=1}^{n}x_{i,j}(y_{i}-w_{-j}^{T}x_{i,-j}).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The piece 
+\begin_inset Formula $w_{-j}^{T}x_{i,-j}$
+\end_inset
+
+ is prediction of 
+\begin_inset Formula $y_{i}$
+\end_inset
+
+ using everything but 
+\begin_inset Formula $w_{j}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Then 
+\begin_inset Formula $y_{i}-w_{-j}^{T}x_{i,-j}$
+\end_inset
+
+ is the partial residual of that prediction.
+\end_layout
+
+\begin_layout Itemize
+Then 
+\begin_inset Formula $\sum_{i=1}^{n}x_{i,j}(y_{i}-w_{-j}^{T}x_{i,-j})$
+\end_inset
+
+ is kind of like a correlation between 
+\begin_inset Formula $x_{j}$
+\end_inset
+
+ and partial residuals
+\end_layout
+
+\begin_layout Itemize
+If this 
+\begin_inset Quotes eld
+\end_inset
+
+correlation-like
+\begin_inset Quotes erd
+\end_inset
+
+ thing is smaller than 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ in absolute value, then 
+\begin_inset Formula $w_{j}$
+\end_inset
+
+ becomes 
+\begin_inset Formula $0$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Coordinate Descent: When does it work?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose we're minimizing 
+\begin_inset Formula $f:\reals^{d}\to\reals$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Sufficient conditions:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $f$
+\end_inset
+
+ is continuously differentiable and
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $f$
+\end_inset
+
+ is strictly convex in each coordinate
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+But lasso objective
+\begin_inset Formula 
+\[
+\sum_{i=1}^{n}\left(w^{T}x_{i}-y_{i}\right)^{2}+\lambda\|w\|_{1}
+\]
+
+\end_inset
+
+is not differentiable...
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Luckily there are weaker conditions...
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Coordinate Descent: The Separability Condition
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Theorem
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Tseng 2001: 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Convergence of a Block Coordinate Descent Method for Nondifferentiable Minimization"
+target "https://link.springer.com/article/10.1023/A:1017501703105"
+literal "false"
+
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Tseng 1988: 
+\begin_inset Quotes eld
+\end_inset
+
+Coordinate ascent for maximizing nondifferentiable concave functions
+\begin_inset Quotes erd
+\end_inset
+
+, Technical Report LIDS-P
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+If the objective 
+\begin_inset Formula $f$
+\end_inset
+
+ has the following structure
+\begin_inset Formula 
+\[
+f(w_{1},\ldots,w_{d})=g(w_{1},\ldots,w_{d})+\sum_{j=1}^{d}h_{j}(w_{j}),
+\]
+
+\end_inset
+
+where
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $g:\reals^{d}\to\reals$
+\end_inset
+
+ is differentiable and convex, and 
+\end_layout
+
+\begin_layout Itemize
+each 
+\begin_inset Formula $h_{j}:\reals\to\reals$
+\end_inset
+
+ is convex (but not necessarily differentiable) 
+\end_layout
+
+\end_deeper
+\begin_layout Theorem
+then the coordinate descent algorithm converges to the global minimum.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+From Brett: I followed up with Tibshirani's slides.
+ I think you referenced the wrong paper.
+ This is the correct one: http://link.springer.com/article/10.1023/A:1017501703105
+ [fixed 1/30/2018 - DR]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Coordinate Descent Method – Variation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose there's no closed form? (e.g.
+ logistic regression)
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Do we really need to fully solve each inner minimization problem?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+A single projected gradient step is enough for 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ regularization!
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Shalev-Shwartz & Tewari's 
+\begin_inset Quotes eld
+\end_inset
+
+Stochastic Methods...
+\begin_inset Quotes erd
+\end_inset
+
+ (2011) 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Stochastic Coordinate Descent for Lasso – Variation 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $\tilde{w}=(w^{+},w^{-})\in\reals^{2d}$
+\end_inset
+
+ and
+\begin_inset Formula 
+\[
+L(\tilde{w})=\sum_{i=1}^{n}\left(\left(w^{+}-w^{-}\right)^{T}x_{i}-y_{i}\right)^{2}+\lambda\left(w^{+}+w^{-}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Stochastic Coordinate Descent for Lasso - Variation 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\series bold
+Goal: 
+\series default
+Minimize 
+\begin_inset Formula $L(\tilde{w})$
+\end_inset
+
+ s.t.
+ 
+\begin_inset Formula $w_{i}^{+},w_{i}^{-}\ge0\mbox{ for all }i.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Initialize
+\series default
+ 
+\begin_inset Formula $\tilde{w}^{(0)}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+while
+\series default
+ not converged:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Randomly choose a coordinate 
+\begin_inset Formula $j\in\left\{ 1,\ldots,2d\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\tilde{w}_{j}\gets\tilde{w}_{j}+\max\left\{ -\tilde{w}_{j},-\del_{j}L(\tilde{w})\right\} $
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Updated Course Overview
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+4 Types of Building Blocks for ML Algorithms
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Building blocks of ML Algorithms – 4 categories:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Loss function
+\end_layout
+
+\begin_layout Itemize
+Hypothesis space
+\end_layout
+
+\begin_layout Itemize
+Regularization
+\end_layout
+
+\begin_layout Itemize
+Optimization method
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+To a large extent, 
+\end_layout
+
+\end_deeper
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Goal is to Learn the Building Blocks
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Large majority of our machine learning algorithms take the following form
+\end_layout
+
+\begin_layout Itemize
+FIND 
+\begin_inset Formula $f$
+\end_inset
+
+ in HYPOTHESIS SPACE 
+\begin_inset Formula $\ch$
+\end_inset
+
+, subject to constraint 
+\begin_inset Formula $\psi(f)\le\lambda$
+\end_inset
+
+, for REGULARIZATION PARAMETER 
+\begin_inset Formula $\lambda$
+\end_inset
+
+, that minimizes the average training LOSS
+\end_layout
+
+\begin_layout Itemize
+To solve the resulting minimization problem, need an OPTIMIZATION METHOD
+\end_layout
+
+\begin_layout Itemize
+objective
+\end_layout
+
+\begin_layout Itemize
+We'll consider each of these pieces:
+\end_layout
+
+\begin_layout Itemize
+Week 2: regularization (l1, l2, elastic net)
+\end_layout
+
+\begin_layout Itemize
+Week 3: loss functions for classification and regression (l1, l2, huber,
+ hinge, logistic, etc)
+\end_layout
+
+\begin_layout Itemize
+Week 4: hypothesis space: kernel methods (kind of nonlinear)
+\end_layout
+
+\begin_layout Itemize
+Week 5: hypothesis space: neural networks (nonlinear)
+\end_layout
+
+\begin_layout Itemize
+Week 6: hypothesis space: trees and ensembles (nonlinear)
+\end_layout
+
+\begin_layout Itemize
+Week 7: loss functions / hypothesis space: multiclass & intro to structured
+ prediction
+\end_layout
+
+\begin_layout Itemize
+Week 8-14: Probabilistic modeling (negative log-likelihood loss function)
+\end_layout
+
+\end_deeper
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Example deconstructions into building blocks
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="8" columns="6">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Name
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Loss
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Regularization
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Hypothesis space
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Optimization Notes
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Linear regression
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Square loss
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+None
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Linear 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ridge regression
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Square
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Linear
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Lasso regression
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Square
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Linear
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Logistic regression
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Logistic
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+None
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Linear
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SVM classification
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Hinge
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Linear
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Adaboost
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Exponential
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Span(Base hypothesis space) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Forward stagewise
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Neural network (MLP)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Any differentiable
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Any
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Neural network
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

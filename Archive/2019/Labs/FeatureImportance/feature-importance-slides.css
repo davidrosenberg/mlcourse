@@ -1,0 +1,11 @@
+table.dataframe {
+  font-size:150%;
+}
+
+table.eli5-feature-importances {
+  font-size:150%;
+}
+
+.container.slides .celltoolbar, .container.slides .hide-in-slideshow {
+    display: None ! important;
+}

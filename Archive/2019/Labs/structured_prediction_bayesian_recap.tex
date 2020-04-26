@@ -1,0 +1,720 @@
+%% LyX 2.3.2 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[english,aspectratio=169, handout]{beamer}
+\usepackage{mathptmx}
+\usepackage{eulervm}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{dsfont}
+\ifx\hypersetup\undefined
+  \AtBeginDocument{%
+    \hypersetup{unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=false,pdfborder={0 0 0},pdfborderstyle={},backref=false,colorlinks=true,
+ allcolors=NYUPurple,urlcolor=LightPurple}
+  }
+\else
+  \hypersetup{unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=false,pdfborder={0 0 0},pdfborderstyle={},backref=false,colorlinks=true,
+ allcolors=NYUPurple,urlcolor=LightPurple}
+\fi
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+% this default might be overridden by plain title style
+\newcommand\makebeamertitle{\frame{\maketitle}}%
+% (ERT) argument for the TOC
+\AtBeginDocument{%
+  \let\origtableofcontents=\tableofcontents
+  \def\tableofcontents{\@ifnextchar[{\origtableofcontents}{\gobbletableofcontents}}
+  \def\gobbletableofcontents#1{\origtableofcontents}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\usetheme{CambridgeUS} 
+\beamertemplatenavigationsymbolsempty
+
+
+% Set Color ==============================
+\definecolor{NYUPurple}{RGB}{87,6,140}
+\definecolor{LightPurple}{RGB}{165,11,255}
+
+
+\setbeamercolor{title}{fg=NYUPurple}
+%\setbeamercolor{frametitle}{fg=NYUPurple}
+\setbeamercolor{frametitle}{fg=NYUPurple}
+
+\setbeamercolor{background canvas}{fg=NYUPurple, bg=white}
+\setbeamercolor{background}{fg=black, bg=NYUPurple}
+
+\setbeamercolor{palette primary}{fg=black, bg=gray!30!white}
+\setbeamercolor{palette secondary}{fg=black, bg=gray!20!white}
+\setbeamercolor{palette tertiary}{fg=gray!20!white, bg=NYUPurple}
+
+\setbeamertemplate{headline}{}
+
+\setbeamercolor{parttitle}{fg=NYUPurple}
+\setbeamercolor{sectiontitle}{fg=NYUPurple}
+\setbeamercolor{sectionname}{fg=NYUPurple}
+\setbeamercolor{section page}{fg=NYUPurple}
+
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+\setbeamercolor{section title}{fg=NYUPurple}
+ \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\usebeamercolor[fg]{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+
+\makeatother
+
+\begin{document}
+\global\long\def\reals{\mathbf{R}}%
+ 
+\global\long\def\integers{\mathbf{Z}}%
+ 
+\global\long\def\naturals{\mathbf{N}}%
+ 
+\global\long\def\rationals{\mathbf{Q}}%
+ 
+\global\long\def\ca{\mathcal{A}}%
+ 
+\global\long\def\cb{\mathcal{B}}%
+ 
+\global\long\def\cc{\mathcal{C}}%
+ 
+\global\long\def\cd{\mathcal{D}}%
+ 
+\global\long\def\ce{\mathcal{E}}%
+ 
+\global\long\def\cf{\mathcal{F}}%
+ 
+\global\long\def\cg{\mathcal{G}}%
+ 
+\global\long\def\ch{\mathcal{H}}%
+ 
+\global\long\def\ci{\mathcal{I}}%
+ 
+\global\long\def\cj{\mathcal{J}}%
+ 
+\global\long\def\ck{\mathcal{K}}%
+ 
+\global\long\def\cl{\mathcal{L}}%
+ 
+\global\long\def\cm{\mathcal{M}}%
+ 
+\global\long\def\cn{\mathcal{N}}%
+ 
+\global\long\def\co{\mathcal{O}}%
+ 
+\global\long\def\cp{\mathcal{P}}%
+ 
+\global\long\def\cq{\mathcal{Q}}%
+ 
+\global\long\def\calr{\mathcal{R}}%
+ 
+\global\long\def\cs{\mathcal{S}}%
+ 
+\global\long\def\ct{\mathcal{T}}%
+ 
+\global\long\def\cu{\mathcal{U}}%
+ 
+\global\long\def\cv{\mathcal{V}}%
+ 
+\global\long\def\cw{\mathcal{W}}%
+ 
+\global\long\def\cx{\mathcal{X}}%
+ 
+\global\long\def\cy{\mathcal{Y}}%
+ 
+\global\long\def\cz{\mathcal{Z}}%
+ 
+\global\long\def\ind#1{1(#1)}%
+ %\newcommand{\pr}{P}
+\global\long\def\pr{\mathbb{P}}%
+ 
+\global\long\def\predsp{\cy}%
+ %{\hat{\cy}}
+\global\long\def\outsp{\cy}%
+
+\global\long\def\prxy{P_{\cx\times\cy}}%
+ 
+\global\long\def\prx{P_{\cx}}%
+ 
+\global\long\def\prygivenx{P_{\cy\mid\cx}}%
+ %\newcommand{\ex}{E}
+\global\long\def\ex{\mathbb{E}}%
+ 
+\global\long\def\var{\textrm{Var}}%
+ 
+\global\long\def\cov{\textrm{Cov}}%
+ 
+\global\long\def\sgn{\textrm{sgn}}%
+ 
+\global\long\def\sign{\textrm{sign}}%
+ 
+\global\long\def\kl{\textrm{KL}}%
+ 
+\global\long\def\law{\mathcal{L}}%
+ 
+\global\long\def\eps{\varepsilon}%
+ 
+\global\long\def\as{\textrm{ a.s.}}%
+ 
+\global\long\def\io{\textrm{ i.o.}}%
+ 
+\global\long\def\ev{\textrm{ ev.}}%
+ 
+\global\long\def\convd{\stackrel{d}{\to}}%
+ 
+\global\long\def\eqd{\stackrel{d}{=}}%
+ 
+\global\long\def\del{\nabla}%
+ 
+\global\long\def\loss{\ell}%
+ 
+\global\long\def\risk{R}%
+ 
+\global\long\def\emprisk{\hat{R}}%
+ 
+\global\long\def\lossfnl{L}%
+ 
+\global\long\def\emplossfnl{\hat{L}}%
+ 
+\global\long\def\empminimizer#1{\hat{#1}^{*}}%
+ 
+\global\long\def\minimizer#1{#1^{*}}%
+\global\long\def\optimizer#1{#1^{*}}%
+ 
+\global\long\def\etal{\textrm{et. al.}}%
+ 
+\global\long\def\tr{\operatorname{tr}}%
+
+\global\long\def\trace{\operatorname{trace}}%
+ 
+\global\long\def\diag{\text{diag}}%
+ 
+\global\long\def\rank{\text{rank}}%
+ 
+\global\long\def\linspan{\text{span}}%
+ 
+\global\long\def\spn{\text{span}}%
+ 
+\global\long\def\proj{\text{Proj}}%
+ 
+\global\long\def\argmax{\operatornamewithlimits{arg\, max}}%
+ 
+\global\long\def\argmin{\operatornamewithlimits{arg\, min}}%
+
+\global\long\def\bfx{\mathbf{x}}%
+ 
+\global\long\def\bfy{\mathbf{y}}%
+ 
+\global\long\def\bfl{\mathbf{\lambda}}%
+ 
+\global\long\def\bfm{\mathbf{\mu}}%
+ 
+\global\long\def\calL{\mathcal{L}}%
+
+\global\long\def\vw{\boldsymbol{w}}%
+ 
+\global\long\def\vx{\boldsymbol{x}}%
+ 
+\global\long\def\vxi{\boldsymbol{\xi}}%
+ 
+\global\long\def\valpha{\boldsymbol{\alpha}}%
+ 
+\global\long\def\vbeta{\boldsymbol{\beta}}%
+ 
+\global\long\def\vsigma{\boldsymbol{\sigma}}%
+\global\long\def\vtheta{\boldsymbol{\theta}}%
+ 
+\global\long\def\vd{\boldsymbol{d}}%
+ 
+\global\long\def\vs{\boldsymbol{s}}%
+ 
+\global\long\def\vt{\boldsymbol{t}}%
+ 
+\global\long\def\vh{\boldsymbol{h}}%
+ 
+\global\long\def\ve{\boldsymbol{e}}%
+ 
+\global\long\def\vf{\boldsymbol{f}}%
+ 
+\global\long\def\vg{\boldsymbol{g}}%
+ 
+\global\long\def\vz{\boldsymbol{z}}%
+ 
+\global\long\def\vk{\boldsymbol{k}}%
+ 
+\global\long\def\va{\boldsymbol{a}}%
+ 
+\global\long\def\vb{\boldsymbol{b}}%
+ 
+\global\long\def\vv{\boldsymbol{v}}%
+ 
+\global\long\def\vy{\boldsymbol{y}}%
+
+\global\long\def\dom{\textrm{\textbf{dom} }}%
+\global\long\def\rank{\text{\textbf{rank }}}%
+\global\long\def\conv{\textrm{\textbf{conv} }}%
+\global\long\def\relint{\text{\textbf{relint }}}%
+\global\long\def\aff{\text{\textbf{aff }}}%
+
+\global\long\def\hil{\ch}%
+ 
+\global\long\def\rkhs{\hil}%
+ 
+\global\long\def\ber{\text{Ber}}%
+
+\title[DS-GA 1003 / CSCI-GA 2567]{Introduction to Structured Prediction and Recap of Bayesian}
+\author{Xintian Han}
+\date{April 3, 2019}
+\institute{CDS, NYU}
+
+\makebeamertitle
+\mode<article>{Just in article version}
+
+\begin{frame}{Contents}
+
+\tableofcontents{}
+\end{frame}
+
+
+\section{Introduction to Structured Prediction}
+\begin{frame}{Multiclass Hypothesis Space: Reframed}
+
+\begin{itemize}
+\item \textbf{General {[}Discrete{]} Output Space: }$\cy$ 
+
+\pause{}
+\item \textbf{Base Hypothesis Space: $\ch=\left\{ h:\cx\times\cy\to\reals\right\} $}
+\begin{itemize}
+\item $h(x,y)$ gives \textbf{compatibility score} between input $x$ and
+output $y$ 
+\end{itemize}
+
+\pause{}
+\item \textbf{Multiclass Hypothesis Space}
+\[
+\cf=\left\{ x\mapsto\argmax_{y\in\cy}h(x,y)\mid h\in\ch\right\} 
+\]
+
+
+\pause{}
+\item Final prediction function is an $f\in\cf$. 
+\item For each $f\in\cf$ there is an underlying compatibility score function
+$h\in\ch$. 
+\end{itemize}
+\end{frame}
+%
+
+\begin{frame}{Part-of-speech (POS) Tagging}
+
+\begin{itemize}
+\item Given a sentence, give a part of speech tag for each word:
+\end{itemize}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+$x$ & $\underbrace{\mbox{[START]}}_{x_{0}}$ & $\underbrace{\mbox{He}}_{x_{1}}$ & $\underbrace{\mbox{eats}}_{x_{2}}$ & $\underbrace{\mbox{apples}}_{x_{3}}$\tabularnewline
+\hline 
+$y$ & $\underbrace{\mbox{[START]}}_{y_{0}}$ & $\underbrace{\mbox{Pronoun}}_{y_{1}}$ & $\underbrace{\mbox{Verb}}_{y_{2}}$ & $\underbrace{\mbox{Noun}}_{y_{3}}$\tabularnewline
+\hline 
+\end{tabular}
+\par\end{center}
+
+\pause{}
+\begin{itemize}
+\item $\cv=\left\{ \mbox{all English words}\right\} \cup\left\{ \mbox{[START]},"."\right\} $
+
+\pause{}
+\item $\cp=\left\{ \mbox{START},\mbox{Pronoun,Verb,Noun,Adjective}\right\} $
+
+\pause{}
+\item $\cx=\cv^{n}$, $n=1,2,3,\ldots$ {[}Word sequences of any length{]}
+
+\pause{}
+\item $\cy=\cp^{n},\,n=1,2,3,\ldots${[}Part of speech sequence of any length{]}
+\end{itemize}
+\end{frame}
+%
+
+%
+\begin{frame}{Structured Prediction}
+
+\begin{itemize}
+\item A \textbf{structured prediction }problem is a multiclass problem in
+which $\cy$ is very large, but has (or we assume it has) a certain
+structure.
+\end{itemize}
+
+\pause{}
+\begin{itemize}
+\item For POS tagging, $\cy$ grows exponentially in the length of the sentence.
+\end{itemize}
+
+\pause{}
+\begin{itemize}
+\item Typical \textbf{structure} assumption: The POS labels form a Markov
+chain.
+\begin{itemize}
+\item i.e. $y_{n+1}\mid y_{n},y_{n-1},\ldots,y_{0}$ is the same as $y_{n+1}\mid y_{n}$.
+\end{itemize}
+\end{itemize}
+\end{frame}
+%
+\begin{frame}{Local Feature Functions: Type 1}
+
+\begin{itemize}
+\item A ``type 1'' \textbf{local feature }only depends on 
+\begin{itemize}
+\item the label at a single position, say $y_{i}$ (label of the $i$th
+word) and
+\item $x$ at any position
+\end{itemize}
+\end{itemize}
+
+\pause{}
+\begin{itemize}
+\item Example: 
+\begin{eqnarray*}
+\phi_{1}(i,x,y_{i}) & = & \ind{x_{i}=\mbox{runs}}\ind{y_{i}=\mbox{Verb}}\\
+\pause\phi_{2}(i,x,y_{i}) & = & \ind{x_{i}=\mbox{runs}}\ind{y_{i}=\mbox{Noun}}\\
+\pause\phi_{3}(i,x,y_{i}) & = & \ind{x_{i-1}=\mbox{He}}\ind{x_{i}=\mbox{runs}}\ind{y_{i}=\mbox{Verb}}
+\end{eqnarray*}
+ 
+\end{itemize}
+\end{frame}
+%
+\begin{frame}{Local Feature Functions: Type 2}
+
+\begin{itemize}
+\item A ``type 2'' \textbf{local feature }only depends on 
+\begin{itemize}
+\item the labels at 2 consecutive positions: $y_{i-1}$ and $y_{i}$
+\item $x$ at any position
+\end{itemize}
+\end{itemize}
+
+\pause{}
+\begin{itemize}
+\item Example: 
+\begin{eqnarray*}
+\theta_{1}(i,x,y_{i-1},y_{i}) & = & \ind{y_{i-1}=\mbox{Pronoun}}\ind{y_{i}=\mbox{Verb}}\\
+\theta_{2}(i,x,y_{i-1},y_{i}) & = & \ind{y_{i-1}=\mbox{Pronoun}}\ind{y_{i}=\mbox{Noun}}
+\end{eqnarray*}
+ 
+\end{itemize}
+\end{frame}
+%
+\begin{frame}{Local Feature Vector and Compatibility Score}
+
+\begin{itemize}
+\item At each position $i$ in sequence, define the \textbf{local feature
+vector}:
+\begin{eqnarray*}
+\Psi_{i}(x,y_{i-1},y_{i}) & = & (\phi_{1}(i,x,y_{i}),\phi_{2}(i,x,y_{i}),\ldots,\\
+ &  & \theta_{1}(i,x,y_{i-1},y_{i}),\theta_{2}(i,x,y_{i-1},y_{i}),\ldots)
+\end{eqnarray*}
+\end{itemize}
+
+\pause{}
+\begin{itemize}
+\item \textbf{Local compatibility score} for $(x,y)$ at position $i$ is
+$\left\langle w,\Psi_{i}(x,y_{i-1},y_{i})\right\rangle $. 
+\end{itemize}
+\end{frame}
+%
+\begin{frame}{Sequence Compatibility Score}
+
+\begin{itemize}
+\item The \textbf{compatibility score} for the pair of sequences $\left(x,y\right)$
+is the sum of the local compatibility scores: 
+\begin{eqnarray*}
+ &  & \sum_{i}\left\langle w,\Psi_{i}(x,y_{i-1},y_{i})\right\rangle \\
+\pause & = & \left\langle w,\sum_{i}\Psi_{i}(x,y_{i-1},y_{i})\right\rangle \\
+\pause & = & \left\langle w,\Psi(x,y)\right\rangle ,
+\end{eqnarray*}
+where we define the sequence feature vector by 
+\[
+\Psi(x,y)=\sum_{i}\Psi_{i}(x,y_{i-1},y_{i}).
+\]
+\end{itemize}
+
+\pause{}
+\begin{itemize}
+\item So we see this is a special case of linear multiclass prediction.
+\end{itemize}
+\end{frame}
+%
+\begin{frame}{Sequence Target Loss}
+
+\begin{itemize}
+\item How do we assess the loss for prediction sequence $y'$ for example
+$\left(x,y\right)?$ 
+\end{itemize}
+
+\pause{}
+\begin{itemize}
+\item \textbf{Hamming loss} is common:
+\[
+\Delta(y,y')=\frac{1}{\left|y\right|}\sum_{i=1}^{\left|y\right|}\ind{y_{i}\neq y_{i}'}
+\]
+\end{itemize}
+
+\pause{}
+\begin{itemize}
+\item Could generalize this as
+\[
+\Delta(y,y')=\frac{1}{\left|y\right|}\sum_{i=1}^{\left|y\right|}\delta(y_{i},y_{i}')
+\]
+ 
+\end{itemize}
+\end{frame}
+%
+\begin{frame}{What remains to be done?}
+
+\begin{itemize}
+\item To compute predictions, we need to find 
+\[
+\argmax_{y\in\cy}\left\langle w,\Psi(x,y)\right\rangle .
+\]
+\item This is straightforward for $|\cy|$ small. 
+\end{itemize}
+
+\pause{}
+\begin{itemize}
+\item Now $\left|\cy\right|$ is exponentially large.
+\end{itemize}
+
+\pause{}
+\begin{itemize}
+\item Because $\Psi$ breaks down into local functions only depending on
+$2$ adjacent labels,
+\begin{itemize}
+\item we can solve this efficiently using dynamic programming. 
+\item (Similar to Viterbi decoding.)
+\end{itemize}
+
+\pause{}
+\item Learning can be done with SGD and a similar dynamic program.
+\end{itemize}
+\end{frame}
+\section{Recap: Bayesian Methods}
+\begin{frame}{Bayesian Decision Theory}
+\begin{itemize}
+\item Ingredients: 
+\begin{itemize}
+\item \textbf{Parameter space} $\Theta$.
+\item \textbf{Prior}: Distribution $p(\theta)$ on $\Theta$.
+\item \textbf{Action space} $\ca$.
+\item \textbf{Loss function}: $\ell:\ca\times\Theta\to\reals$.
+
+\pause{}
+\end{itemize}
+\item The \textbf{posterior risk} of an action $a\in\ca$ is 
+\begin{eqnarray*}
+r(a) & := & \ex\left[\ell(\theta,a)\mid\cd\right]\\
+\pause & = & \int\ell(\theta,a)p(\theta\mid\cd)\,d\theta.
+\end{eqnarray*}
+
+
+\pause{}
+\begin{itemize}
+\item It's the \textbf{expected loss under the posterior.}
+
+\pause{}
+\end{itemize}
+\item A \textbf{Bayes action} $a^{*}$ is an action that minimizes posterior
+risk:
+\[
+r(a^{*})=\min_{a\in\ca}r(a)
+\]
+\end{itemize}
+\end{frame}
+%
+\begin{frame}{The Posterior Predictive Distribution }
+\begin{itemize}
+\item Suppose we've already seen data $\cd$.
+
+\pause{}
+\item The \textbf{posterior predictive distribution }is given by
+\[
+x\mapsto p(y\mid x,\cd)\pause=\int p(y\mid x;\theta)p(\theta\mid\cd)\,d\theta.
+\]
+
+
+\pause{}
+\item This is an average of all conditional densities in our family, weighted
+by the posterior. 
+\pause{}
+\item May not have closed form.
+\pause{}
+\item Numerical integral may be hard to compute.
+\end{itemize}
+\end{frame}
+%
+\begin{frame}{MAP Estimator Versus Posterior Predictive Distribution}
+\begin{itemize}
+\item How do we predict by posterior predictive distribution given a new data point $x^*$?
+\pause{}
+\item We can use $\hat{y}=\argmax_y	p(y\mid x,\cd)$
+\pause{}
+\item What about our MAP estimator for $\theta$?
+\[
+\hat{\theta} = \argmax_{\theta}p(\theta\mid\cd)
+\]
+\pause{}
+\item We can also predict $y$ by
+\[
+\hat{y} = \argmax_y p(y\mid x;\theta = \hat{\theta})
+\]
+\item In general, the predictions from two methods are different. 
+\end{itemize}	
+\end{frame}
+\section{Questions}
+\begin{frame}{Question 1}
+\textbf{Question 1.} (From DeGroot and Schervish) Let $\theta$ denote the proportion of registered voters in a large city who are in favor of a certain proposition.  Suppose that the value of $\theta$ is unknown, and two statisticians $A$ and~$B$
+  assign to~$\theta$ the following different prior PDFs $\xi_A(\theta)$ and~$\xi_B(\theta)$, respectively:
+  $$\begin{array}{rcll}
+    \xi_A(\theta)&=&2\theta & \mbox{for $0<\theta<1$,}\\
+    \xi_B(\theta)&=&4\theta^3 & \mbox{for $0<\theta<1$.}
+  \end{array}$$
+  In a random sample of 1000 registered voters from the city, it is found that 710 are in favor of the proposition.
+  \begin{enumerate}
+  \item Find the posterior distribution that each statistician assigns to~$\theta$.
+  \item Find the Bayes estimate of $\theta$
+    (minimizer of posterior expected loss)
+    for each statistician based on the squared error loss function.
+  \item Show that after the opinions of the 1000 registered voters in the random sample had been obtained, the Bayes estimates for the two statisticians could not
+    possibly differ by more than $0.002$, regardless of the number in the sample who were in favor of the proposition.
+  \end{enumerate}	
+\end{frame}
+\begin{frame}{Question 1: Solution}
+Note that both prior distributions are from the Beta family.
+  \begin{enumerate}
+  \item We have
+    $$\xi_A(\theta|x) \propto f(x|\theta)\xi_A(\theta) \propto \theta^{711}(1-\theta)^{290}$$
+    and
+    $$\xi_B(\theta|x)\propto f(x|\theta)\xi_B(\theta) \propto \theta^{713}(1-\theta)^{290}.$$
+    Thus the posteriors from $A$ and~$B$ are both beta with parameters $(712,291)$ and $(714,291)$, respectively.
+    \pause{}
+  \item The respective means are $\frac{712}{1003}$ and $\frac{714}{1005}$.
+    \pause{}
+  \item In general the two means are given by
+    $$\frac{a+2}{1003}\quad\mbox{and}\quad\frac{a+4}{1005}.$$
+    The difference is less than $2/1000=.002$.
+  \end{enumerate}	
+\end{frame}
+
+\begin{frame}{Question 2 and 3}
+\begin{itemize}
+\item \textbf{Question 2.} Two statistics students decide to compute 95\% confidence
+  intervals for the distribution parameter $\theta$ using an
+  i.i.d.~sample $X_1,\ldots,X_n$.  Student B uses
+  Bayesian methods to find a 95\% credible set $[L_B,R_B]$ for
+  $\theta$.  Student F uses frequentist methods to find a 95\%
+  confidence interval $[L_F,R_F]$ for $\theta$.  Both conclude that
+  parameter $\theta$ is in their respective intervals with probability at least
+  $.95$.  Who is correct? Explain.
+\item \textbf{Question 3.}	Suppose $\theta$ has prior distribution $\text{Beta}(a,b)$ for some $a,b>0$.  Given
+  $\theta$, suppose we make independent coin flips with heads
+  probability $\theta$.  Find values of $a,b$ and the coin flips so that the
+  posterior variance is larger than the prior variance.  [Hint: Recall
+    that a $\text{Beta}(a,b)$ random variable has variance given by
+    $$\frac{ab}{(a+b)^2(a+b+1)}.$$
+    Try $b=1$.]
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Question 2: Solution}
+\begin{itemize}
+\item \textbf{Question 2.} Two statistics students decide to compute 95\% confidence
+  intervals for the distribution parameter $\theta$ using an
+  i.i.d.~sample $X_1,\ldots,X_n$.  Student B uses
+  Bayesian methods to find a 95\% credible set $[L_B,R_B]$ for
+  $\theta$.  Student F uses frequentist methods to find a 95\%
+  confidence interval $[L_F,R_F]$ for $\theta$.  Both conclude that
+  parameter $\theta$ is in their respective intervals with probability at least
+  $.95$.  Who is correct? Explain.
+\item[] \textbf{Solution:} 
+\begin{itemize}
+\item The frequentist student is totally incorrect, since they
+  have misunderstood what a frequentist confidence interval is.  Using
+  frequentist methodology, $\theta$ is not a random variable, so it
+  doesn't make sense to say it lies in some fixed interval
+  $[L_F,R_F]$.  The correct interpretation is that if independent experiments like
+  this were repeated, then at least 95\% of the time $[L_F,R_F]$ will
+  contain $\theta$.  \textbf{That is, the interval is random not $\theta$.}
+\item   We can say that the Bayesian student is consistent.
+  Recall that to compute the credible set, the Bayesian student had to
+  introduce some prior distribution $\pi$ on~$\theta$.  What we can say is
+  if someone believes $\pi$ is correct, then it is rational, given the
+  data, to conclude that $\theta$ will lie in the posterior credible set
+  with probability 95\%.
+\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Question 3: Solution}
+\begin{itemize}
+\item \textbf{Question 3.}	Suppose $\theta$ has prior distribution $\text{Beta}(a,b)$ for some $a,b>0$.  Given
+  $\theta$, suppose we make independent coin flips with heads
+  probability $\theta$.  Find values of $a,b$ and the coin flips so that the
+  posterior variance is larger than the prior variance.  [Hint: Recall
+    that a $\text{Beta}(a,b)$ random variable has variance given by
+    $$\frac{ab}{(a+b)^2(a+b+1)}.$$
+    Try $b=1$.]
+\item[] \textbf{Solution:} As hinted, let's try $a=10$, $b=1$ and 9 coin flips all
+  landing tails.  The prior variance is given by
+  $$\frac{10\cdot 1}{(10+1)^2(10+1+1)} = \frac{5}{726}\approx .0069$$
+  while the posterior variance is given by
+  $$\frac{10\cdot 10}{(10+10)^2(10+10+1)} = \frac{1}{84}\approx.0119.$$
+	
+\end{itemize}
+	
+\end{frame}
+
+\begin{frame}{Question 4}
+\textbf{Question 4.} What would be the Maximum a Posteriori (MAP) estimator for $\lambda$ for i.i.d. $\{x_1, x_2, \dots, x_N\}$ where $x_i \sim \exp(\lambda)$ with prior $\lambda \sim \text{Uniform}[u_0,u_1]$?	
+\end{frame}
+
+\begin{frame}{Question 4: Solution}	
+\begin{itemize}
+\item Likelihood: $L(x_1,\dots,x_N|\lambda) = \lambda^N e^{-\lambda(x_1+\cdots+x_N)}$
+\item log-likelihood: $\ell(\lambda|x_1,\dots,x_N) = N \ln\lambda-\lambda(x_1+\cdots+x_N)$
+\item $\ell'(\lambda) = \frac{N}{\lambda}-(x_1+\dots+x_N)\begin{cases}
+ 	>0 \quad \text{if}~0<\lambda<1/\bar{x}=N/(x_1+\cdots+x_N),\\
+ 	=0 \quad \text{if}~\lambda=1/\bar{x}\\
+ 	<0 \quad \text{if}~\lambda>1/\bar{x}
+ \end{cases}
+$
+\item Prior: $p(\lambda) = \frac{1}{u_1-u_0} \mathds{1}_{[u_0,u_1]}(\lambda)$.
+\item Posterior: $p(\lambda|x_1,\dots,x_N)\propto L(x_1,\dots,x_N|\lambda)p(\lambda) = \lambda e^{-\lambda(x_1+\cdots+x_N)} \mathds{1}_{[u_0,u_1]}(\lambda)$
+\item Maximum value of posterior is attained at 
+\[
+\lambda = \begin{cases}
+ 	u_0 \quad \text{if}~u_0>1/\bar{x},\\
+ 	1/\bar{x} \quad \text{if}~u_0\leq1/\bar{x}\leq u_1\\
+ 	u_1 \quad \text{if}~u_1<1/\bar{x}.
+ \end{cases}
+ \]
+\end{itemize}
+\end{frame}
+
+\end{document}

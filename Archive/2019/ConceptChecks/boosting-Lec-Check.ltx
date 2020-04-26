@@ -1,0 +1,51 @@
+\section{Boosting: Concept Check}
+\subsubsection{Boosting Learning Objectives}
+\begin{itemize}
+  \item Compare learning a linear model on a fixed set of basis functions on the input space, and an "adaptive basis function model" where the basis functions are learned.
+  \item In particular, explain the "recipe" for an adaptive basis function model in terms of the base hypothesis space, and combined hypothesis space.
+  \item Give psuedo-code for forward stagewise additive modeling (FSAM).
+  \item Give the ingredients for gradient boosting machines; in particular, be able to explain why we need a [sub]differentiable loss function w.r.t. the prediction.
+  \item Explain how gradient boosting uses "functional" gradient descent - i.e. learning the basis function (i.e. function in the base hypothesis space) that is closest to the negative gradient step direction given the current prediction function.
+  \item Explain options for step sizes (line search and shrinkage parameter/learning rate).
+  \item Explain variations on gradient boosting (stochastic gradient boosting, and column subsampling).
+\end{itemize}
+
+\begin{enumerate}
+\item $(\star)$ Show the exponential margin loss is a convex upper bound for the
+  $0-1$ loss.
+\begin{solution}
+\item[]\Sol Recall that the exponential margin loss is given by
+  $\ell(y,a)=e^{-ya}$ where $y\in\{-1,1\}$ and $a\in\RR$, and the
+  $0-1$ loss is $\Ind(y\neq\sgn(a))$. If
+  $\sgn(y)\neq a$ then $ya\leq 0$ and
+  $$e^{-ya}\geq 1-ya \geq 1 = \Ind(y\neq\sgn(a)).$$
+  In general $e^{-ya}\geq0$ so the we obtain the upper bound.  To
+  prove convexity, we compute the second derivative and note that it
+  is positive:
+  $$\frac{\partial^2}{\partial a^2}e^{-ya} = y^2e^{-ya} > 0.$$
+\end{solution}
+\item Show how to perform gradient boosting with the hinge loss.
+\begin{solution}
+\item[]\Sol Recall that the hinge loss is given by $\ell(y,a) =
+  \max(0,1-ya)$.  Define $g$ by
+  $$g(y,a) = \left\{\begin{array}{ll} -y & \text{if $1-ya>0$,}\\0&\text{else}.\end{array}\right.$$
+  Then $g(y,a)$ is a subgradient of $\ell(y,a)$ with respect to $a$.
+  At stage $m$ of gradient boosting, we alredy have
+  formed
+  $$f_{m-1} = \sum_{i=1}^{m-1} \nu_i h_i.$$
+  We then compute the pseudoresiduals $r_m$ given by
+  $$r_m =
+  -\left(g(y_1,f_{m-1}(x_1)),\ldots,g(y_n,f_{m-1}(x_n))\right).$$
+  After building the mock dataset
+  $D^{m}=\{(x_1,(r_m)_1),\ldots,(x_n,(r_m)_n)\}$ we perform a least
+  squares fit to obtain $h_m\in\HH$.  Then we can determine $\nu_m$
+  (usually a small fixed value).  Finally we let $f_m = f_{m-1}+\nu_mh_m$.
+\end{solution}
+\item Suppose we are using gradient boosting.  On
+  each step we can do a better job of fitting the pseudoresiduals if
+  we allow for deeper trees.  Why might deep trees be discouraged
+  while gradient boosting?
+\begin{solution}
+\item[]\Sol Deep trees can lead to overfitting the data.
+\end{solution}
+\end{enumerate}

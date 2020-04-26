@@ -31,6 +31,7 @@ for s in input:  # for each line of input
     m = re.match(r"^\s*filename\s+(.+)", s)  #find figure references
     if m:  # if we find something
         fig_path_fname =  os.path.realpath(m.group(1))  # extract the filename itself
+        fig_path_fname = fig_path_fname.strip()
         filepaths.add(fig_path_fname)
         fig_fname =  os.path.basename(fig_path_fname)
         s = s.replace(m.group(1), fig_fname)

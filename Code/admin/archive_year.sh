@@ -4,7 +4,7 @@
 cd ~/Dropbox/repos/mlcourse
 FLATTEN="python Code/admin/flatten_lyx.py"
 LYX2LYX="python /Applications/LyX.app/Contents/Resources/lyx2lyx/lyx2lyx"
-YEAR="2018"
+YEAR="2019"
 ORIGIN="." 
 ##ORIGIN="2017" 
 DEST="Archive"/$YEAR
@@ -15,8 +15,12 @@ find $ORIGIN/Lectures/*lyx |  parallel $FLATTEN  {} $DEST/Lectures/source
 
 ## Generate pdf files from newly flattened lyx
 find $DEST/Lectures -name "*.lyx" | parallel --verbose /Applications/LyX.app/Contents/MacOS/lyx {} -e pdf2
+
+rm -rf $DEST/Lectures/source/ML1.black-box-ML $DEST/Lectures/source/SVM $DEST/Lectures/source/bayesian-networks $DEST/Lectures/source/bloomberg-midterm-review $DEST/Lectures/source/constrained-vs-penalized $DEST/Lectures/source/convex-optimization $DEST/Lectures/source/directional-derivatives $DEST/Lectures/source/exam-recap $DEST/Lectures/source/features $DEST/Lectures/source/hard-margin-SVM $DEST/Lectures/source/kernel-methods-intro $DEST/Lectures/source/kernels-norepresenter $DEST/Lectures/source/kernels-wrapup $DEST/Lectures/source/lasso-ridge-elastic-net $DEST/Lectures/source/ml-overview $DEST/Lectures/source/sgd-gd-revisited $DEST/Lectures/source/test2-review $DEST/Lectures/source/01.black-box-ML
+
 ## Move newly generated PDF files up to the $YEAR/Lectures directory
 find $ORIGIN/Lectures/*lyx | parallel mv $DEST/Lectures/source/{/.}/{/.}.pdf $DEST/Lectures/
+rm $DEST/Lectures/ML1.black-box-ML.pdf $DEST/Lectures/SVM.pdf $DEST/Lectures/bayesian-networks.pdf $DEST/Lectures/bloomberg-midterm-review.pdf $DEST/Lectures/constrained-vs-penalized.pdf $DEST/Lectures/convex-optimization.pdf $DEST/Lectures/directional-derivatives.pdf $DEST/Lectures/exam-recap.pdf $DEST/Lectures/features.pdf $DEST/Lectures/hard-margin-SVM.pdf $DEST/Lectures/kernel-methods-intro.pdf $DEST/Lectures/kernels-norepresenter.pdf $DEST/Lectures/kernels-wrapup.pdf $DEST/Lectures/lasso-ridge-elastic-net.pdf $DEST/Lectures/ml-overview.pdf $DEST/Lectures/sgd-gd-revisited.pdf $DEST/Lectures/test2-review.pdf $DEST/Lectures/14c.next-steps.pdf
 
 ## Flatten Notes
 #mkdir -p $YEAR/Notes/source

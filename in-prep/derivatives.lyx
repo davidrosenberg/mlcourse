@@ -1,9 +1,9 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin /Users/drosen/Dropbox/repos/mlcourse/Notes/
+\origin unavailable
 \textclass paper
 \use_default_options false
 \begin_modules
@@ -26,6 +26,8 @@ figs-within-sections
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -55,6 +57,7 @@ figs-within-sections
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -63,7 +66,10 @@ figs-within-sections
 \tocdepth 5
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 2
 \paperpagestyle default
@@ -4022,40 +4028,56 @@ Softmax
 \end_layout
 
 \begin_layout Standard
-Consider an input vector of scores 
-\begin_inset Formula $s$
+(Master: reinforcement-learning Appendix Softmax)
+\end_layout
+
+\begin_layout Standard
+For an input 
+\begin_inset Formula $s\in\reals^{k}$
 \end_inset
 
- is 
-\begin_inset Formula $d\times1$
+, define the standard softmax function 
+\begin_inset Formula $\sigma:\reals^{k}\to\reals^{k}$
 \end_inset
 
- and output vector 
-\begin_inset Formula $y$
+ by
+\begin_inset Formula 
+\[
+\sigma(s)_{i}=\frac{\exp\left(s_{i}\right)}{\sum_{c=1}^{k}\exp\left(s_{c}\right)}\text{ for }i=1,\ldots,k.
+\]
+
 \end_inset
 
- also 
-\begin_inset Formula $d\times1$
+Note that 
+\begin_inset Formula $\sum_{i=1}^{k}\sigma(s)_{i}=1$
 \end_inset
 
-, where 
-\begin_inset Formula $y$
+ and 
+\begin_inset Formula $\sigma(s)_{i}>0$
 \end_inset
 
- encodes a probability distribution over 
-\begin_inset Formula $d$
-\end_inset
-
- classes.
- Then the 
+ for all 
 \begin_inset Formula $i$
 \end_inset
 
-th entry of the output is given by
+.
+ So 
+\begin_inset Formula $\sigma(s)$
+\end_inset
+
+ defines a probability distribution over 
+\begin_inset Formula $k$
+\end_inset
+
+ outcomes.
+ We'd like to know the derivative of this softmax function.
+ For reference, here's the quotient rule: 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
 \begin{eqnarray*}
-d(ab^{-1}) & = & \left(da\right)b^{-1}+ad\left(b^{-1}\right)=\left(da\right)b^{-1}-ab^{-2}d(b)\\
- & = & \frac{bda-adb}{b^{2}}
+d(ab^{-1}) & = & \left(da\right)b^{-1}+ad\left(b^{-1}\right)=\underbrace{\left(da\right)b^{-1}-ab^{-2}d(b)}_{\text{using this}}=\frac{bda-adb}{b^{2}}
 \end{eqnarray*}
 
 \end_inset
@@ -4064,25 +4086,22 @@ d(ab^{-1}) & = & \left(da\right)b^{-1}+ad\left(b^{-1}\right)=\left(da\right)b^{-
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\[
-y_{i}=\frac{\exp\left(s_{i}\right)}{\sum_{c=1}^{k}\exp\left(s_{c}\right)}.
-\]
-
-\end_inset
-
- Then 
+Then 
 \begin_inset Formula 
 \begin{eqnarray*}
-\frac{\partial y_{i}}{\partial s_{j}} & = & \frac{\frac{\partial}{\partial s_{j}}\left(\exp\left(s_{i}\right)\right)}{\sum_{c=1}^{k}\exp\left(s_{c}\right)}-\frac{\exp\left(s_{i}\right)\frac{\partial}{\partial s_{j}}\left(\sum_{c=1}^{k}\exp\left(s_{c}\right)\right)}{\left[\sum_{c=1}^{k}\exp\left(s_{c}\right)\right]^{2}}\\
+\frac{\partial\sigma(s)_{i}}{\partial s_{j}} & = & \frac{\frac{\partial}{\partial s_{j}}\left(\exp\left(s_{i}\right)\right)}{\sum_{c=1}^{k}\exp\left(s_{c}\right)}-\frac{\exp\left(s_{i}\right)\frac{\partial}{\partial s_{j}}\left(\sum_{c=1}^{k}\exp\left(s_{c}\right)\right)}{\left[\sum_{c=1}^{k}\exp\left(s_{c}\right)\right]^{2}}\\
  & = & \frac{\exp\left(s_{i}\right)\delta_{ij}}{\sum_{c=1}^{k}\exp\left(s_{c}\right)}-\frac{\exp\left(s_{i}\right)\exp\left(s_{j}\right)}{\left[\sum_{c=1}^{k}\exp\left(s_{c}\right)\right]^{2}}\\
- & = & \sigma(s_{i})\delta_{ij}-\sigma(s_{i})\sigma(s_{j})\\
- & = & \sigma(s_{i})\left(\delta_{ij}-\sigma(s_{j})\right)
+ & = & \sigma(s)_{i}\delta_{ij}-\sigma(s)_{i}\sigma(s)_{j}\\
+ & = & \sigma(s)_{i}\left(\delta_{ij}-\sigma(s)_{j}\right)
 \end{eqnarray*}
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+(end reinforcement learning section)
 \end_layout
 
 \begin_layout Standard

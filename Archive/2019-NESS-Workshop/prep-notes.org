@@ -1,0 +1,106 @@
+Target number of slides: 200-250
+* Outline
+** Course Introduction - 1 slide
+** Intro SLT - 25 slides
+** SGD - 24 slides
+** Excess risk decomposition: 10
+** L1/L2: 60
+** Loss functions : 20
+** Conditional prob models: 75
+** multiclass / compatibility function: 35    [250]
+** Trees 25
+** bagging and random forest
+** gradient boostingsa
+** Neural networks 40
+* Basic terminology and concepts of machine learning
+- basic problem types (hard/soft classificaton, regression)
+- features
+- prediction functions
+- train/validation/test splits;  (reference c.f. cross-validaiton)
+- things to look out for: sample bias, nonstationarity, over fitting
+* Concepts and terminology from statistical learning theory
+- input space, action space, label/outcome space
+- loss functions
+- hypothesis spaces
+- empirical risk minimization
+* Optimization: Stochastic Gradient Descent
+- SGD is the optimization workhorse of modern ML
+- assumes gradient descent and motivates mini-batch SGD (unbiased estimate of negative gradient step direction)
+- describe issues of non-differentiability, refer to subgradient methods
+* Regularization: Lasso, Ridge, and Elastic Net for Linear Regression
+- Constraint form and penalty form
+- L1 and L2 regularization: basic ideas and sparsity
+- importance of feature scaling with regularization
+- effect of feature correlation for L2 (weight spreading) and L1 (instability of solution, makes interpretation difficult)
+- elastic net for sparsity with more stable variable selection
+- going for sparsity: pros and cons
+* Classification: Margin-based loss functions 
+- introduce concept of score function and margin for binary classification
+- Objective functions for classification just like for regression, but with a different loss function; regularization carries over
+- SVM hinge loss, logistic loss; message is that they both work and are basically the same in practice
+  - UNLESS you're using kernel methods, in which case SVM gives you sparsity in the kernelized prediction function... but kernels will be beyond the scope of this tutorial (I think)
+* Conditional Probability Models
+- predict a probability distribution rather than a number
+  - in practice, the probability distribution is often represented by a single parameter, but it need not be, and it's an important conceptual shift
+- examples: logistic/probit regression (another approach to classification), Poisson regression
+* Multiclass and introduction to structured prediction
+- introduce compatibility functions: take both an input and potential label as input, and output a score for how likely that label is for the given input
+- apply to multiclass classification
+  - multiclass hinge loss [mention]
+  - multinomial logistic regression with softmax (a conditional probability model) [focus on]
+- discuss structured output spaces [maybe -- could be too much at this point]
+  - focus on conditional probability model approach, with distributions over sequences
+  - mention RNNs give distributions over sequences
+- issue of 'decoding' a conditional probability distribution, which is trying to find the most probable sequence from a distribution
+  - mention viterbi
+  - describe beam search (if time)
+* Nonlinear methods: Overview
+- three most common ways to create prediction functions that are nonlinear in inputs:
+  - manually, by introducing nonlinear features (kernel methods are kind of an automated way to introduce nonlinear features, but no learning is involved)
+  - trees
+  - neural networks
+* Gradient Boosting 
+- can use to make nonlinear version of all our conditional probability models
+- xgboost is a particular approach to gradient boosting with trees
+* Neural networks
+- multilayer perceptrons
+- can view as learning nonlinear features from data
+- backpropagation is just an algorithm for computing the gradient (beyond the scope of this lecture)
+- 'learning' is still just optimizing an objective function, usually SGD or some modification
+* Possible fancier topics
+- collaborative filtering / matrix factorization (building a new kind of objective function)
+- ranking models (building on compatiblity functions, and possibly on gradient boosting if we do lambdaMART)
+- class imbalance
+- black box feature importance measures
+- RNNs
+- CNNs
+- Sequence-to-Sequence (translation)
+- Image to sequence (captioning)
+* Feedsback from surveys
+1)  How do you see machine learning and statistical learning differently from your experience in work or in teaching?
+
+2) What makes a given statistical method a 'machine learning' method?
+
+Topic Votes
+
+Neural network * * * * * * *
+Introduction to statistical learning theory   * *
+Bagging ** - 
+Stochastic gradient descent  *
+Excess risk decomposition  *
+Lagrangian duality and convex optimization *
+Subgradient descent *
+Gaussian mixture models *
+backprop *
+Autoencoders *
+Feature extraction *
+random forest *
+trees **  - -
+Performance evaluation * -
+Maximum likelihood estimation * -
+Bayesian methods *  -
+Kernel methods - 
+Boosting * - 
+Lasso, ridge, and elastic net * - - 
+L1 and L2 regularization  - - 
+Support vector machines - - 

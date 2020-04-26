@@ -1,0 +1,6767 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass beamer
+\begin_preamble
+\usetheme{CambridgeUS} 
+\beamertemplatenavigationsymbolsempty
+
+
+% Set Color ==============================
+\definecolor{NYUPurple}{RGB}{87,6,140}
+\definecolor{LightPurple}{RGB}{165,11,255}
+
+
+\setbeamercolor{title}{fg=NYUPurple}
+%\setbeamercolor{frametitle}{fg=NYUPurple}
+\setbeamercolor{frametitle}{fg=NYUPurple}
+
+\setbeamercolor{background canvas}{fg=NYUPurple, bg=white}
+\setbeamercolor{background}{fg=black, bg=NYUPurple}
+
+\setbeamercolor{palette primary}{fg=black, bg=gray!30!white}
+\setbeamercolor{palette secondary}{fg=black, bg=gray!20!white}
+\setbeamercolor{palette tertiary}{fg=gray!20!white, bg=NYUPurple}
+
+\setbeamertemplate{headline}{}
+
+\setbeamercolor{parttitle}{fg=NYUPurple}
+\setbeamercolor{sectiontitle}{fg=NYUPurple}
+\setbeamercolor{sectionname}{fg=NYUPurple}
+\setbeamercolor{section page}{fg=NYUPurple}
+
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+\setbeamercolor{section title}{fg=NYUPurple}
+ \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\usebeamercolor[fg]{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+\end_preamble
+\options aspectratio=169,handout
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "eulervm" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "allcolors=NYUPurple,urlcolor=LightPurple"
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\boxbgcolor #ff31d8
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\renewcommand{\reals}{\mathbf{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\integers}{\mathbf{Z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\naturals}{\mathbf{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\rationals}{\mathbf{Q}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\ca}{\mathcal{A}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\cb}{\mathcal{B}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\cc}{\mathcal{C}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\cd}{\mathcal{D}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\ce}{\mathcal{E}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\cf}{\mathcal{F}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\cg}{\mathcal{G}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\ch}{\mathcal{H}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\ci}{\mathcal{I}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\cj}{\mathcal{J}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\ck}{\mathcal{K}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\cl}{\mathcal{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\cm}{\mathcal{M}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\cn}{\mathcal{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\co}{\mathcal{O}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\cp}{\mathcal{P}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\cq}{\mathcal{Q}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\calr}{\mathcal{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\cs}{\mathcal{S}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\ct}{\mathcal{T}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\cu}{\mathcal{U}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\cv}{\mathcal{V}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\cw}{\mathcal{W}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\cx}{\mathcal{X}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\cy}{\mathcal{Y}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\cz}{\mathcal{Z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\ind}[1]{1(#1)}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand{
+\backslash
+pr}{P}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\renewcommand{\pr}{\mathbb{P}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\predsp}{\cy}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%{
+\backslash
+hat{
+\backslash
+cy}}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\renewcommand{\outsp}{\cy}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\renewcommand{\prxy}{P_{\cx\times\cy}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\prx}{P_{\cx}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\prygivenx}{P_{\cy\mid\cx}}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand{
+\backslash
+ex}{E}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\renewcommand{\ex}{\mathbb{E}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\var}{\textrm{Var}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\cov}{\textrm{Cov}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\sgn}{\textrm{sgn}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\sign}{\textrm{sign}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\kl}{\textrm{KL}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\law}{\mathcal{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\eps}{\varepsilon}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\as}{\textrm{ a.s.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\io}{\textrm{ i.o.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\ev}{\textrm{ ev.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\convd}{\stackrel{d}{\to}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\eqd}{\stackrel{d}{=}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\del}{\nabla}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\loss}{\ell}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\risk}{R}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\emprisk}{\hat{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\lossfnl}{L}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\emplossfnl}{\hat{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\empminimizer}[1]{\hat{#1}^{*}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\minimizer}[1]{#1^{*}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\renewcommand{\optimizer}[1]{#1^{*}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\etal}{\textrm{et. al.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\tr}{\operatorname{tr}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\renewcommand{\trace}{\operatorname{trace}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\diag}{\text{diag}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\rank}{\text{rank}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\linspan}{\text{span}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\spn}{\text{span}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\proj}{\text{Proj}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\argmax}{\operatornamewithlimits{arg\, max}}
+{\text{argmax}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\argmin}{\operatornamewithlimits{arg\, min}}
+{\text{argmin}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\renewcommand{\bfx}{\mathbf{x}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\bfy}{\mathbf{y}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\bfl}{\mathbf{\lambda}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\bfm}{\mathbf{\mu}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\calL}{\mathcal{L}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\renewcommand{\vw}{\boldsymbol{w}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\vx}{\boldsymbol{x}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\vxi}{\boldsymbol{\xi}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\valpha}{\boldsymbol{\alpha}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\vbeta}{\boldsymbol{\beta}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\vsigma}{\boldsymbol{\sigma}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\renewcommand{\vtheta}{\boldsymbol{\theta}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\vd}{\boldsymbol{d}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\vs}{\boldsymbol{s}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\vt}{\boldsymbol{t}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\vh}{\boldsymbol{h}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\ve}{\boldsymbol{e}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\vf}{\boldsymbol{f}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\vg}{\boldsymbol{g}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\vz}{\boldsymbol{z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\vk}{\boldsymbol{k}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\va}{\boldsymbol{a}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\vb}{\boldsymbol{b}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\vv}{\boldsymbol{v}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\vy}{\boldsymbol{y}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\renewcommand{\dom}{\textrm{\textbf{dom} }}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\renewcommand{\rank}{\text{\textbf{rank }}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\renewcommand{\conv}{\textrm{\textbf{conv} }}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\renewcommand{\relint}{\text{\textbf{relint }}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\renewcommand{\aff}{\text{\textbf{aff }}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\renewcommand{\hil}{\ch}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\rkhs}{\hil}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\ber}{\text{Ber}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Conditional Probability Models, Confidence, and Anomaly Detection 
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Contents
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+The CitySense Problem
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Sense Networks
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Startup company incorporated around 2006.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Objective: Develop and leverage expertise in 
+\series bold
+location data
+\series default
+ analytics.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+First product was called CitySense
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+See 
+\begin_inset Quotes eld
+\end_inset
+
+CitySense: Multiscale space time clustering of GPS points and trajectories
+\begin_inset Quotes erd
+\end_inset
+
+ by Markus Loecher and Tony Jebara (2009).
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+url{http://www.cs.columbia.edu/~jebara/papers/CitySense.JSM2009.pdf}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ (2008).
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A real-time, data-driven guide to nightlife in San Francisco.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+CitySense (2008)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename ../Figures/SenseNetworks/citysenseAd.png
+	lyxscale 40
+	height 70theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(Sadly, no longer in the App Store.)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+CitySense: Use Cases
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Two use cases:
+\end_layout
+
+\begin_layout Enumerate
+I'm new to the city – where does everybody hang out at night?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+I know the city, but is there anything 
+\series bold
+special
+\series default
+ going on tonight?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+CitySense: Data Source
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Taxi GPS data for sale in San Francisco 
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename ../Figures/SenseNetworks/yellowcab.pdf
+	lyxscale 60
+	height 70theight%
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+CitySense
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Data Science Strategy
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Model 
+\begin_inset Quotes eld
+\end_inset
+
+typical
+\begin_inset Quotes erd
+\end_inset
+
+ behavior of each area of the city.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Rank areas with activity levels that are 
+\begin_inset Quotes eld
+\end_inset
+
+most unusual
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+We'll discuss modeling strategies shortly.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+CabSense (2010): Second Product
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Business objective
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Plain Layout
+I'm in NYC, and I need a taxi.
+ Where's the best place to find one?
+\end_layout
+
+\end_deeper
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Data Source
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Plain Layout
+NYC Taxi and Limousine Commission provided GPS data from all taxi cabs.
+ However, 
+\series bold
+not real-time
+\series default
+.
+\end_layout
+
+\end_deeper
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Main Idea
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Plain Layout
+Historical taxi pickup frequency are predictive of future frequencies.
+ Need to model pickup rates based on historical data.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+CabSense (2010): Second Product
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Plain Layout
+\align center
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+First all pickups are bucketed into a fine grid, then each street corner
+ gets assigned all gridcells within approximately a half a block radius
+ 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../Figures/SenseNetworks/cabsense-screen.png
+	lyxscale 40
+	height 70theight%
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Picture courtesy of Blake Shaw.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+The Case for Probability Models
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Predicting Probability Distributions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+So far we've discuss two problem classes:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Classification
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Outcome space 
+\begin_inset Formula $\cy=\left\{ -1,1\right\} $
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Action space 
+\begin_inset Formula $\ca=\reals$
+\end_inset
+
+ (threshold to get hard classifications)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Regression
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Outcome space 
+\begin_inset Formula $\cy=\reals$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Action space 
+\begin_inset Formula $\ca=\reals$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Itemize
+So far we've solved decision problems with two types of action spaces:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\ca=\left\{ -1,1\right\} $
+\end_inset
+
+ [hard classification, e.g.
+ decision trees as used in AdaBoost]
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\ca=\reals$
+\end_inset
+
+ [regression or soft classification]
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\ca=\left\{ 1,2,\ldots,k\right\} $
+\end_inset
+
+ [hard multiclass classification]
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\ca=\reals^{k}$
+\end_inset
+
+ [soft multiclass classification]
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Now we consider a third type of 
+\series bold
+action
+\series default
+ 
+\series bold
+space
+\series default
+:
+\begin_inset Formula 
+\[
+\mbox{\ca=\left\{  \text{Probability distributions on outcome space }\cy\right\}  }
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Why?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Joy of Probability Distributions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Outcome space 
+\begin_inset Formula $\cy=\reals$
+\end_inset
+
+ (some regression problem)
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+For input 
+\begin_inset Formula $x$
+\end_inset
+
+, suppose we produce a
+\series bold
+ probability density
+\series default
+ on 
+\begin_inset Formula $\cy$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+x\mapsto p(y)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We can interpret this setting as modeling the 
+\series bold
+conditional probability density
+\series default
+ 
+\begin_inset Formula $p(y\mid x)$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+If we know 
+\begin_inset Formula $p(y\mid x)$
+\end_inset
+
+, we can find a 
+\begin_inset Formula $\hat{y}$
+\end_inset
+
+ that minimizes any loss function for a given 
+\begin_inset Formula $x$
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+For square loss, give the mean of 
+\begin_inset Formula $p(y\mid x)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+For 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ loss, give the median of 
+\begin_inset Formula $p(y\mid x)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Can produce a 
+\series bold
+prediction interval
+\series default
+ that 
+\begin_inset Formula $p(y\mid x)$
+\end_inset
+
+ assigns a 95% probability
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Gives idea of the possibilities of knowing the whole distribution.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Note: If you have a specific loss function of interest, often better to
+ directly optimize the loss function of interest.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Penn Station Taxi Pickup Counts - 27 Weeks
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename ../Figures/SenseNetworks/pennStation27Weeks.png
+	lyxscale 15
+	height 75theight%
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Penn Station Taxi Pickup Counts - Regression
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename ../Figures/SenseNetworks/pennStation27Weeks-pred.png
+	lyxscale 15
+	height 75theight%
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Regression line predicts 
+\series bold
+mean pickups
+\series default
+.
+
+\series bold
+ 
+\series default
+But what's the typical range?
+\series bold
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Penn Station Taxi Pickup Counts - Prediction Intervals
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename ../Figures/SenseNetworks/pennStation27Weeks-pred-interval.png
+	lyxscale 15
+	height 75theight%
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Here plotting estimated 
+\begin_inset Formula $\pm1$
+\end_inset
+
+ standard deviation.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Penn Station Taxi Pickup Counts - Predictive Distribution
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Consider predictions for a particular weekhour 
+\begin_inset Formula $x\in\left\{ 0,\ldots,167\right\} $
+\end_inset
+
+, say 
+\begin_inset Formula $x=10$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Regression
+\series default
+ gives a single number: 
+\begin_inset Formula $\ex\left[y\mid x=10\right]\approx\mathbf{30.1}$
+\end_inset
+
+ taxi pickups
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+A
+\series bold
+ prediction interval 
+\series default
+gives two numbers: 
+\begin_inset Formula $\pr\left(y\in\mathbf{\left[17.8,42.3\right]}\mid x=10\right)\approx68\%$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+We can also produce an estimate of the full 
+\series bold
+conditional probability distribution 
+\series default
+for
+\series bold
+ 
+\begin_inset Formula $p(y\mid x=10)$
+\end_inset
+
+...
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Penn Station Taxi Pickup Counts - Predictive Distribution
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For weekhour 10 (i.e.
+ 
+\begin_inset Formula $x=10$
+\end_inset
+
+), we predict the following distribution for 
+\begin_inset Formula $p(y\mid x=10)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename ../Figures/SenseNetworks/pennStation-pred-dist-wkhr10.png
+	lyxscale 15
+	height 65theight%
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+According to this predictive distribution, how likely are we to get 
+\begin_inset Formula $90$
+\end_inset
+
+ taxi pickups?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Predictive Distributions for Anomaly Characterization
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+At week-hour 10, 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+the expected number of taxi pickups 30.1.
+\end_layout
+
+\begin_layout Itemize
+the 68% prediction interval was 
+\begin_inset Formula $[17.8,42.3]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Suppose we observe 
+\begin_inset Formula $90$
+\end_inset
+
+ taxi pickups.
+ 
+\end_layout
+
+\begin_layout Itemize
+How can we characterize how unusual this event is?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We can directly calculate the probability of 90 or more taxi pickups:
+\begin_inset Formula 
+\[
+\pr(y\ge90\mid x=10)=\sum_{c=90}^{\infty}p(y=c\mid x=10)
+\]
+
+\end_inset
+
+ measures how unusual this event is.
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Why not just compute 
+\begin_inset Formula $p(y=90\mid x=10)$
+\end_inset
+
+?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+The Grid Cells
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Basic Approach
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Raw input is [roughly] continuous in 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+space (lat/lon) and
+\end_layout
+
+\begin_layout Itemize
+time (seconds since 1970-01-01).
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+To make it easier to handle, we partition space and time into buckets.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Spatial partitioning 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Divide earth into regularly spaced grid cells.
+ 
+\end_layout
+
+\begin_layout Itemize
+About 400,000 grid cells to cover NYC
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Time partitioning
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Only consider times at the hour level.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Aggregate taxi pickup counts at the Grid Cell / Hour level.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Initial data analysis, including aggregation by grid cell and hour,
+ was done by Blake Shaw.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Most Active Grid Cell: Penn Station (Grid ID 7750)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename ../Figures/SenseNetworks/pennStationGridCell.png
+	lyxscale 40
+	height 80theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Courant Institute (Grid ID 21272)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename ../Figures/SenseNetworks/courant-pro.jpg
+	lyxscale 40
+	width 100text%
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Data Visualization
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Penn Station (Cell 7750): 1300 Taxi Pickups Per Day
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename ../Figures/SenseNetworks/pennStationWeek1075.png
+	lyxscale 15
+	height 70theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Note difference between weekend and weekday patterns.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Penn Station (Cell 7750): Four Weeks, Some Outliers
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename ../Figures/SenseNetworks/pennStationWeek1071-1074.png
+	lyxscale 20
+	height 75theight%
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+The Prediction Problem
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Prediction Problem
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Somebody queries a 
+\series bold
+grid cell
+\series default
+ and a 
+\series bold
+week-hour
+\series default
+, we tell them what to expect.
+ 
+\end_layout
+
+\begin_layout Itemize
+Input space: 
+\begin_inset Formula $\cx=\left\{ (g,h)\mid g\in\left\{ 1,\ldots,398245\right\} \mbox{ and }h\in\left\{ 0,\ldots,167\right\} \right\} $
+\end_inset
+
+, where
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $g$
+\end_inset
+
+ is the grid Cell ID and
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $h$
+\end_inset
+
+ is the week-hour
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Possible future inputs: Holiday? Raining? Special event? 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Action space: 
+\begin_inset Formula $\ca=\left\{ \mbox{Probability distributions on number of pickups}\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Outcome space: 
+\begin_inset Formula $\cy=\left\{ 0,1,2,3,\ldots\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Actual number of taxi pickups.
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Evaluation? Loss function? We'll come back to these questions...
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Setting up the Learning Problem
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Labeled data look like:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+(Grid Cell = 10321, Week Hour = 120) 
+\begin_inset Formula $\mapsto$
+\end_inset
+
+ Count = 3
+\end_layout
+
+\begin_layout Itemize
+(Grid Cell = 192001, Week Hour = 6) 
+\begin_inset Formula $\mapsto$
+\end_inset
+
+ Count = 12
+\end_layout
+
+\begin_layout Itemize
+(Grid Cell = 1271, Week Hour = 154) 
+\begin_inset Formula $\mapsto$
+\end_inset
+
+ Count = 0
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+How to split the data into a training set and a test set?
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Our approach:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+First 14 weeks are
+\series bold
+ training set
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+Last 13 weeks are 
+\series bold
+test set
+\series default
+.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Stratification Approaches
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Approach 1: Full Stratification (Courant, Tuesdays 7-8pm)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Estimate distribution for each grid cell / week hour pair.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Colored lines are from training.
+ White bars are from test.
+ 
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename ../Figures/SenseNetworks/courantWkhr43.png
+	lyxscale 15
+	height 65theight%
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Terminology: Stratification and Bucketing
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+We say we are 
+\series bold
+stratifying 
+\series default
+if we partition our input space into groups, and treat each group separately.
+ For example, in modeling we would build a separate model for each group,
+ without information sharing across groups.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+On the other hand,
+\end_layout
+
+\begin_layout Definition
+We say we are 
+\series bold
+bucketing 
+\series default
+(or 
+\series bold
+binning
+\series default
+) if we are combining natural groups in the data into a single group, rather
+ than building a separate model for each group.
+ For example, combining all weekdays together would be 
+\begin_inset Quotes eld
+\end_inset
+
+bucketing
+\begin_inset Quotes erd
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Approach 2: Weekday Bucketing (Courant, M-F 7-8pm)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Data inspection suggests that day patterns are similar Mon-Fri.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename ../Figures/SenseNetworks/courantWkhrM-Fwkhr43.png
+	lyxscale 15
+	height 65theight%
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Approach 3: (Courant, M-F 6-8pm)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Also, 6-7pm looks similar to 7-8pm, so join together
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename ../Figures/SenseNetworks/courantWkhrM-Fwkhr6-8pm.png
+	lyxscale 15
+	height 65theight%
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Penn Station, M-F 7-8pm
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Negative binomial fits empirical much better than Poisson.
+ (overdispersion)
+\end_layout
+
+\begin_layout Itemize
+Massive shift between train and test!
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename ../Figures/SenseNetworks/PennWkhrM-Fwkhr7-8pm.png
+	lyxscale 15
+	height 65theight%
+
+\end_inset
+
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+this is referenced in the conditional probability models slide
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Estimation/Approximation Tradeoff of Stratification
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+With a separate probability distribution for every grid cell / week-hour
+ pair, model is highly specific!
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Could capture idiosyncrasy of Friday @5pm that we would miss if combining
+ all weekdays.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+That is, we're decreasing approximation error.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+With relatively little data in a particular stratum, estimates may have
+ high estimation error.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+By 
+\begin_inset Quotes eld
+\end_inset
+
+bucketing
+\begin_inset Quotes erd
+\end_inset
+
+, or combining strata:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We can reduce estimation error.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+It may cost us in approximation error.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+By bucketing in a smart way, you can minimize increase in approximation
+ error.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Note: This is often referred to as a 
+\series bold
+bias / variance tradeoff
+\series default
+: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+bias 
+\begin_inset Formula $\approx$
+\end_inset
+
+ approximation error; variance 
+\begin_inset Formula $\approx$
+\end_inset
+
+ estimation error
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Is there a more convenient way?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We can tradeoff between estimation and approximation error by varying the
+ stratification and the bucketing.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+It's a great way to start your data analysis.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+You get a feel for the data and gain some intuition.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+This technique can be used for classification and regression as well.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Our classification and regression techniques also trade off between approximatio
+n and estimation:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We had to choose our features.
+\end_layout
+
+\begin_layout Itemize
+We had to tune our regularization parameter.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Can we do something similar for predicting distributions?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Yes – to be discussed in our module on conditional probability modeling.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Likelihood of an Estimated Probability Distribution
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Estimating a Probability Distribution: Setting
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $p(y)$
+\end_inset
+
+ represent a probability distribution on 
+\begin_inset Formula $\cy$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $p(y)$
+\end_inset
+
+ is 
+\series bold
+unknown
+\series default
+ and we want to 
+\series bold
+estimate
+\series default
+ it.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Assume that 
+\begin_inset Formula $p(y)$
+\end_inset
+
+ is either a
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+probability density function on a continuous space 
+\begin_inset Formula $\cy$
+\end_inset
+
+, or a
+\end_layout
+
+\begin_layout Itemize
+probability mass function on a discrete space 
+\begin_inset Formula $\cy$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Typical 
+\begin_inset Formula $\cy$
+\end_inset
+
+'s:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\cy=\reals$
+\end_inset
+
+; 
+\begin_inset Formula $\cy=\reals^{d}$
+\end_inset
+
+ [typical continuous distributions]
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\cy=\left\{ -1,1\right\} $
+\end_inset
+
+ [e.g.
+ binary classification]
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\cy=\left\{ 0,1,2,\ldots,K\right\} $
+\end_inset
+
+ [e.g.
+ multiclass problem]
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\cy=\left\{ 0,1,2,3,4\ldots\right\} $
+\end_inset
+
+ [unbounded counts]
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Evaluating a Probability Distribution Estimate
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Before we talk about estimation, let's talk about evaluation.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Somebody gives us an estimate of the probability distribution
+\begin_inset Formula 
+\[
+\hat{p}(y).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+How can we evaluate how good it is?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We want 
+\begin_inset Formula $\hat{p}(y)$
+\end_inset
+
+ to be descriptive of 
+\series bold
+future
+\series default
+ data.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Itemize
+If we knew 
+\begin_inset Formula $p(y)$
+\end_inset
+
+, we could use some distance on distributions.
+ 
+\end_layout
+
+\begin_layout Itemize
+But we don't know 
+\begin_inset Formula $p(y)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Just as for the statistical learning theory setting,
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Likelihood of a Predicted Distribution
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose we have
+\begin_inset Formula 
+\[
+\cd=\left(y_{1},\ldots,y_{n}\right)\text{ sampled i.i.d. from true distribution }p(y).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Then the 
+\series bold
+likelihood 
+\series default
+of 
+\begin_inset Formula $\hat{p}$
+\end_inset
+
+ for the data 
+\begin_inset Formula $\cd$
+\end_inset
+
+ is defined to be
+\begin_inset Formula 
+\[
+\hat{p}(\cd)=\prod_{i=1}^{n}\hat{p}(y_{i}).
+\]
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+To emphasize that this evaluates 
+\begin_inset Formula $\hat{p}$
+\end_inset
+
+, we'll sometimes write this as: 
+\begin_inset Formula 
+\[
+L_{\cd}(\hat{p}):=\hat{p}(\cd)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+If 
+\begin_inset Formula $\hat{p}$
+\end_inset
+
+ is a probability mass function, then likelihood is probability.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Overview and Disclaimer
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Linear Probabilistic Models vs GLMs
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Today we'll be talking about 
+\series bold
+linear probabilistic models
+\series default
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Most books and software libraries related to this topic are actually about
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+generalized linear models
+\series default
+ (GLMs).
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+GLMs are a special case of what we're talking about today.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+They're 
+\begin_inset Quotes eld
+\end_inset
+
+special
+\begin_inset Quotes erd
+\end_inset
+
+ because
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+they're a restriction of our setting
+\end_layout
+
+\begin_layout Itemize
+there are theorems for GLMs that we don't have in our more general setting
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+However, a full development of GLMs requires a fair bit of additional machinery.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+In particular, 
+\series bold
+exponential families
+\series default
+ – a topic from intermediate statistics courses.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Exponential families are wonderful, but I don't believe they're worth the
+ payoff at this level.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+For practical purposes, our development will be more than sufficient (and
+ simpler).
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Modeling Conditional Distributions
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Conditional Distribution Estimation (Generalized Regression)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Given 
+\begin_inset Formula $x$
+\end_inset
+
+, predict
+\emph on
+ probability distribution 
+\emph default
+
+\begin_inset Formula $p(y)$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+How do we represent the probability distribution?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We'll consider 
+\emph on
+parametric families 
+\emph default
+of distributions.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+distribution represented by parameter vector
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Examples:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Logistic regression (Bernoulli distribution)
+\end_layout
+
+\begin_layout Enumerate
+Probit regression (Bernoulli distribution)
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Poisson regression (Poisson distribution)
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Linear regression (Normal distribution, fixed variance)
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Generalized Linear Models (GLM) (encompasses all of the above)
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Generalized Additive Models (GAM) (popular in statistics community)
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Gradient Boosting Machines (GBM) / AnyBoost [in a few weeks]
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Almost all neural network models used in practice (though this is not their
+ essential feature)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Bernoulli Regression
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Probabilistic Binary Classifiers
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Setting: 
+\begin_inset Formula $\cx=\reals^{d}$
+\end_inset
+
+, 
+\begin_inset Formula $\cy=\left\{ 0,1\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+For each 
+\begin_inset Formula $x$
+\end_inset
+
+, need to predict a distribution on 
+\begin_inset Formula $\cy=\left\{ 0,1\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+How can we define a distribution supported on 
+\begin_inset Formula $\left\{ 0,1\right\} $
+\end_inset
+
+?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Sufficient to specify the 
+\series bold
+Bernoulli parameter
+\series default
+ 
+\begin_inset Formula $\theta=p(y=1)$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We can refer to this distribution as 
+\begin_inset Formula $\text{Bernoulli}(\theta)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Linear Probabilistic Classifiers
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Setting: 
+\begin_inset Formula $\cx=\reals^{d}$
+\end_inset
+
+, 
+\begin_inset Formula $\cy=\left\{ 0,1\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Want prediction function to map each 
+\begin_inset Formula $x\in\reals^{d}$
+\end_inset
+
+ to 
+\begin_inset Formula $\theta\in\left[0,1\right]$
+\end_inset
+
+.
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Plain Layout
+[At this point, a binary classification problem on the board with 
+\begin_inset Formula $\cx=\reals$
+\end_inset
+
+, draw the true conditional probability line.
+ Draw some class labels 
+\begin_inset Formula $0/1$
+\end_inset
+
+ and put them on the Y-axis.
+\end_layout
+
+\begin_layout Plain Layout
+For example, mapping age to probability of having lost first tooth
+\end_layout
+
+\begin_layout Itemize
+Somehow we need to map 
+\begin_inset Formula $x\in\reals^{d}$
+\end_inset
+
+ to some 
+\begin_inset Formula $\theta\in[0,1]$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We first 
+\series bold
+extract
+\series default
+ 
+\series bold
+information 
+\series default
+from 
+\begin_inset Formula $x\in\reals^{d}$
+\end_inset
+
+ and summarize in a single number.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+That number is analogous to the 
+\series bold
+score
+\series default
+ in classification.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+For a 
+\series bold
+linear method
+\series default
+, this extraction is done with a linear function:
+\begin_inset Formula 
+\[
+\underbrace{x}_{\in\reals^{d}}\mapsto\underbrace{w^{T}x}_{\in\reals}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+As usual, 
+\begin_inset Formula $x\mapsto w^{T}x$
+\end_inset
+
+ will include affine functions if we include a constant feature in 
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $w^{T}x$
+\end_inset
+
+ is called the 
+\series bold
+linear predictor.
+ 
+\end_layout
+
+\begin_layout Itemize
+Still need to map this to 
+\begin_inset Formula $[0,1]$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Transfer Function
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Need a function to map the linear predictor in 
+\begin_inset Formula $\reals$
+\end_inset
+
+ to 
+\begin_inset Formula $\left[0,1\right]$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\underbrace{x}_{\in\reals^{d}}\mapsto\underbrace{w^{T}x}_{\in\reals}\mapsto\pause\underbrace{f(w^{T}x)}_{\in[0,1]}=\theta,
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $f:\reals\to[0,1]$
+\end_inset
+
+.
+ We'll call 
+\begin_inset Formula $f$
+\end_inset
+
+ the 
+\series bold
+transfer 
+\series default
+function.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+So prediction function is 
+\begin_inset Formula $x\mapsto f(w^{T}x)$
+\end_inset
+
+.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Itemize
+, which gives value for 
+\begin_inset Formula $\theta(x)=p(y=1\mid x)$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout AlertBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Terminology Alert
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+In generalized linear models (GLMs), if 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is the distribution mean, then 
+\begin_inset Formula $f$
+\end_inset
+
+ is called the 
+\series bold
+\color red
+response function
+\series default
+ or 
+\series bold
+inverse link 
+\series default
+function.
+ We avoid that terminology, since we do not require 
+\begin_inset Formula $\theta$
+\end_inset
+
+ to be the distribution mean.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Frame
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Not sure where I saw 
+\begin_inset Quotes eld
+\end_inset
+
+transfer function
+\begin_inset Quotes erd
+\end_inset
+
+.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Response function
+\begin_inset Quotes erd
+\end_inset
+
+ is from Jordan's book.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Transfer Functions for Bernoulli
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Two commonly used transfer functions to map from 
+\begin_inset Formula $w^{T}x$
+\end_inset
+
+ to 
+\begin_inset Formula $\theta$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename ../Figures/GLM/bernoulliInverseLinkFunctions.pdf
+	width 60text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Logistic function: 
+\begin_inset Formula $f(\eta)=\frac{1}{1+e^{-\eta}}$
+\end_inset
+
+ 
+\begin_inset Formula $\pause\implies$
+\end_inset
+
+ Logistic Regression
+\end_layout
+
+\begin_layout Itemize
+Normal CDF 
+\begin_inset Formula $f(\eta)=\int_{-\infty}^{\eta}\frac{1}{\sqrt{2\pi}}e^{-x^{2}/2}$
+\end_inset
+
+
+\begin_inset Formula $\pause\implies$
+\end_inset
+
+ Probit Regression
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Learning
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Input space 
+\begin_inset Formula $\cx=\reals^{d}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Outcome space 
+\begin_inset Formula $\cy=\pause\left\{ 0,1\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Action space 
+\begin_inset Formula $\ca=[0,1]$
+\end_inset
+
+ (Representing Bernoulli
+\begin_inset Formula $(\theta)$
+\end_inset
+
+ distributions by 
+\begin_inset Formula $\theta\in\left[0,1\right]$
+\end_inset
+
+)
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Hypothesis space 
+\begin_inset Formula $\cf=\left\{ x\mapsto f(w^{T}x)\mid w\in\reals^{d}\right\} $
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Parameter space 
+\begin_inset Formula $\reals^{d}$
+\end_inset
+
+ (Each prediction function represented by 
+\begin_inset Formula $w\in\reals^{d}.)$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We can choose 
+\begin_inset Formula $w$
+\end_inset
+
+ using maximum likelihood...
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Bernoulli Regression: Likelihood Scoring Example
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose we have 
+\begin_inset Formula $\cx=\reals$
+\end_inset
+
+ and data 
+\begin_inset Formula $\cd$
+\end_inset
+
+: 
+\begin_inset Formula $(-3,0),\left(0,0\right),(1,1),(2,0)\in\reals\times\left\{ 0,1\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Our model is 
+\begin_inset Formula $p(y=1\mid x)=f(wx)$
+\end_inset
+
+, for some parameter 
+\begin_inset Formula $w\in\reals$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Compute the likelihood for each observation:
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Draw table on board before showing it on slide
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $y$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $wx$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\theta=f(wx)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\hat{p}(y)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-3$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-3w$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f(-3w)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1-f(-3w)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f(0)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1-f(0)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $w$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f(w)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f(w)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2w$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f(2w)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1-f(2w)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+The likelihood of 
+\begin_inset Formula $w$
+\end_inset
+
+ for the data 
+\begin_inset Formula $\cd$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+p(\cd;w)=\left[1-f(-3w)\right]\cdot\left[1-f(0)\right]\cdot\left[f(w)\right]\cdot\left[1-f(2w)\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+x
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The MLE 
+\begin_inset Formula $\hat{w}$
+\end_inset
+
+ is the 
+\begin_inset Formula $w\in\reals$
+\end_inset
+
+ maximizing 
+\begin_inset Formula $p(\cd;w)$
+\end_inset
+
+ for the given 
+\begin_inset Formula $\cd$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+A Clever Way To Write 
+\begin_inset Formula $\hat{p}(y\mid x;w)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For a given 
+\begin_inset Formula $x,w\in\reals^{d}$
+\end_inset
+
+ and 
+\begin_inset Formula $y\in\left\{ 0,1\right\} $
+\end_inset
+
+, the likelihood of 
+\begin_inset Formula $w$
+\end_inset
+
+ for 
+\begin_inset Formula $\left(x,y\right)$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+p(y\mid x;w)=\pause\begin{cases}
+f(w^{T}x) & y=1\\
+1-f(w^{T}x) & y=0
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+It will be convenient to write this as
+\begin_inset Formula 
+\[
+p(y\mid x;w)=\left[f(w^{T}x)\right]^{y}\left[1-f(w^{T}x)\right]^{1-y}\pause,
+\]
+
+\end_inset
+
+which is obvious as long as you remember 
+\begin_inset Formula $y\in\left\{ 0,1\right\} $
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Bernoulli Regression: Likelihood Scoring
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose we have data 
+\begin_inset Formula $\cd:\;(x_{1},y_{1}),\ldots,(x_{n},y_{n})\in\reals^{d}\times\left\{ 0,1\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The likelihood of 
+\begin_inset Formula $w\in\reals^{d}$
+\end_inset
+
+ for data 
+\begin_inset Formula $\cd$
+\end_inset
+
+ is
+\begin_inset Formula 
+\begin{eqnarray*}
+p(\cd;w) & = & \prod_{i=1}^{n}p(y_{i}\mid x_{i};w)\text{ [by independence]}\\
+\pause & = & \prod_{i=1}^{n}\left[f(w^{T}x_{i})\right]^{y_{i}}\left[1-f(w^{T}x_{i})\right]^{1-y_{i}}.
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Easier to work with the log-likelihood:
+\begin_inset Formula 
+\[
+\log p(\cd;w)=\sum_{i=1}^{n}\left(y_{i}\log f(w^{T}x_{i})+\left(1-y_{i}\right)\log\left[1-f(w^{T}x_{i})\right]\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Bernoulli Regression: MLE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Maximum Likelihood Estimation (MLE) finds 
+\begin_inset Formula $w$
+\end_inset
+
+ maximizing 
+\begin_inset Formula $\log p(\cd;w)$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Equivalently, minimize the 
+\series bold
+negative log-likelihood
+\series default
+ objective function
+\begin_inset Formula 
+\[
+J(w)=-\left[\sum_{i=1}^{n}y_{i}\log f(w^{T}x_{i})+\left(1-y_{i}\right)\log\left[1-f(w^{T}x_{i})\right]\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+For differentiable 
+\begin_inset Formula $f$
+\end_inset
+
+,
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $J(w)$
+\end_inset
+
+ is differentiable, and we can use our standard tools.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Possible Homework: Derive the SGD step directions for logistic regression
+ and [harder] probit regression.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Poisson Regression
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\poi}{\text{Poisson}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Poisson Regression: Setup
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Input space 
+\begin_inset Formula $\cx=\reals^{d}$
+\end_inset
+
+, Output space 
+\begin_inset Formula $\cy=\left\{ 0,1,2,3,4,\dots\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+In Poisson regression, prediction functions produce a Poisson distribution.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Represent Poisson
+\begin_inset Formula $\left(\lambda\right)$
+\end_inset
+
+ distribution by the mean parameter 
+\begin_inset Formula $\lambda\in\left(0,\infty\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Action space 
+\begin_inset Formula $\ca=\left(0,\infty\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+In Poisson regression, 
+\begin_inset Formula $x$
+\end_inset
+
+ enters 
+\series bold
+linearly:
+\series default
+ 
+\begin_inset Formula $x\mapsto\underbrace{w^{T}x}_{\reals}\mapsto\lambda=\underbrace{f(w^{T}x)}_{(0,\infty)}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+What can we use as the transfer function 
+\begin_inset Formula $f:\reals\to\left(0,\infty\right)$
+\end_inset
+
+?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Poisson Regression: Transfer Function
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+In Poisson regression, 
+\begin_inset Formula $x$
+\end_inset
+
+ enters 
+\series bold
+linearly:
+\series default
+ 
+\begin_inset Formula 
+\[
+x\mapsto\underbrace{w^{T}x}_{\reals}\mapsto\lambda=\underbrace{f(w^{T}x)}_{(0,\infty)}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Standard approach is to take
+\begin_inset Formula 
+\[
+f(w^{T}x)=\exp\left(w^{T}x\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Note that range of 
+\begin_inset Formula $f(w^{T}x)\in\left(0,\infty\right)$
+\end_inset
+
+, (appropriate for the Poisson parameter).
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Poisson Regression: Likelihood Scoring
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose we have data 
+\begin_inset Formula $\cd=\left\{ (x_{1},y_{1}),\ldots,(x_{n},y_{n})\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Recall the log-likelihood for Poisson parameter 
+\begin_inset Formula $\lambda_{i}$
+\end_inset
+
+ on observation 
+\begin_inset Formula $y_{i}$
+\end_inset
+
+ is:
+\begin_inset Formula 
+\begin{eqnarray*}
+\log p(y_{i};\lambda_{i}) & = & \left[y_{i}\log\lambda_{i}-\lambda_{i}-\log\left(y_{i}!\right)\right]
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Now we want to predict a different 
+\begin_inset Formula $\lambda_{i}$
+\end_inset
+
+ for every 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ with the model
+\begin_inset Formula 
+\[
+\lambda_{i}=f(w^{T}x_{i})=\exp\left(w^{T}x_{i}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The likelihood for 
+\begin_inset Formula $w$
+\end_inset
+
+ on the full dataset 
+\begin_inset Formula $\cd$
+\end_inset
+
+ is
+\begin_inset Formula 
+\begin{eqnarray*}
+\log p(\cd;w) & = & \sum_{i=1}^{n}\left[y_{i}\log\left[\exp\left(w^{T}x_{i}\right)\right]-\exp\left(w^{T}x_{i}\right)-\log\left(y_{i}!\right)\right]\\
+ & = & \sum_{i=1}^{n}\left[y_{i}w^{T}x_{i}-\exp\left(w^{T}x_{i}\right)-\log\left(y_{i}!\right)\right]
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Poisson Regression: MLE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+To get MLE, need to maximize 
+\begin_inset Formula 
+\[
+J(w)=\log p(\cd;w)=\sum_{i=1}^{n}\left[y_{i}w^{T}x_{i}-\exp\left(w^{T}x_{i}\right)-\log\left(y_{i}!\right)\right]
+\]
+
+\end_inset
+
+ over 
+\begin_inset Formula $w\in\reals^{d}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+No closed form for optimum, but it's concave, so easy to optimize.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Poisson Regression Example
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename ../Figures/conditional-probability-models/poissonBumps2.pdf
+	height 55pheight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Example application: Phone call counts per day for a startup company, over
+ 300 days.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Blue line is mean 
+\begin_inset Formula $\mu(x)=\exp\left(wx\right)$
+\end_inset
+
+, some 
+\begin_inset Formula $w\in\reals\pause$
+\end_inset
+
+.
+ (Only linear part 
+\begin_inset Formula $x\mapsto wx$
+\end_inset
+
+ is learned.)
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Samples are 
+\begin_inset Formula $y_{i}\sim\text{Poisson}(wx_{i})$
+\end_inset
+
+.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Plot courtesy of Brett Bernstein.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Nonlinear Score Function: Sneak Preview
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename ../Figures/conditional-probability-models/poissonBumps.pdf
+	height 55pheight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Blue line is mean 
+\begin_inset Formula $\mu(x)=\exp\left(f(x)\right)$
+\end_inset
+
+, for some nonlinear 
+\begin_inset Formula $f$
+\end_inset
+
+ learned from data.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Samples are 
+\begin_inset Formula $y_{i}\sim\text{Poisson}(\exp\left(f(x_{i})\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We can do this with gradient boosting and neural networks, coming up in
+ a few weeks.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Plot courtesy of Brett Bernstein.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Conditional Gaussian Regression
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Gaussian Linear Regression
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Input space 
+\begin_inset Formula $\cx=\reals^{d}$
+\end_inset
+
+, Output space 
+\begin_inset Formula $\cy=\reals$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+In Gaussian regression, prediction functions produce a distribution 
+\begin_inset Formula $\cn(\mu,\sigma^{2})$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Assume 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ is known.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Represent 
+\begin_inset Formula $\cn(\mu,\sigma^{2})$
+\end_inset
+
+ by the mean parameter 
+\begin_inset Formula $\mu\in\reals$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Action space 
+\begin_inset Formula $\ca=\reals$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+In Gaussian linear regression, 
+\begin_inset Formula $x$
+\end_inset
+
+ enters 
+\series bold
+linearly:
+\series default
+ 
+\begin_inset Formula $x\mapsto\underbrace{w^{T}x}_{\reals}\mapsto\mu=\underbrace{f(w^{T}x)}_{\reals}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Since 
+\begin_inset Formula $\mu\in\reals$
+\end_inset
+
+, we can take the identity transfer function: 
+\begin_inset Formula $f(w^{T}x)=w^{T}x$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Gaussian Regression: Likelihood Scoring
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose we have data 
+\begin_inset Formula $\cd=\left\{ (x_{1},y_{1}),\ldots,(x_{n},y_{n})\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Compute the model likelihood for 
+\begin_inset Formula $\cd$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+p(\cd;w)= & \prod_{i=1}^{n}p(y_{i}\mid x_{i};w)\text{ [by independence]}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Maximum Likelihood Estimation (MLE) finds 
+\begin_inset Formula $w$
+\end_inset
+
+ maximizing 
+\begin_inset Formula $\hat{p}(\cd;w)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Equivalently, maximize the data log-likelihood:
+\begin_inset Formula 
+\[
+\minimizer w=\argmax_{w\in\reals^{d}}\sum_{i=1}^{n}\log p(y_{i}\mid x_{i};w)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Let's start solving this!
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Gaussian Regression: MLE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The conditional log-likelihood is:
+\begin_inset Formula 
+\begin{eqnarray*}
+ &  & \sum_{i=1}^{n}\log p(y_{i}\mid x_{i};w)\\
+\pause & = & \sum_{i=1}^{n}\log\left[\frac{1}{\sigma\sqrt{2\pi}}\exp\left(-\frac{(y_{i}-w^{T}x_{i})^{2}}{2\sigma^{2}}\right)\right]\\
+\pause & = & \underbrace{\sum_{i=1}^{n}\log\left[\frac{1}{\sigma\sqrt{2\pi}}\right]}_{\mbox{independent of }w}+\sum_{i=1}^{n}\left(-\frac{(y_{i}-w^{T}x_{i})^{2}}{2\sigma^{2}}\right)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+MLE is the 
+\begin_inset Formula $w$
+\end_inset
+
+ where this is maximized.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Note that 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ is irrelevant to finding the maximizing 
+\begin_inset Formula $w$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Can drop the negative sign and make it a minimization problem.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Gaussian Regression: MLE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The MLE is 
+\begin_inset Formula 
+\begin{align*}
+\minimizer w= & \argmin_{w\in\reals^{d}}\sum_{i=1}^{n}(y_{i}-w^{T}x_{i})^{2}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+This is exactly the objective function for least squares.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+From here, can use usual approaches to solve for 
+\begin_inset Formula $w^{*}$
+\end_inset
+
+ (SGD, linear algebra, calculus, etc.) 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+NOTE: Parameter vector 
+\begin_inset Formula $w$
+\end_inset
+
+ only interacts with 
+\begin_inset Formula $x$
+\end_inset
+
+ by an inner product
+\end_layout
+
+\begin_layout Itemize
+NOTE: The variance 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ falls out of the objective function.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Can use maximum likelihood to estimate 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ as well?
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Multinomial Logistic Regression
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Multinomial Logistic Regression
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Setting: 
+\begin_inset Formula $\cx=\reals^{d}$
+\end_inset
+
+, 
+\begin_inset Formula $\cy=\left\{ 1,\ldots,k\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+For each 
+\begin_inset Formula $x$
+\end_inset
+
+, we want to produce a distribution on 
+\begin_inset Formula $k$
+\end_inset
+
+ classes.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Such a distribution is called a 
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+multinoulli
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+categorical
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+ distribution.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Represent categorical distribution by probability vector 
+\begin_inset Formula $\theta=\left(\theta_{1},\ldots,\theta_{k}\right)\in\reals^{k}$
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\sum_{i=1}^{k}\theta_{i}=1$
+\end_inset
+
+ and 
+\begin_inset Formula $\theta_{i}\ge0$
+\end_inset
+
+ for 
+\begin_inset Formula $i=1,\ldots,k$
+\end_inset
+
+ (i.e.
+ 
+\begin_inset Formula $\theta$
+\end_inset
+
+ represents a 
+\series bold
+distribution
+\series default
+) and
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+So 
+\begin_inset Formula $\forall y\in\left\{ 1,\ldots,k\right\} $
+\end_inset
+
+, 
+\begin_inset Formula $p(y)=\theta_{y}$
+\end_inset
+
+.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+That is, for each 
+\begin_inset Formula $x$
+\end_inset
+
+ and each 
+\begin_inset Formula $y\in\left\{ 1,\ldots,k\right\} $
+\end_inset
+
+, we want to produce a probability where 
+\begin_inset Formula $\sum_{y=1}^{k}\theta_{y}=1$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Multinomial Logistic Regression
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+From each 
+\begin_inset Formula $x$
+\end_inset
+
+, we compute a linear score function for each class: 
+\begin_inset Formula 
+\[
+x\mapsto\left(\left\langle w_{1},x\right\rangle ,\ldots,\left\langle w_{k},x\right\rangle \right)\in\reals^{k},
+\]
+
+\end_inset
+
+where we've introduced parameter vectors 
+\begin_inset Formula $w_{1},\ldots,w_{k}\in\reals^{d}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We need to map this 
+\begin_inset Formula $\reals^{k}$
+\end_inset
+
+ vector of scores into a probability vector.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Consider the 
+\series bold
+softmax function:
+\begin_inset Formula 
+\[
+\left(s_{1},\ldots,s_{k}\right)\mapsto\theta=\left(\frac{e^{s_{1}}}{\sum_{i=1}^{k}e^{s_{i}}},\ldots,\frac{e^{s_{k}}}{\sum_{i=1}^{k}e^{s_{i}}}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Note that 
+\begin_inset Formula $\theta\in\reals^{k}$
+\end_inset
+
+ and
+\begin_inset Formula 
+\begin{eqnarray*}
+\theta_{i} & > & 0\qquad i=1,\ldots,k\\
+\sum_{i=1}^{k}\theta_{i} & = & 1
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Multinomial Logistic Regression
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Say we want to get the predicted categorical distribution for a given 
+\begin_inset Formula $x\in\reals^{d}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+First compute the scores 
+\begin_inset Formula $(\in\reals^{k})$
+\end_inset
+
+ and then their softmax: 
+\series bold
+
+\begin_inset Formula 
+\[
+x\mapsto\left(\left\langle w_{1},x\right\rangle ,\ldots,\left\langle w_{k},x\right\rangle \right)\mapsto\theta=\left(\frac{\exp\left(w_{1}^{T}x\right)}{\sum_{i=1}^{k}\exp\left(w_{i}^{T}x\right)},\ldots,\frac{\exp\left(w_{k}^{T}x\right)}{\sum_{i=1}^{k}\exp\left(w_{i}^{T}x\right)}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+We can write the conditional probability for any 
+\begin_inset Formula $y\in\left\{ 1,\ldots,k\right\} $
+\end_inset
+
+ as
+\begin_inset Formula 
+\[
+p(y\mid x;w)=\frac{\exp\left(w_{y}^{T}x\right)}{\sum_{i=1}^{k}\exp\left(w_{i}^{T}x\right)}.
+\]
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Do we still see score functions in here?
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Can view 
+\begin_inset Formula $x\mapsto w_{y}^{T}x$
+\end_inset
+
+ as the score for class 
+\begin_inset Formula $y\in\left\{ 1,\ldots,k\right\} .$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+We can also 
+\begin_inset Quotes eld
+\end_inset
+
+flatten
+\begin_inset Quotes erd
+\end_inset
+
+ this as we did for multiclass classification.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Introduce a class-sensitive feature vector 
+\begin_inset Formula $\Psi(x,y)\in\reals^{d\times k}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Parameter vector 
+\begin_inset Formula $w\in\reals^{d\times k}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Multinomial Logistic Regression
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Putting this together, we write multinomial logistic regression as
+\begin_inset Formula 
+\[
+p(y\mid x;w)=\frac{\exp\left(w_{y}^{T}x\right)}{\sum_{i=1}^{k}\exp\left(w_{i}^{T}x\right)}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+How do we do learning here? What parameters are we estimating?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Our model is specified once we have 
+\begin_inset Formula $w_{1},\ldots,w_{k}\in\reals^{d}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Find parameter settings maximizing the log-likelihood of data 
+\begin_inset Formula $\cd$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+This objective function is concave in 
+\begin_inset Formula $w$
+\end_inset
+
+'s and straightforward to optimize.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Maximum Likelihood as ERM
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Conditional Probability Modeling as Statistical Learning
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Input space 
+\begin_inset Formula $\cx$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Outcome space 
+\begin_inset Formula $\cy$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+All pairs 
+\begin_inset Formula $(x,y)$
+\end_inset
+
+ are independent with distribution 
+\begin_inset Formula $P_{\cx\times\cy}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Action space
+\series default
+ 
+\begin_inset Formula $\ca=\left\{ p(y)\mid p\text{ is a probability density or mass function on }\cy\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Hypothesis space 
+\begin_inset Formula $\cf$
+\end_inset
+
+ contains decision functions 
+\begin_inset Formula $f:\cx\to\ca$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Maximum likelihood estimation for dataset 
+\begin_inset Formula $\cd=\left((x_{1},y_{1}),\ldots,(x_{n},y_{n}\right)$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+\hat{f}_{\text{MLE}}\in\argmax_{f\in\cf}\sum_{i=1}^{n}\log\left[f(x_{i})(y_{i})\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout ExampleBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Exercise
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout ExampleBlock
+Write the MLE optimization as empirical risk minimization.
+ What's the loss?
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Conditional Probability Modeling as Statistical Learning
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Take loss 
+\begin_inset Formula $\ell:\ca\times\cy\to\reals$
+\end_inset
+
+ for a predicted PDF or PMF 
+\begin_inset Formula $p(y)$
+\end_inset
+
+ and outcome 
+\begin_inset Formula $y$
+\end_inset
+
+ to be
+\begin_inset Formula 
+\[
+\ell(p,y)=-\log p(y)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The risk of decision function 
+\begin_inset Formula $f:\cx\to\ca$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+R(f)=-\ex_{x,y}\log\left[f(x)(y)\right],
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ is a PDF or PMF on 
+\begin_inset Formula $\cy$
+\end_inset
+
+, and we're evaluating it on 
+\begin_inset Formula $y$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Conditional Probability Modeling as Statistical Learning
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The empirical risk of 
+\begin_inset Formula $f$
+\end_inset
+
+ for a sample 
+\begin_inset Formula $\cd=\left\{ y_{1},\ldots,y_{n}\right\} \in\cy$
+\end_inset
+
+ is 
+\begin_inset Formula 
+\[
+\hat{R}(f)=-\frac{1}{n}\sum_{i=1}^{n}\log\left[f(x_{i})\right](y_{i}).
+\]
+
+\end_inset
+
+This is called the negative 
+\series bold
+conditional log-likelihood
+\series default
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Thus for the negative log-likelihood loss, ERM and MLE are equivalent
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+A Note on Notation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Hypothesis spaces contain decision functions 
+\begin_inset Formula $f:\cx\to\ca$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Given an 
+\begin_inset Formula $x\in\cx$
+\end_inset
+
+, predict a probability distribution 
+\begin_inset Formula $p(y)$
+\end_inset
+
+ on 
+\begin_inset Formula $\cy$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Let 
+\begin_inset Formula $f$
+\end_inset
+
+ be a decision function.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+In regression, 
+\begin_inset Formula $f(x)\in\reals$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+In hard classification, 
+\begin_inset Formula $f(x)\in\left\{ -1,1\right\} $
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+For generalized regression, 
+\begin_inset Formula $f(x)\in?$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $f(x)$
+\end_inset
+
+ is a PDF or PMF on 
+\begin_inset Formula $\cy$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+If 
+\begin_inset Formula $p=f(x)$
+\end_inset
+
+, can evaluate 
+\begin_inset Formula $p(y)$
+\end_inset
+
+ for predicted probability of 
+\begin_inset Formula $y$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Or just write 
+\begin_inset Formula $[f(x)](y)$
+\end_inset
+
+ or even 
+\begin_inset Formula $f(x)(y)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Deviance Defined
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We have used likelihood as our performance measure.
+\end_layout
+
+\begin_layout Itemize
+An alternative measure used commonly in statistics is called 
+\series bold
+deviance
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+For model fitting, it leads to the same results.
+\end_layout
+
+\begin_layout Itemize
+As above, for any input 
+\begin_inset Formula $x$
+\end_inset
+
+ we predict parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+ for a parametric family 
+\begin_inset Formula $p(y;\theta)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+How General A Distribution Can We Use?
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Uniform Example?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../Figures/conditional-probability-models/uniform.pdf
+	height 70pheight%
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Can't use it in GBM: likelihood not differentiable (not continuous)
+\end_layout
+
+\begin_layout Itemize
+Motivates using 
+\begin_inset Quotes eld
+\end_inset
+
+exponential family
+\begin_inset Quotes erd
+\end_inset
+
+ distributions (a bit about this next time)
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

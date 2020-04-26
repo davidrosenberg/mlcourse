@@ -1,0 +1,6322 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass beamer
+\begin_preamble
+\usetheme{CambridgeUS} 
+\beamertemplatenavigationsymbolsempty
+
+
+% Set Color ==============================
+\definecolor{NYUPurple}{RGB}{87,6,140}
+\definecolor{LightPurple}{RGB}{165,11,255}
+
+
+\setbeamercolor{title}{fg=NYUPurple}
+%\setbeamercolor{frametitle}{fg=NYUPurple}
+\setbeamercolor{frametitle}{fg=NYUPurple}
+
+\setbeamercolor{background canvas}{fg=NYUPurple, bg=white}
+\setbeamercolor{background}{fg=black, bg=NYUPurple}
+
+\setbeamercolor{palette primary}{fg=black, bg=gray!30!white}
+\setbeamercolor{palette secondary}{fg=black, bg=gray!20!white}
+\setbeamercolor{palette tertiary}{fg=gray!20!white, bg=NYUPurple}
+
+\setbeamertemplate{headline}{}
+
+\setbeamercolor{parttitle}{fg=NYUPurple}
+\setbeamercolor{sectiontitle}{fg=NYUPurple}
+\setbeamercolor{sectionname}{fg=NYUPurple}
+\setbeamercolor{section page}{fg=NYUPurple}
+
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+\setbeamercolor{section title}{fg=NYUPurple}
+ \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\usebeamercolor[fg]{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+\end_preamble
+\options aspectratio=169,handout
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "eulervm" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "allcolors=NYUPurple,urlcolor=LightPurple"
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\boxbgcolor #ff31d8
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\renewcommand{\reals}{\mathbf{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\integers}{\mathbf{Z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\naturals}{\mathbf{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\rationals}{\mathbf{Q}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\ca}{\mathcal{A}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\cb}{\mathcal{B}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\cc}{\mathcal{C}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\cd}{\mathcal{D}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\ce}{\mathcal{E}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\cf}{\mathcal{F}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\cg}{\mathcal{G}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\ch}{\mathcal{H}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\ci}{\mathcal{I}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\cj}{\mathcal{J}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\ck}{\mathcal{K}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\cl}{\mathcal{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\cm}{\mathcal{M}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\cn}{\mathcal{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\co}{\mathcal{O}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\cp}{\mathcal{P}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\cq}{\mathcal{Q}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\calr}{\mathcal{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\cs}{\mathcal{S}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\ct}{\mathcal{T}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\cu}{\mathcal{U}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\cv}{\mathcal{V}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\cw}{\mathcal{W}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\cx}{\mathcal{X}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\cy}{\mathcal{Y}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\cz}{\mathcal{Z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\ind}[1]{1(#1)}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand{
+\backslash
+pr}{P}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\renewcommand{\pr}{\mathbb{P}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\predsp}{\cy}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%{
+\backslash
+hat{
+\backslash
+cy}}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\renewcommand{\outsp}{\cy}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\renewcommand{\prxy}{P_{\cx\times\cy}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\prx}{P_{\cx}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\prygivenx}{P_{\cy\mid\cx}}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand{
+\backslash
+ex}{E}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\renewcommand{\ex}{\mathbb{E}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\var}{\textrm{Var}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\cov}{\textrm{Cov}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\sgn}{\textrm{sgn}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\sign}{\textrm{sign}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\kl}{\textrm{KL}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\law}{\mathcal{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\eps}{\varepsilon}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\as}{\textrm{ a.s.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\io}{\textrm{ i.o.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\ev}{\textrm{ ev.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\convd}{\stackrel{d}{\to}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\eqd}{\stackrel{d}{=}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\del}{\nabla}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\loss}{\ell}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\risk}{R}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\emprisk}{\hat{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\lossfnl}{L}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\emplossfnl}{\hat{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\empminimizer}[1]{\hat{#1}^{*}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\minimizer}[1]{#1^{*}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\renewcommand{\optimizer}[1]{#1^{*}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\etal}{\textrm{et. al.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\tr}{\operatorname{tr}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\renewcommand{\trace}{\operatorname{trace}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\diag}{\text{diag}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\rank}{\text{rank}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\linspan}{\text{span}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\spn}{\text{span}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\proj}{\text{Proj}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\argmax}{\operatornamewithlimits{arg\, max}}
+{\text{argmax}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\argmin}{\operatornamewithlimits{arg\, min}}
+{\text{argmin}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\renewcommand{\bfx}{\mathbf{x}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\bfy}{\mathbf{y}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\bfl}{\mathbf{\lambda}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\bfm}{\mathbf{\mu}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\calL}{\mathcal{L}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\renewcommand{\vw}{\boldsymbol{w}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\vx}{\boldsymbol{x}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\vxi}{\boldsymbol{\xi}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\valpha}{\boldsymbol{\alpha}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\vbeta}{\boldsymbol{\beta}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\vsigma}{\boldsymbol{\sigma}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\renewcommand{\vtheta}{\boldsymbol{\theta}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\vd}{\boldsymbol{d}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\vs}{\boldsymbol{s}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\vt}{\boldsymbol{t}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\vh}{\boldsymbol{h}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\ve}{\boldsymbol{e}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\vf}{\boldsymbol{f}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\vg}{\boldsymbol{g}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\vz}{\boldsymbol{z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\vk}{\boldsymbol{k}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\va}{\boldsymbol{a}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\vb}{\boldsymbol{b}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\vv}{\boldsymbol{v}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\vy}{\boldsymbol{y}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\renewcommand{\dom}{\textrm{\textbf{dom} }}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\renewcommand{\rank}{\text{\textbf{rank }}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\renewcommand{\conv}{\textrm{\textbf{conv} }}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\renewcommand{\relint}{\text{\textbf{relint }}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\renewcommand{\aff}{\text{\textbf{aff }}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\renewcommand{\hil}{\ch}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\rkhs}{\hil}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\ber}{\text{Ber}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ Regularization
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Contents
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Tikhonov and Ivanov Regularization
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Hypothesis Spaces
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We've spoken vaguely about 
+\begin_inset Quotes eld
+\end_inset
+
+bigger
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+smaller
+\begin_inset Quotes erd
+\end_inset
+
+ hypothesis spaces
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+In practice, convenient to work with a 
+\series bold
+nested sequence 
+\series default
+of spaces:
+\begin_inset Formula 
+\[
+\cf_{1}\subset\cf_{2}\subset\cf_{n}\cdots\subset\cf
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout ExampleBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Polynomial Functions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\cf=\left\{ \mbox{all polynomial functions}\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\cf_{d}=\left\{ \mbox{all polynomials of degree }\le d\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout ExampleBlock
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Decision Trees
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\cf=\left\{ \mbox{all decision trees}\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\cf_{n}=\left\{ \mbox{all decision trees of depth }\le n\right\} $
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Complexity Measures for Decision Functions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Number of variables / features
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Depth of a decision tree
+\end_layout
+
+\begin_layout Itemize
+Degree of polynomial
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+A measure of smoothness:
+\begin_inset Formula 
+\[
+f\mapsto\int\left\{ f''(t)\right\} ^{2}\,dt
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+How about for 
+\series bold
+linear
+\series default
+ decision functions, i.e.
+ 
+\begin_inset Formula $x\mapsto w^{T}x=w_{1}x_{1}+\cdots+w_{d}x_{d}$
+\end_inset
+
+?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\ell_{0}$
+\end_inset
+
+ complexity: number of non-zero coefficients 
+\begin_inset Formula $\sum_{i=1}^{d}\ind{w_{i}\neq0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+lasso
+\begin_inset Quotes erd
+\end_inset
+
+ complexity: 
+\begin_inset Formula $\sum_{i=1}^{d}\left|w_{i}\right|$
+\end_inset
+
+, for coefficients 
+\begin_inset Formula $w_{1},\ldots,w_{d}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+ridge
+\begin_inset Quotes erd
+\end_inset
+
+ complexity: 
+\begin_inset Formula $\sum_{i=1}^{d}w_{i}^{2}$
+\end_inset
+
+ for coefficients 
+\begin_inset Formula $w_{1},\ldots,w_{d}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Nested Hypothesis Spaces from Complexity Measure
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Hypothesis space: 
+\begin_inset Formula $\cf$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Complexity measure 
+\begin_inset Formula $\Omega:\cf\to[0,\infty)$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Consider all functions in 
+\begin_inset Formula $\cf$
+\end_inset
+
+ with
+\emph on
+ 
+\emph default
+complexity 
+\series bold
+at most 
+\begin_inset Formula $r$
+\end_inset
+
+:
+\series default
+
+\begin_inset Formula 
+\[
+\cf_{r}=\left\{ f\in\cf\mid\Omega(f)\le r\right\} 
+\]
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+If 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ is a norm on 
+\begin_inset Formula $\cf$
+\end_inset
+
+, this is a 
+\series bold
+ball of radius 
+\begin_inset Formula $r$
+\end_inset
+
+ 
+\series default
+in 
+\begin_inset Formula $\cf$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Increasing complexities: 
+\begin_inset Formula $r=0,1.2,2.6,5.4,\ldots$
+\end_inset
+
+ gives nested spaces:
+\begin_inset Formula 
+\[
+\cf_{0}\subset\cf_{1.2}\subset\cf_{2.6}\subset\cf_{5.4}\subset\cdots\subset\cf
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Constrained Empirical Risk Minimization
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Constrained ERM (Ivanov regularization)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+For complexity measure 
+\begin_inset Formula $\Omega:\cf\to[0,\infty)$
+\end_inset
+
+ and fixed 
+\begin_inset Formula $r\ge0$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\min_{f\in\cf}\; & \frac{1}{n}\sum_{i=1}^{n}\ell(f(x_{i}),y_{i})\\
+\mbox{s.t.}\; & \Omega(f)\le r
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Choose 
+\begin_inset Formula $r$
+\end_inset
+
+ using validation data or cross-validation.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Each 
+\begin_inset Formula $r$
+\end_inset
+
+ corresponds to a different hypothesis spaces.
+ Could also write:
+\begin_inset Formula 
+\[
+\min_{f\in\cf_{r}}\frac{1}{n}\sum_{i=1}^{n}\ell(f(x_{i}),y_{i})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Penalized Empirical Risk Minimization
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Penalized ERM (Tikhonov regularization)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+For complexity measure 
+\begin_inset Formula $\Omega:\cf\to[0,\infty)$
+\end_inset
+
+ and fixed 
+\begin_inset Formula $\lambda\ge0$
+\end_inset
+
+,
+\begin_inset Formula 
+\begin{align*}
+\min_{f\in\cf} & \frac{1}{n}\sum_{i=1}^{n}\ell(f(x_{i}),y_{i})+\lambda\Omega(f)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Choose 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ using validation data or cross-validation.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Ivanov vs Tikhonov Regularization 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $L:\cf\to\reals$
+\end_inset
+
+ be any performance measure of 
+\begin_inset Formula $f$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+e.g.
+ 
+\begin_inset Formula $L(f)$
+\end_inset
+
+ could be the empirical risk of 
+\begin_inset Formula $f$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+For many 
+\begin_inset Formula $L$
+\end_inset
+
+ and 
+\begin_inset Formula $\Omega$
+\end_inset
+
+, Ivanov and Tikhonov are 
+\begin_inset Quotes eld
+\end_inset
+
+equivalent
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+What does this mean?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Any solution 
+\begin_inset Formula $f^{*}$
+\end_inset
+
+ you could get from Ivanov, can also get from Tikhonov.
+\end_layout
+
+\begin_layout Itemize
+Any solution 
+\begin_inset Formula $f^{*}$
+\end_inset
+
+ you could get from Tikhonov, can also get from Ivanov.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+In practice, both approaches are effective.
+\end_layout
+
+\begin_layout Itemize
+Tikhonov convenient because it's 
+\emph on
+unconstrained
+\emph default
+ minimization.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Can get conditions for equivalence from Lagrangian duality theory – details
+ in homework.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Recall: Risk Decomposition Figure
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Introduce 
+\series bold
+complexity-constrained hypothesis space
+\series default
+: 
+\begin_inset Formula $\cf_{r}=\left\{ f\in\cf\mid\Omega(f)\le r\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/ApproxEstError/F_r-constrained-space.png
+	lyxscale 20
+	width 90col%
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Risk Decomposition Figure: Complexity Constrained
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/ApproxEstError/approx-est-r-constrained.png
+	lyxscale 20
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Revised notation:
+\begin_inset Formula 
+\begin{align*}
+\hat{f}_{r}= & \argmin_{f\in\cf_{r}}\frac{1}{n}\sum_{i=1}^{n}\ell(f(x_{i}),y_{i}) & f_{r}= & \argmin_{f\in\cf_{r}}\ex\ell(f(X),Y)) & f^{*}= & \argmin_{f}\ex\ell(f(X),Y)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+This time we've put 
+\begin_inset Formula $\hat{f}_{r}$
+\end_inset
+
+ on the boundary of 
+\begin_inset Formula $\cf$
+\end_inset
+
+ - why?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Risk Decomposition Figure: Complexity Constrained
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/ApproxEstError/approx-est-r-constrained.png
+	lyxscale 20
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+This time we've put 
+\begin_inset Formula $\hat{f}_{r}$
+\end_inset
+
+ on the boundary of 
+\begin_inset Formula $\cf$
+\end_inset
+
+ - why?
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Typically
+\series default
+, 
+\begin_inset Formula $\hat{f}_{r}$
+\end_inset
+
+ will have 
+\begin_inset Formula $\Omega(\hat{f}_{r})=r$
+\end_inset
+
+, since with more complexity we can usually fit the data better.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Risk Decomposition Figure: Complexity Constrained
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Consider complexity constraints 
+\begin_inset Formula $r=.001,.01,1.0,10,1000$
+\end_inset
+
+, corresponding to nested spaces:
+\begin_inset Formula 
+\[
+\cf_{0.001}\subset\cf_{0.1}\subset\cf_{1.0}\subset\cf_{10}\subset\cf_{1000}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+We get corresponding sequence of ERMs: 
+\begin_inset Formula $\hat{f}_{0.001},\hat{f}_{0.1},\hat{f}_{1.0},\hat{f}_{10},\hat{f}_{1000}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/ApproxEstError/constrained-reg-seq.png
+	lyxscale 20
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Regularization Path for Constrained ERM
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+What if we found ERM's 
+\begin_inset Formula $\hat{f}_{r}$
+\end_inset
+
+ for all 
+\begin_inset Formula $r\in[0,\infty]$
+\end_inset
+
+? 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Define the 
+\series bold
+regularization path 
+\series default
+for constrained optimization in 
+\begin_inset Formula $\cf$
+\end_inset
+
+ with complexity 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ as
+\begin_inset Formula 
+\[
+P_{\cf,\Omega}^{\text{constrained}}=\left\{ \hat{f}_{r}\mid r\in\left[0,\infty\right]\right\} ,
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\hat{f}_{r}$
+\end_inset
+
+ is the constrained ERM in 
+\begin_inset Formula $\cf$
+\end_inset
+
+ defined by 
+\begin_inset Formula $\hat{f}_{r}=\argmin_{\left\{ f\in\cf\mid\Omega(f)\le r\right\} }\hat{R}(f).$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/ApproxEstError/constrained-reg-path.png
+	lyxscale 20
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Regularization Path for Penalized ERM
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Define the 
+\series bold
+regularization path 
+\series default
+for penalized optimization in 
+\begin_inset Formula $\cf$
+\end_inset
+
+ with complexity 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ as
+\begin_inset Formula 
+\[
+P_{\cf,\Omega}^{\text{penalized}}=\left\{ \hat{f}_{\lambda}\mid\lambda\in\left[0,\infty\right]\right\} ,
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\hat{f}_{r}$
+\end_inset
+
+ is the constrained ERM in 
+\begin_inset Formula $\cf$
+\end_inset
+
+ defined by 
+\begin_inset Formula $\hat{f}_{r}=\argmin_{\left\{ f\in\cf\mid\Omega(f)\le r\right\} }\hat{R}(f).$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+For lasso, ridge, and many more, 
+\begin_inset Formula $P_{\cf,\Omega}^{\text{constrained}}=P_{\cf,\Omega}^{\text{penalized}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Precise statement in homework.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ Regularization
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Linear Least Squares Regression
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Consider linear models
+\begin_inset Formula 
+\[
+\cf=\left\{ f:\reals^{d}\to\reals\mid f(x)=w^{T}x\mbox{ for }w\in\reals^{d}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Loss: 
+\begin_inset Formula $\loss(\hat{y},y)=\left(y-\hat{y}\right)^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Training data 
+\begin_inset Formula $\cd_{n}=\left((x_{1},y_{1}),\ldots,(x_{n},y_{n})\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Linear least squares regression is ERM for 
+\begin_inset Formula $\ell$
+\end_inset
+
+ over 
+\begin_inset Formula $\cf$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\hat{w}=\argmin_{w\in\reals^{d}}\frac{1}{n}\sum_{i=1}^{n}\left\{ w^{T}x_{i}-y_{i}\right\} ^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Can 
+\series bold
+overfit 
+\series default
+when 
+\begin_inset Formula $d$
+\end_inset
+
+ is large compared to 
+\begin_inset Formula $n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+e.g.: 
+\begin_inset Formula $d\gg n$
+\end_inset
+
+ very common in Natural Language Processing problems (e.g.
+ a 1M features for 10K documents).
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Ridge Regression: Workhorse of Modern Data Science
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Ridge Regression (Tikhonov Form)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+The ridge regression solution for regularization parameter 
+\begin_inset Formula $\lambda\ge0$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+\hat{w}=\argmin_{w\in\reals^{d}}\frac{1}{n}\sum_{i=1}^{n}\left\{ w^{T}x_{i}-y_{i}\right\} ^{2}+\lambda\|w\|_{2}^{2},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\|w\|_{2}^{2}=w_{1}^{2}+\cdots+w_{d}^{2}$
+\end_inset
+
+ is the square of the 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+-norm.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Ridge Regression (Ivanov Form)
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+The ridge regression solution for complexity parameter 
+\begin_inset Formula $r\ge0$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+\hat{w}=\argmin_{\|w\|_{2}^{2}\le r^{2}}\frac{1}{n}\sum_{i=1}^{n}\left\{ w^{T}x_{i}-y_{i}\right\} ^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+How does 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ regularization induce 
+\begin_inset Quotes eld
+\end_inset
+
+regularity
+\begin_inset Quotes erd
+\end_inset
+
+?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For 
+\begin_inset Formula $\hat{f}(x)=\hat{w}^{T}x$
+\end_inset
+
+, 
+\begin_inset Formula $\hat{f}$
+\end_inset
+
+ is 
+\series bold
+Lipschitz continuous 
+\series default
+with Lipschitz constant 
+\begin_inset Formula $L=\|\hat{w}\|_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+That is, when moving from 
+\begin_inset Formula $x$
+\end_inset
+
+ to 
+\begin_inset Formula $x+h\pause$
+\end_inset
+
+, 
+\begin_inset Formula $\hat{f}$
+\end_inset
+
+ changes no more than 
+\begin_inset Formula $L\|h\|$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+So 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ regularization controls the maximum rate of change of 
+\begin_inset Formula $\hat{f}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Proof:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+\left|\hat{f}(x+h)-\hat{f}(x)\right| & = & |\hat{w}^{T}\left(x+h\right)-\hat{w}^{T}x|=\pause\left|\hat{w}^{T}h\right|\\
+\pause & \le & \|\hat{w}\|_{2}\|h\|_{2}\text{\pause(Cauchy-Schwarz inequality)}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Since 
+\begin_inset Formula $\|\hat{w}\|_{1}\ge\|\hat{w}\|_{2}$
+\end_inset
+
+, an 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ constraint will also give a Lipschitz bound.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Ridge Regression: Regularization Path
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Modified from Hastie, Tibshirani, and Wainwright's 
+\backslash
+emph{Statistical Learning with Sparsity}, Fig 2.1.
+ About predicting crime in 50 US cities.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/L1L2/ridge-regularization-HTW-Fig2.1-LATEX.png
+	lyxscale 30
+	height 70theight%
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Flex ArticleMode
+status open
+
+\begin_layout Plain Layout
+Do we get lots of regularization with 
+\begin_inset Formula $r$
+\end_inset
+
+ large or 
+\begin_inset Formula $r$
+\end_inset
+
+ small? This plot traces out the paths of coefficients as we vary the amount
+ of 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ regularization.
+ With no regularization, 
+\begin_inset Formula $\|\hat{w}_{\infty}\|_{2}=\|\hat{w}\|_{2}$
+\end_inset
+
+, which corresponds to the right side of the plot.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Lasso Regression: Workhorse (2) of Modern Data Science
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Lasso Regression (Tikhonov Form)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+The lasso regression solution for regularization parameter 
+\begin_inset Formula $\lambda\ge0$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+\hat{w}=\argmin_{w\in\reals^{d}}\frac{1}{n}\sum_{i=1}^{n}\left\{ w^{T}x_{i}-y_{i}\right\} ^{2}+\lambda\|w\|_{1},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\|w\|_{1}=\left|w_{1}\right|+\cdots+\left|w_{d}\right|$
+\end_inset
+
+ is the 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+-norm.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Lasso Regression (Ivanov Form)
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+The lasso regression solution for complexity parameter 
+\begin_inset Formula $r\ge0$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+\hat{w}=\argmin_{\|w\|_{1}\le r}\frac{1}{n}\sum_{i=1}^{n}\left\{ w^{T}x_{i}-y_{i}\right\} ^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Lasso Regression: Regularization Path
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Modified from Hastie, Tibshirani, and Wainwright's 
+\backslash
+emph{Statistical Learning with Sparsity}, Fig 2.1.
+ About predicting crime in 50 US cities.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/L1L2/lasso-regularization-HTW-Fig2.1-LATEX.png
+	lyxscale 30
+	height 70theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Ridge vs.
+ Lasso: Regularization Paths
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Modified from Hastie, Tibshirani, and Wainwright's 
+\backslash
+emph{Statistical Learning with Sparsity}, Fig 2.1.
+ About predicting crime in 50 US cities.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/L1L2/lasso-ridge-paths-side-by-side.png
+	lyxscale 30
+	height 80theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Lasso Gives Feature Sparsity: So What?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Coefficient are 
+\begin_inset Formula $0$
+\end_inset
+
+ 
+\begin_inset Formula $\implies$
+\end_inset
+
+don't need those features.
+ What's the gain?
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Time/expense to compute/buy features
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Memory to store features (e.g.
+ real-time deployment)
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Identifies the important features
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Better prediction? sometimes
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+As a feature-selection step for training a slower non-linear model
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Ivanov and Tikhonov Equivalent?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For ridge regression and lasso regression (and much more) 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+the Ivanov and Tikhonov formulations are equivalent
+\end_layout
+
+\begin_layout Itemize
+[Optional homework problem, upcoming.]
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We will use whichever form is most convenient.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Why does Lasso regression give sparse solutions?
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Parameter Space
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Illustrate affine prediction functions in parameter space.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ Norm Constraints
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For visualization, restrict to 2-dimensional input space
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\cf=\left\{ f(x)=w_{1}x_{1}+w_{2}x_{2}\right\} $
+\end_inset
+
+ (linear hypothesis space)
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Represent 
+\begin_inset Formula $\cf$
+\end_inset
+
+ by 
+\begin_inset Formula $\left\{ \left(w_{1},w_{2}\right)\in\reals^{2}\right\} .$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout ColumnsTopAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+.3
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ contour: 
+\begin_inset Formula $w_{1}^{2}+w_{2}^{2}=r$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout ColumnsTopAligned
+\begin_inset Graphics
+	filename ../Figures/L1L2/l2Contour.png
+	height 25theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout ColumnsTopAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+.3
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ contour: 
+\begin_inset Formula $\left|w_{1}\right|+\left|w_{2}\right|=r$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename ../Figures/L1L2/l1Countour.png
+	height 25theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+Where are the 
+\begin_inset Quotes eld
+\end_inset
+
+sparse
+\begin_inset Quotes erd
+\end_inset
+
+ solutions?
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Famous Picture for 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ Regularization
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{KPM Fig.
+ 13.3}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\minimizer{f_{r}}=\argmin_{w\in\reals^{2}}\frac{1}{n}\sum_{i=1}^{n}\left(w^{T}x_{i}-y_{i}\right)^{2}\text{subject to}\left|w_{1}\right|+\left|w_{2}\right|\le r$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/L1L2/l1LossConstraintPic.png
+	lyxscale 60
+	height 50theight%
+
+\end_inset
+
+
+\begin_inset VSpace -0.3cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Blue region: Area satisfying complexity constraint: 
+\begin_inset Formula $\left|w_{1}\right|+\left|w_{2}\right|\le r$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Red lines: contours of 
+\begin_inset Formula $\hat{R}_{n}(w)=\sum_{i=1}^{n}\left(w^{T}x_{i}-y_{i}\right)^{2}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Empirical Risk for Square Loss
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Denote the empirical risk of 
+\begin_inset Formula $f(x)=w^{T}x$
+\end_inset
+
+ by
+\begin_inset Formula 
+\[
+\hat{R}_{n}(w)=\frac{1}{n}\|Xw-y\|^{2},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $X$
+\end_inset
+
+ is the 
+\series bold
+design matrix
+\series default
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\hat{R}_{n}$
+\end_inset
+
+ is minimized by 
+\begin_inset Formula $\hat{w}=\left(X^{T}X\right)^{-1}X^{T}y$
+\end_inset
+
+, the OLS solution.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+What does 
+\begin_inset Formula $\hat{R}_{n}$
+\end_inset
+
+ look like around 
+\begin_inset Formula $\hat{w}$
+\end_inset
+
+?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Empirical Risk for Square Loss
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+By 
+\begin_inset Quotes eld
+\end_inset
+
+completing the square
+\begin_inset Quotes erd
+\end_inset
+
+, we can show for any 
+\begin_inset Formula $w\in\reals^{d}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\hat{R}_{n}(w)=\frac{1}{n}\left(w-\hat{w}\right)^{T}X^{T}X\left(w-\hat{w}\right)+\hat{R}_{n}(\hat{w})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Set of 
+\begin_inset Formula $w$
+\end_inset
+
+ with 
+\begin_inset Formula $\hat{R}_{n}(w)$
+\end_inset
+
+ exceeding 
+\begin_inset Formula $\hat{R}_{n}(\hat{w})$
+\end_inset
+
+ by 
+\begin_inset Formula $c>0$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+\left\{ w\mid\hat{R}_{n}(w)=c+\hat{R}_{n}(\hat{w})\right\} =\left\{ w\mid\left(w-\hat{w}\right)^{T}X^{T}X\left(w-\hat{w}\right)=nc\right\} ,
+\]
+
+\end_inset
+
+which is an 
+\series bold
+ellipsoid centered at 
+\begin_inset Formula $\hat{w}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We'll derive this in homework.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Famous Picture for 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ Regularization
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\minimizer{f_{r}}=\argmin_{w\in\reals^{2}}\sum_{i=1}^{n}\left(w^{T}x_{i}-y_{i}\right)^{2}\text{subject to }w_{1}^{2}+w_{2}^{2}\le r$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/L1L2/l2LossConstraintPic.png
+	lyxscale 60
+	height 50theight%
+
+\end_inset
+
+
+\begin_inset VSpace -0.3cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Blue region: Area satisfying complexity constraint: 
+\begin_inset Formula $w_{1}^{2}+w_{2}^{2}\le r$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Red lines: contours of 
+\begin_inset Formula $\hat{R}_{n}(w)=\sum_{i=1}^{n}\left(w^{T}x_{i}-y_{i}\right)^{2}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{KPM Fig.
+ 13.3}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Why are Lasso Solutions Often Sparse?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Fig from 
+\backslash
+href{https://arxiv.org/abs/1411.3230}{Mairal et al.'s Sparse Modeling for Image
+ and Vision Processing} Fig 1.6}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/L1L2/projections-to-L1Ball.png
+	lyxscale 40
+	height 50theight%
+
+\end_inset
+
+
+\begin_inset VSpace -0.3cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Suppose design matrix 
+\begin_inset Formula $X$
+\end_inset
+
+ is orthogonal, so 
+\begin_inset Formula $X^{T}X=I$
+\end_inset
+
+, and contours are circles.
+\end_layout
+
+\begin_layout Itemize
+Then OLS solution in green or red regions implies 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ constrained solution will be at corner
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The 
+\begin_inset Formula $\left(\ell_{q}\right)^{q}$
+\end_inset
+
+ Constraint
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Generalize to 
+\begin_inset Formula $\ell_{q}$
+\end_inset
+
+ : 
+\begin_inset Formula $\left(\|w\|_{q}\right)^{q}=\left|w_{1}\right|^{q}+\left|w_{2}\right|^{q}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Note: 
+\begin_inset Formula $\|w\|_{q}$
+\end_inset
+
+ is a norm if 
+\begin_inset Formula $q\ge1$
+\end_inset
+
+, but not for 
+\begin_inset Formula $q\in\left(0,1\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\cf=\left\{ f(x)=w_{1}x_{1}+w_{2}x_{2}\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Contours of 
+\begin_inset Formula $\|w\|_{q}^{q}=\left|w_{1}\right|^{q}+\left|w_{2}\right|^{q}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename ../Figures/L1L2/LqNormContours.png
+	width 80col%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ell_{q}$
+\end_inset
+
+ Even Sparser
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Fig from 
+\backslash
+href{https://arxiv.org/abs/1411.3230}{Mairal et al.'s Sparse Modeling for Image
+ and Vision Processing} Fig 1.9}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/L1L2/projections-to-LqBall.png
+	lyxscale 40
+	height 50theight%
+
+\end_inset
+
+
+\begin_inset VSpace -0.3cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Suppose design matrix 
+\begin_inset Formula $X$
+\end_inset
+
+ is orthogonal, so 
+\begin_inset Formula $X^{T}X=I$
+\end_inset
+
+, and contours are circles.
+\end_layout
+
+\begin_layout Itemize
+Then OLS solution in green or red regions implies 
+\begin_inset Formula $\ell_{q}$
+\end_inset
+
+ constrained solution will be at corner
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\ell_{q}$
+\end_inset
+
+-ball constraint is not convex, so more difficult to optimize.
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Quora Picture
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+From Quora: 
+\begin_inset Quotes eld
+\end_inset
+
+Why is L1 regularization supposed to lead to sparsity than L2? [sic]
+\begin_inset Quotes erd
+\end_inset
+
+ (google it)
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/stepFnsL1L2/L0L1.jpg
+	lyxscale 60
+	width 46col%
+	height 35theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Does this picture have any interpretation that makes sense? (Aren't those
+ lines supposed to be ellipses?)
+\end_layout
+
+\begin_layout Itemize
+Yes...
+ we can revisit.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+e.g.
+ What if 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+ are linearly related? What if the empirical risk minimizer has huge norm
+ (i.e.
+ is very far from the origin).
+ Then the ellipse around that point may look like a straight line in the
+ vicinity of the relevant level sets of 
+\begin_inset Formula $\|w\|_{1}$
+\end_inset
+
+.
+ In this situation, we see it is even more likely to hit a corner.
+ Translation for intuition: When regularization is significantly changing
+ the least squares solution, we're more likely to be sparse.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Figure from 
+\backslash
+url{https://www.quora.com/Why-is-L1-regularization-supposed-to-lead-to-sparsity-th
+an-L2}.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Repeated Features
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+A Very Simple Model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose we have one feature 
+\begin_inset Formula $x_{1}\in\reals$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Response variable 
+\begin_inset Formula $y\in\reals$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Got some data and ran least squares linear regression.
+\end_layout
+
+\begin_layout Itemize
+The ERM is
+\begin_inset Formula 
+\[
+\hat{f}(x_{1})=4x_{1}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+What happens if we get a new feature 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+, 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+but we always have 
+\begin_inset Formula $x_{2}=x_{1}$
+\end_inset
+
+?
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Duplicate Features
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+New feature 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+ gives no new information.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+ERM is still
+\begin_inset Formula 
+\[
+\hat{f}(x_{1},x_{2})=4x{}_{1}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Now there are some more ERMs:
+\begin_inset Formula 
+\begin{eqnarray*}
+\hat{f}(x_{1},x_{2}) & = & 2x_{1}+2x_{2}\\
+\hat{f}(x_{1},x_{2}) & = & x_{1}+3x_{2}\\
+\hat{f}(x_{1},x_{2}) & = & 4x_{2}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+What if we introduce 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ or 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ regularization?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Duplicate Features: 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ norms
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\hat{f}(x_{1},x_{2})=w_{1}x_{1}+w_{2}x_{2}$
+\end_inset
+
+ is an ERM iff 
+\begin_inset Formula $w_{1}+w_{2}=4$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Consider the 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ norms of various solutions:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $w_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $w_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\|w\|_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\|w\|_{2}^{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+16
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+8
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+26
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\|w\|_{1}$
+\end_inset
+
+ doesn't discriminate, as long as all have same sign
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\|w\|_{2}^{2}$
+\end_inset
+
+ minimized when weight is spread equally
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Math proof: Lagrange multipliers
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Picture proof: Level sets of loss are lines of the form 
+\begin_inset Formula $w_{1}+w_{2}=4$
+\end_inset
+
+...
+\begin_inset Note Note
+status open
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+2 Equal Features: Summary
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Input features: 
+\begin_inset Formula $x_{1},x_{2}\in\reals$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Outcome: 
+\begin_inset Formula $y\in\reals$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Linear prediction functions 
+\begin_inset Formula $f(x)=w_{1}x_{2}+w_{2}x_{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Suppose 
+\begin_inset Formula $x_{1}=x_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Then all functions with 
+\begin_inset Formula $w_{1}+w_{2}=k$
+\end_inset
+
+ are the same.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+give same predictions and have same empirical risk
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Plain Layout
+What function will we select if we do ERM with 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ or 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ constraint?
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Equal Features, 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ Constraint
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/L1L2/L2Eq.png
+	lyxscale 20
+	height 40theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Suppose the line 
+\begin_inset Formula $w_{1}+w_{2}=2\sqrt{2}+3.5$
+\end_inset
+
+ corresponds to the empirical risk minimizers.
+\end_layout
+
+\begin_layout Itemize
+Empirical risk increase as we move away from these parameter settings
+\end_layout
+
+\begin_layout Itemize
+Intersection of 
+\begin_inset Formula $w_{1}+w_{2}=2\sqrt{2}$
+\end_inset
+
+ and the norm ball 
+\begin_inset Formula $\|w\|_{2}\le2$
+\end_inset
+
+ is ridge solution.
+\end_layout
+
+\begin_layout Itemize
+Note that 
+\begin_inset Formula $w_{1}=w_{2}$
+\end_inset
+
+ at the solution
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Equal Features, 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ Constraint
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/L1L2/L1Eq.png
+	lyxscale 20
+	height 40theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Suppose the line 
+\begin_inset Formula $w_{1}+w_{2}=5.5$
+\end_inset
+
+ corresponds to the empirical risk minimizers.
+\end_layout
+
+\begin_layout Itemize
+Intersection of 
+\begin_inset Formula $w_{1}+w_{2}=2$
+\end_inset
+
+ and the norm ball 
+\begin_inset Formula $\|w\|_{1}\le2$
+\end_inset
+
+ is lasso solution.
+\end_layout
+
+\begin_layout Itemize
+Note that the solution set is 
+\begin_inset Formula $\left\{ \left(w_{1},w_{2}\right):w_{1}+w_{2}=2,w_{1},w_{2}\ge0\right\} $
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Linearly Dependent Features
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Linearly Related Features
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Linear prediction functions: 
+\begin_inset Formula $f(x)=w_{1}x_{2}+w_{2}x_{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Same setup, now suppose 
+\begin_inset Formula $x_{2}=2x_{1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex ArticleMode
+status open
+
+\begin_layout Plain Layout
+So 
+\begin_inset Formula $f(x)=w_{1}x_{1}+w_{2}x_{2}=w_{1}x_{1}+2w_{2}x_{1}=\left(w_{1}+2w_{2}\right)x_{1}$
+\end_inset
+
+.
+ So all functions with 
+\begin_inset Formula $w_{1}+2w_{2}=k$
+\end_inset
+
+ are the same.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Then all functions with 
+\begin_inset Formula $w_{1}+2w_{2}=k$
+\end_inset
+
+ are the same.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+give same predictions and have same empirical risk
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+What function will we select if we do ERM with 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ or 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ constraint?
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Compare on board 1 solution that puts all weight on w1 and another all weight
+ on w2.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Compare a solution that just uses 
+\begin_inset Formula $w_{1}$
+\end_inset
+
+ to a solution that just uses 
+\begin_inset Formula $w_{2}$
+\end_inset
+
+...
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Suppose the 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ solution is on the line 
+\begin_inset Formula $w_{1}+2w_{2}=k$
+\end_inset
+
+.
+ Then we know the solution minimizes 
+\begin_inset Formula $w_{1}^{2}+w_{2}^{2}$
+\end_inset
+
+ on that line.
+ Plugging in, this is minimized at 
+\begin_inset Formula $w_{1}=k/5$
+\end_inset
+
+ and 
+\begin_inset Formula $w_{2}=\left[k-\left(k/5\right)\right]/2=2k/5$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $w_{2}/w_{1}=2$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Linearly Related Features, 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ Constraint
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/L1L2/L2Doub.png
+	lyxscale 40
+	height 40theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $w_{1}+2w_{2}=10/\sqrt{5}+7$
+\end_inset
+
+ corresponds to the empirical risk minimizers.
+\end_layout
+
+\begin_layout Itemize
+Intersection of 
+\begin_inset Formula $w_{1}+2w_{2}=10\sqrt{5}$
+\end_inset
+
+ and the norm ball 
+\begin_inset Formula $\|w\|_{2}\le2$
+\end_inset
+
+ is ridge solution.
+\end_layout
+
+\begin_layout Itemize
+At solution, 
+\begin_inset Formula $w_{2}=2w_{1}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Linearly Related Features, 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ Constraint
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/L1L2/L1Doub.png
+	lyxscale 30
+	height 40theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Intersection of 
+\begin_inset Formula $w_{1}+2w_{2}=4$
+\end_inset
+
+ and the norm ball 
+\begin_inset Formula $\|w\|_{1}\le2$
+\end_inset
+
+ is lasso solution.
+\end_layout
+
+\begin_layout Itemize
+Solution is now a corner of the 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ ball, corresonding to a sparse solution.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Linearly Dependent Features: Take Away
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For identical features
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ regularization spreads weight arbitrarily (all weights same sign)
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ regularization spreads weight evenly 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Linearly related features
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ regularization chooses variable with larger scale, 0 weight to others
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ prefers variables with larger scale – spreads weight proportional to scale
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Empirical Risk for Square Loss and Linear Predictors
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Recall 
+\begin_inset CommandInset href
+LatexCommand href
+name "our discussion"
+target "https://davidrosenberg.github.io/mlcourse/Archive/2017/Lectures/2b.L1L2-regularization.pdf#page=21"
+literal "false"
+
+\end_inset
+
+ of linear predictors 
+\begin_inset Formula $f(x)=w^{T}x$
+\end_inset
+
+ and square loss.
+\end_layout
+
+\begin_layout Itemize
+Sets of 
+\begin_inset Formula $w$
+\end_inset
+
+ giving same empirical risk (i.e.
+ level sets) formed ellipsoids around the ERM.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{KPM Fig.
+ 13.3}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/L1L2/l1LossConstraintPic.png
+	lyxscale 60
+	height 40theight%
+
+\end_inset
+
+
+\begin_inset VSpace -0.3cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+With 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+ linearly related, 
+\begin_inset Formula $X^{T}X$
+\end_inset
+
+ has a 0 eigenvalue.
+\end_layout
+
+\begin_layout Itemize
+So the level set 
+\begin_inset Formula $\left\{ w\mid\left(w-\hat{w}\right)^{T}X^{T}X\left(w-\hat{w}\right)=nc\right\} $
+\end_inset
+
+ is no longer an ellipsoid.
+\end_layout
+
+\begin_layout Itemize
+It's a degenerate ellipsoid – that's why level sets were pairs of lines
+ in this case
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+THIS SLIDE NEEDS WORK - -BE MORE PRECISE IN DERIVATION OF CLAIM ABOVE ABOUT
+ 'pairs of lines' _- give generalization to higher dimensions
+\end_layout
+
+\begin_layout Itemize
+Level set 
+\begin_inset Formula $\left\{ w\mid\left(w-\hat{w}\right)^{T}X^{T}X\left(w-\hat{w}\right)=nc\right\} $
+\end_inset
+
+, 
+\begin_inset Formula $X^{T}X$
+\end_inset
+
+ has a 0 eigenvalue (like ellipsoid with an infinite principal axis)
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Eigenvalues are the reciprocals of the squares of the semi-axes.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+That's why level sets were lines (actually pairs of lines, one on each side
+ of ERM).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Correlated Features
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Correlated Features – Same Scale
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+ are highly correlated and the same scale.
+\end_layout
+
+\begin_layout Itemize
+This is quite typical in real data, after normalizing data.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Nothing degenerate here, so level sets are ellipsoids.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+But, the higher the correlation, the closer to degenerate we get.
+\end_layout
+
+\begin_layout Itemize
+That is, ellipsoids keep stretching out, getting closer to two parallel
+ lines.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Correlated Features, 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ Regularization
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/L1L2/L1Corr.png
+	lyxscale 20
+	height 40theight%
+
+\end_inset
+
+
+\begin_inset space \hspace{}
+\length 20text%
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../Figures/L1L2/L1Corr2.png
+	lyxscale 20
+	height 40theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Intersection could be anywhere on the top right edge.
+ 
+\end_layout
+
+\begin_layout Itemize
+Minor perturbations (in data) can drastically change intersection point
+ – very unstable solution.
+\end_layout
+
+\begin_layout Itemize
+Makes division of weight among highly correlated features (of same scale)
+ seem arbitrary.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If 
+\begin_inset Formula $x_{1}\approx2x_{2}$
+\end_inset
+
+, ellipse changes orientation and we hit a corner.
+ (Which one?)
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Plugging into 
+\begin_inset Formula $w_{1}x_{2}+w_{2}x_{2}=k$
+\end_inset
+
+, we get 
+\begin_inset Formula $\left(2w_{1}+w_{2}\right)x_{2}=k$
+\end_inset
+
+, when 
+\begin_inset Formula $x_{1}=2x_{2}$
+\end_inset
+
+, so we get equivalent predictors for all parameter values on the line 
+\begin_inset Formula $2w_{1}+w_{2}=c$
+\end_inset
+
+, which has slope negative 
+\begin_inset Formula $2$
+\end_inset
+
+, so we'll hit the corner on the 
+\begin_inset Formula $w_{1}$
+\end_inset
+
+ axis, which corresponds to 
+\begin_inset Formula $w_{2}=0$
+\end_inset
+
+, which makes sense, since 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+ has smaller scale.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Section
+The Case Against Sparsity
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+A Case Against Sparsity
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose there's some unknown value 
+\begin_inset Formula $\theta\in\reals$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We get 
+\begin_inset Formula $3$
+\end_inset
+
+ noisy observations of 
+\begin_inset Formula $\theta$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+x_{1},x_{2},x_{3}\sim\cn\left(\theta,1\right)\text{ (i.i.d)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+What's a good estimator 
+\begin_inset Formula $\hat{\theta}$
+\end_inset
+
+ for 
+\begin_inset Formula $\theta$
+\end_inset
+
+?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Would you prefer 
+\begin_inset Formula $\hat{\theta}=x_{1}$
+\end_inset
+
+ or 
+\begin_inset Formula $\hat{\theta}=\frac{1}{3}\left(x_{1}+x_{2}+x_{3}\right)$
+\end_inset
+
+?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Estimator Performance Analysis
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\ex\left[x_{1}\right]=\theta$
+\end_inset
+
+ and 
+\begin_inset Formula $\ex\left[\frac{1}{3}\left(x_{1}+x_{2}+x_{3}\right)\right]=\theta$
+\end_inset
+
+.
+ So both unbiased.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\var\left[x_{1}\right]=\pause1$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\var\left[\frac{1}{3}\left(x_{1}+x_{2}+x_{3}\right)\right]=\pause\frac{1}{9}\left(1+1+1\right)=\frac{1}{3}.$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Average has a smaller variance — the independent errors cancel each other
+ out.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Similar thing happens in regression with correlated features:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+e.g.
+ If 3 features are correlated, we could keep just one of them.
+\end_layout
+
+\begin_layout Itemize
+But we can potentially do better by using all 
+\begin_inset Formula $3$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Simple Regression Problem with Correlated Features
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Input space: 
+\begin_inset Formula $\cx=\reals^{3}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Each example 
+\begin_inset Formula $\left(\left(x_{1},x_{2},x_{3}\right),y\right)$
+\end_inset
+
+ is generated as follows:
+\begin_inset Formula 
+\begin{eqnarray*}
+y & \sim & \cn(0,1)\\
+\eps_{1},\eps_{2},\eps_{3} & \sim & \cn(0,1)\mbox{ (iid)}\\
+x_{i} & = & y+\eps_{i}\text{ for }i=1,2,3
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We want a prediction function 
+\begin_inset Formula $\hat{y}=f(x_{1},x_{2},x_{3})$
+\end_inset
+
+ that is good for estimating 
+\begin_inset Formula $y$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We want a prediction function 
+\begin_inset Formula $\hat{y}=f(x_{1},x_{2},x_{3})$
+\end_inset
+
+ that is good for estimating 
+\begin_inset Formula $y$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Example with highly correlated features
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Model in words:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $y$
+\end_inset
+
+ is some unknown linear combination of 
+\begin_inset Formula $z_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $z_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+But we don't observe 
+\begin_inset Formula $z_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $z_{2}$
+\end_inset
+
+ directly.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+We get 
+\begin_inset Formula $3$
+\end_inset
+
+ noisy observations of 
+\begin_inset Formula $z_{1}$
+\end_inset
+
+, call them 
+\begin_inset Formula $x_{1},x_{2},x_{3}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+We get 
+\begin_inset Formula $3$
+\end_inset
+
+ noisy observations of 
+\begin_inset Formula $z_{2}$
+\end_inset
+
+, call them 
+\begin_inset Formula $x_{4},x_{5},x_{6}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We want to predict 
+\begin_inset Formula $y$
+\end_inset
+
+ from our noisy observations.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+That is, we want an estimator 
+\begin_inset Formula $\hat{y}=f(x_{1},x_{2},x_{3},x_{4},x_{5},x_{6})$
+\end_inset
+
+ for estimating 
+\begin_inset Formula $y$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Example from Section 4.2 in Hastie et al's 
+\backslash
+emph{Statistical Learning with Sparsity}.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Example with highly correlated features
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose 
+\begin_inset Formula $(x,y)$
+\end_inset
+
+ generated as follows:
+\begin_inset Formula 
+\begin{eqnarray*}
+z_{1},z_{2} & \sim & \cn(0,1)\mbox{ (independent)}\\
+\eps_{0},\eps_{1},\ldots,\eps_{6} & \sim & \cn(0,1)\mbox{ (independent)}\\
+\pause y & = & 3z_{1}-1.5z_{2}+2\eps_{0}\\
+\pause x_{j} & = & \begin{cases}
+z_{1}+\eps_{j}/5 & \mbox{ for }j=1,2,3\\
+z_{2}+\eps_{j}/5 & \mbox{ for }j=4,5,6
+\end{cases}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Generated a sample of 
+\begin_inset Formula $(\left(x_{1},\ldots,x_{6}\right),y)$
+\end_inset
+
+ pairs of size 
+\begin_inset Formula $n=100$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+That is, we want an estimator 
+\begin_inset Formula $\hat{y}=f(x_{1},x_{2},x_{3},x_{4},x_{5},x_{6})$
+\end_inset
+
+ that is good for estimating 
+\begin_inset Formula $y$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+High feature correlation
+\series default
+: Correlations within the groups of 
+\begin_inset Formula $x$
+\end_inset
+
+'s is around 
+\begin_inset Formula $0.97$
+\end_inset
+
+.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Note: as presented, this is basically a Bayesian inference problem, since
+ we have a full probability distribution over everything.
+ Can think of 
+\begin_inset Formula $z's$
+\end_inset
+
+ as the unknown parameters, and they have priors.
+ If we were to think of this in a frequentist setting, we could drop the
+ 
+\begin_inset Quotes eld
+\end_inset
+
+prior
+\begin_inset Quotes erd
+\end_inset
+
+ and ask whether for each setting of 
+\begin_inset Formula $z_{1},z_{2}$
+\end_inset
+
+ is our estimator unbiased (i.e.
+ does the expectation f 
+\end_layout
+
+\begin_layout Plain Layout
+—
+\end_layout
+
+\begin_layout Plain Layout
+What's the variance of our estimator if we just plug in 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{4}$
+\end_inset
+
+ for 
+\begin_inset Formula $z_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $z_{2}$
+\end_inset
+
+? How does that compare to plugging in the average?
+\end_layout
+
+\begin_layout Plain Layout
+So the regression problem is to predict 
+\begin_inset Formula $y$
+\end_inset
+
+ given 
+\begin_inset Formula $x_{1},x_{2},x_{3},x_{4},x_{5},x_{6}$
+\end_inset
+
+.
+ Under square loss, the Bayes optimal prediction function is the conditional
+ mean of 
+\begin_inset Formula $y$
+\end_inset
+
+ given 
+\begin_inset Formula $x_{1},\ldots,x_{6}$
+\end_inset
+
+.
+ That is, we should predict
+\begin_inset Formula 
+\begin{eqnarray*}
+\ex\left[y\mid x_{1},x_{2},x_{3},x_{4},x_{5},x_{6}\right] & = & \ex\left[y\mid x_{1},x_{2},x_{3},x_{4},x_{5},x_{6}\right]\\
+ & = & \ex\left[3\left(x_{1}-\frac{\eps_{1}}{5}\right)-1.5\left(x_{4}-\frac{\eps_{4}}{5}\right)+2\eps_{0}\mid x_{1},x_{2},x_{3},x_{4},x_{5},x_{6}\right]\\
+ & = & 3x_{1}-1.5x_{4}-\frac{3}{5}\ex\left[\eps_{1}\mid x_{1},x_{2},x_{3}\right]+\frac{1.5}{5}\ex\left[\eps_{4}\mid x_{4},x_{5},x_{6}\right]
+\end{eqnarray*}
+
+\end_inset
+
+We can solve these expectations, since the variables involved are all jointly
+ Gaussian...
+ 
+\begin_inset Formula 
+\[
+\begin{pmatrix}z_{1}\\
+\eps_{1}\\
+\eps_{2}\\
+\eps_{3}
+\end{pmatrix}\sim\cn\left(0,I\right)
+\]
+
+\end_inset
+
+And 
+\begin_inset Formula 
+\[
+\begin{pmatrix}\eps_{1}\\
+x_{1}\\
+x_{2}\\
+x_{3}
+\end{pmatrix}=\begin{pmatrix}0 & 1 & 0 & 0\\
+1 & \frac{1}{5} & 0 & 0\\
+1 & 0 & \frac{1}{5} & 0\\
+1 & 0 & 0 & \frac{1}{5}
+\end{pmatrix}\begin{pmatrix}z_{1}\\
+\eps_{1}\\
+\eps_{2}\\
+\eps_{3}
+\end{pmatrix}
+\]
+
+\end_inset
+
+So
+\begin_inset Formula 
+\[
+\cov\begin{pmatrix}\eps_{1}\\
+x_{1}\\
+x_{2}\\
+x_{3}
+\end{pmatrix}=\begin{pmatrix}0 & 1 & 0 & 0\\
+1 & \frac{1}{5} & 0 & 0\\
+1 & 0 & \frac{1}{5} & 0\\
+1 & 0 & 0 & \frac{1}{5}
+\end{pmatrix}\begin{pmatrix}0 & 1 & 0 & 0\\
+1 & \frac{1}{5} & 0 & 0\\
+1 & 0 & \frac{1}{5} & 0\\
+1 & 0 & 0 & \frac{1}{5}
+\end{pmatrix}^{T}=\begin{pmatrix}1 & .2 & 0 & 0\\
+.2 & 1.04 & 1 & 1\\
+0 & 1 & 1.04 & 1\\
+0 & 1 & 1 & 1.04
+\end{pmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+The expectation is all zeros.
+ So the conditional expectation of 
+\begin_inset Formula $\eps_{1}$
+\end_inset
+
+ given 
+\begin_inset Formula $x_{1},x_{2},x_{3}$
+\end_inset
+
+ is 
+\begin_inset Formula $\cn\left(\mu,\Sigma\right)$
+\end_inset
+
+ with
+\begin_inset Formula 
+\begin{eqnarray*}
+\mu & = & \left(.2\,0\,0\right)\begin{pmatrix}1.04 & 1 & 1\\
+1 & 1.04 & 1\\
+1 & 1 & 1.04
+\end{pmatrix}^{-1}\begin{pmatrix}x_{1}\\
+x_{2}\\
+x_{3}
+\end{pmatrix}\approx\left(3.35\,-1.64\,-1.64\right)\begin{pmatrix}x_{1}\\
+x_{2}\\
+x_{3}
+\end{pmatrix}\\
+\Sigma & = & \text{don't care because we're just taking expectations}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+We end up getting that 
+\begin_inset Formula 
+\begin{eqnarray*}
+\ex\left[y\mid x_{1},x_{2},x_{3},x_{4},x_{5},x_{6}\right] & = & 3(\frac{1}{3.04}\left(x_{1}+x_{2}+x_{3}\right))-1.5\left(\frac{1}{3.04}\left(x_{4}+x_{5}+x_{6}\right)\right)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+—–
+\end_layout
+
+\begin_layout Plain Layout
+Let's go simpler, what's 
+\begin_inset Formula $\ex\left[z_{1}\mid x_{1},x_{2},x_{3}\right]$
+\end_inset
+
+? Turns out it's not the average of the 
+\begin_inset Formula $x$
+\end_inset
+
+'s, it.s teh average shrunk towards 0.
+ Shrunk more when the variance of 
+\begin_inset Formula $\eps$
+\end_inset
+
+'s increase 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Example from Section 4.2 in Hastie et al's 
+\backslash
+emph{Statistical Learning with Sparsity}.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Example with highly correlated features
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Lasso regularization paths: 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/L1L2/L1regpaths-correlated-vars.png
+	lyxscale 25
+	height 60theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Lines with the same color correspond to features with essentially the same
+ information
+\end_layout
+
+\begin_layout Itemize
+Distribution of weight among them seems almost arbitrary
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Hedge Bets When Variables Highly Correlated
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+When variables are highly correlated (and same scale – assume we've standardized
+ features), 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+we want to give them roughly the same weight.
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Why?
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let their errors cancel out
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+How can we get the weight spread more evenly?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Elastic Net
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Elastic Net
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The 
+\series bold
+elastic net
+\series default
+ combines lasso and ridge penalties:
+\begin_inset Formula 
+\[
+\hat{w}=\argmin_{w\in\reals^{d}}\frac{1}{n}\sum_{i=1}^{n}\left\{ w^{T}x_{i}-y_{i}\right\} ^{2}+\lambda_{1}\|w\|_{1}+\lambda_{2}\|w\|_{2}^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+We expect correlated random variables to have similar coefficients.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Highly Correlated Features, Elastic Net Constraint
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/L1L2/EnetCorr.png
+	lyxscale 18
+	height 50theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Elastic net solution is closer to 
+\begin_inset Formula $w_{2}=w_{1}$
+\end_inset
+
+ line, despite high correlation.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Elastic Net Results on Model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/L1L2/L1regpaths-correlated-vars.png
+	lyxscale 20
+	height 60theight%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../Figures/L1L2/elasticNetregpaths-correlated-vars.png
+	lyxscale 20
+	height 60theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Lasso on left; Elastic net on right.
+\end_layout
+
+\begin_layout Itemize
+Ratio of 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ to 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ regularization roughly 
+\begin_inset Formula $2:1$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Elastic Net - 
+\begin_inset Quotes eld
+\end_inset
+
+Sparse Regions
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Fig from 
+\backslash
+href{https://arxiv.org/abs/1411.3230}{Mairal et al.'s Sparse Modeling for Image
+ and Vision Processing} Fig 1.9}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/L1L2/projections-to-ElasticNetBall.png
+	lyxscale 40
+	height 50theight%
+
+\end_inset
+
+
+\begin_inset VSpace -0.3cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Suppose design matrix 
+\begin_inset Formula $X$
+\end_inset
+
+ is orthogonal, so 
+\begin_inset Formula $X^{T}X=I$
+\end_inset
+
+, and contours are circles (and features uncorrelated)
+\end_layout
+
+\begin_layout Itemize
+Then OLS solution in green or red regions implies elastic-net constrained
+ solution will be at corner
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Elastic Net – A Theorem for Correlated Variables
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Theorem
+Let 
+\begin_inset Formula $\rho_{ij}=\widehat{\mbox{corr}}(x_{i},x_{j})$
+\end_inset
+
+.
+ Suppose features 
+\begin_inset Formula $x_{1},\ldots,x_{d}$
+\end_inset
+
+ are standardized and 
+\begin_inset Formula $\hat{w}_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{w}_{j}$
+\end_inset
+
+ are selected by elastic net, with 
+\begin_inset Formula $\hat{w}_{i}\hat{w}_{j}>0$
+\end_inset
+
+.
+ Then
+\begin_inset Formula 
+\[
+|\hat{w}_{i}-\hat{w}_{j}|\le\frac{\|y\|_{2}\sqrt{2}}{\sqrt{n}\lambda_{2}}\sqrt{1-\rho_{ij}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Proof
+See Theorem 1 in Zou and Hastie's 2005 paper 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Regularization and variable selection via the elastic net"
+target "https://web.stanford.edu/~hastie/Papers/B67.2%20(2005)%20301-320%20Zou%20&%20Hastie.pdf"
+literal "false"
+
+\end_inset
+
+.
+\begin_inset Quotes erd
+\end_inset
+
+ Or see these 
+\begin_inset CommandInset href
+LatexCommand href
+name "notes"
+target "https://davidrosenberg.github.io/mlcourse/Notes/elastic-net-theorem.pdf"
+literal "false"
+
+\end_inset
+
+ that adapt their proof to our notation.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Could replace the L2 norm of 
+\begin_inset Formula $y$
+\end_inset
+
+ with 
+\begin_inset Formula $L1$
+\end_inset
+
+ norm of 
+\begin_inset Formula $y$
+\end_inset
+
+, since
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename ../Figures/L1L2/l1l2-norm-inequality.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Suppose 
+\begin_inset Formula $x$
+\end_inset
+
+ is standardized and 
+\begin_inset Formula $x'$
+\end_inset
+
+ is not.
+ What is the correlation?
+\begin_inset Formula 
+\[
+\rho(x,x')=\frac{1}{n}x^{T}\left[\frac{1}{s}\left(x'-m1\right)\right]=\frac{1}{ns}x^{T}x'-\frac{m}{ns}x^{T}1=
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename ../Figures/L1L2/elastic-net-correlation-vars-proof.png
+	lyxscale 60
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\end_body
+\end_document

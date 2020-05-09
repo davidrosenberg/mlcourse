@@ -48,3 +48,23 @@ rsync -av ConceptChecks $DEST/
 ##find $DEST/Lectures -name "*.lyx" | parallel --verbose echo mv {} {//}/old; $LYX2LYX {//}/old -o {}
 ##parallel --verbose /Applications/LyX.app/Contents/MacOS/lyx {} -e pdf2
 ##$LYX2LYX 
+
+
+## In lectures.yml, search and replace:
+cd ~/Dropbox/repos/ml2019/data
+sed '
+s_https://davidrosenberg.github.io/mlcourse/Lectures_ https://davidrosenberg.github.io/mlcourse/Archive/2019/Lectures_
+s_https://davidrosenberg.github.io/mlcourse/ConceptChecks_ https://davidrosenberg.github.io/mlcourse/Archive/2019/ConceptChecks_
+s_https://davidrosenberg.github.io/mlcourse/Notes_ https://davidrosenberg.github.io/mlcourse/Archive/2019/Notes_
+s_https://davidrosenberg.github.io/mlcourse/Homework_ https://davidrosenberg.github.io/mlcourse/Archive/2019/Homework_
+s_https://davidrosenberg.github.io/mlcourse/Labs_ https://davidrosenberg.github.io/mlcourse/Archive/2019/Labs_' <lectures.yml >tmp
+mv tmp lectures.yml
+rm tmp
+
+sed 's_https://davidrosenberg.github.io/mlcourse/Homework_ https://davidrosenberg.github.io/mlcourse/Archive/2019/Homework_'
+<assignments.yml >tmp
+mv tmp assignments.yml
+rm tmp
+
+echo "null" > this-week.yml 
+

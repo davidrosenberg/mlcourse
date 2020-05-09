@@ -1,0 +1,5556 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass beamer
+\begin_preamble
+\usetheme{CambridgeUS} 
+\beamertemplatenavigationsymbolsempty
+
+
+% Set Color ==============================
+\definecolor{NYUPurple}{RGB}{87,6,140}
+\definecolor{LightPurple}{RGB}{165,11,255}
+
+
+\setbeamercolor{title}{fg=NYUPurple}
+%\setbeamercolor{frametitle}{fg=NYUPurple}
+\setbeamercolor{frametitle}{fg=NYUPurple}
+
+\setbeamercolor{background canvas}{fg=NYUPurple, bg=white}
+\setbeamercolor{background}{fg=black, bg=NYUPurple}
+
+\setbeamercolor{palette primary}{fg=black, bg=gray!30!white}
+\setbeamercolor{palette secondary}{fg=black, bg=gray!20!white}
+\setbeamercolor{palette tertiary}{fg=gray!20!white, bg=NYUPurple}
+
+\setbeamertemplate{headline}{}
+
+\setbeamercolor{parttitle}{fg=NYUPurple}
+\setbeamercolor{sectiontitle}{fg=NYUPurple}
+\setbeamercolor{sectionname}{fg=NYUPurple}
+\setbeamercolor{section page}{fg=NYUPurple}
+
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+\setbeamercolor{section title}{fg=NYUPurple}
+ \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\usebeamercolor[fg]{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+\end_preamble
+\options aspectratio=169,handout
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "eulervm" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures false
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "allcolors=NYUPurple,urlcolor=LightPurple"
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\boxbgcolor #ff31d8
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\reals}{\mathbf{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\integers}{\mathbf{Z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\naturals}{\mathbf{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rationals}{\mathbf{Q}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ca}{\mathcal{A}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cb}{\mathcal{B}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cc}{\mathcal{C}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cd}{\mathcal{D}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ce}{\mathcal{E}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cf}{\mathcal{F}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cg}{\mathcal{G}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ch}{\mathcal{H}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ci}{\mathcal{I}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cj}{\mathcal{J}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ck}{\mathcal{K}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cl}{\mathcal{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cm}{\mathcal{M}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cn}{\mathcal{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\co}{\mathcal{O}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cp}{\mathcal{P}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cq}{\mathcal{Q}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\calr}{\mathcal{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cs}{\mathcal{S}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ct}{\mathcal{T}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cu}{\mathcal{U}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cv}{\mathcal{V}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cw}{\mathcal{W}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cx}{\mathcal{X}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cy}{\mathcal{Y}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cz}{\mathcal{Z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ind}[1]{1(#1)}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand{
+\backslash
+pr}{P}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\pr}{\mathbb{P}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\predsp}{\cy}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%{
+\backslash
+hat{
+\backslash
+cy}}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\outsp}{\cy}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\prxy}{P_{\cx\times\cy}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\prx}{P_{\cx}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\prygivenx}{P_{\cy\mid\cx}}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand{
+\backslash
+ex}{E}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ex}{\mathbb{E}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\var}{\textrm{Var}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cov}{\textrm{Cov}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\sgn}{\textrm{sgn}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\sign}{\textrm{sign}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\kl}{\textrm{KL}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\law}{\mathcal{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\eps}{\varepsilon}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\as}{\textrm{ a.s.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\io}{\textrm{ i.o.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ev}{\textrm{ ev.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\convd}{\stackrel{d}{\to}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\eqd}{\stackrel{d}{=}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\del}{\nabla}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\loss}{\ell}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\risk}{R}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\emprisk}{\hat{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\lossfnl}{L}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\emplossfnl}{\hat{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\empminimizer}[1]{\hat{#1}^{*}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\minimizer}[1]{#1^{*}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\optimizer}[1]{#1^{*}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\etal}{\textrm{et. al.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\tr}{\operatorname{tr}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\trace}{\operatorname{trace}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\diag}{\text{diag}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rank}{\text{rank}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\linspan}{\text{span}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\spn}{\text{span}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\proj}{\text{Proj}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\argmax}{\operatornamewithlimits{arg\, max}}
+{\text{argmax}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\argmin}{\operatornamewithlimits{arg\, min}}
+{\text{argmin}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\bfx}{\mathbf{x}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfy}{\mathbf{y}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfl}{\mathbf{\lambda}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfm}{\mathbf{\mu}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\calL}{\mathcal{L}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\vw}{\boldsymbol{w}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vx}{\boldsymbol{x}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vxi}{\boldsymbol{\xi}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\valpha}{\boldsymbol{\alpha}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vbeta}{\boldsymbol{\beta}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vsigma}{\boldsymbol{\sigma}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vtheta}{\boldsymbol{\theta}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vd}{\boldsymbol{d}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vs}{\boldsymbol{s}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vt}{\boldsymbol{t}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vh}{\boldsymbol{h}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ve}{\boldsymbol{e}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vf}{\boldsymbol{f}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vg}{\boldsymbol{g}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vz}{\boldsymbol{z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vk}{\boldsymbol{k}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\va}{\boldsymbol{a}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vb}{\boldsymbol{b}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vv}{\boldsymbol{v}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vy}{\boldsymbol{y}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\dom}{\textrm{\textbf{dom} }}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\renewcommand{\rank}{\text{\textbf{rank }}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\conv}{\textrm{\textbf{conv} }}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\relint}{\text{\textbf{relint }}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\aff}{\text{\textbf{aff }}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\hil}{\ch}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rkhs}{\hil}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ber}{\text{Ber}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+Gradient Boosting
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+DS-GA 1003 / CSCI-GA 2567
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+optional, use only with long paper titles
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+David S.
+ Rosenberg 
+\end_layout
+
+\begin_layout Date
+April 10, 2018
+\end_layout
+
+\begin_layout Institute
+New York University
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex ArticleMode
+status open
+
+\begin_layout Plain Layout
+Just in article version
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Plots courtesy of Ningshan Zhang.}} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Contents
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Possible ISSUE: For minibatching i.e.
+ stochastic gradient boosting – do I need to change the objective function
+ to 
+\begin_inset Formula $\frac{1}{n}$
+\end_inset
+
+ in front of sum of losses?
+\end_layout
+
+\begin_layout Plain Layout
+david [8:57 AM] So in GBM, there’s kind of two steps: find the objective
+ fn gradient w.r.t.
+ to the function predictions at each training point, then fit those with
+ regression to get the step.
+ What if we go back to FSAM — for most loss functions, for any given x_i,y_i
+ it’s easy to find either the minimizer of the loss or something that makes
+ the loss smaller (say logistic loss).
+ Why not just use these values as the target in the regression? Either this
+ works, or the intuitive explanation of GBM needs more.
+ Because we’ve gone from projected gradient descent to projected optimal
+ descent — why wouldn’t this be better?
+\end_layout
+
+\begin_layout Plain Layout
+david [9:00 AM] I wonder if it comes down to the difficulties one would
+ have trying to do logistic regression, which is… what target do you choose?
+ and how to do you keep the targets balanced?
+\end_layout
+
+\begin_layout Plain Layout
+> So I believe the goal is to take small steps that are good locally since
+ the validity of the projection (regression) step on a longer jump may not
+ be clear
+\end_layout
+
+\begin_layout Plain Layout
+The only unique minimizer case I think one uses in practice is square loss,
+ and in that case they're equivalent.
+ If we took another loss with a unique minimizer, you think gradient or
+ Newton direction would work better than heading towards the unique minimizer?
+ Will it heading towards the minimizer even be a descent direction (assume
+ differentiability)? 
+\end_layout
+
+\begin_layout Plain Layout
+Anyway, some good news -- turns out the original AnyBoost papers do have
+ convergence theorems: https://papers.nips.cc/paper/1766-boosting-algorithms-as-gr
+adient-descent.pdf .
+ Proof is stuck in a book: http://www.eecs.yorku.ca/course_archive/2005-06/F/6002B/
+Readings/lmc-book.pdf#page=232 .
+ 
+\end_layout
+
+\begin_layout Plain Layout
+As far as xgboost pruning or not -- their papers don't mention pruning,
+ but then they don't really give details on the tree building, beyond how
+ the split is chosen, and how to approximate that choice and do it in distribute
+d fashion.
+\end_layout
+
+\begin_layout Plain Layout
+The software documentation does mention pruning: http://xgboost.readthedocs.io/en/
+latest//parameter.html: ‘prune’: prunes the splits where loss < min_split_loss
+ (or gamma).
+\end_layout
+
+\begin_layout Plain Layout
+Though that's not entirely clear.
+ A tutorial https://www.analyticsvidhya.com/blog/2016/03/complete-guide-parameter-
+tuning-xgboost-with-codes-python/ says: Tree Pruning: A GBM would stop splitting
+ a node when it encounters a negative loss in the split.
+ Thus it is more of a greedy algorithm.
+ XGBoost on the other hand make splits upto the max_depth specified and
+ then start pruningthe tree backwards and remove splits beyond which there
+ is no positive gain.
+ Another advantage is that sometimes a split of negative loss say -2 may
+ be followed by a split of positive loss +10.
+ GBM would stop as it encounters -2.
+ But XGBoost will go deeper and it will see a combined effect of +8 of the
+ split and keep both.
+ So -- I guess it prunes.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+[Update Nov 19 2017: Confirmed with author that they do backward pruning
+ in xgboost but no details given]
+\end_layout
+
+\begin_layout Plain Layout
+—
+\end_layout
+
+\begin_layout Plain Layout
+maybe worth reading:https://www.salford-systems.com/blog/dan-steinberg/the-shape-o
+f-the-trees-in-gradient-boosting-machines 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Todo:
+\end_layout
+
+\begin_layout Plain Layout
+What's the deal with stepsize? Do people ever actually do line search?
+\end_layout
+
+\begin_layout Plain Layout
+It's mostly implemented just for trees anyway?
+\end_layout
+
+\begin_layout Plain Layout
+1) expressivity / complexity of boosting decision stumps
+\end_layout
+
+\begin_layout Plain Layout
+2) generalization bounds in terms of complexity of base hypothesis space
+\end_layout
+
+\begin_layout Plain Layout
+3) Picture of fitting sinc with decision trees and GBM
+\end_layout
+
+\begin_layout Plain Layout
+4) [DONE] put in L2 boosting before general GBM boosting?
+\end_layout
+
+\begin_layout Plain Layout
+5) [DONE in homework] Population minimizer of exponential loss
+\end_layout
+
+\begin_layout Plain Layout
+6) [DONE in homework] adaboost is special case of stagewise 
+\end_layout
+
+\begin_layout Plain Layout
+7) stagewise is special case of gbm for exponential loss
+\end_layout
+
+\begin_layout Plain Layout
+8) regularization on step size
+\end_layout
+
+\begin_layout Plain Layout
+9) regularization by subsampling (of rows) 
+\begin_inset Quotes eld
+\end_inset
+
+bag fraction
+\begin_inset Quotes erd
+\end_inset
+
+ ; frequent default is 50%...
+ but what if we have tons of data?[what happens in the limit of a single
+ or very few data points?] – possible issue is that we mess up predictions
+ at other points...
+ [homework problem???]
+\end_layout
+
+\begin_layout Plain Layout
+10) do we take step proportional to the gradient size as is usual in gradient
+ descent style algorithms?
+\end_layout
+
+\begin_layout Plain Layout
+11) regularization by subsampling (of columns) 
+\begin_inset Quotes eld
+\end_inset
+
+According to use feedback, using column sub-sampling prevents overfitting
+ even more so than the traditional row sub-sampling.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+12) What's the hypothesis space for boosting methods? [universal?]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Nonlinear Regression
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose we have the following regression problem:
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename ../Figures/boosting/nonlinear-regression-data.png
+	lyxscale 50
+	height 60theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+What are some options?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+basis functions, kernel methods, 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+local regression/smoothing methods, 
+\end_layout
+
+\end_inset
+
+trees, neural nets, ...
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Linear Model with Basis Functions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Choose some basis functions on input space 
+\begin_inset Formula $\cx$
+\end_inset
+
+: 
+\begin_inset Formula 
+\[
+g_{1},\ldots,g_{M}:\cx\to\reals
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Predict with linear combination of basis functions:
+\begin_inset Formula 
+\[
+f(x)=\sum_{m=1}^{M}\nu_{m}g_{m}(x)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Can fit this using standard methods for linear models (e.g.
+ least squares, lasso, ridge, etc.)
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+In ML parlance, basis functions are called 
+\series bold
+features 
+\series default
+or
+\series bold
+ feature functions.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Not Limited to Regression
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Linear combination of basis functions:
+\begin_inset Formula 
+\[
+f(x)=\sum_{m=1}^{M}\nu_{m}g_{m}(x)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $f(x)$
+\end_inset
+
+ is a number — for regression, it's exactly what we're looking for.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Otherwise, 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ is often called a 
+\series bold
+score
+\series default
+ function.
+\end_layout
+
+\begin_layout Itemize
+It can be 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+thresholded to get a classification
+\end_layout
+
+\begin_layout Itemize
+transformed to get a probability
+\end_layout
+
+\begin_layout Itemize
+transformed to get a parameter of a probability distribution (e.g.
+ Poisson regression)
+\end_layout
+
+\begin_layout Itemize
+used for ranking search results
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Adaptive Basis Function Model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let's 
+\begin_inset Quotes eld
+\end_inset
+
+learn
+\begin_inset Quotes erd
+\end_inset
+
+ the basis functions
+\series bold
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Base hypothesis space
+\series default
+ 
+\begin_inset Formula $\ch$
+\end_inset
+
+ consisting of functions 
+\begin_inset Formula $h:\cx\to\reals$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We will choose our 
+\begin_inset Quotes eld
+\end_inset
+
+basis functions
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+features
+\begin_inset Quotes erd
+\end_inset
+
+ from this set of functions.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+An 
+\series bold
+adaptive basis function expansion 
+\series default
+over 
+\begin_inset Formula $\ch$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+f(x)=\sum_{m=1}^{M}\nu_{m}h_{m}(x),
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $v_{m}\in\reals$
+\end_inset
+
+ and 
+\begin_inset Formula $h_{m}\in\ch$
+\end_inset
+
+ are chosen based on training data.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Adaptive Basis Function Model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Base hypothesis space
+\series default
+: 
+\begin_inset Formula $\ch$
+\end_inset
+
+ of 
+\series bold
+real-valued functions
+\series default
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Combined hypothesis space:
+\series default
+ 
+\begin_inset Formula $\cf_{M}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\cf_{M}=\left\{ \sum_{m=1}^{M}v_{m}h_{m}(x)\mid v_{m}\in\reals,\:h_{m}\in\ch,\:m=1,\ldots,M\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Suppose we're given some data 
+\begin_inset Formula $\cd=\left((x_{1},y_{1}),\ldots,(x_{n},y_{n})\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Learning is choosing 
+\begin_inset Formula $v_{1},\ldots,v_{M}\in\reals$
+\end_inset
+
+ and 
+\begin_inset Formula $h_{1},\ldots,h_{M}\in\ch$
+\end_inset
+
+ to fit 
+\begin_inset Formula $\cd$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Empirical Risk Minimization
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We'll consider learning by 
+\series bold
+empirical risk minimization
+\series default
+: 
+\begin_inset Formula 
+\[
+\hat{f}=\argmin_{f\in\cf_{M}}\frac{1}{n}\sum_{i=1}^{n}\ell\left(y_{i},f(x_{i})\right),
+\]
+
+\end_inset
+
+for some 
+\series bold
+loss function
+\series default
+ 
+\begin_inset Formula $\ell(y,\hat{y})$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Write ERM objective function as
+\begin_inset Formula 
+\[
+J(v_{1},\ldots,v_{M},h_{1},\ldots,h_{M})=\frac{1}{n}\sum_{i=1}^{n}\ell\left(y_{i},\sum_{m=1}^{M}v_{m}h_{m}(x)\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+How to optimize 
+\begin_inset Formula $J$
+\end_inset
+
+? i.e.
+ how to learn?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Gradient-Based Methods
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Suppose
+\series default
+ our base hypothesis space is parameterized by 
+\begin_inset Formula $\Theta=\reals^{b}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+J(v_{1},\ldots,v_{M},\theta_{1},\ldots,\theta_{M})=\frac{1}{n}\sum_{i=1}^{n}\ell\left(y_{i},\sum_{m=1}^{M}v_{m}h(x;\theta_{m})\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Can we can differentiate 
+\begin_inset Formula $J$
+\end_inset
+
+ w.r.t.
+ 
+\begin_inset Formula $v_{m}$
+\end_inset
+
+'s and 
+\begin_inset Formula $\theta_{m}$
+\end_inset
+
+'s? Optimize with SGD? 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+For 
+\series bold
+some
+\series default
+ hypothesis spaces and typical loss functions, yes!
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Neural networks fall into this category! (
+\begin_inset Formula $h_{1},\ldots,h_{M}$
+\end_inset
+
+ are neurons of last hidden layer.)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+What if Gradient Based Methods Don't Apply?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+What if base hypothesis space 
+\begin_inset Formula $\ch$
+\end_inset
+
+ consists of decision trees? 
+\end_layout
+
+\begin_layout Itemize
+Can we even parameterize trees with 
+\begin_inset Formula $\Theta=\reals^{b}$
+\end_inset
+
+?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Even if we could for some set of trees, 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+predictions would not change continuously w.r.t.
+ 
+\begin_inset Formula $\theta\in\Theta$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Itemize
+and so certainly not differentiable.
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Today we'll discuss 
+\series bold
+gradient boosting
+\series default
+.
+ It applies whenever 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+our loss function is [sub]differentiable w.r.t.
+ training predictions 
+\begin_inset Formula $f(x_{i})$
+\end_inset
+
+, and
+\end_layout
+
+\begin_layout Itemize
+we can do regression with the base hypothesis space 
+\begin_inset Formula $\ch$
+\end_inset
+
+ (e.g.
+ regression trees).
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Overview
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Forward stagewise additive modeling (FSAM)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+example: 
+\begin_inset Formula $L^{2}$
+\end_inset
+
+ Boosting 
+\end_layout
+
+\begin_layout Itemize
+example: exponential loss gives AdaBoost
+\end_layout
+
+\begin_layout Itemize
+Not clear how to do it with many other losses, including logistic loss
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Gradient Boosting
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+example: logistic loss gives BinomialBoost
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Variations on Gradient Boosting
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+step size selection
+\end_layout
+
+\begin_layout Itemize
+stochastic row/column selection
+\end_layout
+
+\begin_layout Itemize
+Newton step direction
+\end_layout
+
+\begin_layout Itemize
+XGBoost
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Section
+Forward Stagewise Additive Modeling 
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Forward Stagewise Additive Modeling (FSAM)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+FSAM is an iterative optimization algorithm for fitting adaptive basis function
+ models.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Start with 
+\begin_inset Formula $f_{0}\equiv0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+After 
+\begin_inset Formula $m-1$
+\end_inset
+
+ stages, we have
+\begin_inset Formula 
+\[
+f_{m-1}=\sum_{i=1}^{m-1}\nu_{i}h_{i}.
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+In 
+\begin_inset Formula $m$
+\end_inset
+
+'th round, we want to find 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+step direction
+\series default
+ 
+\begin_inset Formula $h_{m}\in\ch$
+\end_inset
+
+ (i.e.
+ a basis function) and
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+step size 
+\series default
+
+\begin_inset Formula $\nu_{i}>0$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+such that 
+\begin_inset Formula 
+\[
+f_{m}=f_{m-1}+\nu_{i}h_{m}
+\]
+
+\end_inset
+
+improves objective function value by as much as possible.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Forward Stagewise Additive Modeling for ERM
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Initialize 
+\begin_inset Formula $f_{0}(x)=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+For 
+\begin_inset Formula $m=1$
+\end_inset
+
+ to 
+\begin_inset Formula $M$
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Enumerate
+Compute:
+\begin_inset Formula 
+\[
+\left(\nu_{m},h_{m}\right)=\argmin_{\nu\in\reals,h\in\ch}\frac{1}{n}\sum_{i=1}^{n}\ell\left(y_{i},f_{m-1}(x_{i})\underbrace{+\nu h(x_{i})}_{\text{new piece}}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Set 
+\begin_inset Formula $f_{m}=f_{m-1}+\nu_{m}h$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+Return: 
+\begin_inset Formula $f_{M}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Example: 
+\begin_inset Formula $L^{2}$
+\end_inset
+
+ Boosting
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Example: 
+\begin_inset Formula $L^{2}$
+\end_inset
+
+ Boosting
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose we use the 
+\series bold
+square loss
+\series default
+.
+ Then in each step we minimize 
+\begin_inset Formula 
+\[
+J(v,h)=\frac{1}{n}\sum_{i=1}^{n}\left(y_{i}-\left[f_{m-1}(x_{i})\underbrace{+\nu h(x_{i})}_{\text{new piece}}\right]\right)^{2}
+\]
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+\pause=\frac{1}{n}\sum_{i=1}^{n}\left(\left[y_{i}-f_{m-1}(x_{i})\right]-\underbrace{\nu h(x_{i})}_{\text{new piece}}\right)^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+If 
+\begin_inset Formula $\ch$
+\end_inset
+
+ is closed under rescaling (i.e.
+ if 
+\begin_inset Formula $h\in\ch$
+\end_inset
+
+, then 
+\begin_inset Formula $vh\in\ch$
+\end_inset
+
+ for all 
+\begin_inset Formula $h\in\reals$
+\end_inset
+
+), then don't need 
+\begin_inset Formula $\nu$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Take 
+\begin_inset Formula $\nu=1$
+\end_inset
+
+ and minimize
+\begin_inset Formula 
+\[
+J(h)=\frac{1}{n}\sum_{i=1}^{n}\left(\left[\underbrace{y_{i}-f_{m-1}(x_{i})}_{\text{residual}}\right]-h(x_{i})\right)^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+This is just fitting the residuals with least-squares regression!
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+If we can do regression with our base hypothesis space 
+\begin_inset Formula $\ch$
+\end_inset
+
+, then we're set!
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Regression Stumps
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A 
+\series bold
+regression stump 
+\series default
+is a regression tree with a single split.
+\end_layout
+
+\begin_layout Itemize
+A
+\series bold
+ regression stump 
+\series default
+is a function of the form 
+\series bold
+
+\begin_inset Formula $h(x)=a\ind{x_{i}\le c}+b\ind{x_{i}>c}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename ../Figures/boosting/stump.pdf
+	height 70theight%
+	clip
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Plot courtesy of Brett Bernstein.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $L^{2}$
+\end_inset
+
+ Boosting with Decision Stumps: Demo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Consider FSAM with 
+\begin_inset Formula $L^{2}$
+\end_inset
+
+ loss (i.e.
+ 
+\begin_inset Formula $L^{2}$
+\end_inset
+
+ Boosting)
+\end_layout
+
+\begin_layout Itemize
+For base hypothesis space of 
+\series bold
+regression stumps
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Data we'll fit with 
+\begin_inset CommandInset href
+LatexCommand href
+name "code"
+target "https://davidrosenberg.github.io/mlcourse/Labs/gbm.py"
+literal "false"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename ../Figures/boosting/data.pdf
+	lyxscale 50
+	height 60theight%
+	clip
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Plot courtesy of Brett Bernstein.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $L^{2}$
+\end_inset
+
+ Boosting with Decision Stumps: Results
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename ../Figures/boosting/l2boosting-stage1.png
+	lyxscale 40
+	height 80theight%
+
+\end_inset
+
+ 
+\begin_inset Formula $\pause$
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../Figures/boosting/l2boosting-stage2.png
+	lyxscale 40
+	height 80theight%
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Plots and code courtesy of Brett Bernstein.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $L^{2}$
+\end_inset
+
+ Boosting with Decision Stumps: Results
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename ../Figures/boosting/l2boosting-stage3.png
+	lyxscale 40
+	height 80theight%
+
+\end_inset
+
+ 
+\begin_inset Formula $\pause$
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../Figures/boosting/l2boosting-stage4.png
+	lyxscale 40
+	height 80theight%
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Plots and code courtesy of Brett Bernstein.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $L^{2}$
+\end_inset
+
+ Boosting with Decision Stumps: Results
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename ../Figures/boosting/l2boosting-stage5.png
+	lyxscale 40
+	height 80theight%
+
+\end_inset
+
+ 
+\begin_inset Formula $\pause$
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../Figures/boosting/l2boosting-stage50.png
+	lyxscale 40
+	height 80theight%
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Plots and code courtesy of Brett Bernstein.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Example: AdaBoost
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Classification Problem
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Outcome space 
+\begin_inset Formula $\cy=\left\{ -1,1\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Action space 
+\begin_inset Formula $\ca=\reals$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Score function 
+\begin_inset Formula $f:\cx\to\ca$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Margin for example 
+\begin_inset Formula $(x,y)$
+\end_inset
+
+ is 
+\begin_inset Formula $m=yf(x)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $m>0\iff$
+\end_inset
+
+ classification correct
+\end_layout
+
+\begin_layout Itemize
+Larger 
+\begin_inset Formula $m$
+\end_inset
+
+ is better.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Margin-Based Losses for Classification
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/loss-functions/loss.Zero_One.Hinge.Logistic.png
+	lyxscale 30
+	height 70theight%
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Exponential Loss
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Introduce the 
+\series bold
+exponential loss
+\series default
+: 
+\begin_inset Formula $\ell(y,f(x))=\exp\left(-yf(x)\right).$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/boosting/loss.Zero_One.Hinge.Logistic_Rescaled.Exponential.png
+	lyxscale 25
+	height 65theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+FSAM with Exponential Loss
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Consider classification setting: 
+\begin_inset Formula $\cy=\left\{ -1,1\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Take loss function to be the 
+\series bold
+exponential loss
+\series default
+: 
+\begin_inset Formula 
+\[
+\ell(y,f(x))=\exp\left(-yf(x)\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $\ch$
+\end_inset
+
+ be a base hypothesis space of classifiers 
+\begin_inset Formula $h:\cx\to\left\{ -1,1\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+(Also assume 
+\begin_inset Formula $\ch$
+\end_inset
+
+ closed under negation: 
+\begin_inset Formula $h\in\ch\implies-h\in\ch$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Then Forward Stagewise Additive Modeling (FSAM) reduces to a version of
+ 
+\series bold
+AdaBoost
+\series default
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Proof on 
+\begin_inset CommandInset href
+LatexCommand href
+name "Spring 2017 Homework #6, Problem 4"
+target "https://davidrosenberg.github.io/mlcourse/Archive/2017/Homework/hw6.pdf"
+literal "false"
+
+\end_inset
+
+ (and see HTF Section 10.4).
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Itemize
+Proof on 
+\begin_inset CommandInset href
+LatexCommand href
+name "Homework #6, Problem 4"
+target "https://davidrosenberg.github.io/mlcourse/Homework/hw6.pdf"
+literal "false"
+
+\end_inset
+
+ (and see HTF Section 10.4).
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Only difference:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+AdaBoost gets whichever 
+\begin_inset Formula $G_{m}$
+\end_inset
+
+ the base learner returns from 
+\begin_inset Formula $\ch$
+\end_inset
+
+ – no guarantees it's best in 
+\begin_inset Formula $\ch$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+FSAM explicitly requires getting the best in 
+\begin_inset Formula $\ch$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+G_{m}=\argmin_{G\in\ch}\sum_{i=1}^{N}w_{i}^{(m)}\ind{y_{i}\neq G(x_{i})}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Exponential Loss
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Note that exponential loss puts a very large weight on bad misclassifications.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/boosting/loss.Zero_One.Hinge.Logistic_Rescaled.Exponential.png
+	lyxscale 25
+	height 65theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+AdaBoost / Exponential Loss: Robustness Issues
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+When Bayes error rate is high (e.g.
+ 
+\begin_inset Formula $\pr\left(f^{*}(X)\neq Y\right)=0.25$
+\end_inset
+
+)
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+e.g.
+ there's some intrinsic randomness in the label
+\end_layout
+
+\begin_layout Itemize
+e.g.
+ training examples with same input, but different classifications.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Best we can do is predict the most likely class for each 
+\begin_inset Formula $X$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Some training predictions 
+\series bold
+should be wrong
+\series default
+,
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+because example doesn't have majority class
+\end_layout
+
+\begin_layout Itemize
+AdaBoost / exponential loss puts a lot of focus on getting those right
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Empirically, AdaBoost has degraded performance in situations with 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+high Bayes error rate, or when there's 
+\end_layout
+
+\begin_layout Itemize
+high 
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+label noise
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Logistic loss performs better in settings with high Bayes error
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+FSAM for Other Loss Functions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We know how to do FSAM for certain loss functions
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+e.g square loss, absolute loss, exponential loss,...
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+In each case, happens to reduce to another problem we know how to solve,
+ at least approximately.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+However, not clear how to do FSAM in general.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+For example, logistic loss / cross-entropy loss? 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Gradient Boosting / 
+\begin_inset Quotes eld
+\end_inset
+
+Anyboost
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+FSAM Is Iterative Optimization
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The FSAM step
+\begin_inset Formula 
+\[
+\left(\nu_{m},h_{m}\right)=\argmin_{\nu\in\reals,h\in\ch}\sum_{i=1}^{n}\ell\left(y_{i},f_{m-1}(x_{i})\underbrace{+\nu h(x_{i})}_{\text{new piece}}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Hard part: finding the 
+\series bold
+best
+\series default
+ 
+\series bold
+step direction
+\series default
+ 
+\begin_inset Formula $h$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+What if we looked for the 
+\series bold
+locally best 
+\series default
+step direction?
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+like in gradient descent
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Approach:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Choose 
+\begin_inset Formula $h_{m}$
+\end_inset
+
+ to be something like a gradient in function space.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Roughly speaking, it will be the functional gradient projected onto 
+\begin_inset Formula $\cf$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+Functional
+\begin_inset Quotes erd
+\end_inset
+
+ Gradient Descent 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We want to minimize
+\begin_inset Formula 
+\[
+J(f)=\sum_{i=1}^{n}\ell\left(y_{i},f(x_{i})\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+In some sense, we want to take the gradient w.r.t.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $f$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+, whatever that means.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $J(f)$
+\end_inset
+
+ only depends on 
+\begin_inset Formula $f$
+\end_inset
+
+ at the 
+\begin_inset Formula $n$
+\end_inset
+
+ training points.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Define
+\begin_inset Formula 
+\[
+{\bf f}=\left(f(x_{1}),\ldots,f(x_{n})\right)^{T}
+\]
+
+\end_inset
+
+and write the objective function as 
+\begin_inset Formula 
+\[
+J({\bf f})=\sum_{i=1}^{n}\ell\left(y_{i,}{\bf f}_{i}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Functional Gradient Descent: Unconstrained Step Direction
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Consider gradient descent on 
+\begin_inset Formula 
+\[
+J({\bf f})=\sum_{i=1}^{n}\ell\left(y_{i,}{\bf f}_{i}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The 
+\series bold
+negative gradient step direction
+\series default
+ at 
+\begin_inset Formula ${\bf f}$
+\end_inset
+
+ is
+\begin_inset Formula 
+\begin{eqnarray*}
+-{\bf g} & = & -\del_{\vf}J({\bf f})\\
+ & = & -\left(\partial_{{\bf f}_{1}}\ell\left(y_{1},{\bf f}_{1}\right),\ldots,\partial_{{\bf f}_{n}}\ell\left(y_{n},{\bf f}_{n}\right)\right)
+\end{eqnarray*}
+
+\end_inset
+
+which we can easily calculate.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $-{\bf g}\in\reals^{n}$
+\end_inset
+
+ is the direction we want to change each of our 
+\begin_inset Formula $n$
+\end_inset
+
+ predictions on training data.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Eventually we need more than just 
+\begin_inset Formula ${\bf f}$
+\end_inset
+
+, which is just predictions on training.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+We'll need a full function 
+\begin_inset Formula $f:\cx\to\reals$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+This is just about how to adjust the values of 
+\begin_inset Formula $f$
+\end_inset
+
+ at the training data.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+How to keep 
+\begin_inset Formula $f\in\cf$
+\end_inset
+
+?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Solve both of these problems by projecting 
+\begin_inset Formula $-{\bf g}_{m}$
+\end_inset
+
+ into 
+\begin_inset Formula $\cf$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Unconstrained Functional Gradient Stepping
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Plain Layout
+\align left
+\begin_inset Graphics
+	filename ../Figures/boosting/unconstrained-fnl-gradient-steps-SeniElderFigB.1.png
+	lyxscale 50
+	height 60theight%
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $R(\mathbf{f})$
+\end_inset
+
+ is the empirical risk, where 
+\begin_inset Formula $\mathbf{f}=\left(f(x_{1}),f(x_{2})\right)$
+\end_inset
+
+ are predictions on training set.
+\begin_inset Newline newline
+\end_inset
+
+Issue: 
+\begin_inset Formula $\hat{{\bf f}}_{M}$
+\end_inset
+
+ only defined at training points.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Seni and Elder's 
+\backslash
+emph{Ensemble Methods in Data Mining}, Fig B.1.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Functional Gradient Descent: Projection Step
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Unconstrained step direction is
+\begin_inset Formula 
+\[
+-{\bf g}=-\del_{\vf}J({\bf f})=-\left(\partial_{{\bf f}_{1}}\ell\left(y_{1},{\bf f}_{1}\right),\ldots,\partial_{{\bf f}_{n}}\ell\left(y_{n},{\bf f}_{n}\right)\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Also called the 
+\begin_inset Quotes eld
+\end_inset
+
+
+\series bold
+pseudo-residuals
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+(for square loss, they're exactly the residuals)
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+One common question is, instead of fitting 
+\begin_inset Quotes eld
+\end_inset
+
+pseudo-residuals
+\begin_inset Quotes erd
+\end_inset
+
+, why not directly fit the residual? Well, this is a reasonable thing to
+ try in the regression setting, and for 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ loss, the pseudoresidual is exactly this! but what should the 
+\begin_inset Quotes eld
+\end_inset
+
+residual
+\begin_inset Quotes erd
+\end_inset
+
+ be in, say, a logistic regression setting? To minimize the loss on a single
+ input, you'd have to set the score function to produce 
+\begin_inset Formula $\pm\infty$
+\end_inset
+
+.
+ So that doesn't make much sense...
+ The gradient gives us a way to have a reasonable relative magnitude of
+ change for each of the 
+\begin_inset Formula $f$
+\end_inset
+
+'s.
+\end_layout
+
+\end_inset
+
+Find the closest base hypothesis 
+\begin_inset Formula $h\in\ch$
+\end_inset
+
+ (in the 
+\begin_inset Formula $\ell^{2}$
+\end_inset
+
+ sense):
+\begin_inset Formula 
+\[
+\min_{h\in\ch}\sum_{i=1}^{n}\left(-{\bf g}_{i}-h(x_{i})\right)^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+This is a least squares regression problem over hypothesis space 
+\begin_inset Formula $\ch$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Take the 
+\begin_inset Formula $h\in\ch$
+\end_inset
+
+ that best approximates 
+\begin_inset Formula $-{\bf g}$
+\end_inset
+
+ as our step direction.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+Projected
+\begin_inset Quotes erd
+\end_inset
+
+ Functional Gradient Stepping
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Plain Layout
+\align left
+\begin_inset Graphics
+	filename ../Figures/boosting/projected-fnl-grad-SeniElderFigB.2.png
+	lyxscale 50
+	height 55theight%
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $T(x;p)\in\ch$
+\end_inset
+
+ is our actual step direction – like the projection of 
+\begin_inset Formula $\mbox{-{\bf g}=-}\del R(\mathbf{f})$
+\end_inset
+
+ onto 
+\begin_inset Formula $\ch$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Seni and Elder's 
+\backslash
+emph{Ensemble Methods in Data Mining}, Fig B.2.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Functional Gradient Descent: Step Size
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Finally, we choose a stepsize.
+ 
+\end_layout
+
+\begin_layout Itemize
+Option 1 (Line search
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ – 
+\emph on
+not sure this is actually used in practice
+\end_layout
+
+\end_inset
+
+):
+\begin_inset Formula 
+\[
+\nu_{m}=\argmin_{\nu>0}\sum_{i=1}^{n}\ell\left\{ y_{i},f_{m-1}(x_{i})+\nu h_{m}(x_{i})\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Option 2: (Shrinkage parameter – 
+\series bold
+more common
+\series default
+)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We consider 
+\begin_inset Formula $\nu=1$
+\end_inset
+
+ to be the full gradient step.
+\end_layout
+
+\begin_layout Itemize
+Choose a fixed 
+\begin_inset Formula $\nu\in(0,1)$
+\end_inset
+
+ – called a 
+\series bold
+shrinkage parameter.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+A value of 
+\begin_inset Formula $\nu=0.1$
+\end_inset
+
+ is typical – optimize as a hyperparameter .
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Gradient Boosting Machine Ingredients (Recap)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Take any loss function [sub]differentiable w.r.t.
+ the prediction
+\end_layout
+
+\begin_layout Itemize
+Choose a base hypothesis space for regression.
+\end_layout
+
+\begin_layout Itemize
+Choose number of steps (or a stopping criterion).
+\end_layout
+
+\begin_layout Itemize
+Choose step size methodology.
+\end_layout
+
+\begin_layout Itemize
+Then you're good to go!
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Sidebar: Logistic Loss, Cross-Entropy Loss, and Log-Loss
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Logistic Loss
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+In margin-based classification setting, 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $f(x)\in\reals$
+\end_inset
+
+ is a score function
+\end_layout
+
+\begin_layout Itemize
+target label 
+\begin_inset Formula $y\in\left\{ -1,1\right\} .$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Logistic loss (e.g.
+ for logistic regression) is 
+\begin_inset Formula 
+\[
+\ell\left(y,f(x)\right)=\log\left(1+e^{-yf(x)}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Can map score 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ to a probability as
+\begin_inset Formula 
+\[
+p(y=1\mid x)=\frac{1}{1+e^{-f(x)}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Log-Loss, Cross-Entropy Loss, and Logistic Loss
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The 
+\begin_inset Quotes eld
+\end_inset
+
+log-loss
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+cross-entropy loss
+\begin_inset Quotes erd
+\end_inset
+
+ is the negative log-likelihood for observation 
+\begin_inset Formula $(x,y)$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{eqnarray*}
+-p(y\mid x) & = & -\ind{y=1}\log\left[\frac{1}{1+e^{-f(x)}}\right]-\ind{y=-1}\log\left[1-\frac{1}{1+e^{-f(x)}}\right]\\
+ & = & \ind{y=1}\log\left[1+e^{-f(x)}\right]+\ind{y=-1}\log\left[1+e^{f(x)}\right]\\
+ & = & \log\left[1+e^{-yf(x)}\right]
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Notation: 
+\begin_inset Formula $\ind x=\begin{cases}
+1 & \text{if }x\text{ is true}\\
+0 & \text{otherwise}.
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Logistic-loss is cross-entropy loss when we interpret the score as giving
+ a probability via function given.
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Example: BinomialBoost
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+BinomialBoost: Gradient Boosting with Logistic Loss
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Recall the logistic loss for classification, with 
+\begin_inset Formula $\cy=\left\{ -1,1\right\} $
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{eqnarray*}
+\ell(y,f(x)) & = & \log\left(1+e^{-yf(x)}\right)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Pseudoresidual for 
+\begin_inset Formula $i$
+\end_inset
+
+'th example is negative derivative of loss w.r.t.
+ prediction:
+\begin_inset Formula 
+\begin{eqnarray*}
+r_{i} & = & -\partial_{f(x_{i})}\left[\log\left(1+e^{-y_{i}f(x_{i})}\right)\right]\\
+ & = & \frac{y_{i}e^{-y_{i}f(x_{i})}}{1+e^{-y_{i}f(x_{i})}}\\
+ & = & \frac{y_{i}}{1+e^{y_{i}f(x_{i})}}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+BinomialBoost: Gradient Boosting with Logistic Loss
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Pseudoresidual for 
+\begin_inset Formula $i$
+\end_inset
+
+th example:
+\begin_inset Formula 
+\begin{eqnarray*}
+r_{i} & = & -\partial_{f(x_{i})}\left[\log\left(1+e^{-y_{i}f(x_{i})}\right)\right]=\frac{y_{i}}{1+e^{y_{i}f(x_{i})}}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+So if 
+\begin_inset Formula $f_{m-1}(x)$
+\end_inset
+
+ is prediction after 
+\begin_inset Formula $m-1$
+\end_inset
+
+ rounds, step direction for 
+\begin_inset Formula $m$
+\end_inset
+
+'th round is
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+h_{m}=\argmin_{h\in\ch}\sum_{i=1}^{n}\left[\left(\frac{y_{i}}{1+e^{y_{i}f_{m-1}(x_{i})}}\right)-h(x_{i})\right]^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+And 
+\begin_inset Formula $f_{m}(x)=f_{m-1}(x)+\nu h_{m}(x).$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Gradient Tree Boosting
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Gradient Tree Boosting
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+One common form of gradient boosting machine takes
+\begin_inset Formula 
+\[
+\ch=\left\{ \mbox{regression trees of size \ensuremath{J}}\right\} ,
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $J$
+\end_inset
+
+ is the number of terminal nodes.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $J=2$
+\end_inset
+
+ gives decision stumps
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+HTF recommends 
+\begin_inset Formula $4\le J\le8$
+\end_inset
+
+ (but more recent results use much larger trees)
+\end_layout
+
+\begin_layout Itemize
+Software packages:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Gradient tree boosting is implemented by the 
+\series bold
+gbm package
+\series default
+ for R
+\end_layout
+
+\begin_layout Itemize
+as 
+\family typewriter
+\size footnotesize
+GradientBoostingClassifier
+\family default
+\size default
+ and 
+\family typewriter
+\size footnotesize
+GradientBoostingRegressor
+\family default
+\size default
+ in 
+\series bold
+sklearn
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+xgboost
+\series default
+ and 
+\series bold
+lightGBM
+\series default
+ are state of the art for speed and performance
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+For trees, there are other tweaks on the algorithm one can do
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+See HTF 10.9-10.12 
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Section
+GBM Regression with Stumps
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Sinc Function: Our Dataset
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename ../Figures/boosting/sinc-fn-data.png
+	lyxscale 70
+	height 60theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Natekin and Knoll's "Gradient boosting machines, a tutorial"}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Minimizing Square Loss with Ensemble of Decision Stumps
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename ../Figures/boosting/sinc-fit-1step10steps.png
+	height 30theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename ../Figures/boosting/sinc-fit-50steps100steps.png
+	height 30theight%
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Decision stumps with 
+\begin_inset Formula $1,10,50$
+\end_inset
+
+, and 
+\begin_inset Formula $100$
+\end_inset
+
+ steps, step size 
+\begin_inset Formula $\lambda=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Figure 3 from Natekin and Knoll's "Gradient boosting machines, a tutorial"}
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Step Size as Regularization
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename ../Figures/boosting/sinc-regression-train-validation.png
+	lyxscale 35
+	width 90text%
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Performance vs rounds of boosting and step size.
+ (Left is training set, right is validation set)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Figure 5 from Natekin and Knoll's "Gradient boosting machines, a tutorial"}
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Rule of Thumb
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The smaller the step size, the more steps you'll need.
+\end_layout
+
+\begin_layout Itemize
+But never seems to make results worse, and often better.
+\end_layout
+
+\begin_layout Itemize
+So set your step size as small as you have patience for.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Variations on Gradient Boosting
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Stochastic Gradient Boosting
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For each stage, 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+choose random subset of data for computing projected gradient step.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Quotes eld
+\end_inset
+
+Typically, about 50% of the dataset size, can be much smaller for large
+ training set.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Fraction is called the 
+\series bold
+bag fraction
+\series default
+.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Why do this?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Subsample percentage is additional regularization parameter – may help overfitti
+ng.
+\end_layout
+
+\begin_layout Itemize
+Faster.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+We can view this is a 
+\series bold
+minibatch method
+\series default
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+we're estimating the 
+\begin_inset Quotes eld
+\end_inset
+
+true
+\begin_inset Quotes erd
+\end_inset
+
+ step direction (the projected gradient) using a subset of data 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Introduced by Friedman (1999) in 
+\backslash
+href{http://statweb.stanford.edu/~jhf/ftp/stobst.pdf}{Stochastic Gradient Boosting}.
+ }}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Some Comments on Bag Size
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Justification for 50% of dataset size:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+In bagging, sampling 50% without replacement gives very similar results
+ to full bootstrap sample
+\end_layout
+
+\begin_layout Itemize
+See Buja and Stuetzle's 
+\begin_inset CommandInset href
+LatexCommand href
+name "Observations on Bagging"
+target "http://stat.wharton.upenn.edu/~buja/PAPERS/sinica-bagging-buja-stuetzle.pdf"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+So if we're subsampling because we're inspired by bagging, this makes sense.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+But if we think of stochastic gradient boosting as a minibatch method,
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+then makes little sense to choose batch size as a fixed percent of dataset
+ size,
+\end_layout
+
+\begin_layout Itemize
+especially for large datasets.
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_inset
+
+
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Bag as Minibatch
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Just as we argued for minibatch SGD, 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+sample size needed for a good estimate of step direction is independent
+ of training set size
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Minibatch size should depend on 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+the complexity of base hypothesis space
+\end_layout
+
+\begin_layout Itemize
+the complexity of the target function (Bayes decision function)
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Seems like an interesting area for both practical and theoretical pursuit.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Column / Feature Subsampling for Regularization
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Similar to random forest, randomly choose a subset of features for each
+ round.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+XGBoost paper says: 
+\begin_inset Quotes eld
+\end_inset
+
+According to user feedback, using column sub-sampling prevents overfitting
+ even more so than the traditional row sub-sampling.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Zhao Xing (top Kaggle competitor) finds optimal percentage to be 20%-100%
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Newton Step Direction
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For GBM, we find the closest 
+\begin_inset Formula $h\in\cf$
+\end_inset
+
+ to the negative gradient
+\begin_inset Formula 
+\[
+-{\bf g}=-\del_{\vf}J({\bf f}).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+This is a 
+\begin_inset Quotes eld
+\end_inset
+
+first order
+\begin_inset Quotes erd
+\end_inset
+
+ method.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Newton's method is a 
+\begin_inset Quotes eld
+\end_inset
+
+second order method
+\begin_inset Quotes erd
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Find 2nd order (quadratic) approximation to 
+\begin_inset Formula $J$
+\end_inset
+
+ at 
+\begin_inset Formula $\vf$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Requires computing gradient and Hessian of 
+\begin_inset Formula $J$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Newton step direction points towards minimizer of the quadratic.
+\end_layout
+
+\begin_layout Itemize
+Minimizer of quadratic is easy to find in closed form
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Boosting methods with projected Newton step direction:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+LogitBoost (logistic loss function)
+\end_layout
+
+\begin_layout Itemize
+XGBoost (any loss – uses regression trees for base classifier)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Newton Step Direction for GBM
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Generically, second order Taylor expansion of 
+\begin_inset Formula $J$
+\end_inset
+
+ at 
+\begin_inset Formula ${\bf f}$
+\end_inset
+
+ in direction 
+\begin_inset Formula ${\bf r}$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+J({\bf f}+{\bf r})=J({\bf f})+\left[\del_{{\bf f}}J({\bf f})\right]^{T}{\bf r}+\frac{1}{2}{\bf r}^{T}\left[\del_{{\bf f}}^{2}J({\bf f})\right]{\bf r}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+For 
+\begin_inset Formula $J({\bf f})=\sum_{i=1}^{n}\ell\left(y_{i},{\bf f}_{i}\right)$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+J({\bf f}+{\bf r})=\sum_{i=1}^{n}\left[\ell\left(y_{i},{\bf f}_{i}\right)+g_{i}{\bf r}_{i}+\frac{1}{2}h_{i}{\bf r}_{i}^{2}\right],
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $g_{i}=\partial_{{\bf f}_{i}}\ell\left(y_{i},{\bf f}_{i}\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $h_{i}=\partial_{{\bf f}_{i}}^{2}\ell\left(y_{i},{\bf f}_{i}\right)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Can find 
+\begin_inset Formula ${\bf r}$
+\end_inset
+
+ that minimizes 
+\begin_inset Formula $J({\bf f}+{\bf r})$
+\end_inset
+
+ in closed form.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Can take step direction to be 
+\begin_inset Quotes eld
+\end_inset
+
+projection
+\begin_inset Quotes erd
+\end_inset
+
+ of 
+\begin_inset Formula ${\bf r}$
+\end_inset
+
+ into base hypothesis space 
+\begin_inset Formula $\ch$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+XGBoost: Objective Function with Tree Penalty Term
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Adds explicit penalty term on tree complexity to the empirical risk:
+\begin_inset Formula 
+\[
+\Omega(r)=\gamma T+\frac{1}{2}\lambda\sum_{i=1}^{T}w_{j}^{2},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $r\in\ch$
+\end_inset
+
+ is a regression tree from our base hypothesis space and
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $T$
+\end_inset
+
+ is the number of leaf nodes and
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $w_{j}$
+\end_inset
+
+ is the prediction in the 
+\begin_inset Formula $j$
+\end_inset
+
+'th node
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Objective function at step 
+\begin_inset Formula $m$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+J(r)=\sum_{i=1}^{n}\left[g_{i}r(x_{i})+\frac{1}{2}h_{i}r(x_{i})^{2}\right]+\Omega(r)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+In XGBoost, they also use this objective to decide on tree splits
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+See 
+\begin_inset CommandInset href
+LatexCommand href
+name "XGBoost Introduction"
+target "http://xgboost.readthedocs.io/en/latest/model.html"
+literal "false"
+
+\end_inset
+
+ for a nice introduction.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+XGBoost: Rewriting objective function
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For a given tree, let 
+\begin_inset Formula $q(x_{i})$
+\end_inset
+
+ be 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+'s node assignment and 
+\begin_inset Formula $w_{j}$
+\end_inset
+
+ the prediction for node 
+\begin_inset Formula $j$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+In each step of XGBoost we're looking for a tree that minimizes
+\begin_inset Formula 
+\begin{eqnarray*}
+ &  & \sum_{i=1}^{n}\left[g_{i}w_{q(x_{i})}+\frac{1}{2}h_{i}w_{q(x_{i})}^{2}\right]+\gamma T+\frac{1}{2}\lambda\sum_{i=1}^{T}w_{j}^{2}\\
+\pause & = & \sum_{\text{leaf node }j=1}^{T}\left[\left(\underbrace{\sum_{i\in I_{j}}g_{i}}_{G_{j}}\right)w_{j}+\frac{1}{2}\left(\underbrace{\sum_{i\in I_{j}}h_{i}}_{H_{j}}+\lambda\right)w_{j}^{2}\right]+\gamma T,
+\end{eqnarray*}
+
+\end_inset
+
+where 
+\begin_inset Formula $I_{j}=\left\{ i\mid q(x_{i})=j\right\} $
+\end_inset
+
+ is set of training example indices landing in leaf 
+\begin_inset Formula $j$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+XGBoost: Simple Expression for Tree Penalty/Loss
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Simplifies to 
+\begin_inset Formula 
+\[
+\sum_{j=1}^{T}\left[G_{j}w_{j}+\frac{1}{2}\left(H_{j}+\lambda\right)w_{j}^{2}\right]+\gamma T
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+For fixed 
+\begin_inset Formula $q(x)$
+\end_inset
+
+ (i.e.
+ fixed tree partitioning), objective minimized when leaf node values are
+\begin_inset Formula 
+\[
+w_{j}^{*}=-G_{j}/\left(H_{j}+\lambda\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Plugging 
+\begin_inset Formula $w_{j}^{*}$
+\end_inset
+
+ back in, this objective reduces to
+\begin_inset Formula 
+\[
+-\frac{1}{2}\sum_{j=1}^{T}\frac{G_{j}^{2}}{H_{j}+\lambda}+\gamma T,
+\]
+
+\end_inset
+
+which we can think of as the loss for tree partitioning function 
+\begin_inset Formula $q(x)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+If time were no issue, we could search over all trees to mininize this objective.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+XGBoost: Building Tree Using Objective Function
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Expression to evaluate a tree's node assignment function 
+\begin_inset Formula $q(x)$
+\end_inset
+
+: 
+\begin_inset Formula 
+\[
+-\frac{1}{2}\sum_{j=1}^{T}\frac{G_{j}^{2}}{H_{j}+\lambda}+\gamma T,
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $G_{j}=\sum_{i\in I_{j}}g_{i}$
+\end_inset
+
+ for examples 
+\begin_inset Formula $i$
+\end_inset
+
+ assigned to leaf node 
+\begin_inset Formula $j$
+\end_inset
+
+.
+ And 
+\begin_inset Formula $H_{j}=\sum_{i\in I_{j}}h_{i}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Suppose we're considering splitting some data into two nodes: 
+\begin_inset Formula $L$
+\end_inset
+
+ and 
+\begin_inset Formula $R$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Loss of tree with this one split is
+\begin_inset Formula 
+\[
+-\frac{1}{2}\left[\frac{G_{L}^{2}}{H_{L}+\lambda}+\frac{G_{R}^{2}}{H_{R}+\lambda}\right]+2\gamma.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Without the split – i.e.
+ a tree with a single leaf node, loss is
+\begin_inset Formula 
+\[
+-\frac{1}{2}\left[\frac{\left(G_{L}+G_{R}\right)^{2}}{H_{L}+H_{R}+\lambda}\right]+\gamma.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+XGBoost: Node Splitting Criterion
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We can define the 
+\series bold
+gain
+\series default
+ of a split to be the reduction in objective between tree with and without
+ split:
+\begin_inset Formula 
+\begin{eqnarray*}
+\text{Gain} & = & \frac{1}{2}\left[\frac{G_{L}^{2}}{H_{L}+\lambda}+\frac{G_{R}^{2}}{H_{R}+\lambda}-\frac{\left(G_{L}+G_{R}\right)^{2}}{H_{L}+H_{R}+\lambda}\right]-\gamma.
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Tree building method: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+recursively choose split that maximizes the gain.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\end_body
+\end_document

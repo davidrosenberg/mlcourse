@@ -1,9 +1,9 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin /Users/drosen/Dropbox/repos/mlcourse/Lectures/
+\origin unavailable
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -62,6 +62,8 @@
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -101,6 +103,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_minted 0
 \boxbgcolor #ff31d8
 \index Index
 \shortcut idx
@@ -110,7 +113,10 @@
 \tocdepth 2
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -768,6 +774,20 @@ Just in article version
 status open
 
 \begin_layout Plain Layout
+Incorporate images and some simplifications from Lagrangian Duality in 10
+ Minutes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -980,6 +1000,7 @@ See the
 LatexCommand href
 name "Extreme Abridgement of Boyd and Vandenberghe"
 target "https://davidrosenberg.github.io/mlcourse/Notes/convex-optimization.pdf"
+literal "false"
 
 \end_inset
 

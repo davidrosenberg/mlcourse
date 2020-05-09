@@ -1,0 +1,2790 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin /Users/drosen/Dropbox/repos/mlcourse/Lectures/
+\textclass beamer
+\begin_preamble
+\usetheme{CambridgeUS} 
+\beamertemplatenavigationsymbolsempty
+
+
+% Set Color ==============================
+\definecolor{NYUPurple}{RGB}{87,6,140}
+\definecolor{LightPurple}{RGB}{165,11,255}
+
+
+\setbeamercolor{title}{fg=NYUPurple}
+%\setbeamercolor{frametitle}{fg=NYUPurple}
+\setbeamercolor{frametitle}{fg=NYUPurple}
+
+\setbeamercolor{background canvas}{fg=NYUPurple, bg=white}
+\setbeamercolor{background}{fg=black, bg=NYUPurple}
+
+\setbeamercolor{palette primary}{fg=black, bg=gray!30!white}
+\setbeamercolor{palette secondary}{fg=black, bg=gray!20!white}
+\setbeamercolor{palette tertiary}{fg=gray!20!white, bg=NYUPurple}
+
+\setbeamertemplate{headline}{}
+
+\setbeamercolor{parttitle}{fg=NYUPurple}
+\setbeamercolor{sectiontitle}{fg=NYUPurple}
+\setbeamercolor{sectionname}{fg=NYUPurple}
+\setbeamercolor{section page}{fg=NYUPurple}
+
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+\setbeamercolor{section title}{fg=NYUPurple}
+ \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\usebeamercolor[fg]{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+\end_preamble
+\options aspectratio=169,handout
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "eulervm" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "allcolors=NYUPurple,urlcolor=LightPurple"
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\boxbgcolor #ff31d8
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\reals}{\mathbf{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\integers}{\mathbf{Z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\naturals}{\mathbf{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rationals}{\mathbf{Q}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ca}{\mathcal{A}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cb}{\mathcal{B}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cc}{\mathcal{C}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cd}{\mathcal{D}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ce}{\mathcal{E}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cf}{\mathcal{F}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cg}{\mathcal{G}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ch}{\mathcal{H}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ci}{\mathcal{I}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cj}{\mathcal{J}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ck}{\mathcal{K}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cl}{\mathcal{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cm}{\mathcal{M}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cn}{\mathcal{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\co}{\mathcal{O}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cp}{\mathcal{P}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cq}{\mathcal{Q}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\calr}{\mathcal{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cs}{\mathcal{S}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ct}{\mathcal{T}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cu}{\mathcal{U}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cv}{\mathcal{V}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cw}{\mathcal{W}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cx}{\mathcal{X}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cy}{\mathcal{Y}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cz}{\mathcal{Z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ind}[1]{1(#1)}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand{
+\backslash
+pr}{P}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\pr}{\mathbb{P}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\predsp}{\cy}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%{
+\backslash
+hat{
+\backslash
+cy}}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\outsp}{\cy}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\prxy}{P_{\cx\times\cy}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\prx}{P_{\cx}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\prygivenx}{P_{\cy\mid\cx}}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand{
+\backslash
+ex}{E}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ex}{\mathbb{E}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\var}{\textrm{Var}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cov}{\textrm{Cov}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\sgn}{\textrm{sgn}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\sign}{\textrm{sign}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\kl}{\textrm{KL}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\law}{\mathcal{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\eps}{\varepsilon}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\as}{\textrm{ a.s.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\io}{\textrm{ i.o.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ev}{\textrm{ ev.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\convd}{\stackrel{d}{\to}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\eqd}{\stackrel{d}{=}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\del}{\nabla}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\loss}{\ell}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\risk}{R}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\emprisk}{\hat{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\lossfnl}{L}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\emplossfnl}{\hat{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\empminimizer}[1]{\hat{#1}^{*}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\minimizer}[1]{#1^{*}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\optimizer}[1]{#1^{*}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\etal}{\textrm{et. al.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\tr}{\operatorname{tr}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\trace}{\operatorname{trace}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\diag}{\text{diag}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rank}{\text{rank}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\linspan}{\text{span}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\spn}{\text{span}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\proj}{\text{Proj}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\argmax}{\operatornamewithlimits{arg\, max}}
+{\text{argmax}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\argmin}{\operatornamewithlimits{arg\, min}}
+{\text{argmin}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\bfx}{\mathbf{x}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfy}{\mathbf{y}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfl}{\mathbf{\lambda}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfm}{\mathbf{\mu}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\calL}{\mathcal{L}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\vw}{\boldsymbol{w}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vx}{\boldsymbol{x}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vxi}{\boldsymbol{\xi}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\valpha}{\boldsymbol{\alpha}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vbeta}{\boldsymbol{\beta}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vsigma}{\boldsymbol{\sigma}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vtheta}{\boldsymbol{\theta}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vd}{\boldsymbol{d}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vs}{\boldsymbol{s}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vt}{\boldsymbol{t}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vh}{\boldsymbol{h}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ve}{\boldsymbol{e}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vf}{\boldsymbol{f}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vg}{\boldsymbol{g}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vz}{\boldsymbol{z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vk}{\boldsymbol{k}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\va}{\boldsymbol{a}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vb}{\boldsymbol{b}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vv}{\boldsymbol{v}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vy}{\boldsymbol{y}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\dom}{\textrm{\textbf{dom} }}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\renewcommand{\rank}{\text{\textbf{rank }}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\conv}{\textrm{\textbf{conv} }}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\relint}{\text{\textbf{relint }}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\aff}{\text{\textbf{aff }}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\hil}{\ch}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rkhs}{\hil}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ber}{\text{Ber}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+Maximum Likelihood Estimation
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+DS-GA 1003 / CSCI-GA 2567
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+optional, use only with long paper titles
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+David S.
+ Rosenberg 
+\end_layout
+
+\begin_layout Date
+February 21, 2018
+\end_layout
+
+\begin_layout Institute
+New York University
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex ArticleMode
+status open
+
+\begin_layout Plain Layout
+Just in article version
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Plots courtesy of Ningshan Zhang.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Contents
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Figure from 
+\backslash
+url{http://taps-graph-review.wikispaces.com/Box+and+Whisker+Plots}.}}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+put it in first slide...
+\end_layout
+
+\begin_layout Plain Layout
+
+exponential distribution of lifetime of lightbulbs
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+somewhere in the first 7 slides, give an example with some data...
+ mean / variance (e.g.
+ assume gaussians)...
+ ......
+ ..
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+before generalized regression - tie this to something they've done already
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+calls coming into call center; want to know mean rate of a calls.
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+exponential distribuiton -- what is lifetime ...
+ Parameter estimation...
+\end_layout
+
+\begin_layout Plain Layout
+
+model = set of probability distributions
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+reframe in context -- hypothesis spaces = set of probability distributions
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+regular linear regression on Poisson data -- why don't people do that? I
+ assume it's less efficient.
+  to help motivate adn explain what is going on
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+link function needs to connect the parameter domain to the output of w^t
+ x.
+  Somebody also mentions that we want the variance of the residuals to be
+ constant...
+ my thought is that otherwise areas of the domain with high variance will
+ have more influence on the fit.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Likelihood of an Estimated Probability Distribution
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Estimating a Probability Distribution: Setting
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $p(y)$
+\end_inset
+
+ represent a probability distribution on 
+\begin_inset Formula $\cy$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $p(y)$
+\end_inset
+
+ is 
+\series bold
+unknown
+\series default
+ and we want to 
+\series bold
+estimate
+\series default
+ it.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Assume that 
+\begin_inset Formula $p(y)$
+\end_inset
+
+ is either a
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+probability density function on a continuous space 
+\begin_inset Formula $\cy$
+\end_inset
+
+, or a
+\end_layout
+
+\begin_layout Itemize
+probability mass function on a discrete space 
+\begin_inset Formula $\cy$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Typical 
+\begin_inset Formula $\cy$
+\end_inset
+
+'s:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\cy=\reals$
+\end_inset
+
+; 
+\begin_inset Formula $\cy=\reals^{d}$
+\end_inset
+
+ [typical continuous distributions]
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\cy=\left\{ -1,1\right\} $
+\end_inset
+
+ [e.g.
+ binary classification]
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\cy=\left\{ 0,1,2,\ldots,K\right\} $
+\end_inset
+
+ [e.g.
+ multiclass problem]
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\cy=\left\{ 0,1,2,3,4\ldots\right\} $
+\end_inset
+
+ [unbounded counts]
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Evaluating a Probability Distribution Estimate
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Before we talk about estimation, let's talk about evaluation.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Somebody gives us an estimate of the probability distribution
+\begin_inset Formula 
+\[
+\hat{p}(y).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+How can we evaluate how good it is?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We want 
+\begin_inset Formula $\hat{p}(y)$
+\end_inset
+
+ to be descriptive of 
+\series bold
+future
+\series default
+ data.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Itemize
+If we knew 
+\begin_inset Formula $p(y)$
+\end_inset
+
+, we could use some distance on distributions.
+ 
+\end_layout
+
+\begin_layout Itemize
+But we don't know 
+\begin_inset Formula $p(y)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Just as for the statistical learning theory setting,
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Likelihood of a Predicted Distribution
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose we have
+\begin_inset Formula 
+\[
+\cd=\left(y_{1},\ldots,y_{n}\right)\text{ sampled i.i.d. from true distribution }p(y).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Then the 
+\series bold
+likelihood 
+\series default
+of 
+\begin_inset Formula $\hat{p}$
+\end_inset
+
+ for the data 
+\begin_inset Formula $\cd$
+\end_inset
+
+ is defined to be
+\begin_inset Formula 
+\[
+\hat{p}(\cd)=\prod_{i=1}^{n}\hat{p}(y_{i}).
+\]
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+To emphasize that this evaluates 
+\begin_inset Formula $\hat{p}$
+\end_inset
+
+, we'll sometimes write this as: 
+\begin_inset Formula 
+\[
+L_{\cd}(\hat{p}):=\hat{p}(\cd)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+If 
+\begin_inset Formula $\hat{p}$
+\end_inset
+
+ is a probability mass function, then likelihood is probability.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Parametric Families of Distributions
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Parametric Models
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+A 
+\series bold
+parametric model 
+\series default
+is a set of probability distributions indexed by a parameter 
+\begin_inset Formula $\theta\in\Theta$
+\end_inset
+
+.
+ We denote this as
+\begin_inset Formula 
+\[
+\left\{ p(y;\theta)\mid\theta\in\Theta\right\} ,
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is the 
+\series bold
+parameter
+\series default
+ and 
+\begin_inset Formula $\Theta$
+\end_inset
+
+ is the 
+\series bold
+parameter space
+\series default
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Below we'll give some examples of common parametric models.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+But it's worth doing research to find a parametric model most appropriate
+ for your data.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We'll sometimes say
+\series bold
+ family of distributions
+\series default
+ for a probability model.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Definition
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+In 
+\series bold
+probabilistic modeling,
+\series default
+ analysis begins with something like:
+\end_layout
+
+\begin_layout Quote
+Suppose the data are generated by a distribution in parametric family 
+\begin_inset Formula $\cf$
+\end_inset
+
+ (e.g.
+ a Poisson family).
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Our perspective is different, at least conceptually: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We don't make any assumptions about the data generating distribution.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We use a parametric model as a 
+\series bold
+hypothesis space
+\series default
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+(More on this later.)
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Poisson Family
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout ColumnsTopAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+.6
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Support 
+\begin_inset Formula $\cy=\left\{ 0,1,2,3,\ldots\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Parameter space: 
+\begin_inset Formula $\left\{ \lambda\in\reals\mid\lambda>0\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Probability mass function on 
+\begin_inset Formula $k\in\cy$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+p(k;\lambda)=\lambda^{k}e^{-\lambda}/\left(k!\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+.35
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/SenseNetworks/poissonDistribution.png
+	lyxscale 30
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Figure is "Poisson pmf" by Skbkekas - Own work.
+ Licensed under CC BY 3.0 via Wikimedia Commons - 
+\backslash
+url{http://commons.wikimedia.org/wiki/File:Poisson_pmf.svg
+\backslash
+#/media/File:Poisson_pmf.svg}.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Beta Family
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout ColumnsTopAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+.6
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Support 
+\begin_inset Formula $\cy=(0,1)$
+\end_inset
+
+.
+ [The unit interval.]
+\end_layout
+
+\begin_layout Itemize
+Parameter space: 
+\begin_inset Formula $\left\{ \theta=\left(\alpha,\beta\right)\mid\alpha,\beta>0\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Probability density function on 
+\begin_inset Formula $y\in\cy$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+p(y;a,b)=\frac{y^{\alpha-1}\left(1-y\right)^{\beta-1}}{B(\alpha,\beta)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+.35
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/SenseNetworks/betaFamily.png
+	lyxscale 30
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Figure by Horas based on the work of Krishnavedala (Own work) [Public
+ domain], via 
+\backslash
+href{https://en.wikipedia.org/wiki/File:Beta_distribution_pdf.svg}{Wikimedia
+ Commons}.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Gamma Family
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout ColumnsTopAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+.6
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Support 
+\begin_inset Formula $\cy=(0,\infty)$
+\end_inset
+
+.
+ [Positive real numbers]
+\end_layout
+
+\begin_layout Itemize
+Parameter space: 
+\begin_inset Formula $\left\{ \theta=\left(k,\theta\right)\mid k>0,\theta>0\right\} $
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Probability density function on 
+\begin_inset Formula $y\in\cy$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+p(y;k,\theta)=\frac{1}{\Gamma(k)\theta^{k}}x^{k-1}e^{-y/\theta}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+.35
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/SenseNetworks/gammaFamily.png
+	lyxscale 30
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Special cases: exponential distribution, chi-squared distribution, Erlang
+ distribution
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Figure from Wikipedia 
+\backslash
+url{https://commons.wikimedia.org/wiki/File:Gamma_distribution_pdf.svg}.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Maximum Likelihood Estimation
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Likelihood in a Parametric Model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Suppose we have a parametric model 
+\begin_inset Formula $\left\{ p(y;\theta)\mid\theta\in\Theta\right\} $
+\end_inset
+
+ and a sample 
+\begin_inset Formula $\cd=\left(y_{1},\ldots,y_{n}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+The 
+\series bold
+likelihood 
+\series default
+of parameter estimate 
+\begin_inset Formula $\hat{\theta}\in\Theta$
+\end_inset
+
+ for sample 
+\begin_inset Formula $\cd$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+p(\cd;\hat{\theta})\pause=\prod_{i=1}^{n}p(y_{i};\hat{\theta}).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+In practice, we prefer to work with the 
+\series bold
+log-likelihood
+\series default
+.
+ Same maximizer, but
+\begin_inset Formula 
+\[
+\log p(\cd;\hat{\theta})=\sum_{i=1}^{n}\log p(y_{i};\hat{\theta}),
+\]
+
+\end_inset
+
+and sums are easier to work with than products.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Maximum Likelihood Estimation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose 
+\begin_inset Formula $\cd=\left(y_{1},\ldots,y_{n}\right)$
+\end_inset
+
+ is an i.i.d.
+ sample from some distribution.
+ 
+\end_layout
+
+\begin_layout Definition
+A 
+\series bold
+maximum likelihood estimator (MLE)
+\series default
+ for 
+\begin_inset Formula $\theta$
+\end_inset
+
+ in the model 
+\begin_inset Formula $\left\{ p(y;\theta)\mid\theta\in\Theta\right\} $
+\end_inset
+
+ is
+\begin_inset Formula 
+\begin{eqnarray*}
+\hat{\theta} & \in & \argmax_{\theta\in\Theta}\log p(\cd,\hat{\theta})\\
+\pause & = & \argmax_{\theta\in\Theta}\sum_{i=1}^{n}\log p(y_{i};\theta).
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Maximum Likelihood Estimation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Finding the MLE is an 
+\series bold
+optimization problem
+\series default
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+For some model families, calculus gives a closed form for the MLE.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Can also use numerical methods we know (e.g.
+ SGD).
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+MLE Existence
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+In certain situations, the MLE may not exist.
+ 
+\end_layout
+
+\begin_layout Itemize
+But there is usually a good reason for this.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+e.g.
+ Gaussian family 
+\begin_inset Formula $\left\{ \cn(\mu,\sigma^{2})\mid\mu\in\reals,\sigma^{2}>0\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+We have a single observation 
+\begin_inset Formula $y$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Is there an MLE?
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Taking 
+\begin_inset Formula $\mu=y$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma^{2}\to0$
+\end_inset
+
+ drives likelihood to infinity.
+ 
+\end_layout
+
+\begin_layout Itemize
+MLE doesn't exist.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Example: MLE for Poisson
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Observed counts 
+\begin_inset Formula $\cd=\left(k_{1},\ldots,k_{n}\right)$
+\end_inset
+
+ for taxi cab pickups over 
+\begin_inset Formula $n$
+\end_inset
+
+ weeks.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $k_{i}$
+\end_inset
+
+ is number of pickups at Penn Station Mon, 7-8pm, for week 
+\begin_inset Formula $i$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We want to fit a Poisson distribution to this data.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The Poisson log-likelihood for a single count is
+\begin_inset Formula 
+\begin{eqnarray*}
+\log\left[p(k;\lambda)\right] & = & \log\left[\frac{\lambda^{k}e^{-\lambda}}{k!}\right]\\
+ & = & k\log\lambda-\lambda-\log\left(k!\right)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The full log-likelihood is
+\begin_inset Formula 
+\begin{eqnarray*}
+\log p(\cd,\lambda) & = & \sum_{i=1}^{n}\left[k_{i}\log\lambda-\lambda-\log\left(k_{i}!\right)\right].
+\end{eqnarray*}
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Example: MLE for Poisson
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The full log-likelihood is
+\begin_inset Formula 
+\begin{eqnarray*}
+\log p(\cd,\lambda) & = & \sum_{i=1}^{n}\left[k_{i}\log\lambda-\lambda-\log\left(k_{i}!\right)\right]
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+First order condition gives
+\begin_inset Formula 
+\begin{eqnarray*}
+0=\frac{\partial}{\partial\lambda}\left[\log p(\cd,\lambda)\right] & = & \sum_{i=1}^{n}\left[\frac{k_{i}}{\lambda}-1\right]\\
+\pause\implies\lambda & = & \frac{1}{n}\sum_{i=1}^{n}k_{i}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+So MLE 
+\begin_inset Formula $\hat{\lambda}$
+\end_inset
+
+ is just the mean of the counts.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Test Set Log Likelihood for Penn Station, Mon-Fri 7-8pm
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Method 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Test Log-Likelihood
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Poisson
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-392.16$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Negative Binomial
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-188.67$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Histogram (Bin width = 7)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-\infty$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+.95 Histogram +.05 NegBin
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-203.89$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Estimating Distributions, Overfitting, and Hypothesis Spaces
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Just as in classification and regression, MLE can overfit! 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Example Probability Models:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\cf=\left\{ \text{Poisson distributions}\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\cf=\left\{ \text{Negative binomial distributions}\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\cf=$
+\end_inset
+
+
+\begin_inset Formula $\left\{ \text{Histogram with 10 bins}\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\cf=$
+\end_inset
+
+
+\begin_inset Formula $\left\{ \text{Histogram with bin for every \ensuremath{y\in\cy}}\right\} $
+\end_inset
+
+ [will likely overfit for continuous data] 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+How to judge which model works the best?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Choose the model with the 
+\series bold
+highest likelihood on validation set
+\series default
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Probability Estimation as Statistical Learning
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+[NOTE – THIS STUFF ISN'T great because there's no input space, and we didn't
+ really define ERM in that case]
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If 
+\series bold
+true
+\series default
+ distribution of 
+\begin_inset Formula $y$
+\end_inset
+
+ is 
+\begin_inset Formula $q$
+\end_inset
+
+, then 
+\series bold
+risk
+\series default
+ of predicted distribution 
+\begin_inset Formula $p$
+\end_inset
+
+ is 
+\begin_inset Formula 
+\[
+R(p)=\ex_{y\sim q}\left[-\log p(y)\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+The empirical risk of 
+\begin_inset Formula $p$
+\end_inset
+
+ for a sample 
+\begin_inset Formula $\cd=\left\{ y_{1},\ldots,y_{n}\right\} \in\cy$
+\end_inset
+
+ is 
+\begin_inset Formula 
+\[
+\hat{R}(p)=-\sum_{i=1}^{n}\log p(y_{i}),
+\]
+
+\end_inset
+
+which is exactly the 
+\series bold
+negative
+\series default
+ 
+\series bold
+log-likelihood of 
+\begin_inset Formula $p$
+\end_inset
+
+ for the data 
+\begin_inset Formula $\cd$
+\end_inset
+
+
+\series default
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Therefore, MLE is just an empirical risk minimizer.
+\end_layout
+
+\end_deeper
+\begin_layout Plain Layout
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Statistical Learning Formulation
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Probability Estimation as Statistical Learning
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Outcome space 
+\begin_inset Formula $\cy$
+\end_inset
+
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+(containing observations from distribution 
+\begin_inset Formula $P$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Action space
+\series default
+ 
+\begin_inset Formula $\ca=\left\{ p(y)\mid p\text{ is a probability density or mass function on }\cy\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+How to encode our objective of 
+\begin_inset Quotes eld
+\end_inset
+
+high likelihood
+\begin_inset Quotes erd
+\end_inset
+
+ as a loss function?
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Define loss function as the negative log-likelihood of 
+\begin_inset Formula $y$
+\end_inset
+
+ under 
+\begin_inset Formula $p(\cdot)$
+\end_inset
+
+: 
+\begin_inset Formula 
+\[
+\begin{matrix}\loss: & \ca\times\cy & \rightarrow & \reals\\
+ & (p,y) & \mapsto & -\log p(y)
+\end{matrix}
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

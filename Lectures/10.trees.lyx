@@ -1,0 +1,5156 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin /Users/drosen/Dropbox/repos/mlcourse/Lectures/
+\textclass beamer
+\begin_preamble
+\usetheme{CambridgeUS} 
+\beamertemplatenavigationsymbolsempty
+
+
+% Set Color ==============================
+\definecolor{NYUPurple}{RGB}{87,6,140}
+\definecolor{LightPurple}{RGB}{165,11,255}
+
+
+\setbeamercolor{title}{fg=NYUPurple}
+%\setbeamercolor{frametitle}{fg=NYUPurple}
+\setbeamercolor{frametitle}{fg=NYUPurple}
+
+\setbeamercolor{background canvas}{fg=NYUPurple, bg=white}
+\setbeamercolor{background}{fg=black, bg=NYUPurple}
+
+\setbeamercolor{palette primary}{fg=black, bg=gray!30!white}
+\setbeamercolor{palette secondary}{fg=black, bg=gray!20!white}
+\setbeamercolor{palette tertiary}{fg=gray!20!white, bg=NYUPurple}
+
+\setbeamertemplate{headline}{}
+
+\setbeamercolor{parttitle}{fg=NYUPurple}
+\setbeamercolor{sectiontitle}{fg=NYUPurple}
+\setbeamercolor{sectionname}{fg=NYUPurple}
+\setbeamercolor{section page}{fg=NYUPurple}
+
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+\setbeamercolor{section title}{fg=NYUPurple}
+ \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\usebeamercolor[fg]{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+\end_preamble
+\options aspectratio=169,handout
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "eulervm" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "allcolors=NYUPurple,urlcolor=LightPurple"
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\boxbgcolor #ff31d8
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\reals}{\mathbf{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\integers}{\mathbf{Z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\naturals}{\mathbf{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rationals}{\mathbf{Q}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ca}{\mathcal{A}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cb}{\mathcal{B}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cc}{\mathcal{C}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cd}{\mathcal{D}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ce}{\mathcal{E}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cf}{\mathcal{F}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cg}{\mathcal{G}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ch}{\mathcal{H}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ci}{\mathcal{I}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cj}{\mathcal{J}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ck}{\mathcal{K}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cl}{\mathcal{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cm}{\mathcal{M}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cn}{\mathcal{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\co}{\mathcal{O}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cp}{\mathcal{P}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cq}{\mathcal{Q}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\calr}{\mathcal{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cs}{\mathcal{S}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ct}{\mathcal{T}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cu}{\mathcal{U}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cv}{\mathcal{V}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cw}{\mathcal{W}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cx}{\mathcal{X}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cy}{\mathcal{Y}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cz}{\mathcal{Z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ind}[1]{1(#1)}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand{
+\backslash
+pr}{P}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\pr}{\mathbb{P}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\predsp}{\cy}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%{
+\backslash
+hat{
+\backslash
+cy}}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\outsp}{\cy}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\prxy}{P_{\cx\times\cy}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\prx}{P_{\cx}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\prygivenx}{P_{\cy\mid\cx}}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand{
+\backslash
+ex}{E}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ex}{\mathbb{E}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\var}{\textrm{Var}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cov}{\textrm{Cov}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\sgn}{\textrm{sgn}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\sign}{\textrm{sign}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\kl}{\textrm{KL}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\law}{\mathcal{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\eps}{\varepsilon}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\as}{\textrm{ a.s.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\io}{\textrm{ i.o.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ev}{\textrm{ ev.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\convd}{\stackrel{d}{\to}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\eqd}{\stackrel{d}{=}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\del}{\nabla}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\loss}{\ell}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\risk}{R}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\emprisk}{\hat{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\lossfnl}{L}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\emplossfnl}{\hat{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\empminimizer}[1]{\hat{#1}^{*}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\minimizer}[1]{#1^{*}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\optimizer}[1]{#1^{*}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\etal}{\textrm{et. al.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\tr}{\operatorname{tr}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\trace}{\operatorname{trace}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\diag}{\text{diag}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rank}{\text{rank}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\linspan}{\text{span}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\spn}{\text{span}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\proj}{\text{Proj}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\argmax}{\operatornamewithlimits{arg\, max}}
+{\text{argmax}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\argmin}{\operatornamewithlimits{arg\, min}}
+{\text{argmin}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\bfx}{\mathbf{x}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfy}{\mathbf{y}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfl}{\mathbf{\lambda}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfm}{\mathbf{\mu}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\calL}{\mathcal{L}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\vw}{\boldsymbol{w}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vx}{\boldsymbol{x}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vxi}{\boldsymbol{\xi}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\valpha}{\boldsymbol{\alpha}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vbeta}{\boldsymbol{\beta}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vsigma}{\boldsymbol{\sigma}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vtheta}{\boldsymbol{\theta}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vd}{\boldsymbol{d}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vs}{\boldsymbol{s}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vt}{\boldsymbol{t}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vh}{\boldsymbol{h}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ve}{\boldsymbol{e}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vf}{\boldsymbol{f}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vg}{\boldsymbol{g}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vz}{\boldsymbol{z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vk}{\boldsymbol{k}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\va}{\boldsymbol{a}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vb}{\boldsymbol{b}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vv}{\boldsymbol{v}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vy}{\boldsymbol{y}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\dom}{\textrm{\textbf{dom} }}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\renewcommand{\rank}{\text{\textbf{rank }}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\conv}{\textrm{\textbf{conv} }}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\relint}{\text{\textbf{relint }}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\aff}{\text{\textbf{aff }}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\hil}{\ch}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rkhs}{\hil}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ber}{\text{Ber}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+Classification and Regression Trees
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+DS-GA 1003 / CSCI-GA 2567
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+optional, use only with long paper titles
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+David S.
+ Rosenberg 
+\end_layout
+
+\begin_layout Date
+April 3, 2018
+\end_layout
+
+\begin_layout Institute
+New York University
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex ArticleMode
+status open
+
+\begin_layout Plain Layout
+Just in article version
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Plots courtesy of Ningshan Zhang.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Contents
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Should re-read HTF section for big picture review
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+TODO:
+\end_layout
+
+\begin_layout Plain Layout
+0) Clarify surrogate splits – how to evaluate a split if some examples are
+ missing from the evaluation?
+\end_layout
+
+\begin_layout Plain Layout
+.1) Give a precise statement of the binary classification with categorical
+ varaibles equivalence – requires some condition on the impurity measures.
+\end_layout
+
+\begin_layout Plain Layout
+.2) Idea for next time: speak more generally about splitting values of a
+ particular feature : categorical – arbitrary subset; discrete ordered feature,
+ split at any particular feature value; continuous ordered feature, generally
+ split halfway between two distinct, consecutive feature values that appear
+ in the training data.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+1) fix pruning explanation to say: each step of pruning eliminates one split.
+ Generally this means eliminates two leaf nodes, and converting an internal
+ node to a leaf node.
+\end_layout
+
+\begin_layout Plain Layout
+Should say up front that we'll be focusing on splits that work with a single
+ feature at time? These lead to axis-parallel splits of input space; 
+\series bold
+oblique decision trees 
+\series default
+don't have this restriction (Murthy et al 
+\begin_inset Quotes eld
+\end_inset
+
+A system for the induction of oblique decision trees
+\begin_inset Quotes erd
+\end_inset
+
+ JAIR 1994); also 
+\series bold
+binary space partition trees
+\series default
+ (BSP trees) have a linear split at each node) induces a partitiom into
+ convex polyhedral cells; Can also have 
+\series bold
+sphere trees
+\series default
+ – space is partitioned by a sphere of a certain radius around a fixed point.
+ [Devroye, Gyorfi, Lugosi p.
+ 316]
+\end_layout
+
+\begin_layout Plain Layout
+- Breiman ran some experiments with CART to see bias / variance breakdown:
+ http://projecteuclid.org/download/pdf_1/euclid.aos/1024691079 
+\end_layout
+
+\begin_layout Plain Layout
+- incorporate a slide or two about categorical variables (see CART book
+ p.
+ 101)
+\end_layout
+
+\begin_layout Plain Layout
+- colinearity mattering with tree-based methods? 
+\end_layout
+
+\begin_layout Plain Layout
+questions:
+\end_layout
+
+\begin_layout Plain Layout
+1) the fact that greedy algorithm works for minimizing cost complexity criterion
+ – does that depend on the complexity measure being the number of leaf nodes?
+\end_layout
+
+\begin_layout Plain Layout
+– 
+\end_layout
+
+\begin_layout Plain Layout
+Add note on extremeley randomized trees (extra-trees) (https://orbi.uliege.be/bits
+tream/2268/9357/1/geurts-mlj-advance.pdf) that choose attribute and cutpoint
+ randomly.
+ Or attribute can be chosen as the best of K randomly chosen attributes,
+ though we're still selecting split points randomly for each of those K,
+ so 
+\begin_inset Quotes eld
+\end_inset
+
+best
+\begin_inset Quotes erd
+\end_inset
+
+ is also a random thing.
+\end_layout
+
+\begin_layout Plain Layout
+Potentially good reference: https://sebastianraschka.com/faq/docs/decision-tree-b
+inary.html
+\end_layout
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\begin_layout Plain Layout
+Need more details on the surrogate split stuff – what to do with missing
+ feature values in the first place? 
+\end_layout
+
+\begin_layout Plain Layout
+Also, could be interesting to discuss the variable importance using surrogate
+ splits (CART book section 5.3.4 p.
+ 146)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Trees
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex ArticleMode
+status open
+
+\begin_layout Plain Layout
+Trees are our first truly nonlinear learning algorithm.
+ We have certainly generated prediction functions that are nonlinear in
+ inputs 
+\begin_inset Formula $x\in\reals^{d}$
+\end_inset
+
+, but we did that by generating feature vectors that are nonlinear functions
+ of 
+\begin_inset Formula $x$
+\end_inset
+
+, and then we 
+\series bold
+learned
+\series default
+ the coefficients to linearly combine these nonlinear features.
+ Trees are the first method that actually learn the nonlinearities.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Tree Terminology
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename ../Figures/trees/generalTreeStructure.png
+	lyxscale 50
+	width 70theight%
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Criminisi et al.
+ MSR-TR-2011-114, 28 October 2011.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+A Binary Decision Tree
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align left
+
+\series bold
+binary tree
+\series default
+: each node has either 2 children or 0 children
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename ../Figures/trees/decisionTree.png
+	lyxscale 50
+	width 50theight%
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Criminisi et al.
+ MSR-TR-2011-114, 28 October 2011.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Binary Decision Tree on 
+\begin_inset Formula $\reals^{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Consider a binary tree on 
+\begin_inset Formula $\left\{ \left(X_{1},X_{2}\right)\mid X_{1},X_{2}\in\reals\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename ../Figures/trees/basicBinaryTree.png
+	lyxscale 50
+	width 50theight%
+
+\end_inset
+
+
+\begin_inset space \qquad{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../Figures/trees/binaryRegions.png
+	lyxscale 50
+	width 50theight%
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From 
+\backslash
+emph{An Introduction to Statistical Learning, with applications in R} (Springer,
+ 2013) with permission from the authors: G.
+ James, D.
+ Witten,  T.
+ Hastie and R.
+ Tibshirani.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Types of Decision Trees
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We'll only consider 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+binary trees
+\series default
+ (vs multiway trees where nodes can have more than 2 children)
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+decisions at each node involve only a single feature (i.e.
+ input coordinate)
+\end_layout
+
+\begin_layout Itemize
+for continuous variables, splits always of the form 
+\begin_inset Formula 
+\[
+x_{i}\le t
+\]
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+(Gives us a partition into convex polyhedral cells, each side parallel to
+ a coordinate axis)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+for discrete variables, partitions values into two groups
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Other types of splitting rules
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+oblique decision trees 
+\series default
+or 
+\series bold
+binary space partition trees
+\series default
+ (BSP trees) have a linear split at each node
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+sphere trees
+\series default
+ – space is partitioned by a sphere of a certain radius around a fixed point
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Regression Trees
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Binary Regression Tree on 
+\begin_inset Formula $\reals^{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Consider a binary tree on 
+\begin_inset Formula $\left\{ \left(X_{1},X_{2}\right)\mid X_{1},X_{2}\in\reals\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename ../Figures/trees/binaryRegions.png
+	lyxscale 50
+	width 50theight%
+
+\end_inset
+
+
+\begin_inset space \qquad{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../Figures/trees/binaryTree3D.png
+	lyxscale 50
+	width 50theight%
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From 
+\backslash
+emph{An Introduction to Statistical Learning, with applications in R} (Springer,
+ 2013) with permission from the authors: G.
+ James, D.
+ Witten,  T.
+ Hastie and R.
+ Tibshirani.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Fitting a Regression Tree
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The decision tree gives the partition of 
+\begin_inset Formula $\cx$
+\end_inset
+
+ into regions:
+\begin_inset Formula 
+\[
+\left\{ R_{1},\ldots,R_{M}\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Recall that a partition is a 
+\series bold
+disjoint union
+\series default
+, that is:
+\begin_inset Formula 
+\[
+\cx=R_{1}\cup R_{2}\cup\cdots\cup R_{M}
+\]
+
+\end_inset
+
+and
+\begin_inset Formula 
+\[
+R_{i}\cap R_{j}=\emptyset\quad\forall i\neq j
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Fitting a Regression Tree
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Given the partition 
+\begin_inset Formula $\left\{ R_{1},\ldots,R_{M}\right\} $
+\end_inset
+
+, final prediction is
+\begin_inset Formula 
+\[
+f(x)=\sum_{m=1}^{M}c_{m}\ind{x\in R_{m}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+How to choose 
+\begin_inset Formula $c_{1},\ldots,c_{M}$
+\end_inset
+
+? 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+For loss function 
+\begin_inset Formula $\ell(\hat{y},y)=\left(\hat{y}-y\right)^{2}$
+\end_inset
+
+, best is
+\begin_inset Formula 
+\[
+\hat{c}_{m}=\text{ave}(y_{i}\mid x_{i}\in R_{m}).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Trees and Overfitting
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If we do enough splitting, every unique 
+\begin_inset Formula $x$
+\end_inset
+
+ value will be in its own partition.
+\end_layout
+
+\begin_layout Itemize
+This very likely overfits.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+As usual, we need to control the complexity of our hypothesis space.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+In Lecture 2, our tree complexity measure was 
+\series bold
+tree depth
+\series default
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+CART (Breiman et al.
+ 1984) uses 
+\series bold
+number of terminal nodes
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+Tree depth is also common.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Complexity of a Tree
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $\left|T\right|=M$
+\end_inset
+
+ denote the number of terminal nodes in 
+\begin_inset Formula $T$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We will use 
+\begin_inset Formula $\left|T\right|$
+\end_inset
+
+ to measure the complexity of a tree.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+For any given complexity, 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+we want the tree minimizing square error on training set.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Finding the optimal binary tree of a given complexity is computationally
+ intractable.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Learning the simplest (smallest) decision tree is an NP-complete problem
+ [Hyafil & Rivest ’76] 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We proceed with a 
+\series bold
+greedy algorithm
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Means build the tree one node at a time, without any planning ahead.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Root Node, Continuous Variables
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $x=\left(x_{1},\ldots,x_{d}\right)\in\reals^{d}$
+\end_inset
+
+.
+ (
+\begin_inset Formula $d$
+\end_inset
+
+ features) 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Splitting variable
+\series default
+ 
+\begin_inset Formula $j\in\left\{ 1,\ldots,d\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Split point
+\series default
+ 
+\begin_inset Formula $s\in\reals$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Partition based on 
+\begin_inset Formula $j$
+\end_inset
+
+ and 
+\begin_inset Formula $s$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+R_{1}(j,s) & =\left\{ x\mid x_{j}\le s\right\} \\
+R_{2}(j,s) & =\left\{ x\mid x_{j}>s\right\} 
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Root Node, Continuous Variables
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For each splitting variable 
+\begin_inset Formula $j$
+\end_inset
+
+ and split point 
+\begin_inset Formula $s$
+\end_inset
+
+,
+\begin_inset Formula 
+\begin{eqnarray*}
+\hat{c}_{1}(j,s) & = & \text{ave}(y_{i}\mid x_{i}\in R_{1}(j,s))\\
+\hat{c}_{2}(j,s) & = & \text{ave}(y_{i}\mid x_{i}\in R_{2}(j,s))
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Find 
+\begin_inset Formula $j,s$
+\end_inset
+
+ minimizing loss
+\begin_inset Formula 
+\[
+L(j,s)=\sum_{i:x_{i}\in R_{1}(j,s)}\left(y_{i}-\hat{c}_{1}(j,s)\right)^{2}+\sum_{i:x_{i}\in R_{2}(j,s)}\left(y_{i}-\hat{c}_{2}(j,s)\right)^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+How?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Finding the Split Point
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Consider splitting on the 
+\begin_inset Formula $j$
+\end_inset
+
+'th feature 
+\begin_inset Formula $x_{j}$
+\end_inset
+
+.
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+As we change the split point 
+\begin_inset Formula $s$
+\end_inset
+
+,
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+the performance on training data changes at most 
+\begin_inset Formula $n-1$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+If 
+\begin_inset Formula $x_{j(1)},\ldots,x_{j(n)}$
+\end_inset
+
+ are the sorted values of the 
+\begin_inset Formula $j$
+\end_inset
+
+'th feature,
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+we only need to check split points between adjacent values
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+traditionally take split points halfway between adjacent values:
+\begin_inset Formula 
+\[
+s_{j}\in\left\{ \frac{1}{2}\left(x_{j(r)}+x_{j(r+1)}\right)\mid r=1,\ldots,n-1\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+So only need to check performance of 
+\begin_inset Formula $n-1$
+\end_inset
+
+ splits.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Then Proceed Recursively
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+We have determined 
+\begin_inset Formula $R_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $R_{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Find best split for points in 
+\begin_inset Formula $R_{1}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Find best split for points in 
+\begin_inset Formula $R_{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Continue...
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+When do we stop?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Complexity Control Strategy
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If the tree is too big, we may overfit.
+\end_layout
+
+\begin_layout Itemize
+If too small, we may miss patterns in the data (underfit).
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Can limit max depth of tree.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Can require all leaf nodes contain a minimum number of points.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Can require a node have at least a certain number of data points to split.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Can do 
+\series bold
+backward pruning
+\series default
+ – the approach of 
+\series bold
+CART
+\series default
+ (Breiman et al 1984): 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Build a really big tree (e.g.
+ until all regions have 
+\begin_inset Formula $\le5$
+\end_inset
+
+ points).
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+\begin_inset Quotes eld
+\end_inset
+
+Prune
+\begin_inset Quotes erd
+\end_inset
+
+
+\series default
+ the tree back greedily all the way to the root, assessing performance on
+ validation.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Classification Trees
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Classification Trees
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Consider classification case: 
+\begin_inset Formula $\cy=\left\{ 1,2,\ldots,K\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We need to modify
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+criteria for splitting nodes
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+method for pruning tree 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Classification Trees
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let node 
+\begin_inset Formula $m$
+\end_inset
+
+ represent region 
+\begin_inset Formula $R_{m}$
+\end_inset
+
+, with 
+\begin_inset Formula $N_{m}$
+\end_inset
+
+ observations
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Denote proportion of observations in 
+\begin_inset Formula $R_{m}$
+\end_inset
+
+ with class 
+\begin_inset Formula $k$
+\end_inset
+
+ by
+\begin_inset Formula 
+\[
+\hat{p}_{mk}=\frac{1}{N_{m}}\sum_{\left\{ i:x_{i}\in R_{m}\right\} }\ind{y_{i}=k}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Predicted classification
+\series default
+ for node 
+\begin_inset Formula $m$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+k(m)=\argmax_{k}\hat{p}_{mk}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Predicted class probability distribution
+\series default
+ is 
+\begin_inset Formula $\left(\hat{p}_{m1},\ldots,\hat{p}_{mK}\right)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Misclassification Error
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Consider node 
+\begin_inset Formula $m$
+\end_inset
+
+ representing region 
+\begin_inset Formula $R_{m}$
+\end_inset
+
+, with 
+\begin_inset Formula $N_{m}$
+\end_inset
+
+ observations
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Suppose we predict 
+\begin_inset Formula 
+\[
+k(m)=\argmax_{k}\hat{p}_{mk}
+\]
+
+\end_inset
+
+ as the class for all inputs in region 
+\begin_inset Formula $R_{m}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+What is the misclassification rate on the training data?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+It's just
+\begin_inset Formula 
+\[
+1-\hat{p}_{mk(m)}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+What loss function to use for node splitting?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Natural loss function for classification is 
+\begin_inset Formula $0/1$
+\end_inset
+
+ loss.
+\end_layout
+
+\begin_layout Itemize
+Is this tractable for finding the best split?
+\begin_inset Formula $\pause$
+\end_inset
+
+ Yes!
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Should we use it?
+\begin_inset Formula $\pause$
+\end_inset
+
+ Maybe not! 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+If we're only splitting once, then make sense to split using ultimate loss
+ function (say 
+\begin_inset Formula $0/1$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Itemize
+But we can split nodes repeatedly – don't have to get it right all at once.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Splitting Example
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Two class problem: 4 observations in each class.
+\end_layout
+
+\begin_layout Itemize
+Split 1: (3,1) and (1,3) [each region has 3 of one class and 1 of other]
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Split 2: (2,4) and (2,0) [one region has 2 of one class and 4 of other,
+ other region pure]
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Misclassification rate for the two splits are same.
+ (
+\begin_inset Formula $\pause2%5\%
+$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+In split 1, we'll want to split each node again, and 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+we'll end up with a leaf node with a single element.node .
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+In split 2, we're already done with the node 
+\begin_inset Formula $(2,0)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Splitting Criteria
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Eventually we want 
+\series bold
+pure
+\series default
+ leaf nodes (i.e.
+ as close to a single class as possible).
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+We'll find splitting variables and split point minimizing
+\series bold
+ 
+\series default
+some
+\series bold
+ node impurity
+\series default
+ measure.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Two-Class Node Impurity Measures
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Consider binary classification
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $p$
+\end_inset
+
+ be the relative frequency of class 1.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Here are three node impurity measures as a function of 
+\begin_inset Formula $p$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename ../Figures/trees/impurityMeasureTwoClass.png
+	lyxscale 50
+	height 50theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{HTF Figure 9.3}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Classification Trees: Node Impurity Measures
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Consider leaf node 
+\begin_inset Formula $m$
+\end_inset
+
+ representing region 
+\begin_inset Formula $R_{m}$
+\end_inset
+
+, with 
+\begin_inset Formula $N_{m}$
+\end_inset
+
+ observations
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Three measures 
+\begin_inset Formula $Q_{m}(T)$
+\end_inset
+
+ of 
+\series bold
+node impurity
+\series default
+ for leaf node 
+\begin_inset Formula $m$
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Misclassification error:
+\begin_inset Formula 
+\[
+1-\hat{p}_{mk(m)}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Gini index:
+\begin_inset Formula 
+\[
+\sum_{k=1}^{K}\hat{p}_{mk}(1-\hat{p}_{mk})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Entropy
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Itemize
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+In HTF's book this is called 
+\begin_inset Quotes eld
+\end_inset
+
+cross-entropy
+\begin_inset Quotes erd
+\end_inset
+
+, but I don't know why.
+ Using entropy as the node impurity measure is equivalent to using 
+\begin_inset Quotes eld
+\end_inset
+
+information gain
+\begin_inset Quotes erd
+\end_inset
+
+, which you may read about elsewhere.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ or deviance (equivalent to using information gain):
+\begin_inset Formula 
+\[
+-\sum_{k=1}^{K}\hat{p}_{mk}\log\hat{p}_{mk}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Class Distributions: Pre-split 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename ../Figures/trees/treeEntropyPreSplit.png
+	lyxscale 50
+	height 70theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Criminisi et al.
+ MSR-TR-2011-114, 28 October 2011.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Class Distributions: Split Search 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename ../Figures/trees/treeEntropySplitSearch.png
+	lyxscale 50
+	height 60theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(Maximizing information gain is equivalent to minimizing entropy.)
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From Criminisi et al.
+ MSR-TR-2011-114, 28 October 2011.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Splitting nodes: How exactly do we do this?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $R_{L}$
+\end_inset
+
+ and 
+\begin_inset Formula $R_{R}$
+\end_inset
+
+ be regions corresponding to a potential node split.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Suppose we have 
+\begin_inset Formula $N_{L}$
+\end_inset
+
+ points in 
+\begin_inset Formula $R_{L}$
+\end_inset
+
+ and 
+\begin_inset Formula $N_{R}$
+\end_inset
+
+ points in 
+\begin_inset Formula $R_{R}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $Q(R_{L})$
+\end_inset
+
+ and 
+\begin_inset Formula $Q(R_{R})$
+\end_inset
+
+ be the node impurity measures.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Then find split that minimizes the 
+\series bold
+weighted average of node impurities
+\series default
+:
+\begin_inset Formula 
+\[
+N_{L}Q(R_{L})+N_{R}Q(R_{R})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Classification Trees: Node Impurity Measures
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For building the tree, Gini and Entropy seem to be more effective.
+\end_layout
+
+\begin_layout Itemize
+They push for more pure nodes, not just misclassification rate 
+\end_layout
+
+\begin_layout Itemize
+A good split may not change misclassification rate at all!
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Two class problem: 4 observations in each class.
+\end_layout
+
+\begin_layout Itemize
+Split 1: (3,1) and (1,3) [each region has 3 of one class and 1 of other]
+\end_layout
+
+\begin_layout Itemize
+Split 2: (2,4) and (2,0) [one region has 2 of one class and 4 of other,
+ other region pure]
+\end_layout
+
+\begin_layout Itemize
+Misclassification rate for two splits are same.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Gini and entropy split prefer Split 2
+\series default
+.
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+For pruning the tree, use misclassification error – closer to risk estimate.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Trees in General
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Missing Features 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+(or 
+\begin_inset Quotes eld
+\end_inset
+
+Predictors
+\begin_inset Quotes erd
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Itemize
+Features are also called 
+\series bold
+covariates
+\series default
+ or 
+\series bold
+predictors
+\series default
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+What to do about missing features? 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Throw out inputs with missing features
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Impute missing values with feature means
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+If a categorical feature, let 
+\begin_inset Quotes eld
+\end_inset
+
+missing
+\begin_inset Quotes erd
+\end_inset
+
+ be a new category.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+For trees we can do something else...
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Building a Tree when we have Missing Features
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Method suggested in the CART book (Breiman et al 1984):
+\end_layout
+
+\begin_layout Itemize
+When we're finding the best split using a particular feature,
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+we only use the examples that are not missing that feature.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Performance evaluation for the split is made only on the data available
+ for that split.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Totally unclear how to evaluate in this case – what if we have very few
+ examples with a particular feature, but it has a great impurity measure
+ – is that good? 
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{I found the CART book a bit vague on this, so this is my best guess
+ for what is intended.
+ If somebody finds a clear statement, please let me know.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Surrogate Splits for Missing Data
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For any non-terminal node that splits using feature 
+\begin_inset Formula $f$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Itemize
+we can find a 
+\series bold
+surrogate split 
+\series default
+using each of the other features.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+To make a surrogate using 
+\begin_inset Formula $f'$
+\end_inset
+
+, we find the split using 
+\begin_inset Formula $f'$
+\end_inset
+
+ that best approximates the split using 
+\begin_inset Formula $f$
+\end_inset
+
+\SpecialChar endofsentence
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Define 
+\begin_inset Quotes eld
+\end_inset
+
+best
+\begin_inset Quotes erd
+\end_inset
+
+ in term of 0/1 loss on the examples for which neither 
+\begin_inset Formula $f$
+\end_inset
+
+ nor 
+\begin_inset Formula $f'$
+\end_inset
+
+ is missing.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+If there are 
+\begin_inset Formula $d$
+\end_inset
+
+ features, we'll have 
+\begin_inset Formula $d-1$
+\end_inset
+
+ 
+\series bold
+surrogate splits
+\series default
+ to approximate the split on 
+\begin_inset Formula $f$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We can rank these splits by how well they approximate the original split.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We repeat the above process for every non-terminal node.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+So each node has the primary split and 
+\begin_inset Formula $d-1$
+\end_inset
+
+ surrogate splits, where 
+\begin_inset Formula $d$
+\end_inset
+
+ is the number of features.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+If we're predicting on an example and the feature needed to evaluate a split
+ is missing,
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+simply go down the list of surrogate splits until we get to one for which
+ the feature is not missing.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{I found the CART book a bit vague on this, so this is my best guess
+ for what is intended.
+ If somebody finds a clear statement, please let me know.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Categorical Features
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose we have a categorical feature with 
+\begin_inset Formula $q$
+\end_inset
+
+ possible values (unordered).
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We want to find the best split into 2 groups
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+There are 
+\begin_inset Formula $2^{q-1}-1$
+\end_inset
+
+ distinct splits.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Is this tractable? 
+\begin_inset Formula $\pause$
+\end_inset
+
+ Maybe not in general.
+ But...
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+For binary classification 
+\begin_inset Formula $\cy=\left\{ 0,1\right\} $
+\end_inset
+
+, there is an efficient algorithm.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Categorical Features in Binary Classification
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Assign each category a number
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+the proportion of class 
+\begin_inset Formula $0$
+\end_inset
+
+ among training examples with that category.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Then find optimal split as though it were a numeric feature.
+\end_layout
+
+\begin_layout Itemize
+For binary classification, this is equivalent to searching over all splits
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+at least for certain for node impurity measures of a certain class, including
+ square error, gini and entropy.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+(This trick doesn't work for multiclass – would have to use approximations...)
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Statistical issues with categorical features?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+If a category has a very large number of categories, we can overfit.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Extreme example: Row Number could lead to perfect classification with a
+ single split.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Trees vs Linear Models
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Trees have to work much harder to capture linear relations.
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename ../Figures/trees/treeVsLinear.pdf
+	lyxscale 30
+	height 60theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From 
+\backslash
+emph{An Introduction to Statistical Learning, with applications in R} (Springer,
+ 2013) with permission from the authors: G.
+ James, D.
+ Witten,  T.
+ Hastie and R.
+ Tibshirani.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Interpretability
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Trees are certainly easy to explain.
+\end_layout
+
+\begin_layout Itemize
+You can show a tree on a slide.
+\end_layout
+
+\begin_layout Itemize
+Small trees seem interpretable.
+\end_layout
+
+\begin_layout Itemize
+For large trees, maybe not so easy.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Trees for Nonlinear Feature Discovery
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose tree 
+\begin_inset Formula $T$
+\end_inset
+
+ gives partition 
+\begin_inset Formula $R_{1},\ldots,R_{m}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Predictions are
+\begin_inset Formula 
+\[
+f(x)=\sum_{m=1}^{M}c_{m}\ind{x\in R_{m}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Each region 
+\begin_inset Formula $R_{m}$
+\end_inset
+
+ can be viewed as giving a feature function 
+\begin_inset Formula $x\mapsto\ind{x\in R_{m}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Can use these nonlinear features in e.g.
+ lasso regression.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+This is called
+\series bold
+ rule fit 
+\series default
+by Friedman.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Trees can be used to discover nonlinear features.
+ 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Instability / High Variance of Trees
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Trees are
+\series bold
+ high variance
+\series default
+: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If we randomly split the data, we may get quite different trees from each
+ part 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+By contrast, linear models have low variance (at least when well-regularized)
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Later we investigate several ways to reduce this variance
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Comments about Trees
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Trees make no use of 
+\series bold
+geometry
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+No inner products or distances
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+called a 
+\begin_inset Quotes eld
+\end_inset
+
+nonmetric
+\begin_inset Quotes erd
+\end_inset
+
+ method
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Feature scale irrelevant
+\series default
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Prediction functions are not continuous
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+not so bad for classification
+\end_layout
+
+\begin_layout Itemize
+may not be desirable for regression
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+The discussion above focuses on the CART (classification and regression
+ tree) implementation of trees.
+ The other popular methodology is ID3 and its later versions, C4.5 and C5.0
+ (Quinlan, 1993).
+ The data science book from the Weka folks has a pretty in-depth review
+ of ID3 and C4.5.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\start_of_appendix
+Appendix: Tree Pruning 
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Stopping Conditions for Building the Big Tree
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+First step is to build the 
+\begin_inset Quotes eld
+\end_inset
+
+big tree
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Keep splitting nodes until every node either has
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Zero error OR
+\end_layout
+
+\begin_layout Itemize
+Node has 
+\begin_inset Formula $C$
+\end_inset
+
+ or fewer examples (typically 
+\begin_inset Formula $C=5$
+\end_inset
+
+ or 
+\begin_inset Formula $C=1$
+\end_inset
+
+) OR
+\end_layout
+
+\begin_layout Itemize
+All inputs in node are identical (and thus we cannot split more)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Tree Terminology
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Each 
+\series bold
+internal node
+\series default
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+has a splitting variable and a split point
+\end_layout
+
+\begin_layout Itemize
+corresponds to binary partition of the space
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+A 
+\series bold
+terminal node 
+\series default
+or 
+\series bold
+leaf node
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+corresponds to a region
+\end_layout
+
+\begin_layout Itemize
+corresponds to a particular prediction
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+A 
+\series bold
+subtree
+\series default
+ 
+\begin_inset Formula $T\subset T_{0}$
+\end_inset
+
+ is any tree obtained by 
+\series bold
+pruning 
+\series default
+
+\begin_inset Formula $T_{0}$
+\end_inset
+
+, which means collapsing any number of its internal nodes.
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Pruning the Tree
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Consider an internal node 
+\begin_inset Formula $n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+To prune the subtree rooted at 
+\begin_inset Formula $n$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+eliminate all descendants of 
+\begin_inset Formula $n$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $n$
+\end_inset
+
+ becomes a terminal node 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Tree Pruning
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Full Tree 
+\begin_inset Formula $T_{0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename ../Figures/trees/bigBaseballTree.png
+	lyxscale 30
+	height 60theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From 
+\backslash
+emph{An Introduction to Statistical Learning, with applications in R} (Springer,
+ 2013) with permission from the authors: G.
+ James, D.
+ Witten,  T.
+ Hastie and R.
+ Tibshirani.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Tree Pruning
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Subtree 
+\begin_inset Formula $T\subset T_{0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename ../Figures/trees/smallBaseballTree.png
+	lyxscale 30
+	height 60theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{From 
+\backslash
+emph{An Introduction to Statistical Learning, with applications in R} (Springer,
+ 2013) with permission from the authors: G.
+ James, D.
+ Witten,  T.
+ Hastie and R.
+ Tibshirani.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Empirical Risk and Tree Complexity
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose we want to prune a big tree 
+\begin_inset Formula $T_{0}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Let 
+\begin_inset Formula $\hat{R}(T)$
+\end_inset
+
+ be the empirical risk of 
+\begin_inset Formula $T$
+\end_inset
+
+ (i.e.
+ square error on training)
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Clearly, for any subtree 
+\begin_inset Formula $T\subset T_{0}$
+\end_inset
+
+, 
+\begin_inset Formula $\hat{R}(T)\ge\hat{R}(T_{0})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Let 
+\begin_inset Formula $\left|T\right|$
+\end_inset
+
+ be the number of terminal nodes in 
+\begin_inset Formula $T$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\left|T\right|$
+\end_inset
+
+ is our measure of complexity for a tree.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Cost Complexity (or Weakest Link) Pruning
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definitions
+The 
+\series bold
+cost complexity criterion
+\series default
+ with parameter 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+C_{\alpha}(T)=\hat{R}(T)+\alpha\left|T\right|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Trades off between empirical risk and complexity of tree.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Cost complexity pruning:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For each 
+\begin_inset Formula $\alpha$
+\end_inset
+
+, find the subtree 
+\begin_inset Formula $T\subset T_{0}$
+\end_inset
+
+ minimizing 
+\begin_inset Formula $C_{\alpha}(T)$
+\end_inset
+
+ (on training data).
+\end_layout
+
+\begin_layout Itemize
+Use cross validation to find the right choice of 
+\begin_inset Formula $\alpha$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Do we need to search over all subtrees?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The 
+\series bold
+cost complexity criterion
+\series default
+ with parameter 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+C_{\alpha}(T)=\hat{R}(T)+\alpha\left|T\right|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $C_{\alpha}(T)$
+\end_inset
+
+ has familiar regularized ERM form, but
+\end_layout
+
+\begin_layout Itemize
+Cannot just differentiate w.r.t.
+ parameters of a tree 
+\begin_inset Formula $T$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+To minimize 
+\begin_inset Formula $C_{\alpha}(T)$
+\end_inset
+
+ over subtrees 
+\begin_inset Formula $T\subset T_{0}$
+\end_inset
+
+,
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+seems like we need to evaluate exponentially many
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+As many as 
+\begin_inset Formula $2^{N_{\text{Int}}-1}+N_{\text{Int}}-1$
+\end_inset
+
+ for trees with 
+\begin_inset Formula $N_{\text{Int}}$
+\end_inset
+
+ internal nodes.
+\end_layout
+
+\end_inset
+
+See 
+\begin_inset CommandInset href
+LatexCommand href
+name "On subtrees of trees"
+target "http://www.sciencedirect.com/science/article/pii/S0196885804000697"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ subtrees 
+\begin_inset Formula $T\subset T_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+(In particular, we can include or exclude any subset of internal nodes that
+ are parents of leaf nodes.)
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Amazingly, we only need to try 
+\begin_inset Formula $N_{\text{Int}}$
+\end_inset
+
+, where 
+\begin_inset Formula $N_{\text{Int}}$
+\end_inset
+
+ is the number of internal nodes of 
+\begin_inset Formula $T_{0}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Cost Complexity Greedy Pruning Algorithm
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Find a proper
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $T_{1}$
+\end_inset
+
+ is a proper subtree of 
+\begin_inset Formula $T_{0}$
+\end_inset
+
+ if tree 
+\begin_inset Formula $T_{1}\subset T_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $T_{1}\neq T_{0}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ subtree 
+\begin_inset Formula $T_{1}\subset T_{0}$
+\end_inset
+
+ that minimizes 
+\begin_inset Formula $\hat{R}(T_{1})-\hat{R}(T_{0})$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Can get 
+\begin_inset Formula $T_{1}$
+\end_inset
+
+ by removing a single pair of leaf nodes, and their internal node parent
+ becomes a leaf node.
+\end_layout
+
+\begin_layout Itemize
+This 
+\begin_inset Formula $T_{1}$
+\end_inset
+
+ will have 
+\begin_inset Formula $1$
+\end_inset
+
+ fewer internal node than 
+\begin_inset Formula $T_{0}$
+\end_inset
+
+.
+ (And 1 fewer leaf node.)
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Then find proper subtree 
+\begin_inset Formula $T_{2}\subset T_{1}$
+\end_inset
+
+ that minimizes minimizes 
+\begin_inset Formula $\hat{R}(T_{2})-\hat{R}(T_{1})$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Repeat until we have removed all internal nodes are left with just a single
+ node (a leaf node).
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+If 
+\begin_inset Formula $N_{\text{Int}}$
+\end_inset
+
+ is the number of internal nodes of 
+\begin_inset Formula $T_{0}$
+\end_inset
+
+, then we end up with a nested sequence of trees:
+\begin_inset Formula 
+\[
+\ct=\left\{ T_{0}\supset T_{1}\supset T_{2}\supset\cdots\supset T_{\left|N_{\text{Int}}\right|}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Greedy Pruning is Sufficient
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Cost complexity pruning algorithm gives us a set of nested trees:
+\begin_inset Formula 
+\[
+\ct=\left\{ T_{0}\supset T_{1}\supset T_{2}\supset\cdots\supset T_{\left|N_{\text{Int}}\right|}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Breiman et al.
+ (1984
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+The CART book Section 3.3
+\end_layout
+
+\end_inset
+
+) proved that this is all you need.
+ That is:
+\begin_inset Formula 
+\[
+\left\{ \argmin_{T\subset T_{0}}C_{\alpha}(T)\mid\alpha\ge0\right\} \subset\ct
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Only need to evaluate 
+\begin_inset Formula $N_{\text{Int}}$
+\end_inset
+
+ trees.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Regularization Path for Trees on SPAM dataset (HTF Figure 9.4)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename ../Figures/trees/pruningTreesize.png
+	lyxscale 70
+	height 60theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For each 
+\begin_inset Formula $\alpha$
+\end_inset
+
+, we find optimal tree 
+\begin_inset Formula $T_{\alpha}$
+\end_inset
+
+ on training set.
+ Corresponding tree size 
+\begin_inset Formula $\left|T_{\alpha}\right|$
+\end_inset
+
+ is shown on bottom.
+ Blue curves gives error rate estimates from cross-validation (tree-size
+ in each fold may be different from 
+\begin_inset Formula $|T_{\alpha}|$
+\end_inset
+
+).
+ Orange curve is test error.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Why doesn't this overfit? For each 
+\begin_inset Formula $\alpha,$
+\end_inset
+
+ we might get a different tree depth in each fold...
+ the tree size is the size of the tree when use 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ on the full training dataset, after pruning.
+ My best guess for why we're not seeing overfitting is that the tree size
+ complexity just doesn't get that large because we stop splitting before
+ leaf nodes have only a single element.
+ Note that in this figure, tree size is the number of terminal nodes, not
+ the depth of the tree.
+ Perhaps if we'd been working with larger trees (i.e.
+ started with a larger 
+\begin_inset Formula $T_{0}$
+\end_inset
+
+), we'd start to see overfitting.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+\align left
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{HTF Figure 9.4}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_body
+\end_document

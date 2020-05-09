@@ -1,0 +1,5514 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin /Users/drosen/Dropbox/repos/mlcourse/Lectures/
+\textclass beamer
+\begin_preamble
+\usetheme{CambridgeUS} 
+\beamertemplatenavigationsymbolsempty
+
+
+% Set Color ==============================
+\definecolor{NYUPurple}{RGB}{87,6,140}
+\definecolor{LightPurple}{RGB}{165,11,255}
+
+
+\setbeamercolor{title}{fg=NYUPurple}
+%\setbeamercolor{frametitle}{fg=NYUPurple}
+\setbeamercolor{frametitle}{fg=NYUPurple}
+
+\setbeamercolor{background canvas}{fg=NYUPurple, bg=white}
+\setbeamercolor{background}{fg=black, bg=NYUPurple}
+
+\setbeamercolor{palette primary}{fg=black, bg=gray!30!white}
+\setbeamercolor{palette secondary}{fg=black, bg=gray!20!white}
+\setbeamercolor{palette tertiary}{fg=gray!20!white, bg=NYUPurple}
+
+\setbeamertemplate{headline}{}
+
+\setbeamercolor{parttitle}{fg=NYUPurple}
+\setbeamercolor{sectiontitle}{fg=NYUPurple}
+\setbeamercolor{sectionname}{fg=NYUPurple}
+\setbeamercolor{section page}{fg=NYUPurple}
+
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+\setbeamercolor{section title}{fg=NYUPurple}
+ \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\usebeamercolor[fg]{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+\end_preamble
+\options aspectratio=169,handout
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "eulervm" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "allcolors=NYUPurple,urlcolor=LightPurple"
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\boxbgcolor #ff31d8
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\reals}{\mathbf{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\integers}{\mathbf{Z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\naturals}{\mathbf{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rationals}{\mathbf{Q}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ca}{\mathcal{A}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cb}{\mathcal{B}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cc}{\mathcal{C}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cd}{\mathcal{D}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ce}{\mathcal{E}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cf}{\mathcal{F}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cg}{\mathcal{G}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ch}{\mathcal{H}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ci}{\mathcal{I}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cj}{\mathcal{J}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ck}{\mathcal{K}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cl}{\mathcal{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cm}{\mathcal{M}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cn}{\mathcal{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\co}{\mathcal{O}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cp}{\mathcal{P}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cq}{\mathcal{Q}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\calr}{\mathcal{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cs}{\mathcal{S}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ct}{\mathcal{T}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cu}{\mathcal{U}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cv}{\mathcal{V}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cw}{\mathcal{W}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cx}{\mathcal{X}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cy}{\mathcal{Y}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cz}{\mathcal{Z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ind}[1]{1(#1)}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand{
+\backslash
+pr}{P}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\pr}{\mathbb{P}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\predsp}{\cy}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%{
+\backslash
+hat{
+\backslash
+cy}}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\outsp}{\cy}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\prxy}{P_{\cx\times\cy}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\prx}{P_{\cx}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\prygivenx}{P_{\cy\mid\cx}}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newcommand{
+\backslash
+ex}{E}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ex}{\mathbb{E}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\var}{\textrm{Var}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cov}{\textrm{Cov}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\sgn}{\textrm{sgn}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\sign}{\textrm{sign}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\kl}{\textrm{KL}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\law}{\mathcal{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\eps}{\varepsilon}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\as}{\textrm{ a.s.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\io}{\textrm{ i.o.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ev}{\textrm{ ev.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\convd}{\stackrel{d}{\to}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\eqd}{\stackrel{d}{=}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\del}{\nabla}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\loss}{\ell}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\risk}{R}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\emprisk}{\hat{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\lossfnl}{L}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\emplossfnl}{\hat{L}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\empminimizer}[1]{\hat{#1}^{*}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\minimizer}[1]{#1^{*}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\optimizer}[1]{#1^{*}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\etal}{\textrm{et. al.}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\tr}{\operatorname{tr}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\trace}{\operatorname{trace}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\diag}{\text{diag}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rank}{\text{rank}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\linspan}{\text{span}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\spn}{\text{span}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\proj}{\text{Proj}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\argmax}{\operatornamewithlimits{arg\, max}}
+{\text{argmax}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\argmin}{\operatornamewithlimits{arg\, min}}
+{\text{argmin}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\bfx}{\mathbf{x}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfy}{\mathbf{y}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfl}{\mathbf{\lambda}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\bfm}{\mathbf{\mu}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\calL}{\mathcal{L}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\vw}{\boldsymbol{w}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vx}{\boldsymbol{x}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vxi}{\boldsymbol{\xi}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\valpha}{\boldsymbol{\alpha}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vbeta}{\boldsymbol{\beta}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vsigma}{\boldsymbol{\sigma}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vtheta}{\boldsymbol{\theta}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vd}{\boldsymbol{d}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vs}{\boldsymbol{s}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vt}{\boldsymbol{t}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vh}{\boldsymbol{h}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ve}{\boldsymbol{e}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vf}{\boldsymbol{f}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vg}{\boldsymbol{g}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vz}{\boldsymbol{z}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vk}{\boldsymbol{k}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\va}{\boldsymbol{a}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vb}{\boldsymbol{b}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vv}{\boldsymbol{v}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vy}{\boldsymbol{y}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\dom}{\textrm{\textbf{dom} }}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\renewcommand{\rank}{\text{\textbf{rank }}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\conv}{\textrm{\textbf{conv} }}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\relint}{\text{\textbf{relint }}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\aff}{\text{\textbf{aff }}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\hil}{\ch}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rkhs}{\hil}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\ber}{\text{Ber}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+Multiclass and Introduction to Structured Prediction
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+DS-GA 1003 / CSCI-GA 2567
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+optional, use only with long paper titles
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+David S.
+ Rosenberg 
+\end_layout
+
+\begin_layout Date
+March 27, 2018
+\end_layout
+
+\begin_layout Institute
+New York University
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex ArticleMode
+status open
+
+\begin_layout Plain Layout
+Just in article version
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Plots courtesy of Ningshan Zhang.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Contents
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Ok good question.
+ So first, the whole discussion of reduction to one-vs-all is more general
+ than just linear classifiers.
+ So if we treat the binary classifier as just a black box, we have no guarantee
+ that the scores produced by different models, even from the same black
+ box, would be comparable.
+ Though it seems plausible that they might be.
+ I agree that if we're using linear prediction functions and we normalize
+ the w's that we learn, then we can interpret the scores as how "deep" the
+ data point is in one class or the other.
+ Although in our discussion we considered normalized w's, since the geometry
+ of the situation is easier to interpret, I wasn't necessarily saying that's
+ the correct prescription.
+ In fact, I haven't actually heard of this being done in practice, though
+ it seems reasonable.
+ It was not done in the Rifkin "defense of one vs all" paper.
+ I did see this suggested in a recent textbook, but it didn't give any empirical
+ or theoretical results.
+ This could be an interesting line of research to pursue (or try out in
+ homework #5).
+ There are many ways to implement the specifics of the multiclass to binary
+ reduction.
+ I gave two examples in class.
+ The following paper gives a serious investigation into several methods:
+ http://www.jmlr.org/papers/volume1/allwein00a/allwein00a.pdf, though it's
+ rather old already.
+ The results in this paper seem to suggest that one-vs-all is lousy, but
+ this is one of the papers disputed by the Rifkin & Klautau paper I mentioned
+ in class.
+ The authors of the Allwein paper gave a more recent talk at ICML 2010 in
+ which they seem to admit that Rifkin & Klautau might have a point on this
+ slide: http://www.cs.princeton.edu/~schapire/talks/ecoc-icml10.pdf#page=17
+ (this is all very exciting, I know.) sklearn seems to do a combination of
+ predicted labels and using scores to break ties (https://github.com/scikit-learn
+/scikit-learn/blob/3a106fc792eb8e70e1fd078e351ba42487d3214d/sklearn/utils/multic
+lass.py).
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+To do: Consider reordering material, to present the multiclass solution
+ without the 'compatibility score functions' until the end.
+ Possible downside is that there’s less time to get used to the idea of
+ compatibility scores, and it seems more like an add-on at the end.
+ It’s possible the compatibility score is actually the more important thing
+ to grasp.
+ e.g., with the idea of compatibility score, one can reduce to binary classificati
+on just by training it as a standard binary classifier (1 if x and y are
+ compatible, -1 otherwise)… I wonder how that would work...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+TO do: put in a slide or two about the actual algorithm of the reduction
+ to 1 vs all? (seems too easy, but wasn't clear people were getting it,
+ and we went through it on the board)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+TODO: Need to clarify this in slides below: Then 
+\begin_inset Formula $\|w_{i}\|$
+\end_inset
+
+ and 
+\begin_inset Formula $\|x\|$
+\end_inset
+
+ are equal for all scores.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+To do: What happens when we increase the norm of w? Does the decision region
+ rotate? anything specific we can say
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Material based primarily on Chapter 17 of Shalev-Schwartz and Ben-David's
+ 
+\emph on
+Understanding Machine Learning
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Besides one vs all, there's also error correcting output codes (ECOC) -
+ -see Dietterich and Bakiri 1995
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+give more example of compatibility features that are interesting to givce
+ more justification for the 
+\begin_inset Quotes eld
+\end_inset
+
+more convenient form
+\begin_inset Quotes erd
+\end_inset
+
+ that is compatibility functions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Multiclass Setting
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Input space: 
+\begin_inset Formula $\cx$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Ouput space: 
+\begin_inset Formula $\cy=\left\{ 1,\ldots,k\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Our approaches to multiclass problems so far:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+multinomial / softmax logistic regression 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Soon: trees and random forests
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Today we consider linear methods specifically designed for multiclass.
+\end_layout
+
+\begin_layout Itemize
+But the main takeaway will be an approach that generalizes to situations
+ where 
+\begin_inset Formula $k$
+\end_inset
+
+ is 
+\begin_inset Quotes eld
+\end_inset
+
+exponentially large
+\begin_inset Quotes erd
+\end_inset
+
+ – too large to enumerate.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Reduction to Binary Classification
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+One-vs-All / One-vs-Rest
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/multiclass/sontag-one-vs-all.png
+	lyxscale 60
+	height 70theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Plot courtesy of  David Sontag.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+One-vs-All / One-vs-Rest
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Train 
+\begin_inset Formula $k$
+\end_inset
+
+ binary classifiers, one for each class.
+\end_layout
+
+\begin_layout Itemize
+Train 
+\begin_inset Formula $i$
+\end_inset
+
+th classifier to distinguish class 
+\begin_inset Formula $i$
+\end_inset
+
+ from rest
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Suppose 
+\begin_inset Formula $h_{1},\ldots,h_{k}:\cx\to\reals$
+\end_inset
+
+ are our binary classifiers.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Can output hard classifications in 
+\begin_inset Formula $\left\{ -1,1\right\} $
+\end_inset
+
+ or scores in 
+\begin_inset Formula $\reals$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Final prediction is 
+\begin_inset Formula 
+\[
+h(x)=\argmax_{i\in\left\{ 1,\ldots,k\right\} }h_{i}(x)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Ties can be broken arbitrarily.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+From Ryan Rifkin email March 11, 2017: 
+\begin_inset Quotes eld
+\end_inset
+
+In the 2001 paper we took the class with the highest score.
+ The classifiers were not calibrated against each other in meaningful way.
+ On datasets with large numbers of classes and very unbalanced class sizes
+ I don't expect this to work especially well.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Linear Classifers: Binary and Multiclass
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Linear Binary Classifier Review
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Input Space: 
+\begin_inset Formula $\cx=\reals^{d}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Output Space: 
+\begin_inset Formula $\cy=\left\{ -1,1\right\} $
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Linear classifier score function:
+\begin_inset Formula 
+\begin{eqnarray*}
+f(x) & = & \left\langle w,x\right\rangle =w^{T}x
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Final classification prediction: 
+\begin_inset Formula $\sign\left(f(x)\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Geometrically, when are 
+\begin_inset Formula $\sign\left(f(x)\right)=+1$
+\end_inset
+
+ and 
+\begin_inset Formula $\sign\left(f(x)\right)=-1$
+\end_inset
+
+? 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Linear Binary Classifier Review
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/multiclass/linear-separator.png
+	lyxscale 30
+	height 45theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+Suppose 
+\begin_inset Formula $\|w\|>0$
+\end_inset
+
+ and 
+\begin_inset Formula $\|x\|>0$
+\end_inset
+
+: 
+\begin_inset Formula 
+\begin{eqnarray*}
+f(x) & = & \left\langle w,x\right\rangle =\|w\|\|x\|\cos\theta\\
+\pause f(x)>0 & \iff & \cos\theta>0\pause\iff\theta\in\left(-90^{\circ},90^{\circ}\right)\\
+\pause f(x)<0 & \iff & \cos\theta<0\pause\iff\theta\not\in[-90^{\circ},90^{\circ}]
+\end{eqnarray*}
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Three Class Example
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/multiclass/three-classes.png
+	lyxscale 30
+	height 60theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Base hypothesis space 
+\begin_inset Formula $\ch=\left\{ f(x)=w^{T}x\mid x\in\reals^{2}\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Note: Separating boundary always contains the origin.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Example based on Shalev-Schwartz and Ben-David's 
+\backslash
+emph{Understanding Machine Learning}, Section 17.1}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Three Class Example: One-vs-Rest
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/multiclass/three-classes-one-separator.png
+	lyxscale 30
+	height 60theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Class 1 vs Rest:
+\begin_inset Formula 
+\[
+f_{1}(x)=w_{1}^{T}x
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Three Class Example: One-vs-Rest
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/multiclass/three-classes-one-vs-all.png
+	lyxscale 30
+	height 60theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Examine 
+\begin_inset Quotes eld
+\end_inset
+
+Class 2 vs Rest
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Predicts everything to be 
+\begin_inset Quotes eld
+\end_inset
+
+Not 2
+\begin_inset Quotes erd
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+If it predicted some 
+\begin_inset Quotes eld
+\end_inset
+
+2
+\begin_inset Quotes erd
+\end_inset
+
+, then it would get many more 
+\begin_inset Quotes eld
+\end_inset
+
+Not 2
+\begin_inset Quotes erd
+\end_inset
+
+ incorrect.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+One-vs-Rest: Predictions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/multiclass/three-classes-one-vs-all.png
+	lyxscale 30
+	height 60theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Score for class 
+\begin_inset Formula $i$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+f_{i}(x)=\left\langle w_{i},x\right\rangle =\|w_{i}\|\|x\|\cos\theta_{i},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\theta_{i}$
+\end_inset
+
+ is the angle between 
+\begin_inset Formula $x$
+\end_inset
+
+ and 
+\begin_inset Formula $w_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Predict class 
+\begin_inset Formula $i$
+\end_inset
+
+ that has highest 
+\begin_inset Formula $f_{i}(x)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+One-vs-Rest: Class Boundaries
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For simplicity, we've assumed 
+\begin_inset Formula $\|w_{1}\|=\|w_{2}\|=\|w_{3}\|$
+\end_inset
+
+\SpecialChar endofsentence
+
+\end_layout
+
+\begin_layout Itemize
+Then 
+\begin_inset Formula $\|w_{i}\|$
+\end_inset
+
+ and 
+\begin_inset Formula $\|x\|$
+\end_inset
+
+ are equal for all scores.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\implies$
+\end_inset
+
+ 
+\begin_inset Formula $x$
+\end_inset
+
+ is classified by whichever has largest 
+\begin_inset Formula $\cos\theta_{i}$
+\end_inset
+
+ (i.e.
+ 
+\begin_inset Formula $\theta_{i}$
+\end_inset
+
+ closest to 
+\begin_inset Formula $0$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/multiclass/One-vs-all-classboundaries.png
+	lyxscale 30
+	height 60theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+One-vs-Rest: Class Boundaries
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/multiclass/One-vs-all-classboundaries.png
+	lyxscale 30
+	height 60theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+This approach doesn't work well in this instance.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+How can we fix this?
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Could fix with a nonlinear base hypothesis space...
+ But we're going a different direction.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Linear Multiclass Hypothesis Space
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Base Hypothesis Space
+\series default
+: 
+\begin_inset Formula $\ch=\left\{ x\mapsto w^{T}x\mid w\in\reals^{d}\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Linear Multiclass Hypothesis Space
+\series default
+ (for 
+\begin_inset Formula $k$
+\end_inset
+
+ classes): 
+\begin_inset Formula 
+\[
+\cf=\left\{ x\mapsto\argmax_{i}h_{i}(x)\mid h_{1},\ldots,h_{k}\in\ch\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+What's the action space here? 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+just the class label
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+One-vs-Rest: Class Boundaries
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/multiclass/One-vs-all-classboundaries.png
+	lyxscale 30
+	height 60theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Recall: A 
+\series bold
+learning algorithm
+\series default
+ chooses the hypothesis from the hypothesis space.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Is this a failure of the hypothesis space or the learning algorithm?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+A Solution with Linear Functions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/multiclass/three-classes-multiclass.jpg
+	lyxscale 20
+	height 60theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+This works...
+ so the problem is not with the hypothesis space.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+How can we get a solution like this?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Multiclass Predictors
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Multiclass Hypothesis Space
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Base Hypothesis Space
+\series default
+: 
+\begin_inset Formula $\ch=\left\{ h:\cx\to\reals\right\} $
+\end_inset
+
+ (
+\begin_inset Quotes eld
+\end_inset
+
+score functions
+\begin_inset Quotes erd
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Multiclass Hypothesis Space
+\series default
+ (for 
+\begin_inset Formula $k$
+\end_inset
+
+ classes): 
+\begin_inset Formula 
+\[
+\cf=\left\{ x\mapsto\argmax_{i}h_{i}(x)\mid h_{1},\ldots,h_{k}\in\ch\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $h_{i}(x)$
+\end_inset
+
+ 
+\series bold
+scores
+\series default
+ how likely 
+\begin_inset Formula $x$
+\end_inset
+
+ is to be from class 
+\begin_inset Formula $i$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+Issue: Need to learn (and represent) 
+\begin_inset Formula $k$
+\end_inset
+
+ functions.
+ Doesn't scale to very large 
+\begin_inset Formula $k$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Multiclass Hypothesis Space: Reframed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+A slight reframing turns out to be more convenient down the line
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+General [Discrete] Output Space: 
+\series default
+
+\begin_inset Formula $\cy\pause$
+\end_inset
+
+ (e.g 
+\begin_inset Formula $\cy=\left\{ 1,\ldots,k\right\} $
+\end_inset
+
+ for multiclass)
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\emph on
+New idea
+\emph default
+: Rather than a score function for each class, 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+use one function 
+\begin_inset Formula $h(x,y)$
+\end_inset
+
+ that gives a 
+\series bold
+compatibility score
+\series default
+ between input 
+\begin_inset Formula $x$
+\end_inset
+
+ and output 
+\begin_inset Formula $y$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Final 
+\series bold
+prediction
+\series default
+ is the 
+\begin_inset Formula $y\in\cy$
+\end_inset
+
+ that is 
+\begin_inset Quotes eld
+\end_inset
+
+most compatible
+\begin_inset Quotes erd
+\end_inset
+
+ with 
+\begin_inset Formula $x$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+f(x)=\argmax_{y\in\cy}h(x,y)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+This subsumes the framework with class-specific score functions.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Given class-specific score functions 
+\begin_inset Formula $h_{1},\ldots,h_{k}$
+\end_inset
+
+, we could define compatibility function as
+\begin_inset Formula 
+\[
+h(x,i)=h_{i}(x),\;i=1,\ldots,k.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Multiclass Hypothesis Space: Reframed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+General [Discrete] Output Space: 
+\series default
+
+\begin_inset Formula $\cy$
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Base Hypothesis Space: 
+\begin_inset Formula $\ch=\left\{ h:\cx\times\cy\to\reals\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $h(x,y)$
+\end_inset
+
+ gives 
+\series bold
+compatibility score
+\series default
+ between input 
+\begin_inset Formula $x$
+\end_inset
+
+ and output 
+\begin_inset Formula $y$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Multiclass Hypothesis Space
+\series default
+
+\begin_inset Formula 
+\[
+\cf=\left\{ x\mapsto\argmax_{y\in\cy}h(x,y)\mid h\in\ch\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Final prediction function is an 
+\begin_inset Formula $f\in\cf$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+For each 
+\begin_inset Formula $f\in\cf$
+\end_inset
+
+ there is an underlying compatibility score function 
+\begin_inset Formula $h\in\ch$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Learning in a Multiclass Hypothesis Space: In Words
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Base Hypothesis Space: 
+\begin_inset Formula $\ch=\left\{ h:\cx\times\cy\to\reals\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Training data: 
+\begin_inset Formula $(x_{1},y_{1}),(x_{2},y_{2}),\ldots,(x_{n},y_{n})$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Learning process chooses 
+\begin_inset Formula $h\in\ch$
+\end_inset
+
+.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+What makes a good 
+\begin_inset Formula $h$
+\end_inset
+
+?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Want compatibility 
+\begin_inset Formula $h(x,y)$
+\end_inset
+
+ to be large when 
+\begin_inset Formula $x$
+\end_inset
+
+ has label 
+\begin_inset Formula $y$
+\end_inset
+
+, small otherwise.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Itemize
+Want 
+\begin_inset Formula $h(x_{i},y_{i})$
+\end_inset
+
+ to be large and 
+\begin_inset Formula $h(x_{i},y)$
+\end_inset
+
+ for 
+\begin_inset Formula $y\neq y_{i}$
+\end_inset
+
+ to be small.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Learning in a Multiclass Hypothesis Space: In Math
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $h(x,y)$
+\end_inset
+
+ classifies
+\series bold
+
+\begin_inset Formula $\left(x_{i},y_{i}\right)$
+\end_inset
+
+ 
+\series default
+correctly iff
+\series bold
+ 
+\series default
+
+\begin_inset Formula 
+\[
+h(x_{i},y_{i})>h(x_{i},y)\,\forall y\neq y_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $h$
+\end_inset
+
+ should give higher score for correct 
+\begin_inset Formula $y$
+\end_inset
+
+ than for all other 
+\begin_inset Formula $y\in\cy$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+An equivalent condition is the following:
+\begin_inset Formula 
+\[
+h(x_{i},y_{i})>\max_{y\neq y_{i}}h(x_{i},y)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+If we define
+\begin_inset Formula 
+\[
+m_{i}=h(x_{i},y_{i})-\max_{y\neq y_{i}}h(x_{i},y),
+\]
+
+\end_inset
+
+ then classification is correct if 
+\begin_inset Formula $m_{i}>0$
+\end_inset
+
+.
+ Generally want 
+\begin_inset Formula $m_{i}$
+\end_inset
+
+ to be large.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Sound familiar?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+First idea for objective function: 
+\begin_inset Formula 
+\[
+\min_{h\in\ch}\sum_{i=1}^{n}\ell\left[h(x_{i},y_{i})-\max_{y\neq y_{i}}h(x_{i},y)\right],
+\]
+
+\end_inset
+
+for any margin-based loss 
+\begin_inset Formula $\ell$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+A Linear Multiclass Hypothesis Space
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Linear Multiclass Prediction Function
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A
+\series bold
+ linear class-sensitive score function
+\series default
+ is given by
+\begin_inset Formula 
+\[
+h(x,y)=\left\langle w,\Psi(x,y)\right\rangle ,
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\Psi(x,y):\cx\times\cy\to\reals^{d}$
+\end_inset
+
+ is a 
+\series bold
+class-sensitive feature map
+\series default
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\Psi(x,y)$
+\end_inset
+
+ extracts features relevant to how compatible 
+\begin_inset Formula $y$
+\end_inset
+
+ is with 
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Final compatibility score is a 
+\series bold
+linear
+\series default
+ function of
+\series bold
+ 
+\begin_inset Formula $\Psi(x,y)$
+\end_inset
+
+
+\series default
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Linear Multiclass Hypothesis Space
+\series default
+
+\begin_inset Formula 
+\[
+\cf=\left\{ x\mapsto\argmax_{y\in\cy}\left\langle w,\Psi(x,y)\right\rangle \mid w\in\reals^{d}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Example: 
+\begin_inset Formula $\cx=\reals^{2}$
+\end_inset
+
+, 
+\begin_inset Formula $\cy=\left\{ 1,2,3\right\} $
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/multiclass/three-classes-multiclass.jpg
+	lyxscale 15
+	height 40theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $w_{1}=\left(-\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}\right)$
+\end_inset
+
+, 
+\begin_inset Formula $w_{2}=\left(0,1\right)$
+\end_inset
+
+, 
+\begin_inset Formula $w_{3}=\left(\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Prediction function: 
+\begin_inset Formula $\left(x_{1},x_{2}\right)\mapsto\argmax_{i\in\left\{ 1,2,3\right\} }\left\langle w_{i},\left(x_{1},x_{2}\right)\right\rangle $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+How can we get this into the form 
+\begin_inset Formula $x\mapsto\argmax_{y\in\cy}\left\langle w,\Psi(x,y)\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Multivector Construction
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+What if we stack 
+\begin_inset Formula $w_{i}$
+\end_inset
+
+'s together:
+\begin_inset Formula 
+\[
+w=\left(\underbrace{-\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}}_{w_{1}},\underbrace{0,1}_{w_{2}},\underbrace{\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}}_{w_{3}}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+And then do the following: 
+\begin_inset Formula $\Psi:\reals^{2}\times\left\{ 1,2,3\right\} \to\reals^{6}$
+\end_inset
+
+ defined by
+\begin_inset Formula 
+\begin{eqnarray*}
+\Psi(x,1) & := & \left(x_{1},x_{2},0,0,0,0\right)\\
+\Psi(x,2) & := & \left(0,0,x_{1},x_{2},0,0\right)\\
+\Psi(x,3) & := & \left(0,0,0,0,x_{1},x_{2}\right)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Then 
+\begin_inset Formula $\left\langle w,\Psi(x,y)\right\rangle =\left\langle w_{y},x\right\rangle $
+\end_inset
+
+, which is what we want.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+NLP Example: Part-of-speech classification
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\cx=\left\{ \mbox{All possible words}\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\cy=\left\{ \mbox{NOUN,VERB,ADJECTIVE,ADVERB,ARTICLE,PREPOSITION}\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Features of 
+\begin_inset Formula $x\in\cx$
+\end_inset
+
+: 
+\begin_inset Formula $\mbox{[The word itself], ENDS\_IN\_ly, ENDS\_IN\_ness, ...}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\Psi(x,y)=\left(\psi_{1}(x,y),\psi_{2}(x,y),\psi_{3}(x,y),\ldots,\psi_{d}(x,y)\right)$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{eqnarray*}
+\pause\psi_{1}(x,y) & = & \ind{x=\mbox{apple AND }y=\mbox{NOUN}}\\
+\pause\psi_{2}(x,y) & = & \ind{x=\mbox{run AND }y=\mbox{NOUN}}\\
+\pause\psi_{3}(x,y) & = & \ind{x=\mbox{run AND }y=\mbox{VERB}}\\
+\pause\psi_{4}(x,y) & = & \ind{x\mbox{ ENDS\_IN\_ly AND \ensuremath{y=}ADVERB}}\\
+\vdots & \vdots & \vdots
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+e.g.
+ 
+\begin_inset Formula $\Psi(x=\text{run},y=\text{NOUN})=\left(0,1,0,0,\ldots\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+After training, what would you guess corresponding 
+\begin_inset Formula $w_{1},w_{2},w_{3},w_{4}$
+\end_inset
+
+ to be?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+NLP Example: How does it work?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\Psi(x,y)=\left(\psi_{1}(x,y),\psi_{2}(x,y),\psi_{3}(x,y),\ldots,\psi_{d}(x,y)\right)\in\reals^{d}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{eqnarray*}
+`\pause\psi_{1}(x,y) & = & \ind{x=\mbox{apple AND }y=\mbox{NOUN}}\\
+\pause\psi_{2}(x,y) & = & \ind{x=\mbox{run AND }y=\mbox{NOUN}}\\
+\vdots & \vdots & \vdots
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+After training, we've learned 
+\begin_inset Formula $w\in\reals^{d}$
+\end_inset
+
+.
+ Say 
+\begin_inset Formula $w=\left(5,-3,1,4,\ldots\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+To predict label for 
+\begin_inset Formula $x=\mbox{apple}$
+\end_inset
+
+, 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+we compute compatibility scores for each 
+\begin_inset Formula $y\in\cy$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{eqnarray*}
+ & \left\langle w,\Psi(\mbox{apple},\mbox{NOUN})\right\rangle \\
+ & \left\langle w,\Psi(\mbox{apple},\mbox{VERB})\right\rangle \\
+ & \left\langle w,\Psi(\mbox{apple},\mbox{ADVERB})\right\rangle \\
+ & \vdots
+\end{eqnarray*}
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Predict class that gives highest score.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Could add in more implementation details here.
+ e.g.
+ with hashmap lookup table with x,y as key giving index into feature array...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Another Approach: Use Label Features
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+What if we have a very large number of classes?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Make features for the classes\SpecialChar endofsentence
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Common in advertising
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\cx$
+\end_inset
+
+: User and user context
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\cy:$
+\end_inset
+
+ A large set of banner ads
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Suppose user 
+\begin_inset Formula $x$
+\end_inset
+
+ is shown many banner ads.
+\end_layout
+
+\begin_layout Itemize
+We want to predict which one the user will click on.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Possible compatibility features:
+\begin_inset Formula 
+\begin{eqnarray*}
+\psi_{1}(x,y) & = & \ind{x\mbox{ interested in sports AND }y\mbox{ relevant to sports}}\\
+\pause\psi_{2}(x,y) & = & \ind{x\mbox{ is in target demographic group of }y}\\
+\pause\psi_{3}(x,y) & = & \ind{x\mbox{ previously clicked on ad from company sponsoring }y}
+\end{eqnarray*}
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+TF-IDF Features for News Article Classification
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\cx=\left\{ \mbox{news articles}\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\cy=\left\{ \mbox{politics, sports, entertainment, world news, local news}\right\} $
+\end_inset
+
+ [TOPICS]
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Want to use the words in article 
+\begin_inset Formula $x$
+\end_inset
+
+ to predict topic 
+\begin_inset Formula $y$
+\end_inset
+
+.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Suppose we have a list of of all 
+\begin_inset Formula $d=1,025,109.8$
+\end_inset
+
+ words in English.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The 
+\series bold
+Term-Frequency
+\series default
+ of word 
+\begin_inset Formula $w$
+\end_inset
+
+ in document 
+\begin_inset Formula $x$
+\end_inset
+
+, denoted 
+\begin_inset Formula 
+\[
+TF(w,x),
+\]
+
+\end_inset
+
+is the numer of times word 
+\begin_inset Formula $w$
+\end_inset
+
+ occurs in document 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+TF-IDF Features for News Article Classification
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The 
+\series bold
+Document-Frequency
+\series default
+ of word 
+\begin_inset Formula $w$
+\end_inset
+
+ in class 
+\begin_inset Formula $y$
+\end_inset
+
+, denoted 
+\begin_inset Formula 
+\[
+DF(w,y),
+\]
+
+\end_inset
+
+is the number of documents containing word 
+\begin_inset Formula $w$
+\end_inset
+
+ NOT in topic 
+\begin_inset Formula $y$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The TF-IDF feature for word 
+\begin_inset Formula $w$
+\end_inset
+
+ is then defined as
+\begin_inset Formula 
+\[
+\psi_{w}(x,y)=TF(w,x)\log\left(\frac{m}{DF(w,y)}\right),
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $m$
+\end_inset
+
+ is the total number of documents in training set.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+(NOTE: There are 
+\series bold
+many
+\series default
+ other variations of TF-IDF).
+\end_layout
+
+\end_deeper
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+TF-IDF: Things to note
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose we have 
+\begin_inset Formula $d$
+\end_inset
+
+ words in our vocabulary and 
+\begin_inset Formula $k$
+\end_inset
+
+ topic classes.
+\end_layout
+
+\begin_layout Itemize
+Suppose we have a TF-IDF feature for each word (and no other features).
+\end_layout
+
+\begin_layout Itemize
+What's the dimension of 
+\begin_inset Formula $\Psi(x,y)$
+\end_inset
+
+?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We have one TF-IDF for each word.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Recall our multivector-style NLP features:
+\begin_inset Formula 
+\begin{eqnarray*}
+\pause\psi_{2}(x,y) & = & \ind{x=\mbox{run AND }y=\mbox{NOUN}}\\
+\pause\psi_{3}(x,y) & = & \ind{x=\mbox{run AND }y=\mbox{VERB}}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+If made this 
+\begin_inset Quotes eld
+\end_inset
+
+TF-IDF
+\begin_inset Quotes erd
+\end_inset
+
+ style, it would like
+\begin_inset Formula 
+\[
+\psi_{x=\mbox{run}}(x,y)=\ind{x=\mbox{run}}\times\left(\mbox{compatibility of "run" with class }y\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Linear Multiclass SVM
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Should definitely do a full version of multiclass SVM without class-specific
+ losses and class-specific margins.
+ Then introduce this additional complication with a new major section.
+ Perhaps continue the previous section with an easier verson of the multiclass
+ SVM.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Margin for Multiclass
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $h:\cx\times\cy\to\reals$
+\end_inset
+
+ be our 
+\series bold
+compatibility score function
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Define a 
+\series bold
+
+\begin_inset Quotes eld
+\end_inset
+
+margin
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\series default
+between correct class and each other class:
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Definition
+The [class-specific] 
+\series bold
+margin
+\series default
+ of score function 
+\begin_inset Formula $h$
+\end_inset
+
+ on the 
+\begin_inset Formula $i$
+\end_inset
+
+th example 
+\begin_inset Formula $(x_{i},y_{i})$
+\end_inset
+
+ for class 
+\begin_inset Formula $y$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+m_{i,y}(h)=h(x_{i},y_{i})-h(x_{i},y).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Want 
+\begin_inset Formula $m_{i,y}(h)$
+\end_inset
+
+ to be large and positive for all 
+\begin_inset Formula $y\neq y_{i}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+For our linear hypothesis space, margin is
+\begin_inset Formula 
+\[
+m_{i,y}(w)=\left\langle w,\Psi(x_{i},y_{i})\right\rangle -\left\langle w,\Psi(x_{i},y)\right\rangle 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+I should have an extra slide here.
+ Saying something like, fo reach example 
+\begin_inset Formula $i$
+\end_inset
+
+, we want a big gap between score of 
+\begin_inset Formula $y_{i}$
+\end_inset
+
+ and score of all other 
+\begin_inset Formula $y$
+\end_inset
+
+.
+ The gap for each 
+\begin_inset Formula $y$
+\end_inset
+
+ is called the margin 
+\begin_inset Formula $m_{i,y}(w)$
+\end_inset
+
+.
+ For each example, let's focus on the most troublesome 
+\begin_inset Formula $y$
+\end_inset
+
+: the one with the smallest margin.
+ let's assign that margin the loss 
+\begin_inset Formula $\ell(\min_{y}m_{i,y}(w))$
+\end_inset
+
+.
+ Or equivalently, for typical loss functions, 
+\begin_inset Formula $\max_{y}\ell(m_{i,y}(w))$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+A Margin-Based Multiclass Objective
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $\ell(m)$
+\end_inset
+
+ be any margin-based loss.
+ (i.e.
+ small 
+\begin_inset Formula $m$
+\end_inset
+
+ bad, large 
+\begin_inset Formula $m$
+\end_inset
+
+ good.) 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+For each margin 
+\begin_inset Formula $m_{i,y}(w)$
+\end_inset
+
+ we can assign the loss 
+\begin_inset Formula $\ell(m_{i,y}(w))$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+For each example 
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+We want the margin 
+\begin_inset Formula $m_{i,y}(w)$
+\end_inset
+
+ to be large for each 
+\begin_inset Formula $y\neq y_{i}$
+\end_inset
+
+.
+\begin_inset Formula 
+\[
+m_{i,y}(w)=\left\langle w,\Psi(x_{i},y_{i})\right\rangle -\left\langle w,\Psi(x_{i},y)\right\rangle .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+A reasonable multiclass objective function is
+\begin_inset Formula 
+\[
+\min_{w\in\reals^{d}}\frac{1}{2}||w||^{2}+\frac{c}{n}\sum_{i=1}^{n}\max_{y}\left(\ell(m_{i,y}(w))\right),
+\]
+
+\end_inset
+
+where the margin 
+\begin_inset Formula $m_{i,y}(w)$
+\end_inset
+
+ is defined as
+\begin_inset Formula 
+\[
+m_{i,y}(w)=\left\langle w,\Psi(x_{i},y_{i})\right\rangle -\left\langle w,\Psi(x_{i},y)\right\rangle .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Multiclass SVM with Hinge Loss
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Recall binary SVM (without bias term):
+\begin_inset Formula 
+\[
+\min_{w\in\reals^{d}}\frac{1}{2}||w||^{2}+\frac{c}{n}\sum_{i=1}^{n}\max\left(0,1-\underbrace{y_{i}w^{T}x_{i}}_{\mbox{margin}}\right).
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Multiclass SVM (Version 1): 
+\begin_inset Formula 
+\[
+\min_{w\in\reals^{d}}\frac{1}{2}||w||^{2}+\frac{c}{n}\sum_{i=1}^{n}\max_{y\neq y_{i}}\left[\max\left(0,1-m_{i,y}(w)\right)\right]
+\]
+
+\end_inset
+
+ where 
+\begin_inset Formula $m_{i,y}(w)=\left\langle w,\Psi(x_{i},y_{i})\right\rangle -\left\langle w,\Psi(x_{i},y)\right\rangle $
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+As in SVM, we've taken the value 
+\begin_inset Formula $1$
+\end_inset
+
+ as our 
+\begin_inset Quotes eld
+\end_inset
+
+target margin
+\begin_inset Quotes erd
+\end_inset
+
+ for each 
+\begin_inset Formula $i,y$
+\end_inset
+
+.
+\begin_inset Note Note
+status open
+
+\begin_layout Itemize
+is the 
+\begin_inset Quotes eld
+\end_inset
+
+margin
+\begin_inset Quotes erd
+\end_inset
+
+ between 
+\begin_inset Formula $y$
+\end_inset
+
+ and the true 
+\begin_inset Formula $y_{i}$
+\end_inset
+
+ (want this to be big for 
+\begin_inset Formula $y_{i}\neq y$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $L(x_{i},y_{i},y)$
+\end_inset
+
+ can be interpreted as the 
+\begin_inset Quotes eld
+\end_inset
+
+desired minimal margin
+\begin_inset Quotes erd
+\end_inset
+
+ between 
+\begin_inset Formula $y$
+\end_inset
+
+ and 
+\begin_inset Formula $y_{i}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula 
+\begin{eqnarray*}
+\max_{y'}\left[\Delta(y_{i},y')+\left\langle w,\Psi(x_{i},y')\right\rangle -\left\langle w,\Psi(x_{i},y_{i})\right\rangle \right] & = & \left\langle w,\Psi(x_{i},y_{i})\right\rangle 
+\end{eqnarray*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{eqnarray*}
+ &  & \Delta(y_{i},y')+\left\langle w,\Psi(x_{i},y')\right\rangle -\left\langle w,\Psi(x_{i},y_{i})\right\rangle \\
+ & = & \ind{y_{i}\neq y'}+\left\langle w,\frac{x_{i}y'}{2}\right\rangle -\left\langle w,\frac{x_{i}y_{i}}{2}\right\rangle \\
+ & = & \ind{y_{i}\neq y'}+\left\langle w,\frac{x_{i}\left(y'-y_{i}\right)}{2}\right\rangle \\
+ & = & \begin{cases}
+0 & y_{i}=y'\\
+1-y'\left\langle w,x\right\rangle  & y_{i}\neq y'
+\end{cases}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Class-Sensitive Loss
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+In multiclass, some misclassifications may be worse than others.
+\end_layout
+
+\begin_layout Itemize
+Rather than 
+\begin_inset Formula $0/1$
+\end_inset
+
+ Loss, we may be interested in a more general loss
+\begin_inset Formula 
+\[
+\Delta:\cy\times\ca\to[0,\infty)
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We can use this 
+\begin_inset Formula $\Delta$
+\end_inset
+
+ as our 
+\series bold
+target margin 
+\series default
+for multiclass SVM.
+\end_layout
+
+\begin_layout Itemize
+Multiclass SVM (Version 2):
+\begin_inset Formula 
+\[
+\min_{w\in\reals^{d}}\frac{1}{2}||w||^{2}+\frac{c}{n}\sum_{i=1}^{n}\max_{y\neq y_{i}}\left[\max\left(0,\Delta(y_{i},y)-m_{i,y}(w)\right)\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+If margin 
+\begin_inset Formula $m_{i,y}(w)$
+\end_inset
+
+ meets or exceeds its target 
+\begin_inset Formula $\Delta(y_{i},y)$
+\end_inset
+
+ 
+\begin_inset Formula $\forall y\neq y_{i}$
+\end_inset
+
+, then no loss on example 
+\begin_inset Formula $i$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Note: If 
+\begin_inset Formula $\Delta(y,y)=0$
+\end_inset
+
+ 
+\begin_inset Formula $\forall y\in\cy$
+\end_inset
+
+, then we can replace 
+\begin_inset Formula $\max_{y\neq y_{i}}$
+\end_inset
+
+ with 
+\begin_inset Formula $\max_{y}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Geometric Interpretation
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Prediction is given by 
+\begin_inset Formula $\argmax_{y\in\cy}\left\langle w,\Psi(x,y)\right\rangle $
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Note it's unchanged if we replace 
+\begin_inset Formula $w$
+\end_inset
+
+ by 
+\begin_inset Formula $w/\|w\|$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+For simplicity, let's assume 
+\begin_inset Formula $\|w\|=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Then score function 
+\begin_inset Formula $\left\langle w,\Psi(x,y)\right\rangle =\|\Psi(x,y)\|\cos\theta=\proj_{w}\Psi(x,y)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../Figures/multiclass/Feature-vec-projection.jpg
+	lyxscale 15
+	height 40theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Plain Layout
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Geometric Interpretation
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../Figures/multiclass/ftr-map-projects-margin.png
+	lyxscale 30
+	height 50theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\Psi$
+\end_inset
+
+ maps each 
+\begin_inset Formula $x\in\cx$
+\end_inset
+
+ to 
+\begin_inset Formula $|\cy|$
+\end_inset
+
+ different vectors in 
+\begin_inset Formula $\reals^{d}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+For example 
+\begin_inset Formula $(x,y)$
+\end_inset
+
+, we want margins for all 
+\begin_inset Formula $y'\neq y$
+\end_inset
+
+ to exceed target margin:
+\begin_inset Formula 
+\begin{eqnarray*}
+\left\langle w,\Psi(x,y)\right\rangle -\left\langle w,\Psi(x,y')\right\rangle  & \ge & \Delta(y,y')
+\end{eqnarray*}
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Figure from Section 17.2.4 from Shalev-Schwartz and Ben-David's 
+\backslash
+emph{Understanding Machine Learning}}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Interlude: Is This Worth The Hassle Compared to One-vs-All?
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Recap: What Have We Got?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Problem: Multiclass classification 
+\begin_inset Formula $\cy=\left\{ 1,\ldots,k\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Solution 1: One-vs-All
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Train 
+\begin_inset Formula $k$
+\end_inset
+
+ models: 
+\begin_inset Formula $h_{1}(x),\ldots,h_{k}(x):\cx\to\reals$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Predict with 
+\begin_inset Formula $\argmax_{y\in\cy}h_{y}(x)$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Gave simple example where this fails for linear classifiers
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Solution 2: Multiclass
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Train one model: 
+\begin_inset Formula $h(x,y):\cx\times\cy\to\reals$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Prediction involves solving 
+\begin_inset Formula $\argmax_{y\in\cy}h(x,y)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Does it work better in practice?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Paper by Rifkin & Klautau: 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "In Defense of One-Vs-All Classification"
+target "http://www.jmlr.org/papers/v5/rifkin04a.html"
+
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ (2004)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Extensive experiments, carefully done 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+albeit on relatively small UCI datasets
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Suggests one-vs-all works just as well in practice
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+(or at least, the advantages claimed by earlier papers for multiclass methods
+ were not compelling)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Compared 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+many multiclass frameworks (including the one we discuss)
+\end_layout
+
+\begin_layout Itemize
+one-vs-all for SVMs with RBF kernel
+\end_layout
+
+\begin_layout Itemize
+one-vs-all for square loss with RBF kernel (for classification!) 
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+All performed roughly the same
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Why Are We Bothering with Multiclass?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The framework we have developed for multiclass
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+compatibility features / score functions
+\end_layout
+
+\begin_layout Itemize
+multiclass margin
+\end_layout
+
+\begin_layout Itemize
+target margin 
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Generalizes to situations where 
+\begin_inset Formula $k$
+\end_inset
+
+ is very large and one-vs-all is intractable.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Key point is that we can generalize across outputs 
+\begin_inset Formula $y$
+\end_inset
+
+ by using features of 
+\begin_inset Formula $y$
+\end_inset
+
+.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+really could use more examples here; giving ranking example!
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Section
+Introduction to Structured Prediction
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Part-of-speech (POS) Tagging
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Given a sentence, give a part of speech tag for each word:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\underbrace{\mbox{[START]}}_{x_{0}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\underbrace{\mbox{He}}_{x_{1}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\underbrace{\mbox{eats}}_{x_{2}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\underbrace{\mbox{apples}}_{x_{3}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $y$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\underbrace{\mbox{[START]}}_{y_{0}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\underbrace{\mbox{Pronoun}}_{y_{1}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\underbrace{\mbox{Verb}}_{y_{2}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\underbrace{\mbox{Noun}}_{y_{3}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\cv=\left\{ \mbox{all English words}\right\} \cup\left\{ \mbox{[START]},"."\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\cp=\left\{ \mbox{START},\mbox{Pronoun,Verb,Noun,Adjective}\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\cx=\cv^{n}$
+\end_inset
+
+, 
+\begin_inset Formula $n=1,2,3,\ldots$
+\end_inset
+
+ [Word sequences of any length]
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\cy=\cp^{n},\,n=1,2,3,\ldots$
+\end_inset
+
+[Part of speech sequence of any length]
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Structured Prediction
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A 
+\series bold
+structured prediction 
+\series default
+problem is a multiclass problem in which 
+\begin_inset Formula $\cy$
+\end_inset
+
+ is very large, but has (or we assume it has) a certain structure.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+For POS tagging, 
+\begin_inset Formula $\cy$
+\end_inset
+
+ grows exponentially in the length of the sentence.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Typical 
+\series bold
+structure
+\series default
+ assumption: The POS labels form a Markov chain.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+i.e.
+ 
+\begin_inset Formula $y_{n+1}\mid y_{n},y_{n-1},\ldots,y_{0}$
+\end_inset
+
+ is the same as 
+\begin_inset Formula $y_{n+1}\mid y_{n}$
+\end_inset
+
+.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+More on this in several weeks or in DS-GA 1005.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Local Feature Functions: Type 1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A 
+\begin_inset Quotes eld
+\end_inset
+
+type 1
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\series bold
+local feature 
+\series default
+only depends on 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+the label at a single position, say 
+\begin_inset Formula $y_{i}$
+\end_inset
+
+ (label of the 
+\begin_inset Formula $i$
+\end_inset
+
+th word) and
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $x$
+\end_inset
+
+ at any position
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Example: 
+\begin_inset Formula 
+\begin{eqnarray*}
+\phi_{1}(i,x,y_{i}) & = & \ind{x_{i}=\mbox{runs}}\ind{y_{i}=\mbox{Verb}}\\
+\pause\phi_{2}(i,x,y_{i}) & = & \ind{x_{i}=\mbox{runs}}\ind{y_{i}=\mbox{Noun}}\\
+\pause\phi_{3}(i,x,y_{i}) & = & \ind{x_{i-1}=\mbox{He}}\ind{x_{i}=\mbox{runs}}\ind{y_{i}=\mbox{Verb}}
+\end{eqnarray*}
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Local Feature Functions: Type 2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A 
+\begin_inset Quotes eld
+\end_inset
+
+type 2
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\series bold
+local feature 
+\series default
+only depends on 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+the labels at 2 consecutive positions: 
+\begin_inset Formula $y_{i-1}$
+\end_inset
+
+ and 
+\begin_inset Formula $y_{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $x$
+\end_inset
+
+ at any position
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Example: 
+\begin_inset Formula 
+\begin{eqnarray*}
+\theta_{1}(i,x,y_{i-1},y_{i}) & = & \ind{y_{i-1}=\mbox{Pronoun}}\ind{y_{i}=\mbox{Verb}}\\
+\theta_{2}(i,x,y_{i-1},y_{i}) & = & \ind{y_{i-1}=\mbox{Pronoun}}\ind{y_{i}=\mbox{Noun}}
+\end{eqnarray*}
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Local Feature Vector and Compatibility Score
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+At each position 
+\begin_inset Formula $i$
+\end_inset
+
+ in sequence, define the 
+\series bold
+local feature vector
+\series default
+:
+\begin_inset Formula 
+\begin{eqnarray*}
+\Psi_{i}(x,y_{i-1},y_{i}) & = & (\phi_{1}(i,x,y_{i}),\phi_{2}(i,x,y_{i}),\ldots,\\
+ &  & \theta_{1}(i,x,y_{i-1},y_{i}),\theta_{2}(i,x,y_{i-1},y_{i}),\ldots)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Local compatibility score
+\series default
+ for 
+\begin_inset Formula $(x,y)$
+\end_inset
+
+ at position 
+\begin_inset Formula $i$
+\end_inset
+
+ is 
+\begin_inset Formula $\left\langle w,\Psi_{i}(x,y_{i-1},y_{i})\right\rangle $
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Sequence Compatibility Score
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The 
+\series bold
+compatibility score
+\series default
+ for the pair of sequences 
+\begin_inset Formula $\left(x,y\right)$
+\end_inset
+
+ is the sum of the local compatibility scores: 
+\begin_inset Formula 
+\begin{eqnarray*}
+ &  & \sum_{i}\left\langle w,\Psi_{i}(x,y_{i-1},y_{i})\right\rangle \\
+\pause & = & \left\langle w,\sum_{i}\Psi_{i}(x,y_{i-1},y_{i})\right\rangle \\
+\pause & = & \left\langle w,\Psi(x,y)\right\rangle ,
+\end{eqnarray*}
+
+\end_inset
+
+where we define the sequence feature vector by 
+\begin_inset Formula 
+\[
+\Psi(x,y)=\sum_{i}\Psi_{i}(x,y_{i-1},y_{i}).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+So we see this is a special case of linear multiclass prediction.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Sequence Target Loss
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+How do we assess the loss for prediction sequence 
+\begin_inset Formula $y'$
+\end_inset
+
+ for example 
+\begin_inset Formula $\left(x,y\right)?$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Hamming loss
+\series default
+ is common:
+\begin_inset Formula 
+\[
+\Delta(y,y')=\frac{1}{\left|y\right|}\sum_{i=1}^{\left|y\right|}\ind{y_{i}\neq y_{i}'}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Could generalize this as
+\begin_inset Formula 
+\[
+\Delta(y,y')=\frac{1}{\left|y\right|}\sum_{i=1}^{\left|y\right|}\delta(y_{i},y_{i}')
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+What remains to be done?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+To compute predictions, we need to find 
+\begin_inset Formula 
+\[
+\argmax_{y\in\cy}\left\langle w,\Psi(x,y)\right\rangle .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+This is straightforward for 
+\begin_inset Formula $|\cy|$
+\end_inset
+
+ small.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Now 
+\begin_inset Formula $\left|\cy\right|$
+\end_inset
+
+ is exponentially large.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Because 
+\begin_inset Formula $\Psi$
+\end_inset
+
+ breaks down into local functions only depending on 
+\begin_inset Formula $2$
+\end_inset
+
+ adjacent labels,
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+we can solve this efficiently using dynamic programming.
+ 
+\end_layout
+
+\begin_layout Itemize
+(Similar to Viterbi decoding.)
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Learning can be done with SGD and a similar dynamic program.
+\end_layout
+
+\end_deeper
+\end_body
+\end_document

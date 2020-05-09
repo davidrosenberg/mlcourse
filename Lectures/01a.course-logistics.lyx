@@ -1,9 +1,9 @@
-#LyX 2.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 544
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin unavailable
+\origin /Users/drosen/Dropbox/repos/mlcourse/Lectures/
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -62,8 +62,6 @@
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
-\use_microtype false
-\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -103,7 +101,6 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
-\use_minted 0
 \boxbgcolor #ff31d8
 \index Index
 \shortcut idx
@@ -113,10 +110,7 @@
 \tocdepth 2
 \paragraph_separation indent
 \paragraph_indentation default
-\is_math_indent 0
-\math_numbering_side default
-\quotes_style english
-\dynamic_quotes 0
+\quotes_language english
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -744,16 +738,16 @@ optional, use only with long paper titles
 \end_layout
 
 \begin_layout Author
-Julia Kempe & David S.
+David S.
  Rosenberg 
 \end_layout
 
 \begin_layout Date
-January 29, 2019
+January 23, 2018
 \end_layout
 
 \begin_layout Institute
-CDS, NYU
+New York University
 \end_layout
 
 \begin_layout Standard
@@ -827,7 +821,7 @@ status open
 
 \begin_layout Plain Layout
 
-https://davidrosenberg.github.io/ml2019
+https://davidrosenberg.github.io/ml2018
 \end_layout
 
 \end_inset
@@ -854,7 +848,7 @@ status open
 
 \begin_layout Plain Layout
 
-https://piazza.com/nyu/spring2019/dsga1003
+https://piazza.com/nyu/spring2018/dsga1003
 \end_layout
 
 \end_inset
@@ -894,7 +888,7 @@ Lecture
 \begin_inset Quotes erd
 \end_inset
 
-: 5:20 - 7pm (Meyer 121)
+: 5:20 - 7pm (GSACL C95)
 \end_layout
 
 \begin_layout Itemize
@@ -912,26 +906,7 @@ Lab
 \begin_layout Itemize
 
 \series bold
-(Both are required.)
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Office Hours:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Julia - Tuesdays 4-5pm, 60 5th Ave., 620 (Except weeks 5,7,11, possibly one
- more -> David)
-\end_layout
-
-\begin_layout Itemize
-Sreyas/Xintian (TAs): Wednesdays 7:45-8:45pm 60 5th Ave C-15
-\end_layout
-
-\begin_layout Itemize
-Graders: TBD (see course webpage)
+(Both are required.) 
 \end_layout
 
 \end_deeper
@@ -958,32 +933,12 @@ Course Staff
 
 \begin_deeper
 \begin_layout Itemize
-Instructors:
+TA: 
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Julia Kempe (CDS Director, Professor for Computer Science and Mathematics,
- NYU Courant Institute)
-\end_layout
-
-\begin_layout Itemize
-David S.
- Rosenberg (CDS, Bloomberg) - 3-4 lectures and behind the scenes
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-TAs:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Sreyras Mohan (CDS, PhD Data Science)
-\end_layout
-
-\begin_layout Itemize
-Xintian Han (CDS, PhD Data Science)
+Ben Jakubowski (CDS MS Data Science, 2017)
 \end_layout
 
 \begin_deeper
@@ -999,27 +954,27 @@ Graders:
 
 \begin_deeper
 \begin_layout Itemize
-Sanyam Kapoor (Head Grader)
+Lisa Ren (Head Grader)
 \end_layout
 
 \begin_layout Itemize
-Aakash Kaku
+Utku Evci
 \end_layout
 
 \begin_layout Itemize
-Mingsi Long
+Mi Fang
 \end_layout
 
 \begin_layout Itemize
-Mihir Rana
+Sanyam Kapoor
 \end_layout
 
 \begin_layout Itemize
-Tingyan Xiang
+Nan Wu
 \end_layout
 
 \begin_layout Itemize
-Yi Zhou
+Zemin Yu
 \end_layout
 
 \begin_deeper
@@ -1028,6 +983,17 @@ Yi Zhou
 \end_layout
 
 \end_deeper
+\end_deeper
+\begin_layout Itemize
+Project Advisers:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Kurt Miller, Brian d'Alessandro, Bonnie Ray, Daniel Chen, Elliot Ash, Vitaly
+ Kuznetsov, David Frohardt-Lane
+\end_layout
+
 \end_deeper
 \end_deeper
 \begin_layout Standard
@@ -1056,23 +1022,34 @@ About 7 or 8 homeworks (40%)
 \end_layout
 
 \begin_layout Itemize
-Two tests (60%)
+Two tests (40%)
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Midterm Exam (30%) in Week 7 (March 6th)
+Midterm Exam (20%) in Week 7 (March 6th)
 \end_layout
 
 \begin_layout Itemize
-Final Exam (30%) - Final Exam Period (Thursday May 16th 6-7:50pm - to be
- confirmed)
+Final Exam (20%) - Final Exam Period (tentatively May 15th) 
 \end_layout
 
+\end_deeper
+\begin_layout Itemize
+Project (20%) 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Project proposal (Week 8) and project report (Week 15)
+\end_layout
+
+\begin_deeper
 \begin_layout Pause
 
 \end_layout
 
+\end_deeper
 \end_deeper
 \begin_layout Itemize
 These scores determine 
@@ -1160,7 +1137,7 @@ At most, increases final grade by half a letter (e.g.
 \end_layout
 
 \begin_layout Itemize
-In 2018, about 10% of people has letter grade increases from optional credit.
+In 2017, about 10% of people has letter grade increases from optional credit.
  
 \end_layout
 
@@ -1199,8 +1176,8 @@ Learn more concepts and practice more techniques
 \end_deeper
 \end_deeper
 \begin_layout Itemize
-High performance on optional homework is something we can mention in recommendat
-ion letters.
+High performance on optional homework is something I can mention in recommendati
+on letters.
 \end_layout
 
 \end_deeper
@@ -1226,11 +1203,15 @@ Lab Sessions
 
 \begin_deeper
 \begin_layout Itemize
-Most led by TAs Sreyras and Xintian
+Some led by TA Ben Jakubowski, some by me
 \end_layout
 
 \begin_layout Itemize
-Most will be lecture format, some will be reviews
+Most will be lecture format
+\end_layout
+
+\begin_layout Itemize
+Meetings with project advisors
 \end_layout
 
 \begin_deeper
@@ -1240,7 +1221,7 @@ Most will be lecture format, some will be reviews
 
 \end_deeper
 \begin_layout Itemize
-Tomorrow: Guest lecture from Brett Bernstein (2017 TA, PhD student)
+Tomorrow: Guest lecture from Brett Bernstein (last year's TA)
 \end_layout
 
 \end_deeper
@@ -1266,7 +1247,7 @@ Homework (40%)
 
 \begin_deeper
 \begin_layout Itemize
-First assignment out now – due week from Thursday 23:59pm
+First assignment out now – due week from Thursday 10pm
 \end_layout
 
 \begin_layout Itemize
@@ -1329,6 +1310,76 @@ When graders identify copying, we're obliged to tell the administration,
 status open
 
 \begin_layout Plain Layout
+Projects (20%)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Some notes on website, and will be posting more information on Piazza.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Logistics:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+3 students per group (exceptions possible)
+\end_layout
+
+\begin_layout Itemize
+First meeting with advisers (Wed, March 7)
+\end_layout
+
+\begin_layout Itemize
+Project proposal due after Spring Break (Thurs, March 22) 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Some project advisers supply code and project ideas
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Law and economics (Daniel Chen and Elliott Ash)
+\end_layout
+
+\begin_layout Itemize
+Sports Betting (David Frohardt-Lane)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
 Prerequisites
 \end_layout
 
@@ -1356,11 +1407,11 @@ Multivariate Calculus
 \end_layout
 
 \begin_layout Itemize
-Linear Algebra (see HW 1 for a question)
+Linear Algebra
 \end_layout
 
 \begin_layout Itemize
-Probability Theory (see HW 1 for a question)
+Probability Theory
 \end_layout
 
 \begin_layout Itemize
@@ -1490,7 +1541,7 @@ However, the slides will look similar.
 \end_deeper
 \begin_layout Itemize
 But primarily because it's the level at which new machine learning methods
- presented in research papers.
+ or presented in research papers.
 \end_layout
 
 \begin_layout Itemize
@@ -1732,7 +1783,7 @@ Syllabus (Tentative)
 
 \begin_deeper
 \begin_layout Standard
-13 weeks of instruction + 1 week midterm exam
+12 weeks of instruction + 1 week midterm exam + 1 week final exam review
 \end_layout
 
 \begin_layout Itemize
@@ -1835,16 +1886,6 @@ clustering
  and 
 \series bold
 matrix factorization
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-More specific tentative Syllabus on the webpage.
 \end_layout
 
 \end_deeper
@@ -2003,6 +2044,17 @@ Once we have built it from scratch once, we can use the sklearn version.
 
 \end_layout
 
+\begin_layout Itemize
+For projects, you should NOT code ML algorithms yourself, except in exceptional
+ circumstances
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+- use existing frameworks (sklearn, xgboost, tensorflow, etc)
+\end_layout
+
+\end_deeper
 \end_deeper
 \begin_layout Section
 \begin_inset Note Note

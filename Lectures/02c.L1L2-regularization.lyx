@@ -732,9 +732,9 @@ ex}{E}
 status open
 
 \begin_layout Plain Layout
-DS-GA 1003 / CSCI-GA 2567
+DS-GA 1003
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 optional, use only with long paper titles
@@ -834,7 +834,8 @@ status open
 \begin_layout Plain Layout
 Rather than saying 'under technical conditions', can I give some specific
  technical conditions and quote them as a theorem (proven in homework?),
- that doesn't reference duality directly?)
+ that doesn't reference duality directly?) [I think this is about the equivalenc
+e of hard and soft penalization]
 \end_layout
 
 \begin_layout Plain Layout

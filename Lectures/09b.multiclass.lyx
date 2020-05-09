@@ -720,7 +720,7 @@ ex}{E}
 \end_layout
 
 \begin_layout Title
-Multiclass 
+Multiclass and Introduction to Structured Prediction
 \begin_inset Argument 1
 status open
 
@@ -4743,5 +4743,779 @@ really could use more examples here; giving ranking example!
 
 \end_layout
 
+\begin_layout Section
+Introduction to Structured Prediction
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Part-of-speech (POS) Tagging
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Given a sentence, give a part of speech tag for each word:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\underbrace{\mbox{[START]}}_{x_{0}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\underbrace{\mbox{He}}_{x_{1}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\underbrace{\mbox{eats}}_{x_{2}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\underbrace{\mbox{apples}}_{x_{3}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $y$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\underbrace{\mbox{[START]}}_{y_{0}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\underbrace{\mbox{Pronoun}}_{y_{1}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\underbrace{\mbox{Verb}}_{y_{2}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\underbrace{\mbox{Noun}}_{y_{3}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\cv=\left\{ \mbox{all English words}\right\} \cup\left\{ \mbox{[START]},"."\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\cp=\left\{ \mbox{START},\mbox{Pronoun,Verb,Noun,Adjective}\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\cx=\cv^{n}$
+\end_inset
+
+, 
+\begin_inset Formula $n=1,2,3,\ldots$
+\end_inset
+
+ [Word sequences of any length]
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\cy=\cp^{n},\,n=1,2,3,\ldots$
+\end_inset
+
+[Part of speech sequence of any length]
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Structured Prediction
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A 
+\series bold
+structured prediction 
+\series default
+problem is a multiclass problem in which 
+\begin_inset Formula $\cy$
+\end_inset
+
+ is very large, but has (or we assume it has) a certain structure.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+For POS tagging, 
+\begin_inset Formula $\cy$
+\end_inset
+
+ grows exponentially in the length of the sentence.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Typical 
+\series bold
+structure
+\series default
+ assumption: The POS labels form a Markov chain.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+i.e.
+ 
+\begin_inset Formula $y_{n+1}\mid y_{n},y_{n-1},\ldots,y_{0}$
+\end_inset
+
+ is the same as 
+\begin_inset Formula $y_{n+1}\mid y_{n}$
+\end_inset
+
+.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+More on this in several weeks or in DS-GA 1005.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Local Feature Functions: Type 1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A 
+\begin_inset Quotes eld
+\end_inset
+
+type 1
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\series bold
+local feature 
+\series default
+only depends on 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+the label at a single position, say 
+\begin_inset Formula $y_{i}$
+\end_inset
+
+ (label of the 
+\begin_inset Formula $i$
+\end_inset
+
+th word) and
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $x$
+\end_inset
+
+ at any position
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Example: 
+\begin_inset Formula 
+\begin{eqnarray*}
+\phi_{1}(i,x,y_{i}) & = & \ind{x_{i}=\mbox{runs}}\ind{y_{i}=\mbox{Verb}}\\
+\pause\phi_{2}(i,x,y_{i}) & = & \ind{x_{i}=\mbox{runs}}\ind{y_{i}=\mbox{Noun}}\\
+\pause\phi_{3}(i,x,y_{i}) & = & \ind{x_{i-1}=\mbox{He}}\ind{x_{i}=\mbox{runs}}\ind{y_{i}=\mbox{Verb}}
+\end{eqnarray*}
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Local Feature Functions: Type 2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A 
+\begin_inset Quotes eld
+\end_inset
+
+type 2
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\series bold
+local feature 
+\series default
+only depends on 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+the labels at 2 consecutive positions: 
+\begin_inset Formula $y_{i-1}$
+\end_inset
+
+ and 
+\begin_inset Formula $y_{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $x$
+\end_inset
+
+ at any position
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Example: 
+\begin_inset Formula 
+\begin{eqnarray*}
+\theta_{1}(i,x,y_{i-1},y_{i}) & = & \ind{y_{i-1}=\mbox{Pronoun}}\ind{y_{i}=\mbox{Verb}}\\
+\theta_{2}(i,x,y_{i-1},y_{i}) & = & \ind{y_{i-1}=\mbox{Pronoun}}\ind{y_{i}=\mbox{Noun}}
+\end{eqnarray*}
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Local Feature Vector and Compatibility Score
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+At each position 
+\begin_inset Formula $i$
+\end_inset
+
+ in sequence, define the 
+\series bold
+local feature vector
+\series default
+:
+\begin_inset Formula 
+\begin{eqnarray*}
+\Psi_{i}(x,y_{i-1},y_{i}) & = & (\phi_{1}(i,x,y_{i}),\phi_{2}(i,x,y_{i}),\ldots,\\
+ &  & \theta_{1}(i,x,y_{i-1},y_{i}),\theta_{2}(i,x,y_{i-1},y_{i}),\ldots)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Local compatibility score
+\series default
+ for 
+\begin_inset Formula $(x,y)$
+\end_inset
+
+ at position 
+\begin_inset Formula $i$
+\end_inset
+
+ is 
+\begin_inset Formula $\left\langle w,\Psi_{i}(x,y_{i-1},y_{i})\right\rangle $
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Sequence Compatibility Score
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The 
+\series bold
+compatibility score
+\series default
+ for the pair of sequences 
+\begin_inset Formula $\left(x,y\right)$
+\end_inset
+
+ is the sum of the local compatibility scores: 
+\begin_inset Formula 
+\begin{eqnarray*}
+ &  & \sum_{i}\left\langle w,\Psi_{i}(x,y_{i-1},y_{i})\right\rangle \\
+\pause & = & \left\langle w,\sum_{i}\Psi_{i}(x,y_{i-1},y_{i})\right\rangle \\
+\pause & = & \left\langle w,\Psi(x,y)\right\rangle ,
+\end{eqnarray*}
+
+\end_inset
+
+where we define the sequence feature vector by 
+\begin_inset Formula 
+\[
+\Psi(x,y)=\sum_{i}\Psi_{i}(x,y_{i-1},y_{i}).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+So we see this is a special case of linear multiclass prediction.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Sequence Target Loss
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+How do we assess the loss for prediction sequence 
+\begin_inset Formula $y'$
+\end_inset
+
+ for example 
+\begin_inset Formula $\left(x,y\right)?$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Hamming loss
+\series default
+ is common:
+\begin_inset Formula 
+\[
+\Delta(y,y')=\frac{1}{\left|y\right|}\sum_{i=1}^{\left|y\right|}\ind{y_{i}\neq y_{i}'}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Could generalize this as
+\begin_inset Formula 
+\[
+\Delta(y,y')=\frac{1}{\left|y\right|}\sum_{i=1}^{\left|y\right|}\delta(y_{i},y_{i}')
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+What remains to be done?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+To compute predictions, we need to find 
+\begin_inset Formula 
+\[
+\argmax_{y\in\cy}\left\langle w,\Psi(x,y)\right\rangle .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+This is straightforward for 
+\begin_inset Formula $|\cy|$
+\end_inset
+
+ small.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Now 
+\begin_inset Formula $\left|\cy\right|$
+\end_inset
+
+ is exponentially large.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Because 
+\begin_inset Formula $\Psi$
+\end_inset
+
+ breaks down into local functions only depending on 
+\begin_inset Formula $2$
+\end_inset
+
+ adjacent labels,
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+we can solve this efficiently using dynamic programming.
+ 
+\end_layout
+
+\begin_layout Itemize
+(Similar to Viterbi decoding.)
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Learning can be done with SGD and a similar dynamic program.
+\end_layout
+
+\end_deeper
 \end_body
 \end_document

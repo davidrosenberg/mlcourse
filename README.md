@@ -22,9 +22,9 @@ selection via the elastic net." into the notation of our class, dropping an unne
 - Added a note on the [main takeaways from duality for the SVM](https://davidrosenberg.github.io/mlcourse/Notes/SVM-main-points.pdf). 
 - Rather than go through the [full derivation of the SVM dual](https://davidrosenberg.github.io/mlcourse/Archive/2017/Lectures/4b.SVM.pdf), in [the new lecture](https://davidrosenberg.github.io/mlcourse/Lectures/04b.SVM-summary.pdf), I just state the dual formulation and highlight the insights we get from the complementary slackness conditions, with an emphasis on the "sparsity in the data". 
 - Dropped the [geometric derivation of SVMs](https://davidrosenberg.github.io/mlcourse/Archive/2017/Labs/3-SVM-Slides.pdf) and all mention of hard-margin SVM. It was always a crowd-pleaser, but I don't think it's worth the time. Seemed most useful as a review of affine spaces, projections, and other basic linear algebra.
-- Dropped most of [the AdaBoost lecture](https://davidrosenberg.github.io/mlcourse/Archive/2017/Lectures/9b.adaboost.pdf), except to mention it as a special case of forward stagewise additive modeling with an exponential loss [(slides 24-29)](https://davidrosenberg.github.io/mlcourse/Lectures/11b.gradient-boosting.pdf#page=23). 
+- Dropped most of [the AdaBoost lecture](https://davidrosenberg.github.io/mlcourse/Archive/2017/Lectures/9b.adaboost.pdf), except to mention it as a special case of forward stagewise additive modeling with an exponential loss [(slides 24-29)](https://davidrosenberg.github.io/mlcourse/Archive/2017Fall/Lectures/11a.gradient-boosting.pdf#page=23). 
 - New [worked example](https://davidrosenberg.github.io/mlcourse/Notes/poisson-gradient-boosting.pdf) for predicting Poisson distributions with linear and gradient boosting models.
-- New module on [back propagation](https://davidrosenberg.github.io/mlcourse/Lectures/12b.backpropagation.pdf).
+- New module on [back propagation](https://davidrosenberg.github.io/mlcourse/Archive/2017Fall/Lectures/12b.backpropagation.pdf).
 
 ## Notable Changes from [2016](https://davidrosenberg.github.io/ml2016/#home) to [2017](https://davidrosenberg.github.io/ml2017/#home)
 - New lecture on geometric approach to SVMs (Brett)

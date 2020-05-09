@@ -45,7 +45,7 @@
   \end{frame}
 }
 \end_preamble
-\options aspectratio=169
+\options aspectratio=169,handout
 \use_default_options false
 \maintain_unincluded_children false
 \language english
@@ -744,16 +744,16 @@ optional, use only with long paper titles
 \end_layout
 
 \begin_layout Author
-Julia Kempe & David S.
+David S.
  Rosenberg 
 \end_layout
 
 \begin_layout Date
-May 7, 2019
+April 24, 2018
 \end_layout
 
 \begin_layout Institute
-CDS, NYU
+New York University
 \end_layout
 
 \begin_layout Standard

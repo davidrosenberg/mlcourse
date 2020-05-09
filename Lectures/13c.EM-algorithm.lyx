@@ -1,5 +1,5 @@
-#LyX 2.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 544
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -62,8 +62,6 @@
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
-\use_microtype false
-\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -103,7 +101,6 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
-\use_minted 0
 \boxbgcolor #ff31d8
 \index Index
 \shortcut idx
@@ -113,10 +110,7 @@
 \tocdepth 2
 \paragraph_separation indent
 \paragraph_indentation default
-\is_math_indent 0
-\math_numbering_side default
-\quotes_style english
-\dynamic_quotes 0
+\quotes_language english
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -744,12 +738,12 @@ optional, use only with long paper titles
 \end_layout
 
 \begin_layout Author
-Julia Kempe & David S.
+David S.
  Rosenberg 
 \end_layout
 
 \begin_layout Date
-May 7, 2019
+April 24, 2018
 \end_layout
 
 \begin_layout Institute
@@ -1604,7 +1598,7 @@ The Marginal Log-Likelihood Function
 \begin_deeper
 \begin_layout Standard
 \begin_inset Graphics
-	filename margLL.pdf
+	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/EM-algorithm/margLL.pdf
 	width 85page%
 	clip
 
@@ -1637,7 +1631,7 @@ The Maximum Likelihood Estimator
 \begin_deeper
 \begin_layout Standard
 \begin_inset Graphics
-	filename margLL-withMax.pdf
+	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/EM-algorithm/margLL-withMax.pdf
 	width 85page%
 	clip
 
@@ -1670,7 +1664,7 @@ Lower Bounds on Marginal Log-Likelihood
 \begin_deeper
 \begin_layout Standard
 \begin_inset Graphics
-	filename margLL-with-lowerbounds.pdf
+	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/EM-algorithm/margLL-with-lowerbounds.pdf
 	width 85page%
 	clip
 
@@ -1703,7 +1697,7 @@ Supremum over Lower Bounds is a Lower Bound
 \begin_deeper
 \begin_layout Standard
 \begin_inset Graphics
-	filename margLL-sup-lowerbound.pdf
+	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/EM-algorithm/margLL-sup-lowerbound.pdf
 	width 85page%
 	clip
 
@@ -1736,7 +1730,7 @@ Parameter Estimate: Max over all lower bounds
 \begin_deeper
 \begin_layout Standard
 \begin_inset Graphics
-	filename margLL-argmax-lowerbound.pdf
+	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/EM-algorithm/margLL-argmax-lowerbound.pdf
 	width 85page%
 	clip
 
@@ -2069,7 +2063,7 @@ f(\theta x+(1-\theta)y)\le\theta f(x)+(1-\theta)f(y).
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename fig7.5a.pdf
+	filename ../Archive/2017/Lectures/source/13.Lab.EM-algorithm/fig7.5a.pdf
 	lyxscale 50
 	width 40text%
 
@@ -2077,7 +2071,7 @@ f(\theta x+(1-\theta)y)\le\theta f(x)+(1-\theta)f(y).
 
 
 \begin_inset Graphics
-	filename fig7.5b.pdf
+	filename ../Archive/2017/Lectures/source/13.Lab.EM-algorithm/fig7.5b.pdf
 	lyxscale 50
 	width 40text%
 
@@ -2961,7 +2955,7 @@ as functions of
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename lowerBounds-Bishop9.14.png
+	filename ../Figures/EM-algorithm/lowerBounds-Bishop9.14.png
 	lyxscale 50
 	height 50theight%
 
@@ -3194,7 +3188,7 @@ should draw another version with lots of lower bounds, and we're taking
 
 
 \begin_inset Graphics
-	filename EM-twosteps-Bishop9.14.png
+	filename ../Figures/EM-algorithm/EM-twosteps-Bishop9.14.png
 	lyxscale 50
 	height 50theight%
 
@@ -3548,7 +3542,7 @@ the Supremum over Lower Bounds
 \begin_deeper
 \begin_layout Standard
 \begin_inset Graphics
-	filename sup-margLL.pdf
+	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/EM-algorithm/sup-margLL.pdf
 	width 75page%
 	clip
 
@@ -3848,7 +3842,7 @@ Tight lower bound for any chosen
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename EM-twosteps-Bishop9.14.png
+	filename ../Figures/EM-algorithm/EM-twosteps-Bishop9.14.png
 	lyxscale 50
 	height 50theight%
 
@@ -4194,7 +4188,7 @@ EM Gives Monotonically Increasing Likelihood: By Picture
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename EM-twosteps-Bishop9.14.png
+	filename ../Figures/EM-algorithm/EM-twosteps-Bishop9.14.png
 	lyxscale 50
 	height 55theight%
 

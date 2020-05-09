@@ -725,7 +725,7 @@ Subgradient Descent
 status open
 
 \begin_layout Plain Layout
-DS-GA 1003 / CSCI-GA 2567
+DS-GA 1003
 \begin_inset Note Note
 status open
 
@@ -749,7 +749,7 @@ David S.
 \end_layout
 
 \begin_layout Date
-February 7, 2018
+May 9, 2020
 \end_layout
 
 \begin_layout Institute
@@ -826,6 +826,20 @@ LatexCommand tableofcontents
 \end_layout
 
 \end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+This version of the lecture includes some slides on convex optimization,
+ since that lecture was not given in full in this iteration.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset Note Note
 status open
@@ -3922,6 +3936,26 @@ S=\left\{ x\in\reals^{d}\mid f(x)=f(x_{0})\right\} .
 \end_deeper
 \begin_layout Itemize
 Proof sketch in notes.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Would be nice to have a formal definition of 
+\begin_inset Quotes eld
+\end_inset
+
+normal to level set
+\begin_inset Quotes erd
+\end_inset
+
+ at least in the notes.
+ Right now, in the notes, it's a bit vague about orthgonality to the velocity
+ vector of a particle moving along the level set.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
@@ -3977,6 +4011,1373 @@ tiny{Plot courtesy of Brett Bernstein.}}
 \end_inset
 
 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Contour Lines and Subgradients
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A hyperplane 
+\begin_inset Formula $H$
+\end_inset
+
+ 
+\series bold
+supports 
+\series default
+a set 
+\begin_inset Formula $S$
+\end_inset
+
+ if 
+\begin_inset Formula $H$
+\end_inset
+
+ intersects 
+\begin_inset Formula $S$
+\end_inset
+
+ and all of 
+\begin_inset Formula $S$
+\end_inset
+
+ lies one one side of 
+\begin_inset Formula $H$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+If 
+\begin_inset Formula $f:\reals^{d}\to\reals$
+\end_inset
+
+ has subgradient 
+\begin_inset Formula $g$
+\end_inset
+
+ at 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+, then the hyperplane 
+\begin_inset Formula $H$
+\end_inset
+
+ orthogonal to 
+\begin_inset Formula $g$
+\end_inset
+
+ at 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ must 
+\series bold
+support
+\series default
+ the level set 
+\begin_inset Formula $S=\left\{ x\in\reals^{d}\mid f(x)=f(x_{0})\right\} $
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Proof:
+\end_layout
+
+\begin_layout Itemize
+For any 
+\begin_inset Formula $y$
+\end_inset
+
+, we have 
+\begin_inset Formula $f(y)\ge f(x_{0})+g^{T}(y-x_{0})\pause$
+\end_inset
+
+.
+ (def of subgradient)
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+If 
+\begin_inset Formula $y$
+\end_inset
+
+ is strictly on side of 
+\begin_inset Formula $H$
+\end_inset
+
+ that 
+\begin_inset Formula $g$
+\end_inset
+
+ points in,
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+then 
+\begin_inset Formula $g^{T}\left(y-x_{0}\right)>0$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+So 
+\begin_inset Formula $f(y)>f(x_{0})$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+So 
+\begin_inset Formula $y$
+\end_inset
+
+ is not in the level set 
+\begin_inset Formula $S$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\therefore$
+\end_inset
+
+ All elements of 
+\begin_inset Formula $S$
+\end_inset
+
+ must be on 
+\begin_inset Formula $H$
+\end_inset
+
+ or on the 
+\begin_inset Formula $-g$
+\end_inset
+
+ side of 
+\begin_inset Formula $H$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Subgradient of 
+\begin_inset Formula $f(x_{1},x_{2})=\left|x_{1}\right|+2\left|x_{2}\right|$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/subgradient-methods/contour-plot-abs-x1-plus-2absx2.png
+	lyxscale 30
+	height 75theight%
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Plot courtesy of Brett Bernstein.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Subgradient of 
+\begin_inset Formula $f(x_{1},x_{2})=\left|x_{1}\right|+2\left|x_{2}\right|$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../Figures/subgradient-methods/contour-plot-abs-x1-plus-2absx2.png
+	lyxscale 20
+	height 40theight%
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Plot courtesy of Brett Bernstein.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Points on 
+\begin_inset Formula $g$
+\end_inset
+
+ side of 
+\begin_inset Formula $H$
+\end_inset
+
+ have larger 
+\begin_inset Formula $f$
+\end_inset
+
+-values than 
+\begin_inset Formula $f(x_{0})$
+\end_inset
+
+.
+ (from proof)
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+But points on 
+\begin_inset Formula $-g$
+\end_inset
+
+ side may 
+\series bold
+not 
+\series default
+have smaller 
+\begin_inset Formula $f$
+\end_inset
+
+-values.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+So 
+\begin_inset Formula $-g$
+\end_inset
+
+ may 
+\series bold
+not
+\series default
+ be a descent direction.
+ (shown in figure)
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Subgradient Descent
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Subgradient Descent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose 
+\begin_inset Formula $f$
+\end_inset
+
+ is convex, and we start optimizing at 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Repeat
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Step in a negative subgradient direction: 
+\begin_inset Formula 
+\[
+x=x_{0}-tg,
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $t>0$
+\end_inset
+
+ is the step size and 
+\begin_inset Formula $g\in\partial f(x_{0})$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $-g$
+\end_inset
+
+ not a descent direction – can this work?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Subgradient Gets Us Closer To Minimizer
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Theorem
+Suppose 
+\begin_inset Formula $f$
+\end_inset
+
+ is convex.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $x=x_{0}-tg$
+\end_inset
+
+, for 
+\begin_inset Formula $g\in\partial f(x_{0})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Let 
+\begin_inset Formula $z$
+\end_inset
+
+ be any point for which 
+\begin_inset Formula $f(z)<f(x_{0})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Then for small enough 
+\begin_inset Formula $t>0$
+\end_inset
+
+,
+\begin_inset Formula 
+\[
+\|x-z\|_{2}<\|x_{0}-z\|_{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Apply this with 
+\begin_inset Formula $z=x^{*}\in\argmin_{x}f(x)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\implies$
+\end_inset
+
+
+\series bold
+Negative subgradient step gets us closer to minimizer
+\series default
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Subgradient Gets Us Closer To Minimizer (Proof)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $x=x_{0}-tg$
+\end_inset
+
+, for 
+\begin_inset Formula $g\in\partial f(x_{0})$
+\end_inset
+
+ and 
+\begin_inset Formula $t>0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Let 
+\begin_inset Formula $z$
+\end_inset
+
+ be any point for which 
+\begin_inset Formula $f(z)<f(x_{0})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Then
+\begin_inset Formula 
+\begin{eqnarray*}
+\|x-z\|_{2}^{2} & = & \|x_{0}-tg-z\|_{2}^{2}\\
+\pause & = & \|x_{0}-z\|_{2}^{2}-2tg^{T}\left(x_{0}-z\right)+t^{2}\|g\|_{2}^{2}\\
+\pause & \le & \|x_{0}-z\|_{2}^{2}-2t\left[f(x_{0})-f(z)\right]+t^{2}\|g\|_{2}^{2}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Consider 
+\begin_inset Formula $-2t\left[f(x_{0})-f(z)\right]+t^{2}\|g\|_{2}^{2}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+It's a convex quadratic (facing upwards).
+\end_layout
+
+\begin_layout Itemize
+Has zeros at 
+\begin_inset Formula $t=0$
+\end_inset
+
+ and 
+\begin_inset Formula $t=2\left(f(x_{0})-f(z)\right)/\|g\|_{2}^{2}>0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Therefore, it's negative for any 
+\begin_inset Formula 
+\[
+t\in\left(0,\frac{2\left(f(x_{0})-f(z)\right)}{\|g\|_{2}^{2}}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+If we know 
+\begin_inset Formula $f(z)$
+\end_inset
+
+, we can use 
+\begin_inset Quotes eld
+\end_inset
+
+Polyak's step size
+\begin_inset Quotes erd
+\end_inset
+
+, which is the minimizer of the bound (i.e.
+ 
+\begin_inset Formula $t=\left(f(x_{0})-f(z)\right)/\|g\|_{2}^{2}$
+\end_inset
+
+).
+ But not clear how we would know that.
+ See 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+url{http://web.stanford.edu/class/ee364b/lectures/subgrad_method_notes.pdf}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Based on Boyd EE364b: Subgradients Slides}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Convergence Theorem for Fixed Step Size
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Assume 
+\begin_inset Formula $f:\reals^{n}\to\reals$
+\end_inset
+
+ is convex and
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $f$
+\end_inset
+
+ is Lipschitz continuous with constant 
+\begin_inset Formula $G>0$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\left|f(x)-f(y)\right|\le G\|x-y\|\mbox{ for all }x,y
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+For fixed step size 
+\begin_inset Formula $t$
+\end_inset
+
+, subgradient method satisfies:
+\begin_inset Formula 
+\[
+\lim_{k\to\infty}f(x_{\text{best}}^{(k)})\le f(x^{*})+G^{2}t/2
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Based on 
+\backslash
+url{https://www.cs.cmu.edu/~ggordon/10725-F12/slides/06-sg-method.pdf}}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Convergence Theorems for Decreasing Step Sizes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Assume 
+\begin_inset Formula $f:\reals^{n}\to\reals$
+\end_inset
+
+ is convex and
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $f$
+\end_inset
+
+ is Lipschitz continuous with constant 
+\begin_inset Formula $G>0$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\left|f(x)-f(y)\right|\le G\|x-y\|\mbox{ for all }x,y
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+For step size respecting Robbins-Monro conditions,
+\begin_inset Formula 
+\[
+\lim_{k\to\infty}f(x_{\text{best}}^{(k)})=f(x^{*})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+thefootnote
+\backslash
+relax
+\backslash
+footnotetext{
+\backslash
+tiny{Based on 
+\backslash
+url{https://www.cs.cmu.edu/~ggordon/10725-F12/slides/06-sg-method.pdf}}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Subgradient for Lasso (written by Xintian Han)
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status collapsed
+
+\begin_layout Plain Layout
+The Lasso Problem
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Lasso problem can be parametrized as 
+\begin_inset Formula 
+\[
+\min_{w\in\reals^{d}}J(w)=\frac{1}{n}\sum_{i=1}^{n}\left\{ w^{T}x_{i}-y_{i}\right\} ^{2}+\lambda\|w\|_{1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+We could solve Lasso by Shooting Method and Projected SGD.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+How about using SGD? 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\|w\|_{1}=\mid w_{1}\mid+\mid w_{2}\mid$
+\end_inset
+
+ is not differentiable! 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status collapsed
+
+\begin_layout Plain Layout
+Gradient Descent on Lasso Objective?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The partial gradient of the Lasso objective is 
+\begin_inset Formula 
+\[
+\del_{w}J(w)=\frac{1}{n}\sum_{j=1}^{n}2\{w^{T}x_{j}-y_{j}\}x_{j}+\lambda\cdot\text{sign}(w)
+\]
+
+\end_inset
+
+when 
+\begin_inset Formula $w_{i}\neq0$
+\end_inset
+
+ for all 
+\begin_inset Formula $i$
+\end_inset
+
+, and 
+\series bold
+otherwise is undefined
+\series default
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status collapsed
+
+\begin_layout Plain Layout
+Important Properties of Subdifferential
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If 
+\begin_inset Formula $f_{1},\dots,f_{m}:\reals^{d}\rightarrow\reals$
+\end_inset
+
+ are convex functions and 
+\begin_inset Formula $f=f_{1}+\cdots+f_{m}$
+\end_inset
+
+, then 
+\begin_inset Formula $\partial f(x)=\partial f_{1}(x)+\cdots+\partial f_{m}(x)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+For 
+\begin_inset Formula $\alpha\geq0$
+\end_inset
+
+, 
+\begin_inset Formula $\partial(\alpha f)(x)=\alpha\partial f(x)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status collapsed
+
+\begin_layout Plain Layout
+Subgradients of 
+\begin_inset Formula $f(x)=\|x\|_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let's find the subdifferential of 
+\begin_inset Formula $f(x)=\|x\|_{1}=\sum_{i=1}^{d}|x_{i}|$
+\end_inset
+
+ at any given point 
+\begin_inset Formula $x^{0}=(x_{1}^{0},x_{2}^{0},\dots,x_{d}^{0})$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+By an important property of subdifferential: If 
+\begin_inset Formula $f=f_{1}+\cdots+f_{m}$
+\end_inset
+
+, then 
+\begin_inset Formula $\partial f(x)=\partial f_{1}(x)+\cdots\partial f_{m}(x)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+We could calculate the subgradient of 
+\begin_inset Formula $f^{i}(x)=|x_{i}|$
+\end_inset
+
+ and sum them up.
+ 
+\end_layout
+
+\begin_layout Itemize
+The subgradient 
+\begin_inset Formula $g^{i}=(g_{1}^{i},\dots,g_{d}^{i})$
+\end_inset
+
+ of 
+\begin_inset Formula $f^{i}(x)=|x_{i}|$
+\end_inset
+
+ at 
+\begin_inset Formula $x^{0}=(x_{1}^{0},x_{2}^{0},\dots,x_{d}^{0})$
+\end_inset
+
+ is: 
+\begin_inset Formula 
+\[
+g_{j}^{i}=0,\quad{j\neq i};\quad g_{j}^{i}=s(x_{j}^{0}),\quad j=i,
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $s(x)=\text{sign}(x)$
+\end_inset
+
+ if 
+\begin_inset Formula $x\neq0$
+\end_inset
+
+ and 
+\begin_inset Formula $s(x)\in[-1,1]$
+\end_inset
+
+ if 
+\begin_inset Formula $x=0$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+We sum all the 
+\begin_inset Formula $g^{i}$
+\end_inset
+
+ up to get the subgradient 
+\begin_inset Formula $g=(g_{1},\dots,g_{d})$
+\end_inset
+
+ of 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ at 
+\begin_inset Formula $x^{0}$
+\end_inset
+
+: 
+\begin_inset Formula 
+\[
+g_{i}=s(x_{i}^{0})\quad\text{for all }i
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status collapsed
+
+\begin_layout Plain Layout
+Subgradient Descent for Lasso Problem
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Lasso problem can be parametrized as 
+\begin_inset Formula 
+\[
+\min_{w\in\reals^{d}}J(w)=\frac{1}{n}\sum_{i=1}^{n}\left\{ w^{T}x_{i}-y_{i}\right\} ^{2}+\lambda\|w\|_{1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Subgradients of 
+\begin_inset Formula $J(w)$
+\end_inset
+
+ are 
+\begin_inset Formula 
+\[
+\frac{1}{n}\sum_{i=1}^{n}2\{w^{T}x_{i}-y_{i}\}x_{i}+\lambda s,
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $s_{i}=\text{sign}(w_{i})$
+\end_inset
+
+ if 
+\begin_inset Formula $w_{i}\neq0$
+\end_inset
+
+ and 
+\begin_inset Formula $s_{i}\in[-1,1]$
+\end_inset
+
+ if 
+\begin_inset Formula $w_{i}=0$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status collapsed
+
+\begin_layout Plain Layout
+Subgradient Descent for Lasso Problem: Potential Issues
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Subgradient descent will work for all convex and Lipschitz continuous objective
+ functions.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+BUT, convergence can be very 
+\series bold
+slow
+\series default
+ for non-differentiable functions 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+One can often find better approaches by closer examination of the objective
+ function.
+ For example, shooting method or projected SGD.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Taking small steps in the direction of the (sub)gradient usually may 
+\series bold
+not
+\series default
+ lead to zero coordinates.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+BUT, in practice, we can threshold small values.
+ 
 \end_layout
 
 \end_deeper

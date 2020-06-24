@@ -777,7 +777,7 @@ TO DO:
 \end_layout
 
 \begin_layout Plain Layout
-Put in an annotation on the ROC picture that the x-axis is about 
+- [ ] Put in an annotation on the ROC picture that the x-axis is about 
 \begin_inset Quotes eld
 \end_inset
 
@@ -795,6 +795,14 @@ How we do on the positive examples
 
 .
  
+\end_layout
+
+\begin_layout Plain Layout
+- [ ] Add in slide on how to generate an ROC curve for a hard-classifier
+ (e.g.
+ a tree): can use different sampling rates or sample weights or class weights
+ or things of that sort during training to trace out a curve (c.f.
+ Section 5.2 in Chawla's SMOTE paper)
 \end_layout
 
 \end_inset

@@ -815,7 +815,6 @@ Contents
 
 \end_layout
 
-\begin_deeper
 \begin_layout Standard
 \begin_inset CommandInset toc
 LatexCommand tableofcontents
@@ -825,10 +824,14 @@ LatexCommand tableofcontents
 
 \end_layout
 
-\end_deeper
 \begin_layout Standard
 \begin_inset Note Note
 status open
+
+\begin_layout Plain Layout
+presentation on xgboost, catboost, lightgbm: https://www.youtube.com/watch?v=5CWww
+tEM2TA
+\end_layout
 
 \begin_layout Plain Layout
 Possible ISSUE: For minibatching i.e.

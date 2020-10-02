@@ -802,7 +802,9 @@ How we do on the positive examples
  (e.g.
  a tree): can use different sampling rates or sample weights or class weights
  or things of that sort during training to trace out a curve (c.f.
- Section 5.2 in Chawla's SMOTE paper)
+ Section 5.2 in Chawla's SMOTE paper).
+ Note that if we generate an ROC curve in this way, we no longer have any
+ guarantee that it will be a function!
 \end_layout
 
 \end_inset

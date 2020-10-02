@@ -1,9 +1,9 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin /Users/drosen/Dropbox/repos/mlcourse/Lectures/
+\origin unavailable
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -62,6 +62,8 @@
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -101,6 +103,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_minted 0
 \boxbgcolor #ff31d8
 \index Index
 \shortcut idx
@@ -110,7 +113,10 @@
 \tocdepth 2
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -820,6 +826,69 @@ LatexCommand tableofcontents
 \end_layout
 
 \end_deeper
+\begin_layout Frame
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+On MISSING FEATURES: 
+\end_layout
+
+\begin_layout Plain Layout
+Very nice investigation and discussion in Ding and Simonoff JMLR 2010 http://peo
+ple.stern.nyu.edu/jsimonof/jmlr10.pdf 
+\begin_inset Quotes eld
+\end_inset
+
+An Investigation of Missing Data Methods for Classification Trees Applied
+ to Binary Response Data
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Does comparison of 6 missing data strategies:
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+This study examines six different missing data methods: probabilistic split,
+ complete case method, grand mode/mean imputation, separate class, surrogate
+ split, and complete variable method.
+ Probabilistic split is the default method of C4.5 (Quinlan, 1993).
+ In the training phase, observations with values observed on the split variable
+ are split first.
+ The ones with missing values are then put into each of the child nodes
+ with a weight given as the proportion of non-missing instances in the child.
+ In the testing phase, an observation with a missing value on a split variable
+ will be associated with all of the children using probabilities, which
+ are the weights recorded in the training phase.
+ The complete case method deletes all observations that contain missing
+ values in any of the predictors in the training phase.
+ If the testing set also contains missing values, the complete case method
+ is not applicable and thus some other method has to be used.
+ In the simulations, we use C4.5 to realize the complete case method.
+ In the training phase, we manually delete all of the observations with
+ missing values and then run C4.5 on the pre-processed remaining complete
+ data.
+ In the testing phase, the default missing data method, probabilistic split,
+ is used.
+ Grand mode imputation imputes the missing value with the grand mode of
+ that variable if it is categorical.
+ Grand mean is used if the variable is continuous.
+ The separate class method treats the missing values as a new class...
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset Note Note
 status open
@@ -839,6 +908,11 @@ status open
 
 \begin_layout Plain Layout
 TODO:
+\end_layout
+
+\begin_layout Plain Layout
+-1) Make slide on C4.5 approach to missing data at test (probabilistic combinatio
+n of leaf nodes, based on training set size)
 \end_layout
 
 \begin_layout Plain Layout
@@ -3243,33 +3317,6 @@ Predictors
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Itemize
-Features are also called 
-\series bold
-covariates
-\series default
- or 
-\series bold
-predictors
-\series default
-.
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\end_inset
-
-
-\end_layout
-
 \begin_layout Itemize
 What to do about missing features? 
 \end_layout
@@ -3419,7 +3466,7 @@ tiny{I found the CART book a bit vague on this, so this is my best guess
 status open
 
 \begin_layout Plain Layout
-Surrogate Splits for Missing Data
+Surrogate Splits for Missing Data [CART approach]
 \end_layout
 
 \end_inset
@@ -4778,6 +4825,7 @@ See
 LatexCommand href
 name "On subtrees of trees"
 target "http://www.sciencedirect.com/science/article/pii/S0196885804000697"
+literal "false"
 
 \end_inset
 

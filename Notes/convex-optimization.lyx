@@ -839,8 +839,7 @@ Recall that a
 subspace
 \series default
  is a subset of a vector space that is closed under sums and scalar multiplicati
-on.
- If 
+on.  This implies that a subspace must contain the origin (by closure under multiplication by 0).  Intuitively, a subspace is an affine space that contains the origin. If 
 \begin_inset Formula $C$
 \end_inset
 

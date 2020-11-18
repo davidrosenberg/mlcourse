@@ -2408,7 +2408,7 @@ example weight adjustment
 \end_deeper
 \end_deeper
 \begin_layout Enumerate
-Ouptut 
+Output 
 \begin_inset Formula $G(x)=\sign\left[\sum_{m=1}^{M}\alpha_{m}G_{m}(x)\right]$
 \end_inset
 

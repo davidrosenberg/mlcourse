@@ -1,0 +1,137 @@
+# -*- mode: Org; org-download-image-dir: "./figures"; -*-
+#+STARTUP: latexpreview
+#+STARTUP: showall
+#+STARTUP: entitiespretty
+#+OPTIONS: ':t *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t
+#+OPTIONS: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
+#+OPTIONS: email:nil f:t inline:t num:nil p:nil pri:nil prop:nil stat:t tags:t
+#+OPTIONS: tasks:t tex:t timestamp:t title:t toc:nil todo:t |:t
+#+TITLE: DS-GA 3001: Tools and Techniques for Machine Learning (Spring 2021)
+#+DATE: 2020-11-13
+#+AUTHOR: Instructor: David S. Rosenberg
+#+LANGUAGE: en
+#+CREATOR: Emacs 26.3 (Org mode 9.2)
+#+LATEX_CLASS: paper
+#+LATEX_CLASS_OPTIONS: [9pt,letterpaper,english]
+#+LATEX_HEADER: \input{my_macros.tex}
+#+LATEX_HEADER: \usepackage[utf8]{inputenc}
+#+LATEX_HEADER: \usepackage[T1]{fontenc}
+
+#+LATEX_HEADER_EXTRA:
+#+DESCRIPTION:
+#+KEYWORDS:
+#+SUBTITLE:
+#+LATEX_COMPILER: pdflatex
+
+
+#+LATEX_HEADER: \hypersetup{colorlinks=true, linkcolor=blue}
+#+LATEX_HEADER: \hypersetup{filecolor=magenta, urlcolor=cyan, citecolor=magenta}
+#+LATEX_HEADER: \usepackage[round]{natbib}
+
+* COMMENT Basic Information
+- *Instructor*: David Rosenberg
+- *Term*: Spring 2021
+
+* Course description
+This survey course deals with a range of topics that come up when applying machine learning in practice. Roughly half the course will cover topics connected to machine learning with interventions, such as counterfactual learning, reinforcement learning, and causal inference. Inverse propensity methods for handling biased samples and control variate methods for reducing variance will be given special attention, as these form a common thread of techniques relevant to each of these topics.  We will also cover calibrating probability forecasts, interpreting machine learning models, active learning, crowdsourcing and "data programming", as time permits.
+
+* Prerequisites
+- [[https://davidrosenberg.github.io/ml2018/][DS-GA 1003: Machine Learning]] or equivalent.
+- [[https://cims.nyu.edu/~cfgranda/pages/DSGA1002_fall17/index.html][DS-GA 1002: Probability and Statistics]] or equivalent.
+- Comfort with [[https://davidrosenberg.github.io/mlcourse/Notes/conditional-expectations.pdf][conditional expectations]], [[https://davidrosenberg.github.io/mlcourse/Archive/2018/Lectures/06a.conditional-probability-models.pdf][conditional probability modeling]], basic [[https://davidrosenberg.github.io/mlcourse/Archive/2018/Lectures/08a.bayesian-methods.pdf][Bayesian statistics]], hypothesis testing and confidence intervals.
+- Python programming required for most homework assignments.
+
+* Schedule
+*DISCLAIMER:* This is a draft syllabus that is subject to change. We will cover the majority of the topics below, but the organization and specific topics may change.
+- *Week 1*: Estimating a population mean with a biased sample
+- *Week 2*: Exploration vs exploitation for bandits
+- *Week 3*: Machine learning for causal inference
+- *Week 4*: Counterfactual policy evaluation
+- *Week 5*: Counterfactual learning
+- *Week 6*: Introduction to reinforcement learning
+- *Week 7*: Catch-up and review
+- *Week 8*: Calibrated probability predictions
+- *Week 9*: Methods for global feature importance
+- *Week 10*: Explaining black-box model predictions
+- *Week 11*: Crowdsourcing
+- *Week 12*: Active learning
+- *Week 13*: Weak supervision and "Data Programming"
+- *Week 14*: Catch-up, review, and conclusions
+
+* Course Requirements and Evaluation
+- *(50%) Homework*: 4 -- 5 homework assignments; mix of model building and written mathematical exercises to reinforce the main concepts. 
+- *(20%) Weekly Quizzes*: Concept-check quizzes that reinforce the main ideas from lectures and lab, which students may use any resources to complete.
+- *(30%) Project*: In groups of 2--4, reproduce the experiments from a paper of relevance to the course and extend them in some way (e.g. an additional dataset, a new evaluation process, comparing to another method, etc.).
+
+* Topic Details
+*** Estimating a population mean with a biased sample 
+There are certain challenging ideas and techniques that come up repeatedly in the first part of our course (in causal inference, counterfactual learning, and reinforcement learning).  We will introduce them here in the simplest possible setting: estimating the mean of a population with a biased sample.  
+- Regression, inverse propensity, and doubly robust methods cite:seaman-2018-introd-to,kang-2007-demys-doubl-robus 
+- [[https://statweb.stanford.edu/~owen/mc/Ch-var-basic.pdf][Control variates for variance reduction]] [[cite:owen-2013-monte-carlo][Sec 8.9]]
+*** Exploration vs exploitation for bandits
+When machine learning is applied in practice, it is often used to guide *interventions* in the world that we hope will improve some outcome measure. How can we balance "exploiting" interventions that worked well before (e.g. suggesting comedy movies for a particular individual) with "exploring" new intervention strategies (e.g. suggesting action movies) that may have better outcomes? In this module, we explore approaches to this classic "explore/exploit" problem.  We will start with a focus on the simple "bernoulli bandit" setting.  Then we will introduce the more general contextual bandit setting, and discuss explore/exploit methods for that case as well.
+- Gradient bandit algorithms [[cite:sutton-2018-reinf-learn-2ed][Sec 2.8]] 
+  - Using a "baseline" for variance reduction (a control variate technique) 
+- [[https://davidrosenberg.github.io/mlcourse/in-prep/thompson-sampling-bernoulli.pdf][Thompson sampling]] for bandits and contextual bandits cite:chapelle-2011-emp-eval-thomp,russo-2018-tutor-thomp-sampl
+*** Machine learning for causal inference 
+When we start making interventions, one of the most basic questions we can ask is which of two interventions (such as a treatment and a control) is better.  In a basic statistics class, we learn how to estimate the "average treatment effect" (ATE) when individuals are assigned to a treatment or control group with equal probability. In this module, we discuss how to estimate the ATE when individuals are assigned to interventions with probabilities that depend on covariates (i.e. characteristics/features of the individuals). Of course, interventions may have better or worse performance depending on characteristics of the individuals. We will also discuss how to estimate these "conditional average treatment effects".
+- Estimating average treatment effects with inverse propensity weighting
+- Two trees algorithm for estimating conditional average treatment effects (CATE)  cite:athey-2015-machin-learn
+- X-learner algorithm for CATE estimation cite:kuenzel-2019-metal-estim
+   - (optional) Honest random forest cite:athey-2015-recur-partit 
+   - (optional) Bayesian Additive Regression Trees (BART) cite:chipman-2010-BART
+*** Counterfactual policy evaluation
+Suppose we believe that different interventions are preferable for different individuals, depending on their characteristics.  Then we want to develop a "policy" that determines the interventions we take as a function of the characteristics of the individual.  Given two policies, the simplest way to compare their performance is with an "A/B test", which basically means deploying the two policies and seeing how they do.  However, there can be very high costs to deploying a sub-optimal policy.  Furthermore, there is a practical limit to how many policies we can test out and still get a reasonable estimate of the performance each. In this module, we discuss how we can estimate the performance of a new policy without actually deploying it, using data that was already collected with a different policy.  This data collected from the, so called, "logging policy" is called "logged bandit feedback".  We will revisit our discussion of imputation, inverse propensity, and doubly robust methods and apply them to the problem of estimating the performance of a policy using logged bandit feedback.
+- Extending the imputation, inverse propensity, and doubly robust methods to counterfactual policy evaluation from logged bandit feedback cite:dudik-2011-doubly-robust
+*** Counterfactual learning
+In our module on counterfactual policy evaluation, we discussed some methods for estimating the performance of a new policy using logged bandit feedback.  However, the uncertainty of these estimates can vary dramatically, depending on how different the new policy is from the logging policy.  In this module, we discuss how to handle this uncertainty when it comes to learning an optimal policy from logged bandit feedback.
+- Learning from logged bandit feedback (POEM) cite:swaminathan-2015-counterfactual,swaminathan-2015-batch-learn
+- Propensity overfitting (self-normalized estimator) cite:swaminathan-2015-self
+*** Introduction to reinforcement learning
+So far we've considered learning and evaluating policies in the contextual bandit setting, where we assume that the contexts we observe are i.i.d.  In the reinforcement learning setting, sequences of contexts are grouped together into "episodes", which will have sequential dependencies. In particular, the action we take at one step in the episode may affect the next context we observe. In this module, we study "policy gradient" approaches for learning policies in this setting. 
+- Empirical risk minimization with black-box loss functions 
+- Policy gradient methods for reinforcement learning [[cite:sutton-2018-reinf-learn-2ed][Ch 13]] 
+  - Using a "baseline" for variance reduction (a control variate technique) 
+*** Calibrated probability predictions
+For models that make probabilistic predictions, how can we ensure that they are both "calibrated" (e.g. the "70%" outcomes actually occur 70% of the time) and "sharp" (e.g. the probability predicted for the successful outcome of a surgery isn't just the overall success rate, but varies depending on as many characteristics of the individual as we can). It turns out, even assessing whether a model is calibrated is nontrivial. In this module, we discuss some classic and modern approaches to calibration and to assessing calibration.
+ - Assessing probabilistic predictions: $\ell_p$ calibration error, Brier score, and likelihood
+ - Basic calibration methods: histogram binning and Platt scaling cite:platt-1999-prob-output
+ - Bias/variance tradeoffs in assessing calibration
+ - The scaling-binning calibrator cite:kumar-2019-verif-uncert-calib 
+*** Feature importance
+There are many methods that purport to measure the relative importance of various features in a model.  As one digs in, one finds that there are about as many different methods for defining what is meant by feature importance.  In this module, we discuss the many intepretations of "feature importance".  We also present some of the most popular approaches to feature importance, along with a discussion of how they can be misinterpreted.
+- Permutation feature importance cite:breiman-2001-random-forest
+- Partial Dependency Plots (PDP) cite:friedman-2001-greedy-func-appr
+- Individual Conditional Expectation (ICE) Plots cite:goldstein-2013-peekin-insid
+- Issues with above methods cite:hooker-2019-pleas-stop
+*** Explaining black-box model predictions
+The previous module was about the relative importance of features in a model, as a whole.  In this module, we discuss how to assess the contributions of each features to a *particular* model prediction.  We'll discuss some recent approaches to these "local" model interpretations, as well as some of their issues.
+- Local Interpretable Model-agnostic Explanations (LIME) cite:ribeiro-2016-why-shoul 
+- Shapley Additive Explanation (SHAP) cite:lundberg-2017-unified-approac,lundberg-2020-from-local
+- Debate about SHAP and similar interpretability methods cite:sundararajan-2019-many-shapl,kumar-2020-probl-with,alvarez-melis-2018-robus-inter-method
+*** Crowdsourcing
+For many problems in the real world, a major expense (time and money) in building a machine learning model is in the collection of labeled data.  In this module and the following two modules we will address several aspects of this problem.  In this module, we discuss how we can use "crowd workers" (generally non-expert, and with varying error rates) to generate reasonably reliable labels for our data. In particular, how many crowd workers should we get to label each example?  How do we automatically resolve disagreements? 
+- Jointly estimating worker skill and ground truth with Dawid-Skene two-coin model cite:dawid-1979-mle-observ-err,raykar-2010-learning,zhang-2014-spect-method,zhang-2014-spect-method  
+- Incorporating example difficulty cite:zhou-2015-regul-minim
+- How many labels do we need per example? cite:khetan-2017-learn-from
+*** Active learning 
+Given a large pool of unlabeled examples and a finite budget for labeling these examples, can we do better than randomly sampling unlabeled examples to be labeled?  This is the core question of the "active learning" problem.  In this module, we discuss some classic approaches to active learning, as well as some refinements.
+- Uncertainty Sampling cite:lewis-1994-heterogeneous
+- Query-by-committee cite:settles-2009-active  
+- Selection with simpler proxy models cite:coleman-2020-select-via-proxy
+- Evaluating active learning methods cite:yang-2016-bench-compar
+*** Weak supervision and "Data Programming"
+Rather than labeling individual examples, we can consider getting experts to write "rules" for generating labels. For example, a rule might be "If the radiologist's report has the phrase 'is cancerous' then the corresponding image should be labeled as 'shows cancer'."  In this module we discuss how we might use these imprecise rules to generate a useful training set of "weakly labeled" data.
+- Human-generated rules as weak supervision (SNORKEL) cite:ratner-2016-data-progr
+- Matrix factorization for multitask weak supervision cite:ratner-2018-train-compl
+
+* Academic Integrity Policy:
+The course conforms to [[http://www.nyu.edu/about/policies-guidelines-compliance/policies-and-guidelines/academic-integrity-for-students-at-nyu.html][NYU’s policy]] on academic integrity for students.
+
+* Moses Statement
+Academic accommodations are available for students with disabilities. The Moses Center website is [[http://www.nyu.edu/csd]]. Please contact the Moses Center for Students with Disabilities (212-998-4980 or mosescsd@nyu.edu) for further information. Students who are requesting academic accommodations are advised to reach out to the Moses Center as early as possible in the semester for assistance.
+
+
+* The Bibliography :ignore:
+bibliographystyle:apalike
+bibliography:refs.bib

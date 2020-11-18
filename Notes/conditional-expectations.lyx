@@ -604,6 +604,10 @@ Note: Although we usually use lower case variables for both random variables
  
 \end_layout
 
+\begin_layout Section
+The Notation
+\end_layout
+
 \begin_layout Itemize
 Suppose 
 \begin_inset Formula $X$
@@ -901,6 +905,10 @@ We can now interpret
 
 \end_layout
 
+\begin_layout Section
+Law of Iterated Expectations
+\end_layout
+
 \begin_layout Itemize
 It turns out there is a 
 \begin_inset Quotes eld
@@ -946,6 +954,136 @@ It's easy to prove in the case of finite
  & = & \sum_{y\in\cy}yp(y)\\
  & = & \ex Y
 \end{eqnarray*}
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Section
+Law of Total Variance 
+\end_layout
+
+\begin_layout Plain Layout
+According to 
+\begin_inset CommandInset href
+LatexCommand href
+name "wikipedia"
+target "https://en.wikipedia.org/wiki/Law_of_total_variance"
+literal "false"
+
+\end_inset
+
+, the law of total variance goes by many names, including the variance decomposi
+tion formula, conditional variance formulas, law of iterated variances,
+ and Eve's law.
+\end_layout
+
+\begin_layout Theorem*
+If 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
+\begin_inset Formula $Y$
+\end_inset
+
+ are random variables on the same probability space, and the variance of
+ 
+\begin_inset Formula $Y$
+\end_inset
+
+ is finite, then
+\begin_inset Formula 
+\[
+\var(Y)=\ex\left[\var(Y\mid X)\right]+\var(\ex\left[Y\mid X\right]).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Based on the discussion above, you should be able to figure out how to interpret
+ 
+\begin_inset Formula $\var(Y\mid X)$
+\end_inset
+
+ – it's exactly analogous to 
+\begin_inset Formula $\ex[Y\mid X]$
+\end_inset
+
+.
+ First, 
+\begin_inset Formula $\var(Y\mid X=x)$
+\end_inset
+
+ is the variance of the conditional distribution 
+\begin_inset Formula $Y\mid X=x$
+\end_inset
+
+ – that's just a number.
+ Then 
+\begin_inset Formula $\var(Y\mid X)$
+\end_inset
+
+ is a random variable, and 
+\begin_inset Formula $\ex\left[\var(Y\mid X)\right]$
+\end_inset
+
+ is its expectation.
+ In words, what's the conditional variance of 
+\begin_inset Formula $Y$
+\end_inset
+
+ when averaged out over the marginal distribution of 
+\begin_inset Formula $X$
+\end_inset
+
+? It's tempting to say that this value should be smaller than 
+\begin_inset Formula $\var(Y)$
+\end_inset
+
+, since getting new information about 
+\begin_inset Formula $Y$
+\end_inset
+
+ from 
+\begin_inset Formula $X$
+\end_inset
+
+ would seem to make 
+\begin_inset Formula $\var(Y\mid X=x)\le\var(Y)$
+\end_inset
+
+ for all 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ But not really: for example 
+\begin_inset Formula $X=x$
+\end_inset
+
+ could be an unusual situation that corresponds to a large value of 
+\begin_inset Formula $\var(Y\mid X=x)$
+\end_inset
+
+, but...
+ https://www.quora.com/Is-conditional-variance-of-a-random-variable-always-less-or
+-equal-to-its-unconditional-variance
+\end_layout
 
 \end_inset
 

@@ -51,13 +51,49 @@ xmin=-4
 xmax=40
 d = data.table(margin = seq(xmin,xmax,length.out=3000))
 d[, Logistic := log(1+ exp(-margin))]
+d[, Logistic := log(1+ exp(-margin))]
 d[, LogLogistic := log(Logistic)]
 p = ggplot(d, aes(x=margin, y=Logistic))
 p + geom_line(size=1.6)+ xlab("Margin m=yf(x)") + ylab("Logistic(m)")+scale_y_log10()
 
+## Logistic loss (i.e. log-likelihood) and square loss for positive class vs predicted probability (based on margin)
+pmin=.95
+pmax=1
+rescale_pmin = .5
+rescale = TRUE
+d = data.table(p = seq(pmin,pmax,length.out=3000))
+d[, NegLogLoss := -log(p)]
+d[, SqrLoss := (1-p)^2]
+if (rescale) {
+  d[, NegLogLossScaled := NegLogLoss / (-log(rescale_pmin))]
+  d[, SqrLossScaled := SqrLoss / (1-rescale_pmin)^2]
+} else {
+  d[, NegLogLossScaled := (NegLogLoss-min(NegLogLoss)) / max(NegLogLoss - min(NegLogLoss))]
+  d[, SqrLossScaled := (SqrLoss -min(SqrLoss))/ max(SqrLoss-min(SqrLoss))]
+}
+dd = melt(d, id.vars = c('p'))
+plot_lower_lim = 0 
+p = ggplot(dd[variable %in% c('NegLogLossScaled', 'SqrLossScaled') & (p>plot_lower_lim)], aes(x=p, y=value, color=variable))
+p = p + geom_line(size=1.6)+ xlab("Predicted probability p") + ylab("Loss(p, 1)") 
+p + theme(legend.position="right") +theme(legend.title=element_blank())
+plot_lower_lim = 0
+p = ggplot(dd[variable %in% c('NegLogLoss', 'SqrLoss') & (p>plot_lower_lim)], aes(x=p, y=value, color=variable))
+p + geom_line(size=1.6)+ xlab("Predicted probability p") + ylab("Loss(p, 1)") +ylim(0,3)
+
+p = ggplot(dd[variable %in% c('NegLogLoss', 'SqrLoss') & (p>plot_lower_lim)], aes(x=p, y=value))
+p = p + geom_line(size=1.6)+ xlab("Predicted probability p") + ylab("Loss(p, 1)") 
+p +facet_grid(. ~ variable ,scales="free", space="free")
 
 
-p = ggplot(d, aes(x=margin, y=LogLogistic))
++xlim(0,1)+ylim(0,4)
+    p = p + theme(legend.justification=c(0,0), legend.position=c(0.6,.6))
+    print(fname)
+    fname = paste0(jobFolder,"/loss.",paste(plotOrder[1:i],collapse="."),".png")
+    ggsave(filename=fname,plot=p, units="in", width=6, height = 4)
+}
+
+
+
 p + geom_line(size=1.6)+ xlab("Margin m=yf(x)") + ylab("LogLoss(m)")
 p = p + geom_line(size=1.6)+ xlab("Margin m=yf(x)") + ylab("Loss(m)")+xlim(-3,3)+ylim(
 d

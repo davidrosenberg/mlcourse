@@ -655,17 +655,28 @@ noprefix "false"
  we show that
 \begin_inset Formula 
 \[
-\del_{w}\nll(w)=\sum_{i=1}^{n}\left(\phi(w^{T}x_{i})-y_{i}\right)x_{i}.
+\del_{w}\nll(w)=\sum_{i=1}^{n}\left(\phi(w^{T}x_{i})-y_{i}\right)x_{i},
 \]
 
 \end_inset
 
-The objective function 
+and in Appendix 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:NLL-is-convex"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ we show that the objective function 
 \begin_inset Formula $\nll(w)$
 \end_inset
 
- is convex, so we'll get close to the global minimizer by gradient descent.
- The minimizer would have 
+ is convex.
+ So we'll get close to the global minimizer by gradient descent, and the
+ minimizer would have 
 \begin_inset Formula $\del_{w}\nll(w)=0$
 \end_inset
 
@@ -675,8 +686,7 @@ The objective function
 \end_inset
 
  features.
- Let's consider one entry at a time.
- Let's write 
+ Let's consider one entry at a time and write 
 \begin_inset Formula $x_{i}^{j}$
 \end_inset
 

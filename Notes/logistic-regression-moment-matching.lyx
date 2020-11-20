@@ -1,0 +1,1130 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass paper
+\use_default_options false
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding iso8859-1
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "default" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize letterpaper
+\use_geometry false
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 5
+\tocdepth 5
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\reals}{\mathbf{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\integers}{\mathbf{Z}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\naturals}{\mathbf{N}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\rationals}{\mathbf{Q}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ca}{\mathcal{A}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cb}{\mathcal{B}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cc}{\mathcal{C}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\cd}{\mathcal{D}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ce}{\mathcal{E}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cf}{\mathcal{F}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cg}{\mathcal{G}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ch}{\mathcal{H}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ci}{\mathcal{I}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cj}{\mathcal{J}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ck}{\mathcal{K}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cl}{\mathcal{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cm}{\mathcal{M}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cn}{\mathcal{N}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\co}{\mathcal{O}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cp}{\mathcal{P}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cq}{\mathcal{Q}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\calr}{\mathcal{R}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cs}{\mathcal{S}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ct}{\mathcal{T}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cu}{\mathcal{U}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cv}{\mathcal{V}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cw}{\mathcal{W}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cx}{\mathcal{X}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cy}{\mathcal{Y}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cz}{\mathcal{Z}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ind}[1]{1(#1)}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\pr}{\mathbb{P}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\predsp}{\cy}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\outsp}{\cy}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\prxy}{P_{\cx\times\cy}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\prx}{P_{\cx}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\prygivenx}{P_{\cy\mid\cx}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ex}{\mathbb{E}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\var}{\textrm{Var}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cov}{\textrm{Cov}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\sgn}{\textrm{sgn}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\sign}{\textrm{sign}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\kl}{\textrm{KL}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\law}{\mathcal{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\eps}{\varepsilon}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\as}{\textrm{ a.s.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\io}{\textrm{ i.o.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ev}{\textrm{ ev.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\convd}{\stackrel{d}{\to}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\eqd}{\stackrel{d}{=}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\del}{\nabla}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\loss}{V}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\risk}{R}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\emprisk}{\hat{R}_{\ell}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\lossfnl}{L}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\emplossfnl}{\hat{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\empminimizer}[1]{\hat{#1}_{\ell}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\minimizer}[1]{#1_{*}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\etal}{\textrm{et. al.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\tr}{\operatorname{tr}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\trace}{\operatorname{trace}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\diag}{\text{diag}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\rank}{\text{rank}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\linspan}{\text{span}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\proj}{\text{Proj}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\argmax}{\operatornamewithlimits{arg\, max}}
+{\mbox{argmax}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\argmin}{\operatornamewithlimits{arg\, min}}
+{\mbox{argmin}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfx}{\mathbf{x}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfy}{\mathbf{y}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfl}{\mathbf{\lambda}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfm}{\mathbf{\mu}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\calL}{\mathcal{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vw}{\boldsymbol{w}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vx}{\boldsymbol{x}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vxi}{\boldsymbol{\xi}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\valpha}{\boldsymbol{\alpha}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vbeta}{\boldsymbol{\beta}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vsigma}{\boldsymbol{\sigma}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vmu}{\boldsymbol{\mu}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vtheta}{\boldsymbol{\theta}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vd}{\boldsymbol{d}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vs}{\boldsymbol{s}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vt}{\boldsymbol{t}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vh}{\boldsymbol{h}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ve}{\boldsymbol{e}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vf}{\boldsymbol{f}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vg}{\boldsymbol{g}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vz}{\boldsymbol{z}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vk}{\boldsymbol{k}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\va}{\boldsymbol{a}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vb}{\boldsymbol{b}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vv}{\boldsymbol{v}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vy}{\boldsymbol{y}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\hil}{\ch}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\rkhs}{\hil}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\nll}{\text{NLL}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+Logistic/Softmax Regression by Moment Matching
+\end_layout
+
+\begin_layout Author
+David S.
+ Rosenberg
+\end_layout
+
+\begin_layout Date
+November 19, 2020
+\end_layout
+
+\begin_layout Section
+Logistic regression
+\end_layout
+
+\begin_layout Standard
+Consider the conditional probability modeling setting with input space 
+\begin_inset Formula $\cx=\reals^{d}$
+\end_inset
+
+ and outcome space 
+\begin_inset Formula $\cy=\left\{ 0,1\right\} $
+\end_inset
+
+.
+ We want to predict the probability of the outcome 
+\begin_inset Formula $1$
+\end_inset
+
+ for any input 
+\begin_inset Formula $x\in\cx$
+\end_inset
+
+.
+ The logistic regression model is 
+\begin_inset Formula $\pr\left(Y=1\mid X=x;w\right)=\phi(w^{T}x)$
+\end_inset
+
+, where 
+\begin_inset Formula $\phi(\eta)=1/\left(1+e^{-\eta}\right)$
+\end_inset
+
+ (the standard logistic function).
+ We fit 
+\begin_inset Formula $w\in\reals^{d}$
+\end_inset
+
+ by minimizing the negative log-likelihood (NLL) of 
+\begin_inset Formula $w$
+\end_inset
+
+ for some data 
+\begin_inset Formula $\cd=\left((x_{i},y_{i})\right)_{i=1}^{n}$
+\end_inset
+
+.
+ The NLL is 
+\begin_inset Formula 
+\begin{eqnarray*}
+\nll(w) & = & -\left[\sum_{i=1}^{n}y_{i}\log\phi(w^{T}x_{i})+\left(1-y_{i}\right)\log\left(1-\phi(w^{T}x_{i})\right)\right]
+\end{eqnarray*}
+
+\end_inset
+
+In Appendix 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Gradient-of-NLL"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ we show that
+\begin_inset Formula 
+\[
+\del_{w}\nll(w)=\sum_{i=1}^{n}\left(\phi(w^{T}x_{i})-y_{i}\right)x_{i}.
+\]
+
+\end_inset
+
+The objective function 
+\begin_inset Formula $\nll(w)$
+\end_inset
+
+ is convex, so we'll get close to the global minimizer by gradient descent.
+ The minimizer would have 
+\begin_inset Formula $\del_{w}\nll(w)=0$
+\end_inset
+
+.
+ Note that this is a vector equation, with one entry for each of 
+\begin_inset Formula $d$
+\end_inset
+
+ features.
+ Let's consider one entry at a time.
+ Let's write 
+\begin_inset Formula $x_{i}^{j}$
+\end_inset
+
+ for the 
+\begin_inset Formula $j$
+\end_inset
+
+'th feature in the 
+\begin_inset Formula $i$
+\end_inset
+
+'th example.
+ Then we can write the optimality conditions for 
+\begin_inset Formula $w$
+\end_inset
+
+ as
+\begin_inset Formula 
+\begin{eqnarray*}
+\sum_{i=1}^{n}\phi(w^{T}x_{i})x_{i}^{j} & = & \sum_{i=1}^{n}y_{i}x_{i}^{j}\qquad\forall j\in\left\{ 1,\ldots,d\right\} .
+\end{eqnarray*}
+
+\end_inset
+
+To interpret this more easily, let's be concrete.
+ Suppose 
+\begin_inset Formula $x_{i}^{j}=\ind{i\text{ has red hair}}$
+\end_inset
+
+ and suppose that 
+\begin_inset Formula $y_{i}=1$
+\end_inset
+
+ means that 
+\begin_inset Formula $i$
+\end_inset
+
+ likes ice cream.
+ Then on the RHS, each summand 
+\begin_inset Formula $y_{i}x_{i}^{j}$
+\end_inset
+
+ is 1 if individual 
+\begin_inset Formula $i$
+\end_inset
+
+ has red hair AND likes ice cream, and 
+\begin_inset Formula $0$
+\end_inset
+
+ otherwise.
+ On the LHS, 
+\begin_inset Formula $\phi(w^{T}x_{i})x_{i}^{j}$
+\end_inset
+
+ is 
+\begin_inset Formula $0$
+\end_inset
+
+ if individual 
+\begin_inset Formula $i$
+\end_inset
+
+ does not have red hair (because 
+\begin_inset Formula $x_{i}^{j}$
+\end_inset
+
+ is 
+\begin_inset Formula $0$
+\end_inset
+
+) and otherwise it's the predicted probability that the [red-haired] individual
+ likes ice cream.
+ So then the LHS is the 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+expected number of individuals in the training set that have red hair and
+ like ice cream, where the expectation is w.r.t.
+ the model.
+ The RHS is the number of individuals in the training set who have red hair
+ and who like ice cream
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+.
+\end_layout
+
+\begin_layout Standard
+For the optimal 
+\begin_inset Formula $w$
+\end_inset
+
+, these counts and expected counts must be equal for all 
+\begin_inset Formula $d$
+\end_inset
+
+ features.
+ 
+\end_layout
+
+\begin_layout Section
+Multinomial logistic regression wtih compatibility feature functions
+\end_layout
+
+\begin_layout Standard
+The multinomial logistic regression model is a special case of the following
+ probability model
+\begin_inset Formula 
+\[
+p(y|x;w)=\frac{\exp(\sum_{r}w_{r}g_{r}(x,y))}{\sum_{y'}\exp(\sum_{r}w_{r}g_{r}(y',x))},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $(x,y)\in\cx\times\cy$
+\end_inset
+
+ (
+\begin_inset Formula $\cx$
+\end_inset
+
+ arbitrary, 
+\begin_inset Formula $\cy$
+\end_inset
+
+ finite), the 
+\begin_inset Formula $g_{i}:(x,y)\mapsto\reals$
+\end_inset
+
+ for 
+\begin_inset Formula $i=1,\ldots,d$
+\end_inset
+
+ are the 
+\begin_inset Quotes eld
+\end_inset
+
+compatibility features
+\begin_inset Quotes erd
+\end_inset
+
+, or we can call all the 
+\begin_inset Formula $g$
+\end_inset
+
+'s together the 
+\begin_inset Quotes eld
+\end_inset
+
+class-sensitive feature map
+\begin_inset Quotes erd
+\end_inset
+
+ (depending on who you ask).
+ 
+\end_layout
+
+\begin_layout Standard
+Exercise: How is multinomial logistic regression a special case of this?
+ Answer: Let 
+\begin_inset Formula $\cx=\reals^{D}$
+\end_inset
+
+ and let 
+\begin_inset Formula $\cy=\left\{ 1,\ldots,k\right\} $
+\end_inset
+
+.
+ For each 
+\begin_inset Formula $j\in\left\{ 1,\ldots,D\right\} $
+\end_inset
+
+ and for each 
+\begin_inset Formula $c\in\cy$
+\end_inset
+
+, create a compatibility feature 
+\begin_inset Formula $g_{k}(x,y)=x^{j}\ind{y=c}$
+\end_inset
+
+, where 
+\begin_inset Formula $x^{j}$
+\end_inset
+
+ is the 
+\begin_inset Formula $j$
+\end_inset
+
+th component of the original feature vector 
+\begin_inset Formula $x\in\reals^{D}$
+\end_inset
+
+.
+ So in the end there will be 
+\begin_inset Formula $kD$
+\end_inset
+
+ compatibility features, and 
+\begin_inset Formula $w\in\reals^{d}$
+\end_inset
+
+ where 
+\begin_inset Formula $d=kD$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+We'll find 
+\begin_inset Formula $w$
+\end_inset
+
+ by maximum likelihood.
+ The log-likelihood of 
+\begin_inset Formula $w$
+\end_inset
+
+ for a dataset 
+\begin_inset Formula $\left(x_{1},y_{1}\right),\ldots,\left(x_{n},y_{n}\right)$
+\end_inset
+
+ is
+\begin_inset Formula 
+\begin{eqnarray*}
+L(w) & = & \sum_{i=1}^{n}\log p(y_{i}|x_{i};w)\\
+ & = & \sum_{i=1}^{n}\left(\sum_{\textrm{ftr }r}w_{r}g_{r}(x_{i},y_{i})-\log\left[\sum_{\textrm{label }y}\exp\left(\sum_{\textrm{ftr }r}w_{r}g_{r}(x_{i},y)\right)\right]\right)
+\end{eqnarray*}
+
+\end_inset
+
+Let's compute the partials:
+\begin_inset Formula 
+\begin{eqnarray*}
+\frac{\partial}{\partial w_{r}}L(w) & = & \sum_{i=1}^{n}\left(g_{r}(x_{i},y_{i})-\frac{\sum_{\textrm{label }y}g_{r}(x_{i},y)\exp\left(\sum_{\textrm{ftr }r}w_{r}g_{r}(x_{i},y)\right)}{\sum_{\textrm{label }y}\exp\left(\sum_{\textrm{ftr }r}w_{r}g_{r}(x_{i},y)\right)}\right)\\
+ & = & \sum_{i=1}^{n}\left(g_{r}(x_{i},y_{i})-\sum_{\textrm{label }y}g_{r}(x_{i},y)p(y\mid x_{i};w)\right)\\
+ & = & \sum_{i=1}^{n}\left(g_{r}(x_{i},y_{i})-\ex\left[g_{r}(x_{i},Y)\mid X=x_{i};w\right]\right),
+\end{eqnarray*}
+
+\end_inset
+
+where the last expectation is over the distribution for 
+\begin_inset Formula $Y$
+\end_inset
+
+ predicted by our model given input 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ and parameter vector 
+\begin_inset Formula $w$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Note that the first term of 
+\begin_inset Formula $L(w)$
+\end_inset
+
+ is linear in 
+\begin_inset Formula $w$
+\end_inset
+
+ and the second term is the negative of the log-sum-exp of linear functions
+ of 
+\begin_inset Formula $w$
+\end_inset
+
+, so the whole thing is concave (cf.
+ Boyd&Vandenberghe Example 3.14, p.
+ 87).
+ That means we should be able to get close to the global minimum with gradient
+ descent.
+ So let's examine what happens at the solution to the first order conditions,
+ since that's what we'll have at the optimum:
+\begin_inset Formula 
+\begin{eqnarray*}
+\frac{\partial}{\partial w_{r}}L(w) & = & 0\\
+\iff\frac{1}{n}\sum_{i=1}^{n}g_{r}(x_{i},y_{i}) & = & \frac{1}{n}\sum_{i=1}^{n}\ex\left[g_{r}(x_{i},Y)\mid X=x_{i};w\right]
+\end{eqnarray*}
+
+\end_inset
+
+So if 
+\begin_inset Formula $g_{r}(x,y)=\ind{x\text{ has red hair}}\ind{y=\text{likes ice cream}},$
+\end_inset
+
+ then this condition is telling us that the 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+fraction of the sample that has red hair and likes ice cream is equal to
+ the expected fraction of sample thatn has red hair and likes ice cream,
+ as predicted by model
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+.
+ More generally, this is telling us that in fitting the model, we are attempting
+ to match, for each compatibility feature 
+\begin_inset Formula $g_{r}$
+\end_inset
+
+, the empirical average of 
+\begin_inset Formula $g_{r}$
+\end_inset
+
+ over the data with the expected average, where the expectation is based
+ on the label distributions predicted by the model.
+ 
+\end_layout
+
+\begin_layout Standard
+We might call this 
+\begin_inset Quotes eld
+\end_inset
+
+moment matching
+\begin_inset Quotes erd
+\end_inset
+
+, because a [generalized] moment is the expectation of some function of
+ your random variables.
+ In this case, the function is 
+\begin_inset Formula $g_{r}(x_{i},Y)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Section
+\start_of_appendix
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Gradient-of-NLL"
+
+\end_inset
+
+Gradient of NLL for logistic regression
+\end_layout
+
+\begin_layout Standard
+We'll now compute the gradient of the NLL.
+ It's helpful to first note that for 
+\begin_inset Formula $\phi(\eta)=1/\left(1+e^{-\eta}\right)$
+\end_inset
+
+ we have 
+\begin_inset Formula $\phi'(\eta)=\phi(\eta)(1-\phi(\eta)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+\del_{w}\text{NLL}(w) & = & \sum_{i=1}^{n}\left[-y_{i}\del_{w}\log\phi(w^{T}x_{i})\right]+\left(y_{i}-1\right)\del_{w}\log\left(1-\phi(w^{T}x_{i})\right)\\
+ & = & \sum_{i=1}^{n}\left[-y_{i}\frac{\phi'(w^{T}x_{i})x_{i}}{\phi(w^{T}x_{i})}\right]-\left(y_{i}-1\right)\frac{\phi'(w^{T}x_{i})x_{i}}{1-\phi(w^{T}x_{i})}\\
+ & = & \sum_{i=1}^{n}\left[-y_{i}\frac{\phi(w^{T}x_{i})\left[1-\phi(w^{T}x_{i})\right]x_{i}}{\phi(w^{T}x_{i})}\right]-\left(y_{i}-1\right)\frac{\phi(w^{T}x_{i})\left[1-\phi(w^{T}x_{i})\right]x_{i}}{1-\phi(w^{T}x_{i})}\\
+ & = & \sum_{i=1}^{n}\left[-y_{i}\left[1-\phi(w^{T}x_{i})\right]x_{i}\right]-\left(y_{i}-1\right)\phi(w^{T}x_{i})x_{i}\\
+ & = & \sum_{i=1}^{n}\left(-y_{i}x_{i}+y_{i}\phi(w^{T}x_{i})x_{i}-y_{i}\phi(w^{T}x_{i})x_{i}+\phi(w^{T}x_{i})x_{i}\right)\\
+ & = & \sum_{i=1}^{n}\left(-y_{i}x_{i}+\phi(w^{T}x_{i})x_{i}\right)\\
+ & = & \sum_{i=1}^{n}\left(\phi(w^{T}x_{i})-y_{i}\right)x_{i}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:NLL-is-convex"
+
+\end_inset
+
+NLL for logistic regression is convex
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+\del_{w}^{2}\nll(w) & = & \sum_{i=1}^{n}\phi(w^{T}x_{i})\left(1-\phi(w^{T}x_{i})\right)x_{i}x_{i}^{T}
+\end{eqnarray*}
+
+\end_inset
+
+And for any 
+\begin_inset Formula $z\in\reals^{d}$
+\end_inset
+
+, we have
+\begin_inset Formula 
+\begin{eqnarray*}
+z^{T}\left[\del_{w}^{2}\nll(w)\right]z & = & \sum_{i=1}^{n}\phi(w^{T}x_{i})\left(1-\phi(w^{T}x_{i})\right)z^{T}x_{i}x_{i}^{T}z\\
+ & = & \sum_{i=1}^{n}\phi(w^{T}x_{i})\left(1-\phi(w^{T}x_{i})\right)\left(x_{i}^{T}z\right)^{2}\\
+ & \ge & 0.
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

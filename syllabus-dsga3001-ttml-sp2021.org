@@ -42,7 +42,7 @@ This survey course deals with a range of topics that come up when applying machi
 - Python programming required for most homework assignments.
 
 * Schedule
-*DISCLAIMER:* This is a draft syllabus that is subject to change. We will cover the majority of the topics below, but the organization and specific topics may change.
+*DISCLAIMER:* We will cover the majority of the topics below, but the organization and specific topics may change.  In particular, the topics of the first 8 weeks can be quite challenging, and if we need to take more time with them, we may *drop some of the topics at the end of the syllabus*.
 - *Week 1*: Estimating a population mean with a biased sample
 - *Week 2*: Exploration vs exploitation for bandits
 - *Week 3*: Machine learning for causal inference

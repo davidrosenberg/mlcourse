@@ -958,8 +958,50 @@ It's easy to prove in the case of finite
 \end_inset
 
 
+\end_layout
+
+\begin_layout Exercise*
+Suppose 
+\begin_inset Formula $R$
+\end_inset
+
+ has a dependency on 
+\begin_inset Formula $Y$
+\end_inset
+
+ and that 
+\begin_inset Formula $\ex\left[R\mid Y=y\right]=\pi(y),$
+\end_inset
+
+ for some function 
+\begin_inset Formula $\pi$
+\end_inset
+
+.
+ Show that 
+\begin_inset Formula $\ex[YR]=\ex[Y\pi(Y)]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution*
+We have
+\begin_inset Formula 
+\begin{eqnarray*}
+\ex\left[YR\right] & = & \ex\left[\ex\left(YR\mid Y\right)\right]\qquad\text{by Law if Iterated Expectations}\\
+ & = & \ex\left[Y\ex\left(R\mid Y\right)\right]\qquad\text{since \ensuremath{Y} is constant, conditional on }Y\\
+ & = & \ex\left[Y\pi(Y)\right]\qquad\text{by definition of }\pi,\text{ plugging }Y\text{ for }y.
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Section
 Law of Total Variance 

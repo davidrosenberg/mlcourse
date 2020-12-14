@@ -1,4 +1,6 @@
 # -*- mode: Org; org-download-image-dir: "./figures"; -*-
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="rethink.css" />
+
 #+STARTUP: latexpreview
 #+STARTUP: showall
 #+STARTUP: entitiespretty
@@ -6,6 +8,8 @@
 #+OPTIONS: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
 #+OPTIONS: email:nil f:t inline:t num:nil p:nil pri:nil prop:nil stat:t tags:t
 #+OPTIONS: tasks:t tex:t timestamp:t title:t toc:nil todo:t |:t
+#+OPTIONS: toc:nil num:nil html-style:nil
+
 #+TITLE: DS-GA 3001: Tools and Techniques for Machine Learning (Spring 2021)
 #+DATE: 2020-11-13
 #+AUTHOR: Instructor: David S. Rosenberg
@@ -43,9 +47,10 @@ This survey course deals with a range of topics that come up when applying machi
 
 * Schedule
 *DISCLAIMER:* We will cover the majority of the topics below, but the organization and specific topics may change.  In particular, the topics of the first 8 weeks can be quite challenging, and if we need to take more time with them, we may *drop some of the topics at the end of the syllabus*.
+- *Week 0*: Probability review, especially conditional expectations
 - *Week 1*: Estimating a population mean with a biased sample
-- *Week 2*: Exploration vs exploitation for bandits
-- *Week 3*: Machine learning for causal inference
+- *Week 2*: Machine learning for causal inference
+- *Week 3*: Exploration vs exploitation for bandits
 - *Week 4*: Counterfactual policy evaluation
 - *Week 5*: Counterfactual learning
 - *Week 6*: Introduction to reinforcement learning
@@ -66,20 +71,20 @@ This survey course deals with a range of topics that come up when applying machi
 * Topic Details
 *** Estimating a population mean with a biased sample 
 There are certain challenging ideas and techniques that come up repeatedly in the first part of our course (in causal inference, counterfactual learning, and reinforcement learning).  We will introduce them here in the simplest possible setting: estimating the mean of a population with a biased sample.  
-- Regression, inverse propensity, and doubly robust methods cite:seaman-2018-introd-to,kang-2007-demys-doubl-robus 
+- Imputation, inverse propensity, self-normalization, and [possibly] doubly robust methods cite:seaman-2018-introd-to,kang-2007-demys-doubl-robus 
 - [[https://statweb.stanford.edu/~owen/mc/Ch-var-basic.pdf][Control variates for variance reduction]] [[cite:owen-2013-monte-carlo][Sec 8.9]]
-*** Exploration vs exploitation for bandits
-When machine learning is applied in practice, it is often used to guide *interventions* in the world that we hope will improve some outcome measure. How can we balance "exploiting" interventions that worked well before (e.g. suggesting comedy movies for a particular individual) with "exploring" new intervention strategies (e.g. suggesting action movies) that may have better outcomes? In this module, we explore approaches to this classic "explore/exploit" problem.  We will start with a focus on the simple "bernoulli bandit" setting.  Then we will introduce the more general contextual bandit setting, and discuss explore/exploit methods for that case as well.
-- Gradient bandit algorithms [[cite:sutton-2018-reinf-learn-2ed][Sec 2.8]] 
-  - Using a "baseline" for variance reduction (a control variate technique) 
-- [[https://davidrosenberg.github.io/mlcourse/in-prep/thompson-sampling-bernoulli.pdf][Thompson sampling]] for bandits and contextual bandits cite:chapelle-2011-emp-eval-thomp,russo-2018-tutor-thomp-sampl
 *** Machine learning for causal inference 
-When we start making interventions, one of the most basic questions we can ask is which of two interventions (such as a treatment and a control) is better.  In a basic statistics class, we learn how to estimate the "average treatment effect" (ATE) when individuals are assigned to a treatment or control group with equal probability. In this module, we discuss how to estimate the ATE when individuals are assigned to interventions with probabilities that depend on covariates (i.e. characteristics/features of the individuals). Of course, interventions may have better or worse performance depending on characteristics of the individuals. We will also discuss how to estimate these "conditional average treatment effects".
-- Estimating average treatment effects with inverse propensity weighting
+When machine learning is applied in practice, it is often used to guide *interventions* in the world that we hope will improve some outcome measure. When we start making interventions, one of the most basic questions we can ask is which of two interventions (such as a treatment and a control) is better.  In a basic statistics class, we learn how to estimate the "average treatment effect" (ATE) when individuals are assigned to a treatment or control group with equal probability. In this module, we discuss how to estimate the ATE when individuals are assigned to interventions with probabilities that depend on covariates (i.e. characteristics/features of the individuals). Of course, interventions may have better or worse performance depending on characteristics of the individuals. We will also discuss how to estimate these "conditional average treatment effects".
+- Estimating average treatment effects with inverse propensity weighting and imputation
 - Two trees algorithm for estimating conditional average treatment effects (CATE)  cite:athey-2015-machin-learn
 - X-learner algorithm for CATE estimation cite:kuenzel-2019-metal-estim
    - (optional) Honest random forest cite:athey-2015-recur-partit 
    - (optional) Bayesian Additive Regression Trees (BART) cite:chipman-2010-BART
+*** Exploration vs exploitation for bandits
+How can we balance "exploiting" interventions that worked well before (e.g. suggesting comedy movies for a particular individual) with "exploring" new intervention strategies (e.g. suggesting action movies) that may have better outcomes? In this module, we explore approaches to this classic "explore/exploit" problem.  We will start with a focus on the simple "Bernoulli bandit" setting.  Then we will introduce the more general contextual bandit setting, and discuss explore/exploit methods for that case as well.
+- Gradient bandit algorithms [[cite:sutton-2018-reinf-learn-2ed][Sec 2.8]] 
+  - Using a "baseline" for variance reduction (a control variate technique) 
+- [[https://davidrosenberg.github.io/mlcourse/in-prep/thompson-sampling-bernoulli.pdf][Thompson sampling]] for bandits and contextual bandits cite:chapelle-2011-emp-eval-thomp,russo-2018-tutor-thomp-sampl
 *** Counterfactual policy evaluation
 Suppose we believe that different interventions are preferable for different individuals, depending on their characteristics.  Then we want to develop a "policy" that determines the interventions we take as a function of the characteristics of the individual.  Given two policies, the simplest way to compare their performance is with an "A/B test", which basically means deploying the two policies and seeing how they do.  However, there can be very high costs to deploying a sub-optimal policy.  Furthermore, there is a practical limit to how many policies we can test out and still get a reasonable estimate of the performance of each. In this module, we discuss how we can estimate the performance of a new policy without actually deploying it, using data that was already collected with a different policy.  This data, collected from a so-called "logging policy", is called "logged bandit feedback".  We will revisit our discussion of imputation, inverse propensity, and doubly robust methods and apply them to the problem of estimating the performance of a policy using logged bandit feedback.
 - Extending the imputation, inverse propensity, and doubly robust methods to counterfactual policy evaluation from logged bandit feedback cite:dudik-2011-doubly-robust

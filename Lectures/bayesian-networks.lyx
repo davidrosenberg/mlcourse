@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass beamer
 \begin_preamble
 \usetheme{CambridgeUS} 
@@ -25,16 +27,18 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman times
-\font_sans default
-\font_typewriter default
-\font_math eulervm
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "eulervm" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -64,6 +68,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -72,7 +77,10 @@
 \tocdepth 2
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -772,6 +780,9 @@ Probabilistic Reasoning
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -790,6 +801,10 @@ Represent
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -805,6 +820,10 @@ Suppose by research or ML, we get a joint probability distribution
 p(x_{1},\ldots,x_{d}).
 \]
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -829,7 +848,11 @@ inference
 
 
 \series default
- on this model -- essentially, answer queries:
+ on this model – essentially, answer queries:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -839,6 +862,10 @@ What is the most likely of value
 \end_inset
 
 ?
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -857,6 +884,10 @@ What is the most likely of value
 \end_inset
 
 ?
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -879,7 +910,10 @@ Distribution of
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -897,6 +931,9 @@ Example: Medical Diagnosis
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -905,11 +942,21 @@ Example: Medical Diagnosis
 Variables for each 
 \series bold
 symptom
+\series default
+
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 fever, cough, fast breathing, shaking, nausea, vomiting
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -923,11 +970,21 @@ fever, cough, fast breathing, shaking, nausea, vomiting
 Variables for each 
 \series bold
 disease
+\series default
+
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 pneumonia, flu, common cold, bronchitis, tuberculosis
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -955,6 +1012,10 @@ p(\text{pneumonia}=1\mid\text{cough}=1,\text{fever}=1,\text{vomiting}=0)
 
 \begin_layout Itemize
 The QMR-DT (Quick Medical Reference - Decision Theoretic) has
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -994,7 +1055,10 @@ emph{Inference and Representation}, Lecture 1.}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1016,6 +1080,9 @@ Some Notation
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -1026,6 +1093,10 @@ This lecture we'll only be considering
 discrete
 \series default
  random variables.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1053,6 +1124,10 @@ Lower case letters
 \end_inset
 
  denote the values taken.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1079,6 +1154,10 @@ Probability that
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1100,7 +1179,10 @@ p(x_{1},x_{2},\ldots,x_{d}):=\pr\left(X_{1}=x_{1},X_{2}=x_{2},\ldots,X_{d}=x_{d}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1118,12 +1200,19 @@ Representing Probability Distributions
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 Let's consider the case of discrete random variables.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1134,6 +1223,10 @@ Let's consider the case of discrete random variables.
 \end_deeper
 \begin_layout Itemize
 Conceptually, everything can be represented with probability tables.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1144,6 +1237,10 @@ Conceptually, everything can be represented with probability tables.
 \end_deeper
 \begin_layout Itemize
 Variables
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1167,7 +1264,7 @@ Weather
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
-<features rotate="0" tabularvalignment="middle">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <row>
@@ -1253,7 +1350,7 @@ cold
  
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
-<features rotate="0" tabularvalignment="middle">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <row>
@@ -1346,6 +1443,10 @@ These are the
 marginal
 \series default
  probability distributions.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1389,7 +1490,10 @@ emph{DS-GA 1003 Lectures, Spring 2014}, Lecture 10.}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -1407,6 +1511,9 @@ Joint Probability Distributions
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -1425,6 +1532,10 @@ for
 \end_inset
 
  is given by 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1432,7 +1543,7 @@ for
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="3">
-<features rotate="0" tabularvalignment="middle">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -1616,6 +1727,10 @@ rain
 \end_deeper
 \begin_layout Itemize
 With the joint we can answer question such as
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1661,7 +1776,7 @@ emph{DS-GA 1003 Lectures, Spring 2014}, Lecture 10.}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
@@ -1683,6 +1798,9 @@ Conditional Distributions From the Joint Distribution
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -1710,6 +1828,10 @@ p\left(w\mid T=\mbox{hot}\right)=?
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1720,6 +1842,10 @@ p\left(w\mid T=\mbox{hot}\right)=?
 \end_deeper
 \begin_layout Itemize
 Method:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1729,6 +1855,10 @@ Find entries in joint distribution table where
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1736,7 +1866,7 @@ Find entries in joint distribution table where
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="3">
-<features rotate="0" tabularvalignment="middle">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -1856,6 +1986,10 @@ rain
 \end_deeper
 \begin_layout Enumerate
 Renormalize to get conditional probability.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1868,7 +2002,7 @@ Renormalize to get conditional probability.
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="4">
-<features rotate="0" tabularvalignment="middle">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -2038,6 +2172,9 @@ Conditional Distributions From the Joint Distribution
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -2074,7 +2211,7 @@ p(w\mid t)=\frac{p(w,t)}{p(t)}.
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="4">
-<features rotate="0" tabularvalignment="middle">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -2232,6 +2369,10 @@ rain
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_layout Frame
@@ -2248,6 +2389,9 @@ Representing Joint Distributions
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -2262,6 +2406,10 @@ Consider random variables
 
 \begin_layout Itemize
 How many parameters do we need to represent the joint distribution?
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2276,6 +2424,10 @@ Joint probability table has
 \end_inset
 
  rows.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2291,6 +2443,10 @@ For QMR-DT, that's
 
  rows.
  
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2310,6 +2466,10 @@ Only
 \end_inset
 
  atoms in the universe.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2320,11 +2480,19 @@ Only
 \end_deeper
 \begin_layout Itemize
 Having exponentially many parameters is a problem for
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 storage
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2335,6 +2503,10 @@ storage
 \end_deeper
 \begin_layout Itemize
 computation (inference is summing over exponentially many rows)
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2349,7 +2521,10 @@ statistical estimation / learning
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2367,12 +2542,19 @@ How to Restrict the Complexity?
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 Restrict the space of probability distributions
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2389,6 +2571,12 @@ independence
 assumptions
 \series bold
 .
+\series default
+
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2408,6 +2596,10 @@ mutually independent
 \series default
 .
  
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2431,6 +2623,10 @@ mutually independent
 p(x_{1},x_{2},\ldots,x_{d})=p(x_{1})p(x_{2})\cdots p(x_{d}).
 \]
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2465,7 +2661,10 @@ How many parameters to represent the joint distribution, assuming independence?
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2483,12 +2682,19 @@ Assume Full Independence
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 How many parameters to represent the joint distribution?
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2507,6 +2713,10 @@ Say
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2533,6 +2743,10 @@ Clever representation
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2551,6 +2765,10 @@ p(x_{1},\ldots,x_{d})=\prod_{i=1}^{d}\theta_{i}^{x_{i}}\left(1-\theta_{i}\right)
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2561,6 +2779,10 @@ p(x_{1},\ldots,x_{d})=\prod_{i=1}^{d}\theta_{i}^{x_{i}}\left(1-\theta_{i}\right)
 \end_deeper
 \begin_layout Itemize
 How many parameters? 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2577,7 +2799,10 @@ How many parameters?
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2595,6 +2820,9 @@ Conditional Interpretation of Independence
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -2614,6 +2842,10 @@ Suppose
 p(x\mid y)=p(x).
 \]
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2640,6 +2872,10 @@ p(x\mid y) & = & \frac{p(x,y)}{p(y)}\\
 
 \begin_layout Itemize
 With full independence, we have no relationships among variables.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2650,6 +2886,10 @@ With full independence, we have no relationships among variables.
 \end_deeper
 \begin_layout Itemize
 Information about one variable says nothing about any other variable.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2659,7 +2899,10 @@ Would mean diseases don't have symptoms.
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2681,12 +2924,19 @@ Conditional Independence
 \end_layout
 
 \begin_layout Frame
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 Consider 3 events:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2709,6 +2959,10 @@ Consider 3 events:
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2724,6 +2978,10 @@ These events are certainly
 not
 \series default
  independent.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2742,6 +3000,10 @@ Raining
 
  Grass is wet AND The road is slippery 
 \begin_inset Formula $\left(W\cap S\right)$
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2767,6 +3029,10 @@ Grass is wet
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2782,6 +3048,10 @@ Suppose we know that
 it's raining
 \series default
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2798,6 +3068,12 @@ the grass is wet
 Does this tell us anything new about whether 
 \series bold
 the road is slippery? 
+\series default
+
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2840,7 +3116,10 @@ W\perp S\mid R.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2852,6 +3131,10 @@ status open
 Conditional Independence
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2937,7 +3220,10 @@ Can have independence without conditional independence.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -2952,11 +3238,19 @@ Example: Rainy, Slippery, Wet
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 Consider 3 events:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2976,6 +3270,10 @@ Consider 3 events:
 
 \begin_layout Enumerate
 \begin_inset Formula $R=\left\{ \mbox{It's raining}\right\} $
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -2999,6 +3297,10 @@ p(w,s,r) & = & p(w,s\mid r)p(r)\mbox{ \qquad(no assumptions so far)}\\
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3009,6 +3311,10 @@ p(w,s,r) & = & p(w,s\mid r)p(r)\mbox{ \qquad(no assumptions so far)}\\
 \end_deeper
 \begin_layout Itemize
 How many parameters to specify the joint?
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3029,6 +3335,10 @@ How many parameters to specify the joint?
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3042,6 +3352,10 @@ How many parameters to specify the joint?
 \end_inset
 
  requires two.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3055,6 +3369,10 @@ How many parameters to specify the joint?
 \end_inset
 
  requires one parameter,
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3087,7 +3405,10 @@ Full independence:
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3106,11 +3427,19 @@ Bayesian Networks: Introduction
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 Bayesian Networks are 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3127,6 +3456,9 @@ have a particular factorization.
 \end_layout
 
 \begin_layout ColumnsCenterAligned
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -3161,6 +3493,9 @@ textwidth
 
 \end_deeper
 \begin_layout ColumnsCenterAligned
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -3233,7 +3568,10 @@ s CS221, Autumn 2014.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3245,6 +3583,10 @@ status open
 Directed Graphs
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3291,6 +3633,9 @@ directed edges
 \end_layout
 
 \begin_layout ColumnsCenterAligned
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -3325,6 +3670,9 @@ textwidth
 
 \end_deeper
 \begin_layout ColumnsCenterAligned
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -3387,7 +3735,10 @@ tiny{KPM Figure 10.2(a).}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3399,6 +3750,10 @@ status open
 Directed Acyclic Graphs (DAGs)
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3423,6 +3778,9 @@ no directed cycles
 \end_layout
 
 \begin_layout ColumnsCenterAligned
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -3462,6 +3820,9 @@ DAG
 
 \end_deeper
 \begin_layout ColumnsCenterAligned
+\begin_inset Separator latexpar
+\end_inset
+
 
 \end_layout
 
@@ -3538,7 +3899,10 @@ tiny{http://www.geeksforgeeks.org/wp-content/uploads/SCC1.png} and KPM Figure
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3553,6 +3917,10 @@ Bayesian Networks
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3562,6 +3930,10 @@ A
 Bayesian network
 \series default
  is a 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3638,7 +4010,7 @@ belief networks.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
@@ -3654,6 +4026,10 @@ status open
 Bayesian Networks: Example
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3729,6 +4105,10 @@ status open
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -3751,6 +4131,10 @@ A Common Cause
 
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3839,7 +4223,10 @@ emph{Pattern recognition and machine learning}, Figure 8.15.}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3859,6 +4246,10 @@ A Common Cause
 
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -3951,7 +4342,10 @@ emph{Pattern recognition and machine learning}, Figure 8.16.}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -3971,6 +4365,10 @@ An Indirect Effect
 
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -4071,7 +4469,10 @@ emph{Pattern recognition and machine learning}, Figure 8.17.}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -4091,6 +4492,10 @@ An Indirect Effect
 
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -4189,7 +4594,10 @@ emph{Pattern recognition and machine learning}, Figure 8.18.}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -4209,6 +4617,10 @@ A Common Effect
 
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -4312,7 +4724,10 @@ emph{Pattern recognition and machine learning}, Figure 8.19.}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -4340,6 +4755,10 @@ V-Structure
 
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -4438,7 +4857,10 @@ emph{Pattern recognition and machine learning}, Figure 8.20.}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -4450,6 +4872,10 @@ status open
 Conditional Independence from Graph Structure
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -4482,6 +4908,10 @@ A\perp B\mid C?
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -4504,6 +4934,10 @@ d-separation
 \end_inset
 
  that is equivalent to conditional independence.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -4522,6 +4956,10 @@ Suppose we have observed
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -4541,6 +4979,10 @@ We could ignore any evidence collected about
 
 .
  
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -4554,7 +4996,10 @@ See KPM Section 10.5.1 for details.
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -4566,6 +5011,10 @@ status open
 Markov Blanket
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -4590,6 +5039,10 @@ To get maximal information about
 \end_inset
 
 , do we have to observe all other variables?
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -4628,6 +5081,10 @@ In a Bayesian network, the Markov blanket of
 \end_inset
 
  consists of
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -4675,7 +5132,10 @@ co-parents
 
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -4690,6 +5150,10 @@ Markov Blanket
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -4699,6 +5163,10 @@ Markov Blanket of
 \end_inset
 
  in a Bayesian Network:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -4741,7 +5209,10 @@ url{http://en.wikipedia.org/wiki/Markov_blanket}: "Diagram of a Markov blanket"
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -4749,7 +5220,10 @@ url{http://en.wikipedia.org/wiki/Markov_blanket}: "Diagram of a Markov blanket"
 When to use Bayesian Networks?
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -4764,11 +5238,19 @@ Bayesian Networks
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 Bayesian Networks are great when
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -4783,6 +5265,10 @@ you will routinely need to make inferences with incomplete data.
 \end_deeper
 \begin_layout Itemize
 Challenges:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -4792,6 +5278,10 @@ The naive approach to inference doesn't work beyond small scale.
 
 \begin_layout Itemize
 Need more sophisticated algorithm:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -4806,7 +5296,10 @@ approximate inference
 \end_deeper
 \end_deeper
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -4814,7 +5307,10 @@ approximate inference
 Naive Bayes
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -4826,6 +5322,10 @@ status open
 Binary Naive Bayes: A Generative Model for Classification
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -4877,6 +5377,10 @@ p(x_{1},x_{2},x_{3},x_{4},y)=p(y)p(x_{1}\mid y)p(x_{2}\mid y)p(x_{3}\mid y)p(x_{
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -4922,7 +5426,10 @@ tiny{KPM Figure 10.2(a).}}
 \end_layout
 
 \end_deeper
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -4938,6 +5445,10 @@ status open
 Markov Chain Model
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -5053,7 +5564,10 @@ emph{Probabilistic Graphical Models} Figure 6.04.}}
 
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -5065,6 +5579,10 @@ status open
 Hidden Markov Model
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -5122,6 +5640,10 @@ Want to infer
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -5173,7 +5695,10 @@ tiny{KPM Figure 10.4}}
 
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 
@@ -5185,6 +5710,10 @@ status open
 Maximum Entropy Markov Model
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -5235,6 +5764,10 @@ At deployment time, we only observe
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -5283,7 +5816,10 @@ emph{Probabilistic Graphical Models} Figure 20.A.1.}}
 
 \end_layout
 
-\begin_layout Separator
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
 
 \end_layout
 

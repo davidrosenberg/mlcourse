@@ -3258,6 +3258,9 @@ If we had equality constraints here, they would be affine constraints, because
  we should actually be able to replace the equality constraint with two
  inequality constraints, one in each direction, but unless we have an affine
  function, we can't have the function and its negative both be convex.
+ ALSO, note that the direction of the inequality is not optional.
+ The sublevel set for a convex function is a convex set, but not the superlevel
+ set – that's a set with a hole in it.
 \end_layout
 
 \end_inset

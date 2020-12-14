@@ -571,6 +571,10 @@ figs-within-sections
  
 \end_layout
 
+\begin_layout Standard
+
+\end_layout
+
 \begin_layout Title
 Conditional Expectations
 \end_layout
@@ -1093,7 +1097,15 @@ Based on the discussion above, you should be able to figure out how to interpret
 \begin_inset Formula $X$
 \end_inset
 
-? It's tempting to say that this value should be smaller than 
+? The law of total variance is
+\begin_inset Formula 
+\[
+\var(Y)=\ex\left[\var(Y\mid X)\right]+\var\left(\ex\left[Y\mid X\right]\right).
+\]
+
+\end_inset
+
+ lIt's tempting to say that this value should be smaller than 
 \begin_inset Formula $\var(Y)$
 \end_inset
 
@@ -1125,6 +1137,24 @@ Based on the discussion above, you should be able to figure out how to interpret
 , but...
  https://www.quora.com/Is-conditional-variance-of-a-random-variable-always-less-or
 -equal-to-its-unconditional-variance
+\end_layout
+
+\begin_layout Plain Layout
+Also of interest, what's 
+\begin_inset Formula $\var\left[\ex\left[Y\mid X\right]\right]$
+\end_inset
+
+, which is the sharpness of the Bayes optimal probabilistic predcictor for
+ MSE.
+\begin_inset Formula 
+\begin{eqnarray*}
+\var\left[\ex\left[Y\mid X\right]\right] & = & \ex\left[\ex\left[Y\mid X\right]^{2}\right]-\left(\ex\left[\ex\left[Y\mid X\right]\right]\right)^{2}\\
+ & = & \ex\left[\ex\left[Y\mid X\right]^{2}\right]-\left(\ex Y\right)^{2}
+\end{eqnarray*}
+
+\end_inset
+
+
 \end_layout
 
 \end_inset

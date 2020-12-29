@@ -586,7 +586,7 @@ David S.
 \end_layout
 
 \begin_layout Date
-November 19, 2020
+November 19, 2020 [Updated December 29, 2020]
 \end_layout
 
 \begin_layout Section
@@ -807,7 +807,7 @@ For the optimal
 \end_layout
 
 \begin_layout Section
-Multinomial logistic regression wtih compatibility feature functions
+Multinomial logistic regression with compatibility feature functions
 \end_layout
 
 \begin_layout Standard
@@ -1012,7 +1012,7 @@ So if
 \noun off
 \color none
 fraction of the sample that has red hair and likes ice cream is equal to
- the expected fraction of sample thatn has red hair and likes ice cream,
+ the expected fraction of sample that has red hair and likes ice cream,
  as predicted by model
 \family default
 \series default

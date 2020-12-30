@@ -2978,7 +2978,7 @@ Proof of bias/variance decomposition using iterated expectation.
 \begin{align*}
 \ex\big[(f(X)-Y)^{2}\big]= & \ex\big[f(X)-\ex[Y\mid X]+\ex[Y\mid X]-Y\big]^{2}\\
 = & \ex\left[(f(X)-\ex[Y|X])^{2}\right]+\ex\left[\left(\ex[Y|X]-Y\right)^{2}\right]\\
- & +\underbrace{\ex\left[\left(f(X)-\ex[Y\mid X]\right)\left(\ex[Y\mid X]-Y\right)\right]}_{\mbox{will show }=0}\\
+ & +2\underbrace{\ex\left[\left(f(X)-\ex[Y\mid X]\right)\left(\ex[Y\mid X]-Y\right)\right]}_{\mbox{will show }=0}\\
 \ex\left[\left(f(X)-\ex[Y\mid X]\right)\left(\ex[Y\mid X]-Y\right)\right]= & \ex\left[\ex\left[\left(f(X)-\ex[Y\mid X]\right)\left(\ex[Y\mid X]-Y\right)\mid X\right]\right]\\
 = & \ex\left[\left(f(X)-\ex[Y\mid X]\right)\underbrace{\ex\left[\left(\ex[Y\mid X]-Y\right)\mid X\right]}_{\mbox{will show}=0}\right]\\
 \ex\left[\left(\ex[Y\mid X]-Y\right)\mid X\right]= & \ex\left[\ex[Y\mid X]\mid X\right]-\ex\left[Y\mid X\right]\\
@@ -2987,7 +2987,49 @@ Proof of bias/variance decomposition using iterated expectation.
 
 \end_inset
 
+Notice that the 
+\begin_inset Quotes eld
+\end_inset
 
+will show = 0
+\begin_inset Quotes erd
+\end_inset
+
+ is an immediate consequence of the more general notion that the 
+\begin_inset Quotes eld
+\end_inset
+
+residual
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Formula $Y-\ex\left[Y\mid X\right]$
+\end_inset
+
+ is uncorrelated with 
+\begin_inset Formula $h(X)$
+\end_inset
+
+ for any 
+\begin_inset Formula $h$
+\end_inset
+
+.
+ So that product immediately equals 
+\begin_inset Formula $0$
+\end_inset
+
+.
+ The proof above basically shows this, because we can replace 
+\begin_inset Formula $f(X)-\ex\left[Y\mid X\right]$
+\end_inset
+
+ by 
+\begin_inset Formula $h(X)$
+\end_inset
+
+ and nothing changes in the proof.
 \end_layout
 
 \end_inset

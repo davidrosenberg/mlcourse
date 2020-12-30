@@ -711,8 +711,53 @@ noprefix "false"
 
 \end_inset
 
-To interpret this more easily, let's be concrete.
- Suppose 
+
+\end_layout
+
+\begin_layout Standard
+As a simplest possible example, let's suppose that 
+\begin_inset Formula $x_{i}^{j}\equiv1$
+\end_inset
+
+ for all 
+\begin_inset Formula $i$
+\end_inset
+
+.
+ This corresponds to putting an intercept into the logistic regression model.
+ In this case, the optimality condition becomes
+\begin_inset Formula 
+\begin{eqnarray*}
+\sum_{i=1}^{n}\phi(w^{T}x_{i}) & = & \sum_{i=1}^{n}y_{i}.
+\end{eqnarray*}
+
+\end_inset
+
+Note that the RHS is the expected number of 
+\begin_inset Formula $x$
+\end_inset
+
+'s that have 
+\begin_inset Formula $y=1$
+\end_inset
+
+ in the training set, where the expectation is w.r.t.
+ the distribution given by our logistic regression model.
+ The RHS is the actual number of examples with 
+\begin_inset Formula $y=1$
+\end_inset
+
+.
+ Thus if we apply a fitted logistic regression model to its own training
+ data, and add up the predicted probabilities of 
+\begin_inset Formula $y=1$
+\end_inset
+
+, we get the actual number positive examples in the training set.
+\end_layout
+
+\begin_layout Standard
+For another example, suppose 
 \begin_inset Formula $x_{i}^{j}=\ind{i\text{ has red hair}}$
 \end_inset
 

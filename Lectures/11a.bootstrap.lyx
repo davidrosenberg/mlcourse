@@ -782,7 +782,12 @@ TODO: when doing bootstrapping, should we just use
 \begin_inset Formula $\frac{1}{B}\sum_{i=1}^{B}\alpha\left(\hat{\cd}^{(B)}\right)$
 \end_inset
 
-? How could we decide which is better? We'd need to set up criteria, etc.
+? The latter is clearly worse than the original, since as 
+\begin_inset Formula $B\to\infty$
+\end_inset
+
+, it converges to the original.
+ so it's just a noisy version of the original.
  This was in fact never the question.
  The question is, given an estimator, what are some parameters of its sampling
  distribution.
@@ -808,7 +813,30 @@ TODO: when doing bootstrapping, should we just use
 \end_inset
 
 .
- 
+ So the idea would be to 
+\begin_inset Quotes eld
+\end_inset
+
+bias correct
+\begin_inset Quotes erd
+\end_inset
+
+ our original estimate 
+\begin_inset Formula $\alpha(\hat{\cd})$
+\end_inset
+
+ by subtracting off this bias estimate 
+\begin_inset Formula $\frac{1}{B}\sum_{i=1}^{B}\alpha\left(\hat{\cd}^{(B)}\right)-\alpha\left(\hat{\cd}\right)$
+\end_inset
+
+, which would give 
+\begin_inset Formula $2\alpha(\hat{\cd})-\frac{1}{B}\sum_{i=1}^{B}\alpha\left(\hat{\cd}^{(B)}\right)$
+\end_inset
+
+.
+ But this is risky business.
+ don't think it's typically recommended, but would need more research.
+ See Tim Hesterberg's articles.
 \end_layout
 
 \end_inset
@@ -2325,7 +2353,7 @@ Draw
 
 \begin_layout Itemize
 Compute sample or empirical variance of 
-\begin_inset Formula $\hat{\mu}(\cd_{n}^{1}),\ldots,\hat{\mu}(\cd_{n}^{B})$
+\begin_inset Formula $\hat{\mu}(D_{n}^{1}),\ldots,\hat{\mu}(D_{n}^{B})$
 \end_inset
 
 ..
@@ -2352,25 +2380,7 @@ Could report
 status open
 
 \begin_layout Itemize
-.
-\end_layout
-
-\begin_deeper
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-For our point estimate, could also report
-\begin_inset Formula 
-\[
-\frac{1}{B}\sum_{i=1}^{B}\hat{\mu}\left(\cd_{n}^{i}\right)
-\]
-
-\end_inset
-
-
+This pointn estimate:
 \end_layout
 
 \end_inset

@@ -11,7 +11,7 @@
 #+OPTIONS: toc:nil num:nil html-style:nil
 
 #+TITLE: DS-GA 3001: Tools and Techniques for Machine Learning (Spring 2021)
-#+DATE: 2020-11-13
+#+DATE: 2020-01-27
 #+AUTHOR: Instructor: David S. Rosenberg
 #+LANGUAGE: en
 #+CREATOR: Emacs 26.3 (Org mode 9.2)
@@ -37,7 +37,7 @@
 - *Term*: Spring 2021
 
 * Course description
-This survey course deals with a range of topics that come up when applying machine learning in practice. Roughly half the course will cover topics connected to machine learning with interventions, such as counterfactual learning, reinforcement learning, and causal inference. Inverse propensity methods for handling biased samples and control variate methods for reducing variance will be given special attention, as these form a common thread of techniques relevant to each of these topics.  We will also cover calibrating probability forecasts, interpreting machine learning models, active learning, crowdsourcing and "data programming", as time permits.
+This course deals with a range of topics that come up when applying machine learning in practice. Roughly half the course will cover topics connected to machine learning with interventions, such as counterfactual learning, reinforcement learning, and causal inference. Inverse propensity methods for handling biased samples and control variate methods for reducing variance will be given special attention, as these form a common thread of techniques relevant to each of these topics.  We will also cover calibrating probability forecasts, interpreting machine learning models, active learning, crowdsourcing and "data programming", as time permits.
 
 * Prerequisites
 - [[https://davidrosenberg.github.io/ml2018/][DS-GA 1003: Machine Learning]] or equivalent.
@@ -47,7 +47,7 @@ This survey course deals with a range of topics that come up when applying machi
 
 * Schedule
 *DISCLAIMER:* We will cover the majority of the topics below, but the organization and specific topics may change.  In particular, the topics of the first 8 weeks can be quite challenging, and if we need to take more time with them, we may *drop some of the topics at the end of the syllabus*.
-- *Week 0*: Probability review, especially conditional expectations
+- *Week 0*: Conditional expectation and variance decomposition
 - *Week 1*: Estimating a population mean with a biased sample
 - *Week 2*: Machine learning for causal inference
 - *Week 3*: Exploration vs exploitation for bandits

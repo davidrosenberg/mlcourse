@@ -1,5 +1,5 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -26,6 +26,8 @@ figs-within-sections
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -64,6 +66,7 @@ figs-within-sections
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -72,7 +75,10 @@ figs-within-sections
 \tocdepth 5
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 2
 \paperpagestyle default
@@ -648,6 +654,7 @@ unit vectors
 LatexCommand href
 name "Gâteaux derivative"
 target "https://en.wikipedia.org/wiki/G%C3%A2teaux_derivative"
+literal "false"
 
 \end_inset
 
@@ -1085,7 +1092,7 @@ Show that we can get the directions of steepest descent and steepest ascent
  More precisely, show that
 \begin_inset Formula 
 \[
-\argmin_{\|u\|_{2}=1}f'(x;u)=\frac{\del f(x)}{\|\del f(x)\|_{2}}\quad\text{and}\quad\argmax_{\|u\|_{2}=1}f'(x;u)=-\frac{\del f(x)}{\|\del f(x)\|_{2}}.
+\argmin_{\|u\|_{2}=1}f'(x;u)=-\frac{\del f(x)}{\|\del f(x)\|_{2}}\quad\text{and}\quad\argmax_{\|u\|_{2}=1}f'(x;u)=\frac{\del f(x)}{\|\del f(x)\|_{2}}.
 \]
 
 \end_inset
@@ -1096,7 +1103,7 @@ Show that we can get the directions of steepest descent and steepest ascent
 
  and then consider the Cauchy-Schwarz inequaltity.) 
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Formula 

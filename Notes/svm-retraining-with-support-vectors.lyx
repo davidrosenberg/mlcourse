@@ -1,0 +1,663 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass amsart
+\use_default_options false
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding iso8859-1
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures false
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1in
+\topmargin 1in
+\rightmargin 1in
+\bottommargin 1in
+\secnumdepth 5
+\tocdepth 5
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\xsp}{\mathcal{X}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ysp}{\mathcal{Y}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\borel}{\mathcal{R}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\reals}{\mathbf{R}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\integers}{\mathbf{Z}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\naturals}{\mathbf{N}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\rationals}{\mathbf{Q}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ch}{\mathcal{H}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cp}{\mathcal{P}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cq}{\mathcal{Q}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cm}{\mathcal{M}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ck}{\mathcal{K}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cc}{\mathcal{C}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cd}{\mathcal{D}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cf}{\mathcal{F}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\that}{\hat{\theta}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\sampsp}{\mathcal{X}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\modsp}{\mathcal{P}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\paramsp}{\Theta}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\sigf}{\mathcal{F}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ex}{E}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ind}[1]{1(#1)}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\sigg}{\mathcal{G}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\sigs}{\mathcal{S}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\exchf}{\mathcal{E}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\pr}{P}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\var}{\textrm{var}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cov}{\textrm{cov}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\sgn}{\textrm{sgn}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\sign}{\textrm{sign}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\kl}{\textrm{KL}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\xbar}{\overline{X}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\law}{\mathcal{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\gauss}{\mathcal{N}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\eps}{\varepsilon}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\io}{\textrm{ i.o.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ev}{\textrm{ ev.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\xhat}{\hat{x}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\yhat}{\hat{y}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\toninf}{\rightarrow-\infty}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\toinf}{\rightarrow\infty}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\tozero}{\rightarrow0}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\as}{\textrm{ a.s.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\convw}{\stackrel{d}{\rightarrow}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\convd}{\convw}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\eqd}{\stackrel{d}{=}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\argmax}{\textrm{argmax}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\argmin}{\textrm{argmin}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\del}{\nabla}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\loss}{\textrm{Loss}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\etal}{\textrm{et. al.}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\tr}{\textrm{tr}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\trace}{\textrm{trace}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\rkhs}{\hil}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\vf}{\boldsymbol{f}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\valpha}{\boldsymbol{\alpha}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\diag}{\text{diag}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+SVM: Retraining with just the support vectors?
+\end_layout
+
+\begin_layout Author
+David S.
+ Rosenberg
+\end_layout
+
+\begin_layout Date
+October 31, 2021
+\end_layout
+
+\begin_layout Section
+Setup
+\end_layout
+
+\begin_layout Standard
+Consider the following formulation of the SVM objective function:
+\begin_inset Formula 
+\[
+J(w)=\sum_{i=1}^{n}\ell(w^{T}x_{i},y_{i})+\lambda\|w\|^{2},
+\]
+
+\end_inset
+
+for 
+\begin_inset Formula $\lambda>0$
+\end_inset
+
+ and where the loss function is the hinge loss 
+\begin_inset Formula $\ell(\hat{y},y)=\left(1-\hat{y}y_{i}\right)_{+}$
+\end_inset
+
+, where 
+\begin_inset Formula $(x)_{+}=x\ind{x\ge0}$
+\end_inset
+
+ refers to the 
+\begin_inset Quotes eld
+\end_inset
+
+positive part
+\begin_inset Quotes erd
+\end_inset
+
+ of 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ This differs from our usual formulation as 
+\begin_inset Formula $J'(w)=\frac{1}{2}||w||^{2}+\frac{c}{n}\sum_{i=1}^{n}\ell(w^{T}x_{i},y_{i})$
+\end_inset
+
+, but the two will produce the same set of solutions as we vary the hyperparamet
+ers 
+\begin_inset Formula $\lambda,c\in(0,\infty)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+We know from the duality theory of SVMs that we can minimizer of 
+\begin_inset Formula $J(w)$
+\end_inset
+
+ as
+\begin_inset Formula 
+\[
+w^{*}=\sum_{i=1}^{n}\alpha_{i}^{*}y_{i}x_{i},
+\]
+
+\end_inset
+
+where some subset of the 
+\begin_inset Formula $\alpha_{i}^{*}$
+\end_inset
+
+'s may be exactly 
+\begin_inset Formula $0$
+\end_inset
+
+.
+ One natural question is, what happens if we drop all the training points
+ corresponding to 
+\begin_inset Formula $\alpha_{i}^{*}=0$
+\end_inset
+
+ from the objective function and re-fit the model.
+ Does the solution change? 
+\end_layout
+
+\begin_layout Standard
+We can't quite show that, but here we show something a bit weaker: if we
+ drop all training points that are on the 
+\begin_inset Quotes eld
+\end_inset
+
+good side of the margin
+\begin_inset Quotes erd
+\end_inset
+
+, then the solution does not change.
+ In other words, we can drop all training points for which 
+\begin_inset Formula $y_{i}x_{i}^{T}w^{*}>1$
+\end_inset
+
+.
+ This does not include all points for which 
+\begin_inset Formula $\alpha_{i}^{*}=0$
+\end_inset
+
+, since for those points we only know that 
+\begin_inset Formula $y_{i}x_{i}^{T}w^{*}\ge1$
+\end_inset
+
+.
+ Here's the demonstration of the weaker statement:
+\end_layout
+
+\begin_layout Standard
+Without loss of generality, index the 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+'s so 
+\begin_inset Formula $x_{m+1},\ldots,x_{n}$
+\end_inset
+
+ are all on the 
+\begin_inset Quotes eld
+\end_inset
+
+good side of the margin
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Then we know that 
+\begin_inset Formula $\alpha_{m+1}^{*},\ldots,\alpha_{n}^{*}=0$
+\end_inset
+
+.
+ Let's define
+\begin_inset Formula 
+\[
+J_{1}(w)=\sum_{i=1}^{m}\ell(w^{T}x_{i},y_{i})+\lambda\|w\|^{2}
+\]
+
+\end_inset
+
+and let 
+\begin_inset Formula 
+\[
+J_{2}(w)=\sum_{m+1}^{n}\ell(w^{T}x_{i},y_{i}).
+\]
+
+\end_inset
+
+The claim is that 
+\begin_inset Formula $w^{*}$
+\end_inset
+
+ is also the minimizer of 
+\begin_inset Formula $J_{1}(w)$
+\end_inset
+
+.
+ We'll do this with a local analysis of 
+\begin_inset Formula $J$
+\end_inset
+
+ and 
+\begin_inset Formula $J_{1}$
+\end_inset
+
+ around 
+\begin_inset Formula $w^{*}$
+\end_inset
+
+.
+ The relation 
+\begin_inset Formula $y_{i}x_{i}^{T}w^{*}>1$
+\end_inset
+
+ holds for each 
+\begin_inset Formula $i=m+1,\ldots,n$
+\end_inset
+
+.
+ Moreover, since 
+\begin_inset Formula $y_{i}x_{i}^{T}w$
+\end_inset
+
+ is a continuous function of 
+\begin_inset Formula $w$
+\end_inset
+
+ for each 
+\begin_inset Formula $i$
+\end_inset
+
+, these inequality relations will also hold for 
+\begin_inset Formula $w$
+\end_inset
+
+ in an 
+\begin_inset Formula $\eps$
+\end_inset
+
+-ball around 
+\begin_inset Formula $w^{*}$
+\end_inset
+
+, for small enough 
+\begin_inset Formula $\eps>0$
+\end_inset
+
+.
+ Thus in that ball, 
+\begin_inset Formula $\ell(w^{T}x_{i},y_{i})=\left(1-y_{i}w^{T}x_{i}\right)_{+}=0$
+\end_inset
+
+, and so 
+\begin_inset Formula $J_{2}(w)\equiv0$
+\end_inset
+
+ for 
+\begin_inset Formula $\|w-w^{*}\|<\eps$
+\end_inset
+
+.
+ Thus in that ball, 
+\begin_inset Formula $J_{1}(w)=J(w)$
+\end_inset
+
+, and so 
+\begin_inset Formula $w^{*}$
+\end_inset
+
+ is a local minimizer of 
+\begin_inset Formula $J_{1}(w)$
+\end_inset
+
+.
+ By convexity of 
+\begin_inset Formula $J_{1}(w)$
+\end_inset
+
+, 
+\begin_inset Formula $w^{*}$
+\end_inset
+
+ is also a global minimizer of 
+\begin_inset Formula $J_{1}$
+\end_inset
+
+, and so the solution is unchanged by dropping the training points on the
+ good side of the margin.
+\end_layout
+
+\begin_layout Standard
+This argument fails if we only have 
+\begin_inset Formula $y_{i}x_{i}^{T}w^{*}\ge1$
+\end_inset
+
+ for some 
+\begin_inset Formula $i$
+\end_inset
+
+, and so we have not shown that we can just drop all training points with
+ 
+\begin_inset Formula $\alpha_{i}^{*}=0$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_body
+\end_document

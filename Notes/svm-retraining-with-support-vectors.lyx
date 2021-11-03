@@ -428,7 +428,7 @@ positive part
 \end_inset
 
 .
- This differs from our usual formulation as 
+ This differs from our usual objective 
 \begin_inset Formula $J'(w)=\frac{1}{2}||w||^{2}+\frac{c}{n}\sum_{i=1}^{n}\ell(w^{T}x_{i},y_{i})$
 \end_inset
 
@@ -442,11 +442,11 @@ ers
 \end_layout
 
 \begin_layout Standard
-We know from the duality theory of SVMs that we can minimizer of 
+We know from the duality theory of SVMs that the minimizer of 
 \begin_inset Formula $J(w)$
 \end_inset
 
- as
+ can be written as
 \begin_inset Formula 
 \[
 w^{*}=\sum_{i=1}^{n}\alpha_{i}^{*}y_{i}x_{i},

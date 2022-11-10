@@ -387,7 +387,7 @@ David S.
 \end_layout
 
 \begin_layout Date
-October 31, 2021
+October 31, 2021 (Revised November 10, 2022)
 \end_layout
 
 \begin_layout Section
@@ -463,18 +463,19 @@ where some subset of the
 \end_inset
 
 .
- One natural question is, what happens if we drop all the training points
- corresponding to 
+ For prediction, we don't need to save the 
+\begin_inset Formula $\left(x_{i},y_{i}\right)$
+\end_inset
+
+ points for which 
 \begin_inset Formula $\alpha_{i}^{*}=0$
 \end_inset
 
- from the objective function and re-fit the model.
- Does the solution change? 
-\end_layout
-
-\begin_layout Standard
-We can't quite show that, but here we show something a bit weaker: if we
- drop all training points that are on the 
+.
+ One natural question is, what happens if we remove these points from the
+ training set and re-fit the model? Perhaps the solution doesn't change
+ at all? We can't quite show that, but here we show something a bit weaker:
+ if we drop all training points that are on the 
 \begin_inset Quotes eld
 \end_inset
 
@@ -487,17 +488,25 @@ good side of the margin
 \begin_inset Formula $y_{i}x_{i}^{T}w^{*}>1$
 \end_inset
 
-.
- This does not include all points for which 
+ and still end up with the same trained model.
+ The set of training examples for which 
+\begin_inset Formula $y_{i}x_{i}^{T}w^{*}>1$
+\end_inset
+
+ all have 
 \begin_inset Formula $\alpha_{i}^{*}=0$
 \end_inset
 
-, since for those points we only know that 
-\begin_inset Formula $y_{i}x_{i}^{T}w^{*}\ge1$
+, but there may be some points with 
+\begin_inset Formula $\alpha_{i}^{*}=0$
 \end_inset
 
-.
- Here's the demonstration of the weaker statement:
+ for which 
+\begin_inset Formula $y_{i}x_{i}^{T}w^{*}=1$
+\end_inset
+
+, and so wouldn't be excluded.
+ Here's the proof of our claim:
 \end_layout
 
 \begin_layout Standard
@@ -517,7 +526,12 @@ good side of the margin
 \begin_inset Quotes erd
 \end_inset
 
-.
+ (i.e.
+ 
+\begin_inset Formula $y_{i}x_{i}^{T}w^{*}>1$
+\end_inset
+
+).
  Then we know that 
 \begin_inset Formula $\alpha_{m+1}^{*},\ldots,\alpha_{n}^{*}=0$
 \end_inset
@@ -539,11 +553,20 @@ J_{2}(w)=\sum_{m+1}^{n}\ell(w^{T}x_{i},y_{i}).
 
 \end_inset
 
-The claim is that 
+Note that 
+\begin_inset Formula $J(w)=J_{1}(w)+J_{2}(w)$
+\end_inset
+
+.
+ The claim is that if 
 \begin_inset Formula $w^{*}$
 \end_inset
 
- is also the minimizer of 
+ is a minimizer of 
+\begin_inset Formula $J(w)$
+\end_inset
+
+, then it is also a minimizer of 
 \begin_inset Formula $J_{1}(w)$
 \end_inset
 

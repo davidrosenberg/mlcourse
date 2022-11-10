@@ -4,22 +4,20 @@
 \begin_header
 \save_transient_properties true
 \origin unavailable
-\textclass amsart
+\textclass paper
 \use_default_options false
 \begin_modules
-theorems-ams
-eqs-within-sections
-figs-within-sections
+theorems-bytype
 \end_modules
 \maintain_unincluded_children false
 \language english
 \language_package default
 \inputencoding iso8859-1
 \fontencoding global
-\font_roman "default" "default"
+\font_roman "times" "default"
 \font_sans "default" "default"
 \font_typewriter "default" "default"
-\font_math "auto" "auto"
+\font_math "default" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
@@ -27,7 +25,7 @@ figs-within-sections
 \font_sf_scale 100 100
 \font_tt_scale 100 100
 \use_microtype false
-\use_dash_ligatures false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -35,9 +33,18 @@ figs-within-sections
 \index_command default
 \paperfontsize 12
 \spacing single
-\use_hyperref false
-\papersize default
-\use_geometry true
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize letterpaper
+\use_geometry false
 \use_package amsmath 2
 \use_package amssymb 2
 \use_package cancel 1
@@ -62,10 +69,6 @@ figs-within-sections
 \shortcut idx
 \color #008000
 \end_index
-\leftmargin 1in
-\topmargin 1in
-\rightmargin 1in
-\bottommargin 1in
 \secnumdepth 5
 \tocdepth 5
 \paragraph_separation indent
@@ -88,22 +91,7 @@ figs-within-sections
 
 \begin_layout Standard
 \begin_inset FormulaMacro
-\newcommand{\xsp}{\mathcal{X}}
-\end_inset
-
-
-\begin_inset FormulaMacro
-\newcommand{\ysp}{\mathcal{Y}}
-\end_inset
-
-
-\begin_inset FormulaMacro
-\newcommand{\borel}{\mathcal{R}}
-\end_inset
-
-
-\begin_inset FormulaMacro
-\newcommand{\reals}{\mathbf{R}}
+\newcommand{\reals}{\mathbf{\mathbb{R}}}
 \end_inset
 
 
@@ -123,27 +111,12 @@ figs-within-sections
 
 
 \begin_inset FormulaMacro
-\newcommand{\ch}{\mathcal{H}}
+\newcommand{\ca}{\mathcal{A}}
 \end_inset
 
 
 \begin_inset FormulaMacro
-\newcommand{\cp}{\mathcal{P}}
-\end_inset
-
-
-\begin_inset FormulaMacro
-\newcommand{\cq}{\mathcal{Q}}
-\end_inset
-
-
-\begin_inset FormulaMacro
-\newcommand{\cm}{\mathcal{M}}
-\end_inset
-
-
-\begin_inset FormulaMacro
-\newcommand{\ck}{\mathcal{K}}
+\newcommand{\cb}{\mathcal{B}}
 \end_inset
 
 
@@ -158,75 +131,157 @@ figs-within-sections
 
 
 \begin_inset FormulaMacro
+\newcommand{\ce}{\mathcal{E}}
+\end_inset
+
+
+\begin_inset FormulaMacro
 \newcommand{\cf}{\mathcal{F}}
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset FormulaMacro
-\newcommand{\that}{\hat{\theta}}
+\newcommand{\cg}{\mathcal{G}}
 \end_inset
 
 
 \begin_inset FormulaMacro
-\newcommand{\sampsp}{\mathcal{X}}
+\newcommand{\ch}{\mathcal{H}}
 \end_inset
 
 
 \begin_inset FormulaMacro
-\newcommand{\modsp}{\mathcal{P}}
+\newcommand{\ci}{\mathcal{I}}
 \end_inset
 
 
 \begin_inset FormulaMacro
-\newcommand{\paramsp}{\Theta}
+\newcommand{\cj}{\mathcal{J}}
 \end_inset
 
 
 \begin_inset FormulaMacro
-\newcommand{\sigf}{\mathcal{F}}
+\newcommand{\ck}{\mathcal{K}}
 \end_inset
 
 
 \begin_inset FormulaMacro
-\newcommand{\ex}{E}
+\newcommand{\cl}{\mathcal{L}}
 \end_inset
 
 
 \begin_inset FormulaMacro
-\newcommand{\ind}[1]{1(#1)}
+\newcommand{\cm}{\mathcal{M}}
 \end_inset
 
 
 \begin_inset FormulaMacro
-\newcommand{\sigg}{\mathcal{G}}
+\newcommand{\cn}{\mathcal{N}}
 \end_inset
 
 
 \begin_inset FormulaMacro
-\newcommand{\sigs}{\mathcal{S}}
+\newcommand{\co}{\mathcal{O}}
 \end_inset
 
 
 \begin_inset FormulaMacro
-\newcommand{\exchf}{\mathcal{E}}
+\newcommand{\cp}{\mathcal{P}}
 \end_inset
 
 
 \begin_inset FormulaMacro
-\newcommand{\pr}{P}
+\newcommand{\cq}{\mathcal{Q}}
 \end_inset
 
 
 \begin_inset FormulaMacro
-\newcommand{\var}{\textrm{var}}
+\newcommand{\calr}{\mathcal{R}}
 \end_inset
 
 
 \begin_inset FormulaMacro
-\newcommand{\cov}{\textrm{cov}}
+\newcommand{\cs}{\mathcal{S}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ct}{\mathcal{T}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cu}{\mathcal{U}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cv}{\mathcal{V}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cw}{\mathcal{W}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cx}{\mathcal{X}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cy}{\mathcal{Y}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cz}{\mathcal{Z}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\pr}{\mathbb{P}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\predsp}{\cy}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\outsp}{\cy}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\prxy}{P_{\cx\times\cy}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\prx}{P_{\cx}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\prygivenx}{P_{\cy\mid\cx}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ex}{\mathbb{E}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\var}{\textrm{Var}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\cov}{\textrm{Cov}}
 \end_inset
 
 
@@ -246,22 +301,17 @@ figs-within-sections
 
 
 \begin_inset FormulaMacro
-\newcommand{\xbar}{\overline{X}}
-\end_inset
-
-
-\begin_inset FormulaMacro
 \newcommand{\law}{\mathcal{L}}
 \end_inset
 
 
 \begin_inset FormulaMacro
-\newcommand{\gauss}{\mathcal{N}}
+\newcommand{\eps}{\varepsilon}
 \end_inset
 
 
 \begin_inset FormulaMacro
-\newcommand{\eps}{\varepsilon}
+\newcommand{\as}{\textrm{ a.s.}}
 \end_inset
 
 
@@ -276,42 +326,12 @@ figs-within-sections
 
 
 \begin_inset FormulaMacro
-\newcommand{\xhat}{\hat{x}}
+\newcommand{\convd}{\stackrel{d}{\to}}
 \end_inset
 
 
 \begin_inset FormulaMacro
-\newcommand{\yhat}{\hat{y}}
-\end_inset
-
-
-\begin_inset FormulaMacro
-\newcommand{\toninf}{\rightarrow-\infty}
-\end_inset
-
-
-\begin_inset FormulaMacro
-\newcommand{\toinf}{\rightarrow\infty}
-\end_inset
-
-
-\begin_inset FormulaMacro
-\newcommand{\tozero}{\rightarrow0}
-\end_inset
-
-
-\begin_inset FormulaMacro
-\newcommand{\as}{\textrm{ a.s.}}
-\end_inset
-
-
-\begin_inset FormulaMacro
-\newcommand{\convw}{\stackrel{d}{\rightarrow}}
-\end_inset
-
-
-\begin_inset FormulaMacro
-\newcommand{\convd}{\convw}
+\newcommand{\convp}{\stackrel{P}{\to}}
 \end_inset
 
 
@@ -321,22 +341,17 @@ figs-within-sections
 
 
 \begin_inset FormulaMacro
-\newcommand{\argmax}{\textrm{argmax}}
-\end_inset
-
-
-\begin_inset FormulaMacro
-\newcommand{\argmin}{\textrm{argmin}}
-\end_inset
-
-
-\begin_inset FormulaMacro
 \newcommand{\del}{\nabla}
 \end_inset
 
 
 \begin_inset FormulaMacro
-\newcommand{\loss}{\textrm{Loss}}
+\newcommand{\loss}{V}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\risk}{R}
 \end_inset
 
 
@@ -346,22 +361,84 @@ figs-within-sections
 
 
 \begin_inset FormulaMacro
-\newcommand{\tr}{\textrm{tr}}
+\newcommand{\tr}{\operatorname{tr}}
 \end_inset
 
 
 \begin_inset FormulaMacro
-\newcommand{\trace}{\textrm{trace}}
+\newcommand{\trace}{\operatorname{trace}}
 \end_inset
 
 
 \begin_inset FormulaMacro
-\newcommand{\rkhs}{\hil}
+\newcommand{\diag}{\text{diag}}
 \end_inset
 
- 
+
 \begin_inset FormulaMacro
-\newcommand{\vf}{\boldsymbol{f}}
+\newcommand{\rank}{\text{rank}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\linspan}{\text{span}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\proj}{\text{Proj}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\argmax}{\operatornamewithlimits{arg\, max}}
+{\text{arg max}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\argmin}{\operatornamewithlimits{arg\, min}}
+{\text{arg min}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfx}{\mathbf{x}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfy}{\mathbf{y}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfl}{\mathbf{\lambda}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bfm}{\mathbf{\mu}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\calL}{\mathcal{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vw}{\boldsymbol{w}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vx}{\boldsymbol{x}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vxi}{\boldsymbol{\xi}}
 \end_inset
 
 
@@ -371,14 +448,225 @@ figs-within-sections
 
 
 \begin_inset FormulaMacro
-\newcommand{\diag}{\text{diag}}
+\newcommand{\vbeta}{\boldsymbol{\beta}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vsigma}{\boldsymbol{\sigma}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vmu}{\boldsymbol{\mu}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vtheta}{\boldsymbol{\theta}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vd}{\boldsymbol{d}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vs}{\boldsymbol{s}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vt}{\boldsymbol{t}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vh}{\boldsymbol{h}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ve}{\boldsymbol{e}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vf}{\boldsymbol{f}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vg}{\boldsymbol{g}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vr}{\boldsymbol{r}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vz}{\boldsymbol{z}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vk}{\boldsymbol{k}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\va}{\boldsymbol{a}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vb}{\boldsymbol{b}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vv}{\boldsymbol{v}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vy}{\boldsymbol{y}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\hil}{\ch}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\rkhs}{\hil}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\median}{\text{Median}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ipw}{\text{ipw}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ipwsn}{\ensuremath{\text{ipwsn}}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\iw}{\text{iw}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\myfoot}[1]{\let\thefootnote\relax\footnotetext{\tiny{#1}}}
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Causal inference
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ate}{\text{ATE}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\unif}{\text{Unif}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bern}{\text{Bern}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\indep}{\perp\!\!\! \perp}
+{\perp}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\ind}[1]{\mathds{1}\left[#1\right]}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\se}[1]{\text{SE}\left(#1\right)}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\corr}{\text{Corr}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\expit}{\text{expit}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\snipw}{\ensuremath{\text{sn\_ipw}}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bias}{\ensuremath{\text{Bias}}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\sd}{\textrm{SD}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\opt}{\text{opt}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\dm}{\ensuremath{\text{dm}}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\poem}{\text{POEM}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\sniw}{\text{sn\_iw}}
 \end_inset
 
 
 \end_layout
 
 \begin_layout Title
-SVM: Retraining with just the support vectors?
+SVM: retraining with just the support vectors?
 \end_layout
 
 \begin_layout Author
@@ -391,7 +679,7 @@ October 31, 2021 (Revised November 10, 2022)
 \end_layout
 
 \begin_layout Section
-Setup
+Question
 \end_layout
 
 \begin_layout Standard
@@ -474,8 +762,21 @@ where some subset of the
 .
  One natural question is, what happens if we remove these points from the
  training set and re-fit the model? Perhaps the solution doesn't change
- at all? We can't quite show that, but here we show something a bit weaker:
- if we drop all training points that are on the 
+ at all? 
+\end_layout
+
+\begin_layout Section
+Answer to an easier question
+\end_layout
+
+\begin_layout Standard
+We can't show that dropping all points with 
+\begin_inset Formula $\alpha_{i}^{*}=0$
+\end_inset
+
+ from the training set won't change the answer.
+ But here we show something a bit weaker: if we drop all training points
+ that are on the 
 \begin_inset Quotes eld
 \end_inset
 
@@ -514,11 +815,11 @@ Without loss of generality, index the
 \begin_inset Formula $x_{i}$
 \end_inset
 
-'s so 
+'s so that 
 \begin_inset Formula $x_{m+1},\ldots,x_{n}$
 \end_inset
 
- are all on the 
+ are all the points on the 
 \begin_inset Quotes eld
 \end_inset
 
@@ -562,16 +863,281 @@ Note that
 \begin_inset Formula $w^{*}$
 \end_inset
 
- is a minimizer of 
+ is the minimizer of 
 \begin_inset Formula $J(w)$
 \end_inset
 
-, then it is also a minimizer of 
+, then it is also the minimizer of 
 \begin_inset Formula $J_{1}(w)$
 \end_inset
 
 .
  We'll do this with a local analysis of 
+\begin_inset Formula $J$
+\end_inset
+
+ and 
+\begin_inset Formula $J_{1}$
+\end_inset
+
+ around 
+\begin_inset Formula $w^{*}$
+\end_inset
+
+.
+ The relation 
+\begin_inset Formula $y_{i}x_{i}^{T}w^{*}>1$
+\end_inset
+
+ holds for each 
+\begin_inset Formula $i=m+1,\ldots,n$
+\end_inset
+
+.
+ Moreover, since 
+\begin_inset Formula $y_{i}x_{i}^{T}w$
+\end_inset
+
+ is a continuous function of 
+\begin_inset Formula $w$
+\end_inset
+
+ for each 
+\begin_inset Formula $i$
+\end_inset
+
+, there is some 
+\begin_inset Formula $\eps$
+\end_inset
+
+-ball around 
+\begin_inset Formula $w^{*}$
+\end_inset
+
+ for which 
+\begin_inset Formula $y_{i}x_{i}^{T}w>0$
+\end_inset
+
+ for all 
+\begin_inset Formula $i$
+\end_inset
+
+ and for all 
+\begin_inset Formula $w$
+\end_inset
+
+ in the ball.
+ Thus in that ball, i.e.
+ for all 
+\begin_inset Formula $\left\{ w\mid\|w-w^{*}\|<\eps\right\} $
+\end_inset
+
+, we have 
+\begin_inset Formula $\ell(w^{T}x_{i},y_{i})=\left(1-y_{i}w^{T}x_{i}\right)_{+}=0$
+\end_inset
+
+, and so 
+\begin_inset Formula $J_{2}(w)\equiv0$
+\end_inset
+
+ .
+ Thus in that ball, 
+\begin_inset Formula $J_{1}(w)=J(w)$
+\end_inset
+
+.
+ Since 
+\begin_inset Formula $w^{*}$
+\end_inset
+
+ is a local minimizer of 
+\begin_inset Formula $J(w)$
+\end_inset
+
+ in the ball, it is also a local minimizer of 
+\begin_inset Formula $J_{1}(w)$
+\end_inset
+
+.
+ By convexity of 
+\begin_inset Formula $J_{1}(w)$
+\end_inset
+
+, 
+\begin_inset Formula $w^{*}$
+\end_inset
+
+ is a global minimizer of 
+\begin_inset Formula $J_{1}$
+\end_inset
+
+, and so the solution is unchanged by dropping the training points on the
+ good side of the margin.
+\end_layout
+
+\begin_layout Section
+Challenge
+\end_layout
+
+\begin_layout Standard
+What happens if exclude all points with 
+\begin_inset Formula $\alpha_{i}^{*}=0$
+\end_inset
+
+? Either show that we may end up with a different solution 
+\begin_inset Formula $w^{*}$
+\end_inset
+
+ or show that the solution is unchanged.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+All we know about these points is that 
+\begin_inset Formula $y_{i}x_{i}^{T}w^{*}\ge1$
+\end_inset
+
+.
+ If we This argument fails if we only have 
+\begin_inset Formula $y_{i}x_{i}^{T}w^{*}\ge1$
+\end_inset
+
+ for some 
+\begin_inset Formula $i$
+\end_inset
+
+, and so we have not shown that we can just drop all training points with
+ 
+\begin_inset Formula $\alpha_{i}^{*}=0$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+To delete
+\end_layout
+
+\begin_layout Plain Layout
+Without loss of generality, index the 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+'s so 
+\begin_inset Formula $x_{m+1},\ldots,x_{n}$
+\end_inset
+
+ are all the points with 
+\begin_inset Formula $\alpha_{i}^{*}=0$
+\end_inset
+
+.
+ Let's now break up the objective function 
+\begin_inset Formula $J(w)$
+\end_inset
+
+ into two pieces:
+\begin_inset Formula 
+\begin{eqnarray*}
+J_{1}(w) & := & \sum_{i=1}^{m}\ell(w^{T}x_{i},y_{i})+\lambda\|w\|^{2}\\
+J_{2}(w) & := & \sum_{m+1}^{n}\ell(w^{T}x_{i},y_{i}).
+\end{eqnarray*}
+
+\end_inset
+
+Note that 
+\begin_inset Formula $J(w)=J_{1}(w)+J_{2}(w)$
+\end_inset
+
+.
+ Since the loss function is nonnegative, we know that 
+\begin_inset Formula $J_{1}(w)\le J(w)$
+\end_inset
+
+ for all 
+\begin_inset Formula $w$
+\end_inset
+
+.
+ Can there be some 
+\begin_inset Formula $w'$
+\end_inset
+
+ s.t.
+ 
+\begin_inset Formula $J_{2}(w')>0$
+\end_inset
+
+ but we still have 
+\begin_inset Formula $J_{1}(w')<J(w^{*})=J_{1}(w^{*})+J_{2}(w')$
+\end_inset
+
+? I That's the issue...
+ we maybe able to do much better on 
+\begin_inset Formula $J_{1}$
+\end_inset
+
+ with a modest cost on 
+\begin_inset Formula $J_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+is 
+\begin_inset Formula $SinceJ_{2}(w)\ge0$
+\end_inset
+
+ for all 
+\begin_inset Formula $w$
+\end_inset
+
+, we know that 
+\begin_inset Formula $ $
+\end_inset
+
+We know that for 
+\begin_inset Formula $i\ge m+1$
+\end_inset
+
+ we have 
+\begin_inset Formula $y_{i}x_{i}^{T}w^{*}\ge1$
+\end_inset
+
+, and so 
+\begin_inset Formula $\ell(w^{T}x_{i},y_{i})=\left(1-y_{i}x_{i}^{T}w^{*}\right)_{+}=0$
+\end_inset
+
+.
+ This implies that 
+\begin_inset Formula $J_{2}(w^{*})=0$
+\end_inset
+
+.
+ Since 
+\begin_inset Formula $J_{2}(w)\ge0$
+\end_inset
+
+ for all 
+\begin_inset Formula $w$
+\end_inset
+
+, 
+\begin_inset Formula $w^{*}$
+\end_inset
+
+ is a global minimizer of 
+\begin_inset Formula $J_{2}(w)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+We'll do this with a local analysis of 
 \begin_inset Formula $J$
 \end_inset
 
@@ -648,38 +1214,12 @@ Note that
 \end_inset
 
 .
- By convexity of 
-\begin_inset Formula $J_{1}(w)$
-\end_inset
-
-, 
-\begin_inset Formula $w^{*}$
-\end_inset
-
- is also a global minimizer of 
-\begin_inset Formula $J_{1}$
-\end_inset
-
-, and so the solution is unchanged by dropping the training points on the
- good side of the margin.
+ By convexity
 \end_layout
 
-\begin_layout Standard
-This argument fails if we only have 
-\begin_inset Formula $y_{i}x_{i}^{T}w^{*}\ge1$
 \end_inset
 
- for some 
-\begin_inset Formula $i$
-\end_inset
 
-, and so we have not shown that we can just drop all training points with
- 
-\begin_inset Formula $\alpha_{i}^{*}=0$
-\end_inset
-
-.
- 
 \end_layout
 
 \end_body

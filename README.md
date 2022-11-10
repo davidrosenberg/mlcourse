@@ -2,7 +2,8 @@
 <!-- - New figures illustrating regularization paths in space of all functions.-->
 
 ## Notable Changes Since [2018](https://davidrosenberg.github.io/ml2018/#home)
-- Added a note on a [moment-matching interpretation](https://davidrosenberg.github.io/mlcourse/Notes/logistic-regression-moment-matching.pdf) of fitting logistic regression and more general softmax-style linear conditional probability models.
+- Added a [note](https://davidrosenberg.github.io/mlcourse/Notes/svm-retraining-with-support-vectors.pdf) on retraining SVMs with just the support vectors
+- Added a [note](https://davidrosenberg.github.io/mlcourse/Notes/logistic-regression-moment-matching.pdf) on a moment-matching interpretation of fitting logistic regression and more general softmax-style linear conditional probability models.
 
 ## Notable Changes from [2017FOML](https://bloomberg.github.io/foml/#home) to [2018](https://davidrosenberg.github.io/ml2018/#home)
 - Elaborated on the [case against sparsity](https://davidrosenberg.github.io/mlcourse/Archive/2018/Lectures/03a.elastic-net.pdf#page=18) in the lecture on elastic net, to complement the reasons *for* sparsity on the slide [Lasso Gives Feature Sparsity: So What?](https://davidrosenberg.github.io/mlcourse/Archive/2018/Lectures/02c.L1L2-regularization.pdf).

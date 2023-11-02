@@ -1576,7 +1576,7 @@ Data set
 Define
 \begin_inset Formula 
 \[
-\ell_{i}(w,b)=\left[\left(w^{T}x_{i}+b\right)-y_{i}\right]^{2}.
+\ell_{i}(w,b)=\left[y_{i}-\left(w^{T}x_{i}+b\right)\right]^{2}.
 \]
 
 \end_inset
@@ -1663,7 +1663,7 @@ For a generic training point
 , denote the loss by 
 \begin_inset Formula 
 \[
-\ell(w,b)=\left[\left(w^{T}x+b\right)-y\right]^{2}.
+\ell(w,b)=\left[y-\left(w^{T}x+b\right)\right]^{2}.
 \]
 
 \end_inset
@@ -1882,7 +1882,7 @@ For training point
 -regularized objective function is 
 \begin_inset Formula 
 \[
-J(w,b)=\left[\left(w^{T}x+b\right)-y\right]^{2}+\lambda w^{T}w.
+J(w,b)=\left[y-\left(w^{T}x+b\right)\right]^{2}+\lambda w^{T}w.
 \]
 
 \end_inset
@@ -1989,7 +1989,7 @@ Partial Derivatives on Computation Graph
 \begin_deeper
 \begin_layout Itemize
 We'll work our way from graph output 
-\begin_inset Formula $\ell$
+\begin_inset Formula $J$
 \end_inset
 
  back to the parameters 
@@ -2325,9 +2325,9 @@ textwidth
 \begin_inset Formula 
 \begin{eqnarray*}
 \frac{\partial J}{\partial\hat{y}} & = & \frac{\partial J}{\partial\ell}\frac{\partial\ell}{\partial r}\frac{\partial r}{\partial\hat{y}}=\left(1\right)(2r)\left(-1\right)=-2r\\
-\frac{\partial J}{\partial w_{j}^{(2)}} & = & \pause\frac{\partial J}{\partial\hat{y}}\frac{\partial\hat{y}}{\partial w_{j}^{(2)}}=\frac{\partial J}{\partial\hat{y}}x_{j}\\
-\frac{\partial J}{\partial w_{j}^{(1)}} & = & \pause\frac{\partial J}{\partial R}\frac{\partial R}{\partial w_{j}^{(1)}}=\left(1\right)\left(2\lambda w_{j}^{(1)}\right)\\
-\frac{\partial J}{\partial w_{j}} & = & \pause\frac{\partial J}{\partial w_{j}^{(1)}}+\frac{\partial J}{\partial w_{j}^{(2)}}
+\frac{\partial J}{\partial w_{j}^{(2)}} & = & \pause\frac{\partial J}{\partial\hat{y}}\frac{\partial\hat{y}}{\partial w_{j}^{(2)}}=-2rx_{j}\\
+\frac{\partial J}{\partial w_{j}^{(1)}} & = & \pause\frac{\partial J}{\partial R}\frac{\partial R}{\partial w_{j}^{(1)}}=\left(1\right)\left(2\lambda w_{j}^{(1)}\right)=2\lambda w_{j}\\
+\frac{\partial J}{\partial w_{j}} & = & \pause\frac{\partial J}{\partial w_{j}^{(1)}}+\frac{\partial J}{\partial w_{j}^{(2)}}=2\lambda w_{j}-2rx_{j}
 \end{eqnarray*}
 
 \end_inset

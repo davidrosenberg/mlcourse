@@ -1604,7 +1604,7 @@ The Marginal Log-Likelihood Function
 \begin_deeper
 \begin_layout Standard
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/EM-algorithm/margLL.pdf
+	filename ../Figures/EM-algorithm/margLL.pdf
 	width 85page%
 	clip
 
@@ -1637,7 +1637,7 @@ The Maximum Likelihood Estimator
 \begin_deeper
 \begin_layout Standard
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/EM-algorithm/margLL-withMax.pdf
+	filename ../Figures/EM-algorithm/margLL-withMax.pdf
 	width 85page%
 	clip
 
@@ -1670,7 +1670,7 @@ Lower Bounds on Marginal Log-Likelihood
 \begin_deeper
 \begin_layout Standard
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/EM-algorithm/margLL-with-lowerbounds.pdf
+	filename ../Figures/EM-algorithm/margLL-with-lowerbounds.pdf
 	width 85page%
 	clip
 
@@ -1703,7 +1703,7 @@ Supremum over Lower Bounds is a Lower Bound
 \begin_deeper
 \begin_layout Standard
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/EM-algorithm/margLL-sup-lowerbound.pdf
+	filename ../Figures/EM-algorithm/margLL-sup-lowerbound.pdf
 	width 85page%
 	clip
 
@@ -1736,7 +1736,7 @@ Parameter Estimate: Max over all lower bounds
 \begin_deeper
 \begin_layout Standard
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/EM-algorithm/margLL-argmax-lowerbound.pdf
+	filename ../Figures/EM-algorithm/margLL-argmax-lowerbound.pdf
 	width 85page%
 	clip
 
@@ -3548,7 +3548,7 @@ the Supremum over Lower Bounds
 \begin_deeper
 \begin_layout Standard
 \begin_inset Graphics
-	filename /Users/drosen/Dropbox/repos/mlcourse/Figures/EM-algorithm/sup-margLL.pdf
+	filename ../Figures/EM-algorithm/sup-margLL.pdf
 	width 75page%
 	clip
 

@@ -57,7 +57,7 @@ When we talk about the derivative of f:ℝᵈ→ℝ, we're talking about the Jac
 
 In the course webpage we link to [Barnes's Matrix Differentiation](http://www.atmos.washington.edu/~dennis/MatrixCalculus.pdf) notes as a reference. You'll notice the notes never use the word "gradient". Indeed, everything he writes there is about the derivative (i.e. the Jacobian). This is fine, as the gradient is just going to be the transpose of the relevant Jacobian.
 
-Now an annoying thing: the other document on the website, simply called [C: Matrix Calculus](http://www.colorado.edu/engineering/cas/courses.d/IFEM.d/IFEM.AppC.d/IFEM.AppC.pdf), uses the reverse convention. They define the Jacobian as the transpose of the one we've defined above and which we've found to be the more standard. Once you realize the difference is just a transpose, it's not a big deal. But it can certainly be confusing at first...
+Now an annoying thing: the other document on the website, simply called [Appendix F: Matrix Calculus](https://quickfem.com/wp-content/uploads/IFEM.AppF_.pdf), uses the reverse convention. They define the Jacobian as the transpose of the one we've defined above and which we've found to be the more standard. Once you realize the difference is just a transpose, it's not a big deal. But it can certainly be confusing at first...
 
 Besides
 [Brett Bernstein's excellent notes](https://davidrosenberg.github.io/mlcourse/Labs/1-gradients-Notes_sol.pdf),
@@ -83,7 +83,7 @@ more sophisticated models).
 
 For more information about gradient checking, see
 the
-[UFLDL notes on gradient checking](http://ufldl.stanford.edu/wiki/index.php/Gradient_checking_and_advanced_optimization).
+[UFLDL notes on gradient checking](http://ufldl.stanford.edu/tutorial/supervised/DebuggingGradientChecking/).
 
 ## Vectorization
 [//]: # (Original discussion: https://piazza.com/class/ii99b8o57me5jo?cid=24)
@@ -145,9 +145,9 @@ or the "Pareto principle"?  Says you can get 80% of the outcome from
 scientist without knowing a lot of math.  What's essential (the
 "20%") is an understanding of the core principles of machine learning,
 such as discussed in
-[DS-GA 1001](http://cds.nyu.edu/course-pages/ds-ga-1001-intro-data-science/)
+DS-GA 1001
 or the book
-[Data Science for Business](http://data-science-for-biz.com/DSB/Home.html),
+[Data Science for Business](https://data-science-for-biz.com/),
 along with an ability to use existing machine learning toolkits.  With
 this amount of knowledge, you should be able to avoid big mistakes and
 achieve some level of success as a data scientist.  For somebody who
